@@ -25,3 +25,11 @@ CLAUDE.md holds concise persistent project instructions. Detailed task packets, 
 ## D006: bound autonomous work by acceptance units
 
 The initial prompt requests at most three accepted roadmap pushes, then a checkpoint. This bounds a session while respecting the user's authorization for implementation and ordinary commits/pushes. It does not require repeated permission for reversible routine choices. It does not install a recurring automation or an unlimited background agent.
+
+## D007: singularity.certificate/1 satisfies P03's relational-height/1
+
+P03's roadmap text named a format `relational-height/1`. The implemented, tested and retained format is `singularity.certificate/1`. P03 is accepted against the existing format; the roadmap identifier is amended to mean that format. No rename or migration was made, so all retained packets replay unchanged. Alternatives considered: (a) renaming, which would invalidate retained packets without a mathematical reason; (b) a second reader accepting both names, which would create two names for one schema. The reader rejects `relational-height/1` with an explicit superseded-name diagnostic rather than "unrecognized format", and the specification records the decision in `docs/specifications/COEFFICIENTS-v1.md`, section 9. A future incompatible change would be `singularity.certificate/2` with a checked migration.
+
+## D008: session scope "build as much as you can"
+
+On 2026-10-17 the user asked the session to "build as much as you can". This is read as the explicit scope override that CLAUDE.md permits for the three-push batch limit. Each push is still accepted only against its original criteria, committed separately where practical, and recorded in the ledger. The session remains bounded: no scheduler or unattended loop is installed, and it ends at a checkpoint.

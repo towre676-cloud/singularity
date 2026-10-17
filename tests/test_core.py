@@ -13,9 +13,11 @@ import unittest
 from singularity.examples import GRAPHS
 from singularity.graph import Graph
 from singularity.heights import (
-    local_coefficients, marked_coefficients, nested_energy, normalize_heights,
-    normalized_coefficients, threshold_sets, weak_compositions,
+    componentwise_normalized_coefficients, local_coefficients, marked_coefficients,
+    nested_energy, normalize_heights, normalized_coefficients, threshold_sets,
+    weak_compositions,
 )
+from singularity.polynomials import series_mul
 from singularity.invariants import (
     binary_cut_profile, first_difference, laplacian_characteristic_polynomial,
     minimum_cut_profile,
@@ -174,6 +176,56 @@ class HeightTests(unittest.TestCase):
             self.assertEqual(binary_cut_profile(graph), binary_cut_profile(relabeled))
             self.assertEqual(local_coefficients(graph, 3), local_coefficients(relabeled, 3))
             self.assertEqual(marked_coefficients(graph, 3), marked_coefficients(relabeled, 3))
+
+
+class SemanticsTests(unittest.TestCase):
+    """P01: the published examples of docs/specifications/COEFFICIENTS-v1.md."""
+
+    def test_disconnected_global_versus_componentwise_translation(self):
+        graph = Graph(3, [(0, 1)])  # K2 on {0,1} plus the isolated vertex 2
+        # Global min(a)=0 keeps (1,1,0): the component {0,1} stays positive.
+        self.assertEqual(normalized_coefficients(graph, 4), [
+            {0: 1}, {0: 1, 1: 2}, {0: 2, 1: 2, 4: 2}, {0: 1, 1: 4, 4: 2, 9: 2},
+            {0: 2, 1: 2, 4: 4, 9: 2, 16: 2}])
+        # One translation per component: min zero on {0,1} and a_2=0.
+        self.assertEqual(componentwise_normalized_coefficients(graph, 4),
+                         [{0: 1}, {1: 2}, {4: 2}, {9: 2}, {16: 2}])
+        # Componentwise quotient is the product of component B series.
+        edge, point = normalized_coefficients(Graph(2, [(0, 1)]), 4), normalized_coefficients(Graph(1), 4)
+        self.assertEqual(componentwise_normalized_coefficients(graph, 4), series_mul(edge, point))
+        # Global quotient: B = (1-x^3)/((1-x^2)(1-x)) B_K2 B_K1 (SNG-F19).
+        geometric2 = [{0: 1} if m % 2 == 0 else {} for m in range(5)]
+        geometric1 = [{0: 1}] * 5
+        cubic = [{0: 1}, {}, {}, {0: -1}, {}]
+        global_series = series_mul(series_mul(series_mul(cubic, geometric2), geometric1), series_mul(edge, point))
+        self.assertEqual(normalized_coefficients(graph, 4), global_series)
+
+    def test_quotients_agree_exactly_for_connected_graphs(self):
+        for graph in small_graphs():
+            # Disconnected: lifting a smallest component by one is globally
+            # normalized at volume <= 3 when n <= 4, but not componentwise.
+            same = componentwise_normalized_coefficients(graph, 3) == normalized_coefficients(graph, 3)
+            self.assertEqual(same, graph.connected, graph)
+
+    def test_zero_volume_singleton_and_inclusive_truncation(self):
+        self.assertEqual(local_coefficients(Graph(1), 3), [{0: 1}] * 4)
+        self.assertEqual(normalized_coefficients(Graph(1), 3), [{0: 1}, {}, {}, {}])
+        self.assertEqual(marked_coefficients(Graph(1), 3), {(0, 0, 0): 1})
+        self.assertEqual(marked_coefficients(Graph(2, [(0, 1)]), 3),
+                         {(0, 0, 0): 1, (1, 1, 1): 2, (2, 4, 2): 2, (3, 9, 3): 2})
+        for graph in (Graph(1), Graph(3, [(0, 1)]), GRAPHS["spectral_g"]):
+            self.assertEqual(local_coefficients(graph, 0), [{0: 1}])
+            self.assertEqual(normalized_coefficients(graph, 0), [{0: 1}])
+            self.assertEqual(marked_coefficients(graph, 0), {(0, 0, 0): 1})
+        # A truncation at M returns rows 0..M; enlarging M never changes them.
+        graph = Graph(4, [(0, 1), (1, 2)])
+        longer = marked_coefficients(graph, 5)
+        self.assertEqual(marked_coefficients(graph, 3), {k: c for k, c in longer.items() if k[0] <= 3})
+        self.assertEqual(local_coefficients(graph, 5)[:4], local_coefficients(graph, 3))
+
+    def test_automorphisms_do_not_divide_multiplicities(self):
+        # K2's swap symmetry leaves both (h,0) and (0,h) in the population.
+        self.assertEqual(normalized_coefficients(Graph(2, [(0, 1)]), 2), [{0: 1}, {1: 2}, {4: 2}])
 
 
 class DiscoveryTests(unittest.TestCase):

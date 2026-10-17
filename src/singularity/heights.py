@@ -1,4 +1,10 @@
-"""Exact labeled height populations and their formal-series coefficients."""
+"""Exact labeled height populations and their formal-series coefficients.
+
+Meanings, truncation and normalization conventions are frozen in
+docs/specifications/COEFFICIENTS-v1.md.  Every ``max_volume`` is inclusive and
+returns a complete finite prefix; normalization removes one global common
+translation, also for disconnected graphs.
+"""
 
 from __future__ import annotations
 
@@ -25,7 +31,10 @@ def weak_compositions(total: int, length: int) -> Iterator[tuple[int, ...]]:
 
 
 def local_coefficients(graph: Graph, max_volume: int) -> list[dict[int, int]]:
-    """Return [x^m] L_G(x,q) as sparse integer q-polynomials for m <= M."""
+    """Return [x^m] L_G(x,q) as sparse integer q-polynomials for m <= M.
+
+    Row m maps energy to the number of labeled profiles of volume m.
+    """
     max_volume = _integer(max_volume, "max_volume", minimum=0)
     return [
         dict(sorted(Counter(graph.energy(a) for a in weak_compositions(m, graph.n)).items()))
@@ -48,12 +57,34 @@ def normalize_local_coefficients(
 
 
 def normalized_coefficients(graph: Graph, max_volume: int) -> list[dict[int, int]]:
-    """Return coefficients of B_G=(1-x^n)L_G, with min(a)=0."""
+    """Return coefficients of B_G=(1-x^n)L_G, with global min(a)=0.
+
+    A component of a disconnected graph may remain entirely positive; see
+    ``componentwise_normalized_coefficients`` for the other quotient.
+    """
     return normalize_local_coefficients(local_coefficients(graph, max_volume), graph.n)
 
 
+def componentwise_normalized_coefficients(graph: Graph, max_volume: int) -> list[dict[int, int]]:
+    """Count profiles whose minimum is zero on every connected component.
+
+    This is a different quotient from ``normalized_coefficients``: it removes
+    one translation per component, so it equals the product of the components'
+    B series.  For a connected graph the two coincide.  See
+    docs/specifications/COEFFICIENTS-v1.md, section 6.
+    """
+    max_volume = _integer(max_volume, "max_volume", minimum=0)
+    components = graph.components()
+    rows: list[Counter[int]] = [Counter() for _ in range(max_volume + 1)]
+    for volume in range(max_volume + 1):
+        for a in weak_compositions(volume, graph.n):
+            if all(min(a[i] for i in component) == 0 for component in components):
+                rows[volume][graph.energy(a)] += 1
+    return [dict(sorted(row.items())) for row in rows]
+
+
 def marked_coefficients(graph: Graph, max_volume: int) -> dict[tuple[int, int, int], int]:
-    """Count normalized assignments by (total volume, energy, height span)."""
+    """Count global minimum-zero labeled profiles by (volume, energy, span)."""
     max_volume = _integer(max_volume, "max_volume", minimum=0)
     result: Counter[tuple[int, int, int]] = Counter()
     for volume in range(max_volume + 1):

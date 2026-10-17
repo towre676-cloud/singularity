@@ -59,6 +59,7 @@ def compute():
         'spectral':build_certificate(GRAPHS['spectral_g'],4,GRAPHS['spectral_h'],'spectral-pair',factors_a),
         'binary_census':build_certificate(GRAPHS['binary_g'],4,GRAPHS['binary_h'],'binary-census-pair',factors_b),
         'translation':build_certificate(Graph(3,((0,1),(1,2))),5,label='translation-crossing'),
+        'regular_cube_mobius':build_certificate(cube,4,mobius,'cube-mobius-pair',{'coefficient':'2','monomial':4,'factors':[[2,4]]}),
     }
     replays={name:replay_certificate(packet) for name,packet in certificates.items()}
     assert all(r['valid'] for r in replays.values())
@@ -87,7 +88,7 @@ def main():
             target.parent.mkdir(parents=True,exist_ok=True); target.write_text(serialized)
     if failures:
         raise SystemExit('Retained outputs differ: '+', '.join(failures))
-    print('Exact examples, three graph comparisons, three independent packet replays and remote conductor coefficient '+('match retained outputs.' if args.check else 'written.'))
+    print('Exact examples, three graph comparisons, four independent packet replays and remote conductor coefficient '+('match retained outputs.' if args.check else 'written.'))
 
 
 if __name__=='__main__':

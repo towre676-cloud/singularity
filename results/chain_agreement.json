@@ -1,0 +1,69 @@
+{
+  "elapsed_seconds": 3.75,
+  "environment": {
+    "python": "3.13.16"
+  },
+  "interpretation": "Exact finite agreement on the declared population; not a proof for larger graphs or volumes.",
+  "max_n": 5,
+  "max_volume": 6,
+  "methods": {
+    "chains": "singularity.chains.chain_marked_coefficients (nested level sets, SNG-F10 energy)",
+    "oracle": "singularity.heights.marked_coefficients (weak compositions, squared differences)"
+  },
+  "orders": [
+    {
+      "disagreements": [],
+      "gap_profiles_per_graph": 0,
+      "labeled_graphs": 1,
+      "marked_cells_compared": 1,
+      "n": 1,
+      "profiles_compared": 1,
+      "profiles_per_graph": 1
+    },
+    {
+      "disagreements": [],
+      "gap_profiles_per_graph": 10,
+      "labeled_graphs": 2,
+      "marked_cells_compared": 14,
+      "n": 2,
+      "profiles_compared": 26,
+      "profiles_per_graph": 13
+    },
+    {
+      "disagreements": [],
+      "gap_profiles_per_graph": 51,
+      "labeled_graphs": 8,
+      "marked_cells_compared": 242,
+      "n": 3,
+      "profiles_compared": 512,
+      "profiles_per_graph": 64
+    },
+    {
+      "disagreements": [],
+      "gap_profiles_per_graph": 120,
+      "labeled_graphs": 64,
+      "marked_cells_compared": 4456,
+      "n": 4,
+      "profiles_compared": 12480,
+      "profiles_per_graph": 195
+    },
+    {
+      "disagreements": [],
+      "gap_profiles_per_graph": 235,
+      "labeled_graphs": 1024,
+      "marked_cells_compared": 137703,
+      "n": 5,
+      "profiles_compared": 466944,
+      "profiles_per_graph": 456
+    }
+  ],
+  "population": "all labeled simple graphs on 1..5 vertices; minimum-zero profiles of volume <= 6",
+  "schema": "singularity.chain-agreement/1",
+  "totals": {
+    "disagreements": 0,
+    "labeled_graphs": 1099,
+    "marked_cells_compared": 142416,
+    "profiles_compared": 479963
+  },
+  "version": "0.1.0"
+}

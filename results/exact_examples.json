@@ -2,6 +2,7 @@
   "certificate_replays": {
     "binary_census": {
       "checks": {
+        "chain_profiles_recomputed": 660,
         "comparison_recomputed": true,
         "euler_recomposition": true,
         "nested_profiles_checked": 660,
@@ -11,8 +12,21 @@
       "errors": [],
       "valid": true
     },
+    "regular_cube_mobius": {
+      "checks": {
+        "chain_profiles_recomputed": 990,
+        "comparison_recomputed": true,
+        "euler_recomposition": true,
+        "nested_profiles_checked": 990,
+        "profiles_recomputed": 990,
+        "shift_normalization": true
+      },
+      "errors": [],
+      "valid": true
+    },
     "spectral": {
       "checks": {
+        "chain_profiles_recomputed": 660,
         "comparison_recomputed": true,
         "euler_recomposition": true,
         "nested_profiles_checked": 660,
@@ -24,6 +38,7 @@
     },
     "translation": {
       "checks": {
+        "chain_profiles_recomputed": 46,
         "euler_recomposition": true,
         "nested_profiles_checked": 46,
         "profiles_recomputed": 56,

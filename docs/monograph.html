@@ -1897,6 +1897,67 @@ can contribute, so the coefficient remains a finite sum. The expression
 is also a useful specification for an independent implementation: direct
 weak-composition enumeration and threshold-chain enumeration must return
 the same marked cells.</p>
+<p><strong>Proposition SNG-F21 (volume-pruned chain
+enumeration).</strong> Fix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">M\ge0</annotation></semantics></math>.
+The following search visits every normalized profile of volume at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+exactly once: emit the empty chain; for every nonempty proper
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>⊊</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">S_1\subsetneq V</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>S</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">|S_1|\le M</annotation></semantics></math>,
+emit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(S_1)</annotation></semantics></math>
+and recursively extend a chain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(S_1,\ldots,S_t)</annotation></semantics></math>
+by every nonempty
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⊆</mo><msub><mi>S</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">S_{t+1}\subseteq S_t</annotation></semantics></math>,
+equal sets included, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>r</mi><mo>≤</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>S</mi><mi>r</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">\sum_{r\le t+1}|S_r|\le M</annotation></semantics></math>.
+If each appended level is charged
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><msub><mo>∑</mo><mrow><mi>r</mi><mo>≤</mo><mi>t</mi></mrow></msub><msub><mi>e</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi>V</mi><mo>\</mo><msub><mi>S</mi><mi>r</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">c_G(S_{t+1})+2\sum_{r\le t}e_G(S_{t+1},V\setminus S_r)</annotation></semantics></math>,
+the accumulated charge is the energy of the profile, the accumulated
+size is its volume and the chain length is its span.</p>
+<p><em>Proof.</em> Every emitted sequence is a weakly nested chain of
+nonempty sets with proper first set, so SNG-F09 maps it to a normalized
+profile of span equal to its length and volume equal to its total size.
+Conversely the threshold chain of a normalized profile of volume at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+satisfies these constraints, and each of its prefixes has total size at
+most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>,
+because sizes are positive; the search therefore reaches it through its
+prefixes. Distinct emitted chains differ in some level and hence give
+distinct profiles, since SNG-F09 is a bijection; and the search emits
+each chain once, because the chain determines the sequence of choices
+that produced it. Termination follows because each level has size at
+least one, so the length is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>.
+The charge identity is SNG-F10 grouped by the later index
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+of each pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">r&lt;t</annotation></semantics></math>:
+appending
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">S_{t+1}</annotation></semantics></math>
+adds its own cut and twice its overlap with every earlier level, and
+with no other pair.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Repetitions are essential. Forbidding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>S</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">S_{t+1}=S_t</annotation></semantics></math>
+removes exactly the profiles in which some height between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+and the span is unused, for instance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,2,2)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1,3)</annotation></semantics></math>
+on the path. The search is implemented in
+<code>src/singularity/chains.py</code>. It shares neither its generator
+nor its energy evaluation with the weak-composition engine, so agreement
+of the two on complete marked histograms is a genuine cross-check. For
+every labeled simple graph on at most five vertices and every volume at
+most six, the two engines agree on all 142,416 marked cells and 479,963
+profiles (<code>results/chain_agreement.json</code>). This is a finite
+computation on that declared population, not a proof beyond it.</p>
 <p>The expansion shows exactly what a binary observation omits. The
 binary sector reports one subset at a time, through its size and cut. A
 chain term refers to several nested subsets in the same graph and
@@ -6718,6 +6779,19 @@ encode a q-specialization or assert an analytic continuation. Those
 conclusions belong to the separately stated mathematical theorem. A
 source digest identifies the declared graph bytes; correctness comes
 from the independent calculation and mathematical identities.</p>
+<p>Replay first runs a structural parser. It rejects unknown or missing
+fields, non-integer or Boolean counts, negative degrees, duplicate or
+unsorted terms in any polynomial or marked row, rational coefficients
+not in lowest terms, invalid or non-canonical edges in either graph, and
+the superseded roadmap name <code>relational-height/1</code>. Only a
+well-formed packet reaches arithmetic. Recomputation then uses two
+routes, neither of which is the builder’s weak-composition engine: a
+replay-local stars-and-bars generator, and the level-chain search of
+Proposition SNG-F21. Both must reproduce the marked cells, and the work
+budget counts both. A packet whose counts are altered is rejected even
+when its digest, identity flags and every other field are left
+untouched. The format name, field meanings and this decision are fixed
+in <code>docs/specifications/COEFFICIENTS-v1.md</code>.</p>
 <p>There are several different assurance levels. Direct Python
 enumeration is an exact finite computation relative to the interpreter
 and implementation. Independent enumerators reduce common implementation
@@ -7403,6 +7477,10 @@ never an implicit division of multiplicities.</p>
 <h2 data-number="15.2" id="implemented-mathematical-modules"><span
 class="header-section-number">15.2</span> Implemented mathematical
 modules</h2>
+<p>The meaning of every public coefficient, population and certificate
+interface is fixed in the <a
+href="specifications/COEFFICIENTS-v1.md">coefficient
+specification</a>.</p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -7484,10 +7562,18 @@ conservative exact local remainder and tail constants</td>
 recomposition</td>
 </tr>
 <tr class="even">
+<td><code>chains</code></td>
+<td>Weakly nested level chains</td>
+<td>Direct chain generation with repeated levels, nested-boundary
+energy, marked/normalized/local coefficients independent of weak
+compositions</td>
+</tr>
+<tr class="odd">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
-<td>Independent profile replay, nested-cut checks, normalization and
-factorization checks</td>
+<td>Structural parser, two independent replay routes (stars-and-bars and
+level chains), nested-cut checks, normalization and factorization
+checks</td>
 </tr>
 </tbody>
 </table>

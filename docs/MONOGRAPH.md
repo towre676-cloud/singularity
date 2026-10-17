@@ -447,6 +447,12 @@ q^{\sum_t c_G(S_t)+2\sum_{r<t}e_G(S_t,V\setminus S_r)}.
 \]
 This is an identity of formal series. At a specified total volume \(m\), only chains of length at most \(m\) can contribute, so the coefficient remains a finite sum. The expression is also a useful specification for an independent implementation: direct weak-composition enumeration and threshold-chain enumeration must return the same marked cells.
 
+**Proposition SNG-F21 (volume-pruned chain enumeration).** Fix \(M\ge0\). The following search visits every normalized profile of volume at most \(M\) exactly once: emit the empty chain; for every nonempty proper \(S_1\subsetneq V\) with \(|S_1|\le M\), emit \((S_1)\) and recursively extend a chain \((S_1,\ldots,S_t)\) by every nonempty \(S_{t+1}\subseteq S_t\), equal sets included, with \(\sum_{r\le t+1}|S_r|\le M\). If each appended level is charged \(c_G(S_{t+1})+2\sum_{r\le t}e_G(S_{t+1},V\setminus S_r)\), the accumulated charge is the energy of the profile, the accumulated size is its volume and the chain length is its span.
+
+*Proof.* Every emitted sequence is a weakly nested chain of nonempty sets with proper first set, so SNG-F09 maps it to a normalized profile of span equal to its length and volume equal to its total size. Conversely the threshold chain of a normalized profile of volume at most \(M\) satisfies these constraints, and each of its prefixes has total size at most \(M\), because sizes are positive; the search therefore reaches it through its prefixes. Distinct emitted chains differ in some level and hence give distinct profiles, since SNG-F09 is a bijection; and the search emits each chain once, because the chain determines the sequence of choices that produced it. Termination follows because each level has size at least one, so the length is at most \(M\). The charge identity is SNG-F10 grouped by the later index \(t\) of each pair \(r<t\): appending \(S_{t+1}\) adds its own cut and twice its overlap with every earlier level, and with no other pair. \(\square\)
+
+Repetitions are essential. Forbidding \(S_{t+1}=S_t\) removes exactly the profiles in which some height between \(0\) and the span is unused, for instance \((0,2,2)\) and \((0,1,3)\) on the path. The search is implemented in `src/singularity/chains.py`. It shares neither its generator nor its energy evaluation with the weak-composition engine, so agreement of the two on complete marked histograms is a genuine cross-check. For every labeled simple graph on at most five vertices and every volume at most six, the two engines agree on all 142,416 marked cells and 479,963 profiles (`results/chain_agreement.json`). This is a finite computation on that declared population, not a proof beyond it.
+
 The expansion shows exactly what a binary observation omits. The binary sector reports one subset at a time, through its size and cut. A chain term refers to several nested subsets in the same graph and additionally uses their boundary-overlap counts. Separate histograms of subset sizes and cuts do not retain the correspondence needed to form these overlaps.
 
 This statement is directional. The full marked series certainly contains the binary histogram because its span-one coefficient extracts it. It does not follow that the two-variable specialization \(B_G(x,q)=\mathcal B_G(x,q,1)\) permits that same extraction. After span is forgotten, a cell of given volume and energy can receive both binary and nonbinary contributions. No inversion of that mixture is proved here.
@@ -2394,6 +2400,8 @@ The implemented certificate format is `singularity.certificate/1`. It records th
 
 A pair certificate adds the second graph and digest, its retained local coefficients, the first discrepancy within the common truncation, and an optional supplied factorization. Replay independently enumerates original labeled profiles, checks their energies against the nested-threshold identity, reconstructs all recorded sectors, and replays the formal Euler recomposition. The receipt records a total profile count rather than a separate count for every volume. It does not encode a q-specialization or assert an analytic continuation. Those conclusions belong to the separately stated mathematical theorem. A source digest identifies the declared graph bytes; correctness comes from the independent calculation and mathematical identities.
 
+Replay first runs a structural parser. It rejects unknown or missing fields, non-integer or Boolean counts, negative degrees, duplicate or unsorted terms in any polynomial or marked row, rational coefficients not in lowest terms, invalid or non-canonical edges in either graph, and the superseded roadmap name `relational-height/1`. Only a well-formed packet reaches arithmetic. Recomputation then uses two routes, neither of which is the builder's weak-composition engine: a replay-local stars-and-bars generator, and the level-chain search of Proposition SNG-F21. Both must reproduce the marked cells, and the work budget counts both. A packet whose counts are altered is rejected even when its digest, identity flags and every other field are left untouched. The format name, field meanings and this decision are fixed in `docs/specifications/COEFFICIENTS-v1.md`.
+
 There are several different assurance levels. Direct Python enumeration is an exact finite computation relative to the interpreter and implementation. Independent enumerators reduce common implementation risk. A proof-assistant theorem about the enumeration algorithm is stronger, but does not automatically verify a particular exported table. A kernel-checked replay of the concrete table crosses that remaining boundary. Documentation should state which level each claim has reached. A schema and a future formalization plan are not present proof-assistant verification.
 
 ## Analytic experiments and graph boundaries
@@ -2564,6 +2572,8 @@ From the repository root, `python -m pip install -e .` installs the command `sin
 
 ## Implemented mathematical modules
 
+The meaning of every public coefficient, population and certificate interface is fixed in the [coefficient specification](specifications/COEFFICIENTS-v1.md).
+
 | Module | Exact object | Current capability |
 |---|---|---|
 | `graph` | Finite simple graph and integer quadratic energy | Validation, components, relabeling, cuts, Laplacian, signed integer height energy |
@@ -2577,7 +2587,8 @@ From the repository root, `python -m pip install -e .` installs the command `sin
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |
 | `arithmetic` | Prime-valuation populations | Positive integer factorization, finite Dirichlet coefficients, conservative exact local remainder and tail constants |
 | `primitive` | Gcd-one normalized height profiles | Mobius extraction, independent gcd enumeration and exact scaling recomposition |
-| `certificates` | Source-bound finite mathematical claims | Independent profile replay, nested-cut checks, normalization and factorization checks |
+| `chains` | Weakly nested level chains | Direct chain generation with repeated levels, nested-boundary energy, marked/normalized/local coefficients independent of weak compositions |
+| `certificates` | Source-bound finite mathematical claims | Structural parser, two independent replay routes (stars-and-bars and level chains), nested-cut checks, normalization and factorization checks |
 
 The primitive module implements a useful extension of the foundational scaling identity. For every nonzero normalized profile a, its positive coordinate gcd d is unique; dividing by d produces a primitive profile. Total height and span scale by d, while energy scales by d squared. Consequently full marked populations are recovered from primitive populations by a finite divisor sum in every retained volume. The inverse operation uses the ordinary Mobius function on the scaling factor. The released test checks both directions on every simple graph through four vertices at a declared finite depth.
 

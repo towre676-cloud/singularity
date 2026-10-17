@@ -14,8 +14,8 @@
   "priority_definition": "0 = foundational next batch; 1 = high-value core or acceptance closure; 2 = subsequent focused branch; 3 = long-horizon or publication/formalization after prerequisites. Smaller values are earlier priorities, not a dependency override.",
   "cross_cutting_findings": [
     "No proof-assistant sources, toolchain lockfile or kernel build are present; manuscript proofs and Python tests are not kernel verification.",
-    "P02 is missing an independent level-chain generator. nested_energy and certificate replay derive threshold sets from composition-generated tuples, so they do not satisfy that independence criterion.",
-    "The implemented certificate format is singularity.certificate/1. P03's relational-height/1 is a stale proposed identifier, not an implemented second schema. Preserve current fixtures and API; reconcile through an explicit documentation amendment or versioned migration decision.",
+    "P02 is closed: chains.py generates weakly nested level chains directly, and certificate replay uses it as a second route independent of the builder.",
+    "The implemented certificate format singularity.certificate/1 is authoritative (D007). The roadmap name relational-height/1 is rejected by the reader with an explicit superseded-name message.",
     "Exact forest transfer, minimum-zero subtraction, formal Euler extraction and conductor arithmetic are already implemented. Extend and accept them rather than starting duplicate engines.",
     "The n<=6 census retains graph representatives and aggregate class counts, but not all requested intermediate class memberships, spectral partitions, witness records or graph hashes.",
     "All original dependencies remain binding for declaring a push complete. A result may be useful and reusable while its push is not formally closed."
@@ -24,58 +24,75 @@
     {
       "id": "P01",
       "title": "Freeze the coefficient semantics",
-      "status": "partial",
+      "status": "complete",
       "effort": "S",
       "priority": 0,
       "dependencies": [],
       "evidence": [
-        "src/singularity/graph.py",
+        "docs/specifications/COEFFICIENTS-v1.md",
         "src/singularity/heights.py",
+        "src/singularity/graph.py",
         "src/singularity/population.py",
-        "docs/chapters/01_orientation.md",
-        "docs/chapters/02_graphs_lattices.md",
-        "docs/IMPLEMENTATION.md",
+        "src/singularity/weighted.py",
         "tests/test_core.py",
-        "tests/test_transfer.py"
+        "tests/test_transfer.py",
+        "docs/chapters/01_orientation.md",
+        "docs/chapters/02_graphs_lattices.md"
       ],
-      "existing_work": "Core graph, volume, energy, global minimum-zero and span definitions are implemented and described. Disconnected forest global-shift subtraction has a dedicated test; component factorization is proved in exposition as SNG-F19.",
-      "next_action": "Write a versioned finite-semantics specification and API inventory, reuse the existing normalization tests, and add one explicit disconnected quotient comparison before closing P01.",
-      "acceptance_gaps": [
-        "A single versioned mathematical data specification covering every public finite interface, truncation convention and serialization is absent.",
-        "An explicit worked disconnected example must compare global with componentwise translation and state that these are different quotients.",
-        "Record an acceptance receipt mapping public APIs to the specification and exact regression checks."
-      ],
-      "packet": "handoff/tasks/P01.md"
+      "existing_work": "Versioned specification singularity.coefficients/1 fixes graph inputs, signed versus nonnegative heights, volume, squared energy, span, L/B/marked series, inclusive truncation, JSON/Python representations, weighted volume, populations, transfer, chains, certificates and invalid input. It proves the coefficient form of B=(1-x^n)L by an explicit bijection and works the disconnected K2+K1 example, global versus componentwise translation, through volume four. componentwise_normalized_coefficients makes the second quotient executable.",
+      "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P01.md",
+      "acceptance": {
+        "date": "2026-10-17",
+        "criteria": {
+          "every public function has an explicit finite meaning": "COEFFICIENTS-v1.md sections 1-10 and the section 11 API crosswalk",
+          "disconnected examples distinguish global from componentwise translation": "COEFFICIENTS-v1.md section 6; SemanticsTests.test_disconnected_global_versus_componentwise_translation and test_quotients_agree_exactly_for_connected_graphs (all 75 labeled graphs on <=4 vertices, volume <=3)",
+          "zero-volume and singleton dictionaries": "COEFFICIENTS-v1.md section 7; SemanticsTests.test_zero_volume_singleton_and_inclusive_truncation",
+          "compatibility note": "COEFFICIENTS-v1.md section 12: no existing meaning changed"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest discover -s tests -v"
+        ]
+      }
     },
     {
       "id": "P02",
       "title": "Add independent level-chain enumeration",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 0,
       "dependencies": [
         "P01"
       ],
       "evidence": [
-        "src/singularity/heights.py",
-        "src/singularity/certificates.py",
-        "docs/chapters/03_nested_heights.md",
-        "docs/chapters/12_computational_methodology.md",
-        "tests/test_core.py"
+        "src/singularity/chains.py",
+        "tests/test_chains.py",
+        "scripts/chain_agreement.py",
+        "results/chain_agreement.json",
+        "docs/chapters/03_nested_heights.md"
       ],
-      "existing_work": "SNG-F09/F10 prove threshold-chain bijection and mixed-term energy in prose. nested_energy and replay independently evaluate the chain formula on tuples generated by compositions.",
-      "next_action": "Implement a volume-pruned weakly nested chain generator with repeated levels; reconstruct tuples only as an output check and compare all marked cells on a declared exhaustive graph scope.",
-      "acceptance_gaps": [
-        "No enumerator generates nested nonempty proper level sets as its primary search objects.",
-        "No complete marked-histogram comparison between composition generation and independent chain generation is retained.",
-        "Height gaps require repeated sets; tests must expose the lost profiles if repetitions are forbidden."
-      ],
-      "packet": "handoff/tasks/P02.md"
+      "existing_work": "chains.py generates weakly nested chains of nonempty sets (proper first set, repetitions allowed) as bit masks, charges each appended level its cut plus twice its overlap with every earlier level (SNG-F10), and never calls weak compositions or Graph.energy. Proposition SNG-F21 proves the volume-pruned search exhaustive and disjoint. Strict chains (repeats forbidden) are exposed only to show they lose exactly the gap profiles.",
+      "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P02.md",
+      "acceptance": {
+        "date": "2026-10-17",
+        "criteria": {
+          "complete marked histograms agree with weak compositions on a declared population": "tests/test_chains.py: all 75 labeled graphs on 1..4 vertices, volume <=6, 4713 cells, 13019 profiles; results/chain_agreement.json: all 1099 labeled graphs on 1..5 vertices, volume <=6, 142416 cells, 479963 profiles, 0 disagreements, 3.8 s on Python 3.13",
+          "profiles with height gaps": "ChainBoundaryTests.test_height_gaps_need_repeated_levels compares lost strict-chain cells with an independent gap predicate",
+          "mixed boundary terms charged": "ChainBoundaryTests.test_absolute_difference_energy_is_not_the_chain_energy; SNG-F21 proof"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_chains -v",
+          "PYTHONPATH=src python scripts/chain_agreement.py"
+        ]
+      }
     },
     {
       "id": "P03",
       "title": "Publish portable coefficient certificates",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 0,
       "dependencies": [
@@ -84,22 +101,38 @@
       ],
       "evidence": [
         "src/singularity/certificates.py",
-        "src/singularity/polynomials.py",
+        "tests/test_certificates.py",
         "tests/test_analytics.py",
         "results/certificates/spectral.json",
         "results/certificates/binary_census.json",
         "results/certificates/translation.json",
+        "results/certificates/regular_cube_mobius.json",
+        "results/exact_examples.json",
         "scripts/reproduce.py",
-        "docs/chapters/12_computational_methodology.md"
+        "docs/specifications/COEFFICIENTS-v1.md",
+        "docs/chapters/12_computational_methodology.md",
+        "handoff/DECISIONS.md"
       ],
-      "existing_work": "Portable singularity.certificate/1 packets carry canonical graphs and SHA-256 digests, exact count sectors, rational Euler exponents, first differences and factor claims. Replay uses its own stars-and-bars generator, recomputes energies and checks normalization, nested identities and recomposition. Tampering, canonical-source and budget tests exist.",
-      "next_action": "Keep singularity.certificate/1 authoritative, record the stale-roadmap amendment, add focused malformed-input cases and a retained all-packet replay receipt, and connect independent chain checks once P02 closes.",
-      "acceptance_gaps": [
-        "P02's independently generated chain population is absent.",
-        "Original roadmap proposes relational-height/1, while actual code and retained fixtures use singularity.certificate/1; the discrepancy needs an explicit recorded resolution.",
-        "The acceptance matrix needs named adversarial cases for malformed degrees, duplicate terms and invalid edges in all applicable fields, plus replay of every retained small certificate/table."
-      ],
-      "packet": "handoff/tasks/P03.md"
+      "existing_work": "singularity.certificate/1 is retained as the implemented format (D007 amends the roadmap name relational-height/1, which the reader now rejects with an explicit message). parse_certificate checks keys, integer types, ranges, canonical ordering and uniqueness before arithmetic. Replay recomputes through a replay-local stars-and-bars route and the P02 chain route; the work budget counts both. A cube-Mobius pair certificate joins the three original packets.",
+      "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P03.md",
+      "acceptance": {
+        "date": "2026-10-17",
+        "amendment": "D007: the roadmap identifier relational-height/1 is satisfied by the existing singularity.certificate/1 format; no rename or migration was made.",
+        "criteria": {
+          "reader rejects malformed degrees": "CertificateMatrixTests.test_malformed_degrees_and_duplicate_terms, test_malformed_rational_polynomials",
+          "reader rejects duplicate terms": "same tests: count rows, marked rows, Euler and first-difference polynomials",
+          "reader rejects invalid edges": "CertificateMatrixTests.test_invalid_edges_in_every_graph_field: nine edge defects in graph and comparison.graph",
+          "reader rejects altered coefficients": "CertificateMatrixTests.test_altered_counts_rejected_with_digest_and_flags_unchanged",
+          "reproduces all released small tables": "RetainedPacketTests: all four retained packets replay; first differences at volumes 2, 3, 4 agree with results/exact_examples.json",
+          "hash agreement alone does not close": "digest is checked separately from recomputation; altered packets keep the digest and fail"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_certificates -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P04",
@@ -122,8 +155,8 @@
       "existing_work": "The volume 0/1/2 classification, exact Laplacian polynomial and degree-adjacency explanation are already present. Tests retain discrepancy 2q^2(1-q)^3(1+q), first depth 2 and value 3/32 at q=1/2.",
       "next_action": "Reuse the existing proof and fixture; after P02/P03, replay the pair through both enumerators and publish a compact acceptance matrix rather than rewriting the result.",
       "acceptance_gaps": [
-        "Match the spectral pair with P02's actual independent chain enumerator.",
-        "P03 portable-certificate acceptance is open; add an explicit closure record tying proof, exact polynomial and both enumerators together."
+        "Match the spectral pair with the accepted P02 chain enumerator in a retained acceptance matrix.",
+        "Add an explicit closure record tying proof, exact polynomial, certificate and both enumerators together."
       ],
       "packet": "handoff/tasks/P04.md"
     },
@@ -149,7 +182,7 @@
       "next_action": "Add independent chain replay of the fixed pair and a full binary table digest; keep the graph labels and polynomial orientation unchanged.",
       "acceptance_gaps": [
         "Run the genuine P02 chain generator and record agreement across all relevant marked cells.",
-        "Close P03 and associate its complete binary equality and height certificate outputs with the prose proof in an acceptance receipt."
+        "Associate the complete binary equality and the accepted height certificate with the prose proof in an acceptance receipt."
       ],
       "packet": "handoff/tasks/P05.md"
     },

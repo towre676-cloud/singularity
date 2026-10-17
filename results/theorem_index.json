@@ -69,28 +69,34 @@
       "line": 36
     },
     {
+      "id": "SNG-F21",
+      "declaration": "Proposition SNG-F21 (volume-pruned chain enumeration). Fix \\(M\\ge0\\). The following search visits every normalized profile of volume at most \\(M\\) exactly once: emit the empty chain; for every nonempty proper \\(S_1\\subsetneq V\\) with \\(|S_1|\\le M\\), emit \\((S_1)\\) and recursively extend a chain \\((S_1,\\ldots,S_t)\\) by every nonempty \\(S_{t+1}\\subseteq S_t\\), equal sets included, with \\(\\sum_{r\\le t+1}|S_r|\\le M\\). If each appended level is charged \\(c_G(S_{t+1})+2\\sum_{r\\le t}e_G(S_{t+1},V\\setminus S_r)\\), the accumulated charge is the energy of the profile, the accumulated size is its volume and the chain length is its span.",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 97
+    },
+    {
       "id": "SNG-F11",
       "declaration": "Theorem SNG-F11 (binary sector extraction). For \\(k\\ge2\\),",
       "file": "docs/chapters/03_nested_heights.md",
-      "line": 109
+      "line": 115
     },
     {
       "id": "SNG-F12",
       "declaration": "Theorem SNG-F12 (minimum-energy shell). Every nonzero normalized profile of span \\(h\\) obeys",
       "file": "docs/chapters/03_nested_heights.md",
-      "line": 127
+      "line": 133
     },
     {
       "id": "SNG-F13",
       "declaration": "Theorem SNG-F13 (volume, span, and extreme energy). Let \\(k\\ge2\\), and let \\(a\\) be a nonzero normalized profile of volume \\(m\\) and span \\(h\\). Then",
       "file": "docs/chapters/03_nested_heights.md",
-      "line": 149
+      "line": 155
     },
     {
       "id": "SNG-F20",
       "declaration": "Theorem SNG-F20 (primitive-height decomposition). For every graph on \\(k\\ge2\\) vertices,",
       "file": "docs/chapters/03_nested_heights.md",
-      "line": 182
+      "line": 188
     },
     {
       "id": "SNG-F14",

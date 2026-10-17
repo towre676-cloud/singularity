@@ -48,7 +48,7 @@ def normalize_headings(text):
     return re.sub(r'^(#{1,6})\s+\d+(?:\.\d+)*\.?\s+',r'\1 ',text,flags=re.M)
 
 
-def render(source,stem,title,subtitle,book=False):
+def render(source,stem,title,subtitle,book=False,pdf=True):
     tmp=ROOT/'tmp'/'build';tmp.mkdir(parents=True,exist_ok=True)
     output=ROOT/'output'/'pdf';output.mkdir(parents=True,exist_ok=True)
     header=tmp/'header.tex';header.write_text(HEADER)
@@ -66,7 +66,7 @@ def render(source,stem,title,subtitle,book=False):
         common+=['--toc','--toc-depth=2']
     tex=ROOT/'docs'/(stem+'.tex')
     run(common+['--to=latex','--top-level-division='+('chapter' if book else 'section'),'-V','documentclass='+('report' if book else 'article'),'-V','fontsize=11pt','-V','papersize=a4','-V','geometry:margin=22mm','-V','mainfont=DejaVu Serif','-V','sansfont=DejaVu Sans','-V','monofont=DejaVu Sans Mono','--include-in-header',str(header),'-o',str(tex)],log)
-    for _ in range(2):
+    for _ in range(2 if pdf else 0):
         run(['xelatex','-interaction=nonstopmode','-halt-on-error','-output-directory',str(output),str(tex)],log)
     html=ROOT/'docs'/(stem+'.html')
     run(common+['--to=html5','--mathml','--css',str(css),'-o',str(html)],log)
@@ -76,10 +76,14 @@ def render(source,stem,title,subtitle,book=False):
         data='data:image/png;base64,'+base64.b64encode(image_path.read_bytes()).decode()
         content=content.replace('src="docs/assets/'+image_path.name+'"','src="'+data+'"').replace('src="assets/'+image_path.name+'"','src="'+data+'"')
     html.write_text(content)
-    print(f'Built {stem}: {output/(stem+".pdf")}',flush=True)
+    print(f'Built {stem}: '+(str(output/(stem+'.pdf')) if pdf else 'LaTeX and HTML only; PDF left unchanged'),flush=True)
 
 
 def main():
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--no-pdf',action='store_true',help='regenerate Markdown, LaTeX and HTML without XeLaTeX; retained PDFs become stale')
+    pdf=not parser.parse_args().no_pdf
     chapters=sorted((ROOT/'docs'/'chapters').glob('*.md'))
     if len(chapters)!=14:
         raise ValueError('Exactly fourteen authored chapters required')
@@ -102,8 +106,8 @@ Definitions and theorems are supplied with hypotheses and proofs. Finite graph c
     counts['docs/development/PUSHES.md']=len((ROOT/'docs'/'development'/'PUSHES.md').read_text().split())
     report={'schema':'singularity.manuscript-count/1','count_method':'whitespace-delimited source words; equations and tables included','source_word_counts':counts,'source_total':sum(counts.values()),'assembled_monograph_words':len(manuscript.read_text().split()),'companion_article_words':len((ROOT/'docs'/'papers'/'visibility.md').read_text().split())}
     (ROOT/'results'/'manuscript_counts.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
-    render(manuscript,'monograph','Singularity','Relational Heights and Arithmetic Visibility - Research Monograph',book=True)
-    render(ROOT/'docs'/'papers'/'visibility.md','visibility_paper','Relational Height Populations and Arithmetic Visibility','Exact examples, nested boundaries, and primewise singularities')
+    render(manuscript,'monograph','Singularity','Relational Heights and Arithmetic Visibility - Research Monograph',book=True,pdf=pdf)
+    render(ROOT/'docs'/'papers'/'visibility.md','visibility_paper','Relational Height Populations and Arithmetic Visibility','Exact examples, nested boundaries, and primewise singularities',pdf=pdf)
     print('Monograph source words:',report['assembled_monograph_words'])
 
 
