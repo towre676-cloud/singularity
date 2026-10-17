@@ -1,0 +1,282 @@
+{
+  "schema": "singularity.result-index/1",
+  "scope": "human-readable theorem/proposition/calculation declarations; not proof-assistant coverage",
+  "results": [
+    {
+      "id": "SNG-F01",
+      "declaration": "Theorem SNG-F01 (finite local coefficients). For every finite graph on \\(k\\ge1\\) vertices and every \\(m\\ge0\\), \\(C_{G,m}(q)\\) is a polynomial in \\(q\\) with nonnegative integer coefficients. Its coefficient sum is",
+      "file": "docs/chapters/01_orientation.md",
+      "line": 34
+    },
+    {
+      "id": "SNG-F02",
+      "declaration": "Theorem SNG-F02 (normalization and span marking). For every finite graph on \\(k\\ge1\\) vertices,",
+      "file": "docs/chapters/01_orientation.md",
+      "line": 73
+    },
+    {
+      "id": "SNG-F03",
+      "declaration": "Theorem SNG-F03 (isomorphism invariance with original multiplicity). Graph isomorphisms preserve \\(L_G\\), \\(B_G\\), and \\(\\mathcal B_G\\).",
+      "file": "docs/chapters/01_orientation.md",
+      "line": 103
+    },
+    {
+      "id": "SNG-F04",
+      "declaration": "Theorem SNG-F04 (zero energy and component constants). For \\(a\\in\\mathbb R^k\\), \\(E_G(a)=0\\) if and only if \\(a\\) is constant on each connected component. In particular, for connected \\(G\\), \\(\\ker\\Delta_G=\\mathbb R\\mathbf1\\).",
+      "file": "docs/chapters/02_graphs_lattices.md",
+      "line": 12
+    },
+    {
+      "id": "SNG-F05",
+      "declaration": "Theorem SNG-F05 (integer quotient and cut-lattice coordinates). If \\(G\\) is connected, \\(a\\mapsto\\partial a\\) induces an isomorphism of abelian groups",
+      "file": "docs/chapters/02_graphs_lattices.md",
+      "line": 33
+    },
+    {
+      "id": "SNG-F06",
+      "declaration": "Theorem SNG-F06 (matrix-tree determinant). For connected \\(G\\) on \\(k\\ge2\\) vertices and any root \\(r\\),",
+      "file": "docs/chapters/02_graphs_lattices.md",
+      "line": 50
+    },
+    {
+      "id": "SNG-F07",
+      "declaration": "Theorem SNG-F07 (finite energy shells and convergence). If \\(G\\) is connected and \\(k\\ge2\\), every energy coefficient of \\(\\Theta_G\\) is finite, and the series converges absolutely for \\(|q|<1\\). Moreover,",
+      "file": "docs/chapters/02_graphs_lattices.md",
+      "line": 76
+    },
+    {
+      "id": "SNG-F08",
+      "declaration": "Theorem SNG-F08 (gauge identities and complement reciprocity). On \\(\\mathbb Z^k/\\mathbb Z\\mathbf1\\), the functions \\(\\mu\\) and \\(\\eta\\) satisfy",
+      "file": "docs/chapters/02_graphs_lattices.md",
+      "line": 108
+    },
+    {
+      "id": "SNG-F19",
+      "declaration": "Theorem SNG-F19 (component factorization and its endpoint inverse). For graphs \\(G,H\\) on \\(k,\\ell\\ge1\\) vertices,",
+      "file": "docs/chapters/02_graphs_lattices.md",
+      "line": 153
+    },
+    {
+      "id": "SNG-F09",
+      "declaration": "Theorem SNG-F09 (threshold-chain bijection). Normalized profiles of span \\(h\\ge1\\) are in bijection with weakly nested chains of \\(h\\) nonempty proper vertex subsets. The inverse map is \\(a_i=\\#\\{t:i\\in S_t\\}\\), and",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 19
+    },
+    {
+      "id": "SNG-F10",
+      "declaration": "Theorem SNG-F10 (nested-boundary energy formula). For the threshold chain of a normalized profile,",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 36
+    },
+    {
+      "id": "SNG-F11",
+      "declaration": "Theorem SNG-F11 (binary sector extraction). For \\(k\\ge2\\),",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 109
+    },
+    {
+      "id": "SNG-F12",
+      "declaration": "Theorem SNG-F12 (minimum-energy shell). Every nonzero normalized profile of span \\(h\\) obeys",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 127
+    },
+    {
+      "id": "SNG-F13",
+      "declaration": "Theorem SNG-F13 (volume, span, and extreme energy). Let \\(k\\ge2\\), and let \\(a\\) be a nonzero normalized profile of volume \\(m\\) and span \\(h\\). Then",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 149
+    },
+    {
+      "id": "SNG-F20",
+      "declaration": "Theorem SNG-F20 (primitive-height decomposition). For every graph on \\(k\\ge2\\) vertices,",
+      "file": "docs/chapters/03_nested_heights.md",
+      "line": 182
+    },
+    {
+      "id": "SNG-F14",
+      "declaration": "Theorem SNG-F14 (coefficients through volume three). For every simple graph,",
+      "file": "docs/chapters/04_observation_hierarchy.md",
+      "line": 19
+    },
+    {
+      "id": "SNG-F15",
+      "declaration": "Theorem SNG-F15 (second-layer degree mixing). For every graph,",
+      "file": "docs/chapters/04_observation_hierarchy.md",
+      "line": 60
+    },
+    {
+      "id": "SNG-F16",
+      "declaration": "Theorem SNG-F16 (prefix equivalence and an ultrapseudometric). For each \\(M\\ge0\\), agreement of \\(C_{G,m}\\) for all \\(m\\le M\\) is an equivalence relation on graphs of fixed order. Visibility depths satisfy",
+      "file": "docs/chapters/04_observation_hierarchy.md",
+      "line": 101
+    },
+    {
+      "id": "SNG-F17",
+      "declaration": "Theorem SNG-F17 (decorated-deck sufficiency for a prefix). If two graphs of the same order have equal decorated \\(t\\)-decks for every \\(t\\le M\\), then their scalar-height coefficients agree for every \\(m\\le M\\). Their fully marked coefficients agree at those volumes as well.",
+      "file": "docs/chapters/04_observation_hierarchy.md",
+      "line": 117
+    },
+    {
+      "id": "SNG-F18",
+      "declaration": "Theorem SNG-F18 (labeled reconstruction at degree two). The coefficients of \\(\\mathscr L_G\\) through total \\(z\\)-degree two determine the labeled adjacency matrix of \\(G\\).",
+      "file": "docs/chapters/04_observation_hierarchy.md",
+      "line": 139
+    },
+    {
+      "id": "SNG-A01",
+      "declaration": "Theorem SNG-A01 \u2014 valuation assembly. For \\(0\\le q\\le1\\) and \\(\\Re s>1\\), the preceding Dirichlet series is absolutely convergent and",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 39
+    },
+    {
+      "id": "SNG-A02",
+      "declaration": "Theorem SNG-A02 \u2014 common-shift factorization. Put",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 55
+    },
+    {
+      "id": "SNG-A03",
+      "declaration": "Corollary SNG-A03 \u2014 primitive tuple factorization. For \\(\\Re s>1\\),",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 84
+    },
+    {
+      "id": "SNG-A04",
+      "declaration": "Theorem SNG-A04 \u2014 endpoint identities. If \\(G\\) is connected, then",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 101
+    },
+    {
+      "id": "SNG-A05",
+      "declaration": "Theorem SNG-A05 \u2014 first positive energy. Among nonconstant integer profiles, the least energy is \\(\\lambda\\). Among minimum-zero profiles, the profiles of energy \\(\\lambda\\) are exactly \\(\\mathbf1_S\\) for minimum cuts \\(S\\). Consequently",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 121
+    },
+    {
+      "id": "SNG-A06",
+      "declaration": "Theorem SNG-A06 \u2014 minimum-cut prime-zeta coefficient. Initially for \\(\\Re s>1\\),",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 140
+    },
+    {
+      "id": "SNG-A19",
+      "declaration": "Theorem SNG-A19 \u2014 all trees share the unmarked energy theta. Let \\(T\\) be any tree with \\(k\\) vertices, and let",
+      "file": "docs/chapters/05_prime_arithmetic.md",
+      "line": 182
+    },
+    {
+      "id": "SNG-A07",
+      "declaration": "Theorem SNG-A07 \u2014 rational polynomial Euler transform. There is a unique sequence \\(b_m(q)\\in\\mathbb Q[q]\\) such that, formally in \\(x\\),",
+      "file": "docs/chapters/06_euler_analysis.md",
+      "line": 34
+    },
+    {
+      "id": "SNG-A08",
+      "declaration": "Theorem SNG-A08 \u2014 integral bidegree transform. For every series \\(L\\in1+x\\mathbb Z[q][[x]]\\), there are unique integers \\(N_{m,e}\\) satisfying (6.4). Their generating series is the plethystic logarithm",
+      "file": "docs/chapters/06_euler_analysis.md",
+      "line": 91
+    },
+    {
+      "id": "SNG-A09",
+      "declaration": "Theorem SNG-A09 \u2014 leading real singularity. For fixed \\(0\\le q\\le1\\), define",
+      "file": "docs/chapters/06_euler_analysis.md",
+      "line": 128
+    },
+    {
+      "id": "SNG-A10",
+      "declaration": "Theorem SNG-A10 \u2014 controlled finite Euler extraction. Fix an integer \\(M\\ge1\\) and a numerical \\(q\\in[0,1]\\). Put",
+      "file": "docs/chapters/06_euler_analysis.md",
+      "line": 156
+    },
+    {
+      "id": "SNG-A11",
+      "declaration": "Theorem SNG-A11 \u2014 first-discrepancy ratio law. Let \\(G,H\\) have the same finite number \\(k\\) of vertices. Fix \\(q\\in[0,1]\\). Suppose",
+      "file": "docs/chapters/07_visibility_singularities.md",
+      "line": 9
+    },
+    {
+      "id": "SNG-A12",
+      "declaration": "Calculation SNG-A12 \u2014 first reference pair. On vertices \\(0,\\ldots,6\\), take",
+      "file": "docs/chapters/07_visibility_singularities.md",
+      "line": 88
+    },
+    {
+      "id": "SNG-A13",
+      "declaration": "Calculation SNG-A13 \u2014 binary-census reference pair. Take",
+      "file": "docs/chapters/07_visibility_singularities.md",
+      "line": 127
+    },
+    {
+      "id": "SNG-A14",
+      "declaration": "Theorem SNG-A14 \u2014 computable regularized tail. Under the assumptions of Theorem SNG-A11, if real \\(s>1/(r+1)\\) and \\(P^{-s}\\le\\rho\\), then",
+      "file": "docs/chapters/07_visibility_singularities.md",
+      "line": 200
+    },
+    {
+      "id": "SNG-A20",
+      "declaration": "Theorem SNG-A20 \u2014 endpoint scaling of visibility. Suppose the polynomial local coefficients of two graphs agree below volume \\(r\\) for every \\(q\\in[0,1]\\). Let \\(q_*\\in[0,1]\\) be a value where the entire local series agree, and write \\(\\delta(q)=\\ell_{G,r}(q)-\\ell_{H,r}(q)\\). Let \\(q_j\\to q_*\\), \\(\\varepsilon_j\\downarrow0\\), with",
+      "file": "docs/chapters/07_visibility_singularities.md",
+      "line": 276
+    },
+    {
+      "id": "SNG-A15",
+      "declaration": "Theorem SNG-A15 \u2014 uniform synchronization estimate. For \\(0\\le q\\le1\\) and \\(\\varepsilon>0\\),",
+      "file": "docs/chapters/08_synchronization_limits.md",
+      "line": 34
+    },
+    {
+      "id": "SNG-A16",
+      "declaration": "Theorem SNG-A16 \u2014 synchronization boundary layer. Let \\(q_j\\to0\\), \\(\\varepsilon_j\\downarrow0\\). If",
+      "file": "docs/chapters/08_synchronization_limits.md",
+      "line": 101
+    },
+    {
+      "id": "SNG-A17",
+      "declaration": "Theorem SNG-A17 \u2014 weighted endpoints and first divergence. For connected \\(G\\),",
+      "file": "docs/chapters/08_synchronization_limits.md",
+      "line": 147
+    },
+    {
+      "id": "SNG-A18",
+      "declaration": "Theorem SNG-A18 \u2014 exact contraction under zero edge weights. Let \\(F\\subseteq E\\), and set \\(q_e=0\\) for \\(e\\in F\\). Let \\(C_1,\\ldots,C_t\\) be the components of \\((V,F)\\). Replace each component by one vertex of mass \\(|C_i|\\). An unselected edge between \\(C_i\\) and \\(C_j\\) contributes its original factor \\(q_e^{(b_i-b_j)^2}\\); an internal unselected edge contributes one. Then the resulting weighted, possibly multiple-edge local series equals the original specialized local series exactly. The equality also holds for the Euler products on every common domain of absolute convergence.",
+      "file": "docs/chapters/08_synchronization_limits.md",
+      "line": 171
+    },
+    {
+      "id": "SNG-E001",
+      "declaration": "Proposition SNG-E001: the spectral graphs are nonisomorphic. Each graph has a unique vertex of degree four, namely vertex zero. In \\(G_{\\mathrm{sp}}\\), that vertex lies in the triangle \\(0,1,2\\). In \\(H_{\\mathrm{sp}}\\), the only triangle is \\(1,5,6\\), which excludes vertex zero. An isomorphism preserves vertex degrees and triangle membership. It would therefore have to send the degree-four vertex to the degree-four vertex while preserving a property that differs, which is impossible.",
+      "file": "docs/chapters/09_exact_examples.md",
+      "line": 38
+    },
+    {
+      "id": "SNG-E002",
+      "declaration": "Proposition SNG-E002: the binary graphs are nonisomorphic. The unique degree-four vertex of \\(G_{\\mathrm{bin}}\\) is vertex three, and its neighbors are \\(0,1,2,5\\). Exactly one of these neighbors, vertex five, is a leaf. The unique degree-four vertex of \\(H_{\\mathrm{bin}}\\) is vertex six, with neighbors \\(0,1,2,3\\). Exactly two of those neighbors are leaves. The number of leaf neighbors of a specified degree class is invariant under isomorphism. The graphs are therefore nonisomorphic.",
+      "file": "docs/chapters/09_exact_examples.md",
+      "line": 40
+    },
+    {
+      "id": "SNG-I001",
+      "declaration": "Proposition SNG-I001: hierarchy implications. Graph isomorphism implies marked equality. Marked equality implies equality at every finite depth and implies unmarked equality. Equality at depth \\(D+1\\) implies equality at depth \\(D\\). Conversely, equality at every finite depth implies equality of the full marked series, because every individual coefficient has a finite span. These statements follow directly from coefficient extraction and specialization. No converse from unmarked equality to marked equality is asserted.",
+      "file": "docs/chapters/10_inverse_problems.md",
+      "line": 25
+    },
+    {
+      "id": "SNG-I004",
+      "declaration": "Proposition SNG-I004: span reflection. Put \\(B_{G,h}(x,q)=[z^h]B_G(x,q,z)\\). Then",
+      "file": "docs/chapters/10_inverse_problems.md",
+      "line": 73
+    },
+    {
+      "id": "SNG-I007",
+      "declaration": "Proposition SNG-I007: the zero-parameter local series determines the multiset of component sizes. Let \\(m_d\\) be the number of components of size \\(d\\), and put \\(b_r=r[x^r]\\log P_G(x,0)\\). Expanding the logarithm gives",
+      "file": "docs/chapters/10_inverse_problems.md",
+      "line": 124
+    },
+    {
+      "id": "SNG-I020",
+      "declaration": "Proposition SNG-I020: exact synchronization at zero parameter. For a connected graph on \\(k\\) vertices,",
+      "file": "docs/chapters/11_archival_bridges.md",
+      "line": 32
+    }
+  ]
+}

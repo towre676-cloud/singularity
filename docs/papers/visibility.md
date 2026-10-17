@@ -1,0 +1,208 @@
+# Relational height populations and arithmetic visibility
+
+*Singularity research manuscript, version 0.1.0. 17 October 2026.*
+
+## Abstract
+
+We study nonnegative integer heights on a finite graph, counted jointly by total height and quadratic edge energy. Removing common translations gives canonical minimum-zero profiles; an additional span mark separates binary cuts from nested height configurations. We give explicit finite examples in which equal Laplacian spectra, or equal complete binary cut-volume censuses, coexist with unequal height populations. A third comparison of regular graphs delays the first distinction to total height four. For fixed real energy weight, we prove that a first difference at total height r determines a zeta-factor exponent and a power singularity at s=1/r in the ratio of associated prime products. The construction is accompanied by standard-library exact software, independent finite replay, a complete connected-graph census through six vertices, and volume-truncated tree transfer methods. General reconstruction and historical priority are left open. The purpose is an exact account of what these particular observations preserve and where their first lost correspondence becomes visible.
+
+## 1. Question and background
+
+A graph parameter can retain many numerical facts while forgetting the correspondence between the configurations that produced them. The binary cut-volume census is a useful example. It counts vertex subsets jointly by cardinality and boundary size, so equality of this polynomial is stronger than equality of a single energy moment. Nevertheless, it does not retain which subsets are nested or which edges cross two of their boundaries simultaneously. Integer heights provide a direct way to observe those relationships.
+
+The ingredients have established antecedents. Integral cut lattices organize graph gradients modulo constants [BHN1997]. Bivariate Ising polynomials organize binary configurations [AM2009]. Integer-valued Gaussian models use quadratic graph energies [BPR2024]. Formal Euler transforms reorganize coefficient data into cyclotomic factors [Moree2005]. We use these ingredients with explicit marks and a restricted inverse question. The paper does not claim a new origin for the individual ingredients, nor does it claim that the proposed scalar-height observations determine every graph.
+
+There are two logically distinct constructions. First, a local generating function records a finite graph's integer heights. Second, an Euler product attaches that same local function to every rational prime. The first determines graph-information content. The second supplies an arithmetic organization and a precise comparison of singularities. Keeping this distinction visible prevents a prime product from being credited with information that it merely reencodes.
+
+## 2. Local populations and their marks
+
+Let G be a finite connected simple loopless graph on vertices 0,...,k-1, with k at least two. Write d_i for its degrees and A_ij for its adjacency matrix. For a nonnegative integer vector a, put
+
+\[
+ |a|=\sum_i a_i,\qquad
+ E_G(a)=\sum_{\{i,j\}\in E(G)}(a_i-a_j)^2.
+\]
+
+The unnormalized series and the fully marked normalized series are
+
+\[
+ L_G(x,q)=\sum_{a\ge0}x^{|a|}q^{E_G(a)},\qquad
+ \mathcal B_G(x,q,z)=\sum_{\min a=0}x^{|a|}q^{E_G(a)}z^{\max a}.
+\]
+
+Every coefficient of x is a finite polynomial in q. Indeed, there are only \(\binom{m+k-1}{k-1}\) nonnegative vectors of total height m. In particular, these definitions are formal before any analytic parameter is chosen. For 0 at most q at most one and absolute value of x below one, comparison with \((1-|x|)^{-k}\) also gives analytic convergence.
+
+**Proposition 1 (translation normalization).** With \(B_G(x,q)=\mathcal B_G(x,q,1)\),
+
+\[
+ L_G(x,q)=\frac{B_G(x,q)}{1-x^k}.
+\]
+
+**Proof.** Every nonnegative vector has the unique form \(a=b+t\mathbf1\), where \(t=\min a\) and \(\min b=0\). Edge differences, and hence energy, are unchanged. Total height increases by kt. Summing the common translation gives the geometric factor. This is a formal identity with no convergence assumption. \(\square\)
+
+The span mark records a genuine distinction. The binary cut polynomial
+
+\[
+ I_G(x,q)=\sum_{S\subseteq V(G)}x^{|S|}q^{|\partial S|}
+\]
+
+satisfies \(I_G=1+x^k+[z]\mathcal B_G\). Thus the full marked series contains the binary census explicitly. The specialization z=1 merges spans; a general recovery theorem for the binary sector from that specialization is not established here.
+
+**Proposition 2 (nested-boundary energy).** A normalized vector of span h is equivalent to a chain of nonempty proper sets
+
+\[
+ S_h\subseteq\cdots\subseteq S_1,\qquad
+ a=\sum_{t=1}^h\mathbf1_{S_t}.
+\]
+
+Repeated sets are permitted. If e(U,W) counts edges between disjoint sets, then
+
+\[
+ |a|=\sum_t|S_t|,\qquad
+ E_G(a)=\sum_t|\partial S_t|
+       +2\sum_{r<t}e(S_t,V\setminus S_r).
+\]
+
+**Proof.** Take \(S_t=\{i:a_i\ge t\}\). Each coordinate is recovered by counting its occupied thresholds, proving the bijection and total-height identity. On an edge, every nonzero threshold difference has the same sign. Expanding the square of their sum gives the individual threshold crossings and twice every pair of simultaneous crossings. For r below t, simultaneous crossing means that one endpoint lies in S_t and the other outside S_r. Summing edges proves the formula. \(\square\)
+
+For two levels, this becomes \(E(\mathbf1_S+\mathbf1_T)=|\partial S|+|\partial T|+2e(S,V\setminus T)\), for nonempty S contained in proper T, allowing equality. The final term explains why a distribution of isolated cuts can miss the multilevel population.
+
+## 3. Finite visibility and reference examples
+
+Put \(\ell_{G,m}(q)=[x^m]L_G(x,q)\). Splitting weak compositions by their multiplicity patterns gives
+
+\[
+ \ell_{G,1}=\sum_iq^{d_i},\qquad
+ \ell_{G,2}=\sum_iq^{4d_i}+\sum_{i<j}q^{d_i+d_j-2A_{ij}},
+\]
+
+\[
+ \begin{aligned}
+ \ell_{G,3}={}&\sum_iq^{9d_i}
+ +\sum_{i\ne j}q^{4d_i+d_j-4A_{ij}}\\
+ &+\sum_{i<j<t}q^{d_i+d_j+d_t-2(A_{ij}+A_{it}+A_{jt})}.
+ \end{aligned}
+\]
+
+These formulas also delimit the meaning of a small-depth witness. Volume one observes degrees. With degrees fixed, volume two observes the edge degree-sum histogram. The current volume-three witness separates an aggregated binary census by an ordered two-vertex height pattern; it is not a claim that the graph energy contains a new three-body interaction.
+
+All reference inputs are explicit. On vertices 0,...,6, the first pair has edge sets
+
+\[
+ \begin{aligned}
+ E(G_2)&=\{01,02,03,04,12,35,36\},\\
+ E(H_2)&=\{01,02,03,04,15,16,56\}.
+ \end{aligned}
+\]
+
+Their degree multisets and Laplacian characteristic polynomials agree. The latter is
+
+\[
+ t^7-14t^6+73t^5-178t^4+209t^3-112t^2+21t.
+\]
+
+The unique degree-four vertex lies in a triangle in the first graph and not the second, so they are nonisomorphic. Direct coefficient enumeration gives first difference
+
+\[
+ \ell_{G_2,2}-\ell_{H_2,2}=2q^2(1-q)^3(1+q).
+\]
+
+The second pair has edge sets
+
+\[
+ \begin{aligned}
+ E(G_3)&=\{03,04,06,12,13,23,24,35\},\\
+ E(H_3)&=\{01,04,06,15,16,26,36,45\}.
+ \end{aligned}
+\]
+
+Its graphs have the same complete binary cut-volume polynomial: enumeration of all 128 subsets agrees at every pair of subset size and boundary size. Their unique degree-four vertices have respectively one and two leaf neighbors, proving nonisomorphism. The local coefficients agree through volume two, while
+
+\[
+ \ell_{G_3,3}-\ell_{H_3,3}
+ =q^3(1-q)(1-q^3)^2(1-q^4)^2.
+\]
+
+This entire discrepancy occurs in span two. Span one agrees by the binary-census equality; span three agrees by the equal degree multisets. Independent enumeration and polynomial multiplication check the factorization. Both differences are strictly positive on the open interval between zero and one.
+
+A third pair, the three-dimensional cube and the eight-vertex Mobius ladder, consists of triangle-free cubic graphs. Their local coefficients agree through volume three and first differ at volume four by \(2q^4(1-q^2)^4\). That difference is binary. The example illustrates delayed visibility after matching regular low-order data; it does not duplicate the binary-census equality of the second pair.
+
+## 4. Arithmetic assembly and the comparison theorem
+
+For a positive integer n, let v_p(n) be its p-adic valuation. Define
+
+\[
+ \mathcal E_G(n_1,\ldots,n_k)
+ =\sum_pE_G(v_p(n_1),\ldots,v_p(n_k)),
+\]
+
+\[
+ Z_G(s,q)=\sum_{n_1,\ldots,n_k\ge1}
+ \frac{q^{\mathcal E_G(\mathbf n)}}{(n_1\cdots n_k)^s}.
+\]
+
+For fixed q in the closed unit interval and real part of s greater than one, absolute convergence and unique factorization give \(Z_G(s,q)=\prod_pL_G(p^{-s},q)\). The construction is multiplicative across primes, while each prime's local factor retains the graph interaction among its exponent coordinates.
+
+**Theorem 3 (first-discrepancy visibility).** Fix q between zero and one. Suppose two same-order graphs satisfy \(\ell_{G,m}(q)=\ell_{H,m}(q)\) for m below r, and \(\delta=\ell_{G,r}(q)-\ell_{H,r}(q)\ne0\). Then their ratio Euler product converges for real s greater than 1/r and equals
+
+\[
+ R_{G,H}(s,q)=\zeta(rs)^\delta K_{G,H}(s,q),
+\]
+
+where K has a finite positive nonzero limit at s=1/r and is holomorphic and nonzero in a complex neighborhood of that point. Consequently
+
+\[
+ R_{G,H}(s,q)\sim K_{G,H}(1/r,q)(rs-1)^{-\delta}
+ \quad(s\downarrow1/r).
+\]
+
+**Proof.** Constant terms are one, so cancellation of the lower local coefficients gives \(L_G/L_H=1+\delta x^r+O(x^{r+1})\). The ratio Euler product therefore has an absolutely summable logarithm for real s greater than 1/r. Every local factor is positive there. Multiplication by \((1-x^r)^\delta\) removes the first discrepancy, yielding \(1+O(x^{r+1})\). Thus
+
+\[
+ K_{G,H}(s,q)=\prod_p(1-p^{-rs})^\delta
+              \frac{L_G(p^{-s},q)}{L_H(p^{-s},q)}
+\]
+
+converges for real s greater than 1/(r+1). Near s=1/r, finitely many small-prime factors are nonzero by positivity and continuity; the remaining tail has a normally convergent logarithm. This proves the local complex statement. The zeta Euler product proves the factorization on the right of 1/r, and \(\zeta(1+t)\sim1/t\) gives the asymptotic. \(\square\)
+
+At q=1/2, the first two examples yield exponents 3/32 at s=1/2 and 11025/262144 at s=1/3. The cube comparison yields 81/2048 at s=1/4. Nonintegral exponents give power or branch singularities, not ordinary poles. The quotient is initially a quotient of convergent positive series on s>1; its ratio Euler product supplies the extension used in the theorem. No global meromorphic-continuation claim follows.
+
+## 5. Synchronization and its singular limit
+
+Connectedness implies zero energy exactly at constant heights. Hence \(Z_G(s,0)=\zeta(ks)\), whereas \(Z_G(s,1)=\zeta(s)^k\). More generally, the first local coefficient is \(\alpha_G(q)=\sum_iq^{d_i}\), and removal of the linear Euler term gives
+
+\[
+ Z_G(s,q)=\zeta(s)^{\alpha_G(q)}H_G(s,q),
+\]
+
+with H regular and positive near real s=1. Every fixed positive q therefore restores an s=1 divergence, while exact synchronization q=0 leaves the finite value zeta(k) there. The order of these two limits matters.
+
+Let d be minimum degree and b the number of vertices attaining it. If q tends to zero and real s tends down to one with \(q^d\log(1/(s-1))\to c\), then
+
+\[
+ \frac{Z_G(s,q)}{\zeta(ks)}\longrightarrow e^{bc}.
+\]
+
+To justify this limit, use translation-normalized local factors and subtract their common linear term. Their tails are uniformly bounded by a summable multiple of p^{-2s} near s=1, using the weak-composition coefficient bound. The normalized product tends to one by dominated convergence. Finally \(\alpha_G(q)=bq^d+O(q^{d+1})\) supplies the exponential limit. This argument describes a boundary layer in the declared real domain, independently of any global continuation question.
+
+The first positive energy has a separate combinatorial interpretation. Integer coarea bounds energy below by the sum of threshold cut sizes, hence by mincut times span. Equality at the minimum positive energy forces a binary minimum-cut indicator. The first energy coefficient of \(\log(Z_G/\zeta(ks))\) is consequently a sum of prime-zeta functions \(\sum_{|\partial S|=\lambda}P(|S|s)\), counting both cut orientations. This links cut side sizes to an analytic coefficient without claiming that minimum cuts identify the whole graph.
+
+## 6. Computational scope and open structural questions
+
+The released computational core uses integer and rational arithmetic. It supplies weak-composition counts, marked sectors, exact Laplacian characteristic polynomials, formal Euler exponents with independent recomposition, constrained original-label rank and unrank, forest message passing, root-of-unity residue numerators, weighted hard contraction and primitive-profile inversion. A finite certificate records a graph source, coefficient range and declared comparison; replay enumerates profiles independently and checks the normalization and threshold identities. These are software-level exact checks, not proof-assistant certificates for the entire implementation.
+
+An exhaustive enumeration of all connected labeled simple graphs through six vertices, quotiented by degree-respecting permutations, yields respectively 1, 1, 2, 6, 21 and 112 isomorphism classes. For order six, local coefficients through volumes one, two and three distinguish respectively 68, 100 and 112 classes. This is a complete finite census with an explicit generation boundary. It does not imply completeness at larger orders. In particular, the seven- and eight-vertex examples illustrate why visibility depth must remain part of the specification.
+
+The main inverse problem asks whether the fully marked series identifies a graph in a declared class. A negative answer should describe a transformation or an exact pair preserving all heights, rather than merely a long agreeing prefix. A complementary question asks whether nonisomorphic pairs can have first-separation depth tending to infinity. Both questions concern scalar marks. If every vertex receives an independent variable, labeled adjacency is recovered already from the one- and two-coordinate coefficients, making that unrestricted version much easier.
+
+The prime lift adds an analytic hierarchy to these local questions. It does not add graph information: coefficients at prime powers recover the local coefficients, and local coefficients determine the Euler product. Its contribution is to turn a finite first discrepancy into a controlled singularity, allowing relational depth and arithmetic location to be studied together.
+
+## References
+
+[BHN1997] R. Bacher, P. de la Harpe and T. Nagnibeda, *The lattice of integral flows and the lattice of integral cuts on a finite graph*, Bulletin de la Societe Mathematique de France 125 (1997), 167-198. DOI: 10.24033/bsmf.2303.
+
+[AM2009] D. Andren and K. Markstrom, *The bivariate Ising polynomial of a graph*, Discrete Applied Mathematics 157 (2009), 2515-2524. DOI: 10.1016/j.dam.2009.02.021.
+
+[BPR2024] R. Bauerschmidt, J. Park and P.-F. Rodriguez, *The Discrete Gaussian model, I. Renormalisation group flow at high temperature*, Annals of Probability 52 (2024), 1253-1359. arXiv:2202.02286.
+
+[Moree2005] P. Moree, *The formal series Witt transform*, Discrete Mathematics 295 (2005), 143-160. DOI: 10.1016/j.disc.2005.03.004.

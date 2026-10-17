@@ -1,0 +1,47 @@
+{
+  "automated_checks": [
+    {
+      "command": "PYTHONPATH=src python -m unittest discover -s tests -v",
+      "result": "passed",
+      "tests": 55
+    },
+    {
+      "command": "PYTHONPATH=src python scripts/reproduce.py --check",
+      "result": "passed",
+      "scope": "three exact comparison pairs, source-bound certificate replay and finite-conductor example"
+    },
+    {
+      "command": "PYTHONPATH=src python scripts/check_repository.py",
+      "result": "passed",
+      "scope": "source syntax, manuscript extent, retained result consistency and required release artifacts"
+    },
+    {
+      "command": "PYTHONPATH=src python scripts/census.py --max-order 6 --max-volume 6",
+      "result": "completed",
+      "scope": "all connected labeled simple graphs through six vertices, quotiented by exact degree-respecting permutations"
+    },
+    {
+      "command": "PYTHONPATH=src python scripts/benchmark_transfer.py",
+      "result": "completed",
+      "scope": "bounded-height path transfers with independent coefficient checks for all retained volume marginals"
+    }
+  ],
+  "documents": {
+    "companion_article_pages": 6,
+    "count_method": "whitespace-delimited source words; equations and tables included",
+    "main_chapters": 14,
+    "monograph_pages": 105,
+    "monograph_source_words": 34147,
+    "planned_development_pushes": 36,
+    "quality_report": "results/document_quality.json"
+  },
+  "mathematical_review": {
+    "method": "independent analytical review of the formal identities, comparison theorem, synchronization limit and finite computations",
+    "open_questions": "general graph reconstruction, unbounded delayed visibility and historical publication priority remain open",
+    "scope": "software checks and analytical review; no proof-assistant verification is claimed"
+  },
+  "release": "0.1.0",
+  "release_integrity": "scripts/package_release.py writes SHA-256 hashes of included source, document and result files, then verifies every archived entry and ZIP CRC",
+  "schema": "singularity.validation/1",
+  "validation_date": "2026-10-17"
+}

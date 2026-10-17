@@ -1,0 +1,255 @@
+{
+  "format": "singularity.transfer_benchmark/1",
+  "recorded_at_utc": "2026-10-17T20:26:51.063507+00:00",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "method": "Exact bounded-height forest messages with volume pruning; no assignment sampling.",
+  "oracle": "For every retained volume v, compare sum_e C(v,e) to sum_j (-1)^j binom(n,j) binom(v-(H+1)j+n-1,n-1).",
+  "timing_policy": "Elapsed seconds describe this run only. Correctness checks never assert a runtime threshold.",
+  "scope": "Only profiles of total height at most 12 are counted. Counts are not the entire bounded-height cube.",
+  "cases": [
+    {
+      "graph": "path",
+      "vertices": 24,
+      "edges": 23,
+      "height_bound": 2,
+      "max_volume": 12,
+      "min_zero": true,
+      "normalization_note": "The volume budget is smaller than vertex count, so every retained profile has minimum zero.",
+      "labeled_profiles_retained": 484039626,
+      "joint_volume_energy_cells": 273,
+      "complete_bounded_cube_size_not_enumerated": 282429536481,
+      "elapsed_seconds_environment_measurement": 0.010235299996566027,
+      "independent_marginals": [
+        {
+          "volume": 0,
+          "transfer_count": 1,
+          "independent_count": 1
+        },
+        {
+          "volume": 1,
+          "transfer_count": 24,
+          "independent_count": 24
+        },
+        {
+          "volume": 2,
+          "transfer_count": 300,
+          "independent_count": 300
+        },
+        {
+          "volume": 3,
+          "transfer_count": 2576,
+          "independent_count": 2576
+        },
+        {
+          "volume": 4,
+          "transfer_count": 16974,
+          "independent_count": 16974
+        },
+        {
+          "volume": 5,
+          "transfer_count": 91080,
+          "independent_count": 91080
+        },
+        {
+          "volume": 6,
+          "transfer_count": 412896,
+          "independent_count": 412896
+        },
+        {
+          "volume": 7,
+          "transfer_count": 1621224,
+          "independent_count": 1621224
+        },
+        {
+          "volume": 8,
+          "transfer_count": 5612805,
+          "independent_count": 5612805
+        },
+        {
+          "volume": 9,
+          "transfer_count": 17363896,
+          "independent_count": 17363896
+        },
+        {
+          "volume": 10,
+          "transfer_count": 48497064,
+          "independent_count": 48497064
+        },
+        {
+          "volume": 11,
+          "transfer_count": 123286440,
+          "independent_count": 123286440
+        },
+        {
+          "volume": 12,
+          "transfer_count": 287134346,
+          "independent_count": 287134346
+        }
+      ],
+      "all_marginals_match": true
+    },
+    {
+      "graph": "path",
+      "vertices": 48,
+      "edges": 47,
+      "height_bound": 2,
+      "max_volume": 12,
+      "min_zero": true,
+      "normalization_note": "The volume budget is smaller than vertex count, so every retained profile has minimum zero.",
+      "labeled_profiles_retained": 996301693675,
+      "joint_volume_energy_cells": 273,
+      "complete_bounded_cube_size_not_enumerated": 79766443076872509863361,
+      "elapsed_seconds_environment_measurement": 0.020180741004878655,
+      "independent_marginals": [
+        {
+          "volume": 0,
+          "transfer_count": 1,
+          "independent_count": 1
+        },
+        {
+          "volume": 1,
+          "transfer_count": 48,
+          "independent_count": 48
+        },
+        {
+          "volume": 2,
+          "transfer_count": 1176,
+          "independent_count": 1176
+        },
+        {
+          "volume": 3,
+          "transfer_count": 19552,
+          "independent_count": 19552
+        },
+        {
+          "volume": 4,
+          "transfer_count": 247596,
+          "independent_count": 247596
+        },
+        {
+          "volume": 5,
+          "transfer_count": 2542512,
+          "independent_count": 2542512
+        },
+        {
+          "volume": 6,
+          "transfer_count": 22017808,
+          "independent_count": 22017808
+        },
+        {
+          "volume": 7,
+          "transfer_count": 165159504,
+          "independent_count": 165159504
+        },
+        {
+          "volume": 8,
+          "transfer_count": 1094142798,
+          "independent_count": 1094142798
+        },
+        {
+          "volume": 9,
+          "transfer_count": 6496100864,
+          "independent_count": 6496100864
+        },
+        {
+          "volume": 10,
+          "transfer_count": 34963249992,
+          "independent_count": 34963249992
+        },
+        {
+          "volume": 11,
+          "transfer_count": 172160388624,
+          "independent_count": 172160388624
+        },
+        {
+          "volume": 12,
+          "transfer_count": 781397823200,
+          "independent_count": 781397823200
+        }
+      ],
+      "all_marginals_match": true
+    },
+    {
+      "graph": "path",
+      "vertices": 96,
+      "edges": 95,
+      "height_bound": 2,
+      "max_volume": 12,
+      "min_zero": true,
+      "normalization_note": "The volume budget is smaller than vertex count, so every retained profile has minimum zero.",
+      "labeled_profiles_retained": 2506262962660245,
+      "joint_volume_energy_cells": 273,
+      "complete_bounded_cube_size_not_enumerated": 6362685441135942358474828762538534230890216321,
+      "elapsed_seconds_environment_measurement": 0.045418745998176746,
+      "independent_marginals": [
+        {
+          "volume": 0,
+          "transfer_count": 1,
+          "independent_count": 1
+        },
+        {
+          "volume": 1,
+          "transfer_count": 96,
+          "independent_count": 96
+        },
+        {
+          "volume": 2,
+          "transfer_count": 4656,
+          "independent_count": 4656
+        },
+        {
+          "volume": 3,
+          "transfer_count": 152000,
+          "independent_count": 152000
+        },
+        {
+          "volume": 4,
+          "transfer_count": 3755160,
+          "independent_count": 3755160
+        },
+        {
+          "volume": 5,
+          "transfer_count": 74840544,
+          "independent_count": 74840544
+        },
+        {
+          "volume": 6,
+          "transfer_count": 1252743264,
+          "independent_count": 1252743264
+        },
+        {
+          "volume": 7,
+          "transfer_count": 18106010784,
+          "independent_count": 18106010784
+        },
+        {
+          "volume": 8,
+          "transfer_count": 230555650860,
+          "independent_count": 230555650860
+        },
+        {
+          "volume": 9,
+          "transfer_count": 2626501030080,
+          "independent_count": 2626501030080
+        },
+        {
+          "volume": 10,
+          "transfer_count": 27092782937520,
+          "independent_count": 27092782937520
+        },
+        {
+          "volume": 11,
+          "transfer_count": 255511729193760,
+          "independent_count": 255511729193760
+        },
+        {
+          "volume": 12,
+          "transfer_count": 2220781956341520,
+          "independent_count": 2220781956341520
+        }
+      ],
+      "all_marginals_match": true
+    }
+  ]
+}
