@@ -58,3 +58,9 @@ PYTHONPATH=src python scripts/benchmark_transfer.py
 The 14 source chapters are in `docs/chapters`. `make book` uses Pandoc and XeLaTeX to regenerate the PDF, HTML and editable LaTeX. The distributed documents can be read without those tools. `make release` checks the repository and creates the complete source/document/result archive.
 
 The initial roadmap develops reconstruction, delayed visibility, graph transformations, separator algorithms, arithmetic boundary layers and formal proof coverage. Every push specifies a concrete mathematical or computational outcome. Established cut-lattice, Ising, Gaussian, Euler-transform and graph-isomorphism literature is discussed in the final monograph chapter, with primary references.
+
+## Continue with Claude Code
+
+The [Claude Code handoff](handoff/START_HERE.md) preserves all 36 original pushes, audits existing work against acceptance criteria and supplies a separate task packet for every push. Start with the [copy-paste prompt](handoff/CLAUDE_START_PROMPT.md). `python scripts/handoff.py doctor` checks the working baseline; `python scripts/handoff.py next` selects dependency-ready work.
+
+The [complete handoff ZIP](https://github.com/towre676-cloud/singularity/raw/refs/heads/main/releases/Singularity-Claude-Code-Handoff.zip) includes the full source, documents, exact results, SHA-256 manifest and an offline Git bundle. Read the pinned source commit in its metadata before merging later remote work. The recommended first batch is P01–P03; existing forest, Euler and conductor engines are reused. New terminal-interface and delayed-visibility ideas remain proposed extensions.

@@ -23,3 +23,7 @@ jobs:
         run: python scripts/check_repository.py
       - name: Published document links
         run: python scripts/check_links.py
+      - name: Claude handoff ledger and dependency checks
+        run: |
+          python scripts/handoff.py verify
+          python scripts/check_links.py CLAUDE.md handoff/*.md handoff/tasks/*.md

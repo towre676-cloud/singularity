@@ -1,4 +1,4 @@
-.PHONY: test examples book release check
+.PHONY: test examples book release check handoff-check handoff-package
 
 test:
 	PYTHONPATH=src python -m unittest discover -s tests -v
@@ -14,3 +14,9 @@ check: test examples
 
 release: check book
 	python scripts/package_release.py
+
+handoff-check:
+	python scripts/handoff.py verify
+
+handoff-package:
+	python scripts/handoff.py package
