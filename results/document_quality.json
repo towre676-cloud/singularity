@@ -1,11 +1,10 @@
 {
-  "schema": "singularity.document-quality/1",
   "documents": {
     "monograph": {
-      "pages": 105,
-      "page_size": "A4",
-      "overfull_hboxes": 0,
       "missing_glyph_warnings": 0,
+      "overfull_hboxes": 0,
+      "page_size": "A4",
+      "pages": 105,
       "rendered_sample_pages": [
         1,
         3,
@@ -22,10 +21,10 @@
       ]
     },
     "visibility_paper": {
-      "pages": 6,
-      "page_size": "A4",
-      "overfull_hboxes": 0,
       "missing_glyph_warnings": 0,
+      "overfull_hboxes": 0,
+      "page_size": "A4",
+      "pages": 6,
       "rendered_sample_pages": [
         1,
         3,
@@ -33,5 +32,16 @@
       ]
     }
   },
+  "html": {
+    "external_math_scripts": false,
+    "graph_image_embedded": true,
+    "machine_local_paths": false,
+    "math_format": "embedded MathML"
+  },
+  "markdown": {
+    "image_path": "assets/graph_pairs.png",
+    "resolution": "relative to docs/MONOGRAPH.md"
+  },
+  "schema": "singularity.document-quality/1",
   "scope": "typeset log checks and visual sample inspection, not mathematical verification"
 }

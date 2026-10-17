@@ -13,7 +13,8 @@ body{margin:0;background:#f3f0e8;color:#212c34;font:18px/1.7 Georgia,serif}main,
 '''
 
 HEADER=r'''
-\usepackage{amsmath,amssymb,booktabs,longtable,array,etoolbox,xurl,fvextra}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,etoolbox,xurl,fvextra,graphicx}
+\graphicspath{{docs/}}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -68,7 +69,7 @@ def render(source,stem,title,subtitle,book=False):
     for _ in range(2):
         run(['xelatex','-interaction=nonstopmode','-halt-on-error','-output-directory',str(output),str(tex)],log)
     html=ROOT/'docs'/(stem+'.html')
-    run(common+['--to=html5','--mathjax','--css',str(css),'-o',str(html)],log)
+    run(common+['--to=html5','--mathml','--css',str(css),'-o',str(html)],log)
     content=html.read_text()
     content=re.sub(r'<link rel="stylesheet" href="[^"]*style.css"\s*/?>','<style>'+STYLE+'</style>',content)
     for image_path in (ROOT/'docs'/'assets').glob('*.png'):
@@ -90,7 +91,7 @@ The central distinction is between an observation and the correspondence it forg
 
 Definitions and theorems are supplied with hypotheses and proofs. Finite graph calculations have explicit inputs and independently replayable outputs. Established antecedents are attributed in the literature chapter and bibliography. The book is a research foundation and executable companion, not a claim of a completed priority search or unrestricted reconstruction.
 
-![Exact reference graphs. Top: equal Laplacian spectra. Bottom: equal complete binary cut-volume census. Vertex labels remain original.](docs/assets/graph_pairs.png)
+![Exact reference graphs. Top: equal Laplacian spectra. Bottom: equal complete binary cut-volume census. Vertex labels remain original.](assets/graph_pairs.png)
 
 '''
     parts=[preface]+[normalize_headings(p.read_text()) for p in chapters]

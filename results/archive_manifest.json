@@ -2,9 +2,9 @@
   "excluded": "git object directory, earlier releases, caches, temporary and TeX auxiliary files",
   "files": [
     {
-      "bytes": 671,
+      "bytes": 753,
       "path": ".github/workflows/research.yml",
-      "sha256": "e4f573657084dc12c08c545d80895f22ea3df7ab618eb71d1ca3953ccb3cd446"
+      "sha256": "162cb8c04b6d824a089f15b829b90ba0e56c0247cb61d3ea0ae09e48cd79bc4e"
     },
     {
       "bytes": 119,
@@ -27,9 +27,9 @@
       "sha256": "7e84b890f0a3619b1a6398eccf6263ecee91ebfe712ab9cf650967f059f05f27"
     },
     {
-      "bytes": 4782,
+      "bytes": 4781,
       "path": "README.md",
-      "sha256": "d1986a67f06029f015fe27130a75a05160751c402cce4229cc4e81786369609c"
+      "sha256": "d47aa3b15f3b1859db4b73ad266628a5d32de29d1184c18a0b396c418c27fae3"
     },
     {
       "bytes": 270,
@@ -67,9 +67,9 @@
       "sha256": "9c5876ed6ad918bcb99808ef4cd5302c661b0261ba2f7219dc8ae105222d1590"
     },
     {
-      "bytes": 250672,
+      "bytes": 250650,
       "path": "docs/MONOGRAPH.md",
-      "sha256": "a7099ff99e662d7a7138022243c3b26601c261f6b2b3b6967249af7a74cff3eb"
+      "sha256": "793bc452f39f80ddebeb7f9fa83f39373298ec663219ee0f992bd23bb4299019"
     },
     {
       "bytes": 11508,
@@ -162,14 +162,14 @@
       "sha256": "6d5bff4aca12e3c08e371ba24f92c73c2a034491bb77975936c84d09a9157f30"
     },
     {
-      "bytes": 676706,
+      "bytes": 1124470,
       "path": "docs/monograph.html",
-      "sha256": "ad361d7b3feba86b7b3f7404fb35802ab464a615c99191e6de5c964f2da10923"
+      "sha256": "eeaaddc92f713b871b6336cc0c2b266a36f98eab9a1b5507bb601d2a0ec37614"
     },
     {
-      "bytes": 282020,
+      "bytes": 282047,
       "path": "docs/monograph.tex",
-      "sha256": "d553968e28ba50d5865293a8442f1110b0533697c0a09171dbf6083d19f2664a"
+      "sha256": "372e7d0f046ae1c7109aa7af5c708487ca274bb28c7188060a1c648a51eed4ce"
     },
     {
       "bytes": 15370,
@@ -182,24 +182,24 @@
       "sha256": "083a6d3046cde0ecda6c4a4ac74780405bfd670f22961a2985bf020724ae0a43"
     },
     {
-      "bytes": 20807,
+      "bytes": 48389,
       "path": "docs/visibility_paper.html",
-      "sha256": "134ce2c152ee54619a29122b4ecdffdc4ec653f85c78a37c015e4b74cc6c661c"
+      "sha256": "84006d76e783109822cd5fe305f6d3c77d983046f26cd7cf1b97264c2c47679f"
     },
     {
-      "bytes": 19262,
+      "bytes": 19294,
       "path": "docs/visibility_paper.tex",
-      "sha256": "8a28d769da9be5d4205911245fc71b31fe3e9c81abaddc273657d6515646fd69"
+      "sha256": "1c057aa4a50586d0086d8f5f13d5482e282965bff58815d64fc0e08c0033b9ed"
     },
     {
-      "bytes": 647538,
+      "bytes": 647542,
       "path": "output/pdf/monograph.pdf",
-      "sha256": "fc0cb3a73efe6cbc99978628365bf6fe8a16d2546756f5b8116083b5cf3d881d"
+      "sha256": "05374d9591a716adf2ad2a963037f3ac1806c8040de8e663e434c1adeb927930"
     },
     {
-      "bytes": 70294,
+      "bytes": 70299,
       "path": "output/pdf/visibility_paper.pdf",
-      "sha256": "040c574959ff221c00f73337a11f31c0e8b11e91795a9028430a16f0a20e3854"
+      "sha256": "f57f291b5b26189a9019e8b490ee39b17a9e7b9427fad73f4c5970cc5dd57239"
     },
     {
       "bytes": 548,
@@ -227,9 +227,9 @@
       "sha256": "0c28603d230889445f41e1d8ca95fee4717051f7d266f85453cdb1b9af5aca2a"
     },
     {
-      "bytes": 691,
+      "bytes": 964,
       "path": "results/document_quality.json",
-      "sha256": "7fd1039751e740c9f880800fc7323da0fc1d7d74df6b75fe5e35950eb265536e"
+      "sha256": "ed2fc8d5e017d37bb11be925c3d4c7399619547e840430a4c05369b216ed4ec2"
     },
     {
       "bytes": 8703,
@@ -257,9 +257,9 @@
       "sha256": "50d5c0ff3fdba63f8a9650c10523484dce74ec532404493b2915082fa6f1d266"
     },
     {
-      "bytes": 2080,
+      "bytes": 2247,
       "path": "results/validation.json",
-      "sha256": "10a99be773246428ec397a4319acbb5310a0af3956fe764417c0a397daf40728"
+      "sha256": "42f76176d9414c3e2dda7b0907a8204e4aec9f74828e2da55d625c37bb6f5199"
     },
     {
       "bytes": 4055,
@@ -267,14 +267,19 @@
       "sha256": "7e4f5656880f964d06b43448eb17df78bfa5ab33b961309e77564bf3e4b4f5dd"
     },
     {
-      "bytes": 8411,
+      "bytes": 8437,
       "path": "scripts/build_documents.py",
-      "sha256": "0b0165b4467745c15b5ac396e855ba0562a181e1ded2110c8d639669b9f574cb"
+      "sha256": "d995e9c5509fd74cbf88201694ce98a919579674e998833bd1f35e8b14c3c83b"
     },
     {
       "bytes": 4445,
       "path": "scripts/census.py",
       "sha256": "fded4559960a441abee048af45d3a0dd5f50c1b3a7cfc5f315bf0d737373d965"
+    },
+    {
+      "bytes": 5788,
+      "path": "scripts/check_links.py",
+      "sha256": "a38cdc41ff26af2a65f8f397af11fd77b6a7179415117f4a73501fd553d6a516"
     },
     {
       "bytes": 2452,

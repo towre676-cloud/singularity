@@ -6,11 +6,11 @@ The repository includes a book-length research monograph, a concise companion ar
 
 ## Read the mathematics
 
-[Navigable HTML](docs/monograph.html) · [Editable Markdown](docs/MONOGRAPH.md) · [LaTeX](docs/monograph.tex)
+[Research monograph, PDF](output/pdf/monograph.pdf) · [HTML download](docs/monograph.html) · [Editable Markdown](docs/MONOGRAPH.md) · [LaTeX](docs/monograph.tex)
 
-[Article source](docs/papers/visibility.md) · [Result index](docs/THEOREM_INDEX.md) · [Bibliography](docs/references.bib) · [36-push development program](docs/development/PUSHES.md)
+[Companion article, PDF](output/pdf/visibility_paper.pdf) · [Article source](docs/papers/visibility.md) · [Result index](docs/THEOREM_INDEX.md) · [Bibliography](docs/references.bib) · [36-push development program](docs/development/PUSHES.md)
 
-The complete source chapters, software and retained results are committed below. The rendered PDF and ZIP download links will be added when those files are published.
+[Complete downloadable package](releases/Singularity-v0.1.0-complete.zip)
 
 For a connected simple graph G, the local population and its arithmetic lift are
 

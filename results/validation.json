@@ -24,6 +24,11 @@
       "command": "PYTHONPATH=src python scripts/benchmark_transfer.py",
       "result": "completed",
       "scope": "bounded-height path transfers with independent coefficient checks for all retained volume marginals"
+    },
+    {
+      "command": "python scripts/check_links.py",
+      "result": "passed",
+      "scope": "relative links and images in README.md and docs/MONOGRAPH.md"
     }
   ],
   "documents": {

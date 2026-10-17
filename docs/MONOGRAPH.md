@@ -6,9 +6,7 @@ The central distinction is between an observation and the correspondence it forg
 
 Definitions and theorems are supplied with hypotheses and proofs. Finite graph calculations have explicit inputs and independently replayable outputs. Established antecedents are attributed in the literature chapter and bibliography. The book is a research foundation and executable companion, not a claim of a completed priority search or unrestricted reconstruction.
 
-![Exact reference graphs. Top: equal Laplacian spectra. Bottom: equal complete binary cut-volume census. Vertex labels remain original.](docs/assets/graph_pairs.png)
-
-
+![Exact reference graphs. Top: equal Laplacian spectra. Bottom: equal complete binary cut-volume census. Vertex labels remain original.](assets/graph_pairs.png)
 
 # What the population observes
 
@@ -170,7 +168,6 @@ There is also a useful distinction between a new question for this project and a
 The particular program here is to track exactly which relational information survives a succession of increasingly marked arithmetic height observations. Its central difficulty is **lost correspondence**. Counts can be exact while the identities responsible for them are absent. An inverse theorem must recover what that loss hides; an impossibility theorem must demonstrate that the lost information cannot be recovered from the declared observation. Both are substantive mathematical outcomes.
 
 The next chapter puts the translation quotient on an integral lattice. The third chapter explains why multiple nested boundaries retain more information than a single binary cut and why repeated levels cannot be omitted. The fourth chapter turns coefficient order into a precise hierarchy of visibility, beginning with degrees and degree mixing and ending with the open reconstruction question.
-
 
 # Graphs, integral cut lattices, and the height mark
 
@@ -353,7 +350,6 @@ The inverse statement is deliberately modest. Zero energy knows component sizes 
 There is a related warning about the full span mark. The span of a concatenated pair of arbitrary profiles depends on their relative vertical placement, not just on the two individual spans. Consequently one should not multiply \(\mathcal B_G\) and \(\mathcal B_H\) and declare the result to be \(\mathcal B_{G\sqcup H}\). A correct marked factorization would need enough additional data to retain minima, maxima, and their relative shifts. The scalar unnormalized product avoids that missing correspondence because it sums actual coordinates before applying a quotient.
 
 The cut-lattice description clarifies why integer heights are a useful meeting point. They retain the arithmetic placement of a quadratic form, while their minimum-zero representatives supply a nonlinear order mark. The next chapter expresses that order mark through nested threshold sets. This reveals precisely what lies beyond a single binary cut.
-
 
 # Nested heights and the interaction of boundaries
 
@@ -555,7 +551,6 @@ For the path example \((0,2,2)\), the primitive quotient is \((0,1,1)\): volume 
 
 Primitive height here refers only to common divisibility of integer coordinates. It does not mean a primitive graph, a primitive conductor phase, or an element primitive in a different lattice. Those notions may interact in later calculations, but their definitions must not be merged because they share a word. The decomposition itself uses no connectedness assumption, so it also applies when nonconstant componentwise profiles have zero energy.
 
-
 # Visibility depth and the loss of correspondence
 
 ## Increasing volume as an observation hierarchy
@@ -724,7 +719,6 @@ Numerical specialization of \(q\) can lose information as well. The endpoints ar
 Finally, a later primewise Euler lift of \(L_G\) should be understood as an analytic reorganization. Its coefficient at a prime power recovers the corresponding local coefficient, and the local coefficients specify every Euler factor. That lift can expose useful singularities and arithmetic asymptotics, but it does not restore correspondence already discarded by the local histogram. The forward computation, the observation hierarchy, and the inverse reconstruction problem remain distinct throughout.
 
 The resulting program is deliberately open in the right place. We can prove what the first layers observe, identify exact sources of finite-depth agreement, and formulate complete-series reconstruction as a concrete question. We can also search for persistent blindness and treat an exact counterexample as a mathematical result. What we cannot do is promote a successful prefix calculation into a conclusion about every unseen layer. The hierarchy provides the language for making the next calculation precise.
-
 
 # Prime arithmetic: assembling relational height populations
 
@@ -938,7 +932,6 @@ while the single-shift normalized series is
 \]
 
 The remaining denominator is the exact record of those unconstrained relative shifts. This is an example where checking the meaning of a normalization prevents a misleading finite theta interpretation.
-
 
 # Euler analysis: formal coordinates and controlled analytic factors
 
@@ -1175,7 +1168,6 @@ This continuity statement is often enough to pass a weight limit through a regul
 The chosen weight range also has a mathematical boundary. Suppose the graph has an edge, choose a vertex of positive degree \(d_v\), and fix \(0<x<1\). The terms coming from profiles \(ne_v\) are \(q^{d_vn^2}x^n\). For every real \(q>1\), these terms fail even to tend to zero as \(n\to\infty\). Thus the unbounded local height series diverges. The restriction \(q\le1\) cannot simply be removed by calling the series a partition function. A finite height cutoff would define a different object and would require its own limiting argument.
 
 For \(|q|<1\), the local series is analytic in the complex weight parameter. At a boundary value such as \(q=1\), derivatives from the allowed real side can still exist to every finite order, because each derivative introduces only polynomial energy factors and the geometric volume decay dominates them. Such smooth one-sided behavior should not be mistaken for an unrestricted analytic extension beyond the unit disk. These domain distinctions matter especially when symbolic exponents are evaluated numerically: exact polynomial coefficients can be evaluated anywhere, while the infinite series from which they were extracted has the domain proved for it.
-
 
 # Visibility singularities: the first distinction survives arithmetic assembly
 
@@ -1475,7 +1467,6 @@ The second term tends to zero, while \(\log\zeta(1+\varepsilon)-\log(1/\varepsil
 
 For the volume-two pair, \(\delta_2(q)\sim4(1-q)^3\) as \(q\uparrow1\). For the volume-three pair, \(\delta_3(q)\sim144(1-q)^5\), because the final polynomial factor in (7.9) has value 36 at one. Thus \((1-q)^5\log(1/\varepsilon)\to t\) yields the ratio limit \(e^{144t}\) for the second pair at \(s=(1+\varepsilon)/3\). Near zero the corresponding leading behaviors are \(\delta_2\sim2q^2\) and \(\delta_3\sim q^3\). These are proved parameter scales for particular exact witnesses. They do not establish a universal exponent for all graph pairs.
 
-
 # Synchronization limits, uniform scaling, and exact contractions
 
 Setting the energy weight to zero and letting the arithmetic size parameter approach its divergence point are different operations. At zero weight a connected graph forces every coordinate integer to agree, producing \(\zeta(ks)\). At any fixed positive weight the system has rare unequal valuations at every prime, and their combined contribution diverges at \(s=1\). There are infinitely many opportunities for a rare local event. A small penalty need not remain negligible when those opportunities accumulate. This chapter turns that intuition into a uniform theorem and then develops optional extensions that retain the same exact arithmetic meaning.
@@ -1695,7 +1686,6 @@ Next synchronize edge \(23\) as well. The surviving profiles are \((a,a,b,b)\). 
 The changes in threshold have a direct combinatorial explanation. A minimal positive shift of a synchronized block raises every original coordinate in that block. Its arithmetic denominator is therefore the corresponding power of an integer, rather than the first power associated with a single original vertex. The contraction operation preserves that information through its masses. The example also shows why a statement about an exactly zero coupling should not be inferred from small positive couplings without a uniform estimate: rare violations of the equality constraint can restore a divergence at a different location.
 
 For the derivative identities (8.6), values at \(\beta=0\) mean derivatives from the allowed side \(\beta\ge0\). At an interior value \(\beta>0\), ordinary derivatives are available in a neighborhood. The one-sided convention is necessary because rewarding unbounded quadratic energy with \(\beta<0\) makes even a local height series diverge. This is a domain issue in the mathematical definition, not a numerical instability that can be fixed by increasing a cutoff.
-
 
 # Exact examples: what the new population distinguishes
 
@@ -1998,7 +1988,6 @@ For the binary pair, the first additional statistic is particularly transparent.
 
 The analytic ratio does not create that statistic. It transports an already established local discrepancy into a location on the real singularity ladder. The spectral pair first differs at an exponent sum of two and therefore has its first ratio singularity at one half. The binary pair first differs at an exponent sum of three and therefore has its first ratio singularity at one third. This interpretation is helpful because it connects a combinatorial order of distinction to an analytic scale, while keeping the logical direction clear: the exact coefficient calculation comes first, and the analytic statement follows from it.
 
-
 # Inverse problems and the depth of a height population
 
 An invariant is a way of asking questions about an object while discarding its presentation. The inverse problem asks how much of the object can be recovered from the answers. For relational height populations, this question must be posed at several levels. A finite depth, the full marked series, an unmarked specialization, and a primewise Euler product are different data structures. Their relationships can be proved in some directions and remain open in others. Confusing them would replace a promising research question with an unsupported completeness claim.
@@ -2220,7 +2209,6 @@ A useful search ledger should retain graph order, component sizes, degree polyno
 
 These are falsifiable targets. The hypothesis that depth two distinguishes all binary-profile collisions can be rejected by one depth-two collision. The hypothesis that a finite volume cutoff suffices for all graphs of a stated order needs a census whose completeness is itself justified. The hypothesis that a coefficient depends only on a known motif census can be tested by deriving its assignment patterns before scanning data. Every negative result would locate an exact limit of the representation. Such a limit would still be useful mathematics, because it would say what relational information the population has actually retained.
 
-
 # Archival bridges: what is inherited and what changes
 
 Singularity did not arise from an empty mathematical landscape. PerfectPower, PerfectJet, the SOE program, and older conductor and lattice investigations already contain several of its ingredients. The appropriate historical claim is therefore narrow: the present project selects a different object and a different inverse question from a substantial existing toolkit. It does not claim to invent prime valuations, graph Laplacians, discrete Gaussian heights, cut lattices, binary Ising polynomials, or Euler products. Those established subjects are part of the mathematical background [BHN1997; AM2009; BPR2024]. The value of the new direction must be demonstrated through its precise marking, its exact examples, and the questions those examples make available.
@@ -2352,7 +2340,6 @@ One further lesson from the archive is that a change of coefficient domain and a
 
 Conversely, enlarging the question does not require abandoning the old exact arithmetic. The same graph can be studied through an integer coefficient table, a real parameter \(0<q<1\), a cyclotomic specialization, a cut-lattice theta series, or a Dirichlet series. Each view should carry an explicit account of the markers it retains. A statement about the full marked hierarchy cannot be replaced by a statement about one root-of-unity specialization. A statement about an Euler singularity cannot substitute for equality of every local coefficient. The creative move is the selection of the relational population, while the archival discipline supplies the maps that let its different views be compared honestly.
 
-
 # Exact computation, certificates, and reproducible experiments
 
 ## What a computation is intended to establish
@@ -2416,7 +2403,6 @@ For a first discrepancy at volume \(r\), a numerical prime product should evalua
 Graph isomorphism is a separate task. Degree sequences, Laplacian spectra, binary census, and truncated height populations are filters, not general isomorphism decision procedures. Small examples can be checked by exhaustive permutation with an explicit witness or exhaustive exclusion. Larger censuses should use a documented canonical-labeling implementation and preserve its version and generation parameters. A claim that an invariant separates every graph in a census requires an independently specified complete graph population. A claim that it reconstructs all finite graphs requires a theorem. Neither follows from many successful pair comparisons.
 
 The reproducible unit is a command, its declared finite input population, a complete output artifact, and an explanation of what that artifact proves. Small deterministic fixtures belong in routine checks. Larger censuses belong in explicit experiment scripts with resumable checkpoints and resource limits. The reference enumerator should remain available even after faster methods are introduced: its value is interpretability and independent agreement. The project becomes stronger when a reader can reproduce a modest decisive computation in minutes and then understand exactly which larger statements remain mathematical questions.
-
 
 # A mathematical research program with distinct proof routes
 
@@ -2492,7 +2478,6 @@ The analytic path starts with a finite certified coefficient discrepancy, then p
 
 Formalization should follow the dependency order of the mathematics. First prove finite graph energy definitions, translation normalization, binary extraction, and the nested-level identity. Next verify finite coefficient tables and polynomial discrepancy certificates. Only then formalize the analytic comparison theorem against whatever zeta and infinite-product library is actually available. If a library theorem is assumed or imported externally, state that boundary. The central objective is a short chain from an explicit labeled population to a specific real singularity, with every link visible to a reader and no broader reconstruction or formal-verification claim added by implication.
 
-
 # Literature, attribution, and publication claims
 
 ## The contribution must be stated at the right scale
@@ -2564,7 +2549,6 @@ Pieter Moree, 'The formal series Witt transform,' *Discrete Mathematics* **295**
 Brendan D. McKay and Adolfo Piperno, 'Practical graph isomorphism, II,' *Journal of Symbolic Computation* **60** (2014), 94–112. DOI: [10.1016/j.jsc.2013.09.003](https://doi.org/10.1016/j.jsc.2013.09.003). Primary author manuscript: [arXiv:1301.1493](https://arxiv.org/abs/1301.1493). Use this when a census relies on canonical labeling or on nauty/Traces. A citation does not substitute for recording the actual executable version, graph-generation command, and completeness boundary of a particular experiment.
 
 These references were checked against primary author, publisher, or journal records for this release. They are a starting bibliography, not a completed priority search. Before journal submission, the author should search directly for integer-valued graph Gaussian models, graph height partition functions, multivariate theta series, and refinements of Ising-equivalent graphs, then compare definitions term by term. A responsible priority statement belongs at the end of that process.
-
 
 # Implementation and retained computational results
 
@@ -2638,7 +2622,6 @@ Here the degree layer is the complete coefficient polynomial at volume one, not 
 `make book` assembles the chapter sources into a navigable monograph, generates LaTeX and HTML, and compiles the mathematical PDF. The shorter article in `docs/papers/visibility.md` provides a paper-shaped entry to the central construction and visibility theorem. `make release` performs the checks and creates a complete archive with source, documents, tests, inputs and results. Generated archives exclude earlier archives, temporary files and the local git object directory, preventing recursive packaging.
 
 The released finite calculations are computational evidence for their declared inputs. The proofs in the manuscript establish the mathematical identities and analytic transfer statements with their stated hypotheses. Neither the software tests nor a source digest imply a proof-assistant verification of the implementation. This separation lets later pushes strengthen formal coverage without rewriting the meaning of the existing results.
-
 
 # Thirty-six concrete research pushes
 
