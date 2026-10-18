@@ -568,9 +568,10 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 - No rigorous finite-prime local-factor evaluation with truncation enclosures exists.
 - No normalized remainder intervals near s=1/r or demonstrated recovery of the established asymptotic within those intervals is released.
-- P26 is complete (2026-10-18): regularized_tail_constant, regularized_prime_tail_bound and certified_tail_record supply exact constants; near s=1/r the tail decays like C r P^(-1/r), so a useful enclosure needs a sharper, coefficient-aware constant or very large cutoffs.
+- Quantitative obstacle found 2026-10-18: at s=1/2 the prime p=2 has t=2^(-1/2)~0.71, and the uniform truncation bound (7.14) after the ~8 volumes that enumeration reaches for n=7 is useless there; each small-prime local factor must be evaluated through volume ~100 at the fixed rational q.
+- The omitted-prime tail also needs the coefficient-aware form of (7.12) (exact |l_G,n - l_H,n| through the computed volume, A_n beyond): with rho=P^(-s) and P=N^2 at s=1/2 the tail is about 2C/N.
 
-**Next concrete action:** Build interval-enclosed local sums and finite prime products, attach both local truncation and omitted-prime error bounds, and retain a small fully certified table before attempting plots.
+**Next concrete action:** Add a fixed-q engine to decomposition.py (bag messages as volume polynomials with outward-rounded fixed-point coefficients instead of (volume, energy) histograms) to compute L_G(t,q) through volume ~100 for the seven-vertex pairs; combine with integer-root enclosures of p^(-s) and (1-t^r)^delta, the coefficient-aware tail constant and P26's record to publish a certified table of K(s,1/2) at s=1/r and a few larger s.
 
 ### P28
 
