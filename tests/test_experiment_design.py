@@ -23,6 +23,22 @@ class ExactPolynomialMetricTests(unittest.TestCase):
         self.assertEqual(basis.norms_squared,(F(1),F(1,12),F(1,180),F(1,2800)))
         self.assertEqual(basis.polynomial(basis.coordinates(difference)),difference)
 
+    def test_function_norm_differs_from_coefficient_dot(self):
+        delta = (0,-1,2,-1)  # -q(1-q)^2
+        self.assertEqual(sum(c*c for c in delta),6)
+        self.assertEqual(integral_inner_product(delta,delta),F(1,105))
+        basis = orthogonal_polynomial_basis(3)
+        coords = basis.coordinates(delta)
+        # Parseval in orthogonal coordinates reproduces the integral norm.
+        self.assertEqual(sum(c*c*n for c,n in zip(coords,basis.norms_squared)),F(1,105))
+        self.assertEqual(basis.metric.squared_norm(coords),F(1,105))
+        # Independent: integrate the expanded square q^2(1-q)^4 termwise.
+        square = [0]*7
+        for i,a in enumerate(delta):
+            for j,b in enumerate(delta):
+                square[i+j] += a*b
+        self.assertEqual(sum(F(c,k+1) for k,c in enumerate(square)),F(1,105))
+
     def test_polynomial_quadrature_identity(self):
         # Simpson quadrature is exact on the cubic product (1+2q)(3-q+q^2).
         p,q = (1,2),(3,-1,1)
@@ -96,6 +112,34 @@ class ExperimentSelectionTests(unittest.TestCase):
         self.assertFalse(result.certified_unique)
         result = nearest_candidate((0,0),candidates,self.metric,error_bound_squared=0)
         self.assertTrue(result.certified_unique)
+
+    def test_equality_in_the_margin_does_not_certify(self):
+        candidates = {'a':(0,0),'b':(2,0)}
+        separation = minimum_separation(candidates,self.metric)
+        self.assertFalse(separation.guarantees_identification(1))   # 2*epsilon == delta
+        result = nearest_candidate((1,0),candidates,self.metric,error_bound_squared=1)
+        self.assertEqual(result.nearest_labels,('a','b'))
+        self.assertFalse(result.certified_unique)
+
+    def test_identification_theorem_exhaustively(self):
+        # Every family of three distinct lattice points in a 5x5 box with a
+        # true member m and every lattice observation y within the largest
+        # epsilon^2 satisfying 4 epsilon^2 < delta^2: the certified label is m.
+        from itertools import combinations, product
+        points = list(product(range(5),repeat=2))
+        checked = 0
+        for family in combinations(points[::2],3):
+            delta2 = minimum_separation(family,self.metric).delta_squared
+            eps2 = (delta2-1)//4 if delta2 % 4 == 0 else delta2//4
+            self.assertLess(4*eps2,delta2)
+            for true in range(3):
+                for y in points:
+                    if self.metric.distance_squared(y,family[true]) <= eps2:
+                        result = nearest_candidate(y,family,self.metric,error_bound_squared=eps2)
+                        self.assertTrue(result.certified_unique)
+                        self.assertEqual(result.nearest_labels,(true,))
+                        checked += 1
+        self.assertGreater(checked,1000)
 
     def test_finite_pool_cost_and_noise_scores(self):
         a = Experiment('a',{'left':(0,0),'right':(4,0)},self.metric,cost=2,noise_squared=1)

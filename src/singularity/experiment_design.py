@@ -4,6 +4,28 @@ The integral metric observes an entire polynomial curve on a declared interval.
 It is not a claim about a measurement at one fixed q: those are scalar samples
 and can vanish even when the integral distance is positive. All scores are exact
 rational numbers; no floating-point uncertainty is silently rounded away.
+
+Two inner products are kept apart.  The coefficient dot product of ascending
+coefficient vectors is not an inner product of polynomial functions; the
+integral inner product on [a,b] uses the Gram matrix G[i][j] = (b^(i+j+1) -
+a^(i+j+1))/(i+j+1).  For Delta(q) = -q(1-q)^2 = (0,-1,2,-1) the integral of
+Delta^2 over [0,1] is 1/105 while the coefficient dot product is 6.
+
+Noise model and guarantee.  An observation is y = m + e, where m is the exact
+observation vector of the true model, m belongs to the declared finite
+candidate family, and the error is deterministic and bounded:
+||e||_G <= epsilon in the declared metric.  If 2 epsilon < delta, the minimum
+pairwise separation, then m is the unique nearest candidate to y: for any other
+candidate c, ||y - c|| >= ||m - c|| - ||e|| >= delta - epsilon > epsilon >=
+||y - m||.  At equality 2 epsilon = delta the observation can be equidistant
+from two candidates, so equality certifies nothing.  No probabilistic noise
+model is assumed, and nothing outside the declared family is identified.
+
+Scores.  rank_experiments maximizes delta^2 / (cost * noise_squared) over an
+explicit finite pool; ``robust`` records 4 noise_squared < delta^2, i.e. the
+identification guarantee above with epsilon^2 = noise_squared.  This is not a
+search over attachment words, not a maximum-margin word search and not a
+shared-panel design.
 """
 from dataclasses import dataclass
 from fractions import Fraction
