@@ -672,25 +672,38 @@
     {
       "id": "P21",
       "title": "Relate constrained heights to order polytopes",
-      "status": "planned",
+      "status": "complete",
       "effort": "M",
       "priority": 2,
       "dependencies": [
         "P20"
       ],
       "evidence": [
+        "src/singularity/orders.py",
+        "tests/test_orders.py",
         "docs/chapters/13_research_program.md",
         "docs/chapters/14_literature_and_claims.md",
-        "docs/references.bib"
+        "docs/references.bib",
+        "src/singularity/chambers.py"
       ],
-      "existing_work": "Relevant order-polytope background and the warning that quadratic weighting is not automatically ordinary Ehrhart counting are documented.",
-      "next_action": "Choose one finite poset class, derive its integer height counts with an explicit shift convention and test them before adding graph-energy weights.",
-      "acceptance_gaps": [
-        "No explicit finite-poset constrained-height type, weak/strict inequality convention or derived unweighted bounded-height comparison is supplied.",
-        "No theorem identifies the precise additional role of quadratic weighting.",
-        "P20 chamber acceptance is open."
-      ],
-      "packet": "handoff/tasks/P21.md"
+      "existing_work": "orders.py adds validated finite posets (closure, cycle rejection), weak and strict constrained counts by direct enumeration, a chamber-based weak count valid for arbitrary labels, Stanley's linear-extension formula over a natural labeling, and (volume, energy) histograms on order-polytope points. Proposition SNG-F32 identifies weak assignments with lattice points of H*O(P), counted by Omega(P,H+1) with the argument shift explained, maps chamber tie rules to linear extensions, separates strict assignments, and proves that the quadratic weight can destroy polynomiality in H.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P21.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "unweighted bounded-height specialization with correct weak and strict inequalities": "SNG-F32 (1)-(3); OrderPolytopeTests.test_three_counts_agree (seven posets, complete height ranges, three methods); test_closed_forms_and_argument_shift (chain C(H+n,n), strict chain C(H+1,n), antichain (H+1)^n)",
+          "chamber tie rules mapped to linear extensions": "SNG-F32 (2); count_by_chambers on unnaturally labeled posets; test_linear_extensions_and_natural_labeling",
+          "identify what quadratic weighting adds": "SNG-F32 (4); test_quadratic_weight_is_not_an_ehrhart_polynomial",
+          "invalid cyclic relations fail": "test_invalid_relations",
+          "literature positioning": "chapter 13.6 paragraph citing Stanley1986 and Stanley2012",
+          "P20 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_orders -v"
+        ]
+      }
     },
     {
       "id": "P22",

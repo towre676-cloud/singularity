@@ -8099,6 +8099,138 @@ to a quadratic energy introduces an additional structure. Any
 reciprocity statement must specify whether it concerns unweighted
 counts, a formal weighted series, or a transformed analytic function,
 and must prove the claimed boundary terms.</p>
+<p><strong>Proposition SNG-F32 (poset-constrained heights and order
+polytopes).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+be a finite poset on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">|V|=n</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒪</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>x</mi><mo>∈</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mi>n</mi></msup><mo>:</mo><msub><mi>x</mi><mi>i</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>j</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> whenever </mtext><mspace width="0.333em"></mspace></mrow><mi>i</mi><msub><mo>&lt;</mo><mi>P</mi></msub><mi>j</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal O(P)=\{x\in[0,1]^n:x_i\le x_j\text{ whenever }i&lt;_Pj\}</annotation></semantics></math>,
+with the inequalities oriented as in the height constraint. For every
+integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H\ge0</annotation></semantics></math>:</p>
+<ol type="1">
+<li>The weak assignments
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">a\in\{0,\ldots,H\}^n</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>≤</mo><msub><mi>a</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">a_i\le a_j</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><msub><mo>&lt;</mo><mi>P</mi></msub><mi>j</mi></mrow><annotation encoding="application/x-tex">i&lt;_Pj</annotation></semantics></math>
+are exactly the lattice points of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>𝒪</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H\mathcal O(P)</annotation></semantics></math>.
+Their number is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Ω</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>,</mo><mi>H</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Omega(P,H+1)</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Ω</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>,</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Omega(P,m)</annotation></semantics></math>
+is Stanley’s order polynomial, which counts order-preserving maps
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>m</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">P\to\{1,\ldots,m\}</annotation></semantics></math>.
+For any natural labeling,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Ω</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>,</mo><mi>H</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mrow><mi>σ</mi><mo>∈</mo><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>H</mi><mo>+</mo><mi>n</mi><mo>−</mo><mo>des</mo><mi>σ</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Omega(P,H+1)=\sum_{\sigma\in\mathcal L(P)}\binom{H+n-\operatorname{des}\sigma}{n}</annotation></semantics></math>.</li>
+<li>In the chamber decomposition of SNG-F29, a relation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><msub><mo>&lt;</mo><mi>P</mi></msub><mi>j</mi></mrow><annotation encoding="application/x-tex">i&lt;_Pj</annotation></semantics></math>
+holds automatically when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+precedes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+in the chamber order. When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+follows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+it forces every gap between them to be zero, which is impossible across
+a label descent. Each surviving chamber contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>H</mi><mo>−</mo><mi>s</mi><mo>+</mo><mi>f</mi></mrow><mi>f</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{H-s+f}{f}</annotation></semantics></math>
+points, where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+counts free gaps and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+is the forced minimum.</li>
+<li>Strict assignments, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>a</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">a_i&lt;a_j</annotation></semantics></math>,
+form a different population. For a chain they number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>H</mi><mo>+</mo><mn>1</mn></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{H+1}{n}</annotation></semantics></math>
+instead of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>H</mi><mo>+</mo><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{H+n}{n}</annotation></semantics></math>.</li>
+<li>The weighted count
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>a</mi><mo>∈</mo><mi>H</mi><mi>𝒪</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∩</mo><msup><mi>ℤ</mi><mi>n</mi></msup></mrow></msub><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msup><mi>q</mi><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_{a\in H\mathcal O(P)\cap\mathbb Z^n}x^{|a|}q^{E_G(a)}</annotation></semantics></math>
+is a finite weighted sum over the same points. For fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;q&lt;1</annotation></semantics></math>
+it need not be a polynomial in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.</li>
+</ol>
+<p><em>Proof.</em> (1) Scaling
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒪</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal O(P)</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>x</mi><mi>i</mi></msub><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">0\le x_i\le H</annotation></semantics></math>
+and the same order inequalities, so its integer points are the weak
+assignments. The map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>↦</mo><mi>a</mi><mo>+</mo><mn>𝟏</mn></mrow><annotation encoding="application/x-tex">a\mapsto a+\mathbf1</annotation></semantics></math>
+identifies them with order-preserving maps to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,\ldots,H+1\}</annotation></semantics></math>,
+which is the argument shift. For a natural labeling, each weak map lies
+in exactly one chamber of SNG-F29 (sorting by height and then label),
+and the chambers it can occupy are exactly the linear extensions, since
+ties are broken by increasing label and a natural labeling increases
+along relations. In the chamber of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>,
+the gaps
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>d</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">d_1,\ldots,d_{n-1}</annotation></semantics></math>
+are at least one at the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>des</mo><mi>σ</mi></mrow><annotation encoding="application/x-tex">\operatorname{des}\sigma</annotation></semantics></math>
+descents. The points with maximum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+correspond to nonnegative solutions of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow></msub><msub><mi>d</mi><mi>j</mi></msub><mi>′</mi><mo>≤</mo><mi>H</mi><mo>−</mo><mo>des</mo><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sum_{j\ge0}d_j&#39;\le H-\operatorname{des}\sigma</annotation></semantics></math>,
+which number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>H</mi><mo>−</mo><mo>des</mo><mi>σ</mi><mo>+</mo><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{H-\operatorname{des}\sigma+n}{n}</annotation></semantics></math>.
+(2) is the same count without assuming a natural labeling. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+precedes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+the heights are nondecreasing along the order. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+follows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>≥</mo><msub><mi>a</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">a_i\ge a_j</annotation></semantics></math>,
+so the relation requires equality and every intermediate gap must
+vanish. (3) A strict chain assignment chooses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+distinct values in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\ldots,H\}</annotation></semantics></math>.
+(4) For the two-element chain with the edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,1\}</annotation></semantics></math>,
+the weighted count is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>d</mi><mo>=</mo><mn>0</mn></mrow><mi>H</mi></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>q</mi><msup><mi>d</mi><mn>2</mn></msup></msup></mrow><annotation encoding="application/x-tex">W_H(q)=\sum_{d=0}^H(H+1-d)q^{d^2}</annotation></semantics></math>.
+Its second difference in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msup><annotation encoding="application/x-tex">q^{(H+2)^2}</annotation></semantics></math>,
+which is positive and tends to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>.
+The second difference of a polynomial is a polynomial, and one that
+tends to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+vanishes identically, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>H</mi></msub><annotation encoding="application/x-tex">W_H</annotation></semantics></math>
+is not a polynomial in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+The unweighted count on the same points is the polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>H</mi><mo>+</mo><mn>2</mn></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{H+2}2</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Statement (1) is classical [Stanley1986; Stanley2012]. The project
+adds two things: the chamber form (2), which applies to arbitrary labels
+and is checked against direct enumeration, and the explicit warning (4).
+Quadratic weighting keeps the lattice points of the order polytope but
+leaves the polynomial world of ordinary Ehrhart theory, so a reciprocity
+statement for weighted counts needs its own proof (P22).
+<code>src/singularity/orders.py</code> validates acyclicity and takes
+the transitive closure. Its direct, chamber and linear-extension counts
+agree on chains, a reversed chain, antichains, the diamond, a poset with
+unnatural labels, a disconnected poset and a redundant relation for
+several complete height ranges.</p>
 <p>The intended order-theoretic theorem target is a chamber formula with
 a correct treatment of ties, followed by reductions for graph families
 with a controlled set of chamber types. An algorithm summing all
@@ -8724,12 +8856,19 @@ compositions</td>
 reconstruction, factorial-cost third enumerator (SNG-F29)</td>
 </tr>
 <tr class="even">
+<td><code>orders</code></td>
+<td>Poset-constrained heights</td>
+<td>Validated posets, weak and strict counts, chamber and
+linear-extension order-polynomial formulas, weighted histograms on
+order-polytope points (SNG-F32)</td>
+</tr>
+<tr class="odd">
 <td><code>lowvolume</code></td>
 <td>Closed coefficient formulas through volume three</td>
 <td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and

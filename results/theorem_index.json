@@ -333,10 +333,16 @@
       "line": 116
     },
     {
+      "id": "SNG-F32",
+      "declaration": "Proposition SNG-F32 (poset-constrained heights and order polytopes). Let \\(P\\) be a finite poset on \\(V\\), \\(|V|=n\\), and \\(\\mathcal O(P)=\\{x\\in[0,1]^n:x_i\\le x_j\\text{ whenever }i<_Pj\\}\\), with the inequalities oriented as in the height constraint. For every integer \\(H\\ge0\\):",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 130
+    },
+    {
       "id": "SNG-F31",
       "declaration": "Proposition SNG-F31 (exceptional strata are finite and exactly computable). Let \\(\\Delta_v=[x^v](L_G-L_H)\\in\\mathbb Z[q]\\) for \\(0\\le v\\le R\\), let \\(r\\) be the least \\(v\\) with \\(\\Delta_v\\ne0\\), and for \\(q_0\\in(0,1)\\) let \\(r(q_0)\\) be the least \\(v\\le R\\) with \\(\\Delta_v(q_0)\\ne0\\), if any. Then \\(r(q_0)=r\\) except at the finitely many roots of \\(\\Delta_r\\) in \\((0,1)\\); at such a root \\(\\alpha\\), \\(r(q_0)\\) is the least \\(v>r\\) with \\(\\Delta_v(\\alpha)\\ne0\\), or undefined through \\(R\\). Every such root is found by Sturm isolation of the square-free part of \\(\\Delta_r\\), and whether \\(\\Delta_v(\\alpha)=0\\) is decided exactly.",
       "file": "docs/chapters/13_research_program.md",
-      "line": 136
+      "line": 147
     }
   ]
 }

@@ -33,6 +33,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `primitive` | Gcd-one normalized height profiles | Mobius extraction, independent gcd enumeration and exact scaling recomposition |
 | `chains` | Weakly nested level chains | Direct chain generation with repeated levels, nested-boundary energy, marked/normalized/local coefficients independent of weak compositions |
 | `chambers` | Half-open order chambers | Gap coordinates, nested-boundary gap form, unique chamber reconstruction, factorial-cost third enumerator (SNG-F29) |
+| `orders` | Poset-constrained heights | Validated posets, weak and strict counts, chamber and linear-extension order-polynomial formulas, weighted histograms on order-polytope points (SNG-F32) |
 | `lowvolume` | Closed coefficient formulas through volume three | Degree, ordered adjacent-pair and induced-triple statistics; pattern sectors; regular closed form |
 | `certificates` | Source-bound finite mathematical claims | Structural parser, two independent replay routes (stars-and-bars and level chains), nested-cut checks, normalization and factorization checks |
 
