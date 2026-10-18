@@ -8,6 +8,7 @@ from pathlib import Path
 
 from singularity import __version__
 from singularity.certificates import build_certificate, replay_certificate
+from singularity.arithmetic import certified_tail_record
 from singularity.conductor import CyclotomicRing, remote_coefficient, residue_numerator
 from singularity.euler import euler_exponents, first_difference, recompose_euler
 from singularity.examples import GRAPHS
@@ -193,6 +194,10 @@ def compute():
         'results/conductor_fixtures.json':conductor_fixtures(),
         'results/gauss_fixtures.json':gauss_fixtures(),
         'results/visibility_filtration.json':census_visibility(),
+        'results/tail_records.json':{'schema':'singularity.tail-records/1','records':{
+            'spectral':certified_tail_record(local_coefficients(GRAPHS['spectral_g'],3),local_coefficients(GRAPHS['spectral_h'],3),7,Fraction(1,2),Fraction(1,32),1,2,1024),
+            'binary_census':certified_tail_record(local_coefficients(GRAPHS['binary_g'],4),local_coefficients(GRAPHS['binary_h'],4),7,Fraction(1,2),Fraction(1,32),1,3,100),
+            'regular_cube_mobius':certified_tail_record(local_coefficients(cube,5),local_coefficients(mobius,5),8,Fraction(1,2),Fraction(1,32),1,4,100)}},
         'results/parameter_strata.json':{'schema':'singularity.parameter-strata/1','theorem':'SNG-F31',
             'spectral':parameter_strata(local_coefficients(GRAPHS['spectral_g'],4),local_coefficients(GRAPHS['spectral_h'],4)),
             'binary_census':parameter_strata(local_coefficients(GRAPHS['binary_g'],4),local_coefficients(GRAPHS['binary_h'],4)),

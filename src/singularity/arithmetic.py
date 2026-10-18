@@ -84,3 +84,89 @@ def boundary_prime_tail_bound(first_depth, cutoff_root, constant):
     if constant < 0:
         raise ValueError("tail constant must be nonnegative")
     return constant * first_depth / cutoff_root
+
+
+def regularized_tail_constant(vertex_count, first_depth, delta, radius):
+    """The constant C of (7.12) for |log((1-t^r)^delta L_G/L_H)| <= C t^(r+1).
+
+    Valid for 0 <= t <= radius < 1 under the hypotheses of SNG-A11 at a fixed
+    q in [0,1]: equal orders, equal coefficients below r, discrepancy delta at
+    r.  With A_n = C(n+k-1, k-1),
+        D = ((1-rho)^(-k) - 1) / rho,
+        T = 2 rho^(-(r+1)) ((1-rho)^(-k) - sum_{n<=r} A_n rho^n),
+        C = T + |delta| D + |delta| rho^(r-1) / (2 (1 - rho^r)).
+    Unlike ``normalized_ratio_tail_constant`` it needs no condition U < 1.
+    This routine does not check the hypotheses; ``certified_tail_record`` does.
+    """
+    if type(vertex_count) is not int or vertex_count < 1 or type(first_depth) is not int or first_depth < 1:
+        raise ValueError("positive integer graph order and depth required")
+    radius = Fraction(radius); delta = Fraction(delta)
+    if not 0 < radius < 1:
+        raise ValueError("radius must lie strictly between zero and one")
+    from math import comb
+    k, r = vertex_count, first_depth
+    whole = (1 - radius) ** (-k)
+    head = sum(comb(n + k - 1, k - 1) * radius ** n for n in range(r + 1))
+    d_constant = (whole - 1) / radius
+    t_constant = 2 * (whole - head) / radius ** (r + 1)
+    return t_constant + abs(delta) * d_constant + abs(delta) * radius ** (r - 1) / (2 * (1 - radius ** r))
+
+
+def regularized_prime_tail_bound(constant, first_depth, s_numerator, s_denominator, cutoff_root, radius):
+    """Bound C P^(1-(r+1)s) / ((r+1)s - 1) on the omitted primes p > P (7.13).
+
+    The cutoff is P = N^b for s = a/b, so every power is an exact rational.
+    Requires (r+1)s > 1 and the radius condition P^(-s) = N^(-a) <= radius,
+    which places every omitted prime inside the certified local disc; the
+    primes p <= P are kept exactly in the finite product.  At s = 1/r this is
+    C r / N, the bound of ``boundary_prime_tail_bound``.
+    """
+    for value, name in ((first_depth, "depth"), (s_numerator, "s numerator"), (s_denominator, "s denominator"), (cutoff_root, "cutoff root")):
+        if type(value) is not int or value < 1:
+            raise ValueError(f"positive integer {name} required")
+    constant, radius = Fraction(constant), Fraction(radius)
+    if constant < 0:
+        raise ValueError("tail constant must be nonnegative")
+    s = Fraction(s_numerator, s_denominator)
+    excess = (first_depth + 1) * s - 1
+    if excess <= 0:
+        raise ValueError("the regularized tail needs (r+1)s > 1")
+    if Fraction(1, cutoff_root ** s_numerator) > radius:
+        raise ValueError("cutoff too small: omitted primes would leave the certified radius")
+    exponent = s_denominator - (first_depth + 1) * s_numerator  # log_N of P^(1-(r+1)s)
+    return constant * Fraction(cutoff_root) ** exponent / excess
+
+
+def certified_tail_record(left_coefficients, right_coefficients, vertex_count, q, radius, s_numerator, s_denominator, cutoff_root):
+    """Bind the tail bound to an exactly recomputed first discrepancy at q.
+
+    The caller supplies both local coefficient prefixes; the first volume r
+    with a nonzero value at q, and delta, are recomputed here.  If the
+    prefixes agree at q through their common length, no record is produced.
+    """
+    from .euler import first_difference_at_q
+    q = Fraction(q)
+    if not 0 <= q <= 1:
+        raise ValueError("q must lie in [0,1]")
+    found = first_difference_at_q(left_coefficients, right_coefficients, q)
+    if found is None:
+        raise ValueError("no first discrepancy within the supplied prefixes at this q")
+    depth, delta = found
+    if depth < 1:
+        raise ValueError("graphs of equal order agree at volume zero; check the inputs")
+    constant = regularized_tail_constant(vertex_count, depth, delta, radius)
+    tail = regularized_prime_tail_bound(constant, depth, s_numerator, s_denominator, cutoff_root, radius)
+    text = lambda value: f"{value.numerator}/{value.denominator}"
+    return {
+        "schema": "singularity.tail-record/1", "theorem": "SNG-A14 with constant (7.12)",
+        "vertex_count": vertex_count, "q": text(q), "first_depth": depth, "delta": text(delta),
+        "radius": text(Fraction(radius)), "s": text(Fraction(s_numerator, s_denominator)),
+        "cutoff": f"{cutoff_root}^{s_denominator}", "local_constant": text(constant), "tail_bound": text(tail),
+        "hypotheses": [
+            "equal vertex counts (supplied, not checked against graphs)",
+            "coefficients at q agree below first_depth (recomputed from the supplied prefixes)",
+            "local inequality for 0 <= t <= radius on the real branch, q in [0,1]",
+            "omitted primes p > cutoff satisfy p^(-s) <= radius; primes up to the cutoff are kept exactly",
+            "(r+1)s > 1",
+        ],
+    }

@@ -844,25 +844,40 @@
     {
       "id": "P26",
       "title": "Make analytic remainder bounds explicit",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
         "P25"
       ],
       "evidence": [
-        "docs/chapters/07_visibility_singularities.md",
         "src/singularity/arithmetic.py",
         "tests/test_arithmetic.py",
-        "docs/chapters/06_euler_analysis.md"
+        "docs/chapters/07_visibility_singularities.md",
+        "docs/chapters/06_euler_analysis.md",
+        "results/tail_records.json",
+        "scripts/reproduce.py"
       ],
-      "existing_work": "SNG-A14 supplies explicit constants and a normalized logarithmic tail bound for s>1/(r+1), with a finite-prime cutoff condition. arithmetic.py provides a separate conservative exact majorant and a boundary tail C*r/N at P=N^r. Parameter and radius guards are tested.",
-      "next_action": "Publish a theorem-to-code derivation for the conservative constant and an exact hypothesis receipt from a certified pair, then expose finite small-prime handling for P27.",
-      "acceptance_gaps": [
-        "Close P25 and bind numerical hypotheses to an accepted exact first-discrepancy record; the tail routine explicitly does not certify those hypotheses.",
-        "Record the relationship between the manuscript's sharper constant and the code's conservative alternative, plus finite-small-prime treatment in an end-to-end acceptance calculation."
-      ],
-      "packet": "handoff/tasks/P26.md"
+      "existing_work": "The manuscript constant (7.12) is implemented exactly (regularized_tail_constant), with the omitted-prime bound (7.13) for rational s=a/b at cutoffs P=N^b where every power and the radius condition are exact (regularized_prime_tail_bound), recovering C r/N at s=1/r. certified_tail_record recomputes the first discrepancy at q from supplied prefixes and states the remaining hypotheses. Chapter 7 records the relation to the older conservative constant and the finite small-prime treatment. results/tail_records.json holds end-to-end records for the three reference pairs.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P26.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "display constants": "(7.12) implemented exactly; test_constant_matches_its_definition",
+          "parameter restrictions": "q in [0,1], 0<radius<1, (r+1)s>1, P^(-s)<=radius enforced; test_prime_tail_guards_and_boundary_case",
+          "treatment of finitely many small primes": "primes p<=P kept exactly, omitted primes inside the radius by the cutoff guard; chapter 7 paragraph",
+          "boundary estimate C r/N at s=1/r, P=N^r": "test_prime_tail_guards_and_boundary_case",
+          "rigorously bounded finite comparison on small cases": "test_local_inequality_with_rigorous_rational_enclosures (spectral pair, three rational t, enclosure (7.14), Bernoulli bounds, no floating point)",
+          "caller must provide exact first-discrepancy evidence": "certified_tail_record recomputes r and delta; test_record_recomputes_depth_and_rejects_bad_hypotheses (truncated prefix, q=1, q outside [0,1])",
+          "P25 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_arithmetic -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P27",

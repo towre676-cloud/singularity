@@ -4271,6 +4271,62 @@ Sum over primes beyond
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>,
 enlarge to all integers, and apply the integral test.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The constant (7.12) is implemented exactly as
+<code>regularized_tail_constant</code> in
+<code>src/singularity/arithmetic.py</code>. Its proof uses only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mo>ℓ</mo><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><msub><mi>A</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">0\le\ell_n(q)\le A_n</annotation></semantics></math>,
+valid for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">q\in[0,1]</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mi>ρ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t\le\rho&lt;1</annotation></semantics></math>.
+The older routine <code>normalized_ratio_tail_constant</code> bounds the
+same quantity through the coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mo>ℓ</mo><mn>1</mn></msup><annotation encoding="application/x-tex">\ell^1</annotation></semantics></math>
+norm of the logarithm. It requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ρ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mi>k</mi></mrow></msup><mo>−</mo><mn>1</mn><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">U=(1-\rho)^{-k}-1&lt;1</annotation></semantics></math>
+and is far weaker: for the binary pair at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>32</mn></mrow><annotation encoding="application/x-tex">\rho=1/32</annotation></semantics></math>
+it gives about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.9</mn><mo>×</mo><msup><mn>10</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">6.9\times10^5</annotation></semantics></math>,
+against about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>451</mn><annotation encoding="application/x-tex">451</annotation></semantics></math>
+from (7.12). Both are retained, and (7.12) is preferred. For rational
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>a</mi><mi>/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">s=a/b</annotation></semantics></math>
+the cutoff is taken as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msup><mi>N</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">P=N^b</annotation></semantics></math>,
+so the tail bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msup><mi>P</mi><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></mrow></msup><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">CP^{1-(r+1)s}/((r+1)s-1)</annotation></semantics></math>
+and the radius condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mrow><mo>−</mo><mi>s</mi></mrow></msup><mo>=</mo><msup><mi>N</mi><mrow><mo>−</mo><mi>a</mi></mrow></msup><mo>≤</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">P^{-s}=N^{-a}\le\rho</annotation></semantics></math>
+are exact rational statements. Primes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">p\le P</annotation></semantics></math>
+are kept exactly in the finite product, and those beyond it satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mrow><mo>−</mo><mi>s</mi></mrow></msup><mo>&lt;</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">p^{-s}&lt;\rho</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">s=1/r</annotation></semantics></math>
+the bound is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>r</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">Cr/N</annotation></semantics></math>.
+The function <code>certified_tail_record</code> recomputes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+from the two supplied coefficient prefixes at the chosen
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+before it produces a bound. It records the remaining hypotheses
+explicitly, refuses a prefix that ends before the discrepancy, and
+refuses a parameter such as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q=1</annotation></semantics></math>
+at which the discrepancy vanishes. The retained records for the three
+reference pairs at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>
+are in <code>results/tail_records.json</code>. A test also checks the
+local inequality for the spectral pair at three rational points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">t\le\rho</annotation></semantics></math>,
+using rigorous rational enclosures of both local series by (7.14) and of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>t</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>δ</mi></msup><annotation encoding="application/x-tex">(1-t^r)^\delta</annotation></semantics></math>
+by Bernoulli’s inequalities, with no floating point.</p>
 <p>Local factors themselves can also be enclosed by finitely many height
 coefficients. If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></msubsup><msub><mo>ℓ</mo><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>t</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">L_N(t,q)=\sum_{n=0}^N\ell_n(q)t^n</annotation></semantics></math>,
