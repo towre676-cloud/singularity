@@ -2079,6 +2079,36 @@ and its six nonempty proper subsets give
 </annotation></semantics></math> These formulas identify the very first
 nonconstant energy sector. They do not recover arbitrary boundary
 overlaps at higher energy.</p>
+<p>Both hypotheses are needed. For a single vertex there is no nonempty
+proper subset, every normalized profile is zero, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℬ</mi><msub><mi>K</mi><mn>1</mn></msub></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathcal B_{K_1}=1</annotation></semantics></math>.
+For a disconnected graph the minimum cut is zero, and the indicator of a
+component is a nonzero normalized profile of energy zero. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>2</mn></msub><mo>⊔</mo><msub><mi>K</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">K_2\sqcup K_1</annotation></semantics></math>,
+the profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1,0)</annotation></semantics></math>
+has energy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+and the smallest positive energy,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+is attained by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,0,0)</annotation></semantics></math>,
+which is not a minimum-cut side. So the shell statement fails without
+connectedness. Both sides of every minimum cut are counted, at volumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|S|</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">k-|S|</annotation></semantics></math>,
+and the shell is symmetric under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>↦</mo><mi>k</mi><mo>−</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">r\mapsto k-r</annotation></semantics></math>
+by SNG-F11. The theorem orders profiles by energy. It says nothing
+directly about the first discrepancy of two graphs ordered by volume,
+which can occur at energies far above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>.
+Its formal ingredient, the nested identity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><msub><mo>∑</mo><mi>r</mi></msub><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mi>r</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><msub><mo>∑</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>s</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">cross terms</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E=\sum_rc(S_r)+2\sum_{r&lt;s}(\text{cross terms})</annotation></semantics></math>
+with nonnegative cross terms, is kernel-checked as
+<code>energy_nested</code> in
+<code>formal/Singularity/Thresholds.lean</code> (P08).</p>
 <h2 data-number="3.7"
 id="support-restrictions-useful-for-exact-computation"><span
 class="header-section-number">3.7</span> Support restrictions useful for

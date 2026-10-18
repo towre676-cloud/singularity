@@ -249,7 +249,7 @@
   {
    "id": "P07",
    "title": "Formalize translation normalization",
-   "status": "implemented_pending_acceptance",
+   "status": "complete",
    "effort": "M",
    "priority": 1,
    "dependencies": [
@@ -266,17 +266,30 @@
     ".github/workflows/research.yml"
    ],
    "existing_work": "Core Lean 4.12.0 project formal/ (no Mathlib): profiles as List Nat, edge lists, volume and squared-difference energy. Kernel-checked theorems shift_injective, shift_surjective, shift_unique, vol_shift, energy_shift, energy_norm, box/mem_box/box_nodup (finite coefficients), allCount_rec (L(V,e) = B(V,e) + L(V-n,e), the coefficient form of B = (1-x^n)L), allCount_eq_mzCount_of_lt and allCount_eq_shiftSum; no connectivity assumption. Local build and axiom audit (propext, Quot.sound, Classical.choice only) pass; scripts/check_formal.py runs in CI.",
-   "next_action": "Observe the CI formal-lean job (clean download of the pinned release, lake build, axiom audit); on success mark complete.",
-   "acceptance_gaps": [
-    "The clean-environment build in CI has not yet been observed (local build with the same pinned release passes).",
-    "The span-marked (z) version of the shift identity is not formalized; only the unmarked coefficient identity required by the packet is."
-   ],
-   "packet": "handoff/tasks/P07.md"
+   "next_action": "None; P33 builds on these definitions.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P07.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "pinned toolchain and real build": "formal/lean-toolchain leanprover/lean4:v4.12.0, core library only; CI run 40 (commit c301679), job formal-lean: clean download of lean-4.12.0-linux, lake build, scripts/check_formal.py axiom audit — success",
+     "finite nonempty profiles, edge set, volume, squared-difference energy": "formal/Singularity/Normalization.lean: List Nat profiles, List (Nat x Nat) edges, vol, energy",
+     "shift bijection: injectivity, surjectivity, uniqueness": "shift_injective, shift_surjective, shift_unique",
+     "energy preservation and volume increment n t": "energy_shift, energy_norm, vol_shift",
+     "coefficient finiteness before summing": "box, mem_box, box_nodup, mem_allFilter, mem_mzFilter",
+     "coefficient recurrence behind B=(1-x^n)L including disconnected graphs": "allCount_rec, allCount_eq_mzCount_of_lt, allCount_eq_shiftSum (no connectivity hypothesis)",
+     "no sorry/admit/new axioms; dependencies inspected": "check_formal.py: 22 audited theorems use only propext, Quot.sound, Classical.choice"
+    },
+    "commands": [
+     "cd formal && lake build",
+     "python3 scripts/check_formal.py"
+    ]
+   }
   },
   {
    "id": "P08",
    "title": "Formalize the nested-level energy identity",
-   "status": "implemented_pending_acceptance",
+   "status": "complete",
    "effort": "L",
    "priority": 2,
    "dependencies": [
@@ -291,11 +304,25 @@
     "scripts/check_formal.py"
    ],
    "existing_work": "formal/Singularity/Thresholds.lean on the P07 definitions: thr_nested, reconstruct, vol_eq_levels, nonemptyLevels_eq_lmax, span_eq, maxZero_no_levels, thr_proper_of_minZero, edge_square, delta_mul, delta_sq, energy_nested (energy = sum_r cut(S_r) + 2 sum_{r<s} cross(r,s), repeated levels and gaps allowed), energy_binary and binary_dichotomy (zero profile versus exact span one); worked example [0,2,2,5,0] with repeated thresholds. Python P02 histogram comparisons are retained.",
-   "next_action": "Observe the CI formal-lean job; on success mark complete.",
-   "acceptance_gaps": [
-    "The clean-environment build in CI has not yet been observed (local build passes)."
-   ],
-   "packet": "handoff/tasks/P08.md"
+   "next_action": "None.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P08.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "threshold sets, nesting, reconstruction, volume as level sum": "thr_nested, thr_succ_subset, reconstruct, vol_eq_levels",
+     "threshold count equals span after normalization, maximum zero handled": "nonemptyLevels_eq_lmax, span_eq, maxZero_no_levels, thr_proper_of_minZero",
+     "edgewise identity and full quadratic identity with mixed terms, repeated sets and gaps allowed": "edge_square, delta_mul, delta_sq, rsum_sym, edge_nested, energy_nested",
+     "binary sector as span at most one, zero profile distinguished": "energy_binary, binary_dichotomy",
+     "instance with repeated thresholds": "worked example [0,2,2,5,0] in Thresholds.lean",
+     "P02 histogram comparison retained": "tests/test_core.py HeightTests (unchanged)",
+     "clean build": "CI run 40 (commit c301679), job formal-lean: clean download of lean-4.12.0-linux, lake build, scripts/check_formal.py axiom audit — success"
+    },
+    "commands": [
+     "cd formal && lake build",
+     "python3 scripts/check_formal.py"
+    ]
+   }
   },
   {
    "id": "P09",
@@ -437,7 +464,7 @@
   {
    "id": "P13",
    "title": "Classify the first positive-energy layer",
-   "status": "implemented_pending_acceptance",
+   "status": "complete",
    "effort": "S",
    "priority": 2,
    "dependencies": [
@@ -451,17 +478,28 @@
     "tests/test_core.py"
    ],
    "existing_work": "SNG-F12 and SNG-A05 prove E>=lambda*span and characterize minimum-energy normalized profiles as binary minimum-cut sides. Tests enumerate heights 0..2 on connected simple graphs through four vertices, checking nonbinary exclusion and multiplicities.",
-   "next_action": "Reuse the prose proof and exhaustive checks; when P08 is available, derive the formal min-cut corollary from the same nested identity and close the dependency gate explicitly.",
-   "acceptance_gaps": [
-    "P06 is complete; P08's kernel identity remains open (D009).",
-    "Record the existing theorem's acceptance receipt, scope and multiplicity comparison; finite tests supplement the general proof rather than prove it."
-   ],
-   "packet": "handoff/tasks/P13.md"
+   "next_action": "None.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P13.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "complete minimizer classification with nonbinary exclusion": "SNG-F12 (chapter 3, section 3.6), coarea plus d^2 >= d",
+     "exact multiplicities, both sides counted, volume symmetry": "SNG-F11/F12; test_minimum_cut_shell_needs_connectedness_and_is_symmetric",
+     "independent minimum cuts by subset enumeration against bounded profiles": "test_minimum_cut_is_minimum_nonzero_normalized_energy (heights 0..2, all small graphs)",
+     "connectedness essential, singleton separately, disconnected counterexample": "chapter 3 paragraph after SNG-F12; K2+K1 test",
+     "energy-first versus volume-first distinction": "chapter 3 paragraph after SNG-F12",
+     "P06 and P08 dependencies": "both complete; the nested identity used is energy_nested (formal)"
+    },
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_core -v"
+    ]
+   }
   },
   {
    "id": "P14",
    "title": "Compute the nested-pair census",
-   "status": "implemented_pending_acceptance",
+   "status": "complete",
    "effort": "M",
    "priority": 1,
    "dependencies": [
@@ -476,16 +514,24 @@
     "scripts/reproduce.py"
    ],
    "existing_work": "nested_census.py computes the raw five-statistic census over all 3^n pairs T within S (empty, full and equal sets kept). Proposition SNG-F40 proves total mass, the reflection symmetry (T,S)->(V-S,V-T), the projection of the cells with nonempty T and proper S onto the span-two generating function, and the binary marginal. The binary-census pair has identical binary marginals but 591 differing census cells; at volume three they are exactly the ordered adjacent-degree triples (d_i+d_j-2A, d_i, d_i-A), whose energy projection is the SNG-E006 discrepancy.",
-   "next_action": "Close P08 in a proof-assistant environment, then mark P14 complete with the existing receipt (tests/test_nested_census.py, results/nested_census.json).",
-   "acceptance_gaps": [
-    "Original dependency gate: P08 (kernel-checked nested-level identity) is open (D009); the finite content of P14 is complete but cannot be marked complete under the original gate."
-   ],
-   "packet": "handoff/tasks/P14.md"
+   "next_action": "None.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P14.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "finite content and receipts": "as recorded in existing_work and evidence (unchanged since the 2026-10-18 audit, which found only the dependency gate open)",
+     "dependency gate": "P05 complete; P08 complete (formal energy_nested)"
+    },
+    "commands": [
+     "PYTHONPATH=src python -m unittest discover -s tests"
+    ]
+   }
   },
   {
    "id": "P15",
    "title": "Separate lattice information from chamber information",
-   "status": "implemented_pending_acceptance",
+   "status": "complete",
    "effort": "L",
    "priority": 2,
    "dependencies": [
@@ -499,11 +545,19 @@
     "docs/chapters/02_graphs_lattices.md"
    ],
    "existing_work": "Theorem SNG-F46: (i) a bijection of height quotients preserving energy, normalized volume and span induces equal marked series; (ii) energy preservation alone fails even for an affine unimodular isometry induced by a cycle-matroid-preserving edge bijection. The Whitney twist map (identity on one block, a_v -> a_s + a_t - a_v on the other) preserves energy, commutes with shifts and is involutive, but sends the unit vector at an interior vertex (normalized volume 1) to a profile of normalized volume n-1. For path blocks it relates G(2m,2k) and G(2m,2m), whose marked series differ at volume 2k+1 (SNG-F36).",
-   "next_action": "Close P08 and P14, then mark P15 complete with SNG-F46 and tests/test_lattice_marks.py.",
-   "acceptance_gaps": [
-    "Original dependency gate: P08 (formal) and P14 (pending on P08) are not accepted."
-   ],
-   "packet": "handoff/tasks/P15.md"
+   "next_action": "None.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P15.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "finite content and receipts": "as recorded in existing_work and evidence (unchanged since the 2026-10-18 audit, which found only the dependency gate open)",
+     "dependency gate": "P08 and P14 complete"
+    },
+    "commands": [
+     "PYTHONPATH=src python -m unittest discover -s tests"
+    ]
+   }
   },
   {
    "id": "P16",

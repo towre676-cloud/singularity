@@ -501,6 +501,8 @@ For a path, \(\lambda=1\), so the first positive shell consists of the two orien
 \]
 These formulas identify the very first nonconstant energy sector. They do not recover arbitrary boundary overlaps at higher energy.
 
+Both hypotheses are needed. For a single vertex there is no nonempty proper subset, every normalized profile is zero, and \(\mathcal B_{K_1}=1\). For a disconnected graph the minimum cut is zero, and the indicator of a component is a nonzero normalized profile of energy zero. For \(K_2\sqcup K_1\), the profile \((1,1,0)\) has energy \(0\), and the smallest positive energy, \(1\), is attained by \((1,0,0)\), which is not a minimum-cut side. So the shell statement fails without connectedness. Both sides of every minimum cut are counted, at volumes \(|S|\) and \(k-|S|\), and the shell is symmetric under \(r\mapsto k-r\) by SNG-F11. The theorem orders profiles by energy. It says nothing directly about the first discrepancy of two graphs ordered by volume, which can occur at energies far above \(\lambda\). Its formal ingredient, the nested identity \(E=\sum_rc(S_r)+2\sum_{r<s}(\text{cross terms})\) with nonnegative cross terms, is kernel-checked as `energy_nested` in `formal/Singularity/Thresholds.lean` (P08).
+
 ## Support restrictions useful for exact computation
 
 Several finite bounds follow directly from the profile interpretation. They identify impossible marked cells before any enumeration and provide consistency checks afterward.

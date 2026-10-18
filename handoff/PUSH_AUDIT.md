@@ -54,15 +54,15 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P04](#p04) | Give the spectral pair a short coefficient proof | `complete` | P03 | S | 1 |
 | [P05](#p05) | Explain the binary-census separation | `complete` | P02, P03 | S | 1 |
 | [P06](#p06) | Derive universal low-volume formulas | `complete` | P04, P05 | S | 1 |
-| [P07](#p07) | Formalize translation normalization | `implemented_pending_acceptance` | P01 | M | 1 |
-| [P08](#p08) | Formalize the nested-level energy identity | `implemented_pending_acceptance` | P07 | L | 2 |
+| [P07](#p07) | Formalize translation normalization | `complete` | P01 | M | 1 |
+| [P08](#p08) | Formalize the nested-level energy identity | `complete` | P07 | L | 2 |
 | [P09](#p09) | Implement bounded-height tree messages | `complete` | P02 | S | 1 |
 | [P10](#p10) | Prove safe volume truncation | `complete` | P09 | S | 1 |
 | [P11](#p11) | Recover span by bounded-box subtraction | `complete` | P09, P10 | S | 1 |
 | [P12](#p12) | Extend messages to bounded separators | `complete` | P10, P11 | L | 1 |
-| [P13](#p13) | Classify the first positive-energy layer | `implemented_pending_acceptance` | P06, P08 | S | 2 |
-| [P14](#p14) | Compute the nested-pair census | `implemented_pending_acceptance` | P05, P08 | M | 1 |
-| [P15](#p15) | Separate lattice information from chamber information | `implemented_pending_acceptance` | P08, P14 | L | 2 |
+| [P13](#p13) | Classify the first positive-energy layer | `complete` | P06, P08 | S | 2 |
+| [P14](#p14) | Compute the nested-pair census | `complete` | P05, P08 | M | 1 |
+| [P15](#p15) | Separate lattice information from chamber information | `complete` | P08, P14 | L | 2 |
 | [P16](#p16) | Test Whitney switches systematically | `implemented_pending_acceptance` | P15 | M | 2 |
 | [P17](#p17) | Add exact volume congruence filters | `complete` | P03 | S | 2 |
 | [P18](#p18) | Prove root-of-unity rationality in energy | `complete` | P03, P17 | S | 2 |
@@ -172,32 +172,27 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P07
 
-**Formalize translation normalization.** Status: `implemented_pending_acceptance`. Dependencies: P01. Remaining effort: M; priority: 1.
+**Formalize translation normalization.** Status: `complete`. Dependencies: P01. Remaining effort: M; priority: 1.
 
 **Existing work:** Core Lean 4.12.0 project formal/ (no Mathlib): profiles as List Nat, edge lists, volume and squared-difference energy. Kernel-checked theorems shift_injective, shift_surjective, shift_unique, vol_shift, energy_shift, energy_norm, box/mem_box/box_nodup (finite coefficients), allCount_rec (L(V,e) = B(V,e) + L(V-n,e), the coefficient form of B = (1-x^n)L), allCount_eq_mzCount_of_lt and allCount_eq_shiftSum; no connectivity assumption. Local build and axiom audit (propext, Quot.sound, Classical.choice only) pass; scripts/check_formal.py runs in CI.
 
 **Evidence:** [docs/chapters/01_orientation.md](../docs/chapters/01_orientation.md); [src/singularity/heights.py](../src/singularity/heights.py); [tests/test_core.py](../tests/test_core.py); [results/certificates/translation.json](../results/certificates/translation.json); [formal/README.md](../formal/README.md); [formal/Singularity/Normalization.lean](../formal/Singularity/Normalization.lean); [scripts/check_formal.py](../scripts/check_formal.py); [.github/workflows/research.yml](../.github/workflows/research.yml).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- The clean-environment build in CI has not yet been observed (local build with the same pinned release passes).
-- The span-marked (z) version of the shift identity is not formalized; only the unmarked coefficient identity required by the packet is.
-
-**Next concrete action:** Observe the CI formal-lean job (clean download of the pinned release, lake build, axiom audit); on success mark complete.
+**Next concrete action:** none.
 
 ### P08
 
-**Formalize the nested-level energy identity.** Status: `implemented_pending_acceptance`. Dependencies: P07. Remaining effort: L; priority: 2.
+**Formalize the nested-level energy identity.** Status: `complete`. Dependencies: P07. Remaining effort: L; priority: 2.
 
 **Existing work:** formal/Singularity/Thresholds.lean on the P07 definitions: thr_nested, reconstruct, vol_eq_levels, nonemptyLevels_eq_lmax, span_eq, maxZero_no_levels, thr_proper_of_minZero, edge_square, delta_mul, delta_sq, energy_nested (energy = sum_r cut(S_r) + 2 sum_{r<s} cross(r,s), repeated levels and gaps allowed), energy_binary and binary_dichotomy (zero profile versus exact span one); worked example [0,2,2,5,0] with repeated thresholds. Python P02 histogram comparisons are retained.
 
 **Evidence:** [docs/chapters/03_nested_heights.md](../docs/chapters/03_nested_heights.md); [src/singularity/heights.py](../src/singularity/heights.py); [tests/test_core.py](../tests/test_core.py); [formal/README.md](../formal/README.md); [formal/Singularity/Thresholds.lean](../formal/Singularity/Thresholds.lean); [scripts/check_formal.py](../scripts/check_formal.py).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- The clean-environment build in CI has not yet been observed (local build passes).
-
-**Next concrete action:** Observe the CI formal-lean job; on success mark complete.
+**Next concrete action:** none.
 
 ### P09
 
@@ -279,46 +274,39 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P13
 
-**Classify the first positive-energy layer.** Status: `implemented_pending_acceptance`. Dependencies: P06, P08. Remaining effort: S; priority: 2.
+**Classify the first positive-energy layer.** Status: `complete`. Dependencies: P06, P08. Remaining effort: S; priority: 2.
 
 **Existing work:** SNG-F12 and SNG-A05 prove E>=lambda*span and characterize minimum-energy normalized profiles as binary minimum-cut sides. Tests enumerate heights 0..2 on connected simple graphs through four vertices, checking nonbinary exclusion and multiplicities.
 
 **Evidence:** [docs/chapters/03_nested_heights.md](../docs/chapters/03_nested_heights.md); [docs/chapters/05_prime_arithmetic.md](../docs/chapters/05_prime_arithmetic.md); [src/singularity/invariants.py](../src/singularity/invariants.py); [tests/test_core.py](../tests/test_core.py).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- P06 is complete; P08's kernel identity remains open (D009).
-- Record the existing theorem's acceptance receipt, scope and multiplicity comparison; finite tests supplement the general proof rather than prove it.
-
-**Next concrete action:** Reuse the prose proof and exhaustive checks; when P08 is available, derive the formal min-cut corollary from the same nested identity and close the dependency gate explicitly.
+**Next concrete action:** none.
 
 ### P14
 
-**Compute the nested-pair census.** Status: `implemented_pending_acceptance`. Dependencies: P05, P08. Remaining effort: M; priority: 1.
+**Compute the nested-pair census.** Status: `complete`. Dependencies: P05, P08. Remaining effort: M; priority: 1.
 
 **Existing work:** nested_census.py computes the raw five-statistic census over all 3^n pairs T within S (empty, full and equal sets kept). Proposition SNG-F40 proves total mass, the reflection symmetry (T,S)->(V-S,V-T), the projection of the cells with nonempty T and proper S onto the span-two generating function, and the binary marginal. The binary-census pair has identical binary marginals but 591 differing census cells; at volume three they are exactly the ordered adjacent-degree triples (d_i+d_j-2A, d_i, d_i-A), whose energy projection is the SNG-E006 discrepancy.
 
 **Evidence:** [src/singularity/nested_census.py](../src/singularity/nested_census.py); [tests/test_nested_census.py](../tests/test_nested_census.py); [results/nested_census.json](../results/nested_census.json); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [scripts/reproduce.py](../scripts/reproduce.py).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- Original dependency gate: P08 (kernel-checked nested-level identity) is open (D009); the finite content of P14 is complete but cannot be marked complete under the original gate.
-
-**Next concrete action:** Close P08 in a proof-assistant environment, then mark P14 complete with the existing receipt (tests/test_nested_census.py, results/nested_census.json).
+**Next concrete action:** none.
 
 ### P15
 
-**Separate lattice information from chamber information.** Status: `implemented_pending_acceptance`. Dependencies: P08, P14. Remaining effort: L; priority: 2.
+**Separate lattice information from chamber information.** Status: `complete`. Dependencies: P08, P14. Remaining effort: L; priority: 2.
 
 **Existing work:** Theorem SNG-F46: (i) a bijection of height quotients preserving energy, normalized volume and span induces equal marked series; (ii) energy preservation alone fails even for an affine unimodular isometry induced by a cycle-matroid-preserving edge bijection. The Whitney twist map (identity on one block, a_v -> a_s + a_t - a_v on the other) preserves energy, commutes with shifts and is involutive, but sends the unit vector at an interior vertex (normalized volume 1) to a profile of normalized volume n-1. For path blocks it relates G(2m,2k) and G(2m,2m), whose marked series differ at volume 2k+1 (SNG-F36).
 
 **Evidence:** [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [src/singularity/terminals.py](../src/singularity/terminals.py); [tests/test_lattice_marks.py](../tests/test_lattice_marks.py); [docs/chapters/02_graphs_lattices.md](../docs/chapters/02_graphs_lattices.md).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- Original dependency gate: P08 (formal) and P14 (pending on P08) are not accepted.
-
-**Next concrete action:** Close P08 and P14, then mark P15 complete with SNG-F46 and tests/test_lattice_marks.py.
+**Next concrete action:** none.
 
 ### P16
 

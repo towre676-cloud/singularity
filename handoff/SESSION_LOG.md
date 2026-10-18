@@ -171,3 +171,4 @@ Next dependency-ready item and exact first action:
 - Necessary conditions for the R = 11 candidate (no realization found).
 - P07 and P08: core Lean 4.12.0 project in `formal/`, written by a delegated agent and verified here (clean local build; axiom audit lists only propext, Quot.sound and Classical.choice). CI job `formal-lean` added. Both are implemented_pending_acceptance until that job is observed. D011 records the toolchain route.
 - P33 moved to planned; kernel certificate work started.
+- After CI run 40 showed the clean `formal-lean` job passing, P07 and P08 were accepted. With the P08 gate closed, P14 and P15 (finite content already complete) and P13 (after adding the connectedness, singleton and volume-order paragraph and a disconnected counterexample test) were accepted. The ledger now has 28 complete, 4 implemented_pending_acceptance, 2 blocked, 1 partial and 1 planned.

@@ -170,6 +170,20 @@ class HeightTests(unittest.TestCase):
             self.assertEqual(min(energies), minimum)
             self.assertEqual(sizes, minimizers)
 
+    def test_minimum_cut_shell_needs_connectedness_and_is_symmetric(self):
+        # P13 edge cases: K2 + K1 has a nonzero normalized profile of energy zero, and its
+        # smallest positive energy is attained by a profile that is not a minimum-cut side.
+        graph = Graph(3, [(0, 1)])
+        self.assertEqual(direct_energy(graph, (1, 1, 0)), 0)
+        self.assertEqual(direct_energy(graph, (1, 0, 0)), 1)
+        with self.assertRaises(ValueError):
+            minimum_cut_profile(graph)
+        # Both sides of every minimum cut are counted: sizes are symmetric under r -> n - r.
+        for g in small_graphs():
+            if g.n >= 2 and g.connected:
+                _, sizes = minimum_cut_profile(g)
+                self.assertEqual(dict(sizes), {g.n - r: c for r, c in sizes.items()})
+
     def test_relabel_invariance_all_small_graphs(self):
         for graph in small_graphs():
             relabeled = graph.relabel(tuple(reversed(range(graph.n))))
