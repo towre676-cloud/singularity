@@ -1,0 +1,301 @@
+{
+ "benchmark": {
+  "apply_seconds_per_closure": 0.000183,
+  "budget": 8,
+  "compile_interface_seconds": 0.014,
+  "context_operator_seconds_per_context": 0.0263,
+  "contexts": 6,
+  "direct_decomposition_seconds_per_closure": 19.628,
+  "interior": "C_6 (dominating terminals, m = 6)",
+  "note": "wall-clock on the session machine; operators are reusable across all interiors with m = 6",
+  "q": "1/2"
+ },
+ "bits": {
+  "denominator_of_A_j": "exactly 2^(2 j^2), numerator odd",
+  "graph": "K_{2,3} (H = three isolated vertices)",
+  "q": "1/2",
+  "rows": [
+   {
+    "budget": 0,
+    "interface_bits": 2,
+    "ordered_kernel_bits": 2
+   },
+   {
+    "budget": 1,
+    "interface_bits": 7,
+    "ordered_kernel_bits": 17
+   },
+   {
+    "budget": 2,
+    "interface_bits": 22,
+    "ordered_kernel_bits": 80
+   },
+   {
+    "budget": 3,
+    "interface_bits": 54,
+    "ordered_kernel_bits": 265
+   },
+   {
+    "budget": 4,
+    "interface_bits": 109,
+    "ordered_kernel_bits": 699
+   },
+   {
+    "budget": 5,
+    "interface_bits": 194,
+    "ordered_kernel_bits": 1577
+   },
+   {
+    "budget": 6,
+    "interface_bits": 316,
+    "ordered_kernel_bits": 3177
+   },
+   {
+    "budget": 7,
+    "interface_bits": 481,
+    "ordered_kernel_bits": 5874
+   },
+   {
+    "budget": 8,
+    "interface_bits": 696,
+    "ordered_kernel_bits": 10155
+   },
+   {
+    "budget": 9,
+    "interface_bits": 968,
+    "ordered_kernel_bits": 16634
+   },
+   {
+    "budget": 10,
+    "interface_bits": 1303,
+    "ordered_kernel_bits": 26066
+   }
+  ]
+ },
+ "future_classes": [
+  {
+   "distinct_sequences_through_5": 1,
+   "isomorphism_classes": 1,
+   "m": 1
+  },
+  {
+   "distinct_sequences_through_5": 2,
+   "isomorphism_classes": 2,
+   "m": 2
+  },
+  {
+   "distinct_sequences_through_5": 4,
+   "isomorphism_classes": 4,
+   "m": 3
+  },
+  {
+   "distinct_sequences_through_5": 11,
+   "isomorphism_classes": 11,
+   "m": 4
+  },
+  {
+   "distinct_sequences_through_5": 34,
+   "isomorphism_classes": 34,
+   "m": 5
+  },
+  {
+   "distinct_sequences_through_5": 156,
+   "isomorphism_classes": 156,
+   "m": 6
+  }
+ ],
+ "schema": "singularity.charge-interfaces/1",
+ "sizes": {
+  "false_twin_example": {
+   "block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "charge_cells_budget_8": 45,
+   "pattern_dimension": 1
+  },
+  "table": [
+   {
+    "budget": 4,
+    "dominating_interface": 5,
+    "ordered_kernel_table": 35,
+    "symmetrized_interface": 22
+   },
+   {
+    "budget": 8,
+    "dominating_interface": 9,
+    "ordered_kernel_table": 165,
+    "symmetrized_interface": 95
+   },
+   {
+    "budget": 12,
+    "dominating_interface": 13,
+    "ordered_kernel_table": 455,
+    "symmetrized_interface": 252
+   },
+   {
+    "budget": 16,
+    "dominating_interface": 17,
+    "ordered_kernel_table": 969,
+    "symmetrized_interface": 525
+   },
+   {
+    "budget": 24,
+    "dominating_interface": 25,
+    "ordered_kernel_table": 2925,
+    "symmetrized_interface": 1547
+   },
+   {
+    "budget": 32,
+    "dominating_interface": 33,
+    "ordered_kernel_table": 6545,
+    "symmetrized_interface": 3417
+   }
+  ]
+ },
+ "verification": {
+  "budget": 5,
+  "contexts": [
+   "shared neighbour",
+   "leaf on each terminal",
+   "asymmetric with terminal edge"
+  ],
+  "general_charge_compiler_budget_6": [
+   {
+    "block": {
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "n": 5
+    },
+    "charge_cells": 84,
+    "pattern_dimension": 2,
+    "raw_kernel_cells": 84
+   },
+   {
+    "block": {
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       4,
+       5
+      ]
+     ],
+     "n": 6
+    },
+    "charge_cells": 140,
+    "pattern_dimension": 2,
+    "raw_kernel_cells": 84
+   },
+   {
+    "block": {
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       4,
+       5
+      ]
+     ],
+     "n": 6
+    },
+    "charge_cells": 28,
+    "pattern_dimension": 1,
+    "raw_kernel_cells": 84
+   }
+  ],
+  "glued_series_comparisons": 48,
+  "interior_graphs": 8,
+  "q": [
+   "1/2",
+   "2/3"
+  ],
+  "single_closure_recoveries": 16,
+  "transport_composition_law": true
+ }
+}

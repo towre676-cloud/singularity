@@ -8752,6 +8752,273 @@ needs an interpolation argument for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>a</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>q</mi><mrow><mi>b</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{as^2+bt^2}P_j(U,V)+q^{bs^2+at^2}P_j(V,U)</annotation></semantics></math>
 and is open. So is the question whether the remaining candidates are
 realized by actual blocks.</p>
+<h3 data-number="10.8.3"
+id="boundary-charges-and-a-growing-compression-family"><span
+class="header-section-number">10.8.3</span> Boundary charges and a
+growing compression family</h3>
+<p>The rank results above concern what restricted contexts can see. The
+other half of P54 asks how small an exact interface can be for all
+future contexts. The answer depends on how the interior meets the
+terminals. For a block with terminals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">b_1,\ldots,b_k</annotation></semantics></math>,
+give each interior vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+its neighbourhood pattern
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>v</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\eta_v\in\{0,1\}^k</annotation></semantics></math>,
+and call
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>v</mi></msub><msub><mi>h</mi><mi>v</mi></msub><msub><mi>η</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">Q(h)=\sum_vh_v\eta_v</annotation></semantics></math>
+the <em>boundary charge</em> of interior heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>.</p>
+<p><strong>Theorem SNG-F53 (charge interfaces).</strong></p>
+<ol type="a">
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding="application/x-tex">d_i</annotation></semantics></math>
+be the number of interior neighbours of terminal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>T</mi></msub><annotation encoding="application/x-tex">E_T</annotation></semantics></math>
+be the energy of the edges among the terminals. For terminal heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf b</annotation></semantics></math>
+and interior heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+of total
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+the energy is <span class="math display">$$
+E=\Bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\Bigr]+\sum_id_ib_i^2+E_T(\mathbf
+b)-2\langle\mathbf b,Q(h)\rangle.
+$$</span> Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>d</mi><mi>i</mi></msub><msubsup><mi>b</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><msub><mi>E</mi><mi>T</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mo>∑</mo><mrow><mi>j</mi><mo>,</mo><mi>Q</mi></mrow></msub><msup><mi>x</mi><mi>j</mi></msup><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mo stretchy="false" form="prefix">⟨</mo><mi>𝐛</mi><mo>,</mo><mi>Q</mi><mo stretchy="false" form="postfix">⟩</mo></mrow></msup><msub><mi>A</mi><mrow><mi>j</mi><mo>,</mo><mi>Q</mi></mrow></msub></mrow><annotation encoding="application/x-tex">K(\mathbf b)=q^{\sum_id_ib_i^2+E_T(\mathbf b)}\sum_{j,Q}x^jq^{-2\langle\mathbf b,Q\rangle}A_{j,Q}</annotation></semantics></math>,
+with
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>j</mi><mo>,</mo><mi>Q</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>h</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>j</mi><mo>,</mo><mspace width="0.278em"></mspace><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>Q</mi></mrow></munder><msup><mi>q</mi><mrow><msub><mi>E</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><munder><mo>∑</mo><mi>v</mi></munder><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>η</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_{j,Q}=\sum_{|h|=j,\;Q(h)=Q}q^{E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2}.
+</annotation></semantics></math> The charges of volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+lie in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>conv</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>η</mi><mi>v</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">j\operatorname{conv}\{\eta_v\}</annotation></semantics></math>.
+If the patterns have affine dimension
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+the table through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(R^{d+1})</annotation></semantics></math>
+entries, against
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+k+1}{k+1}</annotation></semantics></math>
+for the raw kernel.</p></li>
+<li><p><em>Dominating terminals.</em> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mi>H</mi></msub><annotation encoding="application/x-tex">G_H</annotation></semantics></math>
+consist of an arbitrary simple graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+vertices and two nonadjacent terminals, each joined to every vertex of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+Then every pattern is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><msub><mi>G</mi><mi>H</mi></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><munder><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow></munder><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><mspace width="0.167em"></mspace><msup><mi>x</mi><mi>j</mi></msup><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>h</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>j</mi></mrow></munder><msup><mi>q</mi><mrow><msub><mi>E</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><munder><mo>∑</mo><mi>i</mi></munder><msubsup><mi>h</mi><mi>i</mi><mn>2</mn></msubsup></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+K_{G_H}(s,t)=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}\,x^jq^{-2j(s+t)},\qquad A_{H,j}=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+</annotation></semantics></math> Through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+the interface is the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R+1</annotation></semantics></math>
+polynomials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mn>0</mn></mrow></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>R</mi></mrow></msub></mrow><annotation encoding="application/x-tex">A_{H,0},\ldots,A_{H,R}</annotation></semantics></math>.
+The ordered kernel table has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mn>3</mn></mrow><mn>3</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+3}3</annotation></semantics></math>
+entries and the symmetrized interface of SNG-F49 has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>547</mn></mrow><annotation encoding="application/x-tex">1{,}547</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>24</mn></mrow><annotation encoding="application/x-tex">R=24</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>417</mn></mrow><annotation encoding="application/x-tex">3{,}417</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">R=32</annotation></semantics></math>,
+so the saving grows quadratically.</p></li>
+<li><p><em>One closure is a complete interface.</em> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+be any known context, and put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>s</mi><mo>,</mo><mi>t</mi></mrow></msub><msup><mi>x</mi><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow></msup><msup><mi>q</mi><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">W_{C,j}=\sum_{s,t}x^{s+t}q^{m(s^2+t^2)-2j(s+t)}K_C(s,t)</annotation></semantics></math>.
+Then the closed series is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mrow><mi>H</mi><mo>,</mo><mi>C</mi></mrow></msub><mo>=</mo><msub><mo>∑</mo><mi>j</mi></msub><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><msup><mi>x</mi><mi>j</mi></msup><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Z_{H,C}=\sum_jA_{H,j}x^jW_{C,j}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">W_{C,j}</annotation></semantics></math>
+has constant term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.
+Consequently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>v</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>v</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>Z</mi><mrow><mi>H</mi><mo>,</mo><mi>C</mi></mrow></msub><mo>−</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>&lt;</mo><mi>v</mi></mrow></msub><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mrow><mi>v</mi><mo>−</mo><mi>j</mi></mrow></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">A_{H,v}=[x^v]Z_{H,C}-\sum_{j&lt;v}A_{H,j}[x^{v-j}]W_{C,j}</annotation></semantics></math>.
+Within the class with given
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>,
+for any fixed context
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>0</mn></msub><annotation encoding="application/x-tex">C_0</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mi>A</mi><mrow><mi>H</mi><mi>′</mi><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><mo>⇔</mo><msub><mi>Z</mi><mrow><mi>H</mi><mo>,</mo><msub><mi>C</mi><mn>0</mn></msub><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mi>Z</mi><mrow><mi>H</mi><mi>′</mi><mo>,</mo><msub><mi>C</mi><mn>0</mn></msub><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><mo>⇔</mo><msub><mi>Z</mi><mrow><mi>H</mi><mo>,</mo><mi>C</mi><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mi>Z</mi><mrow><mi>H</mi><mi>′</mi><mo>,</mo><mi>C</mi><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> for every context </mtext><mspace width="0.333em"></mspace></mrow><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_{H,\le R}=A_{H&#39;,\le R}\iff Z_{H,C_0,\le R}=Z_{H&#39;,C_0,\le R}\iff Z_{H,C,\le R}=Z_{H&#39;,C,\le R}\text{ for every context }C.
+</annotation></semantics></math> So the sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mo>≤</mo><mi>R</mi></mrow></msub><annotation encoding="application/x-tex">A_{H,\le R}</annotation></semantics></math>
+is the coarsest exact interface for future gluing at the original
+budget: any representation that determines every future closure
+determines the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>0</mn></msub><annotation encoding="application/x-tex">C_0</annotation></semantics></math>-closure,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.</p></li>
+</ol>
+<p><em>Proof.</em> (a) Expand
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>h</mi><mi>v</mi></msub><mo>−</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><msub><mi>b</mi><mi>i</mi></msub><msub><mi>h</mi><mi>v</mi></msub><mo>+</mo><msubsup><mi>b</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">(h_v-b_i)^2=h_v^2-2b_ih_v+b_i^2</annotation></semantics></math>
+over the edges between the interior and the terminals; the interior and
+terminal–terminal edges are unchanged. (b) This is (a) with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>η</mi><mi>v</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\eta_v=(1,1)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub><mo>=</mo><msub><mi>d</mi><mn>2</mn></msub><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">d_1=d_2=m</annotation></semantics></math>
+and no terminal edge. (c) Gluing gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><msub><mo>∑</mo><mi>𝐛</mi></msub><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msub><mi>K</mi><msub><mi>G</mi><mi>H</mi></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Z=\sum_{\mathbf b}x^{|\mathbf b|}K_{G_H}(\mathbf b)K_C(\mathbf b)</annotation></semantics></math>
+(SNG-F41). The constant term of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">W_{C,j}</annotation></semantics></math>
+comes only from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=t=0</annotation></semantics></math>
+with the whole context at height zero, which has energy zero. The
+recursion follows. The first equivalence follows from the recursion, the
+second from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mrow><mi>H</mi><mo>,</mo><mi>C</mi></mrow></msub><mo>=</mo><msub><mo>∑</mo><mi>j</mi></msub><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><msup><mi>x</mi><mi>j</mi></msup><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Z_{H,C}=\sum_jA_{H,j}x^jW_{C,j}</annotation></semantics></math>,
+and the coarsest-interface statement from the first.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The closing context may be connected and have no terminal edge: a
+single shared neighbour suffices.</p>
+<p><strong>Proposition SNG-F54 (context transport).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>C</mi></msub><annotation encoding="application/x-tex">Z_C</annotation></semantics></math>
+be the coefficient vectors through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+and put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>C</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>v</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>+</mo><mi>u</mi><mo>=</mo><mi>v</mi><mo>−</mo><mi>j</mi></mrow></munder><msup><mi>q</mi><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>u</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(T_C)_{v,j}=\sum_{s+t+u=v-j}q^{m(s^2+t^2)-2j(s+t)}[x^u]K_C(s,t).
+</annotation></semantics></math> Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>C</mi></msub><mo>=</mo><msub><mi>T</mi><mi>C</mi></msub><mi>A</mi></mrow><annotation encoding="application/x-tex">Z_C=T_CA</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>C</mi></msub><annotation encoding="application/x-tex">T_C</annotation></semantics></math>
+is lower triangular with unit diagonal, and it depends on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">m,q,C,R</annotation></semantics></math>
+but not on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>D</mi></msub><mo>=</mo><msub><mi>𝒰</mi><mrow><mi>D</mi><mo>←</mo><mi>C</mi></mrow></msub><msub><mi>Z</mi><mi>C</mi></msub></mrow><annotation encoding="application/x-tex">Z_D=\mathcal U_{D\leftarrow C}Z_C</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒰</mi><mrow><mi>D</mi><mo>←</mo><mi>C</mi></mrow></msub><mo>=</mo><msub><mi>T</mi><mi>D</mi></msub><msubsup><mi>T</mi><mi>C</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\mathcal U_{D\leftarrow C}=T_DT_C^{-1}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒰</mi><mrow><mi>E</mi><mo>←</mo><mi>D</mi></mrow></msub><msub><mi>𝒰</mi><mrow><mi>D</mi><mo>←</mo><mi>C</mi></mrow></msub><mo>=</mo><msub><mi>𝒰</mi><mrow><mi>E</mi><mo>←</mo><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mathcal U_{E\leftarrow D}\mathcal U_{D\leftarrow C}=\mathcal U_{E\leftarrow C}</annotation></semantics></math>.
+A compiled operator stores
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(R^2)</annotation></semantics></math>
+scalars and applies in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(R^2)</annotation></semantics></math>
+operations. Building it from a context kernel takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(R^3)</annotation></semantics></math>
+operations directly.</p>
+<p><em>Proof.</em> Take the coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>v</mi></msup><annotation encoding="application/x-tex">x^v</annotation></semantics></math>
+in SNG-F53(c).
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The entries of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>C</mi></msub><annotation encoding="application/x-tex">T_C</annotation></semantics></math>
+can carry negative powers of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.
+<code>closure_operator</code> in <code>src/singularity/charges.py</code>
+therefore computes them exactly at a rational
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math>,
+while
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">A_{H,j}</annotation></semantics></math>
+is kept as a polynomial. <code>charge_interface</code> and
+<code>kernel_from_charges</code> implement (a) for any number of
+terminals and rebuild the kernel exactly.
+<code>scripts/charge_interfaces.py</code>, checked in CI, verifies the
+following: - all eight labelled interiors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+on three vertices; - three contexts: a shared neighbour, a leaf on each
+terminal, and an asymmetric context with a terminal edge; -
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">q\in\{1/2,2/3\}</annotation></semantics></math>:
+all 48 closures
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>C</mi></msub><mi>A</mi></mrow><annotation encoding="application/x-tex">T_CA</annotation></semantics></math>
+equal the series of the actual glued graphs, counted by weak
+compositions; - all 16 single shared-neighbour closures recover
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+through volume five; - the composition law holds exactly.</p>
+<p>For blocks whose patterns span two dimensions the charge table is not
+smaller than the raw table: 84 or 140 entries against 84 at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">R=6</annotation></semantics></math>.
+The compression is a property of attachment structure. False twins, with
+patterns
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>,
+give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=1</annotation></semantics></math>
+and a quadratic-size table.</p>
+<p><em>Exact bits.</em> The compression survives exact rational
+accounting. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow></msub><annotation encoding="application/x-tex">K_{2,3}</annotation></semantics></math>,
+that is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+three isolated vertices, at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>,
+the value
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>h</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>j</mi></mrow></msub><msup><mn>2</mn><mrow><mo>−</mo><mn>2</mn><mo>∑</mo><msubsup><mi>h</mi><mi>i</mi><mn>2</mn></msubsup></mrow></msup></mrow><annotation encoding="application/x-tex">A_j=\sum_{|h|=j}2^{-2\sum h_i^2}</annotation></semantics></math>
+has denominator exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mn>2</mn><msup><mi>j</mi><mn>2</mn></msup></mrow></msup><annotation encoding="application/x-tex">2^{2j^2}</annotation></semantics></math>.
+After clearing it, the three profiles concentrated at one vertex
+contribute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+each and every other profile an even power of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+so the numerator is odd. The interface
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>A</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">A_0,\ldots,A_R</annotation></semantics></math>
+therefore has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Theta(R^3)</annotation></semantics></math>
+bits. An ordered kernel entry is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>A</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">2^{-(3(s^2+t^2)-2j(s+t))}A_j</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>-adic
+exponent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><msup><mi>j</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">3(s^2+t^2)-2j(s+t)+2j^2</annotation></semantics></math>,
+a positive-definite quadratic form. Summing over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>+</mo><mi>j</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">s+t+j\le R</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mn>5</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Theta(R^5)</annotation></semantics></math>
+bits. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">R=10</annotation></semantics></math>
+the counts are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>303</mn></mrow><annotation encoding="application/x-tex">1{,}303</annotation></semantics></math>
+bits against
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>26</mn><mo>,</mo><mn>066</mn></mrow><annotation encoding="application/x-tex">26{,}066</annotation></semantics></math>.</p>
+<p><em>Reuse.</em> For the dominating block over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>6</mn></msub><annotation encoding="application/x-tex">C_6</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>:
+- computing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>A</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">A_0,\ldots,A_8</annotation></semantics></math>
+takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.014</mn><annotation encoding="application/x-tex">0.014</annotation></semantics></math>
+s; - each context operator takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.026</mn><annotation encoding="application/x-tex">0.026</annotation></semantics></math>
+s, and is reusable for every interior with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m=6</annotation></semantics></math>;
+- each closure then takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.18</mn><annotation encoding="application/x-tex">0.18</annotation></semantics></math>
+ms; - a fresh tree decomposition of each glued graph takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>19.6</mn><annotation encoding="application/x-tex">19.6</annotation></semantics></math>
+s, with identical exact output (<code>--benchmark</code>, wall-clock on
+the session machine, retained).</p>
+<p><em>Future classes.</em> For every isomorphism class of interiors on
+at most six vertices
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>34</mn><mo>,</mo><mn>156</mn></mrow><annotation encoding="application/x-tex">1,2,4,11,34,156</annotation></semantics></math>
+classes), the sequences
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mn>0</mn><mi>.</mi><mn>.5</mn></mrow></msub><annotation encoding="application/x-tex">A_{H,0..5}</annotation></semantics></math>
+are pairwise distinct. On that population, future equivalence of
+dominating blocks at budget five is isomorphism of the interiors.
+Whether non-isomorphic interiors can share the whole sequence, which by
+SNG-F53(c) would make their dominating blocks indistinguishable in every
+context, is open. Computing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">A_{H,j}</annotation></semantics></math>
+for large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is the remaining cost; the separator machinery of SNG-F26 is the natural
+compiler for it.</p>
 <h2 data-number="10.9"
 id="every-late-census-collision-is-separated-by-triangles"><span
 class="header-section-number">10.9</span> Every late census collision is
@@ -11625,62 +11892,69 @@ terminals, Whitney-twist antisymmetric pairing (SNG-F41, SNG-F42)</td>
 interface ranks under a volume budget (SNG-F47, SNG-F48)</td>
 </tr>
 <tr class="odd">
+<td><code>charges</code></td>
+<td>Boundary charges and context transport</td>
+<td>Charge tables rebuilding terminal kernels, the dominating-terminal
+sequence, closure operators, single-closure recovery and transport
+(SNG-F53, SNG-F54)</td>
+</tr>
+<tr class="even">
 <td><code>families</code></td>
 <td>Pendant-cycle family</td>
 <td>Generators, closed binary discrepancy, decorated decks, optimal
 probe parameter (SNG-F36, SNG-F37)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>conductor</code></td>
 <td>Root-of-unity local series</td>
 <td>Integer cyclotomic rings, finite residue numerators, arbitrary-index
 exact coefficients with explicit residue-box budget</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>weighted</code></td>
 <td>Positive integral vertex masses and edge weights</td>
 <td>Parallel-weight aggregation and hard equality contraction preserving
 original energy and mass-weighted height</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>arithmetic</code></td>
 <td>Prime-valuation populations</td>
 <td>Positive integer factorization, finite Dirichlet coefficients,
 conservative exact local remainder and tail constants</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>primitive</code></td>
 <td>Gcd-one normalized height profiles</td>
 <td>Mobius extraction, independent gcd enumeration and exact scaling
 recomposition</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>chains</code></td>
 <td>Weakly nested level chains</td>
 <td>Direct chain generation with repeated levels, nested-boundary
 energy, marked/normalized/local coefficients independent of weak
 compositions</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>chambers</code></td>
 <td>Half-open order chambers</td>
 <td>Gap coordinates, nested-boundary gap form, unique chamber
 reconstruction, factorial-cost third enumerator (SNG-F29)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>orders</code></td>
 <td>Poset-constrained heights</td>
 <td>Validated posets, weak and strict counts, chamber and
 linear-extension order-polynomial formulas, weighted histograms on
 order-polytope points (SNG-F32)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lowvolume</code></td>
 <td>Closed coefficient formulas through volume three</td>
 <td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and

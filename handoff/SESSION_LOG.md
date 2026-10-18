@@ -132,3 +132,12 @@ Next dependency-ready item and exact first action:
 - SNG-F52: interior slice j equals q^{Q0} P_j(q^{-2s}, q^{-2t}), with bidegree ≤ j. Slice one is rigid from total volume 5. For equal terminal degrees, slice j is rigid from volume 3j.
 - Realizable separation: through R = 26 with the terminal edge (the R = 26 candidate is excluded; R = 27 is the first possible ambiguity) and through R = 8 without it. For equal terminal degrees: through R = 37 and R = 10.
 - Open: slice rigidity for unequal degrees with j ≥ 2; whether the R = 27 and R = 9 candidates are realized.
+
+**Continuation (P54 compression family):**
+- SNG-F53: boundary-charge interfaces, an O(R^{d+1}) table for patterns of affine dimension d. For dominating terminals the kernel is q^{m(s²+t²)} Σ_j A_{H,j} x^j q^{−2j(s+t)}. One closure recovers A triangularly and then predicts every other closure, so A is the coarsest exact future interface.
+- SNG-F54: transport operators T_D T_C⁻¹, independent of H, with the composition law.
+- New module `charges`; `scripts/charge_interfaces.py --check` (in CI) verifies 48 gluings, 16 recoveries and the composition law.
+- Size table: R + 1 against C(R+3,3) and 3,417 at R = 32. K₂,₃ bits at R = 10: 1,303 against 26,066.
+- Future classes on interiors with at most six vertices coincide with isomorphism classes through volume 5.
+- Benchmark: 19.6 s direct against 0.18 ms per closure.
+- The previously mentioned local commit 7fda302 does not exist in this checkout or on the remote; this work was rebuilt and verified independently.

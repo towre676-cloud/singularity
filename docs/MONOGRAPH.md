@@ -2523,6 +2523,65 @@ Together with SNG-F49(c), which fixes interior volume zero, this sharpens the re
 
 On these coordinates the exactness hypothesis of SNG-F49(b) holds for \(R\le27\) (\(\kappa=1\)) and \(R\le93\) (\(\kappa=2\)) in general. For equal terminal degrees it holds for \(R\le38\) and \(R\le120\), the latter being the range checked. All statements are recorded in `results/symmetric_contexts.json`. For unequal terminal degrees, the analogue of (b) for \(j\ge2\) needs an interpolation argument for \(q^{as^2+bt^2}P_j(U,V)+q^{bs^2+at^2}P_j(V,U)\) and is open. So is the question whether the remaining candidates are realized by actual blocks.
 
+### Boundary charges and a growing compression family
+
+The rank results above concern what restricted contexts can see. The other half of P54 asks how small an exact interface can be for all future contexts. The answer depends on how the interior meets the terminals. For a block with terminals \(b_1,\ldots,b_k\), give each interior vertex \(v\) its neighbourhood pattern \(\eta_v\in\{0,1\}^k\), and call \(Q(h)=\sum_vh_v\eta_v\) the *boundary charge* of interior heights \(h\).
+
+**Theorem SNG-F53 (charge interfaces).**
+
+(a) Let \(d_i\) be the number of interior neighbours of terminal \(i\), and let \(E_T\) be the energy of the edges among the terminals. For terminal heights \(\mathbf b\) and interior heights \(h\) of total \(j\), the energy is
+\[
+E=\Bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\Bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
+\]
+Hence \(K(\mathbf b)=q^{\sum_id_ib_i^2+E_T(\mathbf b)}\sum_{j,Q}x^jq^{-2\langle\mathbf b,Q\rangle}A_{j,Q}\), with
+\[
+A_{j,Q}=\sum_{|h|=j,\;Q(h)=Q}q^{E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2}.
+\]
+The charges of volume \(j\) lie in \(j\operatorname{conv}\{\eta_v\}\). If the patterns have affine dimension \(d\), the table through volume \(R\) has \(O(R^{d+1})\) entries, against \(\binom{R+k+1}{k+1}\) for the raw kernel.
+
+(b) *Dominating terminals.* Let \(G_H\) consist of an arbitrary simple graph \(H\) on \(m\) vertices and two nonadjacent terminals, each joined to every vertex of \(H\). Then every pattern is \((1,1)\), and
+\[
+K_{G_H}(s,t)=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}\,x^jq^{-2j(s+t)},\qquad A_{H,j}=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+\]
+Through volume \(R\) the interface is the \(R+1\) polynomials \(A_{H,0},\ldots,A_{H,R}\). The ordered kernel table has \(\binom{R+3}3\) entries and the symmetrized interface of SNG-F49 has \(1{,}547\) at \(R=24\) and \(3{,}417\) at \(R=32\), so the saving grows quadratically.
+
+(c) *One closure is a complete interface.* Let \(C\) be any known context, and put \(W_{C,j}=\sum_{s,t}x^{s+t}q^{m(s^2+t^2)-2j(s+t)}K_C(s,t)\). Then the closed series is \(Z_{H,C}=\sum_jA_{H,j}x^jW_{C,j}\), and \(W_{C,j}\) has constant term \(1\). Consequently \(A_{H,v}=[x^v]Z_{H,C}-\sum_{j<v}A_{H,j}[x^{v-j}]W_{C,j}\). Within the class with given \(m\), for any fixed context \(C_0\),
+\[
+A_{H,\le R}=A_{H',\le R}\iff Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\iff Z_{H,C,\le R}=Z_{H',C,\le R}\text{ for every context }C.
+\]
+So the sequence \(A_{H,\le R}\) is the coarsest exact interface for future gluing at the original budget: any representation that determines every future closure determines the \(C_0\)-closure, hence \(A\).
+
+*Proof.* (a) Expand \((h_v-b_i)^2=h_v^2-2b_ih_v+b_i^2\) over the edges between the interior and the terminals; the interior and terminal–terminal edges are unchanged. (b) This is (a) with \(\eta_v=(1,1)\), \(d_1=d_2=m\) and no terminal edge. (c) Gluing gives \(Z=\sum_{\mathbf b}x^{|\mathbf b|}K_{G_H}(\mathbf b)K_C(\mathbf b)\) (SNG-F41). The constant term of \(W_{C,j}\) comes only from \(s=t=0\) with the whole context at height zero, which has energy zero. The recursion follows. The first equivalence follows from the recursion, the second from \(Z_{H,C}=\sum_jA_{H,j}x^jW_{C,j}\), and the coarsest-interface statement from the first. \(\square\)
+
+The closing context may be connected and have no terminal edge: a single shared neighbour suffices.
+
+**Proposition SNG-F54 (context transport).** Let \(A\) and \(Z_C\) be the coefficient vectors through \(R\), and put
+\[
+(T_C)_{v,j}=\sum_{s+t+u=v-j}q^{m(s^2+t^2)-2j(s+t)}[x^u]K_C(s,t).
+\]
+Then \(Z_C=T_CA\), \(T_C\) is lower triangular with unit diagonal, and it depends on \(m,q,C,R\) but not on \(H\). Hence \(Z_D=\mathcal U_{D\leftarrow C}Z_C\) with \(\mathcal U_{D\leftarrow C}=T_DT_C^{-1}\), and \(\mathcal U_{E\leftarrow D}\mathcal U_{D\leftarrow C}=\mathcal U_{E\leftarrow C}\). A compiled operator stores \(O(R^2)\) scalars and applies in \(O(R^2)\) operations. Building it from a context kernel takes \(O(R^3)\) operations directly.
+
+*Proof.* Take the coefficient of \(x^v\) in SNG-F53(c). \(\square\)
+
+The entries of \(T_C\) can carry negative powers of \(q\). `closure_operator` in `src/singularity/charges.py` therefore computes them exactly at a rational \(q_0\), while \(A_{H,j}\) is kept as a polynomial. `charge_interface` and `kernel_from_charges` implement (a) for any number of terminals and rebuild the kernel exactly. `scripts/charge_interfaces.py`, checked in CI, verifies the following:
+- all eight labelled interiors \(H\) on three vertices;
+- three contexts: a shared neighbour, a leaf on each terminal, and an asymmetric context with a terminal edge;
+- \(q\in\{1/2,2/3\}\): all 48 closures \(T_CA\) equal the series of the actual glued graphs, counted by weak compositions;
+- all 16 single shared-neighbour closures recover \(A\) through volume five;
+- the composition law holds exactly.
+
+For blocks whose patterns span two dimensions the charge table is not smaller than the raw table: 84 or 140 entries against 84 at \(R=6\). The compression is a property of attachment structure. False twins, with patterns \((0,0)\) and \((1,1)\), give \(d=1\) and a quadratic-size table.
+
+*Exact bits.* The compression survives exact rational accounting. For \(K_{2,3}\), that is \(H\) three isolated vertices, at \(q=1/2\), the value \(A_j=\sum_{|h|=j}2^{-2\sum h_i^2}\) has denominator exactly \(2^{2j^2}\). After clearing it, the three profiles concentrated at one vertex contribute \(1\) each and every other profile an even power of \(2\), so the numerator is odd. The interface \(A_0,\ldots,A_R\) therefore has \(\Theta(R^3)\) bits. An ordered kernel entry is \(2^{-(3(s^2+t^2)-2j(s+t))}A_j\), with \(2\)-adic exponent \(3(s^2+t^2)-2j(s+t)+2j^2\), a positive-definite quadratic form. Summing over \(s+t+j\le R\) gives \(\Theta(R^5)\) bits. At \(R=10\) the counts are \(1{,}303\) bits against \(26{,}066\).
+
+*Reuse.* For the dominating block over \(C_6\) at \(R=8\), \(q=1/2\):
+- computing \(A_0,\ldots,A_8\) takes \(0.014\) s;
+- each context operator takes \(0.026\) s, and is reusable for every interior with \(m=6\);
+- each closure then takes \(0.18\) ms;
+- a fresh tree decomposition of each glued graph takes \(19.6\) s, with identical exact output (`--benchmark`, wall-clock on the session machine, retained).
+
+*Future classes.* For every isomorphism class of interiors on at most six vertices (\(1,2,4,11,34,156\) classes), the sequences \(A_{H,0..5}\) are pairwise distinct. On that population, future equivalence of dominating blocks at budget five is isomorphism of the interiors. Whether non-isomorphic interiors can share the whole sequence, which by SNG-F53(c) would make their dominating blocks indistinguishable in every context, is open. Computing \(A_{H,j}\) for large \(H\) is the remaining cost; the separator machinery of SNG-F26 is the natural compiler for it.
+
 ## Every late census collision is separated by triangles
 
 For connected graphs with at most six vertices, the symbolic coefficients separate every pair of nonisomorphic graphs by volume three (`results/visibility_filtration.json`). The pairs that survive volume two are fourteen pairs on six vertices; they are retained with their graphs in `results/late_collisions.json`. In each of them the ordered adjacent-degree sector \(2e_i+e_j\) of SNG-F14 also agrees, so the two graphs have the same ordered degree-and-adjacency statistics. The separation comes entirely from the induced-triple sector \(\sum T_{s,t}q^{s-2t}\), and in every pair the triangle counts differ, for example \(K_{3,3}\) against the prism. None of the fourteen pairs is related by a single Whitney twist at a two-vertex separator. Their separation is therefore not the twist mechanism of SNG-F41; it is the classical one of SNG-I008, a different number of triangles under the same degree data. This is a complete finite classification of the late collisions in that population, with an explicit separating pattern for each pair. It is not a statement about larger graphs, where the pendant-cycle and twist families show that collisions can persist to arbitrarily large volume.
@@ -3049,6 +3108,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `nested_census` | Nested-pair boundary census | Five-statistic tensor over all T within S, reflection, span-two projection, binary marginal (SNG-F40) |
 | `terminals` | Terminal kernels and gluing | Kernels conditioned on terminal heights, gluing for any number of terminals, Whitney-twist antisymmetric pairing (SNG-F41, SNG-F42) |
 | `contexts` | Restricted-context quotients | Symmetrized kernels, recovery from swap-symmetric probes and exact interface ranks under a volume budget (SNG-F47, SNG-F48) |
+| `charges` | Boundary charges and context transport | Charge tables rebuilding terminal kernels, the dominating-terminal sequence, closure operators, single-closure recovery and transport (SNG-F53, SNG-F54) |
 | `families` | Pendant-cycle family | Generators, closed binary discrepancy, decorated decks, optimal probe parameter (SNG-F36, SNG-F37) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |
