@@ -1010,7 +1010,7 @@
     {
       "id": "P30",
       "title": "Measure collision classes across invariants",
-      "status": "partial",
+      "status": "implemented_pending_acceptance",
       "effort": "M",
       "priority": 2,
       "dependencies": [
@@ -1019,17 +1019,17 @@
         "P29"
       ],
       "evidence": [
-        "scripts/census.py",
-        "results/small_census.json",
-        "src/singularity/invariants.py",
-        "docs/IMPLEMENTATION.md"
+        "scripts/collision_census.py",
+        "results/collision_census.json",
+        "results/visibility_filtration.json",
+        "results/late_collisions.json",
+        "results/census_manifest.json",
+        "docs/chapters/10_inverse_problems.md"
       ],
-      "existing_work": "The census records complete binary class counts, local/marked class counts by depth through volume six and final unresolved local/marked classes. n<=6 height and binary observations all separate by volume three.",
-      "next_action": "Extend the existing fixed-population census output to retain stable class membership IDs, spectral groups, witness polynomials and exact denominators; do not regenerate an undocumented larger population.",
+      "existing_work": "collision_census.py (checked in CI) computes on the CENSUS-v1 population, one representative per isomorphism class: degree sequences, Laplacian characteristic polynomials, binary cut profiles, nested-pair censuses, and symbolic local and marked prefixes through volume 3 plus a separate q=1/2 column. It lists every nontrivial class with codes, cross-invariant split counts, signed witnesses for every pair first separated at volume 2 or 3, and a chain-recomputed sample. On six vertices: 112 classes; 68 degree sequences; 110 spectra (two cospectral pairs, both separated at volume 3); height prefix 68/100/112 classes at volumes 1/2/3; binary profile and nested census separate all 112. results/visibility_filtration.json holds memberships at every volume.",
+      "next_action": "Close P08 and P14, then mark P30 complete with the existing receipts.",
       "acceptance_gaps": [
-        "No Laplacian spectral partition is retained in the census output.",
-        "Full binary and intermediate prefix class memberships, first-discrepancy witnesses and structured resource limits are absent.",
-        "P12 and P29 are complete; P14 remains open, so the original dependency gate is not met."
+        "Original dependency gate: P14 is not accepted (it waits on P08)."
       ],
       "packet": "handoff/tasks/P30.md"
     },

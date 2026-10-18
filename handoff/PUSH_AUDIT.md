@@ -15,8 +15,8 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 | Status | Meaning | Push count |
 |---|---|---:|
 | `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 1 |
-| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 2 |
-| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 6 |
+| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 1 |
+| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 7 |
 | `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 4 |
 | `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 23 |
 
@@ -77,7 +77,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P27](#p27) | Produce controlled real singularity experiments | `complete` | P26 | M | 1 |
 | [P28](#p28) | State the available complex domain exactly | `complete` | P26 | M | 2 |
 | [P29](#p29) | Specify a complete finite graph census | `complete` | P03 | S | 1 |
-| [P30](#p30) | Measure collision classes across invariants | `partial` | P12, P14, P29 | M | 2 |
+| [P30](#p30) | Measure collision classes across invariants | `implemented_pending_acceptance` | P12, P14, P29 | M | 2 |
 | [P31](#p31) | Resolve targeted collisions structurally | `implemented_pending_acceptance` | P16, P30 | L | 2 |
 | [P32](#p32) | Seek a separation bound for one graph family | `implemented_pending_acceptance` | P06, P12, P31 | L | 2 |
 | [P33](#p33) | Verify concrete coefficient certificates in a kernel | `blocked` | P07, P08, P23 | L | 3 |
@@ -619,19 +619,17 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P30
 
-**Measure collision classes across invariants.** Status: `partial`. Dependencies: P12, P14, P29. Remaining effort: M; priority: 2.
+**Measure collision classes across invariants.** Status: `implemented_pending_acceptance`. Dependencies: P12, P14, P29. Remaining effort: M; priority: 2.
 
-**Existing work:** The census records complete binary class counts, local/marked class counts by depth through volume six and final unresolved local/marked classes. n<=6 height and binary observations all separate by volume three.
+**Existing work:** collision_census.py (checked in CI) computes on the CENSUS-v1 population, one representative per isomorphism class: degree sequences, Laplacian characteristic polynomials, binary cut profiles, nested-pair censuses, and symbolic local and marked prefixes through volume 3 plus a separate q=1/2 column. It lists every nontrivial class with codes, cross-invariant split counts, signed witnesses for every pair first separated at volume 2 or 3, and a chain-recomputed sample. On six vertices: 112 classes; 68 degree sequences; 110 spectra (two cospectral pairs, both separated at volume 3); height prefix 68/100/112 classes at volumes 1/2/3; binary profile and nested census separate all 112. results/visibility_filtration.json holds memberships at every volume.
 
-**Evidence:** [scripts/census.py](../scripts/census.py); [results/small_census.json](../results/small_census.json); [src/singularity/invariants.py](../src/singularity/invariants.py); [docs/IMPLEMENTATION.md](../docs/IMPLEMENTATION.md).
+**Evidence:** [scripts/collision_census.py](../scripts/collision_census.py); [results/collision_census.json](../results/collision_census.json); [results/visibility_filtration.json](../results/visibility_filtration.json); [results/late_collisions.json](../results/late_collisions.json); [results/census_manifest.json](../results/census_manifest.json); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md).
 
 **Acceptance still missing:**
 
-- No Laplacian spectral partition is retained in the census output.
-- Full binary and intermediate prefix class memberships, first-discrepancy witnesses and structured resource limits are absent.
-- P12 and P29 are complete; P14 remains open, so the original dependency gate is not met.
+- Original dependency gate: P14 is not accepted (it waits on P08).
 
-**Next concrete action:** Extend the existing fixed-population census output to retain stable class membership IDs, spectral groups, witness polynomials and exact denominators; do not regenerate an undocumented larger population.
+**Next concrete action:** Close P08 and P14, then mark P30 complete with the existing receipts.
 
 ### P31
 

@@ -25,6 +25,7 @@ jobs:
           PYTHONPATH=src python scripts/census_manifest.py --check
           PYTHONPATH=src python scripts/pendant_family.py --check
           PYTHONPATH=src python scripts/whitney_switches.py --check
+          PYTHONPATH=src python scripts/collision_census.py --check
       - name: Repository and manuscript checks
         run: python scripts/check_repository.py
       - name: Published document links
