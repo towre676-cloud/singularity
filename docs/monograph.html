@@ -7329,6 +7329,28 @@ The kernel point of view separates the mechanism from the family.
 Visibility of a twist is decided by the asymmetry order of the block,
 the least volume at which the two terminals’ decorated neighbourhoods
 differ, and the sign is always that of a sum of squares.</p>
+<p><strong>Proposition SNG-F43 (marked composition).</strong> For blocks
+as in SNG-F41, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">K^{(H)}</annotation></semantics></math>
+be the box kernel, with every height, terminals included, in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\ldots,H\}</annotation></semantics></math>.
+The glued box histogram is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>H</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>𝐛</mi></msub><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msubsup><mi>K</mi><msub><mi>G</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>K</mi><msub><mi>G</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mo>⋅</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C_H=\sum_{\mathbf b}x^{|\mathbf b|}K^{(H)}_{G_1}(\mathbf b)K^{(H)}_{G_2}(\pi\cdot\mathbf b)</annotation></semantics></math>,
+and the span-marked series of the glued graph is recovered from these by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>H</mi></msub><mo>=</mo><msub><mi>C</mi><mi>H</mi></msub><mo>−</mo><msup><mi>x</mi><mi>n</mi></msup><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_H=C_H-x^nC_{H-1}</annotation></semantics></math>
+and exact span
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>H</mi></msub><mo>−</mo><msub><mi>D</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_H-D_{H-1}</annotation></semantics></math>.</p>
+<p><em>Proof.</em> The gluing argument of SNG-F41 applies verbatim
+inside the box. SNG-F25 converts box histograms into minimum-zero and
+exact-span counts, using one global translation of the glued graph.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Global marks are not local: the minimum and maximum of a glued
+profile may sit in either block, so the marked series cannot be read
+from the unbounded kernels alone. The box kernels supply exactly the
+missing information. <code>marked_glue</code> in
+<code>src/singularity/terminals.py</code> implements this, and the tests
+compare it with direct marked enumeration for straight and twisted
+gluings and for a disconnected block.</p>
 <p>A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two

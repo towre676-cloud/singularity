@@ -80,6 +80,21 @@ class KernelTests(unittest.TestCase):
                 self.assertEqual(local_coefficients(glued, bound), local_coefficients(pendant_cycle(2 * m, 2 * k), bound))
                 self.assertEqual(local_coefficients(twisted, bound), local_coefficients(pendant_cycle(2 * m, 2 * m), bound))
 
+    def test_marked_gluing_recovers_global_span(self):
+        from singularity.heights import marked_coefficients
+        from singularity.terminals import marked_glue
+        first = Graph(5, [(0, 1), (1, 2), (2, 3), (1, 4)])
+        second = Graph(4, [(0, 1), (1, 2), (2, 3), (0, 2)])
+        for terminals in ((0, 3), (3, 0)):
+            glued, _ = glue_graphs(first, (0, 3), second, terminals)
+            self.assertEqual(marked_glue(first, (0, 3), second, terminals, 6), marked_coefficients(glued, 6))
+        # A disconnected first block keeps one global translation (SNG-F25).
+        loose = Graph(4, [(0, 2), (1, 3)])
+        glued, _ = glue_graphs(loose, (0, 1), second, (0, 3))
+        self.assertEqual(marked_glue(loose, (0, 1), second, (0, 3), 5), marked_coefficients(glued, 5))
+        box = terminal_kernel(first, (0, 3), 4, height=1)
+        self.assertTrue(all(max(b) <= 1 for b in box))
+
     def test_invalid_terminals_and_shared_edges(self):
         graph = Graph(3, [(0, 1), (1, 2)])
         for terminals in ((), (0, 0), (0, 3), (True,)):

@@ -4840,6 +4840,25 @@ of a twist is decided by the asymmetry order of the block, the least
 volume at which the two terminals' decorated neighbourhoods differ, and
 the sign is always that of a sum of squares.
 
+\textbf{Proposition SNG-F43 (marked composition).} For blocks as in
+SNG-F41, let \(K^{(H)}\) be the box kernel, with every height, terminals
+included, in \(\{0,\ldots,H\}\). The glued box histogram is
+\(C_H=\sum_{\mathbf b}x^{|\mathbf b|}K^{(H)}_{G_1}(\mathbf b)K^{(H)}_{G_2}(\pi\cdot\mathbf b)\),
+and the span-marked series of the glued graph is recovered from these by
+\(D_H=C_H-x^nC_{H-1}\) and exact span \(D_H-D_{H-1}\).
+
+\emph{Proof.} The gluing argument of SNG-F41 applies verbatim inside the
+box. SNG-F25 converts box histograms into minimum-zero and exact-span
+counts, using one global translation of the glued graph. \(\square\)
+
+Global marks are not local: the minimum and maximum of a glued profile
+may sit in either block, so the marked series cannot be read from the
+unbounded kernels alone. The box kernels supply exactly the missing
+information. \texttt{marked\_glue} in
+\texttt{src/singularity/terminals.py} implements this, and the tests
+compare it with direct marked enumeration for straight and twisted
+gluings and for a disconnected block.
+
 A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two

@@ -55,10 +55,16 @@ def kernel_by_enumeration(graph: Graph, terminals: Sequence[int], max_volume: in
     return {b: dict(sorted(c.items())) for b, c in sorted(out.items())}
 
 
-def terminal_kernel(graph: Graph, terminals: Sequence[int], max_volume: int) -> Kernel:
-    """Kernel via bag messages with the terminals in the root bag (SNG-F26)."""
+def terminal_kernel(graph: Graph, terminals: Sequence[int], max_volume: int, height: int | None = None) -> Kernel:
+    """Kernel via bag messages with the terminals in every bag (SNG-F26).
+
+    ``height`` restricts every vertex, terminals included, to 0..H (a box
+    kernel, used for span recovery after gluing); by default H = max_volume,
+    which by SNG-F24 imposes no restriction through that volume.
+    """
     terminals = _check_terminals(graph, terminals)
     max_volume = _integer(max_volume, "max_volume", minimum=0)
+    height = max_volume if height is None else _integer(height, "height", minimum=0)
     rest = [v for v in range(graph.n) if v not in terminals]
     # Greedy min-degree order on non-terminals, terminals eliminated last.
     remaining = {v: set(graph.neighbors[v]) for v in range(graph.n)}
@@ -82,7 +88,7 @@ def terminal_kernel(graph: Graph, terminals: Sequence[int], max_volume: int) -> 
         raise ArithmeticError("terminal decomposition invalid: " + "; ".join(errors))
     root_bag = decomposition.bags[root]
     message: dict = {}
-    _box(graph, decomposition, max_volume, max_volume, None, root_message=message)
+    _box(graph, decomposition, height, max_volume, None, root_message=message)
     position = {v: i for i, v in enumerate(root_bag)}
     out: defaultdict[tuple[int, ...], Counter] = defaultdict(Counter)
     for assignment, histogram in message.items():
@@ -170,3 +176,41 @@ def twist_difference(first: Kernel, second: Kernel, max_volume: int) -> list[dic
                 row[e] = c // 2
         out.append(dict(sorted(row.items())))
     return out
+
+
+def marked_glue(first: Graph, first_terminals: Sequence[int], second: Graph, second_terminals: Sequence[int],
+                max_volume: int) -> dict[tuple[int, int, int], int]:
+    """(volume, energy, span) counts of the glued graph from box kernels (SNG-F43).
+
+    For each H the glued box histogram C_H is assembled from the blocks' box
+    kernels; D_H = C_H - x^n C_{H-1} and D_H - D_{H-1} give exact span H, as in
+    SNG-F25.  Negative differences raise instead of being clipped.
+    """
+    max_volume = _integer(max_volume, "max_volume", minimum=0)
+    t1, t2 = _check_terminals(first, first_terminals), _check_terminals(second, second_terminals)
+    n = first.n + second.n - len(t1)
+
+    def box(h: int, budget: int) -> Counter:
+        if h < 0 or budget < 0:
+            return Counter()
+        rows = glue(terminal_kernel(first, t1, budget, h), terminal_kernel(second, t2, budget, h), budget)
+        return Counter({(v, e): c for v, row in enumerate(rows) for e, c in row.items()})
+
+    def min_zero(h: int) -> Counter:
+        out = box(h, max_volume)
+        for (v, e), c in box(h - 1, max_volume - n).items():
+            out[v + n, e] -= c
+        return out
+
+    result: dict[tuple[int, int, int], int] = {}
+    previous: Counter = Counter()
+    for span in range(max_volume + 1):
+        current = min_zero(span)
+        for key in set(current) | set(previous):
+            count = current.get(key, 0) - previous.get(key, 0)
+            if count < 0:
+                raise ArithmeticError(f"negative exact-span count at span {span}, cell {key}")
+            if count:
+                result[key[0], key[1], span] = count
+        previous = current
+    return dict(sorted(result.items()))
