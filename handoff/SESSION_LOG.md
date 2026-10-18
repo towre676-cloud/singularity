@@ -123,3 +123,5 @@ Next dependency-ready item and exact first action:
   - No two non-isomorphic blocks with at most six vertices share a kernel through volume 4.
   - No two-terminal tree with at most ten vertices has a symmetric kernel without a swap automorphism.
   - Five ten-vertex tree pairs agree through volume 4 and separate at volume 5.
+- Leading-order twist cancellation test: 1,522 balanced asymmetric antisymmetric parts (graphs on ≤ 6 vertices, trees on ≤ 10) through volume 5; 12,112 of 1,159,003 pairs (self-pairings included) have two or more leading orbits; none cancels.
+- Next: P54 needs a family with growing proved compression; the budget-free converse and exactness beyond R = 25 without the edge remain open; the formal chain P07/P08 is still blocked (D009).
