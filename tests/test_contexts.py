@@ -2,8 +2,12 @@ import unittest
 from collections import Counter
 from fractions import Fraction
 
-from singularity.contexts import (orbit_groups, recover_symmetrized_kernel, symmetric_context,
-                                  symmetric_interface_rank, symmetric_probe_set, symmetrize, top_degree_defect)
+from singularity.contexts import (_context_series, interface_status, interior_zero_coefficient, lower_degree_condition,
+                                  orbit_groups, recover_symmetrized_kernel, symmetric_context, symmetric_interface_rank,
+                                  symmetric_interface_rank_mod, symmetric_probe_set, symmetrize, top_block_rank_mod,
+                                  top_degree_defect, top_degree_kernel, weighted_probe)
+from singularity.heights import weak_compositions
+from singularity.polynomials import add, mul
 from singularity.graph import Graph
 from singularity.heights import local_coefficients
 from singularity.terminals import glue_graphs, terminal_kernel
@@ -99,6 +103,93 @@ class RecoveryTests(unittest.TestCase):
             recover_symmetrized_kernel(broken, R, Q0)
         with self.assertRaises(ArithmeticError):
             recover_symmetrized_kernel(values, 25, Q0)
+
+
+class ObservableQuotientTests(unittest.TestCase):
+    def test_blind_direction_at_budget_25(self):
+        # SNG-F49(a): the triple 325 = 1+324 = 36+289 = 100+225 with (s-t)^2 = 289, 121, 25.
+        (v,) = top_degree_kernel(25, 2)
+        self.assertEqual(set(v), {(1, 18), (6, 17), (10, 15)})
+        self.assertEqual(v[1, 18], {25: 1, 121: -1})
+        self.assertEqual(v[6, 17], {289: 1, 25: -1})
+        self.assertEqual(v[10, 15], {121: 1, 289: -1})
+        for e in (0, 1):
+            total = {}
+            for (s, t), poly in v.items():
+                total = add(total, mul(poly, {e * (s - t) ** 2: 1}))
+            self.assertEqual(total, {})
+        # (10, 15) has |o| = 25: interior volume zero, fixed by terminal degrees.
+        self.assertEqual(top_degree_kernel(25, 2, realizable=True), [])
+        self.assertEqual(top_degree_kernel(26, 2, realizable=True), [v])
+        self.assertEqual(top_block_rank_mod(25, 2), (182, 181))
+        self.assertEqual(top_block_rank_mod(25, 2, realizable=True), (169, 169))
+        self.assertEqual(top_block_rank_mod(25, 3), (182, 182))
+
+    def test_interface_dimensions(self):
+        self.assertEqual(interface_status(7, 1)["invisible_dimension"], 1)
+        self.assertEqual(interface_status(7, 1, realizable=True)["invisible_dimension"], 0)
+        self.assertEqual(interface_status(8, 1, realizable=True)["invisible_dimension"], 1)
+        self.assertEqual(interface_status(24, 2)["invisible_dimension"], 0)
+        self.assertEqual(interface_status(25, 2)["invisible_dimension"], 1)
+        self.assertEqual(interface_status(25, 2, realizable=True)["invisible_dimension"], 0)
+        self.assertEqual(interface_status(26, 2, realizable=True)["invisible_dimension"], 1)
+        self.assertIsNone(interface_status(26, 2)["invisible_dimension"])
+
+    def test_interior_volume_zero_is_fixed_by_terminal_degrees(self):
+        for graph in (BLOCK, Graph(6, [(0, 2), (0, 3), (1, 4), (2, 5), (4, 5), (3, 4)])):
+            K = terminal_kernel(graph, (0, 1), 6)
+            plus = symmetrize(K)
+            degrees = (graph.degrees[0], graph.degrees[1])
+            for o in [(0, 1), (1, 2), (0, 3), (2, 2), (1, 5), (3, 3)]:
+                cells = {e: c for (v, e), c in plus[o].items() if v == 0}
+                self.assertEqual(cells, interior_zero_coefficient(degrees, o))
+
+    def test_second_functional(self):
+        # The x^1 coefficient of d leaves per terminal and c shared neighbours is
+        # q^((d+c) m) (d sigma + c pi): trading a leaf for a shared neighbour gives tau = sigma - pi.
+        R = 3
+        for s, t in [(0, 2), (1, 1), (1, 2)]:
+            m = s * s + t * t
+            sigma = Q0 ** (1 - 2 * s) + Q0 ** (1 - 2 * t)
+            pi = Q0 ** (2 - 2 * (s + t))
+            for d, c in [(1, 0), (0, 1), (2, 1), (1, 3)]:
+                series = _context_series((s, t), d, 0, c, R, Q0)
+                self.assertEqual(series[0], Q0 ** ((d + c) * m))
+                self.assertEqual(series[1], Q0 ** ((d + c) * m) * (d * sigma + c * pi))
+
+    def test_lower_degree_condition(self):
+        self.assertEqual(lower_degree_condition(40, 1), 25)
+        self.assertEqual(lower_degree_condition(40, 1, realizable=True), 26)
+        self.assertIsNone(lower_degree_condition(60, 2))
+
+    def test_modular_rank_meets_the_proved_dimension(self):
+        for R in (7, 9):
+            status = interface_status(R, 1)
+            self.assertEqual(symmetric_interface_rank_mod(R, False), (status["unknowns"], status["unknowns"] - status["top_defect"]))
+
+
+class WeightedRestorationTests(unittest.TestCase):
+    def test_weighted_terminal_edge_recovers(self):
+        # SNG-F50 on a real weighted gluing, glued series by weak compositions.
+        R, W = 2, 2
+        values = {}
+        for d, e in symmetric_probe_set(R, W):
+            probe = weighted_probe(BLOCK, d, e)
+            values[d, e] = [sum((Q0 ** probe.energy(a) for a in weak_compositions(v, probe.n)), Fraction(0)) for v in range(R + 1)]
+        Y = recover_symmetrized_kernel(values, R, Q0, max_edge_weight=W)
+        plus = symmetrize(terminal_kernel(BLOCK, (0, 1), R))
+        for o, series in Y.items():
+            for interior in range(R + 1 - sum(o)):
+                self.assertEqual(series[sum(o) + interior],
+                                 sum((c * Q0 ** en for (v, en), c in plus.get(o, {}).items() if v == interior), Fraction(0)))
+
+    def test_multiplicity_check(self):
+        with self.assertRaises(ArithmeticError):
+            recover_symmetrized_kernel({}, 25, Q0, max_edge_weight=1)
+        with self.assertRaises(ValueError):  # weights 0..2 pass the multiplicity check; probes are missing
+            recover_symmetrized_kernel({}, 25, Q0, max_edge_weight=2)
+        with self.assertRaises(ValueError):
+            weighted_probe(Graph(2, [(0, 1)]), 0, 1)
 
 
 if __name__ == "__main__":

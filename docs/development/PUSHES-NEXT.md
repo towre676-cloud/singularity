@@ -35,7 +35,7 @@ The six waves have three centers: certified arithmetic evaluation, exactly contr
 | P51 | Unrestricted linear-interface lower bound under pinned probes | \(\binom{R+k}{k}\) star probes with \(\|r\|\le R\) suffice (lower-set unisolvence) and are optimal for determining the span of realizable kernels; `recover_kernel_from_simplex_probes` |
 | P52 | Volume-limited interface rank | SNG-F48: exact probe-map ranks under budget R for swap-symmetric contexts (full with a terminal edge for R ≤ 9; without it, defect equal to the proved top-degree lower bound for R ≤ 9); `results/symmetric_contexts.json` |
 | P53 | Constructive restricted-context quotients | SNG-F47 (symmetric contexts factor through K⁺) and SNG-F48(b) (2M leaf-and-edge probes recover K⁺ through volume R ≤ 24); `recover_symmetrized_kernel`; no nontrivial K⁺ class among 12,753 blocks on ≤ 6 vertices at volume 4 |
-| P54 | A compression theorem with proved savings, including arithmetic cost | — |
+| P54 | A compression theorem with proved savings, including arithmetic cost | SNG-F49: exact observable quotient \(V_R/N_R\) of simple swap-symmetric contexts with explicit coordinates and a spanning probe family (no terminal edge: R ≤ 25; with it: R ≤ 91), the R = 25 blind direction, and its non-realizability; SNG-F50 weighted restoration at every R; compile-once benchmark (kernel 4.6 s, 7.6 ms per query against 1.33 s direct, break-even 3.5 queries). Open: a family with growing proved compression |
 
 ## Wave D: engines (P55–P60)
 

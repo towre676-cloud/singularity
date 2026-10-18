@@ -1,4 +1,14 @@
 {
+ "benchmark": {
+  "block": "2 x 6 ladder, terminals at opposite corners",
+  "break_even_queries": 3.5,
+  "budget": 6,
+  "compile_seconds": 4.607,
+  "contraction_seconds_per_query": 0.0076,
+  "direct_decomposition_seconds_per_query": 1.3303,
+  "note": "wall-clock on the session machine; context kernels are recomputed per query, block kernel once",
+  "queries": 24
+ },
  "census": {
   "blocks": 12753,
   "budget": 4,
@@ -7,7 +17,1834 @@
   "symmetrized_classes": 451
  },
  "family": "symmetric_context(d, eps, c): d leaves on each terminal, c shared neighbours, optional terminal edge; d <= #orbits, c <= R",
+ "modular_ranks_extended": [
+  {
+   "budget": 13,
+   "rank_mod_p": 304,
+   "unknowns": 308,
+   "unknowns_minus_top_defect": 304
+  },
+  {
+   "budget": 14,
+   "rank_mod_p": 367,
+   "unknowns": 372,
+   "unknowns_minus_top_defect": 367
+  },
+  {
+   "budget": 15,
+   "rank_mod_p": 438,
+   "unknowns": 444,
+   "unknowns_minus_top_defect": 438
+  },
+  {
+   "budget": 16,
+   "rank_mod_p": 518,
+   "unknowns": 525,
+   "unknowns_minus_top_defect": 518
+  },
+  {
+   "budget": 17,
+   "rank_mod_p": 606,
+   "unknowns": 615,
+   "unknowns_minus_top_defect": 606
+  },
+  {
+   "budget": 18,
+   "rank_mod_p": 705,
+   "unknowns": 715,
+   "unknowns_minus_top_defect": 705
+  }
+ ],
+ "modular_ranks_without_terminal_edge": [
+  {
+   "budget": 8,
+   "rank_mod_p": 94,
+   "unknowns": 95,
+   "unknowns_minus_top_defect": 94
+  },
+  {
+   "budget": 9,
+   "rank_mod_p": 124,
+   "unknowns": 125,
+   "unknowns_minus_top_defect": 124
+  },
+  {
+   "budget": 10,
+   "rank_mod_p": 159,
+   "unknowns": 161,
+   "unknowns_minus_top_defect": 159
+  },
+  {
+   "budget": 11,
+   "rank_mod_p": 200,
+   "unknowns": 203,
+   "unknowns_minus_top_defect": 200
+  },
+  {
+   "budget": 12,
+   "rank_mod_p": 249,
+   "unknowns": 252,
+   "unknowns_minus_top_defect": 249
+  }
+ ],
  "q0": "1/2",
+ "quotient": {
+  "blind_direction_R25_formal_kappa_2": [
+   {
+    "orbit": [
+     1,
+     18
+    ],
+    "polynomial": [
+     [
+      25,
+      1,
+      1
+     ],
+     [
+      121,
+      -1,
+      1
+     ]
+    ]
+   },
+   {
+    "orbit": [
+     6,
+     17
+    ],
+    "polynomial": [
+     [
+      25,
+      -1,
+      1
+     ],
+     [
+      289,
+      1,
+      1
+     ]
+    ]
+   },
+   {
+    "orbit": [
+     10,
+     15
+    ],
+    "polynomial": [
+     [
+      121,
+      1,
+      1
+     ],
+     [
+      289,
+      -1,
+      1
+     ]
+    ]
+   }
+  ],
+  "blind_direction_R25_realizable_kappa_2": [],
+  "blind_direction_R26_realizable_kappa_2": [
+   {
+    "orbit": [
+     1,
+     18
+    ],
+    "polynomial": [
+     [
+      25,
+      1,
+      1
+     ],
+     [
+      121,
+      -1,
+      1
+     ]
+    ]
+   },
+   {
+    "orbit": [
+     6,
+     17
+    ],
+    "polynomial": [
+     [
+      25,
+      -1,
+      1
+     ],
+     [
+      289,
+      1,
+      1
+     ]
+    ]
+   },
+   {
+    "orbit": [
+     10,
+     15
+    ],
+    "polynomial": [
+     [
+      121,
+      1,
+      1
+     ],
+     [
+      289,
+      -1,
+      1
+     ]
+    ]
+   }
+  ],
+  "degree_25_diagonal_rank_mod_p": {
+   "formal_kappa_2": [
+    182,
+    181
+   ],
+   "formal_kappa_3": [
+    182,
+    182
+   ],
+   "realizable_kappa_2": [
+    169,
+    169
+   ]
+  },
+  "lower_condition_first_failure": {
+   "formal_kappa_1": 25,
+   "formal_kappa_2": 91,
+   "realizable_kappa_1": 26,
+   "realizable_kappa_2": 92
+  },
+  "statuses": {
+   "formal_kappa_1": [
+    {
+     "budget": 0,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 1
+    },
+    {
+     "budget": 1,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 3
+    },
+    {
+     "budget": 2,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 7
+    },
+    {
+     "budget": 3,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 13
+    },
+    {
+     "budget": 4,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 22
+    },
+    {
+     "budget": 5,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 34
+    },
+    {
+     "budget": 6,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 50
+    },
+    {
+     "budget": 7,
+     "invisible_dimension": 1,
+     "invisible_dimension_bounds": [
+      1,
+      1
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 70
+    },
+    {
+     "budget": 8,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      2
+     ],
+     "kappa": 1,
+     "lower_defects": 1,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 95
+    },
+    {
+     "budget": 9,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      3
+     ],
+     "kappa": 1,
+     "lower_defects": 2,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 125
+    },
+    {
+     "budget": 10,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      2,
+      5
+     ],
+     "kappa": 1,
+     "lower_defects": 3,
+     "realizable": false,
+     "top_defect": 2,
+     "unknowns": 161
+    },
+    {
+     "budget": 11,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      3,
+      8
+     ],
+     "kappa": 1,
+     "lower_defects": 5,
+     "realizable": false,
+     "top_defect": 3,
+     "unknowns": 203
+    },
+    {
+     "budget": 12,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      3,
+      11
+     ],
+     "kappa": 1,
+     "lower_defects": 8,
+     "realizable": false,
+     "top_defect": 3,
+     "unknowns": 252
+    },
+    {
+     "budget": 13,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      4,
+      15
+     ],
+     "kappa": 1,
+     "lower_defects": 11,
+     "realizable": false,
+     "top_defect": 4,
+     "unknowns": 308
+    },
+    {
+     "budget": 14,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      5,
+      20
+     ],
+     "kappa": 1,
+     "lower_defects": 15,
+     "realizable": false,
+     "top_defect": 5,
+     "unknowns": 372
+    },
+    {
+     "budget": 15,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      6,
+      26
+     ],
+     "kappa": 1,
+     "lower_defects": 20,
+     "realizable": false,
+     "top_defect": 6,
+     "unknowns": 444
+    },
+    {
+     "budget": 16,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      7,
+      33
+     ],
+     "kappa": 1,
+     "lower_defects": 26,
+     "realizable": false,
+     "top_defect": 7,
+     "unknowns": 525
+    },
+    {
+     "budget": 17,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      9,
+      42
+     ],
+     "kappa": 1,
+     "lower_defects": 33,
+     "realizable": false,
+     "top_defect": 9,
+     "unknowns": 615
+    },
+    {
+     "budget": 18,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      10,
+      52
+     ],
+     "kappa": 1,
+     "lower_defects": 42,
+     "realizable": false,
+     "top_defect": 10,
+     "unknowns": 715
+    },
+    {
+     "budget": 19,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      12,
+      64
+     ],
+     "kappa": 1,
+     "lower_defects": 52,
+     "realizable": false,
+     "top_defect": 12,
+     "unknowns": 825
+    },
+    {
+     "budget": 20,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      13,
+      77
+     ],
+     "kappa": 1,
+     "lower_defects": 64,
+     "realizable": false,
+     "top_defect": 13,
+     "unknowns": 946
+    },
+    {
+     "budget": 21,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      15,
+      92
+     ],
+     "kappa": 1,
+     "lower_defects": 77,
+     "realizable": false,
+     "top_defect": 15,
+     "unknowns": 1078
+    },
+    {
+     "budget": 22,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      17,
+      109
+     ],
+     "kappa": 1,
+     "lower_defects": 92,
+     "realizable": false,
+     "top_defect": 17,
+     "unknowns": 1222
+    },
+    {
+     "budget": 23,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      21,
+      130
+     ],
+     "kappa": 1,
+     "lower_defects": 109,
+     "realizable": false,
+     "top_defect": 21,
+     "unknowns": 1378
+    },
+    {
+     "budget": 24,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      22,
+      152
+     ],
+     "kappa": 1,
+     "lower_defects": 130,
+     "realizable": false,
+     "top_defect": 22,
+     "unknowns": 1547
+    },
+    {
+     "budget": 25,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      23,
+      175
+     ],
+     "kappa": 1,
+     "lower_defects": 152,
+     "realizable": false,
+     "top_defect": 23,
+     "unknowns": 1729
+    },
+    {
+     "budget": 26,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      26,
+      201
+     ],
+     "kappa": 1,
+     "lower_defects": 175,
+     "realizable": false,
+     "top_defect": 26,
+     "unknowns": 1925
+    },
+    {
+     "budget": 27,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      29,
+      230
+     ],
+     "kappa": 1,
+     "lower_defects": 201,
+     "realizable": false,
+     "top_defect": 29,
+     "unknowns": 2135
+    },
+    {
+     "budget": 28,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      32,
+      262
+     ],
+     "kappa": 1,
+     "lower_defects": 230,
+     "realizable": false,
+     "top_defect": 32,
+     "unknowns": 2360
+    },
+    {
+     "budget": 29,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      35,
+      297
+     ],
+     "kappa": 1,
+     "lower_defects": 262,
+     "realizable": false,
+     "top_defect": 35,
+     "unknowns": 2600
+    },
+    {
+     "budget": 30,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      37,
+      334
+     ],
+     "kappa": 1,
+     "lower_defects": 297,
+     "realizable": false,
+     "top_defect": 37,
+     "unknowns": 2856
+    }
+   ],
+   "formal_kappa_2": [
+    {
+     "budget": 0,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 1
+    },
+    {
+     "budget": 1,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 3
+    },
+    {
+     "budget": 2,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 7
+    },
+    {
+     "budget": 3,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 13
+    },
+    {
+     "budget": 4,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 22
+    },
+    {
+     "budget": 5,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 34
+    },
+    {
+     "budget": 6,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 50
+    },
+    {
+     "budget": 7,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 70
+    },
+    {
+     "budget": 8,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 95
+    },
+    {
+     "budget": 9,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 125
+    },
+    {
+     "budget": 10,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 161
+    },
+    {
+     "budget": 11,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 203
+    },
+    {
+     "budget": 12,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 252
+    },
+    {
+     "budget": 13,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 308
+    },
+    {
+     "budget": 14,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 372
+    },
+    {
+     "budget": 15,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 444
+    },
+    {
+     "budget": 16,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 525
+    },
+    {
+     "budget": 17,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 615
+    },
+    {
+     "budget": 18,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 715
+    },
+    {
+     "budget": 19,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 825
+    },
+    {
+     "budget": 20,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 946
+    },
+    {
+     "budget": 21,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 1078
+    },
+    {
+     "budget": 22,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 1222
+    },
+    {
+     "budget": 23,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 1378
+    },
+    {
+     "budget": 24,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 0,
+     "unknowns": 1547
+    },
+    {
+     "budget": 25,
+     "invisible_dimension": 1,
+     "invisible_dimension_bounds": [
+      1,
+      1
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 1729
+    },
+    {
+     "budget": 26,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      2
+     ],
+     "kappa": 2,
+     "lower_defects": 1,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 1925
+    },
+    {
+     "budget": 27,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      3
+     ],
+     "kappa": 2,
+     "lower_defects": 2,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 2135
+    },
+    {
+     "budget": 28,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      4
+     ],
+     "kappa": 2,
+     "lower_defects": 3,
+     "realizable": false,
+     "top_defect": 1,
+     "unknowns": 2360
+    },
+    {
+     "budget": 29,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      2,
+      6
+     ],
+     "kappa": 2,
+     "lower_defects": 4,
+     "realizable": false,
+     "top_defect": 2,
+     "unknowns": 2600
+    },
+    {
+     "budget": 30,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      2,
+      8
+     ],
+     "kappa": 2,
+     "lower_defects": 6,
+     "realizable": false,
+     "top_defect": 2,
+     "unknowns": 2856
+    }
+   ],
+   "realizable_kappa_1": [
+    {
+     "budget": 0,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 0
+    },
+    {
+     "budget": 1,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 1
+    },
+    {
+     "budget": 2,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 3
+    },
+    {
+     "budget": 3,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 7
+    },
+    {
+     "budget": 4,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 13
+    },
+    {
+     "budget": 5,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 22
+    },
+    {
+     "budget": 6,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 34
+    },
+    {
+     "budget": 7,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 50
+    },
+    {
+     "budget": 8,
+     "invisible_dimension": 1,
+     "invisible_dimension_bounds": [
+      1,
+      1
+     ],
+     "kappa": 1,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 70
+    },
+    {
+     "budget": 9,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      2
+     ],
+     "kappa": 1,
+     "lower_defects": 1,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 95
+    },
+    {
+     "budget": 10,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      3
+     ],
+     "kappa": 1,
+     "lower_defects": 2,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 125
+    },
+    {
+     "budget": 11,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      2,
+      5
+     ],
+     "kappa": 1,
+     "lower_defects": 3,
+     "realizable": true,
+     "top_defect": 2,
+     "unknowns": 161
+    },
+    {
+     "budget": 12,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      3,
+      8
+     ],
+     "kappa": 1,
+     "lower_defects": 5,
+     "realizable": true,
+     "top_defect": 3,
+     "unknowns": 203
+    },
+    {
+     "budget": 13,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      3,
+      11
+     ],
+     "kappa": 1,
+     "lower_defects": 8,
+     "realizable": true,
+     "top_defect": 3,
+     "unknowns": 252
+    },
+    {
+     "budget": 14,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      4,
+      15
+     ],
+     "kappa": 1,
+     "lower_defects": 11,
+     "realizable": true,
+     "top_defect": 4,
+     "unknowns": 308
+    },
+    {
+     "budget": 15,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      5,
+      20
+     ],
+     "kappa": 1,
+     "lower_defects": 15,
+     "realizable": true,
+     "top_defect": 5,
+     "unknowns": 372
+    },
+    {
+     "budget": 16,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      6,
+      26
+     ],
+     "kappa": 1,
+     "lower_defects": 20,
+     "realizable": true,
+     "top_defect": 6,
+     "unknowns": 444
+    },
+    {
+     "budget": 17,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      7,
+      33
+     ],
+     "kappa": 1,
+     "lower_defects": 26,
+     "realizable": true,
+     "top_defect": 7,
+     "unknowns": 525
+    },
+    {
+     "budget": 18,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      9,
+      42
+     ],
+     "kappa": 1,
+     "lower_defects": 33,
+     "realizable": true,
+     "top_defect": 9,
+     "unknowns": 615
+    },
+    {
+     "budget": 19,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      10,
+      52
+     ],
+     "kappa": 1,
+     "lower_defects": 42,
+     "realizable": true,
+     "top_defect": 10,
+     "unknowns": 715
+    },
+    {
+     "budget": 20,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      12,
+      64
+     ],
+     "kappa": 1,
+     "lower_defects": 52,
+     "realizable": true,
+     "top_defect": 12,
+     "unknowns": 825
+    },
+    {
+     "budget": 21,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      13,
+      77
+     ],
+     "kappa": 1,
+     "lower_defects": 64,
+     "realizable": true,
+     "top_defect": 13,
+     "unknowns": 946
+    },
+    {
+     "budget": 22,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      15,
+      92
+     ],
+     "kappa": 1,
+     "lower_defects": 77,
+     "realizable": true,
+     "top_defect": 15,
+     "unknowns": 1078
+    },
+    {
+     "budget": 23,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      17,
+      109
+     ],
+     "kappa": 1,
+     "lower_defects": 92,
+     "realizable": true,
+     "top_defect": 17,
+     "unknowns": 1222
+    },
+    {
+     "budget": 24,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      21,
+      130
+     ],
+     "kappa": 1,
+     "lower_defects": 109,
+     "realizable": true,
+     "top_defect": 21,
+     "unknowns": 1378
+    },
+    {
+     "budget": 25,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      22,
+      152
+     ],
+     "kappa": 1,
+     "lower_defects": 130,
+     "realizable": true,
+     "top_defect": 22,
+     "unknowns": 1547
+    },
+    {
+     "budget": 26,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      23,
+      175
+     ],
+     "kappa": 1,
+     "lower_defects": 152,
+     "realizable": true,
+     "top_defect": 23,
+     "unknowns": 1729
+    },
+    {
+     "budget": 27,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      26,
+      201
+     ],
+     "kappa": 1,
+     "lower_defects": 175,
+     "realizable": true,
+     "top_defect": 26,
+     "unknowns": 1925
+    },
+    {
+     "budget": 28,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      29,
+      230
+     ],
+     "kappa": 1,
+     "lower_defects": 201,
+     "realizable": true,
+     "top_defect": 29,
+     "unknowns": 2135
+    },
+    {
+     "budget": 29,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      32,
+      262
+     ],
+     "kappa": 1,
+     "lower_defects": 230,
+     "realizable": true,
+     "top_defect": 32,
+     "unknowns": 2360
+    },
+    {
+     "budget": 30,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      35,
+      297
+     ],
+     "kappa": 1,
+     "lower_defects": 262,
+     "realizable": true,
+     "top_defect": 35,
+     "unknowns": 2600
+    }
+   ],
+   "realizable_kappa_2": [
+    {
+     "budget": 0,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 0
+    },
+    {
+     "budget": 1,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 1
+    },
+    {
+     "budget": 2,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 3
+    },
+    {
+     "budget": 3,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 7
+    },
+    {
+     "budget": 4,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 13
+    },
+    {
+     "budget": 5,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 22
+    },
+    {
+     "budget": 6,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 34
+    },
+    {
+     "budget": 7,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 50
+    },
+    {
+     "budget": 8,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 70
+    },
+    {
+     "budget": 9,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 95
+    },
+    {
+     "budget": 10,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 125
+    },
+    {
+     "budget": 11,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 161
+    },
+    {
+     "budget": 12,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 203
+    },
+    {
+     "budget": 13,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 252
+    },
+    {
+     "budget": 14,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 308
+    },
+    {
+     "budget": 15,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 372
+    },
+    {
+     "budget": 16,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 444
+    },
+    {
+     "budget": 17,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 525
+    },
+    {
+     "budget": 18,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 615
+    },
+    {
+     "budget": 19,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 715
+    },
+    {
+     "budget": 20,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 825
+    },
+    {
+     "budget": 21,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 946
+    },
+    {
+     "budget": 22,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 1078
+    },
+    {
+     "budget": 23,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 1222
+    },
+    {
+     "budget": 24,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 1378
+    },
+    {
+     "budget": 25,
+     "invisible_dimension": 0,
+     "invisible_dimension_bounds": [
+      0,
+      0
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 0,
+     "unknowns": 1547
+    },
+    {
+     "budget": 26,
+     "invisible_dimension": 1,
+     "invisible_dimension_bounds": [
+      1,
+      1
+     ],
+     "kappa": 2,
+     "lower_defects": 0,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 1729
+    },
+    {
+     "budget": 27,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      2
+     ],
+     "kappa": 2,
+     "lower_defects": 1,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 1925
+    },
+    {
+     "budget": 28,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      3
+     ],
+     "kappa": 2,
+     "lower_defects": 2,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 2135
+    },
+    {
+     "budget": 29,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      1,
+      4
+     ],
+     "kappa": 2,
+     "lower_defects": 3,
+     "realizable": true,
+     "top_defect": 1,
+     "unknowns": 2360
+    },
+    {
+     "budget": 30,
+     "invisible_dimension": null,
+     "invisible_dimension_bounds": [
+      2,
+      6
+     ],
+     "kappa": 2,
+     "lower_defects": 4,
+     "realizable": true,
+     "top_defect": 2,
+     "unknowns": 2600
+    }
+   ]
+  }
+ },
  "ranks": [
   {
    "budget": 0,
@@ -72,5 +1909,12 @@
   "population": "connected graphs on 2-4 labeled vertices, terminals (0,1), no terminal edge",
   "probes_per_block": 12
  },
- "schema": "singularity.symmetric-contexts/1"
+ "schema": "singularity.symmetric-contexts/1",
+ "weighted_recovery": {
+  "blocks": 15,
+  "budget": 3,
+  "glued_series": "weak-composition enumeration of the weighted glued graph",
+  "max_edge_weight": 2,
+  "probes_per_block": 18
+ }
 }

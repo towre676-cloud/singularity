@@ -5144,6 +5144,206 @@ the same script). On that population, swap-symmetric contexts lose
 exactly the order of the terminals. This is a finite statement about one
 population and one budget.
 
+\hypertarget{the-observable-interface}{%
+\subsection{The observable interface}\label{the-observable-interface}}
+
+Let \(V_R\) be the space of coefficients \(Y_o[v]\), \(|o|\le v\le R\),
+over \(\mathbb Q(q)\). For a class \(\mathcal C\) of contexts let
+\(I_{\mathcal C,R}=\bigcap_{C\in\mathcal C}\ker L_C\), where \(L_C\)
+sends the coefficients to the glued series modulo \(x^{R+1}\). The
+\emph{observable interface} is
+\(\mathcal O_{\mathcal C,R}=V_R/I_{\mathcal C,R}\): two blocks have the
+same image exactly when every context in the class gives the same
+answer. Write \(\kappa=1\) for the simple swap-symmetric contexts
+without a terminal edge. Write \(\kappa=2\) for those that may use it,
+in which case the block has no terminal edge. Group the orbits of each
+degree by \(m_o\), and put \(y_o=q^{d_o}\) and \[
+\tau_o=q^{1-2s}+q^{1-2t}-q^{2-2(s+t)}.
+\]
+
+\textbf{Theorem SNG-F49 (the observable interface of simple symmetric
+contexts).}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \emph{Top degree.} Let \(N_R\) be the space of vectors supported on
+  degree \(R\) whose restriction to each group is annihilated by
+  \(y^e\), \(e<\kappa\). Then \(N_R\subseteq I_{\mathcal C,R}\), \(N_R\)
+  is exactly the kernel of the degree-\(R\) diagonal block of the whole
+  class, and \(\dim N_R=\sum_g\max(0,|g|-\kappa)\). For \(\kappa=2\) the
+  first nonzero \(N_R\) occurs at \(R=25\). It is spanned by \[
+  v=\bigl(q^{25}-q^{121},\;q^{289}-q^{25},\;q^{121}-q^{289}\bigr)
+  \] on the orbits \(\{1,18\},\{6,17\},\{10,15\}\) of \(325\), whose
+  \(d_o\) are \(289,121,25\).
+\item
+  \emph{Exactness.} Suppose that for every \(v<R\) and every group at
+  degree \(v\) the functionals \(y^e\tau^i\), \(e<\kappa\),
+  \(i\in\{0,1\}\), are linearly independent on the group. Then
+  \(I_{\mathcal C,R}=N_R\). The interface has the explicit coordinates
+  \[
+  \mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\Bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\Bigr)_{g,\;e<\kappa}.
+  \] The finitely many contexts with \(d\) pendant leaves per terminal,
+  \(c\) shared neighbours and, when \(\kappa=2\), an optional terminal
+  edge span every response of the class. The hypothesis holds for
+  \(\kappa=1\) exactly when \(R\le25\), and for \(\kappa=2\) for every
+  \(R\le91\).
+\item
+  \emph{Realizability.} Let a block have no terminal edge, and let its
+  terminals have internal degrees \(a,b\). Then
+  \(Y_o[|o|]=q^{as^2+bt^2}+q^{bs^2+at^2}\), or \(q^{(a+b)s^2}\) for
+  \(s=t\), and \(Y_{\{0,1\}}[1]=q^a+q^b\) determines \(\{a,b\}\). Hence
+  the difference of two blocks that no context in the class
+  distinguishes vanishes in every coordinate with \(|o|=v\). Parts (a)
+  and (b) hold for such differences with each group restricted to
+  \(|o|<v\), and the exactness hypothesis then holds through \(R=26\)
+  for \(\kappa=1\) and \(R=92\) for \(\kappa=2\). In particular:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  For \(\kappa=2\), simple swap-symmetric contexts separate the
+  truncated symmetrized kernels of any two blocks for every \(R\le25\),
+  and the blind direction \(v\) of (a) is not a difference of two
+  blocks.
+\item
+  At \(R=26\) the only possible invisible difference is a multiple of
+  \(v\) placed at degree \(26\).
+\item
+  For \(\kappa=1\), blocks are separated for \(R\le7\). At \(R=8\) the
+  only possible invisible difference is a multiple of
+  \(e_{\{0,5\}}[8]-e_{\{3,4\}}[8]\).
+\end{itemize}
+
+\emph{Proof.} (a) At interior volume zero a context in the class has
+kernel \(q^{\delta m_o+ed_o}\), with \(\delta\) the common terminal
+degree and \(e\in\{0,1\}\) (\(e=0\) if \(\kappa=1\)), as in SNG-F48(a).
+A coordinate \(Y_o[R]\) enters only the volume-\(R\) coefficient,
+multiplied by this value. A top-degree vector \(c\) is therefore
+invisible exactly when \(\sum_oc_oq^{\delta m_o+ed_o}=0\) for every
+realized pair \((\delta,e)\). Leaves realize every \(\delta\ge0\), and
+the numbers \(q^m\) are distinct, so a Vandermonde system in \(\delta\)
+reduces this to \(\sum_{o\in g}c_oy_o^e=0\) for each group and
+\(e<\kappa\). Within a group the \(y_o\) are distinct (SNG-F48(b)). The
+\(\kappa\times|g|\) Vandermonde matrix therefore has rank
+\(\min(\kappa,|g|)\), which gives the dimension, and Cramer's rule gives
+the basis. For the triple with nodes \(q^{289},q^{121},q^{25}\) the
+cofactors are \(v\).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Induct on \(v<R\), assuming every coordinate of degree below \(v\) is
+  determined. A leaf on a terminal of height \(h\) contributes
+  \(f(h)=q^{h^2}\bigl(1+xq^{1-2h}+O(x^2)\bigr)\), and a shared neighbour
+  contributes \(q^{m}\bigl(1+xq^{2-2(s+t)}+O(x^2)\bigr)\). The context
+  with \(d\) leaves per terminal, \(c\) shared neighbours and \(e\)
+  terminal edges therefore has kernel \[
+  q^{ed_o+(d+c)m_o}\bigl(1+x(d\sigma_o+c\pi_o)+O(x^2)\bigr),\qquad \sigma_o=q^{1-2s}+q^{1-2t},\ \pi_o=q^{2-2(s+t)}.
+  \] After the known terms are removed, the volume-\(v\) coefficients
+  give \(\sum_oq^{\delta m_o}y_o^eY_o[v]\). In the volume-\(v+1\)
+  coefficient, \(Y[v+1]\) appears with the split-independent factor
+  \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the factor
+  \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the context
+  \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves
+  \(\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]\), with \(\delta=d+c\ge1\).
+  The Vandermonde system in \(\delta\) separates the groups. What
+  remains on each group is the functionals \(y^e\tau^i\), which are
+  independent by hypothesis, so degree \(v\) is determined. The
+  induction reaches \(R-1\). At degree \(R\), (a) shows that exactly the
+  group sums are determined, so \(I_{\mathcal C,R}=N_R\). The probes
+  used and the whole class have the same annihilator \(N_R\), so the
+  probes span every response.
+\end{enumerate}
+
+For \(\kappa=1\) the hypothesis asks that \((1,\tau_o)\) separate each
+group. Two orbits of a group have different \(s+t\). Since \(1-2s\) is
+odd, the only even exponent of \(\tau_o\) is \(2-2(s+t)\), so the two
+\(\tau_o\) differ and groups of two pass. A group of three cannot be
+separated by two functionals; the first one is complete at degree
+\(25\). For \(\kappa=2\), after scaling column \(o\) by \(q^{2(s+t)}\)
+the four functionals are integer polynomials. Their matrix has full
+column rank modulo \(2^{61}-1\) at a fixed residue of \(q\) for every
+prefix, ordered by \(|o|\), of every group with \(s+t\le100\). A nonzero
+minor modulo \(p\) is nonzero over \(\mathbb Z[q]\). The first failure
+is the five-orbit group
+\(4225=0^2+65^2=16^2+63^2=25^2+60^2=33^2+56^2=39^2+52^2\) at degree
+\(91\).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Interior volume zero is the single profile with every interior height
+  \(0\), and its energy is \(as^2+bt^2\). By (b) at degree \(1\), where
+  \(m=0,1\) are distinct, two indistinguishable blocks have the same
+  \(q^a+q^b\), hence the same \(\{a,b\}\), and so the same coordinates
+  \(Y_o[|o|]\). Repeating (a) and (b) on the remaining coordinates gives
+  the restricted statements. \(\square\)
+\end{enumerate}
+
+So the interface has a precise shape. Without the terminal edge, each
+budget loses the top-degree collision information and nothing else,
+through \(R=25\). With the edge, the formal interface is complete
+through \(R=24\) and loses one direction at \(R=25\), and this direction
+is not realized by blocks. Independently of the proof, the exact rank of
+the leaf-and-shared-neighbour probe map modulo \(2^{61}-1\) equals
+\(\dim V_R-\dim N_R\) for every \(R\le18\) without the edge. The values
+for \(R=8,\ldots,12\) are rechecked in CI. Beyond the stated budgets,
+whether the higher terms of the \(x\)-expansion keep resolving
+lower-degree collisions is open.
+
+\textbf{Proposition SNG-F50 (weighted terminal coupling).} Let \(\mu_R\)
+be the largest number of orbits with \(|o|\le R\) that share \(m_o\).
+Allow contexts to carry a terminal edge of integer weight
+\(e\in\{0,\ldots,W\}\) with \(W+1\ge\mu_R\). Then the \(M(W+1)\) probes
+with \(\delta<M\) leaves per terminal and terminal weight \(e\)
+determine every \(Y_o\) modulo \(x^{R+1}\), at every budget \(R\).
+
+\emph{Proof.} The induction of SNG-F48(b) applies with the Vandermonde
+system \((q^{ed_o})_{e\le W,\,o\in g}\), whose nodes are distinct within
+a group. \(\square\)
+
+The multiplicity grows slowly: \(\mu_R=2\) for \(7\le R<25\), \(3\) from
+\(R=25\), \(4\) from \(R=47\), where \(1105\) has four orbits, and \(5\)
+from \(R=91\). Weighted coupling therefore enlarges the experimental
+language by a small and explicit amount. It is the extra capability that
+removes the obstruction of SNG-F49(a). The script replays weighted
+recovery on real weighted gluings, counted by weak compositions, for all
+fifteen blocks with at most four vertices (\(R=3\), weights \(0,1,2\)).
+It also checks the degree-25 diagonal ranks modulo \(p\): \(181\) of
+\(182\) with simple contexts, \(169\) of \(169\) on the realizable
+coordinates, and \(182\) of \(182\) with weights up to \(2\).
+
+\emph{Reuse.} Rank reduction is not the only computational gain. A
+kernel is compiled once and then answers every attachment query by the
+contraction of SNG-F41. For a \(2\times6\) ladder with terminals at
+opposite corners and \(R=6\), compiling the kernel takes \(4.6\) s. Each
+of \(24\) symmetric-context queries then takes \(7.6\) ms by
+contraction, against \(1.33\) s for a fresh decomposition of the glued
+graph, with identical exact output. The compilation pays for itself
+after about \(3.5\) queries (\texttt{-\/-benchmark}, wall-clock on the
+session machine, retained). A compression theorem with savings that grow
+along a family remains open (P54).
+
+\emph{Targeted realizability searches.} The following observation gives
+a route to a symmetric kernel without a swap automorphism. If two blocks
+\(A,B\) have \(K_A=K_B\), then joining \(A\) in series with the reversal
+of \(B\), at an internal middle vertex, gives a block with
+\(K(s,t)=\sum_wx^wK_A(s,w)K_A(t,w)\), which is symmetric. It has no swap
+automorphism unless such a map carries \(A\) onto the reversal of \(B\).
+The search for kernel-equal blocks found nothing. The 777
+terminal-isomorphism classes of connected blocks with at most six
+vertices and no terminal edge have 777 distinct kernels through volume
+four. Among the 7,682 two-terminal trees with at most ten vertices, up
+to isomorphism, no kernel is symmetric without a swap automorphism. Five
+pairs of non-isomorphic trees on ten vertices agree through volume four,
+and all five separate at volume five.
+
 \hypertarget{every-late-census-collision-is-separated-by-triangles}{%
 \section{Every late census collision is separated by
 triangles}\label{every-late-census-collision-is-separated-by-triangles}}

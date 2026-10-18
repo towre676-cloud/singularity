@@ -7928,6 +7928,449 @@ terminal swap (451 classes; <code>--census</code> mode of the same
 script). On that population, swap-symmetric contexts lose exactly the
 order of the terminals. This is a finite statement about one population
 and one budget.</p>
+<h3 data-number="10.8.1" id="the-observable-interface"><span
+class="header-section-number">10.8.1</span> The observable
+interface</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>R</mi></msub><annotation encoding="application/x-tex">V_R</annotation></semantics></math>
+be the space of coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y_o[v]</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>v</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|o|\le v\le R</annotation></semantics></math>,
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)</annotation></semantics></math>.
+For a class
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒞</mi><annotation encoding="application/x-tex">\mathcal C</annotation></semantics></math>
+of contexts let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>𝒞</mi><mo>,</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mo>⋂</mo><mrow><mi>C</mi><mo>∈</mo><mi>𝒞</mi></mrow></msub><mo>ker</mo><msub><mi>L</mi><mi>C</mi></msub></mrow><annotation encoding="application/x-tex">I_{\mathcal C,R}=\bigcap_{C\in\mathcal C}\ker L_C</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>C</mi></msub><annotation encoding="application/x-tex">L_C</annotation></semantics></math>
+sends the coefficients to the glued series modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>.
+The <em>observable interface</em> is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒪</mi><mrow><mi>𝒞</mi><mo>,</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mi>V</mi><mi>R</mi></msub><mi>/</mi><msub><mi>I</mi><mrow><mi>𝒞</mi><mo>,</mo><mi>R</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mathcal O_{\mathcal C,R}=V_R/I_{\mathcal C,R}</annotation></semantics></math>:
+two blocks have the same image exactly when every context in the class
+gives the same answer. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>
+for the simple swap-symmetric contexts without a terminal edge. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>
+for those that may use it, in which case the block has no terminal edge.
+Group the orbits of each degree by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>m</mi><mi>o</mi></msub><annotation encoding="application/x-tex">m_o</annotation></semantics></math>,
+and put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>o</mi></msub><mo>=</mo><msup><mi>q</mi><msub><mi>d</mi><mi>o</mi></msub></msup></mrow><annotation encoding="application/x-tex">y_o=q^{d_o}</annotation></semantics></math>
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>o</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><mo>+</mo><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo>−</mo><msup><mi>q</mi><mrow><mn>2</mn><mo>−</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\tau_o=q^{1-2s}+q^{1-2t}-q^{2-2(s+t)}.
+</annotation></semantics></math></p>
+<p><strong>Theorem SNG-F49 (the observable interface of simple symmetric
+contexts).</strong></p>
+<ol type="a">
+<li><p><em>Top degree.</em> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>R</mi></msub><annotation encoding="application/x-tex">N_R</annotation></semantics></math>
+be the space of vectors supported on degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+whose restriction to each group is annihilated by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mi>e</mi></msup><annotation encoding="application/x-tex">y^e</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>&lt;</mo><mi>κ</mi></mrow><annotation encoding="application/x-tex">e&lt;\kappa</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>R</mi></msub><mo>⊆</mo><msub><mi>I</mi><mrow><mi>𝒞</mi><mo>,</mo><mi>R</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_R\subseteq I_{\mathcal C,R}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>R</mi></msub><annotation encoding="application/x-tex">N_R</annotation></semantics></math>
+is exactly the kernel of the
+degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+diagonal block of the whole class, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>dim</mo><msub><mi>N</mi><mi>R</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>g</mi></msub><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mi>κ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dim N_R=\sum_g\max(0,|g|-\kappa)</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>
+the first nonzero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>R</mi></msub><annotation encoding="application/x-tex">N_R</annotation></semantics></math>
+occurs at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">R=25</annotation></semantics></math>.
+It is spanned by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msup><mi>q</mi><mn>25</mn></msup><mo>−</mo><msup><mi>q</mi><mn>121</mn></msup><mo>,</mo><mspace width="0.278em"></mspace><msup><mi>q</mi><mn>289</mn></msup><mo>−</mo><msup><mi>q</mi><mn>25</mn></msup><mo>,</mo><mspace width="0.278em"></mspace><msup><mi>q</mi><mn>121</mn></msup><mo>−</mo><msup><mi>q</mi><mn>289</mn></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+v=\bigl(q^{25}-q^{121},\;q^{289}-q^{25},\;q^{121}-q^{289}\bigr)
+</annotation></semantics></math> on the orbits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>18</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>6</mn><mo>,</mo><mn>17</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>10</mn><mo>,</mo><mn>15</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,18\},\{6,17\},\{10,15\}</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>325</mn><annotation encoding="application/x-tex">325</annotation></semantics></math>,
+whose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>o</mi></msub><annotation encoding="application/x-tex">d_o</annotation></semantics></math>
+are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>289</mn><mo>,</mo><mn>121</mn><mo>,</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">289,121,25</annotation></semantics></math>.</p></li>
+<li><p><em>Exactness.</em> Suppose that for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">v&lt;R</annotation></semantics></math>
+and every group at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+the functionals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mi>e</mi></msup><msup><mi>τ</mi><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">y^e\tau^i</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>&lt;</mo><mi>κ</mi></mrow><annotation encoding="application/x-tex">e&lt;\kappa</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">i\in\{0,1\}</annotation></semantics></math>,
+are linearly independent on the group. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>𝒞</mi><mo>,</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">I_{\mathcal C,R}=N_R</annotation></semantics></math>.
+The interface has the explicit coordinates <span class="math display">$$
+\mathcal O_{\mathcal
+C,R}\cong\bigl(Y_o[v]\bigr)_{v&lt;R}\oplus\Bigl(\textstyle\sum_{o\in
+g}y_o^eY_o[R]\Bigr)_{g,\;e&lt;\kappa}.
+$$</span> The finitely many contexts with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+pendant leaves per terminal,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+shared neighbours and, when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>,
+an optional terminal edge span every response of the class. The
+hypothesis holds for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>
+exactly when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">R\le25</annotation></semantics></math>,
+and for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>91</mn></mrow><annotation encoding="application/x-tex">R\le91</annotation></semantics></math>.</p></li>
+<li><p><em>Realizability.</em> Let a block have no terminal edge, and
+let its terminals have internal degrees
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><mi>a</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><mo>+</mo><msup><mi>q</mi><mrow><mi>b</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup></mrow><annotation encoding="application/x-tex">Y_o[|o|]=q^{as^2+bt^2}+q^{bs^2+at^2}</annotation></semantics></math>,
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>s</mi><mn>2</mn></msup></mrow></msup><annotation encoding="application/x-tex">q^{(a+b)s^2}</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s=t</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><msup><mi>q</mi><mi>a</mi></msup><mo>+</mo><msup><mi>q</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">Y_{\{0,1\}}[1]=q^a+q^b</annotation></semantics></math>
+determines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\}</annotation></semantics></math>.
+Hence the difference of two blocks that no context in the class
+distinguishes vanishes in every coordinate with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">|o|=v</annotation></semantics></math>.
+Parts (a) and (b) hold for such differences with each group restricted
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">|o|&lt;v</annotation></semantics></math>,
+and the exactness hypothesis then holds through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">R=26</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>92</mn></mrow><annotation encoding="application/x-tex">R=92</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>.
+In particular:</p></li>
+</ol>
+<ul>
+<li>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>,
+simple swap-symmetric contexts separate the truncated symmetrized
+kernels of any two blocks for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">R\le25</annotation></semantics></math>,
+and the blind direction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+of (a) is not a difference of two blocks.</li>
+<li>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">R=26</annotation></semantics></math>
+the only possible invisible difference is a multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+placed at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>26</mn><annotation encoding="application/x-tex">26</annotation></semantics></math>.</li>
+<li>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>,
+blocks are separated for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">R\le7</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>
+the only possible invisible difference is a multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">e_{\{0,5\}}[8]-e_{\{3,4\}}[8]</annotation></semantics></math>.</li>
+</ul>
+<p><em>Proof.</em> (a) At interior volume zero a context in the class
+has kernel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mi>δ</mi><msub><mi>m</mi><mi>o</mi></msub><mo>+</mo><mi>e</mi><msub><mi>d</mi><mi>o</mi></msub></mrow></msup><annotation encoding="application/x-tex">q^{\delta m_o+ed_o}</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+the common terminal degree and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">e\in\{0,1\}</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e=0</annotation></semantics></math>
+if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>),
+as in SNG-F48(a). A coordinate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>R</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y_o[R]</annotation></semantics></math>
+enters only the
+volume-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+coefficient, multiplied by this value. A top-degree vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+is therefore invisible exactly when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>o</mi></msub><msub><mi>c</mi><mi>o</mi></msub><msup><mi>q</mi><mrow><mi>δ</mi><msub><mi>m</mi><mi>o</mi></msub><mo>+</mo><mi>e</mi><msub><mi>d</mi><mi>o</mi></msub></mrow></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sum_oc_oq^{\delta m_o+ed_o}=0</annotation></semantics></math>
+for every realized pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo>,</mo><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\delta,e)</annotation></semantics></math>.
+Leaves realize every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta\ge0</annotation></semantics></math>,
+and the numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mi>m</mi></msup><annotation encoding="application/x-tex">q^m</annotation></semantics></math>
+are distinct, so a Vandermonde system in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+reduces this to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>o</mi><mo>∈</mo><mi>g</mi></mrow></msub><msub><mi>c</mi><mi>o</mi></msub><msubsup><mi>y</mi><mi>o</mi><mi>e</mi></msubsup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sum_{o\in g}c_oy_o^e=0</annotation></semantics></math>
+for each group and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>&lt;</mo><mi>κ</mi></mrow><annotation encoding="application/x-tex">e&lt;\kappa</annotation></semantics></math>.
+Within a group the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>o</mi></msub><annotation encoding="application/x-tex">y_o</annotation></semantics></math>
+are distinct (SNG-F48(b)). The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>×</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">\kappa\times|g|</annotation></semantics></math>
+Vandermonde matrix therefore has rank
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>κ</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\min(\kappa,|g|)</annotation></semantics></math>,
+which gives the dimension, and Cramer’s rule gives the basis. For the
+triple with nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mn>289</mn></msup><mo>,</mo><msup><mi>q</mi><mn>121</mn></msup><mo>,</mo><msup><mi>q</mi><mn>25</mn></msup></mrow><annotation encoding="application/x-tex">q^{289},q^{121},q^{25}</annotation></semantics></math>
+the cofactors are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>.</p>
+<ol start="2" type="a">
+<li>Induct on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">v&lt;R</annotation></semantics></math>,
+assuming every coordinate of degree below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+is determined. A leaf on a terminal of height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><msup><mi>h</mi><mn>2</mn></msup></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>h</mi></mrow></msup><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(h)=q^{h^2}\bigl(1+xq^{1-2h}+O(x^2)\bigr)</annotation></semantics></math>,
+and a shared neighbour contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mi>m</mi></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><msup><mi>q</mi><mrow><mn>2</mn><mo>−</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q^{m}\bigl(1+xq^{2-2(s+t)}+O(x^2)\bigr)</annotation></semantics></math>.
+The context with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+leaves per terminal,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+shared neighbours and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+terminal edges therefore has kernel
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>e</mi><msub><mi>d</mi><mi>o</mi></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>+</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>m</mi><mi>o</mi></msub></mrow></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><msub><mi>σ</mi><mi>o</mi></msub><mo>+</mo><mi>c</mi><msub><mi>π</mi><mi>o</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>σ</mi><mi>o</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><mo>+</mo><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>π</mi><mi>o</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mn>2</mn><mo>−</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+q^{ed_o+(d+c)m_o}\bigl(1+x(d\sigma_o+c\pi_o)+O(x^2)\bigr),\qquad \sigma_o=q^{1-2s}+q^{1-2t},\ \pi_o=q^{2-2(s+t)}.
+</annotation></semantics></math> After the known terms are removed, the
+volume-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+coefficients give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>o</mi></msub><msup><mi>q</mi><mrow><mi>δ</mi><msub><mi>m</mi><mi>o</mi></msub></mrow></msup><msubsup><mi>y</mi><mi>o</mi><mi>e</mi></msubsup><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_oq^{\delta m_o}y_o^eY_o[v]</annotation></semantics></math>.
+In the
+volume-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">v+1</annotation></semantics></math>
+coefficient,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y[v+1]</annotation></semantics></math>
+appears with the split-independent factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mi>e</mi><msub><mi>d</mi><mi>o</mi></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>+</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>m</mi><mi>o</mi></msub></mrow></msup><annotation encoding="application/x-tex">q^{ed_o+(d+c)m_o}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y[v]</annotation></semantics></math>
+with the factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>e</mi><msub><mi>d</mi><mi>o</mi></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>+</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>m</mi><mi>o</mi></msub></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><msub><mi>σ</mi><mi>o</mi></msub><mo>+</mo><mi>c</mi><msub><mi>π</mi><mi>o</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)</annotation></semantics></math>.
+Subtracting the context
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>c</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(d-1,c+1)</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>,</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(d,c)</annotation></semantics></math>
+removes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y[v+1]</annotation></semantics></math>
+and leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>o</mi></msub><msup><mi>q</mi><mrow><mi>δ</mi><msub><mi>m</mi><mi>o</mi></msub></mrow></msup><msubsup><mi>y</mi><mi>o</mi><mi>e</mi></msubsup><msub><mi>τ</mi><mi>o</mi></msub><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mi>d</mi><mo>+</mo><mi>c</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\delta=d+c\ge1</annotation></semantics></math>.
+The Vandermonde system in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+separates the groups. What remains on each group is the functionals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mi>e</mi></msup><msup><mi>τ</mi><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">y^e\tau^i</annotation></semantics></math>,
+which are independent by hypothesis, so degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+is determined. The induction reaches
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R-1</annotation></semantics></math>.
+At degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+(a) shows that exactly the group sums are determined, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>𝒞</mi><mo>,</mo><mi>R</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">I_{\mathcal C,R}=N_R</annotation></semantics></math>.
+The probes used and the whole class have the same annihilator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>R</mi></msub><annotation encoding="application/x-tex">N_R</annotation></semantics></math>,
+so the probes span every response.</li>
+</ol>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>
+the hypothesis asks that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><msub><mi>τ</mi><mi>o</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,\tau_o)</annotation></semantics></math>
+separate each group. Two orbits of a group have different
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s+t</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>s</mi></mrow><annotation encoding="application/x-tex">1-2s</annotation></semantics></math>
+is odd, the only even exponent of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>o</mi></msub><annotation encoding="application/x-tex">\tau_o</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>−</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2-2(s+t)</annotation></semantics></math>,
+so the two
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>o</mi></msub><annotation encoding="application/x-tex">\tau_o</annotation></semantics></math>
+differ and groups of two pass. A group of three cannot be separated by
+two functionals; the first one is complete at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>25</mn><annotation encoding="application/x-tex">25</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>,
+after scaling column
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>o</mi><annotation encoding="application/x-tex">o</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">q^{2(s+t)}</annotation></semantics></math>
+the four functionals are integer polynomials. Their matrix has full
+column rank modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>61</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{61}-1</annotation></semantics></math>
+at a fixed residue of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+for every prefix, ordered by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|o|</annotation></semantics></math>,
+of every group with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">s+t\le100</annotation></semantics></math>.
+A nonzero minor modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+is nonzero over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Z[q]</annotation></semantics></math>.
+The first failure is the five-orbit group
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4225</mn><mo>=</mo><msup><mn>0</mn><mn>2</mn></msup><mo>+</mo><msup><mn>65</mn><mn>2</mn></msup><mo>=</mo><msup><mn>16</mn><mn>2</mn></msup><mo>+</mo><msup><mn>63</mn><mn>2</mn></msup><mo>=</mo><msup><mn>25</mn><mn>2</mn></msup><mo>+</mo><msup><mn>60</mn><mn>2</mn></msup><mo>=</mo><msup><mn>33</mn><mn>2</mn></msup><mo>+</mo><msup><mn>56</mn><mn>2</mn></msup><mo>=</mo><msup><mn>39</mn><mn>2</mn></msup><mo>+</mo><msup><mn>52</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4225=0^2+65^2=16^2+63^2=25^2+60^2=33^2+56^2=39^2+52^2</annotation></semantics></math>
+at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>91</mn><annotation encoding="application/x-tex">91</annotation></semantics></math>.</p>
+<ol start="3" type="a">
+<li>Interior volume zero is the single profile with every interior
+height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+and its energy is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">as^2+bt^2</annotation></semantics></math>.
+By (b) at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=0,1</annotation></semantics></math>
+are distinct, two indistinguishable blocks have the same
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mi>a</mi></msup><mo>+</mo><msup><mi>q</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">q^a+q^b</annotation></semantics></math>,
+hence the same
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\}</annotation></semantics></math>,
+and so the same coordinates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y_o[|o|]</annotation></semantics></math>.
+Repeating (a) and (b) on the remaining coordinates gives the restricted
+statements.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></li>
+</ol>
+<p>So the interface has a precise shape. Without the terminal edge, each
+budget loses the top-degree collision information and nothing else,
+through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">R=25</annotation></semantics></math>.
+With the edge, the formal interface is complete through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>24</mn></mrow><annotation encoding="application/x-tex">R=24</annotation></semantics></math>
+and loses one direction at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">R=25</annotation></semantics></math>,
+and this direction is not realized by blocks. Independently of the
+proof, the exact rank of the leaf-and-shared-neighbour probe map modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>61</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{61}-1</annotation></semantics></math>
+equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>dim</mo><msub><mi>V</mi><mi>R</mi></msub><mo>−</mo><mo>dim</mo><msub><mi>N</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">\dim V_R-\dim N_R</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>18</mn></mrow><annotation encoding="application/x-tex">R\le18</annotation></semantics></math>
+without the edge. The values for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">R=8,\ldots,12</annotation></semantics></math>
+are rechecked in CI. Beyond the stated budgets, whether the higher terms
+of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-expansion
+keep resolving lower-degree collisions is open.</p>
+<p><strong>Proposition SNG-F50 (weighted terminal coupling).</strong>
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mi>R</mi></msub><annotation encoding="application/x-tex">\mu_R</annotation></semantics></math>
+be the largest number of orbits with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|o|\le R</annotation></semantics></math>
+that share
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>m</mi><mi>o</mi></msub><annotation encoding="application/x-tex">m_o</annotation></semantics></math>.
+Allow contexts to carry a terminal edge of integer weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>W</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">e\in\{0,\ldots,W\}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>+</mo><mn>1</mn><mo>≥</mo><msub><mi>μ</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">W+1\ge\mu_R</annotation></semantics></math>.
+Then the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>W</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">M(W+1)</annotation></semantics></math>
+probes with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>&lt;</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">\delta&lt;M</annotation></semantics></math>
+leaves per terminal and terminal weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+determine every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mi>o</mi></msub><annotation encoding="application/x-tex">Y_o</annotation></semantics></math>
+modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>,
+at every budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.</p>
+<p><em>Proof.</em> The induction of SNG-F48(b) applies with the
+Vandermonde system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mi>e</mi><msub><mi>d</mi><mi>o</mi></msub></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>e</mi><mo>≤</mo><mi>W</mi><mo>,</mo><mspace width="0.167em"></mspace><mi>o</mi><mo>∈</mo><mi>g</mi></mrow></msub><annotation encoding="application/x-tex">(q^{ed_o})_{e\le W,\,o\in g}</annotation></semantics></math>,
+whose nodes are distinct within a group.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The multiplicity grows slowly:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>R</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\mu_R=2</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">7\le R&lt;25</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">R=25</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>47</mn></mrow><annotation encoding="application/x-tex">R=47</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1105</mn><annotation encoding="application/x-tex">1105</annotation></semantics></math>
+has four orbits, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>91</mn></mrow><annotation encoding="application/x-tex">R=91</annotation></semantics></math>.
+Weighted coupling therefore enlarges the experimental language by a
+small and explicit amount. It is the extra capability that removes the
+obstruction of SNG-F49(a). The script replays weighted recovery on real
+weighted gluings, counted by weak compositions, for all fifteen blocks
+with at most four vertices
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">R=3</annotation></semantics></math>,
+weights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0,1,2</annotation></semantics></math>).
+It also checks the degree-25 diagonal ranks modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>181</mn><annotation encoding="application/x-tex">181</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>182</mn><annotation encoding="application/x-tex">182</annotation></semantics></math>
+with simple contexts,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>169</mn><annotation encoding="application/x-tex">169</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>169</mn><annotation encoding="application/x-tex">169</annotation></semantics></math>
+on the realizable coordinates, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>182</mn><annotation encoding="application/x-tex">182</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>182</mn><annotation encoding="application/x-tex">182</annotation></semantics></math>
+with weights up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.</p>
+<p><em>Reuse.</em> Rank reduction is not the only computational gain. A
+kernel is compiled once and then answers every attachment query by the
+contraction of SNG-F41. For a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">2\times6</annotation></semantics></math>
+ladder with terminals at opposite corners and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">R=6</annotation></semantics></math>,
+compiling the kernel takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4.6</mn><annotation encoding="application/x-tex">4.6</annotation></semantics></math>
+s. Each of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>24</mn><annotation encoding="application/x-tex">24</annotation></semantics></math>
+symmetric-context queries then takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7.6</mn><annotation encoding="application/x-tex">7.6</annotation></semantics></math>
+ms by contraction, against
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1.33</mn><annotation encoding="application/x-tex">1.33</annotation></semantics></math>
+s for a fresh decomposition of the glued graph, with identical exact
+output. The compilation pays for itself after about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.5</mn><annotation encoding="application/x-tex">3.5</annotation></semantics></math>
+queries (<code>--benchmark</code>, wall-clock on the session machine,
+retained). A compression theorem with savings that grow along a family
+remains open (P54).</p>
+<p><em>Targeted realizability searches.</em> The following observation
+gives a route to a symmetric kernel without a swap automorphism. If two
+blocks
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>A</mi></msub><mo>=</mo><msub><mi>K</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">K_A=K_B</annotation></semantics></math>,
+then joining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+in series with the reversal of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+at an internal middle vertex, gives a block with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>w</mi></msub><msup><mi>x</mi><mi>w</mi></msup><msub><mi>K</mi><mi>A</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>K</mi><mi>A</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K(s,t)=\sum_wx^wK_A(s,w)K_A(t,w)</annotation></semantics></math>,
+which is symmetric. It has no swap automorphism unless such a map
+carries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+onto the reversal of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.
+The search for kernel-equal blocks found nothing. The 777
+terminal-isomorphism classes of connected blocks with at most six
+vertices and no terminal edge have 777 distinct kernels through volume
+four. Among the 7,682 two-terminal trees with at most ten vertices, up
+to isomorphism, no kernel is symmetric without a swap automorphism. Five
+pairs of non-isomorphic trees on ten vertices agree through volume four,
+and all five separate at volume five.</p>
 <h2 data-number="10.9"
 id="every-late-census-collision-is-separated-by-triangles"><span
 class="header-section-number">10.9</span> Every late census collision is

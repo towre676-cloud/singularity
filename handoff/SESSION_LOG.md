@@ -110,3 +110,16 @@ Next dependency-ready item and exact first action:
 - No nontrivial K⁺ class among the 12,753 connected blocks with at most six vertices, through volume 4.
 - These are evidence for the proposed P52/P53 in `PUSHES-NEXT.md`; the ledger is unchanged.
 - Open: the budget-free edge-free converse, and orbit triples at R ≥ 25.
+
+**Continuation (observable interface, P54 evidence):**
+- SNG-F49: exact observable quotient \(V_R/N_R\) for simple swap-symmetric contexts.
+  - Explicit coordinates and a spanning probe family.
+  - Exactness proved through R ≤ 25 without the terminal edge, and through R ≤ 91 with it. The proof uses a second functional τ, obtained by trading a leaf for a shared neighbour at the next volume.
+  - Explicit blind direction at R = 25 (the triple 325). It is not realizable by blocks, because interior-volume-zero coefficients are fixed by terminal degrees: simple symmetric contexts separate actual blocks through R = 25.
+- SNG-F50: a terminal edge of weight below μ_R restores recovery at every budget. μ_R = 2, 3, 4, 5 from R = 7, 25, 47, 91.
+- Modular probe-map ranks equal dim V_R − dim N_R for R ≤ 18 without the edge. R = 8..12 are rechecked in CI.
+- Compile-once benchmark: kernel 4.6 s; 7.6 ms per query against 1.33 s direct; break-even after 3.5 queries.
+- Searches:
+  - No two non-isomorphic blocks with at most six vertices share a kernel through volume 4.
+  - No two-terminal tree with at most ten vertices has a symmetric kernel without a swap automorphism.
+  - Five ten-vertex tree pairs agree through volume 4 and separate at volume 5.
