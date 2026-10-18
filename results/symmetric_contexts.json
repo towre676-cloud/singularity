@@ -1,0 +1,76 @@
+{
+ "census": {
+  "blocks": 12753,
+  "budget": 4,
+  "classes_with_two_kernel_swap_orbits": 0,
+  "population": "connected graphs on 2-6 labeled vertices, terminals (0,1), no terminal edge",
+  "symmetrized_classes": 451
+ },
+ "family": "symmetric_context(d, eps, c): d leaves on each terminal, c shared neighbours, optional terminal edge; d <= #orbits, c <= R",
+ "q0": "1/2",
+ "ranks": [
+  {
+   "budget": 0,
+   "rank_with_terminal_edge": 1,
+   "rank_without_terminal_edge": 1,
+   "top_degree_defect": 0,
+   "unknowns": 1
+  },
+  {
+   "budget": 1,
+   "rank_with_terminal_edge": 3,
+   "rank_without_terminal_edge": 3,
+   "top_degree_defect": 0,
+   "unknowns": 3
+  },
+  {
+   "budget": 2,
+   "rank_with_terminal_edge": 7,
+   "rank_without_terminal_edge": 7,
+   "top_degree_defect": 0,
+   "unknowns": 7
+  },
+  {
+   "budget": 3,
+   "rank_with_terminal_edge": 13,
+   "rank_without_terminal_edge": 13,
+   "top_degree_defect": 0,
+   "unknowns": 13
+  },
+  {
+   "budget": 4,
+   "rank_with_terminal_edge": 22,
+   "rank_without_terminal_edge": 22,
+   "top_degree_defect": 0,
+   "unknowns": 22
+  },
+  {
+   "budget": 5,
+   "rank_with_terminal_edge": 34,
+   "rank_without_terminal_edge": 34,
+   "top_degree_defect": 0,
+   "unknowns": 34
+  },
+  {
+   "budget": 6,
+   "rank_with_terminal_edge": 50,
+   "rank_without_terminal_edge": 50,
+   "top_degree_defect": 0,
+   "unknowns": 50
+  },
+  {
+   "budget": 7,
+   "rank_with_terminal_edge": 70,
+   "rank_without_terminal_edge": 69,
+   "top_degree_defect": 1,
+   "unknowns": 70
+  }
+ ],
+ "recovery": {
+  "blocks": 15,
+  "budget": 3,
+  "population": "connected graphs on 2-4 labeled vertices, terminals (0,1), no terminal edge",
+  "probes_per_block": 12
+ },
+ "schema": "singularity.symmetric-contexts/1"
+}

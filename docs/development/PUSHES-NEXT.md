@@ -33,8 +33,8 @@ The six waves have three centers: certified arithmetic evaluation, exactly contr
 | P49 | Future-context equivalence for a specified attachment grammar | SNG-F44: for all edge-disjoint contexts, equivalence is equality of kernels, and star contexts suffice |
 | P50 | Connection-matrix formulation and realizable response spaces | SNG-F41 bilinear gluing; SNG-F44 tensor Vandermonde |
 | P51 | Unrestricted linear-interface lower bound under pinned probes | \(\binom{R+k}{k}\) star probes with \(\|r\|\le R\) suffice (lower-set unisolvence) and are optimal for determining the span of realizable kernels; `recover_kernel_from_simplex_probes` |
-| P52 | Volume-limited interface rank | — |
-| P53 | Constructive restricted-context quotients | — |
+| P52 | Volume-limited interface rank | SNG-F48: exact probe-map ranks under budget R for swap-symmetric contexts (full with a terminal edge for R ≤ 9; without it, defect equal to the proved top-degree lower bound for R ≤ 9); `results/symmetric_contexts.json` |
+| P53 | Constructive restricted-context quotients | SNG-F47 (symmetric contexts factor through K⁺) and SNG-F48(b) (2M leaf-and-edge probes recover K⁺ through volume R ≤ 24); `recover_symmetrized_kernel`; no nontrivial K⁺ class among 12,753 blocks on ≤ 6 vertices at volume 4 |
 | P54 | A compression theorem with proved savings, including arithmetic cost | — |
 
 ## Wave D: engines (P55–P60)

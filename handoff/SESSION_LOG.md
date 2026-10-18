@@ -101,3 +101,12 @@ Decision record updates:
 Local commits, observed remote commit and CI state:
 
 Next dependency-ready item and exact first action:
+
+**Continuation (boundary responses):**
+- SNG-F47: swap-symmetric contexts factor through the symmetrized kernel K⁺.
+- SNG-F48: (a) a proved top-degree obstruction for edge-free symmetric contexts, positive from budget 7, where {0,5} and {3,4} share s²+t². (b) A constructive recovery of K⁺ from 2M leaf-and-edge probes for budgets R ≤ 24.
+- New module `contexts`. `scripts/symmetric_contexts.py --check` runs in CI; its `--census` section, about three minutes, is retained in the file.
+- Exact ranks at q0 = 1/2 for R ≤ 9: full with the terminal edge; without it, short by exactly the top-degree bound.
+- No nontrivial K⁺ class among the 12,753 connected blocks with at most six vertices, through volume 4.
+- These are evidence for the proposed P52/P53 in `PUSHES-NEXT.md`; the ledger is unchanged.
+- Open: the budget-free edge-free converse, and orbit triples at R ≥ 25.
