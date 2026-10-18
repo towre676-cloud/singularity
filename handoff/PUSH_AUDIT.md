@@ -669,17 +669,15 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 **Release the first focused manuscript.** Status: `partial`. Dependencies: P04, P05, P26, P27, P33. Remaining effort: M; priority: 3.
 
-**Existing work:** A six-page focused article with editable sources, literature context, finite examples and the real comparison theorem is already released. Independent computational replay and claim-scope guidance exist. It makes no kernel-verification or priority claim.
+**Existing work:** The visibility paper was rewritten after a claim-by-claim audit (docs/papers/visibility_claims.md, 47 rows, each claim tied to a proof, certificate, kernel theorem or finite computation with scope). Every dependency (P04, P05, P26, P27, P33) is complete. Kernel-checked scope is stated with exact theorem names, and P34's partial formal analytics are described only to their achieved extent. BPR2024 was verified against Project Euclid. The PDF was regenerated and inspected. A clean-checkout reproduction of 1a5f311 passed: tests, reproduce --check with certificate replays, repository and handoff checks. A deterministic commit-pinned archive builder was added.
 
-**Evidence:** [docs/papers/visibility.md](../docs/papers/visibility.md); [docs/visibility_paper.tex](../docs/visibility_paper.tex); [docs/visibility_paper.html](../docs/visibility_paper.html); [output/pdf/visibility_paper.pdf](../output/pdf/visibility_paper.pdf); [docs/references.bib](../docs/references.bib); [results/validation.json](../results/validation.json); [scripts/reproduce.py](../scripts/reproduce.py).
+**Evidence:** [docs/papers/visibility.md](../docs/papers/visibility.md); [docs/papers/visibility_claims.md](../docs/papers/visibility_claims.md); [docs/references.bib](../docs/references.bib); [docs/visibility_paper.html](../docs/visibility_paper.html); [docs/visibility_paper.tex](../docs/visibility_paper.tex); [formal/README.md](../formal/README.md); [output/pdf/visibility_paper.pdf](../output/pdf/visibility_paper.pdf); [results/validation.json](../results/validation.json); [scripts/package_release.py](../scripts/package_release.py); [scripts/reproduce.py](../scripts/reproduce.py).
 
 **Acceptance still missing:**
 
-- The original acceptance gate explicitly depends on P33; a readable article does not satisfy that absent kernel work.
-- P04, P05 and P26 are complete; P27's controlled experiments and P33's kernel verification are absent.
-- A final claim-by-claim proof/certificate matrix and submission-focused literature comparison must be reconciled with achieved scope.
+- The submission-focused literature comparison (integer-valued graph Gaussian models, height partition functions, multivariate theta series, refinements of Ising-equivalent graphs) has not been carried out. A delegated search was stopped by a session rate limit before producing verified references, so no priority statement can yet be reconciled.
 
-**Next concrete action:** Treat the current article as a reusable draft. Build its claim matrix and update it as dependencies close; if publication is pursued earlier, record an explicit roadmap dependency amendment rather than silently marking P35 complete.
+**Next concrete action:** Run the bounded primary-source literature search, write docs/papers/visibility_literature.md, apply any softening or citation it requires to the paper, rebuild the PDF, and then accept P35.
 
 ### P36
 
