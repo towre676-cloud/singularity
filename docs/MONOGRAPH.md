@@ -1448,6 +1448,32 @@ with principal powers, continues the Euler-product ratio from \(s\in(s_0,s_0+\et
 
 The disc is explicit and very small. `complex_disc_certificate` in `src/singularity/arithmetic.py` checks (a)–(c) exactly, using the rational bounds \(2^{-\sigma}\le2^{-1/r}(1+\eta)\) and \(e>27/10\). It admits \(\eta=10^{-5}\) for the spectral pair (\(k=7\), \(r=2\)), \(\eta=10^{-7}\) for the binary pair (\(r=3\)) and \(\eta=10^{-9}\) for the cube and Möbius ladder (\(k=8\), \(r=4\)), and it refuses \(\eta=10^{-4}\), \(10^{-6}\) and \(10^{-8}\) respectively. The radius is limited by the crude derivative bound at \(p=2\). It is not a claim that larger discs contain zeros. Nothing here concerns complex energy parameters \(q\), whose local factors need their own zero analysis, or a global continuation.
 
+**Theorem SNG-F39 (normalized local factors are entire).** Let \(G\) be connected on \(n\ge2\) vertices with diameter \(D\), and fix \(0<q<1\). Then \(B_G(t,q)=(1-t^n)L_G(t,q)\) is an entire function of \(t\), and \(L_G(t,q)\) is meromorphic in \(t\), with poles at most at the \(n\)-th roots of unity. For every \(H\ge0\) and complex \(t\),
+\[
+\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|\le\sum_{h>H}N_n(h)\,\max(|t|^h,|t|^{(n-1)h})\,q^{\lceil h^2/D\rceil},\qquad N_n(h)=(h+1)^n-2h^n+(h-1)^n,
+\]
+where \(B_{G,\le H}\) sums over minimum-zero profiles of maximum at most \(H\).
+
+*Proof.* A minimum-zero profile of maximum \(h\) has a vertex at height \(0\) and one at \(h\), joined by a path of at most \(D\) edges. Cauchy–Schwarz along that path gives \(h^2\le D\,E_G(a)\). Its volume lies in \([h,(n-1)h]\), and \(N_n(h)\) counts the profiles in \(\{0,\ldots,h\}^n\) with minimum \(0\) and maximum \(h\), by inclusion–exclusion. This proves the tail bound. A profile of volume \(m\) has \(h\ge m/(n-1)\), so \(|[t^m]B_G|\le\binom{m+n-1}{n-1}q^{m^2/((n-1)^2D)}\). Hence \(|[t^m]B_G|^{1/m}\to0\), and the radius of convergence is infinite. \(\square\)
+
+For disconnected graphs the zero-energy profiles that are constant on components give \(B_G(t,0)\)-type poles at roots of unity of the component sizes (SNG-F19), so connectedness is necessary. The theorem concerns one local factor at fixed \(q\). It says nothing about continuation of the product over primes.
+
+**Theorem SNG-F38 (certified enclosure of the regularized product).** Under SNG-A11 with \(G,H\) connected and \(q\in(0,1)\) rational, fix rational \(s=a/b\) with \((r+1)s>1\), an integer \(N\), the cutoff \(P=N^b\) and \(\rho=N^{-a}=P^{-s}\). Let \(\ell_n,m_n\) be the local coefficients of \(G\) and \(H\) at \(q\) for \(n\le M\), \(A_n=\binom{n+k-1}{k-1}\), and \(S_M=(1-\rho)^{-k}-\sum_{n\le M}A_n\rho^n\). Put
+\[
+T'=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\qquad
+D'=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\qquad
+C'=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)} .
+\]
+Then
+\[
+\Bigl|\log K_{G,H}(s,q)-\sum_{p\le P}\Bigl(\delta\log(1-p^{-rs})+\log B_G(p^{-s})-\log B_H(p^{-s})\Bigr)\Bigr|\le C'\,\frac{P^{1-(r+1)s}}{(r+1)s-1},
+\]
+and each finite summand is enclosed by rational intervals computed from: integer-root enclosures of \(p^{-a/b}\); monotonicity of \(B\) in \(t\ge0\); the height tail of SNG-F39; outward-rounded sums over a checked tree decomposition; and series enclosures of logarithms.
+
+*Proof.* \(L_G/L_H=B_G/B_H\) because the orders agree. The bound for omitted primes repeats the proof of (7.12) with sharper majorants. For \(0\le t\le\rho\), \(|L_G(t)-L_H(t)-\delta t^r|\le\sum_{n>r}|\ell_n-m_n|t^n\le T't^{r+1}\), using \(|\ell_n-m_n|\le2A_n\) beyond \(M\). Likewise \(\max(L_G,L_H)-1\le\sum_{n\ge1}\max(\ell_n,m_n)t^n\le D't\), using \(0\le\ell_n,m_n\le A_n\). Hence one regularized logarithm is at most \(C't^{r+1}\). Primes \(p>P\) satisfy \(p^{-s}<\rho\). Summing \(C'p^{-(r+1)s}\) over all integers \(p>P\) and applying the integral test gives the displayed bound. The finite enclosures were justified above: \(B_G\) has nonnegative coefficients, so it is increasing on \(t\ge0\), and rounding every product of nonnegative fixed-point numbers down (respectively up) gives a lower (respectively upper) bound. \(\square\)
+
+`src/singularity/certified.py` implements the theorem with 256 fractional bits. The minimum-zero condition is carried as a flag in the bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\) the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at \(s=1/r\). The retained results are in `results/certified_k.json`. For the spectral pair at \(q=1/2\) and \(s=1/2\), with all \(1229\) primes below \(10^4\) kept, the interval for \(\log K\) has width below \(10^{-2}\). The omitted-prime term accounts for almost all of that width; the local height tails total below \(10^{-14}\). With \(R=\zeta(2s)^{3/32}K\), this exhibits the proved branch singularity \((2s-1)^{-3/32}\) with an explicitly enclosed positive constant \(K(1/2,1/2)\). The singularity exponent is proved by SNG-A11, not fitted.
+
 Local factors themselves can also be enclosed by finitely many height coefficients. If \(L_N(t,q)=\sum_{n=0}^N\ell_n(q)t^n\), choose any \(t<R<1\). Then
 
 \[
@@ -2595,6 +2621,16 @@ The span-one sector records a cut-size distribution indexed by the size of a sid
 
 A useful new intermediate object is the finite nested-pair census indexed by \((|S|,|T|,|\delta S|,|\delta T|,e(T,V\setminus S))\). Its purpose is diagnostic. If binary-equivalent graphs first separate at span two, the census can identify which mixed boundary statistic causes that separation. Higher nested censuses are defined similarly, but their dimension grows quickly. The right theorem is not that more marks are always better; it is an explicit projection identity and, when available, a pair of graphs demonstrating that one projection loses information retained by another.
 
+**Proposition SNG-F40 (nested-pair census and its span-two projection).** For a graph on \(V\), \(|V|=n\), let \(\mathcal N_G\) count all pairs \(T\subseteq S\subseteq V\), with empty, full and equal sets allowed, by \((|S|,|T|,c(S),c(T),e(T,V\setminus S))\). Then: (i) \(\mathcal N_G\) has total mass \(3^n\); (ii) it is invariant under \((s,t,c_S,c_T,x)\mapsto(n-t,n-s,c_T,c_S,x)\); (iii) the cells with \(t\ge1\), \(s<n\) project onto the span-two sector,
+\[
+[z^2]\mathcal B_G(x,q,z)=\sum_{t\ge1,\ s<n}\mathcal N_G(s,t,c_S,c_T,x')\,x^{s+t}q^{c_S+c_T+2x'};
+\]
+(iv) the cells with \(t=0\) form the complete binary cut-volume census.
+
+*Proof.* A pair is a choice, for each vertex, of one of the three options \(V\setminus S\), \(S\setminus T\), \(T\), which gives (i). The map \((T,S)\mapsto(V\setminus S,V\setminus T)\) is an involution on nested pairs. It exchanges the two boundaries, and it preserves the crossing set: edges joining \(T\) to \(V\setminus S\) are the edges joining \(V\setminus S\) to \(V\setminus(V\setminus T)\). This gives (ii); on profiles it is \(a\mapsto2-a\). For (iii), the pairs with \(\varnothing\ne T\subseteq S\subsetneq V\) are the threshold chains of minimum-zero profiles of span two (SNG-F09 with \(h=2\)), including \(T=S\) for the gap profiles \(2\cdot\mathbf1_S\). Volume and energy then follow from SNG-F09 and SNG-F10. Part (iv) is immediate. \(\square\)
+
+The census is strictly finer than the span-two coefficients, which see only \(c_S+c_T+2x\). It explains the binary-census pair cell by cell. The two graphs have identical \(t=0\) cells, by (iv) and SNG-E003, yet they already differ in \(591\) cells of \(\mathcal N\). At volume three the differing cells all have \(S=\{i,j\}\), \(T=\{i\}\), with statistics \((d_i+d_j-2A_{ij},\,d_i,\,d_i-A_{ij})\). These are exactly the ordered adjacent-degree triples. The binary census records only the unordered sum \(d_i+d_j-2A_{ij}\) of a two-element set, while a nested pair also orders the two vertices and records which of them is adjacent to the outside. Projecting the differing cells to energy reproduces the discrepancy polynomial \(q^3(1-q)(1-q^3)^2(1-q^4)^2\) of SNG-E006. The census is a finite invariant with no claimed completeness. `src/singularity/nested_census.py` computes it. `tests/test_nested_census.py` checks (i)–(iii) on all 75 labeled graphs with at most four vertices and on the reference graphs against weak compositions and level chains. `results/nested_census.json` retains the complete tables of the reference pairs with graph digests.
+
 Minimum cuts provide a complementary asymptotic direction. On a connected graph, a nonconstant binary profile has positive energy, and the least such energy is the edge-connectivity. Its side-size multiplicities are visible in the marked binary sector. Nonbinary profiles can have energy tied to several nested boundaries, so identifying the first low-energy terms of the complete normalized series requires an argument about all heights. A promising target is a characterization of the minimum positive energy and its minimizing profiles, followed by a classification of the next energy layer. Each statement should distinguish energy ordering from volume ordering, since the Euler visibility theorem uses the latter.
 
 ## Matroids, cut lattices, and the role of a positive chamber
@@ -2811,6 +2847,9 @@ The meaning of every public coefficient, population and certificate interface is
 | `parameters` | Exceptional energy parameters | Square-free parts, Sturm sequences, exact real-root isolation, algebraic specialization, parameter strata (SNG-F31) |
 | `gauss` | Odd-prime Laplacian Gauss sums | Congruence diagonalization with witness, rank, discriminant character, rank-sensitive formula versus direct residue sum (SNG-F30) |
 | `congruence` | Volume residue classes | Direct degree selection, exact character averaging in Z[t]/Phi_m (SNG-F27), direct tuple filtering |
+| `certified` | Certified prime-product evaluation | Normalized local factors on a decomposition with outward rounding, quadratic height tails, interval logarithms, coefficient-aware omitted-prime bound (SNG-F38, SNG-F39) |
+| `nested_census` | Nested-pair boundary census | Five-statistic tensor over all T within S, reflection, span-two projection, binary marginal (SNG-F40) |
+| `families` | Pendant-cycle family | Generators, closed binary discrepancy, decorated decks, optimal probe parameter (SNG-F36, SNG-F37) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |
 | `arithmetic` | Prime-valuation populations | Positive integer factorization, finite Dirichlet coefficients, conservative exact local remainder and tail constants |

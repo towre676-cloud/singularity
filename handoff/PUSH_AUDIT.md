@@ -14,9 +14,9 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 
 | Status | Meaning | Push count |
 |---|---|---:|
-| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 3 |
+| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 2 |
 | `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 3 |
-| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 2 |
+| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 3 |
 | `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 6 |
 | `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 22 |
 
@@ -61,7 +61,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P11](#p11) | Recover span by bounded-box subtraction | `complete` | P09, P10 | S | 1 |
 | [P12](#p12) | Extend messages to bounded separators | `complete` | P10, P11 | L | 1 |
 | [P13](#p13) | Classify the first positive-energy layer | `implemented_pending_acceptance` | P06, P08 | S | 2 |
-| [P14](#p14) | Compute the nested-pair census | `planned` | P05, P08 | M | 1 |
+| [P14](#p14) | Compute the nested-pair census | `implemented_pending_acceptance` | P05, P08 | M | 1 |
 | [P15](#p15) | Separate lattice information from chamber information | `partial` | P08, P14 | L | 2 |
 | [P16](#p16) | Test Whitney switches systematically | `blocked` | P15 | M | 2 |
 | [P17](#p17) | Add exact volume congruence filters | `complete` | P03 | S | 2 |
@@ -296,19 +296,17 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P14
 
-**Compute the nested-pair census.** Status: `planned`. Dependencies: P05, P08. Remaining effort: M; priority: 1.
+**Compute the nested-pair census.** Status: `implemented_pending_acceptance`. Dependencies: P05, P08. Remaining effort: M; priority: 1.
 
-**Existing work:** The five coordinates (|S|,|T|,cut(S),cut(T),e(T,V\S)) and their projection to span-two volume/energy are specified. The fixed binary pair has a verified span-two discrepancy.
+**Existing work:** nested_census.py computes the raw five-statistic census over all 3^n pairs T within S (empty, full and equal sets kept). Proposition SNG-F40 proves total mass, the reflection symmetry (T,S)->(V-S,V-T), the projection of the cells with nonempty T and proper S onto the span-two generating function, and the binary marginal. The binary-census pair has identical binary marginals but 591 differing census cells; at volume three they are exactly the ordered adjacent-degree triples (d_i+d_j-2A, d_i, d_i-A), whose energy projection is the SNG-E006 discrepancy.
 
-**Evidence:** [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [docs/chapters/03_nested_heights.md](../docs/chapters/03_nested_heights.md); [tests/test_core.py](../tests/test_core.py); [results/certificates/binary_census.json](../results/certificates/binary_census.json).
+**Evidence:** [src/singularity/nested_census.py](../src/singularity/nested_census.py); [tests/test_nested_census.py](../tests/test_nested_census.py); [results/nested_census.json](../results/nested_census.json); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [scripts/reproduce.py](../scripts/reproduce.py).
 
 **Acceptance still missing:**
 
-- No independent nested-pair tensor enumerator or retained tensor data exists.
-- No tested projection equality or tensor-cell explanation of the binary pair is released.
-- P05 is complete; P08 acceptance remains open (D009).
+- Original dependency gate: P08 (kernel-checked nested-level identity) is open (D009); the finite content of P14 is complete but cannot be marked complete under the original gate.
 
-**Next concrete action:** Enumerate T subseteq S with precise empty/full and repeated-level conventions, project proper nonempty chains to exact span two, and retain the cells causing the binary-pair discrepancy.
+**Next concrete action:** Close P08 in a proof-assistant environment, then mark P14 complete with the existing receipt (tests/test_nested_census.py, results/nested_census.json).
 
 ### P15
 

@@ -28,6 +28,9 @@ The meaning of every public coefficient, population and certificate interface is
 | `parameters` | Exceptional energy parameters | Square-free parts, Sturm sequences, exact real-root isolation, algebraic specialization, parameter strata (SNG-F31) |
 | `gauss` | Odd-prime Laplacian Gauss sums | Congruence diagonalization with witness, rank, discriminant character, rank-sensitive formula versus direct residue sum (SNG-F30) |
 | `congruence` | Volume residue classes | Direct degree selection, exact character averaging in Z[t]/Phi_m (SNG-F27), direct tuple filtering |
+| `certified` | Certified prime-product evaluation | Normalized local factors on a decomposition with outward rounding, quadratic height tails, interval logarithms, coefficient-aware omitted-prime bound (SNG-F38, SNG-F39) |
+| `nested_census` | Nested-pair boundary census | Five-statistic tensor over all T within S, reflection, span-two projection, binary marginal (SNG-F40) |
+| `families` | Pendant-cycle family | Generators, closed binary discrepancy, decorated decks, optimal probe parameter (SNG-F36, SNG-F37) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |
 | `arithmetic` | Prime-valuation populations | Positive integer factorization, finite Dirichlet coefficients, conservative exact local remainder and tail constants |

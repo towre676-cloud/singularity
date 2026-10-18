@@ -124,6 +124,12 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Analytic constants.** `regularized_tail_constant` is the constant (7.12) for real \(0\le t\le\rho<1\); `regularized_prime_tail_bound` bounds the omitted primes at a cutoff \(N^b\) for rational \(s=a/b\); `certified_tail_record` recomputes the first discrepancy before bounding; `complex_disc_certificate` checks the exact conditions of SNG-F35 for a disc around \(1/r\) and reports the branches used. These are inequalities with stated hypotheses, not numerical evaluations of \(K\).
 
+**Certified evaluation.** `certified_k(G, H, q, a, b, N)` returns rigorous interval enclosures of \(\log K_{G,H}(a/b,q)\) and \(K\) for connected equal-order graphs with primes up to \(N^b\) kept (SNG-F38). Its components are `prime_power_enclosure`, `min_zero_box_sum` (outward-rounded, flag-tracked minimum-zero sums on a decomposition), `height_tail_bound` (SNG-F39), `normalized_factor_enclosure`, `log_enclosure`, `exp_enclosure` and `coefficient_aware_tail_constant`. Fixed-point values use 256 fractional bits; floats in the returned record are summaries, and `k_interval_exact_dyadic` holds the exact endpoints.
+
+**Nested-pair census.** `nested_pair_census(graph)` counts all \(3^n\) pairs \(T\subseteq S\subseteq V\) by `(|S|, |T|, cut S, cut T, e(T, V minus S))`; `span_two_projection` returns the `(volume, energy)` span-two sector; `reflect` applies \((T,S)\mapsto(V\setminus S,V\setminus T)\); `binary_marginal` returns the \(T=\varnothing\) cells (SNG-F40).
+
+**Families.** `pendant_cycle(l, j)` constructs \(G_{\ell,j}\) with original labels: cycle \(0..2\ell-1\), leaf \(2\ell\) at \(0\), leaf \(2\ell+1\) at \(j\). `binary_discrepancy_closed_form` and `binary_discrepancy_enumerated` return `{(z exponent, q exponent): coefficient}`. `first_discrepancy(p)` is \(q^2(1-q)^2(1-q^2)^p\) and `optimal_probe(p)` isolates its maximizer (SNG-F36). `decorated_deck` returns the degree-decorated induced-subgraph multiset of a given size.
+
 **Root-of-unity specialization.** For a primitive \(\ell\)-th root \(\zeta\), `residue_numerator(graph, ℓ)` returns \(N\) with \(L_G(x,\zeta)=N(x)/(1-x^\ell)^n\), coefficients in \(\mathbb Z[t]/\Phi_\ell(t)\) written constant-first, by enumerating the residue cube \(\{0,\ldots,\ell-1\}^n\) under a work budget. `remote_coefficient` evaluates one coefficient at an arbitrary index from \(N\). A budget refusal is not a mathematical statement.
 
 **Odd-prime Gauss sums.** For an odd prime \(p\), `laplacian_invariants(graph, p)` returns the rank of \(\Delta_G\) over \(\mathbb F_p\), a congruence diagonalization with its basis matrix as witness, and the Legendre character of the nonsingular discriminant. `gauss_sum_direct` is \(\sum_{a\in\mathbb F_p^n}\omega^{E(a)}\) from the residue numerator at \(x=1\); `gauss_sum_formula` is \(p^{n-r}(D/p)g_p^r\) (SNG-F30). Both are elements of \(\mathbb Z[t]/\Phi_p(t)\). \(p=2\), composite moduli and prime powers are rejected.
@@ -167,6 +173,9 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `polynomials.*`, `euler.*` | 5, 8 | `tests/test_analytics.py` |
 | `dirichlet_coefficients`, `prime_valuations`, `valuation_energy` | 8 | `tests/test_arithmetic.py` |
 | analytic constants in `arithmetic` | 8 | `tests/test_arithmetic.py`; `results/tail_records.json`, `results/complex_discs.json` |
+| `certified.*` | 8 | `tests/test_certified.py`; `results/certified_k.json` |
+| `nested_census.*` | 8 | `tests/test_nested_census.py`; `results/nested_census.json` |
+| `families.*` | 8 | `tests/test_families.py`; `results/pendant_family.json` |
 | `CyclotomicRing`, `residue_numerator`, `remote_coefficient` | 8 | `tests/test_conductor_weighted.py`; `results/conductor_example.json` |
 | `binary_cut_profile`, `minimum_cut_profile`, `laplacian_characteristic_polynomial`, `invariants.first_difference` | 8 | `HeightTests`, `DiscoveryTests` |
 | `build_certificate`, `replay_certificate`, `parse_certificate` | 5, 9 | `tests/test_certificates.py`, `tests/test_analytics.py`; `results/certificates/` |

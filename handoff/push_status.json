@@ -456,7 +456,7 @@
     {
       "id": "P14",
       "title": "Compute the nested-pair census",
-      "status": "planned",
+      "status": "implemented_pending_acceptance",
       "effort": "M",
       "priority": 1,
       "dependencies": [
@@ -464,17 +464,16 @@
         "P08"
       ],
       "evidence": [
+        "src/singularity/nested_census.py",
+        "tests/test_nested_census.py",
+        "results/nested_census.json",
         "docs/chapters/13_research_program.md",
-        "docs/chapters/03_nested_heights.md",
-        "tests/test_core.py",
-        "results/certificates/binary_census.json"
+        "scripts/reproduce.py"
       ],
-      "existing_work": "The five coordinates (|S|,|T|,cut(S),cut(T),e(T,V\\S)) and their projection to span-two volume/energy are specified. The fixed binary pair has a verified span-two discrepancy.",
-      "next_action": "Enumerate T subseteq S with precise empty/full and repeated-level conventions, project proper nonempty chains to exact span two, and retain the cells causing the binary-pair discrepancy.",
+      "existing_work": "nested_census.py computes the raw five-statistic census over all 3^n pairs T within S (empty, full and equal sets kept). Proposition SNG-F40 proves total mass, the reflection symmetry (T,S)->(V-S,V-T), the projection of the cells with nonempty T and proper S onto the span-two generating function, and the binary marginal. The binary-census pair has identical binary marginals but 591 differing census cells; at volume three they are exactly the ordered adjacent-degree triples (d_i+d_j-2A, d_i, d_i-A), whose energy projection is the SNG-E006 discrepancy.",
+      "next_action": "Close P08 in a proof-assistant environment, then mark P14 complete with the existing receipt (tests/test_nested_census.py, results/nested_census.json).",
       "acceptance_gaps": [
-        "No independent nested-pair tensor enumerator or retained tensor data exists.",
-        "No tested projection equality or tensor-cell explanation of the binary pair is released.",
-        "P05 is complete; P08 acceptance remains open (D009)."
+        "Original dependency gate: P08 (kernel-checked nested-level identity) is open (D009); the finite content of P14 is complete but cannot be marked complete under the original gate."
       ],
       "packet": "handoff/tasks/P14.md"
     },

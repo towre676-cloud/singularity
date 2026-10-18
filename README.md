@@ -25,6 +25,7 @@ Minimum-zero representatives remove common translations. A span mark retains the
 | Seven-vertex spectral pair | Degree multiset and Laplacian spectrum | 2 | 3/32 |
 | Seven-vertex binary-census pair | Entire cut-volume census over all 128 binary assignments | 3 | 11025/262144 |
 | Cube and eight-vertex Mobius ladder | Cubic, triangle-free, equal local and marked prefixes through volume 3 | 4 | 81/2048 |
+| Pendant cycles: C_2l with leaves at distance p versus opposite, every 2 <= p < l (theorem SNG-F36) | Degrees, edge degree types, cut-lattice theta series, all coefficients through volume p | p+1 | 3^p/4^(p+2) |
 
 An exhaustive connected-graph census through six vertices contains 112 isomorphism classes at order six; all separate by volume three. This is a finite population result, not a general reconstruction theorem. A bounded-height transfer experiment on a 96-vertex path counts 2,506,262,962,660,245 retained labeled profiles; every volume marginal is independently checked by a generating-function identity. The [implementation chapter](docs/IMPLEMENTATION.md) explains the restrictions and measured scope.
 

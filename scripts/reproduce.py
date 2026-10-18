@@ -158,6 +158,23 @@ def census_visibility():
             'interpretation': 'finite agreement or separation through volume 6 on this population only', 'orders': orders}
 
 
+def nested_tables():
+    """P14 receipt: complete nested-pair census tables of the reference graphs."""
+    from singularity.nested_census import census_difference, nested_pair_census
+    tables, digests = {}, {}
+    for name in ('spectral_g', 'spectral_h', 'binary_g', 'binary_h'):
+        graph = GRAPHS[name]
+        source = json.dumps(graph.to_dict(), sort_keys=True, separators=(',', ':')).encode()
+        digests[name] = sha256(source).hexdigest()
+        tables[name] = [[*cell, count] for cell, count in nested_pair_census(graph).items()]
+    difference = census_difference(nested_pair_census(GRAPHS['binary_g']), nested_pair_census(GRAPHS['binary_h']))
+    return {'schema': 'singularity.nested-census/1', 'theorem': 'SNG-F40',
+            'cell': '[|S|, |T|, cut S, cut T, e(T, V minus S), count] over all T within S',
+            'graph_sha256': digests, 'tables': tables,
+            'binary_pair_difference_cells': len(difference),
+            'binary_pair_volume_three_difference': [[*k, v] for k, v in difference.items() if k[0] + k[1] <= 3]}
+
+
 def compute():
     factors_a={'coefficient':'2','monomial':2,'factors':[[1,2],[2,1]]}
     factors_b={'coefficient':'1','monomial':3,'factors':[[1,1],[3,2],[4,2]]}
@@ -191,6 +208,7 @@ def compute():
         **{f'data/graphs/{name}.json':graph.to_dict() for name,graph in graph_sources.items()},
         **{f'results/certificates/{name}.json':packet for name,packet in certificates.items()},
         'results/pair_acceptance.json':acceptance,
+        'results/nested_census.json':nested_tables(),
         'results/conductor_fixtures.json':conductor_fixtures(),
         'results/gauss_fixtures.json':gauss_fixtures(),
         'results/visibility_filtration.json':census_visibility(),

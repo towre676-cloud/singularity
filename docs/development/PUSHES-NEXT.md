@@ -1,0 +1,75 @@
+# Proposed extension units P37–P72
+
+**Status:** proposals recorded on 2026-10-18 from the project owner's plan. They extend, and do not replace, the original program in [PUSHES.md](PUSHES.md). P01–P36 keep their identifiers, dependencies and acceptance gates, and `handoff/push_status.json` continues to track exactly those 36. An extension unit is accepted only when its stated result is proved or implemented with an independent check. The column "evidence so far" records work that already bears on a unit; such evidence is not acceptance.
+
+The six waves have three centers: certified arithmetic evaluation, exactly controlled visibility depth, and the information cost of reusable relational interfaces.
+
+## Wave A: exact-depth families (P37–P42)
+
+| ID | Proposed result | Evidence so far |
+|---|---|---|
+| P37 | Connected decorated-support lemma for the pendant-cycle family | Subsumed by the placement lemma in the proof of SNG-F36 |
+| P38 | Disconnected-support reconstruction completing the deck comparison | Proof of SNG-F36 counts all components, including isolated leaves; decks checked computationally for six pairs |
+| P39 | Binary transfer factorization | SNG-F36 closed form \(q^2(1-q)^2(1-q^2)^pz^{p+1}(1-z)^2U_{\ell-p}^2\), checked against all subsets for \(\ell\le7\) |
+| P40 | Exact-depth family theorem | SNG-F36 (chapter 10); `results/pendant_family.json`. Recorded under original P32 as `implemented_pending_acceptance` |
+| P41 | Matched-invariant delay bounds | Depth \((n-2)/2\) with equal degrees, edge degree types and isometric cut lattices; spectra differ |
+| P42 | Optimal visibility parameters | \(q_p^*=2/(1+\sqrt{4p+9})\), stationary equation checked exactly in `tests/test_families.py`; the asymptotic \(1/(ep)\) is stated in chapter 10 |
+
+## Wave B: boundary responses (P43–P48)
+
+| ID | Proposed result | Evidence so far |
+|---|---|---|
+| P43 | Ordered terminal kernels \(K_G^B(\mathbf b;x,q)\) | `decomposition.py` bag messages are terminal-conditioned responses with owned charges |
+| P44 | General gluing theorem with correct ownership and contraction | SNG-F26 ownership rule |
+| P45 | Whitney-twist discrepancy as an antisymmetric pairing | — |
+| P46 | Identical-block positivity (sum of squares with equality conditions) | SNG-F37 is the cycle instance: a positive-definite Gaussian transfer kernel gives a sum of squares |
+| P47 | Marked boundary composition with global minimum-zero and span | SNG-F25 subtraction applies after gluing |
+| P48 | Response-preserving transformations | — |
+
+## Wave C: contexts and interfaces (P49–P54)
+
+| ID | Proposed result |
+|---|---|
+| P49 | Future-context equivalence for a specified attachment grammar |
+| P50 | Connection-matrix formulation and realizable response spaces |
+| P51 | Unrestricted linear-interface lower bound under pinned probes |
+| P52 | Volume-limited interface rank |
+| P53 | Constructive restricted-context quotients |
+| P54 | A compression theorem with proved savings, including arithmetic cost |
+
+## Wave D: engines (P55–P60)
+
+| ID | Proposed result | Evidence so far |
+|---|---|---|
+| P55 | Compiled decomposition plans | `certified.py` reuses one decomposition per graph across all primes |
+| P56 | Multiple arithmetic backends on one checked plan | Exact histograms (`decomposition.py`) and outward-rounded scalars (`certified.py`) share the ownership rule |
+| P57 | Incremental height/span evaluation | — |
+| P58 | Chamber sensitivity calculus | SNG-F29 gap form |
+| P59 | Incremental chamber engine | — |
+| P60 | Observation-cost benchmark | — |
+
+## Wave E: analysis (P61–P66)
+
+| ID | Proposed result | Evidence so far |
+|---|---|---|
+| P61 | Sharp volume–energy coercivity via grounded Green functions | SNG-F39 uses the cruder \(h^2\le DE\) |
+| P62 | Entire normalized local factors | SNG-F39 (chapter 7), with an explicit tail valid for complex \(t\) |
+| P63 | Larger certified complex domains | SNG-F35 disc; SNG-F39 supplies the tool for improving the small-prime step |
+| P64 | Accelerated arithmetic tails | — |
+| P65 | Certified local zero analysis | — |
+| P66 | Uniform parameter regimes near the endpoints | — |
+
+## Wave F: arithmetic and probes (P67–P72)
+
+| ID | Proposed result | Evidence so far |
+|---|---|---|
+| P67 | Prime-power conductor theory | SNG-F30 covers odd primes only |
+| P68 | Characteristic-two classification | — |
+| P69 | Finite-conductor information budgets | SNG-F28 remote formula |
+| P70 | Weighted reciprocity in a new category, or a sharper impossibility theorem | SNG-F34 obstruction in the rational-function category |
+| P71 | First nonbinary energy layers through nested minimum cuts | — |
+| P72 | Optimal probe selection | P42 parameter optimizer |
+
+## Ordering
+
+The owner's suggested order is: P27, which SNG-F38 now addresses; P07–P08 in a prepared proof-assistant environment, with finite preparation for P14; the pendant-cycle theorem, now SNG-F36 and SNG-F37; then terminal kernels and the Whitney-twist identity.
