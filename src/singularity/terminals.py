@@ -287,3 +287,38 @@ def recover_kernel_from_probes(probe_values: dict[tuple[int, ...], list], termin
             total = [{0: total[i].get(0, 0) + term[i].get(0, 0)} for i in range(R + 1)]
         result[b] = [t.get(0, Fraction(0)) for t in total]
     return result
+
+
+def rooted_deck(graph: Graph, terminals: Sequence[int], size: int, swap: bool = False) -> Counter:
+    """Multiset of decorated induced subgraphs on S + terminals over interior S, |S| = size.
+
+    Vertices carry their ambient degree; the terminals carry their position in
+    the ordered tuple (reversed when ``swap``), so isomorphisms must respect
+    terminal roles.  Canonical form: least key over orderings of S.
+    """
+    from itertools import combinations, permutations
+
+    terminals = _check_terminals(graph, terminals)
+    if len(terminals) != 2:
+        raise ValueError("rooted decks are implemented for two terminals")
+    roles = terminals[::-1] if swap else terminals
+    edges, deg = set(graph.edges), graph.degrees
+    interior = [v for v in range(graph.n) if v not in terminals]
+    adjacent = lambda u, v: int((min(u, v), max(u, v)) in edges)
+    deck: Counter = Counter()
+    for subset in combinations(interior, size):
+        best = None
+        for order in permutations(subset):
+            full = list(roles) + list(order)
+            key = (tuple(deg[v] for v in full),
+                   tuple(adjacent(full[i], full[j]) for i in range(len(full)) for j in range(i + 1, len(full))))
+            if best is None or key < best:
+                best = key
+        deck[best] += 1
+    return deck
+
+
+def asymmetry_order(kernel: Kernel) -> int | None:
+    """Least interior volume of a nonzero cell of K(s,t) - K(t,s), or None."""
+    a = antisymmetric_part(kernel)
+    return min((v for cells in a.values() for v, _ in cells), default=None)

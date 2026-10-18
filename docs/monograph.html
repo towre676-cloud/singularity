@@ -4666,29 +4666,93 @@ is exact when
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∣</mo><mi>r</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">b\mid ra</annotation></semantics></math>,
 in particular at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">s=1/r</annotation></semantics></math>.
-The retained results are in <code>results/certified_k.json</code>. For
-the spectral pair at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s=1/2</annotation></semantics></math>,
-with all
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1229</mn><annotation encoding="application/x-tex">1229</annotation></semantics></math>
-primes below
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mn>4</mn></msup><annotation encoding="application/x-tex">10^4</annotation></semantics></math>
-kept, the interval for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">\log K</annotation></semantics></math>
-has width below
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">10^{-2}</annotation></semantics></math>.
-The omitted-prime term accounts for almost all of that width; the local
-height tails total below
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>14</mn></mrow></msup><annotation encoding="application/x-tex">10^{-14}</annotation></semantics></math>.
+The retained results, with exact dyadic endpoints, are in
+<code>results/certified_k.json</code>. All are at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>:</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pair</th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math></th>
+<th style="text-align: right;">Primes kept</th>
+<th style="text-align: right;">Omitted-prime log bound</th>
+<th>Enclosure of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K(s,1/2)</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>spectral,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">r=2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>3</mn><mi>/</mi><mn>32</mn></mrow><annotation encoding="application/x-tex">\delta=3/32</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></td>
+<td style="text-align: right;">1229
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><msup><mn>10</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\le10^4</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.6</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">4.6\times10^{-3}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.84973</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.85750</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.84973,\,0.85750]</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>spectral</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">3/5</annotation></semantics></math></td>
+<td style="text-align: right;">985
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><msup><mn>6</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">\le6^5</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.2</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2.2\times10^{-4}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.89931</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.89971</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.89931,\,0.89971]</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>spectral</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+<td style="text-align: right;">168
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\le10^3</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.1</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">1.1\times10^{-7}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.9678188</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.9678191</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.9678188,\,0.9678191]</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>binary census,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">r=3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>11025</mn><mi>/</mi><mn>262144</mn></mrow><annotation encoding="application/x-tex">\delta=11025/262144</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">1/3</annotation></semantics></math></td>
+<td style="text-align: right;">2961
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><msup><mn>30</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\le30^3</annotation></semantics></math>)</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.2</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2.2\times10^{-2}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.90084</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.94230</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.90084,\,0.94230]</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>The local height tails total below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow><annotation encoding="application/x-tex">4\times10^{-16}</annotation></semantics></math>
+in every run, so the width comes almost entirely from the omitted
+primes; arithmetic rounding is below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>60</mn></mrow></msup><annotation encoding="application/x-tex">10^{-60}</annotation></semantics></math>.
 With
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>ζ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>3</mn><mi>/</mi><mn>32</mn></mrow></msup><mi>K</mi></mrow><annotation encoding="application/x-tex">R=\zeta(2s)^{3/32}K</annotation></semantics></math>,
-this exhibits the proved branch singularity
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mn>3</mn><mi>/</mi><mn>32</mn></mrow></msup><annotation encoding="application/x-tex">(2s-1)^{-3/32}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>ζ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>δ</mi></msup><mi>K</mi></mrow><annotation encoding="application/x-tex">R=\zeta(rs)^\delta K</annotation></semantics></math>,
+the tables exhibit the proved branch singularity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mi>δ</mi></mrow></msup><annotation encoding="application/x-tex">(rs-1)^{-\delta}</annotation></semantics></math>
 with an explicitly enclosed positive constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K(1/2,1/2)</annotation></semantics></math>.
-The singularity exponent is proved by SNG-A11, not fitted.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K(1/r,1/2)</annotation></semantics></math>.
+The singularity exponent is proved by SNG-A11, not fitted. Narrowing the
+binary interval needs either more primes or a smaller constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">C&#39;</annotation></semantics></math>;
+the bound decays only like
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mrow><mo>−</mo><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><annotation encoding="application/x-tex">P^{-1/3}</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">s=1/3</annotation></semantics></math>.
+A separate test checks the following. A run at a smaller cutoff with
+160-bit arithmetic overlaps the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s=1/2</annotation></semantics></math>
+enclosure. Reversing the pair negates the finite log enclosure.
+Identical graphs give a log ratio enclosing zero.</p>
 <p>Local factors themselves can also be enclosed by finitely many height
 coefficients. If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>N</mi></msubsup><msub><mo>ℓ</mo><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>t</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">L_N(t,q)=\sum_{n=0}^N\ell_n(q)t^n</annotation></semantics></math>,
@@ -7455,14 +7519,15 @@ sixteen glued graphs counted by plain enumeration.</p>
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two
 graphs with identical scalar height series. Among all connected blocks
-with at most five vertices and balanced terminals, the kernel through
-volume six is symmetric exactly when such an automorphism exists. This
-finite search does not decide the question in general.
-<code>src/singularity/terminals.py</code> computes kernels on a checked
-decomposition, with the terminals in every bag, and checks them against
-enumeration. <code>tests/test_terminals.py</code> verifies the gluing
-formulas for two and three terminals, the twist identity, invisibility
-for symmetric blocks, and the depth formula and identification above for
+with at most six vertices and balanced terminals (7,456 at six
+vertices), the kernel through volume six is symmetric exactly when such
+an automorphism exists. This finite search does not decide the question
+in general. <code>src/singularity/terminals.py</code> computes kernels
+on a checked decomposition, with the terminals in every bag, and checks
+them against enumeration. <code>tests/test_terminals.py</code> verifies
+the gluing formulas for two and three terminals, the twist identity,
+invisibility for symmetric blocks, and the depth formula and
+identification above for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>m</mi><mo>,</mo><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">B_{m,k}</annotation></semantics></math>
 with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">m\le4</annotation></semantics></math>.</p>

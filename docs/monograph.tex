@@ -2975,15 +2975,52 @@ down (respectively up) gives a lower (respectively upper) bound.
 fractional bits. The minimum-zero condition is carried as a flag in the
 bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\)
 the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at
-\(s=1/r\). The retained results are in
-\texttt{results/certified\_k.json}. For the spectral pair at \(q=1/2\)
-and \(s=1/2\), with all \(1229\) primes below \(10^4\) kept, the
-interval for \(\log K\) has width below \(10^{-2}\). The omitted-prime
-term accounts for almost all of that width; the local height tails total
-below \(10^{-14}\). With \(R=\zeta(2s)^{3/32}K\), this exhibits the
-proved branch singularity \((2s-1)^{-3/32}\) with an explicitly enclosed
-positive constant \(K(1/2,1/2)\). The singularity exponent is proved by
-SNG-A11, not fitted.
+\(s=1/r\). The retained results, with exact dyadic endpoints, are in
+\texttt{results/certified\_k.json}. All are at \(q=1/2\):
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2353}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2353}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Pair
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(s\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Primes kept
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Omitted-prime log bound
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Enclosure of \(K(s,1/2)\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+spectral, \(r=2\), \(\delta=3/32\) & \(1/2\) & 1229 (\(\le10^4\)) &
+\(4.6\times10^{-3}\) & \([0.84973,\,0.85750]\) \\
+spectral & \(3/5\) & 985 (\(\le6^5\)) & \(2.2\times10^{-4}\) &
+\([0.89931,\,0.89971]\) \\
+spectral & \(1\) & 168 (\(\le10^3\)) & \(1.1\times10^{-7}\) &
+\([0.9678188,\,0.9678191]\) \\
+binary census, \(r=3\), \(\delta=11025/262144\) & \(1/3\) & 2961
+(\(\le30^3\)) & \(2.2\times10^{-2}\) & \([0.90084,\,0.94230]\) \\
+\end{longtable}
+
+The local height tails total below \(4\times10^{-16}\) in every run, so
+the width comes almost entirely from the omitted primes; arithmetic
+rounding is below \(10^{-60}\). With \(R=\zeta(rs)^\delta K\), the
+tables exhibit the proved branch singularity \((rs-1)^{-\delta}\) with
+an explicitly enclosed positive constant \(K(1/r,1/2)\). The singularity
+exponent is proved by SNG-A11, not fitted. Narrowing the binary interval
+needs either more primes or a smaller constant \(C'\); the bound decays
+only like \(P^{-1/3}\) at \(s=1/3\). A separate test checks the
+following. A run at a smaller cutoff with 160-bit arithmetic overlaps
+the \(s=1/2\) enclosure. Reversing the pair negates the finite log
+enclosure. Identical graphs give a log ratio enclosing zero.
 
 Local factors themselves can also be enclosed by finitely many height
 coefficients. If \(L_N(t,q)=\sum_{n=0}^N\ell_n(q)t^n\), choose any
@@ -4904,15 +4941,15 @@ A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two
 graphs with identical scalar height series. Among all connected blocks
-with at most five vertices and balanced terminals, the kernel through
-volume six is symmetric exactly when such an automorphism exists. This
-finite search does not decide the question in general.
-\texttt{src/singularity/terminals.py} computes kernels on a checked
-decomposition, with the terminals in every bag, and checks them against
-enumeration. \texttt{tests/test\_terminals.py} verifies the gluing
-formulas for two and three terminals, the twist identity, invisibility
-for symmetric blocks, and the depth formula and identification above for
-\(B_{m,k}\) with \(m\le4\).
+with at most six vertices and balanced terminals (7,456 at six
+vertices), the kernel through volume six is symmetric exactly when such
+an automorphism exists. This finite search does not decide the question
+in general. \texttt{src/singularity/terminals.py} computes kernels on a
+checked decomposition, with the terminals in every bag, and checks them
+against enumeration. \texttt{tests/test\_terminals.py} verifies the
+gluing formulas for two and three terminals, the twist identity,
+invisibility for symmetric blocks, and the depth formula and
+identification above for \(B_{m,k}\) with \(m\le4\).
 
 \hypertarget{what-should-be-searched-next}{%
 \section{What should be searched

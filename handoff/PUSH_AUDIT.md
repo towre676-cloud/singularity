@@ -14,11 +14,11 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 
 | Status | Meaning | Push count |
 |---|---|---:|
-| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 2 |
+| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 1 |
 | `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 3 |
 | `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 3 |
 | `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 6 |
-| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 22 |
+| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 23 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
 
@@ -74,7 +74,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P24](#p24) | Determine exceptional energy parameters | `complete` | P23 | M | 1 |
 | [P25](#p25) | Organize successive visibility levels | `complete` | P23, P24 | M | 1 |
 | [P26](#p26) | Make analytic remainder bounds explicit | `complete` | P25 | S | 1 |
-| [P27](#p27) | Produce controlled real singularity experiments | `planned` | P26 | M | 1 |
+| [P27](#p27) | Produce controlled real singularity experiments | `complete` | P26 | M | 1 |
 | [P28](#p28) | State the available complex domain exactly | `complete` | P26 | M | 2 |
 | [P29](#p29) | Specify a complete finite graph census | `complete` | P03 | S | 1 |
 | [P30](#p30) | Measure collision classes across invariants | `partial` | P12, P14, P29 | M | 2 |
@@ -556,20 +556,26 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P27
 
-**Produce controlled real singularity experiments.** Status: `planned`. Dependencies: P26. Remaining effort: M; priority: 1.
+**Produce controlled real singularity experiments.** Status: `complete` (accepted 2026-10-18). Dependencies: P26.
 
-**Existing work:** Exact tail constants and local truncation estimates are available as foundations. No retained prime-product numerical experiment is included in results/.
+**Accepted evidence:** certified.py encloses K_{G,H}(s,q) rigorously: L_G/L_H = B_G/B_H removes common translations; B is evaluated on a checked decomposition with 256-bit outward rounding and a minimum-zero flag; height truncation is bounded by the quadratic tail of SNG-F39; p^(-a/b) by integer roots; logarithms and the final exponential by series with explicit remainders; omitted primes by the coefficient-aware constant of SNG-F38. Retained enclosures at q=1/2: spectral K(1/2) in [0.84973, 0.85750], K(3/5) in [0.89931, 0.89971], K(1) in [0.9678188, 0.9678191]; binary census K(1/3) in [0.90084, 0.94230].
 
-**Evidence:** [src/singularity/arithmetic.py](../src/singularity/arithmetic.py); [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md); [tests/test_arithmetic.py](../tests/test_arithmetic.py).
+**Evidence files:** [src/singularity/certified.py](../src/singularity/certified.py); [scripts/certified_k.py](../scripts/certified_k.py); [results/certified_k.json](../results/certified_k.json); [tests/test_certified.py](../tests/test_certified.py); [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md); [src/singularity/decomposition.py](../src/singularity/decomposition.py).
 
-**Acceptance still missing:**
+**Criteria receipt:**
 
-- No rigorous finite-prime local-factor evaluation with truncation enclosures exists.
-- No normalized remainder intervals near s=1/r or demonstrated recovery of the established asymptotic within those intervals is released.
-- Quantitative obstacle found 2026-10-18: at s=1/2 the prime p=2 has t=2^(-1/2)~0.71, and the uniform truncation bound (7.14) after the ~8 volumes that enumeration reaches for n=7 is useless there; each small-prime local factor must be evaluated through volume ~100 at the fixed rational q.
-- The omitted-prime tail also needs the coefficient-aware form of (7.12) (exact |l_G,n - l_H,n| through the computed volume, A_n beyond): with rho=P^(-s) and P=N^2 at s=1/2 the tail is about 2C/N.
+- *prime-product evaluations near s=1/r with finite-cutoff error intervals*: results/certified_k.json (s=1/r for both pairs, plus s=3/5 and s=1 for the spectral pair); SNG-F38.
+- *local truncation, arithmetic rounding and omitted-prime errors budgeted separately*: record fields total_height_tail, omitted_prime_log_bound; fixed-point outward rounding.
+- *recover the predicted asymptotic within the intervals*: K(1/r,1/2) enclosed in a positive interval; with the proved factorization R = zeta(rs)^delta K (SNG-A11) the exponent delta is exact, not fitted.
+- *multiple cutoffs and precision settings overlap*: test_other_cutoff_and_precision_overlap_retained_enclosure (cutoff 144, 160 bits).
+- *identical-graph ratio, reversed-pair reciprocals, exact released exponents*: test_identical_graphs_give_log_ratio_enclosing_zero; test_reversal_negates_the_enclosure; test_retained_runs_recompute_the_exact_exponents.
+- *carefully captioned table*: chapter 7 table after SNG-F38.
+- *limitation reported*: the binary interval is wide because the omitted-prime bound decays like P^(-1/3) at s=1/3.
+- *P26 dependency*: complete.
 
-**Next concrete action:** Add a fixed-q engine to decomposition.py (bag messages as volume polynomials with outward-rounded fixed-point coefficients instead of (volume, energy) histograms) to compute L_G(t,q) through volume ~100 for the seven-vertex pairs; combine with integer-root enclosures of p^(-s) and (1-t^r)^delta, the coefficient-aware tail constant and P26's record to publish a certified table of K(s,1/2) at s=1/r and a few larger s.
+**Commands:** `PYTHONPATH=src python scripts/certified_k.py (about 41 minutes)`; `PYTHONPATH=src python -m unittest tests.test_certified -v`.
+
+**Remaining:** none for P27.
 
 ### P28
 

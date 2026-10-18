@@ -88,6 +88,29 @@ class EnclosureTests(unittest.TestCase):
         self.assertEqual(primes_up_to(9), [2, 3, 5, 7])
         self.assertLess(hi - lo, 1e-15)
 
+    def test_identical_graphs_give_log_ratio_enclosing_zero(self):
+        g = GRAPHS["binary_g"]
+        for p in (2, 3, 101):
+            lo_t, hi_t = prime_power_enclosure(p, 1, 3)
+            first = normalized_factor_enclosure(g, lo_t, hi_t, F(1, 2))
+            second = normalized_factor_enclosure(g, lo_t, hi_t, F(1, 2))
+            a_lo, a_hi = log_enclosure(first["low"], first["high"])
+            b_lo, b_hi = log_enclosure(second["low"], second["high"])
+            self.assertLessEqual(a_lo - b_hi, 0)
+            self.assertGreaterEqual(a_hi - b_lo, 0)
+            self.assertLess(a_hi - b_lo, F(1, 10 ** 15))
+
+    def test_retained_runs_recompute_the_exact_exponents(self):
+        import json
+        from pathlib import Path
+        runs = json.loads((Path(__file__).resolve().parents[1] / "results/certified_k.json").read_text())["runs"]
+        exponents = {(r["pair"], r["s"]): (r["first_depth"], r["delta"]) for r in runs}
+        self.assertEqual(exponents["spectral", "1/2"], (2, "3/32"))
+        self.assertEqual(exponents["binary_census", "1/3"], (3, "11025/262144"))
+        for r in runs:
+            lo, hi = (F(x) for x in r["k_interval_exact_dyadic"])
+            self.assertTrue(0 < lo < hi)
+
     def test_other_cutoff_and_precision_overlap_retained_enclosure(self):
         import json
         from pathlib import Path
