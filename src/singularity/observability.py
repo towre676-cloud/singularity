@@ -42,12 +42,20 @@ def _dot(a, b):
     return sum((x*y for x, y in zip(a, b)), Fraction(0))
 
 
-def row_times_matrix(row: Row, matrix: Matrix) -> Row:
+def row_times_matrix(row: Row, matrix: Matrix, columns: int | None = None) -> Row:
+    """Row vector times matrix.  ``columns`` is required when ``matrix`` has no
+    rows: a combination of zero basis rows is the zero vector of the ambient
+    dimension, which an empty matrix cannot report by itself."""
     if len(row) != len(matrix):
         raise ValueError("matrix dimension mismatch")
-    n = len(matrix[0]) if matrix else 0
+    if columns is None:
+        if not matrix:
+            raise ValueError("an empty matrix needs an explicit column count")
+        columns = len(matrix[0])
+    if any(len(r) != columns for r in matrix):
+        raise ValueError("matrix dimension mismatch")
     return tuple(sum((row[k]*matrix[k][j] for k in range(len(row))), Fraction(0))
-                 for j in range(n))
+                 for j in range(columns))
 
 
 def matrix_times_vector(matrix: Matrix, vector: Row) -> Row:
@@ -107,6 +115,11 @@ class ClosureCertificate:
         return len(self.basis)
 
     @property
+    def invisible_subspace(self):
+        """Rows spanning N = ker B, the states no permitted experiment can see."""
+        return self.nullspace
+
+    @property
     def rows(self):
         return tuple(e.row for e in self.basis)
 
@@ -123,6 +136,54 @@ def _index(value, size):
     if isinstance(value, bool) or not isinstance(value, int) or not 0 <= value < size:
         raise ValueError("invalid observation or operator index")
     return value
+
+
+def _exact(value) -> bool:
+    return type(value) is Fraction
+
+
+def _exact_row(value, size) -> bool:
+    return type(value) is tuple and len(value) == size and all(_exact(x) for x in value)
+
+
+def _exact_matrix(value, rows, columns) -> bool:
+    return type(value) is tuple and len(value) == rows and all(_exact_row(r, columns) for r in value)
+
+
+def _exact_index(value, size) -> bool:
+    return type(value) is int and 0 <= value < size
+
+
+def _well_typed(system: OperatorSystem, certificate) -> bool:
+    """The in-memory analogue of portable replay's strict decoding.
+
+    Ordinary equality identifies Fraction(0), 0, 0.0 and False; a certificate
+    is accepted only when every stored number is a Fraction, every index and
+    pivot an int (not bool), and every container a tuple of the stated size.
+    """
+    if not isinstance(system, OperatorSystem) or type(certificate) is not ClosureCertificate:
+        return False
+    n, o, g = system.dimension, len(system.observations), len(system.operators)
+    basis = certificate.basis
+    if type(basis) is not tuple or len(basis) > n:
+        return False
+    r = len(basis)
+    for e in basis:
+        if type(e) is not Experiment or not _exact_index(e.observation, o) or not _exact(e.cost):
+            return False
+        if type(e.word) is not tuple or not all(_exact_index(i, g) for i in e.word):
+            return False
+        if not _exact_row(e.row, n):
+            return False
+    if not _exact_matrix(certificate.observation_coordinates, o, r):
+        return False
+    t = certificate.transition_coordinates
+    if type(t) is not tuple or len(t) != g or not all(_exact_matrix(m, r, r) for m in t):
+        return False
+    if not _exact_matrix(certificate.nullspace, n - r, n):
+        return False
+    p = certificate.pivots
+    return type(p) is tuple and len(p) == r and all(_exact_index(i, n) for i in p)
 
 
 def experiment(system: OperatorSystem, observation: int, word=()) -> Experiment:
@@ -216,7 +277,8 @@ def observable_closure(system: OperatorSystem) -> ClosureCertificate:
         reduced, operations, pivots = _echelon(tuple(b.row for b in basis), system.dimension)
         for i, operator in enumerate(system.operators):
             child = Experiment(e.observation, (i,)+e.word,
-                               row_times_matrix(e.row, operator), e.cost+system.attachment_costs[i])
+                               row_times_matrix(e.row, operator, system.dimension),
+                               e.cost+system.attachment_costs[i])
             heapq.heappush(heap, (child.cost, next(serial), child))
     rank = len(basis)
     def coords(row):
@@ -225,16 +287,27 @@ def observable_closure(system: OperatorSystem) -> ClosureCertificate:
             raise ArithmeticError("observation closure failed")
         return value
     return ClosureCertificate(tuple(basis), tuple(coords(row) for row in system.observations),
-        tuple(tuple(coords(row_times_matrix(e.row, op)) for e in basis)
+        tuple(tuple(coords(row_times_matrix(e.row, op, system.dimension)) for e in basis)
               for op in system.operators), _kernel(reduced, pivots, system.dimension), pivots)
 
 
 def verify_certificate(system: OperatorSystem, certificate: ClosureCertificate) -> bool:
-    """Replay realizability, invariance, nullspace and cost-filtration claims."""
+    """Replay realizability, invariance, nullspace and cost-filtration claims.
+
+    Checks, all exactly: every basis row is the actual experiment its word
+    names, with its exact cost; costs are nondecreasing; the rows are
+    independent with the stated RREF pivots and kernel N; L = A B and
+    B M_i = T_i B; every M_i maps N into N; nonzero entries of A and T_i
+    respect the cost filtration.
+    """
     try:
-        n, r = system.dimension, certificate.rank
-        if r > n or any(experiment(system, e.observation, e.word) != e for e in certificate.basis):
+        if not _well_typed(system, certificate):
             return False
+        n, r = system.dimension, certificate.rank
+        for e in certificate.basis:
+            actual = experiment(system, e.observation, e.word)
+            if actual.row != e.row or actual.cost != e.cost:
+                return False
         if any(certificate.basis[i].cost > certificate.basis[i+1].cost for i in range(r-1)):
             return False
         rows = _matrix(certificate.rows, r, n)
@@ -248,17 +321,22 @@ def verify_certificate(system: OperatorSystem, certificate: ClosureCertificate) 
         if len(transitions) != len(system.operators):
             return False
         for j, coordinates in enumerate(observation_coordinates):
-            if row_times_matrix(coordinates, rows) != system.observations[j]:
+            if row_times_matrix(coordinates, rows, n) != system.observations[j]:
                 return False
             if any(c and certificate.basis[b].cost > system.observation_costs[j]
                    for b, c in enumerate(coordinates)):
                 return False
         for i, transition in enumerate(transitions):
             for a, coordinates in enumerate(transition):
-                if row_times_matrix(coordinates, rows) != row_times_matrix(rows[a], system.operators[i]):
+                if row_times_matrix(coordinates, rows, n) != row_times_matrix(rows[a], system.operators[i], n):
                     return False
                 if any(c and certificate.basis[b].cost > certificate.basis[a].cost+system.attachment_costs[i]
                        for b, c in enumerate(coordinates)):
+                    return False
+        for operator in system.operators:
+            for kernel_row in certificate.nullspace:
+                image = matrix_times_vector(operator, kernel_row)
+                if any(matrix_times_vector(rows, image)):
                     return False
         return True
     except (ValueError, TypeError, AttributeError, IndexError, ZeroDivisionError):
@@ -269,6 +347,18 @@ def quotient_state(system: OperatorSystem, certificate: ClosureCertificate, stat
     if not verify_certificate(system, certificate):
         raise ValueError("invalid closure certificate")
     return matrix_times_vector(certificate.rows, _row(state, system.dimension))
+
+
+def quotient_update(certificate: ClosureCertificate, operator: int, quotient) -> Row:
+    """y -> T_i y, the descended action of generator ``operator`` on y = B v."""
+    t = certificate.transition_coordinates
+    operator = _index(operator, len(t))
+    return matrix_times_vector(t[operator], _row(quotient, certificate.rank))
+
+
+def quotient_output(certificate: ClosureCertificate, quotient) -> Row:
+    """The direct observations L v = A y, read from the quotient state y = B v."""
+    return matrix_times_vector(certificate.observation_coordinates, _row(quotient, certificate.rank))
 
 
 def future_equivalent(system: OperatorSystem, first, second, certificate=None) -> bool:

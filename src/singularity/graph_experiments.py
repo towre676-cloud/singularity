@@ -63,6 +63,13 @@ def standard_attachments() -> tuple[ContextAttachment, ContextAttachment]:
     )
 
 
+def _exact(value, name="value"):
+    """Public numeric inputs are exact: int or Fraction, never bool or float."""
+    if isinstance(value, bool) or not isinstance(value, (int, Fraction)):
+        raise TypeError(f"{name} must be an int or Fraction, not {type(value).__name__}")
+    return Fraction(value)
+
+
 def _row_times(row, matrix):
     return tuple(sum((a * matrix[k][j] for k, a in enumerate(row) if a), Fraction(0))
                  for j in range(len(row)))
@@ -78,7 +85,7 @@ class BoundaryExperimentSystem:
 
     def __init__(self, max_volume: int, q, attachments=None):
         self.max_volume = _integer(max_volume, "max_volume", minimum=0)
-        self.q = Fraction(q)
+        self.q = _exact(q, "q")
         if not 0 < self.q < 1:
             raise ValueError("q must lie strictly between zero and one")
         self.attachments = tuple(standard_attachments() if attachments is None else attachments)
@@ -121,7 +128,7 @@ class BoundaryExperimentSystem:
         return result
 
     def apply_word(self, state, word=()):
-        state = tuple(Fraction(x) for x in state)
+        state = tuple(_exact(x, "state entry") for x in state)
         if len(state) != self.dimension:
             raise ValueError("state has the wrong dimension")
         for i in self._word(word):
