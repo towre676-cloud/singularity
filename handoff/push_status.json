@@ -527,30 +527,42 @@
     {
       "id": "P17",
       "title": "Add exact volume congruence filters",
-      "status": "planned",
+      "status": "complete",
       "effort": "S",
       "priority": 2,
       "dependencies": [
         "P03"
       ],
       "evidence": [
+        "src/singularity/congruence.py",
+        "tests/test_congruence.py",
         "docs/chapters/13_research_program.md",
-        "src/singularity/polynomials.py",
+        "docs/specifications/COEFFICIENTS-v1.md",
         "src/singularity/conductor.py"
       ],
-      "existing_work": "The character-filter idea and its distinction from energy specialization and span extraction are explained. Cyclotomic arithmetic is already reusable.",
-      "next_action": "Implement direct finite volume filtering and an independent cyclotomic character average, prove equality and document that neither recovers discarded span marks.",
-      "acceptance_gaps": [
-        "No public volume-residue filter or exact character-averaging check is implemented.",
-        "No complete comparison with direct assignment volume residues is retained.",
-        "P03 acceptance is open."
-      ],
-      "packet": "handoff/tasks/P17.md"
+      "existing_work": "congruence.py adds direct degree selection, a literal character average of L(w^j x,q) evaluated in Z[t]/Phi_m(t) (divided by m only after the full sum, raising if the result is not an integer multiple of the identity), and direct tuple filtering by each profile's own volume. Proposition SNG-F27 proves the averaging identity, including truncations, residue normalization and m=1.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P17.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "prove the root-of-unity averaging identity": "SNG-F27, chapter 13.5",
+          "compare with direct modular filtering of assignments": "CongruenceTests.test_three_routes_agree_on_all_graphs_through_three_vertices (11 graphs, volume <=6, moduli 1..7, 308 comparisons) and test_three_routes_agree_on_all_graphs_with_four_vertices (64 graphs, volume <=4, moduli 1..5, 960 comparisons)",
+          "nonprimitive powers, composite moduli, short truncation, modulus one, empty classes": "test_nonprimitive_powers_and_cancellation_in_the_ring; test_normalization_modulus_one_empty_classes_and_short_truncation",
+          "exact rational representation": "test_rational_coefficients_stay_exact",
+          "must not be described as extracting span or binary sector": "SNG-F27 discussion; test_marks_cannot_be_recovered_by_volume_filters",
+          "malformed or zero modulus fails": "test_invalid_input"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_congruence -v"
+        ]
+      }
     },
     {
       "id": "P18",
       "title": "Prove root-of-unity rationality in energy",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 2,
       "dependencies": [
@@ -560,18 +572,30 @@
       "evidence": [
         "src/singularity/conductor.py",
         "tests/test_conductor_weighted.py",
-        "docs/chapters/11_archival_bridges.md",
         "docs/chapters/13_research_program.md",
+        "results/conductor_fixtures.json",
         "results/conductor_example.json",
         "scripts/reproduce.py"
       ],
-      "existing_work": "Exact cyclotomic rings, residue-cube numerator and arbitrary-index coefficient recovery are implemented with an explicit residue work budget. Tests compare direct local coefficients through volume 12 for two graphs and orders 1..4; a remote index 10^100 is checked. The coordinate-residue rationality argument is in prose.",
-      "next_action": "Accept and document the existing conductor engine after dependency closure; extend its test scope only for a mathematical reason and keep positive-real analytic assertions separate.",
-      "acceptance_gaps": [
-        "Close P03/P17 dependencies even though the existing energy-specialization implementation does not technically require a volume-filter API.",
-        "Publish a named theorem-to-code acceptance map and retained independent coefficient comparisons for the selected numerator fixtures."
-      ],
-      "packet": "handoff/tasks/P18.md"
+      "existing_work": "Proposition SNG-F28 proves the residue decomposition a_i=r_i+m b_i, E(a)=E(r) mod m, L(x,w)=N/(1-x^m)^n in Z[t]/Phi_m and the remote binomial formula at every index. Tests add an independent Mobius-product construction of Phi_m (m<=24), composite orders 4, 6, 8, 9, isolated-vertex and edgeless graphs, remote indices near 10^30 and exact budget boundaries. results/conductor_fixtures.json retains 20 numerator fixtures with agreement through volume 12.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P18.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "prove the coordinate residue decomposition": "SNG-F28; RootOfUnityTests.test_residue_decomposition_preserves_energy_mod_order",
+          "reproduce local coefficients through an independent bound": "RootOfUnityTests.test_numerator_expansion_equals_direct_specialization (orders 1,2,4,6,8,9 through volume 10); results/conductor_fixtures.json (4 graphs x orders 1,2,3,4,6 through volume 12); ConductorTests.test_numerator_replays_direct_coefficients",
+          "cyclotomic reduction validated independently": "test_cyclotomic_polynomials_by_mobius_product",
+          "one root versus the unspecialized series": "test_specialized_equality_is_not_series_equality",
+          "remote formula and budget": "test_remote_index_uses_binomial_tail_not_enumeration; ConductorTests.test_remote_and_budget",
+          "P17 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_conductor_weighted -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P19",

@@ -116,6 +116,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Root-of-unity specialization.** For a primitive \(\ell\)-th root \(\zeta\), `residue_numerator(graph, ℓ)` returns \(N\) with \(L_G(x,\zeta)=N(x)/(1-x^\ell)^n\), coefficients in \(\mathbb Z[t]/\Phi_\ell(t)\) written constant-first, by enumerating the residue cube \(\{0,\ldots,\ell-1\}^n\) under a work budget. `remote_coefficient` evaluates one coefficient at an arbitrary index from \(N\). A budget refusal is not a mathematical statement.
 
+**Volume congruence filters.** `volume_residue(series, m, a)` keeps the rows \(v\equiv a\pmod m\) of a prefix and empties the others; the residue is normalized to \(0..m-1\) and the prefix length is kept. `character_average` returns the same prefix computed by the exact character average of SNG-F27 in \(\mathbb Z[t]/\Phi_m(t)\), with rational coefficients kept as `Fraction`. `residue_class_coefficients(graph, R, m, a)` counts labeled profiles of volume \(\le R\) in that class directly. These act on the volume variable \(x\), not on \(q\).
+
 **Invariants.** `binary_cut_profile` counts all \(2^n\) binary profiles by `(size, cut)`; restricted to \(0<\text{size}<n\) it is the span-one sector of \(\mathcal B_G\) (SNG-F11). `laplacian_characteristic_polynomial` is exact \(\det(tI-\Delta_G)\). `invariants.first_difference(G, H, M)` compares local prefixes of two graphs.
 
 ## 9. Certificates
@@ -140,6 +142,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `chains.*` | 8 | `tests/test_chains.py`; `results/chain_agreement.json` |
 | `lowvolume.*` (closed formulas through volume 3) | 3, 8 | `tests/test_low_volume.py`; `results/pair_acceptance.json` |
 | `decomposition.*` | 8 | `tests/test_decomposition.py` |
+| `congruence.*` | 8 | `tests/test_congruence.py` |
 | `HeightPopulation` | 8 | `tests/test_population.py` |
 | `bounded_height_histogram`, `brute_bounded_height_histogram`, `histogram_coefficients`, `root_messages`, `transfer_statistics`, `marked_forest_coefficients` | 4, 8 | `tests/test_transfer.py`, including `test_global_shift_subtraction_on_disconnected_forest` |
 | `WeightedGraph`, `weighted_coefficients` | 8 | `tests/test_conductor_weighted.py` |

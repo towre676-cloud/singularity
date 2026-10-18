@@ -8,7 +8,7 @@ from pathlib import Path
 
 from singularity import __version__
 from singularity.certificates import build_certificate, replay_certificate
-from singularity.conductor import remote_coefficient
+from singularity.conductor import CyclotomicRing, remote_coefficient, residue_numerator
 from singularity.euler import euler_exponents, first_difference, recompose_euler
 from singularity.examples import GRAPHS
 from singularity.graph import Graph
@@ -85,6 +85,37 @@ def pair_acceptance(left, right, depth, certificate_replay):
     return record
 
 
+def conductor_fixtures():
+    """P18 receipt: numerators and their agreement with direct specialization."""
+    graphs = {
+        'path3': Graph(3, ((0, 1), (1, 2))),
+        'edge_plus_isolated': Graph(3, ((0, 1),)),
+        'triangle': Graph(3, ((0, 1), (1, 2), (0, 2))),
+        'star4': Graph(4, ((0, 1), (0, 2), (0, 3))),
+    }
+    bound, records = 12, []
+    for name, graph in graphs.items():
+        local = local_coefficients(graph, bound)
+        for order in (1, 2, 3, 4, 6):
+            ring, numerator = residue_numerator(graph, order)
+            direct = []
+            for polynomial in local:
+                value = ring.zero
+                for energy, count in polynomial.items():
+                    value = ring.add(value, ring.scale(ring.phase(energy), count))
+                direct.append(value)
+            remote = [remote_coefficient(graph, order, index) for index in range(bound + 1)]
+            assert remote == direct
+            records.append({'graph': name, 'source': graph.to_dict(), 'order': order,
+                            'cyclotomic_modulus_constant_first': list(ring.modulus),
+                            'numerator_constant_first': [list(e) for e in numerator],
+                            'specialized_coefficients_agree_through_volume': bound})
+    return {'schema': 'singularity.conductor-fixtures/1',
+            'theorem': 'SNG-F28: L_G(x,w)=N_{G,m}(x)/(1-x^m)^n in Z[t]/Phi_m(t)',
+            'oracle': 'direct specialization of weak-composition coefficients, each energy e mapped to t^(e mod m)',
+            'fixtures': records}
+
+
 def compute():
     factors_a={'coefficient':'2','monomial':2,'factors':[[1,2],[2,1]]}
     factors_b={'coefficient':'1','monomial':3,'factors':[[1,1],[3,2],[4,2]]}
@@ -118,6 +149,7 @@ def compute():
         **{f'data/graphs/{name}.json':graph.to_dict() for name,graph in graph_sources.items()},
         **{f'results/certificates/{name}.json':packet for name,packet in certificates.items()},
         'results/pair_acceptance.json':acceptance,
+        'results/conductor_fixtures.json':conductor_fixtures(),
         'results/conductor_example.json':{'schema':'singularity.conductor-example/1','graph':Graph(3,((0,1),(1,2))).to_dict(),'conductor':3,'index':str(10**100),'coefficient':list(remote_coefficient(Graph(3,((0,1),(1,2))),3,10**100)),'ring':'Z[t]/(t^2+t+1)'},
     }
     return files

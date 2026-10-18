@@ -75,6 +75,19 @@ Let \(\omega\) have order \(m\). Write every nonnegative height uniquely as \(a_
 L_G(x,\omega)=\frac{\sum_{r\in\{0,\ldots,m-1\}^n}x^{\sum_i r_i}\omega^{E_G(r)}}{(1-x^m)^n}.
 \]
 
+**Proposition SNG-F28 (energy roots of unity give rational series).** Let \(m\ge1\) and let \(\omega\) be a primitive \(m\)-th root of unity. Then \(L_G(x,\omega)=N_{G,m}(x)/(1-x^m)^n\), where
+\[
+N_{G,m}(x)=\sum_{r\in\{0,\ldots,m-1\}^n}x^{|r|}\omega^{E_G(r)}
+\]
+is a polynomial of degree at most \(n(m-1)\) with coefficients in \(\mathbb Z[\omega]\cong\mathbb Z[t]/\Phi_m(t)\). Consequently, for every integer \(N\ge0\),
+\[
+[x^N]L_G(x,\omega)=\sum_{\substack{0\le j\le n(m-1)\\ j\equiv N\ (\mathrm{mod}\ m)}}[x^j]N_{G,m}\cdot\binom{(N-j)/m+n-1}{n-1}.
+\]
+
+*Proof.* Division with remainder writes each \(a_i\ge0\) uniquely as \(r_i+mb_i\) with \(0\le r_i<m\) and \(b_i\ge0\), so \(a\mapsto(r,b)\) is a bijection from \(\mathbb Z_{\ge0}^n\) to \(\{0,\ldots,m-1\}^n\times\mathbb Z_{\ge0}^n\) with \(|a|=|r|+m|b|\). For each edge, \((a_u-a_v)^2=(r_u-r_v)^2+2m(r_u-r_v)(b_u-b_v)+m^2(b_u-b_v)^2\), so \(E_G(a)\equiv E_G(r)\pmod m\) and \(\omega^{E_G(a)}=\omega^{E_G(r)}\). Summing over \(b\) separately gives the factor \(\sum_{b\ge0}x^{m|b|}=(1-x^m)^{-n}\), whose \(x^{mk}\) coefficient is the number \(\binom{k+n-1}{n-1}\) of weak compositions of \(k\) into \(n\) parts. Multiplying by \(N_{G,m}\) and reading the coefficient of \(x^N\) gives the remote formula, which involves only the finitely many numerator coefficients. Each \(\omega^{E}\) is represented by the reduction of \(t^{E\bmod m}\) modulo the monic integer polynomial \(\Phi_m\), so all arithmetic is exact in \(\mathbb Z[t]/\Phi_m\); for \(m=1\), \(\Phi_1=t-1\), the ring is \(\mathbb Z\) and the formula counts all profiles. \(\square\)
+
+The identity concerns one specialization. Equality of two graphs' specialized series at one root of unity does not imply equality of the unspecialized series: at \(m=2\) both spectral graphs have the same numerator because they have the same degree parities, although their volume-two coefficients differ, and they already differ at \(m=3\). No positivity or real-logarithm argument for \(0<q<1\) transfers to complex \(\omega\). `src/singularity/conductor.py` implements \(N_{G,m}\) under an explicit residue-cube budget \(m^n\) and evaluates the remote formula without enumerating any height box; `tests/test_conductor_weighted.py` checks \(\Phi_m\) against the independent product \(\prod_{d\mid m}(t^d-1)^{\mu(m/d)}\) for \(m\le24\), the numerator expansion against direct specialization of enumerated coefficients for composite orders and graphs with isolated vertices, and the retained fixtures in `results/conductor_fixtures.json`.
+
 An infinite height population therefore becomes a finite residue-cube numerator at each root-of-unity specialization. This identity is a direct consequence of residue decomposition; it is not a claim of new arithmetic theory. It offers a particularly clean computational bridge because all coefficients can be represented exactly in a cyclotomic ring, and equality can be decided by reduction modulo its defining polynomial.
 
 At \(q=-1\), the result collapses further. Squares agree with their bases modulo two, so \(E_G(a)\equiv\sum_i d_i a_i\pmod2\), and
@@ -85,7 +98,16 @@ L_G(x,-1)=\prod_i\bigl(1-(-1)^{d_i}x\bigr)^{-1}.
 
 This specialization sees only degree parity counts. It supplies both a theorem and a warning: an elegant arithmetic specialization can discard most graph information. At odd primes, evaluating the finite numerator at \(x=1\) produces a quadratic Gauss sum for the Laplacian over a finite field. Rank and the discriminant of its nonsingular part become relevant. The singular constant direction must be accounted for, and prime powers need their own lifting argument; an odd-prime formula must not be reused at two.
 
-There is a separate root-of-unity filter in the volume variable. Averaging \(L_G(\omega^j x,q)\) with character weights isolates volumes in a chosen congruence class. It does not isolate binary profiles or recover span after setting \(z=1\). Both kinds of specialization are worthwhile because they provide finite exact comparison problems with different information loss. The positive-real visibility theorem for \(0<q<1\) does not automatically extend to complex \(q\), where local factors may vanish and a logarithm needs an explicitly chosen domain.
+There is a separate root-of-unity filter in the volume variable. Averaging \(L_G(\omega^j x,q)\) with character weights isolates volumes in a chosen congruence class.
+
+**Proposition SNG-F27 (volume congruence filter).** Let \(m\ge1\), let \(\omega\) be a primitive \(m\)-th root of unity, let \(a\in\mathbb Z\), and let \(F=\sum_{v\ge0}F_v(q)x^v\) be a formal series, or a truncation through any degree, with \(F_v\in\mathbb Q[q]\). Then
+\[
+\frac1m\sum_{j=0}^{m-1}\omega^{-aj}F(\omega^jx,q)=\sum_{v\equiv a\ (\mathrm{mod}\ m)}F_v(q)x^v .
+\]
+
+*Proof.* The coefficient of \(x^v\) on the left is \(F_v(q)\cdot\frac1m\sum_{j=0}^{m-1}\zeta^{j}\) with \(\zeta=\omega^{v-a}\). If \(v\equiv a\pmod m\), then \(\zeta=1\) and the average is \(1\). Otherwise \(\zeta\ne1\) and \(\zeta^m=1\), so \((\zeta-1)\sum_j\zeta^j=\zeta^m-1=0\) forces \(\sum_j\zeta^j=0\); this holds in the field \(\mathbb Q(\omega)\cong\mathbb Q[t]/\Phi_m(t)\), hence in the integral representation \(\mathbb Z[t]/\Phi_m(t)\). The identity is coefficientwise, so it holds for every truncation and for any residue representative \(a\); for \(m=1\) it is the identity map. \(\square\)
+
+The implementation in `src/singularity/congruence.py` evaluates the left side literally in \(\mathbb Z[t]/\Phi_m(t)\), including the nonprimitive powers \(\omega^j\), divides only the completed sum by \(m\), and raises if the sum is not an integer multiple of the identity. Tests compare it with direct degree selection and with tuple enumeration filtered by each profile's own volume on all labeled graphs with at most four vertices, for several moduli including composite ones and truncations shorter than the modulus. The filter acts on the volume variable; the energy specialization \(q=\omega\) above is a different operation. It does not isolate binary profiles or recover span after setting \(z=1\): volume classes merge different spans with equal volume and energy, as \(2e_i\) and \(e_i+e_j\) on an edgeless graph already show. Both kinds of specialization are worthwhile because they provide finite exact comparison problems with different information loss. The positive-real visibility theorem for \(0<q<1\) does not automatically extend to complex \(q\), where local factors may vanish and a logarithm needs an explicitly chosen domain.
 
 ## 13.6 Order chambers and weighted lattice-point geometry
 
