@@ -262,10 +262,11 @@
         "results/certificates/translation.json"
       ],
       "existing_work": "SNG-F02 proves the minimum-zero shift bijection in exposition; exact Python normalization and independent replay exist.",
-      "next_action": "Create a minimal pinned formal project for finite tuples and coefficient counts; prove only the shift bijection and coefficient identity before importing more advanced infrastructure.",
+      "next_action": "In an environment with a proof assistant, create a minimal pinned project for finite tuples; prove the minimum-zero shift bijection and the coefficient identity of COEFFICIENTS-v1 section 3 without admitted lemmas, and record the exact build command.",
       "acceptance_gaps": [
         "No proof-assistant project, pinned toolchain, finite profile definitions or compilable theorem exists.",
-        "Kernel proofs of injectivity, surjectivity, volume shift and energy preservation, without admitted lemmas, remain to be written."
+        "Kernel proofs of injectivity, surjectivity, volume shift and energy preservation, without admitted lemmas, remain to be written.",
+        "Session 2026-10-17/18 (D009): no Lean, Coq or Isabelle toolchain was installed, and the environment's network policy refused downloads from the Lean release hosts, so no kernel build could be attempted."
       ],
       "packet": "handoff/tasks/P07.md"
     },
@@ -447,7 +448,7 @@
       "existing_work": "SNG-F12 and SNG-A05 prove E>=lambda*span and characterize minimum-energy normalized profiles as binary minimum-cut sides. Tests enumerate heights 0..2 on connected simple graphs through four vertices, checking nonbinary exclusion and multiplicities.",
       "next_action": "Reuse the prose proof and exhaustive checks; when P08 is available, derive the formal min-cut corollary from the same nested identity and close the dependency gate explicitly.",
       "acceptance_gaps": [
-        "P06 and especially P08's kernel identity remain open.",
+        "P06 is complete; P08's kernel identity remains open (D009).",
         "Record the existing theorem's acceptance receipt, scope and multiplicity comparison; finite tests supplement the general proof rather than prove it."
       ],
       "packet": "handoff/tasks/P13.md"
@@ -473,7 +474,7 @@
       "acceptance_gaps": [
         "No independent nested-pair tensor enumerator or retained tensor data exists.",
         "No tested projection equality or tensor-cell explanation of the binary pair is released.",
-        "P05/P08 acceptance remains open."
+        "P05 is complete; P08 acceptance remains open (D009)."
       ],
       "packet": "handoff/tasks/P14.md"
     },
@@ -708,7 +709,7 @@
     {
       "id": "P22",
       "title": "Establish one genuine reciprocity statement",
-      "status": "blocked",
+      "status": "planned",
       "effort": "L",
       "priority": 3,
       "dependencies": [
@@ -719,10 +720,10 @@
         "docs/chapters/14_literature_and_claims.md"
       ],
       "existing_work": "The research program states the need for explicit boundary corrections and warns against an unproved weighted Ehrhart analogy. Complement/span reflection elsewhere is not the requested order-population reciprocity.",
-      "next_action": "After P21, formulate a single precise reciprocity candidate, compute all tiny cases including boundary strata, and accept either a proof or a rigorously explained counterexample.",
+      "next_action": "Using orders.py, state the established order-polynomial reciprocity between weak and strict counts as background, then either prove a scoped weighted identity with boundary terms or certify the smallest counterexample to the naive H -> -H extension of the weighted count.",
       "acceptance_gaps": [
-        "P21 has not fixed the underlying order counting problem.",
-        "No scoped reciprocity theorem with full proof, or certified counterexample to a chosen weighted extension, is present."
+        "No scoped reciprocity theorem with full proof, or certified counterexample to a chosen weighted extension, is present.",
+        "P21 now fixes the counting problem (orders.py, SNG-F32): weak assignments are Omega(P,H+1), strict assignments a separate population, and quadratic weighting is shown to leave polynomiality in H."
       ],
       "packet": "handoff/tasks/P22.md"
     },
@@ -898,7 +899,7 @@
       "acceptance_gaps": [
         "No rigorous finite-prime local-factor evaluation with truncation enclosures exists.",
         "No normalized remainder intervals near s=1/r or demonstrated recovery of the established asymptotic within those intervals is released.",
-        "P26 acceptance is open."
+        "P26 is complete (2026-10-18): regularized_tail_constant, regularized_prime_tail_bound and certified_tail_record supply exact constants; near s=1/r the tail decays like C r P^(-1/r), so a useful enclosure needs a sharper, coefficient-aware constant or very large cutoffs."
       ],
       "packet": "handoff/tasks/P27.md"
     },
@@ -920,7 +921,7 @@
       "acceptance_gaps": [
         "The local complex neighborhood is established existentially, without an explicit computable disk or certified nonvanishing domain for the selected pair.",
         "Supply domain/branch bookkeeping for all finite denominator factors and the normally convergent tail in a focused statement.",
-        "P26 acceptance is open."
+        "P26 is complete (2026-10-18); its exact constant (7.12) can quantify the tail on a disc around 1/r."
       ],
       "packet": "handoff/tasks/P28.md"
     },
@@ -983,7 +984,7 @@
       "acceptance_gaps": [
         "No Laplacian spectral partition is retained in the census output.",
         "Full binary and intermediate prefix class memberships, first-discrepancy witnesses and structured resource limits are absent.",
-        "P12/P14/P29 dependencies are open; existing small graphs are not a substitute for their acceptance."
+        "P12 and P29 are complete; P14 remains open, so the original dependency gate is not met."
       ],
       "packet": "handoff/tasks/P30.md"
     },
@@ -1031,7 +1032,7 @@
       "next_action": "Choose one narrow family from accepted collision evidence, formulate a uniform statement and pursue either a proof or explicit counterfamily with all construction hypotheses checked.",
       "acceptance_gaps": [
         "No parameterized family with a uniformly proved first-separation bound, or a uniform counterfamily defeating a proposed bound, is established.",
-        "P06/P12/P31 are open.",
+        "P06 and P12 are complete; P31 remains open.",
         "The latest chat's large-girth delayed-visibility and terminal-interface ideas are conjectural research directions, not accepted proofs or replacements for P32."
       ],
       "packet": "handoff/tasks/P32.md"
@@ -1057,7 +1058,7 @@
       "existing_work": "Python replay reconstructs declared coefficients and rejects altered sectors. This is independent finite computational checking, not a kernel-connected enumeration proof.",
       "next_action": "After formal foundations compile, define a verified finite enumeration/checking path and connect it to both existing packets; prove its soundness rather than only verifying a parser.",
       "acceptance_gaps": [
-        "P07/P08 formal definitions and identities are absent; P23 is not accepted.",
+        "P07/P08 formal definitions and identities are absent (D009); P23 is complete.",
         "No kernel theorem connects parsed records to the mathematical coefficient definition or verifies both decisive pair multiplicities.",
         "Kernel tests rejecting a changed graph edge and coefficient remain absent."
       ],
@@ -1081,7 +1082,7 @@
       "existing_work": "The first-discrepancy ratio law and real zeta-factor asymptotic are proved in mathematical exposition with explicit branch and convergence scope.",
       "next_action": "Inventory the chosen proof assistant's actual analytic libraries, formalize the finite local expansion first, and record every remaining analytic assumption without claiming full-chain verification until it compiles.",
       "acceptance_gaps": [
-        "P26/P33 acceptance remains open and no formal analysis project exists.",
+        "P26 is complete; P33 remains open and no formal analysis project exists.",
         "No exposed list of imported analytic theorems, compiling local-expansion-to-asymptotic chain or precisely recorded unformalized boundary is supplied."
       ],
       "packet": "handoff/tasks/P34.md"
@@ -1112,7 +1113,7 @@
       "next_action": "Treat the current article as a reusable draft. Build its claim matrix and update it as dependencies close; if publication is pursued earlier, record an explicit roadmap dependency amendment rather than silently marking P35 complete.",
       "acceptance_gaps": [
         "The original acceptance gate explicitly depends on P33; a readable article does not satisfy that absent kernel work.",
-        "P27's controlled experiments and the remaining P04/P05/P26 acceptance records are absent.",
+        "P04, P05 and P26 are complete; P27's controlled experiments and P33's kernel verification are absent.",
         "A final claim-by-claim proof/certificate matrix and submission-focused literature comparison must be reconciled with achieved scope."
       ],
       "packet": "handoff/tasks/P35.md"
@@ -1138,7 +1139,7 @@
       "existing_work": "Candidate B (exact tree/separator methods) and Candidate C (structural preservation) are clearly described as future papers. Their theorem centers are not declared achieved.",
       "next_action": "Wait for substantive accepted results, then select one coherent paper center and package that result; preserve unfinished branches in the ledger instead of combining them into a larger manuscript.",
       "acceptance_gaps": [
-        "P19/P22/P31/P32/P35 outcomes have not been accepted.",
+        "P19 is complete; P22/P31/P32/P35 outcomes have not been accepted.",
         "No second paper is selected around an actual substantial theorem or decisive negative classification, with focused literature comparison and reproduced artifacts.",
         "The open-problem ledger must distinguish original pushes from any newly approved terminal-interface or delayed-visibility branch."
       ],

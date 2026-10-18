@@ -33,3 +33,11 @@ P03's roadmap text named a format `relational-height/1`. The implemented, tested
 ## D008: session scope "build as much as you can"
 
 On 2026-10-17 the user asked the session to "build as much as you can". This is read as the explicit scope override that CLAUDE.md permits for the three-push batch limit. Each push is still accepted only against its original criteria, committed separately where practical, and recorded in the ledger. The session remains bounded: no scheduler or unattended loop is installed, and it ends at a checkpoint.
+
+## D009: formal pushes remain open without a proof-assistant toolchain
+
+P07, and through it P08, P13, P14, P15, P33 and P34, need a kernel-checked development. In the 2026-10-17/18 session no Lean, Coq or Isabelle installation was present, and the environment's network policy returned HTTP 403 for the Lean release hosts, so no toolchain could be installed. Python tests and manuscript proofs are not substituted for the formal criterion. P07 stays `planned`, and the ledger records the blocker. The next session with a proof assistant should start with P07 as specified in its packet.
+
+## D010: generated documents without XeLaTeX
+
+`scripts/build_documents.py --no-pdf` regenerates `docs/MONOGRAPH.md`, `docs/monograph.tex`, `docs/monograph.html` and `results/manuscript_counts.json` with Pandoc, and leaves the PDFs unchanged. In this session the LaTeX/HTML/Markdown outputs were regenerated after every manuscript change. `output/pdf/monograph.pdf` and `output/pdf/visibility_paper.pdf` are therefore stale relative to the chapters until a build with XeLaTeX runs. The companion paper source did not change. The v0.1.0 release archive is historical and was not rebuilt.
