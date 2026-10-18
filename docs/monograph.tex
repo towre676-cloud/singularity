@@ -4944,7 +4944,9 @@ the two terminals. If for every \(j\le m\) the multiset of these types
 over \(|S|=j\) is unchanged when the roles of \(s\) and \(t\) are
 exchanged, then \(K_G(\beta,\gamma)\) and \(K_G(\gamma,\beta)\) agree in
 every cell of interior volume at most \(m\). Consequently twisting two
-copies of \(G\) is invisible below volume \(2m+3\).
+copies of \(G\) is invisible below volume \(2m+3\), and more generally
+twisting blocks with rooted-deck symmetry through sizes \(m_1\) and
+\(m_2\) is invisible below volume \(m_1+m_2+3\).
 
 \emph{Proof.} As in SNG-F17, interior profiles of volume \(v\) with
 exact support \(S\) have energy determined by the decorated type of
@@ -4955,9 +4957,16 @@ degree label. A role-respecting isomorphism between a type and the
 role-exchanged type of another support gives a bijection of positive
 interior assignments preserving volume and energy, carrying terminal
 heights \((\beta,\gamma)\) to \((\gamma,\beta)\). Summing over supports
-of size at most \(v\le m\) gives the equality of cells. For identical
-blocks SNG-F42 then gives
-\(\mu\ge\min_{\beta\ne\gamma}(\beta+\gamma)+2(m+1)=2m+3\). \(\square\)
+of size at most \(v\le m\) gives the equality of cells. In the pairing
+of SNG-F41 a term at terminal heights \(\mathbf b\) needs nonzero cells
+of both \(A_1(\mathbf b)\) and \(A_2(\mathbf b)\). These require
+\(\beta\ne\gamma\), so \(|\mathbf b|\ge1\), and interior volumes at
+least \(m_1+1\) and \(m_2+1\). Its volume is therefore at least
+\(m_1+m_2+3\). \(\square\)
+
+In the exhaustive pairing of all 54 distinct asymmetric kernels of
+connected blocks with at most five vertices, no pairing vanished through
+volume six; every twist was visible by volume three.
 
 On every connected block with at most six vertices, with terminals \(0\)
 and \(1\) (27,474 blocks), the bound is sharp. Whenever the kernel is

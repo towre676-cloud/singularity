@@ -38,6 +38,48 @@
 
 **Open and next:** P27 is the only dependency-ready push besides P07, which needs a proof assistant (D009). Its obstacle is quantitative, as the ledger records. At s=1/2 the prime 2 has t~0.71, so local factors of the seven-vertex pairs must be evaluated through volume ~100 at fixed q, and the coefficient-aware form of (7.12) is needed for the omitted primes. Exact first action: add a fixed-q, outward-rounded fixed-point variant of the bag-message engine in `decomposition.py`, then build the certified K(s,1/2) table. P35 waits on P27 and P33. P13, P14, P15, P16 and P30–P36 wait on the formal chain (P07/P08) or on P14. P22's result record is `docs/results/order_reciprocity.md`.
 
+## Session 2: 2026-10-18 (Claude Code, cloud session, continued)
+
+**Starting commit:** `0ffc9f9`. The owner proposed three new centers: certified analytic evaluation, an infinite family with exactly controlled visibility depth, and reusable boundary responses. The owner also proposed units P37–P72, recorded in `docs/development/PUSHES-NEXT.md`; the ledger still tracks only P01–P36.
+
+**Accepted:** P27. Certified enclosures of K(s,1/2) are in `results/certified_k.json`, produced by `scripts/certified_k.py` in about 41 minutes and not run in CI:
+- spectral pair: K(1/2) in [0.84973, 0.85750]; K(3/5) in [0.89931, 0.89971]; K(1) in [0.9678188, 0.9678191];
+- binary pair: K(1/3) in [0.90084, 0.94230].
+
+**Implemented, pending original gates:**
+- P32: SNG-F36/F37 pendant-cycle family; gate P31 is open.
+- P14: SNG-F40 nested-pair census; gate P08 is open (D009).
+
+**New results:**
+- SNG-F36: depth p+1 with discrepancy q^2(1-q)^2(1-q^2)^p, and a closed binary form via a 2x2 transfer matrix.
+- SNG-F37: sum-of-squares sign and monotonicity.
+- SNG-F38: certified product enclosure with a coefficient-aware tail constant.
+- SNG-F39: B_G entire for connected G, with a quadratic height tail.
+- SNG-F40: the nested-pair census.
+- SNG-F41: gluing and the Whitney twist identity, L - L_tw = 2 sum x^|b| A1 A2.
+- SNG-F42: identical-block twist depth min_b(|b|+2v_b), positivity. SNG-F36 with even p is a twist of identical path blocks.
+- SNG-F43: marked composition via box kernels.
+- SNG-F44: star probes determine a block's kernel; contextual equivalence equals kernel equality.
+- SNG-F45: rooted decks bound the asymmetry order. It is sharp on all 27,474 connected blocks with at most six vertices (finite observation).
+
+**Also:** P24's isolating-interval endpoint contract is fixed, with a regression test.
+
+**New modules:** `families`, `certified`, `nested_census`, `terminals`. `decomposition._box` can now return root-conditioned messages.
+
+**Finite searches:**
+- No block with at most six vertices has a symmetric kernel without a terminal-swapping automorphism.
+- No pairing of distinct asymmetric kernels with at most five vertices vanishes through volume six.
+- The six-vertex balanced pairing search was still running at the time of writing.
+
+**Checks:** full unit suite, reproduce --check, repository and link checks, and handoff verify at every commit. `scripts/pendant_family.py --check` was added to CI.
+
+**Next:**
+- P31 (structural collision resolution). P32 also needs either P31 or an explicit amendment.
+- Formal chain P07/P08 in an environment with a proof assistant.
+- Tightness of the star-probe interface count (P51).
+- The converse of SNG-F45.
+- Narrowing the binary-pair enclosure with a sharper constant.
+
 ## Template for the next entry
 
 Date and authoring environment:
