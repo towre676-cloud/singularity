@@ -1,8 +1,8 @@
 {
   "format": "singularity.transfer_benchmark/1",
-  "recorded_at_utc": "2026-10-17T20:26:51.063507+00:00",
-  "python_version": "3.12.14",
-  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "recorded_at_utc": "2026-10-18T00:03:55.666544+00:00",
+  "python_version": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
   "method": "Exact bounded-height forest messages with volume pruning; no assignment sampling.",
   "oracle": "For every retained volume v, compare sum_e C(v,e) to sum_j (-1)^j binom(n,j) binom(v-(H+1)j+n-1,n-1).",
   "timing_policy": "Elapsed seconds describe this run only. Correctness checks never assert a runtime threshold.",
@@ -19,7 +19,7 @@
       "labeled_profiles_retained": 484039626,
       "joint_volume_energy_cells": 273,
       "complete_bounded_cube_size_not_enumerated": 282429536481,
-      "elapsed_seconds_environment_measurement": 0.010235299996566027,
+      "elapsed_seconds_environment_measurement": 0.009897210999952222,
       "independent_marginals": [
         {
           "volume": 0,
@@ -100,7 +100,7 @@
       "labeled_profiles_retained": 996301693675,
       "joint_volume_energy_cells": 273,
       "complete_bounded_cube_size_not_enumerated": 79766443076872509863361,
-      "elapsed_seconds_environment_measurement": 0.020180741004878655,
+      "elapsed_seconds_environment_measurement": 0.028052507999973386,
       "independent_marginals": [
         {
           "volume": 0,
@@ -181,7 +181,7 @@
       "labeled_profiles_retained": 2506262962660245,
       "joint_volume_energy_cells": 273,
       "complete_bounded_cube_size_not_enumerated": 6362685441135942358474828762538534230890216321,
-      "elapsed_seconds_environment_measurement": 0.045418745998176746,
+      "elapsed_seconds_environment_measurement": 0.05267646900006184,
       "independent_marginals": [
         {
           "volume": 0,
@@ -250,6 +250,226 @@
         }
       ],
       "all_marginals_match": true
+    }
+  ],
+  "unrestricted_cases": [
+    {
+      "graph": "ternary_tree_40",
+      "vertices": 40,
+      "edges": 39,
+      "height_bound": 8,
+      "max_volume": 8,
+      "min_zero": false,
+      "semantics": "H=R: complete unrestricted local coefficients through volume R (SNG-F24)",
+      "joint_volume_energy_cells": 457,
+      "cost": {
+        "height_states": 360,
+        "max_count_bits": 25,
+        "max_message_support": 1147,
+        "message_support_cells": 5053,
+        "output_support_cells": 457
+      },
+      "elapsed_seconds_environment_measurement": 0.08217143599995325,
+      "independent_checks": [
+        {
+          "volume": 0,
+          "profiles": 1,
+          "energy_sum": 0
+        },
+        {
+          "volume": 1,
+          "profiles": 40,
+          "energy_sum": 78
+        },
+        {
+          "volume": 2,
+          "profiles": 820,
+          "energy_sum": 3276
+        },
+        {
+          "volume": 3,
+          "profiles": 11480,
+          "energy_sum": 70434
+        },
+        {
+          "volume": 4,
+          "profiles": 123410,
+          "energy_sum": 1033032
+        },
+        {
+          "volume": 5,
+          "profiles": 1086008,
+          "energy_sum": 11621610
+        },
+        {
+          "volume": 6,
+          "profiles": 8145060,
+          "energy_sum": 106918812
+        },
+        {
+          "volume": 7,
+          "profiles": 53524680,
+          "energy_sum": 837530694
+        },
+        {
+          "volume": 8,
+          "profiles": 314457495,
+          "energy_sum": 5743067616
+        }
+      ],
+      "oracle": "profiles = C(v+n-1,n-1); energy sum = 2|E| C(v+n,n+1), independent of tree shape"
+    },
+    {
+      "graph": "binary_tree_63",
+      "vertices": 63,
+      "edges": 62,
+      "height_bound": 10,
+      "max_volume": 10,
+      "min_zero": false,
+      "semantics": "H=R: complete unrestricted local coefficients through volume R (SNG-F24)",
+      "joint_volume_energy_cells": 675,
+      "cost": {
+        "height_states": 693,
+        "max_count_bits": 37,
+        "max_message_support": 1340,
+        "message_support_cells": 19675,
+        "output_support_cells": 675
+      },
+      "elapsed_seconds_environment_measurement": 0.24659435400008078,
+      "independent_checks": [
+        {
+          "volume": 0,
+          "profiles": 1,
+          "energy_sum": 0
+        },
+        {
+          "volume": 1,
+          "profiles": 63,
+          "energy_sum": 124
+        },
+        {
+          "volume": 2,
+          "profiles": 2016,
+          "energy_sum": 8060
+        },
+        {
+          "volume": 3,
+          "profiles": 43680,
+          "energy_sum": 265980
+        },
+        {
+          "volume": 4,
+          "profiles": 720720,
+          "energy_sum": 5940220
+        },
+        {
+          "volume": 5,
+          "profiles": 9657648,
+          "energy_sum": 100983740
+        },
+        {
+          "volume": 6,
+          "profiles": 109453344,
+          "energy_sum": 1393575612
+        },
+        {
+          "volume": 7,
+          "profiles": 1078897248,
+          "energy_sum": 16258382140
+        },
+        {
+          "volume": 8,
+          "profiles": 9440350920,
+          "energy_sum": 164906447420
+        },
+        {
+          "volume": 9,
+          "profiles": 74473879480,
+          "energy_sum": 1484158026780
+        },
+        {
+          "volume": 10,
+          "profiles": 536211932256,
+          "energy_sum": 12038170661660
+        }
+      ],
+      "oracle": "profiles = C(v+n-1,n-1); energy sum = 2|E| C(v+n,n+1), independent of tree shape"
+    },
+    {
+      "graph": "path_100",
+      "vertices": 100,
+      "edges": 99,
+      "height_bound": 10,
+      "max_volume": 10,
+      "min_zero": false,
+      "semantics": "H=R: complete unrestricted local coefficients through volume R (SNG-F24)",
+      "joint_volume_energy_cells": 433,
+      "cost": {
+        "height_states": 1100,
+        "max_count_bits": 43,
+        "max_message_support": 1629,
+        "message_support_cells": 156938,
+        "output_support_cells": 433
+      },
+      "elapsed_seconds_environment_measurement": 0.4322717869999906,
+      "independent_checks": [
+        {
+          "volume": 0,
+          "profiles": 1,
+          "energy_sum": 0
+        },
+        {
+          "volume": 1,
+          "profiles": 100,
+          "energy_sum": 198
+        },
+        {
+          "volume": 2,
+          "profiles": 5050,
+          "energy_sum": 20196
+        },
+        {
+          "volume": 3,
+          "profiles": 171700,
+          "energy_sum": 1040094
+        },
+        {
+          "volume": 4,
+          "profiles": 4421275,
+          "energy_sum": 36056592
+        },
+        {
+          "volume": 5,
+          "profiles": 91962520,
+          "energy_sum": 946485540
+        },
+        {
+          "volume": 6,
+          "profiles": 1609344100,
+          "energy_sum": 20065493448
+        },
+        {
+          "volume": 7,
+          "profiles": 24370067800,
+          "energy_sum": 357834633156
+        },
+        {
+          "volume": 8,
+          "profiles": 325949656825,
+          "energy_sum": 5520877197264
+        },
+        {
+          "volume": 9,
+          "profiles": 3911395881900,
+          "energy_sum": 75221951812722
+        },
+        {
+          "volume": 10,
+          "profiles": 42634215112710,
+          "energy_sum": 919379411044380
+        }
+      ],
+      "oracle": "profiles = C(v+n-1,n-1); energy sum = 2|E| C(v+n,n+1), independent of tree shape"
     }
   ]
 }

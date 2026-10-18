@@ -7135,49 +7135,251 @@ class="header-section-number">13.2</span> Tree messages and separator
 geometry</h2>
 <p>Trees provide the first substantial algorithmic theorem target
 because conditioning on a vertex height separates the descendant
-subtrees. Root a tree and let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_v(t;x,q)</annotation></semantics></math>
-count assignments on the subtree at
+subtrees. Root each component of a forest at its least original label
+and orient every edge from parent to child. For a vertex
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>v</mi></msub><annotation encoding="application/x-tex">T_v</annotation></semantics></math>
+for the set of descendants of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(T_v)</annotation></semantics></math>
+for the edges with both endpoints in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>v</mi></msub><annotation encoding="application/x-tex">T_v</annotation></semantics></math>.
+Fix a height bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H\ge0</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">0\le t\le H</annotation></semantics></math>
+define the <strong>message</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi>b</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><msup><mo stretchy="false" form="postfix">}</mo><msub><mi>T</mi><mi>v</mi></msub></msup></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>=</mo><mi>t</mi></mrow></mtd></mtr></mtable></munder><msup><mi>x</mi><mrow><munder><mo>∑</mo><mrow><mi>w</mi><mo>∈</mo><msub><mi>T</mi><mi>v</mi></msub></mrow></munder><msub><mi>b</mi><mi>w</mi></msub></mrow></msup><mspace width="0.167em"></mspace><msup><mi>q</mi><mrow><munder><mo>∑</mo><mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mi>u</mi></msub><mo>−</mo><msub><mi>b</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+F_v(t;x,q)=\sum_{\substack{b\in\{0,\ldots,H\}^{T_v}\\ b_v=t}}x^{\sum_{w\in T_v}b_w}\,q^{\sum_{\{u,w\}\in E(T_v)}(b_u-b_w)^2},
+</annotation></semantics></math> a polynomial whose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>m</mi></msup><msup><mi>q</mi><mi>e</mi></msup></mrow><annotation encoding="application/x-tex">x^mq^e</annotation></semantics></math>
+coefficient counts labeled assignments of the subtree with root height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+and internal energy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>.</p>
+<p><strong>Proposition SNG-F23 (forest message recursion).</strong> For
+every vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+with children
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>u</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">u_1,\ldots,u_c</annotation></semantics></math>,
+<span class="math display">$$
+F_v(t)=x^t\prod_{i=1}^{c}\Bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\Bigr),
+$$</span> and the bounded-box series of the forest is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>H</mi></msub><mo>=</mo><msub><mo>∏</mo><mi>r</mi></msub><msubsup><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><mi>H</mi></msubsup><msub><mi>F</mi><mi>r</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C_H=\prod_{r}\sum_{t=0}^HF_r(t)</annotation></semantics></math>,
+the product over component roots
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>.</p>
+<p><em>Proof.</em> Induct on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|T_v|</annotation></semantics></math>.
+The vertex sets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><msub><mi>T</mi><msub><mi>u</mi><mn>1</mn></msub></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>T</mi><msub><mi>u</mi><mi>c</mi></msub></msub></mrow><annotation encoding="application/x-tex">\{v\},T_{u_1},\ldots,T_{u_c}</annotation></semantics></math>
+partition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>v</mi></msub><annotation encoding="application/x-tex">T_v</annotation></semantics></math>,
+and the edges of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(T_v)</annotation></semantics></math>
+are partitioned into the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+connecting edges
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo>,</mo><msub><mi>u</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{v,u_i\}</annotation></semantics></math>
+and the sets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><msub><mi>u</mi><mi>i</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(T_{u_i})</annotation></semantics></math>;
+no other edge exists, because a forest has no edge between different
+child subtrees. An assignment
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>v</mi></msub><annotation encoding="application/x-tex">T_v</annotation></semantics></math>
 with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>v</mi></msub><mo>=</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">a_v=t</annotation></semantics></math>.
-With heights bounded by
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
-the exact recursion is</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mi>t</mi></msup><munder><mo>∏</mo><mrow><mi>u</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> child of </mtext><mspace width="0.333em"></mspace></mrow><mi>v</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>H</mi></munderover><msup><mi>q</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msup><msub><mi>F</mi><mi>u</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
-F_v(t)=x^t\prod_{u\text{ child of }v}\left(\sum_{j=0}^{H}q^{(t-j)^2}F_u(j)\right).
-</annotation></semantics></math></p>
-<p>The local bounded-height polynomial is <span
-class="math inline">$\sum_tF_{\rm root}(t)$</span>. Truncating every
-product modulo
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>
-preserves all coefficients through volume
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
-because every volume exponent is nonnegative. Taking
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">H=R</annotation></semantics></math>
-therefore computes the unrestricted local series through that volume. A
-proof should specify where the root vertex weight is charged and where
-each edge is charged; double-counting either invalidates an otherwise
-plausible recursion.</p>
-<p>The same bounded-height computation recovers span marking without
-tracking both extrema in every message. Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>H</mi></msub><annotation encoding="application/x-tex">C_H</annotation></semantics></math>
-count profiles with every height in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\ldots,H\}</annotation></semantics></math>,
-and set
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C_{-1}=0</annotation></semantics></math>.
-The polynomial
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>H</mi></msub><mo>=</mo><msub><mi>C</mi><mi>H</mi></msub><mo>−</mo><msup><mi>x</mi><mi>n</mi></msup><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_H=C_H-x^n C_{H-1}</annotation></semantics></math>
-counts profiles with minimum zero and maximum at most
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>v</mi></msub><mo>=</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">b_v=t</annotation></semantics></math>
+is therefore the same as a choice of heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>j</mi><mi>i</mi></msub><mo>=</mo><msub><mi>b</mi><msub><mi>u</mi><mi>i</mi></msub></msub></mrow><annotation encoding="application/x-tex">j_i=b_{u_i}</annotation></semantics></math>
+and of independent assignments on each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><msub><mi>u</mi><mi>i</mi></msub></msub><annotation encoding="application/x-tex">T_{u_i}</annotation></semantics></math>
+with root height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>j</mi><mi>i</mi></msub><annotation encoding="application/x-tex">j_i</annotation></semantics></math>.
+Its volume is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+charged once at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+by the factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>t</mi></msup><annotation encoding="application/x-tex">x^t</annotation></semantics></math>,
+plus the subtree volumes; its energy is the sum of the internal subtree
+energies and the connecting terms
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><msub><mi>j</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(t-j_i)^2</annotation></semantics></math>,
+each charged once in the factor for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mi>i</mi></msub><annotation encoding="application/x-tex">u_i</annotation></semantics></math>.
+Multiplication of generating polynomials realizes exactly this product
+of independent choices, so coefficients count labeled assignments
+without repetition or loss. The base case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>v</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>v</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">T_v=\{v\}</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mi>t</mi></msup></mrow><annotation encoding="application/x-tex">F_v(t)=x^t</annotation></semantics></math>.
+Components are disjoint and joined by no edge, so the forest series is
+the product over roots of the summed root messages.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The implementation computes messages in reverse depth-first order, so
+each child is complete before its parent. After
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>u</mi></msub><annotation encoding="application/x-tex">F_u</annotation></semantics></math>
+is folded into its parent it is deleted. This preserves the result
+because each non-root vertex has exactly one parent: no later step reads
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>u</mi></msub><annotation encoding="application/x-tex">F_u</annotation></semantics></math>.
+The roots’ messages are retained and exposed as
+<code>root_messages</code>, keyed by original labels. Three cost
+measures are recorded separately by <code>transfer_statistics</code>:
+height states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">(H+1)n</annotation></semantics></math>,
+the total and maximum number of sparse
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">volume</mtext><mo>,</mo><mtext mathvariant="normal">energy</mtext><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\text{volume},\text{energy})</annotation></semantics></math>
+cells across messages, and the largest integer bit length. None is by
+itself a running-time bound, since sparse convolution cost depends on
+support products.</p>
+<p><strong>Proposition SNG-F24 (safe volume truncation).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R\ge0</annotation></semantics></math>.
+If every intermediate sum and product in SNG-F23, the convolution over
+components and the minimum-zero subtraction below are reduced by
+deleting monomials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>m</mi></msup><msup><mi>q</mi><mi>e</mi></msup></mrow><annotation encoding="application/x-tex">x^mq^e</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">m&gt;R</annotation></semantics></math>,
+the result agrees with the unreduced computation in every coefficient
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">m\le R</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>≥</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">H\ge R</annotation></semantics></math>,
+these coefficients equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>m</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>L</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">[x^m]L_G</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">m\le R</annotation></semantics></math>.</p>
+<p><em>Proof.</em> Deleting monomials of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-degree
+above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+is the quotient map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>:</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>→</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\pi:\mathbb Z[q][x]\to\mathbb Z[q][x]/(x^{R+1})</annotation></semantics></math>,
+a ring homomorphism, because the monomials of degree above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+form an ideal when all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-exponents
+are nonnegative: a product of a monomial of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">m&gt;R</annotation></semantics></math>
+with any polynomial of nonnegative degrees has every degree at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
 Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mi>f</mi><mspace width="0.167em"></mspace><mi>π</mi><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\pi(fg)=\pi(\pi f\,\pi g)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>+</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>π</mi><mi>f</mi><mo>+</mo><mi>π</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">\pi(f+g)=\pi f+\pi g</annotation></semantics></math>,
+so reducing after every operation equals reducing the final answer.
+Multiplication by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msup><annotation encoding="application/x-tex">q^{(t-j)^2}</annotation></semantics></math>
+does not change
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-degree.
+Every message, the component product and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{H-1}</annotation></semantics></math>
+have nonnegative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-exponents,
+which is the only property used. For the subtraction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>H</mi></msub><mo>=</mo><msub><mi>C</mi><mi>H</mi></msub><mo>−</mo><msup><mi>x</mi><mi>n</mi></msup><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_H=C_H-x^nC_{H-1}</annotation></semantics></math>,
+the term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x^nC_{H-1}</annotation></semantics></math>
+is needed only through degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{H-1}</annotation></semantics></math>
+is needed only through degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">R-n</annotation></semantics></math>;
+the implementation computes it with that shifted budget. Finally, a
+nonnegative profile of volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">m\le R</annotation></semantics></math>
+has every height at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mi>R</mi><mo>≤</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">m\le R\le H</annotation></semantics></math>,
+so it lies in the box
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\{0,\ldots,H\}^n</annotation></semantics></math>,
+and the box and unrestricted counts agree at that volume. When no budget
+is given the implementation uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>n</mi><mi>H</mi></mrow><annotation encoding="application/x-tex">R=nH</annotation></semantics></math>,
+which deletes nothing because every box profile has volume at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>H</mi></mrow><annotation encoding="application/x-tex">nH</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The argument would fail for a representation with negative volume
+exponents, such as a series divided by a power of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+The retained benchmark therefore records two distinct populations: the
+low-volume part of an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H=2</annotation></semantics></math>
+box on paths of up to ninety-six vertices, which is a bounded-height
+population and not the unrestricted series, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">H=R</annotation></semantics></math>
+runs on a forty-vertex ternary tree, a sixty-three-vertex binary tree
+and a hundred-vertex path, which compute complete unrestricted local
+coefficients through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10</mn><annotation encoding="application/x-tex">10</annotation></semantics></math>.
+The latter are checked against two tree-independent identities: the
+profile count
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>m</mi><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{m+n-1}{n-1}</annotation></semantics></math>
+and the energy sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2|E|\binom{m+n}{n+1}</annotation></semantics></math>
+at each volume, the second because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>a</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>u</mi></msub><mo>−</mo><msub><mi>a</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_a(a_u-a_w)^2=2\binom{m+n}{n+1}</annotation></semantics></math>
+over weak compositions of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.</p>
+<p><strong>Proposition SNG-F25 (span by bounded-box
+subtraction).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>H</mi></msub><annotation encoding="application/x-tex">C_H</annotation></semantics></math>
+count all profiles in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\{0,\ldots,H\}^n</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C_{-1}=0</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>H</mi></msub><mo>=</mo><msub><mi>C</mi><mi>H</mi></msub><mo>−</mo><msup><mi>x</mi><mi>n</mi></msup><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_H=C_H-x^nC_{H-1}</annotation></semantics></math>
+counts profiles with minimum zero and maximum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
+and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>H</mi></msub><mo>−</mo><msub><mi>D</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_H-D_{H-1}</annotation></semantics></math>
-counts exact span
+(with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D_{-1}=0</annotation></semantics></math>)
+counts minimum-zero profiles of span exactly
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
-This follows by subtracting profiles whose minimum is positive and
-shifting them down by one. It is a useful proposed implementation path
-because its correctness reduces to a simple bijection rather than an
-enlarged and difficult-to-audit message state.</p>
+All counts are nonnegative.</p>
+<p><em>Proof.</em> The profiles in the box with minimum at least one are
+exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>+</mo><mn>𝟏</mn></mrow><annotation encoding="application/x-tex">b+\mathbf1</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>H</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">b\in\{0,\ldots,H-1\}^n</annotation></semantics></math>.
+The map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>↦</mo><mi>b</mi><mo>+</mo><mn>𝟏</mn></mrow><annotation encoding="application/x-tex">b\mapsto b+\mathbf1</annotation></semantics></math>
+is a bijection, adds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+to volume and leaves energy unchanged, because every edge difference is
+unchanged; this is one global translation, also for disconnected graphs.
+Subtracting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><msub><mi>C</mi><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x^nC_{H-1}</annotation></semantics></math>
+removes these and leaves the box profiles with minimum zero, a subset of
+the first box. A minimum-zero profile has span equal to its maximum.
+Minimum-zero profiles with maximum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">H-1</annotation></semantics></math>
+form a subset of those with maximum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
+and the set difference is exactly those of span
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+Both subtractions remove the counts of a subset, so no final count is
+negative. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>0</mn></msub><mo>=</mo><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D_0=C_0=1</annotation></semantics></math>
+is the zero profile.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p><code>marked_forest_coefficients</code> implements this with the
+shifted budget of SNG-F24 and raises, carrying its input, if a negative
+difference ever appears. For every labeled forest on at most five
+vertices through volume five, and for named paths, stars, balanced and
+branched trees and a disconnected forest through volume six, its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">volume</mtext><mo>,</mo><mtext mathvariant="normal">energy</mtext><mo>,</mo><mtext mathvariant="normal">span</mtext><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\text{volume},\text{energy},\text{span})</annotation></semantics></math>
+cells equal both the weak-composition and level-chain enumerators.</p>
 <p>For general graphs, a tree decomposition replaces a single parent
 height by a tuple of heights on a separator. The number of assignments
 to a bag of size
@@ -7799,8 +8001,9 @@ parameter-specific first discrepancy</td>
 <tr class="odd">
 <td><code>transfer</code></td>
 <td>Bounded-height forest populations</td>
-<td>Separator messages on trees/forests, volume pruning, joint
-volume-energy histograms and minimum-zero subtraction</td>
+<td>Separator messages on trees/forests (SNG-F23), safe volume pruning
+(SNG-F24), root messages, separate cost measures, minimum-zero
+subtraction and exact-span marked histograms (SNG-F25)</td>
 </tr>
 <tr class="even">
 <td><code>conductor</code></td>

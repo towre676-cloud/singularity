@@ -294,7 +294,7 @@
     {
       "id": "P09",
       "title": "Implement bounded-height tree messages",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
@@ -304,23 +304,33 @@
         "src/singularity/transfer.py",
         "tests/test_transfer.py",
         "docs/chapters/13_research_program.md",
-        "docs/IMPLEMENTATION.md",
         "scripts/benchmark_transfer.py",
-        "results/transfer_benchmark.json"
+        "results/transfer_benchmark.json",
+        "docs/specifications/COEFFICIENTS-v1.md"
       ],
-      "existing_work": "Exact forest message passing, single-charge edge combination, disconnected component convolution and a separate Cartesian oracle are implemented. Deterministic generated forests, isolated graphs, a branched tree and paths are checked; cycles are rejected. Joint support cells are reported in benchmarks.",
-      "next_action": "Extend the existing transfer engine's instrumentation and acceptance fixtures; avoid creating a replacement tree enumerator.",
-      "acceptance_gaps": [
-        "Close P02 and compare against its independent population on the accepted finite scope.",
-        "Turn the prose recursion into a complete named correctness proposition with explicit vertex/edge accounting.",
-        "Retain named star and branched-tree cases, and expose height-state counts separately from polynomial support sizes."
-      ],
-      "packet": "handoff/tasks/P09.md"
+      "existing_work": "Proposition SNG-F23 defines the conditioned message F_v(t) and proves the child-product recursion by subtree induction, charging each vertex volume once (x^t at v) and each edge once (connecting factor), with disconnected components multiplied. Rooting at the least original label is explicit; root_messages exposes conditioned messages; transfer_statistics separates height states, sparse support and bit size. Deleting folded child messages is justified by unique parents.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P09.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "prove the child-product recursion": "SNG-F23, chapter 13",
+          "count every vertex and edge once": "SNG-F23 proof; partition of T_v and E(T_v)",
+          "match reference coefficients on paths, stars and branched trees": "TreeTransferTests.test_named_trees_against_cartesian_and_chain_oracles (path7, star7, balanced7, branched8, forest7; Cartesian oracle H<=2 and level chains at H=R=4); test_all_small_labeled_forests_randomized; test_root_messages_condition_on_the_least_label",
+          "report support sizes separately from height-state counts": "transfer_statistics; test_cost_measures_are_separate; results/transfer_benchmark.json unrestricted_cases.cost",
+          "P02 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_transfer -v",
+          "python scripts/benchmark_transfer.py"
+        ]
+      }
     },
     {
       "id": "P10",
       "title": "Prove safe volume truncation",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
@@ -333,18 +343,28 @@
         "scripts/benchmark_transfer.py",
         "results/transfer_benchmark.json"
       ],
-      "existing_work": "Convolutions prune by nonnegative total volume. Tests compare pruned with full histograms and verify H=R coefficients against the unrestricted composition engine. The H=2, R=12 path experiments check every retained volume marginal independently, including n=96.",
-      "next_action": "Promote the nonnegative-exponent argument to a named theorem and add one explicit larger H=R experiment with complete volume-energy semantics and a suitable independent check.",
-      "acceptance_gaps": [
-        "Close P09's acceptance and publish a full truncation correctness argument, including the H=R sufficiency statement.",
-        "Separate the existing H=2 benchmark's bounded-height semantics from an unrestricted H=R large-tree demonstration; low volume does not make H=2 unrestricted at R=12."
-      ],
-      "packet": "handoff/tasks/P10.md"
+      "existing_work": "Proposition SNG-F24 proves that degree-above-R deletion is the quotient homomorphism to Z[q][x]/(x^(R+1)), covering messages, component convolution and minimum-zero subtraction with the shifted budget R-n, and that H=R suffices for unrestricted coefficients through R. The benchmark now separates the H=2 bounded-box path runs from H=R unrestricted runs on 40-, 63- and 100-vertex trees, each checked by tree-independent count and energy-moment identities.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P10.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "intermediate reduction modulo x^(R+1) preserves the output": "SNG-F24; test_volume_pruning_matches_unpruned_population; test_sparse_high_energy_pruning_and_disconnected_budget (star with energies to 405, disconnected forest with min_zero)",
+          "H=R suffices": "SNG-F24; test_low_coefficients_equal_unbounded_composition_engine; test_named_trees_against_cartesian_and_chain_oracles",
+          "larger tree computations with identical semantics": "results/transfer_benchmark.json unrestricted_cases; test_unrestricted_large_tree_independent_moments (40 vertices, R=8: counts, energy sums, energy-0 and energy-1 profiles)",
+          "complete coefficient ranges compared": "every volume 0..R checked; no speed claim made"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_transfer -v",
+          "python scripts/benchmark_transfer.py"
+        ]
+      }
     },
     {
       "id": "P11",
       "title": "Recover span by bounded-box subtraction",
-      "status": "partial",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
@@ -355,16 +375,24 @@
         "src/singularity/transfer.py",
         "tests/test_transfer.py",
         "docs/chapters/13_research_program.md",
-        "src/singularity/heights.py"
+        "docs/specifications/COEFFICIENTS-v1.md"
       ],
-      "existing_work": "D_H=C_H-x^n C_(H-1) is implemented through min_zero=True, including a disconnected global-shift test and rejection of negative normalized counts. Exact span via D_H-D_(H-1) is described in prose.",
-      "next_action": "Add exact-span differencing on top of bounded_height_histogram, investigate rather than clip negative results, and compare every marked cell with marked_coefficients on a declared forest population.",
-      "acceptance_gaps": [
-        "There is no forest-transfer API assembling complete (volume,energy,span) histograms from successive bounded boxes.",
-        "No exhaustive marked-cell comparison of that span algorithm against direct marked enumeration exists.",
-        "P09/P10 acceptance is open."
-      ],
-      "packet": "handoff/tasks/P11.md"
+      "existing_work": "marked_forest_coefficients assembles (volume, energy, span) cells from D_H=C_H-x^n C_(H-1) and exact-span differences D_H-D_(H-1); Proposition SNG-F25 proves both subtractions bijectively, with one global translation, and nonnegativity. A negative difference raises with the input retained.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P11.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "prove the shift subtraction": "SNG-F25",
+          "compare every (v,e,h) count with direct marked enumeration": "test_marked_forest_span_subtraction_all_small_forests: all 339 labeled forests on 1..5 vertices through volume 5 against marked_coefficients; named trees through volume 6 against level chains; span sums recover normalized coefficients",
+          "H=0, singleton, disconnected, crossing volume n": "test_marked_forest_boundaries",
+          "negative intermediate coefficients investigated, not clipped": "ArithmeticError carrying graph, span and cell"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_transfer -v"
+        ]
+      }
     },
     {
       "id": "P12",

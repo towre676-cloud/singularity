@@ -5,6 +5,12 @@ height at its root and the joint (total volume, edge energy) accumulated below
 it. Combining a child charges its connecting edge exactly once. Disconnected
 components are combined by convolution. General graphs are rejected by the
 tree algorithm; a separate brute-force routine is provided for small checks.
+
+Rooting is explicit: every component is rooted at its least original label,
+and children are explored from the original adjacency lists.  Messages are
+keyed by original labels.  Correctness (SNG-F23), safe volume truncation
+(SNG-F24) and span recovery by bounded-box subtraction (SNG-F25) are proved
+in chapter 13; the meanings follow docs/specifications/COEFFICIENTS-v1.md.
 """
 
 from collections import defaultdict
@@ -64,7 +70,15 @@ def _forest_order(graph) -> tuple[list[int], list[list[int]], list[int]]:
     return order, children, roots
 
 
-def _unrestricted_forest(graph, height: int, max_volume: int) -> Histogram:
+def _unrestricted_forest(graph, height: int, max_volume: int, statistics: dict | None = None, keep: bool = False):
+    """Return the box histogram; optionally record costs or keep root messages.
+
+    A message for vertex v is a list indexed by the root height t in 0..H;
+    entry t maps (volume, energy) of the subtree at v, with a_v = t, to its
+    number of labeled assignments.  A child's message is deleted after it has
+    been folded into its parent: no later step reads it, because each vertex
+    has exactly one parent.
+    """
     order, children, roots = _forest_order(graph)
     messages: dict[int, list[Histogram]] = {}
     for vertex in reversed(order):
@@ -80,6 +94,13 @@ def _unrestricted_forest(graph, height: int, max_volume: int) -> Histogram:
                 current = _convolve(current, summed_child, max_volume)
             by_height.append(current)
         messages[vertex] = by_height
+        if statistics is not None:
+            support = sum(map(len, by_height))
+            statistics["height_states"] = statistics.get("height_states", 0) + height + 1
+            statistics["message_support_cells"] = statistics.get("message_support_cells", 0) + support
+            statistics["max_message_support"] = max(statistics.get("max_message_support", 0), support)
+            largest = max((c for h in by_height for c in h.values()), default=0)
+            statistics["max_count_bits"] = max(statistics.get("max_count_bits", 0), largest.bit_length())
         for child in children[vertex]:
             del messages[child]
     result: Histogram = {(0, 0): 1}
@@ -89,7 +110,37 @@ def _unrestricted_forest(graph, height: int, max_volume: int) -> Histogram:
             for key, count in histogram.items():
                 component[key] += count
         result = _convolve(result, component, max_volume)
+    if statistics is not None:
+        statistics["output_support_cells"] = len(result)
+    if keep:
+        return dict(sorted(result.items())), {root: messages[root] for root in roots}
     return dict(sorted(result.items()))
+
+
+def root_messages(graph, height: int, max_volume: int | None = None) -> dict[int, list[Histogram]]:
+    """Return the conditioned message of each component root.
+
+    The key is a component's least original label r; entry t of its list
+    maps (volume, energy) to the number of labeled assignments of that
+    component, heights in 0..H, volume at most the budget, with a_r = t.
+    """
+    height, max_volume = _validate_bounds(height, max_volume, graph.n)
+    _, messages = _unrestricted_forest(graph, height, max_volume, keep=True)
+    return {root: [dict(sorted(h.items())) for h in rows] for root, rows in messages.items()}
+
+
+def transfer_statistics(graph, height: int, max_volume: int | None = None) -> dict[str, int]:
+    """Separate cost measures of one unrestricted forest run.
+
+    ``height_states`` counts (vertex, height) message slots, (H+1) per vertex;
+    ``message_support_cells`` counts sparse (volume, energy) cells over all
+    messages; ``max_count_bits`` is the largest stored integer's bit length.
+    None of these alone is a runtime bound.
+    """
+    height, max_volume = _validate_bounds(height, max_volume, graph.n)
+    statistics: dict[str, int] = {}
+    _unrestricted_forest(graph, height, max_volume, statistics)
+    return dict(sorted(statistics.items()))
 
 
 def bounded_height_histogram(graph, height: int, max_volume: int | None = None, min_zero: bool = False) -> Histogram:
@@ -138,6 +189,36 @@ def brute_bounded_height_histogram(graph, height: int, max_volume: int | None = 
             continue
         energy = sum((profile[u] - profile[v]) ** 2 for u, v in graph.edges)
         result[volume, energy] += 1
+    return dict(sorted(result.items()))
+
+
+def marked_forest_coefficients(graph, max_volume: int, max_span: int | None = None) -> dict[tuple[int, int, int], int]:
+    """Count global minimum-zero profiles by (volume, energy, span) on a forest.
+
+    With C_H the height-box histogram and C_{-1}=0, D_H = C_H - x^n C_{H-1}
+    counts minimum-zero profiles with maximum at most H, and D_H - D_{H-1}
+    those with span exactly H (SNG-F25).  Spans run to ``max_span``, which
+    defaults to ``max_volume``: a minimum-zero profile has span at most its
+    volume.  A negative difference means a broken invariant and raises,
+    carrying the input; it is never clipped.
+    """
+    if not isinstance(max_volume, int) or isinstance(max_volume, bool) or max_volume < 0:
+        raise ValueError("max_volume must be a nonnegative integer")
+    if max_span is None:
+        max_span = max_volume
+    if not isinstance(max_span, int) or isinstance(max_span, bool) or max_span < 0:
+        raise ValueError("max_span must be a nonnegative integer")
+    result: dict[tuple[int, int, int], int] = {}
+    previous: Histogram = {}
+    for span in range(min(max_span, max_volume) + 1):
+        current = bounded_height_histogram(graph, span, max_volume=max_volume, min_zero=True)
+        for key in current.keys() | previous.keys():
+            count = current.get(key, 0) - previous.get(key, 0)
+            if count < 0:
+                raise ArithmeticError(f"negative exact-span count {count} at span {span}, cell {key}, graph {graph.to_dict()}")
+            if count:
+                result[key[0], key[1], span] = count
+        previous = current
     return dict(sorted(result.items()))
 
 

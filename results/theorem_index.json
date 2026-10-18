@@ -283,6 +283,24 @@
       "declaration": "Proposition SNG-I020: exact synchronization at zero parameter. For a connected graph on \\(k\\) vertices,",
       "file": "docs/chapters/11_archival_bridges.md",
       "line": 32
+    },
+    {
+      "id": "SNG-F23",
+      "declaration": "Proposition SNG-F23 (forest message recursion). For every vertex \\(v\\) with children \\(u_1,\\ldots,u_c\\),",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 17
+    },
+    {
+      "id": "SNG-F24",
+      "declaration": "Proposition SNG-F24 (safe volume truncation). Let \\(R\\ge0\\). If every intermediate sum and product in SNG-F23, the convolution over components and the minimum-zero subtraction below are reduced by deleting monomials \\(x^mq^e\\) with \\(m>R\\), the result agrees with the unreduced computation in every coefficient with \\(m\\le R\\). If \\(H\\ge R\\), these coefficients equal \\([x^m]L_G\\) for \\(m\\le R\\).",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 27
+    },
+    {
+      "id": "SNG-F25",
+      "declaration": "Proposition SNG-F25 (span by bounded-box subtraction). Let \\(C_H\\) count all profiles in \\(\\{0,\\ldots,H\\}^n\\) and \\(C_{-1}=0\\). Then \\(D_H=C_H-x^nC_{H-1}\\) counts profiles with minimum zero and maximum at most \\(H\\), and \\(D_H-D_{H-1}\\) (with \\(D_{-1}=0\\)) counts minimum-zero profiles of span exactly \\(H\\). All counts are nonnegative.",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 33
     }
   ]
 }

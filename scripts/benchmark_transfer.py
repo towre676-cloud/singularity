@@ -21,7 +21,7 @@ REPOSITORY = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY / "src"))
 
 from singularity.graph import Graph  # noqa: E402
-from singularity.transfer import bounded_height_histogram  # noqa: E402
+from singularity.transfer import bounded_height_histogram, transfer_statistics  # noqa: E402
 
 
 def independent_volume_count(vertices: int, height_bound: int, volume: int) -> int:
@@ -59,6 +59,37 @@ def run_benchmark() -> dict:
             "independent_marginals": marginals,
             "all_marginals_match": True,
         })
+    unrestricted = []
+    trees = {
+        "ternary_tree_40": Graph(40, [(i, (i - 1) // 3) for i in range(1, 40)]),
+        "binary_tree_63": Graph(63, [(i, (i - 1) // 2) for i in range(1, 63)]),
+        "path_100": Graph(100, [(i, i + 1) for i in range(99)]),
+    }
+    for name, graph in trees.items():
+        bound = 8 if graph.n < 60 else 10
+        started = perf_counter()
+        histogram = bounded_height_histogram(graph, bound, max_volume=bound)
+        elapsed = perf_counter() - started
+        edges = len(graph.edges)
+        checks = []
+        for volume in range(bound + 1):
+            row = {e: c for (v, e), c in histogram.items() if v == volume}
+            count, moment = sum(row.values()), sum(e * c for e, c in row.items())
+            expected_count = comb(volume + graph.n - 1, graph.n - 1)
+            expected_moment = edges * 2 * comb(volume + graph.n, graph.n + 1)
+            if (count, moment) != (expected_count, expected_moment):
+                raise ArithmeticError(f"independent moment mismatch: {name}, volume={volume}")
+            checks.append({"volume": volume, "profiles": count, "energy_sum": moment})
+        unrestricted.append({
+            "graph": name, "vertices": graph.n, "edges": edges,
+            "height_bound": bound, "max_volume": bound, "min_zero": False,
+            "semantics": "H=R: complete unrestricted local coefficients through volume R (SNG-F24)",
+            "joint_volume_energy_cells": len(histogram),
+            "cost": transfer_statistics(graph, bound, max_volume=bound),
+            "elapsed_seconds_environment_measurement": elapsed,
+            "independent_checks": checks,
+            "oracle": "profiles = C(v+n-1,n-1); energy sum = 2|E| C(v+n,n+1), independent of tree shape",
+        })
     return {
         "format": "singularity.transfer_benchmark/1",
         "recorded_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -68,6 +99,7 @@ def run_benchmark() -> dict:
         "timing_policy": "Elapsed seconds describe this run only. Correctness checks never assert a runtime threshold.",
         "scope": "Only profiles of total height at most 12 are counted. Counts are not the entire bounded-height cube.",
         "cases": cases,
+        "unrestricted_cases": unrestricted,
     }
 
 

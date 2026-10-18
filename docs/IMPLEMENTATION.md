@@ -22,7 +22,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `population` | Constrained original-labeled height tuples | Exact counts, lexicographic rank/unrank, feasibility witnesses and finite bound certificates |
 | `polynomials` | Sparse rational q-polynomials and formal x-series | Exact arithmetic, logarithms, specialization, JSON conversion and factor replay |
 | `euler` | Formal zeta exponents | Recursive and Mobius inversion, generalized-binomial recomposition, parameter-specific first discrepancy |
-| `transfer` | Bounded-height forest populations | Separator messages on trees/forests, volume pruning, joint volume-energy histograms and minimum-zero subtraction |
+| `transfer` | Bounded-height forest populations | Separator messages on trees/forests (SNG-F23), safe volume pruning (SNG-F24), root messages, separate cost measures, minimum-zero subtraction and exact-span marked histograms (SNG-F25) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |
 | `arithmetic` | Prime-valuation populations | Positive integer factorization, finite Dirichlet coefficients, conservative exact local remainder and tail constants |
