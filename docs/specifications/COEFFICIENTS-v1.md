@@ -102,7 +102,7 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Order chambers.** `chamber_marked_coefficients` and `chamber_local_coefficients` have the meanings of `marked_coefficients` and `local_coefficients`, computed over the \(n!\) half-open chambers of SNG-F29. `chamber_of(a)` returns the unique `(order, gaps)` of a profile and `chamber_profile` inverts it; `gap_form(graph, order)` is the matrix \(Q\) indexed by gaps \(1..n-1\).
 
-**Poset constraints.** `Poset(n, relations)` takes pairs \((i,j)\) meaning \(i\le_Pj\), rejects loops, cycles and out-of-range elements, and stores the transitive closure. `count_direct(poset, H, strict=False)` counts assignments in \(\{0,\ldots,H\}^n\) with \(a_i\le a_j\) (or \(<\) when strict) for \(i<_Pj\); `count_by_chambers` and `count_by_linear_extensions` compute the weak count, which equals \(\Omega(P,H+1)\) (SNG-F32); `weighted_histogram` returns `(volume, energy)` counts of the weak points.
+**Poset constraints.** `Poset(n, relations)` takes pairs \((i,j)\) meaning \(i\le_Pj\), rejects loops, cycles and out-of-range elements, and stores the transitive closure. `count_direct(poset, H, strict=False)` counts assignments in \(\{0,\ldots,H\}^n\) with \(a_i\le a_j\) (or \(<\) when strict) for \(i<_Pj\); `count_by_chambers` and `count_by_linear_extensions` compute the weak count, which equals \(\Omega(P,H+1)\) (SNG-F32); `weighted_histogram` returns `(volume, energy)` counts of the weak points. `order_polynomial` gives \(\Omega(P,m)\) as exact rational coefficients in \(m\), constant first; `p_partition_series` enumerates \(\sum x^{|a|}q^{E(a)}\) over weak maps \(a\ge0\) or strict maps \(a\ge1\) through a volume bound; and `p_partition_rational` returns the chamber numerator over \(\prod_{i\le n}(1-x^i)\) for the volume-only weight.
 
 **Tree decompositions.** `TreeDecomposition(bags, edges, root)` holds bags of original labels, undirected tree edges between bag indices and a root bag; its JSON form is `{"bags": [[...]], "edges": [[i, j]], "root": r}` with optional `"schema": "singularity.tree-decomposition/1"`. `check_decomposition` lists violations of vertex coverage, edge coverage, connected occurrence of each vertex, and the tree property. `decomposition_histogram` and `marked_decomposition_coefficients` have exactly the meanings of `bounded_height_histogram` and `marked_coefficients` for every graph with a valid decomposition (SNG-F26); `decomposition_statistics` reports width, bag assignments, support and bit size. `elimination_decomposition` and `forest_decomposition` construct valid decompositions.
 
@@ -152,7 +152,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `chains.*` | 8 | `tests/test_chains.py`; `results/chain_agreement.json` |
 | `lowvolume.*` (closed formulas through volume 3) | 3, 8 | `tests/test_low_volume.py`; `results/pair_acceptance.json` |
 | `chambers.*` | 8 | `tests/test_chambers.py` |
-| `orders.*` | 8 | `tests/test_orders.py` |
+| `orders.*` | 8 | `tests/test_orders.py`, `tests/test_reciprocity.py`; `docs/results/order_reciprocity.md` |
 | `decomposition.*` | 8 | `tests/test_decomposition.py` |
 | `visibility.*` | 8 | `tests/test_visibility.py`; `results/visibility_filtration.json` |
 | `parameters.*` | 8 | `tests/test_parameters.py`; `results/parameter_strata.json` |

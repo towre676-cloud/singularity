@@ -14,11 +14,11 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 
 | Status | Meaning | Push count |
 |---|---|---:|
-| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 4 |
+| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 3 |
 | `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 4 |
 | `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 1 |
 | `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 7 |
-| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 20 |
+| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 21 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
 
@@ -69,7 +69,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P19](#p19) | Analyze finite quadratic Gauss sums | `complete` | P18 | M | 2 |
 | [P20](#p20) | Build the disjoint order-chamber formula | `complete` | P02, P06 | M | 2 |
 | [P21](#p21) | Relate constrained heights to order polytopes | `complete` | P20 | M | 2 |
-| [P22](#p22) | Establish one genuine reciprocity statement | `planned` | P21 | L | 3 |
+| [P22](#p22) | Establish one genuine reciprocity statement | `complete` | P21 | L | 3 |
 | [P23](#p23) | Implement formal logarithmic extraction | `complete` | P03 | S | 1 |
 | [P24](#p24) | Determine exceptional energy parameters | `complete` | P23 | M | 1 |
 | [P25](#p25) | Organize successive visibility levels | `complete` | P23, P24 | M | 1 |
@@ -449,18 +449,25 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P22
 
-**Establish one genuine reciprocity statement.** Status: `planned`. Dependencies: P21. Remaining effort: L; priority: 3.
+**Establish one genuine reciprocity statement.** Status: `complete` (accepted 2026-10-18). Dependencies: P21.
 
-**Existing work:** The research program states the need for explicit boundary corrections and warns against an unproved weighted Ehrhart analogy. Complement/span reflection elsewhere is not the requested order-population reciprocity.
+**Accepted evidence:** Outcome: a certified negative result. Theorem SNG-F34 proves that for the two-element chain with its edge the energy-weighted P-partition series W and S equal theta/(1-x^2) and x^2(theta-1)/(1-x^2) with theta = sum x^d q^(d^2), and are not rational in x over Q(q), so the classical reciprocity S(x)=(-1)^n W(1/x) has no weighted analogue of that form. The classical order-polynomial and P-partition reciprocities are stated as established background, with the project's chamber-form numerators, and checked exactly.
 
-**Evidence:** [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [docs/chapters/14_literature_and_claims.md](../docs/chapters/14_literature_and_claims.md).
+**Evidence files:** [docs/results/order_reciprocity.md](../docs/results/order_reciprocity.md); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [src/singularity/orders.py](../src/singularity/orders.py); [tests/test_reciprocity.py](../tests/test_reciprocity.py); [docs/references.bib](../docs/references.bib).
 
-**Acceptance still missing:**
+**Criteria receipt:**
 
-- No scoped reciprocity theorem with full proof, or certified counterexample to a chosen weighted extension, is present.
-- P21 now fixes the counting problem (orders.py, SNG-F32): weak assignments are Omega(P,H+1), strict assignments a separate population, and quadratic weighting is shown to leave polynomiality in H.
+- *proved reciprocity identity with explicit boundary terms, or a counterexample to the proposed weighted extension*: SNG-F34 (negative, proved); docs/results/order_reciprocity.md.
+- *verify complete small instances*: EstablishedReciprocityTests on singleton, chain, antichain, diamond, unnaturally labeled and disconnected posets (order polynomial at negative arguments, H<=4; P-partition series through x^8).
+- *full argument for the stated scope*: chapter 13.6 proofs; rationality argument; Hankel certificates for k<=3.
+- *standard theorem labeled as background*: chapter 13.6 and results record label the Stanley reciprocities as established.
+- *expanded exact polynomials for the counterexample*: EnergyObstructionTests.test_closed_forms_through_degree_twelve; test_hankel_certificates_exclude_short_recurrences.
+- *negative bound evaluation needs a proved algebraic object*: order_polynomial is an explicit polynomial; weighted counts are shown non-polynomial (SNG-F32) and non-rational (SNG-F34).
+- *P21 dependency*: complete.
 
-**Next concrete action:** Using orders.py, state the established order-polynomial reciprocity between weak and strict counts as background, then either prove a scoped weighted identity with boundary terms or certify the smallest counterexample to the naive H -> -H extension of the weighted count.
+**Commands:** `PYTHONPATH=src python -m unittest tests.test_reciprocity tests.test_orders -v`.
+
+**Remaining:** none for P22.
 
 ### P23
 

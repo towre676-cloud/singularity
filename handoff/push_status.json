@@ -709,23 +709,38 @@
     {
       "id": "P22",
       "title": "Establish one genuine reciprocity statement",
-      "status": "planned",
+      "status": "complete",
       "effort": "L",
       "priority": 3,
       "dependencies": [
         "P21"
       ],
       "evidence": [
+        "docs/results/order_reciprocity.md",
         "docs/chapters/13_research_program.md",
-        "docs/chapters/14_literature_and_claims.md"
+        "src/singularity/orders.py",
+        "tests/test_reciprocity.py",
+        "docs/references.bib"
       ],
-      "existing_work": "The research program states the need for explicit boundary corrections and warns against an unproved weighted Ehrhart analogy. Complement/span reflection elsewhere is not the requested order-population reciprocity.",
-      "next_action": "Using orders.py, state the established order-polynomial reciprocity between weak and strict counts as background, then either prove a scoped weighted identity with boundary terms or certify the smallest counterexample to the naive H -> -H extension of the weighted count.",
-      "acceptance_gaps": [
-        "No scoped reciprocity theorem with full proof, or certified counterexample to a chosen weighted extension, is present.",
-        "P21 now fixes the counting problem (orders.py, SNG-F32): weak assignments are Omega(P,H+1), strict assignments a separate population, and quadratic weighting is shown to leave polynomiality in H."
-      ],
-      "packet": "handoff/tasks/P22.md"
+      "existing_work": "Outcome: a certified negative result. Theorem SNG-F34 proves that for the two-element chain with its edge the energy-weighted P-partition series W and S equal theta/(1-x^2) and x^2(theta-1)/(1-x^2) with theta = sum x^d q^(d^2), and are not rational in x over Q(q), so the classical reciprocity S(x)=(-1)^n W(1/x) has no weighted analogue of that form. The classical order-polynomial and P-partition reciprocities are stated as established background, with the project's chamber-form numerators, and checked exactly.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P22.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "proved reciprocity identity with explicit boundary terms, or a counterexample to the proposed weighted extension": "SNG-F34 (negative, proved); docs/results/order_reciprocity.md",
+          "verify complete small instances": "EstablishedReciprocityTests on singleton, chain, antichain, diamond, unnaturally labeled and disconnected posets (order polynomial at negative arguments, H<=4; P-partition series through x^8)",
+          "full argument for the stated scope": "chapter 13.6 proofs; rationality argument; Hankel certificates for k<=3",
+          "standard theorem labeled as background": "chapter 13.6 and results record label the Stanley reciprocities as established",
+          "expanded exact polynomials for the counterexample": "EnergyObstructionTests.test_closed_forms_through_degree_twelve; test_hankel_certificates_exclude_short_recurrences",
+          "negative bound evaluation needs a proved algebraic object": "order_polynomial is an explicit polynomial; weighted counts are shown non-polynomial (SNG-F32) and non-rational (SNG-F34)",
+          "P21 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_reciprocity tests.test_orders -v"
+        ]
+      }
     },
     {
       "id": "P23",

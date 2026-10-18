@@ -20,7 +20,8 @@ from __future__ import annotations
 
 from collections import Counter
 from itertools import permutations, product
-from math import comb
+from fractions import Fraction
+from math import comb, factorial
 from typing import Iterable, Sequence
 
 from .chambers import descents
@@ -129,3 +130,70 @@ def weighted_histogram(poset: Poset, graph: Graph, height: int) -> dict[tuple[in
         if poset.is_weak(a):
             result[sum(a), graph.energy(a)] += 1
     return dict(sorted(result.items()))
+
+
+def order_polynomial(poset: Poset) -> list[Fraction]:
+    """Coefficients (constant first) of Omega(P, m) as a polynomial in m.
+
+    Omega(P, m) = sum_{sigma in L(P)} C(m - 1 + n - des(sigma), n) for a
+    natural labeling, expanded exactly over Q; it may be evaluated at any
+    integer, including negative ones.
+    """
+    natural = poset.relabel(poset.natural_labeling())
+    n = poset.n
+    total = [Fraction(0)] * (n + 1)
+    for sigma in natural.linear_extensions():
+        shift = n - 1 - sum(descents(sigma))  # C(m + shift, n) = prod_{i<n} (m + shift - i) / n!
+        poly = [Fraction(1)]
+        for i in range(n):
+            root = shift - i
+            poly = [Fraction(0)] + poly
+            for k in range(len(poly) - 1):
+                poly[k] += root * poly[k + 1]
+        for k, c in enumerate(poly):
+            total[k] += c / factorial(n)
+    return total
+
+
+def evaluate_order_polynomial(coefficients: Sequence[Fraction], m: int) -> Fraction:
+    return sum((c * Fraction(m) ** k for k, c in enumerate(coefficients)), Fraction(0))
+
+
+def p_partition_series(poset: Poset, max_volume: int, strict: bool = False, energy_graph: Graph | None = None) -> list[dict[int, int]]:
+    """Truncated sum of x^|a| q^E(a) over weak maps a >= 0, or strict maps a >= 1.
+
+    Enumerated directly in the box of heights at most max_volume; without
+    ``energy_graph`` every energy is 0 (the volume-only weight).
+    """
+    max_volume = _integer(max_volume, "max_volume", minimum=0)
+    rows: list[Counter[int]] = [Counter() for _ in range(max_volume + 1)]
+    low = 1 if strict else 0
+    test = poset.is_strict if strict else poset.is_weak
+    for a in product(range(low, max_volume + 1), repeat=poset.n):
+        volume = sum(a)
+        if volume <= max_volume and test(a):
+            rows[volume][energy_graph.energy(a) if energy_graph is not None else 0] += 1
+    return [dict(sorted(r.items())) for r in rows]
+
+
+def p_partition_rational(poset: Poset, strict: bool = False) -> tuple[dict[int, int], int]:
+    """(numerator, n) with sum_a x^|a| = numerator(x) / prod_{i=1}^n (1 - x^i).
+
+    Weak maps a >= 0: break ties by increasing natural label (SNG-F29); the
+    chamber order is a linear extension sigma, gaps are positive at its
+    descents, and sigma contributes x^(sum_{j in Des} (n - j)).  Strict maps
+    a >= 1: break ties by decreasing natural label; the chamber order is again
+    a linear extension, a tied block is a decreasing run and hence an
+    antichain, d_0 >= 1, and gaps are positive at ascents, contributing
+    x^(n + sum_{j in Asc} (n - j)).
+    """
+    natural = poset.relabel(poset.natural_labeling())
+    n = poset.n
+    numerator: Counter[int] = Counter()
+    for sigma in natural.linear_extensions():
+        down = descents(sigma)
+        if strict:
+            numerator[n + sum(n - j for j in range(1, n) if not down[j])] += 1
+        else:
+            numerator[sum(n - j for j in range(1, n) if down[j])] += 1
+    return dict(sorted(numerator.items())), n

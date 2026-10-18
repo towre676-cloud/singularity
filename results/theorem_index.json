@@ -228,7 +228,7 @@
       "id": "SNG-A20",
       "declaration": "Theorem SNG-A20 \u2014 endpoint scaling of visibility. Suppose the polynomial local coefficients of two graphs agree below volume \\(r\\) for every \\(q\\in[0,1]\\). Let \\(q_*\\in[0,1]\\) be a value where the entire local series agree, and write \\(\\delta(q)=\\ell_{G,r}(q)-\\ell_{H,r}(q)\\). Let \\(q_j\\to q_*\\), \\(\\varepsilon_j\\downarrow0\\), with",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 276
+      "line": 278
     },
     {
       "id": "SNG-A15",
@@ -345,10 +345,16 @@
       "line": 130
     },
     {
+      "id": "SNG-F34",
+      "declaration": "Theorem SNG-F34 (energy weights obstruct P-partition reciprocity). Let \\(P\\) be the two-element chain \\(0<1\\) and \\(G=K_2\\) on the same vertices, and put \\(W(x,q)=\\sum_{0\\le a_0\\le a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\\) and \\(S(x,q)=\\sum_{1\\le a_0<a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\\). Then",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 148
+    },
+    {
       "id": "SNG-F31",
       "declaration": "Proposition SNG-F31 (exceptional strata are finite and exactly computable). Let \\(\\Delta_v=[x^v](L_G-L_H)\\in\\mathbb Z[q]\\) for \\(0\\le v\\le R\\), let \\(r\\) be the least \\(v\\) with \\(\\Delta_v\\ne0\\), and for \\(q_0\\in(0,1)\\) let \\(r(q_0)\\) be the least \\(v\\le R\\) with \\(\\Delta_v(q_0)\\ne0\\), if any. Then \\(r(q_0)=r\\) except at the finitely many roots of \\(\\Delta_r\\) in \\((0,1)\\); at such a root \\(\\alpha\\), \\(r(q_0)\\) is the least \\(v>r\\) with \\(\\Delta_v(\\alpha)\\ne0\\), or undefined through \\(R\\). Every such root is found by Sturm isolation of the square-free part of \\(\\Delta_r\\), and whether \\(\\Delta_v(\\alpha)=0\\) is decided exactly.",
       "file": "docs/chapters/13_research_program.md",
-      "line": 147
+      "line": 164
     }
   ]
 }

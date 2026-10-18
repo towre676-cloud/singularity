@@ -138,6 +138,23 @@ This description links the population to familiar order and lattice-point method
 
 Statement (1) is classical [Stanley1986; Stanley2012]. The project adds two things: the chamber form (2), which applies to arbitrary labels and is checked against direct enumeration, and the explicit warning (4). Quadratic weighting keeps the lattice points of the order polytope but leaves the polynomial world of ordinary Ehrhart theory, so a reciprocity statement for weighted counts needs its own proof (P22). `src/singularity/orders.py` validates acyclicity and takes the transitive closure. Its direct, chamber and linear-extension counts agree on chains, a reversed chain, antichains, the diamond, a poset with unnatural labels, a disconnected poset and a redundant relation for several complete height ranges.
 
+Two reciprocity statements hold for these counts, and both are established background rather than project results [Stanley2012]. For strict assignments \(a_i<a_j\) with values in \(\{0,\ldots,H\}\), the count is \((-1)^n\Omega(P,-(H+1))\), where \(\Omega(P,m)\) is the order polynomial of SNG-F32 evaluated as a polynomial at a negative integer. For unbounded heights, let \(W_P(x)=\sum x^{|a|}\) over weak maps \(a\ge0\) and \(S_P(x)=\sum x^{|a|}\) over strict maps \(a\ge1\). Both are rational. In chamber form, with ties broken by increasing natural label for \(W\) and by decreasing natural label for \(S\),
+\[
+W_P=\frac{\sum_{\sigma\in\mathcal L(P)}x^{\sum_{j\in\operatorname{Des}\sigma}(n-j)}}{\prod_{i=1}^n(1-x^i)},\qquad
+S_P=\frac{\sum_{\sigma\in\mathcal L(P)}x^{\,n+\sum_{j\in\operatorname{Asc}\sigma}(n-j)}}{\prod_{i=1}^n(1-x^i)},
+\]
+and \(S_P(x)=(-1)^nW_P(1/x)\). Breaking ties by decreasing label makes every tied block a decreasing run of a linear extension, hence an antichain. This is exactly what strictness permits. The two exponents add to \(n(n+1)/2\), which gives the identity.
+
+**Theorem SNG-F34 (energy weights obstruct P-partition reciprocity).** Let \(P\) be the two-element chain \(0<1\) and \(G=K_2\) on the same vertices, and put \(W(x,q)=\sum_{0\le a_0\le a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\) and \(S(x,q)=\sum_{1\le a_0<a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\). Then
+\[
+W=\frac{\theta(x,q)}{1-x^2},\qquad S=\frac{x^2(\theta(x,q)-1)}{1-x^2},\qquad \theta(x,q)=\sum_{d\ge0}x^dq^{d^2},
+\]
+and neither \(W\) nor \(S\) is a rational function of \(x\) over \(\mathbb Q(q)\). Consequently \(W(1/x,\cdot)\) has no meaning as a rational function, and no identity of the form \(S(x,q)=\pm W(1/x,\psi(q))\) extends the classical reciprocity, which holds at \(q=1\).
+
+*Proof.* Writing \(a=(t,t+d)\) gives the closed forms. If \(W\) were rational in \(x\) over \(\mathbb Q(q)\), so would be \(\theta=(1-x^2)W\). Its coefficients \(q^{d^2}\) would then satisfy a linear recurrence \(\sum_{i=0}^kc_iq^{(d+i)^2}=0\) for all \(d\ge d_0\), with \(c_i\in\mathbb Q(q)\) not all zero. Dividing by \(q^{d^2}\) gives \(\sum_ic_iq^{i^2}y^i=0\) with \(y=q^{2d}\). This polynomial in \(y\) would vanish at the infinitely many distinct elements \(q^{2d}\) of \(\mathbb Q(q)\), hence identically, forcing every \(c_i=0\). The same argument applies to \(S\). At \(q=1\), \(\theta=1/(1-x)\), \(W=1/((1-x)(1-x^2))\) and \(S=x^3/((1-x)(1-x^2))=W(1/x)\). \(\square\)
+
+The obstruction concerns rationality in \(x\), which the classical proof needs. It does not rule out other weighted identities with additional boundary terms or a transformed analytic function; any such claim would need its own definition of the evaluation at \(1/x\) or at negative bounds. The bounded weighted count is not polynomial in \(H\) either (SNG-F32), so evaluation at negative \(H\) is also undefined. `tests/test_reciprocity.py` checks both background reciprocities on six complete small posets, including singleton, chain, antichain, diamond, unnatural labeling and a disconnected poset. It checks the closed forms of \(W\) and \(S\) through \(x^{12}\) by direct enumeration and confirms that the Hankel determinants \(\det[q^{(i+j)^2}]_{0\le i,j\le k}\) for \(k\le3\) are nonzero polynomials. These determinants are the finite certificates excluding recurrences of order \(k\) that start at \(d=0\).
+
 The intended order-theoretic theorem target is a chamber formula with a correct treatment of ties, followed by reductions for graph families with a controlled set of chamber types. An algorithm summing all \(n!\) orders may be a useful check without being a useful large-scale algorithm. A later symmetry reduction must preserve the original labeled multiplicities. Successful chamber identities would provide exact explanations for some coefficient factorizations, rather than relying on numerical pattern recognition.
 
 ## 13.7 Visibility strata and formal proof priorities
