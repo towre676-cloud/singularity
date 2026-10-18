@@ -19,8 +19,10 @@ _SCHEMA = "singularity.operator-closure/1"
 
 
 def _q(value) -> Fraction:
+    """Exact public numbers: int or Fraction.  bool, float and str raise
+    TypeError; wrong values or shapes raise ValueError."""
     if isinstance(value, bool) or not isinstance(value, (int, Fraction)):
-        raise ValueError("exact rational values must be integers or Fractions")
+        raise TypeError(f"exact rational values must be int or Fraction, not {type(value).__name__}")
     return Fraction(value)
 
 
@@ -75,8 +77,10 @@ class OperatorSystem:
     def __init__(self, dimension: int, operators: Sequence[Matrix],
                  observations: Sequence[Row], attachment_costs=None,
                  observation_costs=None):
-        if isinstance(dimension, bool) or not isinstance(dimension, int) or dimension < 0:
-            raise ValueError("dimension must be a nonnegative integer")
+        if isinstance(dimension, bool) or not isinstance(dimension, int):
+            raise TypeError("dimension must be an int")
+        if dimension < 0:
+            raise ValueError("dimension must be nonnegative")
         ops = tuple(_matrix(m, dimension, dimension) for m in operators)
         obs = tuple(_row(row, dimension) for row in observations)
         ac = tuple(_q(c) for c in (attachment_costs if attachment_costs is not None
@@ -133,8 +137,10 @@ class ClosureCertificate:
 
 
 def _index(value, size):
-    if isinstance(value, bool) or not isinstance(value, int) or not 0 <= value < size:
-        raise ValueError("invalid observation or operator index")
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise TypeError("observation and operator indices must be int, not bool")
+    if not 0 <= value < size:
+        raise ValueError("observation or operator index out of range")
     return value
 
 
@@ -440,7 +446,16 @@ def _decode_matrix(values, rows, columns):
 
 
 def replay_bundle(bundle):
-    """Strict, resource-bounded portable replay; returns (system, certificate)."""
+    """Strict, resource-bounded portable replay; returns (system, certificate).
+
+    Every malformed bundle raises ValueError, whatever the defect."""
+    try:
+        return _replay(bundle)
+    except TypeError as error:
+        raise ValueError(f"malformed operator certificate: {error}") from None
+
+
+def _replay(bundle):
     _keys(bundle, ("schema", "system", "certificate"))
     if bundle["schema"] != _SCHEMA:
         raise ValueError("unsupported operator certificate schema")

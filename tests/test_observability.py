@@ -410,21 +410,31 @@ class PortableReplayTests(unittest.TestCase):
 
 class InputContractTests(unittest.TestCase):
     def test_exact_inputs_only(self):
-        for bad in (True, 1.5, -1, "2"):
-            with self.assertRaises((ValueError, TypeError)):
+        # Contract: non-exact types raise TypeError; bad values or shapes ValueError.
+        for bad in (True, 1.5, "2"):
+            with self.assertRaises(TypeError):
                 OperatorSystem(bad, (), ())
         with self.assertRaises(ValueError):
-            OperatorSystem(1, (((0.5,),),), ((1,),))
-        with self.assertRaises(ValueError):
-            OperatorSystem(1, (((1,),),), ((True,),))
+            OperatorSystem(-1, (), ())
+        for bad in (0.5, True, "1"):
+            with self.assertRaises(TypeError):
+                OperatorSystem(1, (((bad,),),), ((1,),))
+            with self.assertRaises(TypeError):
+                OperatorSystem(1, (((1,),),), ((bad,),))
+            with self.assertRaises(TypeError):
+                OperatorSystem(1, (((1,),),), ((1,),), attachment_costs=(bad,))
+            with self.assertRaises(TypeError):
+                apply_word(NONCOMMUTING, (bad, 1), ())
+            with self.assertRaises(TypeError):
+                minimum_distinguishing_experiment(NONCOMMUTING, (bad, 0))
         with self.assertRaises(ValueError):
             OperatorSystem(2, (((1,),),), ((1, 0),))
         with self.assertRaises(ValueError):
-            apply_word(NONCOMMUTING, (0.5, 1), ())
-        with self.assertRaises(ValueError):
             apply_word(NONCOMMUTING, (0, 1), (2,))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             experiment(NONCOMMUTING, 0, (True,))
+        with self.assertRaises(ValueError):
+            experiment(NONCOMMUTING, 1)
         with self.assertRaises(ValueError):
             minimum_distinguishing_experiment(NONCOMMUTING, (1,))
 
