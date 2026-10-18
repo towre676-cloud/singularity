@@ -1,7 +1,7 @@
 import unittest
 from fractions import Fraction
 
-from singularity.charges import (_at, apply, charge_interface, closure_operator, dominating_block, dominating_sequence,
+from singularity.charges import (chart_observations, chart_transport, charge_chart, recover_from_chart, _at, apply, charge_interface, closure_operator, dominating_block, dominating_sequence,
                                  kernel_from_charges, pattern_dimension, recover_sequence, transport)
 from singularity.graph import Graph
 from singularity.heights import local_coefficients
@@ -88,6 +88,31 @@ class TransportTests(unittest.TestCase):
             dominating_block("not a graph")
         with self.assertRaises(ValueError):
             charge_interface(PATH, (0, 0), 2)
+
+
+class ChartTests(unittest.TestCase):
+    def test_false_twin_chart(self):
+        G = Graph(6, [(0, 2), (1, 2), (0, 3), (1, 3), (2, 4), (3, 5), (4, 5)])
+        iface = charge_interface(G, (0, 1), 4)
+        chart = charge_chart(iface, 4)
+        self.assertEqual(len(chart["coordinates"]), pattern_dimension(iface))
+        self.assertLessEqual(chart["budget"], 2 * 4)
+        K = terminal_kernel(G, (0, 1), chart["budget"])
+        truth = {key: _at(cells, Q0) for key, cells in iface["charges"].items()}
+        self.assertEqual(recover_from_chart(iface, chart, chart_observations(K, chart, Q0), Q0), truth)
+
+    def test_three_terminal_chart_and_transport(self):
+        G = Graph(6, [(0, 3), (1, 3), (2, 4), (3, 4), (4, 5), (1, 2)])
+        iface = charge_interface(G, (0, 1, 2), 3)
+        first = charge_chart(iface, 3)
+        second = charge_chart(iface, 3, (1, 2))
+        K = terminal_kernel(G, (0, 1, 2), max(first["budget"], second["budget"]))
+        truth = {key: _at(cells, Q0) for key, cells in iface["charges"].items()}
+        self.assertEqual(recover_from_chart(iface, first, chart_observations(K, first, Q0), Q0), truth)
+        o1, o2 = chart_observations(K, first, Q0), chart_observations(K, second, Q0)
+        for j in first["states"]:
+            U = chart_transport(iface, first, second, j, Q0)
+            self.assertEqual([sum(u * v for u, v in zip(row, o1[j])) for row in U], o2[j])
 
 
 if __name__ == "__main__":

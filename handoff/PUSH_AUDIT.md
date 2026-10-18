@@ -54,8 +54,8 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P04](#p04) | Give the spectral pair a short coefficient proof | `complete` | P03 | S | 1 |
 | [P05](#p05) | Explain the binary-census separation | `complete` | P02, P03 | S | 1 |
 | [P06](#p06) | Derive universal low-volume formulas | `complete` | P04, P05 | S | 1 |
-| [P07](#p07) | Formalize translation normalization | `planned` | P01 | M | 1 |
-| [P08](#p08) | Formalize the nested-level energy identity | `blocked` | P07 | L | 2 |
+| [P07](#p07) | Formalize translation normalization | `implemented_pending_acceptance` | P01 | M | 1 |
+| [P08](#p08) | Formalize the nested-level energy identity | `implemented_pending_acceptance` | P07 | L | 2 |
 | [P09](#p09) | Implement bounded-height tree messages | `complete` | P02 | S | 1 |
 | [P10](#p10) | Prove safe volume truncation | `complete` | P09 | S | 1 |
 | [P11](#p11) | Recover span by bounded-box subtraction | `complete` | P09, P10 | S | 1 |
@@ -80,7 +80,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P30](#p30) | Measure collision classes across invariants | `implemented_pending_acceptance` | P12, P14, P29 | M | 2 |
 | [P31](#p31) | Resolve targeted collisions structurally | `implemented_pending_acceptance` | P16, P30 | L | 2 |
 | [P32](#p32) | Seek a separation bound for one graph family | `implemented_pending_acceptance` | P06, P12, P31 | L | 2 |
-| [P33](#p33) | Verify concrete coefficient certificates in a kernel | `blocked` | P07, P08, P23 | L | 3 |
+| [P33](#p33) | Verify concrete coefficient certificates in a kernel | `planned` | P07, P08, P23 | L | 3 |
 | [P34](#p34) | Formalize the visibility comparison boundary | `blocked` | P26, P33 | L | 3 |
 | [P35](#p35) | Release the first focused manuscript | `partial` | P04, P05, P26, P27, P33 | M | 3 |
 | [P36](#p36) | Choose the second paper from actual results | `blocked` | P19, P22, P31, P32, P35 | L | 3 |
@@ -172,34 +172,32 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P07
 
-**Formalize translation normalization.** Status: `planned`. Dependencies: P01. Remaining effort: M; priority: 1.
+**Formalize translation normalization.** Status: `implemented_pending_acceptance`. Dependencies: P01. Remaining effort: M; priority: 1.
 
-**Existing work:** SNG-F02 proves the minimum-zero shift bijection in exposition; exact Python normalization and independent replay exist.
+**Existing work:** Core Lean 4.12.0 project formal/ (no Mathlib): profiles as List Nat, edge lists, volume and squared-difference energy. Kernel-checked theorems shift_injective, shift_surjective, shift_unique, vol_shift, energy_shift, energy_norm, box/mem_box/box_nodup (finite coefficients), allCount_rec (L(V,e) = B(V,e) + L(V-n,e), the coefficient form of B = (1-x^n)L), allCount_eq_mzCount_of_lt and allCount_eq_shiftSum; no connectivity assumption. Local build and axiom audit (propext, Quot.sound, Classical.choice only) pass; scripts/check_formal.py runs in CI.
 
-**Evidence:** [docs/chapters/01_orientation.md](../docs/chapters/01_orientation.md); [src/singularity/heights.py](../src/singularity/heights.py); [tests/test_core.py](../tests/test_core.py); [results/certificates/translation.json](../results/certificates/translation.json).
+**Evidence:** [docs/chapters/01_orientation.md](../docs/chapters/01_orientation.md); [src/singularity/heights.py](../src/singularity/heights.py); [tests/test_core.py](../tests/test_core.py); [results/certificates/translation.json](../results/certificates/translation.json); [formal/README.md](../formal/README.md); [formal/Singularity/Normalization.lean](../formal/Singularity/Normalization.lean); [scripts/check_formal.py](../scripts/check_formal.py); [.github/workflows/research.yml](../.github/workflows/research.yml).
 
 **Acceptance still missing:**
 
-- No proof-assistant project, pinned toolchain, finite profile definitions or compilable theorem exists.
-- Kernel proofs of injectivity, surjectivity, volume shift and energy preservation, without admitted lemmas, remain to be written.
-- Session 2026-10-17/18 (D009): no Lean, Coq or Isabelle toolchain was installed, and the environment's network policy refused downloads from the Lean release hosts, so no kernel build could be attempted.
+- The clean-environment build in CI has not yet been observed (local build with the same pinned release passes).
+- The span-marked (z) version of the shift identity is not formalized; only the unmarked coefficient identity required by the packet is.
 
-**Next concrete action:** In an environment with a proof assistant, create a minimal pinned project for finite tuples; prove the minimum-zero shift bijection and the coefficient identity of COEFFICIENTS-v1 section 3 without admitted lemmas, and record the exact build command.
+**Next concrete action:** Observe the CI formal-lean job (clean download of the pinned release, lake build, axiom audit); on success mark complete.
 
 ### P08
 
-**Formalize the nested-level energy identity.** Status: `blocked`. Dependencies: P07. Remaining effort: L; priority: 2.
+**Formalize the nested-level energy identity.** Status: `implemented_pending_acceptance`. Dependencies: P07. Remaining effort: L; priority: 2.
 
-**Existing work:** Threshold chains, volume, quadratic mixed terms and binary extraction have prose proofs and finite exhaustive tests. Repeated levels are permitted in the mathematical definition.
+**Existing work:** formal/Singularity/Thresholds.lean on the P07 definitions: thr_nested, reconstruct, vol_eq_levels, nonemptyLevels_eq_lmax, span_eq, maxZero_no_levels, thr_proper_of_minZero, edge_square, delta_mul, delta_sq, energy_nested (energy = sum_r cut(S_r) + 2 sum_{r<s} cross(r,s), repeated levels and gaps allowed), energy_binary and binary_dichotomy (zero profile versus exact span one); worked example [0,2,2,5,0] with repeated thresholds. Python P02 histogram comparisons are retained.
 
-**Evidence:** [docs/chapters/03_nested_heights.md](../docs/chapters/03_nested_heights.md); [src/singularity/heights.py](../src/singularity/heights.py); [tests/test_core.py](../tests/test_core.py).
+**Evidence:** [docs/chapters/03_nested_heights.md](../docs/chapters/03_nested_heights.md); [src/singularity/heights.py](../src/singularity/heights.py); [tests/test_core.py](../tests/test_core.py); [formal/README.md](../formal/README.md); [formal/Singularity/Thresholds.lean](../formal/Singularity/Thresholds.lean); [scripts/check_formal.py](../scripts/check_formal.py).
 
 **Acceptance still missing:**
 
-- P07's formal finite-profile foundation is absent.
-- No kernel-checked threshold-chain bijection, nested mixed-edge count identity or binary extraction theorem exists.
+- The clean-environment build in CI has not yet been observed (local build passes).
 
-**Next concrete action:** After P07 compiles, formalize one-edge threshold expansion, sum it over edges, then prove volume/span and the span-one extraction using the same tuple definitions.
+**Next concrete action:** Observe the CI formal-lean job; on success mark complete.
 
 ### P09
 
@@ -663,7 +661,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P33
 
-**Verify concrete coefficient certificates in a kernel.** Status: `blocked`. Dependencies: P07, P08, P23. Remaining effort: L; priority: 3.
+**Verify concrete coefficient certificates in a kernel.** Status: `planned`. Dependencies: P07, P08, P23. Remaining effort: L; priority: 3.
 
 **Existing work:** Python replay reconstructs declared coefficients and rejects altered sectors. This is independent finite computational checking, not a kernel-connected enumeration proof.
 
@@ -671,11 +669,11 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 **Acceptance still missing:**
 
-- P07/P08 formal definitions and identities are absent (D009); P23 is complete.
-- No kernel theorem connects parsed records to the mathematical coefficient definition or verifies both decisive pair multiplicities.
+- P07/P08 formal foundations now compile locally (pending CI observation); P23 is complete.
+- No kernel theorem connects certificate tables to the coefficient definition yet; a kernel enumeration route on the P07 definitions is in progress.
 - Kernel tests rejecting a changed graph edge and coefficient remain absent.
 
-**Next concrete action:** After formal foundations compile, define a verified finite enumeration/checking path and connect it to both existing packets; prove its soundness rather than only verifying a parser.
+**Next concrete action:** Build formal/Singularity/Certificates.lean: weak-composition enumerator with coverage/uniqueness bridged to allCount, then kernel-check both decisive certificate tables and rejection examples.
 
 ### P34
 

@@ -161,3 +161,13 @@ Next dependency-ready item and exact first action:
   - the K₂,₃ two-temperature recovery works on three cubic 12-vertex graphs.
 - `scripts/overlap_hierarchy.py --check` runs in CI (17 s).
 - Not implemented: ordered charge charts and chart transport.
+
+**Continuation (loop series, formal chain, charts, census):**
+- SNG-F60: loop decomposition below b_g, proved by covering arguments (universal cover for trees, cycle covers U_ℓ for unicyclic sets). b and W_ℓ are computed from the regular tree and the cycle covers. Absolute predictions are exact on twelve fixtures and on all 25 generalized Petersen graphs with m ≤ 14.
+- SNG-F61: the first-overlap correction at R = b_g (the cyclomatic-≥2 part of the spanning sums of b_g-sets). It is sharp: the cycle-only prediction fails exactly when such sets exist. This proves the theta formula N_{b_g} + f N_Θ and the girth-3 form N_4 + f N_◇ + f² N_K4.
+- [x^{g+1}]W_g = gβκ^g for all g, proved by a twin lemma for vertices at height two, checked symbolically and against compiler components. The next-coefficient formula is now a theorem for g ≥ 5.
+- SNG-F62: ordered charge charts and transport, implemented and tested.
+- Census: A_H and L_H separate all graphs on at most 7 vertices through volume 5. On 8 vertices, 20 pairs agree through volume 5 and all separate at 6.
+- Necessary conditions for the R = 11 candidate (no realization found).
+- P07 and P08: core Lean 4.12.0 project in `formal/`, written by a delegated agent and verified here (clean local build; axiom audit lists only propext, Quot.sound and Classical.choice). CI job `formal-lean` added. Both are implemented_pending_acceptance until that job is observed. D011 records the toolchain route.
+- P33 moved to planned; kernel certificate work started.

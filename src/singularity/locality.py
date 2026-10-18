@@ -366,3 +366,171 @@ def moments_from_pinnings(values: dict[int, Sequence], max_volume: int, q) -> li
                     rows[i] = [x - f * y for x, y in zip(rows[i], rows[c])]
         out.append({j + 2 * k: rows[k][-1] for k in range(size) if rows[k][-1]})
     return out
+
+
+def connected_supersets(graph: Graph, base: Iterable[int], max_size: int, forbidden: Iterable[int] = ()) -> Iterable[frozenset]:
+    """Every connected vertex set containing the connected set ``base``, avoiding ``forbidden``, once each."""
+    base = frozenset(base)
+    k = _integer(max_size, "max_size", minimum=0)
+    blocked0 = set(forbidden)
+    neighbours = [set(graph.neighbors[v]) for v in range(graph.n)]
+    if len(base) > k:
+        return
+
+    def extend(current, frontier, excluded):
+        yield current
+        if len(current) == k:
+            return
+        blocked = set(excluded)
+        for i, v in enumerate(frontier):
+            new = frontier[i + 1:] + sorted(w for w in neighbours[v] if w not in current and w not in blocked
+                                           and w not in frontier and w != v)
+            yield from extend(current | {v}, new, blocked | set(frontier[: i + 1]))
+            blocked.add(v)
+
+    start = sorted({w for v in base for w in neighbours[v]} - base - blocked0)
+    yield from extend(base, start, blocked0)
+
+
+def _hang(edges: list, root: int, nxt: int, branches: int, depth: int, arity: int) -> int:
+    """Attach ``branches`` full ``arity``-ary trees of the given depth below ``root``; return the next free label."""
+    frontier = []
+    for _ in range(branches if depth > 0 else 0):
+        edges.append((root, nxt))
+        frontier.append(nxt)
+        nxt += 1
+    for _ in range(depth - 1):
+        new = []
+        for v in frontier:
+            for _ in range(arity):
+                edges.append((v, nxt))
+                new.append(nxt)
+                nxt += 1
+        frontier = new
+    return nxt
+
+
+def regular_tree_ball(d: int, radius: int) -> Graph:
+    """The ball of the d-regular tree around vertex 0."""
+    edges: list = []
+    nxt = _hang(edges, 0, 1, d, radius, d - 1)
+    return Graph(nxt, edges)
+
+
+def _decorated_phi(graph: Graph, subset: frozenset, lam, R: int, phis: dict, logs: dict) -> Series:
+    key = _type_key(graph, subset, lam or 0)
+    if key not in phis:
+        phis[key] = exact_support_log(graph, subset, lam, R, logs)
+    return phis[key]
+
+
+def regular_background(d: int, max_volume: int, lam: int = 2) -> Series:
+    """b_{d,lam} modulo x^(R+1): sum over subtrees S of the d-regular tree through a root of Phi_S / |S| (SNG-F60)."""
+    R = _integer(max_volume, "max_volume", minimum=0)
+    d = _integer(d, "d", minimum=1)
+    ball = regular_tree_ball(d, R)  # sets of at most R vertices through the root stay at distance <= R-1
+    phis, logs = {}, {}
+    total: Series = [{} for _ in range(R + 1)]
+    for S in connected_supersets(ball, {0}, R):
+        phi = _decorated_phi(ball, S, lam, R, phis, logs)
+        total = [add(a, scale(b, Fraction(1, len(S)))) for a, b in zip(total, phi)]
+    return [normalize(t) for t in total]
+
+
+def regular_cycle_term(d: int, ell: int, max_volume: int, lam: int = 2) -> Series:
+    """W_{ell,d,lam} modulo x^(R+1) (SNG-F60).
+
+    W = sum over finite connected supersets S of the cycle C in U_ell (C_ell with
+    d-2 infinite (d-1)-ary branches at each vertex) of Phi_S, minus ell times the
+    sum over subtrees S' of the d-regular tree meeting a line L exactly in a path
+    [0, m-1] with m >= ell, of Phi_S'.  W = O(x^ell) with leading coefficient kappa^ell.
+    """
+    R = _integer(max_volume, "max_volume", minimum=0)
+    d, ell = _integer(d, "d", minimum=2), _integer(ell, "ell", minimum=3)
+    if ell > R:
+        return [{} for _ in range(R + 1)]
+    depth = R - ell + 1
+    edges = [(i, (i + 1) % ell) for i in range(ell)]
+    nxt = ell
+    for v in range(ell):
+        nxt = _hang(edges, v, nxt, d - 2, depth, d - 1)
+    cover = Graph(nxt, edges)
+    phis, logs = {}, {}
+    total: Series = [{} for _ in range(R + 1)]
+    for S in connected_supersets(cover, range(ell), R):
+        total = [add(a, b) for a, b in zip(total, _decorated_phi(cover, S, lam, R, phis, logs))]
+    # the line: vertices 0..R+1 represent positions -1..R
+    edges = [(i, i + 1) for i in range(R + 1)]
+    nxt = R + 2
+    for v in range(1, R + 1):
+        nxt = _hang(edges, v, nxt, d - 2, depth, d - 1)  # at most R - ell vertices hang off the path
+    line = Graph(nxt, edges)
+    unfolded: Series = [{} for _ in range(R + 1)]
+    for m in range(ell, R + 1):
+        path = range(1, m + 1)
+        forbidden = [v for v in range(R + 2) if v not in path]
+        for S in connected_supersets(line, path, R, forbidden):
+            unfolded = [add(a, b) for a, b in zip(unfolded, _decorated_phi(line, S, lam, R, phis, logs))]
+    return [normalize(sub(a, scale(b, ell))) for a, b in zip(total, unfolded)]
+
+
+def girth_threshold(g: int) -> int:
+    """b_g = ceil(3g/2) - 1: fewest vertices of a graph of girth >= g with two independent cycles."""
+    g = _integer(g, "g", minimum=3)
+    return (3 * g + 1) // 2 - 1
+
+
+def regular_log_prediction(n: int, d: int, cycle_counts: dict[int, int], max_volume: int, lam: int = 2,
+                           overlap: dict | None = None) -> Series:
+    """n b + sum_ell N_ell W_ell modulo x^(R+1), valid for d-regular graphs of girth >= g when R < b_g (SNG-F60).
+
+    At R = b_g pass ``overlap = overlap_correction(H, R, lam)``, added at degree R (SNG-F61).
+    """
+    R = _integer(max_volume, "max_volume", minimum=0)
+    total = [scale(c, n) for c in regular_background(d, R, lam)]
+    if overlap:
+        total[R] = add(total[R], overlap)
+    for ell, count in sorted(cycle_counts.items()):
+        if count and 3 <= ell <= R:
+            total = [add(a, scale(b, count)) for a, b in zip(total, regular_cycle_term(d, ell, R, lam))]
+    return [normalize(t) for t in total]
+
+
+def overlap_correction(graph: Graph, max_volume: int, lam: int = 2) -> dict[int, Fraction]:
+    """The degree-R correction of SNG-F61 at R = b_g: sum over connected R-sets S with cyclomatic
+    number >= 2 of a^R sum_{E'} f^|E'|, over connected spanning edge sets E' of H[S] with cyclomatic >= 2.
+
+    a = q^(deg + lam), f = q^-2 - 1; returned as a polynomial in q (the graph must be regular).
+    """
+    from itertools import combinations as _comb
+
+    R = _integer(max_volume, "max_volume", minimum=1)
+    degrees = set(len(graph.neighbors[v]) for v in range(graph.n))
+    if len(degrees) != 1:
+        raise ValueError("overlap_correction expects a regular graph")
+    w = degrees.pop() + _integer(lam, "lam", minimum=0)
+    total: Counter = Counter()
+    for S in connected_sets(graph, R):
+        if len(S) != R:
+            continue
+        inner = [(u, v) for u, v in graph.edges if u in S and v in S]
+        if len(inner) - R + 1 < 2:
+            continue
+        for k in range(R + 1, len(inner) + 1):  # |E'| >= R + 1 means cyclomatic >= 2 when spanning and connected
+            for chosen in _comb(inner, k):
+                seen, stack, adj = {next(iter(S))}, [next(iter(S))], {}
+                for u, v in chosen:
+                    adj.setdefault(u, []).append(v)
+                    adj.setdefault(v, []).append(u)
+                while stack:
+                    u = stack.pop()
+                    for v in adj.get(u, []):
+                        if v not in seen:
+                            seen.add(v)
+                            stack.append(v)
+                if len(seen) == R:
+                    # a^R f^k = q^(w R - 2k) (1 - q^2)^k
+                    from math import comb
+                    for i in range(k + 1):
+                        total[w * R - 2 * k + 2 * i] += (-1) ** i * comb(k, i)
+    return {e: Fraction(c) for e, c in sorted(total.items()) if c}

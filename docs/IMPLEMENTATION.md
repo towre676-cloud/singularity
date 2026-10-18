@@ -33,7 +33,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `terminals` | Terminal kernels and gluing | Kernels conditioned on terminal heights, gluing for any number of terminals, Whitney-twist antisymmetric pairing (SNG-F41, SNG-F42) |
 | `contexts` | Restricted-context quotients | Symmetrized kernels, recovery from swap-symmetric probes and exact interface ranks under a volume budget (SNG-F47, SNG-F48) |
 | `charges` | Boundary charges and context transport | Charge tables rebuilding terminal kernels, the dominating-terminal sequence, closure operators, single-closure recovery and transport (SNG-F53, SNG-F54) |
-| `locality` | Connected-support compiler | Exact-support logarithms over connected sets, pinned series for any degree shift (L_G and A_H), the 2-regular reconstruction (SNG-F55 to SNG-F57) |
+| `locality` | Connected-support compiler | Exact-support logarithms over connected sets, pinned series for any degree shift (L_G and A_H), the 2-regular reconstruction (SNG-F55 to SNG-F57); regular-graph loop decomposition and first-overlap correction (SNG-F60, SNG-F61) |
 | `families` | Pendant-cycle family | Generators, closed binary discrepancy, decorated decks, optimal probe parameter (SNG-F36, SNG-F37) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |
@@ -88,3 +88,5 @@ Here the degree layer is the complete coefficient polynomial at volume one, not 
 `make book` assembles the chapter sources into a navigable monograph, generates LaTeX and HTML, and compiles the mathematical PDF. The shorter article in `docs/papers/visibility.md` provides a paper-shaped entry to the central construction and visibility theorem. `make release` performs the checks and creates a complete archive with source, documents, tests, inputs and results. Generated archives exclude earlier archives, temporary files and the local git object directory, preventing recursive packaging.
 
 The released finite calculations are computational evidence for their declared inputs. The proofs in the manuscript establish the mathematical identities and analytic transfer statements with their stated hypotheses. Neither the software tests nor a source digest imply a proof-assistant verification of the implementation. This separation lets later pushes strengthen formal coverage without rewriting the meaning of the existing results.
+
+Formal development: `formal/` is a core Lean 4.12.0 package (no Mathlib) with kernel-checked theorems for translation normalization (P07) and the nested threshold energy identity (P08); `scripts/check_formal.py` builds it and audits the axioms of the main theorems (see `formal/README.md`).

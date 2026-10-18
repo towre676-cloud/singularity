@@ -1,1198 +1,1203 @@
 {
-  "schema": "singularity.push-status/1",
-  "audit_date": "2026-10-17",
-  "roadmap_source": "docs/development/PUSHES.md",
-  "scope": "Read-only audit of original P01-P36 against repository source, tests, retained outputs and mathematical exposition. No new mathematical result or completed push is claimed by this audit.",
-  "status_definitions": {
-    "planned": "The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open.",
-    "partial": "Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied.",
-    "implemented_pending_acceptance": "The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding.",
-    "blocked": "The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated.",
-    "complete": "All original acceptance requirements and declared dependencies have evidence-backed closure. No push receives this label in the baseline audit."
+ "schema": "singularity.push-status/1",
+ "audit_date": "2026-10-17",
+ "roadmap_source": "docs/development/PUSHES.md",
+ "scope": "Read-only audit of original P01-P36 against repository source, tests, retained outputs and mathematical exposition. No new mathematical result or completed push is claimed by this audit.",
+ "status_definitions": {
+  "planned": "The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open.",
+  "partial": "Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied.",
+  "implemented_pending_acceptance": "The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding.",
+  "blocked": "The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated.",
+  "complete": "All original acceptance requirements and declared dependencies have evidence-backed closure. No push receives this label in the baseline audit."
+ },
+ "effort_definition": "S/M/L estimates the remaining work for the push itself, excluding all transitive prerequisites. They are relative scope judgments, not promised durations.",
+ "priority_definition": "0 = foundational next batch; 1 = high-value core or acceptance closure; 2 = subsequent focused branch; 3 = long-horizon or publication/formalization after prerequisites. Smaller values are earlier priorities, not a dependency override.",
+ "cross_cutting_findings": [
+  "No proof-assistant sources, toolchain lockfile or kernel build are present; manuscript proofs and Python tests are not kernel verification.",
+  "P02 is closed: chains.py generates weakly nested level chains directly, and certificate replay uses it as a second route independent of the builder.",
+  "The implemented certificate format singularity.certificate/1 is authoritative (D007). The roadmap name relational-height/1 is rejected by the reader with an explicit superseded-name message.",
+  "Exact forest transfer, minimum-zero subtraction, formal Euler extraction and conductor arithmetic are already implemented. Extend and accept them rather than starting duplicate engines.",
+  "The n<=6 census retains graph representatives and aggregate class counts, but not all requested intermediate class memberships, spectral partitions, witness records or graph hashes.",
+  "All original dependencies remain binding for declaring a push complete. A result may be useful and reusable while its push is not formally closed."
+ ],
+ "pushes": [
+  {
+   "id": "P01",
+   "title": "Freeze the coefficient semantics",
+   "status": "complete",
+   "effort": "S",
+   "priority": 0,
+   "dependencies": [],
+   "evidence": [
+    "docs/specifications/COEFFICIENTS-v1.md",
+    "src/singularity/heights.py",
+    "src/singularity/graph.py",
+    "src/singularity/population.py",
+    "src/singularity/weighted.py",
+    "tests/test_core.py",
+    "tests/test_transfer.py",
+    "docs/chapters/01_orientation.md",
+    "docs/chapters/02_graphs_lattices.md"
+   ],
+   "existing_work": "Versioned specification singularity.coefficients/1 fixes graph inputs, signed versus nonnegative heights, volume, squared energy, span, L/B/marked series, inclusive truncation, JSON/Python representations, weighted volume, populations, transfer, chains, certificates and invalid input. It proves the coefficient form of B=(1-x^n)L by an explicit bijection and works the disconnected K2+K1 example, global versus componentwise translation, through volume four. componentwise_normalized_coefficients makes the second quotient executable.",
+   "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P01.md",
+   "acceptance": {
+    "date": "2026-10-17",
+    "criteria": {
+     "every public function has an explicit finite meaning": "COEFFICIENTS-v1.md sections 1-10 and the section 11 API crosswalk",
+     "disconnected examples distinguish global from componentwise translation": "COEFFICIENTS-v1.md section 6; SemanticsTests.test_disconnected_global_versus_componentwise_translation and test_quotients_agree_exactly_for_connected_graphs (all 75 labeled graphs on <=4 vertices, volume <=3)",
+     "zero-volume and singleton dictionaries": "COEFFICIENTS-v1.md section 7; SemanticsTests.test_zero_volume_singleton_and_inclusive_truncation",
+     "compatibility note": "COEFFICIENTS-v1.md section 12: no existing meaning changed"
+    },
+    "commands": [
+     "PYTHONPATH=src python -m unittest discover -s tests -v"
+    ]
+   }
   },
-  "effort_definition": "S/M/L estimates the remaining work for the push itself, excluding all transitive prerequisites. They are relative scope judgments, not promised durations.",
-  "priority_definition": "0 = foundational next batch; 1 = high-value core or acceptance closure; 2 = subsequent focused branch; 3 = long-horizon or publication/formalization after prerequisites. Smaller values are earlier priorities, not a dependency override.",
-  "cross_cutting_findings": [
-    "No proof-assistant sources, toolchain lockfile or kernel build are present; manuscript proofs and Python tests are not kernel verification.",
-    "P02 is closed: chains.py generates weakly nested level chains directly, and certificate replay uses it as a second route independent of the builder.",
-    "The implemented certificate format singularity.certificate/1 is authoritative (D007). The roadmap name relational-height/1 is rejected by the reader with an explicit superseded-name message.",
-    "Exact forest transfer, minimum-zero subtraction, formal Euler extraction and conductor arithmetic are already implemented. Extend and accept them rather than starting duplicate engines.",
-    "The n<=6 census retains graph representatives and aggregate class counts, but not all requested intermediate class memberships, spectral partitions, witness records or graph hashes.",
-    "All original dependencies remain binding for declaring a push complete. A result may be useful and reusable while its push is not formally closed."
-  ],
-  "pushes": [
-    {
-      "id": "P01",
-      "title": "Freeze the coefficient semantics",
-      "status": "complete",
-      "effort": "S",
-      "priority": 0,
-      "dependencies": [],
-      "evidence": [
-        "docs/specifications/COEFFICIENTS-v1.md",
-        "src/singularity/heights.py",
-        "src/singularity/graph.py",
-        "src/singularity/population.py",
-        "src/singularity/weighted.py",
-        "tests/test_core.py",
-        "tests/test_transfer.py",
-        "docs/chapters/01_orientation.md",
-        "docs/chapters/02_graphs_lattices.md"
-      ],
-      "existing_work": "Versioned specification singularity.coefficients/1 fixes graph inputs, signed versus nonnegative heights, volume, squared energy, span, L/B/marked series, inclusive truncation, JSON/Python representations, weighted volume, populations, transfer, chains, certificates and invalid input. It proves the coefficient form of B=(1-x^n)L by an explicit bijection and works the disconnected K2+K1 example, global versus componentwise translation, through volume four. componentwise_normalized_coefficients makes the second quotient executable.",
-      "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P01.md",
-      "acceptance": {
-        "date": "2026-10-17",
-        "criteria": {
-          "every public function has an explicit finite meaning": "COEFFICIENTS-v1.md sections 1-10 and the section 11 API crosswalk",
-          "disconnected examples distinguish global from componentwise translation": "COEFFICIENTS-v1.md section 6; SemanticsTests.test_disconnected_global_versus_componentwise_translation and test_quotients_agree_exactly_for_connected_graphs (all 75 labeled graphs on <=4 vertices, volume <=3)",
-          "zero-volume and singleton dictionaries": "COEFFICIENTS-v1.md section 7; SemanticsTests.test_zero_volume_singleton_and_inclusive_truncation",
-          "compatibility note": "COEFFICIENTS-v1.md section 12: no existing meaning changed"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest discover -s tests -v"
-        ]
-      }
+  {
+   "id": "P02",
+   "title": "Add independent level-chain enumeration",
+   "status": "complete",
+   "effort": "M",
+   "priority": 0,
+   "dependencies": [
+    "P01"
+   ],
+   "evidence": [
+    "src/singularity/chains.py",
+    "tests/test_chains.py",
+    "scripts/chain_agreement.py",
+    "results/chain_agreement.json",
+    "docs/chapters/03_nested_heights.md"
+   ],
+   "existing_work": "chains.py generates weakly nested chains of nonempty sets (proper first set, repetitions allowed) as bit masks, charges each appended level its cut plus twice its overlap with every earlier level (SNG-F10), and never calls weak compositions or Graph.energy. Proposition SNG-F21 proves the volume-pruned search exhaustive and disjoint. Strict chains (repeats forbidden) are exposed only to show they lose exactly the gap profiles.",
+   "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P02.md",
+   "acceptance": {
+    "date": "2026-10-17",
+    "criteria": {
+     "complete marked histograms agree with weak compositions on a declared population": "tests/test_chains.py: all 75 labeled graphs on 1..4 vertices, volume <=6, 4713 cells, 13019 profiles; results/chain_agreement.json: all 1099 labeled graphs on 1..5 vertices, volume <=6, 142416 cells, 479963 profiles, 0 disagreements, 3.8 s on Python 3.13",
+     "profiles with height gaps": "ChainBoundaryTests.test_height_gaps_need_repeated_levels compares lost strict-chain cells with an independent gap predicate",
+     "mixed boundary terms charged": "ChainBoundaryTests.test_absolute_difference_energy_is_not_the_chain_energy; SNG-F21 proof"
     },
-    {
-      "id": "P02",
-      "title": "Add independent level-chain enumeration",
-      "status": "complete",
-      "effort": "M",
-      "priority": 0,
-      "dependencies": [
-        "P01"
-      ],
-      "evidence": [
-        "src/singularity/chains.py",
-        "tests/test_chains.py",
-        "scripts/chain_agreement.py",
-        "results/chain_agreement.json",
-        "docs/chapters/03_nested_heights.md"
-      ],
-      "existing_work": "chains.py generates weakly nested chains of nonempty sets (proper first set, repetitions allowed) as bit masks, charges each appended level its cut plus twice its overlap with every earlier level (SNG-F10), and never calls weak compositions or Graph.energy. Proposition SNG-F21 proves the volume-pruned search exhaustive and disjoint. Strict chains (repeats forbidden) are exposed only to show they lose exactly the gap profiles.",
-      "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P02.md",
-      "acceptance": {
-        "date": "2026-10-17",
-        "criteria": {
-          "complete marked histograms agree with weak compositions on a declared population": "tests/test_chains.py: all 75 labeled graphs on 1..4 vertices, volume <=6, 4713 cells, 13019 profiles; results/chain_agreement.json: all 1099 labeled graphs on 1..5 vertices, volume <=6, 142416 cells, 479963 profiles, 0 disagreements, 3.8 s on Python 3.13",
-          "profiles with height gaps": "ChainBoundaryTests.test_height_gaps_need_repeated_levels compares lost strict-chain cells with an independent gap predicate",
-          "mixed boundary terms charged": "ChainBoundaryTests.test_absolute_difference_energy_is_not_the_chain_energy; SNG-F21 proof"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_chains -v",
-          "PYTHONPATH=src python scripts/chain_agreement.py"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_chains -v",
+     "PYTHONPATH=src python scripts/chain_agreement.py"
+    ]
+   }
+  },
+  {
+   "id": "P03",
+   "title": "Publish portable coefficient certificates",
+   "status": "complete",
+   "effort": "M",
+   "priority": 0,
+   "dependencies": [
+    "P01",
+    "P02"
+   ],
+   "evidence": [
+    "src/singularity/certificates.py",
+    "tests/test_certificates.py",
+    "tests/test_analytics.py",
+    "results/certificates/spectral.json",
+    "results/certificates/binary_census.json",
+    "results/certificates/translation.json",
+    "results/certificates/regular_cube_mobius.json",
+    "results/exact_examples.json",
+    "scripts/reproduce.py",
+    "docs/specifications/COEFFICIENTS-v1.md",
+    "docs/chapters/12_computational_methodology.md",
+    "handoff/DECISIONS.md"
+   ],
+   "existing_work": "singularity.certificate/1 is retained as the implemented format (D007 amends the roadmap name relational-height/1, which the reader now rejects with an explicit message). parse_certificate checks keys, integer types, ranges, canonical ordering and uniqueness before arithmetic. Replay recomputes through a replay-local stars-and-bars route and the P02 chain route; the work budget counts both. A cube-Mobius pair certificate joins the three original packets.",
+   "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P03.md",
+   "acceptance": {
+    "date": "2026-10-17",
+    "amendment": "D007: the roadmap identifier relational-height/1 is satisfied by the existing singularity.certificate/1 format; no rename or migration was made.",
+    "criteria": {
+     "reader rejects malformed degrees": "CertificateMatrixTests.test_malformed_degrees_and_duplicate_terms, test_malformed_rational_polynomials",
+     "reader rejects duplicate terms": "same tests: count rows, marked rows, Euler and first-difference polynomials",
+     "reader rejects invalid edges": "CertificateMatrixTests.test_invalid_edges_in_every_graph_field: nine edge defects in graph and comparison.graph",
+     "reader rejects altered coefficients": "CertificateMatrixTests.test_altered_counts_rejected_with_digest_and_flags_unchanged",
+     "reproduces all released small tables": "RetainedPacketTests: all four retained packets replay; first differences at volumes 2, 3, 4 agree with results/exact_examples.json",
+     "hash agreement alone does not close": "digest is checked separately from recomputation; altered packets keep the digest and fail"
     },
-    {
-      "id": "P03",
-      "title": "Publish portable coefficient certificates",
-      "status": "complete",
-      "effort": "M",
-      "priority": 0,
-      "dependencies": [
-        "P01",
-        "P02"
-      ],
-      "evidence": [
-        "src/singularity/certificates.py",
-        "tests/test_certificates.py",
-        "tests/test_analytics.py",
-        "results/certificates/spectral.json",
-        "results/certificates/binary_census.json",
-        "results/certificates/translation.json",
-        "results/certificates/regular_cube_mobius.json",
-        "results/exact_examples.json",
-        "scripts/reproduce.py",
-        "docs/specifications/COEFFICIENTS-v1.md",
-        "docs/chapters/12_computational_methodology.md",
-        "handoff/DECISIONS.md"
-      ],
-      "existing_work": "singularity.certificate/1 is retained as the implemented format (D007 amends the roadmap name relational-height/1, which the reader now rejects with an explicit message). parse_certificate checks keys, integer types, ranges, canonical ordering and uniqueness before arithmetic. Replay recomputes through a replay-local stars-and-bars route and the P02 chain route; the work budget counts both. A cube-Mobius pair certificate joins the three original packets.",
-      "next_action": "Accepted 2026-10-17; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P03.md",
-      "acceptance": {
-        "date": "2026-10-17",
-        "amendment": "D007: the roadmap identifier relational-height/1 is satisfied by the existing singularity.certificate/1 format; no rename or migration was made.",
-        "criteria": {
-          "reader rejects malformed degrees": "CertificateMatrixTests.test_malformed_degrees_and_duplicate_terms, test_malformed_rational_polynomials",
-          "reader rejects duplicate terms": "same tests: count rows, marked rows, Euler and first-difference polynomials",
-          "reader rejects invalid edges": "CertificateMatrixTests.test_invalid_edges_in_every_graph_field: nine edge defects in graph and comparison.graph",
-          "reader rejects altered coefficients": "CertificateMatrixTests.test_altered_counts_rejected_with_digest_and_flags_unchanged",
-          "reproduces all released small tables": "RetainedPacketTests: all four retained packets replay; first differences at volumes 2, 3, 4 agree with results/exact_examples.json",
-          "hash agreement alone does not close": "digest is checked separately from recomputation; altered packets keep the digest and fail"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_certificates -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_certificates -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P04",
+   "title": "Give the spectral pair a short coefficient proof",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P03"
+   ],
+   "evidence": [
+    "docs/chapters/09_exact_examples.md",
+    "docs/chapters/04_observation_hierarchy.md",
+    "src/singularity/lowvolume.py",
+    "src/singularity/examples.py",
+    "tests/test_low_volume.py",
+    "tests/test_core.py",
+    "results/pair_acceptance.json",
+    "results/exact_examples.json",
+    "results/certificates/spectral.json"
+   ],
+   "existing_work": "Chapter 9 now proves SNG-E005 from degree pairs: volumes 0, 1 and the 2e_i sector cancel by the common degree sequence; the e_i+e_j sector gives (q^-2-1)(J_G-J_H) with J_G-J_H=2q^4(1-q)^2 read from an explicit edge-degree-type table. The discrepancy is explained by degree mixing (assortativity), not a higher-order effect.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P04.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "classify every profile type at volumes zero, one and two": "chapter 9 proof; lowvolume.pattern_sectors; FixedPairAcceptanceTests.test_spectral_pair_degree_pair_proof",
+     "compare exact Laplacian characteristic polynomials": "DiscoveryTests.test_spectral_pair (integer Newton identities, Leibniz determinant oracle)",
+     "match both enumerators": "results/pair_acceptance.json: closed formulas, weak compositions and level chains agree through volume 2; marked difference lies entirely in span 1",
+     "certificate": "results/certificates/spectral.json replays valid with both routes"
     },
-    {
-      "id": "P04",
-      "title": "Give the spectral pair a short coefficient proof",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P03"
-      ],
-      "evidence": [
-        "docs/chapters/09_exact_examples.md",
-        "docs/chapters/04_observation_hierarchy.md",
-        "src/singularity/lowvolume.py",
-        "src/singularity/examples.py",
-        "tests/test_low_volume.py",
-        "tests/test_core.py",
-        "results/pair_acceptance.json",
-        "results/exact_examples.json",
-        "results/certificates/spectral.json"
-      ],
-      "existing_work": "Chapter 9 now proves SNG-E005 from degree pairs: volumes 0, 1 and the 2e_i sector cancel by the common degree sequence; the e_i+e_j sector gives (q^-2-1)(J_G-J_H) with J_G-J_H=2q^4(1-q)^2 read from an explicit edge-degree-type table. The discrepancy is explained by degree mixing (assortativity), not a higher-order effect.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P04.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "classify every profile type at volumes zero, one and two": "chapter 9 proof; lowvolume.pattern_sectors; FixedPairAcceptanceTests.test_spectral_pair_degree_pair_proof",
-          "compare exact Laplacian characteristic polynomials": "DiscoveryTests.test_spectral_pair (integer Newton identities, Leibniz determinant oracle)",
-          "match both enumerators": "results/pair_acceptance.json: closed formulas, weak compositions and level chains agree through volume 2; marked difference lies entirely in span 1",
-          "certificate": "results/certificates/spectral.json replays valid with both routes"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_low_volume tests.test_core -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_low_volume tests.test_core -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P05",
+   "title": "Explain the binary-census separation",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P02",
+    "P03"
+   ],
+   "evidence": [
+    "docs/chapters/09_exact_examples.md",
+    "src/singularity/lowvolume.py",
+    "src/singularity/invariants.py",
+    "tests/test_low_volume.py",
+    "tests/test_core.py",
+    "results/pair_acceptance.json",
+    "results/exact_examples.json",
+    "results/certificates/binary_census.json"
+   ],
+   "existing_work": "The retained receipt holds the complete binary cut-volume table of both graphs (all 128 assignments each), the pattern sectors through volume three, and the full marked difference by both enumerators. Chapter 9 accounts for every coefficient below volume three and every non-2e_i+e_j sector at volume three, identifies the 42 ordered 2e_i+e_j profiles as the nested chain {i,j} >= {i}, and records that the graphs differ in joint degree matrix and spectrum.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P05.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "full binary equality certificate": "results/pair_acceptance.json binary_cut_profile for both graphs; binary_census_equal true; DiscoveryTests.test_binary_pair_all_128_assignments_and_first_nested_difference",
+     "identify the span-two profile types responsible": "marked_difference_spans [2]; FixedPairAcceptanceTests.test_binary_pair_lower_coefficients_and_span_two_sector",
+     "account for every lower coefficient": "chapter 9 'Accounting for every lower coefficient'; equal sectors e_i, 2e_i, e_i+e_j, 3e_i, e_i+e_j+e_k",
+     "exact value at q=1/2": "11025/262144 from the factorized sector difference",
+     "binary sampling insufficient": "all 2^7 subsets enumerated for each graph"
     },
-    {
-      "id": "P05",
-      "title": "Explain the binary-census separation",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P02",
-        "P03"
-      ],
-      "evidence": [
-        "docs/chapters/09_exact_examples.md",
-        "src/singularity/lowvolume.py",
-        "src/singularity/invariants.py",
-        "tests/test_low_volume.py",
-        "tests/test_core.py",
-        "results/pair_acceptance.json",
-        "results/exact_examples.json",
-        "results/certificates/binary_census.json"
-      ],
-      "existing_work": "The retained receipt holds the complete binary cut-volume table of both graphs (all 128 assignments each), the pattern sectors through volume three, and the full marked difference by both enumerators. Chapter 9 accounts for every coefficient below volume three and every non-2e_i+e_j sector at volume three, identifies the 42 ordered 2e_i+e_j profiles as the nested chain {i,j} >= {i}, and records that the graphs differ in joint degree matrix and spectrum.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P05.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "full binary equality certificate": "results/pair_acceptance.json binary_cut_profile for both graphs; binary_census_equal true; DiscoveryTests.test_binary_pair_all_128_assignments_and_first_nested_difference",
-          "identify the span-two profile types responsible": "marked_difference_spans [2]; FixedPairAcceptanceTests.test_binary_pair_lower_coefficients_and_span_two_sector",
-          "account for every lower coefficient": "chapter 9 'Accounting for every lower coefficient'; equal sectors e_i, 2e_i, e_i+e_j, 3e_i, e_i+e_j+e_k",
-          "exact value at q=1/2": "11025/262144 from the factorized sector difference",
-          "binary sampling insufficient": "all 2^7 subsets enumerated for each graph"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_low_volume -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_low_volume -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P06",
+   "title": "Derive universal low-volume formulas",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P04",
+    "P05"
+   ],
+   "evidence": [
+    "src/singularity/lowvolume.py",
+    "tests/test_low_volume.py",
+    "docs/chapters/04_observation_hierarchy.md",
+    "docs/chapters/10_inverse_problems.md",
+    "docs/specifications/COEFFICIENTS-v1.md"
+   ],
+   "existing_work": "lowvolume.py implements SNG-F14 from independently defined statistics: degree histogram, ordered pairs by (d_i,d_j,A_ij), unordered triples by (degree sum, induced edges). Chapter 4 adds the pattern table with index-set (ordered/unordered), support and span conventions and the k<=3 translation boundary. regular_low_volume_local implements the SNG-I008 closed form.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P06.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "formulas using degree and adjacent-vertex statistics": "lowvolume.degree_histogram, ordered_pair_statistics, triple_statistics; FormulaPopulationTests.test_statistics_are_defined_without_profiles",
+     "disjoint profile classification": "FormulaPopulationTests.test_classification_is_disjoint_and_exhaustive",
+     "compare against complete small-graph enumeration": "FormulaPopulationTests.test_formulas_equal_both_enumerators_on_all_graphs_through_four_vertices (75 graphs, local/normalized/marked, compositions and chains); session check on all 1099 graphs with n<=5",
+     "n=1,2,3 translation boundaries": "test_small_order_translation_boundaries",
+     "regular simplification with order assumptions": "SNG-I008; test_regular_graphs_follow_order_degree_and_triangles on seven regular graphs"
     },
-    {
-      "id": "P06",
-      "title": "Derive universal low-volume formulas",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P04",
-        "P05"
-      ],
-      "evidence": [
-        "src/singularity/lowvolume.py",
-        "tests/test_low_volume.py",
-        "docs/chapters/04_observation_hierarchy.md",
-        "docs/chapters/10_inverse_problems.md",
-        "docs/specifications/COEFFICIENTS-v1.md"
-      ],
-      "existing_work": "lowvolume.py implements SNG-F14 from independently defined statistics: degree histogram, ordered pairs by (d_i,d_j,A_ij), unordered triples by (degree sum, induced edges). Chapter 4 adds the pattern table with index-set (ordered/unordered), support and span conventions and the k<=3 translation boundary. regular_low_volume_local implements the SNG-I008 closed form.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P06.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "formulas using degree and adjacent-vertex statistics": "lowvolume.degree_histogram, ordered_pair_statistics, triple_statistics; FormulaPopulationTests.test_statistics_are_defined_without_profiles",
-          "disjoint profile classification": "FormulaPopulationTests.test_classification_is_disjoint_and_exhaustive",
-          "compare against complete small-graph enumeration": "FormulaPopulationTests.test_formulas_equal_both_enumerators_on_all_graphs_through_four_vertices (75 graphs, local/normalized/marked, compositions and chains); session check on all 1099 graphs with n<=5",
-          "n=1,2,3 translation boundaries": "test_small_order_translation_boundaries",
-          "regular simplification with order assumptions": "SNG-I008; test_regular_graphs_follow_order_degree_and_triangles on seven regular graphs"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_low_volume -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_low_volume -v"
+    ]
+   }
+  },
+  {
+   "id": "P07",
+   "title": "Formalize translation normalization",
+   "status": "implemented_pending_acceptance",
+   "effort": "M",
+   "priority": 1,
+   "dependencies": [
+    "P01"
+   ],
+   "evidence": [
+    "docs/chapters/01_orientation.md",
+    "src/singularity/heights.py",
+    "tests/test_core.py",
+    "results/certificates/translation.json",
+    "formal/README.md",
+    "formal/Singularity/Normalization.lean",
+    "scripts/check_formal.py",
+    ".github/workflows/research.yml"
+   ],
+   "existing_work": "Core Lean 4.12.0 project formal/ (no Mathlib): profiles as List Nat, edge lists, volume and squared-difference energy. Kernel-checked theorems shift_injective, shift_surjective, shift_unique, vol_shift, energy_shift, energy_norm, box/mem_box/box_nodup (finite coefficients), allCount_rec (L(V,e) = B(V,e) + L(V-n,e), the coefficient form of B = (1-x^n)L), allCount_eq_mzCount_of_lt and allCount_eq_shiftSum; no connectivity assumption. Local build and axiom audit (propext, Quot.sound, Classical.choice only) pass; scripts/check_formal.py runs in CI.",
+   "next_action": "Observe the CI formal-lean job (clean download of the pinned release, lake build, axiom audit); on success mark complete.",
+   "acceptance_gaps": [
+    "The clean-environment build in CI has not yet been observed (local build with the same pinned release passes).",
+    "The span-marked (z) version of the shift identity is not formalized; only the unmarked coefficient identity required by the packet is."
+   ],
+   "packet": "handoff/tasks/P07.md"
+  },
+  {
+   "id": "P08",
+   "title": "Formalize the nested-level energy identity",
+   "status": "implemented_pending_acceptance",
+   "effort": "L",
+   "priority": 2,
+   "dependencies": [
+    "P07"
+   ],
+   "evidence": [
+    "docs/chapters/03_nested_heights.md",
+    "src/singularity/heights.py",
+    "tests/test_core.py",
+    "formal/README.md",
+    "formal/Singularity/Thresholds.lean",
+    "scripts/check_formal.py"
+   ],
+   "existing_work": "formal/Singularity/Thresholds.lean on the P07 definitions: thr_nested, reconstruct, vol_eq_levels, nonemptyLevels_eq_lmax, span_eq, maxZero_no_levels, thr_proper_of_minZero, edge_square, delta_mul, delta_sq, energy_nested (energy = sum_r cut(S_r) + 2 sum_{r<s} cross(r,s), repeated levels and gaps allowed), energy_binary and binary_dichotomy (zero profile versus exact span one); worked example [0,2,2,5,0] with repeated thresholds. Python P02 histogram comparisons are retained.",
+   "next_action": "Observe the CI formal-lean job; on success mark complete.",
+   "acceptance_gaps": [
+    "The clean-environment build in CI has not yet been observed (local build passes)."
+   ],
+   "packet": "handoff/tasks/P08.md"
+  },
+  {
+   "id": "P09",
+   "title": "Implement bounded-height tree messages",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P02"
+   ],
+   "evidence": [
+    "src/singularity/transfer.py",
+    "tests/test_transfer.py",
+    "docs/chapters/13_research_program.md",
+    "scripts/benchmark_transfer.py",
+    "results/transfer_benchmark.json",
+    "docs/specifications/COEFFICIENTS-v1.md"
+   ],
+   "existing_work": "Proposition SNG-F23 defines the conditioned message F_v(t) and proves the child-product recursion by subtree induction, charging each vertex volume once (x^t at v) and each edge once (connecting factor), with disconnected components multiplied. Rooting at the least original label is explicit; root_messages exposes conditioned messages; transfer_statistics separates height states, sparse support and bit size. Deleting folded child messages is justified by unique parents.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P09.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "prove the child-product recursion": "SNG-F23, chapter 13",
+     "count every vertex and edge once": "SNG-F23 proof; partition of T_v and E(T_v)",
+     "match reference coefficients on paths, stars and branched trees": "TreeTransferTests.test_named_trees_against_cartesian_and_chain_oracles (path7, star7, balanced7, branched8, forest7; Cartesian oracle H<=2 and level chains at H=R=4); test_all_small_labeled_forests_randomized; test_root_messages_condition_on_the_least_label",
+     "report support sizes separately from height-state counts": "transfer_statistics; test_cost_measures_are_separate; results/transfer_benchmark.json unrestricted_cases.cost",
+     "P02 dependency": "complete"
     },
-    {
-      "id": "P07",
-      "title": "Formalize translation normalization",
-      "status": "planned",
-      "effort": "M",
-      "priority": 1,
-      "dependencies": [
-        "P01"
-      ],
-      "evidence": [
-        "docs/chapters/01_orientation.md",
-        "src/singularity/heights.py",
-        "tests/test_core.py",
-        "results/certificates/translation.json"
-      ],
-      "existing_work": "SNG-F02 proves the minimum-zero shift bijection in exposition; exact Python normalization and independent replay exist.",
-      "next_action": "In an environment with a proof assistant, create a minimal pinned project for finite tuples; prove the minimum-zero shift bijection and the coefficient identity of COEFFICIENTS-v1 section 3 without admitted lemmas, and record the exact build command.",
-      "acceptance_gaps": [
-        "No proof-assistant project, pinned toolchain, finite profile definitions or compilable theorem exists.",
-        "Kernel proofs of injectivity, surjectivity, volume shift and energy preservation, without admitted lemmas, remain to be written.",
-        "Session 2026-10-17/18 (D009): no Lean, Coq or Isabelle toolchain was installed, and the environment's network policy refused downloads from the Lean release hosts, so no kernel build could be attempted."
-      ],
-      "packet": "handoff/tasks/P07.md"
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_transfer -v",
+     "python scripts/benchmark_transfer.py"
+    ]
+   }
+  },
+  {
+   "id": "P10",
+   "title": "Prove safe volume truncation",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P09"
+   ],
+   "evidence": [
+    "src/singularity/transfer.py",
+    "tests/test_transfer.py",
+    "docs/chapters/13_research_program.md",
+    "scripts/benchmark_transfer.py",
+    "results/transfer_benchmark.json"
+   ],
+   "existing_work": "Proposition SNG-F24 proves that degree-above-R deletion is the quotient homomorphism to Z[q][x]/(x^(R+1)), covering messages, component convolution and minimum-zero subtraction with the shifted budget R-n, and that H=R suffices for unrestricted coefficients through R. The benchmark now separates the H=2 bounded-box path runs from H=R unrestricted runs on 40-, 63- and 100-vertex trees, each checked by tree-independent count and energy-moment identities.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P10.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "intermediate reduction modulo x^(R+1) preserves the output": "SNG-F24; test_volume_pruning_matches_unpruned_population; test_sparse_high_energy_pruning_and_disconnected_budget (star with energies to 405, disconnected forest with min_zero)",
+     "H=R suffices": "SNG-F24; test_low_coefficients_equal_unbounded_composition_engine; test_named_trees_against_cartesian_and_chain_oracles",
+     "larger tree computations with identical semantics": "results/transfer_benchmark.json unrestricted_cases; test_unrestricted_large_tree_independent_moments (40 vertices, R=8: counts, energy sums, energy-0 and energy-1 profiles)",
+     "complete coefficient ranges compared": "every volume 0..R checked; no speed claim made"
     },
-    {
-      "id": "P08",
-      "title": "Formalize the nested-level energy identity",
-      "status": "blocked",
-      "effort": "L",
-      "priority": 2,
-      "dependencies": [
-        "P07"
-      ],
-      "evidence": [
-        "docs/chapters/03_nested_heights.md",
-        "src/singularity/heights.py",
-        "tests/test_core.py"
-      ],
-      "existing_work": "Threshold chains, volume, quadratic mixed terms and binary extraction have prose proofs and finite exhaustive tests. Repeated levels are permitted in the mathematical definition.",
-      "next_action": "After P07 compiles, formalize one-edge threshold expansion, sum it over edges, then prove volume/span and the span-one extraction using the same tuple definitions.",
-      "acceptance_gaps": [
-        "P07's formal finite-profile foundation is absent.",
-        "No kernel-checked threshold-chain bijection, nested mixed-edge count identity or binary extraction theorem exists."
-      ],
-      "packet": "handoff/tasks/P08.md"
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_transfer -v",
+     "python scripts/benchmark_transfer.py"
+    ]
+   }
+  },
+  {
+   "id": "P11",
+   "title": "Recover span by bounded-box subtraction",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P09",
+    "P10"
+   ],
+   "evidence": [
+    "src/singularity/transfer.py",
+    "tests/test_transfer.py",
+    "docs/chapters/13_research_program.md",
+    "docs/specifications/COEFFICIENTS-v1.md"
+   ],
+   "existing_work": "marked_forest_coefficients assembles (volume, energy, span) cells from D_H=C_H-x^n C_(H-1) and exact-span differences D_H-D_(H-1); Proposition SNG-F25 proves both subtractions bijectively, with one global translation, and nonnegativity. A negative difference raises with the input retained.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P11.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "prove the shift subtraction": "SNG-F25",
+     "compare every (v,e,h) count with direct marked enumeration": "test_marked_forest_span_subtraction_all_small_forests: all 339 labeled forests on 1..5 vertices through volume 5 against marked_coefficients; named trees through volume 6 against level chains; span sums recover normalized coefficients",
+     "H=0, singleton, disconnected, crossing volume n": "test_marked_forest_boundaries",
+     "negative intermediate coefficients investigated, not clipped": "ArithmeticError carrying graph, span and cell"
     },
-    {
-      "id": "P09",
-      "title": "Implement bounded-height tree messages",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P02"
-      ],
-      "evidence": [
-        "src/singularity/transfer.py",
-        "tests/test_transfer.py",
-        "docs/chapters/13_research_program.md",
-        "scripts/benchmark_transfer.py",
-        "results/transfer_benchmark.json",
-        "docs/specifications/COEFFICIENTS-v1.md"
-      ],
-      "existing_work": "Proposition SNG-F23 defines the conditioned message F_v(t) and proves the child-product recursion by subtree induction, charging each vertex volume once (x^t at v) and each edge once (connecting factor), with disconnected components multiplied. Rooting at the least original label is explicit; root_messages exposes conditioned messages; transfer_statistics separates height states, sparse support and bit size. Deleting folded child messages is justified by unique parents.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P09.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "prove the child-product recursion": "SNG-F23, chapter 13",
-          "count every vertex and edge once": "SNG-F23 proof; partition of T_v and E(T_v)",
-          "match reference coefficients on paths, stars and branched trees": "TreeTransferTests.test_named_trees_against_cartesian_and_chain_oracles (path7, star7, balanced7, branched8, forest7; Cartesian oracle H<=2 and level chains at H=R=4); test_all_small_labeled_forests_randomized; test_root_messages_condition_on_the_least_label",
-          "report support sizes separately from height-state counts": "transfer_statistics; test_cost_measures_are_separate; results/transfer_benchmark.json unrestricted_cases.cost",
-          "P02 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_transfer -v",
-          "python scripts/benchmark_transfer.py"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_transfer -v"
+    ]
+   }
+  },
+  {
+   "id": "P12",
+   "title": "Extend messages to bounded separators",
+   "status": "complete",
+   "effort": "L",
+   "priority": 1,
+   "dependencies": [
+    "P10",
+    "P11"
+   ],
+   "evidence": [
+    "src/singularity/decomposition.py",
+    "tests/test_decomposition.py",
+    "docs/chapters/13_research_program.md",
+    "docs/specifications/COEFFICIENTS-v1.md"
+   ],
+   "existing_work": "decomposition.py adds TreeDecomposition with JSON schema singularity.tree-decomposition/1, an axiom checker (vertex and edge coverage, connected occurrence, tree property, root), owned-charge bag messages, truncation, minimum-zero and exact-span sectors, cost statistics and elimination/forest constructors. Proposition SNG-F26 proves the bag-conditioned recursion by decomposition induction with each charge owned once.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P12.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "verify the decomposition axioms": "check_decomposition; CheckerTests.test_malformed_decompositions_are_rejected (missing vertex, missing edge, split occurrence, cycle, disconnected tree, bad root, repeated vertex, out-of-range and Boolean labels, invalid tree edges, empty decomposition)",
+     "prove local charge bookkeeping": "SNG-F26; CheckerTests.test_every_charge_has_exactly_one_owner",
+     "compare cycles and bounded-width examples with reference data": "EngineTests: twelve decompositions of C5, C6, a 4-rung ladder, K4 (with redundant bags), two triangles (with an empty bag) and K5 against Cartesian enumeration (H<=2, both normalizations), weak compositions and level chains (marked, volume <=5)",
+     "width-one versus forest transfer": "test_width_one_matches_forest_transfer_including_disconnected",
+     "state count separate from convolution cost": "decomposition_statistics; test_cost_measures"
     },
-    {
-      "id": "P10",
-      "title": "Prove safe volume truncation",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P09"
-      ],
-      "evidence": [
-        "src/singularity/transfer.py",
-        "tests/test_transfer.py",
-        "docs/chapters/13_research_program.md",
-        "scripts/benchmark_transfer.py",
-        "results/transfer_benchmark.json"
-      ],
-      "existing_work": "Proposition SNG-F24 proves that degree-above-R deletion is the quotient homomorphism to Z[q][x]/(x^(R+1)), covering messages, component convolution and minimum-zero subtraction with the shifted budget R-n, and that H=R suffices for unrestricted coefficients through R. The benchmark now separates the H=2 bounded-box path runs from H=R unrestricted runs on 40-, 63- and 100-vertex trees, each checked by tree-independent count and energy-moment identities.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P10.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "intermediate reduction modulo x^(R+1) preserves the output": "SNG-F24; test_volume_pruning_matches_unpruned_population; test_sparse_high_energy_pruning_and_disconnected_budget (star with energies to 405, disconnected forest with min_zero)",
-          "H=R suffices": "SNG-F24; test_low_coefficients_equal_unbounded_composition_engine; test_named_trees_against_cartesian_and_chain_oracles",
-          "larger tree computations with identical semantics": "results/transfer_benchmark.json unrestricted_cases; test_unrestricted_large_tree_independent_moments (40 vertices, R=8: counts, energy sums, energy-0 and energy-1 profiles)",
-          "complete coefficient ranges compared": "every volume 0..R checked; no speed claim made"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_transfer -v",
-          "python scripts/benchmark_transfer.py"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_decomposition -v"
+    ]
+   }
+  },
+  {
+   "id": "P13",
+   "title": "Classify the first positive-energy layer",
+   "status": "implemented_pending_acceptance",
+   "effort": "S",
+   "priority": 2,
+   "dependencies": [
+    "P06",
+    "P08"
+   ],
+   "evidence": [
+    "docs/chapters/03_nested_heights.md",
+    "docs/chapters/05_prime_arithmetic.md",
+    "src/singularity/invariants.py",
+    "tests/test_core.py"
+   ],
+   "existing_work": "SNG-F12 and SNG-A05 prove E>=lambda*span and characterize minimum-energy normalized profiles as binary minimum-cut sides. Tests enumerate heights 0..2 on connected simple graphs through four vertices, checking nonbinary exclusion and multiplicities.",
+   "next_action": "Reuse the prose proof and exhaustive checks; when P08 is available, derive the formal min-cut corollary from the same nested identity and close the dependency gate explicitly.",
+   "acceptance_gaps": [
+    "P06 is complete; P08's kernel identity remains open (D009).",
+    "Record the existing theorem's acceptance receipt, scope and multiplicity comparison; finite tests supplement the general proof rather than prove it."
+   ],
+   "packet": "handoff/tasks/P13.md"
+  },
+  {
+   "id": "P14",
+   "title": "Compute the nested-pair census",
+   "status": "implemented_pending_acceptance",
+   "effort": "M",
+   "priority": 1,
+   "dependencies": [
+    "P05",
+    "P08"
+   ],
+   "evidence": [
+    "src/singularity/nested_census.py",
+    "tests/test_nested_census.py",
+    "results/nested_census.json",
+    "docs/chapters/13_research_program.md",
+    "scripts/reproduce.py"
+   ],
+   "existing_work": "nested_census.py computes the raw five-statistic census over all 3^n pairs T within S (empty, full and equal sets kept). Proposition SNG-F40 proves total mass, the reflection symmetry (T,S)->(V-S,V-T), the projection of the cells with nonempty T and proper S onto the span-two generating function, and the binary marginal. The binary-census pair has identical binary marginals but 591 differing census cells; at volume three they are exactly the ordered adjacent-degree triples (d_i+d_j-2A, d_i, d_i-A), whose energy projection is the SNG-E006 discrepancy.",
+   "next_action": "Close P08 in a proof-assistant environment, then mark P14 complete with the existing receipt (tests/test_nested_census.py, results/nested_census.json).",
+   "acceptance_gaps": [
+    "Original dependency gate: P08 (kernel-checked nested-level identity) is open (D009); the finite content of P14 is complete but cannot be marked complete under the original gate."
+   ],
+   "packet": "handoff/tasks/P14.md"
+  },
+  {
+   "id": "P15",
+   "title": "Separate lattice information from chamber information",
+   "status": "implemented_pending_acceptance",
+   "effort": "L",
+   "priority": 2,
+   "dependencies": [
+    "P08",
+    "P14"
+   ],
+   "evidence": [
+    "docs/chapters/13_research_program.md",
+    "src/singularity/terminals.py",
+    "tests/test_lattice_marks.py",
+    "docs/chapters/02_graphs_lattices.md"
+   ],
+   "existing_work": "Theorem SNG-F46: (i) a bijection of height quotients preserving energy, normalized volume and span induces equal marked series; (ii) energy preservation alone fails even for an affine unimodular isometry induced by a cycle-matroid-preserving edge bijection. The Whitney twist map (identity on one block, a_v -> a_s + a_t - a_v on the other) preserves energy, commutes with shifts and is involutive, but sends the unit vector at an interior vertex (normalized volume 1) to a profile of normalized volume n-1. For path blocks it relates G(2m,2k) and G(2m,2m), whose marked series differ at volume 2k+1 (SNG-F36).",
+   "next_action": "Close P08 and P14, then mark P15 complete with SNG-F46 and tests/test_lattice_marks.py.",
+   "acceptance_gaps": [
+    "Original dependency gate: P08 (formal) and P14 (pending on P08) are not accepted."
+   ],
+   "packet": "handoff/tasks/P15.md"
+  },
+  {
+   "id": "P16",
+   "title": "Test Whitney switches systematically",
+   "status": "implemented_pending_acceptance",
+   "effort": "M",
+   "priority": 2,
+   "dependencies": [
+    "P15"
+   ],
+   "evidence": [
+    "scripts/whitney_switches.py",
+    "results/whitney_switches.json",
+    "src/singularity/terminals.py",
+    "tests/test_terminals.py",
+    "docs/chapters/10_inverse_problems.md"
+   ],
+   "existing_work": "A documented switch family (two-terminal edge-disjoint blocks, straight and twisted gluings) with simplicity, connectedness, circuit-by-circuit cycle-matroid checks, canonical-code isomorphism decisions, and first local and marked differences through volume 6 by two enumerators plus the SNG-F41 prediction: 124 pairs, 68 isomorphic, 28 separated at volume 1, and all 28 degree-preserving switches separated at volume 2; none unresolved. Structural results: SNG-F41 (twist difference = antisymmetric pairing), SNG-F42 (exact depth for identical blocks), SNG-F45 (rooted-deck bound), with arbitrarily deep separating twists from path blocks.",
+   "next_action": "Accept P15 (after P08/P14), then mark P16 complete with the existing receipt.",
+   "acceptance_gaps": [
+    "Original dependency gate: P15 is not accepted (it waits on P08/P14)."
+   ],
+   "packet": "handoff/tasks/P16.md"
+  },
+  {
+   "id": "P17",
+   "title": "Add exact volume congruence filters",
+   "status": "complete",
+   "effort": "S",
+   "priority": 2,
+   "dependencies": [
+    "P03"
+   ],
+   "evidence": [
+    "src/singularity/congruence.py",
+    "tests/test_congruence.py",
+    "docs/chapters/13_research_program.md",
+    "docs/specifications/COEFFICIENTS-v1.md",
+    "src/singularity/conductor.py"
+   ],
+   "existing_work": "congruence.py adds direct degree selection, a literal character average of L(w^j x,q) evaluated in Z[t]/Phi_m(t) (divided by m only after the full sum, raising if the result is not an integer multiple of the identity), and direct tuple filtering by each profile's own volume. Proposition SNG-F27 proves the averaging identity, including truncations, residue normalization and m=1.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P17.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "prove the root-of-unity averaging identity": "SNG-F27, chapter 13.5",
+     "compare with direct modular filtering of assignments": "CongruenceTests.test_three_routes_agree_on_all_graphs_through_three_vertices (11 graphs, volume <=6, moduli 1..7, 308 comparisons) and test_three_routes_agree_on_all_graphs_with_four_vertices (64 graphs, volume <=4, moduli 1..5, 960 comparisons)",
+     "nonprimitive powers, composite moduli, short truncation, modulus one, empty classes": "test_nonprimitive_powers_and_cancellation_in_the_ring; test_normalization_modulus_one_empty_classes_and_short_truncation",
+     "exact rational representation": "test_rational_coefficients_stay_exact",
+     "must not be described as extracting span or binary sector": "SNG-F27 discussion; test_marks_cannot_be_recovered_by_volume_filters",
+     "malformed or zero modulus fails": "test_invalid_input"
     },
-    {
-      "id": "P11",
-      "title": "Recover span by bounded-box subtraction",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P09",
-        "P10"
-      ],
-      "evidence": [
-        "src/singularity/transfer.py",
-        "tests/test_transfer.py",
-        "docs/chapters/13_research_program.md",
-        "docs/specifications/COEFFICIENTS-v1.md"
-      ],
-      "existing_work": "marked_forest_coefficients assembles (volume, energy, span) cells from D_H=C_H-x^n C_(H-1) and exact-span differences D_H-D_(H-1); Proposition SNG-F25 proves both subtractions bijectively, with one global translation, and nonnegativity. A negative difference raises with the input retained.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P11.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "prove the shift subtraction": "SNG-F25",
-          "compare every (v,e,h) count with direct marked enumeration": "test_marked_forest_span_subtraction_all_small_forests: all 339 labeled forests on 1..5 vertices through volume 5 against marked_coefficients; named trees through volume 6 against level chains; span sums recover normalized coefficients",
-          "H=0, singleton, disconnected, crossing volume n": "test_marked_forest_boundaries",
-          "negative intermediate coefficients investigated, not clipped": "ArithmeticError carrying graph, span and cell"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_transfer -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_congruence -v"
+    ]
+   }
+  },
+  {
+   "id": "P18",
+   "title": "Prove root-of-unity rationality in energy",
+   "status": "complete",
+   "effort": "S",
+   "priority": 2,
+   "dependencies": [
+    "P03",
+    "P17"
+   ],
+   "evidence": [
+    "src/singularity/conductor.py",
+    "tests/test_conductor_weighted.py",
+    "docs/chapters/13_research_program.md",
+    "results/conductor_fixtures.json",
+    "results/conductor_example.json",
+    "scripts/reproduce.py"
+   ],
+   "existing_work": "Proposition SNG-F28 proves the residue decomposition a_i=r_i+m b_i, E(a)=E(r) mod m, L(x,w)=N/(1-x^m)^n in Z[t]/Phi_m and the remote binomial formula at every index. Tests add an independent Mobius-product construction of Phi_m (m<=24), composite orders 4, 6, 8, 9, isolated-vertex and edgeless graphs, remote indices near 10^30 and exact budget boundaries. results/conductor_fixtures.json retains 20 numerator fixtures with agreement through volume 12.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P18.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "prove the coordinate residue decomposition": "SNG-F28; RootOfUnityTests.test_residue_decomposition_preserves_energy_mod_order",
+     "reproduce local coefficients through an independent bound": "RootOfUnityTests.test_numerator_expansion_equals_direct_specialization (orders 1,2,4,6,8,9 through volume 10); results/conductor_fixtures.json (4 graphs x orders 1,2,3,4,6 through volume 12); ConductorTests.test_numerator_replays_direct_coefficients",
+     "cyclotomic reduction validated independently": "test_cyclotomic_polynomials_by_mobius_product",
+     "one root versus the unspecialized series": "test_specialized_equality_is_not_series_equality",
+     "remote formula and budget": "test_remote_index_uses_binomial_tail_not_enumeration; ConductorTests.test_remote_and_budget",
+     "P17 dependency": "complete"
     },
-    {
-      "id": "P12",
-      "title": "Extend messages to bounded separators",
-      "status": "complete",
-      "effort": "L",
-      "priority": 1,
-      "dependencies": [
-        "P10",
-        "P11"
-      ],
-      "evidence": [
-        "src/singularity/decomposition.py",
-        "tests/test_decomposition.py",
-        "docs/chapters/13_research_program.md",
-        "docs/specifications/COEFFICIENTS-v1.md"
-      ],
-      "existing_work": "decomposition.py adds TreeDecomposition with JSON schema singularity.tree-decomposition/1, an axiom checker (vertex and edge coverage, connected occurrence, tree property, root), owned-charge bag messages, truncation, minimum-zero and exact-span sectors, cost statistics and elimination/forest constructors. Proposition SNG-F26 proves the bag-conditioned recursion by decomposition induction with each charge owned once.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P12.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "verify the decomposition axioms": "check_decomposition; CheckerTests.test_malformed_decompositions_are_rejected (missing vertex, missing edge, split occurrence, cycle, disconnected tree, bad root, repeated vertex, out-of-range and Boolean labels, invalid tree edges, empty decomposition)",
-          "prove local charge bookkeeping": "SNG-F26; CheckerTests.test_every_charge_has_exactly_one_owner",
-          "compare cycles and bounded-width examples with reference data": "EngineTests: twelve decompositions of C5, C6, a 4-rung ladder, K4 (with redundant bags), two triangles (with an empty bag) and K5 against Cartesian enumeration (H<=2, both normalizations), weak compositions and level chains (marked, volume <=5)",
-          "width-one versus forest transfer": "test_width_one_matches_forest_transfer_including_disconnected",
-          "state count separate from convolution cost": "decomposition_statistics; test_cost_measures"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_decomposition -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_conductor_weighted -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P19",
+   "title": "Analyze finite quadratic Gauss sums",
+   "status": "complete",
+   "effort": "M",
+   "priority": 2,
+   "dependencies": [
+    "P18"
+   ],
+   "evidence": [
+    "src/singularity/gauss.py",
+    "tests/test_gauss.py",
+    "docs/chapters/11_archival_bridges.md",
+    "results/gauss_fixtures.json",
+    "scripts/reproduce.py",
+    "src/singularity/conductor.py"
+   ],
+   "existing_work": "gauss.py diagonalizes the Laplacian by congruence over F_p (odd p), returns and rechecks the basis witness, and computes rank and the Legendre class of the nonsingular discriminant. Theorem SNG-F30 proves Gamma_G(p)=p^(n-r) chi(D) g_p^r for every graph, with congruence invariance, each singular direction (component constants and modular degeneracy) contributing p, and rank zero giving p^n; it recovers SNG-I022 when p does not divide the spanning-tree count. Comparisons are exact in Z[t]/Phi_p(t).",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P19.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "formulas in terms of rank and nonsingular discriminant": "SNG-F30; laplacian_invariants; gauss_sum_formula",
+     "singular directions accounted for": "SNG-F30 proof; test_singular_directions_include_components (three components, rank zero)",
+     "compare direct residue enumeration with diagonalized forms": "test_formula_equals_direct_residue_sum: all 75 graphs with n<=4 at p=3,5,7 and all 1024 five-vertex graphs at p=3; results/gauss_fixtures.json (6 graphs x p=3,5)",
+     "explicit exceptional-prime examples": "test_exceptional_prime_triangle_mod_three (rank 1, Gamma=-9 g_3); spectral_g at p=3 (tau=3, rank 5) in results/gauss_fixtures.json",
+     "transformation witnesses checked exactly": "test_witness_rank_and_invertibility against an independent row-reduction rank",
+     "prime powers and characteristic two remain separate": "test_diagonalizer_handles_zero_diagonal_and_rejects_bad_input rejects 2, 4, 9, 1",
+     "P18 dependency": "complete"
     },
-    {
-      "id": "P13",
-      "title": "Classify the first positive-energy layer",
-      "status": "implemented_pending_acceptance",
-      "effort": "S",
-      "priority": 2,
-      "dependencies": [
-        "P06",
-        "P08"
-      ],
-      "evidence": [
-        "docs/chapters/03_nested_heights.md",
-        "docs/chapters/05_prime_arithmetic.md",
-        "src/singularity/invariants.py",
-        "tests/test_core.py"
-      ],
-      "existing_work": "SNG-F12 and SNG-A05 prove E>=lambda*span and characterize minimum-energy normalized profiles as binary minimum-cut sides. Tests enumerate heights 0..2 on connected simple graphs through four vertices, checking nonbinary exclusion and multiplicities.",
-      "next_action": "Reuse the prose proof and exhaustive checks; when P08 is available, derive the formal min-cut corollary from the same nested identity and close the dependency gate explicitly.",
-      "acceptance_gaps": [
-        "P06 is complete; P08's kernel identity remains open (D009).",
-        "Record the existing theorem's acceptance receipt, scope and multiplicity comparison; finite tests supplement the general proof rather than prove it."
-      ],
-      "packet": "handoff/tasks/P13.md"
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_gauss -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P20",
+   "title": "Build the disjoint order-chamber formula",
+   "status": "complete",
+   "effort": "M",
+   "priority": 2,
+   "dependencies": [
+    "P02",
+    "P06"
+   ],
+   "evidence": [
+    "src/singularity/chambers.py",
+    "tests/test_chambers.py",
+    "docs/chapters/13_research_program.md",
+    "docs/specifications/COEFFICIENTS-v1.md"
+   ],
+   "existing_work": "chambers.py enumerates half-open order chambers (sort by height then label; strict gaps at label descents) and evaluates volume, span and energy from gap coordinates through the nested-boundary gap form Q, without constructing heights. Proposition SNG-F29 proves the chambers are disjoint and cover every profile, derives the volume weights and Q_ij = e(T_max, V minus T_min), and relates Q to SNG-F10.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P20.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "every profile belongs to exactly one chamber, including ties": "SNG-F29; ChamberTests.test_every_profile_has_exactly_one_chamber (all 256 profiles of {0..3}^4); test_tied_blocks_zero_profile_and_labels",
+     "closed chambers overcount": "test_closed_cones_would_overcount_ties",
+     "gap expression for volume and quadratic energy": "SNG-F29; test_gap_form_is_the_nested_boundary_matrix",
+     "match complete histograms": "test_complete_histograms_match_two_enumerators (75 graphs, local and marked, volume <=6, against weak compositions and level chains); session check of all 1024 five-vertex graphs through volume 5 against chains",
+     "factorial cost stated": "chambers.py docstring and chapter 13.6"
     },
-    {
-      "id": "P14",
-      "title": "Compute the nested-pair census",
-      "status": "implemented_pending_acceptance",
-      "effort": "M",
-      "priority": 1,
-      "dependencies": [
-        "P05",
-        "P08"
-      ],
-      "evidence": [
-        "src/singularity/nested_census.py",
-        "tests/test_nested_census.py",
-        "results/nested_census.json",
-        "docs/chapters/13_research_program.md",
-        "scripts/reproduce.py"
-      ],
-      "existing_work": "nested_census.py computes the raw five-statistic census over all 3^n pairs T within S (empty, full and equal sets kept). Proposition SNG-F40 proves total mass, the reflection symmetry (T,S)->(V-S,V-T), the projection of the cells with nonempty T and proper S onto the span-two generating function, and the binary marginal. The binary-census pair has identical binary marginals but 591 differing census cells; at volume three they are exactly the ordered adjacent-degree triples (d_i+d_j-2A, d_i, d_i-A), whose energy projection is the SNG-E006 discrepancy.",
-      "next_action": "Close P08 in a proof-assistant environment, then mark P14 complete with the existing receipt (tests/test_nested_census.py, results/nested_census.json).",
-      "acceptance_gaps": [
-        "Original dependency gate: P08 (kernel-checked nested-level identity) is open (D009); the finite content of P14 is complete but cannot be marked complete under the original gate."
-      ],
-      "packet": "handoff/tasks/P14.md"
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_chambers -v"
+    ]
+   }
+  },
+  {
+   "id": "P21",
+   "title": "Relate constrained heights to order polytopes",
+   "status": "complete",
+   "effort": "M",
+   "priority": 2,
+   "dependencies": [
+    "P20"
+   ],
+   "evidence": [
+    "src/singularity/orders.py",
+    "tests/test_orders.py",
+    "docs/chapters/13_research_program.md",
+    "docs/chapters/14_literature_and_claims.md",
+    "docs/references.bib",
+    "src/singularity/chambers.py"
+   ],
+   "existing_work": "orders.py adds validated finite posets (closure, cycle rejection), weak and strict constrained counts by direct enumeration, a chamber-based weak count valid for arbitrary labels, Stanley's linear-extension formula over a natural labeling, and (volume, energy) histograms on order-polytope points. Proposition SNG-F32 identifies weak assignments with lattice points of H*O(P), counted by Omega(P,H+1) with the argument shift explained, maps chamber tie rules to linear extensions, separates strict assignments, and proves that the quadratic weight can destroy polynomiality in H.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P21.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "unweighted bounded-height specialization with correct weak and strict inequalities": "SNG-F32 (1)-(3); OrderPolytopeTests.test_three_counts_agree (seven posets, complete height ranges, three methods); test_closed_forms_and_argument_shift (chain C(H+n,n), strict chain C(H+1,n), antichain (H+1)^n)",
+     "chamber tie rules mapped to linear extensions": "SNG-F32 (2); count_by_chambers on unnaturally labeled posets; test_linear_extensions_and_natural_labeling",
+     "identify what quadratic weighting adds": "SNG-F32 (4); test_quadratic_weight_is_not_an_ehrhart_polynomial",
+     "invalid cyclic relations fail": "test_invalid_relations",
+     "literature positioning": "chapter 13.6 paragraph citing Stanley1986 and Stanley2012",
+     "P20 dependency": "complete"
     },
-    {
-      "id": "P15",
-      "title": "Separate lattice information from chamber information",
-      "status": "implemented_pending_acceptance",
-      "effort": "L",
-      "priority": 2,
-      "dependencies": [
-        "P08",
-        "P14"
-      ],
-      "evidence": [
-        "docs/chapters/13_research_program.md",
-        "src/singularity/terminals.py",
-        "tests/test_lattice_marks.py",
-        "docs/chapters/02_graphs_lattices.md"
-      ],
-      "existing_work": "Theorem SNG-F46: (i) a bijection of height quotients preserving energy, normalized volume and span induces equal marked series; (ii) energy preservation alone fails even for an affine unimodular isometry induced by a cycle-matroid-preserving edge bijection. The Whitney twist map (identity on one block, a_v -> a_s + a_t - a_v on the other) preserves energy, commutes with shifts and is involutive, but sends the unit vector at an interior vertex (normalized volume 1) to a profile of normalized volume n-1. For path blocks it relates G(2m,2k) and G(2m,2m), whose marked series differ at volume 2k+1 (SNG-F36).",
-      "next_action": "Close P08 and P14, then mark P15 complete with SNG-F46 and tests/test_lattice_marks.py.",
-      "acceptance_gaps": [
-        "Original dependency gate: P08 (formal) and P14 (pending on P08) are not accepted."
-      ],
-      "packet": "handoff/tasks/P15.md"
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_orders -v"
+    ]
+   }
+  },
+  {
+   "id": "P22",
+   "title": "Establish one genuine reciprocity statement",
+   "status": "complete",
+   "effort": "L",
+   "priority": 3,
+   "dependencies": [
+    "P21"
+   ],
+   "evidence": [
+    "docs/results/order_reciprocity.md",
+    "docs/chapters/13_research_program.md",
+    "src/singularity/orders.py",
+    "tests/test_reciprocity.py",
+    "docs/references.bib"
+   ],
+   "existing_work": "Outcome: a certified negative result. Theorem SNG-F34 proves that for the two-element chain with its edge the energy-weighted P-partition series W and S equal theta/(1-x^2) and x^2(theta-1)/(1-x^2) with theta = sum x^d q^(d^2), and are not rational in x over Q(q), so the classical reciprocity S(x)=(-1)^n W(1/x) has no weighted analogue of that form. The classical order-polynomial and P-partition reciprocities are stated as established background, with the project's chamber-form numerators, and checked exactly.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P22.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "proved reciprocity identity with explicit boundary terms, or a counterexample to the proposed weighted extension": "SNG-F34 (negative, proved); docs/results/order_reciprocity.md",
+     "verify complete small instances": "EstablishedReciprocityTests on singleton, chain, antichain, diamond, unnaturally labeled and disconnected posets (order polynomial at negative arguments, H<=4; P-partition series through x^8)",
+     "full argument for the stated scope": "chapter 13.6 proofs; rationality argument; Hankel certificates for k<=3",
+     "standard theorem labeled as background": "chapter 13.6 and results record label the Stanley reciprocities as established",
+     "expanded exact polynomials for the counterexample": "EnergyObstructionTests.test_closed_forms_through_degree_twelve; test_hankel_certificates_exclude_short_recurrences",
+     "negative bound evaluation needs a proved algebraic object": "order_polynomial is an explicit polynomial; weighted counts are shown non-polynomial (SNG-F32) and non-rational (SNG-F34)",
+     "P21 dependency": "complete"
     },
-    {
-      "id": "P16",
-      "title": "Test Whitney switches systematically",
-      "status": "implemented_pending_acceptance",
-      "effort": "M",
-      "priority": 2,
-      "dependencies": [
-        "P15"
-      ],
-      "evidence": [
-        "scripts/whitney_switches.py",
-        "results/whitney_switches.json",
-        "src/singularity/terminals.py",
-        "tests/test_terminals.py",
-        "docs/chapters/10_inverse_problems.md"
-      ],
-      "existing_work": "A documented switch family (two-terminal edge-disjoint blocks, straight and twisted gluings) with simplicity, connectedness, circuit-by-circuit cycle-matroid checks, canonical-code isomorphism decisions, and first local and marked differences through volume 6 by two enumerators plus the SNG-F41 prediction: 124 pairs, 68 isomorphic, 28 separated at volume 1, and all 28 degree-preserving switches separated at volume 2; none unresolved. Structural results: SNG-F41 (twist difference = antisymmetric pairing), SNG-F42 (exact depth for identical blocks), SNG-F45 (rooted-deck bound), with arbitrarily deep separating twists from path blocks.",
-      "next_action": "Accept P15 (after P08/P14), then mark P16 complete with the existing receipt.",
-      "acceptance_gaps": [
-        "Original dependency gate: P15 is not accepted (it waits on P08/P14)."
-      ],
-      "packet": "handoff/tasks/P16.md"
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_reciprocity tests.test_orders -v"
+    ]
+   }
+  },
+  {
+   "id": "P23",
+   "title": "Implement formal logarithmic extraction",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P03"
+   ],
+   "evidence": [
+    "src/singularity/polynomials.py",
+    "src/singularity/euler.py",
+    "tests/test_analytics.py",
+    "docs/chapters/06_euler_analysis.md",
+    "docs/specifications/COEFFICIENTS-v1.md",
+    "src/singularity/certificates.py",
+    "results/certificates/spectral.json"
+   ],
+   "existing_work": "The existing exact transforms are audited and accepted. The specification fixes the coefficient ring Q[q], required constant terms, inclusive truncation and JSON triples, and separates the ordinary exponents from the integral bidegree transform (SNG-A08). Chapter 6 maps each identity to its independent implementation. New tests cover the single-edge worked example (6.10), the triangular identity n c_n = sum_{d|n} d b_d on a graph series, degree-zero truncation, reduced rationals, prefix stability and recomposition of every retained certificate's exponents.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P23.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "formal logarithm, inverse series and finite Euler exponents in rational arithmetic": "polynomials.series_log/series_inverse/series_exp; euler.euler_exponents; FormalSeriesTests",
+     "reconstruct the input truncation by multiplication": "recompose_euler; test_nonconstant_polynomial_exponents_recompose; test_portable_certificate_exponents_recompose; certificate replay",
+     "verify the Mobius coefficient identities": "test_triangular_log_identity_and_mobius_inverse; euler_exponents_mobius equality tests",
+     "distinguish q-dependent exponents from integer multiplicities": "SNG-A07 versus SNG-A08 discussion; specification section 8; negative and fractional exponents in test_single_edge_worked_example_matches_chapter_six",
+     "specialization can annihilate a symbolic discrepancy": "test_symbolic_difference_can_vanish_after_specialization",
+     "P03 dependency": "complete"
     },
-    {
-      "id": "P17",
-      "title": "Add exact volume congruence filters",
-      "status": "complete",
-      "effort": "S",
-      "priority": 2,
-      "dependencies": [
-        "P03"
-      ],
-      "evidence": [
-        "src/singularity/congruence.py",
-        "tests/test_congruence.py",
-        "docs/chapters/13_research_program.md",
-        "docs/specifications/COEFFICIENTS-v1.md",
-        "src/singularity/conductor.py"
-      ],
-      "existing_work": "congruence.py adds direct degree selection, a literal character average of L(w^j x,q) evaluated in Z[t]/Phi_m(t) (divided by m only after the full sum, raising if the result is not an integer multiple of the identity), and direct tuple filtering by each profile's own volume. Proposition SNG-F27 proves the averaging identity, including truncations, residue normalization and m=1.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P17.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "prove the root-of-unity averaging identity": "SNG-F27, chapter 13.5",
-          "compare with direct modular filtering of assignments": "CongruenceTests.test_three_routes_agree_on_all_graphs_through_three_vertices (11 graphs, volume <=6, moduli 1..7, 308 comparisons) and test_three_routes_agree_on_all_graphs_with_four_vertices (64 graphs, volume <=4, moduli 1..5, 960 comparisons)",
-          "nonprimitive powers, composite moduli, short truncation, modulus one, empty classes": "test_nonprimitive_powers_and_cancellation_in_the_ring; test_normalization_modulus_one_empty_classes_and_short_truncation",
-          "exact rational representation": "test_rational_coefficients_stay_exact",
-          "must not be described as extracting span or binary sector": "SNG-F27 discussion; test_marks_cannot_be_recovered_by_volume_filters",
-          "malformed or zero modulus fails": "test_invalid_input"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_congruence -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_analytics -v"
+    ]
+   }
+  },
+  {
+   "id": "P24",
+   "title": "Determine exceptional energy parameters",
+   "status": "complete",
+   "effort": "M",
+   "priority": 1,
+   "dependencies": [
+    "P23"
+   ],
+   "evidence": [
+    "src/singularity/parameters.py",
+    "tests/test_parameters.py",
+    "docs/chapters/13_research_program.md",
+    "results/parameter_strata.json",
+    "scripts/reproduce.py",
+    "src/singularity/euler.py"
+   ],
+   "existing_work": "parameters.py implements square-free parts, Sturm sequences, exact rational bisection, rational-root detection, algebraic specialization by gcd and Sturm counts, multiplicities, and parameter_strata, which reports the generic first volume, every exceptional root in (0,1) with the volume first visible there, and the endpoints separately. Proposition SNG-F31 proves finiteness, completeness of isolation and exactness of the specialization test.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P24.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "isolate every real root in (0,1) of the tested leading polynomials": "SNG-F31; RootIsolationTests; parameter_strata status field",
+     "recompute at each exceptional value": "StrataTests.test_artificial_interior_algebraic_and_rational_strata (two irrational roots visible at volume 3; rational root 1/2 with agreement through the bound)",
+     "released examples strictly visible in the interior": "test_released_pairs_have_no_interior_exceptional_parameter; results/parameter_strata.json (spectral 2, binary 3, cube-Mobius 4, no exceptional q)",
+     "multiplicities, repeated roots, zero polynomials, rational values, endpoints": "test_repeated_roots_and_multiplicity; test_zero_discrepancies_and_endpoint_shift",
+     "no plot or grid": "exact Fraction arithmetic only",
+     "P23 dependency": "complete"
     },
-    {
-      "id": "P18",
-      "title": "Prove root-of-unity rationality in energy",
-      "status": "complete",
-      "effort": "S",
-      "priority": 2,
-      "dependencies": [
-        "P03",
-        "P17"
-      ],
-      "evidence": [
-        "src/singularity/conductor.py",
-        "tests/test_conductor_weighted.py",
-        "docs/chapters/13_research_program.md",
-        "results/conductor_fixtures.json",
-        "results/conductor_example.json",
-        "scripts/reproduce.py"
-      ],
-      "existing_work": "Proposition SNG-F28 proves the residue decomposition a_i=r_i+m b_i, E(a)=E(r) mod m, L(x,w)=N/(1-x^m)^n in Z[t]/Phi_m and the remote binomial formula at every index. Tests add an independent Mobius-product construction of Phi_m (m<=24), composite orders 4, 6, 8, 9, isolated-vertex and edgeless graphs, remote indices near 10^30 and exact budget boundaries. results/conductor_fixtures.json retains 20 numerator fixtures with agreement through volume 12.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P18.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "prove the coordinate residue decomposition": "SNG-F28; RootOfUnityTests.test_residue_decomposition_preserves_energy_mod_order",
-          "reproduce local coefficients through an independent bound": "RootOfUnityTests.test_numerator_expansion_equals_direct_specialization (orders 1,2,4,6,8,9 through volume 10); results/conductor_fixtures.json (4 graphs x orders 1,2,3,4,6 through volume 12); ConductorTests.test_numerator_replays_direct_coefficients",
-          "cyclotomic reduction validated independently": "test_cyclotomic_polynomials_by_mobius_product",
-          "one root versus the unspecialized series": "test_specialized_equality_is_not_series_equality",
-          "remote formula and budget": "test_remote_index_uses_binomial_tail_not_enumeration; ConductorTests.test_remote_and_budget",
-          "P17 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_conductor_weighted -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_parameters -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P25",
+   "title": "Organize successive visibility levels",
+   "status": "complete",
+   "effort": "M",
+   "priority": 1,
+   "dependencies": [
+    "P23",
+    "P24"
+   ],
+   "evidence": [
+    "src/singularity/visibility.py",
+    "tests/test_visibility.py",
+    "docs/chapters/04_observation_hierarchy.md",
+    "results/visibility_filtration.json",
+    "results/census_manifest.json",
+    "scripts/reproduce.py",
+    "src/singularity/parameters.py"
+   ],
+   "existing_work": "visibility.py partitions named prefixes by agreement through each volume in symbolic, marked, rational-parameter and algebraic-parameter domains, with deterministic class identifiers, memberships at every level, signed split witnesses and classes unresolved at the bound. Proposition SNG-F33 proves refinement, the first-difference meaning of witnesses, the domain implications and their failure of converses, and the finite meaning of unresolved classes. The CENSUS-v1 filtrations through volume 6 are retained.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P25.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "filtration by first discrepancy including parameter-dependent refinements": "visibility_filtration domains polynomial/marked/rational/algebraic; test_specialization_merges_symbolic_classes; test_algebraic_parameter_domain",
+     "prove every reported equality below the first differing coefficient": "SNG-F33 (ii); test_witness_lower_coefficients_agree_and_signs",
+     "label unresolved collisions with their tested bound": "unresolved_at_bound; test_reference_pairs_split_at_their_depths (cube-Mobius unresolved through 3)",
+     "recover reference depths 2, 3, 4": "test_reference_pairs_split_at_their_depths",
+     "refinement on the complete declared census, duplicates, relabelings": "test_refinement_is_monotone_on_the_census (n<=5, symbolic and marked); test_duplicates_and_relabelings_share_classes; results/visibility_filtration.json class counts equal results/small_census.json",
+     "unequal truncations and signs": "test_unequal_lengths_and_bounds; sign test",
+     "no unrestricted depth claim": "SNG-F33 (iv) and chapter 4 text",
+     "P23 and P24 dependencies": "complete"
     },
-    {
-      "id": "P19",
-      "title": "Analyze finite quadratic Gauss sums",
-      "status": "complete",
-      "effort": "M",
-      "priority": 2,
-      "dependencies": [
-        "P18"
-      ],
-      "evidence": [
-        "src/singularity/gauss.py",
-        "tests/test_gauss.py",
-        "docs/chapters/11_archival_bridges.md",
-        "results/gauss_fixtures.json",
-        "scripts/reproduce.py",
-        "src/singularity/conductor.py"
-      ],
-      "existing_work": "gauss.py diagonalizes the Laplacian by congruence over F_p (odd p), returns and rechecks the basis witness, and computes rank and the Legendre class of the nonsingular discriminant. Theorem SNG-F30 proves Gamma_G(p)=p^(n-r) chi(D) g_p^r for every graph, with congruence invariance, each singular direction (component constants and modular degeneracy) contributing p, and rank zero giving p^n; it recovers SNG-I022 when p does not divide the spanning-tree count. Comparisons are exact in Z[t]/Phi_p(t).",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P19.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "formulas in terms of rank and nonsingular discriminant": "SNG-F30; laplacian_invariants; gauss_sum_formula",
-          "singular directions accounted for": "SNG-F30 proof; test_singular_directions_include_components (three components, rank zero)",
-          "compare direct residue enumeration with diagonalized forms": "test_formula_equals_direct_residue_sum: all 75 graphs with n<=4 at p=3,5,7 and all 1024 five-vertex graphs at p=3; results/gauss_fixtures.json (6 graphs x p=3,5)",
-          "explicit exceptional-prime examples": "test_exceptional_prime_triangle_mod_three (rank 1, Gamma=-9 g_3); spectral_g at p=3 (tau=3, rank 5) in results/gauss_fixtures.json",
-          "transformation witnesses checked exactly": "test_witness_rank_and_invertibility against an independent row-reduction rank",
-          "prime powers and characteristic two remain separate": "test_diagonalizer_handles_zero_diagonal_and_rejects_bad_input rejects 2, 4, 9, 1",
-          "P18 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_gauss -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_visibility -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P26",
+   "title": "Make analytic remainder bounds explicit",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P25"
+   ],
+   "evidence": [
+    "src/singularity/arithmetic.py",
+    "tests/test_arithmetic.py",
+    "docs/chapters/07_visibility_singularities.md",
+    "docs/chapters/06_euler_analysis.md",
+    "results/tail_records.json",
+    "scripts/reproduce.py"
+   ],
+   "existing_work": "The manuscript constant (7.12) is implemented exactly (regularized_tail_constant), with the omitted-prime bound (7.13) for rational s=a/b at cutoffs P=N^b where every power and the radius condition are exact (regularized_prime_tail_bound), recovering C r/N at s=1/r. certified_tail_record recomputes the first discrepancy at q from supplied prefixes and states the remaining hypotheses. Chapter 7 records the relation to the older conservative constant and the finite small-prime treatment. results/tail_records.json holds end-to-end records for the three reference pairs.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P26.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "display constants": "(7.12) implemented exactly; test_constant_matches_its_definition",
+     "parameter restrictions": "q in [0,1], 0<radius<1, (r+1)s>1, P^(-s)<=radius enforced; test_prime_tail_guards_and_boundary_case",
+     "treatment of finitely many small primes": "primes p<=P kept exactly, omitted primes inside the radius by the cutoff guard; chapter 7 paragraph",
+     "boundary estimate C r/N at s=1/r, P=N^r": "test_prime_tail_guards_and_boundary_case",
+     "rigorously bounded finite comparison on small cases": "test_local_inequality_with_rigorous_rational_enclosures (spectral pair, three rational t, enclosure (7.14), Bernoulli bounds, no floating point)",
+     "caller must provide exact first-discrepancy evidence": "certified_tail_record recomputes r and delta; test_record_recomputes_depth_and_rejects_bad_hypotheses (truncated prefix, q=1, q outside [0,1])",
+     "P25 dependency": "complete"
     },
-    {
-      "id": "P20",
-      "title": "Build the disjoint order-chamber formula",
-      "status": "complete",
-      "effort": "M",
-      "priority": 2,
-      "dependencies": [
-        "P02",
-        "P06"
-      ],
-      "evidence": [
-        "src/singularity/chambers.py",
-        "tests/test_chambers.py",
-        "docs/chapters/13_research_program.md",
-        "docs/specifications/COEFFICIENTS-v1.md"
-      ],
-      "existing_work": "chambers.py enumerates half-open order chambers (sort by height then label; strict gaps at label descents) and evaluates volume, span and energy from gap coordinates through the nested-boundary gap form Q, without constructing heights. Proposition SNG-F29 proves the chambers are disjoint and cover every profile, derives the volume weights and Q_ij = e(T_max, V minus T_min), and relates Q to SNG-F10.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P20.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "every profile belongs to exactly one chamber, including ties": "SNG-F29; ChamberTests.test_every_profile_has_exactly_one_chamber (all 256 profiles of {0..3}^4); test_tied_blocks_zero_profile_and_labels",
-          "closed chambers overcount": "test_closed_cones_would_overcount_ties",
-          "gap expression for volume and quadratic energy": "SNG-F29; test_gap_form_is_the_nested_boundary_matrix",
-          "match complete histograms": "test_complete_histograms_match_two_enumerators (75 graphs, local and marked, volume <=6, against weak compositions and level chains); session check of all 1024 five-vertex graphs through volume 5 against chains",
-          "factorial cost stated": "chambers.py docstring and chapter 13.6"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_chambers -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_arithmetic -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P27",
+   "title": "Produce controlled real singularity experiments",
+   "status": "complete",
+   "effort": "M",
+   "priority": 1,
+   "dependencies": [
+    "P26"
+   ],
+   "evidence": [
+    "src/singularity/certified.py",
+    "scripts/certified_k.py",
+    "results/certified_k.json",
+    "tests/test_certified.py",
+    "docs/chapters/07_visibility_singularities.md",
+    "src/singularity/decomposition.py"
+   ],
+   "existing_work": "certified.py encloses K_{G,H}(s,q) rigorously: L_G/L_H = B_G/B_H removes common translations; B is evaluated on a checked decomposition with 256-bit outward rounding and a minimum-zero flag; height truncation is bounded by the quadratic tail of SNG-F39; p^(-a/b) by integer roots; logarithms and the final exponential by series with explicit remainders; omitted primes by the coefficient-aware constant of SNG-F38. Retained enclosures at q=1/2: spectral K(1/2) in [0.84973, 0.85750], K(3/5) in [0.89931, 0.89971], K(1) in [0.9678188, 0.9678191]; binary census K(1/3) in [0.90084, 0.94230].",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P27.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "prime-product evaluations near s=1/r with finite-cutoff error intervals": "results/certified_k.json (s=1/r for both pairs, plus s=3/5 and s=1 for the spectral pair); SNG-F38",
+     "local truncation, arithmetic rounding and omitted-prime errors budgeted separately": "record fields total_height_tail, omitted_prime_log_bound; fixed-point outward rounding",
+     "recover the predicted asymptotic within the intervals": "K(1/r,1/2) enclosed in a positive interval; with the proved factorization R = zeta(rs)^delta K (SNG-A11) the exponent delta is exact, not fitted",
+     "multiple cutoffs and precision settings overlap": "test_other_cutoff_and_precision_overlap_retained_enclosure (cutoff 144, 160 bits)",
+     "identical-graph ratio, reversed-pair reciprocals, exact released exponents": "test_identical_graphs_give_log_ratio_enclosing_zero; test_reversal_negates_the_enclosure; test_retained_runs_recompute_the_exact_exponents",
+     "carefully captioned table": "chapter 7 table after SNG-F38",
+     "limitation reported": "the binary interval is wide because the omitted-prime bound decays like P^(-1/3) at s=1/3",
+     "P26 dependency": "complete"
     },
-    {
-      "id": "P21",
-      "title": "Relate constrained heights to order polytopes",
-      "status": "complete",
-      "effort": "M",
-      "priority": 2,
-      "dependencies": [
-        "P20"
-      ],
-      "evidence": [
-        "src/singularity/orders.py",
-        "tests/test_orders.py",
-        "docs/chapters/13_research_program.md",
-        "docs/chapters/14_literature_and_claims.md",
-        "docs/references.bib",
-        "src/singularity/chambers.py"
-      ],
-      "existing_work": "orders.py adds validated finite posets (closure, cycle rejection), weak and strict constrained counts by direct enumeration, a chamber-based weak count valid for arbitrary labels, Stanley's linear-extension formula over a natural labeling, and (volume, energy) histograms on order-polytope points. Proposition SNG-F32 identifies weak assignments with lattice points of H*O(P), counted by Omega(P,H+1) with the argument shift explained, maps chamber tie rules to linear extensions, separates strict assignments, and proves that the quadratic weight can destroy polynomiality in H.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P21.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "unweighted bounded-height specialization with correct weak and strict inequalities": "SNG-F32 (1)-(3); OrderPolytopeTests.test_three_counts_agree (seven posets, complete height ranges, three methods); test_closed_forms_and_argument_shift (chain C(H+n,n), strict chain C(H+1,n), antichain (H+1)^n)",
-          "chamber tie rules mapped to linear extensions": "SNG-F32 (2); count_by_chambers on unnaturally labeled posets; test_linear_extensions_and_natural_labeling",
-          "identify what quadratic weighting adds": "SNG-F32 (4); test_quadratic_weight_is_not_an_ehrhart_polynomial",
-          "invalid cyclic relations fail": "test_invalid_relations",
-          "literature positioning": "chapter 13.6 paragraph citing Stanley1986 and Stanley2012",
-          "P20 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_orders -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python scripts/certified_k.py (about 41 minutes)",
+     "PYTHONPATH=src python -m unittest tests.test_certified -v"
+    ]
+   }
+  },
+  {
+   "id": "P28",
+   "title": "State the available complex domain exactly",
+   "status": "complete",
+   "effort": "M",
+   "priority": 2,
+   "dependencies": [
+    "P26"
+   ],
+   "evidence": [
+    "docs/chapters/07_visibility_singularities.md",
+    "src/singularity/arithmetic.py",
+    "tests/test_arithmetic.py",
+    "results/complex_discs.json",
+    "docs/chapters/06_euler_analysis.md"
+   ],
+   "existing_work": "Theorem SNG-F35 gives an explicit disc |s-1/r|<=eta under three exact conditions: convergence, a zeta-factor condition proved from the integral representation of (w-1)zeta(w), and a derivative bound that keeps every local factor in the right half-plane for every prime. It fixes principal branches for all logarithms, proves uniform tail convergence by Schwarz's lemma (showing the conservative constant, not (7.12), is valid for complex t), identifies K with the positive real product, and states the branch-point/pole dichotomy for the ratio. complex_disc_certificate checks the conditions exactly; results/complex_discs.json holds discs for the three reference pairs.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P28.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "local complex branch statement on an explicitly described nonvanishing domain": "SNG-F35; discs eta=1e-5, 1e-7, 1e-9 for the spectral, binary and cube-Mobius pairs; ComplexDiscTests.test_reference_discs_and_refusals",
+     "logarithm choices": "principal logs of L(p^-s), 1-p^-rs and (rs-1)zeta(rs); cut for (rs-1)^-delta; record branches field",
+     "uniform convergence on compact subsets": "Schwarz bound |h| <= M(|t|/rho)^(r+1); test_schwarz_constant_is_the_conservative_one",
+     "finite small primes": "condition (c) covers every prime including small ones; primes beyond the cutoff use the Schwarz tail",
+     "fractional power versus pole": "SNG-F35 final statement",
+     "no global meromorphic continuation, no complex q": "not_claimed field and chapter 7 text",
+     "larger domains": "refusals at 10x larger radii are recorded as failure of the sufficient condition, not as zeros; no counterexample found or claimed",
+     "P26 dependency": "complete"
     },
-    {
-      "id": "P22",
-      "title": "Establish one genuine reciprocity statement",
-      "status": "complete",
-      "effort": "L",
-      "priority": 3,
-      "dependencies": [
-        "P21"
-      ],
-      "evidence": [
-        "docs/results/order_reciprocity.md",
-        "docs/chapters/13_research_program.md",
-        "src/singularity/orders.py",
-        "tests/test_reciprocity.py",
-        "docs/references.bib"
-      ],
-      "existing_work": "Outcome: a certified negative result. Theorem SNG-F34 proves that for the two-element chain with its edge the energy-weighted P-partition series W and S equal theta/(1-x^2) and x^2(theta-1)/(1-x^2) with theta = sum x^d q^(d^2), and are not rational in x over Q(q), so the classical reciprocity S(x)=(-1)^n W(1/x) has no weighted analogue of that form. The classical order-polynomial and P-partition reciprocities are stated as established background, with the project's chamber-form numerators, and checked exactly.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P22.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "proved reciprocity identity with explicit boundary terms, or a counterexample to the proposed weighted extension": "SNG-F34 (negative, proved); docs/results/order_reciprocity.md",
-          "verify complete small instances": "EstablishedReciprocityTests on singleton, chain, antichain, diamond, unnaturally labeled and disconnected posets (order polynomial at negative arguments, H<=4; P-partition series through x^8)",
-          "full argument for the stated scope": "chapter 13.6 proofs; rationality argument; Hankel certificates for k<=3",
-          "standard theorem labeled as background": "chapter 13.6 and results record label the Stanley reciprocities as established",
-          "expanded exact polynomials for the counterexample": "EnergyObstructionTests.test_closed_forms_through_degree_twelve; test_hankel_certificates_exclude_short_recurrences",
-          "negative bound evaluation needs a proved algebraic object": "order_polynomial is an explicit polynomial; weighted counts are shown non-polynomial (SNG-F32) and non-rational (SNG-F34)",
-          "P21 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_reciprocity tests.test_orders -v"
-        ]
-      }
+    "commands": [
+     "PYTHONPATH=src python -m unittest tests.test_arithmetic -v",
+     "PYTHONPATH=src python scripts/reproduce.py --check"
+    ]
+   }
+  },
+  {
+   "id": "P29",
+   "title": "Specify a complete finite graph census",
+   "status": "complete",
+   "effort": "S",
+   "priority": 1,
+   "dependencies": [
+    "P03"
+   ],
+   "evidence": [
+    "docs/specifications/CENSUS-v1.md",
+    "scripts/census_manifest.py",
+    "results/census_manifest.json",
+    "tests/test_census.py",
+    "scripts/census.py",
+    "results/small_census.json"
+   ],
+   "existing_work": "CENSUS-v1.md fixes the population (connected simple graphs, orders 1..6), mask-order generation, the degree-sorted minimum-code isomorphism decision with proof, representative selection, digest encoding and the labeled versus class count distinction. census_manifest.py retains every class with code, generation mask, canonical edges, SHA-256 digest, degrees, labeled copies and brute-force automorphism group order, and refuses to write unless the labeled counts match an independent recurrence and every code group satisfies orbit-stabilizer.",
+   "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P29.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "canonical input manifest with isomorphism handling documented": "docs/specifications/CENSUS-v1.md sections 2-6; results/census_manifest.json",
+     "independently reconcile population counts": "recurrence c_n gives 1,1,4,38,728,26704; orbit-stabilizer totals equal them; classes 1,1,2,6,21,112; CensusManifestTests.test_counts_reconcile",
+     "uniqueness and coverage, not copied counts": "labeled_copies x |Aut| = n! per class (automorphisms by all n! permutations); pairwise brute-force non-isomorphism through n=5 in test_automorphisms_and_uniqueness_through_five_vertices",
+     "generation options and graph hashes": "manifest generation/digest fields; test_reconstruct_every_graph recomputes digests, codes and connectedness",
+     "relabeled copies, equal-degree distinct graphs, reserialization": "test_relabeled_copies_and_equal_degree_graphs (prism versus K3,3); test_reserialization_is_deterministic",
+     "same population as aggregate summaries": "test_manifest_is_the_census_population"
     },
-    {
-      "id": "P23",
-      "title": "Implement formal logarithmic extraction",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P03"
-      ],
-      "evidence": [
-        "src/singularity/polynomials.py",
-        "src/singularity/euler.py",
-        "tests/test_analytics.py",
-        "docs/chapters/06_euler_analysis.md",
-        "docs/specifications/COEFFICIENTS-v1.md",
-        "src/singularity/certificates.py",
-        "results/certificates/spectral.json"
-      ],
-      "existing_work": "The existing exact transforms are audited and accepted. The specification fixes the coefficient ring Q[q], required constant terms, inclusive truncation and JSON triples, and separates the ordinary exponents from the integral bidegree transform (SNG-A08). Chapter 6 maps each identity to its independent implementation. New tests cover the single-edge worked example (6.10), the triangular identity n c_n = sum_{d|n} d b_d on a graph series, degree-zero truncation, reduced rationals, prefix stability and recomposition of every retained certificate's exponents.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P23.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "formal logarithm, inverse series and finite Euler exponents in rational arithmetic": "polynomials.series_log/series_inverse/series_exp; euler.euler_exponents; FormalSeriesTests",
-          "reconstruct the input truncation by multiplication": "recompose_euler; test_nonconstant_polynomial_exponents_recompose; test_portable_certificate_exponents_recompose; certificate replay",
-          "verify the Mobius coefficient identities": "test_triangular_log_identity_and_mobius_inverse; euler_exponents_mobius equality tests",
-          "distinguish q-dependent exponents from integer multiplicities": "SNG-A07 versus SNG-A08 discussion; specification section 8; negative and fractional exponents in test_single_edge_worked_example_matches_chapter_six",
-          "specialization can annihilate a symbolic discrepancy": "test_symbolic_difference_can_vanish_after_specialization",
-          "P03 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_analytics -v"
-        ]
-      }
-    },
-    {
-      "id": "P24",
-      "title": "Determine exceptional energy parameters",
-      "status": "complete",
-      "effort": "M",
-      "priority": 1,
-      "dependencies": [
-        "P23"
-      ],
-      "evidence": [
-        "src/singularity/parameters.py",
-        "tests/test_parameters.py",
-        "docs/chapters/13_research_program.md",
-        "results/parameter_strata.json",
-        "scripts/reproduce.py",
-        "src/singularity/euler.py"
-      ],
-      "existing_work": "parameters.py implements square-free parts, Sturm sequences, exact rational bisection, rational-root detection, algebraic specialization by gcd and Sturm counts, multiplicities, and parameter_strata, which reports the generic first volume, every exceptional root in (0,1) with the volume first visible there, and the endpoints separately. Proposition SNG-F31 proves finiteness, completeness of isolation and exactness of the specialization test.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P24.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "isolate every real root in (0,1) of the tested leading polynomials": "SNG-F31; RootIsolationTests; parameter_strata status field",
-          "recompute at each exceptional value": "StrataTests.test_artificial_interior_algebraic_and_rational_strata (two irrational roots visible at volume 3; rational root 1/2 with agreement through the bound)",
-          "released examples strictly visible in the interior": "test_released_pairs_have_no_interior_exceptional_parameter; results/parameter_strata.json (spectral 2, binary 3, cube-Mobius 4, no exceptional q)",
-          "multiplicities, repeated roots, zero polynomials, rational values, endpoints": "test_repeated_roots_and_multiplicity; test_zero_discrepancies_and_endpoint_shift",
-          "no plot or grid": "exact Fraction arithmetic only",
-          "P23 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_parameters -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
-    },
-    {
-      "id": "P25",
-      "title": "Organize successive visibility levels",
-      "status": "complete",
-      "effort": "M",
-      "priority": 1,
-      "dependencies": [
-        "P23",
-        "P24"
-      ],
-      "evidence": [
-        "src/singularity/visibility.py",
-        "tests/test_visibility.py",
-        "docs/chapters/04_observation_hierarchy.md",
-        "results/visibility_filtration.json",
-        "results/census_manifest.json",
-        "scripts/reproduce.py",
-        "src/singularity/parameters.py"
-      ],
-      "existing_work": "visibility.py partitions named prefixes by agreement through each volume in symbolic, marked, rational-parameter and algebraic-parameter domains, with deterministic class identifiers, memberships at every level, signed split witnesses and classes unresolved at the bound. Proposition SNG-F33 proves refinement, the first-difference meaning of witnesses, the domain implications and their failure of converses, and the finite meaning of unresolved classes. The CENSUS-v1 filtrations through volume 6 are retained.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P25.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "filtration by first discrepancy including parameter-dependent refinements": "visibility_filtration domains polynomial/marked/rational/algebraic; test_specialization_merges_symbolic_classes; test_algebraic_parameter_domain",
-          "prove every reported equality below the first differing coefficient": "SNG-F33 (ii); test_witness_lower_coefficients_agree_and_signs",
-          "label unresolved collisions with their tested bound": "unresolved_at_bound; test_reference_pairs_split_at_their_depths (cube-Mobius unresolved through 3)",
-          "recover reference depths 2, 3, 4": "test_reference_pairs_split_at_their_depths",
-          "refinement on the complete declared census, duplicates, relabelings": "test_refinement_is_monotone_on_the_census (n<=5, symbolic and marked); test_duplicates_and_relabelings_share_classes; results/visibility_filtration.json class counts equal results/small_census.json",
-          "unequal truncations and signs": "test_unequal_lengths_and_bounds; sign test",
-          "no unrestricted depth claim": "SNG-F33 (iv) and chapter 4 text",
-          "P23 and P24 dependencies": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_visibility -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
-    },
-    {
-      "id": "P26",
-      "title": "Make analytic remainder bounds explicit",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P25"
-      ],
-      "evidence": [
-        "src/singularity/arithmetic.py",
-        "tests/test_arithmetic.py",
-        "docs/chapters/07_visibility_singularities.md",
-        "docs/chapters/06_euler_analysis.md",
-        "results/tail_records.json",
-        "scripts/reproduce.py"
-      ],
-      "existing_work": "The manuscript constant (7.12) is implemented exactly (regularized_tail_constant), with the omitted-prime bound (7.13) for rational s=a/b at cutoffs P=N^b where every power and the radius condition are exact (regularized_prime_tail_bound), recovering C r/N at s=1/r. certified_tail_record recomputes the first discrepancy at q from supplied prefixes and states the remaining hypotheses. Chapter 7 records the relation to the older conservative constant and the finite small-prime treatment. results/tail_records.json holds end-to-end records for the three reference pairs.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P26.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "display constants": "(7.12) implemented exactly; test_constant_matches_its_definition",
-          "parameter restrictions": "q in [0,1], 0<radius<1, (r+1)s>1, P^(-s)<=radius enforced; test_prime_tail_guards_and_boundary_case",
-          "treatment of finitely many small primes": "primes p<=P kept exactly, omitted primes inside the radius by the cutoff guard; chapter 7 paragraph",
-          "boundary estimate C r/N at s=1/r, P=N^r": "test_prime_tail_guards_and_boundary_case",
-          "rigorously bounded finite comparison on small cases": "test_local_inequality_with_rigorous_rational_enclosures (spectral pair, three rational t, enclosure (7.14), Bernoulli bounds, no floating point)",
-          "caller must provide exact first-discrepancy evidence": "certified_tail_record recomputes r and delta; test_record_recomputes_depth_and_rejects_bad_hypotheses (truncated prefix, q=1, q outside [0,1])",
-          "P25 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_arithmetic -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
-    },
-    {
-      "id": "P27",
-      "title": "Produce controlled real singularity experiments",
-      "status": "complete",
-      "effort": "M",
-      "priority": 1,
-      "dependencies": [
-        "P26"
-      ],
-      "evidence": [
-        "src/singularity/certified.py",
-        "scripts/certified_k.py",
-        "results/certified_k.json",
-        "tests/test_certified.py",
-        "docs/chapters/07_visibility_singularities.md",
-        "src/singularity/decomposition.py"
-      ],
-      "existing_work": "certified.py encloses K_{G,H}(s,q) rigorously: L_G/L_H = B_G/B_H removes common translations; B is evaluated on a checked decomposition with 256-bit outward rounding and a minimum-zero flag; height truncation is bounded by the quadratic tail of SNG-F39; p^(-a/b) by integer roots; logarithms and the final exponential by series with explicit remainders; omitted primes by the coefficient-aware constant of SNG-F38. Retained enclosures at q=1/2: spectral K(1/2) in [0.84973, 0.85750], K(3/5) in [0.89931, 0.89971], K(1) in [0.9678188, 0.9678191]; binary census K(1/3) in [0.90084, 0.94230].",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P27.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "prime-product evaluations near s=1/r with finite-cutoff error intervals": "results/certified_k.json (s=1/r for both pairs, plus s=3/5 and s=1 for the spectral pair); SNG-F38",
-          "local truncation, arithmetic rounding and omitted-prime errors budgeted separately": "record fields total_height_tail, omitted_prime_log_bound; fixed-point outward rounding",
-          "recover the predicted asymptotic within the intervals": "K(1/r,1/2) enclosed in a positive interval; with the proved factorization R = zeta(rs)^delta K (SNG-A11) the exponent delta is exact, not fitted",
-          "multiple cutoffs and precision settings overlap": "test_other_cutoff_and_precision_overlap_retained_enclosure (cutoff 144, 160 bits)",
-          "identical-graph ratio, reversed-pair reciprocals, exact released exponents": "test_identical_graphs_give_log_ratio_enclosing_zero; test_reversal_negates_the_enclosure; test_retained_runs_recompute_the_exact_exponents",
-          "carefully captioned table": "chapter 7 table after SNG-F38",
-          "limitation reported": "the binary interval is wide because the omitted-prime bound decays like P^(-1/3) at s=1/3",
-          "P26 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python scripts/certified_k.py (about 41 minutes)",
-          "PYTHONPATH=src python -m unittest tests.test_certified -v"
-        ]
-      }
-    },
-    {
-      "id": "P28",
-      "title": "State the available complex domain exactly",
-      "status": "complete",
-      "effort": "M",
-      "priority": 2,
-      "dependencies": [
-        "P26"
-      ],
-      "evidence": [
-        "docs/chapters/07_visibility_singularities.md",
-        "src/singularity/arithmetic.py",
-        "tests/test_arithmetic.py",
-        "results/complex_discs.json",
-        "docs/chapters/06_euler_analysis.md"
-      ],
-      "existing_work": "Theorem SNG-F35 gives an explicit disc |s-1/r|<=eta under three exact conditions: convergence, a zeta-factor condition proved from the integral representation of (w-1)zeta(w), and a derivative bound that keeps every local factor in the right half-plane for every prime. It fixes principal branches for all logarithms, proves uniform tail convergence by Schwarz's lemma (showing the conservative constant, not (7.12), is valid for complex t), identifies K with the positive real product, and states the branch-point/pole dichotomy for the ratio. complex_disc_certificate checks the conditions exactly; results/complex_discs.json holds discs for the three reference pairs.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P28.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "local complex branch statement on an explicitly described nonvanishing domain": "SNG-F35; discs eta=1e-5, 1e-7, 1e-9 for the spectral, binary and cube-Mobius pairs; ComplexDiscTests.test_reference_discs_and_refusals",
-          "logarithm choices": "principal logs of L(p^-s), 1-p^-rs and (rs-1)zeta(rs); cut for (rs-1)^-delta; record branches field",
-          "uniform convergence on compact subsets": "Schwarz bound |h| <= M(|t|/rho)^(r+1); test_schwarz_constant_is_the_conservative_one",
-          "finite small primes": "condition (c) covers every prime including small ones; primes beyond the cutoff use the Schwarz tail",
-          "fractional power versus pole": "SNG-F35 final statement",
-          "no global meromorphic continuation, no complex q": "not_claimed field and chapter 7 text",
-          "larger domains": "refusals at 10x larger radii are recorded as failure of the sufficient condition, not as zeros; no counterexample found or claimed",
-          "P26 dependency": "complete"
-        },
-        "commands": [
-          "PYTHONPATH=src python -m unittest tests.test_arithmetic -v",
-          "PYTHONPATH=src python scripts/reproduce.py --check"
-        ]
-      }
-    },
-    {
-      "id": "P29",
-      "title": "Specify a complete finite graph census",
-      "status": "complete",
-      "effort": "S",
-      "priority": 1,
-      "dependencies": [
-        "P03"
-      ],
-      "evidence": [
-        "docs/specifications/CENSUS-v1.md",
-        "scripts/census_manifest.py",
-        "results/census_manifest.json",
-        "tests/test_census.py",
-        "scripts/census.py",
-        "results/small_census.json"
-      ],
-      "existing_work": "CENSUS-v1.md fixes the population (connected simple graphs, orders 1..6), mask-order generation, the degree-sorted minimum-code isomorphism decision with proof, representative selection, digest encoding and the labeled versus class count distinction. census_manifest.py retains every class with code, generation mask, canonical edges, SHA-256 digest, degrees, labeled copies and brute-force automorphism group order, and refuses to write unless the labeled counts match an independent recurrence and every code group satisfies orbit-stabilizer.",
-      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
-      "acceptance_gaps": [],
-      "packet": "handoff/tasks/P29.md",
-      "acceptance": {
-        "date": "2026-10-18",
-        "criteria": {
-          "canonical input manifest with isomorphism handling documented": "docs/specifications/CENSUS-v1.md sections 2-6; results/census_manifest.json",
-          "independently reconcile population counts": "recurrence c_n gives 1,1,4,38,728,26704; orbit-stabilizer totals equal them; classes 1,1,2,6,21,112; CensusManifestTests.test_counts_reconcile",
-          "uniqueness and coverage, not copied counts": "labeled_copies x |Aut| = n! per class (automorphisms by all n! permutations); pairwise brute-force non-isomorphism through n=5 in test_automorphisms_and_uniqueness_through_five_vertices",
-          "generation options and graph hashes": "manifest generation/digest fields; test_reconstruct_every_graph recomputes digests, codes and connectedness",
-          "relabeled copies, equal-degree distinct graphs, reserialization": "test_relabeled_copies_and_equal_degree_graphs (prism versus K3,3); test_reserialization_is_deterministic",
-          "same population as aggregate summaries": "test_manifest_is_the_census_population"
-        },
-        "commands": [
-          "PYTHONPATH=src python scripts/census_manifest.py --check",
-          "PYTHONPATH=src python -m unittest tests.test_census -v"
-        ]
-      }
-    },
-    {
-      "id": "P30",
-      "title": "Measure collision classes across invariants",
-      "status": "implemented_pending_acceptance",
-      "effort": "M",
-      "priority": 2,
-      "dependencies": [
-        "P12",
-        "P14",
-        "P29"
-      ],
-      "evidence": [
-        "scripts/collision_census.py",
-        "results/collision_census.json",
-        "results/visibility_filtration.json",
-        "results/late_collisions.json",
-        "results/census_manifest.json",
-        "docs/chapters/10_inverse_problems.md"
-      ],
-      "existing_work": "collision_census.py (checked in CI) computes on the CENSUS-v1 population, one representative per isomorphism class: degree sequences, Laplacian characteristic polynomials, binary cut profiles, nested-pair censuses, and symbolic local and marked prefixes through volume 3 plus a separate q=1/2 column. It lists every nontrivial class with codes, cross-invariant split counts, signed witnesses for every pair first separated at volume 2 or 3, and a chain-recomputed sample. On six vertices: 112 classes; 68 degree sequences; 110 spectra (two cospectral pairs, both separated at volume 3); height prefix 68/100/112 classes at volumes 1/2/3; binary profile and nested census separate all 112. results/visibility_filtration.json holds memberships at every volume.",
-      "next_action": "Close P08 and P14, then mark P30 complete with the existing receipts.",
-      "acceptance_gaps": [
-        "Original dependency gate: P14 is not accepted (it waits on P08)."
-      ],
-      "packet": "handoff/tasks/P30.md"
-    },
-    {
-      "id": "P31",
-      "title": "Resolve targeted collisions structurally",
-      "status": "implemented_pending_acceptance",
-      "effort": "L",
-      "priority": 2,
-      "dependencies": [
-        "P16",
-        "P30"
-      ],
-      "evidence": [
-        "results/late_collisions.json",
-        "results/visibility_filtration.json",
-        "scripts/reproduce.py",
-        "docs/chapters/10_inverse_problems.md",
-        "src/singularity/terminals.py",
-        "src/singularity/lowvolume.py"
-      ],
-      "existing_work": "Every census collision that survives volume two (14 pairs, all on six vertices) is resolved with an explicit separating pattern: the ordered adjacent-degree sector agrees, the induced-triple sector differs, and the triangle counts differ in every pair; none is a single Whitney twist. For collisions that persist further, the mechanisms are proved: Whitney twists separate exactly through the antisymmetric kernel pairing (SNG-F41/F42/F45), and the pendant-cycle family has depth p+1 (SNG-F36).",
-      "next_action": "Once P30 retains spectral partitions and P16 is accepted, mark P31 complete with results/late_collisions.json and SNG-F41/F42/F45/F36 as the mechanisms.",
-      "acceptance_gaps": [
-        "Original dependency gates: P16 and P30 are not accepted.",
-        "The census classification is finite (n <= 6); no collision with equal full series has been found, so no equality bijection is claimed."
-      ],
-      "packet": "handoff/tasks/P31.md"
-    },
-    {
-      "id": "P32",
-      "title": "Seek a separation bound for one graph family",
-      "status": "implemented_pending_acceptance",
-      "effort": "L",
-      "priority": 2,
-      "dependencies": [
-        "P06",
-        "P12",
-        "P31"
-      ],
-      "evidence": [
-        "src/singularity/families.py",
-        "tests/test_families.py",
-        "scripts/pendant_family.py",
-        "results/pendant_family.json",
-        "docs/chapters/10_inverse_problems.md"
-      ],
-      "existing_work": "Theorem SNG-F36 (proved, uniform in the family): for the cycle C_2l with leaves at distance p versus opposite (2 <= p < l), all local, normalized and marked coefficients agree through volume p and the volume-(p+1) difference is q^2(1-q)^2(1-q^2)^p, entirely binary; the complete binary difference has the closed form q^2(1-q)^2(1-q^2)^p z^(p+1)(1-z)^2 U_(l-p)^2. With l=p+1 the depth is (n-2)/2, a decisive counterfamily to any fixed-depth bound for equal-order pairs with equal degree sequences, equal edge degree types and isometric cut lattices. Theorem SNG-F37 proves L_{G(l,j)} >= L_{G(l,j')} for j<=j'<=l on (0,1)^2 by a positive-definite Gaussian transfer kernel (sum of squares).",
-      "next_action": "Either accept P31 or record a roadmap amendment that P32's counterfamily outcome does not depend on P31; then close P32 with the existing receipt.",
-      "acceptance_gaps": [
-        "Original dependency gate: P31 (structural resolution of targeted collisions) is not accepted, so P32 cannot be marked complete without an explicit roadmap amendment.",
-        "The theorem is a counterfamily for fixed-depth bounds; no upper separation bound for a natural graph class is claimed."
-      ],
-      "packet": "handoff/tasks/P32.md"
-    },
-    {
-      "id": "P33",
-      "title": "Verify concrete coefficient certificates in a kernel",
-      "status": "blocked",
-      "effort": "L",
-      "priority": 3,
-      "dependencies": [
-        "P07",
-        "P08",
-        "P23"
-      ],
-      "evidence": [
-        "src/singularity/certificates.py",
-        "results/certificates/spectral.json",
-        "results/certificates/binary_census.json",
-        "docs/chapters/12_computational_methodology.md",
-        "tests/test_analytics.py"
-      ],
-      "existing_work": "Python replay reconstructs declared coefficients and rejects altered sectors. This is independent finite computational checking, not a kernel-connected enumeration proof.",
-      "next_action": "After formal foundations compile, define a verified finite enumeration/checking path and connect it to both existing packets; prove its soundness rather than only verifying a parser.",
-      "acceptance_gaps": [
-        "P07/P08 formal definitions and identities are absent (D009); P23 is complete.",
-        "No kernel theorem connects parsed records to the mathematical coefficient definition or verifies both decisive pair multiplicities.",
-        "Kernel tests rejecting a changed graph edge and coefficient remain absent."
-      ],
-      "packet": "handoff/tasks/P33.md"
-    },
-    {
-      "id": "P34",
-      "title": "Formalize the visibility comparison boundary",
-      "status": "blocked",
-      "effort": "L",
-      "priority": 3,
-      "dependencies": [
-        "P26",
-        "P33"
-      ],
-      "evidence": [
-        "docs/chapters/07_visibility_singularities.md",
-        "docs/chapters/06_euler_analysis.md",
-        "docs/papers/visibility.md"
-      ],
-      "existing_work": "The first-discrepancy ratio law and real zeta-factor asymptotic are proved in mathematical exposition with explicit branch and convergence scope.",
-      "next_action": "Inventory the chosen proof assistant's actual analytic libraries, formalize the finite local expansion first, and record every remaining analytic assumption without claiming full-chain verification until it compiles.",
-      "acceptance_gaps": [
-        "P26 is complete; P33 remains open and no formal analysis project exists.",
-        "No exposed list of imported analytic theorems, compiling local-expansion-to-asymptotic chain or precisely recorded unformalized boundary is supplied."
-      ],
-      "packet": "handoff/tasks/P34.md"
-    },
-    {
-      "id": "P35",
-      "title": "Release the first focused manuscript",
-      "status": "partial",
-      "effort": "M",
-      "priority": 3,
-      "dependencies": [
-        "P04",
-        "P05",
-        "P26",
-        "P27",
-        "P33"
-      ],
-      "evidence": [
-        "docs/papers/visibility.md",
-        "docs/visibility_paper.tex",
-        "docs/visibility_paper.html",
-        "output/pdf/visibility_paper.pdf",
-        "docs/references.bib",
-        "results/validation.json",
-        "scripts/reproduce.py"
-      ],
-      "existing_work": "A six-page focused article with editable sources, literature context, finite examples and the real comparison theorem is already released. Independent computational replay and claim-scope guidance exist. It makes no kernel-verification or priority claim.",
-      "next_action": "Treat the current article as a reusable draft. Build its claim matrix and update it as dependencies close; if publication is pursued earlier, record an explicit roadmap dependency amendment rather than silently marking P35 complete.",
-      "acceptance_gaps": [
-        "The original acceptance gate explicitly depends on P33; a readable article does not satisfy that absent kernel work.",
-        "P04, P05 and P26 are complete; P27's controlled experiments and P33's kernel verification are absent.",
-        "A final claim-by-claim proof/certificate matrix and submission-focused literature comparison must be reconciled with achieved scope."
-      ],
-      "packet": "handoff/tasks/P35.md"
-    },
-    {
-      "id": "P36",
-      "title": "Choose the second paper from actual results",
-      "status": "blocked",
-      "effort": "L",
-      "priority": 3,
-      "dependencies": [
-        "P19",
-        "P22",
-        "P31",
-        "P32",
-        "P35"
-      ],
-      "evidence": [
-        "docs/chapters/14_literature_and_claims.md",
-        "docs/chapters/13_research_program.md",
-        "docs/development/PUSHES.md"
-      ],
-      "existing_work": "Candidate B (exact tree/separator methods) and Candidate C (structural preservation) are clearly described as future papers. Their theorem centers are not declared achieved.",
-      "next_action": "Wait for substantive accepted results, then select one coherent paper center and package that result; preserve unfinished branches in the ledger instead of combining them into a larger manuscript.",
-      "acceptance_gaps": [
-        "P19 is complete; P22/P31/P32/P35 outcomes have not been accepted.",
-        "No second paper is selected around an actual substantial theorem or decisive negative classification, with focused literature comparison and reproduced artifacts.",
-        "The open-problem ledger must distinguish original pushes from any newly approved terminal-interface or delayed-visibility branch."
-      ],
-      "packet": "handoff/tasks/P36.md"
-    }
-  ],
-  "baseline_commit": "89fb96d25bef0463e41feb74d987b464e5fd534f"
+    "commands": [
+     "PYTHONPATH=src python scripts/census_manifest.py --check",
+     "PYTHONPATH=src python -m unittest tests.test_census -v"
+    ]
+   }
+  },
+  {
+   "id": "P30",
+   "title": "Measure collision classes across invariants",
+   "status": "implemented_pending_acceptance",
+   "effort": "M",
+   "priority": 2,
+   "dependencies": [
+    "P12",
+    "P14",
+    "P29"
+   ],
+   "evidence": [
+    "scripts/collision_census.py",
+    "results/collision_census.json",
+    "results/visibility_filtration.json",
+    "results/late_collisions.json",
+    "results/census_manifest.json",
+    "docs/chapters/10_inverse_problems.md"
+   ],
+   "existing_work": "collision_census.py (checked in CI) computes on the CENSUS-v1 population, one representative per isomorphism class: degree sequences, Laplacian characteristic polynomials, binary cut profiles, nested-pair censuses, and symbolic local and marked prefixes through volume 3 plus a separate q=1/2 column. It lists every nontrivial class with codes, cross-invariant split counts, signed witnesses for every pair first separated at volume 2 or 3, and a chain-recomputed sample. On six vertices: 112 classes; 68 degree sequences; 110 spectra (two cospectral pairs, both separated at volume 3); height prefix 68/100/112 classes at volumes 1/2/3; binary profile and nested census separate all 112. results/visibility_filtration.json holds memberships at every volume.",
+   "next_action": "Close P08 and P14, then mark P30 complete with the existing receipts.",
+   "acceptance_gaps": [
+    "Original dependency gate: P14 is not accepted (it waits on P08)."
+   ],
+   "packet": "handoff/tasks/P30.md"
+  },
+  {
+   "id": "P31",
+   "title": "Resolve targeted collisions structurally",
+   "status": "implemented_pending_acceptance",
+   "effort": "L",
+   "priority": 2,
+   "dependencies": [
+    "P16",
+    "P30"
+   ],
+   "evidence": [
+    "results/late_collisions.json",
+    "results/visibility_filtration.json",
+    "scripts/reproduce.py",
+    "docs/chapters/10_inverse_problems.md",
+    "src/singularity/terminals.py",
+    "src/singularity/lowvolume.py"
+   ],
+   "existing_work": "Every census collision that survives volume two (14 pairs, all on six vertices) is resolved with an explicit separating pattern: the ordered adjacent-degree sector agrees, the induced-triple sector differs, and the triangle counts differ in every pair; none is a single Whitney twist. For collisions that persist further, the mechanisms are proved: Whitney twists separate exactly through the antisymmetric kernel pairing (SNG-F41/F42/F45), and the pendant-cycle family has depth p+1 (SNG-F36).",
+   "next_action": "Once P30 retains spectral partitions and P16 is accepted, mark P31 complete with results/late_collisions.json and SNG-F41/F42/F45/F36 as the mechanisms.",
+   "acceptance_gaps": [
+    "Original dependency gates: P16 and P30 are not accepted.",
+    "The census classification is finite (n <= 6); no collision with equal full series has been found, so no equality bijection is claimed."
+   ],
+   "packet": "handoff/tasks/P31.md"
+  },
+  {
+   "id": "P32",
+   "title": "Seek a separation bound for one graph family",
+   "status": "implemented_pending_acceptance",
+   "effort": "L",
+   "priority": 2,
+   "dependencies": [
+    "P06",
+    "P12",
+    "P31"
+   ],
+   "evidence": [
+    "src/singularity/families.py",
+    "tests/test_families.py",
+    "scripts/pendant_family.py",
+    "results/pendant_family.json",
+    "docs/chapters/10_inverse_problems.md"
+   ],
+   "existing_work": "Theorem SNG-F36 (proved, uniform in the family): for the cycle C_2l with leaves at distance p versus opposite (2 <= p < l), all local, normalized and marked coefficients agree through volume p and the volume-(p+1) difference is q^2(1-q)^2(1-q^2)^p, entirely binary; the complete binary difference has the closed form q^2(1-q)^2(1-q^2)^p z^(p+1)(1-z)^2 U_(l-p)^2. With l=p+1 the depth is (n-2)/2, a decisive counterfamily to any fixed-depth bound for equal-order pairs with equal degree sequences, equal edge degree types and isometric cut lattices. Theorem SNG-F37 proves L_{G(l,j)} >= L_{G(l,j')} for j<=j'<=l on (0,1)^2 by a positive-definite Gaussian transfer kernel (sum of squares).",
+   "next_action": "Either accept P31 or record a roadmap amendment that P32's counterfamily outcome does not depend on P31; then close P32 with the existing receipt.",
+   "acceptance_gaps": [
+    "Original dependency gate: P31 (structural resolution of targeted collisions) is not accepted, so P32 cannot be marked complete without an explicit roadmap amendment.",
+    "The theorem is a counterfamily for fixed-depth bounds; no upper separation bound for a natural graph class is claimed."
+   ],
+   "packet": "handoff/tasks/P32.md"
+  },
+  {
+   "id": "P33",
+   "title": "Verify concrete coefficient certificates in a kernel",
+   "status": "planned",
+   "effort": "L",
+   "priority": 3,
+   "dependencies": [
+    "P07",
+    "P08",
+    "P23"
+   ],
+   "evidence": [
+    "src/singularity/certificates.py",
+    "results/certificates/spectral.json",
+    "results/certificates/binary_census.json",
+    "docs/chapters/12_computational_methodology.md",
+    "tests/test_analytics.py"
+   ],
+   "existing_work": "Python replay reconstructs declared coefficients and rejects altered sectors. This is independent finite computational checking, not a kernel-connected enumeration proof.",
+   "next_action": "Build formal/Singularity/Certificates.lean: weak-composition enumerator with coverage/uniqueness bridged to allCount, then kernel-check both decisive certificate tables and rejection examples.",
+   "acceptance_gaps": [
+    "P07/P08 formal foundations now compile locally (pending CI observation); P23 is complete.",
+    "No kernel theorem connects certificate tables to the coefficient definition yet; a kernel enumeration route on the P07 definitions is in progress.",
+    "Kernel tests rejecting a changed graph edge and coefficient remain absent."
+   ],
+   "packet": "handoff/tasks/P33.md"
+  },
+  {
+   "id": "P34",
+   "title": "Formalize the visibility comparison boundary",
+   "status": "blocked",
+   "effort": "L",
+   "priority": 3,
+   "dependencies": [
+    "P26",
+    "P33"
+   ],
+   "evidence": [
+    "docs/chapters/07_visibility_singularities.md",
+    "docs/chapters/06_euler_analysis.md",
+    "docs/papers/visibility.md"
+   ],
+   "existing_work": "The first-discrepancy ratio law and real zeta-factor asymptotic are proved in mathematical exposition with explicit branch and convergence scope.",
+   "next_action": "Inventory the chosen proof assistant's actual analytic libraries, formalize the finite local expansion first, and record every remaining analytic assumption without claiming full-chain verification until it compiles.",
+   "acceptance_gaps": [
+    "P26 is complete; P33 remains open and no formal analysis project exists.",
+    "No exposed list of imported analytic theorems, compiling local-expansion-to-asymptotic chain or precisely recorded unformalized boundary is supplied."
+   ],
+   "packet": "handoff/tasks/P34.md"
+  },
+  {
+   "id": "P35",
+   "title": "Release the first focused manuscript",
+   "status": "partial",
+   "effort": "M",
+   "priority": 3,
+   "dependencies": [
+    "P04",
+    "P05",
+    "P26",
+    "P27",
+    "P33"
+   ],
+   "evidence": [
+    "docs/papers/visibility.md",
+    "docs/visibility_paper.tex",
+    "docs/visibility_paper.html",
+    "output/pdf/visibility_paper.pdf",
+    "docs/references.bib",
+    "results/validation.json",
+    "scripts/reproduce.py"
+   ],
+   "existing_work": "A six-page focused article with editable sources, literature context, finite examples and the real comparison theorem is already released. Independent computational replay and claim-scope guidance exist. It makes no kernel-verification or priority claim.",
+   "next_action": "Treat the current article as a reusable draft. Build its claim matrix and update it as dependencies close; if publication is pursued earlier, record an explicit roadmap dependency amendment rather than silently marking P35 complete.",
+   "acceptance_gaps": [
+    "The original acceptance gate explicitly depends on P33; a readable article does not satisfy that absent kernel work.",
+    "P04, P05 and P26 are complete; P27's controlled experiments and P33's kernel verification are absent.",
+    "A final claim-by-claim proof/certificate matrix and submission-focused literature comparison must be reconciled with achieved scope."
+   ],
+   "packet": "handoff/tasks/P35.md"
+  },
+  {
+   "id": "P36",
+   "title": "Choose the second paper from actual results",
+   "status": "blocked",
+   "effort": "L",
+   "priority": 3,
+   "dependencies": [
+    "P19",
+    "P22",
+    "P31",
+    "P32",
+    "P35"
+   ],
+   "evidence": [
+    "docs/chapters/14_literature_and_claims.md",
+    "docs/chapters/13_research_program.md",
+    "docs/development/PUSHES.md"
+   ],
+   "existing_work": "Candidate B (exact tree/separator methods) and Candidate C (structural preservation) are clearly described as future papers. Their theorem centers are not declared achieved.",
+   "next_action": "Wait for substantive accepted results, then select one coherent paper center and package that result; preserve unfinished branches in the ledger instead of combining them into a larger manuscript.",
+   "acceptance_gaps": [
+    "P19 is complete; P22/P31/P32/P35 outcomes have not been accepted.",
+    "No second paper is selected around an actual substantial theorem or decisive negative classification, with focused literature comparison and reproduced artifacts.",
+    "The open-problem ledger must distinguish original pushes from any newly approved terminal-interface or delayed-visibility branch."
+   ],
+   "packet": "handoff/tasks/P36.md"
+  }
+ ],
+ "baseline_commit": "89fb96d25bef0463e41feb74d987b464e5fd534f"
 }

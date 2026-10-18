@@ -41,3 +41,7 @@ P07, and through it P08, P13, P14, P15, P33 and P34, need a kernel-checked devel
 ## D010: generated documents without XeLaTeX
 
 `scripts/build_documents.py --no-pdf` regenerates `docs/MONOGRAPH.md`, `docs/monograph.tex`, `docs/monograph.html` and `results/manuscript_counts.json` with Pandoc, and leaves the PDFs unchanged. In this session the LaTeX/HTML/Markdown outputs were regenerated after every manuscript change. `output/pdf/monograph.pdf` and `output/pdf/visibility_paper.pdf` are therefore stale relative to the chapters until a build with XeLaTeX runs. The companion paper source did not change. The v0.1.0 release archive is historical and was not rebuilt.
+
+## D011: a pinned core Lean toolchain from the GitHub release
+
+On 2026-10-18 the network policy allowed GitHub release downloads, although the Lean release host still failed. The session downloaded `lean-4.12.0-linux.tar.zst` from `github.com/leanprover/lean4/releases`, unpacked it with the Python `zstandard` module in the scratch directory, and built `formal/` with core Lean only (no Mathlib, whose cache hosts were not used). CI repeats this in the `formal-lean` job and runs `scripts/check_formal.py`, which fails on any axiom outside `propext`, `Quot.sound` and `Classical.choice`. This supersedes the blocker in D009 for P07 and P08. Formal pushes that need Mathlib-scale libraries would require a further decision.

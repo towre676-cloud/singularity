@@ -453,7 +453,7 @@ D(z)=z^{-43}(z-1)^{11}H(z),\qquad \deg H=68,\quad H(1)=3{,}870{,}720,\quad H(0)=
 \]
 \(H\) changes sign between \(z=1.1213855316120952\) and \(1.1213855316120954\), so the boundary system degenerates at \(q_*\approx0.8917539702535734\). This obstructs only unrestricted polynomials. Whether a graph slice can realize the degeneracy is open.
 
-`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open.
+`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open, but a realization is tightly constrained. Without the terminal edge at \(R=11\), the candidate is a multiple of \(e_{\{0,5\}}[11]-e_{\{3,4\}}[11]\), at interior volumes \(6\) and \(4\). Two blocks realizing it must have equal symmetrized kernels at every coordinate of degree at most ten. In particular their interiors, pinned at terminal height zero, have equal series through interior volume eleven. Their slice-four difference \(P\) must satisfy \(F_P(s,t)=0\) at every state with \(s+t\le7\) except \(\{3,4\}\). By SNG-F59 this leaves a five-dimensional affine family of slice-four polynomials, fixed by the values at \(s+t=8\). Dominating and other single-charge blocks cannot realize it: their slice differences are \(q^{m(s^2+t^2)}\Delta A_jq^{-2j(s+t)}\), nonzero at the state \((0,0)\) as soon as they are nonzero anywhere. Blocks on at most six vertices are already separated by \(K^+\) at volume four. A realization therefore needs larger blocks whose pinned interiors agree through volume eleven, which by SNG-F55 means equal decorated connected-set statistics up to size eleven.
 
 ### Boundary charges and a growing compression family
 
@@ -514,7 +514,13 @@ For blocks whose patterns span two dimensions the charge table is not smaller th
 
 *Future classes.* For every isomorphism class of interiors on at most six vertices (\(1,2,4,11,34,156\) classes), the sequences \(A_{H,0..5}\) are pairwise distinct. On that population, future equivalence of dominating blocks at budget five is isomorphism of the interiors. Whether non-isomorphic interiors can share the whole sequence, which by SNG-F53(c) would make their dominating blocks indistinguishable in every context, is open. Computing \(A_{H,j}\) for large \(H\) is handled by the connected-support compiler of SNG-F55 below.
 
-*Charge dimension.* If the terminal patterns present have affine dimension \(a\), the cells \((j,Q)\) with \(j\le R\) number \(\Theta(R^{a+1})\). With two distinct patterns \(\chi_1\ne\chi_2\), the charge \(Q=J_1\chi_1+(j-J_1)\chi_2\) determines \(J_1\), so there are exactly \(\binom{R+2}2\) cells, even when \(\chi_1,\chi_2\) span two linear dimensions. For ordered terminal observations there is a reconstruction chart without exceptional parameters. Project the distinct charges of a slice injectively to \(a\) coordinates, and sample the terminal states at the projected charges. The matrix \(M_{v,w}=q^{-2v\cdot w}\) is strictly positive definite, because \(\sum c_vc_wM_{v,w}=\sum_\alpha\frac{(-2\log q)^{|\alpha|}}{\alpha!}\bigl(\sum_vc_vv^\alpha\bigr)^2\) and polynomial interpolation on a finite set makes some square nonzero. The total budget is at most \((a+1)R\). With several charges per slice the single-closure inverse of SNG-F53(c) is replaced by such a chart \(J\), and transport becomes \(J'J^{-1}\). These charts are not implemented.
+*Charge dimension.* If the terminal patterns present have affine dimension \(a\), the cells \((j,Q)\) with \(j\le R\) number \(\Theta(R^{a+1})\). With two distinct patterns \(\chi_1\ne\chi_2\), the charge \(Q=J_1\chi_1+(j-J_1)\chi_2\) determines \(J_1\), so there are exactly \(\binom{R+2}2\) cells, even when \(\chi_1,\chi_2\) span two linear dimensions. For ordered terminal observations there is a reconstruction chart without exceptional parameters. Project the distinct charges of a slice injectively to \(a\) coordinates, and sample the terminal states at the projected charges. The matrix \(M_{v,w}=q^{-2v\cdot w}\) is strictly positive definite, because \(\sum c_vc_wM_{v,w}=\sum_\alpha\frac{(-2\log q)^{|\alpha|}}{\alpha!}\bigl(\sum_vc_vv^\alpha\bigr)^2\) and polynomial interpolation on a finite set makes some square nonzero. The total budget is at most \((a+1)R\). With several charges per slice the single-closure inverse of SNG-F53(c) is replaced by such a chart \(J\), and transport becomes \(J'J^{-1}\).
+
+**Proposition SNG-F62 (ordered charge charts).** Let the patterns of a block have affine dimension \(a\). Choose \(a\) terminal coordinates on which the differences of patterns have full rank. Projection to those coordinates is then injective on the charges of every slice, because \(Q-j\chi_0\) lies in the span of the differences. The ordered kernel at the embedded projected charges determines every \(A_{j,Q}\), with total volume at most \((a+1)R\). Two such charts are related by \(\mathcal U=J'J^{-1}\), slice by slice.
+
+*Proof.* At \(\mathbf b\) supported on the chosen coordinates, \([x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}\). The matrix is the positive-definite kernel above, so each slice is a nonsingular square system. Each sampled coordinate is a charge coordinate, hence at most \(j\). \(\square\)
+
+`charge_chart`, `recover_from_chart` and `chart_transport` in `src/singularity/charges.py` implement this. The tests recover the charge tables exactly from ordered kernels computed by bag messages: a false-twin block (\(a=1\)), a block with four patterns (\(a=2\)), and a three-terminal block, where transport between two different charts reproduces the second chart's observations.
 
 ## Every late census collision is separated by triangles
 
@@ -606,13 +612,13 @@ summed over the \(n!\) bijections of heights to vertices. The positions \(2\cdot
 
 Second, the specialization keeps this information. If the histograms of \(H\) and \(H'\) differ, factor out the first differing power of \(\eta\). The remaining constant is a nonzero integer, while the tail has absolute value at most \(n!\eta/(1-\eta)<1\). So equal coefficients force equal histograms, which contain a common labelled adjacency matrix. \(\square\)
 
-The separating volumes in (c) are enormous. This is a completeness statement, not an isomorphism algorithm, and completeness of the fixed-pinning series \(A_H=F_2(H)\) remains open.
+The separating volumes in (c) are enormous. This is a completeness statement, not an isomorphism algorithm, and completeness of the fixed-pinning series \(A_H=F_2(H)\) remains open. On small populations the fixed-pinning series is already complete. All 1,044 graphs on seven vertices, disconnected ones included, have distinct \(A_H\) and distinct \(L_H\) through volume five; a separate session run confirmed volume six. Among the 12,346 graphs on eight vertices, exactly twenty pairs agree through volume five, the same twenty for \(A_H\), for \(L_H\) and for the full moment series. All of them are connected with equal degree sequences, and all separate at volume six (`collision_census` in `results/loop_series.json`). This is a finite statement about these populations.
 
 At budgets the compiler reaches, (b) gives an inexpensive enrichment with an independent check. In moment mode, `moment_series` in `src/singularity/locality.py` carries \(S\) through the connected-support compiler, packed into the exponent key \(E(R^2+1)+S\), which stays additive and decodable through degree \(R\). `moments_from_pinnings` recovers \(C_{j,S}(q_0)\) from \(\binom R2+1\) ordinary pinned series. The receipt checks both against enumeration, as well as the strata of (a).
 
 ### Beyond the first cycle: overlaps
 
-SNG-F56 resolves cycles. The next information a budget reaches is how cycles overlap. Three exact computations make this concrete.
+SNG-F56 resolves cycles. The next information a budget reaches is how cycles overlap. Three exact computations make this concrete, and SNG-F60 and SNG-F61 below prove the pattern.
 
 *Rook against Shrikhande.* The \(4\times4\) rook graph and the Shrikhande graph are \(6\)-regular on sixteen vertices, with the same spectrum, thirty-two triangles, sixty squares and forty-eight diamond subgraphs. They differ in \(K_4\) subgraphs: eight against none. Their series agree below volume four, and
 \[
@@ -620,19 +626,69 @@ SNG-F56 resolves cycles. The next information a budget reaches is how cycles ove
 \]
 for \(\lambda=0,2\), confirmed by enumeration. With \(a=q^{d+\lambda}\), \(f=q^{-2}-1\) and \(\kappa=af\), this is \(\kappa^4f^2\Delta N_{K_4}\). It matches the normalized girth-three term \(N_4+fN_{\mathrm{diamond}}+f^2N_{K_4}\), with diamonds counted as subgraphs: the induced counts are \(0\) and \(48\), and each \(K_4\) contains six diamonds.
 
-*One volume past the first cycle.* Put \(\beta=a\bigl((d-2)f-2\bigr)+a^3(q^{-2}+1)^2\). For \(d\)-regular graphs of equal order and girth at least \(g\ge5\),
+*The loop decomposition.* For a regular graph the whole series below the first overlap is determined by cycle counts. Let \(\mathbb T_d\) be the \(d\)-regular tree, and let \(\mathcal U_\ell\) be the cycle \(C_\ell\) with \(d-2\) infinite \((d-1)\)-ary branches at each vertex. Put \(b_g=\lceil3g/2\rceil-1\). Define the universal series
+\[
+b_{d,\lambda}=\sum_{o\in S\subseteq\mathbb T_d}\frac{\Phi_S}{|S|},\qquad
+W_{\ell,d,\lambda}=\sum_{C\subseteq S\subseteq\mathcal U_\ell}\Phi_S-\ell\sum_{S'}\Phi_{S'},
+\]
+over finite connected sets. In the last sum \(S'\) ranges over the subtrees of \(\mathbb T_d\) that meet a fixed bi-infinite line \(L\) exactly in a path \([0,m-1]\) with \(m\ge\ell\). These are the tree unfoldings of the cycle, counted modulo translation along \(L\), which lifts \(C\).
+
+**Theorem SNG-F60 (loop decomposition below the first overlap).** Let \(H\) be \(d\)-regular on \(n\) vertices with girth at least \(g\), and let \(R<b_g\). Then
+\[
+\log F_\lambda(H)\equiv n\,b_{d,\lambda}+\sum_{\ell=g}^{R}N_\ell(H)\,W_{\ell,d,\lambda}\pmod{x^{R+1}},
+\]
+and \(W_\ell=\kappa^\ell x^\ell+O(x^{\ell+1})\), with \(\kappa=af\), \(a=q^{d+\lambda}\), \(f=q^{-2}-1\).
+
+*Proof.* A connected graph with two independent cycles contains a theta, a figure-eight or a dumbbell. Under girth \(\ge g\), a theta with path lengths \(\alpha,\beta,\gamma\) needs \(\alpha+\beta,\beta+\gamma,\gamma+\alpha\ge g\), hence at least \(b_g\) vertices; the other two need at least \(2g-1\). So for \(|S|<b_g\), \(H[S]\) is a tree or has exactly one cycle, which is chordless.
+
+Let \(p:\mathbb T_d\to H\) be the universal covering, and fix a lift \(\tilde v\) of each vertex. Summing \(\Phi_{S'}/|S'|\) over subtrees \(S'\ni\tilde v\) with \(|S'|\le R\), and then over \(v\), gives \(nb\) modulo \(x^{R+1}\), since \(\Phi_{S'}\) is computed with all weights equal to \(d+\lambda\). Regroup by the image \(p(S')\):
+- If \(p\) is not injective on \(S'\), the geodesic between two points with the same image projects to a closed non-backtracking walk, so the image contains a cycle and hence exactly one.
+- An image \(S\) inducing a tree arises exactly once through each of its \(|S|\) vertices, and contributes \(\Phi_S\).
+- An image \(S\) with one cycle contributes an amount \(\Psi(H[S])\) that depends only on the type of \(H[S]\). The relevant component of \(p^{-1}(S)\) is the universal cover of \(H[S]\).
+
+For an \(\ell\)-cycle \(C\) of \(H\), the covering \(q_C:\mathcal U_\ell\to H\) with \(q_C(\tilde C)=C\) induces a type-preserving bijection. On one side are the finite connected \(\tilde S\supseteq\tilde C\) with \(|\tilde S|\le R\); on the other, the sets \(S\) of \(H\) with one cycle, namely \(C\), and \(|S|\le R\). By the lifting criterion every such \(S\) lifts uniquely, since its fundamental group is generated by \(C\). Conversely, a collision or an extra edge in \(q_C(\tilde S)\) would give a loop not in \(\langle C\rangle\), hence two independent cycles on fewer than \(b_g\) vertices.
+
+Therefore \(\log F=\sum_S\Phi_S=nb+\sum_{S\text{ unicyclic}}(\Phi_S-\Psi(H[S]))\), and the last sum equals \(\sum_\ell N_\ell W_\ell\). For the cover \(\mathbb T_d\to\mathcal U_\ell\), the preimage of \(C\) is the single line \(L\), and the tree unfoldings of \(\tilde S\) are the subtrees whose intersection with \(L\) covers every residue modulo \(\ell\). Those are the paths of length at least \(\ell\), counted modulo translation, which is the factor \(\ell\). Every set in \(W_\ell\) has at least \(\ell\) vertices. At degree \(\ell\) only \(C\) and the \(\ell\)-vertex paths enter, and SNG-F56 gives \(\kappa^\ell\). \(\square\)
+
+For \(d=2\), \(\mathcal U_\ell=C_\ell\) and \(W_\ell=D_\ell\) of SNG-F57.
+
+**Theorem SNG-F61 (the first overlap).** In SNG-F60 take \(R=b_g\). Then
+\[
+\log F_\lambda(H)\equiv nb+\sum_{\ell=g}^{R}N_\ell W_\ell+x^R\sum_{S}a^R\sum_{E'}f^{|E'|}\pmod{x^{R+1}},
+\]
+where \(S\) runs over the connected \(R\)-sets whose induced graph has cyclomatic number at least \(2\), and \(E'\) over the connected spanning edge sets of \(H[S]\) with cyclomatic number at least \(2\).
+
+*Proof.* Below degree \(R\) nothing changes. At degree \(R\) the only new sets are the multicyclic \(R\)-sets, and only their multilinear coefficient enters, which is \(a^R\sum f^{|E'|}\) over all connected spanning \(E'\) (SNG-F56). The background assigns to \(S\) the lifts through its spanning trees, worth \(\tau(H[S])a^Rf^{R-1}\). A cycle term \(W_\ell\) assigns to each connected spanning subgraph \(U\) of \(H[S]\) with one cycle the lifted set \(\tilde S\), which induces exactly \(U\). That contributes \(a^R(f^R+\ell f^{R-1})\), minus its \(\ell\) tree unfoldings, net \(a^Rf^R\). Subtracting the tree and unicyclic parts from the full sum leaves the stated correction. The covering counts break only at these sets, because two independent cycles need at least \(R\) vertices. \(\square\)
+
+For \(g\ge4\) the multicyclic \(b_g\)-sets are exactly the balanced thetas \(\Theta_g\), with path lengths \((g/2,g/2,g/2)\) or \(((g-1)/2,(g+1)/2,(g+1)/2)\). Each contributes \(a^Rf^{R+1}=\kappa^Rf\). For \(g=3\), \(R=4\), a diamond subgraph contributes \(\kappa^4f\) and a \(K_4\) contributes \(\kappa^4f^2\) beyond the six diamonds it contains. This proves the normalized forms \(N_{b_g}+fN_{\Theta_g}\) and \(N_4+fN_{\mathrm{diamond}}+f^2N_{K_4}\), and with them the rook–Shrikhande coefficient above and the two-temperature recovery below, in absolute form.
+
+*One volume past the first cycle.* Put \(\beta=a\bigl((d-2)f-2\bigr)+a^3(q^{-2}+1)^2\). Then \([x^{g+1}]W_{g,d,\lambda}=g\beta\kappa^g\) for every \(g\ge3\), \(d\ge2\) and \(\lambda\ge0\). For \(g\ge5\) we have \(g+1<b_g\), so SNG-F60 and \([x]\log F=na\) give, for \(d\)-regular graphs of equal order and girth at least \(g\),
 \[
 \Delta[x^{g+1}]F_\lambda=\Delta N_{g+1}\kappa^{g+1}+\Delta N_g\kappa^g(g\beta+na).
 \]
-The term \(na\) comes from exponentiating the logarithm, since \([x]\log F=na\). We verified this as an exact Laurent identity, for \(\lambda=0,2\), on seven pairs: \(2C_g\) against \(C_{2g}\) for \(g=5,6,7\); two Petersen graphs against the dodecahedron; the dodecahedron against the Desargues graph; and two Petersen graphs against the Desargues graph. A general proof is not written. The natural route is a centered (loop-series) expansion: for \(R<b_g=\lceil3g/2\rceil-1\), the only connected footprints without leaves are single cycles, so one expects \(\log F_\lambda\equiv nb_{d,\lambda}+\sum_{\ell=g}^RN_\ell W_{\ell,d,\lambda}\) with universal series. We record this as a conjecture.
+
+*Proof of the coefficient.* At degree \(g+1\), \(W_g\) receives contributions from the following sets:
+- the cycle with one vertex at height two;
+- the cycle with a pendant vertex (\(g(d-2)\) choices);
+- with sign \(-g\): the path \(P_g\) with one vertex at height two, the path \(P_{g+1}\), and \(P_g\) with a pendant.
+
+The pendant terms combine to \(g(d-2)a^{g+1}f^g\bigl((f+g)-g\bigr)=g\kappa^g\cdot a(d-2)f\).
+
+For a vertex \(v\) at height two, the coefficient of \(x_v^2\prod_{u\ne v}x_u\) in \(\log Z\) is given by a *twin lemma*:
+\[
+\tfrac12a^{k+1}\sum_{E'\subseteq G^*}\prod f_e+\tfrac12a^{k+3}\sum_{E'\subseteq G}\prod f'_e .
+\]
+Here \(G^*\) adds a twin \(v'\) of \(v\), joined to the neighbours of \(v\) with weight \(f\), and to \(v\) with weight \(a^2-1\). The weights \(f'\) equal \(q^{-4}-1\) on the edges at \(v\) and \(f\) elsewhere. Both sums run over connected spanning edge sets. The lemma comes from writing the two units at \(v\) as labelled copies: multiset partitions are half the set partitions of \(V\cup\{v'\}\), plus half of those keeping the copies together.
+
+Enumerating the connected spanning edge sets of the cycle, the path and their twins gives a closed form in \(a\), \(f\) and \(\ell\). After division by \(a^{\ell+1}f^{\ell-3}\), the required identity is polynomial in \(a\) and \(f\) and linear in \(\ell\). `scripts/loop_series.py` checks it symbolically, with \(a\) and \(f\) independent, for \(\ell=3,\ldots,8\), which is enough. It also checks each component against compiler coefficients. \(\square\)
 
 *The first bicycle.* For girth \(g=4\), the first footprint with two independent cycles is \(K_{2,3}\), on \(b_4=5\) vertices. Take three cubic graphs on twelve vertices, each with six squares, whose \((N_5,N_{K_{2,3}})\) counts are \((0,0)\), \((0,1)\) and \((4,2)\). For every pair and \(\lambda=0,2\), the series agree below volume five, and
 \[
 \Delta[x^5]F_\lambda=\kappa^5\bigl(\Delta N_5+f\,\Delta N_{K_{2,3}}\bigr).
 \]
-Since \(f(1/2)=3\) and \(f(1/3)=8\), the normalized differences \(r(q)=\Delta[x^5]F/\kappa^5\) at two temperatures recover both counts: \(\Delta N_{K_{2,3}}=(r(1/3)-r(1/2))/5\) and \(\Delta N_5=(8r(1/2)-3r(1/3))/5\). The receipt recovers all three pairs exactly. The absolute version, which subtracts universal background and cycle series, depends on the conjectured decomposition above.
+Since \(f(1/2)=3\) and \(f(1/3)=8\), the normalized differences \(r(q)=\Delta[x^5]F/\kappa^5\) at two temperatures recover both counts: \(\Delta N_{K_{2,3}}=(r(1/3)-r(1/2))/5\) and \(\Delta N_5=(8r(1/2)-3r(1/3))/5\). The receipt recovers all three pairs exactly. By SNG-F61 the absolute version holds too: after subtracting \(nb\) and the cycle terms, the normalized degree-five coefficient is \(N_5+fN_{K_{2,3}}\).
 
-So a budget resolves cycles first and then their overlaps, and two temperatures already separate a cycle count from a bicycle count. These statements are checked in `results/overlap_hierarchy.json`, produced by `scripts/overlap_hierarchy.py` and checked in CI.
+So a budget resolves cycles first and then their overlaps, and two temperatures already separate a cycle count from a bicycle count. The computations are checked in `results/overlap_hierarchy.json`, produced by `scripts/overlap_hierarchy.py`. The decomposition is checked in `results/loop_series.json`, produced by `scripts/loop_series.py`; both scripts run in CI. That receipt compares SNG-F60 and SNG-F61 with the compiler, for \(\lambda=0,2\), on the cube, \(K_{3,3}\), the Petersen graph, the rook and Shrikhande graphs, \(K_5\), \(C_5\) and the three twelve-vertex cubic graphs, below and at \(b_g\). The cycle-only prediction fails at \(b_g\) exactly for the graphs that contain a multicyclic \(b_g\)-set. A retained sweep over all twenty-five generalized Petersen graphs \(GP(m,k)\) with \(m\le14\) and girth \(4\le g\le6\) found every prediction exact at \(R=b_g\). It also confirms \([x^{g+1}]W_g=g\beta\kappa^g\) on a grid of \(d\le4\), \(\lambda\in\{0,2\}\), \(g\le6\).
 
 ## What should be searched next?
 
