@@ -7351,6 +7351,106 @@ missing information. <code>marked_glue</code> in
 <code>src/singularity/terminals.py</code> implements this, and the tests
 compare it with direct marked enumeration for straight and twisted
 gluings and for a disconnected block.</p>
+<p><strong>Proposition SNG-F44 (star probes determine a block).</strong>
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+be a block with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+terminals and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R\ge0</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐫</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>R</mi><msup><mo stretchy="false" form="postfix">}</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\mathbf r\in\{0,\ldots,R\}^k</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>𝐫</mi></msub><annotation encoding="application/x-tex">S_{\mathbf r}</annotation></semantics></math>
+be the context with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>i</mi></msub><annotation encoding="application/x-tex">r_i</annotation></semantics></math>
+pendant leaves on terminal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+The series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi>G</mi><mo>∪</mo><msub><mi>S</mi><mi>𝐫</mi></msub></mrow></msub><annotation encoding="application/x-tex">L_{G\cup S_{\mathbf r}}</annotation></semantics></math>
+modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>,
+over all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><annotation encoding="application/x-tex">(R+1)^k</annotation></semantics></math>
+such
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐫</mi><annotation encoding="application/x-tex">\mathbf r</annotation></semantics></math>,
+determine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x^{|\mathbf b|}K_G(\mathbf b)</annotation></semantics></math>
+modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf b</annotation></semantics></math>,
+and this holds already after specializing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+to any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>.
+Consequently two
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-terminal
+blocks satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi>G</mi><mo>∪</mo><mi>C</mi></mrow></msub><mo>=</mo><msub><mi>L</mi><mrow><mi>G</mi><mi>′</mi><mo>∪</mo><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">L_{G\cup C}=L_{G&#39;\cup C}</annotation></semantics></math>
+for every edge-disjoint context
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+if and only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>G</mi></msub><mo>=</mo><msub><mi>K</mi><mrow><mi>G</mi><mi>′</mi></mrow></msub></mrow><annotation encoding="application/x-tex">K_G=K_{G&#39;}</annotation></semantics></math>.</p>
+<p><em>Proof.</em> A leaf on a terminal of height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mrow><mi>c</mi><mo>≥</mo><mn>0</mn></mrow></msub><msup><mi>x</mi><mi>c</mi></msup><msup><mi>q</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>−</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msup></mrow><annotation encoding="application/x-tex">f(h)=\sum_{c\ge0}x^cq^{(c-h)^2}</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi>G</mi><mo>∪</mo><msub><mi>S</mi><mi>𝐫</mi></msub></mrow></msub><mo>=</mo><msub><mo>∑</mo><mi>𝐛</mi></msub><msub><mi>y</mi><mi>𝐛</mi></msub><msub><mo>∏</mo><mi>i</mi></msub><mi>f</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>r</mi><mi>i</mi></msub></msup></mrow><annotation encoding="application/x-tex">L_{G\cup S_{\mathbf r}}=\sum_{\mathbf b}y_{\mathbf b}\prod_if(b_i)^{r_i}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>𝐛</mi></msub><mo>=</mo><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y_{\mathbf b}=x^{|\mathbf b|}K_G(\mathbf b)</annotation></semantics></math>.
+Modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>
+only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|\le R</annotation></semantics></math>
+contributes, and in particular only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>i</mi></msub><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">b_i\le R</annotation></semantics></math>.
+In the ring
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)[x]/(x^{R+1})</annotation></semantics></math>,
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q[x]/(x^{R+1})</annotation></semantics></math>
+after specializing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>,
+the differences
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≡</mo><msup><mi>q</mi><msup><mi>h</mi><mn>2</mn></msup></msup><mo>−</mo><msup><mi>q</mi><mrow><mi>h</mi><msup><mi>′</mi><mn>2</mn></msup></mrow></msup><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(h)-f(h&#39;)\equiv q^{h^2}-q^{h&#39;^2}\pmod x</annotation></semantics></math>
+are units for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≠</mo><mi>h</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">h\ne h&#39;</annotation></semantics></math>,
+because their constant terms are nonzero (for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>q</mi><mn>0</mn></msub><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;q_0&lt;1</annotation></semantics></math>
+the numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>q</mi><mn>0</mn><msup><mi>h</mi><mn>2</mn></msup></msubsup><annotation encoding="application/x-tex">q_0^{h^2}</annotation></semantics></math>
+are distinct). The tensor Vandermonde matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msub><mo>∏</mo><mi>i</mi></msub><mi>f</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>r</mi><mi>i</mi></msub></msup><msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mrow><mi>𝐫</mi><mo>,</mo><mi>𝐛</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\bigl(\prod_if(b_i)^{r_i}\bigr)_{\mathbf r,\mathbf b}</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐛</mi><mo>,</mo><mi>𝐫</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>R</mi><msup><mo stretchy="false" form="postfix">}</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\mathbf b,\mathbf r\in\{0,\ldots,R\}^k</annotation></semantics></math>,
+is therefore invertible: its determinant is a product of powers of these
+differences. Solving recovers every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>𝐛</mi></msub><annotation encoding="application/x-tex">y_{\mathbf b}</annotation></semantics></math>,
+including those with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|&gt;R</annotation></semantics></math>,
+which vanish. The ‘if’ part of the consequence is the gluing formula;
+the ‘only if’ part follows from the star contexts.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>So every distinction a block can make in any context is already made
+by star contexts. The kernel is the complete interface object for
+edge-disjoint gluing at its terminals. Linear recovery needs at least as
+many probes as unknowns
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>𝐛</mi></msub><annotation encoding="application/x-tex">y_{\mathbf b}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|\le R</annotation></semantics></math>,
+namely
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mi>k</mi></mrow><mi>k</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+k}{k}</annotation></semantics></math>;
+the star family uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><annotation encoding="application/x-tex">(R+1)^k</annotation></semantics></math>.
+Whether a smaller realizable family suffices, and how much a restricted
+family of contexts can compress the interface, are the open questions of
+the proposed units P49–P54. <code>recover_kernel_from_probes</code> in
+<code>src/singularity/terminals.py</code> carries out the inversion at a
+rational
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math>.
+The test recovers a two-terminal kernel through volume three from
+sixteen glued graphs counted by plain enumeration.</p>
 <p>A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two

@@ -214,3 +214,76 @@ def marked_glue(first: Graph, first_terminals: Sequence[int], second: Graph, sec
                 result[key[0], key[1], span] = count
         previous = current
     return dict(sorted(result.items()))
+
+
+def star_probe(terminal_count: int, leaves: Sequence[int]) -> tuple[Graph, tuple[int, ...]]:
+    """Context block: terminals 0..k-1 with leaves[i] pendant leaves on terminal i."""
+    k = _integer(terminal_count, "terminal_count", minimum=1)
+    leaves = tuple(_integer(r, "leaves", minimum=0) for r in leaves)
+    if len(leaves) != k:
+        raise ValueError("one leaf count per terminal is required")
+    edges, nxt = [], k
+    for i, r in enumerate(leaves):
+        for _ in range(r):
+            edges.append((i, nxt))
+            nxt += 1
+    return Graph(nxt, edges), tuple(range(k))
+
+
+def recover_kernel_from_probes(probe_values: dict[tuple[int, ...], list], terminal_count: int,
+                               max_volume: int, q) -> dict[tuple[int, ...], list]:
+    """Solve the star-probe system for y_b = x^|b| K(b)(x, q0) modulo x^(R+1) (SNG-F44).
+
+    ``probe_values[r]`` is the glued series (list of rationals, index = volume)
+    for the star probe with leaf counts r in {0..R}^k, specialized at q = q0.
+    Returns {b: series of y_b} for every b with |b| <= R.  The leaf factor
+    f(h) = sum_c x^c q0^((c-h)^2) satisfies f(h) - f(h') = q0^(h^2) - q0^(h'^2)
+    mod x, a unit when the q0^(h^2) are distinct, so the per-coordinate
+    Vandermonde systems are invertible over Q[x]/(x^(R+1)).
+    """
+    from fractions import Fraction
+    from itertools import product as cartesian
+
+    from .polynomials import series_inverse, series_mul
+
+    k, R, q0 = terminal_count, max_volume, Fraction(q)
+    if not 0 < q0 < 1:
+        raise ValueError("q must lie strictly between 0 and 1 so that the nodes are distinct")
+    nodes = [[{0: q0 ** ((c - h) ** 2)} for c in range(R + 1)] for h in range(R + 1)]
+
+    def mul(a, b):
+        return series_mul(a, b, R)
+
+    def sub(a, b):
+        return [{0: a[i].get(0, 0) - b[i].get(0, 0)} if (a[i] or b[i]) else {} for i in range(R + 1)]
+
+    def lagrange(h):
+        """Coefficients c_r with sum_r c_r f(x)^r equal to the Lagrange basis at node h."""
+        poly = [[{0: Fraction(1)}] + [{} for _ in range(R)]]  # polynomial in F with series coefficients
+        denominator = [{0: Fraction(1)}] + [{} for _ in range(R)]
+        for g in range(R + 1):
+            if g == h:
+                continue
+            # multiply poly by (F - f(g))
+            shifted = [[{} for _ in range(R + 1)]] + poly
+            scaled = [mul(c, nodes[g]) for c in poly] + [[{} for _ in range(R + 1)]]
+            poly = [sub(a, b) for a, b in zip(shifted, scaled)]
+            denominator = mul(denominator, sub(nodes[h], nodes[g]))
+        inverse = series_inverse(denominator, R)
+        return [mul(c, inverse) for c in poly]
+
+    basis = [lagrange(h) for h in range(R + 1)]
+    result = {}
+    for b in cartesian(range(R + 1), repeat=k):
+        if sum(b) > R:
+            continue
+        total = [{} for _ in range(R + 1)]
+        for r in cartesian(range(R + 1), repeat=k):
+            coefficient = [{0: Fraction(1)}] + [{} for _ in range(R)]
+            for i in range(k):
+                coefficient = mul(coefficient, basis[b[i]][r[i]])
+            value = [{0: Fraction(v)} if v else {} for v in probe_values[r]]
+            term = mul(coefficient, value)
+            total = [{0: total[i].get(0, 0) + term[i].get(0, 0)} for i in range(R + 1)]
+        result[b] = [t.get(0, Fraction(0)) for t in total]
+    return result

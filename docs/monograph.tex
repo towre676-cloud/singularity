@@ -4859,6 +4859,47 @@ information. \texttt{marked\_glue} in
 compare it with direct marked enumeration for straight and twisted
 gluings and for a disconnected block.
 
+\textbf{Proposition SNG-F44 (star probes determine a block).} Let \(G\)
+be a block with \(k\) terminals and \(R\ge0\). For
+\(\mathbf r\in\{0,\ldots,R\}^k\), let \(S_{\mathbf r}\) be the context
+with \(r_i\) pendant leaves on terminal \(i\). The series
+\(L_{G\cup S_{\mathbf r}}\) modulo \(x^{R+1}\), over all \((R+1)^k\)
+such \(\mathbf r\), determine \(x^{|\mathbf b|}K_G(\mathbf b)\) modulo
+\(x^{R+1}\) for every \(\mathbf b\), and this holds already after
+specializing \(q\) to any \(q_0\in(0,1)\). Consequently two
+\(k\)-terminal blocks satisfy \(L_{G\cup C}=L_{G'\cup C}\) for every
+edge-disjoint context \(C\) if and only if \(K_G=K_{G'}\).
+
+\emph{Proof.} A leaf on a terminal of height \(h\) contributes
+\(f(h)=\sum_{c\ge0}x^cq^{(c-h)^2}\), so
+\(L_{G\cup S_{\mathbf r}}=\sum_{\mathbf b}y_{\mathbf b}\prod_if(b_i)^{r_i}\)
+with \(y_{\mathbf b}=x^{|\mathbf b|}K_G(\mathbf b)\). Modulo \(x^{R+1}\)
+only \(|\mathbf b|\le R\) contributes, and in particular only
+\(b_i\le R\). In the ring \(\mathbb Q(q)[x]/(x^{R+1})\), or
+\(\mathbb Q[x]/(x^{R+1})\) after specializing \(q\), the differences
+\(f(h)-f(h')\equiv q^{h^2}-q^{h'^2}\pmod x\) are units for \(h\ne h'\),
+because their constant terms are nonzero (for \(0<q_0<1\) the numbers
+\(q_0^{h^2}\) are distinct). The tensor Vandermonde matrix
+\(\bigl(\prod_if(b_i)^{r_i}\bigr)_{\mathbf r,\mathbf b}\), with
+\(\mathbf b,\mathbf r\in\{0,\ldots,R\}^k\), is therefore invertible: its
+determinant is a product of powers of these differences. Solving
+recovers every \(y_{\mathbf b}\), including those with
+\(|\mathbf b|>R\), which vanish. The `if' part of the consequence is the
+gluing formula; the `only if' part follows from the star contexts.
+\(\square\)
+
+So every distinction a block can make in any context is already made by
+star contexts. The kernel is the complete interface object for
+edge-disjoint gluing at its terminals. Linear recovery needs at least as
+many probes as unknowns \(y_{\mathbf b}\) with \(|\mathbf b|\le R\),
+namely \(\binom{R+k}{k}\); the star family uses \((R+1)^k\). Whether a
+smaller realizable family suffices, and how much a restricted family of
+contexts can compress the interface, are the open questions of the
+proposed units P49--P54. \texttt{recover\_kernel\_from\_probes} in
+\texttt{src/singularity/terminals.py} carries out the inversion at a
+rational \(q_0\). The test recovers a two-terminal kernel through volume
+three from sixteen glued graphs counted by plain enumeration.
+
 A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two

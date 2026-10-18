@@ -95,6 +95,28 @@ class KernelTests(unittest.TestCase):
         box = terminal_kernel(first, (0, 3), 4, height=1)
         self.assertTrue(all(max(b) <= 1 for b in box))
 
+    def test_star_probes_determine_the_kernel(self):
+        from fractions import Fraction
+        from itertools import product
+        from singularity.polynomials import evaluate
+        from singularity.terminals import recover_kernel_from_probes, star_probe
+        block, terminals, bound, q = Graph(4, [(0, 2), (2, 3), (3, 1), (2, 1)]), (0, 1), 3, Fraction(1, 3)
+        probes = {}
+        for leaves in product(range(bound + 1), repeat=2):
+            context, context_terminals = star_probe(2, leaves)
+            glued, _ = glue_graphs(block, terminals, context, context_terminals)
+            probes[leaves] = [evaluate(row, q) for row in local_coefficients(glued, bound)]  # plain enumeration
+        recovered = recover_kernel_from_probes(probes, 2, bound, q)
+        kernel = terminal_kernel(block, terminals, bound)
+        for b, series in recovered.items():
+            expected = [Fraction(0)] * (bound + 1)
+            for (v, e), c in kernel.get(b, {}).items():
+                if sum(b) + v <= bound:
+                    expected[sum(b) + v] += c * q ** e
+            self.assertEqual(series, expected, b)
+        with self.assertRaises(ValueError):
+            recover_kernel_from_probes(probes, 2, bound, 1)
+
     def test_invalid_terminals_and_shared_edges(self):
         graph = Graph(3, [(0, 1), (1, 2)])
         for terminals in ((), (0, 0), (0, 3), (True,)):

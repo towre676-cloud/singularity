@@ -28,14 +28,14 @@ The six waves have three centers: certified arithmetic evaluation, exactly contr
 
 ## Wave C: contexts and interfaces (P49–P54)
 
-| ID | Proposed result |
-|---|---|
-| P49 | Future-context equivalence for a specified attachment grammar |
-| P50 | Connection-matrix formulation and realizable response spaces |
-| P51 | Unrestricted linear-interface lower bound under pinned probes |
-| P52 | Volume-limited interface rank |
-| P53 | Constructive restricted-context quotients |
-| P54 | A compression theorem with proved savings, including arithmetic cost |
+| ID | Proposed result | Evidence so far |
+|---|---|---|
+| P49 | Future-context equivalence for a specified attachment grammar | SNG-F44: for all edge-disjoint contexts, equivalence is equality of kernels, and star contexts suffice |
+| P50 | Connection-matrix formulation and realizable response spaces | SNG-F41 bilinear gluing; SNG-F44 tensor Vandermonde |
+| P51 | Unrestricted linear-interface lower bound under pinned probes | \(\binom{R+k}{k}\) unknowns versus \((R+1)^k\) star probes; sharpness open |
+| P52 | Volume-limited interface rank | — |
+| P53 | Constructive restricted-context quotients | — |
+| P54 | A compression theorem with proved savings, including arithmetic cost | — |
 
 ## Wave D: engines (P55–P60)
 
