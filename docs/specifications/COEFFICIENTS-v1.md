@@ -128,6 +128,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Nested-pair census.** `nested_pair_census(graph)` counts all \(3^n\) pairs \(T\subseteq S\subseteq V\) by `(|S|, |T|, cut S, cut T, e(T, V minus S))`; `span_two_projection` returns the `(volume, energy)` span-two sector; `reflect` applies \((T,S)\mapsto(V\setminus S,V\setminus T)\); `binary_marginal` returns the \(T=\varnothing\) cells (SNG-F40).
 
+**Terminal kernels.** `terminal_kernel(graph, terminals, R)` returns `{b: {(interior volume, energy): count}}` for every terminal height tuple `b`, through total volume \(R\) including \(|b|\) (SNG-F41); `kernel_by_enumeration` is the oracle. `glue(K1, K2, R, permutation)` returns the local coefficients of the edge-disjoint gluing, and `glue_graphs` builds that graph with the first block's labels kept and the second block's interior appended. `antisymmetric_part` returns \(2A(b)\) and `twist_difference` returns \(2\sum_b x^{|b|}A_1A_2\) (SNG-F42).
+
 **Families.** `pendant_cycle(l, j)` constructs \(G_{\ell,j}\) with original labels: cycle \(0..2\ell-1\), leaf \(2\ell\) at \(0\), leaf \(2\ell+1\) at \(j\). `binary_discrepancy_closed_form` and `binary_discrepancy_enumerated` return `{(z exponent, q exponent): coefficient}`. `first_discrepancy(p)` is \(q^2(1-q)^2(1-q^2)^p\) and `optimal_probe(p)` isolates its maximizer (SNG-F36). `decorated_deck` returns the degree-decorated induced-subgraph multiset of a given size.
 
 **Root-of-unity specialization.** For a primitive \(\ell\)-th root \(\zeta\), `residue_numerator(graph, ℓ)` returns \(N\) with \(L_G(x,\zeta)=N(x)/(1-x^\ell)^n\), coefficients in \(\mathbb Z[t]/\Phi_\ell(t)\) written constant-first, by enumerating the residue cube \(\{0,\ldots,\ell-1\}^n\) under a work budget. `remote_coefficient` evaluates one coefficient at an arbitrary index from \(N\). A budget refusal is not a mathematical statement.
@@ -175,6 +177,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | analytic constants in `arithmetic` | 8 | `tests/test_arithmetic.py`; `results/tail_records.json`, `results/complex_discs.json` |
 | `certified.*` | 8 | `tests/test_certified.py`; `results/certified_k.json` |
 | `nested_census.*` | 8 | `tests/test_nested_census.py`; `results/nested_census.json` |
+| `terminals.*` | 8 | `tests/test_terminals.py` |
 | `families.*` | 8 | `tests/test_families.py`; `results/pendant_family.json` |
 | `CyclotomicRing`, `residue_numerator`, `remote_coefficient` | 8 | `tests/test_conductor_weighted.py`; `results/conductor_example.json` |
 | `binary_cut_profile`, `minimum_cut_profile`, `laplacian_characteristic_polynomial`, `invariants.first_difference` | 8 | `HeightTests`, `DiscoveryTests` |

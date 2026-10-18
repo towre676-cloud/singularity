@@ -166,7 +166,8 @@ def _convolve(left: Histogram, right: Histogram, max_volume: int) -> Histogram:
     return dict(result)
 
 
-def _box(graph: Graph, decomposition: TreeDecomposition, height: int, max_volume: int, statistics: dict | None) -> Histogram:
+def _box(graph: Graph, decomposition: TreeDecomposition, height: int, max_volume: int, statistics: dict | None,
+         root_message: dict | None = None) -> Histogram:
     order, parent = _rooted(decomposition)
     vertex_owner, edge_owner = charge_owners(graph, decomposition)
     bags = decomposition.bags
@@ -212,6 +213,8 @@ def _box(graph: Graph, decomposition: TreeDecomposition, height: int, max_volume
             statistics["max_message_support"] = max(statistics.get("max_message_support", 0), support)
             largest = max((c for h in message.values() for c in h.values()), default=0)
             statistics["max_count_bits"] = max(statistics.get("max_count_bits", 0), largest.bit_length())
+    if root_message is not None:  # conditioned on the root bag's heights (terminal kernels)
+        root_message.update(messages[decomposition.root])
     result: defaultdict[tuple[int, int], int] = defaultdict(int)
     for histogram in messages[decomposition.root].values():
         for cell, count in histogram.items():

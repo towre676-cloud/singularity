@@ -19,10 +19,10 @@ The six waves have three centers: certified arithmetic evaluation, exactly contr
 
 | ID | Proposed result | Evidence so far |
 |---|---|---|
-| P43 | Ordered terminal kernels \(K_G^B(\mathbf b;x,q)\) | `decomposition.py` bag messages are terminal-conditioned responses with owned charges |
-| P44 | General gluing theorem with correct ownership and contraction | SNG-F26 ownership rule |
-| P45 | Whitney-twist discrepancy as an antisymmetric pairing | — |
-| P46 | Identical-block positivity (sum of squares with equality conditions) | SNG-F37 is the cycle instance: a positive-definite Gaussian transfer kernel gives a sum of squares |
+| P43 | Ordered terminal kernels \(K_G^B(\mathbf b;x,q)\) | `terminals.py` (kernels on a checked decomposition, enumeration oracle) |
+| P44 | General gluing theorem with correct ownership and contraction | SNG-F41 gluing formula for edge-disjoint blocks with any number of terminals; contraction not yet covered |
+| P45 | Whitney-twist discrepancy as an antisymmetric pairing | SNG-F41 identity \(L-L_{\mathrm{tw}}=2\sum x^{\|b\|}A_1A_2\) |
+| P46 | Identical-block positivity (sum of squares with equality conditions) | SNG-F42: exact first visible volume \(\min_b(\|b\|+2v_b)\), sum-of-squares leading coefficient, positivity on the unit square; SNG-F36 (even \(p\)) is a twist of identical path blocks |
 | P47 | Marked boundary composition with global minimum-zero and span | SNG-F25 subtraction applies after gluing |
 | P48 | Response-preserving transformations | — |
 

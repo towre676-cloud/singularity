@@ -355,9 +355,13 @@ degree information</a></li>
 id="toc-a-family-with-exactly-controlled-visibility-depth"><span
 class="toc-section-number">10.6</span> A family with exactly controlled
 visibility depth</a></li>
+<li><a href="#terminal-kernels-and-the-whitney-twist"
+id="toc-terminal-kernels-and-the-whitney-twist"><span
+class="toc-section-number">10.7</span> Terminal kernels and the Whitney
+twist</a></li>
 <li><a href="#what-should-be-searched-next"
 id="toc-what-should-be-searched-next"><span
-class="toc-section-number">10.7</span> What should be searched
+class="toc-section-number">10.8</span> What should be searched
 next?</a></li>
 </ul></li>
 <li><a href="#archival-bridges-what-is-inherited-and-what-changes"
@@ -7160,8 +7164,188 @@ and equality of decorated decks for every size up to
 with inequality at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p+1</annotation></semantics></math>,
 on six pairs. They also check the optimal-probe equation exactly.</p>
-<h2 data-number="10.7" id="what-should-be-searched-next"><span
-class="header-section-number">10.7</span> What should be searched
+<h2 data-number="10.7" id="terminal-kernels-and-the-whitney-twist"><span
+class="header-section-number">10.7</span> Terminal kernels and the
+Whitney twist</h2>
+<p>A <strong>block</strong> is a graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+with an ordered tuple
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐬</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf s=(s_1,\ldots,s_k)</annotation></semantics></math>
+of distinct terminal vertices. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mi>V</mi><mo>\</mo><mi>𝐬</mi></mrow><annotation encoding="application/x-tex">I=V\setminus\mathbf s</annotation></semantics></math>.
+Its <strong>terminal kernel</strong> is the family of series
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><msub><mi>a</mi><mi>I</mi></msub><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>x</mi><mrow><munder><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></munder><msub><mi>a</mi><mi>i</mi></msub></mrow></msup><mspace width="0.167em"></mspace><msup><mi>q</mi><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>I</mi></msub><mo>,</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>𝐛</mi><mo>∈</mo><msubsup><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow><mi>k</mi></msubsup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+K_G(\mathbf b;x,q)=\sum_{a_I\ge0}x^{\sum_{i\in I}a_i}\,q^{E_G(a_I,\mathbf b)},\qquad\mathbf b\in\mathbb Z_{\ge0}^k,
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>I</mi></msub><mo>,</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E_G(a_I,\mathbf b)</annotation></semantics></math>
+is the energy of the profile equal to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf b</annotation></semantics></math>
+on the terminals and to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>I</mi></msub><annotation encoding="application/x-tex">a_I</annotation></semantics></math>
+inside. Kernels retain terminal heights and interior volume separately,
+so they compose.</p>
+<p><strong>Theorem SNG-F41 (gluing and the Whitney twist).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mn>1</mn></msub><mo>,</mo><mi>𝐬</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(G_1,\mathbf s)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><mi>𝐭</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(G_2,\mathbf t)</annotation></semantics></math>
+be blocks with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+terminals that share no edge, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>1</mn></msub><msub><mo>∪</mo><mi>π</mi></msub><msub><mi>G</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G_1\cup_\pi G_2</annotation></semantics></math>
+identify
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>i</mi></msub><annotation encoding="application/x-tex">s_i</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mrow><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><annotation encoding="application/x-tex">t_{\pi(i)}</annotation></semantics></math>
+for a permutation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><msub><mi>G</mi><mn>1</mn></msub><msub><mo>∪</mo><mi>π</mi></msub><msub><mi>G</mi><mn>2</mn></msub></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>𝐛</mi></munder><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msub><mi>K</mi><msub><mi>G</mi><mn>1</mn></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><msub><mi>K</mi><msub><mi>G</mi><mn>2</mn></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mo>⋅</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L_{G_1\cup_\pi G_2}(x,q)=\sum_{\mathbf b}x^{|\mathbf b|}K_{G_1}(\mathbf b)\,K_{G_2}(\pi\cdot\mathbf b).
+</annotation></semantics></math> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2</annotation></semantics></math>,
+put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msub><mi>K</mi><msub><mi>G</mi><mi>j</mi></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>K</mi><msub><mi>G</mi><mi>j</mi></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mn>2</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A_j(b_1,b_2)=\frac12\bigl(K_{G_j}(b_1,b_2)-K_{G_j}(b_2,b_1)\bigr)</annotation></semantics></math>.
+Then the straight and twisted gluings satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><msub><mi>G</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>G</mi><mn>2</mn></msub></mrow></msub><mo>−</mo><msub><mi>L</mi><mrow><msub><mi>G</mi><mn>1</mn></msub><msub><mo>∪</mo><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">w</mi></mrow></msub><msub><mi>G</mi><mn>2</mn></msub></mrow></msub><mo>=</mo><mn>2</mn><munder><mo>∑</mo><mi>𝐛</mi></munder><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msub><mi>A</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>A</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L_{G_1\cup G_2}-L_{G_1\cup_{\mathrm{tw}}G_2}=2\sum_{\mathbf b}x^{|\mathbf b|}A_1(\mathbf b)A_2(\mathbf b).
+</annotation></semantics></math> In particular the twist is invisible at
+every volume if either kernel is symmetric, for instance if a block has
+an automorphism exchanging its terminals.</p>
+<p><em>Proof.</em> A profile on the glued graph is a choice of terminal
+heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf b</annotation></semantics></math>
+and independent interior profiles of the two blocks. Its volume is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|\mathbf b|</annotation></semantics></math>
+plus the two interior volumes. Each edge lies in exactly one block, so
+its energy is the sum of the two block energies. Summing gives the
+gluing formula. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2</annotation></semantics></math>
+write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>j</mi></msub><mo>=</mo><msub><mi>S</mi><mi>j</mi></msub><mo>+</mo><msub><mi>A</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">K_j=S_j+A_j</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>j</mi></msub><annotation encoding="application/x-tex">S_j</annotation></semantics></math>
+symmetric under exchanging the coordinates of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf b</annotation></semantics></math>.
+The weight
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><annotation encoding="application/x-tex">x^{|\mathbf b|}</annotation></semantics></math>
+is symmetric, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>𝐛</mi></msub><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sum_{\mathbf b}x^{|\mathbf b|}F(\mathbf b)=0</annotation></semantics></math>
+for every antisymmetric
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>.
+Expanding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo>+</mo><msub><mi>A</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>2</mn></msub><mo>+</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo>+</mo><msub><mi>A</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>2</mn></msub><mo>−</mo><msub><mi>A</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><msub><mi>S</mi><mn>1</mn></msub><msub><mi>A</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>A</mi><mn>1</mn></msub><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(S_1+A_1)(S_2+A_2)-(S_1+A_1)(S_2-A_2)=2S_1A_2+2A_1A_2</annotation></semantics></math>
+and dropping the antisymmetric
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">S_1A_2</annotation></semantics></math>
+proves the identity, coefficient by coefficient in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p><strong>Theorem SNG-F42 (twisting identical blocks).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>1</mn></msub><mo>=</mo><msub><mi>G</mi><mn>2</mn></msub><mo>=</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">G_1=G_2=G</annotation></semantics></math>
+with terminals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(s,t)</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>A</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>v</mi></msub><msup><mi>x</mi><mi>v</mi></msup><msub><mi>P</mi><mrow><mi>𝐛</mi><mo>,</mo><mi>v</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2A(\mathbf b)=\sum_vx^vP_{\mathbf b,v}(q)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>𝐛</mi><mo>,</mo><mi>v</mi></mrow></msub><mo>∈</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">P_{\mathbf b,v}\in\mathbb Z[q]</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>𝐛</mi></msub><annotation encoding="application/x-tex">v_{\mathbf b}</annotation></semantics></math>
+be the least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>𝐛</mi><mo>,</mo><mi>v</mi></mrow></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P_{\mathbf b,v}\ne0</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>≢</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A\not\equiv0</annotation></semantics></math>,
+the straight and twisted self-gluings first differ at volume
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><munder><mo>min</mo><mi>𝐛</mi></munder><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mn>2</mn><msub><mi>v</mi><mi>𝐛</mi></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>μ</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msub><mi>L</mi><mrow><mi>G</mi><mo>∪</mo><mi>G</mi></mrow></msub><mo>−</mo><msub><mi>L</mi><mrow><mi>G</mi><msub><mo>∪</mo><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">w</mi></mrow></msub><mi>G</mi></mrow></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><munder><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mn>2</mn><msub><mi>v</mi><mi>𝐛</mi></msub><mo>=</mo><mi>μ</mi></mrow></munder><msubsup><mi>P</mi><mrow><mi>𝐛</mi><mo>,</mo><msub><mi>v</mi><mi>𝐛</mi></msub></mrow><mn>2</mn></msubsup><mo>≠</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mu=\min_{\mathbf b}\bigl(|\mathbf b|+2v_{\mathbf b}\bigr),\qquad
+[x^\mu]\bigl(L_{G\cup G}-L_{G\cup_{\mathrm{tw}}G}\bigr)=\tfrac12\sum_{|\mathbf b|+2v_{\mathbf b}=\mu}P_{\mathbf b,v_{\mathbf b}}^2\ne0 .
+</annotation></semantics></math> For real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;x&lt;1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;q&lt;1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi>G</mi><mo>∪</mo><mi>G</mi></mrow></msub><mo>≥</mo><msub><mi>L</mi><mrow><mi>G</mi><msub><mo>∪</mo><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">w</mi></mrow></msub><mi>G</mi></mrow></msub></mrow><annotation encoding="application/x-tex">L_{G\cup G}\ge L_{G\cup_{\mathrm{tw}}G}</annotation></semantics></math>.</p>
+<p><em>Proof.</em> By SNG-F41 the difference is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mo>∑</mo><mi>𝐛</mi></msub><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>A</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\frac12\sum_{\mathbf b}x^{|\mathbf b|}(2A(\mathbf b))^2</annotation></semantics></math>.
+A term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>v</mi><mo>+</mo><mi>v</mi><mi>′</mi></mrow></msup><msub><mi>P</mi><mrow><mi>𝐛</mi><mo>,</mo><mi>v</mi></mrow></msub><msub><mi>P</mi><mrow><mi>𝐛</mi><mo>,</mo><mi>v</mi><mi>′</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x^{|\mathbf b|+v+v&#39;}P_{\mathbf b,v}P_{\mathbf b,v&#39;}</annotation></semantics></math>
+is nonzero only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>v</mi><mi>′</mi><mo>≥</mo><msub><mi>v</mi><mi>𝐛</mi></msub></mrow><annotation encoding="application/x-tex">v,v&#39;\ge v_{\mathbf b}</annotation></semantics></math>,
+so it has volume at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mn>2</mn><msub><mi>v</mi><mi>𝐛</mi></msub><mo>≥</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|+2v_{\mathbf b}\ge\mu</annotation></semantics></math>.
+At volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>v</mi><mi>′</mi><mo>=</mo><msub><mi>v</mi><mi>𝐛</mi></msub></mrow><annotation encoding="application/x-tex">v=v&#39;=v_{\mathbf b}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mn>2</mn><msub><mi>v</mi><mi>𝐛</mi></msub><mo>=</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|+2v_{\mathbf b}=\mu</annotation></semantics></math>
+survives. A finite sum of squares of nonzero real polynomials is not the
+zero polynomial. For real parameters in the unit square every kernel
+converges absolutely, being dominated by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>G</mi></msub><annotation encoding="application/x-tex">L_G</annotation></semantics></math>,
+so the difference is a convergent sum of squares of real numbers.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The pendant-cycle family is an instance. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>m</mi><mo>,</mo><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">B_{m,k}</annotation></semantics></math>
+be the path of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">2m</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+with a leaf at distance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&lt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">k&lt;m</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>.
+Gluing it to itself gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mn>4</mn><mi>m</mi></mrow></msub><annotation encoding="application/x-tex">C_{4m}</annotation></semantics></math>
+with leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">2k</annotation></semantics></math>
+apart, and the twist gives leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">2m</annotation></semantics></math>
+apart. These are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mn>2</mn><mi>m</mi><mo>,</mo><mn>2</mn><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">G_{2m,2k}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mn>2</mn><mi>m</mi><mo>,</mo><mn>2</mn><mi>m</mi></mrow></msub><annotation encoding="application/x-tex">G_{2m,2m}</annotation></semantics></math>
+of SNG-F36. SNG-F42 then gives depth
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2k+1</annotation></semantics></math>
+and leading coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">q^2(1-q)^2(1-q^2)^{2k}</annotation></semantics></math>,
+in agreement with SNG-F36, and its positivity is the even case of
+SNG-F37. The twist representation exists only for even
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>:
+with leaves at distances
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a,c</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+on the two arcs, the straight gluing gives distance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a+c</annotation></semantics></math>
+and the twist
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mo>ℓ</mo><mo>−</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a+\ell-c</annotation></semantics></math>,
+and matching
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo>,</mo><mo>ℓ</mo><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(p,\ell)</annotation></semantics></math>
+forces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>2</mn><mi>a</mi></mrow><annotation encoding="application/x-tex">p=2a</annotation></semantics></math>.
+The kernel point of view separates the mechanism from the family.
+Visibility of a twist is decided by the asymmetry order of the block,
+the least volume at which the two terminals’ decorated neighbourhoods
+differ, and the sign is always that of a sum of squares.</p>
+<p>A twist changes the graph but preserves its cycle matroid, so the cut
+lattice and its energy theta series are unchanged. A block whose kernel
+is symmetric without an exchanging automorphism would therefore give two
+graphs with identical scalar height series. Among all connected blocks
+with at most five vertices and balanced terminals, the kernel through
+volume six is symmetric exactly when such an automorphism exists. This
+finite search does not decide the question in general.
+<code>src/singularity/terminals.py</code> computes kernels on a checked
+decomposition, with the terminals in every bag, and checks them against
+enumeration. <code>tests/test_terminals.py</code> verifies the gluing
+formulas for two and three terminals, the twist identity, invisibility
+for symmetric blocks, and the depth formula and identification above for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>m</mi><mo>,</mo><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">B_{m,k}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">m\le4</annotation></semantics></math>.</p>
+<h2 data-number="10.8" id="what-should-be-searched-next"><span
+class="header-section-number">10.8</span> What should be searched
 next?</h2>
 <p>The first inverse question is whether full marked equality implies
 graph isomorphism on any substantial class. Trees are an attractive
@@ -9854,62 +10038,68 @@ omitted-prime bound (SNG-F38, SNG-F39)</td>
 projection, binary marginal (SNG-F40)</td>
 </tr>
 <tr class="odd">
+<td><code>terminals</code></td>
+<td>Terminal kernels and gluing</td>
+<td>Kernels conditioned on terminal heights, gluing for any number of
+terminals, Whitney-twist antisymmetric pairing (SNG-F41, SNG-F42)</td>
+</tr>
+<tr class="even">
 <td><code>families</code></td>
 <td>Pendant-cycle family</td>
 <td>Generators, closed binary discrepancy, decorated decks, optimal
 probe parameter (SNG-F36, SNG-F37)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>conductor</code></td>
 <td>Root-of-unity local series</td>
 <td>Integer cyclotomic rings, finite residue numerators, arbitrary-index
 exact coefficients with explicit residue-box budget</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>weighted</code></td>
 <td>Positive integral vertex masses and edge weights</td>
 <td>Parallel-weight aggregation and hard equality contraction preserving
 original energy and mass-weighted height</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>arithmetic</code></td>
 <td>Prime-valuation populations</td>
 <td>Positive integer factorization, finite Dirichlet coefficients,
 conservative exact local remainder and tail constants</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>primitive</code></td>
 <td>Gcd-one normalized height profiles</td>
 <td>Mobius extraction, independent gcd enumeration and exact scaling
 recomposition</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>chains</code></td>
 <td>Weakly nested level chains</td>
 <td>Direct chain generation with repeated levels, nested-boundary
 energy, marked/normalized/local coefficients independent of weak
 compositions</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>chambers</code></td>
 <td>Half-open order chambers</td>
 <td>Gap coordinates, nested-boundary gap form, unique chamber
 reconstruction, factorial-cost third enumerator (SNG-F29)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>orders</code></td>
 <td>Poset-constrained heights</td>
 <td>Validated posets, weak and strict counts, chamber and
 linear-extension order-polynomial formulas, weighted histograms on
 order-polytope points (SNG-F32)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lowvolume</code></td>
 <td>Closed coefficient formulas through volume three</td>
 <td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and
