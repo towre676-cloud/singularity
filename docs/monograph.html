@@ -8750,12 +8750,188 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">R\le120</annotation></semantics></math>,
 the latter being the range checked. All statements are recorded in
 <code>results/symmetric_contexts.json</code>. For unequal terminal
-degrees, the analogue of (b) for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">j\ge2</annotation></semantics></math>
-needs an interpolation argument for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>a</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>q</mi><mrow><mi>b</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{as^2+bt^2}P_j(U,V)+q^{bs^2+at^2}P_j(V,U)</annotation></semantics></math>
-and is open. So is the question whether the remaining candidates are
-realized by actual blocks.</p>
+degrees, the analogue of (b) is the following interpolation theorem.</p>
+<p><strong>Theorem SNG-F59 (unequal-degree slice
+interpolation).</strong> Fix integers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d\ge1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ℓ</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ell\ge0</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+have degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+in each variable. Put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>P</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><mi>d</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mo>ℓ</mo><mi>s</mi></mrow></msup><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>q</mi><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mo>ℓ</mo><mi>t</mi></mrow></msup><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F_P(s,t)=q^{ds^2+\ell s}P(q^{-2s},q^{-2t})+q^{dt^2+\ell t}P(q^{-2t},q^{-2s}).
+</annotation></semantics></math> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>P</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F_P(s,t)=0</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mn>2</mn><mi>j</mi></mrow><annotation encoding="application/x-tex">s+t\le2j</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P=0</annotation></semantics></math>.
+This holds over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)</annotation></semantics></math>,
+at every transcendental
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>,
+and at every rational
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q\in(0,1)</annotation></semantics></math>;
+more generally at every algebraic
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+that is not an algebraic unit. The unordered sample set has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>s</mi><mo>≤</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo>−</mo><mn>2</mn><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{s\le j}(2j-2s+1)=(j+1)^2</annotation></semantics></math>
+states, the dimension of the space of such
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.</p>
+<p><em>Proof.</em> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>P</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mi>P</mi></mrow><annotation encoding="application/x-tex">F_P(0,0)=2P</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j\ge1</annotation></semantics></math>,
+the state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(1,1)=0</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>A</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(1,V)=(V-1)A(V)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(U,1)=(U-1)B(U)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>deg</mo><mi>A</mi><mo>,</mo><mo>deg</mo><mi>B</mi><mo>≤</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\deg A,\deg B\le j-1</annotation></semantics></math>.
+The states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,t)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>2</mn><mi>j</mi></mrow><annotation encoding="application/x-tex">1\le t\le2j</annotation></semantics></math>,
+give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>q</mi><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mo>ℓ</mo><mi>t</mi></mrow></msup><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A(q^{-2t})+q^{dt^2+\ell t}B(q^{-2t})=0</annotation></semantics></math>.
+With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">z=q^{-1}</annotation></semantics></math>,
+the matrix of this system has rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo><msup><mi>z</mi><mrow><mn>2</mn><mi>k</mi><mi>t</mi></mrow></msup><mo>∣</mo><msup><mi>z</mi><mrow><mn>2</mn><mi>k</mi><mi>t</mi><mo>−</mo><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mo>ℓ</mo><mi>t</mi></mrow></msup><msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>&lt;</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\bigl[z^{2kt}\mid z^{2kt-dt^2-\ell t}\bigr]_{0\le k&lt;j}</annotation></semantics></math>.</p>
+<p>Its determinant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mrow><mi>j</mi><mo>,</mo><mi>d</mi><mo>,</mo><mo>ℓ</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">D_{j,d,\ell}(z)</annotation></semantics></math>
+is a Laurent polynomial whose extreme coefficients are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm1</annotation></semantics></math>.
+Once the rows assigned to the two column families are fixed, the
+rearrangement inequality uniquely maximizes the exponent by assigning
+increasing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+and uniquely minimizes it by assigning decreasing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+Consider adjacent rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>,</mo><mi>t</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t,t+1</annotation></semantics></math>
+holding a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>-entry
+and an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>-entry
+of family ranks
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t=a+b-1</annotation></semantics></math>.
+Moving the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>-entry
+one row later changes the optimized exponent by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>t</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mo>ℓ</mo><mo>≤</mo><mo>−</mo><mn>3</mn><mo>−</mo><mo>ℓ</mo></mrow><annotation encoding="application/x-tex">2(b-a)-d(2t+1)-\ell\le-3-\ell</annotation></semantics></math>
+for the maximum, and by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>t</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mo>ℓ</mo><mo>≤</mo><mo>−</mo><mn>3</mn><mo>−</mo><mo>ℓ</mo></mrow><annotation encoding="application/x-tex">2(a-b)-d(2t+1)-\ell\le-3-\ell</annotation></semantics></math>
+for the minimum. So the maximum is attained uniquely with all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>-rows
+first, and the minimum uniquely with all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>-rows
+last.</p>
+<p>After clearing the lowest power,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+is an integer polynomial with leading and constant coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm1</annotation></semantics></math>.
+It is not zero, and by the rational-root theorem it has no rational root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z&gt;1</annotation></semantics></math>;
+every algebraic root is a unit. Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>B</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A=B=0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">P=(U-1)(V-1)Q</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+of bidegree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(j-1,j-1)</annotation></semantics></math>.
+At states with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>,</mo><mi>t</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s,t\ge1</annotation></semantics></math>,
+divide out the nonzero symmetric factor and write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>u</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s=u+1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>v</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t=v+1</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>d</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mo>ℓ</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>=</mo><msup><mi>q</mi><mrow><mi>d</mi><mo>+</mo><mo>ℓ</mo></mrow></msup><msup><mi>q</mi><mrow><mi>d</mi><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>d</mi><mo>+</mo><mo>ℓ</mo><mo stretchy="true" form="postfix">)</mo></mrow><mi>u</mi></mrow></msup></mrow><annotation encoding="application/x-tex">q^{d(u+1)^2+\ell(u+1)}=q^{d+\ell}q^{du^2+(2d+\ell)u}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mover><mi>Q</mi><mo accent="true">̃</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>u</mi></mrow></msup><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q(q^{-2s},q^{-2t})=\widetilde Q(q^{-2u},q^{-2v})</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>Q</mi><mo accent="true">̃</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mi>U</mi><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\widetilde Q(U,V)=Q(q^{-2}U,q^{-2}V)</annotation></semantics></math>.
+The states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mi>v</mi><mo>≤</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u+v\le2(j-1)</annotation></semantics></math>
+give the same problem at bidegree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j-1</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ℓ</mo><mo>↦</mo><mo>ℓ</mo><mo>+</mo><mn>2</mn><mi>d</mi></mrow><annotation encoding="application/x-tex">\ell\mapsto\ell+2d</annotation></semantics></math>,
+and induction completes the proof.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>For a block with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\ne b</annotation></semantics></math>,
+the symmetrized slice is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>b</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>e</mi><mi>s</mi><mi>t</mi></mrow></msup><msub><mi>F</mi><mi>P</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{b(s^2+t^2)-2est}F_P(s,t)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">d=|a-b|</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ℓ</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ell=0</annotation></semantics></math>.
+So slice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+is fixed by its values at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mn>2</mn><mi>j</mi></mrow><annotation encoding="application/x-tex">s+t\le2j</annotation></semantics></math>,
+of total volume at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>j</mi></mrow><annotation encoding="application/x-tex">3j</annotation></semantics></math>,
+exactly as in the balanced case. The rule “slice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+is rigid at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>j</mi><mo>&lt;</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">3j&lt;v</annotation></semantics></math>”
+therefore holds for every block
+(<code>realizable="interpolated"</code>). Rerunning SNG-F49 on the
+remaining coordinates gives two bounds. With the terminal edge, simple
+symmetric contexts separate the truncated symmetrized kernels of any two
+blocks through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>37</mn></mrow><annotation encoding="application/x-tex">R=37</annotation></semantics></math>,
+and the first possible ambiguity is at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>38</mn></mrow><annotation encoding="application/x-tex">R=38</annotation></semantics></math>.
+Without the edge, separation holds through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">R=10</annotation></semantics></math>,
+and the first possible ambiguity is at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">R=11</annotation></semantics></math>.</p>
+<p>The arithmetic hypothesis is necessary for the unrestricted
+statement. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">j=3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ℓ</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ell=0</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>z</mi><mrow><mo>−</mo><mn>43</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>11</mn></msup><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mo>deg</mo><mi>H</mi><mo>=</mo><mn>68</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn><mo>,</mo><mn>870</mn><mo>,</mo><mn>720</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>lead</mo><mi>H</mi><mo>=</mo><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+D(z)=z^{-43}(z-1)^{11}H(z),\qquad \deg H=68,\quad H(1)=3{,}870{,}720,\quad H(0)=\operatorname{lead}H=-1.
+</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+changes sign between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1.1213855316120952</mn></mrow><annotation encoding="application/x-tex">z=1.1213855316120952</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1.1213855316120954</mn><annotation encoding="application/x-tex">1.1213855316120954</annotation></semantics></math>,
+so the boundary system degenerates at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mo>*</mo></msub><mo>≈</mo><mn>0.8917539702535734</mn></mrow><annotation encoding="application/x-tex">q_*\approx0.8917539702535734</annotation></semantics></math>.
+This obstructs only unrestricted polynomials. Whether a graph slice can
+realize the degeneracy is open.</p>
+<p><code>boundary_determinant</code> and <code>interpolation_rank</code>
+in <code>src/singularity/contexts.py</code> back these statements.
+<code>scripts/overlap_hierarchy.py</code> checks the unit extreme
+coefficients for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">j\le3</annotation></semantics></math>,
+injectivity at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">j\le4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">d\le3</annotation></semantics></math>,
+and the exceptional factorization with its root bracket. Whether the
+remaining candidates are realized by actual blocks is open.</p>
 <h3 data-number="10.8.3"
 id="boundary-charges-and-a-growing-compression-family"><span
 class="header-section-number">10.8.3</span> Boundary charges and a
@@ -9021,8 +9197,44 @@ context, is open. Computing
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">A_{H,j}</annotation></semantics></math>
 for large
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
-is the remaining cost; the separator machinery of SNG-F26 is the natural
-compiler for it.</p>
+is handled by the connected-support compiler of SNG-F55 below.</p>
+<p><em>Charge dimension.</em> If the terminal patterns present have
+affine dimension
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+the cells
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(j,Q)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">j\le R</annotation></semantics></math>
+number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Theta(R^{a+1})</annotation></semantics></math>.
+With two distinct patterns
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>χ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\chi_1\ne\chi_2</annotation></semantics></math>,
+the charge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><msub><mi>J</mi><mn>1</mn></msub><msub><mi>χ</mi><mn>1</mn></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>−</mo><msub><mi>J</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>χ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">Q=J_1\chi_1+(j-J_1)\chi_2</annotation></semantics></math>
+determines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>J</mi><mn>1</mn></msub><annotation encoding="application/x-tex">J_1</annotation></semantics></math>,
+so there are exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mn>2</mn></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+2}2</annotation></semantics></math>
+cells, even when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>χ</mi><mn>1</mn></msub><mo>,</mo><msub><mi>χ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\chi_1,\chi_2</annotation></semantics></math>
+span two linear dimensions. For ordered terminal observations there is a
+reconstruction chart without exceptional parameters. Project the
+distinct charges of a slice injectively to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+coordinates, and sample the terminal states at the projected charges.
+The matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow></msub><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>v</mi><mo>⋅</mo><mi>w</mi></mrow></msup></mrow><annotation encoding="application/x-tex">M_{v,w}=q^{-2v\cdot w}</annotation></semantics></math>
+is strictly positive definite, because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>c</mi><mi>v</mi></msub><msub><mi>c</mi><mi>w</mi></msub><msub><mi>M</mi><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow></msub><mo>=</mo><msub><mo>∑</mo><mi>α</mi></msub><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>2</mn><mo>log</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>α</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><mrow><mi>α</mi><mi>!</mi></mrow></mfrac><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msub><mo>∑</mo><mi>v</mi></msub><msub><mi>c</mi><mi>v</mi></msub><msup><mi>v</mi><mi>α</mi></msup><msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum c_vc_wM_{v,w}=\sum_\alpha\frac{(-2\log q)^{|\alpha|}}{\alpha!}\bigl(\sum_vc_vv^\alpha\bigr)^2</annotation></semantics></math>
+and polynomial interpolation on a finite set makes some square nonzero.
+The total budget is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">(a+1)R</annotation></semantics></math>.
+With several charges per slice the single-closure inverse of SNG-F53(c)
+is replaced by such a chart
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>,
+and transport becomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mi>′</mi><msup><mi>J</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">J&#39;J^{-1}</annotation></semantics></math>.
+These charts are not implemented.</p>
 <h2 data-number="10.9"
 id="every-late-census-collision-is-separated-by-triangles"><span
 class="header-section-number">10.9</span> Every late census collision is
@@ -9466,6 +9678,254 @@ the session also confirmed
 This gives an infinite graph class with a proved reconstruction
 algorithm, a sharp observation threshold, and explicit pairs attaining
 it.</p>
+<h3 data-number="10.10.1"
+id="squared-height-a-complete-enrichment"><span
+class="header-section-number">10.10.1</span> Squared height: a complete
+enrichment</h3>
+<p>Fixed pinning merges profiles with the same volume and energy but
+different squared height. Keeping the squared height as a second marker
+gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒫</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>u</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>h</mi><mo>:</mo><mi>V</mi><mo>→</mo><mi>ℕ</mi></mrow></munder><msup><mi>x</mi><mrow><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msup><mi>u</mi><mrow><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msup><mi>q</mi><mrow><msub><mi>E</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>J</mi><mo>=</mo><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>h</mi><mi>v</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><mi>S</mi><mo>=</mo><munder><mo>∑</mo><mi>v</mi></munder><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\mathcal P_H(x,u,q)=\sum_{h:V\to\mathbb N}x^{J(h)}u^{S(h)}q^{E_H(h)},\qquad J=\sum_vh_v,\quad S=\sum_vh_v^2,
+</annotation></semantics></math> so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝒫</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><msup><mi>q</mi><mi>λ</mi></msup><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_\lambda(H)=\mathcal P_H(x,q^\lambda,q)</annotation></semantics></math>.</p>
+<p><strong>Theorem SNG-F58 (the moment series).</strong></p>
+<ol type="a">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>j</mi></msup><msup><mi>u</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>𝒫</mi><mi>H</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>T</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>j</mi></mrow></msub><msup><mi>q</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><mi>T</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup></mrow><annotation encoding="application/x-tex">[x^ju^j]\mathcal P_H=\sum_{|T|=j}q^{|\partial T|}</annotation></semantics></math>,
+the binary cut profile by size, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>j</mi></msup><msup><mi>u</mi><msup><mi>j</mi><mn>2</mn></msup></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>𝒫</mi><mi>H</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>v</mi></msub><msup><mi>q</mi><mrow><mo>deg</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>j</mi><mn>2</mn></msup></mrow></msup></mrow><annotation encoding="application/x-tex">[x^ju^{j^2}]\mathcal P_H=\sum_vq^{\deg(v)j^2}</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j\ge1</annotation></semantics></math>,
+the degree distribution.</p></li>
+<li><p>Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>j</mi><mo>,</mo><mi>S</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>j</mi></msup><msup><mi>u</mi><mi>S</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>𝒫</mi><mi>H</mi></msub></mrow><annotation encoding="application/x-tex">C_{j,S}=[x^ju^S]\mathcal P_H</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>h</mi><mn>2</mn></msup><mo>≡</mo><mi>h</mi><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h^2\equiv h\pmod2</annotation></semantics></math>,
+we have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mi>j</mi><mo>+</mo><mn>2</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">S=j+2k</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>j</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">0\le k\le\binom j2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mo>−</mo><mi>λ</mi><mi>j</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mi>λ</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>C</mi><mrow><mi>j</mi><mo>,</mo><mi>j</mi><mo>+</mo><mn>2</mn><mi>k</mi></mrow></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mn>2</mn><mi>λ</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">q^{-\lambda j}[x^j]F_\lambda=\sum_kC_{j,j+2k}(q^{2\lambda})^k</annotation></semantics></math>.
+Hence any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>R</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\binom R2+1</annotation></semantics></math>
+distinct pinnings
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+determine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒫</mi><mi>H</mi></msub><mrow><mspace width="0.222em"></mspace><mo>mod</mo><mspace width="0.222em"></mspace><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">\mathcal P_H\bmod x^{R+1}</annotation></semantics></math>,
+at every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q\in(0,1)</annotation></semantics></math>.</p></li>
+<li><p>For every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒫</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>u</mi><mo>,</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝒫</mi><mrow><mi>H</mi><mi>′</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>u</mi><mo>,</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal P_H(x,u,q_0)=\mathcal P_{H&#39;}(x,u,q_0)</annotation></semantics></math>
+as formal series in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">x,u</annotation></semantics></math>
+if and only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>≅</mo><mi>H</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">H\cong H&#39;</annotation></semantics></math>.</p></li>
+</ol>
+<p><em>Proof.</em> (a)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">S=J</annotation></semantics></math>
+forces heights in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,1\}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msup><mi>J</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S=J^2</annotation></semantics></math>
+forces the whole volume onto one vertex. (b) The system is a Vandermonde
+system in the distinct numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mn>2</mn><mi>λ</mi></mrow></msup><annotation encoding="application/x-tex">q^{2\lambda}</annotation></semantics></math>.</p>
+<ol start="3" type="a">
+<li>By (a), the series determines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math>:
+the degree multiplicities follow by successive exponential dominance.
+Choose an integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>&gt;</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">B&gt;2n</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><msubsup><mi>q</mi><mn>0</mn><msup><mi>B</mi><mn>2</mn></msup></msubsup><mo>&lt;</mo><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mi>!</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\eta=q_0^{B^2}&lt;1/(n!+1)</annotation></semantics></math>,
+put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><msup><mi>B</mi><msup><mn>3</mn><mi>i</mi></msup></msup></mrow><annotation encoding="application/x-tex">M_i=B^{3^i}</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>i</mi><mo>&lt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">0\le i&lt;n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mo>*</mo></msub><mo>=</mo><mo>∑</mo><msub><mi>M</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">J_*=\sum M_i</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mo>*</mo></msub><mo>=</mo><mo>∑</mo><msubsup><mi>M</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_*=\sum M_i^2</annotation></semantics></math>.</li>
+</ol>
+<p>First, these moments force the multiset of heights to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>M</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{M_i\}</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+be the largest and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+the sum of the others, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">(r+1)^2&lt;M</annotation></semantics></math>.
+A competing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-tuple
+with maximum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M-1</annotation></semantics></math>
+has square sum at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><msup><mi>M</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(M-1)^2+(r+1)^2&lt;M^2</annotation></semantics></math>.
+One with maximum at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M+1</annotation></semantics></math>
+has square sum above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>M</mi><mn>2</mn></msup><mo>+</mo><msup><mi>r</mi><mn>2</mn></msup><mo>≥</mo><msub><mi>S</mi><mo>*</mo></msub></mrow><annotation encoding="application/x-tex">M^2+r^2\ge S_*</annotation></semantics></math>.
+So its maximum is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>;
+remove it and repeat. Hence
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><msub><mi>J</mi><mo>*</mo></msub></msup><msup><mi>u</mi><msub><mi>S</mi><mo>*</mo></msub></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>𝒫</mi><mi>H</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>π</mi></munder><msubsup><mi>q</mi><mn>0</mn><msub><mi>E</mi><mi>π</mi></msub></msubsup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>π</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>d</mi><mi>π</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>B</mi><mrow><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>i</mi></msup></mrow></msup><mo>−</mo><mn>2</mn><munder><mo>∑</mo><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><msub><mi>A</mi><mi>π</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>B</mi><mrow><msup><mn>3</mn><mi>i</mi></msup><mo>+</mo><msup><mn>3</mn><mi>j</mi></msup></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+[x^{J_*}u^{S_*}]\mathcal P_H=\sum_{\pi}q_0^{E_\pi},\qquad E_\pi=\sum_id_\pi(i)B^{2\cdot3^i}-2\sum_{i&lt;j}A_\pi(i,j)B^{3^i+3^j},
+</annotation></semantics></math> summed over the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math>
+bijections of heights to vertices. The positions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>⋅</mo><msup><mn>3</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">2\cdot3^i</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>3</mn><mi>i</mi></msup><mo>+</mo><msup><mn>3</mn><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">3^i+3^j</annotation></semantics></math>
+are distinct, and the digits lie in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>2</mn><mo>,</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-2,n-1]</annotation></semantics></math>,
+so with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>&gt;</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">B&gt;2n</annotation></semantics></math>
+each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>π</mi></msub><annotation encoding="application/x-tex">E_\pi</annotation></semantics></math>,
+read in balanced base
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+returns the degrees and adjacencies of a labelling. Each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>π</mi></msub><annotation encoding="application/x-tex">E_\pi</annotation></semantics></math>
+is a multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mn>2</mn></msup><annotation encoding="application/x-tex">B^2</annotation></semantics></math>,
+so the coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>c</mi><mi>k</mi></msub><msup><mi>η</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_kc_k\eta^k</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>c</mi><mi>k</mi></msub><mo>≤</mo><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">0\le c_k\le n!</annotation></semantics></math>.</p>
+<p>Second, the specialization keeps this information. If the histograms
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">H&#39;</annotation></semantics></math>
+differ, factor out the first differing power of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>.
+The remaining constant is a nonzero integer, while the tail has absolute
+value at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><mi>η</mi><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>η</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n!\eta/(1-\eta)&lt;1</annotation></semantics></math>.
+So equal coefficients force equal histograms, which contain a common
+labelled adjacency matrix.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The separating volumes in (c) are enormous. This is a completeness
+statement, not an isomorphism algorithm, and completeness of the
+fixed-pinning series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>H</mi></msub><mo>=</mo><msub><mi>F</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A_H=F_2(H)</annotation></semantics></math>
+remains open.</p>
+<p>At budgets the compiler reaches, (b) gives an inexpensive enrichment
+with an independent check. In moment mode, <code>moment_series</code> in
+<code>src/singularity/locality.py</code> carries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+through the connected-support compiler, packed into the exponent key
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>R</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">E(R^2+1)+S</annotation></semantics></math>,
+which stays additive and decodable through degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+<code>moments_from_pinnings</code> recovers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>j</mi><mo>,</mo><mi>S</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C_{j,S}(q_0)</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>R</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\binom R2+1</annotation></semantics></math>
+ordinary pinned series. The receipt checks both against enumeration, as
+well as the strata of (a).</p>
+<h3 data-number="10.10.2" id="beyond-the-first-cycle-overlaps"><span
+class="header-section-number">10.10.2</span> Beyond the first cycle:
+overlaps</h3>
+<p>SNG-F56 resolves cycles. The next information a budget reaches is how
+cycles overlap. Three exact computations make this concrete.</p>
+<p><em>Rook against Shrikhande.</em> The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4\times4</annotation></semantics></math>
+rook graph and the Shrikhande graph are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>6</mn><annotation encoding="application/x-tex">6</annotation></semantics></math>-regular
+on sixteen vertices, with the same spectrum, thirty-two triangles, sixty
+squares and forty-eight diamond subgraphs. They differ in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>4</mn></msub><annotation encoding="application/x-tex">K_4</annotation></semantics></math>
+subgraphs: eight against none. Their series agree below volume four, and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mn>4</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">k</mi></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">k</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>=</mo><mn>8</mn><msup><mi>q</mi><mrow><mn>12</mn><mo>+</mo><mn>4</mn><mi>λ</mi></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">
+[x^4]\bigl(F_\lambda(\mathrm{rook})-F_\lambda(\mathrm{Shrikhande})\bigr)=8q^{12+4\lambda}(1-q^2)^6
+</annotation></semantics></math> for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda=0,2</annotation></semantics></math>,
+confirmed by enumeration. With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msup><mi>q</mi><mrow><mi>d</mi><mo>+</mo><mi>λ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">a=q^{d+\lambda}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f=q^{-2}-1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mi>a</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\kappa=af</annotation></semantics></math>,
+this is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>κ</mi><mn>4</mn></msup><msup><mi>f</mi><mn>2</mn></msup><mi>Δ</mi><msub><mi>N</mi><msub><mi>K</mi><mn>4</mn></msub></msub></mrow><annotation encoding="application/x-tex">\kappa^4f^2\Delta N_{K_4}</annotation></semantics></math>.
+It matches the normalized girth-three term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>4</mn></msub><mo>+</mo><mi>f</mi><msub><mi>N</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mrow></msub><mo>+</mo><msup><mi>f</mi><mn>2</mn></msup><msub><mi>N</mi><msub><mi>K</mi><mn>4</mn></msub></msub></mrow><annotation encoding="application/x-tex">N_4+fN_{\mathrm{diamond}}+f^2N_{K_4}</annotation></semantics></math>,
+with diamonds counted as subgraphs: the induced counts are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>48</mn><annotation encoding="application/x-tex">48</annotation></semantics></math>,
+and each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>4</mn></msub><annotation encoding="application/x-tex">K_4</annotation></semantics></math>
+contains six diamonds.</p>
+<p><em>One volume past the first cycle.</em> Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mi>a</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>f</mi><mo>−</mo><mn>2</mn><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>+</mo><msup><mi>a</mi><mn>3</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\beta=a\bigl((d-2)f-2\bigr)+a^3(q^{-2}+1)^2</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>-regular
+graphs of equal order and girth at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">g\ge5</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mi>λ</mi></msub><mo>=</mo><mi>Δ</mi><msub><mi>N</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msub><msup><mi>κ</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>+</mo><mi>Δ</mi><msub><mi>N</mi><mi>g</mi></msub><msup><mi>κ</mi><mi>g</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mi>β</mi><mo>+</mo><mi>n</mi><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Delta[x^{g+1}]F_\lambda=\Delta N_{g+1}\kappa^{g+1}+\Delta N_g\kappa^g(g\beta+na).
+</annotation></semantics></math> The term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">na</annotation></semantics></math>
+comes from exponentiating the logarithm, since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>log</mo><mi>F</mi><mo>=</mo><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">[x]\log F=na</annotation></semantics></math>.
+We verified this as an exact Laurent identity, for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda=0,2</annotation></semantics></math>,
+on seven pairs:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>C</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">2C_g</annotation></semantics></math>
+against
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mn>2</mn><mi>g</mi></mrow></msub><annotation encoding="application/x-tex">C_{2g}</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">g=5,6,7</annotation></semantics></math>;
+two Petersen graphs against the dodecahedron; the dodecahedron against
+the Desargues graph; and two Petersen graphs against the Desargues
+graph. A general proof is not written. The natural route is a centered
+(loop-series) expansion: for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&lt;</mo><msub><mi>b</mi><mi>g</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">⌈</mo><mn>3</mn><mi>g</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌉</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R&lt;b_g=\lceil3g/2\rceil-1</annotation></semantics></math>,
+the only connected footprints without leaves are single cycles, so one
+expects
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><msub><mi>F</mi><mi>λ</mi></msub><mo>≡</mo><mi>n</mi><msub><mi>b</mi><mrow><mi>d</mi><mo>,</mo><mi>λ</mi></mrow></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mo>ℓ</mo><mo>=</mo><mi>g</mi></mrow><mi>R</mi></msubsup><msub><mi>N</mi><mo>ℓ</mo></msub><msub><mi>W</mi><mrow><mo>ℓ</mo><mo>,</mo><mi>d</mi><mo>,</mo><mi>λ</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\log F_\lambda\equiv nb_{d,\lambda}+\sum_{\ell=g}^RN_\ell W_{\ell,d,\lambda}</annotation></semantics></math>
+with universal series. We record this as a conjecture.</p>
+<p><em>The first bicycle.</em> For girth
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">g=4</annotation></semantics></math>,
+the first footprint with two independent cycles is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow></msub><annotation encoding="application/x-tex">K_{2,3}</annotation></semantics></math>,
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>4</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">b_4=5</annotation></semantics></math>
+vertices. Take three cubic graphs on twelve vertices, each with six
+squares, whose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>N</mi><mn>5</mn></msub><mo>,</mo><msub><mi>N</mi><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(N_5,N_{K_{2,3}})</annotation></semantics></math>
+counts are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(4,2)</annotation></semantics></math>.
+For every pair and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda=0,2</annotation></semantics></math>,
+the series agree below volume five, and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mn>5</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mi>λ</mi></msub><mo>=</mo><msup><mi>κ</mi><mn>5</mn></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mi>Δ</mi><msub><mi>N</mi><mn>5</mn></msub><mo>+</mo><mi>f</mi><mspace width="0.167em"></mspace><mi>Δ</mi><msub><mi>N</mi><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow></msub></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Delta[x^5]F_\lambda=\kappa^5\bigl(\Delta N_5+f\,\Delta N_{K_{2,3}}\bigr).
+</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">f(1/2)=3</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">f(1/3)=8</annotation></semantics></math>,
+the normalized differences
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mn>5</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><mi>F</mi><mi>/</mi><msup><mi>κ</mi><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">r(q)=\Delta[x^5]F/\kappa^5</annotation></semantics></math>
+at two temperatures recover both counts:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><msub><mi>N</mi><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>3</mn></mrow></msub></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">\Delta N_{K_{2,3}}=(r(1/3)-r(1/2))/5</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><msub><mi>N</mi><mn>5</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>8</mn><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>3</mn><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">\Delta N_5=(8r(1/2)-3r(1/3))/5</annotation></semantics></math>.
+The receipt recovers all three pairs exactly. The absolute version,
+which subtracts universal background and cycle series, depends on the
+conjectured decomposition above.</p>
+<p>So a budget resolves cycles first and then their overlaps, and two
+temperatures already separate a cycle count from a bicycle count. These
+statements are checked in <code>results/overlap_hierarchy.json</code>,
+produced by <code>scripts/overlap_hierarchy.py</code> and checked in
+CI.</p>
 <h2 data-number="10.11" id="what-should-be-searched-next"><span
 class="header-section-number">10.11</span> What should be searched
 next?</h2>

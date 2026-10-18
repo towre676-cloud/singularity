@@ -187,7 +187,7 @@ def all_order_recovery(R=7):
 
 def realizable_bounds():
     out = {}
-    for mode in (False, True, "slice", "balanced"):
+    for mode in (False, True, "slice", "balanced", "interpolated"):
         for kappa in (1, 2):
             first = next(R for R in range(200) if interface_status(R, kappa, mode)["top_defect"])
             out[f"{mode}_kappa_{kappa}"] = {"first_budget_with_possible_ambiguity": first,

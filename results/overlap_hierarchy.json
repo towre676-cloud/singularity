@@ -1,0 +1,740 @@
+{
+ "moments": {
+  "budget": 5,
+  "checks": [
+   "compiler = enumeration",
+   "specialization to lam = 0..3",
+   "recovery from pinnings",
+   "extremal strata"
+  ],
+  "graphs": 3,
+  "pinnings_used": 11,
+  "q": "1/2"
+ },
+ "next_coefficient": {
+  "formula": "Delta N_(g+1) kappa^(g+1) + Delta N_g kappa^g (g beta + n a)",
+  "identity": "exact Laurent",
+  "pairs": [
+   {
+    "delta_N_g": 2,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 5,
+    "lam": 0,
+    "pair": "2C5 - C10"
+   },
+   {
+    "delta_N_g": 2,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 5,
+    "lam": 2,
+    "pair": "2C5 - C10"
+   },
+   {
+    "delta_N_g": 2,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 6,
+    "lam": 0,
+    "pair": "2C6 - C12"
+   },
+   {
+    "delta_N_g": 2,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 6,
+    "lam": 2,
+    "pair": "2C6 - C12"
+   },
+   {
+    "delta_N_g": 2,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 7,
+    "lam": 0,
+    "pair": "2C7 - C14"
+   },
+   {
+    "delta_N_g": 2,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 7,
+    "lam": 2,
+    "pair": "2C7 - C14"
+   },
+   {
+    "delta_N_g": 12,
+    "delta_N_g_plus_1": 20,
+    "girth_bound": 5,
+    "lam": 0,
+    "pair": "2 Petersen - dodecahedron"
+   },
+   {
+    "delta_N_g": 12,
+    "delta_N_g_plus_1": 20,
+    "girth_bound": 5,
+    "lam": 2,
+    "pair": "2 Petersen - dodecahedron"
+   },
+   {
+    "delta_N_g": 12,
+    "delta_N_g_plus_1": -20,
+    "girth_bound": 5,
+    "lam": 0,
+    "pair": "dodecahedron - Desargues"
+   },
+   {
+    "delta_N_g": 12,
+    "delta_N_g_plus_1": -20,
+    "girth_bound": 5,
+    "lam": 2,
+    "pair": "dodecahedron - Desargues"
+   },
+   {
+    "delta_N_g": 24,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 5,
+    "lam": 0,
+    "pair": "2 Petersen - Desargues"
+   },
+   {
+    "delta_N_g": 24,
+    "delta_N_g_plus_1": 0,
+    "girth_bound": 5,
+    "lam": 2,
+    "pair": "2 Petersen - Desargues"
+   }
+  ]
+ },
+ "rook_shrikhande": {
+  "counts": [
+   {
+    "K4": 8,
+    "diamond_subgraphs": 48,
+    "induced_diamonds": 0,
+    "squares": 60,
+    "triangles": 32
+   },
+   {
+    "K4": 0,
+    "diamond_subgraphs": 48,
+    "induced_diamonds": 48,
+    "squares": 60,
+    "triangles": 32
+   }
+  ],
+  "pair": "4x4 rook graph - Shrikhande graph",
+  "rows": [
+   {
+    "difference": [
+     [
+      12,
+      8,
+      1
+     ],
+     [
+      14,
+      -48,
+      1
+     ],
+     [
+      16,
+      120,
+      1
+     ],
+     [
+      18,
+      -160,
+      1
+     ],
+     [
+      20,
+      120,
+      1
+     ],
+     [
+      22,
+      -48,
+      1
+     ],
+     [
+      24,
+      8,
+      1
+     ]
+    ],
+    "first_volume": 4,
+    "lam": 0
+   },
+   {
+    "difference": [
+     [
+      20,
+      8,
+      1
+     ],
+     [
+      22,
+      -48,
+      1
+     ],
+     [
+      24,
+      120,
+      1
+     ],
+     [
+      26,
+      -160,
+      1
+     ],
+     [
+      28,
+      120,
+      1
+     ],
+     [
+      30,
+      -48,
+      1
+     ],
+     [
+      32,
+      8,
+      1
+     ]
+    ],
+    "first_volume": 4,
+    "lam": 2
+   }
+  ]
+ },
+ "schema": "singularity.overlap-hierarchy/1",
+ "slice_interpolation": {
+  "exceptional_j3_d1_l0": {
+   "H_at_0": -1,
+   "H_at_1": 3870720,
+   "degree_H": 68,
+   "leading_H": -1,
+   "lowest_power": -43,
+   "multiplicity_of_z_minus_1": 11,
+   "root_bracket_z": [
+    "1401731914515119/1250000000000000",
+    "5606927658060477/5000000000000000"
+   ]
+  },
+  "extreme_coefficients_unit": [
+   [
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    4
+   ],
+   [
+    1,
+    2,
+    0
+   ],
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    1,
+    2,
+    4
+   ],
+   [
+    1,
+    3,
+    0
+   ],
+   [
+    1,
+    3,
+    1
+   ],
+   [
+    1,
+    3,
+    4
+   ],
+   [
+    2,
+    1,
+    0
+   ],
+   [
+    2,
+    1,
+    1
+   ],
+   [
+    2,
+    1,
+    4
+   ],
+   [
+    2,
+    2,
+    0
+   ],
+   [
+    2,
+    2,
+    1
+   ],
+   [
+    2,
+    2,
+    4
+   ],
+   [
+    2,
+    3,
+    0
+   ],
+   [
+    2,
+    3,
+    1
+   ],
+   [
+    2,
+    3,
+    4
+   ],
+   [
+    3,
+    1,
+    0
+   ],
+   [
+    3,
+    1,
+    1
+   ],
+   [
+    3,
+    1,
+    4
+   ],
+   [
+    3,
+    2,
+    0
+   ],
+   [
+    3,
+    2,
+    1
+   ],
+   [
+    3,
+    2,
+    4
+   ],
+   [
+    3,
+    3,
+    0
+   ],
+   [
+    3,
+    3,
+    1
+   ],
+   [
+    3,
+    3,
+    4
+   ]
+  ],
+  "injective_at_q_half": [
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    4,
+    2
+   ],
+   [
+    4,
+    3
+   ]
+  ],
+  "realizable_bounds_all_blocks": {
+   "kappa_1": {
+    "exactness_condition_first_failure": 38,
+    "first_possible_ambiguity": 11,
+    "separated_through": 10
+   },
+   "kappa_2": {
+    "exactness_condition_first_failure": null,
+    "first_possible_ambiguity": 38,
+    "separated_through": 37
+   }
+  }
+ },
+ "theta": {
+  "graphs": {
+   "N5=0,theta=0": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "N5=0,theta=1": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "N5=4,theta=2": [
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     5,
+     11
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     11
+    ]
+   ]
+  },
+  "rows": [
+   {
+    "lam": 0,
+    "pair": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "recovered_delta_N5": "0",
+    "recovered_delta_theta": "-1"
+   },
+   {
+    "lam": 2,
+    "pair": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "recovered_delta_N5": "0",
+    "recovered_delta_theta": "-1"
+   },
+   {
+    "lam": 0,
+    "pair": [
+     [
+      0,
+      0
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "recovered_delta_N5": "-4",
+    "recovered_delta_theta": "-2"
+   },
+   {
+    "lam": 2,
+    "pair": [
+     [
+      0,
+      0
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "recovered_delta_N5": "-4",
+    "recovered_delta_theta": "-2"
+   },
+   {
+    "lam": 0,
+    "pair": [
+     [
+      0,
+      1
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "recovered_delta_N5": "-4",
+    "recovered_delta_theta": "-1"
+   },
+   {
+    "lam": 2,
+    "pair": [
+     [
+      0,
+      1
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "recovered_delta_N5": "-4",
+    "recovered_delta_theta": "-1"
+   }
+  ],
+  "squares": 6
+ }
+}

@@ -208,7 +208,7 @@ def symmetric_interface_rank(max_volume: int, q, terminal_edge: bool, max_common
     return len(columns), rank
 
 
-REALIZABLE_MODES = (False, True, "slice", "balanced")
+REALIZABLE_MODES = (False, True, "slice", "balanced", "interpolated")
 
 
 def _free(orbit: Orbit, v: int, realizable) -> bool:
@@ -220,7 +220,9 @@ def _free(orbit: Orbit, v: int, realizable) -> bool:
     reads the slice from states of total volume <= 5).  ``"balanced"``,
     for blocks whose terminals have equal internal degree: j >= 1 and
     3j >= v, since slice j is read from the states with s, t <= j, of total
-    volume <= 3j (SNG-F52(b)).
+    volume <= 3j (SNG-F52(b)).  ``"interpolated"``: the same rule for every
+    block, by the unequal-degree interpolation theorem SNG-F59 (valid over
+    Q(q) and at every rational q in (0, 1)).
     """
     if realizable not in REALIZABLE_MODES:
         raise ValueError(f"realizable must be one of {REALIZABLE_MODES}")
@@ -231,7 +233,7 @@ def _free(orbit: Orbit, v: int, realizable) -> bool:
         return j >= 1
     if realizable == "slice":
         return j >= (2 if v >= 6 else 1)
-    return j >= 1 and 3 * j >= v
+    return j >= 1 and 3 * j >= v  # "balanced" and "interpolated"
 
 
 def _first_free(orbit: Orbit, realizable) -> int:
@@ -550,3 +552,50 @@ def recover_by_finite_differences(probe_values: dict[tuple[int, int], Sequence],
         for o, y in zip(active, _solve(rows, rhs, len(active))):
             Y[o][n] = y
     return Y
+
+
+def boundary_determinant(j: int, d: int, ell: int) -> dict[int, int]:
+    """Laurent polynomial in z = 1/q of det[z^(2kt) | z^(2kt - d t^2 - ell t)], t = 1..2j, k < j (SNG-F59).
+
+    Rows t, columns A_k then B_k; computed by the Leibniz expansion (small j only).
+    """
+    from itertools import permutations
+
+    j, d, ell = _integer(j, "j", minimum=1), _integer(d, "d", minimum=1), _integer(ell, "ell", minimum=0)
+    E = [[2 * k * t for k in range(j)] + [2 * k * t - d * t * t - ell * t for k in range(j)] for t in range(1, 2 * j + 1)]
+    n = len(E)
+    out: Counter = Counter()
+    for perm in permutations(range(n)):
+        inversions = sum(1 for a in range(n) for b in range(a + 1, n) if perm[a] > perm[b])
+        out[sum(E[i][perm[i]] for i in range(n))] += -1 if inversions % 2 else 1
+    return {e: c for e, c in sorted(out.items()) if c}
+
+
+def interpolation_rank(j: int, d: int, ell: int, q) -> tuple[int, int]:
+    """(columns, rank) of P -> (F_P(s,t))_{s <= t, s+t <= 2j} at q0 for bidegree (j, j) (SNG-F59).
+
+    F_P(s,t) = q^(d s^2 + ell s) P(q^(-2s), q^(-2t)) + q^(d t^2 + ell t) P(q^(-2t), q^(-2s)).
+    The square system ((j+1)^2 states) is injective exactly when rank = columns.
+    """
+    q0 = Fraction(q)
+    monomials = [(a, b) for a in range(j + 1) for b in range(j + 1)]
+    rows = []
+    for s in range(j + 1):
+        for t in range(s, 2 * j - s + 1):
+            row = []
+            for a, b in monomials:
+                row.append(q0 ** (d * s * s + ell * s) * q0 ** (-2 * s * a - 2 * t * b)
+                           + q0 ** (d * t * t + ell * t) * q0 ** (-2 * t * a - 2 * s * b))
+            rows.append(row)
+    rank = 0
+    for col in range(len(monomials)):
+        pivot = next((i for i in range(rank, len(rows)) if rows[i][col]), None)
+        if pivot is None:
+            continue
+        rows[rank], rows[pivot] = rows[pivot], rows[rank]
+        for i in range(rank + 1, len(rows)):
+            if rows[i][col]:
+                f = rows[i][col] / rows[rank][col]
+                rows[i] = [x - f * y for x, y in zip(rows[i], rows[rank])]
+        rank += 1
+    return len(monomials), rank

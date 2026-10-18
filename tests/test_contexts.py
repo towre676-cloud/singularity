@@ -2,7 +2,7 @@ import unittest
 from collections import Counter
 from fractions import Fraction
 
-from singularity.contexts import (_context_series, finite_difference_budget, finite_difference_probe_set,
+from singularity.contexts import (boundary_determinant, interpolation_rank, _context_series, finite_difference_budget, finite_difference_probe_set,
                                   recover_by_finite_differences, tau, interface_status, interior_zero_coefficient, lower_degree_condition,
                                   orbit_groups, recover_symmetrized_kernel, symmetric_context, symmetric_interface_rank,
                                   symmetric_interface_rank_mod, symmetric_probe_set, symmetrize, top_block_rank_mod,
@@ -280,6 +280,37 @@ class SliceRigidityTests(unittest.TestCase):
         self.assertEqual(interface_status(27, 2, "slice")["invisible_dimension"], 1)
         with self.assertRaises(ValueError):
             interface_status(5, 1, "unknown")
+
+
+class UnequalDegreeInterpolationTests(unittest.TestCase):
+    def test_extreme_coefficients_are_units(self):
+        for j, d, ell in [(1, 1, 0), (2, 1, 0), (2, 3, 2), (3, 2, 1)]:
+            D = boundary_determinant(j, d, ell)
+            self.assertEqual({abs(D[min(D)]), abs(D[max(D)])}, {1})
+
+    def test_injective_at_rational_q(self):
+        for j in range(1, 4):
+            for d in (1, 2):
+                cols, rank = interpolation_rank(j, d, 0, Fraction(1, 2))
+                self.assertEqual(rank, cols)
+
+    def test_exceptional_factor(self):
+        # D_{3,1,0}(z) = z^-43 (z-1)^11 H(z), deg H = 68, H(1) = 3870720, H(0) = lead H = -1.
+        D = boundary_determinant(3, 1, 0)
+        self.assertEqual(min(D), -43)
+        P = [D.get(e, 0) for e in range(min(D), max(D) + 1)]
+        for _ in range(11):
+            out, r = [0] * (len(P) - 1), 0
+            for i in range(len(P) - 1, 0, -1):
+                r += P[i]
+                out[i - 1] = r
+            self.assertEqual(P[0] + r, 0)
+            P = out
+        self.assertEqual((len(P) - 1, sum(P), P[0], P[-1]), (68, 3870720, -1, -1))
+
+    def test_interpolated_bounds(self):
+        first = lambda kappa: next(R for R in range(60) if interface_status(R, kappa, "interpolated")["top_defect"])
+        self.assertEqual((first(2), first(1)), (38, 11))
 
 
 if __name__ == "__main__":

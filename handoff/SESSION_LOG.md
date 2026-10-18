@@ -149,3 +149,15 @@ Next dependency-ready item and exact first action:
 - SNG-F57: reconstruction of 2-regular interiors at the sharp budget ⌊n/2⌋. All 57 graphs with n ≤ 14 are reconstructed.
 - `scripts/locality_family.py --check` runs in CI (14 s).
 - Not done: the q = 1/2 unequal-degree slice rigidity mentioned by the owner; the R = 38 and R = 11 realization questions.
+
+**Continuation (moments, overlaps, interpolation):**
+- SNG-F58: moment series P_H(x,u,q). Extremal strata are the cut profile by size and the degree distribution. C(R,2)+1 pinnings determine P_H mod x^{R+1}. P_H is a complete invariant at every fixed q₀ ∈ (0,1) (the owner's proof, checked). Completeness of A_H itself remains open.
+- The compiler now has a moment mode, checked against enumeration and against reconstruction from pinnings.
+- SNG-F59: unequal-degree slice interpolation over Q(q) and at rational q. Extreme determinant coefficients ±1 were checked for small cases, injectivity at q = 1/2 for j ≤ 4, and the exceptional j = 3 factor (root near q* ≈ 0.89175).
+- Realizable separation for all blocks: through R = 37 with the terminal edge and R = 10 without it (first possible ambiguities at 38 and 11).
+- Overlaps:
+  - rook versus Shrikhande: 8q^{12+4λ}(1−q²)⁶, the K₄ count; diamonds agree as subgraphs, not as induced subgraphs;
+  - the next-coefficient formula holds as an exact Laurent identity on seven pairs; the general decomposition is a conjecture;
+  - the K₂,₃ two-temperature recovery works on three cubic 12-vertex graphs.
+- `scripts/overlap_hierarchy.py --check` runs in CI (17 s).
+- Not implemented: ordered charge charts and chart transport.

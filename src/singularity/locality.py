@@ -22,7 +22,7 @@ from __future__ import annotations
 from collections import Counter
 from fractions import Fraction
 from itertools import permutations
-from typing import Iterable
+from typing import Iterable, Sequence
 
 from .graph import Graph, _integer
 from .heights import weak_compositions
@@ -118,15 +118,23 @@ def _type_key(graph: Graph, subset: frozenset, lam: int) -> tuple:
     return ("graph", tuple(sorted(classes)), tuple(len(c) for c in ordered), best)
 
 
-def _restricted_log(graph: Graph, subset: tuple, lam: int, R: int) -> Series:
-    """log Z_T modulo x^(R+1), Z_T counted over heights supported in T."""
-    weight = [len(graph.neighbors[v]) + lam for v in subset]
+def _restricted_log(graph: Graph, subset: tuple, lam: int | None, R: int) -> Series:
+    """log Z_T modulo x^(R+1), Z_T counted over heights supported in T.
+
+    ``lam=None`` is moment mode: the energy uses the ambient degrees and the
+    squared height S is carried in the key E (R^2 + 1) + S, which is
+    additive and stays decodable because S <= R^2 through degree R.
+    """
+    moment = lam is None
+    weight = [len(graph.neighbors[v]) + (0 if moment else lam) for v in subset]
     position = {v: i for i, v in enumerate(subset)}
     inner = [(position[u], position[v]) for u, v in graph.edges if u in position and v in position]
+    base = R * R + 1
     rows: list[Counter] = [Counter() for _ in range(R + 1)]
     for volume in range(R + 1):
         for h in weak_compositions(volume, len(subset)):
-            rows[volume][sum(w * x * x for w, x in zip(weight, h)) - 2 * sum(h[a] * h[b] for a, b in inner)] += 1
+            energy = sum(w * x * x for w, x in zip(weight, h)) - 2 * sum(h[a] * h[b] for a, b in inner)
+            rows[volume][energy * base + sum(x * x for x in h) if moment else energy] += 1
     return series_log([dict(r) for r in rows], R)
 
 
@@ -162,7 +170,7 @@ def exact_support_log(graph: Graph, subset: frozenset, lam: int, max_volume: int
         T = tuple(v for i, v in enumerate(verts) if mask >> i & 1)
         sign = -1 if (len(verts) - len(T)) % 2 else 1
         for comp in _components(graph, T):
-            key = (_type_key(graph, frozenset(comp), lam), R)
+            key = (_type_key(graph, frozenset(comp), lam or 0), R)
             if key not in memo:
                 memo[key] = _restricted_log(graph, comp, lam, R)
             total = [add(a, scale(b, sign)) for a, b in zip(total, memo[key])]
@@ -174,14 +182,14 @@ def pinned_log(graph: Graph, max_volume: int, lam: int = 2, statistics: dict | N
     if not isinstance(graph, Graph):
         raise TypeError("graph must be a Graph")
     R = _integer(max_volume, "max_volume", minimum=0)
-    lam = _integer(lam, "lam", minimum=0)
+    lam = None if lam is None else _integer(lam, "lam", minimum=0)
     memo: dict[tuple, Series] = {}
     logs: dict = {}
     count: Counter = Counter()
     sets = 0
     for subset in connected_sets(graph, R):
         sets += 1
-        key = _type_key(graph, subset, lam)
+        key = _type_key(graph, subset, lam or 0)
         count[key] += 1
         if key not in memo:
             memo[key] = exact_support_log(graph, subset, lam, R, logs)
@@ -297,3 +305,64 @@ def reconstruct_cycle_type(log: Series, n: int, max_volume: int, lam: int = 2, q
             raise ArithmeticError(f"{rest} leftover vertices: budget {R} cannot split them")
         counts[rest] = counts.get(rest, 0) + 1
     return {ell: c for ell, c in sorted(counts.items()) if c}
+
+
+def moment_series(graph: Graph, max_volume: int) -> list[dict[tuple[int, int], Fraction]]:
+    """P_H(x, u, q) modulo x^(R+1) by the compiler: [x^j] as {(S, E): count}, S = sum h^2 (SNG-F58).
+
+    F_lam is the specialization u = q^lam: [x^j] F_lam = sum C_{j,S,E} q^(E + lam S).
+    """
+    R = _integer(max_volume, "max_volume", minimum=0)
+    base = R * R + 1
+    encoded = series_from_log(pinned_log(graph, R, None))
+    return [{(k % base, k // base): c for k, c in sorted(row.items())} for row in encoded]
+
+
+def moment_series_by_enumeration(graph: Graph, max_volume: int) -> list[dict[tuple[int, int], Fraction]]:
+    R = _integer(max_volume, "max_volume", minimum=0)
+    rows = []
+    for volume in range(R + 1):
+        row: Counter = Counter()
+        for h in weak_compositions(volume, graph.n):
+            row[sum(x * x for x in h), graph.energy(h)] += 1
+        rows.append({k: Fraction(c) for k, c in sorted(row.items())})
+    return rows
+
+
+def specialize_moments(moments: list, lam: int) -> Series:
+    """F_lam from P_H: substitute u = q^lam."""
+    out = []
+    for row in moments:
+        poly: Counter = Counter()
+        for (S, E), c in row.items():
+            poly[E + lam * S] += c
+        out.append(normalize(dict(poly)))
+    return out
+
+
+def moments_from_pinnings(values: dict[int, Sequence], max_volume: int, q) -> list[dict[int, Fraction]]:
+    """Recover C_{j,S}(q0) from F_lam(q0) for C(R,2) + 1 distinct pinnings lam (SNG-F58(b)).
+
+    ``values[lam][j]`` is [x^j] F_lam at q0.  With S = j + 2k,
+    q0^(-lam j) [x^j] F_lam = sum_k C_{j,j+2k} (q0^(2 lam))^k, a Vandermonde system.
+    """
+    R, q0 = _integer(max_volume, "max_volume", minimum=0), Fraction(q)
+    lams = sorted(values)
+    out = []
+    for j in range(R + 1):
+        size = j * (j - 1) // 2 + 1
+        if len(lams) < size:
+            raise ValueError(f"volume {j} needs {size} distinct pinnings")
+        use = lams[:size]
+        rows = [[(q0 ** (2 * lam)) ** k for k in range(size)] + [Fraction(values[lam][j]) / q0 ** (lam * j)] for lam in use]
+        for c in range(size):
+            p = next(i for i in range(c, size) if rows[i][c])
+            rows[c], rows[p] = rows[p], rows[c]
+            inv = 1 / rows[c][c]
+            rows[c] = [x * inv for x in rows[c]]
+            for i in range(size):
+                if i != c and rows[i][c]:
+                    f = rows[i][c]
+                    rows[i] = [x - f * y for x, y in zip(rows[i], rows[c])]
+        out.append({j + 2 * k: rows[k][-1] for k in range(size) if rows[k][-1]})
+    return out

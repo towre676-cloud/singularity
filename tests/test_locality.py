@@ -7,8 +7,10 @@ from itertools import combinations
 from pathlib import Path
 
 from singularity.graph import Graph
+from singularity.invariants import binary_cut_profile
 from singularity.locality import (connected_sets, cycle, cycle_log_difference, disjoint_union, exact_support_log, kappa,
-                                  pinned_log, pinned_series, pinned_series_by_enumeration, reconstruct_cycle_type)
+                                  moment_series, moment_series_by_enumeration, moments_from_pinnings, pinned_log,
+                                  pinned_series, pinned_series_by_enumeration, reconstruct_cycle_type, specialize_moments)
 from singularity.polynomials import normalize, polynomial_from_json, power, scale, sub
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -123,6 +125,41 @@ class CycleReconstructionTests(unittest.TestCase):
             self.assertTrue(D[g])
             with self.assertRaises(ArithmeticError):
                 reconstruct_cycle_type(pinned_log(a, g - 1), n, g - 1)
+
+
+class MomentTests(unittest.TestCase):
+    GRAPH = Graph(6, [(0, 1), (1, 2), (2, 0), (2, 3), (3, 4), (4, 5), (1, 4)])
+
+    def test_moment_compiler_and_specializations(self):
+        M = moment_series(self.GRAPH, 5)
+        self.assertEqual(M, moment_series_by_enumeration(self.GRAPH, 5))
+        for lam in (0, 1, 2, 5):
+            self.assertEqual(specialize_moments(M, lam), pinned_series(self.GRAPH, 5, lam))
+
+    def test_extremal_strata(self):
+        # S = j: zero-one profiles, cuts by size.  S = j^2: one vertex, degrees.
+        M = moment_series(self.GRAPH, 5)
+        cuts = binary_cut_profile(self.GRAPH)
+        for j in range(1, 6):
+            self.assertEqual({E: int(c) for (S, E), c in M[j].items() if S == j},
+                             {c: k for (size, c), k in cuts.items() if size == j})
+            self.assertEqual({E: int(c) for (S, E), c in M[j].items() if S == j * j},
+                             dict(Counter(d * j * j for d in self.GRAPH.degrees)))
+
+    def test_pinnings_determine_moments(self):
+        # C(R,2) + 1 pinnings suffice (Vandermonde in q^(2 lam)); fewer are refused.
+        R, q = 4, Fraction(1, 3)
+        M = moment_series(self.GRAPH, R)
+        values = {lam: [sum(c * q ** e for e, c in row.items()) for row in pinned_series(self.GRAPH, R, lam)] for lam in range(7)}
+        expected = []
+        for row in M:
+            d = Counter()
+            for (S, E), c in row.items():
+                d[S] += c * q ** E
+            expected.append({S: v for S, v in d.items() if v})
+        self.assertEqual(moments_from_pinnings(values, R, q), expected)
+        with self.assertRaises(ValueError):
+            moments_from_pinnings({lam: values[lam] for lam in range(6)}, R, q)
 
 
 if __name__ == "__main__":

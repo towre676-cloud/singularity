@@ -2521,7 +2521,29 @@ Together with SNG-F49(c), which fixes interior volume zero, this sharpens the re
 - **With the terminal edge (\(\kappa=2\)).** Simple symmetric contexts separate the truncated symmetrized kernels of any two blocks through \(R=26\). This removes the \(R=26\) candidate: its coordinate on \(\{10,15\}\) has interior volume one. At \(R=27\) the only possible invisible difference is \(v\) placed at degree \(27\), at interior volumes \(8,4,2\). For equal terminal degrees, separation holds through \(R=37\).
 - **Without the edge (\(\kappa=1\)).** Separation holds through \(R=8\). At \(R=9\) the only possible invisible difference is a multiple of \(e_{\{0,5\}}[9]-e_{\{3,4\}}[9]\). For equal terminal degrees, separation holds through \(R=10\).
 
-On these coordinates the exactness hypothesis of SNG-F49(b) holds for \(R\le27\) (\(\kappa=1\)) and \(R\le93\) (\(\kappa=2\)) in general. For equal terminal degrees it holds for \(R\le38\) and \(R\le120\), the latter being the range checked. All statements are recorded in `results/symmetric_contexts.json`. For unequal terminal degrees, the analogue of (b) for \(j\ge2\) needs an interpolation argument for \(q^{as^2+bt^2}P_j(U,V)+q^{bs^2+at^2}P_j(V,U)\) and is open. So is the question whether the remaining candidates are realized by actual blocks.
+On these coordinates the exactness hypothesis of SNG-F49(b) holds for \(R\le27\) (\(\kappa=1\)) and \(R\le93\) (\(\kappa=2\)) in general. For equal terminal degrees it holds for \(R\le38\) and \(R\le120\), the latter being the range checked. All statements are recorded in `results/symmetric_contexts.json`. For unequal terminal degrees, the analogue of (b) is the following interpolation theorem.
+
+**Theorem SNG-F59 (unequal-degree slice interpolation).** Fix integers \(j\ge0\), \(d\ge1\), \(\ell\ge0\), and let \(P\) have degree at most \(j\) in each variable. Put
+\[
+F_P(s,t)=q^{ds^2+\ell s}P(q^{-2s},q^{-2t})+q^{dt^2+\ell t}P(q^{-2t},q^{-2s}).
+\]
+If \(F_P(s,t)=0\) for all \(s+t\le2j\), then \(P=0\). This holds over \(\mathbb Q(q)\), at every transcendental \(q\), and at every rational \(q\in(0,1)\); more generally at every algebraic \(q\) that is not an algebraic unit. The unordered sample set has \(\sum_{s\le j}(2j-2s+1)=(j+1)^2\) states, the dimension of the space of such \(P\).
+
+*Proof.* For \(j=0\), \(F_P(0,0)=2P\). For \(j\ge1\), the state \((0,0)\) gives \(P(1,1)=0\), so \(P(1,V)=(V-1)A(V)\) and \(P(U,1)=(U-1)B(U)\) with \(\deg A,\deg B\le j-1\). The states \((0,t)\), \(1\le t\le2j\), give \(A(q^{-2t})+q^{dt^2+\ell t}B(q^{-2t})=0\). With \(z=q^{-1}\), the matrix of this system has rows \(\bigl[z^{2kt}\mid z^{2kt-dt^2-\ell t}\bigr]_{0\le k<j}\).
+
+Its determinant \(D_{j,d,\ell}(z)\) is a Laurent polynomial whose extreme coefficients are \(\pm1\). Once the rows assigned to the two column families are fixed, the rearrangement inequality uniquely maximizes the exponent by assigning increasing \(k\), and uniquely minimizes it by assigning decreasing \(k\). Consider adjacent rows \(t,t+1\) holding a \(B\)-entry and an \(A\)-entry of family ranks \(b\) and \(a\), so that \(t=a+b-1\). Moving the \(B\)-entry one row later changes the optimized exponent by \(2(b-a)-d(2t+1)-\ell\le-3-\ell\) for the maximum, and by \(2(a-b)-d(2t+1)-\ell\le-3-\ell\) for the minimum. So the maximum is attained uniquely with all \(B\)-rows first, and the minimum uniquely with all \(B\)-rows last.
+
+After clearing the lowest power, \(D\) is an integer polynomial with leading and constant coefficients \(\pm1\). It is not zero, and by the rational-root theorem it has no rational root \(z>1\); every algebraic root is a unit. Hence \(A=B=0\), and \(P=(U-1)(V-1)Q\) with \(Q\) of bidegree at most \((j-1,j-1)\). At states with \(s,t\ge1\), divide out the nonzero symmetric factor and write \(s=u+1\), \(t=v+1\). Then \(q^{d(u+1)^2+\ell(u+1)}=q^{d+\ell}q^{du^2+(2d+\ell)u}\), and \(Q(q^{-2s},q^{-2t})=\widetilde Q(q^{-2u},q^{-2v})\) with \(\widetilde Q(U,V)=Q(q^{-2}U,q^{-2}V)\). The states \(u+v\le2(j-1)\) give the same problem at bidegree \(j-1\) with \(\ell\mapsto\ell+2d\), and induction completes the proof. \(\square\)
+
+For a block with \(a\ne b\), the symmetrized slice is \(q^{b(s^2+t^2)-2est}F_P(s,t)\) with \(d=|a-b|\) and \(\ell=0\). So slice \(j\) is fixed by its values at \(s+t\le2j\), of total volume at most \(3j\), exactly as in the balanced case. The rule "slice \(j\) is rigid at degree \(v\) when \(3j<v\)" therefore holds for every block (`realizable="interpolated"`). Rerunning SNG-F49 on the remaining coordinates gives two bounds. With the terminal edge, simple symmetric contexts separate the truncated symmetrized kernels of any two blocks through \(R=37\), and the first possible ambiguity is at \(R=38\). Without the edge, separation holds through \(R=10\), and the first possible ambiguity is at \(R=11\).
+
+The arithmetic hypothesis is necessary for the unrestricted statement. For \(j=3\), \(d=1\), \(\ell=0\),
+\[
+D(z)=z^{-43}(z-1)^{11}H(z),\qquad \deg H=68,\quad H(1)=3{,}870{,}720,\quad H(0)=\operatorname{lead}H=-1.
+\]
+\(H\) changes sign between \(z=1.1213855316120952\) and \(1.1213855316120954\), so the boundary system degenerates at \(q_*\approx0.8917539702535734\). This obstructs only unrestricted polynomials. Whether a graph slice can realize the degeneracy is open.
+
+`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open.
 
 ### Boundary charges and a growing compression family
 
@@ -2580,7 +2602,9 @@ For blocks whose patterns span two dimensions the charge table is not smaller th
 - each closure then takes \(0.18\) ms;
 - a fresh tree decomposition of each glued graph takes \(19.6\) s, with identical exact output (`--benchmark`, wall-clock on the session machine, retained).
 
-*Future classes.* For every isomorphism class of interiors on at most six vertices (\(1,2,4,11,34,156\) classes), the sequences \(A_{H,0..5}\) are pairwise distinct. On that population, future equivalence of dominating blocks at budget five is isomorphism of the interiors. Whether non-isomorphic interiors can share the whole sequence, which by SNG-F53(c) would make their dominating blocks indistinguishable in every context, is open. Computing \(A_{H,j}\) for large \(H\) is the remaining cost; the separator machinery of SNG-F26 is the natural compiler for it.
+*Future classes.* For every isomorphism class of interiors on at most six vertices (\(1,2,4,11,34,156\) classes), the sequences \(A_{H,0..5}\) are pairwise distinct. On that population, future equivalence of dominating blocks at budget five is isomorphism of the interiors. Whether non-isomorphic interiors can share the whole sequence, which by SNG-F53(c) would make their dominating blocks indistinguishable in every context, is open. Computing \(A_{H,j}\) for large \(H\) is handled by the connected-support compiler of SNG-F55 below.
+
+*Charge dimension.* If the terminal patterns present have affine dimension \(a\), the cells \((j,Q)\) with \(j\le R\) number \(\Theta(R^{a+1})\). With two distinct patterns \(\chi_1\ne\chi_2\), the charge \(Q=J_1\chi_1+(j-J_1)\chi_2\) determines \(J_1\), so there are exactly \(\binom{R+2}2\) cells, even when \(\chi_1,\chi_2\) span two linear dimensions. For ordered terminal observations there is a reconstruction chart without exceptional parameters. Project the distinct charges of a slice injectively to \(a\) coordinates, and sample the terminal states at the projected charges. The matrix \(M_{v,w}=q^{-2v\cdot w}\) is strictly positive definite, because \(\sum c_vc_wM_{v,w}=\sum_\alpha\frac{(-2\log q)^{|\alpha|}}{\alpha!}\bigl(\sum_vc_vv^\alpha\bigr)^2\) and polynomial interpolation on a finite set makes some square nonzero. The total budget is at most \((a+1)R\). With several charges per slice the single-closure inverse of SNG-F53(c) is replaced by such a chart \(J\), and transport becomes \(J'J^{-1}\). These charts are not implemented.
 
 ## Every late census collision is separated by triangles
 
@@ -2643,6 +2667,62 @@ The budget \(R=\lfloor n/2\rfloor\) determines \(H\), and for \(n\ge6\) no small
 *Proof.* By SNG-F55, \(\log A_{C_\ell}=\ell\sum_{k<\ell}\varphi_k+\Phi_{C_\ell}\), so \(D_\ell=\Phi_{C_\ell}-\ell\sum_{k\ge\ell}\varphi_k\). Its degree-\(\ell\) coefficient is the cycle-minus-paths count of SNG-F56, \(q^{4\ell}f^\ell=\kappa^\ell\). Logarithms add over components, which gives the triangular system. After the cycles of length at most \(R\) are found, the remaining vertices can form at most one cycle, since two cycles longer than \(n/2\) need more than \(n\) vertices. Sharpness: \(C_{2g}\) against \(C_g\sqcup C_g\), and \(C_{2g+1}\) against \(C_g\sqcup C_{g+1}\), agree below volume \(g\), because the difference of logarithms is \(D_g+D_{g+1}-D_{2g+1}\) or \(2D_g-D_{2g}\). \(\square\)
 
 `reconstruct_cycle_type` implements the recursion at a rational \(q_0\). The receipt reconstructs all 57 two-regular graphs on at most fourteen vertices at budget \(\lfloor n/2\rfloor\) and records the sharpness pairs. It checks the compiler against weak-composition enumeration on ten graphs for both \(\lambda\), and the cycle identity for \(g=3,\ldots,8\), with an enumeration oracle for \(g\le6\); the session also confirmed \(g=9,10\). This gives an infinite graph class with a proved reconstruction algorithm, a sharp observation threshold, and explicit pairs attaining it.
+
+### Squared height: a complete enrichment
+
+Fixed pinning merges profiles with the same volume and energy but different squared height. Keeping the squared height as a second marker gives
+\[
+\mathcal P_H(x,u,q)=\sum_{h:V\to\mathbb N}x^{J(h)}u^{S(h)}q^{E_H(h)},\qquad J=\sum_vh_v,\quad S=\sum_vh_v^2,
+\]
+so that \(F_\lambda(H)=\mathcal P_H(x,q^\lambda,q)\).
+
+**Theorem SNG-F58 (the moment series).**
+
+(a) \([x^ju^j]\mathcal P_H=\sum_{|T|=j}q^{|\partial T|}\), the binary cut profile by size, and \([x^ju^{j^2}]\mathcal P_H=\sum_vq^{\deg(v)j^2}\) for \(j\ge1\), the degree distribution.
+
+(b) Write \(C_{j,S}=[x^ju^S]\mathcal P_H\). Since \(h^2\equiv h\pmod2\), we have \(S=j+2k\) with \(0\le k\le\binom j2\), and \(q^{-\lambda j}[x^j]F_\lambda=\sum_kC_{j,j+2k}(q^{2\lambda})^k\). Hence any \(\binom R2+1\) distinct pinnings \(\lambda\) determine \(\mathcal P_H\bmod x^{R+1}\), at every \(q\in(0,1)\).
+
+(c) For every \(q_0\in(0,1)\), \(\mathcal P_H(x,u,q_0)=\mathcal P_{H'}(x,u,q_0)\) as formal series in \(x,u\) if and only if \(H\cong H'\).
+
+*Proof.* (a) \(S=J\) forces heights in \(\{0,1\}\), and \(S=J^2\) forces the whole volume onto one vertex. (b) The system is a Vandermonde system in the distinct numbers \(q^{2\lambda}\).
+
+(c) By (a), the series determines \(n\) at \(q_0\): the degree multiplicities follow by successive exponential dominance. Choose an integer \(B>2n\) with \(\eta=q_0^{B^2}<1/(n!+1)\), put \(M_i=B^{3^i}\) for \(0\le i<n\), \(J_*=\sum M_i\) and \(S_*=\sum M_i^2\).
+
+First, these moments force the multiset of heights to be \(\{M_i\}\). Let \(M\) be the largest and \(r\) the sum of the others, so \((r+1)^2<M\). A competing \(n\)-tuple with maximum at most \(M-1\) has square sum at most \((M-1)^2+(r+1)^2<M^2\). One with maximum at least \(M+1\) has square sum above \(M^2+r^2\ge S_*\). So its maximum is \(M\); remove it and repeat. Hence
+\[
+[x^{J_*}u^{S_*}]\mathcal P_H=\sum_{\pi}q_0^{E_\pi},\qquad E_\pi=\sum_id_\pi(i)B^{2\cdot3^i}-2\sum_{i<j}A_\pi(i,j)B^{3^i+3^j},
+\]
+summed over the \(n!\) bijections of heights to vertices. The positions \(2\cdot3^i\) and \(3^i+3^j\) are distinct, and the digits lie in \([-2,n-1]\), so with \(B>2n\) each \(E_\pi\), read in balanced base \(B\), returns the degrees and adjacencies of a labelling. Each \(E_\pi\) is a multiple of \(B^2\), so the coefficient is \(\sum_kc_k\eta^k\) with \(0\le c_k\le n!\).
+
+Second, the specialization keeps this information. If the histograms of \(H\) and \(H'\) differ, factor out the first differing power of \(\eta\). The remaining constant is a nonzero integer, while the tail has absolute value at most \(n!\eta/(1-\eta)<1\). So equal coefficients force equal histograms, which contain a common labelled adjacency matrix. \(\square\)
+
+The separating volumes in (c) are enormous. This is a completeness statement, not an isomorphism algorithm, and completeness of the fixed-pinning series \(A_H=F_2(H)\) remains open.
+
+At budgets the compiler reaches, (b) gives an inexpensive enrichment with an independent check. In moment mode, `moment_series` in `src/singularity/locality.py` carries \(S\) through the connected-support compiler, packed into the exponent key \(E(R^2+1)+S\), which stays additive and decodable through degree \(R\). `moments_from_pinnings` recovers \(C_{j,S}(q_0)\) from \(\binom R2+1\) ordinary pinned series. The receipt checks both against enumeration, as well as the strata of (a).
+
+### Beyond the first cycle: overlaps
+
+SNG-F56 resolves cycles. The next information a budget reaches is how cycles overlap. Three exact computations make this concrete.
+
+*Rook against Shrikhande.* The \(4\times4\) rook graph and the Shrikhande graph are \(6\)-regular on sixteen vertices, with the same spectrum, thirty-two triangles, sixty squares and forty-eight diamond subgraphs. They differ in \(K_4\) subgraphs: eight against none. Their series agree below volume four, and
+\[
+[x^4]\bigl(F_\lambda(\mathrm{rook})-F_\lambda(\mathrm{Shrikhande})\bigr)=8q^{12+4\lambda}(1-q^2)^6
+\]
+for \(\lambda=0,2\), confirmed by enumeration. With \(a=q^{d+\lambda}\), \(f=q^{-2}-1\) and \(\kappa=af\), this is \(\kappa^4f^2\Delta N_{K_4}\). It matches the normalized girth-three term \(N_4+fN_{\mathrm{diamond}}+f^2N_{K_4}\), with diamonds counted as subgraphs: the induced counts are \(0\) and \(48\), and each \(K_4\) contains six diamonds.
+
+*One volume past the first cycle.* Put \(\beta=a\bigl((d-2)f-2\bigr)+a^3(q^{-2}+1)^2\). For \(d\)-regular graphs of equal order and girth at least \(g\ge5\),
+\[
+\Delta[x^{g+1}]F_\lambda=\Delta N_{g+1}\kappa^{g+1}+\Delta N_g\kappa^g(g\beta+na).
+\]
+The term \(na\) comes from exponentiating the logarithm, since \([x]\log F=na\). We verified this as an exact Laurent identity, for \(\lambda=0,2\), on seven pairs: \(2C_g\) against \(C_{2g}\) for \(g=5,6,7\); two Petersen graphs against the dodecahedron; the dodecahedron against the Desargues graph; and two Petersen graphs against the Desargues graph. A general proof is not written. The natural route is a centered (loop-series) expansion: for \(R<b_g=\lceil3g/2\rceil-1\), the only connected footprints without leaves are single cycles, so one expects \(\log F_\lambda\equiv nb_{d,\lambda}+\sum_{\ell=g}^RN_\ell W_{\ell,d,\lambda}\) with universal series. We record this as a conjecture.
+
+*The first bicycle.* For girth \(g=4\), the first footprint with two independent cycles is \(K_{2,3}\), on \(b_4=5\) vertices. Take three cubic graphs on twelve vertices, each with six squares, whose \((N_5,N_{K_{2,3}})\) counts are \((0,0)\), \((0,1)\) and \((4,2)\). For every pair and \(\lambda=0,2\), the series agree below volume five, and
+\[
+\Delta[x^5]F_\lambda=\kappa^5\bigl(\Delta N_5+f\,\Delta N_{K_{2,3}}\bigr).
+\]
+Since \(f(1/2)=3\) and \(f(1/3)=8\), the normalized differences \(r(q)=\Delta[x^5]F/\kappa^5\) at two temperatures recover both counts: \(\Delta N_{K_{2,3}}=(r(1/3)-r(1/2))/5\) and \(\Delta N_5=(8r(1/2)-3r(1/3))/5\). The receipt recovers all three pairs exactly. The absolute version, which subtracts universal background and cycle series, depends on the conjectured decomposition above.
+
+So a budget resolves cycles first and then their overlaps, and two temperatures already separate a cycle count from a bicycle count. These statements are checked in `results/overlap_hierarchy.json`, produced by `scripts/overlap_hierarchy.py` and checked in CI.
 
 ## What should be searched next?
 
