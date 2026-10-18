@@ -16,8 +16,8 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 |---|---|---:|
 | `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 3 |
 | `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 3 |
-| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 1 |
-| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 7 |
+| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 2 |
+| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 6 |
 | `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 22 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
@@ -79,7 +79,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P29](#p29) | Specify a complete finite graph census | `complete` | P03 | S | 1 |
 | [P30](#p30) | Measure collision classes across invariants | `partial` | P12, P14, P29 | M | 2 |
 | [P31](#p31) | Resolve targeted collisions structurally | `blocked` | P16, P30 | L | 2 |
-| [P32](#p32) | Seek a separation bound for one graph family | `blocked` | P06, P12, P31 | L | 2 |
+| [P32](#p32) | Seek a separation bound for one graph family | `implemented_pending_acceptance` | P06, P12, P31 | L | 2 |
 | [P33](#p33) | Verify concrete coefficient certificates in a kernel | `blocked` | P07, P08, P23 | L | 3 |
 | [P34](#p34) | Formalize the visibility comparison boundary | `blocked` | P26, P33 | L | 3 |
 | [P35](#p35) | Release the first focused manuscript | `partial` | P04, P05, P26, P27, P33 | M | 3 |
@@ -650,19 +650,18 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P32
 
-**Seek a separation bound for one graph family.** Status: `blocked`. Dependencies: P06, P12, P31. Remaining effort: L; priority: 2.
+**Seek a separation bound for one graph family.** Status: `implemented_pending_acceptance`. Dependencies: P06, P12, P31. Remaining effort: L; priority: 2.
 
-**Existing work:** Regular-graph blindness at early volumes and the cube/Mobius-ladder separation provide calibrated finite evidence. The manuscript explicitly keeps general reconstruction and unbounded delayed visibility open.
+**Existing work:** Theorem SNG-F36 (proved, uniform in the family): for the cycle C_2l with leaves at distance p versus opposite (2 <= p < l), all local, normalized and marked coefficients agree through volume p and the volume-(p+1) difference is q^2(1-q)^2(1-q^2)^p, entirely binary; the complete binary difference has the closed form q^2(1-q)^2(1-q^2)^p z^(p+1)(1-z)^2 U_(l-p)^2. With l=p+1 the depth is (n-2)/2, a decisive counterfamily to any fixed-depth bound for equal-order pairs with equal degree sequences, equal edge degree types and isometric cut lattices. Theorem SNG-F37 proves L_{G(l,j)} >= L_{G(l,j')} for j<=j'<=l on (0,1)^2 by a positive-definite Gaussian transfer kernel (sum of squares).
 
-**Evidence:** [docs/chapters/04_observation_hierarchy.md](../docs/chapters/04_observation_hierarchy.md); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [docs/chapters/09_exact_examples.md](../docs/chapters/09_exact_examples.md).
+**Evidence:** [src/singularity/families.py](../src/singularity/families.py); [tests/test_families.py](../tests/test_families.py); [scripts/pendant_family.py](../scripts/pendant_family.py); [results/pendant_family.json](../results/pendant_family.json); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md).
 
 **Acceptance still missing:**
 
-- No parameterized family with a uniformly proved first-separation bound, or a uniform counterfamily defeating a proposed bound, is established.
-- P06 and P12 are complete; P31 remains open.
-- The latest chat's large-girth delayed-visibility and terminal-interface ideas are conjectural research directions, not accepted proofs or replacements for P32.
+- Original dependency gate: P31 (structural resolution of targeted collisions) is not accepted, so P32 cannot be marked complete without an explicit roadmap amendment.
+- The theorem is a counterfamily for fixed-depth bounds; no upper separation bound for a natural graph class is claimed.
 
-**Next concrete action:** Choose one narrow family from accepted collision evidence, formulate a uniform statement and pursue either a proof or explicit counterfamily with all construction hypotheses checked.
+**Next concrete action:** Either accept P31 or record a roadmap amendment that P32's counterfamily outcome does not depend on P31; then close P32 with the existing receipt.
 
 ### P33
 

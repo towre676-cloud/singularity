@@ -55,6 +55,20 @@ class RootIsolationTests(unittest.TestCase):
         self.assertEqual(gcd({0: -1, 2: 1}, {0: 1, 1: 1}), {0: 1, 1: 1})
 
 
+class EndpointContractTests(unittest.TestCase):
+    def test_isolating_intervals_have_root_free_endpoints(self):
+        # q (q - 1)(2 q^2 - 1): roots 0 and 1 sit on the search interval's ends.
+        f = mul(mul({1: 1}, {0: -1, 1: 1}), {0: -1, 2: 2})
+        roots = isolate_roots(f)
+        self.assertEqual(len(roots), 1)
+        a, b = roots[0]["interval"]
+        self.assertTrue(0 < a < b < 1)
+        self.assertNotEqual(evaluate(f, a), 0)
+        self.assertNotEqual(evaluate(f, b), 0)
+        self.assertLess(evaluate(f, a) * evaluate(f, b), 0)
+        self.assertTrue(vanishes_at({0: -1, 2: 2}, roots[0], f))
+
+
 class StrataTests(unittest.TestCase):
     def test_released_pairs_have_no_interior_exceptional_parameter(self):
         pairs = [

@@ -1046,7 +1046,7 @@
     {
       "id": "P32",
       "title": "Seek a separation bound for one graph family",
-      "status": "blocked",
+      "status": "implemented_pending_acceptance",
       "effort": "L",
       "priority": 2,
       "dependencies": [
@@ -1055,17 +1055,17 @@
         "P31"
       ],
       "evidence": [
-        "docs/chapters/04_observation_hierarchy.md",
-        "docs/chapters/10_inverse_problems.md",
-        "docs/chapters/13_research_program.md",
-        "docs/chapters/09_exact_examples.md"
+        "src/singularity/families.py",
+        "tests/test_families.py",
+        "scripts/pendant_family.py",
+        "results/pendant_family.json",
+        "docs/chapters/10_inverse_problems.md"
       ],
-      "existing_work": "Regular-graph blindness at early volumes and the cube/Mobius-ladder separation provide calibrated finite evidence. The manuscript explicitly keeps general reconstruction and unbounded delayed visibility open.",
-      "next_action": "Choose one narrow family from accepted collision evidence, formulate a uniform statement and pursue either a proof or explicit counterfamily with all construction hypotheses checked.",
+      "existing_work": "Theorem SNG-F36 (proved, uniform in the family): for the cycle C_2l with leaves at distance p versus opposite (2 <= p < l), all local, normalized and marked coefficients agree through volume p and the volume-(p+1) difference is q^2(1-q)^2(1-q^2)^p, entirely binary; the complete binary difference has the closed form q^2(1-q)^2(1-q^2)^p z^(p+1)(1-z)^2 U_(l-p)^2. With l=p+1 the depth is (n-2)/2, a decisive counterfamily to any fixed-depth bound for equal-order pairs with equal degree sequences, equal edge degree types and isometric cut lattices. Theorem SNG-F37 proves L_{G(l,j)} >= L_{G(l,j')} for j<=j'<=l on (0,1)^2 by a positive-definite Gaussian transfer kernel (sum of squares).",
+      "next_action": "Either accept P31 or record a roadmap amendment that P32's counterfamily outcome does not depend on P31; then close P32 with the existing receipt.",
       "acceptance_gaps": [
-        "No parameterized family with a uniformly proved first-separation bound, or a uniform counterfamily defeating a proposed bound, is established.",
-        "P06 and P12 are complete; P31 remains open.",
-        "The latest chat's large-girth delayed-visibility and terminal-interface ideas are conjectural research directions, not accepted proofs or replacements for P32."
+        "Original dependency gate: P31 (structural resolution of targeted collisions) is not accepted, so P32 cannot be marked complete without an explicit roadmap amendment.",
+        "The theorem is a counterfamily for fixed-depth bounds; no upper separation bound for a natural graph class is claimed."
       ],
       "packet": "handoff/tasks/P32.md"
     },

@@ -108,8 +108,14 @@ def isolate_roots(f: Mapping[int, Fraction], low: Fraction = Fraction(0), high: 
             continue
         if inside == 1:
             exact = [r for r in (rationals or []) if a < r < b]
-            roots.append({"rational": exact[0]} if exact else {"interval": (a, b)})
-            continue
+            if exact:
+                roots.append({"rational": exact[0]})
+                continue
+            if evaluate(base, a) != 0 and evaluate(base, b) != 0:
+                roots.append({"interval": (a, b)})
+                continue
+            # An endpoint is itself a root of f: keep bisecting until the
+            # isolating interval has root-free endpoints, as promised.
         middle = (a + b) / 2
         if evaluate(base, middle) == 0:
             roots.append({"rational": middle})

@@ -23,6 +23,7 @@ jobs:
         run: |
           PYTHONPATH=src python scripts/chain_agreement.py --check
           PYTHONPATH=src python scripts/census_manifest.py --check
+          PYTHONPATH=src python scripts/pendant_family.py --check
       - name: Repository and manuscript checks
         run: python scripts/check_repository.py
       - name: Published document links
