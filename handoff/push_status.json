@@ -691,7 +691,7 @@
     {
       "id": "P23",
       "title": "Implement formal logarithmic extraction",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
@@ -702,15 +702,28 @@
         "src/singularity/euler.py",
         "tests/test_analytics.py",
         "docs/chapters/06_euler_analysis.md",
-        "src/singularity/certificates.py"
+        "docs/specifications/COEFFICIENTS-v1.md",
+        "src/singularity/certificates.py",
+        "results/certificates/spectral.json"
       ],
-      "existing_work": "Sparse rational arithmetic, inverse series, logarithms, recursive and independent Mobius ordinary Euler exponents, and generalized-binomial recomposition are implemented. Exact tests reconstruct inputs and check identities. SNG-A07 proves the ordinary polynomial-exponent transform in prose.",
-      "next_action": "Reuse the existing modules and run their acceptance checks on the accepted certificate population; do not implement a duplicate logarithm/Euler engine.",
-      "acceptance_gaps": [
-        "P03 acceptance is open; record a closure receipt connecting existing transform tests to portable inputs.",
-        "Keep the prose integral bidegree/plethystic transform distinct: it is not the same implemented ordinary Euler exponent API and is not required to close this original push."
-      ],
-      "packet": "handoff/tasks/P23.md"
+      "existing_work": "The existing exact transforms are audited and accepted. The specification fixes the coefficient ring Q[q], required constant terms, inclusive truncation and JSON triples, and separates the ordinary exponents from the integral bidegree transform (SNG-A08). Chapter 6 maps each identity to its independent implementation. New tests cover the single-edge worked example (6.10), the triangular identity n c_n = sum_{d|n} d b_d on a graph series, degree-zero truncation, reduced rationals, prefix stability and recomposition of every retained certificate's exponents.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P23.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "formal logarithm, inverse series and finite Euler exponents in rational arithmetic": "polynomials.series_log/series_inverse/series_exp; euler.euler_exponents; FormalSeriesTests",
+          "reconstruct the input truncation by multiplication": "recompose_euler; test_nonconstant_polynomial_exponents_recompose; test_portable_certificate_exponents_recompose; certificate replay",
+          "verify the Mobius coefficient identities": "test_triangular_log_identity_and_mobius_inverse; euler_exponents_mobius equality tests",
+          "distinguish q-dependent exponents from integer multiplicities": "SNG-A07 versus SNG-A08 discussion; specification section 8; negative and fractional exponents in test_single_edge_worked_example_matches_chapter_six",
+          "specialization can annihilate a symbolic discrepancy": "test_symbolic_difference_can_vanish_after_specialization",
+          "P03 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_analytics -v"
+        ]
+      }
     },
     {
       "id": "P24",
@@ -835,26 +848,39 @@
     {
       "id": "P29",
       "title": "Specify a complete finite graph census",
-      "status": "partial",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
         "P03"
       ],
       "evidence": [
+        "docs/specifications/CENSUS-v1.md",
+        "scripts/census_manifest.py",
+        "results/census_manifest.json",
+        "tests/test_census.py",
         "scripts/census.py",
-        "results/small_census.json",
-        "docs/IMPLEMENTATION.md",
-        "scripts/check_repository.py"
+        "results/small_census.json"
       ],
-      "existing_work": "Every labeled simple graph through n=6 is generated, connectedness is checked and degree-respecting permutations give an exact isomorphism quotient. Graph representatives, canonical codes, scope and labeled/unlabeled counts are retained; n=6 yields 26704 connected labeled graphs and 112 classes.",
-      "next_action": "Freeze the current n<=6 representatives into a hashed input manifest, independently reconcile the known counts and record generation/canonicalization options without expanding the search scope yet.",
-      "acceptance_gaps": [
-        "No canonical per-graph source-hash manifest or independent generation-count reconciliation receipt is released.",
-        "The retained finite graph list must be separated from aggregate invariant summaries so later comparisons reuse exactly the same population.",
-        "P03 acceptance is open."
-      ],
-      "packet": "handoff/tasks/P29.md"
+      "existing_work": "CENSUS-v1.md fixes the population (connected simple graphs, orders 1..6), mask-order generation, the degree-sorted minimum-code isomorphism decision with proof, representative selection, digest encoding and the labeled versus class count distinction. census_manifest.py retains every class with code, generation mask, canonical edges, SHA-256 digest, degrees, labeled copies and brute-force automorphism group order, and refuses to write unless the labeled counts match an independent recurrence and every code group satisfies orbit-stabilizer.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P29.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "canonical input manifest with isomorphism handling documented": "docs/specifications/CENSUS-v1.md sections 2-6; results/census_manifest.json",
+          "independently reconcile population counts": "recurrence c_n gives 1,1,4,38,728,26704; orbit-stabilizer totals equal them; classes 1,1,2,6,21,112; CensusManifestTests.test_counts_reconcile",
+          "uniqueness and coverage, not copied counts": "labeled_copies x |Aut| = n! per class (automorphisms by all n! permutations); pairwise brute-force non-isomorphism through n=5 in test_automorphisms_and_uniqueness_through_five_vertices",
+          "generation options and graph hashes": "manifest generation/digest fields; test_reconstruct_every_graph recomputes digests, codes and connectedness",
+          "relabeled copies, equal-degree distinct graphs, reserialization": "test_relabeled_copies_and_equal_degree_graphs (prism versus K3,3); test_reserialization_is_deterministic",
+          "same population as aggregate summaries": "test_manifest_is_the_census_population"
+        },
+        "commands": [
+          "PYTHONPATH=src python scripts/census_manifest.py --check",
+          "PYTHONPATH=src python -m unittest tests.test_census -v"
+        ]
+      }
     },
     {
       "id": "P30",

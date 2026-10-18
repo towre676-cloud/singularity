@@ -1020,6 +1020,8 @@ The first exponents are
  b_3=\ell_3-\ell_1\ell_2+\frac{\ell_1^3-\ell_1}{3}.
 \]
 
+The implementation follows these identities literally and keeps them independent. `series_log` uses the recurrence (6.1); `euler_exponents` solves \(nc_n=\sum_{d\mid n}db_d\) upward; `euler_exponents_mobius` applies (6.3); and `recompose_euler` rebuilds \(L\) by multiplying the generalized binomial series \((1-x^m)^{-b_m}=\sum_j\binom{b_m+j-1}{j}x^{mj}\), without any logarithm. All arithmetic is in \(\mathbb Q[q]\) with reduced fractions, and a prefix through volume \(N\) determines exactly the exponents \(b_1,\ldots,b_N\). Tests check the triangular identity on a seven-vertex graph series, the single-edge values (6.10), recomposition of every retained certificate's exponents, nonconstant rational exponents and a symbolic discrepancy that vanishes at \(q=1\), so that the specialized first difference moves to a later volume.
+
 These formulas are economical coordinates for local information. They do not make every exponent nonnegative or integral as a polynomial in \(q\). Such claims would be false for general integer-coefficient series. The existence theorem is over \(\mathbb Q[q]\), where the necessary divisions are legitimate.
 
 Common-shift removal has an especially simple Euler-coordinate description. If \(B=(1-x^k)L\), then
@@ -2654,7 +2656,7 @@ From the repository root, `python -m pip install -e .` installs the command `sin
 
 ## Implemented mathematical modules
 
-The meaning of every public coefficient, population and certificate interface is fixed in the [coefficient specification](specifications/COEFFICIENTS-v1.md).
+The meaning of every public coefficient, population and certificate interface is fixed in the [coefficient specification](specifications/COEFFICIENTS-v1.md). The finite graph population used by census comparisons is fixed in the [census specification](specifications/CENSUS-v1.md).
 
 | Module | Exact object | Current capability |
 |---|---|---|

@@ -15,7 +15,7 @@ from singularity.graph import Graph
 from singularity.heights import local_coefficients, marked_coefficients
 from singularity.polynomials import (
     add, constant, derivative, evaluate, from_factors, mul, normalize,
-    polynomial_from_json, polynomial_to_json, power, series_exp,
+    polynomial_from_json, polynomial_to_json, power, scale, series_exp,
     series_inverse, series_log, series_mul, sub, verify_factorization,
 )
 
@@ -120,6 +120,53 @@ class FormalSeriesTests(unittest.TestCase):
         self.assertEqual({span for volume, _, span in differing if volume == 5}, {2})
         fifth = sub(a[5], b[5])
         self.assertTrue(verify_factorization(fifth, 8, 9, [(2, 2), (4, 2)]))
+
+    def test_single_edge_worked_example_matches_chapter_six(self):
+        series = local_coefficients(Graph(2, [(0, 1)]), 3)
+        exponents = euler_exponents(series)
+        self.assertEqual(exponents[1], {1: 2})
+        self.assertEqual(exponents[2], normalize({0: 1, 1: -1, 2: -2, 4: 2}))
+        self.assertEqual(exponents[3], normalize({1: Fraction(-2, 3), 3: Fraction(8, 3), 5: -4, 9: 2}))
+        self.assertEqual([evaluate(b, Fraction(1, 2)) for b in exponents[1:]], [1, Fraction(1, 8), Fraction(-31, 256)])
+        self.assertEqual(euler_exponents_mobius(series), exponents)
+
+    def test_triangular_log_identity_and_mobius_inverse(self):
+        # n [x^n] log L = sum_{d | n} d b_d, checked directly on a graph series.
+        series = local_coefficients(GRAPHS["spectral_g"], 6)
+        logarithm, exponents = series_log(series), euler_exponents(series)
+        for n in range(1, 7):
+            total = {}
+            for d in range(1, n + 1):
+                if n % d == 0:
+                    total = add(total, scale(exponents[d], d))
+            self.assertEqual(scale(logarithm[n], n), total)
+
+    def test_degree_zero_truncation_and_reduced_rationals(self):
+        self.assertEqual(series_log([{0: 1}]), [{}])
+        self.assertEqual(euler_exponents([{0: 1}]), [{}])
+        self.assertEqual(recompose_euler([{}]), [{0: 1}])
+        self.assertEqual(series_inverse([{0: 4}]), [{0: Fraction(1, 4)}])
+        exponents = euler_exponents([{0: 1}, {0: Fraction(2, 4)}, {}])
+        for poly in exponents:
+            for value in poly.values():
+                self.assertEqual(Fraction(value.numerator, value.denominator), value)
+        self.assertEqual(exponents[2], {0: Fraction(-3, 8)})
+        # Only factors with m <= N affect coefficients through N: truncation is inclusive.
+        long = euler_exponents(local_coefficients(Graph(3, [(0, 1)]), 6))
+        self.assertEqual(euler_exponents(local_coefficients(Graph(3, [(0, 1)]), 4)), long[:5])
+
+    def test_portable_certificate_exponents_recompose(self):
+        import json
+        from pathlib import Path
+        from singularity.polynomials import polynomial_from_json
+        root = Path(__file__).resolve().parents[1]
+        for path in sorted((root / "results/certificates").glob("*.json")):
+            packet = json.loads(path.read_text(encoding="utf-8"))
+            exponents = [polynomial_from_json(p) for p in packet["euler_exponents"]]
+            local = [{e: c for e, c in row} for row in packet["local_coefficients"]]
+            with self.subTest(path=path.name):
+                self.assertEqual(recompose_euler(exponents), [normalize(r) for r in local])
+                self.assertEqual(euler_exponents_mobius(local), exponents)
 
     def test_invalid_series_units(self):
         with self.assertRaises(ValueError):

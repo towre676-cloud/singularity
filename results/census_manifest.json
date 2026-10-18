@@ -1,0 +1,7048 @@
+{
+ "digest": "sha256 of compact sorted-key JSON {n, edges} with canonical edges, as in certificates",
+ "generation": "every edge subset of combinations(range(n), 2), bit j selecting pair j, masks in increasing order",
+ "graph_class": "connected simple loopless graphs, original labels 0..n-1",
+ "isomorphism": "census.canonical_code: minimum adjacency bit string over degree-sorted vertex orders",
+ "orders": [
+  {
+   "classes": [
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 0,
+     "degrees": [
+      0
+     ],
+     "edges": [],
+     "generation_mask": 0,
+     "labeled_copies": 1,
+     "n": 1,
+     "sha256": "a05b398d6b41f4b0ff461d21c6351290da7097caf6af4886d54f9e841a73e4b4"
+    }
+   ],
+   "connected_labeled_graphs": 1,
+   "isomorphism_classes": 1,
+   "labeled_graphs_generated": 1,
+   "n": 1,
+   "orbit_stabilizer_total": 1,
+   "recurrence_connected_labeled": 1
+  },
+  {
+   "classes": [
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1,
+     "degrees": [
+      1,
+      1
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ]
+     ],
+     "generation_mask": 1,
+     "labeled_copies": 1,
+     "n": 2,
+     "sha256": "2eee0cb4357d2f732c34bea97148bb213d067ef5bf92fca3cadde5345ea6a774"
+    }
+   ],
+   "connected_labeled_graphs": 1,
+   "isomorphism_classes": 1,
+   "labeled_graphs_generated": 2,
+   "n": 2,
+   "orbit_stabilizer_total": 1,
+   "recurrence_connected_labeled": 1
+  },
+  {
+   "classes": [
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3,
+     "degrees": [
+      1,
+      1,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "generation_mask": 3,
+     "labeled_copies": 3,
+     "n": 3,
+     "sha256": "57169b81ce720143d889f2f80114fb2bef7fca41559387ba8325e616d5380b71"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 7,
+     "degrees": [
+      2,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 7,
+     "labeled_copies": 1,
+     "n": 3,
+     "sha256": "51b2cf57cfe7e5a5f90a1dc6d7bf11844282375402df9197063b512b2f08a97c"
+    }
+   ],
+   "connected_labeled_graphs": 4,
+   "isomorphism_classes": 2,
+   "labeled_graphs_generated": 8,
+   "n": 3,
+   "orbit_stabilizer_total": 4,
+   "recurrence_connected_labeled": 4
+  },
+  {
+   "classes": [
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 11,
+     "degrees": [
+      1,
+      1,
+      1,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ]
+     ],
+     "generation_mask": 7,
+     "labeled_copies": 4,
+     "n": 4,
+     "sha256": "7e045afbedaa40a8411a255e19940aef028bb157cd35315c2be7811c4b983d77"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 13,
+     "degrees": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 13,
+     "labeled_copies": 12,
+     "n": 4,
+     "sha256": "c27121170f5fca4e85a533b878d13456bf750980309f4b11703ba65c3dc9d805"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 15,
+     "degrees": [
+      1,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 15,
+     "labeled_copies": 12,
+     "n": 4,
+     "sha256": "175a459a497d1cc601eeaea5b1c4ecc3431a600712a0fdcd86f38f9d15a52c10"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 30,
+     "degrees": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 30,
+     "labeled_copies": 3,
+     "n": 4,
+     "sha256": "33b7ce330a760341d2058b6c1d50ad01eb705682c4038e9a9b00087c9749f87c"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 31,
+     "degrees": [
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 31,
+     "labeled_copies": 6,
+     "n": 4,
+     "sha256": "fa2352f3434a8d16a147ae422db37b3622ad27ce9ce9424a5f1aaebc47c7c4e7"
+    },
+    {
+     "automorphism_group_order": 24,
+     "canonical_code": 63,
+     "degrees": [
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 63,
+     "labeled_copies": 1,
+     "n": 4,
+     "sha256": "cc6c3fb49378e8e9ecb29e465cf1307e125c190283d89d0da0642a85fc07c498"
+    }
+   ],
+   "connected_labeled_graphs": 38,
+   "isomorphism_classes": 6,
+   "labeled_graphs_generated": 64,
+   "n": 4,
+   "orbit_stabilizer_total": 38,
+   "recurrence_connected_labeled": 38
+  },
+  {
+   "classes": [
+    {
+     "automorphism_group_order": 24,
+     "canonical_code": 75,
+     "degrees": [
+      1,
+      1,
+      1,
+      1,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ]
+     ],
+     "generation_mask": 15,
+     "labeled_copies": 5,
+     "n": 5,
+     "sha256": "0f55b91c211f93e7313101ae558a691721ac5fd6efdc784931364ca7690cd08d"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 77,
+     "degrees": [
+      1,
+      1,
+      1,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 29,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "4f1a481d95923bfd806e21c8a9e6974fe7ec181dfecdaad0ae8f7a37cfd25321"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 79,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 31,
+     "labeled_copies": 30,
+     "n": 5,
+     "sha256": "4ecedf1a5630a2e63a5e304adf0a275cb035fcd82f01da9214652b5f978fce56"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 86,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 58,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "d73e27004eee1d8a503dccdb2fe1fab74f680b5417410f8c29ffeeaf12ed046e"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 87,
+     "degrees": [
+      1,
+      1,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 59,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "b69a4c8a07819bb926e6d04c49c95318abf6250a87ca724eb75c42a57b6d5c85"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 94,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 62,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "9695bafa06a0f44d549e4147452160d8686ec77d06c78639ccdc85b386a685f8"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 95,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 63,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "fcf36750017a5c363acdcedc717cd60771a076c5b8b431b3008ff533c059f66e"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 119,
+     "degrees": [
+      1,
+      2,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 187,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "8d4e84ac027e83c3925ad62136f9a63e1408e06ccc946cb2153c5e6ffd440bee"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 127,
+     "degrees": [
+      1,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 191,
+     "labeled_copies": 20,
+     "n": 5,
+     "sha256": "d4b9fa0bad1a6dd5a1be5140f11e2a2e903043cb8de7061caad551ec885a4bb5"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 171,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 185,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "ab3a4d0752fdf2b3d49e0f112e94eae17f38367424be94eb8c75ca587468e1b8"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 222,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "generation_mask": 126,
+     "labeled_copies": 10,
+     "n": 5,
+     "sha256": "70480fb4deaf2219c97c11417597a1032c87ea8b51d11244ebc0826b88f1c528"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 223,
+     "degrees": [
+      2,
+      2,
+      2,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "generation_mask": 127,
+     "labeled_copies": 10,
+     "n": 5,
+     "sha256": "e3c33fe35d9b4cb7ad0e03e94f8c750516f28caa07796092f8d948f7fa8b4a83"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 235,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 207,
+     "labeled_copies": 15,
+     "n": 5,
+     "sha256": "71e28c23aec03694d3061a6142c31561743b59e33bf5fd44f2bf60e09d39161a"
+    },
+    {
+     "automorphism_group_order": 10,
+     "canonical_code": 236,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 220,
+     "labeled_copies": 12,
+     "n": 5,
+     "sha256": "02cabc2e456a07238ad01f157b75da44e51667c171088a2d3a4bc1f609b2f3c6"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 237,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 221,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "caf638f34a0e384689c960e2633be800e097a382ca79cdbeeb4ffeb657afe381"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 239,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 223,
+     "labeled_copies": 60,
+     "n": 5,
+     "sha256": "c48150cc0279e66e002156a7c01bcfcc8a304b245c4a6143baaef5c7adb2fb96"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 254,
+     "degrees": [
+      2,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 254,
+     "labeled_copies": 30,
+     "n": 5,
+     "sha256": "29cadd322720ff927c777ccaf68d68798a8046155dc05b4f74c1a632da0b1eef"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 255,
+     "degrees": [
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 255,
+     "labeled_copies": 30,
+     "n": 5,
+     "sha256": "b4589a05c574444d196e1236333f8355549f8d76efe1691a95733bfdef730c62"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 507,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 495,
+     "labeled_copies": 15,
+     "n": 5,
+     "sha256": "76a2980094e8e3cc4d3d38be0e17169bbeb196904f569b11e012055509145d54"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 511,
+     "degrees": [
+      3,
+      3,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 511,
+     "labeled_copies": 10,
+     "n": 5,
+     "sha256": "5442d9f7ef0e0f4fd664dd43a2c09865dddeba1bc4c1ba1718182160e689bdf0"
+    },
+    {
+     "automorphism_group_order": 120,
+     "canonical_code": 1023,
+     "degrees": [
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 1023,
+     "labeled_copies": 1,
+     "n": 5,
+     "sha256": "117f7fbbece0a2e73ef54c9c3164d50af1d84ae19dc142ecc64f3e4fbe3704c0"
+    }
+   ],
+   "connected_labeled_graphs": 728,
+   "isomorphism_classes": 21,
+   "labeled_graphs_generated": 1024,
+   "n": 5,
+   "orbit_stabilizer_total": 728,
+   "recurrence_connected_labeled": 728
+  },
+  {
+   "classes": [
+    {
+     "automorphism_group_order": 120,
+     "canonical_code": 1099,
+     "degrees": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ]
+     ],
+     "generation_mask": 31,
+     "labeled_copies": 6,
+     "n": 6,
+     "sha256": "5b5b46ba981561d066080c6d887933405b994631b2aeadd8bdf44b61b7aa2534"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 1101,
+     "degrees": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 61,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "f6b1dade760a0c327bf95ef9114a3bd0043ae5156459a28d3952845d75518612"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 1103,
+     "degrees": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "generation_mask": 63,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "7066623990938fe5cd1b78a23deb42717138c4bfe89c90437f00342d1247548c"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 1109,
+     "degrees": [
+      1,
+      1,
+      1,
+      1,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 121,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "d9904113515c455871452eda5406c426d11c7380d696c6030c28e994f7ae3407"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1110,
+     "degrees": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 122,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "b1b4b61b9180498482a6ce89edab054745cfc643bf6d3262ba5082be1627b106"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1111,
+     "degrees": [
+      1,
+      1,
+      1,
+      2,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 123,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "4c2904bf2f7d8b21084c43360a28d96d878af50884b0a754616722425dbc89f7"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1118,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 126,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "ed6a57ed7899263d033b3b7c573a999d44c938d29793b317f2451b265b2a2745"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1119,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "generation_mask": 127,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "4c7e865137aa51e6ee925a73adc923dd93055e25fb4a02d29000b0635fe510d3"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1141,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 633,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "ee53b886135b3225474958e6be4c241f18c4362ef42a71e516cf4abaaf5b9bd3"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1143,
+     "degrees": [
+      1,
+      1,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 635,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "e88fc77e8611a84a8386a6e3686a925b7390369ca4a2887ebc216e13985b9bb9"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 1151,
+     "degrees": [
+      1,
+      1,
+      3,
+      3,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 639,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "e27cebb3da74528dd96a1327954fe6425b415fbda93eeaf5ea6834fa94b372d6"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1182,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "generation_mask": 246,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "44fd1a78a10e5433a494733719670981e2c7bb924a70639da1ce3e1f69172daa"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1183,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "generation_mask": 247,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "7b9317531c9819b249587a69c2fcbb4ece47b06cff60adff883b1941e1fa3d40"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1187,
+     "degrees": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 659,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "de8d17be79094389a61d0a4285bd6da0f6d4f20ccc84ee2968296ddd9a87c4ac"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 1191,
+     "degrees": [
+      1,
+      1,
+      1,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 691,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "7f4cb43dd31da06a04a353e1245c1f56d43486fdf6f2dfbc26684667f71ddea3"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1195,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 663,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "2b00fdd574680c420627fb0bcf601dadcbb8cb77b1cf2617fabca59f57fe53b0"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1196,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 692,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "7b9601c1bcf29eed835a8d23788efe9e4c226a0e9852938be6c33cbd7510170c"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1197,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 693,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "5235b344cfc8fb31b3b3e31145a69ab25d954af67eed3f8949e156cf9141d77f"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 1199,
+     "degrees": [
+      1,
+      1,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 695,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "0c7eaa6243e4a3ea44ba68c0df2aa6f6ef39d0dab04ceb13bc1c74bb1d2777c5"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1214,
+     "degrees": [
+      1,
+      1,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 758,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "bf2267621291f6c69d7cde08406b5e3e3d26402a84f7a3a70aa209cff54bdc31"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1215,
+     "degrees": [
+      1,
+      1,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 759,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "86c9c0f202fb8412daec7425ba7802178faef3fad1fc5bfb91d702fdd97e8e80"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 1246,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "generation_mask": 254,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "18ee45413da6b6e9b5469b7cfed14c2f3ab9bdacb9e447033adaa1d26d5a1806"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 1247,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "generation_mask": 255,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "9ce8cc8b3772c912c2ac53ae9d796ca1caff453faa4f94448d0a87a124df7e61"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 1259,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 671,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "68b1f280c713bb6a7895660a8471a7d9c8acaab7d3c20608bdb6279172d9eca7"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1260,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 700,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "4a2db0fef856e3a2b4faf0f6887784f11a60f4cfbf5c6c11bd190f0e918a78c2"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 1261,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 701,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "acfd372c9b3c3c8544a0c6ef438ad702ffdf879464ae0797c3bab5ce14ddd01b"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1263,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 703,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "35b6865758716463b0619e225f58626632bb098cf1071d522123dfe58c935761"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 1270,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 762,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "cc05dca47eeb07bfe2094260d79135a70416888737b319b5b59718b8ef1c4078"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 1271,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 763,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "f7fa6f797c21663121a8140170d89bb78c8d873f6da18d9a735120770515cac4"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1278,
+     "degrees": [
+      1,
+      2,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 766,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "84e968c16d5bb54db3a7816f20a1ddb45c942274d82ac386d607db7041196e34"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1279,
+     "degrees": [
+      1,
+      2,
+      3,
+      3,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 767,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "d3478c34c14fd83629fe7472cf75f57795d203a31b3bdae69b10944f517c54b9"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 1309,
+     "degrees": [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 694,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "7e551cd219aa6555bd69bca2c9ac69f25dfcb45b12b5de040a39dd1c1bd37dc9"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1459,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 954,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "22cf9c494001fa0235cf466cb4d4d523eab2e9633a6cfe696f0079d59deda7f7"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1467,
+     "degrees": [
+      1,
+      2,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1751,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "261edf2388d871318ecdc8cc465a649224891c81b8635b1125a2fe8456015c67"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1471,
+     "degrees": [
+      1,
+      2,
+      3,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1783,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "aaedd37823b475db5ceba96cd32824430b594f7bab19996bd2500a507cbef609"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 1531,
+     "degrees": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1759,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "1877111e0cfc617123aeb62f6612a85562ca08db9a30299b08cff6e90e7eb54e"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1532,
+     "degrees": [
+      1,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1788,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "c15a6625c79bd5a24dda3846287dcd095f4957952df719fb093ae587c992c1e7"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1533,
+     "degrees": [
+      1,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1789,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "ca321a6675244107c706069592d168a7a69b5776795990c3ad95cb7fac9972da"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 1535,
+     "degrees": [
+      1,
+      3,
+      3,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1791,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "fae9475a953cee22d2874c2ef4dfb744d12b3727f8d5e61d84acf0d489837c58"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 1703,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1749,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "71d31b421302616a5c51c036115a8faf01d48c4f15bb6659e480461808c2852a"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 1983,
+     "degrees": [
+      1,
+      3,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5879,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "538556bd0b7214c57c419c9941951f5dfd8bfb9f5b7eb2dca750d0a6bd26ad2a"
+    },
+    {
+     "automorphism_group_order": 24,
+     "canonical_code": 2047,
+     "degrees": [
+      1,
+      4,
+      4,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5887,
+     "labeled_copies": 30,
+     "n": 6,
+     "sha256": "d0b76a5a0a3026cb698e616698f54e8de1a9228778e767c409dcd0b80d507420"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 2282,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 760,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "fefa8adc9009f00d750fe11490ea309386d954fa657609cfac85670a5634507a"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 2283,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 761,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "cae32f3252a2ad2604b49be33d773e9e42fc73a4729994cc5e69bb346ca5bbce"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 2409,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 922,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "853f8407c08ddcc452f6d092c9416e461dabb00fc6cfb06ed6fdf6b52d22ca24"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 2427,
+     "degrees": [
+      1,
+      2,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1781,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "e3513f2b7aca11e5028178aadabd03b1d5bb8e33ffc15a101282265995e43c54"
+    },
+    {
+     "automorphism_group_order": 48,
+     "canonical_code": 3294,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ]
+     ],
+     "generation_mask": 510,
+     "labeled_copies": 15,
+     "n": 6,
+     "sha256": "d03dc8e378b5faf274c7dd1c74a7ff01643ce23e1c466db113e9729f306239db"
+    },
+    {
+     "automorphism_group_order": 48,
+     "canonical_code": 3295,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ]
+     ],
+     "generation_mask": 511,
+     "labeled_copies": 15,
+     "n": 6,
+     "sha256": "60b4da9bd58e6612d3e88e74cb346dfb0bcda132aefeabbb40cce414c56a4ca7"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3306,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 926,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "0978df50ca12106a42fc8b6c80cc0bedfe9e7a2a641d4b47da52e74eecd5bdbb"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3307,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 927,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "cb8fd285c27e88efa7bcca3d700daf0a0926260f8a499991fbef2a6c10c121cf"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3308,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 956,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "d41299ae5ae16fbc129a02991ddcf46a0f5b7ddb47a4579a95e0f925941a6882"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3309,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 957,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "28364336d7199fd8ae923e68a727497d6449748786d541f9ef21430ced6048a9"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3310,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 958,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "4ad8100f097e43cb50bb1ea2b45bf97996a47e67170aa098b7d350bab3866871"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3311,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 959,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "5bfeebfc9613a1eb860cdaa4d992bdc32ebd0d61b4a7fdad1b69749266d426c3"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 3326,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 1022,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "b0f902c280876df435e29c66a4ce7379939fcf03e290b8bcc87829681592fd46"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 3327,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 1023,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "47ec62f84aca92f03c949da2e811338cd48df2d3505d335c5bcf2dc55beb32ba"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 3440,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "edges": [
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1880,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "5aa7774a0648eaa3124824b6bf8c5130047a29f293266c2af1bf4866f0fa5f98"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3441,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1881,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "8bc7aa769a7c9ad37a8357a0e804094046cb313748cd97f7fff19c737d40a4aa"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3443,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1883,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "011e36b784984549f526a772f8ad8a0c35cc112c8447f7cd712ef42ac912056b"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 3447,
+     "degrees": [
+      2,
+      2,
+      2,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1915,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "5e57c07792950004720f7a5be37d4a42de7e58939f259817964cff5d07882002"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3451,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1887,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "9f6fed26c7e84f8109b87e7473c061767b92bfd3226fc57f89105bf9e5d0a366"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3452,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1916,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "e4f1f8e36b87962cc197c90ca1964e623d159cc7b4843c1a99b386884fbbe1c5"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 3453,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1917,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "ff6d365b1a6ffa99a574affeea364a58b268c3fdc95dd8487d3325352796d5d8"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3455,
+     "degrees": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1919,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "6009cbb4672e0fc1f4977448d1efc6810ffbe2a22dcf8c5de20d011aab5d134d"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3578,
+     "degrees": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 2014,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "193132648a0901023fc40021e0e07dc973f3737e0ad0a40b171e2745dc908723"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3579,
+     "degrees": [
+      2,
+      3,
+      3,
+      3,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 2015,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "d5bd1b20572535497ae677080eacdd1b9fedb12911778801701782b839c7cab7"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3582,
+     "degrees": [
+      2,
+      3,
+      3,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 2046,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "6220cda58ee4b4570e1c13c37a0bb5190d6d598d1c66d46c5918425b9df695fd"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3583,
+     "degrees": [
+      2,
+      3,
+      3,
+      4,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 2047,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "0ddffd1aa844eac2a8903d3b0db85c371894d15e9f30dea201117c9c645c19dc"
+    },
+    {
+     "automorphism_group_order": 1,
+     "canonical_code": 3687,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1885,
+     "labeled_copies": 720,
+     "n": 6,
+     "sha256": "a76b561ca2a28bbf918bcef109100358f6324a0884f8510ba7f829a64117d765"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 3870,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 2012,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "d20dda328c313c0b1bed10bda0f3cd94b95063348d1e40691b203fbaf9a79e9d"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3871,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 2013,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "b99ba1b2c0a1f242e3a28520f740bd67edd49246575b902912a25f8591327652"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 3885,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5941,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "17e04732ae417d657092a79ce48c6125af6e51ec8e4319719c1d317d348e0a81"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 3903,
+     "degrees": [
+      2,
+      2,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6007,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "34381159005182e4cac292b58367d1c6f304b169918c8bcb2d671de45e1d3e26"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3949,
+     "degrees": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5949,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "431c9183435be175213ef82f7bcd7f1598fde20c93156271a5c5594c7270de96"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3959,
+     "degrees": [
+      2,
+      3,
+      3,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6011,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "b997970346b1a9cbed7a292da9ad72516d24c5e305a3df6c3118cbce4a50efff"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 3967,
+     "degrees": [
+      2,
+      3,
+      4,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6015,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "a8744f868f6f12904432d1bc29118bf0e913702a6e36bc82e0dd8f5b08e037bf"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 4094,
+     "degrees": [
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6142,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "c17344de0127a2b2af02c4f254199cd0466d42ce8b6842653f5268f3eed3e8a3"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 4095,
+     "degrees": [
+      2,
+      4,
+      4,
+      4,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6143,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "bcf5cebe93e58ae08322ac7bac1651c194397b5d7bc3d4c3e8244a2decda2f7a"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 4315,
+     "degrees": [
+      1,
+      2,
+      2,
+      2,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 923,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "a9ab228f163c1255e47b892e61920ec3223c30d255363f47a4dce8ca5d2d15aa"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 4319,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "generation_mask": 955,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "2db48385afb4e7226ea0eaebad57ce319d93a3893ef898537e1f014f9c1315eb"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 4831,
+     "degrees": [
+      1,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5875,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "d8445b6b2021269a5e92331c941dc302184068a9264de70152a6c187c50590ed"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 5717,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1884,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "89b9b7d9ab3b3dcd8536eb4318704906082f44ac3d38ca47c9cc925d9e954a18"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 5779,
+     "degrees": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5907,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "f83c6b5e7fa47efb62ba362b4da9ba999f8d4d9b2ebfd17a093aa3f78a1b2d38"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 5791,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5943,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "a3f9a526cd4d79d0b11161115e5415d7ab63accf6c44bea9a8a05eab12216e50"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 5855,
+     "degrees": [
+      2,
+      3,
+      3,
+      3,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5951,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "b2760ea90c0621af14880c8d71f04bd72ce86927a29aff46abb029b172e256e8"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 6735,
+     "degrees": [
+      2,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5911,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "9c695e37c552205fdcd5f223afe06e6578d5f25b2714cb2d8170d5581fa77a10"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 6891,
+     "degrees": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6010,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "4e287b35bf01b60222b72ae7668e5bf114fca089424de349c10c03ade3c2811f"
+    },
+    {
+     "automorphism_group_order": 72,
+     "canonical_code": 7672,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "generation_mask": 4060,
+     "labeled_copies": 10,
+     "n": 6,
+     "sha256": "4b19fe6257f82015712fbf8570c1ef742b44217d770769b318d1bdfb0341b1c4"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 7673,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "generation_mask": 4061,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "6a43c1019d0e6f2c4e2a43f2db25aae1459fd3d2fb172f982b528974c7f34b88"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 7675,
+     "degrees": [
+      3,
+      3,
+      3,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "generation_mask": 4063,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "7761655062dd19dd2c8c91b8bde1979c2f90cf454591a313872421107e7d5f16"
+    },
+    {
+     "automorphism_group_order": 36,
+     "canonical_code": 7679,
+     "degrees": [
+      3,
+      3,
+      3,
+      5,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     "generation_mask": 4095,
+     "labeled_copies": 20,
+     "n": 6,
+     "sha256": "ddfa65cd9d8eb0ef9d0fdab9c71e6dc08bfc326d2584e5aeba8abdfc84e6c8e8"
+    },
+    {
+     "automorphism_group_order": 16,
+     "canonical_code": 7902,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6654,
+     "labeled_copies": 45,
+     "n": 6,
+     "sha256": "6136ff9514caab753caa72546754382d2541e42bd7add0734f10c1a6306814dd"
+    },
+    {
+     "automorphism_group_order": 16,
+     "canonical_code": 7903,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6655,
+     "labeled_copies": 45,
+     "n": 6,
+     "sha256": "a5276fdbc8fcb130e09f80fa285801fad55d57eff7af828ffda162998b21ca97"
+    },
+    {
+     "automorphism_group_order": 10,
+     "canonical_code": 7915,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 7071,
+     "labeled_copies": 72,
+     "n": 6,
+     "sha256": "eae3534c0abe98660f420a85c570f4c99f5e37f38599113d58e6f729f29d9514"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 7916,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 7100,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "87e0847330d1c9f2cbe28be82f2e5d82b78f067fe40c2ee02f4e0444efb3b43a"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 7917,
+     "degrees": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 7101,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "d36d824b6569d5ad8d45403a017bd6ce2e7bada98943927963e3403d65d4c685"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 7919,
+     "degrees": [
+      3,
+      3,
+      3,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 7103,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "cbd2c7f5b6b972fda81133e75b492756d31f9ca606996fca750597251ee8b5a9"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 7934,
+     "degrees": [
+      3,
+      3,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 7166,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "93bb17d39865d17db1029f4cfa9e0fe80d7b4e4e33e495e47a76c2b1648927d2"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 7935,
+     "degrees": [
+      3,
+      3,
+      4,
+      4,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 7167,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "c0651cc4458df564a930a034b2a4255487e5069c759088dc7763a6ff162628a1"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 8187,
+     "degrees": [
+      3,
+      4,
+      4,
+      4,
+      4,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 8159,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "d9352691a830b7b7248c3b1fed95a4e82be8e1f4f6c7271609caf8d9153d5e0d"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 8191,
+     "degrees": [
+      3,
+      4,
+      4,
+      5,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 8191,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "ea55836d192fc538cb6a62ac9fd5b9a8f90c89eb60996e7f1acaea0bbd3dc68c"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 8423,
+     "degrees": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "generation_mask": 1780,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "4e3f71700fa989c6f201ab421faf4d0906dac02da8cfb1bd267d62ab4dbe54ed"
+    },
+    {
+     "automorphism_group_order": 2,
+     "canonical_code": 9719,
+     "degrees": [
+      2,
+      3,
+      3,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 6014,
+     "labeled_copies": 360,
+     "n": 6,
+     "sha256": "10e8c029474895adacb78c094ffb49dffd09ee08c0e6b5450caa9c2ea2860c6d"
+    },
+    {
+     "automorphism_group_order": 48,
+     "canonical_code": 16350,
+     "degrees": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       3,
+       5
+      ]
+     ],
+     "generation_mask": 15870,
+     "labeled_copies": 15,
+     "n": 6,
+     "sha256": "0973377244d80696044006e88bf1d4e92c3487b57e55bcb817bb27061e8ec429"
+    },
+    {
+     "automorphism_group_order": 16,
+     "canonical_code": 16351,
+     "degrees": [
+      4,
+      4,
+      4,
+      4,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       3,
+       5
+      ]
+     ],
+     "generation_mask": 15871,
+     "labeled_copies": 45,
+     "n": 6,
+     "sha256": "e908046720df6cd49c9b5bfa39300269f9f2e2df28cf98ff29079e52ac4d8b39"
+    },
+    {
+     "automorphism_group_order": 48,
+     "canonical_code": 16383,
+     "degrees": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       3,
+       5
+      ]
+     ],
+     "generation_mask": 16383,
+     "labeled_copies": 15,
+     "n": 6,
+     "sha256": "785b8d564fa1d4141d8872fc40f9dad83cf7757b3fbbdd6c1f9122df2f5e3644"
+    },
+    {
+     "automorphism_group_order": 6,
+     "canonical_code": 16511,
+     "degrees": [
+      1,
+      2,
+      3,
+      3,
+      3,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5873,
+     "labeled_copies": 120,
+     "n": 6,
+     "sha256": "592cc9e8c80b74e234cffd97adce54991cde19fca4a7c4638a4c6a8cd9d36058"
+    },
+    {
+     "automorphism_group_order": 12,
+     "canonical_code": 17535,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5919,
+     "labeled_copies": 60,
+     "n": 6,
+     "sha256": "079ffb3c8882e4b522b4fe6e913064bb6c9553000ea44c7f2efb278eaac905f0"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 17598,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+     ],
+     "edges": [
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5948,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "7d264636aadbb85599e99ae5f7e2f9c4452da3f2c2e5c5b8c1645059225f76bd"
+    },
+    {
+     "automorphism_group_order": 4,
+     "canonical_code": 17599,
+     "degrees": [
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 5950,
+     "labeled_copies": 180,
+     "n": 6,
+     "sha256": "6e2f785dfb9c9f552625b05d370b516f0e66d1740ca709df539d7e7e144499f4"
+    },
+    {
+     "automorphism_group_order": 8,
+     "canonical_code": 20287,
+     "degrees": [
+      3,
+      3,
+      4,
+      4,
+      4,
+      4
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "generation_mask": 8157,
+     "labeled_copies": 90,
+     "n": 6,
+     "sha256": "ded2bb1a71aa3e9149830081b778cf1b01b3af5e81b1eaa85211f8d5d227a235"
+    },
+    {
+     "automorphism_group_order": 720,
+     "canonical_code": 32767,
+     "degrees": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+     ],
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       1,
+       5
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       5
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       3,
+       5
+      ],
+      [
+       4,
+       5
+      ]
+     ],
+     "generation_mask": 32767,
+     "labeled_copies": 1,
+     "n": 6,
+     "sha256": "e8bd81eedf6b358b1bde630bfc02130dc9143a223dc80bdc1e6399258c364a49"
+    }
+   ],
+   "connected_labeled_graphs": 26704,
+   "isomorphism_classes": 112,
+   "labeled_graphs_generated": 32768,
+   "n": 6,
+   "orbit_stabilizer_total": 26704,
+   "recurrence_connected_labeled": 26704
+  }
+ ],
+ "orders_included": [
+  1,
+  6
+ ],
+ "representative": "first connected labeled graph in mask order with the class code",
+ "schema": "singularity.census-manifest/1",
+ "specification": "docs/specifications/CENSUS-v1.md"
+}

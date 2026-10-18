@@ -3439,6 +3439,27 @@ definition of
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>3</mn></msub><mo>=</mo><msub><mo>ℓ</mo><mn>3</mn></msub><mo>−</mo><msub><mo>ℓ</mo><mn>1</mn></msub><msub><mo>ℓ</mo><mn>2</mn></msub><mo>+</mo><mfrac><mrow><msubsup><mo>ℓ</mo><mn>1</mn><mn>3</mn></msubsup><mo>−</mo><msub><mo>ℓ</mo><mn>1</mn></msub></mrow><mn>3</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
  b_3=\ell_3-\ell_1\ell_2+\frac{\ell_1^3-\ell_1}{3}.
 </annotation></semantics></math></p>
+<p>The implementation follows these identities literally and keeps them
+independent. <code>series_log</code> uses the recurrence (6.1);
+<code>euler_exponents</code> solves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>c</mi><mi>n</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>d</mi><mo>∣</mo><mi>n</mi></mrow></msub><mi>d</mi><msub><mi>b</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">nc_n=\sum_{d\mid n}db_d</annotation></semantics></math>
+upward; <code>euler_exponents_mobius</code> applies (6.3); and
+<code>recompose_euler</code> rebuilds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+by multiplying the generalized binomial series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>x</mi><mi>m</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><msub><mi>b</mi><mi>m</mi></msub></mrow></msup><mo>=</mo><msub><mo>∑</mo><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><msub><mi>b</mi><mi>m</mi></msub><mo>+</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow><mi>j</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>x</mi><mrow><mi>m</mi><mi>j</mi></mrow></msup></mrow><annotation encoding="application/x-tex">(1-x^m)^{-b_m}=\sum_j\binom{b_m+j-1}{j}x^{mj}</annotation></semantics></math>,
+without any logarithm. All arithmetic is in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q[q]</annotation></semantics></math>
+with reduced fractions, and a prefix through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+determines exactly the exponents
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>b</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">b_1,\ldots,b_N</annotation></semantics></math>.
+Tests check the triangular identity on a seven-vertex graph series, the
+single-edge values (6.10), recomposition of every retained certificate’s
+exponents, nonconstant rational exponents and a symbolic discrepancy
+that vanishes at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q=1</annotation></semantics></math>,
+so that the specialized first difference moves to a later volume.</p>
 <p>These formulas are economical coordinates for local information. They
 do not make every exponent nonnegative or integral as a polynomial in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.
@@ -8215,8 +8236,9 @@ class="header-section-number">15.2</span> Implemented mathematical
 modules</h2>
 <p>The meaning of every public coefficient, population and certificate
 interface is fixed in the <a
-href="specifications/COEFFICIENTS-v1.md">coefficient
-specification</a>.</p>
+href="specifications/COEFFICIENTS-v1.md">coefficient specification</a>.
+The finite graph population used by census comparisons is fixed in the
+<a href="specifications/CENSUS-v1.md">census specification</a>.</p>
 <table>
 <colgroup>
 <col style="width: 33%" />

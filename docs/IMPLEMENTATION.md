@@ -12,7 +12,7 @@ From the repository root, `python -m pip install -e .` installs the command `sin
 
 ## Implemented mathematical modules
 
-The meaning of every public coefficient, population and certificate interface is fixed in the [coefficient specification](specifications/COEFFICIENTS-v1.md).
+The meaning of every public coefficient, population and certificate interface is fixed in the [coefficient specification](specifications/COEFFICIENTS-v1.md). The finite graph population used by census comparisons is fixed in the [census specification](specifications/CENSUS-v1.md).
 
 | Module | Exact object | Current capability |
 |---|---|---|
