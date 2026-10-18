@@ -2363,7 +2363,21 @@ g_p=\sum_{u\in\mathbb F_p}e^{2\pi i u^2/p}.
 \tag{SNG-I022}
 \]
 
-In particular its absolute value is \(p^{(k+1)/2}\). When \(p\) divides the spanning-tree count, the reduced quadratic form is singular and this nondegenerate formula must be replaced by its rank-sensitive version. This provides a defined arithmetic role for discriminant primes: they signal additional modular degeneracy. It does not make every finite-conductor phase statistic complete for graph reconstruction.
+In particular its absolute value is \(p^{(k+1)/2}\). When \(p\) divides the spanning-tree count, the reduced quadratic form is singular and this nondegenerate formula must be replaced by its rank-sensitive version, which holds for every graph, connected or not.
+
+**Theorem SNG-F30 (rank-sensitive Gauss sum).** Let \(p\) be an odd prime, \(\omega=e^{2\pi i/p}\), and \(g_p=\sum_{u\in\mathbb F_p}\omega^{u^2}\). Let \(P\in GL_k(\mathbb F_p)\) satisfy \(P^{\top}\Delta_GP\equiv\operatorname{diag}(\lambda_1,\ldots,\lambda_r,0,\ldots,0)\) with \(\lambda_i\not\equiv0\). Then \(r\) is the rank of \(\Delta_G\) over \(\mathbb F_p\), the class of \(D=\lambda_1\cdots\lambda_r\) modulo squares does not depend on \(P\), and
+\[
+\Gamma_G(p)=p^{\,k-r}\left(\frac Dp\right)g_p^{\,r},
+\]
+with the convention that the right side is \(p^k\) when \(r=0\).
+
+*Proof.* Energy is the integer quadratic form \(a^\top\Delta_Ga\), so \(\omega^{E_G(a)}\) depends only on \(a\bmod p\). Every symmetric matrix over a field of odd characteristic is congruent to a diagonal one: if some diagonal entry is nonzero, move it to the pivot and clear its row and column by the substitutions \(e_j\mapsto e_j-(m_{kj}/m_{kk})e_k\); if all remaining diagonal entries vanish but \(m_{ij}\ne0\), replace \(e_i\) by \(e_i+e_j\), whose new diagonal entry is \(2m_{ij}\ne0\) because \(p\) is odd; if the remaining block is zero, stop. Since \(P\) is invertible, \(a=Pb\) is a bijection of \(\mathbb F_p^k\), so
+\[
+\Gamma_G(p)=\sum_b\omega^{\sum_i\lambda_ib_i^2}=\prod_{i\le r}\Bigl(\sum_{u}\omega^{\lambda_iu^2}\Bigr)\cdot p^{\,k-r}.
+\]
+Each zero diagonal entry is a singular direction and contributes a full factor \(p\); these include the constant vector of every connected component, and further directions at primes dividing invariant factors of the Laplacian. For \(\lambda\ne0\), substituting \(u\mapsto\lambda^{-1}u\) when \(\lambda\) is a square, and counting the solutions of \(u^2=v\) when it is not, gives \(\sum_u\omega^{\lambda u^2}=\left(\frac\lambda p\right)g_p\). Multiplicativity of the Legendre symbol gives the formula. Rank is a congruence invariant. The radical \(R=\ker\Delta_G\) is intrinsic, and the induced nondegenerate form on \(\mathbb F_p^k/R\) has Gram determinant \(D\) in the basis given by the images of the first \(r\) columns of \(P\). A change of basis multiplies it by a nonzero square, so the square class is well defined. \(\square\)
+
+For a connected graph with \(p\nmid\tau(G)\), the rank is \(k-1\) and \(D\) has the square class of \(\tau(G)\), which recovers SNG-I022. The triangle at \(p=3\) is an exceptional prime: \(\tau=3\), and \(\Delta_{K_3}\equiv2J\pmod 3\) has rank one, with \(D=2\) a non-square. Hence \(\Gamma_{K_3}(3)=-9g_3=-9-18\omega\), whereas the nondegenerate formula would predict a multiple of \(g_3^2\). The implementation `src/singularity/gauss.py` returns the diagonalizing matrix as a witness and rechecks \(P^\top\Delta_GP\) and \(\det P\ne0\) exactly. It compares \(p^{k-r}(D/p)g_p^r\) with the direct residue-cube sum in \(\mathbb Z[t]/\Phi_p(t)\), with no square root of \(p\), on all labeled graphs with at most four vertices for \(p=3,5,7\) and all five-vertex graphs for \(p=3\). It rejects \(p=2\), composite moduli and prime powers, which this theorem does not cover. This provides a defined arithmetic role for discriminant primes: they signal additional modular degeneracy. It does not make every finite-conductor phase statistic complete for graph reconstruction.
 
 ## What the new direction actually adds
 
@@ -2680,6 +2694,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `euler` | Formal zeta exponents | Recursive and Mobius inversion, generalized-binomial recomposition, parameter-specific first discrepancy |
 | `transfer` | Bounded-height forest populations | Separator messages on trees/forests (SNG-F23), safe volume pruning (SNG-F24), root messages, separate cost measures, minimum-zero subtraction and exact-span marked histograms (SNG-F25) |
 | `decomposition` | Supplied tree decompositions of arbitrary graphs | Axiom checker, owned-charge bag messages (SNG-F26), truncation, minimum-zero and exact-span sectors, elimination-order constructor |
+| `gauss` | Odd-prime Laplacian Gauss sums | Congruence diagonalization with witness, rank, discriminant character, rank-sensitive formula versus direct residue sum (SNG-F30) |
 | `congruence` | Volume residue classes | Direct degree selection, exact character averaging in Z[t]/Phi_m (SNG-F27), direct tuple filtering |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |

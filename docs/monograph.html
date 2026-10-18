@@ -6739,10 +6739,136 @@ When
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
 divides the spanning-tree count, the reduced quadratic form is singular
 and this nondegenerate formula must be replaced by its rank-sensitive
-version. This provides a defined arithmetic role for discriminant
-primes: they signal additional modular degeneracy. It does not make
-every finite-conductor phase statistic complete for graph
-reconstruction.</p>
+version, which holds for every graph, connected or not.</p>
+<p><strong>Theorem SNG-F30 (rank-sensitive Gauss sum).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+be an odd prime,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>/</mi><mi>p</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\omega=e^{2\pi i/p}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>p</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>u</mi><mo>∈</mo><msub><mi>𝔽</mi><mi>p</mi></msub></mrow></msub><msup><mi>ω</mi><msup><mi>u</mi><mn>2</mn></msup></msup></mrow><annotation encoding="application/x-tex">g_p=\sum_{u\in\mathbb F_p}\omega^{u^2}</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>∈</mo><mi>G</mi><msub><mi>L</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>𝔽</mi><mi>p</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\in GL_k(\mathbb F_p)</annotation></semantics></math>
+satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mi>⊤</mi></msup><msub><mi>Δ</mi><mi>G</mi></msub><mi>P</mi><mo>≡</mo><mo>diag</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>λ</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>λ</mi><mi>r</mi></msub><mo>,</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P^{\top}\Delta_GP\equiv\operatorname{diag}(\lambda_1,\ldots,\lambda_r,0,\ldots,0)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>i</mi></msub><mo>≢</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda_i\not\equiv0</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+is the rank of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Δ</mi><mi>G</mi></msub><annotation encoding="application/x-tex">\Delta_G</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝔽</mi><mi>p</mi></msub><annotation encoding="application/x-tex">\mathbb F_p</annotation></semantics></math>,
+the class of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><msub><mi>λ</mi><mn>1</mn></msub><mi>⋯</mi><msub><mi>λ</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">D=\lambda_1\cdots\lambda_r</annotation></semantics></math>
+modulo squares does not depend on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Γ</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>p</mi><mrow><mspace width="0.167em"></mspace><mi>k</mi><mo>−</mo><mi>r</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>D</mi><mi>p</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>g</mi><mi>p</mi><mrow><mspace width="0.167em"></mspace><mi>r</mi></mrow></msubsup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\Gamma_G(p)=p^{\,k-r}\left(\frac Dp\right)g_p^{\,r},
+</annotation></semantics></math> with the convention that the right side
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>p</mi><mi>k</mi></msup><annotation encoding="application/x-tex">p^k</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r=0</annotation></semantics></math>.</p>
+<p><em>Proof.</em> Energy is the integer quadratic form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>⊤</mi></msup><msub><mi>Δ</mi><mi>G</mi></msub><mi>a</mi></mrow><annotation encoding="application/x-tex">a^\top\Delta_Ga</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ω</mi><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">\omega^{E_G(a)}</annotation></semantics></math>
+depends only on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mrow><mspace width="0.222em"></mspace><mo>mod</mo><mspace width="0.222em"></mspace><mi>p</mi></mrow></mrow><annotation encoding="application/x-tex">a\bmod p</annotation></semantics></math>.
+Every symmetric matrix over a field of odd characteristic is congruent
+to a diagonal one: if some diagonal entry is nonzero, move it to the
+pivot and clear its row and column by the substitutions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>j</mi></msub><mo>↦</mo><msub><mi>e</mi><mi>j</mi></msub><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>m</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub><mi>/</mi><msub><mi>m</mi><mrow><mi>k</mi><mi>k</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">e_j\mapsto e_j-(m_{kj}/m_{kk})e_k</annotation></semantics></math>;
+if all remaining diagonal entries vanish but
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m_{ij}\ne0</annotation></semantics></math>,
+replace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>i</mi></msub><annotation encoding="application/x-tex">e_i</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">e_i+e_j</annotation></semantics></math>,
+whose new diagonal entry is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>m</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">2m_{ij}\ne0</annotation></semantics></math>
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+is odd; if the remaining block is zero, stop. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is invertible,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>P</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">a=Pb</annotation></semantics></math>
+is a bijection of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>𝔽</mi><mi>p</mi><mi>k</mi></msubsup><annotation encoding="application/x-tex">\mathbb F_p^k</annotation></semantics></math>,
+so <span class="math display">$$
+\Gamma_G(p)=\sum_b\omega^{\sum_i\lambda_ib_i^2}=\prod_{i\le
+r}\Bigl(\sum_{u}\omega^{\lambda_iu^2}\Bigr)\cdot p^{\,k-r}.
+$$</span> Each zero diagonal entry is a singular direction and
+contributes a full factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>;
+these include the constant vector of every connected component, and
+further directions at primes dividing invariant factors of the
+Laplacian. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ne0</annotation></semantics></math>,
+substituting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>↦</mo><msup><mi>λ</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>u</mi></mrow><annotation encoding="application/x-tex">u\mapsto\lambda^{-1}u</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+is a square, and counting the solutions of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>=</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u^2=v</annotation></semantics></math>
+when it is not, gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>u</mi></msub><msup><mi>ω</mi><mrow><mi>λ</mi><msup><mi>u</mi><mn>2</mn></msup></mrow></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>λ</mi><mi>p</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>g</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\sum_u\omega^{\lambda u^2}=\left(\frac\lambda p\right)g_p</annotation></semantics></math>.
+Multiplicativity of the Legendre symbol gives the formula. Rank is a
+congruence invariant. The radical
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mo>ker</mo><msub><mi>Δ</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">R=\ker\Delta_G</annotation></semantics></math>
+is intrinsic, and the induced nondegenerate form on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>𝔽</mi><mi>p</mi><mi>k</mi></msubsup><mi>/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">\mathbb F_p^k/R</annotation></semantics></math>
+has Gram determinant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+in the basis given by the images of the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+columns of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.
+A change of basis multiplies it by a nonzero square, so the square class
+is well defined.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>For a connected graph with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∤</mo><mi>τ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p\nmid\tau(G)</annotation></semantics></math>,
+the rank is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k-1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+has the square class of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tau(G)</annotation></semantics></math>,
+which recovers SNG-I022. The triangle at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">p=3</annotation></semantics></math>
+is an exceptional prime:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\tau=3</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><msub><mi>K</mi><mn>3</mn></msub></msub><mo>≡</mo><mn>2</mn><mi>J</mi><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Delta_{K_3}\equiv2J\pmod 3</annotation></semantics></math>
+has rank one, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">D=2</annotation></semantics></math>
+a non-square. Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Γ</mi><msub><mi>K</mi><mn>3</mn></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mn>9</mn><msub><mi>g</mi><mn>3</mn></msub><mo>=</mo><mo>−</mo><mn>9</mn><mo>−</mo><mn>18</mn><mi>ω</mi></mrow><annotation encoding="application/x-tex">\Gamma_{K_3}(3)=-9g_3=-9-18\omega</annotation></semantics></math>,
+whereas the nondegenerate formula would predict a multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>g</mi><mn>3</mn><mn>2</mn></msubsup><annotation encoding="application/x-tex">g_3^2</annotation></semantics></math>.
+The implementation <code>src/singularity/gauss.py</code> returns the
+diagonalizing matrix as a witness and rechecks
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mi>⊤</mi></msup><msub><mi>Δ</mi><mi>G</mi></msub><mi>P</mi></mrow><annotation encoding="application/x-tex">P^\top\Delta_GP</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>det</mo><mi>P</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\det P\ne0</annotation></semantics></math>
+exactly. It compares
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mrow><mi>k</mi><mo>−</mo><mi>r</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mi>/</mi><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>g</mi><mi>p</mi><mi>r</mi></msubsup></mrow><annotation encoding="application/x-tex">p^{k-r}(D/p)g_p^r</annotation></semantics></math>
+with the direct residue-cube sum in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>t</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><msub><mi>Φ</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Z[t]/\Phi_p(t)</annotation></semantics></math>,
+with no square root of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>,
+on all labeled graphs with at most four vertices for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">p=3,5,7</annotation></semantics></math>
+and all five-vertex graphs for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">p=3</annotation></semantics></math>.
+It rejects
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p=2</annotation></semantics></math>,
+composite moduli and prime powers, which this theorem does not cover.
+This provides a defined arithmetic role for discriminant primes: they
+signal additional modular degeneracy. It does not make every
+finite-conductor phase statistic complete for graph reconstruction.</p>
 <h2 data-number="11.6" id="what-the-new-direction-actually-adds"><span
 class="header-section-number">11.6</span> What the new direction
 actually adds</h2>
@@ -8430,55 +8556,62 @@ subtraction and exact-span marked histograms (SNG-F25)</td>
 minimum-zero and exact-span sectors, elimination-order constructor</td>
 </tr>
 <tr class="odd">
+<td><code>gauss</code></td>
+<td>Odd-prime Laplacian Gauss sums</td>
+<td>Congruence diagonalization with witness, rank, discriminant
+character, rank-sensitive formula versus direct residue sum
+(SNG-F30)</td>
+</tr>
+<tr class="even">
 <td><code>congruence</code></td>
 <td>Volume residue classes</td>
 <td>Direct degree selection, exact character averaging in Z[t]/Phi_m
 (SNG-F27), direct tuple filtering</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>conductor</code></td>
 <td>Root-of-unity local series</td>
 <td>Integer cyclotomic rings, finite residue numerators, arbitrary-index
 exact coefficients with explicit residue-box budget</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>weighted</code></td>
 <td>Positive integral vertex masses and edge weights</td>
 <td>Parallel-weight aggregation and hard equality contraction preserving
 original energy and mass-weighted height</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>arithmetic</code></td>
 <td>Prime-valuation populations</td>
 <td>Positive integer factorization, finite Dirichlet coefficients,
 conservative exact local remainder and tail constants</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>primitive</code></td>
 <td>Gcd-one normalized height profiles</td>
 <td>Mobius extraction, independent gcd enumeration and exact scaling
 recomposition</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>chains</code></td>
 <td>Weakly nested level chains</td>
 <td>Direct chain generation with repeated levels, nested-boundary
 energy, marked/normalized/local coefficients independent of weak
 compositions</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>chambers</code></td>
 <td>Half-open order chambers</td>
 <td>Gap coordinates, nested-boundary gap form, unique chamber
 reconstruction, factorial-cost third enumerator (SNG-F29)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>lowvolume</code></td>
 <td>Closed coefficient formulas through volume three</td>
 <td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and

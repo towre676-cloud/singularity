@@ -600,25 +600,40 @@
     {
       "id": "P19",
       "title": "Analyze finite quadratic Gauss sums",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 2,
       "dependencies": [
         "P18"
       ],
       "evidence": [
+        "src/singularity/gauss.py",
+        "tests/test_gauss.py",
         "docs/chapters/11_archival_bridges.md",
-        "docs/chapters/13_research_program.md",
+        "results/gauss_fixtures.json",
+        "scripts/reproduce.py",
         "src/singularity/conductor.py"
       ],
-      "existing_work": "Chapter 11 derives the nondegenerate odd-prime formula when p does not divide the spanning-tree count and explains the free constant direction. It identifies singular discriminant primes as requiring a rank-sensitive replacement.",
-      "next_action": "Implement odd-prime modular congruence diagonalization, derive the singular-direction factor explicitly, and test a graph with primes dividing its spanning-tree count against residue enumeration.",
-      "acceptance_gaps": [
-        "No exact modular symmetric-form diagonalizer or complete singular-rank/discriminant formula is implemented and checked.",
-        "No retained comparison between direct residue sums and diagonalized forms, including exceptional-prime examples, exists.",
-        "P18 acceptance is open; characteristic two and prime powers remain outside this push unless separately proved."
-      ],
-      "packet": "handoff/tasks/P19.md"
+      "existing_work": "gauss.py diagonalizes the Laplacian by congruence over F_p (odd p), returns and rechecks the basis witness, and computes rank and the Legendre class of the nonsingular discriminant. Theorem SNG-F30 proves Gamma_G(p)=p^(n-r) chi(D) g_p^r for every graph, with congruence invariance, each singular direction (component constants and modular degeneracy) contributing p, and rank zero giving p^n; it recovers SNG-I022 when p does not divide the spanning-tree count. Comparisons are exact in Z[t]/Phi_p(t).",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P19.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "formulas in terms of rank and nonsingular discriminant": "SNG-F30; laplacian_invariants; gauss_sum_formula",
+          "singular directions accounted for": "SNG-F30 proof; test_singular_directions_include_components (three components, rank zero)",
+          "compare direct residue enumeration with diagonalized forms": "test_formula_equals_direct_residue_sum: all 75 graphs with n<=4 at p=3,5,7 and all 1024 five-vertex graphs at p=3; results/gauss_fixtures.json (6 graphs x p=3,5)",
+          "explicit exceptional-prime examples": "test_exceptional_prime_triangle_mod_three (rank 1, Gamma=-9 g_3); spectral_g at p=3 (tau=3, rank 5) in results/gauss_fixtures.json",
+          "transformation witnesses checked exactly": "test_witness_rank_and_invertibility against an independent row-reduction rank",
+          "prime powers and characteristic two remain separate": "test_diagonalizer_handles_zero_diagonal_and_rejects_bad_input rejects 2, 4, 9, 1",
+          "P18 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_gauss -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P20",

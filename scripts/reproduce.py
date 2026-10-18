@@ -116,6 +116,29 @@ def conductor_fixtures():
             'fixtures': records}
 
 
+def gauss_fixtures():
+    """P19 receipt: rank, discriminant class and agreement of the two Gauss-sum routes."""
+    from singularity.gauss import gauss_sum_direct, gauss_sum_formula, laplacian_invariants
+    graphs = {'triangle': Graph(3, ((0, 1), (1, 2), (0, 2))), 'path3': Graph(3, ((0, 1), (1, 2))),
+              'two_edges_one_point': Graph(5, ((0, 1), (2, 3))), 'spectral_g': GRAPHS['spectral_g'],
+              'binary_g': GRAPHS['binary_g'], 'binary_h': GRAPHS['binary_h']}
+    records = []
+    for name, graph in graphs.items():
+        polynomial = laplacian_characteristic_polynomial(graph)
+        trees = abs(polynomial[-2]) // graph.n if graph.connected else 0
+        for p in (3, 5):
+            info = laplacian_invariants(graph, p)
+            direct, formula = gauss_sum_direct(graph, p), gauss_sum_formula(graph, p)
+            assert direct == formula
+            records.append({'graph': name, 'source': graph.to_dict(), 'prime': p, 'spanning_trees': trees,
+                            'prime_divides_spanning_trees': trees % p == 0, 'rank': info['rank'],
+                            'diagonal': info['diagonal'], 'basis_columns': info['basis_columns'],
+                            'discriminant_character': info['discriminant_character'],
+                            'gauss_sum_constant_first': list(direct)})
+    return {'schema': 'singularity.gauss-fixtures/1', 'theorem': 'SNG-F30',
+            'ring': 'Z[t]/Phi_p(t), t = exp(2 pi i/p)', 'fixtures': records}
+
+
 def compute():
     factors_a={'coefficient':'2','monomial':2,'factors':[[1,2],[2,1]]}
     factors_b={'coefficient':'1','monomial':3,'factors':[[1,1],[3,2],[4,2]]}
@@ -150,6 +173,7 @@ def compute():
         **{f'results/certificates/{name}.json':packet for name,packet in certificates.items()},
         'results/pair_acceptance.json':acceptance,
         'results/conductor_fixtures.json':conductor_fixtures(),
+        'results/gauss_fixtures.json':gauss_fixtures(),
         'results/conductor_example.json':{'schema':'singularity.conductor-example/1','graph':Graph(3,((0,1),(1,2))).to_dict(),'conductor':3,'index':str(10**100),'coefficient':list(remote_coefficient(Graph(3,((0,1),(1,2))),3,10**100)),'ring':'Z[t]/(t^2+t+1)'},
     }
     return files
