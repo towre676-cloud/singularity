@@ -118,6 +118,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Exceptional parameters.** `parameter_strata(left, right)` returns the generic first discrepancy volume of two prefixes, every root in \((0,1)\) of the leading discrepancy (a rational value, or a square-free defining polynomial with an isolating rational interval) with its multiplicity and the first volume visible there, and the endpoint values at \(q=0,1\), all through the shared bound only (SNG-F31). `isolate_roots`, `count_roots` and `vanishes_at` expose the Sturm machinery.
 
+**Visibility filtrations.** `visibility_filtration(named, domain, bound)` partitions named prefixes by agreement through each volume in the domain `"polynomial"`, `"marked"` (bound required), a rational \(q_0\), or `{"defining": f, "root": r}` from `isolate_roots`. It returns class identifiers `v<volume>:c<index>`, memberships, signed split witnesses, and the classes unresolved at the bound (SNG-F33). `first_split_volume` returns the first difference within the common prefix, or `None` for agreement through that prefix only.
+
 **Arithmetic lift.** `dirichlet_coefficients(graph, N)` returns, for each \(1\le k\le N\), the \(q\)-polynomial \([k^{-s}]\prod_pL_G(p^{-s},q)\), assembled multiplicatively from the same local coefficients. It introduces no graph information beyond \(L_G\).
 
 **Root-of-unity specialization.** For a primitive \(\ell\)-th root \(\zeta\), `residue_numerator(graph, ℓ)` returns \(N\) with \(L_G(x,\zeta)=N(x)/(1-x^\ell)^n\), coefficients in \(\mathbb Z[t]/\Phi_\ell(t)\) written constant-first, by enumerating the residue cube \(\{0,\ldots,\ell-1\}^n\) under a work budget. `remote_coefficient` evaluates one coefficient at an arbitrary index from \(N\). A budget refusal is not a mathematical statement.
@@ -152,6 +154,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `chambers.*` | 8 | `tests/test_chambers.py` |
 | `orders.*` | 8 | `tests/test_orders.py` |
 | `decomposition.*` | 8 | `tests/test_decomposition.py` |
+| `visibility.*` | 8 | `tests/test_visibility.py`; `results/visibility_filtration.json` |
 | `parameters.*` | 8 | `tests/test_parameters.py`; `results/parameter_strata.json` |
 | `gauss.*` | 8 | `tests/test_gauss.py`; `results/gauss_fixtures.json` |
 | `congruence.*` | 8 | `tests/test_congruence.py` |

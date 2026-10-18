@@ -803,7 +803,7 @@
     {
       "id": "P25",
       "title": "Organize successive visibility levels",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 1,
       "dependencies": [
@@ -811,21 +811,35 @@
         "P24"
       ],
       "evidence": [
-        "src/singularity/euler.py",
+        "src/singularity/visibility.py",
+        "tests/test_visibility.py",
         "docs/chapters/04_observation_hierarchy.md",
-        "docs/chapters/07_visibility_singularities.md",
-        "results/exact_examples.json",
-        "scripts/census.py",
-        "results/small_census.json"
+        "results/visibility_filtration.json",
+        "results/census_manifest.json",
+        "scripts/reproduce.py",
+        "src/singularity/parameters.py"
       ],
-      "existing_work": "SNG-F16 proves prefix equivalence and the ultrapseudometric in prose. first_difference and finite_signature distinguish a witness from agreement through a cutoff; the census reports prefix class counts.",
-      "next_action": "Define a machine-readable bounded filtration record, retain every equality range and unresolved cutoff, and layer P24's exact parameter strata onto it.",
-      "acceptance_gaps": [
-        "No complete parameter-stratified filtration with retained memberships and bounds is released.",
-        "P24's algebraic exceptional strata are absent and P23 is not accepted.",
-        "No unrestricted depth theorem follows from the existing three small comparison pairs or n<=6 census."
-      ],
-      "packet": "handoff/tasks/P25.md"
+      "existing_work": "visibility.py partitions named prefixes by agreement through each volume in symbolic, marked, rational-parameter and algebraic-parameter domains, with deterministic class identifiers, memberships at every level, signed split witnesses and classes unresolved at the bound. Proposition SNG-F33 proves refinement, the first-difference meaning of witnesses, the domain implications and their failure of converses, and the finite meaning of unresolved classes. The CENSUS-v1 filtrations through volume 6 are retained.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P25.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "filtration by first discrepancy including parameter-dependent refinements": "visibility_filtration domains polynomial/marked/rational/algebraic; test_specialization_merges_symbolic_classes; test_algebraic_parameter_domain",
+          "prove every reported equality below the first differing coefficient": "SNG-F33 (ii); test_witness_lower_coefficients_agree_and_signs",
+          "label unresolved collisions with their tested bound": "unresolved_at_bound; test_reference_pairs_split_at_their_depths (cube-Mobius unresolved through 3)",
+          "recover reference depths 2, 3, 4": "test_reference_pairs_split_at_their_depths",
+          "refinement on the complete declared census, duplicates, relabelings": "test_refinement_is_monotone_on_the_census (n<=5, symbolic and marked); test_duplicates_and_relabelings_share_classes; results/visibility_filtration.json class counts equal results/small_census.json",
+          "unequal truncations and signs": "test_unequal_lengths_and_bounds; sign test",
+          "no unrestricted depth claim": "SNG-F33 (iv) and chapter 4 text",
+          "P23 and P24 dependencies": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_visibility -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P26",

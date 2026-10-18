@@ -140,6 +140,23 @@ def gauss_fixtures():
             'ring': 'Z[t]/Phi_p(t), t = exp(2 pi i/p)', 'fixtures': records}
 
 
+def census_visibility():
+    """P25 receipt: symbolic, marked and q=1/2 filtrations of the CENSUS-v1 population."""
+    from singularity.visibility import visibility_filtration
+    manifest = json.loads((ROOT / 'results/census_manifest.json').read_text())
+    orders = []
+    for order in manifest['orders']:
+        graphs = {f"n{c['n']}:{c['canonical_code']}": Graph(c['n'], c['edges']) for c in order['classes']}
+        local = {k: local_coefficients(g, 6) for k, g in graphs.items()}
+        orders.append({'n': order['n'],
+                       'polynomial': visibility_filtration(local),
+                       'marked': visibility_filtration({k: marked_coefficients(g, 6) for k, g in graphs.items()}, 'marked', 6),
+                       'q_one_half': visibility_filtration(local, Fraction(1, 2))})
+    return {'schema': 'singularity.visibility-filtration/1', 'theorem': 'SNG-F33',
+            'population': 'results/census_manifest.json (connected graphs, n <= 6)', 'bound': 6,
+            'interpretation': 'finite agreement or separation through volume 6 on this population only', 'orders': orders}
+
+
 def compute():
     factors_a={'coefficient':'2','monomial':2,'factors':[[1,2],[2,1]]}
     factors_b={'coefficient':'1','monomial':3,'factors':[[1,1],[3,2],[4,2]]}
@@ -175,6 +192,7 @@ def compute():
         'results/pair_acceptance.json':acceptance,
         'results/conductor_fixtures.json':conductor_fixtures(),
         'results/gauss_fixtures.json':gauss_fixtures(),
+        'results/visibility_filtration.json':census_visibility(),
         'results/parameter_strata.json':{'schema':'singularity.parameter-strata/1','theorem':'SNG-F31',
             'spectral':parameter_strata(local_coefficients(GRAPHS['spectral_g'],4),local_coefficients(GRAPHS['spectral_h'],4)),
             'binary_census':parameter_strata(local_coefficients(GRAPHS['binary_g'],4),local_coefficients(GRAPHS['binary_h'],4)),
