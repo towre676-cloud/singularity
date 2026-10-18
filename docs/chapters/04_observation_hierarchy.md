@@ -47,14 +47,25 @@ The pattern \(2e_i+e_j\) is indexed by ordered distinct vertices because the hei
 
 The classification can be read as a table. Write \(N_d\) for the number of vertices of degree \(d\), \(P_{a,b}^{\epsilon}\) for the number of **ordered** pairs \((i,j)\), \(i\ne j\), with \(d_i=a\), \(d_j=b\), \(A_{ij}=\epsilon\), and \(T_{s,t}\) for the number of unordered triples with degree sum \(s\) spanning \(t\) edges. These statistics are defined from degrees and adjacency alone.
 
-| Volume | Pattern | Index set | Support | Span | Energy | Contribution |
-|---:|---|---|---:|---:|---|---|
-| 1 | \(e_i\) | vertices | 1 | 1 | \(d_i\) | \(\sum_dN_dq^d\) |
-| 2 | \(2e_i\) | vertices | 1 | 2 | \(4d_i\) | \(\sum_dN_dq^{4d}\) |
-| 2 | \(e_i+e_j\) | unordered pairs | 2 | 1 | \(d_i+d_j-2A_{ij}\) | \(\tfrac12\sum P_{a,b}^{\epsilon}q^{a+b-2\epsilon}\) |
-| 3 | \(3e_i\) | vertices | 1 | 3 | \(9d_i\) | \(\sum_dN_dq^{9d}\) |
-| 3 | \(2e_i+e_j\) | ordered pairs | 2 | 2 | \(4d_i+d_j-4A_{ij}\) | \(\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}\) |
-| 3 | \(e_i+e_j+e_k\) | unordered triples | 3 | 1 | \(d_i+d_j+d_k-2e_G(\{i,j,k\})\) | \(\sum T_{s,t}q^{s-2t}\) |
+| Volume | Pattern | Index set | Support | Span | Energy |
+|---:|---|---|---:|---:|---|
+| 1 | \(e_i\) | vertices | 1 | 1 | \(d_i\) |
+| 2 | \(2e_i\) | vertices | 1 | 2 | \(4d_i\) |
+| 2 | \(e_i+e_j\) | unordered pairs | 2 | 1 | \(d_i+d_j-2A_{ij}\) |
+| 3 | \(3e_i\) | vertices | 1 | 3 | \(9d_i\) |
+| 3 | \(2e_i+e_j\) | ordered pairs | 2 | 2 | \(4d_i+d_j-4A_{ij}\) |
+| 3 | \(e_i+e_j+e_k\) | unordered triples | 3 | 1 | \(d_i+d_j+d_k-2e_G(\{i,j,k\})\) |
+
+The corresponding coefficient contributions are separated below so each formula remains readable.
+
+| Volume | Pattern | Contribution |
+|---:|---|---|
+| 1 | \(e_i\) | \(\sum_dN_dq^d\) |
+| 2 | \(2e_i\) | \(\sum_dN_dq^{4d}\) |
+| 2 | \(e_i+e_j\) | \(\tfrac12\sum P_{a,b}^{\epsilon}q^{a+b-2\epsilon}\) |
+| 3 | \(3e_i\) | \(\sum_dN_dq^{9d}\) |
+| 3 | \(2e_i+e_j\) | \(\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}\) |
+| 3 | \(e_i+e_j+e_k\) | \(\sum T_{s,t}q^{s-2t}\) |
 
 A pattern lies in the normalized population exactly when its support is smaller than \(k\); then its span is the displayed value. For \(k\le3\) some patterns cover every vertex and are translations instead: the profile \((1,1)\) on two vertices, \((2,1)\) and \((1,2)\) on two vertices, and \((1,1,1)\) on three. The normalized identity removes exactly these. The table is implemented without profile enumeration in `src/singularity/lowvolume.py`. `tests/test_low_volume.py` compares its local, normalized and marked outputs with both the weak-composition and the level-chain enumerators on all 75 labeled graphs with at most four vertices, on the fixed pairs, and on regular graphs including the cube, the Möbius ladder, the Petersen graph, \(K_4\), \(K_{3,3}\), \(C_5\) and two disjoint triangles, where the closed form in terms of order, degree and triangle count (Proposition SNG-I008) is also checked.
 
@@ -151,7 +162,7 @@ It suggests several distinct research questions. Can nonisomorphic graph familie
 Consider instead the fully vertex-marked series
 \[
 \mathscr L_G(z_0,\ldots,z_{k-1};q)
-=\sum_{a\ge0}\Bigl(\prod_i z_i^{a_i}\Bigr)q^{E_G(a)}.
+=\sum_{a\ge0}\bigl(\prod_i z_i^{a_i}\bigr)q^{E_G(a)}.
 \]
 The variables now identify where each unit was placed. This is a much stronger observation than scalar total height.
 

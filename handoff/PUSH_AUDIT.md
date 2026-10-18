@@ -2,11 +2,11 @@
 
 Baseline: `89fb96d25bef0463e41feb74d987b464e5fd534f` (version 0.1.0), audited 2026-10-17; acceptances through 2026-10-18 are recorded below and in the session log. The original sequence is retained in [PUSHES.md](../docs/development/PUSHES.md). The executable ledger is [push_status.json](push_status.json). All P01–P36 identifiers and original dependency edges are preserved.
 
-**The 36 pushes are the development plan, not 36 completed commits.** The initial release implemented substantial parts of several pushes ahead of their acceptance sequence. This audit separates reusable work from closure. No entry is marked complete because the original dependency and acceptance gates have not all been evidenced. The absence of a complete label does not mean the corresponding code or prose proof is absent.
+**Current release: all P01-P36 acceptance units are complete.** They are research deliverables, not a count of Git commits. The original baseline tables below are historical; current evidence and acceptance records are in the per-push sections and executable ledger. The v0.2.0 release closes the final real-analysis and focused-publication gates without waiving their original dependencies.
 
 ## What Claude Code should do first
 
-Close the finite contract in P01; add the genuinely independent chain generator in P02; then audit and close P03 using the existing certificate engine. Those three steps unlock acceptance of much of the existing work. Do not start by replacing forest transfer, Euler extraction or conductor arithmetic. P04/P05/P06/P09/P10/P18/P23/P26 contain substantive existing deliverables to accept or extend.
+The original P01-P36 sequence is accepted. Reproduce the current release, read the final session-log entry, and select new research from the precise open agenda in the second-paper decision. Do not restart P01-P03 or interpret old baseline gaps as current failures.
 
 Use original dependencies as **completion gates**. Preparatory research may proceed in parallel; an acceptance claim must either satisfy the original gate or record an explicit scope/dependency amendment. In particular, P35 originally requires P33 kernel verification even though a paper draft already exists. Publishing a draft does not silently waive that requirement.
 
@@ -15,10 +15,10 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 | Status | Meaning | Push count |
 |---|---|---:|
 | `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 0 |
-| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 2 |
+| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 0 |
 | `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 0 |
-| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 1 |
-| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 33 |
+| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 0 |
+| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 36 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
 
@@ -81,9 +81,9 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P31](#p31) | Resolve targeted collisions structurally | `complete` | P16, P30 | L | 2 |
 | [P32](#p32) | Seek a separation bound for one graph family | `complete` | P06, P12, P31 | L | 2 |
 | [P33](#p33) | Verify concrete coefficient certificates in a kernel | `complete` | P07, P08, P23 | L | 3 |
-| [P34](#p34) | Formalize the visibility comparison boundary | `partial` | P26, P33 | L | 3 |
-| [P35](#p35) | Release the first focused manuscript | `partial` | P04, P05, P26, P27, P33 | M | 3 |
-| [P36](#p36) | Choose the second paper from actual results | `blocked` | P19, P22, P31, P32, P35 | L | 3 |
+| [P34](#p34) | Formalize the visibility comparison boundary | `complete` | P26, P33 | L | 3 |
+| [P35](#p35) | Release the first focused manuscript | `complete` | P04, P05, P26, P27, P33 | M | 3 |
+| [P36](#p36) | Choose the second paper from actual results | `complete` | P19, P22, P31, P32, P35 | L | 3 |
 
 ## Push-by-push evidence and next actions
 
@@ -651,49 +651,27 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P34
 
-**Formalize the visibility comparison boundary.** Status: `partial`. Dependencies: P26, P33. Remaining effort: L; priority: 3.
+**Formalize the visibility comparison boundary.** Status: `complete` (accepted 18 October 2026). Dependencies: P26 and P33.
 
-**Existing work:** Kernel-checked in core Lean 4.12.0 (formal/Singularity/Visibility.lean, 28 audited theorems, 91 in total, axioms only propext/Quot.sound/Classical.choice): general finite cancellation over any commutative ring (quotient_first_discrepancy, first_difference, logDer_first_discrepancy, log_first_discrepancy for torsion-free rings, binom_cancel); spectral_quotient L_G/L_G' = 1+2q^2(1-q)^2(1-q^2)x^2 mod x^3 and binary_quotient L_G/L_G' = 1+q^3(1-q)(1-q^3)^2(1-q^4)^2x^3 mod x^4, with coefficient data taken from P33's Cert theorems rather than reasserted. Analytic boundary: visibility_conditional derives the positive-real asymptotic (rs-1)^delta R(s) -> K_r(1/r) > 0 from an explicit premise structure RealFacts (Euler product, simple pole of real zeta, product/limit algebra, local series expansion, product convergence criterion) plus pair-specific Expands/Good inputs; no premise mentions the ratio product, its regularization, factorization or asymptotic. realFacts_consistent exhibits a degenerate model (non-contradiction only, not faithfulness).
+The [actual real-analysis package](../formal-analysis/README.md) proves the full positive-real chain using pinned Lean 4.12.0 and Mathlib v4.12.0. The final `graph_visibility` theorem derives convergence, zeta factorization, a positive boundary constant, the right-hand normalized limit and identification with the original Euler quotient on s>1 from finite coefficient agreement. The spectral and binary specializations import P33 and prove the exact q=1/2 exponents. No uninterpreted analytic premise packet is assumed. A clean build and axiom audit passed for all 79 public analysis declarations; [the source-bound receipt](../results/formal_analysis_audit.json) lists only Lean's standard axioms. Complex continuation and the particular numerical interval endpoints are separate scopes, rather than missing premises of the proved theorem.
 
-**Evidence:** [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md); [docs/chapters/06_euler_analysis.md](../docs/chapters/06_euler_analysis.md); [docs/papers/visibility.md](../docs/papers/visibility.md); [formal/Singularity/Visibility.lean](../formal/Singularity/Visibility.lean); [formal/AxiomAudit.lean](../formal/AxiomAudit.lean); [formal/README.md](../formal/README.md); [scripts/check_formal.py](../scripts/check_formal.py).
-
-**Acceptance still missing:**
-
-- RealFacts is an uninterpreted premise structure: no real analysis (reals, zeta, convergent products, limits, real powers, logarithm/binomial series) is kernel-checked, and faithfulness of the premises to R (e.g. prod_pos requires HasProdP to mean a convergent product of positive factors) is unverified.
-- Expands/Good for the actual local series L_G(p^-s,q) at admissible q are premises, not proved; the SNG-A14 tail bound is not formalized.
-- The concrete exponents at q=1/2 (3/32 spectral, 11025/262144 binary) are not formalized; the theorem is positive-real only and does not identify R with Z_G/Z_H nor claim complex or meromorphic continuation.
-
-**Next concrete action:** Discharge RealFacts for the real numbers (e.g. via Mathlib's real zeta, Euler product and tprod) and prove Expands/Good for the actual local series at 0<=q<=1; then add the q=1/2 exponents 3/32 and 11025/262144.
+**Remaining:** none for P34.
 
 ### P35
 
-**Release the first focused manuscript.** Status: `partial`. Dependencies: P04, P05, P26, P27, P33. Remaining effort: M; priority: 3.
+**Release the first focused manuscript.** Status: `complete` (accepted 18 October 2026). Dependencies: P04, P05, P26, P27 and P33.
 
-**Existing work:** The visibility paper was rewritten after a claim-by-claim audit (docs/papers/visibility_claims.md, 47 rows, each claim tied to a proof, certificate, kernel theorem or finite computation with scope). Every dependency (P04, P05, P26, P27, P33) is complete. Kernel-checked scope is stated with exact theorem names, and P34's partial formal analytics are described only to their achieved extent. BPR2024 was verified against Project Euclid. The PDF was regenerated and inspected. A clean-checkout reproduction of 1a5f311 passed: tests, reproduce --check with certificate replays, repository and handoff checks. A deterministic commit-pinned archive builder was added.
+The [focused article](../docs/papers/visibility.md), [claim register](../docs/papers/visibility_claims.md) and [primary-literature comparison](../docs/papers/literature_comparison.md) now match achieved coefficient, interval and formal proof scope. All dependencies are accepted. Its PDF, HTML and editable sources are rebuilt, visually inspected and included in the complete v0.2.0 archive. [Publication evidence](../results/publication_release.json) binds source/output digests to clean reproduction and rendering checks. Release does not assert journal acceptance or a completed historical-priority search.
 
-**Evidence:** [docs/papers/visibility.md](../docs/papers/visibility.md); [docs/papers/visibility_claims.md](../docs/papers/visibility_claims.md); [docs/references.bib](../docs/references.bib); [docs/visibility_paper.html](../docs/visibility_paper.html); [docs/visibility_paper.tex](../docs/visibility_paper.tex); [formal/README.md](../formal/README.md); [output/pdf/visibility_paper.pdf](../output/pdf/visibility_paper.pdf); [results/validation.json](../results/validation.json); [scripts/package_release.py](../scripts/package_release.py); [scripts/reproduce.py](../scripts/reproduce.py).
-
-**Acceptance still missing:**
-
-- The submission-focused literature comparison (integer-valued graph Gaussian models, height partition functions, multivariate theta series, refinements of Ising-equivalent graphs) has not been carried out. A delegated search was stopped by a session rate limit before producing verified references, so no priority statement can yet be reconciled.
-
-**Next concrete action:** Run the bounded primary-source literature search, write docs/papers/visibility_literature.md, apply any softening or citation it requires to the paper, rebuild the PDF, and then accept P35.
+**Remaining:** none for P35.
 
 ### P36
 
-**Choose the second paper from actual results.** Status: `blocked`. Dependencies: P19, P22, P31, P32, P35. Remaining effort: L; priority: 3.
+**Choose the second paper from actual results.** Status: `complete` (accepted 18 October 2026). Dependencies: P19, P22, P31, P32 and P35.
 
-**Existing work:** Candidate B (exact tree/separator methods) and Candidate C (structural preservation) are clearly described as future papers. Their theorem centers are not declared achieved.
+The [selection decision](../docs/papers/second_paper_choice.md) compares the achieved alternatives and selects [Exact Observation Depth for Integer-Height Graph Populations](../docs/papers/locality.md). The center is the complete sharp reconstruction theorem on known-order simple 2-regular graphs, supported by complete locality and first-cycle proofs. An independent agent reviewed the mathematics and primary positioning and replayed the decisive finite receipt. The [claim register](../docs/papers/locality_claims.md), generated PDF/HTML/LaTeX and complete source/data package preserve exact scope. Fixed-pinning completeness, efficient reconstruction beyond this class and interface-candidate realizability remain new research questions, not unfinished original pushes.
 
-**Evidence:** [docs/chapters/14_literature_and_claims.md](../docs/chapters/14_literature_and_claims.md); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [docs/development/PUSHES.md](../docs/development/PUSHES.md).
-
-**Acceptance still missing:**
-
-- P19 is complete; P22/P31/P32/P35 outcomes have not been accepted.
-- No second paper is selected around an actual substantial theorem or decisive negative classification, with focused literature comparison and reproduced artifacts.
-- The open-problem ledger must distinguish original pushes from any newly approved terminal-interface or delayed-visibility branch.
-
-**Next concrete action:** Wait for substantive accepted results, then select one coherent paper center and package that result; preserve unfinished branches in the ledger instead of combining them into a larger manuscript.
+**Remaining:** none for P36.
 
 ## How to update the ledger
 

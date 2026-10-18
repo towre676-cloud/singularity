@@ -1,5 +1,7 @@
 # Handing Singularity to Claude Code
 
+**Current checkpoint (v0.2.0, 18 October 2026): the original P01-P36 program is accepted.** Start with the final session-log entry, reproduce the release, and read the precise open agenda in `docs/papers/second_paper_choice.md`. The original first-batch instructions below are historical onboarding material, not a request to repeat completed pushes.
+
 This package prepares a new development session to continue the 36-push program. It contains the existing mathematics and code, an audit of what the initial release actually established, a dependency/status ledger, a first-batch plan and an operating protocol. The original P01–P36 program remains authoritative. The later chat ideas about terminal interfaces and delayed visibility are proposed strategic extensions; they do not replace or silently complete that program.
 
 The repository is `https://github.com/towre676-cloud/singularity`. The verified release baseline used for this handoff is commit `89fb96d25bef0463e41feb74d987b464e5fd534f`. Compare the current checkout with it; this file is a starting point, not a claim that the remote will never advance.

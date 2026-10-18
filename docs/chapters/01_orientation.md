@@ -40,7 +40,7 @@ If \(\Delta=\max_i d_i\), its degree is at most \(\Delta m^2\).
 *Proof.* The nonnegative integer solutions of \(a_0+\cdots+a_{k-1}=m\) are the weak compositions of \(m\) into \(k\) parts. The usual separator construction gives their number as the displayed binomial coefficient. In particular, there are finitely many terms in \(C_{G,m}\). Every energy is a nonnegative integer. Moreover,
 \[
 E_G(a)=\sum_i d_i a_i^2-2\sum_{\{i,j\}\in E}a_i a_j
-\le\Delta\sum_i a_i^2\le\Delta\Bigl(\sum_i a_i\Bigr)^2.
+\le\Delta\sum_i a_i^2\le\Delta\bigl(\sum_i a_i\bigr)^2.
 \]
 The first inequality uses nonnegativity of all heights; the second follows by expanding the square. This proves all assertions. \(\square\)
 

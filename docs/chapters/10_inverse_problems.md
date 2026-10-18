@@ -333,7 +333,7 @@ Whether swap-symmetric contexts see all of \(K^+\) is a question of rank. Fix a 
 
 (b) Induct on \(v\). Once the \(Y_o[j]\), \(j<v\), are known, subtracting their contribution from the volume-\(v\) coefficients leaves \(\sum_{|o|\le v}Y_o[v]q_0^{\delta m_o+\varepsilon d_o}\) for all probes. Suppose a combination \(\sum_oc_oq_0^{\delta m_o+\varepsilon d_o}\) vanishes for \(\delta<M\) and both \(\varepsilon\). The numbers \(q_0^{m}\) are distinct, so the Vandermonde system in \(\delta\) gives \(\sum_{m_o=m}c_oq_0^{\varepsilon d_o}=0\) for each \(m\) and \(\varepsilon\). Two orbits with the same \(m\) and the same \(d\) have the same \(st\) and \(s+t\), so they coincide. A group of at most two orbits therefore has distinct values of \(d\), and the \(2\times2\) system forces \(c_o=0\). Hence the residual system is injective at every degree, and \(Y\) is determined. \(\square\)
 
-Part (b) is constructive: `recover_symmetrized_kernel` in `src/singularity/contexts.py` solves the triangular system exactly. `scripts/symmetric_contexts.py`, checked in CI, replays the recovery at \(R=3\), \(q_0=1/2\), on all 15 connected blocks with at most four vertices and no terminal edge, against the symmetrized kernel computed by bag messages. For the family with \(\delta\) leaves per terminal, \(c\le R\) shared neighbours and an optional terminal edge, it also computes the exact rank of the probe map for \(R\le7\). With the edge the rank is full. Without it the rank equals the number of unknowns minus the top-degree defect of (a): full through \(R=6\), and \(69\) of \(70\) at \(R=7\). The same pattern holds at \(R=8\) (\(94\) of \(95\), full with the edge) and \(R=9\) (\(124\) of \(125\), full with the edge), computed once in the session that introduced it. Lower-degree collisions are thus resolved by the next volume, and the loss is confined to the top degree in the computed range. Whether this holds for all \(R\), and whether the edge-free class determines \(K^+\) without a budget, is open. For comparison, unrestricted contexts have full rank \(\binom{R+3}{3}\) on the ordered unknowns by SNG-F44. With the edge, symmetric contexts reach \(\sum_{v\le R}\#\{o:|o|\le v\}\), and the difference is exactly the information carried by the order of the terminals.
+Part (b) is constructive: `recover_symmetrized_kernel` in `src/singularity/contexts.py` solves the triangular system exactly. `scripts/symmetric_contexts.py`, checked in CI, replays the recovery at \(R=3\), \(q_0=1/2\), on all 15 connected blocks with at most four vertices and no terminal edge, against the symmetrized kernel computed by bag messages. For the family with \(\delta\) leaves per terminal, \(c\le R\) shared neighbours and an optional terminal edge, it also computes the exact rank of the probe map for \(R\le7\). With the edge the rank is full. Without it the rank equals the number of unknowns minus the top-degree defect of (a): full through \(R=6\), and \(69\) of \(70\) at \(R=7\). The same pattern holds at \(R=8\) (\(94\) of \(95\), full with the edge) and \(R=9\) (\(124\) of \(125\), full with the edge), computed once in the session that introduced it. Lower-degree collisions are thus resolved by the next volume, and the loss is confined to the top degree in the computed range. The fixed-budget exactness question outside the proved ranges remains open. Theorem SNG-F51 below proves that the edge-free class determines every finite prefix of \(K^+\) when additional observation volume is allowed. For comparison, unrestricted contexts have full rank \(\binom{R+3}{3}\) on the ordered unknowns by SNG-F44. With the edge, symmetric contexts reach \(\sum_{v\le R}\#\{o:|o|\le v\}\), and the difference is exactly the information carried by the order of the terminals.
 
 On the realizable side the quotient is no coarser than forced. Among the 12,753 connected blocks with at most six vertices and no terminal edge, grouped by \(K^+\) through volume four, no class contains two kernels unrelated by the terminal swap (451 classes; `--census` mode of the same script). On that population, swap-symmetric contexts lose exactly the order of the terminals. This is a finite statement about one population and one budget.
 
@@ -354,7 +354,7 @@ on the orbits \(\{1,18\},\{6,17\},\{10,15\}\) of \(325\), whose \(d_o\) are \(28
 
 (b) *Exactness.* Suppose that for every \(v<R\) and every group at degree \(v\) the functionals \(y^e\tau^i\), \(e<\kappa\), \(i\in\{0,1\}\), are linearly independent on the group. Then \(I_{\mathcal C,R}=N_R\). The interface has the explicit coordinates
 \[
-\mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\Bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\Bigr)_{g,\;e<\kappa}.
+\mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\bigr)_{g,\;e<\kappa}.
 \]
 The finitely many contexts with \(d\) pendant leaves per terminal, \(c\) shared neighbours and, when \(\kappa=2\), an optional terminal edge span every response of the class. The hypothesis holds for \(\kappa=1\) exactly when \(R\le25\), and for \(\kappa=2\) for every \(R\le91\).
 
@@ -370,7 +370,11 @@ The finitely many contexts with \(d\) pendant leaves per terminal, \(c\) shared 
 \[
 q^{ed_o+(d+c)m_o}\bigl(1+x(d\sigma_o+c\pi_o)+O(x^2)\bigr),\qquad \sigma_o=q^{1-2s}+q^{1-2t},\ \pi_o=q^{2-2(s+t)}.
 \]
-After the known terms are removed, the volume-\(v\) coefficients give \(\sum_oq^{\delta m_o}y_o^eY_o[v]\). In the volume-\(v+1\) coefficient, \(Y[v+1]\) appears with the split-independent factor \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the factor \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the context \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves \(\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]\), with \(\delta=d+c\ge1\). The Vandermonde system in \(\delta\) separates the groups. What remains on each group is the functionals \(y^e\tau^i\), which are independent by hypothesis, so degree \(v\) is determined. The induction reaches \(R-1\). At degree \(R\), (a) shows that exactly the group sums are determined, so \(I_{\mathcal C,R}=N_R\). The probes used and the whole class have the same annihilator \(N_R\), so the probes span every response.
+After the known terms are removed, the volume-\(v\) coefficients give
+\[
+\sum_oq^{\delta m_o}y_o^eY_o[v].
+\]
+In the volume-\(v+1\) coefficient, \(Y[v+1]\) appears with the split-independent factor \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the factor \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the context \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves \(\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]\), with \(\delta=d+c\ge1\). The Vandermonde system in \(\delta\) separates the groups. What remains on each group is the functionals \(y^e\tau^i\), which are independent by hypothesis, so degree \(v\) is determined. The induction reaches \(R-1\). At degree \(R\), (a) shows that exactly the group sums are determined, so \(I_{\mathcal C,R}=N_R\). The probes used and the whole class have the same annihilator \(N_R\), so the probes span every response.
 
 For \(\kappa=1\) the hypothesis asks that \((1,\tau_o)\) separate each group. Two orbits of a group have different \(s+t\). Since \(1-2s\) is odd, the only even exponent of \(\tau_o\) is \(2-2(s+t)\), so the two \(\tau_o\) differ and groups of two pass. A group of three cannot be separated by two functionals; the first one is complete at degree \(25\). For \(\kappa=2\), after scaling column \(o\) by \(q^{2(s+t)}\) the four functionals are integer polynomials. Their matrix has full column rank modulo \(2^{61}-1\) at a fixed residue of \(q\) for every prefix, ordered by \(|o|\), of every group with \(s+t\le100\). A nonzero minor modulo \(p\) is nonzero over \(\mathbb Z[q]\). The first failure is the five-orbit group \(4225=0^2+65^2=16^2+63^2=25^2+60^2=33^2+56^2=39^2+52^2\) at degree \(91\).
 
@@ -384,7 +388,7 @@ So the interface has a precise shape. Without the terminal edge, each budget los
 
 The multiplicity grows slowly: \(\mu_R=2\) for \(7\le R<25\), \(3\) from \(R=25\), \(4\) from \(R=47\), where \(1105\) has four orbits, and \(5\) from \(R=91\). Weighted coupling therefore enlarges the experimental language by a small and explicit amount. It is the extra capability that removes the obstruction of SNG-F49(a). The script replays weighted recovery on real weighted gluings, counted by weak compositions, for all fifteen blocks with at most four vertices (\(R=3\), weights \(0,1,2\)). It also checks the degree-25 diagonal ranks modulo \(p\): \(181\) of \(182\) with simple contexts, \(169\) of \(169\) on the realizable coordinates, and \(182\) of \(182\) with weights up to \(2\).
 
-*Reuse.* Rank reduction is not the only computational gain. A kernel is compiled once and then answers every attachment query by the contraction of SNG-F41. For a \(2\times6\) ladder with terminals at opposite corners and \(R=6\), compiling the kernel takes \(4.6\) s. Each of \(24\) symmetric-context queries then takes \(7.6\) ms by contraction, against \(1.33\) s for a fresh decomposition of the glued graph, with identical exact output. The compilation pays for itself after about \(3.5\) queries (`--benchmark`, wall-clock on the session machine, retained). A compression theorem with savings that grow along a family remains open (P54).
+*Reuse.* Rank reduction is not the only computational gain. A kernel is compiled once and then answers every attachment query by the contraction of SNG-F41. For a \(2\times6\) ladder with terminals at opposite corners and \(R=6\), compiling the kernel takes \(4.6\) s. Each of \(24\) symmetric-context queries then takes \(7.6\) ms by contraction, against \(1.33\) s for a fresh decomposition of the glued graph, with identical exact output. The compilation pays for itself after about \(3.5\) queries (`--benchmark`, wall-clock on the session machine, retained). Theorem SNG-F53 below supplies a compression family whose savings grow with the volume budget (P54).
 
 *Targeted realizability searches.* The following observation gives a route to a symmetric kernel without a swap automorphism. If two blocks \(A,B\) have \(K_A=K_B\), then joining \(A\) in series with the reversal of \(B\), at an internal middle vertex, gives a block with \(K(s,t)=\sum_wx^wK_A(s,w)K_A(t,w)\), which is symmetric. It has no swap automorphism unless such a map carries \(A\) onto the reversal of \(B\). The search for kernel-equal blocks found nothing. The 777 terminal-isomorphism classes of connected blocks with at most six vertices and no terminal edge have 777 distinct kernels through volume four. Among the 7,682 two-terminal trees with at most ten vertices, up to isomorphism, no kernel is symmetric without a swap automorphism. Five pairs of non-isomorphic trees on ten vertices agree through volume four, and all five separate at volume five. For cancelling twists, the pairing of two asymmetric kernels vanishes only if its leading coefficient at volume \(\mu=\min_{\mathbf b}(|\mathbf b|+v_{1,\mathbf b}+v_{2,\mathbf b})\) cancels, and this requires at least two orbits to reach \(\mu\). We tested this on the 1,522 distinct antisymmetric parts, through volume five, of balanced blocks: connected graphs with at most six vertices and two-terminal trees with at most ten vertices. Of the 1,159,003 pairs, self-pairings included, 12,112 have two or more leading orbits, and none has a vanishing leading coefficient. A cancelling pair, if one exists, must therefore come from a richer family or a deeper leading level.
 
@@ -420,7 +424,7 @@ where \(P_j\) has coefficients in \(\mathbb Z_{\ge0}[q]\) and degree at most \(j
 
 *Proof.* For interior heights \(h\) of total \(j\), the energy is
 \[
-Q_0+\Bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\Bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
+Q_0+\bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
 \]
 The bracket does not depend on \((s,t)\), and each of the last two sums is at most \(j\). For \(j=1\) the single raised vertex contributes \(q^{\deg v}U^{A_{sv}}V^{A_{tv}}\).
 
@@ -451,11 +455,14 @@ For a block with \(a\ne b\), the symmetrized slice is \(q^{b(s^2+t^2)-2est}F_P(s
 
 The arithmetic hypothesis is necessary for the unrestricted statement. For \(j=3\), \(d=1\), \(\ell=0\),
 \[
-D(z)=z^{-43}(z-1)^{11}H(z),\qquad \deg H=68,\quad H(1)=3{,}870{,}720,\quad H(0)=\operatorname{lead}H=-1.
+\begin{aligned}
+D(z)&=z^{-43}(z-1)^{11}H(z),&\deg H&=68,\\
+H(1)&=3{,}870{,}720,&H(0)&=\operatorname{lead}H=-1.
+\end{aligned}
 \]
 \(H\) changes sign between \(z=1.1213855316120952\) and \(1.1213855316120954\), so the boundary system degenerates at \(q_*\approx0.8917539702535734\). This obstructs only unrestricted polynomials. Whether a graph slice can realize the degeneracy is open.
 
-`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open, but a realization is tightly constrained. Without the terminal edge at \(R=11\), the candidate is a multiple of \(e_{\{0,5\}}[11]-e_{\{3,4\}}[11]\), at interior volumes \(6\) and \(4\). Two blocks realizing it must have equal symmetrized kernels at every coordinate of degree at most ten. In particular their interiors, pinned at terminal height zero, have equal series through interior volume eleven. Their slice-four difference \(P\) must satisfy \(F_P(s,t)=0\) at every state with \(s+t\le7\) except \(\{3,4\}\). By SNG-F59 this leaves a five-dimensional affine family of slice-four polynomials, fixed by the values at \(s+t=8\). Dominating and other single-charge blocks cannot realize it: their slice differences are \(q^{m(s^2+t^2)}\Delta A_jq^{-2j(s+t)}\), nonzero at the state \((0,0)\) as soon as they are nonzero anywhere. Blocks on at most six vertices are already separated by \(K^+\) at volume four. A realization therefore needs larger blocks whose pinned interiors agree through volume eleven, which by SNG-F55 means equal decorated connected-set statistics up to size eleven. With the terminal edge, the first candidate is at \(R=38\): the vector \(v\) of SNG-F49(a) on \(\{1,18\},\{6,17\},\{10,15\}\), placed at degree \(38\), at interior volumes \(19\), \(15\) and \(13\). The same constraints apply, with agreement required through degree \(37\).
+`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open, but a realization is tightly constrained. Without the terminal edge at \(R=11\), the candidate is a multiple of \(e_{\{0,5\}}[11]-e_{\{3,4\}}[11]\), at interior volumes \(6\) and \(4\). Two blocks realizing it must have equal symmetrized kernels at every coordinate of degree at most ten. In particular their interiors, pinned at terminal height zero, have equal series through interior volume eleven. Their slice-four difference \(P\) must satisfy \(F_P(s,t)=0\) at every state with \(s+t\le7\) except \(\{3,4\}\). By SNG-F59 this leaves a five-dimensional affine family of slice-four polynomials, fixed by the values at \(s+t=8\). Dominating and other single-charge blocks cannot realize it: their slice differences are \(q^{m(s^2+t^2)}\Delta A_jq^{-2j(s+t)}\), nonzero at the state \((0,0)\) as soon as they are nonzero anywhere. Blocks on at most six vertices are already separated by \(K^+\) at volume four. A realization therefore needs larger blocks whose pinned interiors agree through volume eleven. By SNG-F55, equality of their decorated connected-set statistics through size eleven is sufficient for this agreement; the converse is not asserted, since different statistics can have cancelling contributions to the same series prefix. With the terminal edge, the first candidate is at \(R=38\): the vector \(v\) of SNG-F49(a) on \(\{1,18\},\{6,17\},\{10,15\}\), placed at degree \(38\), at interior volumes \(19\), \(15\) and \(13\). The same constraints apply, with agreement required through degree \(37\).
 
 ### Boundary charges and a growing compression family
 
@@ -465,7 +472,7 @@ The rank results above concern what restricted contexts can see. The other half 
 
 (a) Let \(d_i\) be the number of interior neighbours of terminal \(i\), and let \(E_T\) be the energy of the edges among the terminals. For terminal heights \(\mathbf b\) and interior heights \(h\) of total \(j\), the energy is
 \[
-E=\Bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\Bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
+E=\bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
 \]
 Hence \(K(\mathbf b)=q^{\sum_id_ib_i^2+E_T(\mathbf b)}\sum_{j,Q}x^jq^{-2\langle\mathbf b,Q\rangle}A_{j,Q}\), with
 \[
@@ -475,13 +482,21 @@ The charges of volume \(j\) lie in \(j\operatorname{conv}\{\eta_v\}\). If the pa
 
 (b) *Dominating terminals.* Let \(G_H\) consist of an arbitrary simple graph \(H\) on \(m\) vertices and two nonadjacent terminals, each joined to every vertex of \(H\). Then every pattern is \((1,1)\), and
 \[
-K_{G_H}(s,t)=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}\,x^jq^{-2j(s+t)},\qquad A_{H,j}=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+\begin{aligned}
+K_{G_H}(s,t)&=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}x^jq^{-2j(s+t)},\\
+A_{H,j}&=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+\end{aligned}
 \]
 Through volume \(R\) the interface is the \(R+1\) polynomials \(A_{H,0},\ldots,A_{H,R}\). The ordered kernel table has \(\binom{R+3}3\) entries and the symmetrized interface of SNG-F49 has \(1{,}547\) at \(R=24\) and \(3{,}417\) at \(R=32\), so the saving grows quadratically.
 
 (c) *One closure is a complete interface.* Let \(C\) be any known context, and put \(W_{C,j}=\sum_{s,t}x^{s+t}q^{m(s^2+t^2)-2j(s+t)}K_C(s,t)\). Then the closed series is \(Z_{H,C}=\sum_jA_{H,j}x^jW_{C,j}\), and \(W_{C,j}\) has constant term \(1\). Consequently \(A_{H,v}=[x^v]Z_{H,C}-\sum_{j<v}A_{H,j}[x^{v-j}]W_{C,j}\). Within the class with given \(m\), for any fixed context \(C_0\),
 \[
-A_{H,\le R}=A_{H',\le R}\iff Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\iff Z_{H,C,\le R}=Z_{H',C,\le R}\text{ for every context }C.
+\begin{aligned}
+&A_{H,\le R}=A_{H',\le R}\\
+&\quad\Longleftrightarrow\quad Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\\
+&\quad\Longleftrightarrow\quad Z_{H,C,\le R}=Z_{H',C,\le R}
+\quad\text{for every context }C.
+\end{aligned}
 \]
 So the sequence \(A_{H,\le R}\) is the coarsest exact interface for future gluing at the original budget: any representation that determines every future closure determines the \(C_0\)-closure, hence \(A\).
 
@@ -522,7 +537,12 @@ For blocks whose patterns span two dimensions the charge table is not smaller th
 
 **Proposition SNG-F62 (ordered charge charts).** Let the patterns of a block have affine dimension \(a\). Choose \(a\) terminal coordinates on which the differences of patterns have full rank. Projection to those coordinates is then injective on the charges of every slice, because \(Q-j\chi_0\) lies in the span of the differences. The ordered kernel at the embedded projected charges determines every \(A_{j,Q}\), with total volume at most \((a+1)R\). Two such charts are related by \(\mathcal U=J'J^{-1}\), slice by slice.
 
-*Proof.* At \(\mathbf b\) supported on the chosen coordinates, \([x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}\). The matrix is the positive-definite kernel above, so each slice is a nonsingular square system. Each sampled coordinate is a charge coordinate, hence at most \(j\). \(\square\)
+*Proof.* At \(\mathbf b\) supported on the chosen coordinates,
+\[
+[x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}
+\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}.
+\]
+The matrix is the positive-definite kernel above, so each slice is a nonsingular square system. Each sampled coordinate is a charge coordinate, hence at most \(j\). \(\square\)
 
 `charge_chart`, `recover_from_chart` and `chart_transport` in `src/singularity/charges.py` implement this. The tests recover the charge tables exactly from ordered kernels computed by bag messages: a false-twin block (\(a=1\)), a block with four patterns (\(a=2\)), and a three-terminal block, where transport between two different charts reproduces the second chart's observations.
 
@@ -580,7 +600,7 @@ Column \((c,d)\) of \(\wedge^2T\) carries \(x^{c+d}\). The only column of minima
 
 **Theorem SNG-F57 (reconstruction of 2-regular interiors).** Let \(\kappa=q^2(1-q^2)\). Let \(b=\sum_{k\ge1}\varphi_k\), where \(\varphi_k\) is \(\Phi\) of a \(k\)-vertex path whose vertices have ambient degree \(2\), and put \(D_\ell=\log A_{C_\ell}-\ell b\). Then \(D_\ell=\kappa^\ell x^\ell+O(x^{\ell+1})\). For a 2-regular graph on \(n\) vertices with \(c_\ell\) cycles of length \(\ell\),
 \[
-\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\Bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\Bigr).
+\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\bigr).
 \]
 The budget \(R=\lfloor n/2\rfloor\) determines \(H\), and for \(n\ge6\) no smaller budget does.
 

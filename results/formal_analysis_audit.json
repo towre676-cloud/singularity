@@ -1,0 +1,431 @@
+{
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "lean_version": "Lean (version 4.12.0, x86_64-unknown-linux-gnu, commit dc2533473114, Release)",
+  "schema": "singularity.formal-analysis-audit/1",
+  "source_sha256": {
+    "formal-analysis/AnalysisAxiomAudit.lean": "b5d178228c61417baed1c05f00dc7ffcdd8d2f22abaec4fe50018625248f501f",
+    "formal-analysis/SingularityAnalysis.lean": "1c488f008e08f2d18671b2c745c76e65d19c979a2a880b412d88574a2e1804a1",
+    "formal-analysis/SingularityAnalysis/CertificateReal.lean": "f23ba132278970d5c930e1e8d11a3841500238057b37914a19c28a7b5ca5fa32",
+    "formal-analysis/SingularityAnalysis/CoefficientVisibility.lean": "06c20ba7f648645e2c4367237e41832e05e86fa80fd3786c55a23e800ff576e3",
+    "formal-analysis/SingularityAnalysis/EulerRatio.lean": "b08d805681faf92c5ffe133ac5d7742b0a75b08c055f6b98b3b9c0bbb25e61ea",
+    "formal-analysis/SingularityAnalysis/LocalSeries.lean": "5f1bb096abc2f7babb98c0a31f663d4c2e5890a5f126e652cfb87a1c195c27c9",
+    "formal-analysis/SingularityAnalysis/LogExpansion.lean": "85d4f0329d168ac8a62d879f2d17b8a7998bff574a20534eecc1a2607906b2ac",
+    "formal-analysis/SingularityAnalysis/PrimeProduct.lean": "6823c409efba0fd785a754c8b2c60481f176d0843cf2b48f3610e4ebe794a3ab",
+    "formal-analysis/SingularityAnalysis/RealRing.lean": "2f4af7cf452141b858f6be682b1469bb3337a655a1f5273d7307aecb9b339af3",
+    "formal-analysis/SingularityAnalysis/SpectralVisibility.lean": "e060ddd478645f61d59e732df8abec611b01ee189b3009e585d556784b08a405",
+    "formal-analysis/SingularityAnalysis/VisibilityReal.lean": "8135129a294ec2006c4f75f67ce691215483f8e57b86f11b94cfcd9b4e928d52",
+    "formal-analysis/SingularityAnalysis/ZetaReal.lean": "649354fdce22108b6f53456f7baa8db77f05ef199572cb6810528de1d430d8f7",
+    "formal-analysis/lake-manifest.json": "09ecd73bc59f83c0d01ab7068e32a4285ef9de3ded03bc38afe6c14bdc314f25",
+    "formal-analysis/lakefile.lean": "8d4dd1c81902f11d00bebbe1dc1d76b09d3b980be0955fdb819fc2d6922c09be",
+    "formal-analysis/lean-toolchain": "e6930c662006db4d6dc76c651d60a608e4f6a18bcfd53e6b0167d70a125285d5",
+    "formal/AxiomAudit.lean": "6c0cad325a98464ef204bf6baf6835edf72944166f6b3cf716f4bcb57ad855b4",
+    "formal/Singularity.lean": "d3d514f7af983dde4e1bdf59359f8c5030117796340c96f5af51d844ebb6944d",
+    "formal/Singularity/CertificateData.lean": "bcbefd7f594af67cf304bda4c8506497cf9e0debd4a4ef48465f66369373ed8f",
+    "formal/Singularity/Certificates.lean": "4c2d4a50b18216d085dbc474b06472af28cb5c9ee4b8d6e37bb79380b6fda3b9",
+    "formal/Singularity/Normalization.lean": "44f0ae308b20db25808a8dfed90e85ca87f3b75307403bba2657ecc48694f753",
+    "formal/Singularity/Thresholds.lean": "91f07a7b8e4af736451b4ad67a89339fcf91cdd3228e0cc06267f50d7cc96b9f",
+    "formal/Singularity/Visibility.lean": "e004e70c7a263c5cc349801190a299bea1f389a28db8cd77d4cc9f1b261ac216",
+    "formal/lake-manifest.json": "296daabd08d9f14067882382e8f3aa48559257ae5a3c9447b913662bdf0ea11e",
+    "formal/lakefile.lean": "0c4e30e8fcc5404a3023077523f3f35c9b71ee30785a875e633c950cc71b39ad",
+    "formal/lean-toolchain": "e6930c662006db4d6dc76c651d60a608e4f6a18bcfd53e6b0167d70a125285d5",
+    "scripts/check_formal_analysis.py": "822676c0a559b8669ec9b31d07a6a1475b346fbb777c6203492aadf47968da3b"
+  },
+  "theorem_count": 79,
+  "theorems": {
+    "Singularity.RealVisibility.ofReal_zeta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.prime_power_scale": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.visibility_of_log_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.zeta_eq_primeProduct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.zeta_euler_product": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.zeta_euler_product_nat": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.zeta_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Singularity.RealVisibility.zeta_residue_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.LogPowerBound.log_of_small": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.LogPowerBound.of_isBigO_nat": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.abs_log_le_two_mul_abs_sub_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.binary_coeff_agree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.binary_coeff_delta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.binary_coeff_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.binary_exponent_half": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.binary_visibility": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.binary_visibility_half": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.comps_length_le": [
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.comps_zero": [
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.continuousAt_localEulerProduct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.continuousAt_primeProduct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.continuousAt_primeSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.continuousOn_primeSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.energy_zero_profile": [
+      "propext"
+    ],
+    "SingularityAnalysis.graphCoeff_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.graphCoeff_eq_ell": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.graphCoeff_norm_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.graphCoeff_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.graphSeries_summable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.graph_visibility": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.hasProd_div_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.hasProd_localEulerProduct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.hasProd_localEulerProduct_ratio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.hasProd_positive_factors": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.hasProd_primeProduct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.hasProd_primeProduct_subtype": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localEulerProduct_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_continuousAt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_continuousOn_closed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_first_difference_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_log_difference_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_log_powerBound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_one_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_regularized_log_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_remainder_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_remainder_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_summable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_unitCoeff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localSeries_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localTail_norm_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.localTail_summable": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.logPowerBound_zeta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.log_one_add_sub_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.log_one_sub_add_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.power_isBigO_of_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.primeProduct_add": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.primeProduct_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.primeSum_add": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.primeSum_const_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.primeTerm_add": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.primeTerm_const_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.ratio_eq_localEulerProduct_quotient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.real_icast": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.real_ncast": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.real_npow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.real_vone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.real_vzero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.regularized_log_isBigO": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.spectral_coeff_agree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.spectral_coeff_delta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.spectral_coeff_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.spectral_exponent_half": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.spectral_visibility": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.spectral_visibility_half": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.summable_polynomial_geometric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.summable_primeTerm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.unitCoeff_norm_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.unitCoeff_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SingularityAnalysis.visibility_of_coefficients": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  }
+}

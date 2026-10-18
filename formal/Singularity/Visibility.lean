@@ -36,6 +36,11 @@
   proves that `K` is the real numbers or that the abstract operations mean
   what their names say.  No global meromorphic continuation is stated.
 
+  The separate ../formal-analysis package completes the actual positive-real
+  theorem using Mathlib and imports the finite coefficient certificates here.
+  Its concrete results do not assume RealFacts, Expands or Good. Part C below
+  remains a core-only conditional argument with exactly the stated scope.
+
   No `sorry`, `admit`, `axiom`, `native_decide`, `implemented_by` or `unsafe` is used.
 -/
 import Singularity.Certificates

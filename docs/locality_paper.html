@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Singularity project contributors" />
+  <meta name="dcterms.date" content="2026-10-18" />
+  <title>Exact Observation Depth for Integer-Height Graph Populations</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+body{margin:0;background:#f3f0e8;color:#212c34;font:18px/1.7 Georgia,serif}main,body>section,body>header{max-width:1100px;margin:auto}body{padding:4vw 7vw}h1,h2,h3{font-family:system-ui,sans-serif;line-height:1.25;color:#183c50}h1{margin-top:3em;border-bottom:2px solid #bea16d;padding-bottom:.4em}h2{margin-top:2.2em}p{max-width:92ch}a{color:#126084}table{border-collapse:collapse;width:100%;font-size:.87em;line-height:1.45;margin:2em 0;background:#fffdf7}th{background:#e1e9e8;text-align:left}td,th{border:1px solid #bdc9c7;padding:10px;vertical-align:top}pre{overflow:auto;background:#e7ebea;padding:1em;font-size:.8em}code{font-size:.88em}.math.display{display:block;overflow:auto;padding:.6em 0}#TOC{background:#e6e9e2;border-left:4px solid #b2945d;padding:1em 2em;columns:2;font-size:.85em}#TOC ul{break-inside:avoid}img{max-width:100%;height:auto}header p{font-family:system-ui,sans-serif}blockquote{border-left:3px solid #b2945d;padding-left:1em}@media(max-width:800px){body{padding:20px;font-size:17px}#TOC{columns:1}table{display:block;overflow:auto}}@media print{body{background:white;padding:0;font-size:11pt}#TOC{columns:1}h1,h2,h3{break-after:avoid}tr{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Exact Observation Depth for Integer-Height Graph
+Populations</h1>
+<p class="subtitle">Connected supports, delayed distinctions, and sharp
+reconstruction</p>
+<p class="author">Singularity project contributors</p>
+<p class="date">18 October 2026</p>
+</header>
+<h1 class="unnumbered" id="abstract">Abstract</h1>
+<p>For a finite simple graph, we count nonnegative integer vertex
+heights jointly by their sum and a pinned quadratic edge energy. We
+prove a connected-support expansion for the formal logarithm: the
+coefficients through total height R depend only on connected induced
+vertex sets of size at most R, decorated with their ambient degrees.
+This gives an exact bounded-degree compiler whose graph-size cost is
+linear at fixed R. The expansion identifies the first coefficient at
+which equal-order regular graphs of girth at least g can differ: it is
+the difference of their g-cycle counts times an explicit polynomial. Our
+central reconstruction theorem determines every n-vertex simple
+2-regular graph from the pinned series through volume floor(n/2), at
+every fixed real energy weight strictly between zero and one. The budget
+is sharp for every n at least six. In particular, a cycle of length 2g
+and two disjoint g-cycles agree below volume g and have a nonzero
+explicit discrepancy at g. Their dominating-terminal blocks remain
+indistinguishable below that volume under every fixed closing context.
+We supply complete formal-series proofs, independent finite enumeration
+receipts, cycle reconstruction for all 57 simple 2-regular graphs on at
+most fourteen vertices, and retained bounded-degree timing comparisons.
+The connected-cluster principle and low-order graph-coefficient methods
+have established antecedents; the claim here is the stated
+height-population specialization and its exact reconstruction and
+observation-depth theorems.</p>
+<h1 data-number="1" id="population-budget-and-contribution"><span
+class="header-section-number">1</span> Population, budget and
+contribution</h1>
+<p>Let H=(V,E) be a finite simple loopless graph. Heights are functions
+h:V to the nonnegative integers. They remain attached to the original
+labeled vertices; no quotient by graph automorphisms is taken. Define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>v</mi><mo>∈</mo><mi>V</mi></mrow></munder><msub><mi>h</mi><mi>v</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>u</mi><mi>v</mi><mo>∈</mo><mi>E</mi></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>h</mi><mi>u</mi></msub><mo>−</mo><msub><mi>h</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+J(h)=\sum_{v\in V}h_v,\qquad
+E_H(h)=\sum_{uv\in E}(h_u-h_v)^2,
+</annotation></semantics></math> and, for an integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo>;</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>h</mi></munder><msup><mi>x</mi><mrow><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msup><mi>q</mi><mrow><msub><mi>E</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>λ</mi><munder><mo>∑</mo><mi>v</mi></munder><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F_\lambda(H;x,q)=\sum_h x^{J(h)}q^{E_H(h)+\lambda\sum_vh_v^2}.
+\tag{1}
+</annotation></semantics></math> The coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>j</mi></msup><annotation encoding="application/x-tex">x^j</annotation></semantics></math>
+is a polynomial in q with nonnegative integer coefficients. It counts a
+finite population of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>j</mi><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{j+n-1}{n-1}</annotation></semantics></math>
+profiles when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n=|V|&gt;0</annotation></semantics></math>.
+All identities below are initially identities in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q[q][[x]]</annotation></semantics></math>;
+evaluation at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>
+is coefficientwise. No infinite analytic expansion or convergence
+assertion is needed. We write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>H</mi></msub><mo>=</mo><msub><mi>F</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A_H=F_2(H)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>H</mi></msub><mo>=</mo><msub><mi>F</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L_H=F_0(H)</annotation></semantics></math>.</p>
+<p>A budget R means that coefficients of x through degree R are
+available. It bounds total integer height, rather than the number of
+occupied vertices alone or the maximum height. A profile at volume R
+occupies at most R vertices. The logarithm strengthens this elementary
+observation: only connected occupied footprints need to be compiled
+independently. We exploit that identity to establish a sharp observation
+threshold for an infinite graph class.</p>
+<p>The broad computational idea is established. Patel and Regts [PR2017,
+Section 3] compute low-order graph-polynomial information from connected
+induced subgraph counts, including colored variants. Their additivity
+criterion explains the vanishing of disconnected terms. Their later
+induced-count algorithm [PR2019] supplies further bounded-degree
+context. Our ambient-degree labels and unbounded-height formal series
+require the specific specialization proved below; we do not claim a new
+connected-cluster principle. Bauerschmidt, Park and Rodriguez [BPR2024]
+study the integer-valued Gaussian model on lattices and its
+high-temperature scaling, a different question from finite-volume exact
+graph reconstruction. Chertkov and Chernyak [CC2006] express partition
+functions through belief-propagation loop corrections. The present paper
+uses a direct formal logarithm and does not claim to originate loop
+expansions or to provide a new belief-propagation approximation.</p>
+<p>The principal result is Theorem 6: the exact and sharp budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor n/2\rfloor</annotation></semantics></math>
+for simple 2-regular interiors of known order n. The preceding local
+identities provide its proof and an implementation. General completeness
+of the single fixed-pinning series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>H</mi></msub><annotation encoding="application/x-tex">A_H</annotation></semantics></math>
+is not asserted.</p>
+<h1 data-number="2" id="exact-connected-support-expansion"><span
+class="header-section-number">2</span> Exact connected-support
+expansion</h1>
+<p>Expand the exponent in (1) as
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>w</mi><mi>v</mi></msub><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><munder><mo>∑</mo><mrow><mi>u</mi><mi>v</mi><mo>∈</mo><mi>E</mi></mrow></munder><msub><mi>h</mi><mi>u</mi></msub><msub><mi>h</mi><mi>v</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>w</mi><mi>v</mi></msub><mo>=</mo><msub><mi>d</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>λ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sum_v w_vh_v^2-2\sum_{uv\in E}h_uh_v,
+\qquad w_v=d_H(v)+\lambda.
+\tag{2}
+</annotation></semantics></math> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">T\subseteq V</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>T</mi></msub><annotation encoding="application/x-tex">Z_T</annotation></semantics></math>
+be (1) with heights outside T forced to zero. It is essential that (2)
+retains the ambient degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">d_H(v)</annotation></semantics></math>,
+rather than replacing it by the degree in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>T</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H[T]</annotation></semantics></math>:
+an edge to a vertex forced to height zero still contributes energy. Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>⌀</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Z_\varnothing=1</annotation></semantics></math>,
+and define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Φ</mi><mi>S</mi></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>T</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></msup><mo>log</mo><msub><mi>Z</mi><mi>T</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Phi_S=\sum_{T\subseteq S}(-1)^{|S|-|T|}\log Z_T.
+\tag{3}
+</annotation></semantics></math> The logarithm exists formally because
+each series has constant coefficient one.</p>
+<p><strong>Theorem 1 (connected-support locality; SNG-F55).</strong> For
+every nonempty S,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Φ</mi><mi>S</mi></msub><annotation encoding="application/x-tex">\Phi_S</annotation></semantics></math>
+vanishes when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H[S]</annotation></semantics></math>
+is disconnected, has no term below degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|S|</annotation></semantics></math>,
+and depends only on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H[S]</annotation></semantics></math>
+decorated by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>v</mi></msub><annotation encoding="application/x-tex">w_v</annotation></semantics></math>.
+Moreover,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi>⌀</mi><mo>≠</mo><mi>S</mi><mo>⊆</mo><mi>V</mi></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> connected</mtext></mrow></mrow></mtd></mtr></mtable></munder><msub><mi>Φ</mi><mi>S</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\log F_\lambda(H)=\sum_{\substack{\varnothing\ne S\subseteq V\\H[S]\text{ connected}}}\Phi_S.
+\tag{4}
+</annotation></semantics></math> Thus the coefficients through degree R
+are determined by the multiplicities of decorated connected induced
+subgraphs with at most R vertices.</p>
+<p><strong>Proof.</strong> Give each vertex its own variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>v</mi></msub><annotation encoding="application/x-tex">y_v</annotation></semantics></math>,
+replacing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">x^{J(h)}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mi>v</mi></msub><msubsup><mi>y</mi><mi>v</mi><msub><mi>h</mi><mi>v</mi></msub></msubsup></mrow><annotation encoding="application/x-tex">\prod_vy_v^{h_v}</annotation></semantics></math>,
+and call the resulting series F. Forcing heights outside T to zero is
+the substitution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>v</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y_v=0</annotation></semantics></math>
+outside T. The substitution commutes with formal logarithms. A monomial
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">\log F</annotation></semantics></math>
+supported on U therefore survives in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><msub><mi>Z</mi><mi>T</mi></msub></mrow><annotation encoding="application/x-tex">\log Z_T</annotation></semantics></math>
+exactly when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊆</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">U\subseteq T</annotation></semantics></math>.
+Its multiplicity in (3) is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>U</mi><mo>⊆</mo><mi>T</mi><mo>⊆</mo><mi>S</mi></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>T</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\sum_{U\subseteq T\subseteq S}(-1)^{|S|-|T|},
+</annotation></semantics></math> which equals one when U=S and zero
+otherwise. Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Φ</mi><mi>S</mi></msub><annotation encoding="application/x-tex">\Phi_S</annotation></semantics></math>
+consists exactly of monomials with support S. Such monomials have total
+degree at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|S|</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H[S]</annotation></semantics></math>
+splits into nonempty components, the restricted energy is a sum over
+those components,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>S</mi></msub><annotation encoding="application/x-tex">Z_S</annotation></semantics></math>
+is a product, and its logarithm is a sum. It has no monomial meeting
+distinct components, so the exact-support part vanishes. Finally, the
+restricted exponents involve only edges inside S and the labels
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>v</mi></msub><annotation encoding="application/x-tex">w_v</annotation></semantics></math>.
+Partitioning all monomials by support proves (4), and specializing every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>v</mi></msub><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y_v=x</annotation></semantics></math>
+proves the assertion.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>This is a sufficient-statistics theorem, not an inverse equivalence:
+equal decorated small-subgraph counts imply equal truncated series.
+Equal truncated series need not determine all those counts individually,
+since their polynomial contributions can be dependent.</p>
+<p><strong>Proposition 2 (exact recovery and fixed-budget
+cost).</strong> Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>λ</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow></msub><msub><mi>a</mi><mi>j</mi></msub><msup><mi>x</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">F_\lambda=\sum_{j\ge0}a_jx^j</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>r</mi></msub><mo>=</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mo>log</mo><msub><mi>F</mi><mi>λ</mi></msub></mrow><annotation encoding="application/x-tex">B_r=r[x^r]\log F_\lambda</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>j</mi><msub><mi>a</mi><mi>j</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><msub><mi>B</mi><mi>r</mi></msub><msub><mi>a</mi><mrow><mi>j</mi><mo>−</mo><mi>r</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>B</mi><mi>r</mi></msub><mo>∈</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+a_0=1,\qquad
+j a_j=\sum_{r=1}^j B_r a_{j-r},\qquad B_r\in\mathbb Z[q].
+\tag{5}
+</annotation></semantics></math> For fixed R, maximum degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+an exact implementation of (3)–(5) has cost linear in n in an
+arithmetic-operation model. Its dependence on R and degree can be
+exponential; this is not a large-budget polynomial-time claim or a bound
+on coefficient bit cost.</p>
+<p><strong>Proof.</strong> The identity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>F</mi><mi>′</mi><mo>=</mo><mi>F</mi><mspace width="0.167em"></mspace><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>′</mi></mrow><annotation encoding="application/x-tex">xF&#39;=F\,x(\log F)&#39;</annotation></semantics></math>
+gives (5). The inverse of a series in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>x</mi><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">1+x\mathbb Z[q][[x]]</annotation></semantics></math>
+has integer-polynomial coefficients, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>F</mi><mi>′</mi><mi>/</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">xF&#39;/F</annotation></semantics></math>
+also does, proving the assertion for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>r</mi></msub><annotation encoding="application/x-tex">B_r</annotation></semantics></math>.
+A connected s-vertex set has a spanning tree and a walk of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2(s-1)</annotation></semantics></math>
+visiting all its vertices. Choosing a root and such a walk bounds the
+number of sets by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>max</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>Δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">n\max(1,\Delta)^{2(s-1)}</annotation></semantics></math>.
+For each set of size at most R, evaluating all restrictions in (3) takes
+at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>R</mi></msup><annotation encoding="application/x-tex">2^R</annotation></semantics></math>
+restricted calculations. A restriction on t vertices contains at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mi>t</mi></mrow><mi>t</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><msup><mn>4</mn><mi>R</mi></msup></mrow><annotation encoding="application/x-tex">\binom{R+t}{t}\le4^R</annotation></semantics></math>
+profiles of total height at most R. Energy exponents are bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>Δ</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\Delta+\lambda)R^2</annotation></semantics></math>.
+Truncated polynomial arithmetic, logarithms and (5) have cost polynomial
+in this exponent range and R per elementary profile step. One may
+therefore use the conservative bound
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mspace width="0.167em"></mspace><msup><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo>max</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>Δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><mi>R</mi></msup><mo>poly</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>,</mo><mi>Δ</mi><mo>,</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+n\,[8\max(1,\Delta)^2]^R\operatorname{poly}(R,\Delta,\lambda)
+\tag{6}
+</annotation></semantics></math> in coefficient operations. This bound
+requires no canonical labeling or graph-isomorphism oracle: omitting
+memoization preserves it. Exact memoization changes constants and
+sharing, not correctness.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The implementation uses tree encodings for common decorated trees,
+exact small canonical forms when inexpensive, and a vertex-set key when
+canonicalization would be costly. The fallback loses reuse only. It
+never identifies different decorated shapes. This matters because
+factorial canonicalization can cost more than the profile arithmetic it
+is intended to save.</p>
+<h1 data-number="3" id="the-first-cycle-visible-to-a-budget"><span
+class="header-section-number">3</span> The first cycle visible to a
+budget</h1>
+<p>For a regular graph of degree d, put
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><msup><mi>q</mi><mrow><mi>d</mi><mo>+</mo><mi>λ</mi></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>κ</mi><mrow><mi>d</mi><mo>,</mo><mi>λ</mi></mrow></msub><mo>=</mo><mi>a</mi><mi>f</mi><mo>=</mo><msup><mi>q</mi><mrow><mi>d</mi><mo>+</mo><mi>λ</mi><mo>−</mo><mn>2</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+a=q^{d+\lambda},\qquad f=q^{-2}-1,
+\qquad \kappa_{d,\lambda}=af
+=q^{d+\lambda-2}(1-q^2).
+\tag{7}
+</annotation></semantics></math> The temporary Laurent notation f is
+harmless: each final expression below is a polynomial when d is at least
+two. The girth of an acyclic graph is understood to be infinite. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>g</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">N_g(H)</annotation></semantics></math>
+count unoriented simple g-cycles.</p>
+<p><strong>Theorem 3 (first-cycle coefficient; SNG-F56).</strong> Let g
+be at least three. Suppose H and H’ are d-regular graphs of the same
+order, both of girth at least g. Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≡</mo><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><msup><mi>x</mi><mi>g</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>g</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>F</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>N</mi><mi>g</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>N</mi><mi>g</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>κ</mi><mrow><mi>d</mi><mo>,</mo><mi>λ</mi></mrow><mrow><mspace width="0.167em"></mspace><mi>g</mi></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F_\lambda(H)\equiv F_\lambda(H&#39;)\pmod{x^g},
+\qquad
+[x^g](F_\lambda(H)-F_\lambda(H&#39;))
+=(N_g(H)-N_g(H&#39;))\kappa_{d,\lambda}^{\,g}.
+\tag{8}
+</annotation></semantics></math></p>
+<p><strong>Proof.</strong> We first justify the tree counts used in the
+locality formula. For a tree T on k vertices, the number of all graph
+homomorphisms into a d-regular n-vertex graph is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msup><mi>d</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">nd^{k-1}</annotation></semantics></math>,
+obtained by choosing the root image and then one of d neighbors for each
+child. Group these maps by their equality partition of the vertices.
+After identifying equal vertices and suppressing parallel edges, the
+quotient is connected. A quotient with a loop has no map into a simple
+graph. For k at most g, any nontrivial quotient has fewer than g
+vertices; an injective realization of a cyclic quotient would violate
+the girth condition. Every contributing proper quotient is therefore a
+smaller tree. Induction on k now shows that the number of injective
+homomorphisms of T depends only on n,d and T for k at most g.</p>
+<p>For k below g an injective tree image has no extra edge among its
+vertices: adding one to the tree would create a cycle on at most k
+vertices. Thus the number of induced copies of every such T is its
+injective homomorphism count divided by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mo>Aut</mo><mi>T</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|\operatorname{Aut}T|</annotation></semantics></math>,
+independently of H. All ambient-degree labels also agree. Theorem 1
+proves equality of logarithms, and hence series, below degree g.</p>
+<p>At degree g, contributions from supports smaller than g still agree.
+An induced graph on exactly g vertices is either a tree or a chordless
+g-cycle whenever it is connected. An injective tree image can have an
+extra edge only if its tree is the path on g vertices: the cycle formed
+by that edge must use every vertex. Each g-cycle has exactly g spanning
+paths. Consequently the induced-path count is the universal injective
+path-image count minus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><msub><mi>N</mi><mi>g</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">gN_g(H)</annotation></semantics></math>;
+every other g-vertex tree count is universal.</p>
+<p>Only height one at every support vertex contributes at total degree
+g. The coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∏</mo><mrow><mi>v</mi><mo>∈</mo><mi>S</mi></mrow></msub><msub><mi>y</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\prod_{v\in S}y_v</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">\log F</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>g</mi></msup><munder><mo>∑</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mrow><mi>D</mi><mo>⊆</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> connected</mtext></mrow></mrow></mtd></mtr></mtable></munder><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>D</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+a^g\sum_{\substack{D\subseteq E(H[S])\\(S,D)\text{ connected}}}f^{|D|}.
+\tag{9}
+</annotation></semantics></math> To verify (9), expand the binary weight
+on S as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msub><mo>∏</mo><mrow><mi>e</mi><mo>∈</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a^{|S|}\prod_{e\in E(H[S])}(1+f)</annotation></semantics></math>.
+Partition each chosen edge set into its connected components. The
+exponential formula, or direct expansion of the formal logarithm
+followed by this component partition, leaves precisely connected
+spanning edge sets. A path contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>g</mi></msup><msup><mi>f</mi><mrow><mi>g</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a^gf^{g-1}</annotation></semantics></math>.
+A cycle contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>g</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><msup><mi>f</mi><mrow><mi>g</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msup><mi>f</mi><mi>g</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a^g(gf^{g-1}+f^g)</annotation></semantics></math>,
+from its g spanning paths and its full edge set. Subtracting the g
+missing induced paths leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>g</mi></msup><msup><mi>f</mi><mi>g</mi></msup></mrow><annotation encoding="application/x-tex">a^gf^g</annotation></semantics></math>
+per cycle. This proves the logarithmic discrepancy. Since all lower
+coefficients agree and the constant coefficients are one, the first
+discrepancy of the series equals that of their logarithms. Equation (8)
+follows.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>For the cube and eight-vertex Möbius ladder, d=3, g=4 and the square
+counts are six and four. Equation (8) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>q</mi><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2q^4(1-q^2)^4</annotation></semantics></math>
+for L and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>q</mi><mn>12</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2q^{12}(1-q^2)^4</annotation></semantics></math>
+for A. The former is exactly the retained reference discrepancy. The
+triangular prism and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>3</mn><mo>,</mo><mn>3</mn></mrow></msub><annotation encoding="application/x-tex">K_{3,3}</annotation></semantics></math>
+give the analogous volume-three difference from their two versus zero
+triangles. These applications explain particular fixtures; they do not
+assert that cycle counts determine the entire height series.</p>
+<h1 data-number="4"
+id="arbitrarily-late-collisions-and-closing-contexts"><span
+class="header-section-number">4</span> Arbitrarily late collisions and
+closing contexts</h1>
+<p><strong>Corollary 4 (cycle collision family).</strong> For every
+integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">g\ge3</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><msub><mi>C</mi><mi>g</mi></msub><mo>⊔</mo><msub><mi>C</mi><mi>g</mi></msub></mrow></msub><mo>−</mo><msub><mi>A</mi><msub><mi>C</mi><mrow><mn>2</mn><mi>g</mi></mrow></msub></msub><mo>=</mo><mn>2</mn><msup><mi>κ</mi><mi>g</mi></msup><msup><mi>x</mi><mi>g</mi></msup><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>κ</mi><mo>=</mo><msup><mi>q</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_{C_g\sqcup C_g}-A_{C_{2g}}
+=2\kappa^g x^g+O(x^{g+1}),
+\qquad \kappa=q^2(1-q^2).
+\tag{10}
+</annotation></semantics></math> In particular, the series agree below
+volume g and differ at g for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q\in(0,1)</annotation></semantics></math>.</p>
+<p><strong>Proof.</strong> Both graphs have order 2g, degree two and
+girth at least g; their g-cycle counts are two and zero. Apply Theorem 3
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda=2</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>There is an independent transfer proof, useful for checking the
+leading term. At a fixed cutoff R, restrict indices a,b to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">0,\ldots,R</annotation></semantics></math>
+in
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>=</mo><msup><mi>x</mi><mi>b</mi></msup><msup><mi>q</mi><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><msup><mi>b</mi><mn>2</mn></msup></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+T_{ab}=x^bq^{(a-b)^2+2b^2}.
+</annotation></semantics></math> A cyclic matrix product multiplies
+exactly one x-factor and one pinning factor for each vertex, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><msub><mi>C</mi><mi>m</mi></msub></msub><mo>=</mo><mo>tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>T</mi><mi>m</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.222em"></mspace><mo>mod</mo><mspace width="0.222em"></mspace><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></mrow><annotation encoding="application/x-tex">A_{C_m}=\operatorname{tr}(T^m)\bmod x^{R+1}</annotation></semantics></math>.
+The finite-dimensional trace identity gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>tr</mo><msup><mi>T</mi><mi>g</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mo>tr</mo><msup><mi>T</mi><mrow><mn>2</mn><mi>g</mi></mrow></msup><mo>=</mo><mn>2</mn><mo>tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mo>∧</mo><mn>2</mn></msup><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>g</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(\operatorname{tr}T^g)^2-\operatorname{tr}T^{2g}
+=2\operatorname{tr}((\wedge^2T)^g).
+\tag{11}
+</annotation></semantics></math> The column indexed by c&lt;d in the
+exterior-square matrix carries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>c</mi><mo>+</mo><mi>d</mi></mrow></msup><annotation encoding="application/x-tex">x^{c+d}</annotation></semantics></math>.
+Minimum degree one occurs only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>,
+whose diagonal entry is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>det</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>q</mi><mn>3</mn></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>q</mi></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>q</mi><mn>2</mn></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>x</mi><msup><mi>q</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x\det\begin{pmatrix}1&amp;q^3\\q&amp;q^2\end{pmatrix}
+=xq^2(1-q^2).
+</annotation></semantics></math> Every closed product of g entries has
+degree at least g; equality forces every intermediate pair to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>.
+Thus (11) gives exactly the leading term (10). All matrices were finite,
+and enlarging R stabilizes every coefficient under discussion.</p>
+<p>To state the context consequence precisely, form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>H</mi></msub><annotation encoding="application/x-tex">B_H</annotation></semantics></math>
+by adding distinct nonadjacent terminals s,t, each joined to every
+vertex of H. A closing context C is a fixed finite simple graph with two
+designated ordered terminals. It is glued to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>H</mi></msub><annotation encoding="application/x-tex">B_H</annotation></semantics></math>
+by identifying corresponding terminals and retaining all other vertices
+separately. Terminal edge conventions are unchanged by H, and the
+context has no additional identification with the interior. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mrow><mi>C</mi><mo>,</mo><mi>H</mi></mrow></msub><annotation encoding="application/x-tex">Z_{C,H}</annotation></semantics></math>
+for the resulting unpinned local height series.</p>
+<p><strong>Proposition 5 (context-independent first discrepancy;
+SNG-F53–SNG-F54 specialized).</strong> For interiors of the same order
+m,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mrow><mi>C</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow></munder><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>x</mi><mi>j</mi></msup><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Z_{C,H}(x,q)=\sum_{j\ge0} A_{H,j}(q)x^j W_{C,j}(x,q),
+\qquad W_{C,j}(0,q)=1.
+\tag{12}
+</annotation></semantics></math> Hence a first difference at interior
+volume g remains the same coefficient at volume g under every such
+closing context. In particular the family (10) cannot be distinguished
+earlier by any fixed context.</p>
+<p><strong>Proof.</strong> Assign heights s,t to the two terminals. For
+an interior profile of volume j, the edges from terminals to H
+contribute
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><munder><mo>∑</mo><mrow><mi>v</mi><mo>∈</mo><mi>H</mi></mrow></munder><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m(s^2+t^2)+2\sum_{v\in H}h_v^2-2j(s+t).
+</annotation></semantics></math> The first and last terms depend only on
+m,j,s,t, and the middle term is precisely the pinning in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>H</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">A_{H,j}</annotation></semantics></math>.
+Summing terminal and context-interior heights defines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mrow><mi>C</mi><mo>,</mo><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">W_{C,j}</annotation></semantics></math>;
+it is a formal series with coefficients in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)</annotation></semantics></math>.
+Its constant term comes uniquely from zero heights on both terminals and
+all context-interior vertices, and equals one. Thus (12) is a unit
+lower-triangular transformation of the A-sequence, common to all
+interiors of order m. It preserves the first nonzero difference.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>For g=6, the two dominating blocks have fourteen vertices. Closing
+each with a single shared neighbor gives fifteen-vertex graphs. Direct
+weak-composition enumeration of these actual glued graphs gives equality
+through volume five and, at volume six and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="false"><mn>1</mn><mn>4</mn></mfrac><mo>⋅</mo><mfrac displaystyle="false"><mn>3</mn><mn>4</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>6</mn></msup><mo>=</mo><mfrac><mn>729</mn><mrow><mn>8</mn><mspace width="0.167em"></mspace><mn>388</mn><mspace width="0.167em"></mspace><mn>608</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+2(\tfrac14\cdot\tfrac34)^6
+=\frac{729}{8\,388\,608}.
+</annotation></semantics></math> This is a finite independent check of
+the structural identity, not evidence that the complete series are
+equal: (10) proves they are unequal.</p>
+<h1 data-number="5"
+id="sharp-reconstruction-of-every-2-regular-interior"><span
+class="header-section-number">5</span> Sharp reconstruction of every
+2-regular interior</h1>
+<p>For k at least one, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>φ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\varphi_k</annotation></semantics></math>
+be the exact-support contribution (3) for a k-vertex path, with every
+vertex assigned ambient degree two and pinning two. Theorem 1 gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>k</mi></msub><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mi>k</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi_k=O(x^k)</annotation></semantics></math>,
+so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow></munder><msub><mi>φ</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>D</mi><mo>ℓ</mo></msub><mo>=</mo><mo>log</mo><msub><mi>A</mi><msub><mi>C</mi><mo>ℓ</mo></msub></msub><mo>−</mo><mo>ℓ</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">
+b(x,q)=\sum_{k\ge1}\varphi_k(x,q),\qquad
+D_\ell=\log A_{C_\ell}-\ell b
+\tag{13}
+</annotation></semantics></math> are well-defined formal series,
+computable to every finite budget.</p>
+<p><strong>Theorem 6 (sharp 2-regular reconstruction; SNG-F57).</strong>
+Fix an order n and a real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>.
+The coefficients of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A_H(x,q_0)</annotation></semantics></math>
+through degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">R=\lfloor n/2\rfloor</annotation></semantics></math>
+determine the isomorphism type of every simple 2-regular graph H of
+order n. For every n at least six this uniform budget is sharp. Over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)</annotation></semantics></math>,
+or after the same specialization, the cycle counts are recovered
+recursively by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><msub><mi>A</mi><mi>H</mi></msub><mo>−</mo><mi>n</mi><mi>b</mi><mo>=</mo><munder><mo>∑</mo><mrow><mo>ℓ</mo><mo>≥</mo><mn>3</mn></mrow></munder><msub><mi>c</mi><mo>ℓ</mo></msub><msub><mi>D</mi><mo>ℓ</mo></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><msup><mi>κ</mi><mrow><mo>−</mo><mi>r</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><msub><mi>A</mi><mi>H</mi></msub><mo>−</mo><mi>n</mi><mi>b</mi><mo>−</mo><munder><mo>∑</mo><mrow><mn>3</mn><mo>≤</mo><mo>ℓ</mo><mo>&lt;</mo><mi>r</mi></mrow></munder><msub><mi>c</mi><mo>ℓ</mo></msub><msub><mi>D</mi><mo>ℓ</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,
+\qquad
+c_r=\kappa^{-r}[x^r]\left(\log A_H-nb-\sum_{3\le\ell&lt;r}c_\ell D_\ell\right).
+\tag{14}
+</annotation></semantics></math></p>
+<p><strong>Proof.</strong> A simple 2-regular graph is a disjoint union
+of cycles of lengths at least three. For a cycle of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>ℓ</mo><annotation encoding="application/x-tex">\ell</annotation></semantics></math>,
+each connected proper induced subset is a path. There are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>ℓ</mo><annotation encoding="application/x-tex">\ell</annotation></semantics></math>
+copies of each path size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>&lt;</mo><mo>ℓ</mo></mrow><annotation encoding="application/x-tex">1\le k&lt;\ell</annotation></semantics></math>.
+Therefore Theorem 1 gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><msub><mi>A</mi><msub><mi>C</mi><mo>ℓ</mo></msub></msub><mo>=</mo><mo>ℓ</mo><munder><mo>∑</mo><mrow><mi>k</mi><mo>&lt;</mo><mo>ℓ</mo></mrow></munder><msub><mi>φ</mi><mi>k</mi></msub><mo>+</mo><msub><mi>Φ</mi><msub><mi>C</mi><mo>ℓ</mo></msub></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>D</mi><mo>ℓ</mo></msub><mo>=</mo><msub><mi>Φ</mi><msub><mi>C</mi><mo>ℓ</mo></msub></msub><mo>−</mo><mo>ℓ</mo><munder><mo>∑</mo><mrow><mi>k</mi><mo>≥</mo><mo>ℓ</mo></mrow></munder><msub><mi>φ</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\log A_{C_\ell}=\ell\sum_{k&lt;\ell}\varphi_k+\Phi_{C_\ell},
+\quad
+D_\ell=\Phi_{C_\ell}-\ell\sum_{k\ge\ell}\varphi_k.
+</annotation></semantics></math> In particular
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mo>ℓ</mo></msub><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>ℓ</mo></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">D_\ell=O(x^\ell)</annotation></semantics></math>.
+The multilinear path contribution at size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>ℓ</mo><annotation encoding="application/x-tex">\ell</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mn>4</mn><mo>ℓ</mo></mrow></msup><msup><mi>f</mi><mrow><mo>ℓ</mo><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">q^{4\ell}f^{\ell-1}</annotation></semantics></math>;
+the cycle contribution is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mn>4</mn><mo>ℓ</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>ℓ</mo><msup><mi>f</mi><mrow><mo>ℓ</mo><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msup><mi>f</mi><mo>ℓ</mo></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{4\ell}(\ell f^{\ell-1}+f^\ell)</annotation></semantics></math>.
+Their difference shows
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mo>ℓ</mo></msub><mo>=</mo><msup><mi>κ</mi><mo>ℓ</mo></msup><msup><mi>x</mi><mo>ℓ</mo></msup><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mo>ℓ</mo><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+D_\ell=\kappa^\ell x^\ell+O(x^{\ell+1}).
+\tag{15}
+</annotation></semantics></math> The series A multiplies over connected
+components, and logarithms add. Subtracting the total vertex background
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">nb</annotation></semantics></math>
+proves the first identity in (14). Equation (15) makes that identity
+triangular, proving its recursive inverse. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\kappa(q_0)\ne0</annotation></semantics></math>,
+so every division is valid.</p>
+<p>Recover all cycle counts with length at most R. Two remaining cycles
+would each have length greater than R, requiring at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>R</mi><mo>+</mo><mn>2</mn><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2R+2&gt;n</annotation></semantics></math>
+vertices. Hence there is at most one remaining cycle, and its length is
+the remaining vertex count. The recovered multiset of lengths determines
+H up to isomorphism.</p>
+<p>For sharpness, put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">g=\lfloor n/2\rfloor</annotation></semantics></math>.
+If n=2g, compare
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mn>2</mn><mi>g</mi></mrow></msub><annotation encoding="application/x-tex">C_{2g}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>g</mi></msub><mo>⊔</mo><msub><mi>C</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">C_g\sqcup C_g</annotation></semantics></math>.
+If n=2g+1, compare
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mn>2</mn><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{2g+1}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>g</mi></msub><mo>⊔</mo><msub><mi>C</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">C_g\sqcup C_{g+1}</annotation></semantics></math>.
+For n at least six all component lengths are admissible. Their
+logarithmic differences are respectively
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>D</mi><mi>g</mi></msub><mo>−</mo><msub><mi>D</mi><mrow><mn>2</mn><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">2D_g-D_{2g}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>g</mi></msub><mo>+</mo><msub><mi>D</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>D</mi><mrow><mn>2</mn><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">D_g+D_{g+1}-D_{2g+1}</annotation></semantics></math>,
+whose first nonzero coefficients occur at g by (15). Thus no smaller
+budget distinguishes every pair. For n=3,4,5 there is only one simple
+2-regular isomorphism type, so no analogous lower bound is claimed.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The hypothesis that n is known is part of the theorem. It is natural
+for fixed-order graph comparison and avoids hiding order recovery inside
+the final remainder step. The rational implementation takes exact input
+coefficients, validates the recovered nonnegative integer multiplicities
+and remaining length, and can reject data that are inconsistent with a
+2-regular graph.</p>
+<h1 data-number="6" id="reproduction-and-measured-cost"><span
+class="header-section-number">6</span> Reproduction and measured
+cost</h1>
+<p>The package uses Python 3.10 or later and only the standard library
+for its exact core. From the repository root,
+<code>PYTHONPATH=src python scripts/locality_family.py --check</code>
+reproduces the retained structural receipt in
+<code>results/locality_family.json</code>. The receipt compares the
+compiler with an independently implemented weak-composition enumerator
+on ten explicit or seeded graphs for both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+checks (8) against the prism and cube examples, verifies (10) for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>≤</mo><mi>g</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">3\le g\le8</annotation></semantics></math>
+with independent enumeration through g=6, enumerates the fifteen-vertex
+glued example directly, and reconstructs all 57 cycle partitions of
+total order at most fourteen. The sharpness pairs for every order six
+through fourteen are retained too.</p>
+<p>The manuscript’s theorems are proved above in ordinary mathematics.
+The connected-support code and these general theorems are not formalized
+in Lean. Separate Lean artifacts for the first paper’s fixed reference
+coefficients do not enlarge the formal-verification scope of this paper.
+Equality to an independent enumeration oracle is finite evidence about
+the implementation, not a machine-checked proof of its general
+correctness.</p>
+<p>The following timings are retained wall-clock measurements, not
+portable performance guarantees. Graphs are connected cubic graphs
+produced by the seeded configuration-model generator in
+<code>scripts/locality_family.py</code>; n is the seed. The separator
+baseline uses the same total-volume and height cutoffs, a stated
+min-degree elimination order, and exact coefficient comparison wherever
+it is run.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">Connected supports, R=4</th>
+<th style="text-align: right;">Separator engine, R=4</th>
+<th style="text-align: right;">Elimination width</th>
+<th style="text-align: right;">Connected supports, R=6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">0.027 s</td>
+<td style="text-align: right;">0.243 s</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.900 s</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0.025 s</td>
+<td style="text-align: right;">52.611 s</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.818 s</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">0.037 s</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.901 s</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">0.042 s</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0.796 s</td>
+</tr>
+</tbody>
+</table>
+<p>At n=64 and 128 the R=4 baseline would allocate, over all bags under
+its current representation, approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8.19</mn><mo>×</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">8.19\times10^9</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.66</mn><mo>×</mo><msup><mn>10</mn><mn>19</mn></msup></mrow><annotation encoding="application/x-tex">4.66\times10^{19}</annotation></semantics></math>
+height assignments. These are representation-size estimates, not
+measured runtimes or lower bounds for every tree-decomposition
+algorithm. The R=6 figures have still larger estimates and were not run.
+Observed reuse depends on how many decorated types occur; at R=6 these
+four graphs contain 32,26,29 and 17 types. This explains why the finite
+timings need not increase monotonically with n. The theorem guarantees
+linear graph-size dependence at fixed parameters even without reuse,
+rather than a sublinear guarantee.</p>
+<p>To rerun timings use
+<code>PYTHONPATH=src python scripts/locality_family.py --benchmark</code>;
+this updates the retained timing section and is deliberately separate
+from deterministic <code>--check</code>. For the accompanying reference
+coefficients use
+<code>PYTHONPATH=src python scripts/reproduce.py --check</code>. The
+full archive includes sources, tests, exact JSON receipts, the
+bibliography and rendered manuscripts. The detailed claim register
+identifies every finite boundary and the editorial release check.</p>
+<h1 data-number="7" id="scope-and-next-questions"><span
+class="header-section-number">7</span> Scope and next questions</h1>
+<p>Finite agreement below volume g is now explained and attained by an
+explicit family, and within the cycle class a sharp inverse theorem is
+available. It does not follow that the fixed-pinning series reconstructs
+every finite graph. Nonisomorphic graphs with equal complete A-series
+remain a legitimate target. The connected-support identity supplies a
+sufficient condition for truncated equality, but its aggregated
+q-polynomials can merge different decorated statistics. An exhaustive
+prefix search therefore cannot be promoted to a completeness
+theorem.</p>
+<p>Past the first cycle, equal cycle counts need not imply equal
+coefficients: overlapping cycles and other connected footprints
+contribute. The project has additional loop and overlap results
+(SNG-F60–SNG-F61) and a complete moment enrichment (SNG-F58). They are
+deliberately outside this paper’s central proof and are not
+prerequisites for Theorem 6. A further algorithmic question is to
+combine separators inside the connected footprints with the fixed-budget
+compiler, extending the useful budget without requiring bounded
+treewidth of the full graph. These questions retain the same explicit
+volume, parameter and graph-class boundaries as the proved results.</p>
+<h1 class="unnumbered" id="references">References</h1>
+<p>[BPR2024] R. Bauerschmidt, J. Park and P.-F. Rodriguez, <em>The
+Discrete Gaussian model, I. Renormalisation group flow at high
+temperature</em>, Annals of Probability 52 (2024), no. 4, 1253–1359.
+DOI: <a
+href="https://doi.org/10.1214/23-AOP1658">10.1214/23-AOP1658</a>. Author
+manuscript: <a
+href="https://arxiv.org/abs/2202.02286">arXiv:2202.02286</a>.</p>
+<p>[CC2006] M. Chertkov and V. Y. Chernyak, <em>Loop series for discrete
+statistical models on graphs</em>, Journal of Statistical Mechanics:
+Theory and Experiment (2006), P06009. DOI: <a
+href="https://doi.org/10.1088/1742-5468/2006/06/P06009">10.1088/1742-5468/2006/06/P06009</a>.
+Author manuscript: <a
+href="https://arxiv.org/abs/cond-mat/0603189">arXiv:cond-mat/0603189</a>.</p>
+<p>[PR2017] V. Patel and G. Regts, <em>Deterministic polynomial-time
+approximation algorithms for partition functions and graph
+polynomials</em>, SIAM Journal on Computing 46 (2017), no. 6, 1893–1919.
+DOI: <a
+href="https://doi.org/10.1137/16M1101003">10.1137/16M1101003</a>. Author
+manuscript: <a
+href="https://arxiv.org/abs/1607.01167">arXiv:1607.01167</a>, Section 3,
+particularly Lemma 3.5 and the colored version in Theorem 3.7.</p>
+<p>[PR2019] V. Patel and G. Regts, <em>Computing the number of induced
+copies of a fixed graph in a bounded degree graph</em>, Algorithmica 81
+(2019), 1844–1858. DOI: <a
+href="https://doi.org/10.1007/s00453-018-0511-9">10.1007/s00453-018-0511-9</a>.
+Author manuscript: <a
+href="https://arxiv.org/abs/1707.05186">arXiv:1707.05186</a>.</p>
+</body>
+</html>

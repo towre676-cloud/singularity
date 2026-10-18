@@ -21,6 +21,11 @@ A_j: R + 1 polynomials through volume R.
 For a known context C the closed series is Z_C = T_C A, where T_C is lower
 triangular with unit diagonal and does not depend on the interior, so one
 closure determines A and every other closure: Z_D = T_D T_C^(-1) Z_C.
+
+Charge tables also compose directly: parallel gluing is graded convolution,
+and forgetting a terminal sums its height with an exact energy shift.
+Every interface records its complete interior-volume depth, since its sparse
+support alone does not reveal how far it was computed.
 """
 
 from __future__ import annotations
@@ -46,6 +51,8 @@ def charge_interface(graph: Graph, terminals: Sequence[int], max_volume: int) ->
 
     Computed by enumerating interior weak compositions (the interior is
     assumed small); ``kernel_from_charges`` rebuilds the terminal kernel.
+    ``max_volume`` in the returned dictionary declares the complete prefix;
+    depth-sensitive operations reject a request beyond that bound.
     """
     from .terminals import _check_terminals
 
@@ -63,15 +70,102 @@ def charge_interface(graph: Graph, terminals: Sequence[int], max_volume: int) ->
             table[j, charge][energy] += 1
     index = {b: k for k, b in enumerate(terminals)}
     return {"terminals": terminals,
+            "max_volume": R,
             "terminal_degrees": tuple(sum(eta[v][k] for v in interior) for k in range(len(terminals))),
-            "terminal_edges": tuple((index[u], index[v]) for u, v in graph.edges if u in index and v in index),
+            "terminal_edges": tuple(sorted(tuple(sorted((index[u], index[v])))
+                                           for u, v in graph.edges if u in index and v in index)),
             "patterns": sorted(set(eta.values())),
+            "charges": {key: dict(sorted(c.items())) for key, c in sorted(table.items())}}
+
+
+def _charge_depth(interface: dict, max_volume: int | None) -> int:
+    """Require a declared complete prefix; sparse support cannot reveal its depth."""
+    if "max_volume" not in interface:
+        raise ValueError("charge interface needs max_volume completeness metadata; rebuild it with charge_interface")
+    source = _integer(interface["max_volume"], "interface max_volume", minimum=0)
+    requested = source if max_volume is None else _integer(max_volume, "max_volume", minimum=0)
+    if requested > source:
+        raise ValueError(f"requested volume {requested} exceeds charge interface depth {source}")
+    return requested
+
+
+def parallel_interfaces(first: dict, second: dict, max_volume: int | None = None) -> dict:
+    """Glue independent interiors along the same ordered terminal labels.
+
+    The caller supplies edge-disjoint blocks meeting only in their terminals;
+    interiors are treated as disjoint copies, since their vertex identities
+    have already been summed out.  Repeated terminal edges are rejected.
+    The new charge polynomial is the product of the two charge polynomials,
+    truncated in *interior* volume.  No terminal-height table is expanded.
+    By default the result uses the smaller declared complete source depth.
+    """
+    if tuple(first["terminals"]) != tuple(second["terminals"]):
+        raise ValueError("parallel interfaces require the same ordered terminal labels")
+    depth = min(_charge_depth(first, None), _charge_depth(second, None))
+    R = depth if max_volume is None else _integer(max_volume, "max_volume", minimum=0)
+    _charge_depth(first, R)
+    _charge_depth(second, R)
+    edges1 = {tuple(sorted(e)) for e in first["terminal_edges"]}
+    edges2 = {tuple(sorted(e)) for e in second["terminal_edges"]}
+    if edges1 & edges2:
+        raise ValueError("parallel blocks must not share an edge between terminals")
+    table: defaultdict[tuple, Counter] = defaultdict(Counter)
+    for (j1, Q1), cells1 in first["charges"].items():
+        for (j2, Q2), cells2 in second["charges"].items():
+            if j1 + j2 > R:
+                continue
+            row = table[j1 + j2, tuple(a + b for a, b in zip(Q1, Q2))]
+            for e1, count1 in cells1.items():
+                for e2, count2 in cells2.items():
+                    row[e1 + e2] += count1 * count2
+    return {"terminals": tuple(first["terminals"]), "max_volume": R,
+            "terminal_degrees": tuple(a + b for a, b in zip(first["terminal_degrees"], second["terminal_degrees"])),
+            "terminal_edges": tuple(sorted(edges1 | edges2)),
+            "patterns": sorted({tuple(p) for p in first["patterns"] + second["patterns"]}),
+            "charges": {key: dict(sorted(c.items())) for key, c in sorted(table.items())}}
+
+
+def forget_terminal(interface: dict, terminal: int, max_volume: int | None = None) -> dict:
+    """Turn the named terminal into an interior vertex, summing its height.
+
+    If zeta records its edges to the retained terminals, a cell (j,Q,E)
+    at forgotten height h becomes
+        (j+h, Q_without_terminal+h*zeta,
+         E+(d_terminal+sum(zeta))*h*h-2*h*Q_terminal).
+    Here d_terminal counts its old interior neighbours.  Only h <= R-j
+    is needed: interior volume never decreases, so prefix truncation is safe.
+    Forgetting the last terminal is allowed and returns the closed series
+    as the cells (j, ()).  Remaining terminal labels keep their original order.
+    """
+    R = _charge_depth(interface, max_volume)
+    terminal = _integer(terminal, "terminal", minimum=0)
+    terminals = tuple(interface["terminals"])
+    if terminal not in terminals:
+        raise ValueError("terminal is not among the interface terminal labels")
+    t = terminals.index(terminal)
+    retained = [i for i in range(len(terminals)) if i != t]
+    edges = {tuple(sorted(e)) for e in interface["terminal_edges"]}
+    zeta = tuple(int(tuple(sorted((t, i))) in edges) for i in retained)
+    total_degree = interface["terminal_degrees"][t] + sum(zeta)
+    table: defaultdict[tuple, Counter] = defaultdict(Counter)
+    for (j, Q), cells in interface["charges"].items():
+        for h in range(R + 1 - j):
+            charge = tuple(Q[i] + h * adjacent for i, adjacent in zip(retained, zeta))
+            shift = total_degree * h * h - 2 * h * Q[t]
+            row = table[j + h, charge]
+            for energy, count in cells.items():
+                row[energy + shift] += count
+    position = {old: new for new, old in enumerate(retained)}
+    return {"terminals": tuple(terminals[i] for i in retained), "max_volume": R,
+            "terminal_degrees": tuple(interface["terminal_degrees"][i] + adjacent for i, adjacent in zip(retained, zeta)),
+            "terminal_edges": tuple(sorted((position[u], position[v]) for u, v in edges if t not in (u, v))),
+            "patterns": sorted({tuple(p[i] for i in retained) for p in interface["patterns"]} | {zeta}),
             "charges": {key: dict(sorted(c.items())) for key, c in sorted(table.items())}}
 
 
 def kernel_from_charges(interface: dict, max_volume: int) -> dict:
     """Terminal kernel {b: {(interior volume, energy): count}} through total volume R from the charge table."""
-    R = _integer(max_volume, "max_volume", minimum=0)
+    R = _charge_depth(interface, max_volume)
     k = len(interface["terminals"])
     degrees, tedges = interface["terminal_degrees"], interface["terminal_edges"]
     out: defaultdict[tuple, Counter] = defaultdict(Counter)
@@ -113,7 +207,7 @@ def interface_sizes(interface: dict, max_volume: int) -> dict:
     """Number of charge cells (j, Q) against the raw table of (b, interior volume) with |b| + j <= R."""
     from math import comb
 
-    R = _integer(max_volume, "max_volume", minimum=0)
+    R = _charge_depth(interface, max_volume)
     k = len(interface["terminals"])
     return {"charge_cells": sum(1 for j, _ in interface["charges"] if j <= R),
             "raw_kernel_cells": comb(R + k + 1, k + 1)}
@@ -205,7 +299,7 @@ def charge_chart(interface: dict, max_volume: int, coordinates: Sequence[int] | 
     """
     from itertools import combinations as _comb
 
-    R = _integer(max_volume, "max_volume", minimum=0)
+    R = _charge_depth(interface, max_volume)
     k = len(interface["terminals"])
     slices: dict[int, list] = {}
     for (j, Q) in interface["charges"]:

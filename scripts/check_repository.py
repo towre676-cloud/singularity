@@ -24,7 +24,7 @@ def main():
     assert len(definitions)==len(set(definitions)), 'Duplicate declared result identifier'
     for p in list((ROOT/'src').rglob('*.py'))+list((ROOT/'scripts').glob('*.py')):
         ast.parse(p.read_text(),filename=str(p))
-    required=['README.md','docs/MONOGRAPH.md','docs/monograph.tex','docs/monograph.html','docs/papers/visibility.md','docs/references.bib','docs/development/PUSHES.md','output/pdf/monograph.pdf','output/pdf/visibility_paper.pdf','results/exact_examples.json','results/small_census.json','results/transfer_benchmark.json']
+    required=['README.md','docs/MONOGRAPH.md','docs/monograph.tex','docs/monograph.html','docs/papers/visibility.md','docs/references.bib','docs/development/PUSHES.md','output/pdf/monograph.pdf','output/pdf/visibility_paper.pdf','output/pdf/locality_paper.pdf','docs/papers/locality.md','docs/papers/visibility_claims.md','docs/papers/locality_claims.md','formal-analysis/SingularityAnalysis/SpectralVisibility.lean','results/formal_analysis_audit.json','results/publication_release.json','results/exact_examples.json','results/small_census.json','results/transfer_benchmark.json']
     for name in required:
         p=ROOT/name
         assert p.is_file() and p.stat().st_size>0,f'Missing required file {name}'

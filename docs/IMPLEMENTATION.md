@@ -1,6 +1,6 @@
 # Implementation and retained computational results
 
-The mathematical manuscripts describe a research program, while this chapter records the executable boundary of version 0.1.0. The core package requires Python 3.10 or newer and uses only the standard library. Documentation generation additionally uses Pandoc and a LaTeX installation. The rendered PDF and HTML are distributed so that a reader does not need those authoring tools merely to read the work.
+The mathematical manuscripts describe a research program, while this chapter records the executable boundary of version 0.2.0. The core package requires Python 3.10 or newer and uses only the standard library. Documentation generation additionally uses Pandoc and a LaTeX installation. The rendered PDF and HTML are distributed so that a reader does not need those authoring tools merely to read the work.
 
 ## Installing and running the project
 

@@ -2,20 +2,20 @@
 
 ## Core environment
 
-Use Python 3.10 or later and Git. The mathematical runtime and tests use only the Python standard library. The baseline CI matrix is Python 3.10 and 3.12. Claude Code is an external tool installed and authenticated by the user; this repository does not install it, hold its credentials, select a paid model or change its permissions.
+Use Python 3.10+ and Git. The mathematical Python runtime and tests use only the standard library. Core development does not require Lean, Mathlib or a document compiler. Claude Code is installed and authenticated separately by the user; the project contains no credentials and changes no tool permissions.
 
-From the repository root, these commands work without installing the package:
+From the repository root:
 
 ```sh
 python scripts/handoff.py doctor
 python scripts/handoff.py verify
+python scripts/handoff.py status
 python scripts/handoff.py next --limit 3
-python scripts/handoff.py show P02
 ```
 
-doctor runs the standard-library test suite, reproduction checks, repository checks and document-link checks with PYTHONPATH configured internally. It does not rebuild PDFs, contact a remote service, install dependencies or regenerate a large census. verify checks the handoff ledger and packet structure. Use python3 if python names a different interpreter on the target machine.
+`doctor` runs the Python suite, retained-example replay, repository and link checks with `PYTHONPATH` configured. It does not rebuild PDFs or prove Lean theorems. `verify` checks ledger/packet structure. The original P01–P36 selector is now empty because those units are complete; select new work from `docs/papers/second_paper_choice.md`, not by reopening P01. Use `python3` if `python` names another interpreter.
 
-The underlying POSIX commands are:
+Individual core commands are:
 
 ```sh
 PYTHONPATH=src python -m unittest discover -s tests -v
@@ -24,27 +24,48 @@ python scripts/check_repository.py
 python scripts/check_links.py
 ```
 
-On Windows PowerShell, set $env:PYTHONPATH='src' before the first two commands, or use doctor to avoid shell-specific environment syntax. An editable install is optional: python -m pip install -e . may need network access for packaging dependencies even though the mathematical core does not.
+On PowerShell set `$env:PYTHONPATH='src'` before the first two commands, or use `doctor`. An editable install is optional; packaging-backend installation may need network access even though the mathematical runtime does not.
+
+For structural work, use the relevant retained checks, including `scripts/locality_family.py --check`, `scripts/overlap_hierarchy.py --check` and `scripts/loop_series.py --check`, with `PYTHONPATH=src`. These have declared scopes; inspect costs before adding a larger census.
+
+## Optional formal proof setup
+
+Both packages pin Lean 4.12.0. With that toolchain's `lake` on `PATH`, the core-only package needs no Mathlib:
+
+```sh
+python formal/tools/gen_certificates.py --check
+python scripts/check_formal.py
+```
+
+The core audit covers 91 release declarations. The actual real-analytic completion is in the separate `formal-analysis/` package, with pinned Mathlib and transitive dependency manifests. Follow `formal-analysis/README.md` for dependency initialization and its targeted Mathlib cache download. These setup steps may require network access and disk space; the archive intentionally excludes `.lake` caches.
+
+After that setup, from the repository root:
+
+```sh
+python scripts/check_formal_analysis.py --clean --receipt results/formal_analysis_audit.json
+```
+
+This builds the actual real-analysis chain and audits 79 declarations against the standard-axiom allowlist. It proves positive-real Euler-product factorization and the boundary limit, including the two certified pairs. The older conditional core theorem is not the final analytic result. An existing source-bound receipt records the release run; a claim about a changed checkout requires a new successful build. Neither the receipt nor a Python test substitutes for that build.
 
 ## Document tooling
 
-Reading the committed PDF, Markdown and HTML needs no TeX installation. Regeneration uses Pandoc, XeLaTeX, DejaVu fonts and the TeX packages named in scripts/build_documents.py. Drawing the graph illustration uses matplotlib, which is optional and outside the core runtime. No version of these external tools is pinned by the initial project; record versions when regenerating figures or PDFs. A missing document tool is an environment limitation, not a reason to replace a valid committed PDF with a partial build.
+Reading PDF, Markdown or HTML needs no TeX installation. Regeneration uses Pandoc, XeLaTeX, `xdvipdfmx`, DejaVu fonts and the TeX packages in `scripts/build_documents.py`; Poppler's `pdfinfo` validates output readability. The build runs XeLaTeX synchronously in no-PDF mode before converting XDV to PDF. Matplotlib is needed only to redraw the optional illustration. Record tool versions when rebuilding documents.
 
-After a substantive manuscript change, build the documents, inspect log warnings, render representative pages and check mathematical layout. A clean TeX exit alone does not prove a page is readable. The baseline book has 105 pages and 34,147 whitespace-delimited source words, including equations and tables; the companion paper has six pages. These measurements are historical and should be updated if the manuscripts actually change.
+After mathematical manuscript changes, build, inspect warnings, check page counts and render representative pages. A successful TeX exit alone does not establish that a PDF is complete or readable. Current outputs are a 146-page monograph, a ten-page visibility article and an eight-page locality article. Exact whitespace-delimited source counts, including equations and tables, live in `results/manuscript_counts.json`. The old 105-page/34,147-word monograph and six-page article describe v0.1.0 only.
 
 ## Claude Code entry point
 
-Open an interactive Claude Code session from the repository root using claude, then paste handoff/CLAUDE_START_PROMPT.md. Root CLAUDE.md contains concise project instructions. Keep detailed working notes in the handoff ledger, session records and task packets rather than continually expanding the automatically loaded file. Official documentation was checked on 2026-10-17:
+Open an interactive Claude Code session from the repository root using `claude`, then paste `handoff/CLAUDE_START_PROMPT.md`. `CLAUDE.md` supplies project instructions; detailed working state belongs in records and task documents. Official entry-point documentation was checked on 2026-10-17:
 
 - https://code.claude.com/docs/en/memory
 - https://code.claude.com/docs/en/cli-reference
 
-The handoff uses ordinary repository files and an interactive prompt. It does not require a particular Claude model, a permission bypass, custom hooks, a plugin or a remote agent service. Existing user or organization settings may affect which instructions Claude Code loads; the startup prompt explicitly names the required files so the task remains reviewable.
+The handoff requires no particular paid model, permission bypass, custom hook or plugin. Existing organization settings may affect loaded instructions; the prompt names the relevant files explicitly.
 
-## Git workflow
+## Git and exact archive format
 
-The owner has authorized meaningful commits and ordinary pushes to https://github.com/towre676-cloud/singularity. Before changing files, inspect status and the remote head. Preserve unrelated local work. Make small reviewable commits tied to a push ID and report what passed. Push accepted work when credentials are available; never force-push, rewrite shared history or silently claim a local commit is remote.
+The owner authorizes meaningful commits and ordinary pushes to `https://github.com/towre676-cloud/singularity`. Inspect status and remote history, preserve unrelated work, commit bounded results and verify the remote hash after pushing. Never force-push, rewrite shared history or report a local commit as published. Authentication belongs to the user's environment; do not search unrelated files for credentials. Offline work needs no publishing credentials.
 
-During creation of the baseline, command-line Git could fetch this public repository but had no push credentials. The connected GitHub app successfully published it. That app connection is not contained in this archive. On the target machine, use the user's existing Git/GitHub authentication. If publishing is blocked, retain the local commits and record the exact failure; do not probe unrelated files for credentials. No new credentials or platform permissions are needed to work offline.
+`releases/Singularity-v0.2.0-complete.zip` is a plain snapshot with a single top-level `singularity/` directory. It contains source, tests, results, documentation, three PDFs, proof sources and dependency manifests. It contains no `.git` directory, no embedded `repository.bundle`, and no Lean/Mathlib build caches. `results/archive_manifest.json` supplies per-file hashes and names its own self-hash exclusion. Extract, enter `singularity/` and run the local checks. For normal history and publishing, clone the GitHub repository separately and deliberately import any offline edits; do not create unrelated replacement history in the populated remote.
 
-The archive includes a self-contained Git bundle and a plain repository snapshot. The bundle preserves the source commit and its ancestors; the snapshot is useful for inspection and environments without Git. Build metadata identifies the pinned source commit. Fetching a newer main is a deliberate update from that baseline, so rerun doctor and inspect ledger changes after doing so.
+Earlier handoff archives used a different layout with a bundle. Those instructions are historical and do not apply to the v0.2.0 complete archive. `scripts/package_release.py` rebuilds the current snapshot and validates its member hashes.

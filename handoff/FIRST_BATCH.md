@@ -1,31 +1,31 @@
-# First bounded development batch
+# First bounded batch after the original program
 
-## Goal
+## Current starting point
 
-Close the first three original acceptance units, P01–P03, using the existing engine as the baseline. This is a recommended sequence, not a claim they are complete. Re-audit the current checkout: a later maintainer may already have closed one. The batch should make the mathematics independently executable and the acceptance record trustworthy before pursuing larger graph populations or new theories.
+P01–P36 are complete. The former first-batch instructions to specify coefficients, create independent chains and strengthen certificates describe work that has now been accepted. Their evidence remains in `docs/specifications/COEFFICIENTS-v1.md`, `chains.py`, certificate replay, the original task packets and the status ledger. Do not repeat those tasks merely because this filename says FIRST_BATCH.
 
-## P01: audit and freeze the semantics
+Begin with `docs/papers/second_paper_choice.md`. Its selected article proves sharp observation depth for 2-regular interiors; its final section states the remaining inverse, realization and algorithmic questions. The current original-program selector should return no unfinished item. New milestones need their own acceptance criteria rather than a silent reinterpretation of P01–P36.
 
-Read PROJECT_CONTRACT.md, handoff/RESEARCH_CONTEXT.md, the actual public functions and CLI, and the P01 packet. Produce a versioned coefficient/data specification in a new documentation path such as docs/specifications/coefficients-v1.md. Cover graph labels; simple versus weighted graph inputs; nonnegative heights; total volume; squared edge energy; local, minimum-zero and span-marked series; disconnected global versus componentwise shifts; exact rational polynomial representation; invalid inputs and truncation meaning.
+## Recommended practical batch: a hybrid coefficient compiler
 
-Existing tests and prose already establish much of this. Add or retain a small disconnected example showing that global minimum zero permits a component to remain entirely positive, while separately normalizing every component does not. Supply a public-API crosswalk to the specification. Avoid rewriting valid algorithms merely to create activity. Close P01 only when the specification, actual interfaces and boundary examples agree.
+The most concrete development continuation is to combine connected-support locality with the existing checked separator engine inside each connected footprint. This is a research target, not an already demonstrated speedup. Keep the batch to at most three accepted milestones:
 
-## P02: implement the missing independent enumerator
+| Milestone | Deliverable | Acceptance gate |
+|---|---|---|
+| Specify the hybrid | A precise mapping from a connected decorated footprint to its internal exact coefficient problem, preserving ambient degree weights and support inclusion/exclusion | Derive the mapping from SNG-F55; identify where separator evaluation can replace enumeration and where it cannot. A proved obstruction is useful evidence. |
+| Implement one bounded path | A narrowly scoped internal backend using the existing decomposition validation and ownership rule | Match exact q-polynomials against the existing locality compiler and weak-composition oracle on declared small graphs, multiple pinnings and repeated-height cases. Retain original APIs. |
+| Measure and decide | Reproducible equal-output comparisons with source-bound inputs and resource limits | Report decomposition width, graph/support sizes, cutoff, term support, arithmetic/bit cost and measured runtime; retain cases where the hybrid loses. Claim a speedup only on the measured population. |
 
-Generate weakly nested chains of nonempty subsets whose first set is proper, with repetitions allowed. The empty chain represents the all-zero assignment. Bound total volume by the sum of level-set sizes; each nonempty level costs at least one, so the chain length is at most the volume bound. A direct recursive extension from an outer set to any nonempty subset gives a genuinely different enumeration path from weak compositions.
+Read `locality.py`, `decomposition.py`, their tests and the complete connected-support proof before implementing. The induced footprint's internal degree is not its ambient degree. Missing that distinction changes the energy. Avoid adding a third independent graph abstraction when the current graph and weighted models suffice.
 
-For each chain, compute its volume, span and quadratic energy using cut sizes and mixed crossing counts. Preserve labeled multiplicities. Do not call marked_coefficients to generate the same outputs and call that independent. Use it only as an external oracle in tests. A proposed chains.py module can be small and exact before it is fast.
+If the backend cannot yield a useful improvement within the bounded experiment, record why, retain the correct specification and checkpoint. Do not expand the census or weaken exactness to make the comparison favorable.
 
-Begin with all simple graphs on one through four vertices and total volume at most six. That is a declared finite population, includes disconnected graphs, and is inexpensive enough to exercise exhaustive equality. Add explicit gap-height examples, singleton input, empty-chain normalization and repeated levels. Prove the chain/profile bijection and account for each edge cross term. Record the number of tested graphs and profiles, not just a passing Boolean.
+## Alternative mathematical batch
 
-## P03: strengthen portable certificates without breaking the schema
+If structural progress has greater value than an engine change, choose exactly one frontier: reconstruction beyond 2-regular interiors; complete fixed-pinning equality versus a full-series collision; or realizability of the residual symmetric-interface candidates at budgets 38 with a terminal edge and 11 without. Define one tractable restricted class or necessary condition. Release a proved lemma, exact obstruction or certified negative classification with its domain. A larger unexplained finite prefix is not a solution to the full inverse problem.
 
-The repository already has singularity.certificate/1 packets and an independent replay implementation. Audit and reuse them. Resolve the original roadmap's proposed relational-height/1 name in the specification and record the decision: preserve the existing format unless a justified migration is actually implemented and tested. Existing packets must remain replayable or have an explicit checked migration path.
+The complete moment enrichment is already proved, with a huge constructive cutoff. It cannot be relabeled as an efficient reconstruction algorithm or used to declare the scalar fixed-pinning question solved. The later P37–P72 proposals are a reference pool; their evidence annotations must be reconciled with the current manuscript before selecting one.
 
-Integrate the newly independent chain enumeration as a second route for marked counts within a small declared replay budget. Audit malformed inputs, type-sensitive integers, duplicate polynomial terms, graph edge validation, normalization and comparison claims. A certificate must reject altered counts even when a success flag or digest is left unchanged. Preserve the existing replay work limit and make any additional cost explicit. A parser can be independently tested without pretending it verifies an unbounded mathematical theorem.
+## Checkpoint
 
-## Batch acceptance and checkpoint
-
-The three tasks should yield a specification, an independently generated exact population, stronger replay evidence and updated acceptance records. They should not change the three reference discrepancies, replace original graph labels, grow the small census bound or claim Lean verification. Run the inexpensive full suite and reproduce.py --check; run handoff verification and link checks. Update the ledger only after each complete acceptance check, commit reviewable changes, push under the existing authorization when possible, and leave the next dependency-ready item identified.
-
-P07 becomes eligible after P01, but introducing an actual proof-assistant project is a separate task. P09 can be audited against the working forest engine after P02 is accepted. Dependency readiness, concrete evidence and available tools should determine the next batch; elapsed time is not a reason to invent acceptance.
+Run the inexpensive integrated suite, retained relevant receipts and link checks. Rebuild proof packages only when their dependencies or formal sources change, or when auditing the proof environment; report exactly what ran. Update new milestone evidence and the session log without reopening completed original units. Commit reviewable changes and verify the ordinary push when available. Leave the next narrow question explicit.

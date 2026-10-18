@@ -1,6 +1,6 @@
 # Reading guide {.unnumbered}
 
-This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. The implementation appendix states what version 0.1.0 actually executes. The final roadmap defines thirty-six subsequent development pushes.
+This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence it forgets. A binary census can agree for every subset size and boundary size while a nested-height census differs. The arithmetic lift retains these local distinctions and turns the first discrepancy into a controlled ratio singularity. It adds analytic structure rather than new graph information. The full marked hierarchy explicitly contains the binary sector; complete graph reconstruction remains a research question.
 
@@ -50,7 +50,7 @@ If \(\Delta=\max_i d_i\), its degree is at most \(\Delta m^2\).
 *Proof.* The nonnegative integer solutions of \(a_0+\cdots+a_{k-1}=m\) are the weak compositions of \(m\) into \(k\) parts. The usual separator construction gives their number as the displayed binomial coefficient. In particular, there are finitely many terms in \(C_{G,m}\). Every energy is a nonnegative integer. Moreover,
 \[
 E_G(a)=\sum_i d_i a_i^2-2\sum_{\{i,j\}\in E}a_i a_j
-\le\Delta\sum_i a_i^2\le\Delta\Bigl(\sum_i a_i\Bigr)^2.
+\le\Delta\sum_i a_i^2\le\Delta\bigl(\sum_i a_i\bigr)^2.
 \]
 The first inequality uses nonnegativity of all heights; the second follows by expanding the square. This proves all assertions. \(\square\)
 
@@ -608,14 +608,25 @@ The pattern \(2e_i+e_j\) is indexed by ordered distinct vertices because the hei
 
 The classification can be read as a table. Write \(N_d\) for the number of vertices of degree \(d\), \(P_{a,b}^{\epsilon}\) for the number of **ordered** pairs \((i,j)\), \(i\ne j\), with \(d_i=a\), \(d_j=b\), \(A_{ij}=\epsilon\), and \(T_{s,t}\) for the number of unordered triples with degree sum \(s\) spanning \(t\) edges. These statistics are defined from degrees and adjacency alone.
 
-| Volume | Pattern | Index set | Support | Span | Energy | Contribution |
-|---:|---|---|---:|---:|---|---|
-| 1 | \(e_i\) | vertices | 1 | 1 | \(d_i\) | \(\sum_dN_dq^d\) |
-| 2 | \(2e_i\) | vertices | 1 | 2 | \(4d_i\) | \(\sum_dN_dq^{4d}\) |
-| 2 | \(e_i+e_j\) | unordered pairs | 2 | 1 | \(d_i+d_j-2A_{ij}\) | \(\tfrac12\sum P_{a,b}^{\epsilon}q^{a+b-2\epsilon}\) |
-| 3 | \(3e_i\) | vertices | 1 | 3 | \(9d_i\) | \(\sum_dN_dq^{9d}\) |
-| 3 | \(2e_i+e_j\) | ordered pairs | 2 | 2 | \(4d_i+d_j-4A_{ij}\) | \(\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}\) |
-| 3 | \(e_i+e_j+e_k\) | unordered triples | 3 | 1 | \(d_i+d_j+d_k-2e_G(\{i,j,k\})\) | \(\sum T_{s,t}q^{s-2t}\) |
+| Volume | Pattern | Index set | Support | Span | Energy |
+|---:|---|---|---:|---:|---|
+| 1 | \(e_i\) | vertices | 1 | 1 | \(d_i\) |
+| 2 | \(2e_i\) | vertices | 1 | 2 | \(4d_i\) |
+| 2 | \(e_i+e_j\) | unordered pairs | 2 | 1 | \(d_i+d_j-2A_{ij}\) |
+| 3 | \(3e_i\) | vertices | 1 | 3 | \(9d_i\) |
+| 3 | \(2e_i+e_j\) | ordered pairs | 2 | 2 | \(4d_i+d_j-4A_{ij}\) |
+| 3 | \(e_i+e_j+e_k\) | unordered triples | 3 | 1 | \(d_i+d_j+d_k-2e_G(\{i,j,k\})\) |
+
+The corresponding coefficient contributions are separated below so each formula remains readable.
+
+| Volume | Pattern | Contribution |
+|---:|---|---|
+| 1 | \(e_i\) | \(\sum_dN_dq^d\) |
+| 2 | \(2e_i\) | \(\sum_dN_dq^{4d}\) |
+| 2 | \(e_i+e_j\) | \(\tfrac12\sum P_{a,b}^{\epsilon}q^{a+b-2\epsilon}\) |
+| 3 | \(3e_i\) | \(\sum_dN_dq^{9d}\) |
+| 3 | \(2e_i+e_j\) | \(\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}\) |
+| 3 | \(e_i+e_j+e_k\) | \(\sum T_{s,t}q^{s-2t}\) |
 
 A pattern lies in the normalized population exactly when its support is smaller than \(k\); then its span is the displayed value. For \(k\le3\) some patterns cover every vertex and are translations instead: the profile \((1,1)\) on two vertices, \((2,1)\) and \((1,2)\) on two vertices, and \((1,1,1)\) on three. The normalized identity removes exactly these. The table is implemented without profile enumeration in `src/singularity/lowvolume.py`. `tests/test_low_volume.py` compares its local, normalized and marked outputs with both the weak-composition and the level-chain enumerators on all 75 labeled graphs with at most four vertices, on the fixed pairs, and on regular graphs including the cube, the Möbius ladder, the Petersen graph, \(K_4\), \(K_{3,3}\), \(C_5\) and two disjoint triangles, where the closed form in terms of order, degree and triangle count (Proposition SNG-I008) is also checked.
 
@@ -712,7 +723,7 @@ It suggests several distinct research questions. Can nonisomorphic graph familie
 Consider instead the fully vertex-marked series
 \[
 \mathscr L_G(z_0,\ldots,z_{k-1};q)
-=\sum_{a\ge0}\Bigl(\prod_i z_i^{a_i}\Bigr)q^{E_G(a)}.
+=\sum_{a\ge0}\bigl(\prod_i z_i^{a_i}\bigr)q^{E_G(a)}.
 \]
 The variables now identify where each unit was placed. This is a much stronger observation than scalar total height.
 
@@ -1259,6 +1270,9 @@ A positive discrepancy makes the ratio diverge at its visibility point; a negati
 
 There is also no requirement that the original partition functions converge separately at \(s_0\). Their common low-order divergences have been canceled in the ratio product before the limit is taken. This cancellation is the main analytic mechanism. It makes a comparison meaningful farther left without pretending that either original positive Dirichlet series has acquired an absolutely convergent definition there.
 
+The positive-real comparison now has a complete Lean proof over actual Mathlib real numbers and the Riemann zeta function. In `formal-analysis/`, `SingularityAnalysis.visibility_of_coefficients` proves the theorem for nonnegative polynomial-growth coefficient sequences, and `SingularityAnalysis.graph_visibility` applies it to graph height coefficients for \(q\in[0,1]\). The chain proves the local logarithmic expansion, prime-product convergence and boundary continuity, the zeta Euler product and its residue limit. It identifies the continued ratio with the quotient of the original prime products for \(s>1\). The concrete statements `SingularityAnalysis.spectral_visibility_half` and `SingularityAnalysis.binary_visibility_half` import P33 and prove the exact exponents at \(q=1/2\). No unverified analytic premise structure remains. The local-complex holomorphy and branch-continuation argument in this chapter, and the later interval endpoints, remain ordinary or computer-assisted mathematics rather than part of that real-analytic Lean theorem.
+
+
 ## A volume-two calculation and its actual meaning
 
 At volume two there are only two kinds of profile: \(2e_v\), and \(e_u+e_v\) with \(u<v\). Their energies give the identity
@@ -1342,7 +1356,7 @@ Both have degree multiset \(\{4,3,3,2,2,1,1\}\). The exact finite binary census 
  &+2q^{15}+q^{17}-q^{18}\\
  ={}&q^3(1-q)^5(1+q)^2
  (1+2q+5q^2+6q^3+8q^4\\
- &\hspace{38mm}+6q^5+5q^6+2q^7+q^8).
+ &\qquad\qquad+6q^5+5q^6+2q^7+q^8).
  \end{aligned}
  \tag{7.9}
 \]
@@ -1438,7 +1452,7 @@ The constant (7.12) is implemented exactly as `regularized_tail_constant` in `sr
 \]
 Then for every prime \(p\) and every \(s\in D_\eta\), the local factors \(L_G(p^{-s},q)\) and \(L_H(p^{-s},q)\) have positive real part, and so does \(1-p^{-rs}\). With principal logarithms, the function
 \[
-K(s)=\exp\sum_p\Bigl(\log L_G(p^{-s})-\log L_H(p^{-s})+\delta\log(1-p^{-rs})\Bigr)
+K(s)=\exp\sum_p\bigl(\log L_G(p^{-s})-\log L_H(p^{-s})+\delta\log(1-p^{-rs})\bigr)
 \]
 is holomorphic and nonzero on \(D_\eta\), the series converges uniformly there, and \(K\) equals the positive product (7.3) on \(D_\eta\cap\mathbb R\). On \(D_\eta\setminus[s_0-\eta,s_0]\),
 \[
@@ -1452,7 +1466,11 @@ The disc is explicit and very small. `complex_disc_certificate` in `src/singular
 
 **Theorem SNG-F39 (normalized local factors are entire).** Let \(G\) be connected on \(n\ge2\) vertices with diameter \(D\), and fix \(0<q<1\). Then \(B_G(t,q)=(1-t^n)L_G(t,q)\) is an entire function of \(t\), and \(L_G(t,q)\) is meromorphic in \(t\), with poles at most at the \(n\)-th roots of unity. For every \(H\ge0\) and complex \(t\),
 \[
-\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|\le\sum_{h>H}N_n(h)\,\max(|t|^h,|t|^{(n-1)h})\,q^{\lceil h^2/D\rceil},\qquad N_n(h)=(h+1)^n-2h^n+(h-1)^n,
+\begin{aligned}
+\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|
+&\le\sum_{h>H}N_n(h)\max(|t|^h,|t|^{(n-1)h})q^{\lceil h^2/D\rceil},\\
+N_n(h)&=(h+1)^n-2h^n+(h-1)^n.
+\end{aligned}
 \]
 where \(B_{G,\le H}\) sums over minimum-zero profiles of maximum at most \(H\).
 
@@ -1462,26 +1480,34 @@ For disconnected graphs the zero-energy profiles that are constant on components
 
 **Theorem SNG-F38 (certified enclosure of the regularized product).** Under SNG-A11 with \(G,H\) connected and \(q\in(0,1)\) rational, fix rational \(s=a/b\) with \((r+1)s>1\), an integer \(N\), the cutoff \(P=N^b\) and \(\rho=N^{-a}=P^{-s}\). Let \(\ell_n,m_n\) be the local coefficients of \(G\) and \(H\) at \(q\) for \(n\le M\), \(A_n=\binom{n+k-1}{k-1}\), and \(S_M=(1-\rho)^{-k}-\sum_{n\le M}A_n\rho^n\). Put
 \[
-T'=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\qquad
-D'=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\qquad
-C'=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)} .
+\begin{aligned}
+T'&=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\\
+D'&=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\\
+C'&=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)}.
+\end{aligned}
+\]
+For the finite summands, abbreviate
+\[
+\theta_p(s)=\delta\log(1-p^{-rs})
++\log\frac{B_G(p^{-s})}{B_H(p^{-s})}.
 \]
 Then
 \[
-\Bigl|\log K_{G,H}(s,q)-\sum_{p\le P}\Bigl(\delta\log(1-p^{-rs})+\log B_G(p^{-s})-\log B_H(p^{-s})\Bigr)\Bigr|\le C'\,\frac{P^{1-(r+1)s}}{(r+1)s-1},
+\left|\log K_{G,H}(s,q)-\sum_{p\le P}\theta_p(s)\right|
+\le C'\frac{P^{1-(r+1)s}}{(r+1)s-1},
 \]
 and each finite summand is enclosed by rational intervals computed from: integer-root enclosures of \(p^{-a/b}\); monotonicity of \(B\) in \(t\ge0\); the height tail of SNG-F39; outward-rounded sums over a checked tree decomposition; and series enclosures of logarithms.
 
 *Proof.* \(L_G/L_H=B_G/B_H\) because the orders agree. The bound for omitted primes repeats the proof of (7.12) with sharper majorants. For \(0\le t\le\rho\), \(|L_G(t)-L_H(t)-\delta t^r|\le\sum_{n>r}|\ell_n-m_n|t^n\le T't^{r+1}\), using \(|\ell_n-m_n|\le2A_n\) beyond \(M\). Likewise \(\max(L_G,L_H)-1\le\sum_{n\ge1}\max(\ell_n,m_n)t^n\le D't\), using \(0\le\ell_n,m_n\le A_n\). Hence one regularized logarithm is at most \(C't^{r+1}\). Primes \(p>P\) satisfy \(p^{-s}<\rho\). Summing \(C'p^{-(r+1)s}\) over all integers \(p>P\) and applying the integral test gives the displayed bound. The finite enclosures were justified above: \(B_G\) has nonnegative coefficients, so it is increasing on \(t\ge0\), and rounding every product of nonnegative fixed-point numbers down (respectively up) gives a lower (respectively upper) bound. \(\square\)
 
-`src/singularity/certified.py` implements the theorem with 256 fractional bits. The minimum-zero condition is carried as a flag in the bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\) the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at \(s=1/r\). The retained results, with exact dyadic endpoints, are in `results/certified_k.json`. All are at \(q=1/2\):
+`src/singularity/certified.py` implements the theorem with 256 fractional bits. The minimum-zero condition is carried as a flag in the bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\) the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at \(s=1/r\). The retained results, with exact dyadic endpoints, are in `results/certified_k.json`. All are at \(q=1/2\). The spectral pair has \(r=2\), \(\delta=3/32\); the binary pair has \(r=3\), \(\delta=11025/262144\):
 
-| Pair | \(s\) | Primes kept | Omitted-prime log bound | Enclosure of \(K(s,1/2)\) |
-|---|---|---:|---:|---|
-| spectral, \(r=2\), \(\delta=3/32\) | \(1/2\) | 1229 (\(\le10^4\)) | \(4.6\times10^{-3}\) | \([0.84973,\,0.85750]\) |
-| spectral | \(3/5\) | 985 (\(\le6^5\)) | \(2.2\times10^{-4}\) | \([0.89931,\,0.89971]\) |
-| spectral | \(1\) | 168 (\(\le10^3\)) | \(1.1\times10^{-7}\) | \([0.9678188,\,0.9678191]\) |
-| binary census, \(r=3\), \(\delta=11025/262144\) | \(1/3\) | 2961 (\(\le30^3\)) | \(2.2\times10^{-2}\) | \([0.90084,\,0.94230]\) |
+| Pair | \(s\) | Primes kept | Omitted log bound | \(K\) lower | \(K\) upper |
+|---|---|---:|---:|---:|---:|
+| spectral | \(1/2\) | 1229 (\(\le10^4\)) | \(4.6\times10^{-3}\) | 0.84973 | 0.85750 |
+| spectral | \(3/5\) | 985 (\(\le6^5\)) | \(2.2\times10^{-4}\) | 0.89931 | 0.89971 |
+| spectral | \(1\) | 168 (\(\le10^3\)) | \(1.1\times10^{-7}\) | 0.9678188 | 0.9678191 |
+| binary | \(1/3\) | 2961 (\(\le30^3\)) | \(2.2\times10^{-2}\) | 0.90084 | 0.94230 |
 
 The local height tails total below \(4\times10^{-16}\) in every run, so the width comes almost entirely from the omitted primes; arithmetic rounding is below \(10^{-60}\). With \(R=\zeta(rs)^\delta K\), the tables exhibit the proved branch singularity \((rs-1)^{-\delta}\) with an explicitly enclosed positive constant \(K(1/r,1/2)\). The singularity exponent is proved by SNG-A11, not fitted. Narrowing the binary interval needs either more primes or a smaller constant \(C'\); the bound decays only like \(P^{-1/3}\) at \(s=1/3\). A separate test checks the following. A run at a smaller cutoff with 160-bit arithmetic overlaps the \(s=1/2\) enclosure. Reversing the pair negates the finite log enclosure. Identical graphs give a log ratio enclosing zero.
 
@@ -1592,7 +1618,7 @@ The summand is decreasing on \([2,\infty)\) for \(k\ge2\), so the integral bound
  \begin{aligned}
  &\left|\log Z_G(1+\varepsilon,q)
  -\log\zeta(k)-\alpha(q)\log(1/\varepsilon)\right|\\
- &\hspace{12mm}\le
+ &\quad\le
  A_kq^\lambda\bigl(\zeta(2)-1\bigr)
  +(kJ_k+k)\varepsilon.
  \end{aligned}
@@ -2425,7 +2451,7 @@ Whether swap-symmetric contexts see all of \(K^+\) is a question of rank. Fix a 
 
 (b) Induct on \(v\). Once the \(Y_o[j]\), \(j<v\), are known, subtracting their contribution from the volume-\(v\) coefficients leaves \(\sum_{|o|\le v}Y_o[v]q_0^{\delta m_o+\varepsilon d_o}\) for all probes. Suppose a combination \(\sum_oc_oq_0^{\delta m_o+\varepsilon d_o}\) vanishes for \(\delta<M\) and both \(\varepsilon\). The numbers \(q_0^{m}\) are distinct, so the Vandermonde system in \(\delta\) gives \(\sum_{m_o=m}c_oq_0^{\varepsilon d_o}=0\) for each \(m\) and \(\varepsilon\). Two orbits with the same \(m\) and the same \(d\) have the same \(st\) and \(s+t\), so they coincide. A group of at most two orbits therefore has distinct values of \(d\), and the \(2\times2\) system forces \(c_o=0\). Hence the residual system is injective at every degree, and \(Y\) is determined. \(\square\)
 
-Part (b) is constructive: `recover_symmetrized_kernel` in `src/singularity/contexts.py` solves the triangular system exactly. `scripts/symmetric_contexts.py`, checked in CI, replays the recovery at \(R=3\), \(q_0=1/2\), on all 15 connected blocks with at most four vertices and no terminal edge, against the symmetrized kernel computed by bag messages. For the family with \(\delta\) leaves per terminal, \(c\le R\) shared neighbours and an optional terminal edge, it also computes the exact rank of the probe map for \(R\le7\). With the edge the rank is full. Without it the rank equals the number of unknowns minus the top-degree defect of (a): full through \(R=6\), and \(69\) of \(70\) at \(R=7\). The same pattern holds at \(R=8\) (\(94\) of \(95\), full with the edge) and \(R=9\) (\(124\) of \(125\), full with the edge), computed once in the session that introduced it. Lower-degree collisions are thus resolved by the next volume, and the loss is confined to the top degree in the computed range. Whether this holds for all \(R\), and whether the edge-free class determines \(K^+\) without a budget, is open. For comparison, unrestricted contexts have full rank \(\binom{R+3}{3}\) on the ordered unknowns by SNG-F44. With the edge, symmetric contexts reach \(\sum_{v\le R}\#\{o:|o|\le v\}\), and the difference is exactly the information carried by the order of the terminals.
+Part (b) is constructive: `recover_symmetrized_kernel` in `src/singularity/contexts.py` solves the triangular system exactly. `scripts/symmetric_contexts.py`, checked in CI, replays the recovery at \(R=3\), \(q_0=1/2\), on all 15 connected blocks with at most four vertices and no terminal edge, against the symmetrized kernel computed by bag messages. For the family with \(\delta\) leaves per terminal, \(c\le R\) shared neighbours and an optional terminal edge, it also computes the exact rank of the probe map for \(R\le7\). With the edge the rank is full. Without it the rank equals the number of unknowns minus the top-degree defect of (a): full through \(R=6\), and \(69\) of \(70\) at \(R=7\). The same pattern holds at \(R=8\) (\(94\) of \(95\), full with the edge) and \(R=9\) (\(124\) of \(125\), full with the edge), computed once in the session that introduced it. Lower-degree collisions are thus resolved by the next volume, and the loss is confined to the top degree in the computed range. The fixed-budget exactness question outside the proved ranges remains open. Theorem SNG-F51 below proves that the edge-free class determines every finite prefix of \(K^+\) when additional observation volume is allowed. For comparison, unrestricted contexts have full rank \(\binom{R+3}{3}\) on the ordered unknowns by SNG-F44. With the edge, symmetric contexts reach \(\sum_{v\le R}\#\{o:|o|\le v\}\), and the difference is exactly the information carried by the order of the terminals.
 
 On the realizable side the quotient is no coarser than forced. Among the 12,753 connected blocks with at most six vertices and no terminal edge, grouped by \(K^+\) through volume four, no class contains two kernels unrelated by the terminal swap (451 classes; `--census` mode of the same script). On that population, swap-symmetric contexts lose exactly the order of the terminals. This is a finite statement about one population and one budget.
 
@@ -2446,7 +2472,7 @@ on the orbits \(\{1,18\},\{6,17\},\{10,15\}\) of \(325\), whose \(d_o\) are \(28
 
 (b) *Exactness.* Suppose that for every \(v<R\) and every group at degree \(v\) the functionals \(y^e\tau^i\), \(e<\kappa\), \(i\in\{0,1\}\), are linearly independent on the group. Then \(I_{\mathcal C,R}=N_R\). The interface has the explicit coordinates
 \[
-\mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\Bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\Bigr)_{g,\;e<\kappa}.
+\mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\bigr)_{g,\;e<\kappa}.
 \]
 The finitely many contexts with \(d\) pendant leaves per terminal, \(c\) shared neighbours and, when \(\kappa=2\), an optional terminal edge span every response of the class. The hypothesis holds for \(\kappa=1\) exactly when \(R\le25\), and for \(\kappa=2\) for every \(R\le91\).
 
@@ -2462,7 +2488,11 @@ The finitely many contexts with \(d\) pendant leaves per terminal, \(c\) shared 
 \[
 q^{ed_o+(d+c)m_o}\bigl(1+x(d\sigma_o+c\pi_o)+O(x^2)\bigr),\qquad \sigma_o=q^{1-2s}+q^{1-2t},\ \pi_o=q^{2-2(s+t)}.
 \]
-After the known terms are removed, the volume-\(v\) coefficients give \(\sum_oq^{\delta m_o}y_o^eY_o[v]\). In the volume-\(v+1\) coefficient, \(Y[v+1]\) appears with the split-independent factor \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the factor \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the context \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves \(\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]\), with \(\delta=d+c\ge1\). The Vandermonde system in \(\delta\) separates the groups. What remains on each group is the functionals \(y^e\tau^i\), which are independent by hypothesis, so degree \(v\) is determined. The induction reaches \(R-1\). At degree \(R\), (a) shows that exactly the group sums are determined, so \(I_{\mathcal C,R}=N_R\). The probes used and the whole class have the same annihilator \(N_R\), so the probes span every response.
+After the known terms are removed, the volume-\(v\) coefficients give
+\[
+\sum_oq^{\delta m_o}y_o^eY_o[v].
+\]
+In the volume-\(v+1\) coefficient, \(Y[v+1]\) appears with the split-independent factor \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the factor \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the context \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves \(\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]\), with \(\delta=d+c\ge1\). The Vandermonde system in \(\delta\) separates the groups. What remains on each group is the functionals \(y^e\tau^i\), which are independent by hypothesis, so degree \(v\) is determined. The induction reaches \(R-1\). At degree \(R\), (a) shows that exactly the group sums are determined, so \(I_{\mathcal C,R}=N_R\). The probes used and the whole class have the same annihilator \(N_R\), so the probes span every response.
 
 For \(\kappa=1\) the hypothesis asks that \((1,\tau_o)\) separate each group. Two orbits of a group have different \(s+t\). Since \(1-2s\) is odd, the only even exponent of \(\tau_o\) is \(2-2(s+t)\), so the two \(\tau_o\) differ and groups of two pass. A group of three cannot be separated by two functionals; the first one is complete at degree \(25\). For \(\kappa=2\), after scaling column \(o\) by \(q^{2(s+t)}\) the four functionals are integer polynomials. Their matrix has full column rank modulo \(2^{61}-1\) at a fixed residue of \(q\) for every prefix, ordered by \(|o|\), of every group with \(s+t\le100\). A nonzero minor modulo \(p\) is nonzero over \(\mathbb Z[q]\). The first failure is the five-orbit group \(4225=0^2+65^2=16^2+63^2=25^2+60^2=33^2+56^2=39^2+52^2\) at degree \(91\).
 
@@ -2476,7 +2506,7 @@ So the interface has a precise shape. Without the terminal edge, each budget los
 
 The multiplicity grows slowly: \(\mu_R=2\) for \(7\le R<25\), \(3\) from \(R=25\), \(4\) from \(R=47\), where \(1105\) has four orbits, and \(5\) from \(R=91\). Weighted coupling therefore enlarges the experimental language by a small and explicit amount. It is the extra capability that removes the obstruction of SNG-F49(a). The script replays weighted recovery on real weighted gluings, counted by weak compositions, for all fifteen blocks with at most four vertices (\(R=3\), weights \(0,1,2\)). It also checks the degree-25 diagonal ranks modulo \(p\): \(181\) of \(182\) with simple contexts, \(169\) of \(169\) on the realizable coordinates, and \(182\) of \(182\) with weights up to \(2\).
 
-*Reuse.* Rank reduction is not the only computational gain. A kernel is compiled once and then answers every attachment query by the contraction of SNG-F41. For a \(2\times6\) ladder with terminals at opposite corners and \(R=6\), compiling the kernel takes \(4.6\) s. Each of \(24\) symmetric-context queries then takes \(7.6\) ms by contraction, against \(1.33\) s for a fresh decomposition of the glued graph, with identical exact output. The compilation pays for itself after about \(3.5\) queries (`--benchmark`, wall-clock on the session machine, retained). A compression theorem with savings that grow along a family remains open (P54).
+*Reuse.* Rank reduction is not the only computational gain. A kernel is compiled once and then answers every attachment query by the contraction of SNG-F41. For a \(2\times6\) ladder with terminals at opposite corners and \(R=6\), compiling the kernel takes \(4.6\) s. Each of \(24\) symmetric-context queries then takes \(7.6\) ms by contraction, against \(1.33\) s for a fresh decomposition of the glued graph, with identical exact output. The compilation pays for itself after about \(3.5\) queries (`--benchmark`, wall-clock on the session machine, retained). Theorem SNG-F53 below supplies a compression family whose savings grow with the volume budget (P54).
 
 *Targeted realizability searches.* The following observation gives a route to a symmetric kernel without a swap automorphism. If two blocks \(A,B\) have \(K_A=K_B\), then joining \(A\) in series with the reversal of \(B\), at an internal middle vertex, gives a block with \(K(s,t)=\sum_wx^wK_A(s,w)K_A(t,w)\), which is symmetric. It has no swap automorphism unless such a map carries \(A\) onto the reversal of \(B\). The search for kernel-equal blocks found nothing. The 777 terminal-isomorphism classes of connected blocks with at most six vertices and no terminal edge have 777 distinct kernels through volume four. Among the 7,682 two-terminal trees with at most ten vertices, up to isomorphism, no kernel is symmetric without a swap automorphism. Five pairs of non-isomorphic trees on ten vertices agree through volume four, and all five separate at volume five. For cancelling twists, the pairing of two asymmetric kernels vanishes only if its leading coefficient at volume \(\mu=\min_{\mathbf b}(|\mathbf b|+v_{1,\mathbf b}+v_{2,\mathbf b})\) cancels, and this requires at least two orbits to reach \(\mu\). We tested this on the 1,522 distinct antisymmetric parts, through volume five, of balanced blocks: connected graphs with at most six vertices and two-terminal trees with at most ten vertices. Of the 1,159,003 pairs, self-pairings included, 12,112 have two or more leading orbits, and none has a vanishing leading coefficient. A cancelling pair, if one exists, must therefore come from a richer family or a deeper leading level.
 
@@ -2512,7 +2542,7 @@ where \(P_j\) has coefficients in \(\mathbb Z_{\ge0}[q]\) and degree at most \(j
 
 *Proof.* For interior heights \(h\) of total \(j\), the energy is
 \[
-Q_0+\Bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\Bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
+Q_0+\bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
 \]
 The bracket does not depend on \((s,t)\), and each of the last two sums is at most \(j\). For \(j=1\) the single raised vertex contributes \(q^{\deg v}U^{A_{sv}}V^{A_{tv}}\).
 
@@ -2543,11 +2573,14 @@ For a block with \(a\ne b\), the symmetrized slice is \(q^{b(s^2+t^2)-2est}F_P(s
 
 The arithmetic hypothesis is necessary for the unrestricted statement. For \(j=3\), \(d=1\), \(\ell=0\),
 \[
-D(z)=z^{-43}(z-1)^{11}H(z),\qquad \deg H=68,\quad H(1)=3{,}870{,}720,\quad H(0)=\operatorname{lead}H=-1.
+\begin{aligned}
+D(z)&=z^{-43}(z-1)^{11}H(z),&\deg H&=68,\\
+H(1)&=3{,}870{,}720,&H(0)&=\operatorname{lead}H=-1.
+\end{aligned}
 \]
 \(H\) changes sign between \(z=1.1213855316120952\) and \(1.1213855316120954\), so the boundary system degenerates at \(q_*\approx0.8917539702535734\). This obstructs only unrestricted polynomials. Whether a graph slice can realize the degeneracy is open.
 
-`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open, but a realization is tightly constrained. Without the terminal edge at \(R=11\), the candidate is a multiple of \(e_{\{0,5\}}[11]-e_{\{3,4\}}[11]\), at interior volumes \(6\) and \(4\). Two blocks realizing it must have equal symmetrized kernels at every coordinate of degree at most ten. In particular their interiors, pinned at terminal height zero, have equal series through interior volume eleven. Their slice-four difference \(P\) must satisfy \(F_P(s,t)=0\) at every state with \(s+t\le7\) except \(\{3,4\}\). By SNG-F59 this leaves a five-dimensional affine family of slice-four polynomials, fixed by the values at \(s+t=8\). Dominating and other single-charge blocks cannot realize it: their slice differences are \(q^{m(s^2+t^2)}\Delta A_jq^{-2j(s+t)}\), nonzero at the state \((0,0)\) as soon as they are nonzero anywhere. Blocks on at most six vertices are already separated by \(K^+\) at volume four. A realization therefore needs larger blocks whose pinned interiors agree through volume eleven, which by SNG-F55 means equal decorated connected-set statistics up to size eleven. With the terminal edge, the first candidate is at \(R=38\): the vector \(v\) of SNG-F49(a) on \(\{1,18\},\{6,17\},\{10,15\}\), placed at degree \(38\), at interior volumes \(19\), \(15\) and \(13\). The same constraints apply, with agreement required through degree \(37\).
+`boundary_determinant` and `interpolation_rank` in `src/singularity/contexts.py` back these statements. `scripts/overlap_hierarchy.py` checks the unit extreme coefficients for \(j\le3\), injectivity at \(q=1/2\) for \(j\le4\), \(d\le3\), and the exceptional factorization with its root bracket. Whether the remaining candidates are realized by actual blocks is open, but a realization is tightly constrained. Without the terminal edge at \(R=11\), the candidate is a multiple of \(e_{\{0,5\}}[11]-e_{\{3,4\}}[11]\), at interior volumes \(6\) and \(4\). Two blocks realizing it must have equal symmetrized kernels at every coordinate of degree at most ten. In particular their interiors, pinned at terminal height zero, have equal series through interior volume eleven. Their slice-four difference \(P\) must satisfy \(F_P(s,t)=0\) at every state with \(s+t\le7\) except \(\{3,4\}\). By SNG-F59 this leaves a five-dimensional affine family of slice-four polynomials, fixed by the values at \(s+t=8\). Dominating and other single-charge blocks cannot realize it: their slice differences are \(q^{m(s^2+t^2)}\Delta A_jq^{-2j(s+t)}\), nonzero at the state \((0,0)\) as soon as they are nonzero anywhere. Blocks on at most six vertices are already separated by \(K^+\) at volume four. A realization therefore needs larger blocks whose pinned interiors agree through volume eleven. By SNG-F55, equality of their decorated connected-set statistics through size eleven is sufficient for this agreement; the converse is not asserted, since different statistics can have cancelling contributions to the same series prefix. With the terminal edge, the first candidate is at \(R=38\): the vector \(v\) of SNG-F49(a) on \(\{1,18\},\{6,17\},\{10,15\}\), placed at degree \(38\), at interior volumes \(19\), \(15\) and \(13\). The same constraints apply, with agreement required through degree \(37\).
 
 ### Boundary charges and a growing compression family
 
@@ -2557,7 +2590,7 @@ The rank results above concern what restricted contexts can see. The other half 
 
 (a) Let \(d_i\) be the number of interior neighbours of terminal \(i\), and let \(E_T\) be the energy of the edges among the terminals. For terminal heights \(\mathbf b\) and interior heights \(h\) of total \(j\), the energy is
 \[
-E=\Bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\Bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
+E=\bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
 \]
 Hence \(K(\mathbf b)=q^{\sum_id_ib_i^2+E_T(\mathbf b)}\sum_{j,Q}x^jq^{-2\langle\mathbf b,Q\rangle}A_{j,Q}\), with
 \[
@@ -2567,13 +2600,21 @@ The charges of volume \(j\) lie in \(j\operatorname{conv}\{\eta_v\}\). If the pa
 
 (b) *Dominating terminals.* Let \(G_H\) consist of an arbitrary simple graph \(H\) on \(m\) vertices and two nonadjacent terminals, each joined to every vertex of \(H\). Then every pattern is \((1,1)\), and
 \[
-K_{G_H}(s,t)=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}\,x^jq^{-2j(s+t)},\qquad A_{H,j}=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+\begin{aligned}
+K_{G_H}(s,t)&=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}x^jq^{-2j(s+t)},\\
+A_{H,j}&=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+\end{aligned}
 \]
 Through volume \(R\) the interface is the \(R+1\) polynomials \(A_{H,0},\ldots,A_{H,R}\). The ordered kernel table has \(\binom{R+3}3\) entries and the symmetrized interface of SNG-F49 has \(1{,}547\) at \(R=24\) and \(3{,}417\) at \(R=32\), so the saving grows quadratically.
 
 (c) *One closure is a complete interface.* Let \(C\) be any known context, and put \(W_{C,j}=\sum_{s,t}x^{s+t}q^{m(s^2+t^2)-2j(s+t)}K_C(s,t)\). Then the closed series is \(Z_{H,C}=\sum_jA_{H,j}x^jW_{C,j}\), and \(W_{C,j}\) has constant term \(1\). Consequently \(A_{H,v}=[x^v]Z_{H,C}-\sum_{j<v}A_{H,j}[x^{v-j}]W_{C,j}\). Within the class with given \(m\), for any fixed context \(C_0\),
 \[
-A_{H,\le R}=A_{H',\le R}\iff Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\iff Z_{H,C,\le R}=Z_{H',C,\le R}\text{ for every context }C.
+\begin{aligned}
+&A_{H,\le R}=A_{H',\le R}\\
+&\quad\Longleftrightarrow\quad Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\\
+&\quad\Longleftrightarrow\quad Z_{H,C,\le R}=Z_{H',C,\le R}
+\quad\text{for every context }C.
+\end{aligned}
 \]
 So the sequence \(A_{H,\le R}\) is the coarsest exact interface for future gluing at the original budget: any representation that determines every future closure determines the \(C_0\)-closure, hence \(A\).
 
@@ -2614,7 +2655,12 @@ For blocks whose patterns span two dimensions the charge table is not smaller th
 
 **Proposition SNG-F62 (ordered charge charts).** Let the patterns of a block have affine dimension \(a\). Choose \(a\) terminal coordinates on which the differences of patterns have full rank. Projection to those coordinates is then injective on the charges of every slice, because \(Q-j\chi_0\) lies in the span of the differences. The ordered kernel at the embedded projected charges determines every \(A_{j,Q}\), with total volume at most \((a+1)R\). Two such charts are related by \(\mathcal U=J'J^{-1}\), slice by slice.
 
-*Proof.* At \(\mathbf b\) supported on the chosen coordinates, \([x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}\). The matrix is the positive-definite kernel above, so each slice is a nonsingular square system. Each sampled coordinate is a charge coordinate, hence at most \(j\). \(\square\)
+*Proof.* At \(\mathbf b\) supported on the chosen coordinates,
+\[
+[x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}
+\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}.
+\]
+The matrix is the positive-definite kernel above, so each slice is a nonsingular square system. Each sampled coordinate is a charge coordinate, hence at most \(j\). \(\square\)
 
 `charge_chart`, `recover_from_chart` and `chart_transport` in `src/singularity/charges.py` implement this. The tests recover the charge tables exactly from ordered kernels computed by bag messages: a false-twin block (\(a=1\)), a block with four patterns (\(a=2\)), and a three-terminal block, where transport between two different charts reproduces the second chart's observations.
 
@@ -2672,7 +2718,7 @@ Column \((c,d)\) of \(\wedge^2T\) carries \(x^{c+d}\). The only column of minima
 
 **Theorem SNG-F57 (reconstruction of 2-regular interiors).** Let \(\kappa=q^2(1-q^2)\). Let \(b=\sum_{k\ge1}\varphi_k\), where \(\varphi_k\) is \(\Phi\) of a \(k\)-vertex path whose vertices have ambient degree \(2\), and put \(D_\ell=\log A_{C_\ell}-\ell b\). Then \(D_\ell=\kappa^\ell x^\ell+O(x^{\ell+1})\). For a 2-regular graph on \(n\) vertices with \(c_\ell\) cycles of length \(\ell\),
 \[
-\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\Bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\Bigr).
+\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\bigr).
 \]
 The budget \(R=\lfloor n/2\rfloor\) determines \(H\), and for \(n\ge6\) no smaller budget does.
 
@@ -2927,7 +2973,7 @@ with the convention that the right side is \(p^k\) when \(r=0\).
 
 *Proof.* Energy is the integer quadratic form \(a^\top\Delta_Ga\), so \(\omega^{E_G(a)}\) depends only on \(a\bmod p\). Every symmetric matrix over a field of odd characteristic is congruent to a diagonal one: if some diagonal entry is nonzero, move it to the pivot and clear its row and column by the substitutions \(e_j\mapsto e_j-(m_{kj}/m_{kk})e_k\); if all remaining diagonal entries vanish but \(m_{ij}\ne0\), replace \(e_i\) by \(e_i+e_j\), whose new diagonal entry is \(2m_{ij}\ne0\) because \(p\) is odd; if the remaining block is zero, stop. Since \(P\) is invertible, \(a=Pb\) is a bijection of \(\mathbb F_p^k\), so
 \[
-\Gamma_G(p)=\sum_b\omega^{\sum_i\lambda_ib_i^2}=\prod_{i\le r}\Bigl(\sum_{u}\omega^{\lambda_iu^2}\Bigr)\cdot p^{\,k-r}.
+\Gamma_G(p)=\sum_b\omega^{\sum_i\lambda_ib_i^2}=\prod_{i\le r}\bigl(\sum_{u}\omega^{\lambda_iu^2}\bigr)\cdot p^{\,k-r}.
 \]
 Each zero diagonal entry is a singular direction and contributes a full factor \(p\); these include the constant vector of every connected component, and further directions at primes dividing invariant factors of the Laplacian. For \(\lambda\ne0\), substituting \(u\mapsto\lambda^{-1}u\) when \(\lambda\) is a square, and counting the solutions of \(u^2=v\) when it is not, gives \(\sum_u\omega^{\lambda u^2}=\left(\frac\lambda p\right)g_p\). Multiplicativity of the Legendre symbol gives the formula. Rank is a congruence invariant. The radical \(R=\ker\Delta_G\) is intrinsic, and the induced nondegenerate form on \(\mathbb F_p^k/R\) has Gram determinant \(D\) in the basis given by the images of the first \(r\) columns of \(P\). A change of basis multiplies it by a nonzero square, so the square class is well defined. \(\square\)
 
@@ -3003,13 +3049,13 @@ Replay first runs a structural parser. It rejects unknown or missing fields, non
 
 There are several different assurance levels. Direct Python enumeration is an exact finite computation relative to the interpreter and implementation. Independent enumerators reduce common implementation risk. A proof-assistant theorem about the enumeration algorithm is stronger, but does not automatically verify a particular exported table. A kernel-checked replay of the concrete table crosses that remaining boundary. Documentation should state which level each claim has reached. A schema and a future formalization plan are not present proof-assistant verification.
 
-For the two decisive pair certificates, that last level has now been reached for the unmarked tables. `formal/` is a core Lean 4.12.0 package with no Mathlib. In it, `Singularity/Normalization.lean` and `Singularity/Thresholds.lean` (P07, P08) define profiles, volume and squared-difference energy, and prove the translation normalization and the nested threshold identity. `Singularity/Certificates.lean` (P33) proves that a weak-composition enumerator is exactly the duplicate-free list of profiles of each volume, links its counts to the semantic coefficient definition, and then has the kernel evaluate the transcribed tables. `Singularity/Visibility.lean` (P34, partial) proves the finite first-discrepancy cancellation for arbitrary series over any commutative ring and instantiates it on both certificates. Its positive-real asymptotic is conditional on an explicit, unverified structure of real-analysis premises. For the spectral pair and the binary-census pair, the kernel checks:
+For the two decisive pair certificates, that last level has now been reached for the unmarked tables. `formal/` is a core Lean 4.12.0 package with no Mathlib. In it, `Singularity/Normalization.lean` and `Singularity/Thresholds.lean` (P07, P08) define profiles, volume and squared-difference energy, and prove the translation normalization and the nested threshold identity. `Singularity/Certificates.lean` (P33) proves that a weak-composition enumerator is exactly the duplicate-free list of profiles of each volume, links its counts to the semantic coefficient definition, and then has the kernel evaluate the transcribed tables. `Singularity/Visibility.lean` proves the finite first-discrepancy cancellation for arbitrary series over any commutative ring and instantiates it on both certificates. Its original abstract positive-real interface is superseded by the actual Mathlib development in `formal-analysis/`: `SingularityAnalysis.graph_visibility` proves the convergent ratio and regularized prime products, zeta factorization, positive regular factor and right-hand normalized limit from the numerical q-range and certified finite coefficient agreement. The local remainder, prime summability and zeta-limit ingredients are proved, rather than retained in an analytic premise structure. For the spectral pair and the binary-census pair, the kernel checks:
 
-- every local and minimum-zero coefficient of both graphs through volume four;
+- every local coefficient of both graphs through volume four, and the minimum-zero table of the certificate graph;
 - equality of the two graphs at every lower volume;
 - the first-difference polynomial and the expansion of its stated factorization.
 
-Theorems also show that changing one edge, or one decisive coefficient, is rejected. The trusted boundary is the transcription: `formal/tools/gen_certificates.py` copies the JSON numbers into Lean literals, records the input SHA-256 digests, and has a `--check` mode. The span-marked rows and Euler exponents are not covered. `scripts/check_formal.py` builds the package and fails on any axiom outside `propext`, `Quot.sound` and `Classical.choice`; CI runs it on a clean download of the pinned release.
+Theorems also show that changing one edge, or one decisive coefficient, is rejected. The trusted boundary is the transcription: `formal/tools/gen_certificates.py` copies the JSON numbers into Lean literals, records the input SHA-256 digests, and has a `--check` mode. The span-marked rows and Euler exponents are not covered. The actual positive-real specializations `SingularityAnalysis.spectral_visibility_half` and `SingularityAnalysis.binary_visibility_half` are covered, with exact exponents 3/32 and 11025/262144; local-complex continuation, certified numerical intervals and synchronization limits are not formalized. `scripts/check_formal.py` builds the package and fails on any axiom outside `propext`, `Quot.sound` and `Classical.choice`; CI runs it on a clean download of the pinned release.
 
 ## Analytic experiments and graph boundaries
 
@@ -3037,7 +3083,7 @@ a polynomial whose \(x^mq^e\) coefficient counts labeled assignments of the subt
 
 **Proposition SNG-F23 (forest message recursion).** For every vertex \(v\) with children \(u_1,\ldots,u_c\),
 \[
-F_v(t)=x^t\prod_{i=1}^{c}\Bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\Bigr),
+F_v(t)=x^t\prod_{i=1}^{c}\bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\bigr),
 \]
 and the bounded-box series of the forest is \(C_H=\prod_{r}\sum_{t=0}^HF_r(t)\), the product over component roots \(r\).
 
@@ -3062,13 +3108,18 @@ For general graphs, a tree decomposition replaces a single parent height by a tu
 M_s(\sigma)=\sum_{\substack{b\in\{0,\ldots,H\}^{V_s}\\ b|_{X_s}=\sigma}}x^{\sum_{v\in W_s}b_v}q^{\sum_{uv\in E_s}(b_u-b_v)^2}.
 \]
 
-**Proposition SNG-F26 (bag-conditioned recursion).** Let \(w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}\). Then
+**Proposition SNG-F26 (bag-conditioned recursion).** Define the local charge by
+\[
+w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}
+q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}.
+\]
+Then
 \[
 M_s(\sigma)=w_s(\sigma)\prod_{r\text{ child of }s}\ \sum_{\substack{\tau\in\{0,\ldots,H\}^{X_r}\\ \tau|_{X_r\cap X_s}=\sigma|_{X_r\cap X_s}}}M_r(\tau),
 \]
-and the bounded-box series is \(C_H=\sum_\sigma M_{\rm root}(\sigma)\). Every vertex volume and every edge energy is charged exactly once.
+and the bounded-box series is \(C_H=\sum_\sigma M_{\mathrm{root}}(\sigma)\). Every vertex volume and every edge energy is charged exactly once.
 
-*Proof.* Every vertex lies in some bag and every edge in some common bag, so each has exactly one owner, and the owners partition the charges; at the root \(W=V\) and \(E_{\rm root}=E(G)\). Induct on \(|\mathcal T_s|\). The owned sets \(W_s,E_s\) are the disjoint union of the charges owned at \(s\) and the sets \(W_r,E_r\) of the children. A vertex \(v\in V_r\setminus X_s\) lies in no bag outside \(\mathcal T_r\): otherwise the connected subtree of bags containing \(v\) would pass through \(s\). Hence the sets \(V_r\setminus X_s\) for distinct children are disjoint and disjoint from \(X_s\), and an assignment on \(V_s\) extending \(\sigma\) is exactly a choice, for each child independently, of an assignment on \(V_r\) agreeing with \(\sigma\) on \(X_r\cap X_s\). Every charge owned in \(\mathcal T_r\) involves only vertices of \(V_r\), so its contribution depends only on that child's choice. Grouping those choices by \(\tau=b|_{X_r}\) and applying the induction hypothesis gives the displayed sum for each child; the product realizes independent choices, and \(w_s\) adds the charges owned at \(s\), each once. A vertex shared by a parent and child bag carries one height because it is conditioned on both, and its volume is added only at its owner, so repeated bags and joins never double-count it. \(\square\)
+*Proof.* Every vertex lies in some bag and every edge in some common bag, so each has exactly one owner, and the owners partition the charges; at the root \(W=V\) and \(E_{\mathrm{root}}=E(G)\). Induct on \(|\mathcal T_s|\). The owned sets \(W_s,E_s\) are the disjoint union of the charges owned at \(s\) and the sets \(W_r,E_r\) of the children. A vertex \(v\in V_r\setminus X_s\) lies in no bag outside \(\mathcal T_r\): otherwise the connected subtree of bags containing \(v\) would pass through \(s\). Hence the sets \(V_r\setminus X_s\) for distinct children are disjoint and disjoint from \(X_s\), and an assignment on \(V_s\) extending \(\sigma\) is exactly a choice, for each child independently, of an assignment on \(V_r\) agreeing with \(\sigma\) on \(X_r\cap X_s\). Every charge owned in \(\mathcal T_r\) involves only vertices of \(V_r\), so its contribution depends only on that child's choice. Grouping those choices by \(\tau=b|_{X_r}\) and applying the induction hypothesis gives the displayed sum for each child; the product realizes independent choices, and \(w_s\) adds the charges owned at \(s\), each once. A vertex shared by a parent and child bag carries one height because it is conditioned on both, and its volume is added only at its owner, so repeated bags and joins never double-count it. \(\square\)
 
 Safe truncation (SNG-F24) applies verbatim because every message has nonnegative volume exponents, and SNG-F25 gives the minimum-zero and exact-span sectors with one global translation. The implementation `src/singularity/decomposition.py` checks the decomposition axioms and the tree structure before any arithmetic and rejects a decomposition that misses a vertex or an edge or splits the bags of a vertex. Its costs are reported separately: \(\sum_s(H+1)^{|X_s|}\) bag assignments, sparse message support and integer bit length. On several distinct valid decompositions each of the five- and six-cycles, a ladder, \(K_4\) (including redundant repeated bags), two disjoint triangles (including an empty connecting bag) and \(K_5\), the bounded, minimum-zero and marked outputs equal Cartesian enumeration, weak compositions and level chains; width-one decompositions of forests, including disconnected ones, reproduce the forest engine.
 
@@ -3154,9 +3205,12 @@ Every height profile has a unique order obtained by sorting vertices first by he
 
 **Proposition SNG-F29 (disjoint order chambers).** Index positions from \(0\). For a permutation \(\pi=(\pi_0,\ldots,\pi_{n-1})\) let \(C_\pi\) be the set of gap vectors \(d\in\mathbb Z_{\ge0}^n\) with \(d_j\ge1\) whenever \(j\ge1\) and \(\pi_{j-1}>\pi_j\). The map \((\pi,d)\mapsto a\), \(a_{\pi_k}=d_0+\cdots+d_k\), is a bijection from \(\bigsqcup_\pi C_\pi\) onto \(\mathbb Z_{\ge0}^n\). Writing \(T_j=\{\pi_j,\ldots,\pi_{n-1}\}\),
 \[
-|a|=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\qquad
-E_G(a)=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\qquad
-Q_{jj}=c_G(T_j),\quad Q_{ij}=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr),
+\begin{aligned}
+|a|&=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\\
+E_G(a)&=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\\
+Q_{jj}&=c_G(T_j),\\
+Q_{ij}&=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr).
+\end{aligned}
 \]
 and on \(d_0=0\) (the normalized profiles) the span is \(\sum_{j\ge1}d_j\).
 
@@ -3244,7 +3298,7 @@ The matroid question likewise needs a precise target. Sokal treats graph and mat
 
 Euler transforms and Möbius inversion explain how local formal coefficients can be reorganized into cyclotomic factors. For a scalar formal series \(A(x)\in1+xK[[x]]\), with \(K\) of characteristic zero, write \(\log A(x)=\sum_{n\ge1}c_nx^n\). There are unique formal exponents \(b_n\in K\) with \(A(x)=\prod_{n\ge1}(1-x^n)^{-b_n}\), and \(n c_n=\sum_{d\mid n}d b_d\). Moree's work on the formal series Witt transform is a relevant account of the associated cyclotomic identities and Möbius transforms. When \(q\) is a parameter, scalar exponents need not be nonnegative integers or even integer-coefficient polynomials in \(q\).
 
-The analytic Euler product requires a separate argument. Extracting finitely many zeta factors can improve the convergence of a remainder, but a formal infinite factorization is not automatically a global analytic continuation. In this project, the first-discrepancy statement uses a finite local expansion and a normalized remainder converging in a specified region. With a nonintegral discrepancy exponent, a real positive branch is available; a blanket meromorphic-continuation claim is not. The arithmetic lift reexpresses local information and supplies a singularity comparison. It does not increase the invariant's graph-reconstruction power.
+The analytic Euler product requires a separate argument. Extracting finitely many zeta factors can improve the convergence of a remainder, but a formal infinite factorization is not automatically a global analytic continuation. In this project, the first-discrepancy statement uses a finite local expansion and a normalized remainder converging in a specified region. With a nonintegral discrepancy exponent, a real positive branch is available; a blanket meromorphic-continuation claim is not. The arithmetic lift reexpresses local information and supplies a singularity comparison. It does not increase the invariant's graph-reconstruction power. The released `formal-analysis/` package now verifies the positive-real comparison using actual Mathlib real numbers, real powers, infinite products and the Riemann zeta function; the generic graph theorem and two half-parameter pair theorems discharge all analytic premises. This formal scope does not include local-complex continuation, numerical interval endpoints or the synchronization limit. A kernel check does not establish historical novelty, and the bibliography remains the basis for that separate comparison.
 
 ## A claim register for papers and releases
 
@@ -3286,7 +3340,7 @@ These references were checked against primary author, publisher, or journal reco
 
 # Implementation and retained computational results
 
-The mathematical manuscripts describe a research program, while this chapter records the executable boundary of version 0.1.0. The core package requires Python 3.10 or newer and uses only the standard library. Documentation generation additionally uses Pandoc and a LaTeX installation. The rendered PDF and HTML are distributed so that a reader does not need those authoring tools merely to read the work.
+The mathematical manuscripts describe a research program, while this chapter records the executable boundary of version 0.2.0. The core package requires Python 3.10 or newer and uses only the standard library. Documentation generation additionally uses Pandoc and a LaTeX installation. The rendered PDF and HTML are distributed so that a reader does not need those authoring tools merely to read the work.
 
 ## Installing and running the project
 

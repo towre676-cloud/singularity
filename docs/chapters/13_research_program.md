@@ -16,7 +16,7 @@ a polynomial whose \(x^mq^e\) coefficient counts labeled assignments of the subt
 
 **Proposition SNG-F23 (forest message recursion).** For every vertex \(v\) with children \(u_1,\ldots,u_c\),
 \[
-F_v(t)=x^t\prod_{i=1}^{c}\Bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\Bigr),
+F_v(t)=x^t\prod_{i=1}^{c}\bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\bigr),
 \]
 and the bounded-box series of the forest is \(C_H=\prod_{r}\sum_{t=0}^HF_r(t)\), the product over component roots \(r\).
 
@@ -41,13 +41,18 @@ For general graphs, a tree decomposition replaces a single parent height by a tu
 M_s(\sigma)=\sum_{\substack{b\in\{0,\ldots,H\}^{V_s}\\ b|_{X_s}=\sigma}}x^{\sum_{v\in W_s}b_v}q^{\sum_{uv\in E_s}(b_u-b_v)^2}.
 \]
 
-**Proposition SNG-F26 (bag-conditioned recursion).** Let \(w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}\). Then
+**Proposition SNG-F26 (bag-conditioned recursion).** Define the local charge by
+\[
+w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}
+q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}.
+\]
+Then
 \[
 M_s(\sigma)=w_s(\sigma)\prod_{r\text{ child of }s}\ \sum_{\substack{\tau\in\{0,\ldots,H\}^{X_r}\\ \tau|_{X_r\cap X_s}=\sigma|_{X_r\cap X_s}}}M_r(\tau),
 \]
-and the bounded-box series is \(C_H=\sum_\sigma M_{\rm root}(\sigma)\). Every vertex volume and every edge energy is charged exactly once.
+and the bounded-box series is \(C_H=\sum_\sigma M_{\mathrm{root}}(\sigma)\). Every vertex volume and every edge energy is charged exactly once.
 
-*Proof.* Every vertex lies in some bag and every edge in some common bag, so each has exactly one owner, and the owners partition the charges; at the root \(W=V\) and \(E_{\rm root}=E(G)\). Induct on \(|\mathcal T_s|\). The owned sets \(W_s,E_s\) are the disjoint union of the charges owned at \(s\) and the sets \(W_r,E_r\) of the children. A vertex \(v\in V_r\setminus X_s\) lies in no bag outside \(\mathcal T_r\): otherwise the connected subtree of bags containing \(v\) would pass through \(s\). Hence the sets \(V_r\setminus X_s\) for distinct children are disjoint and disjoint from \(X_s\), and an assignment on \(V_s\) extending \(\sigma\) is exactly a choice, for each child independently, of an assignment on \(V_r\) agreeing with \(\sigma\) on \(X_r\cap X_s\). Every charge owned in \(\mathcal T_r\) involves only vertices of \(V_r\), so its contribution depends only on that child's choice. Grouping those choices by \(\tau=b|_{X_r}\) and applying the induction hypothesis gives the displayed sum for each child; the product realizes independent choices, and \(w_s\) adds the charges owned at \(s\), each once. A vertex shared by a parent and child bag carries one height because it is conditioned on both, and its volume is added only at its owner, so repeated bags and joins never double-count it. \(\square\)
+*Proof.* Every vertex lies in some bag and every edge in some common bag, so each has exactly one owner, and the owners partition the charges; at the root \(W=V\) and \(E_{\mathrm{root}}=E(G)\). Induct on \(|\mathcal T_s|\). The owned sets \(W_s,E_s\) are the disjoint union of the charges owned at \(s\) and the sets \(W_r,E_r\) of the children. A vertex \(v\in V_r\setminus X_s\) lies in no bag outside \(\mathcal T_r\): otherwise the connected subtree of bags containing \(v\) would pass through \(s\). Hence the sets \(V_r\setminus X_s\) for distinct children are disjoint and disjoint from \(X_s\), and an assignment on \(V_s\) extending \(\sigma\) is exactly a choice, for each child independently, of an assignment on \(V_r\) agreeing with \(\sigma\) on \(X_r\cap X_s\). Every charge owned in \(\mathcal T_r\) involves only vertices of \(V_r\), so its contribution depends only on that child's choice. Grouping those choices by \(\tau=b|_{X_r}\) and applying the induction hypothesis gives the displayed sum for each child; the product realizes independent choices, and \(w_s\) adds the charges owned at \(s\), each once. A vertex shared by a parent and child bag carries one height because it is conditioned on both, and its volume is added only at its owner, so repeated bags and joins never double-count it. \(\square\)
 
 Safe truncation (SNG-F24) applies verbatim because every message has nonnegative volume exponents, and SNG-F25 gives the minimum-zero and exact-span sectors with one global translation. The implementation `src/singularity/decomposition.py` checks the decomposition axioms and the tree structure before any arithmetic and rejects a decomposition that misses a vertex or an edge or splits the bags of a vertex. Its costs are reported separately: \(\sum_s(H+1)^{|X_s|}\) bag assignments, sparse message support and integer bit length. On several distinct valid decompositions each of the five- and six-cycles, a ladder, \(K_4\) (including redundant repeated bags), two disjoint triangles (including an empty connecting bag) and \(K_5\), the bounded, minimum-zero and marked outputs equal Cartesian enumeration, weak compositions and level chains; width-one decompositions of forests, including disconnected ones, reproduce the forest engine.
 
@@ -133,9 +138,12 @@ Every height profile has a unique order obtained by sorting vertices first by he
 
 **Proposition SNG-F29 (disjoint order chambers).** Index positions from \(0\). For a permutation \(\pi=(\pi_0,\ldots,\pi_{n-1})\) let \(C_\pi\) be the set of gap vectors \(d\in\mathbb Z_{\ge0}^n\) with \(d_j\ge1\) whenever \(j\ge1\) and \(\pi_{j-1}>\pi_j\). The map \((\pi,d)\mapsto a\), \(a_{\pi_k}=d_0+\cdots+d_k\), is a bijection from \(\bigsqcup_\pi C_\pi\) onto \(\mathbb Z_{\ge0}^n\). Writing \(T_j=\{\pi_j,\ldots,\pi_{n-1}\}\),
 \[
-|a|=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\qquad
-E_G(a)=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\qquad
-Q_{jj}=c_G(T_j),\quad Q_{ij}=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr),
+\begin{aligned}
+|a|&=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\\
+E_G(a)&=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\\
+Q_{jj}&=c_G(T_j),\\
+Q_{ij}&=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr).
+\end{aligned}
 \]
 and on \(d_0=0\) (the normalized profiles) the span is \(\sum_{j\ge1}d_j\).
 

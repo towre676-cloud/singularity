@@ -71,6 +71,9 @@
 \setcounter{secnumdepth}{5}
 
 \usepackage{amsmath,amssymb,booktabs,longtable,array,etoolbox,xurl,fvextra,graphicx}
+\usepackage{seqsplit}
+\let\singularitytexttt\texttt
+\renewcommand{\texttt}[1]{\singularitytexttt{\seqsplit{#1}}}
 \graphicspath{{docs/}}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -134,8 +137,10 @@ develop primewise assembly, local analytic comparison and singular
 synchronization. Chapters 9-11 give exact examples, inverse questions
 and the bridges to earlier work. Chapters 12-14 develop computational
 methodology, the research program and the literature. The implementation
-appendix states what version 0.1.0 actually executes. The final roadmap
-defines thirty-six subsequent development pushes.
+appendix records the software contracts and validated computational
+domains. The final roadmap preserves the original thirty-six development
+pushes; their completed acceptance records and subsequent research
+frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence
 it forgets. A binary census can agree for every subset size and boundary
@@ -244,7 +249,7 @@ displayed binomial coefficient. In particular, there are finitely many
 terms in \(C_{G,m}\). Every energy is a nonnegative integer. Moreover,
 \[
 E_G(a)=\sum_i d_i a_i^2-2\sum_{\{i,j\}\in E}a_i a_j
-\le\Delta\sum_i a_i^2\le\Delta\Bigl(\sum_i a_i\Bigr)^2.
+\le\Delta\sum_i a_i^2\le\Delta\bigl(\sum_i a_i\bigr)^2.
 \] The first inequality uses nonnegativity of all heights; the second
 follows by expanding the square. This proves all assertions. \(\square\)
 
@@ -1313,13 +1318,12 @@ with degree sum \(s\) spanning \(t\) edges. These statistics are defined
 from degrees and adjacency alone.
 
 \begin{longtable}[]{@{}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1667}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}@{}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1905}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1429}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedleft
 Volume
@@ -1333,6 +1337,32 @@ Support
 Span
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Energy
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & \(e_i\) & vertices & 1 & 1 & \(d_i\) \\
+2 & \(2e_i\) & vertices & 1 & 2 & \(4d_i\) \\
+2 & \(e_i+e_j\) & unordered pairs & 2 & 1 & \(d_i+d_j-2A_{ij}\) \\
+3 & \(3e_i\) & vertices & 1 & 3 & \(9d_i\) \\
+3 & \(2e_i+e_j\) & ordered pairs & 2 & 2 & \(4d_i+d_j-4A_{ij}\) \\
+3 & \(e_i+e_j+e_k\) & unordered triples & 3 & 1 &
+\(d_i+d_j+d_k-2e_G(\{i,j,k\})\) \\
+\end{longtable}
+
+The corresponding coefficient contributions are separated below so each
+formula remains readable.
+
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+Volume
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Pattern
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Contribution
 \end{minipage} \\
@@ -1340,15 +1370,13 @@ Contribution
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & \(e_i\) & vertices & 1 & 1 & \(d_i\) & \(\sum_dN_dq^d\) \\
-2 & \(2e_i\) & vertices & 1 & 2 & \(4d_i\) & \(\sum_dN_dq^{4d}\) \\
-2 & \(e_i+e_j\) & unordered pairs & 2 & 1 & \(d_i+d_j-2A_{ij}\) &
+1 & \(e_i\) & \(\sum_dN_dq^d\) \\
+2 & \(2e_i\) & \(\sum_dN_dq^{4d}\) \\
+2 & \(e_i+e_j\) &
 \(\tfrac12\sum P_{a,b}^{\epsilon}q^{a+b-2\epsilon}\) \\
-3 & \(3e_i\) & vertices & 1 & 3 & \(9d_i\) & \(\sum_dN_dq^{9d}\) \\
-3 & \(2e_i+e_j\) & ordered pairs & 2 & 2 & \(4d_i+d_j-4A_{ij}\) &
-\(\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}\) \\
-3 & \(e_i+e_j+e_k\) & unordered triples & 3 & 1 &
-\(d_i+d_j+d_k-2e_G(\{i,j,k\})\) & \(\sum T_{s,t}q^{s-2t}\) \\
+3 & \(3e_i\) & \(\sum_dN_dq^{9d}\) \\
+3 & \(2e_i+e_j\) & \(\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}\) \\
+3 & \(e_i+e_j+e_k\) & \(\sum T_{s,t}q^{s-2t}\) \\
 \end{longtable}
 
 A pattern lies in the normalized population exactly when its support is
@@ -1578,7 +1606,7 @@ easy}\label{why-labeled-probes-make-reconstruction-easy}}
 
 Consider instead the fully vertex-marked series \[
 \mathscr L_G(z_0,\ldots,z_{k-1};q)
-=\sum_{a\ge0}\Bigl(\prod_i z_i^{a_i}\Bigr)q^{E_G(a)}.
+=\sum_{a\ge0}\bigl(\prod_i z_i^{a_i}\bigr)q^{E_G(a)}.
 \] The variables now identify where each unit was placed. This is a much
 stronger observation than scalar total height.
 
@@ -2608,6 +2636,25 @@ cancellation is the main analytic mechanism. It makes a comparison
 meaningful farther left without pretending that either original positive
 Dirichlet series has acquired an absolutely convergent definition there.
 
+The positive-real comparison now has a complete Lean proof over actual
+Mathlib real numbers and the Riemann zeta function. In
+\texttt{formal-analysis/},
+\texttt{SingularityAnalysis.visibility\_of\_coefficients} proves the
+theorem for nonnegative polynomial-growth coefficient sequences, and
+\texttt{SingularityAnalysis.graph\_visibility} applies it to graph
+height coefficients for \(q\in[0,1]\). The chain proves the local
+logarithmic expansion, prime-product convergence and boundary
+continuity, the zeta Euler product and its residue limit. It identifies
+the continued ratio with the quotient of the original prime products for
+\(s>1\). The concrete statements
+\texttt{SingularityAnalysis.spectral\_visibility\_half} and
+\texttt{SingularityAnalysis.binary\_visibility\_half} import P33 and
+prove the exact exponents at \(q=1/2\). No unverified analytic premise
+structure remains. The local-complex holomorphy and branch-continuation
+argument in this chapter, and the later interval endpoints, remain
+ordinary or computer-assisted mathematics rather than part of that
+real-analytic Lean theorem.
+
 \hypertarget{a-volume-two-calculation-and-its-actual-meaning}{%
 \section{A volume-two calculation and its actual
 meaning}\label{a-volume-two-calculation-and-its-actual-meaning}}
@@ -2716,7 +2763,7 @@ agree through volume two, but their volume-three difference is
  &+2q^{15}+q^{17}-q^{18}\\
  ={}&q^3(1-q)^5(1+q)^2
  (1+2q+5q^2+6q^3+8q^4\\
- &\hspace{38mm}+6q^5+5q^6+2q^7+q^8).
+ &\qquad\qquad+6q^5+5q^6+2q^7+q^8).
  \end{aligned}
  \tag{7.9}
 \]
@@ -2873,7 +2920,7 @@ let \(s_0=1/r\), \(D_\eta=\{s:|s-s_0|\le\eta\}\) and
 \] Then for every prime \(p\) and every \(s\in D_\eta\), the local
 factors \(L_G(p^{-s},q)\) and \(L_H(p^{-s},q)\) have positive real part,
 and so does \(1-p^{-rs}\). With principal logarithms, the function \[
-K(s)=\exp\sum_p\Bigl(\log L_G(p^{-s})-\log L_H(p^{-s})+\delta\log(1-p^{-rs})\Bigr)
+K(s)=\exp\sum_p\bigl(\log L_G(p^{-s})-\log L_H(p^{-s})+\delta\log(1-p^{-rs})\bigr)
 \] is holomorphic and nonzero on \(D_\eta\), the series converges
 uniformly there, and \(K\) equals the positive product (7.3) on
 \(D_\eta\cap\mathbb R\). On \(D_\eta\setminus[s_0-\eta,s_0]\), \[
@@ -2935,7 +2982,11 @@ global continuation.
 \(0<q<1\). Then \(B_G(t,q)=(1-t^n)L_G(t,q)\) is an entire function of
 \(t\), and \(L_G(t,q)\) is meromorphic in \(t\), with poles at most at
 the \(n\)-th roots of unity. For every \(H\ge0\) and complex \(t\), \[
-\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|\le\sum_{h>H}N_n(h)\,\max(|t|^h,|t|^{(n-1)h})\,q^{\lceil h^2/D\rceil},\qquad N_n(h)=(h+1)^n-2h^n+(h-1)^n,
+\begin{aligned}
+\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|
+&\le\sum_{h>H}N_n(h)\max(|t|^h,|t|^{(n-1)h})q^{\lceil h^2/D\rceil},\\
+N_n(h)&=(h+1)^n-2h^n+(h-1)^n.
+\end{aligned}
 \] where \(B_{G,\le H}\) sums over minimum-zero profiles of maximum at
 most \(H\).
 
@@ -2963,11 +3014,17 @@ the cutoff \(P=N^b\) and \(\rho=N^{-a}=P^{-s}\). Let \(\ell_n,m_n\) be
 the local coefficients of \(G\) and \(H\) at \(q\) for \(n\le M\),
 \(A_n=\binom{n+k-1}{k-1}\), and
 \(S_M=(1-\rho)^{-k}-\sum_{n\le M}A_n\rho^n\). Put \[
-T'=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\qquad
-D'=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\qquad
-C'=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)} .
+\begin{aligned}
+T'&=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\\
+D'&=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\\
+C'&=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)}.
+\end{aligned}
+\] For the finite summands, abbreviate \[
+\theta_p(s)=\delta\log(1-p^{-rs})
++\log\frac{B_G(p^{-s})}{B_H(p^{-s})}.
 \] Then \[
-\Bigl|\log K_{G,H}(s,q)-\sum_{p\le P}\Bigl(\delta\log(1-p^{-rs})+\log B_G(p^{-s})-\log B_H(p^{-s})\Bigr)\Bigr|\le C'\,\frac{P^{1-(r+1)s}}{(r+1)s-1},
+\left|\log K_{G,H}(s,q)-\sum_{p\le P}\theta_p(s)\right|
+\le C'\frac{P^{1-(r+1)s}}{(r+1)s-1},
 \] and each finite summand is enclosed by rational intervals computed
 from: integer-root enclosures of \(p^{-a/b}\); monotonicity of \(B\) in
 \(t\ge0\); the height tail of SNG-F39; outward-rounded sums over a
@@ -2993,14 +3050,17 @@ fractional bits. The minimum-zero condition is carried as a flag in the
 bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\)
 the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at
 \(s=1/r\). The retained results, with exact dyadic endpoints, are in
-\texttt{results/certified\_k.json}. All are at \(q=1/2\):
+\texttt{results/certified\_k.json}. All are at \(q=1/2\). The spectral
+pair has \(r=2\), \(\delta=3/32\); the binary pair has \(r=3\),
+\(\delta=11025/262144\):
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2353}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2353}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1364}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1364}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1818}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1818}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1818}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1818}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Pair
@@ -3009,22 +3069,24 @@ Pair
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Primes kept
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Omitted-prime log bound
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Enclosure of \(K(s,1/2)\)
+Omitted log bound
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(K\) lower
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(K\) upper
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-spectral, \(r=2\), \(\delta=3/32\) & \(1/2\) & 1229 (\(\le10^4\)) &
-\(4.6\times10^{-3}\) & \([0.84973,\,0.85750]\) \\
-spectral & \(3/5\) & 985 (\(\le6^5\)) & \(2.2\times10^{-4}\) &
-\([0.89931,\,0.89971]\) \\
-spectral & \(1\) & 168 (\(\le10^3\)) & \(1.1\times10^{-7}\) &
-\([0.9678188,\,0.9678191]\) \\
-binary census, \(r=3\), \(\delta=11025/262144\) & \(1/3\) & 2961
-(\(\le30^3\)) & \(2.2\times10^{-2}\) & \([0.90084,\,0.94230]\) \\
+spectral & \(1/2\) & 1229 (\(\le10^4\)) & \(4.6\times10^{-3}\) & 0.84973
+& 0.85750 \\
+spectral & \(3/5\) & 985 (\(\le6^5\)) & \(2.2\times10^{-4}\) & 0.89931 &
+0.89971 \\
+spectral & \(1\) & 168 (\(\le10^3\)) & \(1.1\times10^{-7}\) & 0.9678188
+& 0.9678191 \\
+binary & \(1/3\) & 2961 (\(\le30^3\)) & \(2.2\times10^{-2}\) & 0.90084 &
+0.94230 \\
 \end{longtable}
 
 The local height tails total below \(4\times10^{-16}\) in every run, so
@@ -3239,7 +3301,7 @@ integral bound applies directly.
  \begin{aligned}
  &\left|\log Z_G(1+\varepsilon,q)
  -\log\zeta(k)-\alpha(q)\log(1/\varepsilon)\right|\\
- &\hspace{12mm}\le
+ &\quad\le
  A_kq^\lambda\bigl(\zeta(2)-1\bigr)
  +(kJ_k+k)\varepsilon.
  \end{aligned}
@@ -5145,13 +5207,14 @@ minus the top-degree defect of (a): full through \(R=6\), and \(69\) of
 full with the edge) and \(R=9\) (\(124\) of \(125\), full with the
 edge), computed once in the session that introduced it. Lower-degree
 collisions are thus resolved by the next volume, and the loss is
-confined to the top degree in the computed range. Whether this holds for
-all \(R\), and whether the edge-free class determines \(K^+\) without a
-budget, is open. For comparison, unrestricted contexts have full rank
-\(\binom{R+3}{3}\) on the ordered unknowns by SNG-F44. With the edge,
-symmetric contexts reach \(\sum_{v\le R}\#\{o:|o|\le v\}\), and the
-difference is exactly the information carried by the order of the
-terminals.
+confined to the top degree in the computed range. The fixed-budget
+exactness question outside the proved ranges remains open. Theorem
+SNG-F51 below proves that the edge-free class determines every finite
+prefix of \(K^+\) when additional observation volume is allowed. For
+comparison, unrestricted contexts have full rank \(\binom{R+3}{3}\) on
+the ordered unknowns by SNG-F44. With the edge, symmetric contexts reach
+\(\sum_{v\le R}\#\{o:|o|\le v\}\), and the difference is exactly the
+information carried by the order of the terminals.
 
 On the realizable side the quotient is no coarser than forced. Among the
 12,753 connected blocks with at most six vertices and no terminal edge,
@@ -5199,7 +5262,7 @@ contexts).}
   \(i\in\{0,1\}\), are linearly independent on the group. Then
   \(I_{\mathcal C,R}=N_R\). The interface has the explicit coordinates
   \[
-  \mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\Bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\Bigr)_{g,\;e<\kappa}.
+  \mathcal O_{\mathcal C,R}\cong\bigl(Y_o[v]\bigr)_{v<R}\oplus\bigl(\textstyle\sum_{o\in g}y_o^eY_o[R]\bigr)_{g,\;e<\kappa}.
   \] The finitely many contexts with \(d\) pendant leaves per terminal,
   \(c\) shared neighbours and, when \(\kappa=2\), an optional terminal
   edge span every response of the class. The hypothesis holds for
@@ -5262,11 +5325,12 @@ cofactors are \(v\).
   terminal edges therefore has kernel \[
   q^{ed_o+(d+c)m_o}\bigl(1+x(d\sigma_o+c\pi_o)+O(x^2)\bigr),\qquad \sigma_o=q^{1-2s}+q^{1-2t},\ \pi_o=q^{2-2(s+t)}.
   \] After the known terms are removed, the volume-\(v\) coefficients
-  give \(\sum_oq^{\delta m_o}y_o^eY_o[v]\). In the volume-\(v+1\)
-  coefficient, \(Y[v+1]\) appears with the split-independent factor
-  \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the factor
-  \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the context
-  \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves
+  give \[
+  \sum_oq^{\delta m_o}y_o^eY_o[v].
+  \] In the volume-\(v+1\) coefficient, \(Y[v+1]\) appears with the
+  split-independent factor \(q^{ed_o+(d+c)m_o}\), and \(Y[v]\) with the
+  factor \(q^{ed_o+(d+c)m_o}(d\sigma_o+c\pi_o)\). Subtracting the
+  context \((d-1,c+1)\) from \((d,c)\) removes \(Y[v+1]\) and leaves
   \(\sum_oq^{\delta m_o}y_o^e\tau_oY_o[v]\), with \(\delta=d+c\ge1\).
   The Vandermonde system in \(\delta\) separates the groups. What
   remains on each group is the functionals \(y^e\tau^i\), which are
@@ -5345,8 +5409,8 @@ of \(24\) symmetric-context queries then takes \(7.6\) ms by
 contraction, against \(1.33\) s for a fresh decomposition of the glued
 graph, with identical exact output. The compilation pays for itself
 after about \(3.5\) queries (\texttt{-\/-benchmark}, wall-clock on the
-session machine, retained). A compression theorem with savings that grow
-along a family remains open (P54).
+session machine, retained). Theorem SNG-F53 below supplies a compression
+family whose savings grow with the volume budget (P54).
 
 \emph{Targeted realizability searches.} The following observation gives
 a route to a symmetric kernel without a swap automorphism. If two blocks
@@ -5472,7 +5536,7 @@ vertices, has at most four monomials whatever the size of the block.
 
 \emph{Proof.} For interior heights \(h\) of total \(j\), the energy is
 \[
-Q_0+\Bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\Bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
+Q_0+\bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
 \] The bracket does not depend on \((s,t)\), and each of the last two
 sums is at most \(j\). For \(j=1\) the single raised vertex contributes
 \(q^{\deg v}U^{A_{sv}}V^{A_{tv}}\).
@@ -5588,7 +5652,10 @@ possible ambiguity is at \(R=11\).
 
 The arithmetic hypothesis is necessary for the unrestricted statement.
 For \(j=3\), \(d=1\), \(\ell=0\), \[
-D(z)=z^{-43}(z-1)^{11}H(z),\qquad \deg H=68,\quad H(1)=3{,}870{,}720,\quad H(0)=\operatorname{lead}H=-1.
+\begin{aligned}
+D(z)&=z^{-43}(z-1)^{11}H(z),&\deg H&=68,\\
+H(1)&=3{,}870{,}720,&H(0)&=\operatorname{lead}H=-1.
+\end{aligned}
 \] \(H\) changes sign between \(z=1.1213855316120952\) and
 \(1.1213855316120954\), so the boundary system degenerates at
 \(q_*\approx0.8917539702535734\). This obstructs only unrestricted
@@ -5614,13 +5681,15 @@ single-charge blocks cannot realize it: their slice differences are
 \(q^{m(s^2+t^2)}\Delta A_jq^{-2j(s+t)}\), nonzero at the state \((0,0)\)
 as soon as they are nonzero anywhere. Blocks on at most six vertices are
 already separated by \(K^+\) at volume four. A realization therefore
-needs larger blocks whose pinned interiors agree through volume eleven,
-which by SNG-F55 means equal decorated connected-set statistics up to
-size eleven. With the terminal edge, the first candidate is at \(R=38\):
-the vector \(v\) of SNG-F49(a) on \(\{1,18\},\{6,17\},\{10,15\}\),
-placed at degree \(38\), at interior volumes \(19\), \(15\) and \(13\).
-The same constraints apply, with agreement required through degree
-\(37\).
+needs larger blocks whose pinned interiors agree through volume eleven.
+By SNG-F55, equality of their decorated connected-set statistics through
+size eleven is sufficient for this agreement; the converse is not
+asserted, since different statistics can have cancelling contributions
+to the same series prefix. With the terminal edge, the first candidate
+is at \(R=38\): the vector \(v\) of SNG-F49(a) on
+\(\{1,18\},\{6,17\},\{10,15\}\), placed at degree \(38\), at interior
+volumes \(19\), \(15\) and \(13\). The same constraints apply, with
+agreement required through degree \(37\).
 
 \hypertarget{boundary-charges-and-a-growing-compression-family}{%
 \subsection{Boundary charges and a growing compression
@@ -5643,7 +5712,7 @@ heights \(h\).
   and let \(E_T\) be the energy of the edges among the terminals. For
   terminal heights \(\mathbf b\) and interior heights \(h\) of total
   \(j\), the energy is \[
-  E=\Bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\Bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
+  E=\bigl[E_{\mathrm{int}}(h)+\sum_v|\eta_v|h_v^2\bigr]+\sum_id_ib_i^2+E_T(\mathbf b)-2\langle\mathbf b,Q(h)\rangle.
   \] Hence
   \(K(\mathbf b)=q^{\sum_id_ib_i^2+E_T(\mathbf b)}\sum_{j,Q}x^jq^{-2\langle\mathbf b,Q\rangle}A_{j,Q}\),
   with \[
@@ -5657,7 +5726,10 @@ heights \(h\).
   simple graph \(H\) on \(m\) vertices and two nonadjacent terminals,
   each joined to every vertex of \(H\). Then every pattern is \((1,1)\),
   and \[
-  K_{G_H}(s,t)=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}\,x^jq^{-2j(s+t)},\qquad A_{H,j}=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+  \begin{aligned}
+  K_{G_H}(s,t)&=q^{m(s^2+t^2)}\sum_{j\ge0}A_{H,j}x^jq^{-2j(s+t)},\\
+  A_{H,j}&=\sum_{|h|=j}q^{E_H(h)+2\sum_ih_i^2}.
+  \end{aligned}
   \] Through volume \(R\) the interface is the \(R+1\) polynomials
   \(A_{H,0},\ldots,A_{H,R}\). The ordered kernel table has
   \(\binom{R+3}3\) entries and the symmetrized interface of SNG-F49 has
@@ -5671,7 +5743,12 @@ heights \(h\).
   has constant term \(1\). Consequently
   \(A_{H,v}=[x^v]Z_{H,C}-\sum_{j<v}A_{H,j}[x^{v-j}]W_{C,j}\). Within the
   class with given \(m\), for any fixed context \(C_0\), \[
-  A_{H,\le R}=A_{H',\le R}\iff Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\iff Z_{H,C,\le R}=Z_{H',C,\le R}\text{ for every context }C.
+  \begin{aligned}
+  &A_{H,\le R}=A_{H',\le R}\\
+  &\quad\Longleftrightarrow\quad Z_{H,C_0,\le R}=Z_{H',C_0,\le R}\\
+  &\quad\Longleftrightarrow\quad Z_{H,C,\le R}=Z_{H',C,\le R}
+  \quad\text{for every context }C.
+  \end{aligned}
   \] So the sequence \(A_{H,\le R}\) is the coarsest exact interface for
   future gluing at the original budget: any representation that
   determines every future closure determines the \(C_0\)-closure, hence
@@ -5802,9 +5879,10 @@ The ordered kernel at the embedded projected charges determines every
 \(A_{j,Q}\), with total volume at most \((a+1)R\). Two such charts are
 related by \(\mathcal U=J'J^{-1}\), slice by slice.
 
-\emph{Proof.} At \(\mathbf b\) supported on the chosen coordinates,
-\([x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}\).
-The matrix is the positive-definite kernel above, so each slice is a
+\emph{Proof.} At \(\mathbf b\) supported on the chosen coordinates, \[
+[x^j]K(\mathbf b)=q^{\sum d_ib_i^2+E_T(\mathbf b)}
+\sum_QA_{j,Q}q^{-2\langle\pi\mathbf b,\pi Q\rangle}.
+\] The matrix is the positive-definite kernel above, so each slice is a
 nonsingular square system. Each sampled coordinate is a charge
 coordinate, hence at most \(j\). \(\square\)
 
@@ -6000,7 +6078,7 @@ non-isomorphic interiors share the whole sequence \(A\) remains open.
 ambient degree \(2\), and put \(D_\ell=\log A_{C_\ell}-\ell b\). Then
 \(D_\ell=\kappa^\ell x^\ell+O(x^{\ell+1})\). For a 2-regular graph on
 \(n\) vertices with \(c_\ell\) cycles of length \(\ell\), \[
-\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\Bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\Bigr).
+\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\bigr).
 \] The budget \(R=\lfloor n/2\rfloor\) determines \(H\), and for
 \(n\ge6\) no smaller budget does.
 
@@ -6700,7 +6778,7 @@ vanish but \(m_{ij}\ne0\), replace \(e_i\) by \(e_i+e_j\), whose new
 diagonal entry is \(2m_{ij}\ne0\) because \(p\) is odd; if the remaining
 block is zero, stop. Since \(P\) is invertible, \(a=Pb\) is a bijection
 of \(\mathbb F_p^k\), so \[
-\Gamma_G(p)=\sum_b\omega^{\sum_i\lambda_ib_i^2}=\prod_{i\le r}\Bigl(\sum_{u}\omega^{\lambda_iu^2}\Bigr)\cdot p^{\,k-r}.
+\Gamma_G(p)=\sum_b\omega^{\sum_i\lambda_ib_i^2}=\prod_{i\le r}\bigl(\sum_{u}\omega^{\lambda_iu^2}\bigr)\cdot p^{\,k-r}.
 \] Each zero diagonal entry is a singular direction and contributes a
 full factor \(p\); these include the constant vector of every connected
 component, and further directions at primes dividing invariant factors
@@ -7040,18 +7118,24 @@ normalization and the nested threshold identity.
 weak-composition enumerator is exactly the duplicate-free list of
 profiles of each volume, links its counts to the semantic coefficient
 definition, and then has the kernel evaluate the transcribed tables.
-\texttt{Singularity/Visibility.lean} (P34, partial) proves the finite
-first-discrepancy cancellation for arbitrary series over any commutative
-ring and instantiates it on both certificates. Its positive-real
-asymptotic is conditional on an explicit, unverified structure of
-real-analysis premises. For the spectral pair and the binary-census
-pair, the kernel checks:
+\texttt{Singularity/Visibility.lean} proves the finite first-discrepancy
+cancellation for arbitrary series over any commutative ring and
+instantiates it on both certificates. Its original abstract
+positive-real interface is superseded by the actual Mathlib development
+in \texttt{formal-analysis/}:
+\texttt{SingularityAnalysis.graph\_visibility} proves the convergent
+ratio and regularized prime products, zeta factorization, positive
+regular factor and right-hand normalized limit from the numerical
+q-range and certified finite coefficient agreement. The local remainder,
+prime summability and zeta-limit ingredients are proved, rather than
+retained in an analytic premise structure. For the spectral pair and the
+binary-census pair, the kernel checks:
 
 \begin{itemize}
 \tightlist
 \item
-  every local and minimum-zero coefficient of both graphs through volume
-  four;
+  every local coefficient of both graphs through volume four, and the
+  minimum-zero table of the certificate graph;
 \item
   equality of the two graphs at every lower volume;
 \item
@@ -7064,7 +7148,12 @@ is rejected. The trusted boundary is the transcription:
 \texttt{formal/tools/gen\_certificates.py} copies the JSON numbers into
 Lean literals, records the input SHA-256 digests, and has a
 \texttt{-\/-check} mode. The span-marked rows and Euler exponents are
-not covered. \texttt{scripts/check\_formal.py} builds the package and
+not covered. The actual positive-real specializations
+\texttt{SingularityAnalysis.spectral\_visibility\_half} and
+\texttt{SingularityAnalysis.binary\_visibility\_half} are covered, with
+exact exponents 3/32 and 11025/262144; local-complex continuation,
+certified numerical intervals and synchronization limits are not
+formalized. \texttt{scripts/check\_formal.py} builds the package and
 fails on any axiom outside \texttt{propext}, \texttt{Quot.sound} and
 \texttt{Classical.choice}; CI runs it on a clean download of the pinned
 release.
@@ -7151,7 +7240,7 @@ of the subtree with root height \(t\), volume \(m\) and internal energy
 
 \textbf{Proposition SNG-F23 (forest message recursion).} For every
 vertex \(v\) with children \(u_1,\ldots,u_c\), \[
-F_v(t)=x^t\prod_{i=1}^{c}\Bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\Bigr),
+F_v(t)=x^t\prod_{i=1}^{c}\bigl(\sum_{j=0}^{H}q^{(t-j)^2}F_{u_i}(j)\bigr),
 \] and the bounded-box series of the forest is
 \(C_H=\prod_{r}\sum_{t=0}^HF_r(t)\), the product over component roots
 \(r\).
@@ -7268,17 +7357,19 @@ be its subtree, \(V_s=\bigcup_{r\in\mathcal T_s}X_r\), and \(W_s\) and
 M_s(\sigma)=\sum_{\substack{b\in\{0,\ldots,H\}^{V_s}\\ b|_{X_s}=\sigma}}x^{\sum_{v\in W_s}b_v}q^{\sum_{uv\in E_s}(b_u-b_v)^2}.
 \]
 
-\textbf{Proposition SNG-F26 (bag-conditioned recursion).} Let
-\(w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}\).
-Then \[
+\textbf{Proposition SNG-F26 (bag-conditioned recursion).} Define the
+local charge by \[
+w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}
+q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}.
+\] Then \[
 M_s(\sigma)=w_s(\sigma)\prod_{r\text{ child of }s}\ \sum_{\substack{\tau\in\{0,\ldots,H\}^{X_r}\\ \tau|_{X_r\cap X_s}=\sigma|_{X_r\cap X_s}}}M_r(\tau),
 \] and the bounded-box series is
-\(C_H=\sum_\sigma M_{\rm root}(\sigma)\). Every vertex volume and every
-edge energy is charged exactly once.
+\(C_H=\sum_\sigma M_{\mathrm{root}}(\sigma)\). Every vertex volume and
+every edge energy is charged exactly once.
 
 \emph{Proof.} Every vertex lies in some bag and every edge in some
 common bag, so each has exactly one owner, and the owners partition the
-charges; at the root \(W=V\) and \(E_{\rm root}=E(G)\). Induct on
+charges; at the root \(W=V\) and \(E_{\mathrm{root}}=E(G)\). Induct on
 \(|\mathcal T_s|\). The owned sets \(W_s,E_s\) are the disjoint union of
 the charges owned at \(s\) and the sets \(W_r,E_r\) of the children. A
 vertex \(v\in V_r\setminus X_s\) lies in no bag outside
@@ -7612,9 +7703,12 @@ from \(0\). For a permutation \(\pi=(\pi_0,\ldots,\pi_{n-1})\) let
 \((\pi,d)\mapsto a\), \(a_{\pi_k}=d_0+\cdots+d_k\), is a bijection from
 \(\bigsqcup_\pi C_\pi\) onto \(\mathbb Z_{\ge0}^n\). Writing
 \(T_j=\{\pi_j,\ldots,\pi_{n-1}\}\), \[
-|a|=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\qquad
-E_G(a)=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\qquad
-Q_{jj}=c_G(T_j),\quad Q_{ij}=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr),
+\begin{aligned}
+|a|&=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\\
+E_G(a)&=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\\
+Q_{jj}&=c_G(T_j),\\
+Q_{ij}&=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr).
+\end{aligned}
 \] and on \(d_0=0\) (the normalized profiles) the span is
 \(\sum_{j\ge1}d_j\).
 
@@ -8024,7 +8118,15 @@ specified region. With a nonintegral discrepancy exponent, a real
 positive branch is available; a blanket meromorphic-continuation claim
 is not. The arithmetic lift reexpresses local information and supplies a
 singularity comparison. It does not increase the invariant's
-graph-reconstruction power.
+graph-reconstruction power. The released \texttt{formal-analysis/}
+package now verifies the positive-real comparison using actual Mathlib
+real numbers, real powers, infinite products and the Riemann zeta
+function; the generic graph theorem and two half-parameter pair theorems
+discharge all analytic premises. This formal scope does not include
+local-complex continuation, numerical interval endpoints or the
+synchronization limit. A kernel check does not establish historical
+novelty, and the bibliography remains the basis for that separate
+comparison.
 
 \hypertarget{a-claim-register-for-papers-and-releases}{%
 \section{A claim register for papers and
@@ -8206,7 +8308,7 @@ responsible priority statement belongs at the end of that process.
 results}\label{implementation-and-retained-computational-results}}
 
 The mathematical manuscripts describe a research program, while this
-chapter records the executable boundary of version 0.1.0. The core
+chapter records the executable boundary of version 0.2.0. The core
 package requires Python 3.10 or newer and uses only the standard
 library. Documentation generation additionally uses Pandoc and a LaTeX
 installation. The rendered PDF and HTML are distributed so that a reader

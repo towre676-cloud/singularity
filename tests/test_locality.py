@@ -31,6 +31,19 @@ def regular_girth_prediction(cycles, d, g, lam):
 
 
 class ConnectedSupportTests(unittest.TestCase):
+    def test_compiler_uses_local_adjacency_after_graph_construction(self):
+        # A full-edge scan per support makes a bounded-degree compiler quadratic
+        # in graph size. The oracle is evaluated before the instrumented edge
+        # container rejects such scans; cyclic supports exercise canonical keys.
+        class NoFullEdgeScan(tuple):
+            def __iter__(self):
+                raise AssertionError("connected-support work scanned all graph edges")
+
+        graph = disjoint_union(cycle(4), cycle(5))
+        expected = pinned_series_by_enumeration(graph, 4)
+        object.__setattr__(graph, "edges", NoFullEdgeScan(graph.edges))
+        self.assertEqual(pinned_series(graph, 4), expected)
+
     def test_connected_sets_against_brute_force(self):
         rng = random.Random(5)
         for _ in range(25):

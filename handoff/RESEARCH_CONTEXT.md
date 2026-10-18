@@ -2,7 +2,9 @@
 
 ## What this project is trying to establish
 
-Singularity studies the information preserved when all labeled integer height assignments on a graph are counted by a few numerical marks. The first question is combinatorial: which graphs become indistinguishable after correspondence between vertices and observations is forgotten? The second question is analytic: how does the first surviving coefficient discrepancy appear after assembling identical local factors over the primes? The current repository supplies a substantial research draft and exact finite machinery. Its existence does not establish historical priority, complete graph reconstruction, a computational complexity breakthrough, or a verified proof-assistant development.
+Singularity studies the information preserved when all labeled integer height assignments on a graph are counted by a few numerical marks. The first question is combinatorial: which graphs become indistinguishable after correspondence between vertices and observations is forgotten? The second question is analytic: how does the first surviving coefficient discrepancy appear after assembling identical local factors over the primes? The v0.2.0 release completes the original P01–P36 acceptance program and contains two focused papers, exact algorithms and two Lean proof packages. These achievements do not establish historical priority, efficient general graph reconstruction or completeness of the original fixed-pinning series.
+
+The original handoff at commit `89fb96d25bef0463e41feb74d987b464e5fd534f` had a 105-page monograph, partial implementations and no proof package. That is historical context. The current documents are a 146-page monograph, a ten-page visibility paper and an eight-page observation-depth paper. `results/manuscript_counts.json` records the exact assembled source word count. Use the current ledger and source-bound receipts rather than treating old baseline limitations as current gaps.
 
 The owner requested a creative mathematical direction beyond the physical, external and commercial ambitions of earlier projects. The useful inheritance from PerfectPower is exact population counting and navigation; from PerfectJet, representations closed under declared operations; from SOE, equivalence under future continuations. The original archival files are not bundled here. Chapter 11 records the bridges that were actually used. Treat those summaries as the available provenance, not as access to unseen personal history.
 
@@ -32,7 +34,7 @@ E_G(a)=\sum_t|\delta S_t|+
 2\sum_{r<t}e(S_t,V\setminus S_r).
 \]
 
-An independent level-chain enumerator must generate chains as its primary objects. Reusing weak compositions and then checking this identity is an identity check, not that independent enumerator. This is an important remaining gap in P02.
+The independent level-chain enumerator is implemented in `src/singularity/chains.py`: chains are its primary search objects, repeated levels are allowed, and mixed boundary terms supply the energy. Weak compositions provide its independent comparison oracle. The retained finite agreement is in `results/chain_agreement.json`. The P01 specification is `docs/specifications/COEFFICIENTS-v1.md`; P02 is no longer a missing implementation.
 
 ## Three permanent comparison inputs
 
@@ -58,16 +60,22 @@ For connected G, q=0 gives zeta(ns), while q=1 gives zeta(s)^n. At an interior r
 
 The prime lift does not add graph information: coefficients at prime powers recover the local coefficients. Delta may vanish at exceptional q, changing the first visibility depth. Formal Euler exponents depending on q need not be integer combinatorial counts. Exact sparse polynomials use Fraction coefficients where rational arithmetic is necessary.
 
+The formal chain now has two parts. `formal/` is a core-only Lean 4.12.0 package covering normalization, nested levels, decisive graph certificates and finite cancellation; its audit lists 91 declarations. `formal-analysis/` uses pinned Mathlib to prove actual local convergence, logarithmic remainders, the regularized prime product, real zeta factorization and the positive normalized boundary limit. Its source-bound audit lists 79 declarations. The concrete spectral and binary theorems at q=1/2 discharge the finite hypotheses and prove their exact exponents. Read `formal-analysis/README.md` for setup and scope: this is a positive-real theorem, not global complex meromorphic continuation.
+
 ## What the finite evidence establishes
 
 The retained connected simple graph census exhausts labeled inputs through six vertices and quotients by exact degree-respecting permutations. Isomorphism class counts are 1,1,2,6,21,112. At order six all 112 classes separate by local volume three. This is a finite statement. It proves neither unrestricted reconstruction nor a universal depth bound.
 
 The 96-vertex path transfer experiment uses heights at most two and total volume at most twelve. It retains 2,506,262,962,660,245 labeled profiles; each volume marginal is independently checked. It does not enumerate all 3^96 assignments. Forest message passing rejects cycles. Conductor calculations have an explicit finite residue-box budget. Source hashes establish integrity of declared inputs, not authentication or historical priority.
 
-## The 36 pushes and the newer strategic discussion
+## Structural achievements and the next research frontier
 
-docs/development/PUSHES.md preserves the original 36 acceptance contracts. handoff/push_status.json audits what exists. The task packets turn those contracts into executable work. Close existing gaps before replacing APIs that already work. In particular the actual certificate format is singularity.certificate/1; the roadmap's relational-height/1 name was a proposal and must not trigger an undocumented format migration.
+The original P01–P36 program is complete. `docs/development/PUSHES.md` preserves its contracts; `handoff/push_status.json` and `handoff/PUSH_AUDIT.md` record acceptance evidence. The actual certificate format remains `singularity.certificate/1`; the alternate original name was resolved without a silent migration. An empty `python scripts/handoff.py next --limit 3` result means the original program is finished, not that the project has no open questions.
 
-The later chat identified a possible broader objective: quantify what a representation must remember to remain sufficient under future composition. Boundary-conditioned kernels, minimal linear interfaces and delayed visibility are proposed ways to investigate that objective. No rooted.py, separators.py, general separator engine or completed infinite-family blindness theorem exists in this baseline. Earlier chat discussed those developments, but discussion and attempted delegation did not produce committed implementations. handoff/STRATEGIC_EXTENSIONS.md keeps the proposals separate from completed work and the original push IDs.
+Named terminal kernels, checked tree decompositions, marked gluing, Whitney-twist identities, symmetric-context quotients and boundary-charge interfaces are implemented. Explicit pendant-cycle and twist families have unbounded first-separation volume. Connected-support locality supplies a compiler with linear graph-size cost at fixed degree and budget. For simple 2-regular interiors of known order n, the pinned series determines the cycle type through volume floor(n/2), with a sharp worst-case budget for n>=6. These are family theorems, stronger than extrapolations from a small census.
+
+The moment enrichment `P_H(x,u,q)=sum_h x^(sum h) u^(sum h^2) q^(E_H(h))` is complete at every fixed 0<q<1 (SNG-F58), with an enormous constructive separating-volume bound. This is not an efficient isomorphism algorithm. The scalar fixed-pinning series `A_H(x,q)=sum_h x^(sum h) q^(E_H(h)+2 sum h^2)` has a different unresolved inverse problem: prove completeness or construct a genuine full-series collision. Keeping squared height as a separate marker and specializing it away are distinct operations.
+
+Start the next work from `docs/papers/second_paper_choice.md` and its precise open agenda. Productive targets include a hybrid connected-support/separator compiler, reconstruction beyond 2-regular interiors, the fixed-pinning inverse, and realization or exclusion of the remaining symmetric-interface candidates at budgets 38 with a terminal edge and 11 without. `handoff/STRATEGIC_EXTENSIONS.md` distinguishes achieved components from these frontiers. The proposed P37–P72 file is an ideas inventory whose older evidence annotations require a fresh audit, not a second completed ledger.
 
 The immediate research value comes from a short, inspectable chain: explicitly defined population, exact calculation or proof, precise limitation, and one new structural conclusion. Additional pages are justified when they clarify that chain. A negative result, a counterexample or a proved limitation is a successful research output when its scope and assumptions are explicit.
