@@ -2,6 +2,19 @@
 
 This directory is a Lean 4 package, `Singularity`, that kernel-checks the translation-normalization identity (roadmap push P07, manuscript theorem SNG-F02), the nested-level energy identity (push P08), and the two decisive coefficient certificates `results/certificates/spectral.json` and `results/certificates/binary_census.json` against the P07 coefficient definition (push P33). It also contains a partial formalization of the visibility comparison SNG-A11 (push P34, **PARTIAL**): the finite power-series cancellation is kernel-checked, the analytic part is a conditional theorem whose premises are listed explicitly (see the P34 section). It uses core Lean 4 only: no Mathlib, Batteries or other dependency (`lake-manifest.json` has an empty package list).
 
+## Completed real analytic extension
+
+The real-number completion of P34 is in the separate, dependency-pinned
+[Mathlib analysis package](../formal-analysis/README.md). It imports these
+core certificates, proves actual local-series convergence and logarithmic
+remainders, proves convergence and positivity of the regularized prime
+product, and connects to Mathlib's real-axis Riemann zeta Euler product and
+residue. Its final spectral and binary theorems require no `RealFacts`,
+`Expands` or `Good` hypotheses. The exact exponents at `q=1/2` are also proved.
+The core-only conditional development below is retained unchanged as an
+independently buildable component; its analytic limitations describe this
+directory, not the complete two-package proof chain.
+
 ## Toolchain and build
 
 - Toolchain: `leanprover/lean4:v4.12.0`, pinned in `lean-toolchain`.
@@ -34,7 +47,7 @@ Files:
 | `Singularity/Thresholds.lean` | P08. |
 | `Singularity/CertificateData.lean` | P33: Lean literals transcribed from the two certificates. Generated; do not edit. |
 | `Singularity/Certificates.lean` | P33: enumerator, histogram correctness, table/difference/factorization checks and the certificate theorems. |
-| `Singularity/Visibility.lean` | P34 (partial): truncated power series over a commutative ring, finite cancellation, the certificate quotient laws, and the conditional analytic theorem. |
+| `Singularity/Visibility.lean` | Core finite part of P34: truncated power series over a commutative ring, finite cancellation, the certificate quotient laws, and the conditional analytic theorem. |
 | `tools/gen_certificates.py` | P33 transcription script (JSON → `CertificateData.lean`); `--check` detects a stale data file. |
 | `AxiomAudit.lean` | `#print axioms` for the main theorems. It is not part of the library. |
 
@@ -155,7 +168,7 @@ For each pair (`spectral`: `spectral.json`, first discrepancy at volume 2; `bina
 
 ## Theorems: P34 (`Singularity/Visibility.lean`) — PARTIAL
 
-Status: **partial formalization.** The finite power-series cancellation behind manuscript theorem SNG-A11 is proved in general and connected to the P33 certificates. The analytic statement is proved only *conditionally*, from an explicit structure of real-analytic premises over an abstract type. Core Lean 4.12 has no real numbers, limits, infinite products or zeta function, so none of those premises is verified. SNG-A11 is **not** formally verified.
+Status: **partial formalization.** The finite power-series cancellation behind manuscript theorem SNG-A11 is proved in general and connected to the P33 certificates. The analytic statement is proved only *conditionally*, from an explicit structure of real-analytic premises over an abstract type. Core Lean 4.12 has no real numbers, limits, infinite products or zeta function, so none of those premises is verified. SNG-A11 is **not** formally verified by this core-only package; its positive-real statement is completed in [formal-analysis](../formal-analysis/README.md).
 
 ### Algebraic setting
 
@@ -218,7 +231,7 @@ How the proof uses the premises: Part A's `quotient_first_discrepancy` and `bino
 
 ### Unformalized boundary (what P34 does not verify)
 
-- **No real analysis is checked.** `RealFacts` is a list of hypotheses. Lean does not construct `ℝ`, `ζ`, convergent products or limits, so it does not check that a faithful model exists or that the abstract operations mean what their names say. The degenerate `Unit` model satisfies every premise, which shows that the premises do not by themselves force the intended meaning. Verifying SNG-A11 requires an instance `RealFacts ℝ` with the intended operations, for example from Mathlib's real analysis and `riemannZeta`, together with proofs of `Expands` and `Good` for the actual local series at `0 ≤ q ≤ 1`. Neither exists here.
+- **No real analysis is checked.** `RealFacts` is a list of hypotheses. Lean does not construct `ℝ`, `ζ`, convergent products or limits, so it does not check that a faithful model exists or that the abstract operations mean what their names say. The degenerate `Unit` model satisfies every premise, which shows that the premises do not by themselves force the intended meaning. Verifying SNG-A11 requires an instance `RealFacts ℝ` with the intended operations, for example from Mathlib's real analysis and `riemannZeta`, together with proofs of `Expands` and `Good` for the actual local series at `0 ≤ q ≤ 1`. Neither is defined in this core-only directory. The separate [formal-analysis](../formal-analysis/README.md) package discharges the analytic boundary directly with actual Mathlib real functions, rather than constructing an instance of the abstract packet.
 - The conditional theorem concerns the **positive real axis only**: the factorization for real `rs > 1` and the right-hand limit as `s ↓ 1/r`. It states nothing about complex `s`, the local holomorphic branch of SNG-A11, or any global meromorphic continuation. It also omits the identification of `R` with `Z_G/Z_H` on `s > 1`. For nonintegral `δ` the singularity is a branch point, not a pole. The statement makes no claim about it either way.
 - The real logarithm and the binomial series are premises (`exp_binom`). Part A treats the formal logarithm only through `k (log A)_k = (x A'/A)_k`, because there are no rationals.
 - The effective tail bound SNG-A14 is not formalized.

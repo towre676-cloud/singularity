@@ -108,31 +108,31 @@
       "id": "SNG-F15",
       "declaration": "Theorem SNG-F15 (second-layer degree mixing). For every graph,",
       "file": "docs/chapters/04_observation_hierarchy.md",
-      "line": 73
+      "line": 84
     },
     {
       "id": "SNG-F16",
       "declaration": "Theorem SNG-F16 (prefix equivalence and an ultrapseudometric). For each \\(M\\ge0\\), agreement of \\(C_{G,m}\\) for all \\(m\\le M\\) is an equivalence relation on graphs of fixed order. Visibility depths satisfy",
       "file": "docs/chapters/04_observation_hierarchy.md",
-      "line": 114
+      "line": 125
     },
     {
       "id": "SNG-F33",
       "declaration": "Proposition SNG-F33 (finite visibility filtration). Fix a domain \\(\\mathcal D\\): the symbolic coefficients in \\(\\mathbb Z[q]\\), the span-marked counts, or the values at a parameter \\(q_0\\) that is rational or an isolated real algebraic number. For a finite family of series with common prefix through \\(R\\), let \\(\\sim_v\\) be agreement in \\(\\mathcal D\\) of every coefficient at volumes \\(0,\\ldots,v\\). Then (i) each \\(\\sim_v\\) is an equivalence relation and \\(\\sim_{v+1}\\) refines \\(\\sim_v\\); (ii) if two series are \\(\\sim_{v-1}\\)-equivalent and differ at \\(v\\), then \\(v\\) is their first difference in \\(\\mathcal D\\), and the signed difference at \\(v\\) is a witness; (iii) symbolic equivalence implies equivalence at every parameter, and marked equivalence implies symbolic equivalence, while the converses can fail; (iv) a class that survives to \\(R\\) records agreement through \\(R\\) only.",
       "file": "docs/chapters/04_observation_hierarchy.md",
-      "line": 122
+      "line": 133
     },
     {
       "id": "SNG-F17",
       "declaration": "Theorem SNG-F17 (decorated-deck sufficiency for a prefix). If two graphs of the same order have equal decorated \\(t\\)-decks for every \\(t\\le M\\), then their scalar-height coefficients agree for every \\(m\\le M\\). Their fully marked coefficients agree at those volumes as well.",
       "file": "docs/chapters/04_observation_hierarchy.md",
-      "line": 136
+      "line": 147
     },
     {
       "id": "SNG-F18",
       "declaration": "Theorem SNG-F18 (labeled reconstruction at degree two). The coefficients of \\(\\mathscr L_G\\) through total \\(z\\)-degree two determine the labeled adjacency matrix of \\(G\\).",
       "file": "docs/chapters/04_observation_hierarchy.md",
-      "line": 158
+      "line": 169
     },
     {
       "id": "SNG-A01",
@@ -210,43 +210,43 @@
       "id": "SNG-A12",
       "declaration": "Calculation SNG-A12 \u2014 first reference pair. On vertices \\(0,\\ldots,6\\), take",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 88
+      "line": 91
     },
     {
       "id": "SNG-A13",
       "declaration": "Calculation SNG-A13 \u2014 binary-census reference pair. Take",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 127
+      "line": 130
     },
     {
       "id": "SNG-A14",
       "declaration": "Theorem SNG-A14 \u2014 computable regularized tail. Under the assumptions of Theorem SNG-A11, if real \\(s>1/(r+1)\\) and \\(P^{-s}\\le\\rho\\), then",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 200
+      "line": 203
     },
     {
       "id": "SNG-F35",
       "declaration": "Theorem SNG-F35 (an explicit complex disc around the visibility point). Keep the hypotheses of SNG-A11 with \\(q\\in[0,1]\\) fixed, and let \\(s_0=1/r\\), \\(D_\\eta=\\{s:|s-s_0|\\le\\eta\\}\\) and \\(\\sigma=s_0-\\eta\\). Suppose",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 233
+      "line": 236
     },
     {
       "id": "SNG-F39",
       "declaration": "Theorem SNG-F39 (normalized local factors are entire). Let \\(G\\) be connected on \\(n\\ge2\\) vertices with diameter \\(D\\), and fix \\(0<q<1\\). Then \\(B_G(t,q)=(1-t^n)L_G(t,q)\\) is an entire function of \\(t\\), and \\(L_G(t,q)\\) is meromorphic in \\(t\\), with poles at most at the \\(n\\)-th roots of unity. For every \\(H\\ge0\\) and complex \\(t\\),",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 253
+      "line": 256
     },
     {
       "id": "SNG-F38",
       "declaration": "Theorem SNG-F38 (certified enclosure of the regularized product). Under SNG-A11 with \\(G,H\\) connected and \\(q\\in(0,1)\\) rational, fix rational \\(s=a/b\\) with \\((r+1)s>1\\), an integer \\(N\\), the cutoff \\(P=N^b\\) and \\(\\rho=N^{-a}=P^{-s}\\). Let \\(\\ell_n,m_n\\) be the local coefficients of \\(G\\) and \\(H\\) at \\(q\\) for \\(n\\le M\\), \\(A_n=\\binom{n+k-1}{k-1}\\), and \\(S_M=(1-\\rho)^{-k}-\\sum_{n\\le M}A_n\\rho^n\\). Put",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 263
+      "line": 270
     },
     {
       "id": "SNG-A20",
       "declaration": "Theorem SNG-A20 \u2014 endpoint scaling of visibility. Suppose the polynomial local coefficients of two graphs agree below volume \\(r\\) for every \\(q\\in[0,1]\\). Let \\(q_*\\in[0,1]\\) be a value where the entire local series agree, and write \\(\\delta(q)=\\ell_{G,r}(q)-\\ell_{H,r}(q)\\). Let \\(q_j\\to q_*\\), \\(\\varepsilon_j\\downarrow0\\), with",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 333
+      "line": 348
     },
     {
       "id": "SNG-A15",
@@ -366,79 +366,79 @@
       "id": "SNG-F50",
       "declaration": "Proposition SNG-F50 (weighted terminal coupling). Let \\(\\mu_R\\) be the largest number of orbits with \\(|o|\\le R\\) that share \\(m_o\\). Allow contexts to carry a terminal edge of integer weight \\(e\\in\\{0,\\ldots,W\\}\\) with \\(W+1\\ge\\mu_R\\). Then the \\(M(W+1)\\) probes with \\(\\delta<M\\) leaves per terminal and terminal weight \\(e\\) determine every \\(Y_o\\) modulo \\(x^{R+1}\\), at every budget \\(R\\).",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 380
+      "line": 385
     },
     {
       "id": "SNG-F51",
       "declaration": "Theorem SNG-F51 (recovery with extra volume). Let \\(m_R\\) be the largest number of orbits with \\(|o|\\le R\\) sharing a value of \\(s^2+t^2\\), and let \\(G\\) be the number of distinct values. Let \\(C_{d,c}\\) be the context with \\(d\\) pendant leaves on each terminal, \\(c\\) shared neighbours and no terminal edge. Then the glued series of a block with the contexts \\(C_{d,c}\\), \\(d+c<G+m_R-1\\), through volume \\(R+m_R-1\\) determine \\(Y_o\\) modulo \\(x^{R+1}\\) for every orbit. This holds over \\(\\mathbb Q(q)\\) and at every \\(q_0\\in(0,1)\\). In particular, edge-free symmetric contexts determine every finite prefix of \\(K^+\\): the obstruction of SNG-F49(a) delays observation by \\(m_R-1\\) units of volume, and loses nothing.",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 394
+      "line": 399
     },
     {
       "id": "SNG-F52",
       "declaration": "Proposition SNG-F52 (interior slices of a block kernel). Let a block have terminal degrees \\(a,b\\), let \\(e\\in\\{0,1\\}\\) count its terminal edge, and put \\(Q_0(s,t)=as^2+bt^2-2est\\), \\(U=q^{-2s}\\), \\(V=q^{-2t}\\). For every \\(j\\),",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 410
+      "line": 415
     },
     {
       "id": "SNG-F59",
       "declaration": "Theorem SNG-F59 (unequal-degree slice interpolation). Fix integers \\(j\\ge0\\), \\(d\\ge1\\), \\(\\ell\\ge0\\), and let \\(P\\) have degree at most \\(j\\) in each variable. Put",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 436
+      "line": 442
     },
     {
       "id": "SNG-F53",
       "declaration": "Theorem SNG-F53 (charge interfaces).",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 462
+      "line": 471
     },
     {
       "id": "SNG-F54",
       "declaration": "Proposition SNG-F54 (context transport). Let \\(A\\) and \\(Z_C\\) be the coefficient vectors through \\(R\\), and put",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 490
+      "line": 507
     },
     {
       "id": "SNG-F62",
       "declaration": "Proposition SNG-F62 (ordered charge charts). Let the patterns of a block have affine dimension \\(a\\). Choose \\(a\\) terminal coordinates on which the differences of patterns have full rank. Projection to those coordinates is then injective on the charges of every slice, because \\(Q-j\\chi_0\\) lies in the span of the differences. The ordered kernel at the embedded projected charges determines every \\(A_{j,Q}\\), with total volume at most \\((a+1)R\\). Two such charts are related by \\(\\mathcal U=J'J^{-1}\\), slice by slice.",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 519
+      "line": 538
     },
     {
       "id": "SNG-F55",
       "declaration": "Theorem SNG-F55 (connected-support locality). \\(\\Phi_S=0\\) unless \\(H[S]\\) is connected, \\(\\Phi_S=O(x^{|S|})\\), and \\(\\Phi_S\\) depends only on the isomorphism type of \\(H[S]\\) decorated by the weights \\(w_v\\). Hence",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 539
+      "line": 563
     },
     {
       "id": "SNG-F56",
       "declaration": "Theorem SNG-F56 (the first cycle a budget sees). Let \\(H,H'\\) be \\(d\\)-regular graphs on the same number of vertices, both of girth at least \\(g\\), and let \\(N_g\\) count \\(g\\)-cycles. Then \\(F_\\lambda(H)\\equiv F_\\lambda(H')\\pmod{x^g}\\), and",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 560
+      "line": 584
     },
     {
       "id": "SNG-F57",
       "declaration": "Theorem SNG-F57 (reconstruction of 2-regular interiors). Let \\(\\kappa=q^2(1-q^2)\\). Let \\(b=\\sum_{k\\ge1}\\varphi_k\\), where \\(\\varphi_k\\) is \\(\\Phi\\) of a \\(k\\)-vertex path whose vertices have ambient degree \\(2\\), and put \\(D_\\ell=\\log A_{C_\\ell}-\\ell b\\). Then \\(D_\\ell=\\kappa^\\ell x^\\ell+O(x^{\\ell+1})\\). For a 2-regular graph on \\(n\\) vertices with \\(c_\\ell\\) cycles of length \\(\\ell\\),",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 577
+      "line": 601
     },
     {
       "id": "SNG-F58",
       "declaration": "Theorem SNG-F58 (the moment series).",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 595
+      "line": 619
     },
     {
       "id": "SNG-F60",
       "declaration": "Theorem SNG-F60 (loop decomposition below the first overlap). Let \\(H\\) be \\(d\\)-regular on \\(n\\) vertices with girth at least \\(g\\), and let \\(R<b_g\\). Then",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 636
+      "line": 660
     },
     {
       "id": "SNG-F61",
       "declaration": "Theorem SNG-F61 (the first overlap). In SNG-F60 take \\(R=b_g\\). Then",
       "file": "docs/chapters/10_inverse_problems.md",
-      "line": 655
+      "line": 680
     },
     {
       "id": "SNG-I020",
@@ -472,7 +472,7 @@
     },
     {
       "id": "SNG-F26",
-      "declaration": "Proposition SNG-F26 (bag-conditioned recursion). Let \\(w_s(\\sigma)=x^{\\sum_{v\\text{ owned by }s}\\sigma_v}q^{\\sum_{uv\\text{ owned by }s}(\\sigma_u-\\sigma_v)^2}\\). Then",
+      "declaration": "Proposition SNG-F26 (bag-conditioned recursion). Define the local charge by",
       "file": "docs/chapters/13_research_program.md",
       "line": 44
     },
@@ -480,49 +480,49 @@
       "id": "SNG-F40",
       "declaration": "Proposition SNG-F40 (nested-pair census and its span-two projection). For a graph on \\(V\\), \\(|V|=n\\), let \\(\\mathcal N_G\\) count all pairs \\(T\\subseteq S\\subseteq V\\), with empty, full and equal sets allowed, by \\((|S|,|T|,c(S),c(T),e(T,V\\setminus S))\\). Then: (i) \\(\\mathcal N_G\\) has total mass \\(3^n\\); (ii) it is invariant under \\((s,t,c_S,c_T,x)\\mapsto(n-t,n-s,c_T,c_S,x)\\); (iii) the cells with \\(t\\ge1\\), \\(s<n\\) project onto the span-two sector,",
       "file": "docs/chapters/13_research_program.md",
-      "line": 60
+      "line": 65
     },
     {
       "id": "SNG-F46",
       "declaration": "Theorem SNG-F46 (marks versus the cut lattice). Let \\(G,G'\\) be connected graphs on \\(n\\) vertices and \\(\\Lambda_G=\\mathbb Z^n/\\mathbb Z\\mathbf1\\) with energy \\(E_G\\). For \\([a]\\in\\Lambda_G\\) let \\(\\nu([a])\\) and \\(\\sigma([a])\\) be the volume and span of the minimum-zero representative.",
       "file": "docs/chapters/13_research_program.md",
-      "line": 78
+      "line": 83
     },
     {
       "id": "SNG-F28",
       "declaration": "Proposition SNG-F28 (energy roots of unity give rational series). Let \\(m\\ge1\\) and let \\(\\omega\\) be a primitive \\(m\\)-th root of unity. Then \\(L_G(x,\\omega)=N_{G,m}(x)/(1-x^m)^n\\), where",
       "file": "docs/chapters/13_research_program.md",
-      "line": 96
+      "line": 101
     },
     {
       "id": "SNG-F27",
       "declaration": "Proposition SNG-F27 (volume congruence filter). Let \\(m\\ge1\\), let \\(\\omega\\) be a primitive \\(m\\)-th root of unity, let \\(a\\in\\mathbb Z\\), and let \\(F=\\sum_{v\\ge0}F_v(q)x^v\\) be a formal series, or a truncation through any degree, with \\(F_v\\in\\mathbb Q[q]\\). Then",
       "file": "docs/chapters/13_research_program.md",
-      "line": 121
+      "line": 126
     },
     {
       "id": "SNG-F29",
       "declaration": "Proposition SNG-F29 (disjoint order chambers). Index positions from \\(0\\). For a permutation \\(\\pi=(\\pi_0,\\ldots,\\pi_{n-1})\\) let \\(C_\\pi\\) be the set of gap vectors \\(d\\in\\mathbb Z_{\\ge0}^n\\) with \\(d_j\\ge1\\) whenever \\(j\\ge1\\) and \\(\\pi_{j-1}>\\pi_j\\). The map \\((\\pi,d)\\mapsto a\\), \\(a_{\\pi_k}=d_0+\\cdots+d_k\\), is a bijection from \\(\\bigsqcup_\\pi C_\\pi\\) onto \\(\\mathbb Z_{\\ge0}^n\\). Writing \\(T_j=\\{\\pi_j,\\ldots,\\pi_{n-1}\\}\\),",
       "file": "docs/chapters/13_research_program.md",
-      "line": 134
+      "line": 139
     },
     {
       "id": "SNG-F32",
       "declaration": "Proposition SNG-F32 (poset-constrained heights and order polytopes). Let \\(P\\) be a finite poset on \\(V\\), \\(|V|=n\\), and \\(\\mathcal O(P)=\\{x\\in[0,1]^n:x_i\\le x_j\\text{ whenever }i<_Pj\\}\\), with the inequalities oriented as in the height constraint. For every integer \\(H\\ge0\\):",
       "file": "docs/chapters/13_research_program.md",
-      "line": 148
+      "line": 156
     },
     {
       "id": "SNG-F34",
       "declaration": "Theorem SNG-F34 (energy weights obstruct P-partition reciprocity). Let \\(P\\) be the two-element chain \\(0<1\\) and \\(G=K_2\\) on the same vertices, and put \\(W(x,q)=\\sum_{0\\le a_0\\le a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\\) and \\(S(x,q)=\\sum_{1\\le a_0<a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\\). Then",
       "file": "docs/chapters/13_research_program.md",
-      "line": 166
+      "line": 174
     },
     {
       "id": "SNG-F31",
       "declaration": "Proposition SNG-F31 (exceptional strata are finite and exactly computable). Let \\(\\Delta_v=[x^v](L_G-L_H)\\in\\mathbb Z[q]\\) for \\(0\\le v\\le R\\), let \\(r\\) be the least \\(v\\) with \\(\\Delta_v\\ne0\\), and for \\(q_0\\in(0,1)\\) let \\(r(q_0)\\) be the least \\(v\\le R\\) with \\(\\Delta_v(q_0)\\ne0\\), if any. Then \\(r(q_0)=r\\) except at the finitely many roots of \\(\\Delta_r\\) in \\((0,1)\\); at such a root \\(\\alpha\\), \\(r(q_0)\\) is the least \\(v>r\\) with \\(\\Delta_v(\\alpha)\\ne0\\), or undefined through \\(R\\). Every such root is found by Sturm isolation of the square-free part of \\(\\Delta_r\\), and whether \\(\\Delta_v(\\alpha)=0\\) is decided exactly.",
       "file": "docs/chapters/13_research_program.md",
-      "line": 182
+      "line": 190
     }
   ]
 }

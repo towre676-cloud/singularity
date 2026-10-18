@@ -14,6 +14,9 @@ body{margin:0;background:#f3f0e8;color:#212c34;font:18px/1.7 Georgia,serif}main,
 
 HEADER=r'''
 \usepackage{amsmath,amssymb,booktabs,longtable,array,etoolbox,xurl,fvextra,graphicx}
+\usepackage{seqsplit}
+\let\singularitytexttt\texttt
+\renewcommand{\texttt}[1]{\singularitytexttt{\seqsplit{#1}}}
 \graphicspath{{docs/}}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -66,8 +69,13 @@ def render(source,stem,title,subtitle,book=False,pdf=True):
         common+=['--toc','--toc-depth=2']
     tex=ROOT/'docs'/(stem+'.tex')
     run(common+['--to=latex','--top-level-division='+('chapter' if book else 'section'),'-V','documentclass='+('report' if book else 'article'),'-V','fontsize=11pt','-V','papersize=a4','-V','geometry:margin=22mm','-V','mainfont=DejaVu Serif','-V','sansfont=DejaVu Sans','-V','monofont=DejaVu Sans Mono','--include-in-header',str(header),'-o',str(tex)],log)
-    for _ in range(2 if pdf else 0):
-        run(['xelatex','-interaction=nonstopmode','-halt-on-error','-output-directory',str(output),str(tex)],log)
+    if pdf:
+        for suffix in ('.aux', '.toc', '.out'):
+            (output/(stem+suffix)).unlink(missing_ok=True)
+        for _ in range(2):
+            run(['xelatex','-no-pdf','-interaction=nonstopmode','-halt-on-error','-output-directory',str(output),str(tex)],log)
+        run(['xdvipdfmx','-o',str(output/(stem+'.pdf')),str(output/(stem+'.xdv'))],log)
+        run(['pdfinfo',str(output/(stem+'.pdf'))],log)
     html=ROOT/'docs'/(stem+'.html')
     run(common+['--to=html5','--mathml','--css',str(css),'-o',str(html)],log)
     content=html.read_text()
@@ -89,7 +97,7 @@ def main():
         raise ValueError('Exactly fourteen authored chapters required')
     preface='''# Reading guide {.unnumbered}
 
-This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. The implementation appendix states what version 0.1.0 actually executes. The final roadmap defines thirty-six subsequent development pushes.
+This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence it forgets. A binary census can agree for every subset size and boundary size while a nested-height census differs. The arithmetic lift retains these local distinctions and turns the first discrepancy into a controlled ratio singularity. It adds analytic structure rather than new graph information. The full marked hierarchy explicitly contains the binary sector; complete graph reconstruction remains a research question.
 
@@ -104,10 +112,11 @@ Definitions and theorems are supplied with hypotheses and proofs. Finite graph c
     counts={str(p.relative_to(ROOT)):len(p.read_text().split()) for p in chapters}
     counts['docs/IMPLEMENTATION.md']=len((ROOT/'docs'/'IMPLEMENTATION.md').read_text().split())
     counts['docs/development/PUSHES.md']=len((ROOT/'docs'/'development'/'PUSHES.md').read_text().split())
-    report={'schema':'singularity.manuscript-count/1','count_method':'whitespace-delimited source words; equations and tables included','source_word_counts':counts,'source_total':sum(counts.values()),'assembled_monograph_words':len(manuscript.read_text().split()),'companion_article_words':len((ROOT/'docs'/'papers'/'visibility.md').read_text().split())}
+    report={'schema':'singularity.manuscript-count/1','count_method':'whitespace-delimited source words; equations and tables included','source_word_counts':counts,'source_total':sum(counts.values()),'assembled_monograph_words':len(manuscript.read_text().split()),'companion_article_words':len((ROOT/'docs'/'papers'/'visibility.md').read_text().split()),'locality_article_words':len((ROOT/'docs'/'papers'/'locality.md').read_text().split())}
     (ROOT/'results'/'manuscript_counts.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
     render(manuscript,'monograph','Singularity','Relational Heights and Arithmetic Visibility - Research Monograph',book=True,pdf=pdf)
     render(ROOT/'docs'/'papers'/'visibility.md','visibility_paper','Relational Height Populations and Arithmetic Visibility','Exact examples, nested boundaries, and primewise singularities',pdf=pdf)
+    render(ROOT/'docs'/'papers'/'locality.md','locality_paper','Exact Observation Depth for Integer-Height Graph Populations','Connected supports, delayed distinctions, and sharp reconstruction',pdf=pdf)
     print('Monograph source words:',report['assembled_monograph_words'])
 
 

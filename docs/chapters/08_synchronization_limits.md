@@ -37,7 +37,7 @@ The summand is decreasing on \([2,\infty)\) for \(k\ge2\), so the integral bound
  \begin{aligned}
  &\left|\log Z_G(1+\varepsilon,q)
  -\log\zeta(k)-\alpha(q)\log(1/\varepsilon)\right|\\
- &\hspace{12mm}\le
+ &\quad\le
  A_kq^\lambda\bigl(\zeta(2)-1\bigr)
  +(kJ_k+k)\varepsilon.
  \end{aligned}

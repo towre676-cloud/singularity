@@ -18,6 +18,43 @@ jobs:
         run: |
           python3 formal/tools/gen_certificates.py --check
           python3 scripts/check_formal.py
+  formal-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the pinned Lean 4.12.0 release
+        run: |
+          curl -fsSL -o lean.tar.zst https://github.com/leanprover/lean4/releases/download/v4.12.0/lean-4.12.0-linux.tar.zst
+          tar --zstd -xf lean.tar.zst
+          echo "$PWD/lean-4.12.0-linux/bin" >> "$GITHUB_PATH"
+      - name: Initialize the pinned Mathlib dependencies
+        working-directory: formal-analysis
+        env:
+          MATHLIB_NO_CACHE_ON_UPDATE: '1'
+        run: lake update
+      - name: Download the exact analysis import cache
+        working-directory: formal-analysis
+        run: |
+          lake exe cache get \
+            Mathlib/NumberTheory/EulerProduct/DirichletLSeries.lean \
+            Mathlib/Analysis/SpecificLimits/Normed.lean \
+            Mathlib/Analysis/NormedSpace/FunctionSeries.lean \
+            Mathlib/Analysis/Asymptotics/Asymptotics.lean \
+            Mathlib/Analysis/PSeries.lean \
+            Mathlib/Analysis/SpecialFunctions/Exp.lean \
+            Mathlib/Analysis/SpecialFunctions/Log/Basic.lean \
+            Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean \
+            Mathlib/Analysis/SpecialFunctions/Pow/Continuity.lean \
+            Mathlib/Analysis/SpecialFunctions/Pow/Asymptotics.lean \
+            Mathlib/Data/Real/Basic.lean \
+            Mathlib/Tactic/NormNum.lean \
+            Mathlib/Tactic/Linarith.lean \
+            Mathlib/Tactic/GCongr.lean \
+            Mathlib/Tactic/Ring.lean \
+            Mathlib/Tactic/Positivity.lean
+      - name: Actual real visibility theorem and axiom audit (P34)
+        run: python3 scripts/check_formal_analysis.py --clean
   exact-python:
     runs-on: ubuntu-latest
     strategy:

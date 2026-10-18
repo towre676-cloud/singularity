@@ -3,14 +3,16 @@
 from pathlib import Path
 import hashlib
 import json
+import re
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-EXCLUDED={'.git','tmp','releases','__pycache__','.venv','.pytest_cache'}
-SUFFIXES={'.aux','.log','.out','.toc','.fls','.fdb_latexmk','.pyc','.synctex.gz'}
+EXCLUDED={'.git','.lake','tmp','releases','__pycache__','.venv','.pytest_cache'}
+SUFFIXES={'.aux','.log','.out','.toc','.fls','.fdb_latexmk','.pyc','.synctex.gz','.xdv'}
 
 
 def main():
+    version=re.search(r'^version\s*=\s*"([^"]+)"', (ROOT/'pyproject.toml').read_text(), re.M).group(1)
     source=[]
     for p in ROOT.rglob('*'):
         relative=p.relative_to(ROOT)
@@ -23,13 +25,13 @@ def main():
         source.append(p)
     source.sort(key=lambda p:p.relative_to(ROOT).as_posix())
     entries=[{'path':p.relative_to(ROOT).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in source]
-    manifest={'schema':'singularity.release-manifest/1','version':'0.1.0','files':entries,'self_hash_excluded':'results/archive_manifest.json','excluded':'git object directory, earlier releases, caches, temporary and TeX auxiliary files'}
+    manifest={'schema':'singularity.release-manifest/1','version':version,'files':entries,'self_hash_excluded':'results/archive_manifest.json','excluded':'git object directory, earlier releases, build caches (including Lean .lake), temporary and TeX auxiliary files'}
     manifest_path=ROOT/'results'/'archive_manifest.json';manifest_path.write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
     source.append(manifest_path)
-    target=ROOT/'releases'/'Singularity-v0.1.0-complete.zip';target.parent.mkdir(exist_ok=True)
+    target=ROOT/'releases'/f'Singularity-v{version}-complete.zip';target.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(target,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         for p in source:
-            entry=zipfile.ZipInfo('singularity/'+p.relative_to(ROOT).as_posix(),date_time=(2026,10,17,0,0,0))
+            entry=zipfile.ZipInfo('singularity/'+p.relative_to(ROOT).as_posix(),date_time=(2026,10,18,0,0,0))
             entry.external_attr=0o100644<<16;entry.compress_type=zipfile.ZIP_DEFLATED
             archive.writestr(entry,p.read_bytes())
     with zipfile.ZipFile(target) as archive:

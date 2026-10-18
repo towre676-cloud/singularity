@@ -59,6 +59,9 @@ A positive discrepancy makes the ratio diverge at its visibility point; a negati
 
 There is also no requirement that the original partition functions converge separately at \(s_0\). Their common low-order divergences have been canceled in the ratio product before the limit is taken. This cancellation is the main analytic mechanism. It makes a comparison meaningful farther left without pretending that either original positive Dirichlet series has acquired an absolutely convergent definition there.
 
+The positive-real comparison now has a complete Lean proof over actual Mathlib real numbers and the Riemann zeta function. In `formal-analysis/`, `SingularityAnalysis.visibility_of_coefficients` proves the theorem for nonnegative polynomial-growth coefficient sequences, and `SingularityAnalysis.graph_visibility` applies it to graph height coefficients for \(q\in[0,1]\). The chain proves the local logarithmic expansion, prime-product convergence and boundary continuity, the zeta Euler product and its residue limit. It identifies the continued ratio with the quotient of the original prime products for \(s>1\). The concrete statements `SingularityAnalysis.spectral_visibility_half` and `SingularityAnalysis.binary_visibility_half` import P33 and prove the exact exponents at \(q=1/2\). No unverified analytic premise structure remains. The local-complex holomorphy and branch-continuation argument in this chapter, and the later interval endpoints, remain ordinary or computer-assisted mathematics rather than part of that real-analytic Lean theorem.
+
+
 ## A volume-two calculation and its actual meaning
 
 At volume two there are only two kinds of profile: \(2e_v\), and \(e_u+e_v\) with \(u<v\). Their energies give the identity
@@ -142,7 +145,7 @@ Both have degree multiset \(\{4,3,3,2,2,1,1\}\). The exact finite binary census 
  &+2q^{15}+q^{17}-q^{18}\\
  ={}&q^3(1-q)^5(1+q)^2
  (1+2q+5q^2+6q^3+8q^4\\
- &\hspace{38mm}+6q^5+5q^6+2q^7+q^8).
+ &\qquad\qquad+6q^5+5q^6+2q^7+q^8).
  \end{aligned}
  \tag{7.9}
 \]
@@ -238,7 +241,7 @@ The constant (7.12) is implemented exactly as `regularized_tail_constant` in `sr
 \]
 Then for every prime \(p\) and every \(s\in D_\eta\), the local factors \(L_G(p^{-s},q)\) and \(L_H(p^{-s},q)\) have positive real part, and so does \(1-p^{-rs}\). With principal logarithms, the function
 \[
-K(s)=\exp\sum_p\Bigl(\log L_G(p^{-s})-\log L_H(p^{-s})+\delta\log(1-p^{-rs})\Bigr)
+K(s)=\exp\sum_p\bigl(\log L_G(p^{-s})-\log L_H(p^{-s})+\delta\log(1-p^{-rs})\bigr)
 \]
 is holomorphic and nonzero on \(D_\eta\), the series converges uniformly there, and \(K\) equals the positive product (7.3) on \(D_\eta\cap\mathbb R\). On \(D_\eta\setminus[s_0-\eta,s_0]\),
 \[
@@ -252,7 +255,11 @@ The disc is explicit and very small. `complex_disc_certificate` in `src/singular
 
 **Theorem SNG-F39 (normalized local factors are entire).** Let \(G\) be connected on \(n\ge2\) vertices with diameter \(D\), and fix \(0<q<1\). Then \(B_G(t,q)=(1-t^n)L_G(t,q)\) is an entire function of \(t\), and \(L_G(t,q)\) is meromorphic in \(t\), with poles at most at the \(n\)-th roots of unity. For every \(H\ge0\) and complex \(t\),
 \[
-\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|\le\sum_{h>H}N_n(h)\,\max(|t|^h,|t|^{(n-1)h})\,q^{\lceil h^2/D\rceil},\qquad N_n(h)=(h+1)^n-2h^n+(h-1)^n,
+\begin{aligned}
+\bigl|B_G(t,q)-B_{G,\le H}(t,q)\bigr|
+&\le\sum_{h>H}N_n(h)\max(|t|^h,|t|^{(n-1)h})q^{\lceil h^2/D\rceil},\\
+N_n(h)&=(h+1)^n-2h^n+(h-1)^n.
+\end{aligned}
 \]
 where \(B_{G,\le H}\) sums over minimum-zero profiles of maximum at most \(H\).
 
@@ -262,26 +269,34 @@ For disconnected graphs the zero-energy profiles that are constant on components
 
 **Theorem SNG-F38 (certified enclosure of the regularized product).** Under SNG-A11 with \(G,H\) connected and \(q\in(0,1)\) rational, fix rational \(s=a/b\) with \((r+1)s>1\), an integer \(N\), the cutoff \(P=N^b\) and \(\rho=N^{-a}=P^{-s}\). Let \(\ell_n,m_n\) be the local coefficients of \(G\) and \(H\) at \(q\) for \(n\le M\), \(A_n=\binom{n+k-1}{k-1}\), and \(S_M=(1-\rho)^{-k}-\sum_{n\le M}A_n\rho^n\). Put
 \[
-T'=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\qquad
-D'=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\qquad
-C'=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)} .
+\begin{aligned}
+T'&=\sum_{r<n\le M}|\ell_n-m_n|\rho^{n-r-1}+\frac{2S_M}{\rho^{r+1}},\\
+D'&=\sum_{1\le n\le M}\max(\ell_n,m_n)\rho^{n-1}+\frac{S_M}\rho,\\
+C'&=T'+|\delta|D'+\frac{|\delta|\rho^{r-1}}{2(1-\rho^r)}.
+\end{aligned}
+\]
+For the finite summands, abbreviate
+\[
+\theta_p(s)=\delta\log(1-p^{-rs})
++\log\frac{B_G(p^{-s})}{B_H(p^{-s})}.
 \]
 Then
 \[
-\Bigl|\log K_{G,H}(s,q)-\sum_{p\le P}\Bigl(\delta\log(1-p^{-rs})+\log B_G(p^{-s})-\log B_H(p^{-s})\Bigr)\Bigr|\le C'\,\frac{P^{1-(r+1)s}}{(r+1)s-1},
+\left|\log K_{G,H}(s,q)-\sum_{p\le P}\theta_p(s)\right|
+\le C'\frac{P^{1-(r+1)s}}{(r+1)s-1},
 \]
 and each finite summand is enclosed by rational intervals computed from: integer-root enclosures of \(p^{-a/b}\); monotonicity of \(B\) in \(t\ge0\); the height tail of SNG-F39; outward-rounded sums over a checked tree decomposition; and series enclosures of logarithms.
 
 *Proof.* \(L_G/L_H=B_G/B_H\) because the orders agree. The bound for omitted primes repeats the proof of (7.12) with sharper majorants. For \(0\le t\le\rho\), \(|L_G(t)-L_H(t)-\delta t^r|\le\sum_{n>r}|\ell_n-m_n|t^n\le T't^{r+1}\), using \(|\ell_n-m_n|\le2A_n\) beyond \(M\). Likewise \(\max(L_G,L_H)-1\le\sum_{n\ge1}\max(\ell_n,m_n)t^n\le D't\), using \(0\le\ell_n,m_n\le A_n\). Hence one regularized logarithm is at most \(C't^{r+1}\). Primes \(p>P\) satisfy \(p^{-s}<\rho\). Summing \(C'p^{-(r+1)s}\) over all integers \(p>P\) and applying the integral test gives the displayed bound. The finite enclosures were justified above: \(B_G\) has nonnegative coefficients, so it is increasing on \(t\ge0\), and rounding every product of nonnegative fixed-point numbers down (respectively up) gives a lower (respectively upper) bound. \(\square\)
 
-`src/singularity/certified.py` implements the theorem with 256 fractional bits. The minimum-zero condition is carried as a flag in the bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\) the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at \(s=1/r\). The retained results, with exact dyadic endpoints, are in `results/certified_k.json`. All are at \(q=1/2\):
+`src/singularity/certified.py` implements the theorem with 256 fractional bits. The minimum-zero condition is carried as a flag in the bag messages, so no subtraction of enclosures occurs. For \(t=p^{-a/b}\) the factor \((1-t^r)\) is exact when \(b\mid ra\), in particular at \(s=1/r\). The retained results, with exact dyadic endpoints, are in `results/certified_k.json`. All are at \(q=1/2\). The spectral pair has \(r=2\), \(\delta=3/32\); the binary pair has \(r=3\), \(\delta=11025/262144\):
 
-| Pair | \(s\) | Primes kept | Omitted-prime log bound | Enclosure of \(K(s,1/2)\) |
-|---|---|---:|---:|---|
-| spectral, \(r=2\), \(\delta=3/32\) | \(1/2\) | 1229 (\(\le10^4\)) | \(4.6\times10^{-3}\) | \([0.84973,\,0.85750]\) |
-| spectral | \(3/5\) | 985 (\(\le6^5\)) | \(2.2\times10^{-4}\) | \([0.89931,\,0.89971]\) |
-| spectral | \(1\) | 168 (\(\le10^3\)) | \(1.1\times10^{-7}\) | \([0.9678188,\,0.9678191]\) |
-| binary census, \(r=3\), \(\delta=11025/262144\) | \(1/3\) | 2961 (\(\le30^3\)) | \(2.2\times10^{-2}\) | \([0.90084,\,0.94230]\) |
+| Pair | \(s\) | Primes kept | Omitted log bound | \(K\) lower | \(K\) upper |
+|---|---|---:|---:|---:|---:|
+| spectral | \(1/2\) | 1229 (\(\le10^4\)) | \(4.6\times10^{-3}\) | 0.84973 | 0.85750 |
+| spectral | \(3/5\) | 985 (\(\le6^5\)) | \(2.2\times10^{-4}\) | 0.89931 | 0.89971 |
+| spectral | \(1\) | 168 (\(\le10^3\)) | \(1.1\times10^{-7}\) | 0.9678188 | 0.9678191 |
+| binary | \(1/3\) | 2961 (\(\le30^3\)) | \(2.2\times10^{-2}\) | 0.90084 | 0.94230 |
 
 The local height tails total below \(4\times10^{-16}\) in every run, so the width comes almost entirely from the omitted primes; arithmetic rounding is below \(10^{-60}\). With \(R=\zeta(rs)^\delta K\), the tables exhibit the proved branch singularity \((rs-1)^{-\delta}\) with an explicitly enclosed positive constant \(K(1/r,1/2)\). The singularity exponent is proved by SNG-A11, not fitted. Narrowing the binary interval needs either more primes or a smaller constant \(C'\); the bound decays only like \(P^{-1/3}\) at \(s=1/3\). A separate test checks the following. A run at a smaller cutoff with 160-bit arithmetic overlaps the \(s=1/2\) enclosure. Reversing the pair negates the finite log enclosure. Identical graphs give a log ratio enclosing zero.
 

@@ -1,8 +1,8 @@
 {
  "schema": "singularity.push-status/1",
- "audit_date": "2026-10-17",
+ "audit_date": "2026-10-18",
  "roadmap_source": "docs/development/PUSHES.md",
- "scope": "Read-only audit of original P01-P36 against repository source, tests, retained outputs and mathematical exposition. No new mathematical result or completed push is claimed by this audit.",
+ "scope": "Original P01-P36 acceptance ledger. The v0.2.0 integration closes the final real-analysis and publication gates; later open research questions remain distinct from completion of this original program.",
  "status_definitions": {
   "planned": "The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open.",
   "partial": "Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied.",
@@ -13,12 +13,12 @@
  "effort_definition": "S/M/L estimates the remaining work for the push itself, excluding all transitive prerequisites. They are relative scope judgments, not promised durations.",
  "priority_definition": "0 = foundational next batch; 1 = high-value core or acceptance closure; 2 = subsequent focused branch; 3 = long-horizon or publication/formalization after prerequisites. Smaller values are earlier priorities, not a dependency override.",
  "cross_cutting_findings": [
-  "No proof-assistant sources, toolchain lockfile or kernel build are present; manuscript proofs and Python tests are not kernel verification.",
-  "P02 is closed: chains.py generates weakly nested level chains directly, and certificate replay uses it as a second route independent of the builder.",
-  "The implemented certificate format singularity.certificate/1 is authoritative (D007). The roadmap name relational-height/1 is rejected by the reader with an explicit superseded-name message.",
-  "Exact forest transfer, minimum-zero subtraction, formal Euler extraction and conductor arithmetic are already implemented. Extend and accept them rather than starting duplicate engines.",
-  "The n<=6 census retains graph representatives and aggregate class counts, but not all requested intermediate class memberships, spectral partitions, witness records or graph hashes.",
-  "All original dependencies remain binding for declaring a push complete. A result may be useful and reusable while its push is not formally closed."
+  "All original P01-P36 acceptance criteria and dependencies are closed; subsequent research questions are not implied solved by this release.",
+  "Core Lean 4.12.0 checks 91 declarations; the separate pinned Mathlib project checks 79 actual real-analysis declarations, including both certified graph-pair limits at q=1/2. Only standard Lean axioms are accepted.",
+  "The certificate format singularity.certificate/1 remains authoritative (D007); independent composition, level-chain and order-chamber routes retain original labels and squared energy.",
+  "Forest, separator, connected-support and charge-chart engines are implemented with independent comparisons; the compiler uses subset-local adjacency after graph construction.",
+  "The complete finite census retains inputs, partitions and witnesses; finite census separation does not imply unrestricted reconstruction or fixed-pinning completeness.",
+  "The release contains a 146-page monograph and two focused papers, with exact retained replays, source-bound proof audits, visual PDF review and a complete source archive."
  ],
  "pushes": [
   {
@@ -272,7 +272,7 @@
    "acceptance": {
     "date": "2026-10-18",
     "criteria": {
-     "pinned toolchain and real build": "formal/lean-toolchain leanprover/lean4:v4.12.0, core library only; CI run 40 (commit c301679), job formal-lean: clean download of lean-4.12.0-linux, lake build, scripts/check_formal.py axiom audit — success",
+     "pinned toolchain and real build": "formal/lean-toolchain leanprover/lean4:v4.12.0, core library only; CI run 40 (commit c301679), job formal-lean: clean download of lean-4.12.0-linux, lake build, scripts/check_formal.py axiom audit \u2014 success",
      "finite nonempty profiles, edge set, volume, squared-difference energy": "formal/Singularity/Normalization.lean: List Nat profiles, List (Nat x Nat) edges, vol, energy",
      "shift bijection: injectivity, surjectivity, uniqueness": "shift_injective, shift_surjective, shift_unique",
      "energy preservation and volume increment n t": "energy_shift, energy_norm, vol_shift",
@@ -316,7 +316,7 @@
      "binary sector as span at most one, zero profile distinguished": "energy_binary, binary_dichotomy",
      "instance with repeated thresholds": "worked example [0,2,2,5,0] in Thresholds.lean",
      "P02 histogram comparison retained": "tests/test_core.py HeightTests (unchanged)",
-     "clean build": "CI run 40 (commit c301679), job formal-lean: clean download of lean-4.12.0-linux, lake build, scripts/check_formal.py axiom audit — success"
+     "clean build": "CI run 40 (commit c301679), job formal-lean: clean download of lean-4.12.0-linux, lake build, scripts/check_formal.py axiom audit \u2014 success"
     },
     "commands": [
      "cd formal && lake build",
@@ -1236,7 +1236,7 @@
   {
    "id": "P34",
    "title": "Formalize the visibility comparison boundary",
-   "status": "partial",
+   "status": "complete",
    "effort": "L",
    "priority": 3,
    "dependencies": [
@@ -1244,27 +1244,46 @@
     "P33"
    ],
    "evidence": [
-    "docs/chapters/07_visibility_singularities.md",
-    "docs/chapters/06_euler_analysis.md",
-    "docs/papers/visibility.md",
-    "formal/Singularity/Visibility.lean",
-    "formal/AxiomAudit.lean",
-    "formal/README.md",
-    "scripts/check_formal.py"
+    "formal-analysis/README.md",
+    "formal-analysis/lake-manifest.json",
+    "formal-analysis/SingularityAnalysis/LocalSeries.lean",
+    "formal-analysis/SingularityAnalysis/LogExpansion.lean",
+    "formal-analysis/SingularityAnalysis/PrimeProduct.lean",
+    "formal-analysis/SingularityAnalysis/ZetaReal.lean",
+    "formal-analysis/SingularityAnalysis/VisibilityReal.lean",
+    "formal-analysis/SingularityAnalysis/CoefficientVisibility.lean",
+    "formal-analysis/SingularityAnalysis/CertificateReal.lean",
+    "formal-analysis/SingularityAnalysis/EulerRatio.lean",
+    "formal-analysis/SingularityAnalysis/SpectralVisibility.lean",
+    "formal-analysis/AnalysisAxiomAudit.lean",
+    "scripts/check_formal_analysis.py",
+    "results/formal_analysis_audit.json",
+    ".github/workflows/research.yml"
    ],
-   "existing_work": "Kernel-checked in core Lean 4.12.0 (formal/Singularity/Visibility.lean, 28 audited theorems, 91 in total, axioms only propext/Quot.sound/Classical.choice): general finite cancellation over any commutative ring (quotient_first_discrepancy, first_difference, logDer_first_discrepancy, log_first_discrepancy for torsion-free rings, binom_cancel); spectral_quotient L_G/L_G' = 1+2q^2(1-q)^2(1-q^2)x^2 mod x^3 and binary_quotient L_G/L_G' = 1+q^3(1-q)(1-q^3)^2(1-q^4)^2x^3 mod x^4, with coefficient data taken from P33's Cert theorems rather than reasserted. Analytic boundary: visibility_conditional derives the positive-real asymptotic (rs-1)^delta R(s) -> K_r(1/r) > 0 from an explicit premise structure RealFacts (Euler product, simple pole of real zeta, product/limit algebra, local series expansion, product convergence criterion) plus pair-specific Expands/Good inputs; no premise mentions the ratio product, its regularization, factorization or asymptotic. realFacts_consistent exhibits a degenerate model (non-contradiction only, not faithfulness).",
-   "next_action": "Discharge RealFacts for the real numbers (e.g. via Mathlib's real zeta, Euler product and tprod) and prove Expands/Good for the actual local series at 0<=q<=1; then add the q=1/2 exponents 3/32 and 11025/262144.",
-   "acceptance_gaps": [
-    "RealFacts is an uninterpreted premise structure: no real analysis (reals, zeta, convergent products, limits, real powers, logarithm/binomial series) is kernel-checked, and faithfulness of the premises to R (e.g. prod_pos requires HasProdP to mean a convergent product of positive factors) is unverified.",
-    "Expands/Good for the actual local series L_G(p^-s,q) at admissible q are premises, not proved; the SNG-A14 tail bound is not formalized.",
-    "The concrete exponents at q=1/2 (3/32 spectral, 11025/262144 binary) are not formalized; the theorem is positive-real only and does not identify R with Z_G/Z_H nor claim complex or meromorphic continuation."
-   ],
-   "packet": "handoff/tasks/P34.md"
+   "existing_work": "A separate Lean 4.12.0/Mathlib v4.12.0 package formal-analysis proves the actual positive-real visibility chain. Polynomial bounds on the certified weak-composition coefficients give unit-disc convergence, positivity and Taylor/logarithmic remainders. Actual prime-log summability gives convergent positive products, continuity, real-zeta factorization and the right-hand normalized asymptotic. graph_visibility identifies the ratio with the quotient of the original Euler products on s>1. spectral_visibility and binary_visibility discharge all finite inputs from P33; the half-parameter theorems prove exponents 3/32 and 11025/262144. All 79 new public declarations passed a clean build and axiom audit, using only propext, Quot.sound and Classical.choice. The old core-only conditional theorem is retained but is not an analytic premise of the new endpoints.",
+   "next_action": "None for P34. Complex continuation and the particular effective numerical constant remain separately scoped results.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P34.md",
+   "acceptance": {
+    "commands": [
+     "python scripts/check_formal_analysis.py --clean --receipt results/formal_analysis_audit.json"
+    ],
+    "criteria": {
+     "actual analytic objects": "Mathlib real numbers, real powers, topology, HasProd, infinite sums and Riemann zeta; no RealFacts/Expands/Good premise packet at the concrete endpoints",
+     "concrete certified input": "CertificateReal.graphCoeff_eq_ell, spectral_coeff_agree/delta and binary_coeff_agree/delta derive from P33",
+     "original Euler quotient": "EulerRatio.ratio_eq_localEulerProduct_quotient and the final GraphVisibility conjunct on s>1",
+     "pinned clean build and axioms": "results/formal_analysis_audit.json: all 79 public analysis declarations, only standard Lean axioms",
+     "positive-real factor and boundary": "GraphVisibility and graph_visibility; spectral_visibility, binary_visibility and the two half-parameter specializations",
+     "remainder and prime convergence": "LocalSeries, LogExpansion and PrimeProduct discharge the coefficient-to-product chain",
+     "scope": "positive real comparison only; no claim of global meromorphic continuation or formal verification of numerical interval endpoints"
+    },
+    "date": "2026-10-18"
+   }
   },
   {
    "id": "P35",
    "title": "Release the first focused manuscript",
-   "status": "partial",
+   "status": "complete",
    "effort": "M",
    "priority": 3,
    "dependencies": [
@@ -1281,21 +1300,34 @@
     "output/pdf/visibility_paper.pdf",
     "docs/references.bib",
     "results/validation.json",
-    "scripts/reproduce.py"
+    "scripts/reproduce.py",
+    "docs/papers/visibility_claims.md",
+    "docs/papers/literature_comparison.md",
+    "results/certified_k.json",
+    "results/formal_analysis_audit.json",
+    "results/publication_release.json",
+    "results/archive_manifest.json"
    ],
-   "existing_work": "A six-page focused article with editable sources, literature context, finite examples and the real comparison theorem is already released. Independent computational replay and claim-scope guidance exist. It makes no kernel-verification or priority claim.",
-   "next_action": "Treat the current article as a reusable draft. Build its claim matrix and update it as dependencies close; if publication is pursued earlier, record an explicit roadmap dependency amendment rather than silently marking P35 complete.",
-   "acceptance_gaps": [
-    "The original acceptance gate explicitly depends on P33; a readable article does not satisfy that absent kernel work.",
-    "P04, P05 and P26 are complete; P27's controlled experiments and P33's kernel verification are absent.",
-    "A final claim-by-claim proof/certificate matrix and submission-focused literature comparison must be reconciled with achieved scope."
-   ],
-   "packet": "handoff/tasks/P35.md"
+   "existing_work": "The first focused article is reconciled with completed P04/P05/P26/P27/P33 and the actual P34 analysis extension. It has a claim-by-claim register, verified primary-literature comparison, independent exact replay, source/LaTeX/HTML/PDF, and an archive-bound publication receipt. The paper states exact kernel coverage, the positive-real theorem and the remaining complex/numerical formalization boundaries.",
+   "next_action": "None for P35. Journal submission and historical-priority review are not claimed by this release.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P35.md",
+   "acceptance": {
+    "criteria": {
+     "clean reproduction and artifact binding": "results/publication_release.json records the clean release-snapshot commands and source/output digests",
+     "complete package": "three rendered PDFs and complete sources/data/proofs in the v0.2.0 archive; manifest verifies every entry",
+     "original dependencies": "P04, P05, P26, P27 and P33 accepted without a dependency amendment",
+     "primary comparisons": "docs/papers/literature_comparison.md and verified bibliography",
+     "proof and coefficient traceability": "docs/papers/visibility_claims.md; P33 semantic tables and P34 actual-real specializations named precisely",
+     "rendered inspection": "all article pages inspected; long inline paths and crowded certified interval table corrected"
+    },
+    "date": "2026-10-18"
+   }
   },
   {
    "id": "P36",
    "title": "Choose the second paper from actual results",
-   "status": "blocked",
+   "status": "complete",
    "effort": "L",
    "priority": 3,
    "dependencies": [
@@ -1306,18 +1338,35 @@
     "P35"
    ],
    "evidence": [
-    "docs/chapters/14_literature_and_claims.md",
-    "docs/chapters/13_research_program.md",
-    "docs/development/PUSHES.md"
+    "docs/papers/second_paper_choice.md",
+    "docs/papers/second_paper.md",
+    "docs/papers/locality.md",
+    "docs/papers/locality_claims.md",
+    "docs/locality_paper.tex",
+    "docs/locality_paper.html",
+    "output/pdf/locality_paper.pdf",
+    "results/locality_family.json",
+    "scripts/locality_family.py",
+    "results/publication_release.json",
+    "docs/references.bib",
+    "results/archive_manifest.json"
    ],
-   "existing_work": "Candidate B (exact tree/separator methods) and Candidate C (structural preservation) are clearly described as future papers. Their theorem centers are not declared achieved.",
-   "next_action": "Wait for substantive accepted results, then select one coherent paper center and package that result; preserve unfinished branches in the ledger instead of combining them into a larger manuscript.",
-   "acceptance_gaps": [
-    "P19 is complete; P22/P31/P32/P35 outcomes have not been accepted.",
-    "No second paper is selected around an actual substantial theorem or decisive negative classification, with focused literature comparison and reproduced artifacts.",
-    "The open-problem ledger must distinguish original pushes from any newly approved terminal-interface or delayed-visibility branch."
-   ],
-   "packet": "handoff/tasks/P36.md"
+   "existing_work": "An evidence-based decision selects Exact Observation Depth for Integer-Height Graph Populations as the second paper, centered on the complete sharp reconstruction theorem for simple 2-regular graphs of known order n at budget floor(n/2). The article gives complete locality, first-cycle, collision-family and reconstruction proofs; a separate independent agent accepted the proof center and primary-literature positioning and reproduced its decisive receipt.",
+   "next_action": "None for P36. The precise research agenda retains fixed-pinning completeness, larger-class efficient reconstruction and realization of the surviving interface candidates as open questions.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P36.md",
+   "acceptance": {
+    "criteria": {
+     "complete central proof": "locality.md Theorem 6, sharp cycle reconstruction, with preceding complete formal-series proofs",
+     "finite artifacts": "all 57 2-regular types through order 14, independent composition comparisons and direct 15-vertex gluing in locality_family.json",
+     "independent review": "locality_claims.md records an independent acceptance and reproduced locality_family.py --check",
+     "open agenda": "the selected paper and decision keep unresolved research claims separate from the original 36 completed acceptance units",
+     "original dependencies": "P19, P22, P31, P32 and P35 accepted",
+     "rendered and packaged": "PDF/HTML/LaTeX and source/data hashes recorded in publication_release.json and the complete archive",
+     "selection table": "second_paper_choice.md compares achieved theorems, negative results, usefulness, literature and remaining questions"
+    },
+    "date": "2026-10-18"
+   }
   }
  ],
  "baseline_commit": "89fb96d25bef0463e41feb74d987b464e5fd534f"

@@ -48,19 +48,23 @@ heights two and three. For both pairs, the unmarked local coefficient
 tables through total height four, equality below the first difference,
 the first-difference polynomial and its stated factorization are checked
 by the Lean 4 kernel against a semantic definition of the coefficients.
-Apart from Lean itself, the only unverified link is a transcription
-script with recorded input digests. A third comparison, between the cube
-and the eight-vertex Möbius ladder, delays the first difference to total
-height four; it is checked by exact software replay only. For a fixed
-energy weight q in the closed unit interval, we prove the following. If
-the first difference occurs at total height r, it fixes the exponent of
-a zeta factor in the ratio of the associated prime products, and hence
-the power singularity at s=1/r. For the two seven-vertex pairs at q=1/2,
-the regular factor at s=1/r is enclosed in explicit rigorous intervals.
-The examples come with standard-library exact software, independent
-finite replay, and an exhaustive census of connected graphs through six
-vertices. General reconstruction, unbounded delayed visibility and
-historical priority are left open.</p>
+The source-graph and JSON transcription boundaries are recorded
+separately from the kernel-checked statements. A third comparison,
+between the cube and the eight-vertex Möbius ladder, delays the first
+difference to total height four; it is checked by exact software replay
+only. For a fixed energy weight q in the closed unit interval, we prove
+the following. If the first difference occurs at total height r, it
+fixes the exponent of a zeta factor in the ratio of the associated prime
+products, and hence the power singularity at s=1/r. The positive-real
+comparison is also kernel-checked over Mathlib’s real numbers and actual
+Riemann zeta function, including both exact exponents at q=1/2. For
+those two seven-vertex pairs, the regular factor at s=1/r is enclosed in
+explicit rigorous intervals. The examples come with standard-library
+exact software, independent finite replay, and an exhaustive census of
+connected graphs through six vertices. General reconstruction for the
+original scalar-height series and historical priority are unclaimed; a
+companion paper proves unbounded delayed visibility and sharp
+reconstruction within a specific graph class.</p>
 <h1 data-number="1" id="question-and-background"><span
 class="header-section-number">1</span> Question and background</h1>
 <p>A graph parameter can retain many numerical facts while forgetting
@@ -88,10 +92,41 @@ The first determines graph-information content. The second supplies an
 arithmetic organization and a precise comparison of singularities.
 Keeping this distinction visible prevents a prime product from being
 credited with information that it merely reencodes.</p>
-<p>Results labeled SNG-… refer to the full proofs in the project
-monograph (<code>docs/MONOGRAPH.md</code>). The proofs given here are
-complete for the statements as displayed. Lean theorem names refer to
-the core Lean 4.12.0 package in <code>formal/</code>.</p>
+<p>Results labeled SNG-… refer to full proofs in the <a
+href="../MONOGRAPH.md">project monograph</a>. The proofs given here are
+complete for the statements as displayed. Finite Lean theorem names
+refer to the core Lean 4.12.0 package in <code>formal/</code>. The
+real-analytic theorems are in <code>formal-analysis/</code>, using the
+pinned Mathlib v4.12.0 dependency and the same kernel.</p>
+<p>The closest objects can be compared directly, rather than by
+terminology. Under spins
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>v</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\sigma_v\in\{-1,1\}</annotation></semantics></math>,
+let S be the negative-spin set. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>v</mi></msub><msub><mi>σ</mi><mi>v</mi></msub><mo>=</mo><mi>k</mi><mo>−</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_v\sigma_v=k-2|S|</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>u</mi><mi>v</mi><mo>∈</mo><mi>E</mi></mrow></msub><msub><mi>σ</mi><mi>u</mi></msub><msub><mi>σ</mi><mi>v</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{uv\in E}\sigma_u\sigma_v=|E|-2|\partial S|</annotation></semantics></math>.
+Thus the uniform-coupling Ising partition function with field is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>β</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>h</mi><mi>k</mi></mrow></msup><msub><mi>I</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>h</mi></mrow></msup><mo>,</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>β</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{\beta|E|+hk}I_G(e^{-2h},e^{-2\beta})</annotation></semantics></math>
+in our cut convention. Equality of the binary census is equality of this
+particular binary-state observation, not an unknown new form of Ising
+equivalence. The volume-three example proves only that its two specified
+graphs separate when integer heights are allowed.</p>
+<p>For a connected graph, the gradient map sends integer heights modulo
+constants to its integral cut lattice, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>G</mi></msub><annotation encoding="application/x-tex">E_G</annotation></semantics></math>
+is the squared gradient norm. This is the established framework of
+[BHN1997]. Our common minimum-zero representative and total-height and
+span marks carry additional chamber information; we do not identify the
+resulting series with a theta series that forgets these marks. In
+[BPR2024] the integer-valued Gaussian model is studied on lattices, with
+a high-temperature scaling question. Its energy is a direct antecedent,
+while the present finite graph invariant, marked exact populations and
+first-discrepancy comparison are the claims requiring the proofs below.
+Finally [Moree2005] supplies formal cyclotomic-transform context; it
+does not substitute for the real analytic estimates in Theorem 3. The
+primary-source comparison and checked bibliographic records are retained
+in <code>docs/papers/literature_comparison.md</code>; no
+historical-priority conclusion is drawn from that bounded search.</p>
 <h1 data-number="2" id="local-populations-and-their-marks"><span
 class="header-section-number">2</span> Local populations and their
 marks</h1>
@@ -467,8 +502,16 @@ displayed differences. Nonintegral exponents give power or branch
 singularities, not ordinary poles. The quotient is initially a quotient
 of convergent positive series on s&gt;1; its ratio Euler product
 supplies the extension used in the theorem. No global
-meromorphic-continuation claim follows. Theorem 3 is a human-readable
-proof; it is not formalized.</p>
+meromorphic-continuation claim follows. The positive-real part of
+Theorem 3 is kernel-checked by
+<code>SingularityAnalysis.graph_visibility</code> in
+<code>formal-analysis/SingularityAnalysis/SpectralVisibility.lean</code>.
+Its hypotheses are the numerical range of q, a positive depth r and
+finite agreement of the actual graph coefficients below r. The local
+logarithmic estimates, prime-product convergence, nonvanishing at the
+boundary and the zeta residue limit are proved in the imported chain.
+The local-complex holomorphy and branch-continuation statements remain
+ordinary mathematical proofs.</p>
 <p><strong>Certified regular factors.</strong> The constant
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K_{G,H}(1/r,1/2)</annotation></semantics></math>
 has been enclosed rigorously for the two seven-vertex pairs (SNG-F38,
@@ -622,28 +665,45 @@ normalization and threshold identities.
 <code>PYTHONPATH=src python scripts/reproduce.py --check</code> replays
 the four retained certificates and the three comparison pairs. These are
 software-level exact checks relative to the Python interpreter.</p>
-<p>The Lean package in <code>formal/</code> crosses the remaining
-boundary only where stated. It kernel-checks the coefficientwise
-normalization identity of Proposition 1, the nested energy identity of
-Proposition 2, and the decisive unmarked coefficient tables of the first
-two pairs, as listed in Section 3. It also kernel-checks the finite
-cancellation behind Theorem 3. A first coefficient discrepancy at volume
-r gives the quotient
+<p>The core Lean package in <code>formal/</code> kernel-checks the
+coefficientwise normalization identity of Proposition 1, the nested
+energy identity of Proposition 2, the decisive unmarked coefficient
+tables of the first two pairs, and finite first-discrepancy
+cancellation. A first coefficient discrepancy at volume r gives the
+quotient
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>δ</mi><msup><mi>x</mi><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">1+\delta x^r</annotation></semantics></math>
 modulo
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{r+1}</annotation></semantics></math>
-for any series over any commutative ring, and the binomial factor
-cancels it. For the first two pairs the quotients are
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1+2q^2(1-q)^2(1-q^2)x^2</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><msup><mi>q</mi><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>4</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">1+q^3(1-q)(1-q^3)^2(1-q^4)^2x^3</annotation></semantics></math>.
-The analytic conclusion appears in Lean only as a conditional theorem.
-Its real-analysis premises (the Euler product, the pole of zeta,
-convergence of products and the local series expansions) are stated, not
-proved. The Lean package does not formalize the span-marked series, the
-prime products over the real numbers or any unconditional analytic
-statement of Sections 4 and 5. It is not linked to the Python
-implementation.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{r+1}</annotation></semantics></math>,
+and the binomial factor cancels it. The concrete quotients are obtained
+from the P33 coefficient theorems rather than assumed data.</p>
+<p>The separate package <code>formal-analysis/</code> closes the
+positive-real analytic chain over Mathlib’s actual real numbers, real
+powers, topology, Riemann zeta function and infinite products.
+<code>SingularityAnalysis.visibility_of_coefficients</code> derives the
+comparison from nonnegative unit-constant coefficients of polynomial
+growth and finite agreement below r. The local logarithmic remainder
+estimates, prime summability, convergence and positivity of the
+normalized product, its continuity at the boundary, the zeta Euler
+product and its residue limit are discharged within the compiling
+theorem chain. <code>SingularityAnalysis.graph_visibility</code> applies
+it to the actual graph height coefficients for q in [0,1] and identifies
+the continued ratio with the quotient of the two original prime products
+on s&gt;1. No <code>RealFacts</code> structure or unproved analytic
+premise packet remains in that theorem.</p>
+<p>For the two reference pairs,
+<code>SingularityAnalysis.spectral_visibility</code> and
+<code>SingularityAnalysis.binary_visibility</code> import the certified
+finite coefficient facts. The specialized theorems
+<code>SingularityAnalysis.spectral_visibility_half</code> and
+<code>SingularityAnalysis.binary_visibility_half</code> prove the
+positive-real boundary limits with exponents 3/32 and 11025/262144,
+respectively. These theorems include convergence of raw and regularized
+products, the zeta factorization, positivity of the regular factor and
+the right-hand normalized limit. Their assumptions and standard-axiom
+dependencies are audited in the released formal build. The interval
+endpoints, local-complex continuation, synchronization results of
+Section 5, span-marked generating functions, graph nonisomorphism and
+Python implementation are outside this real-analytic formal scope.</p>
 <p>An exhaustive enumeration covers all labeled simple graphs on one to
 six vertices, 26,704 of which are connected on six vertices. Connected
 graphs were grouped into isomorphism classes by an exact minimal
@@ -662,15 +722,24 @@ eight-vertex examples illustrate why visibility depth must remain part
 of the specification.</p>
 <h1 data-number="7" id="open-structural-questions"><span
 class="header-section-number">7</span> Open structural questions</h1>
-<p>The main inverse problem asks whether the fully marked series
-identifies a graph in a declared class. A negative answer should
-describe a transformation or an exact pair preserving all heights,
-rather than merely a long agreeing prefix. A complementary question asks
-whether nonisomorphic pairs can have first-separation depth tending to
-infinity. Both questions concern scalar marks. If every vertex receives
-an independent variable, labeled adjacency is recovered already from the
-one- and two-coordinate coefficients (SNG-F18), making that unrestricted
-version much easier.</p>
+<p>The main inverse problem asks whether the original fixed
+scalar-height observations identify a graph in a declared class. A
+negative answer should describe a transformation or an exact pair
+preserving all heights, rather than merely a long agreeing prefix.
+Unbounded delayed visibility is now proved in explicit families (SNG-F36
+and SNG-F56); it is no longer an open existence question. The companion
+paper <code>docs/papers/locality.md</code> gives the cycle collision
+family, its invariant leading discrepancy under every fixed closing
+context, and sharp reconstruction of simple 2-regular interiors at
+budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>n</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor n/2\rfloor</annotation></semantics></math>.
+Neither that class theorem nor a finite census proves general
+completeness of the fixed-pinning series. The project’s moment-enriched
+series has a separate completeness theorem (SNG-F58), with a much larger
+separating-volume argument, outside the scope of this article. If every
+vertex receives an independent variable, labeled adjacency is recovered
+already from the one- and two-coordinate coefficients (SNG-F18), making
+that unrestricted version much easier.</p>
 <p>The prime lift adds an analytic hierarchy to these local questions.
 It does not add graph information: coefficients at prime powers recover
 the local coefficients, and local coefficients determine the Euler

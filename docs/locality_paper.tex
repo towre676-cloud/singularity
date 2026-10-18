@@ -1,0 +1,632 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{DejaVu Serif}
+  \setsansfont[]{DejaVu Sans}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=22mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\usepackage{amsmath,amssymb,booktabs,longtable,array,etoolbox,xurl,fvextra,graphicx}
+\usepackage{seqsplit}
+\let\singularitytexttt\texttt
+\renewcommand{\texttt}[1]{\singularitytexttt{\seqsplit{#1}}}
+\graphicspath{{docs/}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Singularity: Relational Heights and Arithmetic Visibility}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\AtBeginEnvironment{longtable}{\footnotesize\everymath{\scriptstyle}}
+\fvset{breaklines=true,breakanywhere=true}
+\allowdisplaybreaks
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.6em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{4em}}
+\renewcommand*\@pnumwidth{2.5em}
+\renewcommand*\@tocrmarg{3.5em}
+\makeatother
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=teal,urlcolor=teal}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Exact Observation Depth for Integer-Height Graph Populations},
+  pdfauthor={Singularity project contributors},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Exact Observation Depth for Integer-Height Graph Populations}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Connected supports, delayed distinctions, and sharp
+reconstruction}
+\author{Singularity project contributors}
+\date{18 October 2026}
+
+\begin{document}
+\maketitle
+
+\hypertarget{abstract}{%
+\section*{Abstract}\label{abstract}}
+\addcontentsline{toc}{section}{Abstract}
+
+For a finite simple graph, we count nonnegative integer vertex heights
+jointly by their sum and a pinned quadratic edge energy. We prove a
+connected-support expansion for the formal logarithm: the coefficients
+through total height R depend only on connected induced vertex sets of
+size at most R, decorated with their ambient degrees. This gives an
+exact bounded-degree compiler whose graph-size cost is linear at fixed
+R. The expansion identifies the first coefficient at which equal-order
+regular graphs of girth at least g can differ: it is the difference of
+their g-cycle counts times an explicit polynomial. Our central
+reconstruction theorem determines every n-vertex simple 2-regular graph
+from the pinned series through volume floor(n/2), at every fixed real
+energy weight strictly between zero and one. The budget is sharp for
+every n at least six. In particular, a cycle of length 2g and two
+disjoint g-cycles agree below volume g and have a nonzero explicit
+discrepancy at g. Their dominating-terminal blocks remain
+indistinguishable below that volume under every fixed closing context.
+We supply complete formal-series proofs, independent finite enumeration
+receipts, cycle reconstruction for all 57 simple 2-regular graphs on at
+most fourteen vertices, and retained bounded-degree timing comparisons.
+The connected-cluster principle and low-order graph-coefficient methods
+have established antecedents; the claim here is the stated
+height-population specialization and its exact reconstruction and
+observation-depth theorems.
+
+\hypertarget{population-budget-and-contribution}{%
+\section{Population, budget and
+contribution}\label{population-budget-and-contribution}}
+
+Let H=(V,E) be a finite simple loopless graph. Heights are functions h:V
+to the nonnegative integers. They remain attached to the original
+labeled vertices; no quotient by graph automorphisms is taken. Define \[
+J(h)=\sum_{v\in V}h_v,\qquad
+E_H(h)=\sum_{uv\in E}(h_u-h_v)^2,
+\] and, for an integer \(\lambda\ge0\), \[
+F_\lambda(H;x,q)=\sum_h x^{J(h)}q^{E_H(h)+\lambda\sum_vh_v^2}.
+\tag{1}
+\] The coefficient of \(x^j\) is a polynomial in q with nonnegative
+integer coefficients. It counts a finite population of
+\(\binom{j+n-1}{n-1}\) profiles when \(n=|V|>0\). All identities below
+are initially identities in \(\mathbb Q[q][[x]]\); evaluation at
+\(q_0\in(0,1)\) is coefficientwise. No infinite analytic expansion or
+convergence assertion is needed. We write \(A_H=F_2(H)\) and
+\(L_H=F_0(H)\).
+
+A budget R means that coefficients of x through degree R are available.
+It bounds total integer height, rather than the number of occupied
+vertices alone or the maximum height. A profile at volume R occupies at
+most R vertices. The logarithm strengthens this elementary observation:
+only connected occupied footprints need to be compiled independently. We
+exploit that identity to establish a sharp observation threshold for an
+infinite graph class.
+
+The broad computational idea is established. Patel and Regts {[}PR2017,
+Section 3{]} compute low-order graph-polynomial information from
+connected induced subgraph counts, including colored variants. Their
+additivity criterion explains the vanishing of disconnected terms. Their
+later induced-count algorithm {[}PR2019{]} supplies further
+bounded-degree context. Our ambient-degree labels and unbounded-height
+formal series require the specific specialization proved below; we do
+not claim a new connected-cluster principle. Bauerschmidt, Park and
+Rodriguez {[}BPR2024{]} study the integer-valued Gaussian model on
+lattices and its high-temperature scaling, a different question from
+finite-volume exact graph reconstruction. Chertkov and Chernyak
+{[}CC2006{]} express partition functions through belief-propagation loop
+corrections. The present paper uses a direct formal logarithm and does
+not claim to originate loop expansions or to provide a new
+belief-propagation approximation.
+
+The principal result is Theorem 6: the exact and sharp budget
+\(\lfloor n/2\rfloor\) for simple 2-regular interiors of known order
+n.~The preceding local identities provide its proof and an
+implementation. General completeness of the single fixed-pinning series
+\(A_H\) is not asserted.
+
+\hypertarget{exact-connected-support-expansion}{%
+\section{Exact connected-support
+expansion}\label{exact-connected-support-expansion}}
+
+Expand the exponent in (1) as \[
+\sum_v w_vh_v^2-2\sum_{uv\in E}h_uh_v,
+\qquad w_v=d_H(v)+\lambda.
+\tag{2}
+\] For \(T\subseteq V\), let \(Z_T\) be (1) with heights outside T
+forced to zero. It is essential that (2) retains the ambient degree
+\(d_H(v)\), rather than replacing it by the degree in \(H[T]\): an edge
+to a vertex forced to height zero still contributes energy. Set
+\(Z_\varnothing=1\), and define \[
+\Phi_S=\sum_{T\subseteq S}(-1)^{|S|-|T|}\log Z_T.
+\tag{3}
+\] The logarithm exists formally because each series has constant
+coefficient one.
+
+\textbf{Theorem 1 (connected-support locality; SNG-F55).} For every
+nonempty S, \(\Phi_S\) vanishes when \(H[S]\) is disconnected, has no
+term below degree \(|S|\), and depends only on \(H[S]\) decorated by
+\(w_v\). Moreover, \[
+\log F_\lambda(H)=\sum_{\substack{\varnothing\ne S\subseteq V\\H[S]\text{ connected}}}\Phi_S.
+\tag{4}
+\] Thus the coefficients through degree R are determined by the
+multiplicities of decorated connected induced subgraphs with at most R
+vertices.
+
+\textbf{Proof.} Give each vertex its own variable \(y_v\), replacing
+\(x^{J(h)}\) by \(\prod_vy_v^{h_v}\), and call the resulting series F.
+Forcing heights outside T to zero is the substitution \(y_v=0\) outside
+T. The substitution commutes with formal logarithms. A monomial of
+\(\log F\) supported on U therefore survives in \(\log Z_T\) exactly
+when \(U\subseteq T\). Its multiplicity in (3) is \[
+\sum_{U\subseteq T\subseteq S}(-1)^{|S|-|T|},
+\] which equals one when U=S and zero otherwise. Hence \(\Phi_S\)
+consists exactly of monomials with support S. Such monomials have total
+degree at least \(|S|\). If \(H[S]\) splits into nonempty components,
+the restricted energy is a sum over those components, \(Z_S\) is a
+product, and its logarithm is a sum. It has no monomial meeting distinct
+components, so the exact-support part vanishes. Finally, the restricted
+exponents involve only edges inside S and the labels \(w_v\).
+Partitioning all monomials by support proves (4), and specializing every
+\(y_v=x\) proves the assertion. \(\square\)
+
+This is a sufficient-statistics theorem, not an inverse equivalence:
+equal decorated small-subgraph counts imply equal truncated series.
+Equal truncated series need not determine all those counts individually,
+since their polynomial contributions can be dependent.
+
+\textbf{Proposition 2 (exact recovery and fixed-budget cost).} Write
+\(F_\lambda=\sum_{j\ge0}a_jx^j\) and \(B_r=r[x^r]\log F_\lambda\). Then
+\[
+a_0=1,\qquad
+j a_j=\sum_{r=1}^j B_r a_{j-r},\qquad B_r\in\mathbb Z[q].
+\tag{5}
+\] For fixed R, maximum degree \(\Delta\) and \(\lambda\), an exact
+implementation of (3)--(5) has cost linear in n in an
+arithmetic-operation model. Its dependence on R and degree can be
+exponential; this is not a large-budget polynomial-time claim or a bound
+on coefficient bit cost.
+
+\textbf{Proof.} The identity \(xF'=F\,x(\log F)'\) gives (5). The
+inverse of a series in \(1+x\mathbb Z[q][[x]]\) has integer-polynomial
+coefficients, so \(xF'/F\) also does, proving the assertion for \(B_r\).
+A connected s-vertex set has a spanning tree and a walk of length
+\(2(s-1)\) visiting all its vertices. Choosing a root and such a walk
+bounds the number of sets by \(n\max(1,\Delta)^{2(s-1)}\). For each set
+of size at most R, evaluating all restrictions in (3) takes at most
+\(2^R\) restricted calculations. A restriction on t vertices contains at
+most \(\binom{R+t}{t}\le4^R\) profiles of total height at most R. Energy
+exponents are bounded by \((\Delta+\lambda)R^2\). Truncated polynomial
+arithmetic, logarithms and (5) have cost polynomial in this exponent
+range and R per elementary profile step. One may therefore use the
+conservative bound \[
+n\,[8\max(1,\Delta)^2]^R\operatorname{poly}(R,\Delta,\lambda)
+\tag{6}
+\] in coefficient operations. This bound requires no canonical labeling
+or graph-isomorphism oracle: omitting memoization preserves it. Exact
+memoization changes constants and sharing, not correctness. \(\square\)
+
+The implementation uses tree encodings for common decorated trees, exact
+small canonical forms when inexpensive, and a vertex-set key when
+canonicalization would be costly. The fallback loses reuse only. It
+never identifies different decorated shapes. This matters because
+factorial canonicalization can cost more than the profile arithmetic it
+is intended to save.
+
+\hypertarget{the-first-cycle-visible-to-a-budget}{%
+\section{The first cycle visible to a
+budget}\label{the-first-cycle-visible-to-a-budget}}
+
+For a regular graph of degree d, put \[
+a=q^{d+\lambda},\qquad f=q^{-2}-1,
+\qquad \kappa_{d,\lambda}=af
+=q^{d+\lambda-2}(1-q^2).
+\tag{7}
+\] The temporary Laurent notation f is harmless: each final expression
+below is a polynomial when d is at least two. The girth of an acyclic
+graph is understood to be infinite. Let \(N_g(H)\) count unoriented
+simple g-cycles.
+
+\textbf{Theorem 3 (first-cycle coefficient; SNG-F56).} Let g be at least
+three. Suppose H and H' are d-regular graphs of the same order, both of
+girth at least g. Then \[
+F_\lambda(H)\equiv F_\lambda(H')\pmod{x^g},
+\qquad
+[x^g](F_\lambda(H)-F_\lambda(H'))
+=(N_g(H)-N_g(H'))\kappa_{d,\lambda}^{\,g}.
+\tag{8}
+\]
+
+\textbf{Proof.} We first justify the tree counts used in the locality
+formula. For a tree T on k vertices, the number of all graph
+homomorphisms into a d-regular n-vertex graph is \(nd^{k-1}\), obtained
+by choosing the root image and then one of d neighbors for each child.
+Group these maps by their equality partition of the vertices. After
+identifying equal vertices and suppressing parallel edges, the quotient
+is connected. A quotient with a loop has no map into a simple graph. For
+k at most g, any nontrivial quotient has fewer than g vertices; an
+injective realization of a cyclic quotient would violate the girth
+condition. Every contributing proper quotient is therefore a smaller
+tree. Induction on k now shows that the number of injective
+homomorphisms of T depends only on n,d and T for k at most g.
+
+For k below g an injective tree image has no extra edge among its
+vertices: adding one to the tree would create a cycle on at most k
+vertices. Thus the number of induced copies of every such T is its
+injective homomorphism count divided by \(|\operatorname{Aut}T|\),
+independently of H. All ambient-degree labels also agree. Theorem 1
+proves equality of logarithms, and hence series, below degree g.
+
+At degree g, contributions from supports smaller than g still agree. An
+induced graph on exactly g vertices is either a tree or a chordless
+g-cycle whenever it is connected. An injective tree image can have an
+extra edge only if its tree is the path on g vertices: the cycle formed
+by that edge must use every vertex. Each g-cycle has exactly g spanning
+paths. Consequently the induced-path count is the universal injective
+path-image count minus \(gN_g(H)\); every other g-vertex tree count is
+universal.
+
+Only height one at every support vertex contributes at total degree g.
+The coefficient of \(\prod_{v\in S}y_v\) in \(\log F\) is \[
+a^g\sum_{\substack{D\subseteq E(H[S])\\(S,D)\text{ connected}}}f^{|D|}.
+\tag{9}
+\] To verify (9), expand the binary weight on S as
+\(a^{|S|}\prod_{e\in E(H[S])}(1+f)\). Partition each chosen edge set
+into its connected components. The exponential formula, or direct
+expansion of the formal logarithm followed by this component partition,
+leaves precisely connected spanning edge sets. A path contributes
+\(a^gf^{g-1}\). A cycle contributes \(a^g(gf^{g-1}+f^g)\), from its g
+spanning paths and its full edge set. Subtracting the g missing induced
+paths leaves \(a^gf^g\) per cycle. This proves the logarithmic
+discrepancy. Since all lower coefficients agree and the constant
+coefficients are one, the first discrepancy of the series equals that of
+their logarithms. Equation (8) follows. \(\square\)
+
+For the cube and eight-vertex Möbius ladder, d=3, g=4 and the square
+counts are six and four. Equation (8) gives \(2q^4(1-q^2)^4\) for L and
+\(2q^{12}(1-q^2)^4\) for A. The former is exactly the retained reference
+discrepancy. The triangular prism and \(K_{3,3}\) give the analogous
+volume-three difference from their two versus zero triangles. These
+applications explain particular fixtures; they do not assert that cycle
+counts determine the entire height series.
+
+\hypertarget{arbitrarily-late-collisions-and-closing-contexts}{%
+\section{Arbitrarily late collisions and closing
+contexts}\label{arbitrarily-late-collisions-and-closing-contexts}}
+
+\textbf{Corollary 4 (cycle collision family).} For every integer
+\(g\ge3\), \[
+A_{C_g\sqcup C_g}-A_{C_{2g}}
+=2\kappa^g x^g+O(x^{g+1}),
+\qquad \kappa=q^2(1-q^2).
+\tag{10}
+\] In particular, the series agree below volume g and differ at g for
+every \(q\in(0,1)\).
+
+\textbf{Proof.} Both graphs have order 2g, degree two and girth at least
+g; their g-cycle counts are two and zero. Apply Theorem 3 with
+\(\lambda=2\). \(\square\)
+
+There is an independent transfer proof, useful for checking the leading
+term. At a fixed cutoff R, restrict indices a,b to \(0,\ldots,R\) in \[
+T_{ab}=x^bq^{(a-b)^2+2b^2}.
+\] A cyclic matrix product multiplies exactly one x-factor and one
+pinning factor for each vertex, so
+\(A_{C_m}=\operatorname{tr}(T^m)\bmod x^{R+1}\). The finite-dimensional
+trace identity gives \[
+(\operatorname{tr}T^g)^2-\operatorname{tr}T^{2g}
+=2\operatorname{tr}((\wedge^2T)^g).
+\tag{11}
+\] The column indexed by c\textless d in the exterior-square matrix
+carries \(x^{c+d}\). Minimum degree one occurs only at \((0,1)\), whose
+diagonal entry is \[
+x\det\begin{pmatrix}1&q^3\\q&q^2\end{pmatrix}
+=xq^2(1-q^2).
+\] Every closed product of g entries has degree at least g; equality
+forces every intermediate pair to be \((0,1)\). Thus (11) gives exactly
+the leading term (10). All matrices were finite, and enlarging R
+stabilizes every coefficient under discussion.
+
+To state the context consequence precisely, form \(B_H\) by adding
+distinct nonadjacent terminals s,t, each joined to every vertex of H. A
+closing context C is a fixed finite simple graph with two designated
+ordered terminals. It is glued to \(B_H\) by identifying corresponding
+terminals and retaining all other vertices separately. Terminal edge
+conventions are unchanged by H, and the context has no additional
+identification with the interior. Write \(Z_{C,H}\) for the resulting
+unpinned local height series.
+
+\textbf{Proposition 5 (context-independent first discrepancy;
+SNG-F53--SNG-F54 specialized).} For interiors of the same order m, \[
+Z_{C,H}(x,q)=\sum_{j\ge0} A_{H,j}(q)x^j W_{C,j}(x,q),
+\qquad W_{C,j}(0,q)=1.
+\tag{12}
+\] Hence a first difference at interior volume g remains the same
+coefficient at volume g under every such closing context. In particular
+the family (10) cannot be distinguished earlier by any fixed context.
+
+\textbf{Proof.} Assign heights s,t to the two terminals. For an interior
+profile of volume j, the edges from terminals to H contribute \[
+m(s^2+t^2)+2\sum_{v\in H}h_v^2-2j(s+t).
+\] The first and last terms depend only on m,j,s,t, and the middle term
+is precisely the pinning in \(A_{H,j}\). Summing terminal and
+context-interior heights defines \(W_{C,j}\); it is a formal series with
+coefficients in \(\mathbb Q(q)\). Its constant term comes uniquely from
+zero heights on both terminals and all context-interior vertices, and
+equals one. Thus (12) is a unit lower-triangular transformation of the
+A-sequence, common to all interiors of order m. It preserves the first
+nonzero difference. \(\square\)
+
+For g=6, the two dominating blocks have fourteen vertices. Closing each
+with a single shared neighbor gives fifteen-vertex graphs. Direct
+weak-composition enumeration of these actual glued graphs gives equality
+through volume five and, at volume six and \(q=1/2\), \[
+2(\tfrac14\cdot\tfrac34)^6
+=\frac{729}{8\,388\,608}.
+\] This is a finite independent check of the structural identity, not
+evidence that the complete series are equal: (10) proves they are
+unequal.
+
+\hypertarget{sharp-reconstruction-of-every-2-regular-interior}{%
+\section{Sharp reconstruction of every 2-regular
+interior}\label{sharp-reconstruction-of-every-2-regular-interior}}
+
+For k at least one, let \(\varphi_k\) be the exact-support contribution
+(3) for a k-vertex path, with every vertex assigned ambient degree two
+and pinning two. Theorem 1 gives \(\varphi_k=O(x^k)\), so \[
+b(x,q)=\sum_{k\ge1}\varphi_k(x,q),\qquad
+D_\ell=\log A_{C_\ell}-\ell b
+\tag{13}
+\] are well-defined formal series, computable to every finite budget.
+
+\textbf{Theorem 6 (sharp 2-regular reconstruction; SNG-F57).} Fix an
+order n and a real \(q_0\in(0,1)\). The coefficients of \(A_H(x,q_0)\)
+through degree \(R=\lfloor n/2\rfloor\) determine the isomorphism type
+of every simple 2-regular graph H of order n.~For every n at least six
+this uniform budget is sharp. Over \(\mathbb Q(q)\), or after the same
+specialization, the cycle counts are recovered recursively by \[
+\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,
+\qquad
+c_r=\kappa^{-r}[x^r]\left(\log A_H-nb-\sum_{3\le\ell<r}c_\ell D_\ell\right).
+\tag{14}
+\]
+
+\textbf{Proof.} A simple 2-regular graph is a disjoint union of cycles
+of lengths at least three. For a cycle of length \(\ell\), each
+connected proper induced subset is a path. There are \(\ell\) copies of
+each path size \(1\le k<\ell\). Therefore Theorem 1 gives \[
+\log A_{C_\ell}=\ell\sum_{k<\ell}\varphi_k+\Phi_{C_\ell},
+\quad
+D_\ell=\Phi_{C_\ell}-\ell\sum_{k\ge\ell}\varphi_k.
+\] In particular \(D_\ell=O(x^\ell)\). The multilinear path contribution
+at size \(\ell\) is \(q^{4\ell}f^{\ell-1}\); the cycle contribution is
+\(q^{4\ell}(\ell f^{\ell-1}+f^\ell)\). Their difference shows \[
+D_\ell=\kappa^\ell x^\ell+O(x^{\ell+1}).
+\tag{15}
+\] The series A multiplies over connected components, and logarithms
+add. Subtracting the total vertex background \(nb\) proves the first
+identity in (14). Equation (15) makes that identity triangular, proving
+its recursive inverse. At \(q_0\in(0,1)\), \(\kappa(q_0)\ne0\), so every
+division is valid.
+
+Recover all cycle counts with length at most R. Two remaining cycles
+would each have length greater than R, requiring at least \(2R+2>n\)
+vertices. Hence there is at most one remaining cycle, and its length is
+the remaining vertex count. The recovered multiset of lengths determines
+H up to isomorphism.
+
+For sharpness, put \(g=\lfloor n/2\rfloor\). If n=2g, compare \(C_{2g}\)
+and \(C_g\sqcup C_g\). If n=2g+1, compare \(C_{2g+1}\) and
+\(C_g\sqcup C_{g+1}\). For n at least six all component lengths are
+admissible. Their logarithmic differences are respectively
+\(2D_g-D_{2g}\) and \(D_g+D_{g+1}-D_{2g+1}\), whose first nonzero
+coefficients occur at g by (15). Thus no smaller budget distinguishes
+every pair. For n=3,4,5 there is only one simple 2-regular isomorphism
+type, so no analogous lower bound is claimed. \(\square\)
+
+The hypothesis that n is known is part of the theorem. It is natural for
+fixed-order graph comparison and avoids hiding order recovery inside the
+final remainder step. The rational implementation takes exact input
+coefficients, validates the recovered nonnegative integer multiplicities
+and remaining length, and can reject data that are inconsistent with a
+2-regular graph.
+
+\hypertarget{reproduction-and-measured-cost}{%
+\section{Reproduction and measured
+cost}\label{reproduction-and-measured-cost}}
+
+The package uses Python 3.10 or later and only the standard library for
+its exact core. From the repository root,
+\texttt{PYTHONPATH=src\ python\ scripts/locality\_family.py\ -\/-check}
+reproduces the retained structural receipt in
+\texttt{results/locality\_family.json}. The receipt compares the
+compiler with an independently implemented weak-composition enumerator
+on ten explicit or seeded graphs for both \(\lambda=0\) and \(2\),
+checks (8) against the prism and cube examples, verifies (10) for
+\(3\le g\le8\) with independent enumeration through g=6, enumerates the
+fifteen-vertex glued example directly, and reconstructs all 57 cycle
+partitions of total order at most fourteen. The sharpness pairs for
+every order six through fourteen are retained too.
+
+The manuscript's theorems are proved above in ordinary mathematics. The
+connected-support code and these general theorems are not formalized in
+Lean. Separate Lean artifacts for the first paper's fixed reference
+coefficients do not enlarge the formal-verification scope of this paper.
+Equality to an independent enumeration oracle is finite evidence about
+the implementation, not a machine-checked proof of its general
+correctness.
+
+The following timings are retained wall-clock measurements, not portable
+performance guarantees. Graphs are connected cubic graphs produced by
+the seeded configuration-model generator in
+\texttt{scripts/locality\_family.py}; n is the seed. The separator
+baseline uses the same total-volume and height cutoffs, a stated
+min-degree elimination order, and exact coefficient comparison wherever
+it is run.
+
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+n
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Connected supports, R=4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Separator engine, R=4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Elimination width
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Connected supports, R=6
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+16 & 0.027 s & 0.243 s & 4 & 0.900 s \\
+32 & 0.025 s & 52.611 s & 7 & 0.818 s \\
+64 & 0.037 s & not run & 13 & 0.901 s \\
+128 & 0.042 s & not run & 27 & 0.796 s \\
+\end{longtable}
+
+At n=64 and 128 the R=4 baseline would allocate, over all bags under its
+current representation, approximately \(8.19\times10^9\) and
+\(4.66\times10^{19}\) height assignments. These are representation-size
+estimates, not measured runtimes or lower bounds for every
+tree-decomposition algorithm. The R=6 figures have still larger
+estimates and were not run. Observed reuse depends on how many decorated
+types occur; at R=6 these four graphs contain 32,26,29 and 17 types.
+This explains why the finite timings need not increase monotonically
+with n.~The theorem guarantees linear graph-size dependence at fixed
+parameters even without reuse, rather than a sublinear guarantee.
+
+To rerun timings use
+\texttt{PYTHONPATH=src\ python\ scripts/locality\_family.py\ -\/-benchmark};
+this updates the retained timing section and is deliberately separate
+from deterministic \texttt{-\/-check}. For the accompanying reference
+coefficients use
+\texttt{PYTHONPATH=src\ python\ scripts/reproduce.py\ -\/-check}. The
+full archive includes sources, tests, exact JSON receipts, the
+bibliography and rendered manuscripts. The detailed claim register
+identifies every finite boundary and the editorial release check.
+
+\hypertarget{scope-and-next-questions}{%
+\section{Scope and next questions}\label{scope-and-next-questions}}
+
+Finite agreement below volume g is now explained and attained by an
+explicit family, and within the cycle class a sharp inverse theorem is
+available. It does not follow that the fixed-pinning series reconstructs
+every finite graph. Nonisomorphic graphs with equal complete A-series
+remain a legitimate target. The connected-support identity supplies a
+sufficient condition for truncated equality, but its aggregated
+q-polynomials can merge different decorated statistics. An exhaustive
+prefix search therefore cannot be promoted to a completeness theorem.
+
+Past the first cycle, equal cycle counts need not imply equal
+coefficients: overlapping cycles and other connected footprints
+contribute. The project has additional loop and overlap results
+(SNG-F60--SNG-F61) and a complete moment enrichment (SNG-F58). They are
+deliberately outside this paper's central proof and are not
+prerequisites for Theorem 6. A further algorithmic question is to
+combine separators inside the connected footprints with the fixed-budget
+compiler, extending the useful budget without requiring bounded
+treewidth of the full graph. These questions retain the same explicit
+volume, parameter and graph-class boundaries as the proved results.
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+{[}BPR2024{]} R. Bauerschmidt, J. Park and P.-F. Rodriguez, \emph{The
+Discrete Gaussian model, I. Renormalisation group flow at high
+temperature}, Annals of Probability 52 (2024), no. 4, 1253--1359. DOI:
+\href{https://doi.org/10.1214/23-AOP1658}{10.1214/23-AOP1658}. Author
+manuscript: \href{https://arxiv.org/abs/2202.02286}{arXiv:2202.02286}.
+
+{[}CC2006{]} M. Chertkov and V. Y. Chernyak, \emph{Loop series for
+discrete statistical models on graphs}, Journal of Statistical
+Mechanics: Theory and Experiment (2006), P06009. DOI:
+\href{https://doi.org/10.1088/1742-5468/2006/06/P06009}{10.1088/1742-5468/2006/06/P06009}.
+Author manuscript:
+\href{https://arxiv.org/abs/cond-mat/0603189}{arXiv:cond-mat/0603189}.
+
+{[}PR2017{]} V. Patel and G. Regts, \emph{Deterministic polynomial-time
+approximation algorithms for partition functions and graph polynomials},
+SIAM Journal on Computing 46 (2017), no. 6, 1893--1919. DOI:
+\href{https://doi.org/10.1137/16M1101003}{10.1137/16M1101003}. Author
+manuscript: \href{https://arxiv.org/abs/1607.01167}{arXiv:1607.01167},
+Section 3, particularly Lemma 3.5 and the colored version in Theorem
+3.7.
+
+{[}PR2019{]} V. Patel and G. Regts, \emph{Computing the number of
+induced copies of a fixed graph in a bounded degree graph}, Algorithmica
+81 (2019), 1844--1858. DOI:
+\href{https://doi.org/10.1007/s00453-018-0511-9}{10.1007/s00453-018-0511-9}.
+Author manuscript:
+\href{https://arxiv.org/abs/1707.05186}{arXiv:1707.05186}.
+
+\end{document}

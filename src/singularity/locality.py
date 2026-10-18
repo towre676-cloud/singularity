@@ -99,7 +99,7 @@ def _type_key(graph: Graph, subset: frozenset, lam: int) -> tuple:
     ordered = [classes[k] for k in sorted(classes)]
     if prod(factorial(len(c)) for c in ordered) > 40320:
         return ("set", tuple(verts))
-    edges = set(graph.edges)
+    edges = {(min(v, w), max(v, w)) for v in verts for w in inside[v]}
     best = None
 
     def orders(i):
@@ -128,7 +128,8 @@ def _restricted_log(graph: Graph, subset: tuple, lam: int | None, R: int) -> Ser
     moment = lam is None
     weight = [len(graph.neighbors[v]) + (0 if moment else lam) for v in subset]
     position = {v: i for i, v in enumerate(subset)}
-    inner = [(position[u], position[v]) for u, v in graph.edges if u in position and v in position]
+    inner = [(position[u], position[v]) for u in subset for v in graph.neighbors[u]
+             if u < v and v in position]
     base = R * R + 1
     rows: list[Counter] = [Counter() for _ in range(R + 1)]
     for volume in range(R + 1):
@@ -513,7 +514,7 @@ def overlap_correction(graph: Graph, max_volume: int, lam: int = 2) -> dict[int,
     for S in connected_sets(graph, R):
         if len(S) != R:
             continue
-        inner = [(u, v) for u, v in graph.edges if u in S and v in S]
+        inner = [(u, v) for u in S for v in graph.neighbors[u] if u < v and v in S]
         if len(inner) - R + 1 < 2:
             continue
         for k in range(R + 1, len(inner) + 1):  # |E'| >= R + 1 means cyclomatic >= 2 when spanning and connected
