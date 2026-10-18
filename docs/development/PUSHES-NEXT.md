@@ -24,7 +24,7 @@ The six waves have three centers: certified arithmetic evaluation, exactly contr
 | P45 | Whitney-twist discrepancy as an antisymmetric pairing | SNG-F41 identity \(L-L_{\mathrm{tw}}=2\sum x^{\|b\|}A_1A_2\) |
 | P46 | Identical-block positivity (sum of squares with equality conditions) | SNG-F42: exact first visible volume \(\min_b(\|b\|+2v_b)\), sum-of-squares leading coefficient, positivity on the unit square; SNG-F36 (even \(p\)) is a twist of identical path blocks |
 | P47 | Marked boundary composition with global minimum-zero and span | SNG-F43 via box kernels; `marked_glue`, tested against direct marked enumeration |
-| P48 | Response-preserving transformations | — |
+| P48 | Response-preserving transformations | SNG-F45: swap-symmetric rooted decks through size m keep twists invisible below volume 2m+3; sharp on all connected blocks with at most six vertices; exhaustive search found no symmetric kernel without a swapping automorphism up to six vertices |
 
 ## Wave C: contexts and interfaces (P49–P54)
 

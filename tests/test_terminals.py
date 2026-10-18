@@ -117,6 +117,30 @@ class KernelTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             recover_kernel_from_probes(probes, 2, bound, 1)
 
+    def test_rooted_deck_symmetry_bounds_the_asymmetry_order(self):
+        from itertools import combinations
+        from singularity.terminals import asymmetry_order, rooted_deck
+        checked = tight = 0
+        for n in range(3, 6):
+            pairs = list(combinations(range(n), 2))
+            for mask in range(1 << len(pairs)):
+                graph = Graph(n, [e for j, e in enumerate(pairs) if mask >> j & 1])
+                if not graph.connected:
+                    continue
+                m = -1
+                while m + 1 <= n - 2 and rooted_deck(graph, (0, 1), m + 1) == rooted_deck(graph, (0, 1), m + 1, swap=True):
+                    m += 1
+                order = asymmetry_order(terminal_kernel(graph, (0, 1), m + 3))
+                self.assertTrue(order is None or order > m, graph)  # SNG-F45
+                checked += 1
+                tight += order == m + 1
+        self.assertEqual((checked, tight), (770, 606))  # 164 remaining have symmetric kernels
+        # Path blocks: rooted decks are symmetric exactly through size k - 1.
+        block = path_block(4, 2)
+        self.assertEqual(rooted_deck(block, (0, 1), 1), rooted_deck(block, (0, 1), 1, swap=True))
+        self.assertNotEqual(rooted_deck(block, (0, 1), 2), rooted_deck(block, (0, 1), 2, swap=True))
+        self.assertEqual(asymmetry_order(terminal_kernel(block, (0, 1), 6)), 2)
+
     def test_invalid_terminals_and_shared_edges(self):
         graph = Graph(3, [(0, 1), (1, 2)])
         for terminals in ((), (0, 0), (0, 3), (True,)):

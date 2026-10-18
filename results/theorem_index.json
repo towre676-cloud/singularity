@@ -246,7 +246,7 @@
       "id": "SNG-A20",
       "declaration": "Theorem SNG-A20 \u2014 endpoint scaling of visibility. Suppose the polynomial local coefficients of two graphs agree below volume \\(r\\) for every \\(q\\in[0,1]\\). Let \\(q_*\\in[0,1]\\) be a value where the entire local series agree, and write \\(\\delta(q)=\\ell_{G,r}(q)-\\ell_{H,r}(q)\\). Let \\(q_j\\to q_*\\), \\(\\varepsilon_j\\downarrow0\\), with",
       "file": "docs/chapters/07_visibility_singularities.md",
-      "line": 324
+      "line": 333
     },
     {
       "id": "SNG-A15",
@@ -337,6 +337,12 @@
       "declaration": "Proposition SNG-F44 (star probes determine a block). Let \\(G\\) be a block with \\(k\\) terminals and \\(R\\ge0\\). For \\(\\mathbf r\\in\\{0,\\ldots,R\\}^k\\), let \\(S_{\\mathbf r}\\) be the context with \\(r_i\\) pendant leaves on terminal \\(i\\). The series \\(L_{G\\cup S_{\\mathbf r}}\\) modulo \\(x^{R+1}\\), over all \\((R+1)^k\\) such \\(\\mathbf r\\), determine \\(x^{|\\mathbf b|}K_G(\\mathbf b)\\) modulo \\(x^{R+1}\\) for every \\(\\mathbf b\\), and this holds already after specializing \\(q\\) to any \\(q_0\\in(0,1)\\). Consequently two \\(k\\)-terminal blocks satisfy \\(L_{G\\cup C}=L_{G'\\cup C}\\) for every edge-disjoint context \\(C\\) if and only if \\(K_G=K_{G'}\\).",
       "file": "docs/chapters/10_inverse_problems.md",
       "line": 298
+    },
+    {
+      "id": "SNG-F45",
+      "declaration": "Proposition SNG-F45 (rooted decks bound the asymmetry order). For a block \\(G\\) with terminals \\((s,t)\\) and \\(S\\subseteq I\\), regard \\(G[S\\cup\\{s,t\\}]\\) as decorated by ambient degrees and by the roles of the two terminals. If for every \\(j\\le m\\) the multiset of these types over \\(|S|=j\\) is unchanged when the roles of \\(s\\) and \\(t\\) are exchanged, then \\(K_G(\\beta,\\gamma)\\) and \\(K_G(\\gamma,\\beta)\\) agree in every cell of interior volume at most \\(m\\). Consequently twisting two copies of \\(G\\) is invisible below volume \\(2m+3\\).",
+      "file": "docs/chapters/10_inverse_problems.md",
+      "line": 304
     },
     {
       "id": "SNG-I020",
