@@ -1,0 +1,104 @@
+{
+  "checked_profiles_through_volume_8": 165,
+  "moment_volume_1_2_3_jacobian_determinant": "1113221/1230187500000000",
+  "near_symmetry": [
+    {
+      "epsilon": "1/10",
+      "first_coefficient_change": "-1/100",
+      "moment_probe_determinant": "-27250501869/15258789062500000"
+    },
+    {
+      "epsilon": "1/100",
+      "first_coefficient_change": "-1/10000",
+      "moment_probe_determinant": "-2057054084083850940356063006115009/1000000000000000000000000000000000000000000"
+    },
+    {
+      "epsilon": "1/1000",
+      "first_coefficient_change": "-1/1000000",
+      "moment_probe_determinant": "-2059907684473388282960091793253910750005062486500009/1000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "ordinary_volume_1_2_3_jacobian_determinant": "-229387106779/1230187500000000",
+  "schema": "singularity.vakil-bridge/1",
+  "scope": "Exact finite experiment through volume 8. All-depth and all-positive-parameter statements are proved in docs/research/VAKIL_BRIDGES.md; no effective Noetherian cutoff is computed.",
+  "source": "https://math.stanford.edu/~vakil/216blog/FOAGjun1113public.pdf",
+  "strata": {
+    "all_equal": {
+      "edge_factors": [
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "labeled_one_unit_probe_rank": 3,
+      "labeled_probe_determinant": "-1/4",
+      "moment_prefix_rank_at_8": 1,
+      "ordinary_prefix_ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "three_moment_probe_rank": 1
+    },
+    "distinct": {
+      "edge_factors": [
+        "1/2",
+        "1/3",
+        "1/5"
+      ],
+      "labeled_one_unit_probe_rank": 3,
+      "labeled_probe_determinant": "-1/15",
+      "moment_prefix_rank_at_8": 3,
+      "ordinary_prefix_ranks": [
+        1,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "three_moment_probe_rank": 3
+    },
+    "two_equal": {
+      "edge_factors": [
+        "1/2",
+        "1/2",
+        "1/3"
+      ],
+      "labeled_one_unit_probe_rank": 3,
+      "labeled_probe_determinant": "-1/6",
+      "moment_prefix_rank_at_8": 2,
+      "ordinary_prefix_ranks": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "three_moment_probe_rank": 2
+    }
+  },
+  "triangle_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ]
+  ]
+}

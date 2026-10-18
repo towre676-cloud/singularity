@@ -1,0 +1,30 @@
+{
+  "status": "checkpoint",
+  "new_metrics_tests_passed": 11,
+  "restored_modules": [
+    "observability.py",
+    "graph_experiments.py",
+    "experiment_design.py"
+  ],
+  "dimension_R4": 22,
+  "observable_rank_R4": 22,
+  "certificate_replay": true,
+  "cheapest_graph_experiment": {
+    "word": [
+      1
+    ],
+    "cost": "1",
+    "volume": 1,
+    "readings": [
+      "1",
+      "9/8"
+    ]
+  },
+  "not_delivered": [
+    "periodic.py recovery",
+    "full new-module regression suites",
+    "new combined full-suite run",
+    "new release publication"
+  ],
+  "scope": "Recovered local checkpoint, not a completed new release. Historical 43 new tests before pruning are not a current full-suite result."
+}

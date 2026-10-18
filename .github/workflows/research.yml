@@ -78,6 +78,7 @@ jobs:
           PYTHONPATH=src python scripts/collision_census.py --check
           PYTHONPATH=src python scripts/symmetric_contexts.py --check
           PYTHONPATH=src python scripts/charge_interfaces.py --check
+          PYTHONPATH=src python scripts/vakil_bridge.py --check
           PYTHONPATH=src python scripts/locality_family.py --check
           PYTHONPATH=src python scripts/overlap_hierarchy.py --check
           PYTHONPATH=src python scripts/loop_series.py --check
