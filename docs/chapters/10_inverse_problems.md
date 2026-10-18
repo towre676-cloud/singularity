@@ -359,6 +359,7 @@ on the orbits \(\{1,18\},\{6,17\},\{10,15\}\) of \(325\), whose \(d_o\) are \(28
 The finitely many contexts with \(d\) pendant leaves per terminal, \(c\) shared neighbours and, when \(\kappa=2\), an optional terminal edge span every response of the class. The hypothesis holds for \(\kappa=1\) exactly when \(R\le25\), and for \(\kappa=2\) for every \(R\le91\).
 
 (c) *Realizability.* Let a block have no terminal edge, and let its terminals have internal degrees \(a,b\). Then \(Y_o[|o|]=q^{as^2+bt^2}+q^{bs^2+at^2}\), or \(q^{(a+b)s^2}\) for \(s=t\), and \(Y_{\{0,1\}}[1]=q^a+q^b\) determines \(\{a,b\}\). Hence the difference of two blocks that no context in the class distinguishes vanishes in every coordinate with \(|o|=v\). Parts (a) and (b) hold for such differences with each group restricted to \(|o|<v\), and the exactness hypothesis then holds through \(R=26\) for \(\kappa=1\) and \(R=92\) for \(\kappa=2\). In particular:
+
 - For \(\kappa=2\), simple swap-symmetric contexts separate the truncated symmetrized kernels of any two blocks for every \(R\le25\), and the blind direction \(v\) of (a) is not a difference of two blocks.
 - At \(R=26\) the only possible invisible difference allowed by (c) alone is a multiple of \(v\) placed at degree \(26\). SNG-F52 below excludes it as well.
 - For \(\kappa=1\), blocks are separated for \(R\le7\). At \(R=8\) the only possible invisible difference allowed by (c) alone is a multiple of \(e_{\{0,5\}}[8]-e_{\{3,4\}}[8]\), which SNG-F52 also excludes.
@@ -428,6 +429,7 @@ The bracket does not depend on \((s,t)\), and each of the last two sums is at mo
 (b) With \(a=b\), \(Q_0\) is symmetric, and the symmetrized slice is \(q^{Q_0}\Sigma(U,V)\) with \(\Sigma(U,V)=P_j(U,V)+P_j(V,U)\) off the diagonal, and \(q^{Q_0}\Sigma(z,z)/2\) on it. The symmetric polynomial \(\Sigma\), of degree at most \(j\) in each variable, vanishes on the tensor grid of the \(j+1\) distinct nodes \(q^{-2s}\), \(s\le j\), and is therefore zero. \(\square\)
 
 Together with SNG-F49(c), which fixes interior volume zero, this sharpens the realizable statements. Two indistinguishable blocks agree below degree \(v\) by induction, and the degree data fix \(\{a,b\}\) at degree \(1\) and \(e\) at degree \(2\). So their difference vanishes in slice one at every degree \(v\ge6\), and, when the terminal degrees are equal, in every slice \(j\) with \(3j<v\). Rerunning SNG-F49 on the remaining coordinates (`realizable="slice"` or `"balanced"` in `interface_status`) gives:
+
 - **With the terminal edge (\(\kappa=2\)).** Simple symmetric contexts separate the truncated symmetrized kernels of any two blocks through \(R=26\). This removes the \(R=26\) candidate: its coordinate on \(\{10,15\}\) has interior volume one. At \(R=27\) the only possible invisible difference is \(v\) placed at degree \(27\), at interior volumes \(8,4,2\). For equal terminal degrees, separation holds through \(R=37\).
 - **Without the edge (\(\kappa=1\)).** Separation holds through \(R=8\). At \(R=9\) the only possible invisible difference is a multiple of \(e_{\{0,5\}}[9]-e_{\{3,4\}}[9]\). For equal terminal degrees, separation holds through \(R=10\).
 
@@ -496,6 +498,7 @@ Then \(Z_C=T_CA\), \(T_C\) is lower triangular with unit diagonal, and it depend
 *Proof.* Take the coefficient of \(x^v\) in SNG-F53(c). \(\square\)
 
 The entries of \(T_C\) can carry negative powers of \(q\). `closure_operator` in `src/singularity/charges.py` therefore computes them exactly at a rational \(q_0\), while \(A_{H,j}\) is kept as a polynomial. `charge_interface` and `kernel_from_charges` implement (a) for any number of terminals and rebuild the kernel exactly. `scripts/charge_interfaces.py`, checked in CI, verifies the following:
+
 - all eight labelled interiors \(H\) on three vertices;
 - three contexts: a shared neighbour, a leaf on each terminal, and an asymmetric context with a terminal edge;
 - \(q\in\{1/2,2/3\}\): all 48 closures \(T_CA\) equal the series of the actual glued graphs, counted by weak compositions;
@@ -507,6 +510,7 @@ For blocks whose patterns span two dimensions the charge table is not smaller th
 *Exact bits.* The compression survives exact rational accounting. For \(K_{2,3}\), that is \(H\) three isolated vertices, at \(q=1/2\), the value \(A_j=\sum_{|h|=j}2^{-2\sum h_i^2}\) has denominator exactly \(2^{2j^2}\). After clearing it, the three profiles concentrated at one vertex contribute \(1\) each and every other profile an even power of \(2\), so the numerator is odd. The interface \(A_0,\ldots,A_R\) therefore has \(\Theta(R^3)\) bits. An ordered kernel entry is \(2^{-(3(s^2+t^2)-2j(s+t))}A_j\), with \(2\)-adic exponent \(3(s^2+t^2)-2j(s+t)+2j^2\), a positive-definite quadratic form. Summing over \(s+t+j\le R\) gives \(\Theta(R^5)\) bits. At \(R=10\) the counts are \(1{,}303\) bits against \(26{,}066\).
 
 *Reuse.* For the dominating block over \(C_6\) at \(R=8\), \(q=1/2\):
+
 - computing \(A_0,\ldots,A_8\) takes \(0.014\) s;
 - each context operator takes \(0.026\) s, and is reusable for every interior with \(m=6\);
 - each closure then takes \(0.18\) ms;
@@ -642,6 +646,7 @@ and \(W_\ell=\kappa^\ell x^\ell+O(x^{\ell+1})\), with \(\kappa=af\), \(a=q^{d+\l
 *Proof.* A connected graph with two independent cycles contains a theta, a figure-eight or a dumbbell. Under girth \(\ge g\), a theta with path lengths \(\alpha,\beta,\gamma\) needs \(\alpha+\beta,\beta+\gamma,\gamma+\alpha\ge g\), hence at least \(b_g\) vertices; the other two need at least \(2g-1\). So for \(|S|<b_g\), \(H[S]\) is a tree or has exactly one cycle, which is chordless.
 
 Let \(p:\mathbb T_d\to H\) be the universal covering, and fix a lift \(\tilde v\) of each vertex. Summing \(\Phi_{S'}/|S'|\) over subtrees \(S'\ni\tilde v\) with \(|S'|\le R\), and then over \(v\), gives \(nb\) modulo \(x^{R+1}\), since \(\Phi_{S'}\) is computed with all weights equal to \(d+\lambda\). Regroup by the image \(p(S')\):
+
 - If \(p\) is not injective on \(S'\), the geodesic between two points with the same image projects to a closed non-backtracking walk, so the image contains a cycle and hence exactly one.
 - An image \(S\) inducing a tree arises exactly once through each of its \(|S|\) vertices, and contributes \(\Phi_S\).
 - An image \(S\) with one cycle contributes an amount \(\Psi(H[S])\) that depends only on the type of \(H[S]\). The relevant component of \(p^{-1}(S)\) is the universal cover of \(H[S]\).
@@ -668,6 +673,7 @@ For \(g\ge4\) the multicyclic \(b_g\)-sets are exactly the balanced thetas \(\Th
 \]
 
 *Proof of the coefficient.* At degree \(g+1\), \(W_g\) receives contributions from the following sets:
+
 - the cycle with one vertex at height two;
 - the cycle with a pendant vertex (\(g(d-2)\) choices);
 - with sign \(-g\): the path \(P_g\) with one vertex at height two, the path \(P_{g+1}\), and \(P_g\) with a pendant.

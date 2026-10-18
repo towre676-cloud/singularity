@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Singularity project contributors" />
-  <meta name="dcterms.date" content="2026-10-17" />
+  <meta name="dcterms.date" content="2026-10-18" />
   <title>Singularity</title>
   <style>
     code{white-space: pre-wrap;}
@@ -33,7 +33,7 @@ body{margin:0;background:#f3f0e8;color:#212c34;font:18px/1.7 Georgia,serif}main,
 <p class="subtitle">Relational Heights and Arithmetic Visibility -
 Research Monograph</p>
 <p class="author">Singularity project contributors</p>
-<p class="date">17 October 2026</p>
+<p class="date">18 October 2026</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -8739,7 +8739,9 @@ with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>j</mi><mo>&lt;</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">3j&lt;v</annotation></semantics></math>.
 Rerunning SNG-F49 on the remaining coordinates
 (<code>realizable="slice"</code> or <code>"balanced"</code> in
-<code>interface_status</code>) gives: - <strong>With the terminal edge
+<code>interface_status</code>) gives:</p>
+<ul>
+<li><strong>With the terminal edge
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>).</strong>
 Simple symmetric contexts separate the truncated symmetrized kernels of
 any two blocks through
@@ -8757,8 +8759,8 @@ placed at degree
 at interior volumes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">8,4,2</annotation></semantics></math>.
 For equal terminal degrees, separation holds through
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>37</mn></mrow><annotation encoding="application/x-tex">R=37</annotation></semantics></math>.
-- <strong>Without the edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>37</mn></mrow><annotation encoding="application/x-tex">R=37</annotation></semantics></math>.</li>
+<li><strong>Without the edge
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>).</strong>
 Separation holds through
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>.
@@ -8767,7 +8769,8 @@ At
 the only possible invisible difference is a multiple of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>9</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>9</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">e_{\{0,5\}}[9]-e_{\{3,4\}}[9]</annotation></semantics></math>.
 For equal terminal degrees, separation holds through
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">R=10</annotation></semantics></math>.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">R=10</annotation></semantics></math>.</li>
+</ul>
 <p>On these coordinates the exactness hypothesis of SNG-F49(b) holds for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">R\le27</annotation></semantics></math>
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>)
@@ -9185,17 +9188,23 @@ is kept as a polynomial. <code>charge_interface</code> and
 <code>kernel_from_charges</code> implement (a) for any number of
 terminals and rebuild the kernel exactly.
 <code>scripts/charge_interfaces.py</code>, checked in CI, verifies the
-following: - all eight labelled interiors
+following:</p>
+<ul>
+<li>all eight labelled interiors
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
-on three vertices; - three contexts: a shared neighbour, a leaf on each
-terminal, and an asymmetric context with a terminal edge; -
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">q\in\{1/2,2/3\}</annotation></semantics></math>:
+on three vertices;</li>
+<li>three contexts: a shared neighbour, a leaf on each terminal, and an
+asymmetric context with a terminal edge;</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">q\in\{1/2,2/3\}</annotation></semantics></math>:
 all 48 closures
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>C</mi></msub><mi>A</mi></mrow><annotation encoding="application/x-tex">T_CA</annotation></semantics></math>
 equal the series of the actual glued graphs, counted by weak
-compositions; - all 16 single shared-neighbour closures recover
+compositions;</li>
+<li>all 16 single shared-neighbour closures recover
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
-through volume five; - the composition law holds exactly.</p>
+through volume five;</li>
+<li>the composition law holds exactly.</li>
+</ul>
 <p>For blocks whose patterns span two dimensions the charge table is not
 smaller than the raw table: 84 or 140 entries against 84 at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">R=6</annotation></semantics></math>.
@@ -9247,21 +9256,25 @@ bits against
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>6</mn></msub><annotation encoding="application/x-tex">C_6</annotation></semantics></math>
 at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>:
-- computing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>:</p>
+<ul>
+<li>computing
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>A</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">A_0,\ldots,A_8</annotation></semantics></math>
 takes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.014</mn><annotation encoding="application/x-tex">0.014</annotation></semantics></math>
-s; - each context operator takes
+s;</li>
+<li>each context operator takes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.026</mn><annotation encoding="application/x-tex">0.026</annotation></semantics></math>
 s, and is reusable for every interior with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m=6</annotation></semantics></math>;
-- each closure then takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">m=6</annotation></semantics></math>;</li>
+<li>each closure then takes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.18</mn><annotation encoding="application/x-tex">0.18</annotation></semantics></math>
-ms; - a fresh tree decomposition of each glued graph takes
+ms;</li>
+<li>a fresh tree decomposition of each glued graph takes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>19.6</mn><annotation encoding="application/x-tex">19.6</annotation></semantics></math>
 s, with identical exact output (<code>--benchmark</code>, wall-clock on
-the session machine, retained).</p>
+the session machine, retained).</li>
+</ul>
 <p><em>Future classes.</em> For every isomorphism class of interiors on
 at most six vertices
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>34</mn><mo>,</mo><mn>156</mn></mrow><annotation encoding="application/x-tex">1,2,4,11,34,156</annotation></semantics></math>
@@ -10080,20 +10093,22 @@ since
 is computed with all weights equal to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>+</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">d+\lambda</annotation></semantics></math>.
 Regroup by the image
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(S&#39;)</annotation></semantics></math>:
-- If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(S&#39;)</annotation></semantics></math>:</p>
+<ul>
+<li>If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
 is not injective on
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">S&#39;</annotation></semantics></math>,
 the geodesic between two points with the same image projects to a closed
 non-backtracking walk, so the image contains a cycle and hence exactly
-one. - An image
+one.</li>
+<li>An image
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
 inducing a tree arises exactly once through each of its
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|S|</annotation></semantics></math>
 vertices, and contributes
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Φ</mi><mi>S</mi></msub><annotation encoding="application/x-tex">\Phi_S</annotation></semantics></math>.
-- An image
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Φ</mi><mi>S</mi></msub><annotation encoding="application/x-tex">\Phi_S</annotation></semantics></math>.</li>
+<li>An image
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
 with one cycle contributes an amount
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Ψ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Psi(H[S])</annotation></semantics></math>
@@ -10102,7 +10117,8 @@ that depends only on the type of
 The relevant component of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p^{-1}(S)</annotation></semantics></math>
 is the universal cover of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H[S]</annotation></semantics></math>.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>S</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">H[S]</annotation></semantics></math>.</li>
+</ul>
 <p>For an
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>ℓ</mo><annotation encoding="application/x-tex">\ell</annotation></semantics></math>-cycle
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
@@ -10280,10 +10296,13 @@ graphs of equal order and girth at least
 <p><em>Proof of the coefficient.</em> At degree
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">g+1</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>g</mi></msub><annotation encoding="application/x-tex">W_g</annotation></semantics></math>
-receives contributions from the following sets: - the cycle with one
-vertex at height two; - the cycle with a pendant vertex
+receives contributions from the following sets:</p>
+<ul>
+<li>the cycle with one vertex at height two;</li>
+<li>the cycle with a pendant vertex
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(d-2)</annotation></semantics></math>
-choices); - with sign
+choices);</li>
+<li>with sign
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">-g</annotation></semantics></math>:
 the path
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>g</mi></msub><annotation encoding="application/x-tex">P_g</annotation></semantics></math>
@@ -10291,7 +10310,8 @@ with one vertex at height two, the path
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">P_{g+1}</annotation></semantics></math>,
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>g</mi></msub><annotation encoding="application/x-tex">P_g</annotation></semantics></math>
-with a pendant.</p>
+with a pendant.</li>
+</ul>
 <p>The pendant terms combine to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>a</mi><mrow><mi>g</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>f</mi><mi>g</mi></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>+</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>g</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>=</mo><mi>g</mi><msup><mi>κ</mi><mi>g</mi></msup><mo>⋅</mo><mi>a</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">g(d-2)a^{g+1}f^g\bigl((f+g)-g\bigr)=g\kappa^g\cdot a(d-2)f</annotation></semantics></math>.</p>
 <p>For a vertex
@@ -11285,10 +11305,14 @@ normalization and the nested threshold identity.
 weak-composition enumerator is exactly the duplicate-free list of
 profiles of each volume, links its counts to the semantic coefficient
 definition, and then has the kernel evaluate the transcribed tables. For
-the spectral pair and the binary-census pair, the kernel checks: - every
-local and minimum-zero coefficient of both graphs through volume four; -
-equality of the two graphs at every lower volume; - the first-difference
-polynomial and the expansion of its stated factorization.</p>
+the spectral pair and the binary-census pair, the kernel checks:</p>
+<ul>
+<li>every local and minimum-zero coefficient of both graphs through
+volume four;</li>
+<li>equality of the two graphs at every lower volume;</li>
+<li>the first-difference polynomial and the expansion of its stated
+factorization.</li>
+</ul>
 <p>Theorems also show that changing one edge, or one decisive
 coefficient, is rejected. The trusted boundary is the transcription:
 <code>formal/tools/gen_certificates.py</code> copies the JSON numbers

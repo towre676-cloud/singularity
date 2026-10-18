@@ -113,7 +113,7 @@
 \subtitle{Relational Heights and Arithmetic Visibility - Research
 Monograph}
 \author{Singularity project contributors}
-\date{17 October 2026}
+\date{18 October 2026}
 
 \begin{document}
 \maketitle
@@ -5505,17 +5505,24 @@ degree \(1\) and \(e\) at degree \(2\). So their difference vanishes in
 slice one at every degree \(v\ge6\), and, when the terminal degrees are
 equal, in every slice \(j\) with \(3j<v\). Rerunning SNG-F49 on the
 remaining coordinates (\texttt{realizable="slice"} or
-\texttt{"balanced"} in \texttt{interface\_status}) gives: - \textbf{With
-the terminal edge (\(\kappa=2\)).} Simple symmetric contexts separate
-the truncated symmetrized kernels of any two blocks through \(R=26\).
-This removes the \(R=26\) candidate: its coordinate on \(\{10,15\}\) has
-interior volume one. At \(R=27\) the only possible invisible difference
-is \(v\) placed at degree \(27\), at interior volumes \(8,4,2\). For
-equal terminal degrees, separation holds through \(R=37\). -
-\textbf{Without the edge (\(\kappa=1\)).} Separation holds through
-\(R=8\). At \(R=9\) the only possible invisible difference is a multiple
-of \(e_{\{0,5\}}[9]-e_{\{3,4\}}[9]\). For equal terminal degrees,
-separation holds through \(R=10\).
+\texttt{"balanced"} in \texttt{interface\_status}) gives:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{With the terminal edge (\(\kappa=2\)).} Simple symmetric
+  contexts separate the truncated symmetrized kernels of any two blocks
+  through \(R=26\). This removes the \(R=26\) candidate: its coordinate
+  on \(\{10,15\}\) has interior volume one. At \(R=27\) the only
+  possible invisible difference is \(v\) placed at degree \(27\), at
+  interior volumes \(8,4,2\). For equal terminal degrees, separation
+  holds through \(R=37\).
+\item
+  \textbf{Without the edge (\(\kappa=1\)).} Separation holds through
+  \(R=8\). At \(R=9\) the only possible invisible difference is a
+  multiple of \(e_{\{0,5\}}[9]-e_{\{3,4\}}[9]\). For equal terminal
+  degrees, separation holds through \(R=10\).
+\end{itemize}
 
 On these coordinates the exactness hypothesis of SNG-F49(b) holds for
 \(R\le27\) (\(\kappa=1\)) and \(R\le93\) (\(\kappa=2\)) in general. For
@@ -5705,13 +5712,24 @@ therefore computes them exactly at a rational \(q_0\), while \(A_{H,j}\)
 is kept as a polynomial. \texttt{charge\_interface} and
 \texttt{kernel\_from\_charges} implement (a) for any number of terminals
 and rebuild the kernel exactly. \texttt{scripts/charge\_interfaces.py},
-checked in CI, verifies the following: - all eight labelled interiors
-\(H\) on three vertices; - three contexts: a shared neighbour, a leaf on
-each terminal, and an asymmetric context with a terminal edge; -
-\(q\in\{1/2,2/3\}\): all 48 closures \(T_CA\) equal the series of the
-actual glued graphs, counted by weak compositions; - all 16 single
-shared-neighbour closures recover \(A\) through volume five; - the
-composition law holds exactly.
+checked in CI, verifies the following:
+
+\begin{itemize}
+\tightlist
+\item
+  all eight labelled interiors \(H\) on three vertices;
+\item
+  three contexts: a shared neighbour, a leaf on each terminal, and an
+  asymmetric context with a terminal edge;
+\item
+  \(q\in\{1/2,2/3\}\): all 48 closures \(T_CA\) equal the series of the
+  actual glued graphs, counted by weak compositions;
+\item
+  all 16 single shared-neighbour closures recover \(A\) through volume
+  five;
+\item
+  the composition law holds exactly.
+\end{itemize}
 
 For blocks whose patterns span two dimensions the charge table is not
 smaller than the raw table: 84 or 140 entries against 84 at \(R=6\). The
@@ -5732,12 +5750,22 @@ over \(s+t+j\le R\) gives \(\Theta(R^5)\) bits. At \(R=10\) the counts
 are \(1{,}303\) bits against \(26{,}066\).
 
 \emph{Reuse.} For the dominating block over \(C_6\) at \(R=8\),
-\(q=1/2\): - computing \(A_0,\ldots,A_8\) takes \(0.014\) s; - each
-context operator takes \(0.026\) s, and is reusable for every interior
-with \(m=6\); - each closure then takes \(0.18\) ms; - a fresh tree
-decomposition of each glued graph takes \(19.6\) s, with identical exact
-output (\texttt{-\/-benchmark}, wall-clock on the session machine,
-retained).
+\(q=1/2\):
+
+\begin{itemize}
+\tightlist
+\item
+  computing \(A_0,\ldots,A_8\) takes \(0.014\) s;
+\item
+  each context operator takes \(0.026\) s, and is reusable for every
+  interior with \(m=6\);
+\item
+  each closure then takes \(0.18\) ms;
+\item
+  a fresh tree decomposition of each glued graph takes \(19.6\) s, with
+  identical exact output (\texttt{-\/-benchmark}, wall-clock on the
+  session machine, retained).
+\end{itemize}
 
 \emph{Future classes.} For every isomorphism class of interiors on at
 most six vertices (\(1,2,4,11,34,156\) classes), the sequences
@@ -6140,14 +6168,22 @@ Let \(p:\mathbb T_d\to H\) be the universal covering, and fix a lift
 \(\tilde v\) of each vertex. Summing \(\Phi_{S'}/|S'|\) over subtrees
 \(S'\ni\tilde v\) with \(|S'|\le R\), and then over \(v\), gives \(nb\)
 modulo \(x^{R+1}\), since \(\Phi_{S'}\) is computed with all weights
-equal to \(d+\lambda\). Regroup by the image \(p(S')\): - If \(p\) is
-not injective on \(S'\), the geodesic between two points with the same
-image projects to a closed non-backtracking walk, so the image contains
-a cycle and hence exactly one. - An image \(S\) inducing a tree arises
-exactly once through each of its \(|S|\) vertices, and contributes
-\(\Phi_S\). - An image \(S\) with one cycle contributes an amount
-\(\Psi(H[S])\) that depends only on the type of \(H[S]\). The relevant
-component of \(p^{-1}(S)\) is the universal cover of \(H[S]\).
+equal to \(d+\lambda\). Regroup by the image \(p(S')\):
+
+\begin{itemize}
+\tightlist
+\item
+  If \(p\) is not injective on \(S'\), the geodesic between two points
+  with the same image projects to a closed non-backtracking walk, so the
+  image contains a cycle and hence exactly one.
+\item
+  An image \(S\) inducing a tree arises exactly once through each of its
+  \(|S|\) vertices, and contributes \(\Phi_S\).
+\item
+  An image \(S\) with one cycle contributes an amount \(\Psi(H[S])\)
+  that depends only on the type of \(H[S]\). The relevant component of
+  \(p^{-1}(S)\) is the universal cover of \(H[S]\).
+\end{itemize}
 
 For an \(\ell\)-cycle \(C\) of \(H\), the covering
 \(q_C:\mathcal U_\ell\to H\) with \(q_C(\tilde C)=C\) induces a
@@ -6215,10 +6251,18 @@ order and girth at least \(g\), \[
 \]
 
 \emph{Proof of the coefficient.} At degree \(g+1\), \(W_g\) receives
-contributions from the following sets: - the cycle with one vertex at
-height two; - the cycle with a pendant vertex (\(g(d-2)\) choices); -
-with sign \(-g\): the path \(P_g\) with one vertex at height two, the
-path \(P_{g+1}\), and \(P_g\) with a pendant.
+contributions from the following sets:
+
+\begin{itemize}
+\tightlist
+\item
+  the cycle with one vertex at height two;
+\item
+  the cycle with a pendant vertex (\(g(d-2)\) choices);
+\item
+  with sign \(-g\): the path \(P_g\) with one vertex at height two, the
+  path \(P_{g+1}\), and \(P_g\) with a pendant.
+\end{itemize}
 
 The pendant terms combine to
 \(g(d-2)a^{g+1}f^g\bigl((f+g)-g\bigr)=g\kappa^g\cdot a(d-2)f\).
@@ -6996,10 +7040,19 @@ normalization and the nested threshold identity.
 weak-composition enumerator is exactly the duplicate-free list of
 profiles of each volume, links its counts to the semantic coefficient
 definition, and then has the kernel evaluate the transcribed tables. For
-the spectral pair and the binary-census pair, the kernel checks: - every
-local and minimum-zero coefficient of both graphs through volume four; -
-equality of the two graphs at every lower volume; - the first-difference
-polynomial and the expansion of its stated factorization.
+the spectral pair and the binary-census pair, the kernel checks:
+
+\begin{itemize}
+\tightlist
+\item
+  every local and minimum-zero coefficient of both graphs through volume
+  four;
+\item
+  equality of the two graphs at every lower volume;
+\item
+  the first-difference polynomial and the expansion of its stated
+  factorization.
+\end{itemize}
 
 Theorems also show that changing one edge, or one decisive coefficient,
 is rejected. The trusted boundary is the transcription:

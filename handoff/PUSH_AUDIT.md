@@ -80,7 +80,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P30](#p30) | Measure collision classes across invariants | `complete` | P12, P14, P29 | M | 2 |
 | [P31](#p31) | Resolve targeted collisions structurally | `complete` | P16, P30 | L | 2 |
 | [P32](#p32) | Seek a separation bound for one graph family | `complete` | P06, P12, P31 | L | 2 |
-| [P33](#p33) | Verify concrete coefficient certificates in a kernel | `implemented_pending_acceptance` | P07, P08, P23 | L | 3 |
+| [P33](#p33) | Verify concrete coefficient certificates in a kernel | `complete` | P07, P08, P23 | L | 3 |
 | [P34](#p34) | Formalize the visibility comparison boundary | `blocked` | P26, P33 | L | 3 |
 | [P35](#p35) | Release the first focused manuscript | `partial` | P04, P05, P26, P27, P33 | M | 3 |
 | [P36](#p36) | Choose the second paper from actual results | `blocked` | P19, P22, P31, P32, P35 | L | 3 |
@@ -639,18 +639,15 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P33
 
-**Verify concrete coefficient certificates in a kernel.** Status: `implemented_pending_acceptance`. Dependencies: P07, P08, P23. Remaining effort: L; priority: 3.
+**Verify concrete coefficient certificates in a kernel.** Status: `complete`. Dependencies: P07, P08, P23. Remaining effort: L; priority: 3.
 
 **Existing work:** Kernel-checked (core Lean 4.12.0): mem_comps/comps_nodup (weak-composition enumerator, coverage and uniqueness), allCount_eq_compCount and allCount_eq_look_hist (link to P07's semantic allCount), table_of_ok (kernel-evaluated tables imply every coefficient), allCount_eq_nestedCount (via P08 energy_nested). For both decisive certificates (spectral, binary): full local tables of both graphs through volume 4, minimum-zero tables via P07, equality below the first discrepancy, the first-difference polynomial and its factorization (expandFac), and rejection theorems for one changed edge, one changed coefficient, and changed difference/factorization. Trusted boundary: transcription by formal/tools/gen_certificates.py (--check, input SHA-256 recorded). 63 audited theorems use only propext, Quot.sound, Classical.choice.
 
 **Evidence:** [src/singularity/certificates.py](../src/singularity/certificates.py); [results/certificates/spectral.json](../results/certificates/spectral.json); [results/certificates/binary_census.json](../results/certificates/binary_census.json); [docs/chapters/12_computational_methodology.md](../docs/chapters/12_computational_methodology.md); [tests/test_analytics.py](../tests/test_analytics.py); [formal/Singularity/Certificates.lean](../formal/Singularity/Certificates.lean); [formal/Singularity/CertificateData.lean](../formal/Singularity/CertificateData.lean); [formal/tools/gen_certificates.py](../formal/tools/gen_certificates.py); [formal/README.md](../formal/README.md); [scripts/check_formal.py](../scripts/check_formal.py).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- The clean-environment CI build including Certificates.lean has not yet been observed (local clean build passes, about 100 s).
-- Span-marked rows and Euler exponents of the certificates are not kernel-checked; the packet's acceptance concerns the decisive coefficient tables and first-discrepancy factorizations, which are.
-
-**Next concrete action:** Observe the formal-lean CI job on this commit; on success mark complete.
+**Next concrete action:** none.
 
 ### P34
 

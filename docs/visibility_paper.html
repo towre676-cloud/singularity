@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Singularity project contributors" />
-  <meta name="dcterms.date" content="2026-10-17" />
+  <meta name="dcterms.date" content="2026-10-18" />
   <title>Relational Height Populations and Arithmetic Visibility</title>
   <style>
     code{white-space: pre-wrap;}
@@ -34,25 +34,33 @@ Visibility</h1>
 <p class="subtitle">Exact examples, nested boundaries, and primewise
 singularities</p>
 <p class="author">Singularity project contributors</p>
-<p class="date">17 October 2026</p>
+<p class="date">18 October 2026</p>
 </header>
 <h1 class="unnumbered" id="abstract">Abstract</h1>
 <p>We study nonnegative integer heights on a finite graph, counted
-jointly by total height and quadratic edge energy. Removing common
-translations gives canonical minimum-zero profiles; an additional span
+jointly by total height and quadratic edge energy. Removing a common
+translation gives canonical minimum-zero profiles. An additional span
 mark separates binary cuts from nested height configurations. We give
-explicit finite examples in which equal Laplacian spectra, or equal
-complete binary cut-volume censuses, coexist with unequal height
-populations. A third comparison of regular graphs delays the first
-distinction to total height four. For fixed real energy weight, we prove
-that a first difference at total height r determines a zeta-factor
-exponent and a power singularity at s=1/r in the ratio of associated
-prime products. The construction is accompanied by standard-library
-exact software, independent finite replay, a complete connected-graph
-census through six vertices, and volume-truncated tree transfer methods.
-General reconstruction and historical priority are left open. The
-purpose is an exact account of what these particular observations
-preserve and where their first lost correspondence becomes visible.</p>
+explicit seven-vertex examples in which equal Laplacian characteristic
+polynomials, or equal complete binary cut-volume censuses, coexist with
+unequal height coefficients. The first differences occur at total
+heights two and three. For both pairs, the unmarked local coefficient
+tables through total height four, equality below the first difference,
+the first-difference polynomial and its stated factorization are checked
+by the Lean 4 kernel against a semantic definition of the coefficients.
+Apart from Lean itself, the only unverified link is a transcription
+script with recorded input digests. A third comparison, between the cube
+and the eight-vertex Möbius ladder, delays the first difference to total
+height four; it is checked by exact software replay only. For a fixed
+energy weight q in the closed unit interval, we prove the following. If
+the first difference occurs at total height r, it fixes the exponent of
+a zeta factor in the ratio of the associated prime products, and hence
+the power singularity at s=1/r. For the two seven-vertex pairs at q=1/2,
+the regular factor at s=1/r is enclosed in explicit rigorous intervals.
+The examples come with standard-library exact software, independent
+finite replay, and an exhaustive census of connected graphs through six
+vertices. General reconstruction, unbounded delayed visibility and
+historical priority are left open.</p>
 <h1 data-number="1" id="question-and-background"><span
 class="header-section-number">1</span> Question and background</h1>
 <p>A graph parameter can retain many numerical facts while forgetting
@@ -66,12 +74,13 @@ observe those relationships.</p>
 <p>The ingredients have established antecedents. Integral cut lattices
 organize graph gradients modulo constants [BHN1997]. Bivariate Ising
 polynomials organize binary configurations [AM2009]. Integer-valued
-Gaussian models use quadratic graph energies [BPR2024]. Formal Euler
-transforms reorganize coefficient data into cyclotomic factors
-[Moree2005]. We use these ingredients with explicit marks and a
-restricted inverse question. The paper does not claim a new origin for
-the individual ingredients, nor does it claim that the proposed
-scalar-height observations determine every graph.</p>
+Gaussian models on lattices use the same squared nearest-neighbour
+energy [BPR2024]. Formal Euler transforms reorganize coefficient data
+into cyclotomic factors [Moree2005]. We use these ingredients with
+explicit marks and a restricted inverse question. The paper does not
+claim a new origin for the individual ingredients. Nor does it claim
+that the proposed scalar-height observations determine every graph. No
+completed priority search is claimed.</p>
 <p>There are two logically distinct constructions. First, a local
 generating function records a finite graph’s integer heights. Second, an
 Euler product attaches that same local function to every rational prime.
@@ -79,12 +88,24 @@ The first determines graph-information content. The second supplies an
 arithmetic organization and a precise comparison of singularities.
 Keeping this distinction visible prevents a prime product from being
 credited with information that it merely reencodes.</p>
+<p>Results labeled SNG-… refer to the full proofs in the project
+monograph (<code>docs/MONOGRAPH.md</code>). The proofs given here are
+complete for the statements as displayed. Lean theorem names refer to
+the core Lean 4.12.0 package in <code>formal/</code>.</p>
 <h1 data-number="2" id="local-populations-and-their-marks"><span
 class="header-section-number">2</span> Local populations and their
 marks</h1>
 <p>Let G be a finite connected simple loopless graph on vertices
-0,…,k-1, with k at least two. Write d_i for its degrees and A_ij for its
-adjacency matrix. For a nonnegative integer vector a, put</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>k</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0,\ldots,k-1</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k\ge2</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding="application/x-tex">d_i</annotation></semantics></math>
+for its degrees and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">A_{ij}</annotation></semantics></math>
+for its adjacency matrix. Connectedness is used only in Section 5 and in
+the certified enclosures of Section 4. Propositions 1 and 2 and Theorem
+3 hold without it. For a nonnegative integer vector a, put</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>a</mi><mi>i</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false" form="postfix">}</mo><mo>∈</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>−</mo><msub><mi>a</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
  |a|=\sum_i a_i,\qquad
  E_G(a)=\sum_{\{i,j\}\in E(G)}(a_i-a_j)^2.
@@ -95,15 +116,18 @@ are</p>
  L_G(x,q)=\sum_{a\ge0}x^{|a|}q^{E_G(a)},\qquad
  \mathcal B_G(x,q,z)=\sum_{\min a=0}x^{|a|}q^{E_G(a)}z^{\max a}.
 </annotation></semantics></math></p>
-<p>Every coefficient of x is a finite polynomial in q. Indeed, there are
+<p>Every coefficient of x is a finite polynomial in q, because there are
 only
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>m</mi><mo>+</mo><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{m+k-1}{k-1}</annotation></semantics></math>
-nonnegative vectors of total height m. In particular, these definitions
-are formal before any analytic parameter is chosen. For 0 at most q at
-most one and absolute value of x below one, comparison with
+nonnegative vectors of total height m (SNG-F01). Hence these definitions
+are formal before any analytic parameter is chosen. Counts are of
+original labeled assignments; no quotient by graph automorphisms is
+taken. For 0 at most q at most one and absolute value of x below one,
+comparison with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mi>k</mi></mrow></msup><annotation encoding="application/x-tex">(1-|x|)^{-k}</annotation></semantics></math>
 also gives analytic convergence.</p>
-<p><strong>Proposition 1 (translation normalization).</strong> With
+<p><strong>Proposition 1 (translation normalization; SNG-F02).</strong>
+With
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>ℬ</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B_G(x,q)=\mathcal B_G(x,q,1)</annotation></semantics></math>,</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msub><mi>B</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mi>k</mi></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
  L_G(x,q)=\frac{B_G(x,q)}{1-x^k}.
@@ -118,24 +142,32 @@ Edge differences, and hence energy, are unchanged. Total height
 increases by kt. Summing the common translation gives the geometric
 factor. This is a formal identity with no convergence assumption.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The coefficientwise form of Proposition 1 is kernel-checked for
+arbitrary edge lists, including disconnected graphs, as
+<code>allCount_eq_shiftSum</code> and <code>allCount_rec</code>
+(<code>formal/Singularity/Normalization.lean</code>). The span-marked
+identity, with z retained, is not formalized.</p>
 <p>The span mark records a genuine distinction. The binary cut
 polynomial</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>S</mi><mo>⊆</mo><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><msup><mi>q</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup></mrow><annotation encoding="application/x-tex">
  I_G(x,q)=\sum_{S\subseteq V(G)}x^{|S|}q^{|\partial S|}
 </annotation></semantics></math></p>
 <p>satisfies
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>G</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><msup><mi>x</mi><mi>k</mi></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>z</mi><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>ℬ</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">I_G=1+x^k+[z]\mathcal B_G</annotation></semantics></math>.
-Thus the full marked series contains the binary census explicitly. The
-specialization z=1 merges spans; a general recovery theorem for the
-binary sector from that specialization is not established here.</p>
-<p><strong>Proposition 2 (nested-boundary energy).</strong> A normalized
-vector of span h is equivalent to a chain of nonempty proper sets</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mi>G</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><msup><mi>x</mi><mi>k</mi></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>z</mi><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>ℬ</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">I_G=1+x^k+[z]\mathcal B_G</annotation></semantics></math>
+(SNG-F11). Thus the full marked series contains the binary census
+explicitly. The specialization z=1 merges spans; a general recovery
+theorem for the binary sector from that specialization is not
+established here.</p>
+<p><strong>Proposition 2 (nested-boundary energy; SNG-F09,
+SNG-F10).</strong> A normalized vector of span h is equivalent to a
+chain of nonempty proper sets</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>h</mi></msub><mo>⊆</mo><mi>⋯</mi><mo>⊆</mo><msub><mi>S</mi><mn>1</mn></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>a</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>h</mi></munderover><msub><mn>𝟏</mn><msub><mi>S</mi><mi>t</mi></msub></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
  S_h\subseteq\cdots\subseteq S_1,\qquad
  a=\sum_{t=1}^h\mathbf1_{S_t}.
 </annotation></semantics></math></p>
-<p>Repeated sets are permitted. If e(U,W) counts edges between disjoint
-sets, then</p>
+<p>Repeated sets are permitted. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>W</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e(U,W)</annotation></semantics></math>
+counts edges between disjoint sets, then</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>t</mi></munder><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>t</mi></munder><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mn>2</mn><munder><mo>∑</mo><mrow><mi>r</mi><mo>&lt;</mo><mi>t</mi></mrow></munder><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mi>t</mi></msub><mo>,</mo><mi>V</mi><mo>\</mo><msub><mi>S</mi><mi>r</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
  |a|=\sum_t|S_t|,\qquad
  E_G(a)=\sum_t|\partial S_t|
@@ -147,10 +179,23 @@ Each coordinate is recovered by counting its occupied thresholds,
 proving the bijection and total-height identity. On an edge, every
 nonzero threshold difference has the same sign. Expanding the square of
 their sum gives the individual threshold crossings and twice every pair
-of simultaneous crossings. For r below t, simultaneous crossing means
-that one endpoint lies in S_t and the other outside S_r. Summing edges
-proves the formula.
+of simultaneous crossings. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">r&lt;t</annotation></semantics></math>,
+simultaneous crossing means that one endpoint lies in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>t</mi></msub><annotation encoding="application/x-tex">S_t</annotation></semantics></math>
+and the other outside
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>r</mi></msub><annotation encoding="application/x-tex">S_r</annotation></semantics></math>.
+Summing edges proves the formula.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The threshold reconstruction, the volume identity and the energy
+identity are kernel-checked for every edge list and every profile as
+<code>reconstruct</code>, <code>vol_eq_levels</code> and
+<code>energy_nested</code>. Nestedness and properness of the threshold
+sets are checked as <code>thr_nested</code> and
+<code>thr_proper_of_minZero</code>, and the span count as
+<code>span_eq</code> (<code>formal/Singularity/Thresholds.lean</code>).
+The converse direction of the bijection, from an arbitrary chain to a
+profile, is proved above but is not stated in Lean.</p>
 <p>For two levels, this becomes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mn>𝟏</mn><mi>S</mi></msub><mo>+</mo><msub><mn>𝟏</mn><mi>T</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><mi>T</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mn>2</mn><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>V</mi><mo>\</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(\mathbf1_S+\mathbf1_T)=|\partial S|+|\partial T|+2e(S,V\setminus T)</annotation></semantics></math>,
 for nonempty S contained in proper T, allowing equality. The final term
@@ -161,7 +206,8 @@ class="header-section-number">3</span> Finite visibility and reference
 examples</h1>
 <p>Put
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><mi>G</mi><mo>,</mo><mi>m</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>m</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>L</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\ell_{G,m}(q)=[x^m]L_G(x,q)</annotation></semantics></math>.
-Splitting weak compositions by their multiplicity patterns gives</p>
+Splitting weak compositions by their multiplicity patterns gives
+(SNG-F14)</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><mi>G</mi><mo>,</mo><mn>1</mn></mrow></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msup><mi>q</mi><msub><mi>d</mi><mi>i</mi></msub></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mo>ℓ</mo><mrow><mi>G</mi><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><munder><mo>∑</mo><mi>i</mi></munder><msup><mi>q</mi><mrow><mn>4</mn><msub><mi>d</mi><mi>i</mi></msub></mrow></msup><mo>+</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><msup><mi>q</mi><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub><mo>−</mo><mn>2</mn><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
  \ell_{G,1}=\sum_iq^{d_i},\qquad
  \ell_{G,2}=\sum_iq^{4d_i}+\sum_{i&lt;j}q^{d_i+d_j-2A_{ij}},
@@ -175,12 +221,16 @@ Splitting weak compositions by their multiplicity patterns gives</p>
 </annotation></semantics></math></p>
 <p>These formulas also delimit the meaning of a small-depth witness.
 Volume one observes degrees. With degrees fixed, volume two observes the
-edge degree-sum histogram. The current volume-three witness separates an
-aggregated binary census by an ordered two-vertex height pattern; it is
-not a claim that the graph energy contains a new three-body
-interaction.</p>
-<p>All reference inputs are explicit. On vertices 0,…,6, the first pair
-has edge sets</p>
+edge degree-sum polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mrow><mi>i</mi><mi>j</mi><mo>∈</mo><mi>E</mi></mrow></msub><msup><mi>q</mi><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">M_G(q)=\sum_{ij\in E}q^{d_i+d_j}</annotation></semantics></math>,
+since then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><mi>G</mi><mo>,</mo><mn>2</mn></mrow></msub><mo>−</mo><msub><mo>ℓ</mo><mrow><mi>H</mi><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mi>G</mi></msub><mo>−</mo><msub><mi>M</mi><mi>H</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\ell_{G,2}-\ell_{H,2}=(q^{-2}-1)(M_G-M_H)</annotation></semantics></math>.
+The current volume-three witness separates an aggregated binary census
+by an ordered two-vertex height pattern. It is not a claim that the
+graph energy contains a new three-body interaction.</p>
+<p>All reference inputs are explicit. On vertices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">0,\ldots,6</annotation></semantics></math>,
+the first pair has edge sets</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>01</mn><mo>,</mo><mn>02</mn><mo>,</mo><mn>03</mn><mo>,</mo><mn>04</mn><mo>,</mo><mn>12</mn><mo>,</mo><mn>35</mn><mo>,</mo><mn>36</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>H</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>01</mn><mo>,</mo><mn>02</mn><mo>,</mo><mn>03</mn><mo>,</mo><mn>04</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>56</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
  \begin{aligned}
  E(G_2)&amp;=\{01,02,03,04,12,35,36\},\\
@@ -188,16 +238,20 @@ has edge sets</p>
  \end{aligned}
 </annotation></semantics></math></p>
 <p>Their degree multisets and Laplacian characteristic polynomials
-agree. The latter is</p>
+agree. The latter, computed exactly in integer arithmetic, is</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>t</mi><mn>7</mn></msup><mo>−</mo><mn>14</mn><msup><mi>t</mi><mn>6</mn></msup><mo>+</mo><mn>73</mn><msup><mi>t</mi><mn>5</mn></msup><mo>−</mo><mn>178</mn><msup><mi>t</mi><mn>4</mn></msup><mo>+</mo><mn>209</mn><msup><mi>t</mi><mn>3</mn></msup><mo>−</mo><mn>112</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>21</mn><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
  t^7-14t^6+73t^5-178t^4+209t^3-112t^2+21t.
 </annotation></semantics></math></p>
 <p>The unique degree-four vertex lies in a triangle in the first graph
-and not the second, so they are nonisomorphic. Direct coefficient
-enumeration gives first difference</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><mn>2</mn></mrow></msub><mo>−</mo><msub><mo>ℓ</mo><mrow><msub><mi>H</mi><mn>2</mn></msub><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
- \ell_{G_2,2}-\ell_{H_2,2}=2q^2(1-q)^3(1+q).
+and not the second, so they are nonisomorphic (SNG-E001). Direct
+coefficient enumeration gives the first difference</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><mn>2</mn></mrow></msub><mo>−</mo><msub><mo>ℓ</mo><mrow><msub><mi>H</mi><mn>2</mn></msub><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ \ell_{G_2,2}-\ell_{H_2,2}=2q^2(1-q)^3(1+q)=2q^2(1-q)^2(1-q^2).
 </annotation></semantics></math></p>
+<p>Its source is elementary: the degree-sum polynomials differ,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><msub><mi>G</mi><mn>2</mn></msub></msub><mo>−</mo><msub><mi>M</mi><msub><mi>H</mi><mn>2</mn></msub></msub><mo>=</mo><mn>2</mn><msup><mi>q</mi><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">M_{G_2}-M_{H_2}=2q^4(1-q)^2</annotation></semantics></math>.
+The pair therefore separates the height population from the Laplacian
+spectrum through degree mixing, not through a higher-order relation.</p>
 <p>The second pair has edge sets</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>G</mi><mn>3</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>03</mn><mo>,</mo><mn>04</mn><mo>,</mo><mn>06</mn><mo>,</mo><mn>12</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>23</mn><mo>,</mo><mn>24</mn><mo>,</mo><mn>35</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>H</mi><mn>3</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>01</mn><mo>,</mo><mn>04</mn><mo>,</mo><mn>06</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>26</mn><mo>,</mo><mn>36</mn><mo>,</mo><mn>45</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
  \begin{aligned}
@@ -206,32 +260,149 @@ enumeration gives first difference</p>
  \end{aligned}
 </annotation></semantics></math></p>
 <p>Its graphs have the same complete binary cut-volume polynomial:
-enumeration of all 128 subsets agrees at every pair of subset size and
-boundary size. Their unique degree-four vertices have respectively one
-and two leaf neighbors, proving nonisomorphism. The local coefficients
-agree through volume two, while</p>
+enumeration of all 128 subsets of each graph agrees at every pair of
+subset size and boundary size. Their unique degree-four vertices have
+respectively one and two leaf neighbors, proving nonisomorphism
+(SNG-E002). The local coefficients agree through volume two, while</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><msub><mi>G</mi><mn>3</mn></msub><mo>,</mo><mn>3</mn></mrow></msub><mo>−</mo><msub><mo>ℓ</mo><mrow><msub><mi>H</mi><mn>3</mn></msub><mo>,</mo><mn>3</mn></mrow></msub><mo>=</mo><msup><mi>q</mi><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>4</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
  \ell_{G_3,3}-\ell_{H_3,3}
  =q^3(1-q)(1-q^3)^2(1-q^4)^2.
 </annotation></semantics></math></p>
 <p>This entire discrepancy occurs in span two. Span one agrees by the
-binary-census equality; span three agrees by the equal degree multisets.
-Independent enumeration and polynomial multiplication check the
-factorization. Both differences are strictly positive on the open
-interval between zero and one.</p>
-<p>A third pair, the three-dimensional cube and the eight-vertex Mobius
-ladder, consists of triangle-free cubic graphs. Their local coefficients
-agree through volume three and first differ at volume four by
+binary-census equality, and span three agrees by the equal degree
+multisets. The degree-sum polynomials agree, which explains agreement at
+volume two. The finer joint degree table of the edges differs, and the
+unequal-height sector weights endpoint degrees through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">4d_i+d_j</annotation></semantics></math>.
+Both differences are strictly positive on the open interval between zero
+and one, as their factorizations show.</p>
+<p>The elementary invariants shared by each pair are summarized below.
+The data are in <code>results/exact_examples.json</code>.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pair</th>
+<th style="text-align: right;">Order</th>
+<th>Degree multiset</th>
+<th>Laplacian char. polynomial</th>
+<th>Binary cut census</th>
+<th>Edge degree-sum polynomial</th>
+<th>First difference: volume, span</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><msub><mi>H</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G_2,H_2</annotation></semantics></math></td>
+<td style="text-align: right;">7</td>
+<td>equal</td>
+<td>equal</td>
+<td>different</td>
+<td>different</td>
+<td>2, span 1</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub><mo>,</mo><msub><mi>H</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">G_3,H_3</annotation></semantics></math></td>
+<td style="text-align: right;">7</td>
+<td>equal</td>
+<td>different</td>
+<td>equal</td>
+<td>equal</td>
+<td>3, span 2</td>
+</tr>
+<tr class="odd">
+<td>cube, Möbius ladder</td>
+<td style="text-align: right;">8</td>
+<td>equal (3-regular)</td>
+<td>different</td>
+<td>different</td>
+<td>equal (regular)</td>
+<td>4, span 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kernel-checked scope.</strong> For the first two pairs, the
+decisive coefficients are checked in Lean 4.12.0 (core library only, no
+project axioms) by kernel evaluation of the released certificates
+<code>results/certificates/spectral.json</code> and
+<code>results/certificates/binary_census.json</code>. Write X for
+<code>spectral</code> or <code>binary</code> in namespace
+<code>Singularity.Cert</code>. The following hold for the stated edge
+lists on seven vertices.</p>
+<ul>
+<li><code>X_local</code> and <code>XCmp_local</code>: every coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>V</mi></msup><msup><mi>q</mi><mi>e</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">[x^Vq^e]L</annotation></semantics></math>
+of each graph, for all V at most 4 and all integers e, equals the
+transcribed table. The coefficient is defined semantically by
+<code>allCount</code>, as a count of all length-7 profiles of volume V
+and energy e.</li>
+<li><code>X_normalized</code>: the minimum-zero coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>V</mi></msup><msup><mi>q</mi><mi>e</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">[x^Vq^e]B</annotation></semantics></math>
+of the certificate graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>2</mn></msub><annotation encoding="application/x-tex">G_2</annotation></semantics></math>,
+respectively
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>3</mn></msub><annotation encoding="application/x-tex">G_3</annotation></semantics></math>,
+through volume 4. This follows from P07 because these volumes are below
+7.</li>
+<li><code>X_agree_below</code>: the two graphs agree at every volume
+below the first difference.</li>
+<li><code>X_first_difference</code>, <code>X_factorization</code> and
+<code>X_discrepancy</code>: the first-difference polynomial is the
+displayed one, it equals the expansion of the factorization
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2q^2(1-q)^2(1-q^2)</annotation></semantics></math>,
+respectively
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>4</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">q^3(1-q)(1-q^3)^2(1-q^4)^2</annotation></semantics></math>,
+and it is nonzero.</li>
+</ul>
+<p>Rejection theorems show that one changed edge or one changed decisive
+coefficient is refused. The trusted boundary is the transcription script
+<code>formal/tools/gen_certificates.py</code>, which copies the JSON
+numbers into Lean literals and records the input SHA-256 digests. These
+are <code>379d5c47…ec6b2</code> for <code>spectral.json</code> and
+<code>e654012d…e4b2</code> for <code>binary_census.json</code>; full
+digests are in <code>formal/README.md</code>. The script’s
+<code>--check</code> mode detects a stale transcription.</p>
+<p>The kernel does not check the span-marked rows, which include the
+span-two localization above. It also does not check the Euler exponents,
+the binary cut census, the Laplacian polynomials, nonisomorphism,
+simplicity of the edge lists, or anything about the Python
+implementation. Those rest on exact software replay, on two independent
+enumerators, and on the short arguments given here. The package builds
+from a clean download of the pinned Lean release in the project’s
+continuous integration, which also audits that the listed theorems
+depend only on Lean’s standard axioms; the build command and theorem
+list are in <code>formal/README.md</code>.</p>
+<p>A third pair, the three-dimensional cube and the eight-vertex Möbius
+ladder, consists of triangle-free cubic graphs. They are nonisomorphic
+because the cube is bipartite and the ladder contains a five-cycle.
+Their local coefficients agree through volume three and first differ at
+volume four by
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>q</mi><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2q^4(1-q^2)^4</annotation></semantics></math>.
-That difference is binary. The example illustrates delayed visibility
-after matching regular low-order data; it does not duplicate the
-binary-census equality of the second pair.</p>
+That difference lies in span one, the binary sector. The example
+illustrates delayed visibility after matching regular low-order data. It
+does not duplicate the binary-census equality of the second pair. Its
+coefficients are confirmed by the independent software replay of
+<code>results/certificates/regular_cube_mobius.json</code>. They are not
+kernel-checked.</p>
 <h1 data-number="4"
 id="arithmetic-assembly-and-the-comparison-theorem"><span
 class="header-section-number">4</span> Arithmetic assembly and the
 comparison theorem</h1>
-<p>For a positive integer n, let v_p(n) be its p-adic valuation.
-Define</p>
+<p>For a positive integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v_p(n)</annotation></semantics></math>
+be its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>-adic
+valuation. Define</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℰ</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>n</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>p</mi></munder><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>v</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>v</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
  \mathcal E_G(n_1,\ldots,n_k)
  =\sum_pE_G(v_p(n_1),\ldots,v_p(n_k)),
@@ -242,12 +413,13 @@ Define</p>
 </annotation></semantics></math></p>
 <p>For fixed q in the closed unit interval and real part of s greater
 than one, absolute convergence and unique factorization give
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∏</mo><mi>p</mi></msub><msub><mi>L</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>p</mi><mrow><mo>−</mo><mi>s</mi></mrow></msup><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Z_G(s,q)=\prod_pL_G(p^{-s},q)</annotation></semantics></math>.
-The construction is multiplicative across primes, while each prime’s
-local factor retains the graph interaction among its exponent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∏</mo><mi>p</mi></msub><msub><mi>L</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>p</mi><mrow><mo>−</mo><mi>s</mi></mrow></msup><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Z_G(s,q)=\prod_pL_G(p^{-s},q)</annotation></semantics></math>
+(SNG-A01). The construction is multiplicative across primes, while each
+prime’s local factor retains the graph interaction among its exponent
 coordinates.</p>
-<p><strong>Theorem 3 (first-discrepancy visibility).</strong> Fix q
-between zero and one. Suppose two same-order graphs satisfy
+<p><strong>Theorem 3 (first-discrepancy visibility; SNG-A11).</strong>
+Fix q in the closed interval [0,1]. Suppose two graphs with the same
+number of vertices satisfy
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>ℓ</mo><mrow><mi>G</mi><mo>,</mo><mi>m</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>ℓ</mo><mrow><mi>H</mi><mo>,</mo><mi>m</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\ell_{G,m}(q)=\ell_{H,m}(q)</annotation></semantics></math>
 for m below r, and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><msub><mo>ℓ</mo><mrow><mi>G</mi><mo>,</mo><mi>r</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mo>ℓ</mo><mrow><mi>H</mi><mo>,</mo><mi>r</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta=\ell_{G,r}(q)-\ell_{H,r}(q)\ne0</annotation></semantics></math>.
@@ -256,9 +428,8 @@ equals</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ζ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>δ</mi></msup><msub><mi>K</mi><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
  R_{G,H}(s,q)=\zeta(rs)^\delta K_{G,H}(s,q),
 </annotation></semantics></math></p>
-<p>where K has a finite positive nonzero limit at s=1/r and is
-holomorphic and nonzero in a complex neighborhood of that point.
-Consequently</p>
+<p>where K has a finite positive limit at s=1/r and is holomorphic and
+nonzero in a complex neighborhood of that point. Consequently</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∼</mo><msub><mi>K</mi><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mi>δ</mi></mrow></msup><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>↓</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
  R_{G,H}(s,q)\sim K_{G,H}(1/r,q)(rs-1)^{-\delta}
  \quad(s\downarrow1/r).
@@ -285,79 +456,198 @@ on the right of 1/r, and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∼</mo><mn>1</mn><mi>/</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\zeta(1+t)\sim1/t</annotation></semantics></math>
 gives the asymptotic.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
-<p>At q=1/2, the first two examples yield exponents 3/32 at s=1/2 and
-11025/262144 at s=1/3. The cube comparison yields 81/2048 at s=1/4.
-Nonintegral exponents give power or branch singularities, not ordinary
-poles. The quotient is initially a quotient of convergent positive
-series on s&gt;1; its ratio Euler product supplies the extension used in
-the theorem. No global meromorphic-continuation claim follows.</p>
+<p>The hypothesis concerns values at the chosen q. A polynomial
+discrepancy can vanish at an endpoint or at an interior root, which
+changes the first visible volume at that parameter. For the three
+reference pairs the polynomial differences are positive on 0&lt;q&lt;1,
+so the theorem applies there with r=2, 3 and 4. At q=1/2 the exponents
+are δ=3/32 at s=1/2, δ=11025/262144 at s=1/3, and δ=81/2048 at s=1/4 for
+the cube comparison. These are exact rational evaluations of the
+displayed differences. Nonintegral exponents give power or branch
+singularities, not ordinary poles. The quotient is initially a quotient
+of convergent positive series on s&gt;1; its ratio Euler product
+supplies the extension used in the theorem. No global
+meromorphic-continuation claim follows. Theorem 3 is a human-readable
+proof; it is not formalized.</p>
+<p><strong>Certified regular factors.</strong> The constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mrow><mi>G</mi><mo>,</mo><mi>H</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>r</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K_{G,H}(1/r,1/2)</annotation></semantics></math>
+has been enclosed rigorously for the two seven-vertex pairs (SNG-F38,
+<code>results/certified_k.json</code>). The enclosure assumes that both
+graphs are connected, q is rational in (0,1) and s=a/b is rational with
+(r+1)s&gt;1. It keeps all primes up to a cutoff
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msup><mi>N</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">P=N^b</annotation></semantics></math>
+exactly and bounds the omitted primes by an explicit constant times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></mrow></msup><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P^{1-(r+1)s}/((r+1)s-1)</annotation></semantics></math>.
+Truncated heights are bounded by a quadratic tail estimate (SNG-F39).
+The computation uses 256-bit fixed-point arithmetic with outward
+rounding and series enclosures of the logarithms. The retained
+intervals, rounded outward from their exact dyadic endpoints, are as
+follows.</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pair</th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math></th>
+<th style="text-align: right;">Primes kept</th>
+<th>Enclosure of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K(s,1/2)</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><msub><mi>H</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G_2,H_2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">r=2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>3</mn><mi>/</mi><mn>32</mn></mrow><annotation encoding="application/x-tex">\delta=3/32</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></td>
+<td style="text-align: right;">1229
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><msup><mn>10</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">p\le10^4</annotation></semantics></math>)</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.84973</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.85750</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.84973,\,0.85750]</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><msub><mi>H</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G_2,H_2</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">3/5</annotation></semantics></math></td>
+<td style="text-align: right;">985
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><msup><mn>6</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">p\le6^5</annotation></semantics></math>)</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.89931</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.89971</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.89931,\,0.89971]</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><msub><mi>H</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G_2,H_2</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></td>
+<td style="text-align: right;">168
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">p\le10^3</annotation></semantics></math>)</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.9678188</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.9678191</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.9678188,\,0.9678191]</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub><mo>,</mo><msub><mi>H</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">G_3,H_3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">r=3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>11025</mn><mi>/</mi><mn>262144</mn></mrow><annotation encoding="application/x-tex">\delta=11025/262144</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">1/3</annotation></semantics></math></td>
+<td style="text-align: right;">2961
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><msup><mn>30</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">p\le30^3</annotation></semantics></math>)</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.90084</mn><mo>,</mo><mspace width="0.167em"></mspace><mn>0.94230</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0.90084,\,0.94230]</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><msub><mi>G</mi><mn>2</mn></msub><mo>,</mo><msub><mi>H</mi><mn>2</mn></msub></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>∼</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mn>3</mn><mi>/</mi><mn>32</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{G_2,H_2}(s,1/2)\sim C_2(2s-1)^{-3/32}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.84973</mn><mo>,</mo><mn>0.85750</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">C_2\in[0.84973,0.85750]</annotation></semantics></math>.
+Likewise
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mrow><msub><mi>G</mi><mn>3</mn></msub><mo>,</mo><msub><mi>H</mi><mn>3</mn></msub></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>∼</mo><msub><mi>C</mi><mn>3</mn></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mn>11025</mn><mi>/</mi><mn>262144</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R_{G_3,H_3}(s,1/2)\sim C_3(3s-1)^{-11025/262144}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>3</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0.90084</mn><mo>,</mo><mn>0.94230</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">C_3\in[0.90084,0.94230]</annotation></semantics></math>.
+The exponents come from Theorem 3 and the exact coefficients; they are
+not fitted. The binary interval is wide because the omitted-prime bound
+decays only like
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mrow><mo>−</mo><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><annotation encoding="application/x-tex">P^{-1/3}</annotation></semantics></math>
+at s=1/3. These are computer-assisted interval computations in Python.
+They are not kernel-checked. No enclosure has been computed for the cube
+comparison.</p>
 <h1 data-number="5" id="synchronization-and-its-singular-limit"><span
 class="header-section-number">5</span> Synchronization and its singular
 limit</h1>
 <p>Connectedness implies zero energy exactly at constant heights. Hence
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ζ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Z_G(s,0)=\zeta(ks)</annotation></semantics></math>,
 whereas
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ζ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">Z_G(s,1)=\zeta(s)^k</annotation></semantics></math>.
-More generally, the first local coefficient is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msup><mi>q</mi><msub><mi>d</mi><mi>i</mi></msub></msup></mrow><annotation encoding="application/x-tex">\alpha_G(q)=\sum_iq^{d_i}</annotation></semantics></math>,
-and removal of the linear Euler term gives</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ζ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">Z_G(s,1)=\zeta(s)^k</annotation></semantics></math>
+(SNG-A04). More generally, the first local coefficient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msup><mi>q</mi><msub><mi>d</mi><mi>i</mi></msub></msup></mrow><annotation encoding="application/x-tex">\alpha_G(q)=\sum_iq^{d_i}</annotation></semantics></math>.
+For fixed q in [0,1], removal of the linear Euler term gives
+(SNG-A09)</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ζ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><msub><mi>α</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>H</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
  Z_G(s,q)=\zeta(s)^{\alpha_G(q)}H_G(s,q),
 </annotation></semantics></math></p>
-<p>with H regular and positive near real s=1. Every fixed positive q
-therefore restores an s=1 divergence, while exact synchronization q=0
-leaves the finite value zeta(k) there. The order of these two limits
-matters.</p>
-<p>Let d be minimum degree and b the number of vertices attaining it. If
-q tends to zero and real s tends down to one with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mi>d</mi></msup><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">q^d\log(1/(s-1))\to c</annotation></semantics></math>,
-then</p>
+<p>initially for real part of s above one, with H holomorphic for real
+part of s above 1/2 and positive and nonzero near real s=1. Every fixed
+positive q therefore restores an s=1 divergence, while exact
+synchronization q=0 leaves the finite value
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\zeta(k)</annotation></semantics></math>
+there. The order of these two limits matters.</p>
+<p>Let d be minimum degree and b the number of vertices attaining it.
+Suppose q tends to zero and real s tends down to one, along sequences,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mi>d</mi></msup><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>c</mi><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">q^d\log(1/(s-1))\to c&lt;\infty</annotation></semantics></math>.
+Then (SNG-A16)</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msub><mi>Z</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>ζ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>→</mo><msup><mi>e</mi><mrow><mi>b</mi><mi>c</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
  \frac{Z_G(s,q)}{\zeta(ks)}\longrightarrow e^{bc}.
 </annotation></semantics></math></p>
 <p>To justify this limit, use translation-normalized local factors and
-subtract their common linear term. Their tails are uniformly bounded by
-a summable multiple of p^{-2s} near s=1, using the weak-composition
-coefficient bound. The normalized product tends to one by dominated
-convergence. Finally
+subtract their common linear term. For real s at least one, each such
+logarithm is bounded by an explicit constant times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mi>λ</mi></msup><msup><mi>p</mi><mrow><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">q^\lambda p^{-2s}</annotation></semantics></math>,
+where λ is the edge connectivity. The bound comes from the
+weak-composition coefficient count and the fact that every nonzero
+minimum-zero profile has energy at least λ (SNG-A15). Summing over
+primes, the normalized product tends to one as q tends to zero,
+uniformly in s. Finally
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>b</mi><msup><mi>q</mi><mi>d</mi></msup><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mi>d</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\alpha_G(q)=bq^d+O(q^{d+1})</annotation></semantics></math>
-supplies the exponential limit. This argument describes a boundary layer
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mi>ζ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log\zeta(s)=\log(1/(s-1))+O(s-1)</annotation></semantics></math>
+supply the exponential limit. This argument describes a boundary layer
 in the declared real domain, independently of any global continuation
 question.</p>
 <p>The first positive energy has a separate combinatorial
 interpretation. Integer coarea bounds energy below by the sum of
-threshold cut sizes, hence by mincut times span. Equality at the minimum
-positive energy forces a binary minimum-cut indicator. The first energy
-coefficient of
+threshold cut sizes, hence by λ times span. Equality at the minimum
+positive energy forces a binary minimum-cut indicator (SNG-A05).
+Consequently, initially for real part of s above one, the coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mi>λ</mi></msup><annotation encoding="application/x-tex">q^\lambda</annotation></semantics></math>
+in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Z</mi><mi>G</mi></msub><mi>/</mi><mi>ζ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log(Z_G/\zeta(ks))</annotation></semantics></math>
-is consequently a sum of prime-zeta functions
+is the sum of prime-zeta functions
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>∂</mi><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>λ</mi></mrow></msub><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{|\partial S|=\lambda}P(|S|s)</annotation></semantics></math>,
-counting both cut orientations. This links cut side sizes to an analytic
-coefficient without claiming that minimum cuts identify the whole
-graph.</p>
-<h1 data-number="6"
-id="computational-scope-and-open-structural-questions"><span
-class="header-section-number">6</span> Computational scope and open
-structural questions</h1>
-<p>The released computational core uses integer and rational arithmetic.
-It supplies weak-composition counts, marked sectors, exact Laplacian
-characteristic polynomials, formal Euler exponents with independent
-recomposition, constrained original-label rank and unrank, forest
-message passing, root-of-unity residue numerators, weighted hard
-contraction and primitive-profile inversion. A finite certificate
-records a graph source, coefficient range and declared comparison;
-replay enumerates profiles independently and checks the normalization
-and threshold identities. These are software-level exact checks, not
-proof-assistant certificates for the entire implementation.</p>
-<p>An exhaustive enumeration of all connected labeled simple graphs
-through six vertices, quotiented by degree-respecting permutations,
-yields respectively 1, 1, 2, 6, 21 and 112 isomorphism classes. For
-order six, local coefficients through volumes one, two and three
-distinguish respectively 68, 100 and 112 classes. This is a complete
-finite census with an explicit generation boundary. It does not imply
+counting both cut orientations (SNG-A06). This links cut side sizes to
+an analytic coefficient without claiming that minimum cuts identify the
+whole graph.</p>
+<h1 data-number="6" id="computational-and-formal-scope"><span
+class="header-section-number">6</span> Computational and formal
+scope</h1>
+<p>The released computational core uses integer and rational arithmetic
+and the Python standard library. It supplies weak-composition counts,
+marked sectors, exact Laplacian characteristic polynomials, formal Euler
+exponents with independent recomposition, constrained original-label
+rank and unrank, forest message passing, root-of-unity residue
+numerators, weighted hard contraction and primitive-profile inversion. A
+finite certificate records a graph source, coefficient range and
+declared comparison. Replay parses it strictly and recomputes all
+coefficients by two routes that do not reuse the builder’s enumerator:
+stars-and-bars compositions and level chains. It also checks the
+normalization and threshold identities.
+<code>PYTHONPATH=src python scripts/reproduce.py --check</code> replays
+the four retained certificates and the three comparison pairs. These are
+software-level exact checks relative to the Python interpreter.</p>
+<p>The Lean package in <code>formal/</code> crosses the remaining
+boundary only where stated. It kernel-checks the coefficientwise
+normalization identity of Proposition 1, the nested energy identity of
+Proposition 2, and the decisive unmarked coefficient tables of the first
+two pairs, as listed in Section 3. It does not formalize generating
+functions, the span-marked series, the prime products or any analytic
+statement of Sections 4 and 5. It is not linked to the Python
+implementation.</p>
+<p>An exhaustive enumeration covers all labeled simple graphs on one to
+six vertices, 26,704 of which are connected on six vertices. Connected
+graphs were grouped into isomorphism classes by an exact minimal
+adjacency code over degree-preserving relabelings. This yields
+respectively 1, 1, 2, 6, 21 and 112 classes
+(<code>results/small_census.json</code>,
+<code>scripts/census.py --max-order 6 --max-volume 6</code>). For order
+six, exact polynomial local coefficients through volumes one, two and
+three distinguish respectively 68, 100 and 112 classes. In this
+population the binary cut census also separates all classes, so a
+connected nonisomorphic pair with equal binary census, such as the
+second pair, needs at least seven vertices. This is a complete finite
+census with an explicit generation boundary. It does not imply
 completeness at larger orders. In particular, the seven- and
 eight-vertex examples illustrate why visibility depth must remain part
 of the specification.</p>
+<h1 data-number="7" id="open-structural-questions"><span
+class="header-section-number">7</span> Open structural questions</h1>
 <p>The main inverse problem asks whether the fully marked series
 identifies a graph in a declared class. A negative answer should
 describe a transformation or an exact pair preserving all heights,
@@ -365,8 +655,8 @@ rather than merely a long agreeing prefix. A complementary question asks
 whether nonisomorphic pairs can have first-separation depth tending to
 infinity. Both questions concern scalar marks. If every vertex receives
 an independent variable, labeled adjacency is recovered already from the
-one- and two-coordinate coefficients, making that unrestricted version
-much easier.</p>
+one- and two-coordinate coefficients (SNG-F18), making that unrestricted
+version much easier.</p>
 <p>The prime lift adds an analytic hierarchy to these local questions.
 It does not add graph information: coefficients at prime powers recover
 the local coefficients, and local coefficients determine the Euler

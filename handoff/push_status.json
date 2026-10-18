@@ -1191,7 +1191,7 @@
   {
    "id": "P33",
    "title": "Verify concrete coefficient certificates in a kernel",
-   "status": "implemented_pending_acceptance",
+   "status": "complete",
    "effort": "L",
    "priority": 3,
    "dependencies": [
@@ -1212,12 +1212,26 @@
     "scripts/check_formal.py"
    ],
    "existing_work": "Kernel-checked (core Lean 4.12.0): mem_comps/comps_nodup (weak-composition enumerator, coverage and uniqueness), allCount_eq_compCount and allCount_eq_look_hist (link to P07's semantic allCount), table_of_ok (kernel-evaluated tables imply every coefficient), allCount_eq_nestedCount (via P08 energy_nested). For both decisive certificates (spectral, binary): full local tables of both graphs through volume 4, minimum-zero tables via P07, equality below the first discrepancy, the first-difference polynomial and its factorization (expandFac), and rejection theorems for one changed edge, one changed coefficient, and changed difference/factorization. Trusted boundary: transcription by formal/tools/gen_certificates.py (--check, input SHA-256 recorded). 63 audited theorems use only propext, Quot.sound, Classical.choice.",
-   "next_action": "Observe the formal-lean CI job on this commit; on success mark complete.",
-   "acceptance_gaps": [
-    "The clean-environment CI build including Certificates.lean has not yet been observed (local clean build passes, about 100 s).",
-    "Span-marked rows and Euler exponents of the certificates are not kernel-checked; the packet's acceptance concerns the decisive coefficient tables and first-discrepancy factorizations, which are."
-   ],
-   "packet": "handoff/tasks/P33.md"
+   "next_action": "None; P34 and P35 build on these theorems.",
+   "acceptance_gaps": [],
+   "packet": "handoff/tasks/P33.md",
+   "acceptance": {
+    "date": "2026-10-18",
+    "criteria": {
+     "finite enumeration with coverage and uniqueness": "mem_comps, comps_nodup",
+     "accumulator computes the defined coefficients": "allCount_eq_compCount, look_histOf, allCount_eq_look_hist, table_of_ok",
+     "both decisive pair tables kernel-checked, with lower-volume equality and first-discrepancy factorization": "Singularity.Cert.{spectral,binary}_{local,local_entries,normalized,agree_below,first_difference,factorization,factorization_eval,discrepancy} and the Cmp tables",
+     "normalization and nested identities derived from P07/P08": "{spectral,binary}_normalized via allCount_eq_mzCount_of_lt; allCount_eq_nestedCount via energy_nested",
+     "checked import with declared trusted boundary and digests": "formal/tools/gen_certificates.py (--check in CI), SHA-256 of both JSON files in CertificateData.lean and formal/README.md",
+     "mutation of one edge and one coefficient rejected": "{spectral,binary}_edge_mutation_rejected, _edge_mutation_table, _coefficient_mutation_rejected, _mutated_table_rejected, _mutated_difference_rejected, _mutated_factorization_rejected",
+     "clean pinned build, no admitted lemmas, axioms reviewed": "CI run 42 (d7336f8) job formal-lean success; 63 audited theorems use only propext, Quot.sound, Classical.choice",
+     "scope": "span-marked rows and Euler exponents are not kernel-checked (outside the decisive tables)"
+    },
+    "commands": [
+     "python3 formal/tools/gen_certificates.py --check",
+     "python3 scripts/check_formal.py"
+    ]
+   }
   },
   {
    "id": "P34",
