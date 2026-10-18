@@ -322,3 +322,58 @@ def asymmetry_order(kernel: Kernel) -> int | None:
     """Least interior volume of a nonzero cell of K(s,t) - K(t,s), or None."""
     a = antisymmetric_part(kernel)
     return min((v for cells in a.values() for v, _ in cells), default=None)
+
+
+def recover_kernel_from_simplex_probes(probe_values: dict[tuple[int, ...], list], terminal_count: int,
+                                       max_volume: int, q) -> dict[tuple[int, ...], list]:
+    """Recover y_b = x^|b| K(b)(x, q0) mod x^(R+1) from C(R+k, k) star probes, |r| <= R.
+
+    The matrix M[r][b] = prod_i f(b_i)^(r_i) over r, b in the lower set
+    {|.| <= R} reduces modulo x to monomial interpolation on a lower set at
+    grid points (q0^(b_1^2), ..., q0^(b_k^2)), which is unisolvent, so M is
+    invertible over Q[x]/(x^(R+1)).  Gaussian elimination pivots on entries
+    with nonzero constant term.
+    """
+    from fractions import Fraction
+    from itertools import product as cartesian
+
+    from .polynomials import series_inverse, series_mul
+
+    k, R, q0 = terminal_count, max_volume, Fraction(q)
+    if not 0 < q0 < 1:
+        raise ValueError("q must lie strictly between 0 and 1 so that the nodes are distinct")
+    index = [b for b in cartesian(range(R + 1), repeat=k) if sum(b) <= R]
+    leaf = [[{0: q0 ** ((c - h) ** 2)} for c in range(R + 1)] for h in range(R + 1)]
+    one = [{0: Fraction(1)}] + [{} for _ in range(R)]
+
+    def mul(a, b):
+        return series_mul(a, b, R)
+
+    def lin(a, b, scale):  # a - scale * b
+        prod = mul(scale, b)
+        return [{0: a[i].get(0, 0) - prod[i].get(0, 0)} for i in range(R + 1)]
+
+    powers = [[one] for _ in range(R + 1)]
+    for h in range(R + 1):
+        for _ in range(R):
+            powers[h].append(mul(powers[h][-1], leaf[h]))
+    matrix = []
+    for r in index:
+        row = []
+        for b in index:
+            entry = one
+            for i in range(k):
+                entry = mul(entry, powers[b[i]][r[i]])
+            row.append(entry)
+        matrix.append(row + [[{0: Fraction(v)} for v in probe_values[r]]])
+    size = len(index)
+    for col in range(size):
+        pivot = next(i for i in range(col, size) if matrix[i][col][0].get(0, 0) != 0)
+        matrix[col], matrix[pivot] = matrix[pivot], matrix[col]
+        inverse = series_inverse(matrix[col][col], R)
+        matrix[col] = [mul(entry, inverse) for entry in matrix[col]]
+        for i in range(size):
+            if i != col and any(matrix[i][col][j].get(0, 0) for j in range(R + 1)):
+                factor = matrix[i][col]
+                matrix[i] = [lin(a, b, factor) for a, b in zip(matrix[i], matrix[col])]
+    return {b: [matrix[i][size][j].get(0, Fraction(0)) for j in range(R + 1)] for i, b in enumerate(index)}

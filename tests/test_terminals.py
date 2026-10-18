@@ -141,6 +141,29 @@ class KernelTests(unittest.TestCase):
         self.assertNotEqual(rooted_deck(block, (0, 1), 2), rooted_deck(block, (0, 1), 2, swap=True))
         self.assertEqual(asymmetry_order(terminal_kernel(block, (0, 1), 6)), 2)
 
+    def test_simplex_star_probes_suffice(self):
+        from fractions import Fraction
+        from itertools import product
+        from math import comb
+        from singularity.polynomials import evaluate
+        from singularity.terminals import recover_kernel_from_simplex_probes, star_probe
+        block, terminals, bound, q = Graph(5, [(0, 3), (1, 3), (2, 4), (3, 4)]), (0, 1, 2), 3, Fraction(2, 5)
+        probes = {}
+        for leaves in product(range(bound + 1), repeat=3):
+            if sum(leaves) <= bound:
+                context, context_terminals = star_probe(3, leaves)
+                glued, _ = glue_graphs(block, terminals, context, context_terminals)
+                probes[leaves] = [evaluate(row, q) for row in local_coefficients(glued, bound)]
+        self.assertEqual(len(probes), comb(bound + 3, 3))
+        recovered = recover_kernel_from_simplex_probes(probes, 3, bound, q)
+        kernel = terminal_kernel(block, terminals, bound)
+        for b, series in recovered.items():
+            expected = [Fraction(0)] * (bound + 1)
+            for (v, e), c in kernel.get(b, {}).items():
+                if sum(b) + v <= bound:
+                    expected[sum(b) + v] += c * q ** e
+            self.assertEqual(series, expected, b)
+
     def test_invalid_terminals_and_shared_edges(self):
         graph = Graph(3, [(0, 1), (1, 2)])
         for terminals in ((), (0, 0), (0, 3), (True,)):

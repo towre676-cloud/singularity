@@ -7498,18 +7498,37 @@ the ‘only if’ part follows from the star contexts.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
 <p>So every distinction a block can make in any context is already made
 by star contexts. The kernel is the complete interface object for
-edge-disjoint gluing at its terminals. Linear recovery needs at least as
-many probes as unknowns
+edge-disjoint gluing at its terminals. The count can be reduced to
+exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mi>k</mi></mrow><mi>k</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+k}{k}</annotation></semantics></math>,
+the number of unknowns
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>𝐛</mi></msub><annotation encoding="application/x-tex">y_{\mathbf b}</annotation></semantics></math>
 with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|\le R</annotation></semantics></math>.
+The star probes with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐫</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|\mathbf r|\le R</annotation></semantics></math>
+suffice. Modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+their matrix is monomial interpolation on the lower set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐫</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{|\mathbf r|\le R\}</annotation></semantics></math>
+at the grid points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><msubsup><mi>b</mi><mn>1</mn><mn>2</mn></msubsup></msup><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>q</mi><msubsup><mi>b</mi><mi>k</mi><mn>2</mn></msubsup></msup><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(q^{b_1^2},\ldots,q^{b_k^2})</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|\mathbf b|\le R</annotation></semantics></math>,
-namely
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mi>k</mi></mrow><mi>k</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+k}{k}</annotation></semantics></math>;
-the star family uses
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><annotation encoding="application/x-tex">(R+1)^k</annotation></semantics></math>.
-Whether a smaller realizable family suffices, and how much a restricted
-family of contexts can compress the interface, are the open questions of
-the proposed units P49–P54. <code>recover_kernel_from_probes</code> in
+and interpolation on a lower set with tensor-grid nodes of distinct
+coordinates is unisolvent, as the Newton form on lower sets shows. The
+matrix is therefore invertible over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q[x]/(x^{R+1})</annotation></semantics></math>.
+The count is optimal in the following sense. The star blocks are
+themselves realizable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-terminal
+blocks, and by the same invertibility their kernels span the whole
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mi>R</mi><mo>+</mo><mi>k</mi></mrow><mi>k</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\binom{R+k}{k}</annotation></semantics></math>-dimensional
+space of truncated
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mi>𝐛</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(y_{\mathbf b})</annotation></semantics></math>.
+A family of fewer contexts gives a linear map from that span with a
+nonzero kernel, so it cannot determine every element of the span. How
+much a restricted family of contexts can compress the interface remains
+open (P52–P54). <code>recover_kernel_from_probes</code> in
 <code>src/singularity/terminals.py</code> carries out the inversion at a
 rational
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math>.

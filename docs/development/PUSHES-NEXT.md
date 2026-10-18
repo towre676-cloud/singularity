@@ -32,7 +32,7 @@ The six waves have three centers: certified arithmetic evaluation, exactly contr
 |---|---|---|
 | P49 | Future-context equivalence for a specified attachment grammar | SNG-F44: for all edge-disjoint contexts, equivalence is equality of kernels, and star contexts suffice |
 | P50 | Connection-matrix formulation and realizable response spaces | SNG-F41 bilinear gluing; SNG-F44 tensor Vandermonde |
-| P51 | Unrestricted linear-interface lower bound under pinned probes | \(\binom{R+k}{k}\) unknowns versus \((R+1)^k\) star probes; sharpness open |
+| P51 | Unrestricted linear-interface lower bound under pinned probes | \(\binom{R+k}{k}\) star probes with \(\|r\|\le R\) suffice (lower-set unisolvence) and are optimal for determining the span of realizable kernels; `recover_kernel_from_simplex_probes` |
 | P52 | Volume-limited interface rank | — |
 | P53 | Constructive restricted-context quotients | — |
 | P54 | A compression theorem with proved savings, including arithmetic cost | — |
