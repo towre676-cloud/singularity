@@ -18,6 +18,11 @@ the lower-degree rank condition fails, the degree-25 diagonal ranks modulo
 a prime, modular probe-map ranks confirming the dimension for R = 8..12
 (``--extended`` retains R = 13..18), weighted-edge recovery on real weighted
 gluings, and (``--benchmark``, retained) compile-once versus per-query cost.
+
+SNG-F51/F52 sections: finite-difference recovery without a terminal edge
+at R = 7 from probes whose glued series are computed on the actual glued
+graphs by tree decomposition, and the realizable separation bounds under
+the interior-slice rigidity rules.
 """
 import argparse
 from fractions import Fraction
@@ -26,7 +31,8 @@ import json
 from pathlib import Path
 import time
 
-from singularity.contexts import (_context_series, interface_status, lower_degree_condition,
+from singularity.contexts import (_context_series, finite_difference_budget, finite_difference_probe_set,
+                                  interface_status, lower_degree_condition, recover_by_finite_differences,
                                   recover_symmetrized_kernel, symmetric_context, symmetric_interface_rank,
                                   symmetric_interface_rank_mod, symmetric_probe_set, symmetrize, top_block_rank_mod,
                                   top_degree_defect, top_degree_kernel, weighted_probe)
@@ -144,6 +150,54 @@ def weighted_recovery(R=3, W=2):
             "glued_series": "weak-composition enumeration of the weighted glued graph"}
 
 
+def _min_degree_order(graph):
+    remaining = {v: set(graph.neighbors[v]) for v in range(graph.n)}
+    order = []
+    while remaining:
+        v = min(remaining, key=lambda u: (len(remaining[u]), u))
+        nbrs = remaining.pop(v)
+        for a in nbrs:
+            remaining[a] |= nbrs - {a}
+            remaining[a].discard(v)
+        order.append(v)
+    return order
+
+
+def all_order_recovery(R=7):
+    """SNG-F51 end to end: glued series of the actual glued graphs, by tree decomposition."""
+    block = Graph(6, [(0, 2), (2, 3), (3, 1), (2, 4), (4, 5)])
+    B = finite_difference_budget(R)
+    values = {}
+    start = time.perf_counter()
+    for d, c in finite_difference_probe_set(R):
+        context, terminals = symmetric_context(d, False, c)
+        glued, _ = glue_graphs(block, (0, 1), context, terminals)
+        coefficients = histogram_coefficients(decomposition_histogram(glued, elimination_decomposition(glued, _min_degree_order(glued)), B, B), B)
+        values[d, c] = [at(row) for row in coefficients]
+    Y = recover_by_finite_differences(values, R, Q0)
+    plus = symmetrize(terminal_kernel(block, (0, 1), R))
+    for o, series in Y.items():
+        for interior in range(R + 1 - sum(o)):
+            expected = sum((c * Q0 ** en for (v, en), c in plus.get(o, {}).items() if v == interior), Fraction(0))
+            assert series[sum(o) + interior] == expected, (o, interior)
+    return {"block": block.to_dict(), "budget": R, "observation_budget": B, "probes": len(values),
+            "top_defect_at_budget_R_without_edge": top_degree_defect(R),
+            "glued_series": "tree decomposition of each actual glued graph", "recovered": True}
+
+
+def realizable_bounds():
+    out = {}
+    for mode in (False, True, "slice", "balanced"):
+        for kappa in (1, 2):
+            first = next(R for R in range(200) if interface_status(R, kappa, mode)["top_defect"])
+            out[f"{mode}_kappa_{kappa}"] = {"first_budget_with_possible_ambiguity": first,
+                                           "exactness_condition_first_failure": lower_degree_condition(120, kappa, mode)}
+    vector = lambda vs: [{"orbit": list(o), "polynomial": polynomial_to_json(p)} for v in vs for o, p in v.items()]
+    out["slice_kappa_2_candidate_R27"] = vector(top_degree_kernel(27, 2, "slice"))
+    out["slice_kappa_1_candidate_R9"] = vector(top_degree_kernel(9, 1, "slice"))
+    return out
+
+
 def benchmark(R=6):
     """Compile a ladder block once, then answer symmetric-context queries by contraction."""
     rungs = 6
@@ -198,7 +252,8 @@ def main():
               "family": "symmetric_context(d, eps, c): d leaves on each terminal, c shared neighbours, optional terminal edge; d <= #orbits, c <= R",
               "ranks": ranks(), "recovery": recovery(), "quotient": quotient(),
               "modular_ranks_without_terminal_edge": modular_ranks(range(8, 13)),
-              "weighted_recovery": weighted_recovery()}
+              "weighted_recovery": weighted_recovery(),
+              "all_order_recovery": all_order_recovery(), "realizable_bounds": realizable_bounds()}
     retained = json.loads(TARGET.read_text()) if TARGET.exists() else {}
     if args.check:
         if {k: retained.get(k) for k in result} != result:

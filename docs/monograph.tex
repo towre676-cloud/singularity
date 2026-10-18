@@ -5208,12 +5208,13 @@ contexts).}
   and the blind direction \(v\) of (a) is not a difference of two
   blocks.
 \item
-  At \(R=26\) the only possible invisible difference is a multiple of
-  \(v\) placed at degree \(26\).
+  At \(R=26\) the only possible invisible difference allowed by (c)
+  alone is a multiple of \(v\) placed at degree \(26\). SNG-F52 below
+  excludes it as well.
 \item
   For \(\kappa=1\), blocks are separated for \(R\le7\). At \(R=8\) the
-  only possible invisible difference is a multiple of
-  \(e_{\{0,5\}}[8]-e_{\{3,4\}}[8]\).
+  only possible invisible difference allowed by (c) alone is a multiple
+  of \(e_{\{0,5\}}[8]-e_{\{3,4\}}[8]\), which SNG-F52 also excludes.
 \end{itemize}
 
 \emph{Proof.} (a) At interior volume zero a context in the class has
@@ -5353,6 +5354,160 @@ two-terminal trees with at most ten vertices. Of the 1,159,003 pairs,
 self-pairings included, 12,112 have two or more leading orbits, and none
 has a vanishing leading coefficient. A cancelling pair, if one exists,
 must therefore come from a richer family or a deeper leading level.
+
+\hypertarget{recovery-with-extra-volume-and-rigidity-of-realizable-interfaces}{%
+\subsection{Recovery with extra volume, and rigidity of realizable
+interfaces}\label{recovery-with-extra-volume-and-rigidity-of-realizable-interfaces}}
+
+The obstruction of SNG-F49(a) is tied to a fixed budget. Two questions
+remain: how much additional observation recovers an interface, and which
+formal ambiguities actual blocks can realize. The relevant object is
+\(\ker\mathcal O_R\cap(\mathcal B_R-\mathcal B_R)\), where
+\(\mathcal B_R\) is the set of truncated interfaces of actual blocks.
+SNG-F49 describes the first factor; the slice constraints below begin to
+describe the second.
+
+\textbf{Theorem SNG-F51 (recovery with extra volume).} Let \(m_R\) be
+the largest number of orbits with \(|o|\le R\) sharing a value of
+\(s^2+t^2\), and let \(G\) be the number of distinct values. Let
+\(C_{d,c}\) be the context with \(d\) pendant leaves on each terminal,
+\(c\) shared neighbours and no terminal edge. Then the glued series of a
+block with the contexts \(C_{d,c}\), \(d+c<G+m_R-1\), through volume
+\(R+m_R-1\) determine \(Y_o\) modulo \(x^{R+1}\) for every orbit. This
+holds over \(\mathbb Q(q)\) and at every \(q_0\in(0,1)\). In particular,
+edge-free symmetric contexts determine every finite prefix of \(K^+\):
+the obstruction of SNG-F49(a) delays observation by \(m_R-1\) units of
+volume, and loses nothing.
+
+\emph{Proof.} With \(L_h(x)=\sum_ux^uq^{(u-h)^2}\), a pair of leaves
+contributes \(P=L_sL_t\) and a shared neighbour contributes
+\(S=\sum_ux^uq^{(u-s)^2+(u-t)^2}\). Both have constant term \(q^{E}\),
+\(E=s^2+t^2\), and \(S-P=-q^E\tau_ox+O(x^2)\). The context \(C_{k-c,c}\)
+contributes \(P^{k-c}S^c\), so for \(k\ge j\) \[
+\sum_{c=0}^{j}(-1)^{j-c}\binom jc P^{k-c}S^c=P^{k-j}(S-P)^j=x^jq^{kE}(-\tau_o)^j+O(x^{j+1}).
+\] This is an exact linear combination of responses of actual contexts,
+and it vanishes through degree \(j-1\).
+
+Suppose every coordinate of degree below \(n\) is known, and subtract
+its contribution. At output volume \(n+j\) the differenced measurement
+is \(\sum_{|o|\le n}q^{kE_o}(-\tau_o)^jY_o[n]\). Coordinates of degree
+above \(n\) cannot enter, because the context factor supplies at least
+\(j\) units of volume. For fixed \(j\), varying \(k=j,\ldots,j+G-1\)
+gives a Vandermonde system in the distinct numbers \(q^E\), which
+separates the groups. Inside a group, \(j=0,\ldots,|g|-1\) gives a
+Vandermonde system in the \(\tau_o\).
+
+These are distinct. Write \(\tau_o=1-(q^{1-2s}-1)(q^{1-2t}-1)\). For
+\(t\ge1\) the pair \(\{0,t\}\) has \(\tau>1\), and pairs with
+\(s,t\ge1\) have \(\tau<1\). For the latter put \(r=1/q>1\) and
+\(g(y)=\log(r^{2\sqrt y-1}-1)\) for \(y\ge1\). With \(x=\sqrt y\),
+\(h(x)=\log(r^{2x-1}-1)\) and \(L=\log r\), one has
+\(h'=2Lr^{2x-1}/(r^{2x-1}-1)>0\) and
+\(h''=-4L^2r^{2x-1}/(r^{2x-1}-1)^2<0\). Hence
+\(g''=(h''-h'/x)/(4x^2)<0\), and on the circle \(s^2+t^2=E\) the sum
+\(g(s^2)+g(t^2)\) strictly increases toward balance. So \(\tau_o\)
+strictly decreases toward balance, and distinct orbits of a group have
+distinct \(\tau_o\). A group at degree \(n\) has at most \(m_R\) orbits,
+so the output volumes used are at most \(R+m_R-1\). \(\square\)
+
+If only connected contexts are allowed, keep one shared neighbour in
+every probe. The same argument goes through with the extra factor \(S\),
+whose constant term is a unit.
+
+The three mechanisms compare as follows. Ordinary symmetric contexts at
+the original budget give the quotient of SNG-F49. Finite differences,
+with \(m_R-1\) extra units of volume, produce the powers
+\(1,\tau,\tau^2,\ldots\) and recover everything (SNG-F51). A weighted
+terminal edge with weights \(0,\ldots,m_R-1\) produces the powers
+\(1,y,y^2,\ldots\) and recovers everything at the original budget
+(SNG-F50). Here \(m_R=2\) for \(7\le R<25\), \(3\) from \(25\), \(4\)
+from \(47\) and \(5\) from \(91\).
+\texttt{recover\_by\_finite\_differences} in
+\texttt{src/singularity/contexts.py} carries out the reconstruction.
+\texttt{scripts/symmetric\_contexts.py} replays it at \(R=7\), where the
+budget-\(7\) quotient has a defect, with 39 probes through volume \(8\).
+Their glued series are computed by tree decomposition of each actual
+glued graph, independently of the contraction formula and of the
+closed-form context factors.
+
+\textbf{Proposition SNG-F52 (interior slices of a block kernel).} Let a
+block have terminal degrees \(a,b\), let \(e\in\{0,1\}\) count its
+terminal edge, and put \(Q_0(s,t)=as^2+bt^2-2est\), \(U=q^{-2s}\),
+\(V=q^{-2t}\). For every \(j\), \[
+[x^j]K(s,t)=q^{Q_0(s,t)}P_j(U,V),
+\] where \(P_j\) has coefficients in \(\mathbb Z_{\ge0}[q]\) and degree
+at most \(j\) in each variable. In particular
+\(P_1=\sum_vq^{\deg v}U^{A_{sv}}V^{A_{tv}}\), summed over interior
+vertices, has at most four monomials whatever the size of the block.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Suppose two blocks have the same \(\{a,b\}\) and \(e\). If their
+  symmetrized kernels agree in interior volume one at the states
+  \((0,0),(1,1),(2,2)\) and \((0,1)\), of total volume at most \(5\),
+  then their interior-volume-one slices of \(K^+\) agree at every state.
+\item
+  If moreover \(a=b\), agreement of slice \(j\) of \(K^+\) at the states
+  with \(s,t\le j\), of total volume at most \(3j\), implies agreement
+  of slice \(j\) at every state.
+\end{enumerate}
+
+\emph{Proof.} For interior heights \(h\) of total \(j\), the energy is
+\[
+Q_0+\Bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim s}h_v^2+\sum_{v\sim t}h_v^2\Bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim t}h_v.
+\] The bracket does not depend on \((s,t)\), and each of the last two
+sums is at most \(j\). For \(j=1\) the single raised vertex contributes
+\(q^{\deg v}U^{A_{sv}}V^{A_{tv}}\).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  When \(a\ne b\), order the terminals of both blocks so that \(s\) has
+  degree \(a\); this does not change \(K^+\). Let \(P=P_1-P_1'\). At a
+  diagonal state \(K^+(s,s)=K(s,s)\), so agreement at \(s=0,1,2\) says
+  that \(P(z,z)\), of degree at most \(2\), vanishes at the three
+  distinct nodes \(z=1,q^{-2},q^{-4}\). Hence \(P=c(U-V)\). At
+  \(s\ne t\) the symmetrized difference is
+  \(c(U-V)\bigl(q^{Q_0(s,t)}-q^{Q_0(t,s)}\bigr)\). This vanishes
+  identically when \(a=b\). When \(a\ne b\), at \((0,1)\) it equals
+  \(c(1-q^{-2})(q^b-q^a)\), forcing \(c=0\).
+\item
+  With \(a=b\), \(Q_0\) is symmetric, and the symmetrized slice is
+  \(q^{Q_0}\Sigma(U,V)\) with \(\Sigma(U,V)=P_j(U,V)+P_j(V,U)\) off the
+  diagonal, and \(q^{Q_0}\Sigma(z,z)/2\) on it. The symmetric polynomial
+  \(\Sigma\), of degree at most \(j\) in each variable, vanishes on the
+  tensor grid of the \(j+1\) distinct nodes \(q^{-2s}\), \(s\le j\), and
+  is therefore zero. \(\square\)
+\end{enumerate}
+
+Together with SNG-F49(c), which fixes interior volume zero, this
+sharpens the realizable statements. Two indistinguishable blocks agree
+below degree \(v\) by induction, and the degree data fix \(\{a,b\}\) at
+degree \(1\) and \(e\) at degree \(2\). So their difference vanishes in
+slice one at every degree \(v\ge6\), and, when the terminal degrees are
+equal, in every slice \(j\) with \(3j<v\). Rerunning SNG-F49 on the
+remaining coordinates (\texttt{realizable="slice"} or
+\texttt{"balanced"} in \texttt{interface\_status}) gives: - \textbf{With
+the terminal edge (\(\kappa=2\)).} Simple symmetric contexts separate
+the truncated symmetrized kernels of any two blocks through \(R=26\).
+This removes the \(R=26\) candidate: its coordinate on \(\{10,15\}\) has
+interior volume one. At \(R=27\) the only possible invisible difference
+is \(v\) placed at degree \(27\), at interior volumes \(8,4,2\). For
+equal terminal degrees, separation holds through \(R=37\). -
+\textbf{Without the edge (\(\kappa=1\)).} Separation holds through
+\(R=8\). At \(R=9\) the only possible invisible difference is a multiple
+of \(e_{\{0,5\}}[9]-e_{\{3,4\}}[9]\). For equal terminal degrees,
+separation holds through \(R=10\).
+
+On these coordinates the exactness hypothesis of SNG-F49(b) holds for
+\(R\le27\) (\(\kappa=1\)) and \(R\le93\) (\(\kappa=2\)) in general. For
+equal terminal degrees it holds for \(R\le38\) and \(R\le120\), the
+latter being the range checked. All statements are recorded in
+\texttt{results/symmetric\_contexts.json}. For unequal terminal degrees,
+the analogue of (b) for \(j\ge2\) needs an interpolation argument for
+\(q^{as^2+bt^2}P_j(U,V)+q^{bs^2+at^2}P_j(V,U)\) and is open. So is the
+question whether the remaining candidates are realized by actual blocks.
 
 \hypertarget{every-late-census-collision-is-separated-by-triangles}{%
 \section{Every late census collision is separated by

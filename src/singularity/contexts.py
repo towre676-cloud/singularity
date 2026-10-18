@@ -208,30 +208,64 @@ def symmetric_interface_rank(max_volume: int, q, terminal_edge: bool, max_common
     return len(columns), rank
 
 
+REALIZABLE_MODES = (False, True, "slice", "balanced")
+
+
+def _free(orbit: Orbit, v: int, realizable) -> bool:
+    """Whether the coordinate Y_o[v] can differ between two indistinguishable blocks.
+
+    ``False``: the formal space, every coordinate.  ``True``: interior
+    volume j = v - |o| >= 1 (j = 0 is fixed by the terminal degrees,
+    SNG-F49(c)).  ``"slice"``: also j = 1 once v >= 6 (SNG-F52(a), which
+    reads the slice from states of total volume <= 5).  ``"balanced"``,
+    for blocks whose terminals have equal internal degree: j >= 1 and
+    3j >= v, since slice j is read from the states with s, t <= j, of total
+    volume <= 3j (SNG-F52(b)).
+    """
+    if realizable not in REALIZABLE_MODES:
+        raise ValueError(f"realizable must be one of {REALIZABLE_MODES}")
+    j = v - sum(orbit)
+    if realizable is False:
+        return True
+    if realizable is True:
+        return j >= 1
+    if realizable == "slice":
+        return j >= (2 if v >= 6 else 1)
+    return j >= 1 and 3 * j >= v
+
+
+def _first_free(orbit: Orbit, realizable) -> int:
+    v = sum(orbit)
+    while not _free(orbit, v, realizable):
+        v += 1
+    return v
+
+
 def max_group_size(max_volume: int) -> int:
     """Largest number of orbits with |o| <= R sharing s^2 + t^2."""
     return max(len(g) for g in orbit_groups(max_volume).values())
 
 
-def diagonal_defects(max_volume: int, kappa: int, realizable: bool = False) -> list[int]:
+def diagonal_defects(max_volume: int, kappa: int, realizable=False) -> list[int]:
     """delta_v = sum over s^2+t^2 groups of max(0, |g| - kappa), v = 0..R (SNG-F49).
 
     kappa is the number of distinct terminal-edge weights available: 1 with
     no terminal edge, 2 for simple contexts, W + 1 with weights 0..W.  The
-    group at degree v holds the orbits with |o| <= v, or |o| < v when
-    ``realizable``: coefficients with |o| = v have interior volume zero and
-    are fixed by the unordered terminal degrees, which degree 1 reveals.
+    group at degree v holds the orbits with |o| <= v whose coordinate is
+    free in the sense of ``_free``: in the realizable modes, coordinates
+    fixed by lower-degree data (terminal degrees, rigid interior slices)
+    are removed.
     """
     R = _integer(max_volume, "max_volume", minimum=0)
     kappa = _integer(kappa, "kappa", minimum=1)
     out = []
     for v in range(R + 1):
-        sizes = Counter(s * s + t * t for s, t in orbits(v) if not realizable or s + t < v)
+        sizes = Counter(s * s + t * t for s, t in orbits(v) if _free((s, t), v, realizable))
         out.append(sum(max(0, size - kappa) for size in sizes.values()))
     return out
 
 
-def interface_status(max_volume: int, kappa: int, realizable: bool = False) -> dict:
+def interface_status(max_volume: int, kappa: int, realizable=False) -> dict:
     """What SNG-F49 proves about the invisible subspace at budget R.
 
     The invisible subspace of the formal (or realizable) coefficient space
@@ -240,7 +274,7 @@ def interface_status(max_volume: int, kappa: int, realizable: bool = False) -> d
     """
     R = _integer(max_volume, "max_volume", minimum=0)
     defects = diagonal_defects(R, kappa, realizable)
-    unknowns = sum(R + 1 - sum(o) - (1 if realizable else 0) for o in orbits(R))
+    unknowns = sum(_free(o, v, realizable) for o in orbits(R) for v in range(sum(o), R + 1))
     exact = not any(defects[:-1])
     return {"budget": R, "kappa": kappa, "realizable": realizable, "unknowns": unknowns,
             "top_defect": defects[-1], "lower_defects": sum(defects[:-1]),
@@ -248,11 +282,11 @@ def interface_status(max_volume: int, kappa: int, realizable: bool = False) -> d
             "invisible_dimension_bounds": [defects[-1], sum(defects)]}
 
 
-def top_degree_kernel(max_volume: int, kappa: int, realizable: bool = False) -> list[dict[Orbit, dict[int, int]]]:
+def top_degree_kernel(max_volume: int, kappa: int, realizable=False) -> list[dict[Orbit, dict[int, int]]]:
     """A basis of the top-degree invisible vectors, as polynomials in q (SNG-F49).
 
     For each s^2+t^2 group with more than kappa orbits o_0 < o_1 < ... (in
-    the realizable case only those with |o| < R), and each j >= kappa, the
+    the realizable modes only the free orbits), and each j >= kappa, the
     vector on S = (o_0..o_{kappa-1}, o_j) with entry (-1)^i times the
     Vandermonde determinant of the nodes q^(d_o), o in S minus S_i, is
     annihilated by every row q^(delta m + e d), e < kappa.
@@ -263,7 +297,7 @@ def top_degree_kernel(max_volume: int, kappa: int, realizable: bool = False) -> 
     kappa = _integer(kappa, "kappa", minimum=1)
     groups: defaultdict[int, list[Orbit]] = defaultdict(list)
     for s, t in orbits(R):
-        if not realizable or s + t < R:
+        if _free((s, t), R, realizable):
             groups[s * s + t * t].append((s, t))
     basis = []
     for m, group in sorted(groups.items()):
@@ -379,7 +413,7 @@ def _rank_mod(rows: list[list[int]], prime: int) -> int:
     return rank
 
 
-def top_block_rank_mod(max_volume: int, kappa: int, realizable: bool = False,
+def top_block_rank_mod(max_volume: int, kappa: int, realizable=False,
                        prime: int = (1 << 61) - 1, q: int = 3) -> tuple[int, int]:
     """(columns, rank) of the degree-R diagonal block q^(delta m_o + e d_o), e < kappa, modulo a prime.
 
@@ -387,7 +421,7 @@ def top_block_rank_mod(max_volume: int, kappa: int, realizable: bool = False,
     columns, which is enough for the Vandermonde in delta.
     """
     R = _integer(max_volume, "max_volume", minimum=0)
-    cols = [o for o in orbits(R) if not realizable or sum(o) < R]
+    cols = [o for o in orbits(R) if _free(o, R, realizable)]
     if not cols:
         return 0, 0
     G = len({s * s + t * t for s, t in cols})
@@ -396,12 +430,12 @@ def top_block_rank_mod(max_volume: int, kappa: int, realizable: bool = False,
     return len(cols), _rank_mod(rows, prime)
 
 
-def lower_degree_condition(max_degree: int, kappa: int, realizable: bool = False,
+def lower_degree_condition(max_degree: int, kappa: int, realizable=False,
                            prime: int = (1 << 61) - 1, q: int = 1234567891) -> int | None:
     """Least degree v <= max_degree at which the SNG-F49(b) condition fails, or None.
 
-    At degree v the group of orbits sharing m (|o| <= v, or |o| < v when
-    ``realizable``) must have full column rank for the functionals
+    At degree v the group of free orbits sharing m (see ``_free``) must
+    have full column rank for the functionals
     y^e tau^i (e < kappa, i <= 1), with y_o = q^((s-t)^2) and
     tau_o = q^(1-2s) + q^(1-2t) - q^(2-2(s+t)).  Columns are scaled by
     q^(2(s+t)) to clear denominators; a nonzero minor modulo p at one q
@@ -415,7 +449,7 @@ def lower_degree_condition(max_degree: int, kappa: int, realizable: bool = False
             groups[s * s + t * t].append((s, t))
     worst = None
     for group in groups.values():
-        group.sort(key=sum)
+        group.sort(key=lambda o: _first_free(o, realizable))
         for k in range(2, len(group) + 1):
             prefix = group[:k]
             rows = []
@@ -429,8 +463,90 @@ def lower_degree_condition(max_degree: int, kappa: int, realizable: bool = False
                         row.append(y * (tau if i else scale) % prime)
                     rows.append(row)
             if _rank_mod(rows, prime) < k:
-                degree = sum(prefix[-1]) + (1 if realizable else 0)
+                degree = _first_free(prefix[-1], realizable)
                 if degree <= V and (worst is None or degree < worst):
                     worst = degree
                 break
     return worst
+
+
+def tau(orbit: Orbit, q) -> Fraction:
+    """tau_o = q^(1-2s) + q^(1-2t) - q^(2-2(s+t)) = 1 - (q^(1-2s) - 1)(q^(1-2t) - 1)."""
+    s, t = orbit
+    q = Fraction(q)
+    return q ** (1 - 2 * s) + q ** (1 - 2 * t) - q ** (2 - 2 * (s + t))
+
+
+def finite_difference_budget(max_volume: int) -> int:
+    """Observation budget R + m_R - 1 of SNG-F51, m_R the largest s^2+t^2 collision through R."""
+    R = _integer(max_volume, "max_volume", minimum=0)
+    return R + max_group_size(R) - 1
+
+
+def finite_difference_probe_set(max_volume: int) -> list[tuple[int, int]]:
+    """(leaves per terminal, shared neighbours) contexts used by recover_by_finite_differences.
+
+    For j < m_R and k = j..j+G-1 (G distinct values of s^2+t^2), the
+    contexts (k - c, c), c = 0..j; no terminal edge is used.
+    """
+    R = _integer(max_volume, "max_volume", minimum=0)
+    G, m = len(orbit_groups(R)), max_group_size(R)
+    return sorted({(k - c, c) for j in range(m) for k in range(j, j + G) for c in range(j + 1)})
+
+
+def recover_by_finite_differences(probe_values: dict[tuple[int, int], Sequence], max_volume: int, q) -> dict[Orbit, list]:
+    """Recover Y_o = x^|o| K^+(o)(x, q0) mod x^(R+1) from edge-free symmetric probes (SNG-F51).
+
+    ``probe_values[(d, c)]`` is the glued series at q0 through volume
+    R + m_R - 1 with d leaves on each terminal and c shared neighbours.
+    The j-th difference in c at fixed k = d + c is the context factor
+    P^(k-j) (S - P)^j, which vanishes below x^j and has x^j coefficient
+    q0^(k m_o) (-tau_o)^j.  Degree n is solved from output volumes n..n+m-1:
+    a Vandermonde in k separates the s^2+t^2 groups, a Vandermonde in j
+    the orbits of a group, whose tau_o are distinct (strictly decreasing
+    toward balance on each circle).
+    """
+    from math import comb
+
+    R, q0 = _integer(max_volume, "max_volume", minimum=0), Fraction(q)
+    if not 0 < q0 < 1:
+        raise ValueError("q must lie strictly between 0 and 1")
+    B = finite_difference_budget(R)
+    probes = finite_difference_probe_set(R)
+    missing = [p for p in probes if p not in probe_values]
+    if missing:
+        raise ValueError(f"missing probe values for {missing}")
+    values = {}
+    for p in probes:
+        series = [Fraction(v) for v in probe_values[p]]
+        if len(series) < B + 1:
+            raise ValueError(f"probe {p} needs its series through volume {B}")
+        values[p] = series[: B + 1]
+    os_ = orbits(R)
+    G, m = len(orbit_groups(R)), max_group_size(R)
+    # Differenced measurement and context factor for each (k, j).
+    measured, factor = {}, {}
+    for j in range(m):
+        for k in range(j, j + G):
+            measured[k, j] = [sum((-1) ** (j - c) * comb(j, c) * values[k - c, c][w] for c in range(j + 1)) for w in range(B + 1)]
+            for o in os_:
+                series = [Fraction(0)] * (B + 1)
+                for c in range(j + 1):
+                    term = _context_series(o, k - c, 0, c, B, q0)
+                    series = [a + (-1) ** (j - c) * comb(j, c) * b for a, b in zip(series, term)]
+                factor[k, j, o] = series
+    Y = {o: [Fraction(0)] * (R + 1) for o in os_}
+    for n in range(R + 1):
+        active = [o for o in os_ if sum(o) <= n]
+        groups = Counter(s * s + t * t for s, t in active)
+        jmax = max(groups.values())
+        rows, rhs = [], []
+        for j in range(jmax):
+            for k in range(j, j + G):
+                w = n + j
+                residual = measured[k, j][w] - sum(Y[o][i] * factor[k, j, o][w - i] for o in os_ for i in range(sum(o), n))
+                rows.append([factor[k, j, o][j] for o in active])
+                rhs.append(residual)
+        for o, y in zip(active, _solve(rows, rhs, len(active))):
+            Y[o][n] = y
+    return Y

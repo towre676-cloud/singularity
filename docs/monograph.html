@@ -8065,18 +8065,22 @@ and the blind direction
 of (a) is not a difference of two blocks.</li>
 <li>At
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">R=26</annotation></semantics></math>
-the only possible invisible difference is a multiple of
+the only possible invisible difference allowed by (c) alone is a
+multiple of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
 placed at degree
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>26</mn><annotation encoding="application/x-tex">26</annotation></semantics></math>.</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>26</mn><annotation encoding="application/x-tex">26</annotation></semantics></math>.
+SNG-F52 below excludes it as well.</li>
 <li>For
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>,
 blocks are separated for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">R\le7</annotation></semantics></math>.
 At
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>
-the only possible invisible difference is a multiple of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">e_{\{0,5\}}[8]-e_{\{3,4\}}[8]</annotation></semantics></math>.</li>
+the only possible invisible difference allowed by (c) alone is a
+multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>8</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">e_{\{0,5\}}[8]-e_{\{3,4\}}[8]</annotation></semantics></math>,
+which SNG-F52 also excludes.</li>
 </ul>
 <p><em>Proof.</em> (a) At interior volume zero a context in the class
 has kernel
@@ -8382,6 +8386,372 @@ two-terminal trees with at most ten vertices. Of the 1,159,003 pairs,
 self-pairings included, 12,112 have two or more leading orbits, and none
 has a vanishing leading coefficient. A cancelling pair, if one exists,
 must therefore come from a richer family or a deeper leading level.</p>
+<h3 data-number="10.8.2"
+id="recovery-with-extra-volume-and-rigidity-of-realizable-interfaces"><span
+class="header-section-number">10.8.2</span> Recovery with extra volume,
+and rigidity of realizable interfaces</h3>
+<p>The obstruction of SNG-F49(a) is tied to a fixed budget. Two
+questions remain: how much additional observation recovers an interface,
+and which formal ambiguities actual blocks can realize. The relevant
+object is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ker</mo><msub><mi>𝒪</mi><mi>R</mi></msub><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ℬ</mi><mi>R</mi></msub><mo>−</mo><msub><mi>ℬ</mi><mi>R</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\ker\mathcal O_R\cap(\mathcal B_R-\mathcal B_R)</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℬ</mi><mi>R</mi></msub><annotation encoding="application/x-tex">\mathcal B_R</annotation></semantics></math>
+is the set of truncated interfaces of actual blocks. SNG-F49 describes
+the first factor; the slice constraints below begin to describe the
+second.</p>
+<p><strong>Theorem SNG-F51 (recovery with extra volume).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>m</mi><mi>R</mi></msub><annotation encoding="application/x-tex">m_R</annotation></semantics></math>
+be the largest number of orbits with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|o|\le R</annotation></semantics></math>
+sharing a value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">s^2+t^2</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+be the number of distinct values. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mi>d</mi><mo>,</mo><mi>c</mi></mrow></msub><annotation encoding="application/x-tex">C_{d,c}</annotation></semantics></math>
+be the context with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+pendant leaves on each terminal,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+shared neighbours and no terminal edge. Then the glued series of a block
+with the contexts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mi>d</mi><mo>,</mo><mi>c</mi></mrow></msub><annotation encoding="application/x-tex">C_{d,c}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>+</mo><mi>c</mi><mo>&lt;</mo><mi>G</mi><mo>+</mo><msub><mi>m</mi><mi>R</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d+c&lt;G+m_R-1</annotation></semantics></math>,
+through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>+</mo><msub><mi>m</mi><mi>R</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R+m_R-1</annotation></semantics></math>
+determine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mi>o</mi></msub><annotation encoding="application/x-tex">Y_o</annotation></semantics></math>
+modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{R+1}</annotation></semantics></math>
+for every orbit. This holds over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)</annotation></semantics></math>
+and at every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>.
+In particular, edge-free symmetric contexts determine every finite
+prefix of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>K</mi><mo>+</mo></msup><annotation encoding="application/x-tex">K^+</annotation></semantics></math>:
+the obstruction of SNG-F49(a) delays observation by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>R</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m_R-1</annotation></semantics></math>
+units of volume, and loses nothing.</p>
+<p><em>Proof.</em> With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>u</mi></msub><msup><mi>x</mi><mi>u</mi></msup><msup><mi>q</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msup></mrow><annotation encoding="application/x-tex">L_h(x)=\sum_ux^uq^{(u-h)^2}</annotation></semantics></math>,
+a pair of leaves contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>L</mi><mi>s</mi></msub><msub><mi>L</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">P=L_sL_t</annotation></semantics></math>
+and a shared neighbour contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><msub><mo>∑</mo><mi>u</mi></msub><msup><mi>x</mi><mi>u</mi></msup><msup><mi>q</mi><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow></msup></mrow><annotation encoding="application/x-tex">S=\sum_ux^uq^{(u-s)^2+(u-t)^2}</annotation></semantics></math>.
+Both have constant term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mi>E</mi></msup><annotation encoding="application/x-tex">q^{E}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E=s^2+t^2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>−</mo><mi>P</mi><mo>=</mo><mo>−</mo><msup><mi>q</mi><mi>E</mi></msup><msub><mi>τ</mi><mi>o</mi></msub><mi>x</mi><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">S-P=-q^E\tau_ox+O(x^2)</annotation></semantics></math>.
+The context
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mi>k</mi><mo>−</mo><mi>c</mi><mo>,</mo><mi>c</mi></mrow></msub><annotation encoding="application/x-tex">C_{k-c,c}</annotation></semantics></math>
+contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mrow><mi>k</mi><mo>−</mo><mi>c</mi></mrow></msup><msup><mi>S</mi><mi>c</mi></msup></mrow><annotation encoding="application/x-tex">P^{k-c}S^c</annotation></semantics></math>,
+so for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">k\ge j</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>c</mi><mo>=</mo><mn>0</mn></mrow><mi>j</mi></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>j</mi><mo>−</mo><mi>c</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>j</mi><mi>c</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>P</mi><mrow><mi>k</mi><mo>−</mo><mi>c</mi></mrow></msup><msup><mi>S</mi><mi>c</mi></msup><mo>=</mo><msup><mi>P</mi><mrow><mi>k</mi><mo>−</mo><mi>j</mi></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>−</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>j</mi></msup><mo>=</mo><msup><mi>x</mi><mi>j</mi></msup><msup><mi>q</mi><mrow><mi>k</mi><mi>E</mi></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><msub><mi>τ</mi><mi>o</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>j</mi></msup><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sum_{c=0}^{j}(-1)^{j-c}\binom jc P^{k-c}S^c=P^{k-j}(S-P)^j=x^jq^{kE}(-\tau_o)^j+O(x^{j+1}).
+</annotation></semantics></math> This is an exact linear combination of
+responses of actual contexts, and it vanishes through degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j-1</annotation></semantics></math>.</p>
+<p>Suppose every coordinate of degree below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+is known, and subtract its contribution. At output volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">n+j</annotation></semantics></math>
+the differenced measurement is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>o</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>n</mi></mrow></msub><msup><mi>q</mi><mrow><mi>k</mi><msub><mi>E</mi><mi>o</mi></msub></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><msub><mi>τ</mi><mi>o</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>j</mi></msup><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>n</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{|o|\le n}q^{kE_o}(-\tau_o)^jY_o[n]</annotation></semantics></math>.
+Coordinates of degree above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+cannot enter, because the context factor supplies at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+units of volume. For fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+varying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mi>j</mi><mo>,</mo><mi>…</mi><mo>,</mo><mi>j</mi><mo>+</mo><mi>G</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k=j,\ldots,j+G-1</annotation></semantics></math>
+gives a Vandermonde system in the distinct numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mi>E</mi></msup><annotation encoding="application/x-tex">q^E</annotation></semantics></math>,
+which separates the groups. Inside a group,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>g</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=0,\ldots,|g|-1</annotation></semantics></math>
+gives a Vandermonde system in the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>o</mi></msub><annotation encoding="application/x-tex">\tau_o</annotation></semantics></math>.</p>
+<p>These are distinct. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>o</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\tau_o=1-(q^{1-2s}-1)(q^{1-2t}-1)</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t\ge1</annotation></semantics></math>
+the pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,t\}</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\tau&gt;1</annotation></semantics></math>,
+and pairs with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>,</mo><mi>t</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s,t\ge1</annotation></semantics></math>
+have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\tau&lt;1</annotation></semantics></math>.
+For the latter put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn><mi>/</mi><mi>q</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r=1/q&gt;1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>r</mi><mrow><mn>2</mn><msqrt><mi>y</mi></msqrt><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(y)=\log(r^{2\sqrt y-1}-1)</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y\ge1</annotation></semantics></math>.
+With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msqrt><mi>y</mi></msqrt></mrow><annotation encoding="application/x-tex">x=\sqrt y</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>r</mi><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h(x)=\log(r^{2x-1}-1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo>log</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">L=\log r</annotation></semantics></math>,
+one has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>′</mi><mo>=</mo><mn>2</mn><mi>L</mi><msup><mi>r</mi><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>r</mi><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h&#39;=2Lr^{2x-1}/(r^{2x-1}-1)&gt;0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>″</mi><mo>=</mo><mo>−</mo><mn>4</mn><msup><mi>L</mi><mn>2</mn></msup><msup><mi>r</mi><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup><mi>/</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>r</mi><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h&#39;&#39;=-4L^2r^{2x-1}/(r^{2x-1}-1)^2&lt;0</annotation></semantics></math>.
+Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>″</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mi>″</mi><mo>−</mo><mi>h</mi><mi>′</mi><mi>/</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g&#39;&#39;=(h&#39;&#39;-h&#39;/x)/(4x^2)&lt;0</annotation></semantics></math>,
+and on the circle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">s^2+t^2=E</annotation></semantics></math>
+the sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(s^2)+g(t^2)</annotation></semantics></math>
+strictly increases toward balance. So
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>o</mi></msub><annotation encoding="application/x-tex">\tau_o</annotation></semantics></math>
+strictly decreases toward balance, and distinct orbits of a group have
+distinct
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>o</mi></msub><annotation encoding="application/x-tex">\tau_o</annotation></semantics></math>.
+A group at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+has at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>m</mi><mi>R</mi></msub><annotation encoding="application/x-tex">m_R</annotation></semantics></math>
+orbits, so the output volumes used are at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>+</mo><msub><mi>m</mi><mi>R</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R+m_R-1</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>If only connected contexts are allowed, keep one shared neighbour in
+every probe. The same argument goes through with the extra factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>,
+whose constant term is a unit.</p>
+<p>The three mechanisms compare as follows. Ordinary symmetric contexts
+at the original budget give the quotient of SNG-F49. Finite differences,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>R</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m_R-1</annotation></semantics></math>
+extra units of volume, produce the powers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>τ</mi><mo>,</mo><msup><mi>τ</mi><mn>2</mn></msup><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">1,\tau,\tau^2,\ldots</annotation></semantics></math>
+and recover everything (SNG-F51). A weighted terminal edge with weights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>m</mi><mi>R</mi></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0,\ldots,m_R-1</annotation></semantics></math>
+produces the powers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>y</mi><mo>,</mo><msup><mi>y</mi><mn>2</mn></msup><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">1,y,y^2,\ldots</annotation></semantics></math>
+and recovers everything at the original budget (SNG-F50). Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>R</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">m_R=2</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>≤</mo><mi>R</mi><mo>&lt;</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">7\le R&lt;25</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>25</mn><annotation encoding="application/x-tex">25</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>47</mn><annotation encoding="application/x-tex">47</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>91</mn><annotation encoding="application/x-tex">91</annotation></semantics></math>.
+<code>recover_by_finite_differences</code> in
+<code>src/singularity/contexts.py</code> carries out the reconstruction.
+<code>scripts/symmetric_contexts.py</code> replays it at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">R=7</annotation></semantics></math>,
+where the
+budget-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7</mn><annotation encoding="application/x-tex">7</annotation></semantics></math>
+quotient has a defect, with 39 probes through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>8</mn><annotation encoding="application/x-tex">8</annotation></semantics></math>.
+Their glued series are computed by tree decomposition of each actual
+glued graph, independently of the contraction formula and of the
+closed-form context factors.</p>
+<p><strong>Proposition SNG-F52 (interior slices of a block
+kernel).</strong> Let a block have terminal degrees
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">e\in\{0,1\}</annotation></semantics></math>
+count its terminal edge, and put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>a</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><msup><mi>t</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>e</mi><mi>s</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">Q_0(s,t)=as^2+bt^2-2est</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">U=q^{-2s}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">V=q^{-2t}</annotation></semantics></math>.
+For every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><msub><mi>Q</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+[x^j]K(s,t)=q^{Q_0(s,t)}P_j(U,V),
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>j</mi></msub><annotation encoding="application/x-tex">P_j</annotation></semantics></math>
+has coefficients in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Z_{\ge0}[q]</annotation></semantics></math>
+and degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+in each variable. In particular
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>=</mo><msub><mo>∑</mo><mi>v</mi></msub><msup><mi>q</mi><mrow><mo>deg</mo><mi>v</mi></mrow></msup><msup><mi>U</mi><msub><mi>A</mi><mrow><mi>s</mi><mi>v</mi></mrow></msub></msup><msup><mi>V</mi><msub><mi>A</mi><mrow><mi>t</mi><mi>v</mi></mrow></msub></msup></mrow><annotation encoding="application/x-tex">P_1=\sum_vq^{\deg v}U^{A_{sv}}V^{A_{tv}}</annotation></semantics></math>,
+summed over interior vertices, has at most four monomials whatever the
+size of the block.</p>
+<ol type="a">
+<li><p>Suppose two blocks have the same
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>.
+If their symmetrized kernels agree in interior volume one at the states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(0,0),(1,1),(2,2)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>,
+of total volume at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5</mn><annotation encoding="application/x-tex">5</annotation></semantics></math>,
+then their interior-volume-one slices of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>K</mi><mo>+</mo></msup><annotation encoding="application/x-tex">K^+</annotation></semantics></math>
+agree at every state.</p></li>
+<li><p>If moreover
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math>,
+agreement of slice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>K</mi><mo>+</mo></msup><annotation encoding="application/x-tex">K^+</annotation></semantics></math>
+at the states with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>,</mo><mi>t</mi><mo>≤</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">s,t\le j</annotation></semantics></math>,
+of total volume at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>j</mi></mrow><annotation encoding="application/x-tex">3j</annotation></semantics></math>,
+implies agreement of slice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+at every state.</p></li>
+</ol>
+<p><em>Proof.</em> For interior heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+of total
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+the energy is <span class="math display">$$
+Q_0+\Bigl[\sum_{\text{interior edges}}(h_u-h_v)^2+\sum_{v\sim
+s}h_v^2+\sum_{v\sim t}h_v^2\Bigr]-2s\sum_{v\sim s}h_v-2t\sum_{v\sim
+t}h_v.
+$$</span> The bracket does not depend on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(s,t)</annotation></semantics></math>,
+and each of the last two sums is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=1</annotation></semantics></math>
+the single raised vertex contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mo>deg</mo><mi>v</mi></mrow></msup><msup><mi>U</mi><msub><mi>A</mi><mrow><mi>s</mi><mi>v</mi></mrow></msub></msup><msup><mi>V</mi><msub><mi>A</mi><mrow><mi>t</mi><mi>v</mi></mrow></msub></msup></mrow><annotation encoding="application/x-tex">q^{\deg v}U^{A_{sv}}V^{A_{tv}}</annotation></semantics></math>.</p>
+<ol type="a">
+<li><p>When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\ne b</annotation></semantics></math>,
+order the terminals of both blocks so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+has degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>;
+this does not change
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>K</mi><mo>+</mo></msup><annotation encoding="application/x-tex">K^+</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mn>1</mn></msub><mo>−</mo><msub><mi>P</mi><mn>1</mn></msub><mi>′</mi></mrow><annotation encoding="application/x-tex">P=P_1-P_1&#39;</annotation></semantics></math>.
+At a diagonal state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>K</mi><mo>+</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>K</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K^+(s,s)=K(s,s)</annotation></semantics></math>,
+so agreement at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">s=0,1,2</annotation></semantics></math>
+says that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(z,z)</annotation></semantics></math>,
+of degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+vanishes at the three distinct nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>,</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">z=1,q^{-2},q^{-4}</annotation></semantics></math>.
+Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>−</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P=c(U-V)</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>≠</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s\ne t</annotation></semantics></math>
+the symmetrized difference is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>−</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msup><mi>q</mi><mrow><msub><mi>Q</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>−</mo><msup><mi>q</mi><mrow><msub><mi>Q</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c(U-V)\bigl(q^{Q_0(s,t)}-q^{Q_0(t,s)}\bigr)</annotation></semantics></math>.
+This vanishes identically when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math>.
+When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\ne b</annotation></semantics></math>,
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>
+it equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mi>b</mi></msup><mo>−</mo><msup><mi>q</mi><mi>a</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">c(1-q^{-2})(q^b-q^a)</annotation></semantics></math>,
+forcing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c=0</annotation></semantics></math>.</p></li>
+<li><p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">Q_0</annotation></semantics></math>
+is symmetric, and the symmetrized slice is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><msub><mi>Q</mi><mn>0</mn></msub></msup><mi>Σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{Q_0}\Sigma(U,V)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Sigma(U,V)=P_j(U,V)+P_j(V,U)</annotation></semantics></math>
+off the diagonal, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><msub><mi>Q</mi><mn>0</mn></msub></msup><mi>Σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q^{Q_0}\Sigma(z,z)/2</annotation></semantics></math>
+on it. The symmetric polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>,
+of degree at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+in each variable, vanishes on the tensor grid of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j+1</annotation></semantics></math>
+distinct nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>s</mi></mrow></msup><annotation encoding="application/x-tex">q^{-2s}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>≤</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">s\le j</annotation></semantics></math>,
+and is therefore zero.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p></li>
+</ol>
+<p>Together with SNG-F49(c), which fixes interior volume zero, this
+sharpens the realizable statements. Two indistinguishable blocks agree
+below degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+by induction, and the degree data fix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a,b\}</annotation></semantics></math>
+at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>.
+So their difference vanishes in slice one at every degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≥</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">v\ge6</annotation></semantics></math>,
+and, when the terminal degrees are equal, in every slice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>j</mi><mo>&lt;</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">3j&lt;v</annotation></semantics></math>.
+Rerunning SNG-F49 on the remaining coordinates
+(<code>realizable="slice"</code> or <code>"balanced"</code> in
+<code>interface_status</code>) gives: - <strong>With the terminal edge
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>).</strong>
+Simple symmetric contexts separate the truncated symmetrized kernels of
+any two blocks through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">R=26</annotation></semantics></math>.
+This removes the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">R=26</annotation></semantics></math>
+candidate: its coordinate on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>10</mn><mo>,</mo><mn>15</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{10,15\}</annotation></semantics></math>
+has interior volume one. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">R=27</annotation></semantics></math>
+the only possible invisible difference is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+placed at degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>27</mn><annotation encoding="application/x-tex">27</annotation></semantics></math>,
+at interior volumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">8,4,2</annotation></semantics></math>.
+For equal terminal degrees, separation holds through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>37</mn></mrow><annotation encoding="application/x-tex">R=37</annotation></semantics></math>.
+- <strong>Without the edge
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>).</strong>
+Separation holds through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">R=8</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">R=9</annotation></semantics></math>
+the only possible invisible difference is a multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>9</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><mn>9</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">e_{\{0,5\}}[9]-e_{\{3,4\}}[9]</annotation></semantics></math>.
+For equal terminal degrees, separation holds through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">R=10</annotation></semantics></math>.</p>
+<p>On these coordinates the exactness hypothesis of SNG-F49(b) holds for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">R\le27</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\kappa=1</annotation></semantics></math>)
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>93</mn></mrow><annotation encoding="application/x-tex">R\le93</annotation></semantics></math>
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\kappa=2</annotation></semantics></math>)
+in general. For equal terminal degrees it holds for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>38</mn></mrow><annotation encoding="application/x-tex">R\le38</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">R\le120</annotation></semantics></math>,
+the latter being the range checked. All statements are recorded in
+<code>results/symmetric_contexts.json</code>. For unequal terminal
+degrees, the analogue of (b) for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">j\ge2</annotation></semantics></math>
+needs an interpolation argument for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mrow><mi>a</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>q</mi><mrow><mi>b</mi><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></msup><msub><mi>P</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q^{as^2+bt^2}P_j(U,V)+q^{bs^2+at^2}P_j(V,U)</annotation></semantics></math>
+and is open. So is the question whether the remaining candidates are
+realized by actual blocks.</p>
 <h2 data-number="10.9"
 id="every-late-census-collision-is-separated-by-triangles"><span
 class="header-section-number">10.9</span> Every late census collision is

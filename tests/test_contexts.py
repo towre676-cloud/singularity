@@ -2,7 +2,8 @@ import unittest
 from collections import Counter
 from fractions import Fraction
 
-from singularity.contexts import (_context_series, interface_status, interior_zero_coefficient, lower_degree_condition,
+from singularity.contexts import (_context_series, finite_difference_budget, finite_difference_probe_set,
+                                  recover_by_finite_differences, tau, interface_status, interior_zero_coefficient, lower_degree_condition,
                                   orbit_groups, recover_symmetrized_kernel, symmetric_context, symmetric_interface_rank,
                                   symmetric_interface_rank_mod, symmetric_probe_set, symmetrize, top_block_rank_mod,
                                   top_degree_defect, top_degree_kernel, weighted_probe)
@@ -190,6 +191,95 @@ class WeightedRestorationTests(unittest.TestCase):
             recover_symmetrized_kernel({}, 25, Q0, max_edge_weight=2)
         with self.assertRaises(ValueError):
             weighted_probe(Graph(2, [(0, 1)]), 0, 1)
+
+
+class AllOrderRecoveryTests(unittest.TestCase):
+    def test_closed_form_context_series_matches_actual_contexts(self):
+        R = 5
+        for d, c in [(0, 2), (2, 1), (1, 0)]:
+            context, terminals = symmetric_context(d, False, c)
+            K = terminal_kernel(context, terminals, R)
+            for o in [(0, 0), (0, 2), (1, 1), (1, 3)]:
+                actual = [Fraction(0)] * (R + 1)
+                for (v, e), count in K.get(o, {}).items():
+                    actual[v] += count * Q0 ** e
+                self.assertEqual(actual[: R + 1 - sum(o)], _context_series(o, d, 0, c, R, Q0)[: R + 1 - sum(o)])
+
+    def test_finite_differences_vanish_below_order_j(self):
+        # SNG-F51: sum_c (-1)^(j-c) C(j,c) P^(k-c) S^c = P^(k-j) (S-P)^j.
+        from math import comb
+        R, q = 6, Fraction(1, 3)
+        for o in [(0, 2), (1, 3), (2, 2)]:
+            m = o[0] ** 2 + o[1] ** 2
+            for k in range(4):
+                for j in range(k + 1):
+                    D = [Fraction(0)] * (R + 1)
+                    for c in range(j + 1):
+                        D = [a + (-1) ** (j - c) * comb(j, c) * b for a, b in zip(D, _context_series(o, k - c, 0, c, R, q))]
+                    self.assertEqual(D[:j], [0] * j)
+                    self.assertEqual(D[j], q ** (k * m) * (-tau(o, q)) ** j)
+
+    def test_tau_orders_each_circle(self):
+        # tau = 1 - (q^(1-2s) - 1)(q^(1-2t) - 1) strictly decreases toward balance.
+        for q in (Fraction(1, 10), Fraction(1, 2), Fraction(9, 10)):
+            for group in orbit_groups(60).values():
+                values = [tau(o, q) for o in sorted(group, key=lambda o: o[1] - o[0])]
+                self.assertTrue(all(a < b for a, b in zip(values, values[1:])))
+                for o in group:  # tau > 1 exactly for {0, t}, t >= 1
+                    self.assertEqual(tau(o, q) > 1, o[0] == 0 and o[1] > 0)
+
+    def test_recovery_past_the_top_degree_obstruction(self):
+        # R = 7 has a top-degree defect without the edge; one extra volume recovers it.
+        R = 7
+        self.assertEqual(top_degree_defect(R), 1)
+        B = finite_difference_budget(R)
+        self.assertEqual(B, 8)
+        block = Graph(6, [(0, 2), (2, 3), (3, 1), (2, 4), (4, 5)])
+        plus = symmetrize(terminal_kernel(block, (0, 1), B))
+        values = {}
+        for d, c in finite_difference_probe_set(R):
+            series = [Fraction(0)] * (B + 1)
+            for o, cells in plus.items():
+                ctx = _context_series(o, d, 0, c, B, Q0)
+                for (v, en), count in cells.items():
+                    for w in range(B + 1 - sum(o) - v):
+                        series[sum(o) + v + w] += count * Q0 ** en * ctx[w]
+            values[d, c] = series
+        Y = recover_by_finite_differences(values, R, Q0)
+        for o, series in Y.items():
+            for interior in range(R + 1 - sum(o)):
+                self.assertEqual(series[sum(o) + interior],
+                                 sum((c * Q0 ** en for (v, en), c in plus.get(o, {}).items() if v == interior), Fraction(0)))
+        with self.assertRaises(ValueError):
+            recover_by_finite_differences({k: v[:B] for k, v in values.items()}, R, Q0)
+
+
+class SliceRigidityTests(unittest.TestCase):
+    def test_first_interior_slice_has_four_coefficients(self):
+        # SNG-F52(a): [x] K(s,t) = q^Q0 sum_v q^deg(v) U^A_sv V^A_tv, U = q^(-2s), V = q^(-2t).
+        for graph in (Graph(6, [(0, 2), (0, 3), (1, 4), (2, 5), (4, 5), (3, 4), (2, 3)]),
+                      Graph(5, [(0, 2), (2, 3), (3, 1), (2, 4), (0, 1)])):
+            K = terminal_kernel(graph, (0, 1), 7)
+            a, b, e = graph.degrees[0], graph.degrees[1], int((0, 1) in graph.edges)
+            for (s, t), cells in K.items():
+                if s + t + 1 > 7:
+                    continue
+                expected = Counter()
+                for v in range(2, graph.n):
+                    A_s, A_t = int((0, v) in graph.edges), int((1, v) in graph.edges)
+                    expected[a * s * s + b * t * t - 2 * e * s * t + graph.degrees[v] - 2 * s * A_s - 2 * t * A_t] += 1
+                self.assertEqual({en: c for (v, en), c in cells.items() if v == 1}, dict(expected))
+
+    def test_realizable_separation_bounds(self):
+        first = lambda kappa, mode: next(R for R in range(60) if interface_status(R, kappa, mode)["top_defect"])
+        self.assertEqual((first(2, True), first(2, "slice"), first(2, "balanced")), (26, 27, 38))
+        self.assertEqual((first(1, True), first(1, "slice"), first(1, "balanced")), (8, 9, 11))
+        (v,) = top_degree_kernel(25, 2)
+        self.assertEqual(top_degree_kernel(26, 2, "slice"), [])
+        self.assertEqual(top_degree_kernel(27, 2, "slice"), [v])
+        self.assertEqual(interface_status(27, 2, "slice")["invisible_dimension"], 1)
+        with self.assertRaises(ValueError):
+            interface_status(5, 1, "unknown")
 
 
 if __name__ == "__main__":

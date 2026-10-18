@@ -125,3 +125,10 @@ Next dependency-ready item and exact first action:
   - Five ten-vertex tree pairs agree through volume 4 and separate at volume 5.
 - Leading-order twist cancellation test: 1,522 balanced asymmetric antisymmetric parts (graphs on ≤ 6 vertices, trees on ≤ 10) through volume 5; 12,112 of 1,159,003 pairs (self-pairings included) have two or more leading orbits; none cancels.
 - Next: P54 needs a family with growing proved compression; the budget-free converse and exactness beyond R = 25 without the edge remain open; the formal chain P07/P08 is still blocked (D009).
+
+**Continuation (recovery and realizability):**
+- SNG-F51: edge-free symmetric contexts determine K⁺ through R from glued series through R + m_R − 1. The j-th difference in the leaf/shared-neighbour split is P^(k−j)(S−P)^j; τ is distinct on each circle by a concavity argument.
+- `recover_by_finite_differences` is replayed end to end at R = 7: 39 probes through volume 8, with glued series computed by tree decomposition of the actual glued graphs.
+- SNG-F52: interior slice j equals q^{Q0} P_j(q^{-2s}, q^{-2t}), with bidegree ≤ j. Slice one is rigid from total volume 5. For equal terminal degrees, slice j is rigid from volume 3j.
+- Realizable separation: through R = 26 with the terminal edge (the R = 26 candidate is excluded; R = 27 is the first possible ambiguity) and through R = 8 without it. For equal terminal degrees: through R = 37 and R = 10.
+- Open: slice rigidity for unequal degrees with j ≥ 2; whether the R = 27 and R = 9 candidates are realized.
