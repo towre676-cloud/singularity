@@ -1,6 +1,6 @@
 # Implementation and retained computational results
 
-The mathematical manuscripts describe a research program, while this chapter records the executable boundary of version 0.2.0. The core package requires Python 3.10 or newer and uses only the standard library. Documentation generation additionally uses Pandoc and a LaTeX installation. The rendered PDF and HTML are distributed so that a reader does not need those authoring tools merely to read the work.
+The mathematical manuscripts describe a research program, while this chapter records the executable boundary of version 0.3.0. The core package requires Python 3.10 or newer and uses only the standard library. Documentation generation additionally uses Pandoc and a LaTeX installation. The rendered PDF and HTML are distributed so that a reader does not need those authoring tools merely to read the work.
 
 ## Installing and running the project
 
@@ -44,6 +44,10 @@ The meaning of every public coefficient, population and certificate interface is
 | `orders` | Poset-constrained heights | Validated posets, weak and strict counts, chamber and linear-extension order-polynomial formulas, weighted histograms on order-polytope points (SNG-F32) |
 | `lowvolume` | Closed coefficient formulas through volume three | Degree, ordered adjacent-pair and induced-triple statistics; pattern sectors; regular closed form |
 | `certificates` | Source-bound finite mathematical claims | Structural parser, two independent replay routes (stars-and-bars and level chains), nested-cut checks, normalization and factorization checks |
+| `observability` | Finite operator systems and experiments | Exact closure with actual experiment words, certificates of L=AB and BM_i=T_iB, invisible subspace, quotient dynamics, globally cheapest distinguishing experiments under positive costs, strict in-memory and portable replay (SNG-O01–SNG-O04) |
+| `graph_experiments` | Symmetric two-terminal context operators | Checked contexts with terminal-swap automorphisms, compiled truncated kernel operators, raw state compilation for asymmetric base blocks, direct-enumeration cross-check (SNG-O05, SNG-O06) |
+| `experiment_design` | Exact polynomial-curve metrics | Gram matrices, LDL positivity, orthogonal coordinates, separations, certified nearest-candidate identification and finite-pool scores (SNG-O07) |
+| `periodic` | Root-of-unity edge phases | Residue numerators in Z[t]/Phi_M, palindromes, independent height enumeration and the sufficient cutoff comparison (SNG-O08, SNG-O09) |
 
 The primitive module implements a useful extension of the foundational scaling identity. For every nonzero normalized profile a, its positive coordinate gcd d is unique; dividing by d produces a primitive profile. Total height and span scale by d, while energy scales by d squared. Consequently full marked populations are recovered from primitive populations by a finite divisor sum in every retained volume. The inverse operation uses the ordinary Mobius function on the scaling factor. The released test checks both directions on every simple graph through four vertices at a declared finite depth.
 

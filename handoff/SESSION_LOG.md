@@ -197,3 +197,17 @@ Publication integration observed a concurrent README-only commit `acf915b` on ma
 
 **18 October 2026: Vakil mining supplement (after v0.2.0).**
 The linked June 11, 2013 Vakil draft yields a Noetherian finite-determination proposition for complete-series equality across fixed polynomial edge-factor families. It is non-effective and does not settle completeness of the ordinary invariant. `docs/research/VAKIL_BRIDGES.md` proves the statement and the complete positive weighted-triangle tangent-rank classification (three moment probes, ranks 3/2/1 by the number of distinct edge factors), with a second-order symmetry countercheck. `edge_factors.py` and `scripts/vakil_bridge.py` provide exact finite evidence through volume eight. `charges.py` adds direct parallel composition and terminal forgetting, tested against actual graph enumeration; interfaces now retain their complete depth and reject over-depth requests. No original roadmap statuses or v0.2.0 formal claims are changed. These new propositions are not Lean-formalized. Broader sextic determinantal charts and origin-aware curve transport remain proposals.
+
+## 2026-10-18 (late): operator release 0.3.0
+
+**Starting state:** `main` at `21953a9` (operator checkpoint), with CI run 47 green. The working branch was merged with `main` and its superseded P35 commits were dropped from the tree.
+- OE01: fixed the rank-zero certificate defect (dimension-aware reconstruction) and the inexact-type acceptance in the in-memory verifier. Added `quotient_update` and `quotient_output`. Exception contract: TypeError for non-exact types, ValueError for values and shapes.
+- OE03: graph suite against independent height enumeration. Results:
+  - R=4 rank sequence 5, 11, 15, 17, 18, 19, 20, 21, 22;
+  - R=7 rank 69 with kernel e((3,4),7) − e((0,5),7) and eigenvalue 2^−25;
+  - path fixture witness: shared neighbour, cost 1, discrepancy −1/8;
+  - new top-volume corank bound SNG-O06.
+- OE04: noise model and identification proof stated; exhaustive lattice test.
+- OE05: `periodic.py` (delegated agent, reviewed), with 524-model exhaustion.
+- OE06: `scripts/operator_experiments.py --check` added to CI. Chapter 15 written, with SNG-O01 to SNG-O12. Added OPERATORS-v1, version 0.3.0, README, ledger and D015.
+- The background references (Schützenberger, Kalman, Carlyle–Paz, Berstel–Reutenauer) were recorded with their primary-record check open: publisher and Crossref hosts were unreachable.

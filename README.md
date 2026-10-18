@@ -20,7 +20,7 @@ The Python core uses Python 3.10+ and the standard library. The repository inclu
 
 [Paper 2: exact observation depth — PDF](output/pdf/locality_paper.pdf) · [Source](docs/papers/locality.md) · [Claim register](docs/papers/locality_claims.md) · [Selection and literature comparison](docs/papers/second_paper_choice.md)
 
-[Complete v0.2.0 download](https://github.com/towre676-cloud/singularity/blob/main/releases/Singularity-v0.2.0-complete.zip) · [Release manifest](results/archive_manifest.json) · [Publication checks](results/publication_release.json)
+[Complete v0.2.0 download](releases/Singularity-v0.2.0-complete.zip) · [Release manifest](results/archive_manifest.json) · [Publication checks](results/publication_release.json) · [Operator release record (v0.3.0 source)](results/operator_checkpoint.json)
 
 The archive contains the source, all three PDFs, editable mathematical documents, exact results, tests, proof sources and dependency manifests. Lean and Mathlib build caches are excluded. No document compiler is needed to read the PDFs.
 
@@ -44,6 +44,9 @@ where $N_g$ counts $g$-cycles. This explains the cube–Möbius witness. The loo
 
 **Interfaces and observation.** Boundary-charge tables compile terminal responses; complete ordered observation charts transport information between experiments. Cycle counts determine the regular-graph series before the first overlap threshold, after which theta, diamond and clique corrections become observable.
 
+**Experiments and observability (v0.3.0).** A two-terminal state can be changed by attaching symmetric graph contexts and read through its coefficients. `observability.py` computes the exact observation space with retained rows that are actual experiment words, certificates of $L=AB$ and $BM_i=T_iB$, the invisible subspace, quotient dynamics, and a provably cheapest distinguishing experiment under positive attachment costs. Cheapest is not strongest: a discarded longer experiment can amplify a discrepancy. `graph_experiments.py` compiles contexts into exact operators. At budget four the interface has dimension 22 and full observable rank, with length-filtered ranks 5, 11, 15, 17, 18, 19, 20, 21, 22. At budget seven a formal direction $e_{((0,5),7)}-e_{((3,4),7)}$ is invisible, explained by the top-volume corank bound. `periodic.py` treats root-of-unity edge phases. There the numerator of $P/(1-x^M)^n$ is palindromic, so agreement through $\lfloor n(M-1)/2
+floor$ proves full equality. [Chapter 15](docs/chapters/15_operators_experiments.md) gives the proofs and limitations, [the interface specification](docs/specifications/OPERATORS-v1.md) gives the contracts, and [the retained receipt](results/operator_experiments.json) gives the exact evidence. The [edge-factor supplement](docs/research/VAKIL_BRIDGES.md) adds finite determination for polynomial edge-factor families, triangle tangent ranks and compressed-interface composition. Its [exact experiment](results/vakil_bridge.json) is replayed in CI.
+
 **Arithmetic and proof scope.** Explicit remainder bounds and outward-rounded computations control the normalized real Euler-product remainder. Core Lean 4.12.0 checks normalization, nested levels, both decisive coefficient certificates and finite cancellation. The separate [Mathlib analysis project](formal-analysis/README.md) proves the actual real Euler-product factorization and positive normalized boundary limit, including both certified graph pairs at $q=1/2$. Its [source-bound audit](results/formal_analysis_audit.json) checks 79 declarations, alongside 91 in the core project. The newer reconstruction and loop theorems have manuscript proofs and computational checks; their Lean formalization is a separate future task.
 
 ## Run and reproduce
@@ -56,6 +59,7 @@ PYTHONPATH=src python scripts/reproduce.py --check
 PYTHONPATH=src python scripts/locality_family.py --check
 PYTHONPATH=src python scripts/overlap_hierarchy.py --check
 PYTHONPATH=src python scripts/loop_series.py --check
+PYTHONPATH=src python scripts/operator_experiments.py --check
 python scripts/check_repository.py
 python scripts/check_links.py
 ```

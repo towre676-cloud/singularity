@@ -57,3 +57,7 @@ The v0.2.0 release contains the visibility paper and a second paper centered on 
 ## D014: validate the completed PDF rather than the renderer exit code
 
 Final release inspection caught a truncated monograph despite a successful XeLaTeX exit. The builder now writes XDV explicitly, invokes `xdvipdfmx` synchronously, and requires `pdfinfo` to parse the resulting PDF. It clears stale auxiliary files before its two passes. All final pages receive visual review, and the release receipt binds the reviewed PDF bytes and authored sources to their checks. Unsupported MathML macros and overflowing display/code layouts were corrected without changing mathematical statements; the chapter 12 certificate-scope sentence was narrowed to the explicitly named artifacts.
+
+## D015: new identifiers for the operator and experiment program
+
+On 2026-10-18 the owner asked to finish and release the operator checkpoint `21953a9` and then expand it. The P01–P36 ledger is complete and stays frozen; the P37–P72 file remains an idea pool. The new work is tracked as OE01–OE13 in `handoff/OPERATOR_LEDGER.md`. New manuscript results use SNG-O identifiers (Chapter 15), and examples continue the SNG-E series from E009. The working branch is `claude/exciting-brown-95vyq3`, which was merged with `main` at `21953a9`; `main` itself is updated only by the owner.

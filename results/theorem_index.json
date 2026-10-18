@@ -523,6 +523,78 @@
       "declaration": "Proposition SNG-F31 (exceptional strata are finite and exactly computable). Let \\(\\Delta_v=[x^v](L_G-L_H)\\in\\mathbb Z[q]\\) for \\(0\\le v\\le R\\), let \\(r\\) be the least \\(v\\) with \\(\\Delta_v\\ne0\\), and for \\(q_0\\in(0,1)\\) let \\(r(q_0)\\) be the least \\(v\\le R\\) with \\(\\Delta_v(q_0)\\ne0\\), if any. Then \\(r(q_0)=r\\) except at the finitely many roots of \\(\\Delta_r\\) in \\((0,1)\\); at such a root \\(\\alpha\\), \\(r(q_0)\\) is the least \\(v>r\\) with \\(\\Delta_v(\\alpha)\\ne0\\), or undefined through \\(R\\). Every such root is found by Sturm isolation of the square-free part of \\(\\Delta_r\\), and whether \\(\\Delta_v(\\alpha)=0\\) is decided exactly.",
       "file": "docs/chapters/13_research_program.md",
       "line": 190
+    },
+    {
+      "id": "SNG-O01",
+      "declaration": "Theorem SNG-O01 (closure certificate). Let \\(B\\in\\mathbb Q^{r\\times n}\\) have rows \\(b_1,\\ldots,b_r\\), each equal to an actual experiment \\(L_{j_k}M_{w_k}\\). Suppose there are matrices \\(A\\in\\mathbb Q^{o\\times r}\\) and \\(T_i\\in\\mathbb Q^{r\\times r}\\) with",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 46
+    },
+    {
+      "id": "SNG-O02",
+      "declaration": "Theorem SNG-O02 (invariant kernel, quotient and linear minimality). Under SNG-O01, put \\(N=\\ker B\\). Then:",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 60
+    },
+    {
+      "id": "SNG-O03",
+      "declaration": "Theorem SNG-O03 (cost-filtered pruning and cheapest witnesses). Assume the following:",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 71
+    },
+    {
+      "id": "SNG-O04",
+      "declaration": "Proposition SNG-O04 (cheapest is not strongest). Take \\(n=1\\), a single observation \\(L=(1)\\) and a single generator \\(M=(2)\\). Then:",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 91
+    },
+    {
+      "id": "SNG-O05",
+      "declaration": "Theorem SNG-O05 (compiler correctness). Under the conditions above, attaching \\(C\\) maps the state of \\(G\\) to the state of the glued graph by",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 124
+    },
+    {
+      "id": "SNG-O06",
+      "declaration": "Proposition SNG-O06 (top-volume corank bound). Let every context in the language satisfy the conditions above, and let \\(d_C\\) be the number of interior neighbours of a terminal of \\(C\\), which is the same for both terminals. For each orbit \\(o=(s,t)\\) with \\(s+t\\le R\\), the coordinate vector \\(e_{(o,R)}\\) is an eigenvector of every compiled operator, with eigenvalue \\(q^{d_C(s^2+t^2)}\\), and its readout is the volume-\\(R\\) unit. Consequently, if orbits \\(o\\ne o'\\) with \\(s+t,s'+t'\\le R\\) have \\(s^2+t^2=s'^2+t'^2\\), then \\(e_{(o,R)}-e_{(o',R)}\\) is invisible, and",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 147
+    },
+    {
+      "id": "SNG-O07",
+      "declaration": "Proposition SNG-O07 (certified nearest-candidate identification). Suppose:",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 164
+    },
+    {
+      "id": "SNG-O08",
+      "declaration": "Theorem SNG-O08 (residue numerator). With \\(K=n(M-1)\\),",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 186
+    },
+    {
+      "id": "SNG-O09",
+      "declaration": "Theorem SNG-O09 (palindrome and sufficient cutoff). Then \\(P_k=P_{K-k}\\) for every \\(k\\). Let two models have the same \\(n\\) and \\(M\\). If their series agree at every volume up to \\(\\lfloor K/2\\rfloor\\), they agree at every volume.",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 194
+    },
+    {
+      "id": "SNG-O10",
+      "declaration": "Proposition SNG-O10 (finite determination for edge-factor families). Place an independent factor \\(t_e\\) on every edge of a fixed template. For two fixed templates there is an \\(R_*\\) such that, over every commutative \\(\\mathbb Q\\)-algebra, agreement through volume \\(R_*\\) is equivalent to equality of the complete series. The proof is the Hilbert basis theorem applied to the chain of coefficient-difference ideals. No effective \\(R_*\\) is given. An ideal that stops growing once can grow later: the coefficients \\(0,\\ldots,0,t\\) are an example. Noetherian finite determination is not an algorithm.",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 207
+    },
+    {
+      "id": "SNG-O11",
+      "declaration": "Proposition SNG-O11 (triangle tangent ranks). On the positive octant, the three top-moment probes of the edge-factor triangle have Jacobian rank \\(3\\), \\(2\\) or \\(1\\) according as the edge factors take three, two or one distinct values. No further symmetric coefficient raises the rank.",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 209
+    },
+    {
+      "id": "SNG-O12",
+      "declaration": "Proposition SNG-O12 (parallel composition and terminal forgetting). Compressed charge interfaces multiply under parallel composition of blocks with disjoint interiors and edge-disjoint terminal graphs. Forgetting a terminal \\(t\\) at interior height \\(h\\) sends a cell by",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 211
     }
   ]
 }

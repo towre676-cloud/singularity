@@ -93,11 +93,11 @@ def main():
     parser.add_argument('--no-pdf',action='store_true',help='regenerate Markdown, LaTeX and HTML without XeLaTeX; retained PDFs become stale')
     pdf=not parser.parse_args().no_pdf
     chapters=sorted((ROOT/'docs'/'chapters').glob('*.md'))
-    if len(chapters)!=14:
-        raise ValueError('Exactly fourteen authored chapters required')
+    if len(chapters)!=15:
+        raise ValueError('Exactly fifteen authored chapters required')
     preface='''# Reading guide {.unnumbered}
 
-This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
+This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence it forgets. A binary census can agree for every subset size and boundary size while a nested-height census differs. The arithmetic lift retains these local distinctions and turns the first discrepancy into a controlled ratio singularity. It adds analytic structure rather than new graph information. The full marked hierarchy explicitly contains the binary sector; complete graph reconstruction remains a research question.
 

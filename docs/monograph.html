@@ -22,6 +22,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <style>
 body{margin:0;background:#f3f0e8;color:#212c34;font:18px/1.7 Georgia,serif}main,body>section,body>header{max-width:1100px;margin:auto}body{padding:4vw 7vw}h1,h2,h3{font-family:system-ui,sans-serif;line-height:1.25;color:#183c50}h1{margin-top:3em;border-bottom:2px solid #bea16d;padding-bottom:.4em}h2{margin-top:2.2em}p{max-width:92ch}a{color:#126084}table{border-collapse:collapse;width:100%;font-size:.87em;line-height:1.45;margin:2em 0;background:#fffdf7}th{background:#e1e9e8;text-align:left}td,th{border:1px solid #bdc9c7;padding:10px;vertical-align:top}pre{overflow:auto;background:#e7ebea;padding:1em;font-size:.8em}code{font-size:.88em}.math.display{display:block;overflow:auto;padding:.6em 0}#TOC{background:#e6e9e2;border-left:4px solid #b2945d;padding:1em 2em;columns:2;font-size:.85em}#TOC ul{break-inside:avoid}img{max-width:100%;height:auto}header p{font-family:system-ui,sans-serif}blockquote{border-left:3px solid #b2945d;padding-left:1em}@media(max-width:800px){body{padding:20px;font-size:17px}#TOC{columns:1}table{display:block;overflow:auto}}@media print{body{background:white;padding:0;font-size:11pt}#TOC{columns:1}h1,h2,h3{break-after:avoid}tr{break-inside:avoid}}
@@ -515,184 +579,229 @@ id="toc-verified-references-and-their-intended-use"><span
 class="toc-section-number">14.7</span> Verified references and their
 intended use</a></li>
 </ul></li>
+<li><a
+href="#context-operators-cheapest-experiments-and-periodic-sectors"
+id="toc-context-operators-cheapest-experiments-and-periodic-sectors"><span
+class="toc-section-number">15</span> Context operators, cheapest
+experiments and periodic sectors</a>
+<ul>
+<li><a href="#background-and-what-is-new"
+id="toc-background-and-what-is-new"><span
+class="toc-section-number">15.1</span> Background and what is
+new</a></li>
+<li><a href="#operator-systems-experiments-and-word-order"
+id="toc-operator-systems-experiments-and-word-order"><span
+class="toc-section-number">15.2</span> Operator systems, experiments and
+word order</a></li>
+<li><a href="#closure-quotient-and-cheapest-experiments"
+id="toc-closure-quotient-and-cheapest-experiments"><span
+class="toc-section-number">15.3</span> Closure, quotient and cheapest
+experiments</a></li>
+<li><a href="#certificates-and-their-contracts"
+id="toc-certificates-and-their-contracts"><span
+class="toc-section-number">15.4</span> Certificates and their
+contracts</a></li>
+<li><a href="#the-graph-context-compiler"
+id="toc-the-graph-context-compiler"><span
+class="toc-section-number">15.5</span> The graph context
+compiler</a></li>
+<li><a href="#exact-robustness-for-finite-candidate-families"
+id="toc-exact-robustness-for-finite-candidate-families"><span
+class="toc-section-number">15.6</span> Exact robustness for finite
+candidate families</a></li>
+<li><a href="#the-periodic-sector" id="toc-the-periodic-sector"><span
+class="toc-section-number">15.7</span> The periodic sector</a></li>
+<li><a href="#edge-factor-families-and-compressed-interfaces"
+id="toc-edge-factor-families-and-compressed-interfaces"><span
+class="toc-section-number">15.8</span> Edge-factor families and
+compressed interfaces</a></li>
+<li><a href="#interfaces-and-runnable-examples"
+id="toc-interfaces-and-runnable-examples"><span
+class="toc-section-number">15.9</span> Interfaces and runnable
+examples</a></li>
+<li><a href="#formal-status" id="toc-formal-status"><span
+class="toc-section-number">15.10</span> Formal status</a></li>
+<li><a href="#open-questions" id="toc-open-questions"><span
+class="toc-section-number">15.11</span> Open questions</a></li>
+</ul></li>
 <li><a href="#implementation-and-retained-computational-results"
 id="toc-implementation-and-retained-computational-results"><span
-class="toc-section-number">15</span> Implementation and retained
+class="toc-section-number">16</span> Implementation and retained
 computational results</a>
 <ul>
 <li><a href="#installing-and-running-the-project"
 id="toc-installing-and-running-the-project"><span
-class="toc-section-number">15.1</span> Installing and running the
+class="toc-section-number">16.1</span> Installing and running the
 project</a></li>
 <li><a href="#implemented-mathematical-modules"
 id="toc-implemented-mathematical-modules"><span
-class="toc-section-number">15.2</span> Implemented mathematical
+class="toc-section-number">16.2</span> Implemented mathematical
 modules</a></li>
 <li><a href="#population-navigation-and-exact-bounds"
 id="toc-population-navigation-and-exact-bounds"><span
-class="toc-section-number">15.3</span> Population navigation and exact
+class="toc-section-number">16.3</span> Population navigation and exact
 bounds</a></li>
 <li><a href="#forest-transfer-experiment"
 id="toc-forest-transfer-experiment"><span
-class="toc-section-number">15.4</span> Forest transfer
+class="toc-section-number">16.4</span> Forest transfer
 experiment</a></li>
 <li><a href="#complete-small-graph-census"
 id="toc-complete-small-graph-census"><span
-class="toc-section-number">15.5</span> Complete small-graph
+class="toc-section-number">16.5</span> Complete small-graph
 census</a></li>
 <li><a href="#reproduction-and-document-generation"
 id="toc-reproduction-and-document-generation"><span
-class="toc-section-number">15.6</span> Reproduction and document
+class="toc-section-number">16.6</span> Reproduction and document
 generation</a></li>
 </ul></li>
 <li><a href="#thirty-six-concrete-research-pushes"
 id="toc-thirty-six-concrete-research-pushes"><span
-class="toc-section-number">16</span> Thirty-six concrete research
+class="toc-section-number">17</span> Thirty-six concrete research
 pushes</a>
 <ul>
 <li><a href="#p01-freeze-the-coefficient-semantics"
 id="toc-p01-freeze-the-coefficient-semantics"><span
-class="toc-section-number">16.1</span> P01 — Freeze the coefficient
+class="toc-section-number">17.1</span> P01 — Freeze the coefficient
 semantics</a></li>
 <li><a href="#p02-add-independent-level-chain-enumeration"
 id="toc-p02-add-independent-level-chain-enumeration"><span
-class="toc-section-number">16.2</span> P02 — Add independent level-chain
+class="toc-section-number">17.2</span> P02 — Add independent level-chain
 enumeration</a></li>
 <li><a href="#p03-publish-portable-coefficient-certificates"
 id="toc-p03-publish-portable-coefficient-certificates"><span
-class="toc-section-number">16.3</span> P03 — Publish portable
+class="toc-section-number">17.3</span> P03 — Publish portable
 coefficient certificates</a></li>
 <li><a href="#p04-give-the-spectral-pair-a-short-coefficient-proof"
 id="toc-p04-give-the-spectral-pair-a-short-coefficient-proof"><span
-class="toc-section-number">16.4</span> P04 — Give the spectral pair a
+class="toc-section-number">17.4</span> P04 — Give the spectral pair a
 short coefficient proof</a></li>
 <li><a href="#p05-explain-the-binary-census-separation"
 id="toc-p05-explain-the-binary-census-separation"><span
-class="toc-section-number">16.5</span> P05 — Explain the binary-census
+class="toc-section-number">17.5</span> P05 — Explain the binary-census
 separation</a></li>
 <li><a href="#p06-derive-universal-low-volume-formulas"
 id="toc-p06-derive-universal-low-volume-formulas"><span
-class="toc-section-number">16.6</span> P06 — Derive universal low-volume
+class="toc-section-number">17.6</span> P06 — Derive universal low-volume
 formulas</a></li>
 <li><a href="#p07-formalize-translation-normalization"
 id="toc-p07-formalize-translation-normalization"><span
-class="toc-section-number">16.7</span> P07 — Formalize translation
+class="toc-section-number">17.7</span> P07 — Formalize translation
 normalization</a></li>
 <li><a href="#p08-formalize-the-nested-level-energy-identity"
 id="toc-p08-formalize-the-nested-level-energy-identity"><span
-class="toc-section-number">16.8</span> P08 — Formalize the nested-level
+class="toc-section-number">17.8</span> P08 — Formalize the nested-level
 energy identity</a></li>
 <li><a href="#p09-implement-bounded-height-tree-messages"
 id="toc-p09-implement-bounded-height-tree-messages"><span
-class="toc-section-number">16.9</span> P09 — Implement bounded-height
+class="toc-section-number">17.9</span> P09 — Implement bounded-height
 tree messages</a></li>
 <li><a href="#p10-prove-safe-volume-truncation"
 id="toc-p10-prove-safe-volume-truncation"><span
-class="toc-section-number">16.10</span> P10 — Prove safe volume
+class="toc-section-number">17.10</span> P10 — Prove safe volume
 truncation</a></li>
 <li><a href="#p11-recover-span-by-bounded-box-subtraction"
 id="toc-p11-recover-span-by-bounded-box-subtraction"><span
-class="toc-section-number">16.11</span> P11 — Recover span by
+class="toc-section-number">17.11</span> P11 — Recover span by
 bounded-box subtraction</a></li>
 <li><a href="#p12-extend-messages-to-bounded-separators"
 id="toc-p12-extend-messages-to-bounded-separators"><span
-class="toc-section-number">16.12</span> P12 — Extend messages to bounded
+class="toc-section-number">17.12</span> P12 — Extend messages to bounded
 separators</a></li>
 <li><a href="#p13-classify-the-first-positive-energy-layer"
 id="toc-p13-classify-the-first-positive-energy-layer"><span
-class="toc-section-number">16.13</span> P13 — Classify the first
+class="toc-section-number">17.13</span> P13 — Classify the first
 positive-energy layer</a></li>
 <li><a href="#p14-compute-the-nested-pair-census"
 id="toc-p14-compute-the-nested-pair-census"><span
-class="toc-section-number">16.14</span> P14 — Compute the nested-pair
+class="toc-section-number">17.14</span> P14 — Compute the nested-pair
 census</a></li>
 <li><a href="#p15-separate-lattice-information-from-chamber-information"
 id="toc-p15-separate-lattice-information-from-chamber-information"><span
-class="toc-section-number">16.15</span> P15 — Separate lattice
+class="toc-section-number">17.15</span> P15 — Separate lattice
 information from chamber information</a></li>
 <li><a href="#p16-test-whitney-switches-systematically"
 id="toc-p16-test-whitney-switches-systematically"><span
-class="toc-section-number">16.16</span> P16 — Test Whitney switches
+class="toc-section-number">17.16</span> P16 — Test Whitney switches
 systematically</a></li>
 <li><a href="#p17-add-exact-volume-congruence-filters"
 id="toc-p17-add-exact-volume-congruence-filters"><span
-class="toc-section-number">16.17</span> P17 — Add exact volume
+class="toc-section-number">17.17</span> P17 — Add exact volume
 congruence filters</a></li>
 <li><a href="#p18-prove-root-of-unity-rationality-in-energy"
 id="toc-p18-prove-root-of-unity-rationality-in-energy"><span
-class="toc-section-number">16.18</span> P18 — Prove root-of-unity
+class="toc-section-number">17.18</span> P18 — Prove root-of-unity
 rationality in energy</a></li>
 <li><a href="#p19-analyze-finite-quadratic-gauss-sums"
 id="toc-p19-analyze-finite-quadratic-gauss-sums"><span
-class="toc-section-number">16.19</span> P19 — Analyze finite quadratic
+class="toc-section-number">17.19</span> P19 — Analyze finite quadratic
 Gauss sums</a></li>
 <li><a href="#p20-build-the-disjoint-order-chamber-formula"
 id="toc-p20-build-the-disjoint-order-chamber-formula"><span
-class="toc-section-number">16.20</span> P20 — Build the disjoint
+class="toc-section-number">17.20</span> P20 — Build the disjoint
 order-chamber formula</a></li>
 <li><a href="#p21-relate-constrained-heights-to-order-polytopes"
 id="toc-p21-relate-constrained-heights-to-order-polytopes"><span
-class="toc-section-number">16.21</span> P21 — Relate constrained heights
+class="toc-section-number">17.21</span> P21 — Relate constrained heights
 to order polytopes</a></li>
 <li><a href="#p22-establish-one-genuine-reciprocity-statement"
 id="toc-p22-establish-one-genuine-reciprocity-statement"><span
-class="toc-section-number">16.22</span> P22 — Establish one genuine
+class="toc-section-number">17.22</span> P22 — Establish one genuine
 reciprocity statement</a></li>
 <li><a href="#p23-implement-formal-logarithmic-extraction"
 id="toc-p23-implement-formal-logarithmic-extraction"><span
-class="toc-section-number">16.23</span> P23 — Implement formal
+class="toc-section-number">17.23</span> P23 — Implement formal
 logarithmic extraction</a></li>
 <li><a href="#p24-determine-exceptional-energy-parameters"
 id="toc-p24-determine-exceptional-energy-parameters"><span
-class="toc-section-number">16.24</span> P24 — Determine exceptional
+class="toc-section-number">17.24</span> P24 — Determine exceptional
 energy parameters</a></li>
 <li><a href="#p25-organize-successive-visibility-levels"
 id="toc-p25-organize-successive-visibility-levels"><span
-class="toc-section-number">16.25</span> P25 — Organize successive
+class="toc-section-number">17.25</span> P25 — Organize successive
 visibility levels</a></li>
 <li><a href="#p26-make-analytic-remainder-bounds-explicit"
 id="toc-p26-make-analytic-remainder-bounds-explicit"><span
-class="toc-section-number">16.26</span> P26 — Make analytic remainder
+class="toc-section-number">17.26</span> P26 — Make analytic remainder
 bounds explicit</a></li>
 <li><a href="#p27-produce-controlled-real-singularity-experiments"
 id="toc-p27-produce-controlled-real-singularity-experiments"><span
-class="toc-section-number">16.27</span> P27 — Produce controlled real
+class="toc-section-number">17.27</span> P27 — Produce controlled real
 singularity experiments</a></li>
 <li><a href="#p28-state-the-available-complex-domain-exactly"
 id="toc-p28-state-the-available-complex-domain-exactly"><span
-class="toc-section-number">16.28</span> P28 — State the available
+class="toc-section-number">17.28</span> P28 — State the available
 complex domain exactly</a></li>
 <li><a href="#p29-specify-a-complete-finite-graph-census"
 id="toc-p29-specify-a-complete-finite-graph-census"><span
-class="toc-section-number">16.29</span> P29 — Specify a complete finite
+class="toc-section-number">17.29</span> P29 — Specify a complete finite
 graph census</a></li>
 <li><a href="#p30-measure-collision-classes-across-invariants"
 id="toc-p30-measure-collision-classes-across-invariants"><span
-class="toc-section-number">16.30</span> P30 — Measure collision classes
+class="toc-section-number">17.30</span> P30 — Measure collision classes
 across invariants</a></li>
 <li><a href="#p31-resolve-targeted-collisions-structurally"
 id="toc-p31-resolve-targeted-collisions-structurally"><span
-class="toc-section-number">16.31</span> P31 — Resolve targeted
+class="toc-section-number">17.31</span> P31 — Resolve targeted
 collisions structurally</a></li>
 <li><a href="#p32-seek-a-separation-bound-for-one-graph-family"
 id="toc-p32-seek-a-separation-bound-for-one-graph-family"><span
-class="toc-section-number">16.32</span> P32 — Seek a separation bound
+class="toc-section-number">17.32</span> P32 — Seek a separation bound
 for one graph family</a></li>
 <li><a href="#p33-verify-concrete-coefficient-certificates-in-a-kernel"
 id="toc-p33-verify-concrete-coefficient-certificates-in-a-kernel"><span
-class="toc-section-number">16.33</span> P33 — Verify concrete
+class="toc-section-number">17.33</span> P33 — Verify concrete
 coefficient certificates in a kernel</a></li>
 <li><a href="#p34-formalize-the-visibility-comparison-boundary"
 id="toc-p34-formalize-the-visibility-comparison-boundary"><span
-class="toc-section-number">16.34</span> P34 — Formalize the visibility
+class="toc-section-number">17.34</span> P34 — Formalize the visibility
 comparison boundary</a></li>
 <li><a href="#p35-release-the-first-focused-manuscript"
 id="toc-p35-release-the-first-focused-manuscript"><span
-class="toc-section-number">16.35</span> P35 — Release the first focused
+class="toc-section-number">17.35</span> P35 — Release the first focused
 manuscript</a></li>
 <li><a href="#p36-choose-the-second-paper-from-actual-results"
 id="toc-p36-choose-the-second-paper-from-actual-results"><span
-class="toc-section-number">16.36</span> P36 — Choose the second paper
+class="toc-section-number">17.36</span> P36 — Choose the second paper
 from actual results</a></li>
 </ul></li>
 </ul>
@@ -705,11 +814,13 @@ establish the objects and finite observation hierarchy. Chapters 5-8
 develop primewise assembly, local analytic comparison and singular
 synchronization. Chapters 9-11 give exact examples, inverse questions
 and the bridges to earlier work. Chapters 12-14 develop computational
-methodology, the research program and the literature. The implementation
-appendix records the software contracts and validated computational
-domains. The final roadmap preserves the original thirty-six development
-pushes; their completed acceptance records and subsequent research
-frontiers are maintained in the handoff ledger.</p>
+methodology, the research program and the literature. Chapter 15 adds
+context operators, certified cheapest experiments, exact robustness and
+the periodic residue sector. The implementation appendix records the
+software contracts and validated computational domains. The final
+roadmap preserves the original thirty-six development pushes; their
+completed acceptance records and subsequent research frontiers are
+maintained in the handoff ledger.</p>
 <p>The central distinction is between an observation and the
 correspondence it forgets. A binary census can agree for every subset
 size and boundary size while a nested-height census differs. The
@@ -13281,17 +13392,992 @@ height partition functions, multivariate theta series, and refinements
 of Ising-equivalent graphs, then compare definitions term by term. A
 responsible priority statement belongs at the end of that process.</p>
 <h1 data-number="15"
+id="context-operators-cheapest-experiments-and-periodic-sectors"><span
+class="header-section-number">15</span> Context operators, cheapest
+experiments and periodic sectors</h1>
+<p>This chapter adds an experimental layer to the boundary machinery of
+Chapter 10. A two-terminal graph state is changed by attaching declared
+contexts and is read through its local coefficients. The questions are
+which states can ever be told apart, by which experiment, at what cost,
+and how much state an observer must keep. Three ingredients are
+standard: linear observability, minimal realization of weighted
+automata, and the invariant-subspace computation behind them. The
+graph-specific parts are new to this project. They are the context
+compiler and its correctness conditions, the experiment language with
+costs, independently replayable certificates that tie the retained rows
+to actual experiment words, the cost-filtered pruning theorem, the
+top-volume corank bound and the periodic cutoff. The last section
+integrates the October 2026 edge-factor supplement.</p>
+<p>Throughout,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+is the field of rationals and every computation is exact. “Proved”
+refers to the proofs written here. “Checked” refers to an exact finite
+computation with a declared population and budget, retained in
+<code>results/operator_experiments.json</code> and replayed by
+<code>scripts/operator_experiments.py --check</code>. None of the new
+statements is formalized in Lean unless Section 15.10 says so.</p>
+<h2 data-number="15.1" id="background-and-what-is-new"><span
+class="header-section-number">15.1</span> Background and what is
+new</h2>
+<p>For a linear system with state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><msup><mi>K</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v\in K^n</annotation></semantics></math>,
+generators
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>i</mi></msub><annotation encoding="application/x-tex">M_i</annotation></semantics></math>
+and output rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>j</mi></msub><annotation encoding="application/x-tex">L_j</annotation></semantics></math>,
+the set of states with identical output under every input word is an
+invariant subspace, and the quotient by it is the minimal linear
+realization. Kalman (1963) developed this for linear dynamical systems.
+Schützenberger (1961) introduced the weighted-automaton form of rational
+series, and Carlyle and Paz (1971) proved the Hankel-rank minimal
+realization for such automata. Berstel and Reutenauer’s monograph gives
+a modern account of noncommutative rational series and their
+minimization. These are the established background of Sections 15.2 and
+15.3. We do not claim them.</p>
+<p>The bibliographic data of these four sources agree across independent
+library and index records. These include the MIT <em>Information and
+Control</em> author index, the Cambridge copyright record of the
+Berstel–Reutenauer volume, and reference lists citing Kalman and
+Carlyle–Paz. In this session the publisher pages, Crossref and
+author-hosted copies were unreachable through the network policy. Their
+primary-record check, and the DOIs other than Berstel–Reutenauer’s
+catalogue DOI, remain open.</p>
+<p>The project-specific content is as follows:</p>
+<ul>
+<li>a compiler from symmetric two-terminal graph contexts to exact
+rational operators on truncated boundary kernels, with the conditions
+under which it is correct for every word length (SNG-O05);</li>
+<li>certificates whose retained rows are actual experiments with their
+words and costs, replayable without rediscovery, with an exactly typed
+in-memory verifier and a strict portable format (Section 15.4);</li>
+<li>the cost-filtered pruning theorem, which makes the first retained
+row nonzero on a difference a globally cheapest distinguishing
+experiment (SNG-O03), together with the counterexample showing that it
+does not maximize signal (SNG-O04);</li>
+<li>the top-volume corank bound for graph contexts (SNG-O06) and the
+exact evidence at budgets four and seven;</li>
+<li>the exact robustness statement for finite candidate families
+(SNG-O07);</li>
+<li>the periodic residue sector with a palindromic numerator and a
+sufficient cutoff (SNG-O08, SNG-O09).</li>
+</ul>
+<h2 data-number="15.2"
+id="operator-systems-experiments-and-word-order"><span
+class="header-section-number">15.2</span> Operator systems, experiments
+and word order</h2>
+<p>An <strong>operator system</strong> over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>
+consists of the following data:</p>
+<ul>
+<li>the dimension
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n\ge0</annotation></semantics></math>
+of the formal state space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℚ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb Q^n</annotation></semantics></math>,
+whose states are columns;</li>
+<li>generators
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>M</mi><mi>g</mi></msub><mo>∈</mo><msup><mi>ℚ</mi><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">M_1,\ldots,M_g\in\mathbb Q^{n\times n}</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g\ge0</annotation></semantics></math>;</li>
+<li>observation rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>L</mi><mi>o</mi></msub><mo>∈</mo><msup><mi>ℚ</mi><mrow><mn>1</mn><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">L_1,\ldots,L_o\in\mathbb Q^{1\times n}</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">o\ge0</annotation></semantics></math>;</li>
+<li>attachment costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_i&gt;0</annotation></semantics></math>
+and observation costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>j</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\gamma_j\ge0</annotation></semantics></math>.</li>
+</ul>
+<p>A <strong>word</strong> is a finite sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>i</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>i</mi><mi>m</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">w=(i_1,\ldots,i_m)</annotation></semantics></math>
+of generator indices, read chronologically:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>i</mi><mn>1</mn></msub><annotation encoding="application/x-tex">i_1</annotation></semantics></math>
+is applied first. It acts on states by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>w</mi></msub><mo>=</mo><msub><mi>M</mi><msub><mi>i</mi><mi>m</mi></msub></msub><mi>⋯</mi><msub><mi>M</mi><msub><mi>i</mi><mn>1</mn></msub></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>v</mi><mo>↦</mo><msub><mi>M</mi><mi>w</mi></msub><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+M_w=M_{i_m}\cdots M_{i_1},\qquad v\mapsto M_wv.
+</annotation></semantics></math> The <strong>experiment</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(j,w)</annotation></semantics></math>
+is the row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub><msub><mi>M</mi><mi>w</mi></msub></mrow><annotation encoding="application/x-tex">L_jM_w</annotation></semantics></math>.
+Its cost is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>γ</mi><mi>j</mi></msub><mo>+</mo><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>c</mi><msub><mi>i</mi><mi>k</mi></msub></msub></mrow><annotation encoding="application/x-tex">\gamma_j+\sum_{k}c_{i_k}</annotation></semantics></math>,
+and its reading on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub><msub><mi>M</mi><mi>w</mi></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">L_jM_wv</annotation></semantics></math>.
+Right multiplication of an experiment row by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>i</mi></msub><annotation encoding="application/x-tex">M_i</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub><msub><mi>M</mi><mi>w</mi></msub><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><msub><mi>L</mi><mi>j</mi></msub><msub><mi>M</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">L_jM_wM_i=L_jM_{(i,w)}</annotation></semantics></math>,
+the experiment whose word has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+<strong>prepended</strong>: the new attachment happens first. This
+convention matters only for noncommuting generators. The test suite
+checks it on
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>M</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>L</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+M_0=\begin{pmatrix}1&amp;1\\0&amp;1\end{pmatrix},\qquad
+M_1=\begin{pmatrix}1&amp;0\\1&amp;1\end{pmatrix},\qquad L=(1,0).
+</annotation></semantics></math> Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>1</mn></msub><msub><mi>M</mi><mn>0</mn></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup><mo>≠</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup><mo>=</mo><msub><mi>M</mi><mn>0</mn></msub><msub><mi>M</mi><mn>1</mn></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">M_1M_0(0,1)^T=(1,2)^T\ne(1,1)^T=M_0M_1(0,1)^T</annotation></semantics></math>,
+and the closure retains the words
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">()</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0)</annotation></semantics></math>.
+Parallel graph attachments commute, so graph data alone cannot detect an
+order error.</p>
+<p>The <strong>observation space</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒪</mi><annotation encoding="application/x-tex">\mathcal O</annotation></semantics></math>
+is the span of all experiment rows. Two states are
+<strong>future-equivalent</strong> if every experiment reads the same
+value on them.</p>
+<h2 data-number="15.3"
+id="closure-quotient-and-cheapest-experiments"><span
+class="header-section-number">15.3</span> Closure, quotient and cheapest
+experiments</h2>
+<p><strong>Theorem SNG-O01 (closure certificate).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∈</mo><msup><mi>ℚ</mi><mrow><mi>r</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">B\in\mathbb Q^{r\times n}</annotation></semantics></math>
+have rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>b</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">b_1,\ldots,b_r</annotation></semantics></math>,
+each equal to an actual experiment
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><msub><mi>j</mi><mi>k</mi></msub></msub><msub><mi>M</mi><msub><mi>w</mi><mi>k</mi></msub></msub></mrow><annotation encoding="application/x-tex">L_{j_k}M_{w_k}</annotation></semantics></math>.
+Suppose there are matrices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℚ</mi><mrow><mi>o</mi><mo>×</mo><mi>r</mi></mrow></msup></mrow><annotation encoding="application/x-tex">A\in\mathbb Q^{o\times r}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub><mo>∈</mo><msup><mi>ℚ</mi><mrow><mi>r</mi><mo>×</mo><mi>r</mi></mrow></msup></mrow><annotation encoding="application/x-tex">T_i\in\mathbb Q^{r\times r}</annotation></semantics></math>
+with
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>A</mi><mi>B</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub><mi>B</mi><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+L=AB,\qquad BM_i=T_iB\quad(1\le i\le g),
+</annotation></semantics></math> where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+stacks the observation rows. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>row</mo><mi>B</mi><mo>=</mo><mi>𝒪</mi></mrow><annotation encoding="application/x-tex">\operatorname{row}B=\mathcal O</annotation></semantics></math>.
+For every word
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+the experiment rows satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><msub><mi>M</mi><mi>w</mi></msub><mo>=</mo><mi>A</mi><msub><mi>T</mi><mi>w</mi></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">LM_w=AT_wB</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>w</mi></msub><mo>=</mo><msub><mi>T</mi><msub><mi>i</mi><mn>1</mn></msub></msub><msub><mi>T</mi><msub><mi>i</mi><mn>2</mn></msub></msub><mi>⋯</mi><msub><mi>T</mi><msub><mi>i</mi><mi>m</mi></msub></msub></mrow><annotation encoding="application/x-tex">T_w=T_{i_1}T_{i_2}\cdots T_{i_m}</annotation></semantics></math>.</p>
+<p><em>Proof.</em> Induct on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">m=|w|</annotation></semantics></math>.
+The case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m=0</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">L=AB</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><msub><mi>M</mi><mi>w</mi></msub><mo>=</mo><mi>A</mi><msub><mi>T</mi><mi>w</mi></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">LM_w=AT_wB</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><msub><mi>M</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub><mo>=</mo><mi>L</mi><msub><mi>M</mi><mi>w</mi></msub><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><mi>A</mi><msub><mi>T</mi><mi>w</mi></msub><mi>B</mi><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><mi>A</mi><msub><mi>T</mi><mi>w</mi></msub><msub><mi>T</mi><mi>i</mi></msub><mi>B</mi><mo>=</mo><mi>A</mi><msub><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub><mi>B</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+LM_{(i,w)}=LM_wM_i=AT_wBM_i=AT_wT_iB=AT_{(i,w)}B,
+</annotation></semantics></math> so every experiment row lies in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>row</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\operatorname{row}B</annotation></semantics></math>.
+Conversely, each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>
+is itself an experiment row, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>row</mo><mi>B</mi><mo>⊆</mo><mi>𝒪</mi></mrow><annotation encoding="application/x-tex">\operatorname{row}B\subseteq\mathcal O</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The identities say that the retained space contains every future
+observation. The words say that it contains nothing else. Neither half
+needs a horizon or a bound on word length. Gaussian-elimination
+residuals are useful internally, but they are generally not experiment
+rows, so a certificate built from them would not prove reachability. The
+implementation therefore keeps original experiment rows as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.</p>
+<p><strong>Theorem SNG-O02 (invariant kernel, quotient and linear
+minimality).</strong> Under SNG-O01, put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mo>ker</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">N=\ker B</annotation></semantics></math>.
+Then:</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>i</mi></msub><mi>N</mi><mo>⊆</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M_iN\subseteq N</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>;</li>
+<li>every experiment vanishes on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>,
+and two states are future-equivalent if and only if their difference
+lies in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>;</li>
+<li>the quotient state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>B</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">y=Bv</annotation></semantics></math>
+evolves by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>↦</mo><msub><mi>T</mi><mi>i</mi></msub><mi>y</mi></mrow><annotation encoding="application/x-tex">y\mapsto T_iy</annotation></semantics></math>
+and is read by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>v</mi><mo>=</mo><mi>A</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Lv=Ay</annotation></semantics></math>;</li>
+<li>if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>:</mo><msup><mi>ℚ</mi><mi>n</mi></msup><mo>→</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">\phi:\mathbb Q^n\to W</annotation></semantics></math>
+is linear and every experiment is constant on the fibres of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ker</mo><mi>ϕ</mi><mo>⊆</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\ker\phi\subseteq N</annotation></semantics></math>.
+Consequently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>rank</mo><mi>ϕ</mi><mo>≥</mo><mo>rank</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\operatorname{rank}\phi\ge\operatorname{rank}B</annotation></semantics></math>.</li>
+</ol>
+<p><em>Proof.</em> (1) If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>v</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Bv=0</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><msub><mi>M</mi><mi>i</mi></msub><mi>v</mi><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub><mi>B</mi><mi>v</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">BM_iv=T_iBv=0</annotation></semantics></math>.
+(2) By SNG-O01 every experiment row is a combination of rows of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+so it vanishes on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.
+Conversely, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∉</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">d\notin N</annotation></semantics></math>,
+some row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is nonzero on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>
+is an experiment. (3)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><msub><mi>M</mi><mi>i</mi></msub><mi>v</mi><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub><mi>B</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">BM_iv=T_iBv</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>v</mi><mo>=</mo><mi>A</mi><mi>B</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">Lv=ABv</annotation></semantics></math>.
+(4) If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\phi(d)=0</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+lie in one fibre, so every experiment, and in particular every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>,
+vanishes on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>;
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">d\in N</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>rank</mo><mi>ϕ</mi><mo>=</mo><mi>n</mi><mo>−</mo><mo>dim</mo><mo>ker</mo><mi>ϕ</mi><mo>≥</mo><mi>n</mi><mo>−</mo><mo>dim</mo><mi>N</mi><mo>=</mo><mo>rank</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\operatorname{rank}\phi=n-\dim\ker\phi\ge n-\dim N=\operatorname{rank}B</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Part (4) is minimality among <strong>linear</strong> compressions of
+the <strong>full declared formal state space</strong>. It says nothing
+about nonlinear encodings. It also says nothing about the smaller set of
+states that graphs actually realize: a family occupying an affine
+subspace or a semialgebraic subset can need fewer coordinates. Section
+15.11 lists this as open.</p>
+<p><strong>Theorem SNG-O03 (cost-filtered pruning and cheapest
+witnesses).</strong> Assume the following:</p>
+<ul>
+<li>the rows of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+are actual experiments with costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mn>1</mn></msub><mo>≤</mo><mi>⋯</mi><mo>≤</mo><msub><mi>β</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">\beta_1\le\cdots\le\beta_r</annotation></semantics></math>;</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">L=AB</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">BM_i=T_iB</annotation></semantics></math>;</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>j</mi><mi>k</mi></mrow></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A_{jk}\ne0</annotation></semantics></math>
+implies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>≤</mo><msub><mi>γ</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\beta_k\le\gamma_j</annotation></semantics></math>;</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>a</mi><mi>k</mi></mrow></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(T_i)_{ak}\ne0</annotation></semantics></math>
+implies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>≤</mo><msub><mi>β</mi><mi>a</mi></msub><mo>+</mo><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\beta_k\le\beta_a+c_i</annotation></semantics></math>.</li>
+</ul>
+<p>Then for every real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+every experiment of cost at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+lies in the span of the rows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>≤</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">\beta_k\le C</annotation></semantics></math>.
+Hence, for any difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><msup><mi>ℚ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">d\in\mathbb Q^n</annotation></semantics></math>:</p>
+<ul>
+<li>if some experiment is nonzero on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+then the first row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>k</mi></msub><annotation encoding="application/x-tex">b_k</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>k</mi></msub><mi>d</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b_kd\ne0</annotation></semantics></math>
+is an experiment of globally minimum cost among all experiments nonzero
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+within the declared generator language;</li>
+<li>if no row of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is nonzero on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+no experiment distinguishes the two states.</li>
+</ul>
+<p><em>Proof.</em> Induct on word length. For the empty word,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>k</mi></msub><msub><mi>A</mi><mrow><mi>j</mi><mi>k</mi></mrow></msub><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">L_j=\sum_kA_{jk}b_k</annotation></semantics></math>,
+and every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+used has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>≤</mo><msub><mi>γ</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\beta_k\le\gamma_j</annotation></semantics></math>.
+Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub><msub><mi>M</mi><mi>w</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>a</mi></msub><msub><mi>λ</mi><mi>a</mi></msub><msub><mi>b</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">L_jM_w=\sum_a\lambda_ab_a</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>a</mi></msub><mo>≤</mo><msub><mi>γ</mi><mi>j</mi></msub><mo>+</mo><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta_a\le\gamma_j+c(w)</annotation></semantics></math>
+whenever
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>a</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda_a\ne0</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>j</mi></msub><msub><mi>M</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub><mo>=</mo><munder><mo>∑</mo><mi>a</mi></munder><msub><mi>λ</mi><mi>a</mi></msub><msub><mi>b</mi><mi>a</mi></msub><msub><mi>M</mi><mi>i</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>a</mi></munder><munder><mo>∑</mo><mi>k</mi></munder><msub><mi>λ</mi><mi>a</mi></msub><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>a</mi><mi>k</mi></mrow></msub><msub><mi>b</mi><mi>k</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+L_jM_{(i,w)}=\sum_a\lambda_ab_aM_i=\sum_a\sum_k\lambda_a(T_i)_{ak}b_k ,
+</annotation></semantics></math> and every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+with a nonzero contribution has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>≤</mo><msub><mi>β</mi><mi>a</mi></msub><mo>+</mo><msub><mi>c</mi><mi>i</mi></msub><mo>≤</mo><msub><mi>γ</mi><mi>j</mi></msub><mo>+</mo><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\beta_k\le\beta_a+c_i\le\gamma_j+c(w)+c_i</annotation></semantics></math>,
+the cost of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(j,(i,w))</annotation></semantics></math>.
+Now let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+be an experiment of cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>d</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">ed\ne0</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+lies in the span of the rows of cost at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+one of those rows is nonzero on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.
+The first row nonzero on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+therefore costs at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+and it is itself an experiment.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The algorithm produces such a certificate. It processes candidate
+experiments in nondecreasing cost from a priority queue, keeps a
+candidate only if it is independent of the rows already kept, and
+extends each kept row by every generator. A discarded candidate lies in
+the span of kept rows of cost at most its own. Right multiplication
+preserves that relation and adds the same positive cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>i</mi></msub><annotation encoding="application/x-tex">c_i</annotation></semantics></math>
+to every term, so the extensions of discarded rows are never needed.
+This is where strict positivity of attachment costs is used. Observation
+costs may be zero. The verifier checks the cost conditions on every
+nonzero coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>i</mi></msub><annotation encoding="application/x-tex">T_i</annotation></semantics></math>.</p>
+<p><strong>Proposition SNG-O04 (cheapest is not strongest).</strong>
+Take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>,
+a single observation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L=(1)</annotation></semantics></math>
+and a single generator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">M=(2)</annotation></semantics></math>.
+Then:</p>
+<ul>
+<li>the closure has rank one and the cheapest witness for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=1</annotation></semantics></math>
+is the direct reading, with cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+and signal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>;</li>
+<li>the experiment with word
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0,0)</annotation></semantics></math>
+reads
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>8</mn><annotation encoding="application/x-tex">8</annotation></semantics></math>;</li>
+<li>dependence pruning discards every extension, although the extensions
+amplify the discrepancy without bound.</li>
+</ul>
+<p>Minimum cost, maximum margin under a cost budget, and minimum-cost
+shared panels for several candidate pairs are therefore three different
+optimization problems. SNG-O03 solves only the first.</p>
+<h2 data-number="15.4" id="certificates-and-their-contracts"><span
+class="header-section-number">15.4</span> Certificates and their
+contracts</h2>
+<p>A closure certificate contains the experiments of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+(observation index, word, row and cost), the matrices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>i</mi></msub><annotation encoding="application/x-tex">T_i</annotation></semantics></math>,
+the reduced-row-echelon pivots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+and the canonical kernel basis of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>.</p>
+<p>The verifier recomputes every listed experiment from its word,
+rechecks independence, the pivots and the kernel, both identity
+families, the invariance of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+and the cost filtration. It never reruns the closure search. It is exact
+in two senses. Arithmetic is rational, and types are checked: every
+stored number must be a <code>Fraction</code>, every index and pivot an
+<code>int</code> that is not a <code>bool</code>, and every container a
+tuple of the stated size. Python equality identifies
+<code>Fraction(0)</code>, <code>0</code>, <code>0.0</code> and
+<code>False</code>, so a value check alone would accept a forged cost of
+<code>0.0</code>. The portable JSON format
+<code>singularity.operator-closure/1</code> encodes rationals as reduced
+pairs <code>[numerator, denominator]</code> and replays with resource
+limits. In memory and on disk the two contracts agree.</p>
+<p>A rank-zero closure is legitimate: the zero observation, or no
+observations at all. Its certificate has no rows, and reconstruction
+must return the zero vector of the ambient dimension. Earlier checkpoint
+code lost that dimension when reconstructing from an empty matrix and
+rejected such certificates. The reconstruction now takes the dimension
+explicitly. The test suite covers dimension zero, rank zero, and empty
+observation and generator families.</p>
+<p><strong>Exception contract.</strong> Non-exact public numbers
+(<code>bool</code>, <code>float</code>, <code>str</code>) raise
+<code>TypeError</code>. Valid types with invalid values or shapes raise
+<code>ValueError</code>. Portable replay converts every defect to
+<code>ValueError</code>.</p>
+<h2 data-number="15.5" id="the-graph-context-compiler"><span
+class="header-section-number">15.5</span> The graph context
+compiler</h2>
+<p>A <strong>context</strong> is a simple graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+with ordered terminals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>,
+subject to three conditions:</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>b</mi><mo>∉</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">ab\notin E(C)</annotation></semantics></math>;</li>
+<li>there is a graph automorphism
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\sigma(a)=b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\sigma(b)=a</annotation></semantics></math>,
+and the implementation checks the actual permutation;</li>
+<li>on attachment the interior of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+is copied freshly, disjoint from everything else, and the terminals of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+are identified with those of the current graph.</li>
+</ul>
+<p>A <strong>base block</strong> is any two-terminal simple graph,
+symmetric or not, and it may contain its terminal edge. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">K_G(s,t)\in\mathbb Z[q][x]</annotation></semantics></math>
+for the interior kernel of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+at terminal heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(s,t)</annotation></semantics></math>.
+It sums
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mtext mathvariant="normal">interior volume</mtext></msup><msup><mi>q</mi><mtext mathvariant="normal">energy</mtext></msup></mrow><annotation encoding="application/x-tex">x^{\text{interior volume}}q^{\text{energy}}</annotation></semantics></math>
+over nonnegative interior heights. Fix a budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>ℚ</mi><mo>∩</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q\in\mathbb Q\cap(0,1)</annotation></semantics></math>.
+The state coordinates are indexed by orbits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>s</mi><mo>≤</mo><mi>t</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">o=\{s\le t\}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">s+t\le R</annotation></semantics></math>
+and volumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mi>v</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">s+t\le v\le R</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>v</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow></msup><msubsup><mi>K</mi><mi>G</mi><mo>+</mo></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>K</mi><mi>G</mi><mo>+</mo></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mi>s</mi><mo>&lt;</mo><mi>t</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mi>s</mi><mo>=</mo><mi>t</mi><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+Y_{o}[v]=[x^v]\,x^{s+t}K_G^+(o),\qquad
+K_G^+(o)=\begin{cases}K_G(s,t)+K_G(t,s)&amp;s&lt;t,\\ K_G(s,s)&amp;s=t.\end{cases}
+</annotation></semantics></math> These are raw labeled population
+counts. Nothing is averaged, symmetric coordinates are not identified,
+and no normalization changes as the graph grows.</p>
+<p><strong>Theorem SNG-O05 (compiler correctness).</strong> Under the
+conditions above, attaching
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+maps the state of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+to the state of the glued graph by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><msub><mi>′</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>v</mi><mo>−</mo><mi>s</mi><mo>−</mo><mi>t</mi></mrow></munderover><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+Y&#39;_o[v]=\sum_{j=0}^{v-s-t}[x^j]K_C(o)\,Y_o[v-j],
+</annotation></semantics></math> and the local coefficient at volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">v\le R</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>o</mi></msub><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_oY_o[v]</annotation></semantics></math>.
+The glued graph is again a simple two-terminal graph with the same
+terminals. Hence the formula holds for every word of attachments of
+every length, with no truncation error.</p>
+<p><em>Proof.</em> Every edge of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+has an interior endpoint, because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>b</mi><mo>∉</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">ab\notin E(C)</annotation></semantics></math>.
+The fresh copy makes the interiors of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+disjoint. So for fixed terminal heights the energy splits as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>G</mi></msub><mo>+</mo><msub><mi>E</mi><mi>C</mi></msub></mrow><annotation encoding="application/x-tex">E_G+E_C</annotation></semantics></math>,
+the volume as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s+t</annotation></semantics></math>
+plus the two interior volumes, and the interior height choices are
+independent. The local series of the glued graph is therefore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub><msup><mi>x</mi><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow></msup><msub><mi>K</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_{(s,t)}x^{s+t}K_G(s,t)K_C(s,t)</annotation></semantics></math>
+over ordered terminal heights. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+swaps the terminals,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K_C(s,t)=K_C(t,s)</annotation></semantics></math>.
+Grouping
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(s,t)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(t,s)</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>o</mi></msub><msup><mi>x</mi><mrow><mi>s</mi><mo>+</mo><mi>t</mi></mrow></msup><msubsup><mi>K</mi><mi>G</mi><mo>+</mo></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sum_ox^{s+t}K_G^+(o)K_C(o)</annotation></semantics></math>.
+Extracting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>v</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[x^v]</annotation></semantics></math>
+gives the update and the readout. Interior volumes are nonnegative, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><msub><mi>′</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y&#39;_o[v]</annotation></semantics></math>
+uses only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mi>o</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>v</mi><mi>′</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">Y_o[v&#39;]</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>′</mi><mo>≤</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">v&#39;\le v</annotation></semantics></math>.
+The truncated coordinates are therefore closed under the update, and the
+budget never has to grow with word length. No terminal edge is added and
+the interior is fresh, so simplicity and the terminal labels persist.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The implementation <code>BoundaryExperimentSystem</code> compiles a
+declared list of contexts at given
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.
+The checked evidence is listed here; all of it is in the retained
+receipt.</p>
+<ul>
+<li><strong>Standard contexts.</strong> The pendant-leaf pair attaches
+one new leaf at each terminal. The shared neighbour attaches one new
+vertex adjacent to both.</li>
+<li><strong>Budget four (SNG-E009).</strong> At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">R=4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>
+the state dimension is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>22</mn><annotation encoding="application/x-tex">22</annotation></semantics></math>
+and the closure has full rank
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>22</mn><annotation encoding="application/x-tex">22</annotation></semantics></math>.
+The number of retained rows of word length at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>11</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>15</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>17</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>18</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>19</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>20</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>21</mn><mo>,</mo><mspace width="0.222em"></mspace><mn>22</mn><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+5,\ 11,\ 15,\ 17,\ 18,\ 19,\ 20,\ 21,\ 22\qquad(k=0,\ldots,8).
+</annotation></semantics></math> By SNG-O03 with unit attachment costs,
+this is the rank of all experiments of length at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+The first four values are confirmed by an independent rank computation
+over all words. The portable certificate is retained, replays without
+discovery, and equals a fresh discovery byte for byte as JSON.</li>
+<li><strong>Budget seven (SNG-E010).</strong> At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">R=7</annotation></semantics></math>
+the dimension is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>70</mn><annotation encoding="application/x-tex">70</annotation></semantics></math>
+and the rank is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>69</mn><annotation encoding="application/x-tex">69</annotation></semantics></math>.
+The kernel is spanned by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow></msub><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mn>7</mn><mo stretchy="true" form="postfix">)</mo></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+e_{((3,4),7)}-e_{((0,5),7)} .
+</annotation></semantics></math> Both generators multiply it by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>q</mi><mn>25</mn></msup><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>25</mn></mrow></msup></mrow><annotation encoding="application/x-tex">q^{25}=2^{-25}</annotation></semantics></math>,
+and every output annihilates it. This is a <strong>formal</strong>
+interface ambiguity in the declared coordinate space. No pair of graphs
+realizing this difference is asserted.</li>
+<li><strong>Path fixture (SNG-E011).</strong> Take the path
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>−</mo><mn>1</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0-1-2</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>,
+with terminals at the two endpoints or at an endpoint and the middle
+vertex. Both direct observation vectors are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>5</mn><mi>/</mi><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,5/4)</annotation></semantics></math>.
+At volume one, by direct height enumeration on the glued graphs, the
+pendant-leaf pair gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">7/4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">15/8</annotation></semantics></math>
+and the shared neighbour gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">9/8</annotation></semantics></math>.
+With costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+the certified cheapest witness is the shared neighbour, with cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and discrepancy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">-1/8</annotation></semantics></math>.
+All fifteen words of length at most three were checked against direct
+enumeration at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">R=3</annotation></semantics></math>
+for both placements.</li>
+</ul>
+<p><strong>Proposition SNG-O06 (top-volume corank bound).</strong> Let
+every context in the language satisfy the conditions above, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>C</mi></msub><annotation encoding="application/x-tex">d_C</annotation></semantics></math>
+be the number of interior neighbours of a terminal of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+which is the same for both terminals. For each orbit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">o=(s,t)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">s+t\le R</annotation></semantics></math>,
+the coordinate vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub><annotation encoding="application/x-tex">e_{(o,R)}</annotation></semantics></math>
+is an eigenvector of every compiled operator, with eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><msub><mi>d</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">q^{d_C(s^2+t^2)}</annotation></semantics></math>,
+and its readout is the
+volume-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+unit. Consequently, if orbits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mo>≠</mo><mi>o</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">o\ne o&#39;</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>+</mo><mi>t</mi><mo>,</mo><mi>s</mi><mi>′</mi><mo>+</mo><mi>t</mi><mi>′</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">s+t,s&#39;+t&#39;\le R</annotation></semantics></math>
+have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo>=</mo><mi>s</mi><msup><mi>′</mi><mn>2</mn></msup><mo>+</mo><mi>t</mi><msup><mi>′</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">s^2+t^2=s&#39;^2+t&#39;^2</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub><mo>−</mo><msub><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mi>′</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow></msub></mrow><annotation encoding="application/x-tex">e_{(o,R)}-e_{(o&#39;,R)}</annotation></semantics></math>
+is invisible, and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>corank</mo><mspace width="0.222em"></mspace><mo>≥</mo><mspace width="0.222em"></mspace><munder><mo>∑</mo><mtext mathvariant="normal">classes</mtext></munder><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>o</mi><mo>:</mo><mspace width="0.222em"></mspace><mi>s</mi><mo>+</mo><mi>t</mi><mo>≤</mo><mi>R</mi><mo>,</mo><mspace width="0.222em"></mspace><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo>=</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo><mo>−</mo><mn>1</mn><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{corank}\ \ge\ \sum_{\text{classes}}\bigl(\#\{o:\ s+t\le R,\ s^2+t^2=c\}-1\bigr).
+</annotation></semantics></math></p>
+<p><em>Proof.</em> By SNG-O05, the column
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(o,R)</annotation></semantics></math>
+of the operator has nonzero entries only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(o,v)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≥</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">v\ge R</annotation></semantics></math>,
+so only at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(o,R)</annotation></semantics></math>.
+The entry is the interior-volume-zero kernel coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mn>0</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>K</mi><mi>C</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">[x^0]K_C(o)</annotation></semantics></math>.
+With every interior height zero, only the terminal–interior edges carry
+energy, which totals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>C</mi></msub><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msub><mi>d</mi><mi>C</mi></msub><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">d_Cs^2+d_Ct^2</annotation></semantics></math>.
+The readout of the coordinate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(o,R)</annotation></semantics></math>
+is the coefficient at volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+Differences within one class are therefore common eigenvectors with zero
+readout. Differences from distinct classes have disjoint supports, so
+they are independent.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The bound is zero for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>≤</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">R\le6</annotation></semantics></math>.
+It is one for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>7</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">R=7,8,9</annotation></semantics></math>,
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>0</mn><mn>2</mn></msup><mo>+</mo><msup><mn>5</mn><mn>2</mn></msup><mo>=</mo><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><msup><mn>4</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">0^2+5^2=3^2+4^2</annotation></semantics></math>,
+and two at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">R=10</annotation></semantics></math>,
+adding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mn>7</mn><mn>2</mn></msup><mo>=</mo><msup><mn>5</mn><mn>2</mn></msup><mo>+</mo><msup><mn>5</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1^2+7^2=5^2+5^2</annotation></semantics></math>.
+It equals the computed corank at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">R=4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">R=7</annotation></semantics></math>.
+Whether it is sharp for larger budgets is open. Fixed-budget closure is
+a statement about a finite truncation: it does not prove that an
+untruncated generating function is rational or that the visible rank
+stabilizes as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+grows.</p>
+<h2 data-number="15.6"
+id="exact-robustness-for-finite-candidate-families"><span
+class="header-section-number">15.6</span> Exact robustness for finite
+candidate families</h2>
+<p>Experiments that return polynomial curves in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+are compared in the integral metric of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L^2([a,b])</annotation></semantics></math>.
+Its Gram matrix on monomials is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>b</mi><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>+</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G_{ij}=(b^{i+j+1}-a^{i+j+1})/(i+j+1)</annotation></semantics></math>.
+The coefficient dot product is a different quantity. For the path
+discrepancy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><mi>q</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Delta(q)=-q(1-q)^2</annotation></semantics></math>,
+with coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,-1,2,-1)</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>Δ</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>q</mi><mo>=</mo><mfrac><mn>1</mn><mn>105</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>6</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\int_0^1\Delta(q)^2\,dq=\frac1{105},\qquad (0,-1,2,-1)\cdot(0,-1,2,-1)=6 .
+</annotation></semantics></math> In the monic orthogonal basis on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>,
+the coordinates of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math>
+are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mi>/</mi><mn>12</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>10</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1/12,1/10,1/2,-1)</annotation></semantics></math>
+with squared norms
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>12</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>180</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2800</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1/12,1/180,1/2800)</annotation></semantics></math>,
+and Parseval returns
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>105</mn></mrow><annotation encoding="application/x-tex">1/105</annotation></semantics></math>.
+All Gram matrices are checked positive definite by exact
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>D</mi><msup><mi>L</mi><mi>𝖳</mi></msup></mrow><annotation encoding="application/x-tex">LDL^{\mathsf T}</annotation></semantics></math>.</p>
+<p><strong>Proposition SNG-O07 (certified nearest-candidate
+identification).</strong> Suppose:</p>
+<ul>
+<li>the candidate family is a finite set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>
+of observation vectors with minimum pairwise distance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+in a declared positive definite metric;</li>
+<li>the true vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+lies in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>;</li>
+<li>the observation is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mo>+</mo><mi>e</mi></mrow><annotation encoding="application/x-tex">y=m+e</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>e</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">\|e\|\le\varepsilon</annotation></semantics></math>.</li>
+</ul>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>ε</mi><mo>&lt;</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">2\varepsilon&lt;\delta</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is the unique nearest candidate to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p>
+<p><em>Proof.</em> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi>ℱ</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>m</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">c\in\mathcal F\setminus\{m\}</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.222em"></mspace><mo>≥</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>m</mi><mo>−</mo><mi>c</mi><mo stretchy="false" form="postfix">∥</mo><mo>−</mo><mo stretchy="false" form="postfix">∥</mo><mi>e</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.222em"></mspace><mo>≥</mo><mspace width="0.222em"></mspace><mi>δ</mi><mo>−</mo><mi>ε</mi><mspace width="0.222em"></mspace><mo>&gt;</mo><mspace width="0.222em"></mspace><mi>ε</mi><mspace width="0.222em"></mspace><mo>≥</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><mi>m</mi><mo stretchy="false" form="postfix">∥</mo><mi>.</mi><mspace width="2.0em"></mspace><mi>▫</mi></mrow><annotation encoding="application/x-tex">
+\|y-c\|\ \ge\ \|m-c\|-\|e\|\ \ge\ \delta-\varepsilon\ &gt;\ \varepsilon\ \ge\ \|y-m\| .\qquad\square
+</annotation></semantics></math></p>
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>ε</mi><mo>=</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">2\varepsilon=\delta</annotation></semantics></math>
+the observation can be equidistant from two candidates, so equality
+certifies nothing. The noise model is deterministic and bounded. Nothing
+outside the declared family is identified. Whole-curve separation is not
+pointwise separation:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">(-1/2)+q</annotation></semantics></math>
+has positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>L</mi><mn>2</mn></msup><annotation encoding="application/x-tex">L^2</annotation></semantics></math>
+norm on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
+but vanishes at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>.
+A single specialized interface value cannot reconstruct a parameter
+polynomial. The finite-pool ranking scores
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>δ</mi><mn>2</mn></msup><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">cost</mtext><mo>⋅</mo><msup><mtext mathvariant="normal">noise</mtext><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta^2/(\text{cost}\cdot\text{noise}^2)</annotation></semantics></math>
+over an explicit pool. It is not a search over attachment words.</p>
+<h2 data-number="15.7" id="the-periodic-sector"><span
+class="header-section-number">15.7</span> The periodic sector</h2>
+<p>Fix a graph on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+labeled vertices (isolated vertices and disconnected graphs allowed), a
+modulus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M\ge1</annotation></semantics></math>,
+and integer exponents
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>e</mi></msub><annotation encoding="application/x-tex">a_e</annotation></semantics></math>,
+where zero and negative values are allowed. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>e</mi></msub><mo>=</mo><msubsup><mi>ζ</mi><mi>M</mi><msub><mi>a</mi><mi>e</mi></msub></msubsup></mrow><annotation encoding="application/x-tex">t_e=\zeta_M^{a_e}</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>t</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><msub><mi>Φ</mi><mi>M</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Z[t]/\Phi_M(t)</annotation></semantics></math>
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>h</mi><mo>∈</mo><msup><mi>ℕ</mi><mi>n</mi></msup></mrow></munder><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>h</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><munder><mo>∏</mo><mrow><mi>u</mi><mi>v</mi><mo>∈</mo><mi>E</mi></mrow></munder><msubsup><mi>t</mi><mrow><mi>u</mi><mi>v</mi></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>h</mi><mi>u</mi></msub><mo>−</mo><msub><mi>h</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F(x)=\sum_{h\in\mathbb N^n}x^{|h|}\prod_{uv\in E}t_{uv}^{(h_u-h_v)^2}.
+</annotation></semantics></math></p>
+<p><strong>Theorem SNG-O08 (residue numerator).</strong> With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K=n(M-1)</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>x</mi><mi>M</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>ρ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>M</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow></munder><msup><mi>x</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>ρ</mi><mo stretchy="true" form="postfix">|</mo></mrow></msup><munder><mo>∏</mo><mrow><mi>u</mi><mi>v</mi></mrow></munder><msubsup><mi>t</mi><mrow><mi>u</mi><mi>v</mi></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>u</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></msubsup><mo>,</mo><mspace width="2.0em"></mspace><mo>deg</mo><mi>P</mi><mo>≤</mo><mi>K</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+F(x)=\frac{P(x)}{(1-x^M)^n},\qquad
+P(x)=\sum_{\rho\in\{0,\ldots,M-1\}^n}x^{|\rho|}\prod_{uv}t_{uv}^{(\rho_u-\rho_v)^2},\qquad \deg P\le K .
+</annotation></semantics></math></p>
+<p><em>Proof.</em> Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>ρ</mi><mo>+</mo><mi>M</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">h=\rho+Mb</annotation></semantics></math>
+uniquely with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo>&lt;</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">0\le\rho_v&lt;M</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∈</mo><msup><mi>ℕ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">b\in\mathbb N^n</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>h</mi><mi>u</mi></msub><mo>−</mo><msub><mi>h</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>≡</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>u</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mi>M</mi><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(h_u-h_v)^2\equiv(\rho_u-\rho_v)^2\pmod M</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>t</mi><mi>e</mi><mi>M</mi></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t_e^M=1</annotation></semantics></math>,
+so each weight depends only on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>.
+Summing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>M</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>b</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></msup><annotation encoding="application/x-tex">x^{M|b|}</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>x</mi><mi>M</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">(1-x^M)^{-n}</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p><strong>Theorem SNG-O09 (palindrome and sufficient cutoff).</strong>
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>k</mi></msub><mo>=</mo><msub><mi>P</mi><mrow><mi>K</mi><mo>−</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_k=P_{K-k}</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+Let two models have the same
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>.
+If their series agree at every volume up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>K</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor K/2\rfloor</annotation></semantics></math>,
+they agree at every volume.</p>
+<p><em>Proof.</em> The complement
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>↦</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>𝟏</mn><mo>−</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\rho\mapsto(M-1)\mathbf 1-\rho</annotation></semantics></math>
+negates every difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>u</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\rho_u-\rho_v</annotation></semantics></math>,
+so it preserves every squared difference. It sends
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>ρ</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|\rho|</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>ρ</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">K-|\rho|</annotation></semantics></math>.
+It is a bijection of the residue box, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>k</mi></msub><mo>=</mo><msub><mi>P</mi><mrow><mi>K</mi><mo>−</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_k=P_{K-k}</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>F</mi><mo>⋅</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>x</mi><mi>M</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">P=F\cdot(1-x^M)^n</annotation></semantics></math>
+and the factor is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mi>M</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">1+O(x^M)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>k</mi></msub><annotation encoding="application/x-tex">P_k</annotation></semantics></math>
+is determined by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>F</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">F_0,\ldots,F_k</annotation></semantics></math>.
+Agreement through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>K</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor K/2\rfloor</annotation></semantics></math>
+fixes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>P</mi><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>K</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow></msub></mrow><annotation encoding="application/x-tex">P_0,\ldots,P_{\lfloor K/2\rfloor}</annotation></semantics></math>.
+The palindrome fixes the remaining coefficients, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+determines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>This is a sufficient cutoff, not a sharpness claim. The argument uses
+squared edge differences only. A unary or vertex weight is not preserved
+by complementation, and no such extension is claimed. The following were
+checked:</p>
+<ul>
+<li><strong>A certified equal pair (SNG-E012).</strong> At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n=3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">M=2</annotation></semantics></math>,
+with every exponent one, the path
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>−</mo><mn>1</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0-1-2</annotation></semantics></math>
+and the edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>01</mn><annotation encoding="application/x-tex">01</annotation></semantics></math>
+with isolated vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+have the same numerator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,-1,-1,1)</annotation></semantics></math>.
+The cutoff is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+so their complete series are equal. Direct enumeration confirms
+agreement through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>14</mn><annotation encoding="application/x-tex">14</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">M=3</annotation></semantics></math>
+the same pair separates at volume one, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><mi>ζ</mi><mo>+</mo><msup><mi>ζ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F_1=2\zeta+\zeta^2</annotation></semantics></math>
+versus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>ζ</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2\zeta+1</annotation></semantics></math>.</li>
+<li><strong>Exhaustive population.</strong> Every graph on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n\le3</annotation></semantics></math>
+labeled vertices, every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">M\in\{1,2,3,4\}</annotation></semantics></math>
+and every exponent assignment from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{-1,0,1,2\}</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>524</mn><annotation encoding="application/x-tex">524</annotation></semantics></math>
+models. The residue identity was checked against direct height
+enumeration through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>+</mo><mn>2</mn><mi>M</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">K+2M+1</annotation></semantics></math>,
+the palindrome on every numerator, and the cutoff theorem on every pair
+with equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n,M)</annotation></semantics></math>.</li>
+</ul>
+<h2 data-number="15.8"
+id="edge-factor-families-and-compressed-interfaces"><span
+class="header-section-number">15.8</span> Edge-factor families and
+compressed interfaces</h2>
+<p>The October 2026 supplement
+<code>docs/research/VAKIL_BRIDGES.md</code> gives full proofs of three
+results, recorded here with identifiers. It applies standard tools from
+Vakil’s draft of <em>Foundations of Algebraic Geometry</em> to the
+height series.</p>
+<p><strong>Proposition SNG-O10 (finite determination for edge-factor
+families).</strong> Place an independent factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>t</mi><mi>e</mi></msub><annotation encoding="application/x-tex">t_e</annotation></semantics></math>
+on every edge of a fixed template. For two fixed templates there is an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>
+such that, over every commutative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>-algebra,
+agreement through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>
+is equivalent to equality of the complete series. The proof is the
+Hilbert basis theorem applied to the chain of coefficient-difference
+ideals. No effective
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>
+is given. An ideal that stops growing once can grow later: the
+coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>0</mn><mo>,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">0,\ldots,0,t</annotation></semantics></math>
+are an example. Noetherian finite determination is not an algorithm.</p>
+<p><strong>Proposition SNG-O11 (triangle tangent ranks).</strong> On the
+positive octant, the three top-moment probes of the edge-factor triangle
+have Jacobian rank
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+according as the edge factors take three, two or one distinct values. No
+further symmetric coefficient raises the rank.</p>
+<p><strong>Proposition SNG-O12 (parallel composition and terminal
+forgetting).</strong> Compressed charge interfaces multiply under
+parallel composition of blocks with disjoint interiors and edge-disjoint
+terminal graphs. Forgetting a terminal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+at interior height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+sends a cell by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>Q</mi><mo>,</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>↦</mo><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><mi>j</mi><mo>+</mo><mi>h</mi><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>Q</mi><mrow><mo>−</mo><mi>t</mi></mrow></msub><mo>+</mo><mi>h</mi><mi>ζ</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>E</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>d</mi><mi>t</mi></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>ζ</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>h</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>h</mi><msub><mi>Q</mi><mi>t</mi></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+(j,Q,E)\mapsto\bigl(j+h,\ Q_{-t}+h\zeta,\ E+(d_t+|\zeta|)h^2-2hQ_t\bigr),
+</annotation></semantics></math> and a source interface complete through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+suffices for output budget
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.</p>
+<p>These are applications of standard principles, not new algebraic
+geometry. They are implemented in <code>edge_factors.py</code> and
+<code>charges.py</code> and checked by
+<code>scripts/vakil_bridge.py --check</code>.</p>
+<h2 data-number="15.9" id="interfaces-and-runnable-examples"><span
+class="header-section-number">15.9</span> Interfaces and runnable
+examples</h2>
+<p>The public contracts are specified in
+<code>docs/specifications/OPERATORS-v1.md</code>. A minimal session:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fractions <span class="im">import</span> Fraction</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> singularity.graph <span class="im">import</span> Graph</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> singularity.graph_experiments <span class="im">import</span> BoundaryExperimentSystem</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> singularity.observability <span class="im">import</span> observable_closure, minimum_distinguishing_experiment</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>system <span class="op">=</span> BoundaryExperimentSystem(<span class="dv">1</span>, Fraction(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>operators <span class="op">=</span> system.operator_system(attachment_costs<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>certificate <span class="op">=</span> observable_closure(operators)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Graph(<span class="dv">3</span>, ((<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">1</span>, <span class="dv">2</span>)))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="bu">tuple</span>(a <span class="op">-</span> b <span class="cf">for</span> a, b <span class="kw">in</span> <span class="bu">zip</span>(system.compile_graph(path, (<span class="dv">0</span>, <span class="dv">2</span>)), system.compile_graph(path, (<span class="dv">0</span>, <span class="dv">1</span>))))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>witness <span class="op">=</span> minimum_distinguishing_experiment(operators, d, certificate)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> (witness.word, witness.cost) <span class="op">==</span> ((<span class="dv">1</span>,), <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> singularity.graph <span class="im">import</span> Graph</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> singularity.periodic <span class="im">import</span> PeriodicModel, compare_models</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> compare_models(PeriodicModel(Graph(<span class="dv">3</span>, ((<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">1</span>, <span class="dv">2</span>))), <span class="dv">2</span>), PeriodicModel(Graph(<span class="dv">3</span>, ((<span class="dv">0</span>, <span class="dv">1</span>),)), <span class="dv">2</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> result.equal <span class="kw">and</span> result.cutoff <span class="op">==</span> <span class="dv">1</span></span></code></pre></div>
+<h2 data-number="15.10" id="formal-status"><span
+class="header-section-number">15.10</span> Formal status</h2>
+<p>The Lean packages <code>formal/</code> and
+<code>formal-analysis/</code> predate this chapter. Their declarations
+do not formalize SNG-O01 to SNG-O12. A separate formalization of the
+closure, quotient, cost-filtration and periodic-complement arguments is
+reported in <code>formal-analysis/README.md</code> only to the extent
+that it compiles without admitted results. Until then, all statements in
+this chapter are mathematical exposition with exact finite checks.</p>
+<h2 data-number="15.11" id="open-questions"><span
+class="header-section-number">15.11</span> Open questions</h2>
+<p>The following are open:</p>
+<ul>
+<li><strong>Restricted state families.</strong> Find the minimal
+dimension of a compression that is exact only on the states graphs
+actually realize, and decide whether such a family can be closed under
+attachment with typed transitions.</li>
+<li><strong>Sharpness of the corank bound.</strong> Is SNG-O06 sharp for
+every budget, and does the visible rank have a closed form in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>?</li>
+<li><strong>Margins.</strong> Develop bounded maximum-margin experiment
+search under a cost budget. An unrestricted optimum need not exist,
+because signals can grow without bound (SNG-O04).</li>
+<li><strong>Shared panels.</strong> Find minimum-cost shared panels that
+separate every pair in a candidate family, ideally with joint
+robustness. Exact methods face set-cover hardness in general.</li>
+<li><strong>Parameter dependence.</strong> Determine where the rank
+depends on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>:
+generic rank over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(q)</annotation></semantics></math>
+versus rank at every specialization.</li>
+<li><strong>Sharper periodic cutoffs and noncommuting
+operations.</strong> Find periodic cutoffs below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>K</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor K/2\rfloor</annotation></semantics></math>
+for structured families, and genuinely noncommuting graph operations
+with closed state semantics.</li>
+</ul>
+<h1 data-number="16"
 id="implementation-and-retained-computational-results"><span
-class="header-section-number">15</span> Implementation and retained
+class="header-section-number">16</span> Implementation and retained
 computational results</h1>
 <p>The mathematical manuscripts describe a research program, while this
-chapter records the executable boundary of version 0.2.0. The core
+chapter records the executable boundary of version 0.3.0. The core
 package requires Python 3.10 or newer and uses only the standard
 library. Documentation generation additionally uses Pandoc and a LaTeX
 installation. The rendered PDF and HTML are distributed so that a reader
 does not need those authoring tools merely to read the work.</p>
-<h2 data-number="15.1" id="installing-and-running-the-project"><span
-class="header-section-number">15.1</span> Installing and running the
+<h2 data-number="16.1" id="installing-and-running-the-project"><span
+class="header-section-number">16.1</span> Installing and running the
 project</h2>
 <p>From the repository root, <code>python -m pip install -e .</code>
 installs the command <code>singularity</code>. An installation-free
@@ -13315,8 +14401,8 @@ The input can instead be a JSON object with an integer vertex count and
 an explicit edge list. Original vertex labels are retained throughout
 all finite populations. Isomorphism is a separate mathematical quotient,
 never an implicit division of multiplicities.</p>
-<h2 data-number="15.2" id="implemented-mathematical-modules"><span
-class="header-section-number">15.2</span> Implemented mathematical
+<h2 data-number="16.2" id="implemented-mathematical-modules"><span
+class="header-section-number">16.2</span> Implemented mathematical
 modules</h2>
 <p>The meaning of every public coefficient, population and certificate
 interface is fixed in the <a
@@ -13514,6 +14600,34 @@ sectors; regular closed form</td>
 level chains), nested-cut checks, normalization and factorization
 checks</td>
 </tr>
+<tr class="odd">
+<td><code>observability</code></td>
+<td>Finite operator systems and experiments</td>
+<td>Exact closure with actual experiment words, certificates of L=AB and
+BM_i=T_iB, invisible subspace, quotient dynamics, globally cheapest
+distinguishing experiments under positive costs, strict in-memory and
+portable replay (SNG-O01–SNG-O04)</td>
+</tr>
+<tr class="even">
+<td><code>graph_experiments</code></td>
+<td>Symmetric two-terminal context operators</td>
+<td>Checked contexts with terminal-swap automorphisms, compiled
+truncated kernel operators, raw state compilation for asymmetric base
+blocks, direct-enumeration cross-check (SNG-O05, SNG-O06)</td>
+</tr>
+<tr class="odd">
+<td><code>experiment_design</code></td>
+<td>Exact polynomial-curve metrics</td>
+<td>Gram matrices, LDL positivity, orthogonal coordinates, separations,
+certified nearest-candidate identification and finite-pool scores
+(SNG-O07)</td>
+</tr>
+<tr class="even">
+<td><code>periodic</code></td>
+<td>Root-of-unity edge phases</td>
+<td>Residue numerators in Z[t]/Phi_M, palindromes, independent height
+enumeration and the sufficient cutoff comparison (SNG-O08, SNG-O09)</td>
+</tr>
 </tbody>
 </table>
 <p>The primitive module implements a useful extension of the
@@ -13525,8 +14639,8 @@ primitive populations by a finite divisor sum in every retained volume.
 The inverse operation uses the ordinary Mobius function on the scaling
 factor. The released test checks both directions on every simple graph
 through four vertices at a declared finite depth.</p>
-<h2 data-number="15.3" id="population-navigation-and-exact-bounds"><span
-class="header-section-number">15.3</span> Population navigation and
+<h2 data-number="16.3" id="population-navigation-and-exact-bounds"><span
+class="header-section-number">16.3</span> Population navigation and
 exact bounds</h2>
 <p>The command
 <code>population --example binary_g --volume 3 --span 2 --sample 5</code>
@@ -13544,8 +14658,8 @@ storing every completed tuple. Their computational cost still depends on
 the graph’s frontier and on the active constraints. The package does not
 advertise a uniform polynomial-time procedure for arbitrary graphs or
 arbitrary energy budgets.</p>
-<h2 data-number="15.4" id="forest-transfer-experiment"><span
-class="header-section-number">15.4</span> Forest transfer
+<h2 data-number="16.4" id="forest-transfer-experiment"><span
+class="header-section-number">16.4</span> Forest transfer
 experiment</h2>
 <p>The forest engine conditions each subtree on the height at its root.
 Combining a child charges the connecting edge exactly once and convolves
@@ -13567,8 +14681,8 @@ in <code>results/transfer_benchmark.json</code> records both counts and
 measured execution times. Timing is an environmental observation. The
 arithmetic identities and retained population definition are the
 reproducible mathematical conclusions.</p>
-<h2 data-number="15.5" id="complete-small-graph-census"><span
-class="header-section-number">15.5</span> Complete small-graph
+<h2 data-number="16.5" id="complete-small-graph-census"><span
+class="header-section-number">16.5</span> Complete small-graph
 census</h2>
 <p>The script <code>scripts/census.py</code> enumerates every labeled
 simple graph through six vertices, filters connected graphs, and takes
@@ -13655,8 +14769,8 @@ demonstrates why this finite observation cannot be promoted to a
 reconstruction theorem. The census gives a reproducible starting point
 for measuring how visibility changes as the graph population
 expands.</p>
-<h2 data-number="15.6" id="reproduction-and-document-generation"><span
-class="header-section-number">15.6</span> Reproduction and document
+<h2 data-number="16.6" id="reproduction-and-document-generation"><span
+class="header-section-number">16.6</span> Reproduction and document
 generation</h2>
 <p><code>make test</code> runs the standard-library suite.
 <code>make examples</code> regenerates the three reference comparisons,
@@ -13686,8 +14800,8 @@ package (no Mathlib) with kernel-checked theorems for translation
 normalization (P07) and the nested threshold energy identity (P08);
 <code>scripts/check_formal.py</code> builds it and audits the axioms of
 the main theorems (see <code>formal/README.md</code>).</p>
-<h1 data-number="16" id="thirty-six-concrete-research-pushes"><span
-class="header-section-number">16</span> Thirty-six concrete research
+<h1 data-number="17" id="thirty-six-concrete-research-pushes"><span
+class="header-section-number">17</span> Thirty-six concrete research
 pushes</h1>
 <p>This is a proposed sequence after the initial release. No entry is
 marked complete by its presence here. A push closes when its
@@ -13707,8 +14821,8 @@ to be investigated, never an acceptance criterion satisfied by a finite
 census. The two supplied graph pairs remain fixed regression examples
 throughout, so an expansion cannot silently change their labeling,
 normalization, or first-discrepancy statements.</p>
-<h2 data-number="16.1" id="p01-freeze-the-coefficient-semantics"><span
-class="header-section-number">16.1</span> P01 — Freeze the coefficient
+<h2 data-number="17.1" id="p01-freeze-the-coefficient-semantics"><span
+class="header-section-number">17.1</span> P01 — Freeze the coefficient
 semantics</h2>
 <p><strong>Inputs:</strong> the graph and height definitions of the
 initial release. <strong>Outcome:</strong> a versioned mathematical data
@@ -13718,9 +14832,9 @@ explicit finite meaning, and disconnected examples distinguish global
 from componentwise translation. <strong>Dependencies:</strong> the
 initial release. This push settles conventions before optimization
 introduces alternative representations.</p>
-<h2 data-number="16.2"
+<h2 data-number="17.2"
 id="p02-add-independent-level-chain-enumeration"><span
-class="header-section-number">16.2</span> P02 — Add independent
+class="header-section-number">17.2</span> P02 — Add independent
 level-chain enumeration</h2>
 <p><strong>Inputs:</strong> P01 and the nested-boundary identity.
 <strong>Outcome:</strong> a second coefficient enumerator using nonempty
@@ -13729,9 +14843,9 @@ complete marked histograms agree with weak compositions on a declared
 small graph population, including profiles with height gaps.
 <strong>Dependencies:</strong> P01. The implementation must charge mixed
 boundary terms rather than substitute absolute-difference energy.</p>
-<h2 data-number="16.3"
+<h2 data-number="17.3"
 id="p03-publish-portable-coefficient-certificates"><span
-class="header-section-number">16.3</span> P03 — Publish portable
+class="header-section-number">17.3</span> P03 — Publish portable
 coefficient certificates</h2>
 <p><strong>Inputs:</strong> both enumerators and canonical graph
 serialization. <strong>Outcome:</strong>
@@ -13741,9 +14855,9 @@ independent reader rejects malformed degrees, duplicate terms, invalid
 edges, and altered coefficients, while reproducing all released small
 tables. <strong>Dependencies:</strong> P01–P02. Hash agreement alone
 does not close this push.</p>
-<h2 data-number="16.4"
+<h2 data-number="17.4"
 id="p04-give-the-spectral-pair-a-short-coefficient-proof"><span
-class="header-section-number">16.4</span> P04 — Give the spectral pair a
+class="header-section-number">17.4</span> P04 — Give the spectral pair a
 short coefficient proof</h2>
 <p><strong>Inputs:</strong> the fixed seven-vertex spectral pair.
 <strong>Outcome:</strong> a human-readable volume-two classification
@@ -13754,9 +14868,9 @@ zero, one, and two; compare exact Laplacian characteristic polynomials;
 match both enumerators. <strong>Dependencies:</strong> P03. The proof
 should explain the difference through explicit degree and adjacency
 contributions.</p>
-<h2 data-number="16.5"
+<h2 data-number="17.5"
 id="p05-explain-the-binary-census-separation"><span
-class="header-section-number">16.5</span> P05 — Explain the
+class="header-section-number">17.5</span> P05 — Explain the
 binary-census separation</h2>
 <p><strong>Inputs:</strong> the second fixed graph pair and its 128
 binary assignments. <strong>Outcome:</strong> a full binary equality
@@ -13767,9 +14881,9 @@ value at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>.
 <strong>Dependencies:</strong> P02–P03. Binary sampling is
 insufficient.</p>
-<h2 data-number="16.6"
+<h2 data-number="17.6"
 id="p06-derive-universal-low-volume-formulas"><span
-class="header-section-number">16.6</span> P06 — Derive universal
+class="header-section-number">17.6</span> P06 — Derive universal
 low-volume formulas</h2>
 <p><strong>Inputs:</strong> arbitrary simple graphs and profile
 partitions through volume three. <strong>Outcome:</strong> formulas
@@ -13779,9 +14893,9 @@ disjoint profile classification and compare it against complete
 small-graph enumeration. <strong>Dependencies:</strong> P04–P05. Any
 proposed graph statistic must have a definition independent of the
 formula it explains.</p>
-<h2 data-number="16.7"
+<h2 data-number="17.7"
 id="p07-formalize-translation-normalization"><span
-class="header-section-number">16.7</span> P07 — Formalize translation
+class="header-section-number">17.7</span> P07 — Formalize translation
 normalization</h2>
 <p><strong>Inputs:</strong> the finite graph energy definition and
 minimum-zero bijection. <strong>Outcome:</strong> a proof-assistant
@@ -13792,9 +14906,9 @@ surjectivity, volume shift, and energy preservation without admitted
 lemmas; publish the actual build command and dependencies.
 <strong>Dependencies:</strong> P01. No analytic infinite-product library
 is needed for this push.</p>
-<h2 data-number="16.8"
+<h2 data-number="17.8"
 id="p08-formalize-the-nested-level-energy-identity"><span
-class="header-section-number">16.8</span> P08 — Formalize the
+class="header-section-number">17.8</span> P08 — Formalize the
 nested-level energy identity</h2>
 <p><strong>Inputs:</strong> finite height tuples and threshold sets.
 <strong>Outcome:</strong> kernel-checked volume, span, and quadratic
@@ -13803,9 +14917,9 @@ prove the mixed term equals the stated edge count for nested sets, and
 derive binary extraction. <strong>Dependencies:</strong> P07. The
 theorem should expose the pairwise edge model rather than introduce a
 different interaction law.</p>
-<h2 data-number="16.9"
+<h2 data-number="17.9"
 id="p09-implement-bounded-height-tree-messages"><span
-class="header-section-number">16.9</span> P09 — Implement bounded-height
+class="header-section-number">17.9</span> P09 — Implement bounded-height
 tree messages</h2>
 <p><strong>Inputs:</strong> rooted trees, height bound
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
@@ -13817,8 +14931,8 @@ recursion, count every vertex and edge once, and match reference
 coefficients on paths, stars, and branched trees.
 <strong>Dependencies:</strong> P02. Report polynomial support sizes
 separately from height-state counts.</p>
-<h2 data-number="16.10" id="p10-prove-safe-volume-truncation"><span
-class="header-section-number">16.10</span> P10 — Prove safe volume
+<h2 data-number="17.10" id="p10-prove-safe-volume-truncation"><span
+class="header-section-number">17.10</span> P10 — Prove safe volume
 truncation</h2>
 <p><strong>Inputs:</strong> P09’s recursion and nonnegative volume
 exponents. <strong>Outcome:</strong> a theorem that intermediate
@@ -13831,9 +14945,9 @@ suffices for unrestricted coefficients through
 then demonstrate larger tree computations with identical semantics.
 <strong>Dependencies:</strong> P09. Benchmarks must compare complete
 coefficient ranges.</p>
-<h2 data-number="16.11"
+<h2 data-number="17.11"
 id="p11-recover-span-by-bounded-box-subtraction"><span
-class="header-section-number">16.11</span> P11 — Recover span by
+class="header-section-number">17.11</span> P11 — Recover span by
 bounded-box subtraction</h2>
 <p><strong>Inputs:</strong> the bounded-height polynomials
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>H</mi></msub><annotation encoding="application/x-tex">C_H</annotation></semantics></math>.
@@ -13845,9 +14959,9 @@ subtraction and compare every
 count with direct marked enumeration. <strong>Dependencies:</strong>
 P09–P10. Negative intermediate coefficients must be investigated rather
 than clipped to zero.</p>
-<h2 data-number="16.12"
+<h2 data-number="17.12"
 id="p12-extend-messages-to-bounded-separators"><span
-class="header-section-number">16.12</span> P12 — Extend messages to
+class="header-section-number">17.12</span> P12 — Extend messages to
 bounded separators</h2>
 <p><strong>Inputs:</strong> a graph with an explicitly supplied tree
 decomposition. <strong>Outcome:</strong> a bag-conditioned exact
@@ -13857,9 +14971,9 @@ cycles and bounded-width examples with reference data.
 <strong>Dependencies:</strong> P10–P11. State-count and sparse
 polynomial-convolution costs must remain separate in the complexity
 discussion.</p>
-<h2 data-number="16.13"
+<h2 data-number="17.13"
 id="p13-classify-the-first-positive-energy-layer"><span
-class="header-section-number">16.13</span> P13 — Classify the first
+class="header-section-number">17.13</span> P13 — Classify the first
 positive-energy layer</h2>
 <p><strong>Inputs:</strong> connected graphs and marked coefficients.
 <strong>Outcome:</strong> a theorem describing minimum-energy
@@ -13868,8 +14982,8 @@ nonconstant profiles and their relation to minimum cuts.
 explicitly, prove the stated multiplicities, and compare with exhaustive
 profiles. <strong>Dependencies:</strong> P06 and P08. Energy order must
 not be confused with volume order.</p>
-<h2 data-number="16.14" id="p14-compute-the-nested-pair-census"><span
-class="header-section-number">16.14</span> P14 — Compute the nested-pair
+<h2 data-number="17.14" id="p14-compute-the-nested-pair-census"><span
+class="header-section-number">17.14</span> P14 — Compute the nested-pair
 census</h2>
 <p><strong>Inputs:</strong> all
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">T\subseteq S\subseteq V</annotation></semantics></math>
@@ -13879,9 +14993,9 @@ five-statistic nested-boundary tensor described in Chapter 13.
 an explicit projection and explain the binary-census example’s
 separation. <strong>Dependencies:</strong> P05 and P08. A new tensor
 name is not itself a structural result.</p>
-<h2 data-number="16.15"
+<h2 data-number="17.15"
 id="p15-separate-lattice-information-from-chamber-information"><span
-class="header-section-number">16.15</span> P15 — Separate lattice
+class="header-section-number">17.15</span> P15 — Separate lattice
 information from chamber information</h2>
 <p><strong>Inputs:</strong> the cut-lattice realization and minimum-zero
 volume functional. <strong>Outcome:</strong> a precise preservation
@@ -13890,9 +15004,9 @@ question with proved sufficient conditions for marked-series equality.
 height volume and span, and exhibit a nontrivial worked instance or a
 failure of a proposed condition. <strong>Dependencies:</strong> P08 and
 P14. Abstract energy preservation alone is insufficient.</p>
-<h2 data-number="16.16"
+<h2 data-number="17.16"
 id="p16-test-whitney-switches-systematically"><span
-class="header-section-number">16.16</span> P16 — Test Whitney switches
+class="header-section-number">17.16</span> P16 — Test Whitney switches
 systematically</h2>
 <p><strong>Inputs:</strong> a documented family of admissible
 two-terminal gluings and switches. <strong>Outcome:</strong> exact
@@ -13901,9 +15015,9 @@ conjecture. <strong>Acceptance:</strong> verify the matroid-preserving
 hypotheses independently and retain tested volume bounds for unresolved
 pairs. <strong>Dependencies:</strong> P15. No finite failure to separate
 may be reported as universal matroid invariance.</p>
-<h2 data-number="16.17"
+<h2 data-number="17.17"
 id="p17-add-exact-volume-congruence-filters"><span
-class="header-section-number">16.17</span> P17 — Add exact volume
+class="header-section-number">17.17</span> P17 — Add exact volume
 congruence filters</h2>
 <p><strong>Inputs:</strong> local polynomials and a positive modulus.
 <strong>Outcome:</strong> character-filtered populations for volume
@@ -13912,9 +15026,9 @@ averaging identity and compare it with direct modular filtering of
 assignments. <strong>Dependencies:</strong> P03. This filter must not be
 described as extracting span or the binary sector after those marks have
 been summed away.</p>
-<h2 data-number="16.18"
+<h2 data-number="17.18"
 id="p18-prove-root-of-unity-rationality-in-energy"><span
-class="header-section-number">16.18</span> P18 — Prove root-of-unity
+class="header-section-number">17.18</span> P18 — Prove root-of-unity
 rationality in energy</h2>
 <p><strong>Inputs:</strong> an energy root of unity of order
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
@@ -13925,9 +15039,9 @@ prove the coordinate residue decomposition and reproduce local
 coefficients through an independent bound.
 <strong>Dependencies:</strong> P03 and P17. Complex specialization does
 not inherit positive-real branch assertions.</p>
-<h2 data-number="16.19"
+<h2 data-number="17.19"
 id="p19-analyze-finite-quadratic-gauss-sums"><span
-class="header-section-number">16.19</span> P19 — Analyze finite
+class="header-section-number">17.19</span> P19 — Analyze finite
 quadratic Gauss sums</h2>
 <p><strong>Inputs:</strong> P18 numerators at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=1</annotation></semantics></math>
@@ -13937,9 +15051,9 @@ accounted for. <strong>Acceptance:</strong> compare direct residue
 enumeration with diagonalized forms and give explicit exceptional-prime
 examples. <strong>Dependencies:</strong> P18. Prime powers and
 characteristic two remain separate until proved.</p>
-<h2 data-number="16.20"
+<h2 data-number="17.20"
 id="p20-build-the-disjoint-order-chamber-formula"><span
-class="header-section-number">16.20</span> P20 — Build the disjoint
+class="header-section-number">17.20</span> P20 — Build the disjoint
 order-chamber formula</h2>
 <p><strong>Inputs:</strong> vertex permutations with label-based tie
 breaking. <strong>Outcome:</strong> a gap-coordinate expression for
@@ -13948,9 +15062,9 @@ every profile belongs to exactly one chamber, including tied heights,
 and match complete histograms. <strong>Dependencies:</strong> P02 and
 P06. Summing closed chambers without boundary corrections fails this
 criterion.</p>
-<h2 data-number="16.21"
+<h2 data-number="17.21"
 id="p21-relate-constrained-heights-to-order-polytopes"><span
-class="header-section-number">16.21</span> P21 — Relate constrained
+class="header-section-number">17.21</span> P21 — Relate constrained
 heights to order polytopes</h2>
 <p><strong>Inputs:</strong> an explicit finite poset of height
 inequalities. <strong>Outcome:</strong> a comparison between constrained
@@ -13960,9 +15074,9 @@ specialization with correct weak and strict inequalities, then identify
 what quadratic weighting adds. <strong>Dependencies:</strong> P20.
 Ordinary Ehrhart conclusions require an ordinary fixed-polytope counting
 problem.</p>
-<h2 data-number="16.22"
+<h2 data-number="17.22"
 id="p22-establish-one-genuine-reciprocity-statement"><span
-class="header-section-number">16.22</span> P22 — Establish one genuine
+class="header-section-number">17.22</span> P22 — Establish one genuine
 reciprocity statement</h2>
 <p><strong>Inputs:</strong> a precisely chosen bounded order or chamber
 population. <strong>Outcome:</strong> a proved reciprocity identity with
@@ -13971,9 +15085,9 @@ extension. <strong>Acceptance:</strong> verify complete small instances
 and give a full argument for the stated scope.
 <strong>Dependencies:</strong> P21. An analogy to Ehrhart or chromatic
 reciprocity does not close the push.</p>
-<h2 data-number="16.23"
+<h2 data-number="17.23"
 id="p23-implement-formal-logarithmic-extraction"><span
-class="header-section-number">16.23</span> P23 — Implement formal
+class="header-section-number">17.23</span> P23 — Implement formal
 logarithmic extraction</h2>
 <p><strong>Inputs:</strong> exact local coefficient polynomials through
 volume
@@ -13985,9 +15099,9 @@ coefficient identities. <strong>Dependencies:</strong> P03. Distinguish
 scalar exponents depending on
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
 from integer combinatorial multiplicities.</p>
-<h2 data-number="16.24"
+<h2 data-number="17.24"
 id="p24-determine-exceptional-energy-parameters"><span
-class="header-section-number">16.24</span> P24 — Determine exceptional
+class="header-section-number">17.24</span> P24 — Determine exceptional
 energy parameters</h2>
 <p><strong>Inputs:</strong> discrepancy polynomials for a graph pair.
 <strong>Outcome:</strong> exact rational or algebraic parameter strata
@@ -13997,9 +15111,9 @@ isolate every real root in
 for the tested leading polynomials and recompute at each exceptional
 value. <strong>Dependencies:</strong> P23. A plot or a finite parameter
 grid cannot establish absence of roots.</p>
-<h2 data-number="16.25"
+<h2 data-number="17.25"
 id="p25-organize-successive-visibility-levels"><span
-class="header-section-number">16.25</span> P25 — Organize successive
+class="header-section-number">17.25</span> P25 — Organize successive
 visibility levels</h2>
 <p><strong>Inputs:</strong> coefficient differences through a declared
 volume bound. <strong>Outcome:</strong> a filtration by first
@@ -14008,9 +15122,9 @@ discrepancy, including parameter-dependent refinements.
 first differing coefficient and label unresolved collisions with their
 tested bound. <strong>Dependencies:</strong> P23–P24. Claims of an
 unrestricted separation depth require an additional theorem.</p>
-<h2 data-number="16.26"
+<h2 data-number="17.26"
 id="p26-make-analytic-remainder-bounds-explicit"><span
-class="header-section-number">16.26</span> P26 — Make analytic remainder
+class="header-section-number">17.26</span> P26 — Make analytic remainder
 bounds explicit</h2>
 <p><strong>Inputs:</strong> local coefficient growth bounds and a first
 discrepancy at
@@ -14022,9 +15136,9 @@ sufficient for convergence when
 and treatment of finitely many small primes.
 <strong>Dependencies:</strong> P25. A formal expansion without a
 controlled remainder is not the analytic theorem.</p>
-<h2 data-number="16.27"
+<h2 data-number="17.27"
 id="p27-produce-controlled-real-singularity-experiments"><span
-class="header-section-number">16.27</span> P27 — Produce controlled real
+class="header-section-number">17.27</span> P27 — Produce controlled real
 singularity experiments</h2>
 <p><strong>Inputs:</strong> P26 bounds and exact discrepancy exponents.
 <strong>Outcome:</strong> prime-product evaluations of the normalized
@@ -14034,9 +15148,9 @@ positive-real remainder near
 recover the predicted asymptotic within them.
 <strong>Dependencies:</strong> P26. Numerical slope fitting illustrates
 an established exponent; it does not determine the exponent’s proof.</p>
-<h2 data-number="16.28"
+<h2 data-number="17.28"
 id="p28-state-the-available-complex-domain-exactly"><span
-class="header-section-number">16.28</span> P28 — State the available
+class="header-section-number">17.28</span> P28 — State the available
 complex domain exactly</h2>
 <p><strong>Inputs:</strong> fixed admissible
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>,
@@ -14046,9 +15160,9 @@ domain, or a documented obstruction. <strong>Acceptance:</strong>
 specify logarithm choices and convergence uniformly on compact subsets.
 <strong>Dependencies:</strong> P26. Do not infer global meromorphic
 continuation from real-axis control.</p>
-<h2 data-number="16.29"
+<h2 data-number="17.29"
 id="p29-specify-a-complete-finite-graph-census"><span
-class="header-section-number">16.29</span> P29 — Specify a complete
+class="header-section-number">17.29</span> P29 — Specify a complete
 finite graph census</h2>
 <p><strong>Inputs:</strong> a chosen graph class, order bound, and
 graph-generation method. <strong>Outcome:</strong> a canonical input
@@ -14057,9 +15171,9 @@ manifest with isomorphism handling documented.
 generation options, and graph hashes. <strong>Dependencies:</strong>
 P03. Degree and spectrum filters are not a substitute for a complete
 census or a graph-isomorphism decision.</p>
-<h2 data-number="16.30"
+<h2 data-number="17.30"
 id="p30-measure-collision-classes-across-invariants"><span
-class="header-section-number">16.30</span> P30 — Measure collision
+class="header-section-number">17.30</span> P30 — Measure collision
 classes across invariants</h2>
 <p><strong>Inputs:</strong> P29’s fixed graph population and exact
 coefficient algorithms. <strong>Outcome:</strong> collision partitions
@@ -14068,9 +15182,9 @@ for spectra, binary census, and specified height truncations.
 first-discrepancy witnesses, resource limits, and unresolved classes.
 <strong>Dependencies:</strong> P12, P14, and P29. Report bounded
 separation percentages with their exact denominator.</p>
-<h2 data-number="16.31"
+<h2 data-number="17.31"
 id="p31-resolve-targeted-collisions-structurally"><span
-class="header-section-number">16.31</span> P31 — Resolve targeted
+class="header-section-number">17.31</span> P31 — Resolve targeted
 collisions structurally</h2>
 <p><strong>Inputs:</strong> the smallest unresolved classes from P30.
 <strong>Outcome:</strong> an explicit bijection, a higher-volume
@@ -14079,9 +15193,9 @@ separation, or a precise remaining conjecture for each selected pair.
 increase a cutoff; retain negative results.
 <strong>Dependencies:</strong> P16 and P30. A full-series equality claim
 needs an all-volume argument.</p>
-<h2 data-number="16.32"
+<h2 data-number="17.32"
 id="p32-seek-a-separation-bound-for-one-graph-family"><span
-class="header-section-number">16.32</span> P32 — Seek a separation bound
+class="header-section-number">17.32</span> P32 — Seek a separation bound
 for one graph family</h2>
 <p><strong>Inputs:</strong> low-volume formulas, tree messages, and
 collision evidence. <strong>Outcome:</strong> a proved first-separation
@@ -14090,9 +15204,9 @@ proposed bound. <strong>Acceptance:</strong> parameterize the family and
 prove the statement uniformly. <strong>Dependencies:</strong> P06, P12,
 and P31. Complete graph reconstruction remains outside the claim unless
 proved separately.</p>
-<h2 data-number="16.33"
+<h2 data-number="17.33"
 id="p33-verify-concrete-coefficient-certificates-in-a-kernel"><span
-class="header-section-number">16.33</span> P33 — Verify concrete
+class="header-section-number">17.33</span> P33 — Verify concrete
 coefficient certificates in a kernel</h2>
 <p><strong>Inputs:</strong> P03 certificates and the formal finite
 identities. <strong>Outcome:</strong> a checker connecting released
@@ -14101,9 +15215,9 @@ tables to the mathematical coefficient definition.
 certificates and reject a changed coefficient or graph edge.
 <strong>Dependencies:</strong> P07–P08 and P23. A verified parser alone
 does not verify enumerated multiplicities.</p>
-<h2 data-number="16.34"
+<h2 data-number="17.34"
 id="p34-formalize-the-visibility-comparison-boundary"><span
-class="header-section-number">16.34</span> P34 — Formalize the
+class="header-section-number">17.34</span> P34 — Formalize the
 visibility comparison boundary</h2>
 <p><strong>Inputs:</strong> the finite first-discrepancy theorem and
 available analytic libraries. <strong>Outcome:</strong> a formal
@@ -14113,9 +15227,9 @@ imported theorem and any unformalized premise; claim complete
 verification only when the full chain compiles.
 <strong>Dependencies:</strong> P26 and P33. Missing library
 infrastructure is recorded explicitly.</p>
-<h2 data-number="16.35"
+<h2 data-number="17.35"
 id="p35-release-the-first-focused-manuscript"><span
-class="header-section-number">16.35</span> P35 — Release the first
+class="header-section-number">17.35</span> P35 — Release the first
 focused manuscript</h2>
 <p><strong>Inputs:</strong> the exact examples, finite proofs, and real
 comparison theorem. <strong>Outcome:</strong> a literature-positioned
@@ -14125,9 +15239,9 @@ coefficients, reconcile every claim with its proof or certificate, and
 remove unsupported priority language. <strong>Dependencies:</strong>
 P04–P05, P26–P27, and P33; formal analytics are included only to their
 achieved scope.</p>
-<h2 data-number="16.36"
+<h2 data-number="17.36"
 id="p36-choose-the-second-paper-from-actual-results"><span
-class="header-section-number">16.36</span> P36 — Choose the second paper
+class="header-section-number">17.36</span> P36 — Choose the second paper
 from actual results</h2>
 <p><strong>Inputs:</strong> the tree, matroid, arithmetic, and order
 outcomes. <strong>Outcome:</strong> one coherent methods or structural
