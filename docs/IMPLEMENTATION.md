@@ -30,6 +30,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `arithmetic` | Prime-valuation populations | Positive integer factorization, finite Dirichlet coefficients, conservative exact local remainder and tail constants |
 | `primitive` | Gcd-one normalized height profiles | Mobius extraction, independent gcd enumeration and exact scaling recomposition |
 | `chains` | Weakly nested level chains | Direct chain generation with repeated levels, nested-boundary energy, marked/normalized/local coefficients independent of weak compositions |
+| `chambers` | Half-open order chambers | Gap coordinates, nested-boundary gap form, unique chamber reconstruction, factorial-cost third enumerator (SNG-F29) |
 | `lowvolume` | Closed coefficient formulas through volume three | Degree, ordered adjacent-pair and induced-triple statistics; pattern sectors; regular closed form |
 | `certificates` | Source-bound finite mathematical claims | Structural parser, two independent replay routes (stars-and-bars and level chains), nested-cut checks, normalization and factorization checks |
 

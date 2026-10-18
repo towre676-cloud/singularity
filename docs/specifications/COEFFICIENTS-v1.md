@@ -100,6 +100,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Forest transfer.** `bounded_height_histogram(forest, H, max_volume=None, min_zero=False)` counts labeled profiles in \(\{0,\ldots,H\}^n\) with volume at most `max_volume` (default \(nH\)), keyed by `(volume, energy)`. With `min_zero=True` it subtracts the all-positive profiles, \(x^n\) times the height-\((H-1)\) box (global translation, Section 6). Graphs with cycles are rejected. `brute_bounded_height_histogram` has the same meaning for every graph. `histogram_coefficients` converts to the prefix interface. `root_messages` returns, for each component rooted at its least original label, the list indexed by root height \(t\) of `(volume, energy)` histograms of that component with \(a_{\text{root}}=t\). `transfer_statistics` reports height states, sparse message support and integer bit size separately. `marked_forest_coefficients(forest, M, max_span=None)` has exactly the meaning of `marked_coefficients` (restricted to spans at most `max_span`), computed by bounded-box subtraction (SNG-F25).
 
+**Order chambers.** `chamber_marked_coefficients` and `chamber_local_coefficients` have the meanings of `marked_coefficients` and `local_coefficients`, computed over the \(n!\) half-open chambers of SNG-F29. `chamber_of(a)` returns the unique `(order, gaps)` of a profile and `chamber_profile` inverts it; `gap_form(graph, order)` is the matrix \(Q\) indexed by gaps \(1..n-1\).
+
 **Tree decompositions.** `TreeDecomposition(bags, edges, root)` holds bags of original labels, undirected tree edges between bag indices and a root bag; its JSON form is `{"bags": [[...]], "edges": [[i, j]], "root": r}` with optional `"schema": "singularity.tree-decomposition/1"`. `check_decomposition` lists violations of vertex coverage, edge coverage, connected occurrence of each vertex, and the tree property. `decomposition_histogram` and `marked_decomposition_coefficients` have exactly the meanings of `bounded_height_histogram` and `marked_coefficients` for every graph with a valid decomposition (SNG-F26); `decomposition_statistics` reports width, bag assignments, support and bit size. `elimination_decomposition` and `forest_decomposition` construct valid decompositions.
 
 **Chains.** `chain_marked_coefficients(graph, M)` has exactly the meaning of `marked_coefficients` but is generated from weakly nested level sets (SNG-F09, SNG-F10). `level_chains(n, M)` yields chains as tuples of bit masks over original labels; the empty chain is the zero profile. `chain_normalized_coefficients` and `chain_local_coefficients` are its projections to \(B\) and \(L\).
@@ -141,6 +143,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | Automorphism multiplicity | 1, 7 | `SemanticsTests.test_automorphisms_do_not_divide_multiplicities`, `HeightTests.test_relabel_invariance_all_small_graphs` |
 | `chains.*` | 8 | `tests/test_chains.py`; `results/chain_agreement.json` |
 | `lowvolume.*` (closed formulas through volume 3) | 3, 8 | `tests/test_low_volume.py`; `results/pair_acceptance.json` |
+| `chambers.*` | 8 | `tests/test_chambers.py` |
 | `decomposition.*` | 8 | `tests/test_decomposition.py` |
 | `congruence.*` | 8 | `tests/test_congruence.py` |
 | `HeightPopulation` | 8 | `tests/test_population.py` |

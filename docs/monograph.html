@@ -7834,6 +7834,133 @@ resulting chambers are disjoint, including their prescribed boundaries.
 Volume becomes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>d</mi><mn>0</mn></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>d</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">nd_0+\sum_{j=1}^{n-1}(n-j)d_j</annotation></semantics></math>,
 and energy becomes an explicit quadratic form in the remaining gaps.</p>
+<p><strong>Proposition SNG-F29 (disjoint order chambers).</strong> Index
+positions from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>.
+For a permutation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>π</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>π</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\pi=(\pi_0,\ldots,\pi_{n-1})</annotation></semantics></math>
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>π</mi></msub><annotation encoding="application/x-tex">C_\pi</annotation></semantics></math>
+be the set of gap vectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><msubsup><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">d\in\mathbb Z_{\ge0}^n</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>j</mi></msub><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d_j\ge1</annotation></semantics></math>
+whenever
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j\ge1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>&gt;</mo><msub><mi>π</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\pi_{j-1}&gt;\pi_j</annotation></semantics></math>.
+The map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>↦</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">(\pi,d)\mapsto a</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><msub><mi>π</mi><mi>k</mi></msub></msub><mo>=</mo><msub><mi>d</mi><mn>0</mn></msub><mo>+</mo><mi>⋯</mi><mo>+</mo><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_{\pi_k}=d_0+\cdots+d_k</annotation></semantics></math>,
+is a bijection from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>⨆</mo><mi>π</mi></msub><msub><mi>C</mi><mi>π</mi></msub></mrow><annotation encoding="application/x-tex">\bigsqcup_\pi C_\pi</annotation></semantics></math>
+onto
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow><mi>n</mi></msubsup><annotation encoding="application/x-tex">\mathbb Z_{\ge0}^n</annotation></semantics></math>.
+Writing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>j</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>π</mi><mi>j</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>π</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">T_j=\{\pi_j,\ldots,\pi_{n-1}\}</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>n</mi><msub><mi>d</mi><mn>0</mn></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>d</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><msub><mi>Q</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>d</mi><mi>i</mi></msub><msub><mi>d</mi><mi>j</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>Q</mi><mrow><mi>j</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>c</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>Q</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mi>e</mi><mi>G</mi></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">(</mo><msub><mi>T</mi><mrow><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mo>,</mo><mi>V</mi><mo>\</mo><msub><mi>T</mi><mrow><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+|a|=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\qquad
+E_G(a)=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\qquad
+Q_{jj}=c_G(T_j),\quad Q_{ij}=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr),
+</annotation></semantics></math> and on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">d_0=0</annotation></semantics></math>
+(the normalized profiles) the span is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>d</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{j\ge1}d_j</annotation></semantics></math>.</p>
+<p><em>Proof.</em> Given
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+list the vertices by increasing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>v</mi></msub><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a_v,v)</annotation></semantics></math>
+and set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>=</mo><msub><mi>a</mi><msub><mi>π</mi><mn>0</mn></msub></msub></mrow><annotation encoding="application/x-tex">d_0=a_{\pi_0}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>j</mi></msub><mo>=</mo><msub><mi>a</mi><msub><mi>π</mi><mi>j</mi></msub></msub><mo>−</mo><msub><mi>a</mi><msub><mi>π</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub></msub></mrow><annotation encoding="application/x-tex">d_j=a_{\pi_j}-a_{\pi_{j-1}}</annotation></semantics></math>.
+The gaps are nonnegative, and if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>&gt;</mo><msub><mi>π</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\pi_{j-1}&gt;\pi_j</annotation></semantics></math>
+the two heights cannot be equal, because equal heights are sorted by
+increasing label; so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><msub><mi>C</mi><mi>π</mi></msub></mrow><annotation encoding="application/x-tex">d\in C_\pi</annotation></semantics></math>
+and the map hits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.
+Conversely, for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>∈</mo><msub><mi>C</mi><mi>π</mi></msub></mrow><annotation encoding="application/x-tex">d\in C_\pi</annotation></semantics></math>
+the heights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><msub><mi>π</mi><mi>k</mi></msub></msub><annotation encoding="application/x-tex">a_{\pi_k}</annotation></semantics></math>
+are nondecreasing in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+and two consecutive positions tie only when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>j</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">d_j=0</annotation></semantics></math>,
+which forces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>&lt;</mo><msub><mi>π</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\pi_{j-1}&lt;\pi_j</annotation></semantics></math>.
+Sorting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>v</mi></msub><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a_v,v)</annotation></semantics></math>
+therefore returns
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>,
+and the gaps are recovered by differences, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\pi,d)</annotation></semantics></math>
+is determined by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>:
+the chambers are disjoint. Vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>π</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\pi_k</annotation></semantics></math>
+has height
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>+</mo><mi>⋯</mi><mo>+</mo><msub><mi>d</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">d_0+\cdots+d_k</annotation></semantics></math>,
+so gap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>
+is counted at the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">n-j</annotation></semantics></math>
+positions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">k\ge j</annotation></semantics></math>,
+giving the volume. An edge with endpoints at positions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&lt;</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p&lt;q</annotation></semantics></math>
+has difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mrow><mi>p</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>⋯</mi><mo>+</mo><msub><mi>d</mi><mi>q</mi></msub></mrow><annotation encoding="application/x-tex">d_{p+1}+\cdots+d_q</annotation></semantics></math>;
+squaring and summing over edges gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>Q</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>d</mi><mi>i</mi></msub><msub><mi>d</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\sum Q_{ij}d_id_j</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">Q_{ij}</annotation></semantics></math>
+counts edges whose position interval contains both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>.
+Such an edge has its upper endpoint in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><annotation encoding="application/x-tex">T_{\max(i,j)}</annotation></semantics></math>
+and its lower endpoint outside
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><annotation encoding="application/x-tex">T_{\min(i,j)}</annotation></semantics></math>,
+and conversely; for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i=j</annotation></semantics></math>
+this is the cut of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>j</mi></msub><annotation encoding="application/x-tex">T_j</annotation></semantics></math>.
+The minimum height is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mn>0</mn></msub><annotation encoding="application/x-tex">d_0</annotation></semantics></math>
+and the maximum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mn>0</mn></msub><mo>+</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>d</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">d_0+\sum_{j\ge1}d_j</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+is the nested-boundary matrix of SNG-F10 for the chain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>⊇</mo><mi>⋯</mi><mo>⊇</mo><msub><mi>T</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">T_1\supseteq\cdots\supseteq T_{n-1}</annotation></semantics></math>,
+with gap
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>j</mi></msub><annotation encoding="application/x-tex">d_j</annotation></semantics></math>
+recording how many threshold levels coincide with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>j</mi></msub><annotation encoding="application/x-tex">T_j</annotation></semantics></math>.
+Closed weak-order cones would place a profile with a tied block of size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">s!</annotation></semantics></math>
+cones; the strict descent condition removes exactly that overcount.
+<code>src/singularity/chambers.py</code> enumerates the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math>
+chambers and their gap vectors within a volume budget, evaluates volume
+and energy from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>,
+and never constructs height tuples; its factorial cost restricts it to
+small graphs. Its local and marked histograms equal the weak-composition
+and level-chain enumerators on all 75 labeled graphs with at most four
+vertices through volume six, and the chamber of every profile in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>3</mn><msup><mo stretchy="false" form="postfix">}</mo><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\{0,\ldots,3\}^4</annotation></semantics></math>
+is recovered uniquely.</p>
 <p>This description links the population to familiar order and
 lattice-point methods while retaining a concrete accounting benefit. It
 can expose which cross terms depend on the relative placement of cuts,
@@ -8340,12 +8467,18 @@ energy, marked/normalized/local coefficients independent of weak
 compositions</td>
 </tr>
 <tr class="odd">
+<td><code>chambers</code></td>
+<td>Half-open order chambers</td>
+<td>Gap coordinates, nested-boundary gap form, unique chamber
+reconstruction, factorial-cost third enumerator (SNG-F29)</td>
+</tr>
+<tr class="even">
 <td><code>lowvolume</code></td>
 <td>Closed coefficient formulas through volume three</td>
 <td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and

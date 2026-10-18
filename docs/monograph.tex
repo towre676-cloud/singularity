@@ -5521,6 +5521,52 @@ tied block. The resulting chambers are disjoint, including their
 prescribed boundaries. Volume becomes \(nd_0+\sum_{j=1}^{n-1}(n-j)d_j\),
 and energy becomes an explicit quadratic form in the remaining gaps.
 
+\textbf{Proposition SNG-F29 (disjoint order chambers).} Index positions
+from \(0\). For a permutation \(\pi=(\pi_0,\ldots,\pi_{n-1})\) let
+\(C_\pi\) be the set of gap vectors \(d\in\mathbb Z_{\ge0}^n\) with
+\(d_j\ge1\) whenever \(j\ge1\) and \(\pi_{j-1}>\pi_j\). The map
+\((\pi,d)\mapsto a\), \(a_{\pi_k}=d_0+\cdots+d_k\), is a bijection from
+\(\bigsqcup_\pi C_\pi\) onto \(\mathbb Z_{\ge0}^n\). Writing
+\(T_j=\{\pi_j,\ldots,\pi_{n-1}\}\), \[
+|a|=nd_0+\sum_{j=1}^{n-1}(n-j)d_j,\qquad
+E_G(a)=\sum_{i,j=1}^{n-1}Q_{ij}d_id_j,\qquad
+Q_{jj}=c_G(T_j),\quad Q_{ij}=e_G\bigl(T_{\max(i,j)},V\setminus T_{\min(i,j)}\bigr),
+\] and on \(d_0=0\) (the normalized profiles) the span is
+\(\sum_{j\ge1}d_j\).
+
+\emph{Proof.} Given \(a\), let \(\pi\) list the vertices by increasing
+\((a_v,v)\) and set \(d_0=a_{\pi_0}\), \(d_j=a_{\pi_j}-a_{\pi_{j-1}}\).
+The gaps are nonnegative, and if \(\pi_{j-1}>\pi_j\) the two heights
+cannot be equal, because equal heights are sorted by increasing label;
+so \(d\in C_\pi\) and the map hits \(a\). Conversely, for \(d\in C_\pi\)
+the heights \(a_{\pi_k}\) are nondecreasing in \(k\), and two
+consecutive positions tie only when \(d_j=0\), which forces
+\(\pi_{j-1}<\pi_j\). Sorting \(a\) by \((a_v,v)\) therefore returns
+\(\pi\), and the gaps are recovered by differences, so \((\pi,d)\) is
+determined by \(a\): the chambers are disjoint. Vertex \(\pi_k\) has
+height \(d_0+\cdots+d_k\), so gap \(d_j\) is counted at the \(n-j\)
+positions \(k\ge j\), giving the volume. An edge with endpoints at
+positions \(p<q\) has difference \(d_{p+1}+\cdots+d_q\); squaring and
+summing over edges gives \(\sum Q_{ij}d_id_j\), where \(Q_{ij}\) counts
+edges whose position interval contains both \(i\) and \(j\). Such an
+edge has its upper endpoint in \(T_{\max(i,j)}\) and its lower endpoint
+outside \(T_{\min(i,j)}\), and conversely; for \(i=j\) this is the cut
+of \(T_j\). The minimum height is \(d_0\) and the maximum
+\(d_0+\sum_{j\ge1}d_j\). \(\square\)
+
+The matrix \(Q\) is the nested-boundary matrix of SNG-F10 for the chain
+\(T_1\supseteq\cdots\supseteq T_{n-1}\), with gap \(d_j\) recording how
+many threshold levels coincide with \(T_j\). Closed weak-order cones
+would place a profile with a tied block of size \(s\) in \(s!\) cones;
+the strict descent condition removes exactly that overcount.
+\texttt{src/singularity/chambers.py} enumerates the \(n!\) chambers and
+their gap vectors within a volume budget, evaluates volume and energy
+from \(Q\), and never constructs height tuples; its factorial cost
+restricts it to small graphs. Its local and marked histograms equal the
+weak-composition and level-chain enumerators on all 75 labeled graphs
+with at most four vertices through volume six, and the chamber of every
+profile in \(\{0,\ldots,3\}^4\) is recovered uniquely.
+
 This description links the population to familiar order and
 lattice-point methods while retaining a concrete accounting benefit. It
 can expose which cross terms depend on the relative placement of cuts,
@@ -6001,6 +6047,9 @@ recomposition \\
 \texttt{chains} & Weakly nested level chains & Direct chain generation
 with repeated levels, nested-boundary energy, marked/normalized/local
 coefficients independent of weak compositions \\
+\texttt{chambers} & Half-open order chambers & Gap coordinates,
+nested-boundary gap form, unique chamber reconstruction, factorial-cost
+third enumerator (SNG-F29) \\
 \texttt{lowvolume} & Closed coefficient formulas through volume three &
 Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form \\

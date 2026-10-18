@@ -623,7 +623,7 @@
     {
       "id": "P20",
       "title": "Build the disjoint order-chamber formula",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 2,
       "dependencies": [
@@ -631,18 +631,28 @@
         "P06"
       ],
       "evidence": [
+        "src/singularity/chambers.py",
+        "tests/test_chambers.py",
         "docs/chapters/13_research_program.md",
-        "docs/chapters/14_literature_and_claims.md",
-        "src/singularity/heights.py"
+        "docs/specifications/COEFFICIENTS-v1.md"
       ],
-      "existing_work": "Label-based tie breaking, strict gaps at adjacent descents and volume n*d0+sum((n-j)*dj) are specified. The chamber approach is proposed as another independent finite representation.",
-      "next_action": "Derive the edge-wise gap quadratic form and implement tiny permutation chambers with strict-descent lower bounds; prove disjoint coverage and compare full finite histograms.",
-      "acceptance_gaps": [
-        "No executable chamber generator or explicit graph-dependent gap quadratic-form API exists.",
-        "No complete uniqueness/coverage proof and tied-height histogram replay is released.",
-        "P02/P06 acceptance is open."
-      ],
-      "packet": "handoff/tasks/P20.md"
+      "existing_work": "chambers.py enumerates half-open order chambers (sort by height then label; strict gaps at label descents) and evaluates volume, span and energy from gap coordinates through the nested-boundary gap form Q, without constructing heights. Proposition SNG-F29 proves the chambers are disjoint and cover every profile, derives the volume weights and Q_ij = e(T_max, V minus T_min), and relates Q to SNG-F10.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P20.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "every profile belongs to exactly one chamber, including ties": "SNG-F29; ChamberTests.test_every_profile_has_exactly_one_chamber (all 256 profiles of {0..3}^4); test_tied_blocks_zero_profile_and_labels",
+          "closed chambers overcount": "test_closed_cones_would_overcount_ties",
+          "gap expression for volume and quadratic energy": "SNG-F29; test_gap_form_is_the_nested_boundary_matrix",
+          "match complete histograms": "test_complete_histograms_match_two_enumerators (75 graphs, local and marked, volume <=6, against weak compositions and level chains); session check of all 1024 five-vertex graphs through volume 5 against chains",
+          "factorial cost stated": "chambers.py docstring and chapter 13.6"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_chambers -v"
+        ]
+      }
     },
     {
       "id": "P21",

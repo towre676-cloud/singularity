@@ -180,19 +180,19 @@
       "id": "SNG-A08",
       "declaration": "Theorem SNG-A08 \u2014 integral bidegree transform. For every series \\(L\\in1+x\\mathbb Z[q][[x]]\\), there are unique integers \\(N_{m,e}\\) satisfying (6.4). Their generating series is the plethystic logarithm",
       "file": "docs/chapters/06_euler_analysis.md",
-      "line": 91
+      "line": 93
     },
     {
       "id": "SNG-A09",
       "declaration": "Theorem SNG-A09 \u2014 leading real singularity. For fixed \\(0\\le q\\le1\\), define",
       "file": "docs/chapters/06_euler_analysis.md",
-      "line": 128
+      "line": 130
     },
     {
       "id": "SNG-A10",
       "declaration": "Theorem SNG-A10 \u2014 controlled finite Euler extraction. Fix an integer \\(M\\ge1\\) and a numerical \\(q\\in[0,1]\\). Put",
       "file": "docs/chapters/06_euler_analysis.md",
-      "line": 156
+      "line": 158
     },
     {
       "id": "SNG-A11",
@@ -319,6 +319,12 @@
       "declaration": "Proposition SNG-F27 (volume congruence filter). Let \\(m\\ge1\\), let \\(\\omega\\) be a primitive \\(m\\)-th root of unity, let \\(a\\in\\mathbb Z\\), and let \\(F=\\sum_{v\\ge0}F_v(q)x^v\\) be a formal series, or a truncation through any degree, with \\(F_v\\in\\mathbb Q[q]\\). Then",
       "file": "docs/chapters/13_research_program.md",
       "line": 103
+    },
+    {
+      "id": "SNG-F29",
+      "declaration": "Proposition SNG-F29 (disjoint order chambers). Index positions from \\(0\\). For a permutation \\(\\pi=(\\pi_0,\\ldots,\\pi_{n-1})\\) let \\(C_\\pi\\) be the set of gap vectors \\(d\\in\\mathbb Z_{\\ge0}^n\\) with \\(d_j\\ge1\\) whenever \\(j\\ge1\\) and \\(\\pi_{j-1}>\\pi_j\\). The map \\((\\pi,d)\\mapsto a\\), \\(a_{\\pi_k}=d_0+\\cdots+d_k\\), is a bijection from \\(\\bigsqcup_\\pi C_\\pi\\) onto \\(\\mathbb Z_{\\ge0}^n\\). Writing \\(T_j=\\{\\pi_j,\\ldots,\\pi_{n-1}\\}\\),",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 116
     }
   ]
 }
