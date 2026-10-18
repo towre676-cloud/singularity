@@ -12,7 +12,9 @@ from singularity.conductor import remote_coefficient
 from singularity.euler import euler_exponents, first_difference, recompose_euler
 from singularity.examples import GRAPHS
 from singularity.graph import Graph
+from singularity.chains import chain_local_coefficients, chain_marked_coefficients
 from singularity.heights import local_coefficients, marked_coefficients
+from singularity.lowvolume import low_volume_local, low_volume_marked, pattern_sectors, regular_low_volume_local
 from singularity.invariants import binary_cut_profile, laplacian_characteristic_polynomial
 from singularity.polynomials import evaluate, polynomial_to_json, verify_factorization
 
@@ -45,6 +47,44 @@ def record_pair(left, right, depth, factorization):
     }
 
 
+def marked_difference(left, right):
+    keys = sorted(set(left) | set(right))
+    return [[*key, left.get(key, 0) - right.get(key, 0)] for key in keys if left.get(key, 0) != right.get(key, 0)]
+
+
+def edge_degree_types(graph):
+    counts = {}
+    for u, v in graph.edges:
+        key = tuple(sorted((graph.degrees[u], graph.degrees[v])))
+        counts[key] = counts.get(key, 0) + 1
+    return [[a, b, c] for (a, b), c in sorted(counts.items())]
+
+
+def pair_acceptance(left, right, depth, certificate_replay):
+    """P04/P05 receipt: formulas, two enumerators, binary census and certificate."""
+    record = {'depth': depth, 'graphs': [left.to_dict(), right.to_dict()]}
+    for side, graph in (('left', left), ('right', right)):
+        composition, chains = marked_coefficients(graph, depth), chain_marked_coefficients(graph, depth)
+        assert composition == chains == {k: c for k, c in low_volume_marked(graph).items() if k[0] <= depth}
+        assert local_coefficients(graph, depth) == chain_local_coefficients(graph, depth) == low_volume_local(graph)[:depth + 1]
+        record[side] = {
+            'degrees': list(graph.degrees),
+            'edge_degree_types': edge_degree_types(graph),
+            'pattern_sectors': {k: [[e, c] for e, c in v.items()] for k, v in pattern_sectors(graph).items()},
+            'binary_cut_profile': [[r, cut, c] for (r, cut), c in binary_cut_profile(graph).items()],
+        }
+    by_compositions = marked_difference(marked_coefficients(left, depth), marked_coefficients(right, depth))
+    by_chains = marked_difference(chain_marked_coefficients(left, depth), chain_marked_coefficients(right, depth))
+    assert by_compositions == by_chains
+    record['marked_difference'] = by_chains
+    record['first_marked_difference_volume'] = min(row[0] for row in by_chains)
+    record['marked_difference_spans'] = sorted({row[2] for row in by_chains})
+    record['binary_census_equal'] = binary_cut_profile(left) == binary_cut_profile(right)
+    record['enumerators_agree'] = {'weak_compositions': True, 'level_chains': True, 'closed_formulas_through_volume_3': True}
+    record['certificate_replay_valid'] = certificate_replay['valid']
+    return record
+
+
 def compute():
     factors_a={'coefficient':'2','monomial':2,'factors':[[1,2],[2,1]]}
     factors_b={'coefficient':'1','monomial':3,'factors':[[1,1],[3,2],[4,2]]}
@@ -63,11 +103,21 @@ def compute():
     }
     replays={name:replay_certificate(packet) for name,packet in certificates.items()}
     assert all(r['valid'] for r in replays.values())
+    regular=regular_low_volume_local(8,3,0)
+    assert local_coefficients(cube,3)==local_coefficients(mobius,3)==regular
+    acceptance={
+        'schema':'singularity.pair-acceptance/1',
+        'scope':'fixed labeled pairs; closed formulas (lowvolume.py), weak compositions (heights.py) and level chains (chains.py) through the stated depth',
+        'spectral':pair_acceptance(GRAPHS['spectral_g'],GRAPHS['spectral_h'],2,replays['spectral']),
+        'binary_census':pair_acceptance(GRAPHS['binary_g'],GRAPHS['binary_h'],3,replays['binary_census']),
+        'regular_cube_mobius_through_volume_3':{'n':8,'degree':3,'triangles':[0,0],'local_coefficients':[[[e,c] for e,c in row.items()] for row in regular],'agree':True},
+    }
     graph_sources={**GRAPHS,'cube':cube,'mobius_ladder':mobius}
     files={
         'results/exact_examples.json':{'schema':'singularity.reproduction/1','version':__version__,'pairs':pairs,'certificate_replays':replays},
         **{f'data/graphs/{name}.json':graph.to_dict() for name,graph in graph_sources.items()},
         **{f'results/certificates/{name}.json':packet for name,packet in certificates.items()},
+        'results/pair_acceptance.json':acceptance,
         'results/conductor_example.json':{'schema':'singularity.conductor-example/1','graph':Graph(3,((0,1),(1,2))).to_dict(),'conductor':3,'index':str(10**100),'coefficient':list(remote_coefficient(Graph(3,((0,1),(1,2))),3,10**100)),'ring':'Z[t]/(t^2+t+1)'},
     }
     return files

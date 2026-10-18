@@ -137,33 +137,45 @@
     {
       "id": "P04",
       "title": "Give the spectral pair a short coefficient proof",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
         "P03"
       ],
       "evidence": [
-        "docs/chapters/04_observation_hierarchy.md",
-        "docs/chapters/07_visibility_singularities.md",
         "docs/chapters/09_exact_examples.md",
+        "docs/chapters/04_observation_hierarchy.md",
+        "src/singularity/lowvolume.py",
         "src/singularity/examples.py",
+        "tests/test_low_volume.py",
         "tests/test_core.py",
+        "results/pair_acceptance.json",
         "results/exact_examples.json",
         "results/certificates/spectral.json"
       ],
-      "existing_work": "The volume 0/1/2 classification, exact Laplacian polynomial and degree-adjacency explanation are already present. Tests retain discrepancy 2q^2(1-q)^3(1+q), first depth 2 and value 3/32 at q=1/2.",
-      "next_action": "Reuse the existing proof and fixture; after P02/P03, replay the pair through both enumerators and publish a compact acceptance matrix rather than rewriting the result.",
-      "acceptance_gaps": [
-        "Match the spectral pair with the accepted P02 chain enumerator in a retained acceptance matrix.",
-        "Add an explicit closure record tying proof, exact polynomial, certificate and both enumerators together."
-      ],
-      "packet": "handoff/tasks/P04.md"
+      "existing_work": "Chapter 9 now proves SNG-E005 from degree pairs: volumes 0, 1 and the 2e_i sector cancel by the common degree sequence; the e_i+e_j sector gives (q^-2-1)(J_G-J_H) with J_G-J_H=2q^4(1-q)^2 read from an explicit edge-degree-type table. The discrepancy is explained by degree mixing (assortativity), not a higher-order effect.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P04.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "classify every profile type at volumes zero, one and two": "chapter 9 proof; lowvolume.pattern_sectors; FixedPairAcceptanceTests.test_spectral_pair_degree_pair_proof",
+          "compare exact Laplacian characteristic polynomials": "DiscoveryTests.test_spectral_pair (integer Newton identities, Leibniz determinant oracle)",
+          "match both enumerators": "results/pair_acceptance.json: closed formulas, weak compositions and level chains agree through volume 2; marked difference lies entirely in span 1",
+          "certificate": "results/certificates/spectral.json replays valid with both routes"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_low_volume tests.test_core -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P05",
       "title": "Explain the binary-census separation",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
@@ -171,25 +183,38 @@
         "P03"
       ],
       "evidence": [
-        "docs/chapters/07_visibility_singularities.md",
         "docs/chapters/09_exact_examples.md",
+        "src/singularity/lowvolume.py",
+        "src/singularity/invariants.py",
+        "tests/test_low_volume.py",
         "tests/test_core.py",
+        "results/pair_acceptance.json",
         "results/exact_examples.json",
-        "results/certificates/binary_census.json",
-        "src/singularity/invariants.py"
+        "results/certificates/binary_census.json"
       ],
-      "existing_work": "All 128 binary assignments are compared exactly. Volume-three profile classes, the ordered 2e_i+e_j span-two sector, lower equality and q=1/2 value 11025/262144 are retained; the discrepancy factors as q^3(1-q)(1-q^3)^2(1-q^4)^2.",
-      "next_action": "Add independent chain replay of the fixed pair and a full binary table digest; keep the graph labels and polynomial orientation unchanged.",
-      "acceptance_gaps": [
-        "Run the genuine P02 chain generator and record agreement across all relevant marked cells.",
-        "Associate the complete binary equality and the accepted height certificate with the prose proof in an acceptance receipt."
-      ],
-      "packet": "handoff/tasks/P05.md"
+      "existing_work": "The retained receipt holds the complete binary cut-volume table of both graphs (all 128 assignments each), the pattern sectors through volume three, and the full marked difference by both enumerators. Chapter 9 accounts for every coefficient below volume three and every non-2e_i+e_j sector at volume three, identifies the 42 ordered 2e_i+e_j profiles as the nested chain {i,j} >= {i}, and records that the graphs differ in joint degree matrix and spectrum.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P05.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "full binary equality certificate": "results/pair_acceptance.json binary_cut_profile for both graphs; binary_census_equal true; DiscoveryTests.test_binary_pair_all_128_assignments_and_first_nested_difference",
+          "identify the span-two profile types responsible": "marked_difference_spans [2]; FixedPairAcceptanceTests.test_binary_pair_lower_coefficients_and_span_two_sector",
+          "account for every lower coefficient": "chapter 9 'Accounting for every lower coefficient'; equal sectors e_i, 2e_i, e_i+e_j, 3e_i, e_i+e_j+e_k",
+          "exact value at q=1/2": "11025/262144 from the factorized sector difference",
+          "binary sampling insufficient": "all 2^7 subsets enumerated for each graph"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_low_volume -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P06",
       "title": "Derive universal low-volume formulas",
-      "status": "implemented_pending_acceptance",
+      "status": "complete",
       "effort": "S",
       "priority": 1,
       "dependencies": [
@@ -197,18 +222,29 @@
         "P05"
       ],
       "evidence": [
+        "src/singularity/lowvolume.py",
+        "tests/test_low_volume.py",
         "docs/chapters/04_observation_hierarchy.md",
-        "docs/chapters/09_exact_examples.md",
         "docs/chapters/10_inverse_problems.md",
-        "tests/test_core.py"
+        "docs/specifications/COEFFICIENTS-v1.md"
       ],
-      "existing_work": "SNG-F14 gives disjoint profile classifications through volume three; SNG-F15 defines the edge degree-sum polynomial independently and explains the volume-two mixing statistic. Regular-graph early blindness is derived in Chapter 10.",
-      "next_action": "Implement a small formula oracle separate from weak compositions and retain exhaustive volume-0-to-3 comparisons, including n=1/2/3 normalization boundary cases.",
-      "acceptance_gaps": [
-        "A dedicated implementation of the closed formulas must be checked against coefficient enumeration across a complete declared small graph population; generic coefficient-oracle tests do not explicitly verify the formulas.",
-        "P04/P05 acceptance remains open."
-      ],
-      "packet": "handoff/tasks/P06.md"
+      "existing_work": "lowvolume.py implements SNG-F14 from independently defined statistics: degree histogram, ordered pairs by (d_i,d_j,A_ij), unordered triples by (degree sum, induced edges). Chapter 4 adds the pattern table with index-set (ordered/unordered), support and span conventions and the k<=3 translation boundary. regular_low_volume_local implements the SNG-I008 closed form.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P06.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "formulas using degree and adjacent-vertex statistics": "lowvolume.degree_histogram, ordered_pair_statistics, triple_statistics; FormulaPopulationTests.test_statistics_are_defined_without_profiles",
+          "disjoint profile classification": "FormulaPopulationTests.test_classification_is_disjoint_and_exhaustive",
+          "compare against complete small-graph enumeration": "FormulaPopulationTests.test_formulas_equal_both_enumerators_on_all_graphs_through_four_vertices (75 graphs, local/normalized/marked, compositions and chains); session check on all 1099 graphs with n<=5",
+          "n=1,2,3 translation boundaries": "test_small_order_translation_boundaries",
+          "regular simplification with order assumptions": "SNG-I008; test_regular_graphs_follow_order_degree_and_triangles on seven regular graphs"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_low_volume -v"
+        ]
+      }
     },
     {
       "id": "P07",

@@ -102,6 +102,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Chains.** `chain_marked_coefficients(graph, M)` has exactly the meaning of `marked_coefficients` but is generated from weakly nested level sets (SNG-F09, SNG-F10). `level_chains(n, M)` yields chains as tuples of bit masks over original labels; the empty chain is the zero profile. `chain_normalized_coefficients` and `chain_local_coefficients` are its projections to \(B\) and \(L\).
 
+**Closed low-volume formulas.** `low_volume_local`, `low_volume_normalized` and `low_volume_marked` return the same objects as the enumerators for volumes \(0..3\), computed from degree, ordered-pair and induced-triple statistics (SNG-F14). `regular_low_volume_local(n, d, T)` gives \(C_0..C_3\) of a \(d\)-regular graph with \(T\) triangles.
+
 **Weighted graphs.** `WeightedGraph(masses, edges)` has positive integral vertex masses \(m_i\) and positive integral edge weights \(w_{uv}\), with parallel edges summed. Volume is \(\sum m_ia_i\) and energy \(\sum w_{uv}(a_u-a_v)^2\). `contract` imposes equal heights by merging vertices, summing masses and parallel weights. `weighted_coefficients` returns rows \(0..M\) by weighted volume, enumerating a box of explicitly budgeted size. No normalization is offered there: a common translation changes weighted volume by \(\sum m_i\), not \(n\). The unweighted API is unchanged.
 
 **Primitive profiles.** `primitive_marked_coefficients` counts minimum-zero profiles with \(\gcd(a)=1\) and volume \(\ge1\), by `(volume, energy, span)`, using Möbius inversion of the dilation \(a\mapsto da\) (volume \(\times d\), energy \(\times d^2\), span \(\times d\)). `recompose_primitive_counts` inverts it and restores the zero profile.
@@ -134,6 +136,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `componentwise_normalized_coefficients` | 6 | `SemanticsTests.test_disconnected_global_versus_componentwise_translation`, `test_quotients_agree_exactly_for_connected_graphs` |
 | Automorphism multiplicity | 1, 7 | `SemanticsTests.test_automorphisms_do_not_divide_multiplicities`, `HeightTests.test_relabel_invariance_all_small_graphs` |
 | `chains.*` | 8 | `tests/test_chains.py`; `results/chain_agreement.json` |
+| `lowvolume.*` (closed formulas through volume 3) | 3, 8 | `tests/test_low_volume.py`; `results/pair_acceptance.json` |
 | `HeightPopulation` | 8 | `tests/test_population.py` |
 | `bounded_height_histogram`, `brute_bounded_height_histogram`, `histogram_coefficients` | 4, 8 | `tests/test_transfer.py`, including `test_global_shift_subtraction_on_disconnected_forest` |
 | `WeightedGraph`, `weighted_coefficients` | 8 | `tests/test_conductor_weighted.py` |

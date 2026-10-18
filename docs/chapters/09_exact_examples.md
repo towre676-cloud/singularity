@@ -147,6 +147,20 @@ Subtracting and factoring gives the exact identity
 
 The height-two-at-one-vertex terms cancel because the degree multisets coincide. The difference is entirely in the binary span-one sector. It is positive for every real \(0<q<1\), with exact value \(3/32\) at \(q=1/2\). Thus the distinction is not a numerical coincidence at one parameter or a sign-sensitive coefficient observed only after rounding.
 
+**Proof of SNG-E005 from degree pairs.** Volume zero contributes the zero profile to both graphs. Volume one contributes \(\sum_iq^{d_i}\), and volume two contributes \(\sum_iq^{4d_i}\) from the profiles \(2e_i\); these agree because both degree sequences are \(\{4,3,2,2,1,1,1\}\). The only remaining volume-two profiles are \(e_i+e_j\), \(i<j\), with energy \(d_i+d_j-2A_{ij}\). Summing \(q^{d_i+d_j}\) over all pairs again depends only on the degree sequence, so by SNG-F15 the difference is \((q^{-2}-1)(J_{G_{\mathrm{sp}}}-J_{H_{\mathrm{sp}}})\), where \(J\) sums \(q^{d_i+d_j}\) over edges. The edges are distributed over unordered endpoint-degree pairs as follows.
+
+| Endpoint degrees | \(\{1,3\}\) | \(\{1,4\}\) | \(\{2,2\}\) | \(\{2,3\}\) | \(\{2,4\}\) | \(\{3,4\}\) |
+|---|---:|---:|---:|---:|---:|---:|
+| degree sum | 4 | 5 | 4 | 5 | 6 | 7 |
+| \(G_{\mathrm{sp}}\) edges | 2 | 1 | 1 | 0 | 2 | 1 |
+| \(H_{\mathrm{sp}}\) edges | 0 | 3 | 1 | 2 | 0 | 1 |
+
+Hence \(J_{G_{\mathrm{sp}}}=3q^4+q^5+2q^6+q^7\), \(J_{H_{\mathrm{sp}}}=q^4+5q^5+q^7\), their difference is \(2q^4(1-q)^2\), and
+\[
+[x^2](P_{G_{\mathrm{sp}}}-P_{H_{\mathrm{sp}}})=q^{-2}(1-q)(1+q)\cdot2q^4(1-q)^2=2q^2(1-q)^3(1+q).
+\]
+Reversing the order of the pair reverses the sign. The degree-four vertex of \(G_{\mathrm{sp}}\) is joined to the two degree-two vertices, while in \(H_{\mathrm{sp}}\) it is joined to three leaves; this difference in degree mixing (degree assortativity) is the entire volume-two discrepancy. No higher-order phenomenon is involved: the pair is a cospectral example whose separation is already explained by adjacent-degree statistics. The closed formulas are implemented independently of enumeration in `src/singularity/lowvolume.py`, and `results/pair_acceptance.json` records their agreement with the weak-composition and level-chain enumerators and with the replayed certificate. \(\square\)
+
 The binary pair has common first and second coefficients
 
 \[
@@ -202,6 +216,8 @@ The factorization is an exact polynomial identity, checkable by multiplication. 
 [x^3z^2](B_{G_{\mathrm{bin}}}-B_{H_{\mathrm{bin}}})
 =[x^3](P_{G_{\mathrm{bin}}}-P_{H_{\mathrm{bin}}})=\Delta(q).
 \]
+
+**Accounting for every lower coefficient.** Volumes zero, one and two depend only on the degree sequence and on \(J_G\) (SNG-F14, SNG-F15). Both binary graphs have degree sequence \(\{4,3,3,2,2,1,1\}\) and \(J=q^4+4q^5+q^6+2q^7\), so these coefficients agree. At volume three, the \(3e_i\) sector is again a function of degrees and the \(e_i+e_j+e_k\) sector is the size-three binary row, equal by SNG-E003. Only the forty-two ordered \(2e_i+e_j\) profiles remain; their energy is \(4d_i+d_j-4A_{ij}\), so they record the ordered degree pair and the adjacency of the two positions together. The two graphs do not have the same joint degree matrix: \(G_{\mathrm{bin}}\) has edges of degree types \(\{1,3\},\{1,4\},3\times\{2,3\},\{2,4\},2\times\{3,4\}\), and \(H_{\mathrm{bin}}\) has \(2\times\{1,4\},\{2,2\},2\times\{2,3\},\{3,3\},2\times\{3,4\}\), with equal degree sums edge by edge in aggregate. Nor are they cospectral. The separation claimed here is specifically beyond the complete binary cut-volume census, through the nested chain \(S_1=\{i,j\}\supseteq S_2=\{i\}\), whose energy is \(c(S_1)+c(S_2)+2e(\{i\},V\setminus\{i,j\})\) by SNG-F10.
 
 For every \(0<q<1\), this is strictly positive. At one half it is exactly \(11025/262144\). The factors at zero and one have straightforward meanings: zero eliminates all nonconstant heights on a connected graph, while one forgets energy and leaves the same number of assignments on seven coordinates. The additional factors at cube and fourth roots are an algebraic feature of this finite difference; no universal cyclotomic cancellation rule is inferred from them.
 

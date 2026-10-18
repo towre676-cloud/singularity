@@ -2331,6 +2331,131 @@ triples. These are disjoint exhaustive cases, giving the formulas
 without missing multiplicities. The normalized identity is coefficient
 extraction from Theorem SNG-F02.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The classification can be read as a table. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>d</mi></msub><annotation encoding="application/x-tex">N_d</annotation></semantics></math>
+for the number of vertices of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>P</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><mi>ϵ</mi></msubsup><annotation encoding="application/x-tex">P_{a,b}^{\epsilon}</annotation></semantics></math>
+for the number of <strong>ordered</strong> pairs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>≠</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i\ne j</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">d_i=a</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>j</mi></msub><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">d_j=b</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">A_{ij}=\epsilon</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mi>s</mi><mo>,</mo><mi>t</mi></mrow></msub><annotation encoding="application/x-tex">T_{s,t}</annotation></semantics></math>
+for the number of unordered triples with degree sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+spanning
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+edges. These statistics are defined from degrees and adjacency
+alone.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Volume</th>
+<th>Pattern</th>
+<th>Index set</th>
+<th style="text-align: right;">Support</th>
+<th style="text-align: right;">Span</th>
+<th>Energy</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>i</mi></msub><annotation encoding="application/x-tex">e_i</annotation></semantics></math></td>
+<td>vertices</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding="application/x-tex">d_i</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>d</mi></msub><msub><mi>N</mi><mi>d</mi></msub><msup><mi>q</mi><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">\sum_dN_dq^d</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>e</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">2e_i</annotation></semantics></math></td>
+<td>vertices</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">4d_i</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>d</mi></msub><msub><mi>N</mi><mi>d</mi></msub><msup><mi>q</mi><mrow><mn>4</mn><mi>d</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_dN_dq^{4d}</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">e_i+e_j</annotation></semantics></math></td>
+<td>unordered pairs</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub><mo>−</mo><mn>2</mn><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">d_i+d_j-2A_{ij}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo>∑</mo><msubsup><mi>P</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><mi>ϵ</mi></msubsup><msup><mi>q</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mo>−</mo><mn>2</mn><mi>ϵ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\tfrac12\sum P_{a,b}^{\epsilon}q^{a+b-2\epsilon}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msub><mi>e</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">3e_i</annotation></semantics></math></td>
+<td>vertices</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">9d_i</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>d</mi></msub><msub><mi>N</mi><mi>d</mi></msub><msup><mi>q</mi><mrow><mn>9</mn><mi>d</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_dN_dq^{9d}</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">2e_i+e_j</annotation></semantics></math></td>
+<td>ordered pairs</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub><mo>−</mo><mn>4</mn><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">4d_i+d_j-4A_{ij}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msubsup><mi>P</mi><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><mi>ϵ</mi></msubsup><msup><mi>q</mi><mrow><mn>4</mn><mi>a</mi><mo>+</mo><mi>b</mi><mo>−</mo><mn>4</mn><mi>ϵ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\sum P_{a,b}^{\epsilon}q^{4a+b-4\epsilon}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub><mo>+</mo><msub><mi>e</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">e_i+e_j+e_k</annotation></semantics></math></td>
+<td>unordered triples</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub><mo>+</mo><msub><mi>d</mi><mi>k</mi></msub><mo>−</mo><mn>2</mn><msub><mi>e</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">d_i+d_j+d_k-2e_G(\{i,j,k\})</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>T</mi><mrow><mi>s</mi><mo>,</mo><mi>t</mi></mrow></msub><msup><mi>q</mi><mrow><mi>s</mi><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\sum T_{s,t}q^{s-2t}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>A pattern lies in the normalized population exactly when its support
+is smaller than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>;
+then its span is the displayed value. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">k\le3</annotation></semantics></math>
+some patterns cover every vertex and are translations instead: the
+profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>
+on two vertices,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(2,1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,2)</annotation></semantics></math>
+on two vertices, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1,1)</annotation></semantics></math>
+on three. The normalized identity removes exactly these. The table is
+implemented without profile enumeration in
+<code>src/singularity/lowvolume.py</code>.
+<code>tests/test_low_volume.py</code> compares its local, normalized and
+marked outputs with both the weak-composition and the level-chain
+enumerators on all 75 labeled graphs with at most four vertices, on the
+fixed pairs, and on regular graphs including the cube, the Möbius
+ladder, the Petersen graph,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>4</mn></msub><annotation encoding="application/x-tex">K_4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>3</mn><mo>,</mo><mn>3</mn></mrow></msub><annotation encoding="application/x-tex">K_{3,3}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>5</mn></msub><annotation encoding="application/x-tex">C_5</annotation></semantics></math>
+and two disjoint triangles, where the closed form in terms of order,
+degree and triangle count (Proposition SNG-I008) is also checked.</p>
 <p>For example,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mrow><mi>G</mi><mo>,</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">C_{G,1}</annotation></semantics></math>
 determines the degree histogram exactly: its coefficient of
@@ -5220,6 +5345,113 @@ at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>.
 Thus the distinction is not a numerical coincidence at one parameter or
 a sign-sensitive coefficient observed only after rounding.</p>
+<p><strong>Proof of SNG-E005 from degree pairs.</strong> Volume zero
+contributes the zero profile to both graphs. Volume one contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msup><mi>q</mi><msub><mi>d</mi><mi>i</mi></msub></msup></mrow><annotation encoding="application/x-tex">\sum_iq^{d_i}</annotation></semantics></math>,
+and volume two contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msup><mi>q</mi><mrow><mn>4</mn><msub><mi>d</mi><mi>i</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_iq^{4d_i}</annotation></semantics></math>
+from the profiles
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>e</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">2e_i</annotation></semantics></math>;
+these agree because both degree sequences are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>4</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{4,3,2,2,1,1,1\}</annotation></semantics></math>.
+The only remaining volume-two profiles are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">e_i+e_j</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i&lt;j</annotation></semantics></math>,
+with energy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub><mo>−</mo><mn>2</mn><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">d_i+d_j-2A_{ij}</annotation></semantics></math>.
+Summing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub></mrow></msup><annotation encoding="application/x-tex">q^{d_i+d_j}</annotation></semantics></math>
+over all pairs again depends only on the degree sequence, so by SNG-F15
+the difference is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>J</mi><msub><mi>G</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub></msub><mo>−</mo><msub><mi>J</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(q^{-2}-1)(J_{G_{\mathrm{sp}}}-J_{H_{\mathrm{sp}}})</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+sums
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub></mrow></msup><annotation encoding="application/x-tex">q^{d_i+d_j}</annotation></semantics></math>
+over edges. The edges are distributed over unordered endpoint-degree
+pairs as follows.</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Endpoint degrees</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,3\}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,4\}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,2\}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,3\}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2,4\}</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{3,4\}</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>degree sum</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub><annotation encoding="application/x-tex">G_{\mathrm{sp}}</annotation></semantics></math>
+edges</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub><annotation encoding="application/x-tex">H_{\mathrm{sp}}</annotation></semantics></math>
+edges</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><msub><mi>G</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub></msub><mo>=</mo><mn>3</mn><msup><mi>q</mi><mn>4</mn></msup><mo>+</mo><msup><mi>q</mi><mn>5</mn></msup><mo>+</mo><mn>2</mn><msup><mi>q</mi><mn>6</mn></msup><mo>+</mo><msup><mi>q</mi><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">J_{G_{\mathrm{sp}}}=3q^4+q^5+2q^6+q^7</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub></msub><mo>=</mo><msup><mi>q</mi><mn>4</mn></msup><mo>+</mo><mn>5</mn><msup><mi>q</mi><mn>5</mn></msup><mo>+</mo><msup><mi>q</mi><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">J_{H_{\mathrm{sp}}}=q^4+5q^5+q^7</annotation></semantics></math>,
+their difference is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>q</mi><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2q^4(1-q)^2</annotation></semantics></math>,
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>P</mi><msub><mi>G</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub></msub><mo>−</mo><msub><mi>P</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mn>2</mn><msup><mi>q</mi><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+[x^2](P_{G_{\mathrm{sp}}}-P_{H_{\mathrm{sp}}})=q^{-2}(1-q)(1+q)\cdot2q^4(1-q)^2=2q^2(1-q)^3(1+q).
+</annotation></semantics></math> Reversing the order of the pair
+reverses the sign. The degree-four vertex of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub><annotation encoding="application/x-tex">G_{\mathrm{sp}}</annotation></semantics></math>
+is joined to the two degree-two vertices, while in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">p</mi></mrow></msub><annotation encoding="application/x-tex">H_{\mathrm{sp}}</annotation></semantics></math>
+it is joined to three leaves; this difference in degree mixing (degree
+assortativity) is the entire volume-two discrepancy. No higher-order
+phenomenon is involved: the pair is a cospectral example whose
+separation is already explained by adjacent-degree statistics. The
+closed formulas are implemented independently of enumeration in
+<code>src/singularity/lowvolume.py</code>, and
+<code>results/pair_acceptance.json</code> records their agreement with
+the weak-composition and level-chain enumerators and with the replayed
+certificate.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
 <p>The binary pair has common first and second coefficients</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><mi>q</mi><mo>+</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><msup><mi>q</mi><mn>3</mn></msup><mo>+</mo><msup><mi>q</mi><mn>4</mn></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
 A_1=2q+2q^2+2q^3+q^4,
@@ -5375,6 +5607,39 @@ span-two difference. Therefore</p>
 [x^3z^2](B_{G_{\mathrm{bin}}}-B_{H_{\mathrm{bin}}})
 =[x^3](P_{G_{\mathrm{bin}}}-P_{H_{\mathrm{bin}}})=\Delta(q).
 </annotation></semantics></math></p>
+<p><strong>Accounting for every lower coefficient.</strong> Volumes
+zero, one and two depend only on the degree sequence and on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>J</mi><mi>G</mi></msub><annotation encoding="application/x-tex">J_G</annotation></semantics></math>
+(SNG-F14, SNG-F15). Both binary graphs have degree sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>4</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{4,3,3,2,2,1,1\}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><msup><mi>q</mi><mn>4</mn></msup><mo>+</mo><mn>4</mn><msup><mi>q</mi><mn>5</mn></msup><mo>+</mo><msup><mi>q</mi><mn>6</mn></msup><mo>+</mo><mn>2</mn><msup><mi>q</mi><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">J=q^4+4q^5+q^6+2q^7</annotation></semantics></math>,
+so these coefficients agree. At volume three, the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msub><mi>e</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">3e_i</annotation></semantics></math>
+sector is again a function of degrees and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub><mo>+</mo><msub><mi>e</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">e_i+e_j+e_k</annotation></semantics></math>
+sector is the size-three binary row, equal by SNG-E003. Only the
+forty-two ordered
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">2e_i+e_j</annotation></semantics></math>
+profiles remain; their energy is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msub><mi>d</mi><mi>i</mi></msub><mo>+</mo><msub><mi>d</mi><mi>j</mi></msub><mo>−</mo><mn>4</mn><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">4d_i+d_j-4A_{ij}</annotation></semantics></math>,
+so they record the ordered degree pair and the adjacency of the two
+positions together. The two graphs do not have the same joint degree
+matrix:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><annotation encoding="application/x-tex">G_{\mathrm{bin}}</annotation></semantics></math>
+has edges of degree types
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mn>3</mn><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mn>2</mn><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{1,3\},\{1,4\},3\times\{2,3\},\{2,4\},2\times\{3,4\}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><annotation encoding="application/x-tex">H_{\mathrm{bin}}</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mn>2</mn><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mn>2</mn><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">2\times\{1,4\},\{2,2\},2\times\{2,3\},\{3,3\},2\times\{3,4\}</annotation></semantics></math>,
+with equal degree sums edge by edge in aggregate. Nor are they
+cospectral. The separation claimed here is specifically beyond the
+complete binary cut-volume census, through the nested chain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false" form="postfix">}</mo><mo>⊇</mo><msub><mi>S</mi><mn>2</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S_1=\{i,j\}\supseteq S_2=\{i\}</annotation></semantics></math>,
+whose energy is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>S</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><mi>e</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>V</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">c(S_1)+c(S_2)+2e(\{i\},V\setminus\{i,j\})</annotation></semantics></math>
+by SNG-F10.</p>
 <p>For every
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;q&lt;1</annotation></semantics></math>,
 this is strictly positive. At one half it is exactly
@@ -7569,6 +7834,12 @@ energy, marked/normalized/local coefficients independent of weak
 compositions</td>
 </tr>
 <tr class="odd">
+<td><code>lowvolume</code></td>
+<td>Closed coefficient formulas through volume three</td>
+<td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
+sectors; regular closed form</td>
+</tr>
+<tr class="even">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and
