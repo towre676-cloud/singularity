@@ -175,6 +175,35 @@ def nested_tables():
             'binary_pair_volume_three_difference': [[*k, v] for k, v in difference.items() if k[0] + k[1] <= 3]}
 
 
+def late_collisions():
+    """P30/P31 receipt: census pairs agreeing through volume 2, with the separating sector."""
+    from itertools import combinations
+    from singularity.lowvolume import pattern_sectors, triple_statistics
+    manifest = json.loads((ROOT / 'results/census_manifest.json').read_text())
+    records = []
+    for order in manifest['orders']:
+        graphs = {c['canonical_code']: Graph(c['n'], c['edges']) for c in order['classes']}
+        local = {k: local_coefficients(g, 3) for k, g in graphs.items()}
+        for a, b in combinations(sorted(graphs), 2):
+            if local[a][:3] != local[b][:3]:
+                continue
+            ga, gb = graphs[a], graphs[b]
+            sa, sb = pattern_sectors(ga), pattern_sectors(gb)
+            ta, tb = triple_statistics(ga), triple_statistics(gb)
+            keys = sorted(set(ta) | set(tb))
+            records.append({
+                'n': order['n'], 'codes': [a, b], 'graphs': [ga.to_dict(), gb.to_dict()],
+                'first_difference_volume': next((v for v in range(4) if local[a][v] != local[b][v]), None),
+                'ordered_pair_sector_equal': sa['2e_i+e_j'] == sb['2e_i+e_j'],
+                'triple_sector_equal': sa['e_i+e_j+e_k'] == sb['e_i+e_j+e_k'],
+                'triangles': [sum(c for (_, t_), c in ta.items() if t_ == 3), sum(c for (_, t_), c in tb.items() if t_ == 3)],
+                'triple_statistic_difference': [[s_, t_, ta.get((s_, t_), 0) - tb.get((s_, t_), 0)] for s_, t_ in keys if ta.get((s_, t_), 0) != tb.get((s_, t_), 0)],
+            })
+    return {'schema': 'singularity.late-collisions/1', 'population': 'results/census_manifest.json',
+            'selection': 'pairs with equal local coefficients through volume 2',
+            'interpretation': 'finite classification on connected graphs with at most six vertices', 'pairs': records}
+
+
 def compute():
     factors_a={'coefficient':'2','monomial':2,'factors':[[1,2],[2,1]]}
     factors_b={'coefficient':'1','monomial':3,'factors':[[1,1],[3,2],[4,2]]}
@@ -209,6 +238,7 @@ def compute():
         **{f'results/certificates/{name}.json':packet for name,packet in certificates.items()},
         'results/pair_acceptance.json':acceptance,
         'results/nested_census.json':nested_tables(),
+        'results/late_collisions.json':late_collisions(),
         'results/conductor_fixtures.json':conductor_fixtures(),
         'results/gauss_fixtures.json':gauss_fixtures(),
         'results/visibility_filtration.json':census_visibility(),

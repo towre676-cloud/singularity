@@ -16,8 +16,8 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 |---|---|---:|
 | `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 1 |
 | `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 2 |
-| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 5 |
-| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 5 |
+| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 6 |
+| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 4 |
 | `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 23 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
@@ -78,7 +78,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P28](#p28) | State the available complex domain exactly | `complete` | P26 | M | 2 |
 | [P29](#p29) | Specify a complete finite graph census | `complete` | P03 | S | 1 |
 | [P30](#p30) | Measure collision classes across invariants | `partial` | P12, P14, P29 | M | 2 |
-| [P31](#p31) | Resolve targeted collisions structurally | `blocked` | P16, P30 | L | 2 |
+| [P31](#p31) | Resolve targeted collisions structurally | `implemented_pending_acceptance` | P16, P30 | L | 2 |
 | [P32](#p32) | Seek a separation bound for one graph family | `implemented_pending_acceptance` | P06, P12, P31 | L | 2 |
 | [P33](#p33) | Verify concrete coefficient certificates in a kernel | `blocked` | P07, P08, P23 | L | 3 |
 | [P34](#p34) | Formalize the visibility comparison boundary | `blocked` | P26, P33 | L | 3 |
@@ -635,18 +635,18 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P31
 
-**Resolve targeted collisions structurally.** Status: `blocked`. Dependencies: P16, P30. Remaining effort: L; priority: 2.
+**Resolve targeted collisions structurally.** Status: `implemented_pending_acceptance`. Dependencies: P16, P30. Remaining effort: L; priority: 2.
 
-**Existing work:** Three fixed comparison pairs have concrete structural explanations, but the retained n<=6 complete census has no unresolved final local or marked classes. Those examples are not outcomes selected from an accepted P30 target ledger.
+**Existing work:** Every census collision that survives volume two (14 pairs, all on six vertices) is resolved with an explicit separating pattern: the ordered adjacent-degree sector agrees, the induced-triple sector differs, and the triangle counts differ in every pair; none is a single Whitney twist. For collisions that persist further, the mechanisms are proved: Whitney twists separate exactly through the antisymmetric kernel pairing (SNG-F41/F42/F45), and the pendant-cycle family has depth p+1 (SNG-F36).
 
-**Evidence:** [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [results/small_census.json](../results/small_census.json).
+**Evidence:** [results/late_collisions.json](../results/late_collisions.json); [results/visibility_filtration.json](../results/visibility_filtration.json); [scripts/reproduce.py](../scripts/reproduce.py); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md); [src/singularity/terminals.py](../src/singularity/terminals.py); [src/singularity/lowvolume.py](../src/singularity/lowvolume.py).
 
 **Acceptance still missing:**
 
-- P16/P30 must supply a defined target population and collision classes.
-- No per-target structural resolution ledger provides bijections, later-volume witnesses or precise remaining conjectures with negative results.
+- Original dependency gates: P16 and P30 are not accepted.
+- The census classification is finite (n <= 6); no collision with equal full series has been found, so no equality bijection is claimed.
 
-**Next concrete action:** After P30, select the smallest meaningful collisions, including deliberate invariant-matched families if necessary, and seek a mechanism before raising their coefficient cutoff.
+**Next concrete action:** Once P30 retains spectral partitions and P16 is accepted, mark P31 complete with results/late_collisions.json and SNG-F41/F42/F45/F36 as the mechanisms.
 
 ### P32
 

@@ -359,9 +359,13 @@ visibility depth</a></li>
 id="toc-terminal-kernels-and-the-whitney-twist"><span
 class="toc-section-number">10.7</span> Terminal kernels and the Whitney
 twist</a></li>
+<li><a href="#every-late-census-collision-is-separated-by-triangles"
+id="toc-every-late-census-collision-is-separated-by-triangles"><span
+class="toc-section-number">10.8</span> Every late census collision is
+separated by triangles</a></li>
 <li><a href="#what-should-be-searched-next"
 id="toc-what-should-be-searched-next"><span
-class="toc-section-number">10.8</span> What should be searched
+class="toc-section-number">10.9</span> What should be searched
 next?</a></li>
 </ul></li>
 <li><a href="#archival-bridges-what-is-inherited-and-what-changes"
@@ -7675,8 +7679,34 @@ identification above for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>m</mi><mo>,</mo><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">B_{m,k}</annotation></semantics></math>
 with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≤</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">m\le4</annotation></semantics></math>.</p>
-<h2 data-number="10.8" id="what-should-be-searched-next"><span
-class="header-section-number">10.8</span> What should be searched
+<h2 data-number="10.8"
+id="every-late-census-collision-is-separated-by-triangles"><span
+class="header-section-number">10.8</span> Every late census collision is
+separated by triangles</h2>
+<p>For connected graphs with at most six vertices, the symbolic
+coefficients separate every pair of nonisomorphic graphs by volume three
+(<code>results/visibility_filtration.json</code>). The pairs that
+survive volume two are fourteen pairs on six vertices; they are retained
+with their graphs in <code>results/late_collisions.json</code>. In each
+of them the ordered adjacent-degree sector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>e</mi><mi>i</mi></msub><mo>+</mo><msub><mi>e</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">2e_i+e_j</annotation></semantics></math>
+of SNG-F14 also agrees, so the two graphs have the same ordered
+degree-and-adjacency statistics. The separation comes entirely from the
+induced-triple sector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msub><mi>T</mi><mrow><mi>s</mi><mo>,</mo><mi>t</mi></mrow></msub><msup><mi>q</mi><mrow><mi>s</mi><mo>−</mo><mn>2</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\sum T_{s,t}q^{s-2t}</annotation></semantics></math>,
+and in every pair the triangle counts differ, for example
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>3</mn><mo>,</mo><mn>3</mn></mrow></msub><annotation encoding="application/x-tex">K_{3,3}</annotation></semantics></math>
+against the prism. None of the fourteen pairs is related by a single
+Whitney twist at a two-vertex separator. Their separation is therefore
+not the twist mechanism of SNG-F41; it is the classical one of SNG-I008,
+a different number of triangles under the same degree data. This is a
+complete finite classification of the late collisions in that
+population, with an explicit separating pattern for each pair. It is not
+a statement about larger graphs, where the pendant-cycle and twist
+families show that collisions can persist to arbitrarily large
+volume.</p>
+<h2 data-number="10.9" id="what-should-be-searched-next"><span
+class="header-section-number">10.9</span> What should be searched
 next?</h2>
 <p>The first inverse question is whether full marked equality implies
 graph isomorphism on any substantial class. Trees are an attractive

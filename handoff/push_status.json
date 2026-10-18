@@ -1036,7 +1036,7 @@
     {
       "id": "P31",
       "title": "Resolve targeted collisions structurally",
-      "status": "blocked",
+      "status": "implemented_pending_acceptance",
       "effort": "L",
       "priority": 2,
       "dependencies": [
@@ -1044,15 +1044,18 @@
         "P30"
       ],
       "evidence": [
+        "results/late_collisions.json",
+        "results/visibility_filtration.json",
+        "scripts/reproduce.py",
         "docs/chapters/10_inverse_problems.md",
-        "docs/chapters/13_research_program.md",
-        "results/small_census.json"
+        "src/singularity/terminals.py",
+        "src/singularity/lowvolume.py"
       ],
-      "existing_work": "Three fixed comparison pairs have concrete structural explanations, but the retained n<=6 complete census has no unresolved final local or marked classes. Those examples are not outcomes selected from an accepted P30 target ledger.",
-      "next_action": "After P30, select the smallest meaningful collisions, including deliberate invariant-matched families if necessary, and seek a mechanism before raising their coefficient cutoff.",
+      "existing_work": "Every census collision that survives volume two (14 pairs, all on six vertices) is resolved with an explicit separating pattern: the ordered adjacent-degree sector agrees, the induced-triple sector differs, and the triangle counts differ in every pair; none is a single Whitney twist. For collisions that persist further, the mechanisms are proved: Whitney twists separate exactly through the antisymmetric kernel pairing (SNG-F41/F42/F45), and the pendant-cycle family has depth p+1 (SNG-F36).",
+      "next_action": "Once P30 retains spectral partitions and P16 is accepted, mark P31 complete with results/late_collisions.json and SNG-F41/F42/F45/F36 as the mechanisms.",
       "acceptance_gaps": [
-        "P16/P30 must supply a defined target population and collision classes.",
-        "No per-target structural resolution ledger provides bijections, later-volume witnesses or precise remaining conjectures with negative results."
+        "Original dependency gates: P16 and P30 are not accepted.",
+        "The census classification is finite (n <= 6); no collision with equal full series has been found, so no equality bijection is claimed."
       ],
       "packet": "handoff/tasks/P31.md"
     },
