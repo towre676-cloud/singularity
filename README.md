@@ -11,6 +11,7 @@ The repository includes a book-length research monograph, a concise companion ar
 [Companion article, PDF](output/pdf/visibility_paper.pdf) · [Article source](docs/papers/visibility.md) · [Result index](docs/THEOREM_INDEX.md) · [Bibliography](docs/references.bib) · [36-push development program](docs/development/PUSHES.md)
 
 [Complete downloadable package](releases/Singularity-v0.1.0-complete.zip)
+[Commit-pinned reproducibility package (P35, source commit fdb22fe)](releases/Singularity-v0.1.0-p35-complete.zip) with [its manifest](releases/Singularity-v0.1.0-p35-manifest.json)
 
 For a connected simple graph G, the local population and its arithmetic lift are
 
