@@ -5243,15 +5243,64 @@ branched trees and a disconnected forest through volume six, its
 weak-composition and level-chain enumerators.
 
 For general graphs, a tree decomposition replaces a single parent height
-by a tuple of heights on a separator. The number of assignments to a bag
-of size \(w+1\) is \((H+1)^{w+1}\); this is only the state-count
-contribution, not the full arithmetic complexity. Volume and energy
-polynomials still require exact convolutions. The research objective is
-a correctness theorem together with measured support growth on paths,
-stars, balanced trees, cycles, and bounded-width constructions. A speed
-claim should compare complete identical coefficient ranges against the
-reference enumerator, not compare a marked computation with an unmarked
-one.
+by a tuple of heights on a separator. A \textbf{tree decomposition} of
+\(G\) is a tree \(\mathcal T\) whose nodes carry bags \(X_s\subseteq V\)
+such that every vertex lies in some bag, both endpoints of every edge
+lie in a common bag, and for each vertex the bags containing it form a
+connected subtree. Choose a root bag. For a vertex \(v\) the bags
+containing it form a subtree with a unique node nearest the root; call
+it the \textbf{owner} of \(v\). For an edge \(uv\) the bags containing
+both endpoints form the intersection of two subtrees, again a subtree
+with a unique top node, its owner. For a node \(s\) let \(\mathcal T_s\)
+be its subtree, \(V_s=\bigcup_{r\in\mathcal T_s}X_r\), and \(W_s\) and
+\(E_s\) the vertices and edges owned by nodes of \(\mathcal T_s\). For
+\(\sigma\in\{0,\ldots,H\}^{X_s}\) define \[
+M_s(\sigma)=\sum_{\substack{b\in\{0,\ldots,H\}^{V_s}\\ b|_{X_s}=\sigma}}x^{\sum_{v\in W_s}b_v}q^{\sum_{uv\in E_s}(b_u-b_v)^2}.
+\]
+
+\textbf{Proposition SNG-F26 (bag-conditioned recursion).} Let
+\(w_s(\sigma)=x^{\sum_{v\text{ owned by }s}\sigma_v}q^{\sum_{uv\text{ owned by }s}(\sigma_u-\sigma_v)^2}\).
+Then \[
+M_s(\sigma)=w_s(\sigma)\prod_{r\text{ child of }s}\ \sum_{\substack{\tau\in\{0,\ldots,H\}^{X_r}\\ \tau|_{X_r\cap X_s}=\sigma|_{X_r\cap X_s}}}M_r(\tau),
+\] and the bounded-box series is
+\(C_H=\sum_\sigma M_{\rm root}(\sigma)\). Every vertex volume and every
+edge energy is charged exactly once.
+
+\emph{Proof.} Every vertex lies in some bag and every edge in some
+common bag, so each has exactly one owner, and the owners partition the
+charges; at the root \(W=V\) and \(E_{\rm root}=E(G)\). Induct on
+\(|\mathcal T_s|\). The owned sets \(W_s,E_s\) are the disjoint union of
+the charges owned at \(s\) and the sets \(W_r,E_r\) of the children. A
+vertex \(v\in V_r\setminus X_s\) lies in no bag outside
+\(\mathcal T_r\): otherwise the connected subtree of bags containing
+\(v\) would pass through \(s\). Hence the sets \(V_r\setminus X_s\) for
+distinct children are disjoint and disjoint from \(X_s\), and an
+assignment on \(V_s\) extending \(\sigma\) is exactly a choice, for each
+child independently, of an assignment on \(V_r\) agreeing with
+\(\sigma\) on \(X_r\cap X_s\). Every charge owned in \(\mathcal T_r\)
+involves only vertices of \(V_r\), so its contribution depends only on
+that child's choice. Grouping those choices by \(\tau=b|_{X_r}\) and
+applying the induction hypothesis gives the displayed sum for each
+child; the product realizes independent choices, and \(w_s\) adds the
+charges owned at \(s\), each once. A vertex shared by a parent and child
+bag carries one height because it is conditioned on both, and its volume
+is added only at its owner, so repeated bags and joins never
+double-count it. \(\square\)
+
+Safe truncation (SNG-F24) applies verbatim because every message has
+nonnegative volume exponents, and SNG-F25 gives the minimum-zero and
+exact-span sectors with one global translation. The implementation
+\texttt{src/singularity/decomposition.py} checks the decomposition
+axioms and the tree structure before any arithmetic and rejects a
+decomposition that misses a vertex or an edge or splits the bags of a
+vertex. Its costs are reported separately: \(\sum_s(H+1)^{|X_s|}\) bag
+assignments, sparse message support and integer bit length. On several
+distinct valid decompositions each of the five- and six-cycles, a
+ladder, \(K_4\) (including redundant repeated bags), two disjoint
+triangles (including an empty connecting bag) and \(K_5\), the bounded,
+minimum-zero and marked outputs equal Cartesian enumeration, weak
+compositions and level chains; width-one decompositions of forests,
+including disconnected ones, reproduce the forest engine.
 
 \hypertarget{what-nested-boundaries-remember}{%
 \section{What nested boundaries
@@ -5839,6 +5888,9 @@ discrepancy \\
 messages on trees/forests (SNG-F23), safe volume pruning (SNG-F24), root
 messages, separate cost measures, minimum-zero subtraction and
 exact-span marked histograms (SNG-F25) \\
+\texttt{decomposition} & Supplied tree decompositions of arbitrary
+graphs & Axiom checker, owned-charge bag messages (SNG-F26), truncation,
+minimum-zero and exact-span sectors, elimination-order constructor \\
 \texttt{conductor} & Root-of-unity local series & Integer cyclotomic
 rings, finite residue numerators, arbitrary-index exact coefficients
 with explicit residue-box budget \\

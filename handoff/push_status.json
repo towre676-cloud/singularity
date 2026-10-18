@@ -397,7 +397,7 @@
     {
       "id": "P12",
       "title": "Extend messages to bounded separators",
-      "status": "blocked",
+      "status": "complete",
       "effort": "L",
       "priority": 1,
       "dependencies": [
@@ -405,18 +405,28 @@
         "P11"
       ],
       "evidence": [
+        "src/singularity/decomposition.py",
+        "tests/test_decomposition.py",
         "docs/chapters/13_research_program.md",
-        "docs/chapters/11_archival_bridges.md",
-        "src/singularity/transfer.py"
+        "docs/specifications/COEFFICIENTS-v1.md"
       ],
-      "existing_work": "The manuscript specifies bag-height state counts and the need to separate state count from convolution cost. The only transfer implementation accepts forests and explicitly rejects cycles.",
-      "next_action": "Specify and validate decompositions first, implement a minimal introduce/forget/join or elimination convention with explicit charge ownership, and compare complete cycle histograms to the reference engine.",
-      "acceptance_gaps": [
-        "No supplied-tree-decomposition type or checker exists.",
-        "No bag-conditioned general-graph algorithm, local charge proof or cycle/bounded-width regression output exists.",
-        "P10/P11 must establish the semantics and marked reconstruction used by the extension."
-      ],
-      "packet": "handoff/tasks/P12.md"
+      "existing_work": "decomposition.py adds TreeDecomposition with JSON schema singularity.tree-decomposition/1, an axiom checker (vertex and edge coverage, connected occurrence, tree property, root), owned-charge bag messages, truncation, minimum-zero and exact-span sectors, cost statistics and elimination/forest constructors. Proposition SNG-F26 proves the bag-conditioned recursion by decomposition induction with each charge owned once.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P12.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "verify the decomposition axioms": "check_decomposition; CheckerTests.test_malformed_decompositions_are_rejected (missing vertex, missing edge, split occurrence, cycle, disconnected tree, bad root, repeated vertex, out-of-range and Boolean labels, invalid tree edges, empty decomposition)",
+          "prove local charge bookkeeping": "SNG-F26; CheckerTests.test_every_charge_has_exactly_one_owner",
+          "compare cycles and bounded-width examples with reference data": "EngineTests: twelve decompositions of C5, C6, a 4-rung ladder, K4 (with redundant bags), two triangles (with an empty bag) and K5 against Cartesian enumeration (H<=2, both normalizations), weak compositions and level chains (marked, volume <=5)",
+          "width-one versus forest transfer": "test_width_one_matches_forest_transfer_including_disconnected",
+          "state count separate from convolution cost": "decomposition_statistics; test_cost_measures"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_decomposition -v"
+        ]
+      }
     },
     {
       "id": "P13",
