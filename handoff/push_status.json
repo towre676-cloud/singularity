@@ -921,24 +921,40 @@
     {
       "id": "P28",
       "title": "State the available complex domain exactly",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 2,
       "dependencies": [
         "P26"
       ],
       "evidence": [
-        "docs/chapters/06_euler_analysis.md",
-        "docs/chapters/07_visibility_singularities.md"
+        "docs/chapters/07_visibility_singularities.md",
+        "src/singularity/arithmetic.py",
+        "tests/test_arithmetic.py",
+        "results/complex_discs.json",
+        "docs/chapters/06_euler_analysis.md"
       ],
-      "existing_work": "SNG-A10 proves normal tail convergence on compact subsets of the finite-extraction half-plane; SNG-A11 supplies a holomorphic nonzero neighborhood of the positive real visibility point. Small-prime denominators and the power-series branch of log(1-p^-rs) are explicitly discussed; global meromorphic continuation is not claimed.",
-      "next_action": "Choose one fixed rational interior q and derive a conservative explicit disk around s=1/r with certified finite-factor nonvanishing and uniform tail convergence.",
-      "acceptance_gaps": [
-        "The local complex neighborhood is established existentially, without an explicit computable disk or certified nonvanishing domain for the selected pair.",
-        "Supply domain/branch bookkeeping for all finite denominator factors and the normally convergent tail in a focused statement.",
-        "P26 is complete (2026-10-18); its exact constant (7.12) can quantify the tail on a disc around 1/r."
-      ],
-      "packet": "handoff/tasks/P28.md"
+      "existing_work": "Theorem SNG-F35 gives an explicit disc |s-1/r|<=eta under three exact conditions: convergence, a zeta-factor condition proved from the integral representation of (w-1)zeta(w), and a derivative bound that keeps every local factor in the right half-plane for every prime. It fixes principal branches for all logarithms, proves uniform tail convergence by Schwarz's lemma (showing the conservative constant, not (7.12), is valid for complex t), identifies K with the positive real product, and states the branch-point/pole dichotomy for the ratio. complex_disc_certificate checks the conditions exactly; results/complex_discs.json holds discs for the three reference pairs.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P28.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "local complex branch statement on an explicitly described nonvanishing domain": "SNG-F35; discs eta=1e-5, 1e-7, 1e-9 for the spectral, binary and cube-Mobius pairs; ComplexDiscTests.test_reference_discs_and_refusals",
+          "logarithm choices": "principal logs of L(p^-s), 1-p^-rs and (rs-1)zeta(rs); cut for (rs-1)^-delta; record branches field",
+          "uniform convergence on compact subsets": "Schwarz bound |h| <= M(|t|/rho)^(r+1); test_schwarz_constant_is_the_conservative_one",
+          "finite small primes": "condition (c) covers every prime including small ones; primes beyond the cutoff use the Schwarz tail",
+          "fractional power versus pole": "SNG-F35 final statement",
+          "no global meromorphic continuation, no complex q": "not_claimed field and chapter 7 text",
+          "larger domains": "refusals at 10x larger radii are recorded as failure of the sufficient condition, not as zeros; no counterexample found or claimed",
+          "P26 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_arithmetic -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P29",

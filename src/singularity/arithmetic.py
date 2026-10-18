@@ -170,3 +170,72 @@ def certified_tail_record(left_coefficients, right_coefficients, vertex_count, q
             "(r+1)s > 1",
         ],
     }
+
+
+def _root_upper(value, degree, digits=30):
+    """Rational u >= value^(1/degree) for rational 0 < value < 1, checked exactly."""
+    from math import isqrt  # noqa: F401  (integer roots below are by bisection)
+    value = Fraction(value)
+    scale = 10 ** digits
+    low, high = 0, scale
+    while high - low > 1:
+        middle = (low + high) // 2
+        if Fraction(middle, scale) ** degree >= value:
+            high = middle
+        else:
+            low = middle
+    upper = Fraction(high, scale)
+    assert upper ** degree >= value
+    return upper
+
+
+def complex_disc_certificate(vertex_count, first_depth, delta, eta):
+    """Check SNG-F35's exact conditions for the disc |s - 1/r| <= eta.
+
+    With sigma = 1/r - eta and k = vertex_count:
+    (a) (r+1) sigma > 1, so the regularized product converges;
+    (b) r eta <= 1/4, so (rs-1) zeta(rs) has positive real part on the disc;
+    (c) eta k (1 - 2^-sigma)^-(k+1) / (e sigma) < 1, which keeps every local
+        factor L(p^-s) in the right half-plane for every prime p.
+    Upper bounds 2^-sigma <= 2^(-1/r) (1 + eta) and e > 27/10 make (c) exact.
+    The returned conservative constant bounds the holomorphic logarithm of each
+    regularized local factor by C |t|^(r+1) for |t| <= rho, U(rho) < 1.
+    """
+    if type(vertex_count) is not int or vertex_count < 1 or type(first_depth) is not int or first_depth < 1:
+        raise ValueError("positive integer graph order and depth required")
+    eta, delta = Fraction(eta), Fraction(delta)
+    k, r = vertex_count, first_depth
+    if eta <= 0:
+        raise ValueError("the disc radius must be positive")
+    sigma = Fraction(1, r) - eta
+    failures = []
+    if (r + 1) * sigma <= 1:
+        failures.append("(a) disc reaches Re s <= 1/(r+1)")
+    if r * eta > Fraction(1, 4):
+        failures.append("(b) r*eta exceeds 1/4")
+    two_power = _root_upper(Fraction(1, 2), r) * (1 + eta)  # >= 2^(-sigma)
+    if two_power >= 1 or sigma <= 0:
+        failures.append("(c) cannot bound 2^-sigma below one")
+    else:
+        lhs = eta * k * (1 - two_power) ** (-(k + 1)) / (Fraction(27, 10) * sigma)
+        if lhs >= 1:
+            failures.append("(c) local nonvanishing inequality fails")
+    if failures:
+        raise ValueError("; ".join(failures))
+    rho = Fraction(1, 2 * k + 2)  # U(rho) = (1-rho)^-k - 1 < 1 for this choice
+    cutoff = int((1 / rho) ** (r + 1)) + 1  # P^-sigma <= P^(-1/(r+1)) <= rho
+    constant = normalized_ratio_tail_constant(k, r, delta, rho)
+    text = lambda value: f"{value.numerator}/{value.denominator}"
+    return {
+        "schema": "singularity.complex-disc/1", "theorem": "SNG-F35",
+        "center": f"1/{r}", "radius": text(eta), "min_real_part": text(sigma),
+        "vertex_count": k, "first_depth": r, "delta": text(delta),
+        "local_radius_rho": text(rho), "schwarz_constant": text(constant),
+        "primes_beyond_cutoff": cutoff,
+        "branches": {
+            "local factors": "principal log of L(p^-s), whose real part is positive on the disc for every prime",
+            "(1-p^-rs)^delta": "principal log; |p^-rs| < 1 on the disc",
+            "zeta factor": "(rs-1)zeta(rs) has positive real part; (rs-1)^-delta uses the principal log of rs-1, cut along the real segment [1/r - eta, 1/r]",
+        },
+        "not_claimed": "global meromorphic continuation; zero-freeness beyond this disc; complex energy parameters q",
+    }

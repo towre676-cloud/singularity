@@ -1,0 +1,64 @@
+{
+  "q": "1/2",
+  "records": {
+    "binary_census": {
+      "branches": {
+        "(1-p^-rs)^delta": "principal log; |p^-rs| < 1 on the disc",
+        "local factors": "principal log of L(p^-s), whose real part is positive on the disc for every prime",
+        "zeta factor": "(rs-1)zeta(rs) has positive real part; (rs-1)^-delta uses the principal log of rs-1, cut along the real segment [1/r - eta, 1/r]"
+      },
+      "center": "1/3",
+      "delta": "11025/262144",
+      "first_depth": 3,
+      "local_radius_rho": "1/16",
+      "min_real_part": "9999997/30000000",
+      "not_claimed": "global meromorphic continuation; zero-freeness beyond this disc; complex energy parameters q",
+      "primes_beyond_cutoff": 65537,
+      "radius": "1/10000000",
+      "schema": "singularity.complex-disc/1",
+      "schwarz_constant": "332528076767277/1905365644",
+      "theorem": "SNG-F35",
+      "vertex_count": 7
+    },
+    "regular_cube_mobius": {
+      "branches": {
+        "(1-p^-rs)^delta": "principal log; |p^-rs| < 1 on the disc",
+        "local factors": "principal log of L(p^-s), whose real part is positive on the disc for every prime",
+        "zeta factor": "(rs-1)zeta(rs) has positive real part; (rs-1)^-delta uses the principal log of rs-1, cut along the real segment [1/r - eta, 1/r]"
+      },
+      "center": "1/4",
+      "delta": "81/2048",
+      "first_depth": 4,
+      "local_radius_rho": "1/18",
+      "min_real_part": "249999999/1000000000",
+      "not_claimed": "global meromorphic continuation; zero-freeness beyond this disc; complex energy parameters q",
+      "primes_beyond_cutoff": 1889569,
+      "radius": "1/1000000000",
+      "schema": "singularity.complex-disc/1",
+      "schwarz_constant": "51340654829378620219257/9847677224715200",
+      "theorem": "SNG-F35",
+      "vertex_count": 8
+    },
+    "spectral": {
+      "branches": {
+        "(1-p^-rs)^delta": "principal log; |p^-rs| < 1 on the disc",
+        "local factors": "principal log of L(p^-s), whose real part is positive on the disc for every prime",
+        "zeta factor": "(rs-1)zeta(rs) has positive real part; (rs-1)^-delta uses the principal log of rs-1, cut along the real segment [1/r - eta, 1/r]"
+      },
+      "center": "1/2",
+      "delta": "3/32",
+      "first_depth": 2,
+      "local_radius_rho": "1/16",
+      "min_real_part": "49999/100000",
+      "not_claimed": "global meromorphic continuation; zero-freeness beyond this disc; complex energy parameters q",
+      "primes_beyond_cutoff": 4097,
+      "radius": "1/100000",
+      "schema": "singularity.complex-disc/1",
+      "schwarz_constant": "117566707584/10776955",
+      "theorem": "SNG-F35",
+      "vertex_count": 7
+    }
+  },
+  "schema": "singularity.complex-discs/1",
+  "theorem": "SNG-F35"
+}

@@ -103,5 +103,33 @@ class RegularizedTailTests(unittest.TestCase):
             certified_tail_record(a, b, 7, Fraction(3, 2), Fraction(1, 32), 1, 3, 100)
 
 
+class ComplexDiscTests(unittest.TestCase):
+    """P28: exact conditions of SNG-F35 for the reference pairs."""
+
+    def test_reference_discs_and_refusals(self):
+        from singularity.arithmetic import complex_disc_certificate
+        cases = [(7, 2, Fraction(3, 32), 5), (7, 3, Fraction(11025, 262144), 7), (8, 4, Fraction(81, 2048), 9)]
+        for k, r, delta, digits in cases:
+            record = complex_disc_certificate(k, r, delta, Fraction(1, 10 ** digits))
+            self.assertEqual(record["center"], f"1/{r}")
+            self.assertGreater(Fraction(record["min_real_part"]) * (r + 1), 1)
+            self.assertIn("principal log", record["branches"]["local factors"])
+            with self.assertRaisesRegex(ValueError, r"\(c\)"):
+                complex_disc_certificate(k, r, delta, Fraction(1, 10 ** (digits - 1)))
+        with self.assertRaisesRegex(ValueError, r"\(a\)"):
+            complex_disc_certificate(7, 2, Fraction(3, 32), Fraction(1, 6))
+        with self.assertRaises(ValueError):
+            complex_disc_certificate(7, 2, Fraction(3, 32), 0)
+
+    def test_schwarz_constant_is_the_conservative_one(self):
+        from singularity.arithmetic import complex_disc_certificate
+        record = complex_disc_certificate(7, 2, Fraction(3, 32), Fraction(1, 10 ** 5))
+        rho = Fraction(record["local_radius_rho"])
+        self.assertLess((1 - rho) ** -7 - 1, 1)
+        self.assertEqual(Fraction(record["schwarz_constant"]), normalized_ratio_tail_constant(7, 2, Fraction(3, 32), rho))
+        cutoff = record["primes_beyond_cutoff"]
+        self.assertGreaterEqual(Fraction(cutoff), (1 / rho) ** 3)  # P^-sigma <= P^(-1/3) <= rho
+
+
 if __name__ == '__main__':
     unittest.main()

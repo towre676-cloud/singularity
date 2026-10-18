@@ -122,6 +122,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Arithmetic lift.** `dirichlet_coefficients(graph, N)` returns, for each \(1\le k\le N\), the \(q\)-polynomial \([k^{-s}]\prod_pL_G(p^{-s},q)\), assembled multiplicatively from the same local coefficients. It introduces no graph information beyond \(L_G\).
 
+**Analytic constants.** `regularized_tail_constant` is the constant (7.12) for real \(0\le t\le\rho<1\); `regularized_prime_tail_bound` bounds the omitted primes at a cutoff \(N^b\) for rational \(s=a/b\); `certified_tail_record` recomputes the first discrepancy before bounding; `complex_disc_certificate` checks the exact conditions of SNG-F35 for a disc around \(1/r\) and reports the branches used. These are inequalities with stated hypotheses, not numerical evaluations of \(K\).
+
 **Root-of-unity specialization.** For a primitive \(\ell\)-th root \(\zeta\), `residue_numerator(graph, ℓ)` returns \(N\) with \(L_G(x,\zeta)=N(x)/(1-x^\ell)^n\), coefficients in \(\mathbb Z[t]/\Phi_\ell(t)\) written constant-first, by enumerating the residue cube \(\{0,\ldots,\ell-1\}^n\) under a work budget. `remote_coefficient` evaluates one coefficient at an arbitrary index from \(N\). A budget refusal is not a mathematical statement.
 
 **Odd-prime Gauss sums.** For an odd prime \(p\), `laplacian_invariants(graph, p)` returns the rank of \(\Delta_G\) over \(\mathbb F_p\), a congruence diagonalization with its basis matrix as witness, and the Legendre character of the nonsingular discriminant. `gauss_sum_direct` is \(\sum_{a\in\mathbb F_p^n}\omega^{E(a)}\) from the residue numerator at \(x=1\); `gauss_sum_formula` is \(p^{n-r}(D/p)g_p^r\) (SNG-F30). Both are elements of \(\mathbb Z[t]/\Phi_p(t)\). \(p=2\), composite moduli and prime powers are rejected.
@@ -164,6 +166,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `primitive_*` | 8 | `tests/test_primitive.py` |
 | `polynomials.*`, `euler.*` | 5, 8 | `tests/test_analytics.py` |
 | `dirichlet_coefficients`, `prime_valuations`, `valuation_energy` | 8 | `tests/test_arithmetic.py` |
+| analytic constants in `arithmetic` | 8 | `tests/test_arithmetic.py`; `results/tail_records.json`, `results/complex_discs.json` |
 | `CyclotomicRing`, `residue_numerator`, `remote_coefficient` | 8 | `tests/test_conductor_weighted.py`; `results/conductor_example.json` |
 | `binary_cut_profile`, `minimum_cut_profile`, `laplacian_characteristic_polynomial`, `invariants.first_difference` | 8 | `HeightTests`, `DiscoveryTests` |
 | `build_certificate`, `replay_certificate`, `parse_certificate` | 5, 9 | `tests/test_certificates.py`, `tests/test_analytics.py`; `results/certificates/` |

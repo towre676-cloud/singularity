@@ -15,10 +15,10 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 | Status | Meaning | Push count |
 |---|---|---:|
 | `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 3 |
-| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 4 |
+| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 3 |
 | `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 1 |
 | `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 7 |
-| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 21 |
+| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 22 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
 
@@ -75,7 +75,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P25](#p25) | Organize successive visibility levels | `complete` | P23, P24 | M | 1 |
 | [P26](#p26) | Make analytic remainder bounds explicit | `complete` | P25 | S | 1 |
 | [P27](#p27) | Produce controlled real singularity experiments | `planned` | P26 | M | 1 |
-| [P28](#p28) | State the available complex domain exactly | `partial` | P26 | M | 2 |
+| [P28](#p28) | State the available complex domain exactly | `complete` | P26 | M | 2 |
 | [P29](#p29) | Specify a complete finite graph census | `complete` | P03 | S | 1 |
 | [P30](#p30) | Measure collision classes across invariants | `partial` | P12, P14, P29 | M | 2 |
 | [P31](#p31) | Resolve targeted collisions structurally | `blocked` | P16, P30 | L | 2 |
@@ -574,19 +574,26 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P28
 
-**State the available complex domain exactly.** Status: `partial`. Dependencies: P26. Remaining effort: M; priority: 2.
+**State the available complex domain exactly.** Status: `complete` (accepted 2026-10-18). Dependencies: P26.
 
-**Existing work:** SNG-A10 proves normal tail convergence on compact subsets of the finite-extraction half-plane; SNG-A11 supplies a holomorphic nonzero neighborhood of the positive real visibility point. Small-prime denominators and the power-series branch of log(1-p^-rs) are explicitly discussed; global meromorphic continuation is not claimed.
+**Accepted evidence:** Theorem SNG-F35 gives an explicit disc |s-1/r|<=eta under three exact conditions: convergence, a zeta-factor condition proved from the integral representation of (w-1)zeta(w), and a derivative bound that keeps every local factor in the right half-plane for every prime. It fixes principal branches for all logarithms, proves uniform tail convergence by Schwarz's lemma (showing the conservative constant, not (7.12), is valid for complex t), identifies K with the positive real product, and states the branch-point/pole dichotomy for the ratio. complex_disc_certificate checks the conditions exactly; results/complex_discs.json holds discs for the three reference pairs.
 
-**Evidence:** [docs/chapters/06_euler_analysis.md](../docs/chapters/06_euler_analysis.md); [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md).
+**Evidence files:** [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md); [src/singularity/arithmetic.py](../src/singularity/arithmetic.py); [tests/test_arithmetic.py](../tests/test_arithmetic.py); [results/complex_discs.json](../results/complex_discs.json); [docs/chapters/06_euler_analysis.md](../docs/chapters/06_euler_analysis.md).
 
-**Acceptance still missing:**
+**Criteria receipt:**
 
-- The local complex neighborhood is established existentially, without an explicit computable disk or certified nonvanishing domain for the selected pair.
-- Supply domain/branch bookkeeping for all finite denominator factors and the normally convergent tail in a focused statement.
-- P26 is complete (2026-10-18); its exact constant (7.12) can quantify the tail on a disc around 1/r.
+- *local complex branch statement on an explicitly described nonvanishing domain*: SNG-F35; discs eta=1e-5, 1e-7, 1e-9 for the spectral, binary and cube-Mobius pairs; ComplexDiscTests.test_reference_discs_and_refusals.
+- *logarithm choices*: principal logs of L(p^-s), 1-p^-rs and (rs-1)zeta(rs); cut for (rs-1)^-delta; record branches field.
+- *uniform convergence on compact subsets*: Schwarz bound |h| <= M(|t|/rho)^(r+1); test_schwarz_constant_is_the_conservative_one.
+- *finite small primes*: condition (c) covers every prime including small ones; primes beyond the cutoff use the Schwarz tail.
+- *fractional power versus pole*: SNG-F35 final statement.
+- *no global meromorphic continuation, no complex q*: not_claimed field and chapter 7 text.
+- *larger domains*: refusals at 10x larger radii are recorded as failure of the sufficient condition, not as zeros; no counterexample found or claimed.
+- *P26 dependency*: complete.
 
-**Next concrete action:** Choose one fixed rational interior q and derive a conservative explicit disk around s=1/r with certified finite-factor nonvanishing and uniform tail convergence.
+**Commands:** `PYTHONPATH=src python -m unittest tests.test_arithmetic -v`; `PYTHONPATH=src python scripts/reproduce.py --check`.
+
+**Remaining:** none for P28.
 
 ### P29
 

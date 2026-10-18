@@ -8,7 +8,7 @@ from pathlib import Path
 
 from singularity import __version__
 from singularity.certificates import build_certificate, replay_certificate
-from singularity.arithmetic import certified_tail_record
+from singularity.arithmetic import certified_tail_record, complex_disc_certificate
 from singularity.conductor import CyclotomicRing, remote_coefficient, residue_numerator
 from singularity.euler import euler_exponents, first_difference, recompose_euler
 from singularity.examples import GRAPHS
@@ -194,6 +194,10 @@ def compute():
         'results/conductor_fixtures.json':conductor_fixtures(),
         'results/gauss_fixtures.json':gauss_fixtures(),
         'results/visibility_filtration.json':census_visibility(),
+        'results/complex_discs.json':{'schema':'singularity.complex-discs/1','theorem':'SNG-F35','q':'1/2','records':{
+            'spectral':complex_disc_certificate(7,2,Fraction(3,32),Fraction(1,10**5)),
+            'binary_census':complex_disc_certificate(7,3,Fraction(11025,262144),Fraction(1,10**7)),
+            'regular_cube_mobius':complex_disc_certificate(8,4,Fraction(81,2048),Fraction(1,10**9))}},
         'results/tail_records.json':{'schema':'singularity.tail-records/1','records':{
             'spectral':certified_tail_record(local_coefficients(GRAPHS['spectral_g'],3),local_coefficients(GRAPHS['spectral_h'],3),7,Fraction(1,2),Fraction(1,32),1,2,1024),
             'binary_census':certified_tail_record(local_coefficients(GRAPHS['binary_g'],4),local_coefficients(GRAPHS['binary_h'],4),7,Fraction(1,2),Fraction(1,32),1,3,100),
