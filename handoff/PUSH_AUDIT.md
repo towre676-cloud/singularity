@@ -63,7 +63,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P13](#p13) | Classify the first positive-energy layer | `complete` | P06, P08 | S | 2 |
 | [P14](#p14) | Compute the nested-pair census | `complete` | P05, P08 | M | 1 |
 | [P15](#p15) | Separate lattice information from chamber information | `complete` | P08, P14 | L | 2 |
-| [P16](#p16) | Test Whitney switches systematically | `implemented_pending_acceptance` | P15 | M | 2 |
+| [P16](#p16) | Test Whitney switches systematically | `complete` | P15 | M | 2 |
 | [P17](#p17) | Add exact volume congruence filters | `complete` | P03 | S | 2 |
 | [P18](#p18) | Prove root-of-unity rationality in energy | `complete` | P03, P17 | S | 2 |
 | [P19](#p19) | Analyze finite quadratic Gauss sums | `complete` | P18 | M | 2 |
@@ -77,10 +77,10 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P27](#p27) | Produce controlled real singularity experiments | `complete` | P26 | M | 1 |
 | [P28](#p28) | State the available complex domain exactly | `complete` | P26 | M | 2 |
 | [P29](#p29) | Specify a complete finite graph census | `complete` | P03 | S | 1 |
-| [P30](#p30) | Measure collision classes across invariants | `implemented_pending_acceptance` | P12, P14, P29 | M | 2 |
-| [P31](#p31) | Resolve targeted collisions structurally | `implemented_pending_acceptance` | P16, P30 | L | 2 |
-| [P32](#p32) | Seek a separation bound for one graph family | `implemented_pending_acceptance` | P06, P12, P31 | L | 2 |
-| [P33](#p33) | Verify concrete coefficient certificates in a kernel | `planned` | P07, P08, P23 | L | 3 |
+| [P30](#p30) | Measure collision classes across invariants | `complete` | P12, P14, P29 | M | 2 |
+| [P31](#p31) | Resolve targeted collisions structurally | `complete` | P16, P30 | L | 2 |
+| [P32](#p32) | Seek a separation bound for one graph family | `complete` | P06, P12, P31 | L | 2 |
+| [P33](#p33) | Verify concrete coefficient certificates in a kernel | `implemented_pending_acceptance` | P07, P08, P23 | L | 3 |
 | [P34](#p34) | Formalize the visibility comparison boundary | `blocked` | P26, P33 | L | 3 |
 | [P35](#p35) | Release the first focused manuscript | `partial` | P04, P05, P26, P27, P33 | M | 3 |
 | [P36](#p36) | Choose the second paper from actual results | `blocked` | P19, P22, P31, P32, P35 | L | 3 |
@@ -310,17 +310,15 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P16
 
-**Test Whitney switches systematically.** Status: `implemented_pending_acceptance`. Dependencies: P15. Remaining effort: M; priority: 2.
+**Test Whitney switches systematically.** Status: `complete`. Dependencies: P15. Remaining effort: M; priority: 2.
 
 **Existing work:** A documented switch family (two-terminal edge-disjoint blocks, straight and twisted gluings) with simplicity, connectedness, circuit-by-circuit cycle-matroid checks, canonical-code isomorphism decisions, and first local and marked differences through volume 6 by two enumerators plus the SNG-F41 prediction: 124 pairs, 68 isomorphic, 28 separated at volume 1, and all 28 degree-preserving switches separated at volume 2; none unresolved. Structural results: SNG-F41 (twist difference = antisymmetric pairing), SNG-F42 (exact depth for identical blocks), SNG-F45 (rooted-deck bound), with arbitrarily deep separating twists from path blocks.
 
 **Evidence:** [scripts/whitney_switches.py](../scripts/whitney_switches.py); [results/whitney_switches.json](../results/whitney_switches.json); [src/singularity/terminals.py](../src/singularity/terminals.py); [tests/test_terminals.py](../tests/test_terminals.py); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- Original dependency gate: P15 is not accepted (it waits on P08/P14).
-
-**Next concrete action:** Accept P15 (after P08/P14), then mark P16 complete with the existing receipt.
+**Next concrete action:** none.
 
 ### P17
 
@@ -605,63 +603,54 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P30
 
-**Measure collision classes across invariants.** Status: `implemented_pending_acceptance`. Dependencies: P12, P14, P29. Remaining effort: M; priority: 2.
+**Measure collision classes across invariants.** Status: `complete`. Dependencies: P12, P14, P29. Remaining effort: M; priority: 2.
 
 **Existing work:** collision_census.py (checked in CI) computes on the CENSUS-v1 population, one representative per isomorphism class: degree sequences, Laplacian characteristic polynomials, binary cut profiles, nested-pair censuses, and symbolic local and marked prefixes through volume 3 plus a separate q=1/2 column. It lists every nontrivial class with codes, cross-invariant split counts, signed witnesses for every pair first separated at volume 2 or 3, and a chain-recomputed sample. On six vertices: 112 classes; 68 degree sequences; 110 spectra (two cospectral pairs, both separated at volume 3); height prefix 68/100/112 classes at volumes 1/2/3; binary profile and nested census separate all 112. results/visibility_filtration.json holds memberships at every volume.
 
 **Evidence:** [scripts/collision_census.py](../scripts/collision_census.py); [results/collision_census.json](../results/collision_census.json); [results/visibility_filtration.json](../results/visibility_filtration.json); [results/late_collisions.json](../results/late_collisions.json); [results/census_manifest.json](../results/census_manifest.json); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- Original dependency gate: P14 is not accepted (it waits on P08).
-
-**Next concrete action:** Close P08 and P14, then mark P30 complete with the existing receipts.
+**Next concrete action:** none.
 
 ### P31
 
-**Resolve targeted collisions structurally.** Status: `implemented_pending_acceptance`. Dependencies: P16, P30. Remaining effort: L; priority: 2.
+**Resolve targeted collisions structurally.** Status: `complete`. Dependencies: P16, P30. Remaining effort: L; priority: 2.
 
 **Existing work:** Every census collision that survives volume two (14 pairs, all on six vertices) is resolved with an explicit separating pattern: the ordered adjacent-degree sector agrees, the induced-triple sector differs, and the triangle counts differ in every pair; none is a single Whitney twist. For collisions that persist further, the mechanisms are proved: Whitney twists separate exactly through the antisymmetric kernel pairing (SNG-F41/F42/F45), and the pendant-cycle family has depth p+1 (SNG-F36).
 
 **Evidence:** [results/late_collisions.json](../results/late_collisions.json); [results/visibility_filtration.json](../results/visibility_filtration.json); [scripts/reproduce.py](../scripts/reproduce.py); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md); [src/singularity/terminals.py](../src/singularity/terminals.py); [src/singularity/lowvolume.py](../src/singularity/lowvolume.py).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- Original dependency gates: P16 and P30 are not accepted.
-- The census classification is finite (n <= 6); no collision with equal full series has been found, so no equality bijection is claimed.
-
-**Next concrete action:** Once P30 retains spectral partitions and P16 is accepted, mark P31 complete with results/late_collisions.json and SNG-F41/F42/F45/F36 as the mechanisms.
+**Next concrete action:** none.
 
 ### P32
 
-**Seek a separation bound for one graph family.** Status: `implemented_pending_acceptance`. Dependencies: P06, P12, P31. Remaining effort: L; priority: 2.
+**Seek a separation bound for one graph family.** Status: `complete`. Dependencies: P06, P12, P31. Remaining effort: L; priority: 2.
 
 **Existing work:** Theorem SNG-F36 (proved, uniform in the family): for the cycle C_2l with leaves at distance p versus opposite (2 <= p < l), all local, normalized and marked coefficients agree through volume p and the volume-(p+1) difference is q^2(1-q)^2(1-q^2)^p, entirely binary; the complete binary difference has the closed form q^2(1-q)^2(1-q^2)^p z^(p+1)(1-z)^2 U_(l-p)^2. With l=p+1 the depth is (n-2)/2, a decisive counterfamily to any fixed-depth bound for equal-order pairs with equal degree sequences, equal edge degree types and isometric cut lattices. Theorem SNG-F37 proves L_{G(l,j)} >= L_{G(l,j')} for j<=j'<=l on (0,1)^2 by a positive-definite Gaussian transfer kernel (sum of squares).
 
 **Evidence:** [src/singularity/families.py](../src/singularity/families.py); [tests/test_families.py](../tests/test_families.py); [scripts/pendant_family.py](../scripts/pendant_family.py); [results/pendant_family.json](../results/pendant_family.json); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md).
 
-**Acceptance still missing:**
+**Acceptance still missing:** none; see the acceptance record in `push_status.json` (2026-10-18).
 
-- Original dependency gate: P31 (structural resolution of targeted collisions) is not accepted, so P32 cannot be marked complete without an explicit roadmap amendment.
-- The theorem is a counterfamily for fixed-depth bounds; no upper separation bound for a natural graph class is claimed.
-
-**Next concrete action:** Either accept P31 or record a roadmap amendment that P32's counterfamily outcome does not depend on P31; then close P32 with the existing receipt.
+**Next concrete action:** none.
 
 ### P33
 
-**Verify concrete coefficient certificates in a kernel.** Status: `planned`. Dependencies: P07, P08, P23. Remaining effort: L; priority: 3.
+**Verify concrete coefficient certificates in a kernel.** Status: `implemented_pending_acceptance`. Dependencies: P07, P08, P23. Remaining effort: L; priority: 3.
 
-**Existing work:** Python replay reconstructs declared coefficients and rejects altered sectors. This is independent finite computational checking, not a kernel-connected enumeration proof.
+**Existing work:** Kernel-checked (core Lean 4.12.0): mem_comps/comps_nodup (weak-composition enumerator, coverage and uniqueness), allCount_eq_compCount and allCount_eq_look_hist (link to P07's semantic allCount), table_of_ok (kernel-evaluated tables imply every coefficient), allCount_eq_nestedCount (via P08 energy_nested). For both decisive certificates (spectral, binary): full local tables of both graphs through volume 4, minimum-zero tables via P07, equality below the first discrepancy, the first-difference polynomial and its factorization (expandFac), and rejection theorems for one changed edge, one changed coefficient, and changed difference/factorization. Trusted boundary: transcription by formal/tools/gen_certificates.py (--check, input SHA-256 recorded). 63 audited theorems use only propext, Quot.sound, Classical.choice.
 
-**Evidence:** [src/singularity/certificates.py](../src/singularity/certificates.py); [results/certificates/spectral.json](../results/certificates/spectral.json); [results/certificates/binary_census.json](../results/certificates/binary_census.json); [docs/chapters/12_computational_methodology.md](../docs/chapters/12_computational_methodology.md); [tests/test_analytics.py](../tests/test_analytics.py).
+**Evidence:** [src/singularity/certificates.py](../src/singularity/certificates.py); [results/certificates/spectral.json](../results/certificates/spectral.json); [results/certificates/binary_census.json](../results/certificates/binary_census.json); [docs/chapters/12_computational_methodology.md](../docs/chapters/12_computational_methodology.md); [tests/test_analytics.py](../tests/test_analytics.py); [formal/Singularity/Certificates.lean](../formal/Singularity/Certificates.lean); [formal/Singularity/CertificateData.lean](../formal/Singularity/CertificateData.lean); [formal/tools/gen_certificates.py](../formal/tools/gen_certificates.py); [formal/README.md](../formal/README.md); [scripts/check_formal.py](../scripts/check_formal.py).
 
 **Acceptance still missing:**
 
-- P07/P08 formal foundations now compile locally (pending CI observation); P23 is complete.
-- No kernel theorem connects certificate tables to the coefficient definition yet; a kernel enumeration route on the P07 definitions is in progress.
-- Kernel tests rejecting a changed graph edge and coefficient remain absent.
+- The clean-environment CI build including Certificates.lean has not yet been observed (local clean build passes, about 100 s).
+- Span-marked rows and Euler exponents of the certificates are not kernel-checked; the packet's acceptance concerns the decisive coefficient tables and first-discrepancy factorizations, which are.
 
-**Next concrete action:** Build formal/Singularity/Certificates.lean: weak-composition enumerator with coverage/uniqueness bridged to allCount, then kernel-check both decisive certificate tables and rejection examples.
+**Next concrete action:** Observe the formal-lean CI job on this commit; on success mark complete.
 
 ### P34
 

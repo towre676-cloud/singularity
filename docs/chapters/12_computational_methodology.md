@@ -56,6 +56,13 @@ Replay first runs a structural parser. It rejects unknown or missing fields, non
 
 There are several different assurance levels. Direct Python enumeration is an exact finite computation relative to the interpreter and implementation. Independent enumerators reduce common implementation risk. A proof-assistant theorem about the enumeration algorithm is stronger, but does not automatically verify a particular exported table. A kernel-checked replay of the concrete table crosses that remaining boundary. Documentation should state which level each claim has reached. A schema and a future formalization plan are not present proof-assistant verification.
 
+For the two decisive pair certificates, that last level has now been reached for the unmarked tables. `formal/` is a core Lean 4.12.0 package with no Mathlib. In it, `Singularity/Normalization.lean` and `Singularity/Thresholds.lean` (P07, P08) define profiles, volume and squared-difference energy, and prove the translation normalization and the nested threshold identity. `Singularity/Certificates.lean` (P33) proves that a weak-composition enumerator is exactly the duplicate-free list of profiles of each volume, links its counts to the semantic coefficient definition, and then has the kernel evaluate the transcribed tables. For the spectral pair and the binary-census pair, the kernel checks:
+- every local and minimum-zero coefficient of both graphs through volume four;
+- equality of the two graphs at every lower volume;
+- the first-difference polynomial and the expansion of its stated factorization.
+
+Theorems also show that changing one edge, or one decisive coefficient, is rejected. The trusted boundary is the transcription: `formal/tools/gen_certificates.py` copies the JSON numbers into Lean literals, records the input SHA-256 digests, and has a `--check` mode. The span-marked rows and Euler exponents are not covered. `scripts/check_formal.py` builds the package and fails on any axiom outside `propext`, `Quot.sound` and `Classical.choice`; CI runs it on a clean download of the pinned release.
+
 ## 12.7 Analytic experiments and graph boundaries
 
 For a first discrepancy at volume \(r\), a numerical prime product should evaluate the normalized ratio after extracting \(\zeta(rs)^\delta\), not multiply divergent raw products and interpret numerical overflow as evidence. The remainder product converges on the positive real region \(s>1/(r+1)\) under the stated local cancellation argument. A plot near \(1/r\) should therefore compare the normalized remainder with a certified tail bound. Finite prime cutoffs need their own error estimates. Exact local coefficients establish the exponent; a fitted slope does not establish it independently.
