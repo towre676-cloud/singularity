@@ -15,9 +15,9 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 | Status | Meaning | Push count |
 |---|---|---:|
 | `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 1 |
-| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 3 |
-| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 3 |
-| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 6 |
+| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 2 |
+| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 5 |
+| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 5 |
 | `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 23 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
@@ -62,8 +62,8 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P12](#p12) | Extend messages to bounded separators | `complete` | P10, P11 | L | 1 |
 | [P13](#p13) | Classify the first positive-energy layer | `implemented_pending_acceptance` | P06, P08 | S | 2 |
 | [P14](#p14) | Compute the nested-pair census | `implemented_pending_acceptance` | P05, P08 | M | 1 |
-| [P15](#p15) | Separate lattice information from chamber information | `partial` | P08, P14 | L | 2 |
-| [P16](#p16) | Test Whitney switches systematically | `blocked` | P15 | M | 2 |
+| [P15](#p15) | Separate lattice information from chamber information | `implemented_pending_acceptance` | P08, P14 | L | 2 |
+| [P16](#p16) | Test Whitney switches systematically | `implemented_pending_acceptance` | P15 | M | 2 |
 | [P17](#p17) | Add exact volume congruence filters | `complete` | P03 | S | 2 |
 | [P18](#p18) | Prove root-of-unity rationality in energy | `complete` | P03, P17 | S | 2 |
 | [P19](#p19) | Analyze finite quadratic Gauss sums | `complete` | P18 | M | 2 |
@@ -310,35 +310,31 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P15
 
-**Separate lattice information from chamber information.** Status: `partial`. Dependencies: P08, P14. Remaining effort: L; priority: 2.
+**Separate lattice information from chamber information.** Status: `implemented_pending_acceptance`. Dependencies: P08, P14. Remaining effort: L; priority: 2.
 
-**Existing work:** The integer cut-lattice realization, quotient by constants, volume/span gauges and the distinction between energy isometry and chamber preservation are described. No new structural preservation theorem is claimed.
+**Existing work:** Theorem SNG-F46: (i) a bijection of height quotients preserving energy, normalized volume and span induces equal marked series; (ii) energy preservation alone fails even for an affine unimodular isometry induced by a cycle-matroid-preserving edge bijection. The Whitney twist map (identity on one block, a_v -> a_s + a_t - a_v on the other) preserves energy, commutes with shifts and is involutive, but sends the unit vector at an interior vertex (normalized volume 1) to a profile of normalized volume n-1. For path blocks it relates G(2m,2k) and G(2m,2m), whose marked series differ at volume 2k+1 (SNG-F36).
 
-**Evidence:** [docs/chapters/02_graphs_lattices.md](../docs/chapters/02_graphs_lattices.md); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md); [docs/chapters/11_archival_bridges.md](../docs/chapters/11_archival_bridges.md); [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md).
+**Evidence:** [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [src/singularity/terminals.py](../src/singularity/terminals.py); [tests/test_lattice_marks.py](../tests/test_lattice_marks.py); [docs/chapters/02_graphs_lattices.md](../docs/chapters/02_graphs_lattices.md).
 
 **Acceptance still missing:**
 
-- State and prove explicit sufficient conditions on a lattice map preserving the marked series.
-- Provide a nontrivial map and worked graph instance or a counterexample to a proposed condition.
-- Close P08/P14 and connect the conditions to their concrete marks.
+- Original dependency gate: P08 (formal) and P14 (pending on P08) are not accepted.
 
-**Next concrete action:** Start with an explicit integral height-quotient map; prove what volume and span preservation would require and test a small nontrivial candidate before generalizing.
+**Next concrete action:** Close P08 and P14, then mark P15 complete with SNG-F46 and tests/test_lattice_marks.py.
 
 ### P16
 
-**Test Whitney switches systematically.** Status: `blocked`. Dependencies: P15. Remaining effort: M; priority: 2.
+**Test Whitney switches systematically.** Status: `implemented_pending_acceptance`. Dependencies: P15. Remaining effort: M; priority: 2.
 
-**Existing work:** Whitney switches are identified as a controlled matroid-preserving test family; the text explicitly disallows universal conclusions from failed finite separation.
+**Existing work:** A documented switch family (two-terminal edge-disjoint blocks, straight and twisted gluings) with simplicity, connectedness, circuit-by-circuit cycle-matroid checks, canonical-code isomorphism decisions, and first local and marked differences through volume 6 by two enumerators plus the SNG-F41 prediction: 124 pairs, 68 isomorphic, 28 separated at volume 1, and all 28 degree-preserving switches separated at volume 2; none unresolved. Structural results: SNG-F41 (twist difference = antisymmetric pairing), SNG-F42 (exact depth for identical blocks), SNG-F45 (rooted-deck bound), with arbitrarily deep separating twists from path blocks.
 
-**Evidence:** [docs/chapters/13_research_program.md](../docs/chapters/13_research_program.md); [docs/chapters/14_literature_and_claims.md](../docs/chapters/14_literature_and_claims.md).
+**Evidence:** [scripts/whitney_switches.py](../scripts/whitney_switches.py); [results/whitney_switches.json](../results/whitney_switches.json); [src/singularity/terminals.py](../src/singularity/terminals.py); [tests/test_terminals.py](../tests/test_terminals.py); [docs/chapters/10_inverse_problems.md](../docs/chapters/10_inverse_problems.md).
 
 **Acceptance still missing:**
 
-- No admissible two-terminal gluing generator, independent matroid-hypothesis checker or exact switch comparison table exists.
-- No separating pair or justified transformation conjecture is retained.
-- P15 must fix the preservation question being tested.
+- Original dependency gate: P15 is not accepted (it waits on P08/P14).
 
-**Next concrete action:** Define a small exhaustive switch family with terminal conventions, verify each switch's hypotheses, and retain symbolic comparison bounds and any witness rather than only summary counts.
+**Next concrete action:** Accept P15 (after P08/P14), then mark P16 complete with the existing receipt.
 
 ### P17
 

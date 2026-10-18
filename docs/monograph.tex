@@ -4988,6 +4988,27 @@ size. Whether this equality holds in general is open; it is a finite
 observation, not a theorem. The path blocks \(B_{m,k}\) attain it with
 first asymmetric size \(k\).
 
+A systematic census of switches is retained in
+\texttt{results/whitney\_switches.json}, produced by
+\texttt{scripts/whitney\_switches.py} and checked in CI. Family A glues
+every connected block on three or four vertices to every such block
+without the terminal edge. Family B uses a first block on at most five
+vertices with terminals of equal degree, so that the twist preserves the
+degree sequence. For each of the 124 pairs kept after removing
+isomorphic duplicates, the receipt records simplicity, connectedness and
+cycle-matroid preservation, checked by comparing all circuits under the
+edge correspondence. It also records isomorphism by canonical code and
+the first local and marked differences through volume six, by weak
+compositions and level chains, together with the SNG-F41 prediction. In
+family A, 68 switches give isomorphic graphs and 28 separate at volume
+one, where the degree sequence changes. All 28 degree-preserving
+switches of family B separate at volume two: by SNG-F15 the difference
+is \((q^{-2}-1)(J_G-J_{G'})\), and the twist changes the edge degree-sum
+polynomial \(J\). No pair is unresolved at the bound. Deeper twists
+require blocks whose terminals agree in rooted decks to larger size
+(SNG-F45), and the path blocks show that the depth can be made
+arbitrarily large.
+
 A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two
@@ -6059,6 +6080,51 @@ complete search can either produce a separating pair, thereby disproving
 a proposed factorization through the matroid, or identify a
 transformation law worth proving. Failure to find a small separating
 pair is not proof of matroid invariance.
+
+\textbf{Theorem SNG-F46 (marks versus the cut lattice).} Let \(G,G'\) be
+connected graphs on \(n\) vertices and
+\(\Lambda_G=\mathbb Z^n/\mathbb Z\mathbf1\) with energy \(E_G\). For
+\([a]\in\Lambda_G\) let \(\nu([a])\) and \(\sigma([a])\) be the volume
+and span of the minimum-zero representative. (i) If a bijection
+\(\Phi:\Lambda_G\to\Lambda_{G'}\) satisfies \(E_{G'}\circ\Phi=E_G\),
+\(\nu\circ\Phi=\nu\) and \(\sigma\circ\Phi=\sigma\), then
+\(\mathcal B_G=\mathcal B_{G'}\). (ii) Energy preservation alone does
+not suffice, even for an affine unimodular isometry induced by an edge
+bijection that preserves the cycle matroid. Let \(G=B_1\cup B_2\) and
+\(G'=B_1\cup_{\mathrm{tw}}B_2\) be the straight and twisted gluings of
+blocks with terminals \(s,t\). The map \(\varphi\), equal to the
+identity on \(B_1\) and to \(a_v\mapsto a_s+a_t-a_v\) on the interior of
+\(B_2\), is an involutive affine bijection of \(\mathbb Z^n\) commuting
+with constant shifts and satisfying \(E_{G'}(\varphi(a))=E_G(a)\). For
+the path blocks of SNG-F42, \(G,G'\) are \(G_{2m,2k}\) and
+\(G_{2m,2m}\), whose marked series differ at volume \(2k+1\) by SNG-F36.
+
+\emph{Proof.} (i) The minimum-zero representatives are in bijection with
+\(\Lambda_G\), and each marked coefficient counts the classes with
+prescribed \((\nu,E,\sigma)\). The coefficients are finite by SNG-F01,
+and \(\Phi\) carries each such finite set bijectively onto the
+corresponding set for \(G'\). (ii) Edges of \(B_1\) keep both endpoint
+heights. On an edge \(uv\) of \(B_2\) the difference \(a_u-a_v\) becomes
+\(-(a_u-a_v)\), including at the terminals, which the twist exchanges.
+So every squared difference is preserved. Adding \(c\mathbf1\) changes
+\(a_s+a_t-a_v\) by \(c\), so \(\varphi\) descends to the quotient, and
+applying it twice is the identity. The edge correspondence carries
+cycles to cycles: a cycle meeting both blocks passes through both
+terminals, and the twist reverses only its \(B_2\) segment. Hence the
+cycle matroid, and with it the cut lattice and its energy theta series,
+is preserved. The marks are not. For an interior vertex \(v\) of
+\(B_2\), the unit vector \(e_v\) has normalized volume \(1\), while
+\(\varphi(e_v)\) equals \(-1\) at \(v\) and \(0\) elsewhere, whose
+minimum-zero representative \(\mathbf1-e_v\) has volume \(n-1\).
+\(\square\)
+
+So the extra information in \(\mathcal B_G\) beyond the cut lattice is
+exactly the dependence of \(\nu\) and \(\sigma\) on the vertex
+realization. A matroid-preserving switch moves it, and the twist pairing
+of SNG-F41 measures by how much. \texttt{twist\_lattice\_map} in
+\texttt{src/singularity/terminals.py} implements \(\varphi\), and
+\texttt{tests/test\_lattice\_marks.py} checks energy preservation, shift
+equivariance, involution and the volume change exactly.
 
 This path is especially useful because it can explain a collision rather
 than merely record one. If an equality comes from an integral lattice

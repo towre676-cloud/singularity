@@ -480,7 +480,7 @@
     {
       "id": "P15",
       "title": "Separate lattice information from chamber information",
-      "status": "partial",
+      "status": "implemented_pending_acceptance",
       "effort": "L",
       "priority": 2,
       "dependencies": [
@@ -488,39 +488,38 @@
         "P14"
       ],
       "evidence": [
-        "docs/chapters/02_graphs_lattices.md",
-        "docs/chapters/10_inverse_problems.md",
-        "docs/chapters/11_archival_bridges.md",
-        "docs/chapters/13_research_program.md"
+        "docs/chapters/13_research_program.md",
+        "src/singularity/terminals.py",
+        "tests/test_lattice_marks.py",
+        "docs/chapters/02_graphs_lattices.md"
       ],
-      "existing_work": "The integer cut-lattice realization, quotient by constants, volume/span gauges and the distinction between energy isometry and chamber preservation are described. No new structural preservation theorem is claimed.",
-      "next_action": "Start with an explicit integral height-quotient map; prove what volume and span preservation would require and test a small nontrivial candidate before generalizing.",
+      "existing_work": "Theorem SNG-F46: (i) a bijection of height quotients preserving energy, normalized volume and span induces equal marked series; (ii) energy preservation alone fails even for an affine unimodular isometry induced by a cycle-matroid-preserving edge bijection. The Whitney twist map (identity on one block, a_v -> a_s + a_t - a_v on the other) preserves energy, commutes with shifts and is involutive, but sends the unit vector at an interior vertex (normalized volume 1) to a profile of normalized volume n-1. For path blocks it relates G(2m,2k) and G(2m,2m), whose marked series differ at volume 2k+1 (SNG-F36).",
+      "next_action": "Close P08 and P14, then mark P15 complete with SNG-F46 and tests/test_lattice_marks.py.",
       "acceptance_gaps": [
-        "State and prove explicit sufficient conditions on a lattice map preserving the marked series.",
-        "Provide a nontrivial map and worked graph instance or a counterexample to a proposed condition.",
-        "Close P08/P14 and connect the conditions to their concrete marks."
+        "Original dependency gate: P08 (formal) and P14 (pending on P08) are not accepted."
       ],
       "packet": "handoff/tasks/P15.md"
     },
     {
       "id": "P16",
       "title": "Test Whitney switches systematically",
-      "status": "blocked",
+      "status": "implemented_pending_acceptance",
       "effort": "M",
       "priority": 2,
       "dependencies": [
         "P15"
       ],
       "evidence": [
-        "docs/chapters/13_research_program.md",
-        "docs/chapters/14_literature_and_claims.md"
+        "scripts/whitney_switches.py",
+        "results/whitney_switches.json",
+        "src/singularity/terminals.py",
+        "tests/test_terminals.py",
+        "docs/chapters/10_inverse_problems.md"
       ],
-      "existing_work": "Whitney switches are identified as a controlled matroid-preserving test family; the text explicitly disallows universal conclusions from failed finite separation.",
-      "next_action": "Define a small exhaustive switch family with terminal conventions, verify each switch's hypotheses, and retain symbolic comparison bounds and any witness rather than only summary counts.",
+      "existing_work": "A documented switch family (two-terminal edge-disjoint blocks, straight and twisted gluings) with simplicity, connectedness, circuit-by-circuit cycle-matroid checks, canonical-code isomorphism decisions, and first local and marked differences through volume 6 by two enumerators plus the SNG-F41 prediction: 124 pairs, 68 isomorphic, 28 separated at volume 1, and all 28 degree-preserving switches separated at volume 2; none unresolved. Structural results: SNG-F41 (twist difference = antisymmetric pairing), SNG-F42 (exact depth for identical blocks), SNG-F45 (rooted-deck bound), with arbitrarily deep separating twists from path blocks.",
+      "next_action": "Accept P15 (after P08/P14), then mark P16 complete with the existing receipt.",
       "acceptance_gaps": [
-        "No admissible two-terminal gluing generator, independent matroid-hypothesis checker or exact switch comparison table exists.",
-        "No separating pair or justified transformation conjecture is retained.",
-        "P15 must fix the preservation question being tested."
+        "Original dependency gate: P15 is not accepted (it waits on P08/P14)."
       ],
       "packet": "handoff/tasks/P16.md"
     },

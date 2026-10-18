@@ -7624,6 +7624,28 @@ observation, not a theorem. The path blocks
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>m</mi><mo>,</mo><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">B_{m,k}</annotation></semantics></math>
 attain it with first asymmetric size
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</p>
+<p>A systematic census of switches is retained in
+<code>results/whitney_switches.json</code>, produced by
+<code>scripts/whitney_switches.py</code> and checked in CI. Family A
+glues every connected block on three or four vertices to every such
+block without the terminal edge. Family B uses a first block on at most
+five vertices with terminals of equal degree, so that the twist
+preserves the degree sequence. For each of the 124 pairs kept after
+removing isomorphic duplicates, the receipt records simplicity,
+connectedness and cycle-matroid preservation, checked by comparing all
+circuits under the edge correspondence. It also records isomorphism by
+canonical code and the first local and marked differences through volume
+six, by weak compositions and level chains, together with the SNG-F41
+prediction. In family A, 68 switches give isomorphic graphs and 28
+separate at volume one, where the degree sequence changes. All 28
+degree-preserving switches of family B separate at volume two: by
+SNG-F15 the difference is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>J</mi><mi>G</mi></msub><mo>−</mo><msub><mi>J</mi><mrow><mi>G</mi><mi>′</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(q^{-2}-1)(J_G-J_{G&#39;})</annotation></semantics></math>,
+and the twist changes the edge degree-sum polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>.
+No pair is unresolved at the bound. Deeper twists require blocks whose
+terminals agree in rooted decks to larger size (SNG-F45), and the path
+blocks show that the depth can be made arbitrarily large.</p>
 <p>A twist changes the graph but preserves its cycle matroid, so the cut
 lattice and its energy theta series are unchanged. A block whose kernel
 is symmetric without an exchanging automorphism would therefore give two
@@ -9064,6 +9086,127 @@ search can either produce a separating pair, thereby disproving a
 proposed factorization through the matroid, or identify a transformation
 law worth proving. Failure to find a small separating pair is not proof
 of matroid invariance.</p>
+<p><strong>Theorem SNG-F46 (marks versus the cut lattice).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>,</mo><mi>G</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">G,G&#39;</annotation></semantics></math>
+be connected graphs on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+vertices and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Λ</mi><mi>G</mi></msub><mo>=</mo><msup><mi>ℤ</mi><mi>n</mi></msup><mi>/</mi><mi>ℤ</mi><mn>𝟏</mn></mrow><annotation encoding="application/x-tex">\Lambda_G=\mathbb Z^n/\mathbb Z\mathbf1</annotation></semantics></math>
+with energy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>G</mi></msub><annotation encoding="application/x-tex">E_G</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>∈</mo><msub><mi>Λ</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">[a]\in\Lambda_G</annotation></semantics></math>
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\nu([a])</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sigma([a])</annotation></semantics></math>
+be the volume and span of the minimum-zero representative. (i) If a
+bijection
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Φ</mi><mo>:</mo><msub><mi>Λ</mi><mi>G</mi></msub><mo>→</mo><msub><mi>Λ</mi><mrow><mi>G</mi><mi>′</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Phi:\Lambda_G\to\Lambda_{G&#39;}</annotation></semantics></math>
+satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mrow><mi>G</mi><mi>′</mi></mrow></msub><mo>∘</mo><mi>Φ</mi><mo>=</mo><msub><mi>E</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">E_{G&#39;}\circ\Phi=E_G</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∘</mo><mi>Φ</mi><mo>=</mo><mi>ν</mi></mrow><annotation encoding="application/x-tex">\nu\circ\Phi=\nu</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>∘</mo><mi>Φ</mi><mo>=</mo><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma\circ\Phi=\sigma</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℬ</mi><mi>G</mi></msub><mo>=</mo><msub><mi>ℬ</mi><mrow><mi>G</mi><mi>′</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mathcal B_G=\mathcal B_{G&#39;}</annotation></semantics></math>.
+(ii) Energy preservation alone does not suffice, even for an affine
+unimodular isometry induced by an edge bijection that preserves the
+cycle matroid. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G=B_1\cup B_2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>′</mi><mo>=</mo><msub><mi>B</mi><mn>1</mn></msub><msub><mo>∪</mo><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">w</mi></mrow></msub><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">G&#39;=B_1\cup_{\mathrm{tw}}B_2</annotation></semantics></math>
+be the straight and twisted gluings of blocks with terminals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s,t</annotation></semantics></math>.
+The map
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>φ</mi><annotation encoding="application/x-tex">\varphi</annotation></semantics></math>,
+equal to the identity on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>1</mn></msub><annotation encoding="application/x-tex">B_1</annotation></semantics></math>
+and to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>v</mi></msub><mo>↦</mo><msub><mi>a</mi><mi>s</mi></msub><mo>+</mo><msub><mi>a</mi><mi>t</mi></msub><mo>−</mo><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">a_v\mapsto a_s+a_t-a_v</annotation></semantics></math>
+on the interior of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>2</mn></msub><annotation encoding="application/x-tex">B_2</annotation></semantics></math>,
+is an involutive affine bijection of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℤ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb Z^n</annotation></semantics></math>
+commuting with constant shifts and satisfying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mrow><mi>G</mi><mi>′</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>φ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E_{G&#39;}(\varphi(a))=E_G(a)</annotation></semantics></math>.
+For the path blocks of SNG-F42,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>,</mo><mi>G</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">G,G&#39;</annotation></semantics></math>
+are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mn>2</mn><mi>m</mi><mo>,</mo><mn>2</mn><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">G_{2m,2k}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mrow><mn>2</mn><mi>m</mi><mo>,</mo><mn>2</mn><mi>m</mi></mrow></msub><annotation encoding="application/x-tex">G_{2m,2m}</annotation></semantics></math>,
+whose marked series differ at volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2k+1</annotation></semantics></math>
+by SNG-F36.</p>
+<p><em>Proof.</em> (i) The minimum-zero representatives are in bijection
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Λ</mi><mi>G</mi></msub><annotation encoding="application/x-tex">\Lambda_G</annotation></semantics></math>,
+and each marked coefficient counts the classes with prescribed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>ν</mi><mo>,</mo><mi>E</mi><mo>,</mo><mi>σ</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\nu,E,\sigma)</annotation></semantics></math>.
+The coefficients are finite by SNG-F01, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Φ</mi><annotation encoding="application/x-tex">\Phi</annotation></semantics></math>
+carries each such finite set bijectively onto the corresponding set for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">G&#39;</annotation></semantics></math>.
+(ii) Edges of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>1</mn></msub><annotation encoding="application/x-tex">B_1</annotation></semantics></math>
+keep both endpoint heights. On an edge
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">uv</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>2</mn></msub><annotation encoding="application/x-tex">B_2</annotation></semantics></math>
+the difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>u</mi></msub><mo>−</mo><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">a_u-a_v</annotation></semantics></math>
+becomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>u</mi></msub><mo>−</mo><msub><mi>a</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">-(a_u-a_v)</annotation></semantics></math>,
+including at the terminals, which the twist exchanges. So every squared
+difference is preserved. Adding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mn>𝟏</mn></mrow><annotation encoding="application/x-tex">c\mathbf1</annotation></semantics></math>
+changes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>+</mo><msub><mi>a</mi><mi>t</mi></msub><mo>−</mo><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">a_s+a_t-a_v</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>φ</mi><annotation encoding="application/x-tex">\varphi</annotation></semantics></math>
+descends to the quotient, and applying it twice is the identity. The
+edge correspondence carries cycles to cycles: a cycle meeting both
+blocks passes through both terminals, and the twist reverses only its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>2</mn></msub><annotation encoding="application/x-tex">B_2</annotation></semantics></math>
+segment. Hence the cycle matroid, and with it the cut lattice and its
+energy theta series, is preserved. The marks are not. For an interior
+vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mn>2</mn></msub><annotation encoding="application/x-tex">B_2</annotation></semantics></math>,
+the unit vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>v</mi></msub><annotation encoding="application/x-tex">e_v</annotation></semantics></math>
+has normalized volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+while
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\varphi(e_v)</annotation></semantics></math>
+equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+elsewhere, whose minimum-zero representative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>𝟏</mn><mo>−</mo><msub><mi>e</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf1-e_v</annotation></semantics></math>
+has volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>So the extra information in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ℬ</mi><mi>G</mi></msub><annotation encoding="application/x-tex">\mathcal B_G</annotation></semantics></math>
+beyond the cut lattice is exactly the dependence of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ν</mi><annotation encoding="application/x-tex">\nu</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+on the vertex realization. A matroid-preserving switch moves it, and the
+twist pairing of SNG-F41 measures by how much.
+<code>twist_lattice_map</code> in
+<code>src/singularity/terminals.py</code> implements
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>φ</mi><annotation encoding="application/x-tex">\varphi</annotation></semantics></math>,
+and <code>tests/test_lattice_marks.py</code> checks energy preservation,
+shift equivariance, involution and the volume change exactly.</p>
 <p>This path is especially useful because it can explain a collision
 rather than merely record one. If an equality comes from an integral
 lattice isometry that also preserves the chosen height chamber and

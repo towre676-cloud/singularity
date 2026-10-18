@@ -340,7 +340,7 @@
     },
     {
       "id": "SNG-F45",
-      "declaration": "Proposition SNG-F45 (rooted decks bound the asymmetry order). For a block \\(G\\) with terminals \\((s,t)\\) and \\(S\\subseteq I\\), regard \\(G[S\\cup\\{s,t\\}]\\) as decorated by ambient degrees and by the roles of the two terminals. If for every \\(j\\le m\\) the multiset of these types over \\(|S|=j\\) is unchanged when the roles of \\(s\\) and \\(t\\) are exchanged, then \\(K_G(\\beta,\\gamma)\\) and \\(K_G(\\gamma,\\beta)\\) agree in every cell of interior volume at most \\(m\\). Consequently twisting two copies of \\(G\\) is invisible below volume \\(2m+3\\).",
+      "declaration": "Proposition SNG-F45 (rooted decks bound the asymmetry order). For a block \\(G\\) with terminals \\((s,t)\\) and \\(S\\subseteq I\\), regard \\(G[S\\cup\\{s,t\\}]\\) as decorated by ambient degrees and by the roles of the two terminals. If for every \\(j\\le m\\) the multiset of these types over \\(|S|=j\\) is unchanged when the roles of \\(s\\) and \\(t\\) are exchanged, then \\(K_G(\\beta,\\gamma)\\) and \\(K_G(\\gamma,\\beta)\\) agree in every cell of interior volume at most \\(m\\). Consequently twisting two copies of \\(G\\) is invisible below volume \\(2m+3\\), and more generally twisting blocks with rooted-deck symmetry through sizes \\(m_1\\) and \\(m_2\\) is invisible below volume \\(m_1+m_2+3\\).",
       "file": "docs/chapters/10_inverse_problems.md",
       "line": 304
     },
@@ -387,40 +387,46 @@
       "line": 60
     },
     {
+      "id": "SNG-F46",
+      "declaration": "Theorem SNG-F46 (marks versus the cut lattice). Let \\(G,G'\\) be connected graphs on \\(n\\) vertices and \\(\\Lambda_G=\\mathbb Z^n/\\mathbb Z\\mathbf1\\) with energy \\(E_G\\). For \\([a]\\in\\Lambda_G\\) let \\(\\nu([a])\\) and \\(\\sigma([a])\\) be the volume and span of the minimum-zero representative.",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 78
+    },
+    {
       "id": "SNG-F28",
       "declaration": "Proposition SNG-F28 (energy roots of unity give rational series). Let \\(m\\ge1\\) and let \\(\\omega\\) be a primitive \\(m\\)-th root of unity. Then \\(L_G(x,\\omega)=N_{G,m}(x)/(1-x^m)^n\\), where",
       "file": "docs/chapters/13_research_program.md",
-      "line": 88
+      "line": 96
     },
     {
       "id": "SNG-F27",
       "declaration": "Proposition SNG-F27 (volume congruence filter). Let \\(m\\ge1\\), let \\(\\omega\\) be a primitive \\(m\\)-th root of unity, let \\(a\\in\\mathbb Z\\), and let \\(F=\\sum_{v\\ge0}F_v(q)x^v\\) be a formal series, or a truncation through any degree, with \\(F_v\\in\\mathbb Q[q]\\). Then",
       "file": "docs/chapters/13_research_program.md",
-      "line": 113
+      "line": 121
     },
     {
       "id": "SNG-F29",
       "declaration": "Proposition SNG-F29 (disjoint order chambers). Index positions from \\(0\\). For a permutation \\(\\pi=(\\pi_0,\\ldots,\\pi_{n-1})\\) let \\(C_\\pi\\) be the set of gap vectors \\(d\\in\\mathbb Z_{\\ge0}^n\\) with \\(d_j\\ge1\\) whenever \\(j\\ge1\\) and \\(\\pi_{j-1}>\\pi_j\\). The map \\((\\pi,d)\\mapsto a\\), \\(a_{\\pi_k}=d_0+\\cdots+d_k\\), is a bijection from \\(\\bigsqcup_\\pi C_\\pi\\) onto \\(\\mathbb Z_{\\ge0}^n\\). Writing \\(T_j=\\{\\pi_j,\\ldots,\\pi_{n-1}\\}\\),",
       "file": "docs/chapters/13_research_program.md",
-      "line": 126
+      "line": 134
     },
     {
       "id": "SNG-F32",
       "declaration": "Proposition SNG-F32 (poset-constrained heights and order polytopes). Let \\(P\\) be a finite poset on \\(V\\), \\(|V|=n\\), and \\(\\mathcal O(P)=\\{x\\in[0,1]^n:x_i\\le x_j\\text{ whenever }i<_Pj\\}\\), with the inequalities oriented as in the height constraint. For every integer \\(H\\ge0\\):",
       "file": "docs/chapters/13_research_program.md",
-      "line": 140
+      "line": 148
     },
     {
       "id": "SNG-F34",
       "declaration": "Theorem SNG-F34 (energy weights obstruct P-partition reciprocity). Let \\(P\\) be the two-element chain \\(0<1\\) and \\(G=K_2\\) on the same vertices, and put \\(W(x,q)=\\sum_{0\\le a_0\\le a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\\) and \\(S(x,q)=\\sum_{1\\le a_0<a_1}x^{a_0+a_1}q^{(a_1-a_0)^2}\\). Then",
       "file": "docs/chapters/13_research_program.md",
-      "line": 158
+      "line": 166
     },
     {
       "id": "SNG-F31",
       "declaration": "Proposition SNG-F31 (exceptional strata are finite and exactly computable). Let \\(\\Delta_v=[x^v](L_G-L_H)\\in\\mathbb Z[q]\\) for \\(0\\le v\\le R\\), let \\(r\\) be the least \\(v\\) with \\(\\Delta_v\\ne0\\), and for \\(q_0\\in(0,1)\\) let \\(r(q_0)\\) be the least \\(v\\le R\\) with \\(\\Delta_v(q_0)\\ne0\\), if any. Then \\(r(q_0)=r\\) except at the finitely many roots of \\(\\Delta_r\\) in \\((0,1)\\); at such a root \\(\\alpha\\), \\(r(q_0)\\) is the least \\(v>r\\) with \\(\\Delta_v(\\alpha)\\ne0\\), or undefined through \\(R\\). Every such root is found by Sturm isolation of the square-free part of \\(\\Delta_r\\), and whether \\(\\Delta_v(\\alpha)=0\\) is decided exactly.",
       "file": "docs/chapters/13_research_program.md",
-      "line": 174
+      "line": 182
     }
   ]
 }

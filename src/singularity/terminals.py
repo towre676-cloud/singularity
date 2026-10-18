@@ -377,3 +377,45 @@ def recover_kernel_from_simplex_probes(probe_values: dict[tuple[int, ...], list]
                 factor = matrix[i][col]
                 matrix[i] = [lin(a, b, factor) for a, b in zip(matrix[i], matrix[col])]
     return {b: [matrix[i][size][j].get(0, Fraction(0)) for j in range(R + 1)] for i, b in enumerate(index)}
+
+
+def twist_lattice_map(first: Graph, first_terminals: Sequence[int], second: Graph, second_terminals: Sequence[int]):
+    """The twist as a map of height vectors between the straight and twisted gluings (SNG-F46).
+
+    Returns (straight, twisted, phi) where phi maps a height vector on the
+    straight gluing to one on the twisted gluing: unchanged on the first
+    block, a_v -> a_s + a_t - a_v on the second block's interior.  phi is an
+    involutive affine-unimodular map commuting with constant shifts, and
+    E_twisted(phi(a)) = E_straight(a).
+    """
+    straight, map_straight = glue_graphs(first, first_terminals, second, second_terminals)
+    twisted, map_twisted = glue_graphs(first, first_terminals, second, tuple(reversed(second_terminals)))
+    s, t = first_terminals
+    interior = [v for v in range(second.n) if v not in second_terminals]
+
+    def phi(a: Sequence[int]) -> tuple[int, ...]:
+        if len(a) != straight.n:
+            raise ValueError("height vector has the wrong length")
+        image = list(a)
+        for v in interior:
+            image[map_twisted[v]] = a[s] + a[t] - a[map_straight[v]]
+        return tuple(image)
+
+    return straight, twisted, phi
+
+
+def circuits(graph: Graph) -> set[frozenset]:
+    """All circuits (edge sets of cycles) of a small graph, by DFS over simple cycles."""
+    adjacency = {v: set(graph.neighbors[v]) for v in range(graph.n)}
+    found: set[frozenset] = set()
+    for start in range(graph.n):
+        stack = [(start, [start])]
+        while stack:
+            vertex, path = stack.pop()
+            for w in adjacency[vertex]:
+                if w == start and len(path) >= 3:
+                    edges = frozenset(tuple(sorted((path[i], path[(i + 1) % len(path)]))) for i in range(len(path)))
+                    found.add(edges)
+                elif w > start and w not in path:
+                    stack.append((w, path + [w]))
+    return found

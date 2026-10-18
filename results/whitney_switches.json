@@ -1,0 +1,15944 @@
+{
+ "bound": 6,
+ "family": "A: connected blocks on 3-4 vertices; B: balanced first block on 3-5 vertices, nonisomorphic outcomes; terminals (0,1); second block without the terminal edge",
+ "pairs": [
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 3
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     4,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     4,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     5,
+     1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     5,
+     -1,
+     1
+    ]
+   ],
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": 1,
+   "first_marked_difference": 1,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": null,
+   "family": "A",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "first_local_difference": null,
+   "first_marked_difference": null,
+   "isomorphic": true,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "isomorphic graphs",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "n": 6
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     6,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     6,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     6,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     6,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     6,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     6,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     6,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     6,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -2,
+     1
+    ],
+    [
+     7,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     7,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -2,
+     1
+    ],
+    [
+     7,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     7,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     6,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     6,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     -1,
+     1
+    ],
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     6,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     3,
+     -2,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     6,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -2,
+     1
+    ],
+    [
+     7,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     7,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -2,
+     1
+    ],
+    [
+     7,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     7,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -2,
+     1
+    ],
+    [
+     7,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     7,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     -1,
+     1
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -2,
+     1
+    ],
+    [
+     7,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     -2,
+     1
+    ],
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     7,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     4,
+     -1,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     7,
+     -2,
+     1
+    ],
+    [
+     8,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     7,
+     2,
+     1
+    ],
+    [
+     8,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     4,
+     -1,
+     1
+    ],
+    [
+     5,
+     2,
+     1
+    ],
+    [
+     7,
+     -2,
+     1
+    ],
+    [
+     8,
+     1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  },
+  {
+   "cycle_matroid_preserved": true,
+   "difference_at_first_volume": [
+    [
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     -2,
+     1
+    ],
+    [
+     7,
+     2,
+     1
+    ],
+    [
+     8,
+     -1,
+     1
+    ]
+   ],
+   "family": "B",
+   "first_block": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    "n": 5
+   },
+   "first_local_difference": 2,
+   "first_marked_difference": 2,
+   "isomorphic": false,
+   "second_block": {
+    "edges": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "n": 4
+   },
+   "simple_and_connected": true,
+   "status": "separated",
+   "straight": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   },
+   "twisted": {
+    "edges": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "n": 7
+   }
+  }
+ ],
+ "schema": "singularity.whitney-switches/1",
+ "summary": {
+  "isomorphic graphs": 68,
+  "separated at volume 1": 28,
+  "separated at volume 2": 28
+ }
+}
