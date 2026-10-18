@@ -1,0 +1,519 @@
+{
+ "benchmark": {
+  "graphs": "random connected cubic graphs (configuration model, seed n)",
+  "note": "wall-clock on the session machine",
+  "rows": [
+   {
+    "bag_assignments": "1.278e+04",
+    "budget": 4,
+    "compiler_seconds": 0.027,
+    "connected_sets": 165,
+    "decomposition_seconds": 0.243,
+    "min_degree_width": 4,
+    "n": 16,
+    "types": 9
+   },
+   {
+    "bag_assignments": "7.183e+05",
+    "budget": 4,
+    "compiler_seconds": 0.025,
+    "connected_sets": 383,
+    "decomposition_seconds": 52.611,
+    "min_degree_width": 7,
+    "n": 32,
+    "types": 8
+   },
+   {
+    "bag_assignments": "8.189e+09",
+    "budget": 4,
+    "compiler_seconds": 0.037,
+    "connected_sets": 783,
+    "min_degree_width": 13,
+    "n": 64,
+    "types": 8
+   },
+   {
+    "bag_assignments": "4.664e+19",
+    "budget": 4,
+    "compiler_seconds": 0.042,
+    "connected_sets": 1591,
+    "min_degree_width": 27,
+    "n": 128,
+    "types": 6
+   },
+   {
+    "bag_assignments": "5.837e+04",
+    "budget": 6,
+    "compiler_seconds": 0.9,
+    "connected_sets": 703,
+    "min_degree_width": 4,
+    "n": 16,
+    "types": 32
+   },
+   {
+    "bag_assignments": "8.858e+06",
+    "budget": 6,
+    "compiler_seconds": 0.818,
+    "connected_sets": 2184,
+    "min_degree_width": 7,
+    "n": 32,
+    "types": 26
+   },
+   {
+    "bag_assignments": "8.215e+11",
+    "budget": 6,
+    "compiler_seconds": 0.901,
+    "connected_sets": 4650,
+    "min_degree_width": 13,
+    "n": 64,
+    "types": 29
+   },
+   {
+    "bag_assignments": "5.369e+23",
+    "budget": 6,
+    "compiler_seconds": 0.796,
+    "connected_sets": 9945,
+    "min_degree_width": 27,
+    "n": 128,
+    "types": 17
+   }
+  ],
+  "series": "L_G (lam = 0)"
+ },
+ "cycle_family": [
+  {
+   "difference": [
+    [
+     6,
+     2,
+     1
+    ],
+    [
+     8,
+     -6,
+     1
+    ],
+    [
+     10,
+     6,
+     1
+    ],
+    [
+     12,
+     -2,
+     1
+    ]
+   ],
+   "enumeration_oracle": true,
+   "first_volume": 3,
+   "g": 3
+  },
+  {
+   "difference": [
+    [
+     8,
+     2,
+     1
+    ],
+    [
+     10,
+     -8,
+     1
+    ],
+    [
+     12,
+     12,
+     1
+    ],
+    [
+     14,
+     -8,
+     1
+    ],
+    [
+     16,
+     2,
+     1
+    ]
+   ],
+   "enumeration_oracle": true,
+   "first_volume": 4,
+   "g": 4
+  },
+  {
+   "difference": [
+    [
+     10,
+     2,
+     1
+    ],
+    [
+     12,
+     -10,
+     1
+    ],
+    [
+     14,
+     20,
+     1
+    ],
+    [
+     16,
+     -20,
+     1
+    ],
+    [
+     18,
+     10,
+     1
+    ],
+    [
+     20,
+     -2,
+     1
+    ]
+   ],
+   "enumeration_oracle": true,
+   "first_volume": 5,
+   "g": 5
+  },
+  {
+   "difference": [
+    [
+     12,
+     2,
+     1
+    ],
+    [
+     14,
+     -12,
+     1
+    ],
+    [
+     16,
+     30,
+     1
+    ],
+    [
+     18,
+     -40,
+     1
+    ],
+    [
+     20,
+     30,
+     1
+    ],
+    [
+     22,
+     -12,
+     1
+    ],
+    [
+     24,
+     2,
+     1
+    ]
+   ],
+   "enumeration_oracle": true,
+   "first_volume": 6,
+   "g": 6
+  },
+  {
+   "difference": [
+    [
+     14,
+     2,
+     1
+    ],
+    [
+     16,
+     -14,
+     1
+    ],
+    [
+     18,
+     42,
+     1
+    ],
+    [
+     20,
+     -70,
+     1
+    ],
+    [
+     22,
+     70,
+     1
+    ],
+    [
+     24,
+     -42,
+     1
+    ],
+    [
+     26,
+     14,
+     1
+    ],
+    [
+     28,
+     -2,
+     1
+    ]
+   ],
+   "enumeration_oracle": false,
+   "first_volume": 7,
+   "g": 7
+  },
+  {
+   "difference": [
+    [
+     16,
+     2,
+     1
+    ],
+    [
+     18,
+     -16,
+     1
+    ],
+    [
+     20,
+     56,
+     1
+    ],
+    [
+     22,
+     -112,
+     1
+    ],
+    [
+     24,
+     140,
+     1
+    ],
+    [
+     26,
+     -112,
+     1
+    ],
+    [
+     28,
+     56,
+     1
+    ],
+    [
+     30,
+     -16,
+     1
+    ],
+    [
+     32,
+     2,
+     1
+    ]
+   ],
+   "enumeration_oracle": false,
+   "first_volume": 8,
+   "g": 8
+  }
+ ],
+ "dominating_closure": {
+  "context": "one shared neighbour",
+  "difference": "729/8388608",
+  "first_volume": 6,
+  "glued_vertices": 15,
+  "interiors": [
+   "C_12",
+   "C_6 + C_6"
+  ],
+  "q": "1/2"
+ },
+ "first_cycle": [
+  {
+   "cycle_count_difference": 2,
+   "difference": [
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     6,
+     -8,
+     1
+    ],
+    [
+     8,
+     12,
+     1
+    ],
+    [
+     10,
+     -8,
+     1
+    ],
+    [
+     12,
+     2,
+     1
+    ]
+   ],
+   "first_volume": 4,
+   "lam": 0,
+   "pair": "cube - moebius"
+  },
+  {
+   "cycle_count_difference": 2,
+   "difference": [
+    [
+     12,
+     2,
+     1
+    ],
+    [
+     14,
+     -8,
+     1
+    ],
+    [
+     16,
+     12,
+     1
+    ],
+    [
+     18,
+     -8,
+     1
+    ],
+    [
+     20,
+     2,
+     1
+    ]
+   ],
+   "first_volume": 4,
+   "lam": 2,
+   "pair": "cube - moebius"
+  },
+  {
+   "cycle_count_difference": 2,
+   "difference": [
+    [
+     3,
+     2,
+     1
+    ],
+    [
+     5,
+     -6,
+     1
+    ],
+    [
+     7,
+     6,
+     1
+    ],
+    [
+     9,
+     -2,
+     1
+    ]
+   ],
+   "first_volume": 3,
+   "lam": 0,
+   "pair": "prism - K33"
+  },
+  {
+   "cycle_count_difference": 2,
+   "difference": [
+    [
+     9,
+     2,
+     1
+    ],
+    [
+     11,
+     -6,
+     1
+    ],
+    [
+     13,
+     6,
+     1
+    ],
+    [
+     15,
+     -2,
+     1
+    ]
+   ],
+   "first_volume": 3,
+   "lam": 2,
+   "pair": "prism - K33"
+  }
+ ],
+ "oracle": {
+  "agreement": true,
+  "budget": 4,
+  "graphs": 10,
+  "shifts": [
+   0,
+   2
+  ]
+ },
+ "reconstruction": {
+  "budget": "floor(n/2)",
+  "graphs_reconstructed": 57,
+  "max_n": 14,
+  "sharpness": [
+   {
+    "first_volume": 3,
+    "n": 6,
+    "pair": "C_6 vs C_3 + C_3"
+   },
+   {
+    "first_volume": 3,
+    "n": 7,
+    "pair": "C_7 vs C_3 + C_4"
+   },
+   {
+    "first_volume": 4,
+    "n": 8,
+    "pair": "C_8 vs C_4 + C_4"
+   },
+   {
+    "first_volume": 4,
+    "n": 9,
+    "pair": "C_9 vs C_4 + C_5"
+   },
+   {
+    "first_volume": 5,
+    "n": 10,
+    "pair": "C_10 vs C_5 + C_5"
+   },
+   {
+    "first_volume": 5,
+    "n": 11,
+    "pair": "C_11 vs C_5 + C_6"
+   },
+   {
+    "first_volume": 6,
+    "n": 12,
+    "pair": "C_12 vs C_6 + C_6"
+   },
+   {
+    "first_volume": 6,
+    "n": 13,
+    "pair": "C_13 vs C_6 + C_7"
+   },
+   {
+    "first_volume": 7,
+    "n": 14,
+    "pair": "C_14 vs C_7 + C_7"
+   }
+  ]
+ },
+ "schema": "singularity.locality-family/1"
+}

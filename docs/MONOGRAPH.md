@@ -2588,6 +2588,62 @@ For connected graphs with at most six vertices, the symbolic coefficients separa
 
 The same population is measured across invariants in `results/collision_census.json`, produced by `scripts/collision_census.py` and checked in CI. Counts are of connected isomorphism classes, one representative each. On six vertices, 112 classes give 68 degree sequences and 110 Laplacian spectra (two cospectral pairs). Volume one of the height series also gives 68 classes and volume two gives 100. The binary cut profile, the nested-pair census, and the height prefix through volume three each separate all 112, both symbolically in \(q\) and at \(q=1/2\). Both cospectral pairs are separated by the volume-three height prefix. All ten nontrivial classes of the volume-two prefix are split by the binary profile and also by the spectrum. The report lists every nontrivial class with its graph codes, and the number of classes of each invariant split by every other. It gives a signed difference witness for each pair first separated at volume two or three, and a chain-recomputed sample. There are no unresolved classes at volume three in this population.
 
+## Observation depth and connected supports
+
+Which parts of a graph does a volume budget see, and what is the cheapest exact computation of exactly those parts? For a graph \(H\) and an integer \(\lambda\ge0\), put \(w_v=\deg_H(v)+\lambda\) and
+\[
+F_\lambda(H)=\sum_{h:V\to\mathbb N}x^{|h|}q^{\sum_vw_vh_v^2-2\sum_{uv\in E}h_uh_v}.
+\]
+Here \(\lambda=0\) gives the local series \(L_H\), and \(\lambda=2\) gives the interior sequence \(A_H\) of the dominating blocks of SNG-F53(b). For \(T\subseteq V\) let \(Z_T\) be the same sum over heights supported in \(T\), keeping the ambient degrees, and let \(\Phi_S=\sum_{T\subseteq S}(-1)^{|S|-|T|}\log Z_T\).
+
+**Theorem SNG-F55 (connected-support locality).** \(\Phi_S=0\) unless \(H[S]\) is connected, \(\Phi_S=O(x^{|S|})\), and \(\Phi_S\) depends only on the isomorphism type of \(H[S]\) decorated by the weights \(w_v\). Hence
+\[
+\log F_\lambda(H)=\sum_{H[S]\ \mathrm{connected}}\Phi_S,
+\]
+and \(\log F_\lambda(H)\bmod x^{R+1}\) is determined by the decorated connected induced subgraphs with at most \(R\) vertices.
+
+*Proof.* Give each vertex its own variable \(x_v\). Then \(Z_T\) is \(F\) with \(x_v=0\) for \(v\notin T\), and since substitution commutes with the logarithm, \(\log Z_T\) consists of the monomials of \(\log F\) supported in \(T\). Inclusion–exclusion leaves exactly the monomials whose support is \(S\), and these have degree at least \(|S|\). If \(H[T]\) has no edge between \(T_1\) and \(T_2=T\setminus T_1\), the exponent separates, so \(Z_T=Z_{T_1}Z_{T_2}\). Then \(\log F\) has no monomial meeting both parts, and \(\Phi_S=0\) for disconnected \(S\). The value of \(\Phi_S\) is computed from the weights and the edges inside \(S\). \(\square\)
+
+`pinned_log` in `src/singularity/locality.py` compiles \(\log F\) modulo \(x^{R+1}\). It enumerates connected sets, memoizes \(\Phi\) by an exact decorated-type key (an AHU encoding for trees, a class-respecting canonical form for small non-trees, and otherwise the set itself), and uses the additivity of \(\log Z_T\) over the components of \(H[T]\). The series is recovered by the exact recursion \(nF_n=\sum_{r\le n}B_rF_{n-r}\), \(B_r=r[x^r]\log F\). On graphs of maximum degree \(\Delta\), the number of connected sets of size at most \(R\) is \(O(n(e\Delta)^R)\), so for fixed \(R\) and \(\Delta\) the cost is linear in \(n\), and treewidth does not enter.
+
+On seeded random connected cubic graphs, `scripts/locality_family.py --benchmark` gives the following wall-clock times on the session machine (retained):
+
+| \(n\) | Compiler, \(R=4\) | Tree decomposition, \(R=4\) | Min-degree width | Compiler, \(R=6\) |
+|---|---|---|---|---|
+| 16 | 0.03 s | 0.24 s | 4 | 0.90 s |
+| 32 | 0.03 s | 52.6 s | 7 | 0.82 s |
+| 64 | 0.04 s | about \(8\times10^{9}\) bag assignments | 13 | 0.90 s |
+| 128 | 0.04 s | about \(5\times10^{19}\) bag assignments | 27 | 0.80 s |
+
+Where both methods run, the output is identical. The two methods are complementary: separators suit large budgets on narrow graphs, and connected supports suit small budgets on large sparse graphs.
+
+**Theorem SNG-F56 (the first cycle a budget sees).** Let \(H,H'\) be \(d\)-regular graphs on the same number of vertices, both of girth at least \(g\), and let \(N_g\) count \(g\)-cycles. Then \(F_\lambda(H)\equiv F_\lambda(H')\pmod{x^g}\), and
+\[
+[x^g]\bigl(F_\lambda(H)-F_\lambda(H')\bigr)=\bigl(N_g(H)-N_g(H')\bigr)\,q^{(d+\lambda-2)g}(1-q^2)^g.
+\]
+
+*Proof.* Every connected set with fewer than \(g\) vertices induces a tree. The number of sets inducing a given tree with \(k<g\) vertices is the number of injective homomorphisms of the tree, divided by its automorphisms. All homomorphisms of a \(k\)-vertex tree into a \(d\)-regular graph number \(nd^{k-1}\). A non-injective one has an image on fewer than \(k\) vertices, which is a tree because the girth exceeds \(k\), so it is counted in the same way, and induction on \(k\) shows that the counts depend only on \(n\) and \(d\). This gives agreement modulo \(x^g\).
+
+At degree \(g\), only sets with exactly \(g\) vertices contribute something new, through the multilinear coefficient. By the cumulant expansion of \(\log F\), the coefficient of \(\prod_{v\in S}x_v\) is \(q^{(d+\lambda)g}\sum_{E'}\prod_{e\in E'}f\), with \(f=q^{-2}-1\), summed over the connected spanning edge sets \(E'\) of \(H[S]\). A set with \(g\) vertices that is not a tree induces a \(g\)-cycle, since a chord would make a shorter cycle. That cycle contributes \(q^{(d+\lambda)g}f^{g-1}(f+g)\). Its vertex set is also one of the vertex sets that would otherwise induce a path, worth \(q^{(d+\lambda)g}f^{g-1}\), and each \(g\)-cycle removes exactly \(g\) of them. Paths are the only trees affected. The net contribution per cycle is \(q^{(d+\lambda)g}f^g=q^{(d+\lambda-2)g}(1-q^2)^g\). \(\square\)
+
+This explains the retained cube–Möbius comparison. Both graphs are cubic of girth four, with six and four squares, so the theorem predicts \([x^4](L_{\mathrm{cube}}-L_{\mathrm{M\ddot obius}})=2q^4(1-q^2)^4\), exactly the fixture's first difference. In \(A\) the same pair gives \(2q^{12}(1-q^2)^4\). The prism against \(K_{3,3}\) (two triangles against none) gives \(2q^3(1-q^2)^3\) at volume three, the triangle mechanism of the late census collisions below.
+
+*Cycles.* For \(H_1=C_{2g}\) and \(H_2=C_g\sqcup C_g\), the transfer matrix \(T_{ab}=x^bq^{(a-b)^2+2b^2}\) gives \(A_{C_n}=\operatorname{tr}T^n\). Hence
+\[
+A_{H_2}-A_{H_1}=(\operatorname{tr}T^g)^2-\operatorname{tr}T^{2g}=2\operatorname{tr}\bigl((\wedge^2T)^g\bigr).
+\]
+Column \((c,d)\) of \(\wedge^2T\) carries \(x^{c+d}\). The only column of minimal degree is \((0,1)\), with diagonal entry \(xq^2(1-q^2)\). So the difference is \(2[q^2(1-q^2)]^gx^g+O(x^{g+1})\), nonzero at every \(q\in(0,1)\); this is SNG-F56 with \(d=2\), \(\lambda=2\), \(\Delta N_g=2\). Attach the two dominating terminals of SNG-F53(b). Both blocks have \(2g\) interior vertices, so every context acts through the same unit-triangular operator \(T_C\) (SNG-F54). Every context therefore sees the same first discrepancy, at volume \(g\), and no context makes it appear earlier. For \(g=6\) the blocks have fourteen vertices. Glued to one shared neighbour and counted directly by weak compositions on fifteen vertices, they agree through volume five and differ at six by \(729/8{,}388{,}608\) at \(q=1/2\). These are finite-prefix collisions in an infinite family. Whether two non-isomorphic interiors share the whole sequence \(A\) remains open.
+
+**Theorem SNG-F57 (reconstruction of 2-regular interiors).** Let \(\kappa=q^2(1-q^2)\). Let \(b=\sum_{k\ge1}\varphi_k\), where \(\varphi_k\) is \(\Phi\) of a \(k\)-vertex path whose vertices have ambient degree \(2\), and put \(D_\ell=\log A_{C_\ell}-\ell b\). Then \(D_\ell=\kappa^\ell x^\ell+O(x^{\ell+1})\). For a 2-regular graph on \(n\) vertices with \(c_\ell\) cycles of length \(\ell\),
+\[
+\log A_H-nb=\sum_{\ell\ge3}c_\ell D_\ell,\qquad c_r=\kappa^{-r}[x^r]\Bigl(\log A_H-nb-\sum_{\ell<r}c_\ell D_\ell\Bigr).
+\]
+The budget \(R=\lfloor n/2\rfloor\) determines \(H\), and for \(n\ge6\) no smaller budget does.
+
+*Proof.* By SNG-F55, \(\log A_{C_\ell}=\ell\sum_{k<\ell}\varphi_k+\Phi_{C_\ell}\), so \(D_\ell=\Phi_{C_\ell}-\ell\sum_{k\ge\ell}\varphi_k\). Its degree-\(\ell\) coefficient is the cycle-minus-paths count of SNG-F56, \(q^{4\ell}f^\ell=\kappa^\ell\). Logarithms add over components, which gives the triangular system. After the cycles of length at most \(R\) are found, the remaining vertices can form at most one cycle, since two cycles longer than \(n/2\) need more than \(n\) vertices. Sharpness: \(C_{2g}\) against \(C_g\sqcup C_g\), and \(C_{2g+1}\) against \(C_g\sqcup C_{g+1}\), agree below volume \(g\), because the difference of logarithms is \(D_g+D_{g+1}-D_{2g+1}\) or \(2D_g-D_{2g}\). \(\square\)
+
+`reconstruct_cycle_type` implements the recursion at a rational \(q_0\). The receipt reconstructs all 57 two-regular graphs on at most fourteen vertices at budget \(\lfloor n/2\rfloor\) and records the sharpness pairs. It checks the compiler against weak-composition enumeration on ten graphs for both \(\lambda\), and the cycle identity for \(g=3,\ldots,8\), with an enumeration oracle for \(g\le6\); the session also confirmed \(g=9,10\). This gives an infinite graph class with a proved reconstruction algorithm, a sharp observation threshold, and explicit pairs attaining it.
+
 ## What should be searched next?
 
 The first inverse question is whether full marked equality implies graph isomorphism on any substantial class. Trees are an attractive target because the ordinary cut lattice of every tree is a standard integer lattice and therefore discards almost all attachment geometry. The marked volume population could preserve some of that geometry. Completeness on trees is a question, not a conclusion. A single pair of nonisomorphic trees with equal full marked series would refute it; a finite census without a collision would only establish a bounded result.
@@ -3109,6 +3165,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `terminals` | Terminal kernels and gluing | Kernels conditioned on terminal heights, gluing for any number of terminals, Whitney-twist antisymmetric pairing (SNG-F41, SNG-F42) |
 | `contexts` | Restricted-context quotients | Symmetrized kernels, recovery from swap-symmetric probes and exact interface ranks under a volume budget (SNG-F47, SNG-F48) |
 | `charges` | Boundary charges and context transport | Charge tables rebuilding terminal kernels, the dominating-terminal sequence, closure operators, single-closure recovery and transport (SNG-F53, SNG-F54) |
+| `locality` | Connected-support compiler | Exact-support logarithms over connected sets, pinned series for any degree shift (L_G and A_H), the 2-regular reconstruction (SNG-F55 to SNG-F57) |
 | `families` | Pendant-cycle family | Generators, closed binary discrepancy, decorated decks, optimal probe parameter (SNG-F36, SNG-F37) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |

@@ -33,6 +33,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `terminals` | Terminal kernels and gluing | Kernels conditioned on terminal heights, gluing for any number of terminals, Whitney-twist antisymmetric pairing (SNG-F41, SNG-F42) |
 | `contexts` | Restricted-context quotients | Symmetrized kernels, recovery from swap-symmetric probes and exact interface ranks under a volume budget (SNG-F47, SNG-F48) |
 | `charges` | Boundary charges and context transport | Charge tables rebuilding terminal kernels, the dominating-terminal sequence, closure operators, single-closure recovery and transport (SNG-F53, SNG-F54) |
+| `locality` | Connected-support compiler | Exact-support logarithms over connected sets, pinned series for any degree shift (L_G and A_H), the 2-regular reconstruction (SNG-F55 to SNG-F57) |
 | `families` | Pendant-cycle family | Generators, closed binary discrepancy, decorated decks, optimal probe parameter (SNG-F36, SNG-F37) |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |
 | `weighted` | Positive integral vertex masses and edge weights | Parallel-weight aggregation and hard equality contraction preserving original energy and mass-weighted height |

@@ -141,3 +141,11 @@ Next dependency-ready item and exact first action:
 - Future classes on interiors with at most six vertices coincide with isomorphism classes through volume 5.
 - Benchmark: 19.6 s direct against 0.18 ms per closure.
 - The previously mentioned local commit 7fda302 does not exist in this checkout or on the remote; this work was rebuilt and verified independently.
+
+**Continuation (observation depth):**
+- SNG-F55: connected-support locality. log F_λ(H) is a sum of exact-support logarithms over connected decorated induced subgraphs. The `locality` compiler is checked against enumeration for L_G and A_H. Benchmark on random cubic graphs: n = 32, R = 4 takes 0.03 s against 52.6 s by tree decomposition; n = 128, R = 6 takes 0.8 s (min-degree width 27).
+- SNG-F56: regular graphs of equal order and girth ≥ g agree below volume g. Their first difference is ΔN_g q^{(d+λ−2)g}(1−q²)^g. This explains the retained cube–Möbius fixture exactly (2q⁴(1−q²)⁴) and the prism/K₃,₃ triangle collision.
+- Cycle family C_{2g} versus C_g + C_g, verified for g = 3–10. Dominating blocks over C_12 and C_6 + C_6, glued to a shared neighbour, differ first at volume 6 by 729/8388608 at q = 1/2, counted on the actual 15-vertex graphs.
+- SNG-F57: reconstruction of 2-regular interiors at the sharp budget ⌊n/2⌋. All 57 graphs with n ≤ 14 are reconstructed.
+- `scripts/locality_family.py --check` runs in CI (14 s).
+- Not done: the q = 1/2 unequal-degree slice rigidity mentioned by the owner; the R = 38 and R = 11 realization questions.
