@@ -114,6 +114,8 @@ The coefficient 2 for \(K_2\) records the two labeled profiles \((h,0)\) and \((
 
 **Formal algebra.** Series in `polynomials` are lists of rational \(q\)-polynomials indexed by \(x\)-degree. `euler_exponents(L)` returns the unique \(b_n\in\mathbb Q[q]\) with \(L=\prod_n(1-x^n)^{-b_n}\) through the prefix; these are formal exponents, not integer multiplicities. Coefficients lie in \(\mathbb Q[q]\) as reduced `Fraction`s. `series_log` requires constant term exactly \(1\), `series_exp` constant term \(0\), and `series_inverse` a nonzero rational constant; every transform of a prefix through \(N\) returns a prefix through \(N\) whose rows depend only on input rows up to the same index, and `euler_exponents` sets \(b_0=0\). In JSON an exponent is a rational polynomial (Section 5). `euler_exponents_mobius` computes the same \(b_n\) by divisor inversion and `recompose_euler` multiplies generalized-binomial factors without logarithms; these are independent checks. The integral bidegree (plethystic) transform of SNG-A08 is a different object and is not implemented by these functions. `first_difference(left, right)` returns the first index and signed polynomial difference within the common prefix, or `None`, which means only that the prefix did not distinguish them.
 
+**Exceptional parameters.** `parameter_strata(left, right)` returns the generic first discrepancy volume of two prefixes, every root in \((0,1)\) of the leading discrepancy (a rational value, or a square-free defining polynomial with an isolating rational interval) with its multiplicity and the first volume visible there, and the endpoint values at \(q=0,1\), all through the shared bound only (SNG-F31). `isolate_roots`, `count_roots` and `vanishes_at` expose the Sturm machinery.
+
 **Arithmetic lift.** `dirichlet_coefficients(graph, N)` returns, for each \(1\le k\le N\), the \(q\)-polynomial \([k^{-s}]\prod_pL_G(p^{-s},q)\), assembled multiplicatively from the same local coefficients. It introduces no graph information beyond \(L_G\).
 
 **Root-of-unity specialization.** For a primitive \(\ell\)-th root \(\zeta\), `residue_numerator(graph, ℓ)` returns \(N\) with \(L_G(x,\zeta)=N(x)/(1-x^\ell)^n\), coefficients in \(\mathbb Z[t]/\Phi_\ell(t)\) written constant-first, by enumerating the residue cube \(\{0,\ldots,\ell-1\}^n\) under a work budget. `remote_coefficient` evaluates one coefficient at an arbitrary index from \(N\). A budget refusal is not a mathematical statement.
@@ -147,6 +149,7 @@ Integer parameters reject Booleans, non-integers and values below their minimum 
 | `lowvolume.*` (closed formulas through volume 3) | 3, 8 | `tests/test_low_volume.py`; `results/pair_acceptance.json` |
 | `chambers.*` | 8 | `tests/test_chambers.py` |
 | `decomposition.*` | 8 | `tests/test_decomposition.py` |
+| `parameters.*` | 8 | `tests/test_parameters.py`; `results/parameter_strata.json` |
 | `gauss.*` | 8 | `tests/test_gauss.py`; `results/gauss_fixtures.json` |
 | `congruence.*` | 8 | `tests/test_congruence.py` |
 | `HeightPopulation` | 8 | `tests/test_population.py` |

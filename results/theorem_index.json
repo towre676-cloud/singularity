@@ -331,6 +331,12 @@
       "declaration": "Proposition SNG-F29 (disjoint order chambers). Index positions from \\(0\\). For a permutation \\(\\pi=(\\pi_0,\\ldots,\\pi_{n-1})\\) let \\(C_\\pi\\) be the set of gap vectors \\(d\\in\\mathbb Z_{\\ge0}^n\\) with \\(d_j\\ge1\\) whenever \\(j\\ge1\\) and \\(\\pi_{j-1}>\\pi_j\\). The map \\((\\pi,d)\\mapsto a\\), \\(a_{\\pi_k}=d_0+\\cdots+d_k\\), is a bijection from \\(\\bigsqcup_\\pi C_\\pi\\) onto \\(\\mathbb Z_{\\ge0}^n\\). Writing \\(T_j=\\{\\pi_j,\\ldots,\\pi_{n-1}\\}\\),",
       "file": "docs/chapters/13_research_program.md",
       "line": 116
+    },
+    {
+      "id": "SNG-F31",
+      "declaration": "Proposition SNG-F31 (exceptional strata are finite and exactly computable). Let \\(\\Delta_v=[x^v](L_G-L_H)\\in\\mathbb Z[q]\\) for \\(0\\le v\\le R\\), let \\(r\\) be the least \\(v\\) with \\(\\Delta_v\\ne0\\), and for \\(q_0\\in(0,1)\\) let \\(r(q_0)\\) be the least \\(v\\le R\\) with \\(\\Delta_v(q_0)\\ne0\\), if any. Then \\(r(q_0)=r\\) except at the finitely many roots of \\(\\Delta_r\\) in \\((0,1)\\); at such a root \\(\\alpha\\), \\(r(q_0)\\) is the least \\(v>r\\) with \\(\\Delta_v(\\alpha)\\ne0\\), or undefined through \\(R\\). Every such root is found by Sturm isolation of the square-free part of \\(\\Delta_r\\), and whether \\(\\Delta_v(\\alpha)=0\\) is decided exactly.",
+      "file": "docs/chapters/13_research_program.md",
+      "line": 136
     }
   ]
 }

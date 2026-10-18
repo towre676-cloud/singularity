@@ -24,6 +24,7 @@ The meaning of every public coefficient, population and certificate interface is
 | `euler` | Formal zeta exponents | Recursive and Mobius inversion, generalized-binomial recomposition, parameter-specific first discrepancy |
 | `transfer` | Bounded-height forest populations | Separator messages on trees/forests (SNG-F23), safe volume pruning (SNG-F24), root messages, separate cost measures, minimum-zero subtraction and exact-span marked histograms (SNG-F25) |
 | `decomposition` | Supplied tree decompositions of arbitrary graphs | Axiom checker, owned-charge bag messages (SNG-F26), truncation, minimum-zero and exact-span sectors, elimination-order constructor |
+| `parameters` | Exceptional energy parameters | Square-free parts, Sturm sequences, exact real-root isolation, algebraic specialization, parameter strata (SNG-F31) |
 | `gauss` | Odd-prime Laplacian Gauss sums | Congruence diagonalization with witness, rank, discriminant character, rank-sensitive formula versus direct residue sum (SNG-F30) |
 | `congruence` | Volume residue classes | Direct degree selection, exact character averaging in Z[t]/Phi_m (SNG-F27), direct tuple filtering |
 | `conductor` | Root-of-unity local series | Integer cyclotomic rings, finite residue numerators, arbitrary-index exact coefficients with explicit residue-box budget |

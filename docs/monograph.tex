@@ -5651,6 +5651,50 @@ survives. At an algebraic parameter, reduction by a minimal polynomial
 gives an exact test. Sampling several real values cannot prove that a
 discrepancy has no interior zero.
 
+\textbf{Proposition SNG-F31 (exceptional strata are finite and exactly
+computable).} Let \(\Delta_v=[x^v](L_G-L_H)\in\mathbb Z[q]\) for
+\(0\le v\le R\), let \(r\) be the least \(v\) with \(\Delta_v\ne0\), and
+for \(q_0\in(0,1)\) let \(r(q_0)\) be the least \(v\le R\) with
+\(\Delta_v(q_0)\ne0\), if any. Then \(r(q_0)=r\) except at the finitely
+many roots of \(\Delta_r\) in \((0,1)\); at such a root \(\alpha\),
+\(r(q_0)\) is the least \(v>r\) with \(\Delta_v(\alpha)\ne0\), or
+undefined through \(R\). Every such root is found by Sturm isolation of
+the square-free part of \(\Delta_r\), and whether \(\Delta_v(\alpha)=0\)
+is decided exactly.
+
+\emph{Proof.} For \(v<r\), \(\Delta_v=0\) identically, so
+\(r(q_0)\ge r\) for every \(q_0\), with equality exactly when
+\(\Delta_r(q_0)\ne0\). A nonzero polynomial has finitely many roots. Let
+\(f=\Delta_r/\gcd(\Delta_r,\Delta_r')\), which has the same roots, all
+simple. Sturm's theorem states that the number of distinct roots of
+\(f\) in \((a,b]\) equals the drop in sign changes of its Sturm sequence
+from \(a\) to \(b\); subtracting a root at \(b\), found by exact
+evaluation, gives the number strictly inside. Bisection at rational
+midpoints, recording any midpoint that is a root, splits every interval
+with two or more roots. It terminates because distinct roots are
+separated by a positive distance. Each surviving interval then contains
+exactly one root, so the list is complete. For an isolated root
+\(\alpha\) of \(f\) in \((a,b)\), \(\Delta_v(\alpha)=0\) if and only if
+\(\alpha\) is a common root of \(f\) and \(\Delta_v\), that is, a root
+of \(\gcd(f,\Delta_v)\). That gcd divides \(f\), so its roots in
+\((a,b)\) are among those of \(f\), namely \(\alpha\) alone, and a Sturm
+count of the gcd on the interval decides the question. Rational
+arithmetic is exact throughout. \(\square\)
+
+\texttt{src/singularity/parameters.py} implements this. It reports
+rational roots exactly, also through the rational-root theorem when the
+coefficients are small. It represents the others by a square-free
+defining polynomial and an isolating interval. The defining polynomial
+divides a discrepancy and need not be the minimal polynomial. It also
+computes multiplicities by repeated derivatives and evaluates the
+endpoints \(q=0,1\) separately. For the spectral, binary-census and
+cube--Möbius pairs it finds no interior root of the leading discrepancy,
+so the first visible volume is \(2\), \(3\) and \(4\) at every
+\(q\in(0,1)\) (\texttt{results/parameter\_strata.json}). At both
+endpoints the binary pair agrees through the tested bound. Artificial
+discrepancies with interior irrational and rational roots, repeated
+roots and identically zero differences are tested as well.
+
 The analytic path starts with a finite certified coefficient
 discrepancy, then proves a local factor expansion and a uniformly
 convergent normalized prime product in the stated real domain. More
@@ -6080,6 +6124,9 @@ exact-span marked histograms (SNG-F25) \\
 \texttt{decomposition} & Supplied tree decompositions of arbitrary
 graphs & Axiom checker, owned-charge bag messages (SNG-F26), truncation,
 minimum-zero and exact-span sectors, elimination-order constructor \\
+\texttt{parameters} & Exceptional energy parameters & Square-free parts,
+Sturm sequences, exact real-root isolation, algebraic specialization,
+parameter strata (SNG-F31) \\
 \texttt{gauss} & Odd-prime Laplacian Gauss sums & Congruence
 diagonalization with witness, rank, discriminant character,
 rank-sensitive formula versus direct residue sum (SNG-F30) \\

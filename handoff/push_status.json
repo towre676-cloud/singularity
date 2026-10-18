@@ -753,27 +753,39 @@
     {
       "id": "P24",
       "title": "Determine exceptional energy parameters",
-      "status": "partial",
+      "status": "complete",
       "effort": "M",
       "priority": 1,
       "dependencies": [
         "P23"
       ],
       "evidence": [
-        "src/singularity/euler.py",
-        "src/singularity/polynomials.py",
-        "tests/test_analytics.py",
-        "docs/chapters/07_visibility_singularities.md",
-        "docs/chapters/09_exact_examples.md"
+        "src/singularity/parameters.py",
+        "tests/test_parameters.py",
+        "docs/chapters/13_research_program.md",
+        "results/parameter_strata.json",
+        "scripts/reproduce.py",
+        "src/singularity/euler.py"
       ],
-      "existing_work": "Exact rational specialization and parameter-specific first differences exist. Factored reference discrepancies prove no interior real zero for the retained examples; endpoint coincidence and scaling are discussed.",
-      "next_action": "First retain complete root certificates for the factored reference polynomials; then add a controlled algebraic root-isolation path and recomputation test for a polynomial with an actual interior exceptional root.",
-      "acceptance_gaps": [
-        "No general exact real-root isolation or algebraic-number specialization machinery exists.",
-        "No released parameter-stratum object recomputes first visibility depth at every isolated exceptional value.",
-        "P23 acceptance is open."
-      ],
-      "packet": "handoff/tasks/P24.md"
+      "existing_work": "parameters.py implements square-free parts, Sturm sequences, exact rational bisection, rational-root detection, algebraic specialization by gcd and Sturm counts, multiplicities, and parameter_strata, which reports the generic first volume, every exceptional root in (0,1) with the volume first visible there, and the endpoints separately. Proposition SNG-F31 proves finiteness, completeness of isolation and exactness of the specialization test.",
+      "next_action": "Accepted 2026-10-18; reopen only if a regression or specification conflict is found.",
+      "acceptance_gaps": [],
+      "packet": "handoff/tasks/P24.md",
+      "acceptance": {
+        "date": "2026-10-18",
+        "criteria": {
+          "isolate every real root in (0,1) of the tested leading polynomials": "SNG-F31; RootIsolationTests; parameter_strata status field",
+          "recompute at each exceptional value": "StrataTests.test_artificial_interior_algebraic_and_rational_strata (two irrational roots visible at volume 3; rational root 1/2 with agreement through the bound)",
+          "released examples strictly visible in the interior": "test_released_pairs_have_no_interior_exceptional_parameter; results/parameter_strata.json (spectral 2, binary 3, cube-Mobius 4, no exceptional q)",
+          "multiplicities, repeated roots, zero polynomials, rational values, endpoints": "test_repeated_roots_and_multiplicity; test_zero_discrepancies_and_endpoint_shift",
+          "no plot or grid": "exact Fraction arithmetic only",
+          "P23 dependency": "complete"
+        },
+        "commands": [
+          "PYTHONPATH=src python -m unittest tests.test_parameters -v",
+          "PYTHONPATH=src python scripts/reproduce.py --check"
+        ]
+      }
     },
     {
       "id": "P25",

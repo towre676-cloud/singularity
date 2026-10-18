@@ -14,6 +14,7 @@ from singularity.examples import GRAPHS
 from singularity.graph import Graph
 from singularity.chains import chain_local_coefficients, chain_marked_coefficients
 from singularity.heights import local_coefficients, marked_coefficients
+from singularity.parameters import parameter_strata
 from singularity.lowvolume import low_volume_local, low_volume_marked, pattern_sectors, regular_low_volume_local
 from singularity.invariants import binary_cut_profile, laplacian_characteristic_polynomial
 from singularity.polynomials import evaluate, polynomial_to_json, verify_factorization
@@ -174,6 +175,10 @@ def compute():
         'results/pair_acceptance.json':acceptance,
         'results/conductor_fixtures.json':conductor_fixtures(),
         'results/gauss_fixtures.json':gauss_fixtures(),
+        'results/parameter_strata.json':{'schema':'singularity.parameter-strata/1','theorem':'SNG-F31',
+            'spectral':parameter_strata(local_coefficients(GRAPHS['spectral_g'],4),local_coefficients(GRAPHS['spectral_h'],4)),
+            'binary_census':parameter_strata(local_coefficients(GRAPHS['binary_g'],4),local_coefficients(GRAPHS['binary_h'],4)),
+            'regular_cube_mobius':parameter_strata(local_coefficients(cube,5),local_coefficients(mobius,5))},
         'results/conductor_example.json':{'schema':'singularity.conductor-example/1','graph':Graph(3,((0,1),(1,2))).to_dict(),'conductor':3,'index':str(10**100),'coefficient':list(remote_coefficient(Graph(3,((0,1),(1,2))),3,10**100)),'ring':'Z[t]/(t^2+t+1)'},
     }
     return files

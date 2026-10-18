@@ -8121,6 +8121,118 @@ parameter, direct substitution determines whether a proposed exponent
 survives. At an algebraic parameter, reduction by a minimal polynomial
 gives an exact test. Sampling several real values cannot prove that a
 discrepancy has no interior zero.</p>
+<p><strong>Proposition SNG-F31 (exceptional strata are finite and
+exactly computable).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>v</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>L</mi><mi>G</mi></msub><mo>−</mo><msub><mi>L</mi><mi>H</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\Delta_v=[x^v](L_G-L_H)\in\mathbb Z[q]</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>v</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">0\le v\le R</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+be the least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v\ne0</annotation></semantics></math>,
+and for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q_0\in(0,1)</annotation></semantics></math>
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r(q_0)</annotation></semantics></math>
+be the least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≤</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">v\le R</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v(q_0)\ne0</annotation></semantics></math>,
+if any. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">r(q_0)=r</annotation></semantics></math>
+except at the finitely many roots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Δ</mi><mi>r</mi></msub><annotation encoding="application/x-tex">\Delta_r</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>;
+at such a root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r(q_0)</annotation></semantics></math>
+is the least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>&gt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">v&gt;r</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v(\alpha)\ne0</annotation></semantics></math>,
+or undefined through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+Every such root is found by Sturm isolation of the square-free part of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Δ</mi><mi>r</mi></msub><annotation encoding="application/x-tex">\Delta_r</annotation></semantics></math>,
+and whether
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v(\alpha)=0</annotation></semantics></math>
+is decided exactly.</p>
+<p><em>Proof.</em> For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>&lt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">v&lt;r</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v=0</annotation></semantics></math>
+identically, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">r(q_0)\ge r</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math>,
+with equality exactly when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>r</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_r(q_0)\ne0</annotation></semantics></math>.
+A nonzero polynomial has finitely many roots. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><msub><mi>Δ</mi><mi>r</mi></msub><mi>/</mi><mo>gcd</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Δ</mi><mi>r</mi></msub><mo>,</mo><msub><mi>Δ</mi><mi>r</mi></msub><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f=\Delta_r/\gcd(\Delta_r,\Delta_r&#39;)</annotation></semantics></math>,
+which has the same roots, all simple. Sturm’s theorem states that the
+number of distinct roots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">(a,b]</annotation></semantics></math>
+equals the drop in sign changes of its Sturm sequence from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>;
+subtracting a root at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+found by exact evaluation, gives the number strictly inside. Bisection
+at rational midpoints, recording any midpoint that is a root, splits
+every interval with two or more roots. It terminates because distinct
+roots are separated by a positive distance. Each surviving interval then
+contains exactly one root, so the list is complete. For an isolated root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Δ</mi><mi>v</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta_v(\alpha)=0</annotation></semantics></math>
+if and only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+is a common root of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Δ</mi><mi>v</mi></msub><annotation encoding="application/x-tex">\Delta_v</annotation></semantics></math>,
+that is, a root of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>gcd</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>,</mo><msub><mi>Δ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gcd(f,\Delta_v)</annotation></semantics></math>.
+That gcd divides
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+so its roots in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+are among those of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+namely
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+alone, and a Sturm count of the gcd on the interval decides the
+question. Rational arithmetic is exact throughout.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p><code>src/singularity/parameters.py</code> implements this. It
+reports rational roots exactly, also through the rational-root theorem
+when the coefficients are small. It represents the others by a
+square-free defining polynomial and an isolating interval. The defining
+polynomial divides a discrepancy and need not be the minimal polynomial.
+It also computes multiplicities by repeated derivatives and evaluates
+the endpoints
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q=0,1</annotation></semantics></math>
+separately. For the spectral, binary-census and cube–Möbius pairs it
+finds no interior root of the leading discrepancy, so the first visible
+volume is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>
+at every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q\in(0,1)</annotation></semantics></math>
+(<code>results/parameter_strata.json</code>). At both endpoints the
+binary pair agrees through the tested bound. Artificial discrepancies
+with interior irrational and rational roots, repeated roots and
+identically zero differences are tested as well.</p>
 <p>The analytic path starts with a finite certified coefficient
 discrepancy, then proves a local factor expansion and a uniformly
 convergent normalized prime product in the stated real domain. More
@@ -8556,62 +8668,68 @@ subtraction and exact-span marked histograms (SNG-F25)</td>
 minimum-zero and exact-span sectors, elimination-order constructor</td>
 </tr>
 <tr class="odd">
+<td><code>parameters</code></td>
+<td>Exceptional energy parameters</td>
+<td>Square-free parts, Sturm sequences, exact real-root isolation,
+algebraic specialization, parameter strata (SNG-F31)</td>
+</tr>
+<tr class="even">
 <td><code>gauss</code></td>
 <td>Odd-prime Laplacian Gauss sums</td>
 <td>Congruence diagonalization with witness, rank, discriminant
 character, rank-sensitive formula versus direct residue sum
 (SNG-F30)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>congruence</code></td>
 <td>Volume residue classes</td>
 <td>Direct degree selection, exact character averaging in Z[t]/Phi_m
 (SNG-F27), direct tuple filtering</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>conductor</code></td>
 <td>Root-of-unity local series</td>
 <td>Integer cyclotomic rings, finite residue numerators, arbitrary-index
 exact coefficients with explicit residue-box budget</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>weighted</code></td>
 <td>Positive integral vertex masses and edge weights</td>
 <td>Parallel-weight aggregation and hard equality contraction preserving
 original energy and mass-weighted height</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>arithmetic</code></td>
 <td>Prime-valuation populations</td>
 <td>Positive integer factorization, finite Dirichlet coefficients,
 conservative exact local remainder and tail constants</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>primitive</code></td>
 <td>Gcd-one normalized height profiles</td>
 <td>Mobius extraction, independent gcd enumeration and exact scaling
 recomposition</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>chains</code></td>
 <td>Weakly nested level chains</td>
 <td>Direct chain generation with repeated levels, nested-boundary
 energy, marked/normalized/local coefficients independent of weak
 compositions</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>chambers</code></td>
 <td>Half-open order chambers</td>
 <td>Gap coordinates, nested-boundary gap form, unique chamber
 reconstruction, factorial-cost third enumerator (SNG-F29)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>lowvolume</code></td>
 <td>Closed coefficient formulas through volume three</td>
 <td>Degree, ordered adjacent-pair and induced-triple statistics; pattern
 sectors; regular closed form</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>certificates</code></td>
 <td>Source-bound finite mathematical claims</td>
 <td>Structural parser, two independent replay routes (stars-and-bars and
