@@ -1,6 +1,6 @@
 # Formal kernel checks (Lean 4, core only)
 
-This directory is a Lean 4 package, `Singularity`, that kernel-checks the translation-normalization identity (roadmap push P07, manuscript theorem SNG-F02), the nested-level energy identity (push P08), and the two decisive coefficient certificates `results/certificates/spectral.json` and `results/certificates/binary_census.json` against the P07 coefficient definition (push P33). It uses core Lean 4 only: no Mathlib, Batteries or other dependency (`lake-manifest.json` has an empty package list).
+This directory is a Lean 4 package, `Singularity`, that kernel-checks the translation-normalization identity (roadmap push P07, manuscript theorem SNG-F02), the nested-level energy identity (push P08), and the two decisive coefficient certificates `results/certificates/spectral.json` and `results/certificates/binary_census.json` against the P07 coefficient definition (push P33). It also contains a partial formalization of the visibility comparison SNG-A11 (push P34, **PARTIAL**): the finite power-series cancellation is kernel-checked, the analytic part is a conditional theorem whose premises are listed explicitly (see the P34 section). It uses core Lean 4 only: no Mathlib, Batteries or other dependency (`lake-manifest.json` has an empty package list).
 
 ## Toolchain and build
 
@@ -22,7 +22,7 @@ This directory is a Lean 4 package, `Singularity`, that kernel-checks the transl
   ```
 
   Every listed theorem depends only on Lean's standard axioms `propext`, `Quot.sound` and, for some theorems, `Classical.choice`. No project axiom is declared. A text search of `Singularity.lean`, `Singularity/*.lean` for `sorry`, `admit`, `axiom`, `native_decide`, `implemented_by` and `unsafe` finds those words only in the header comments that say they are not used. In P07/P08, `decide` appears only in small evaluated examples (profiles of length at most 5, boxes of at most 16 profiles) and in `Decidable` plumbing for `List.filter`. In P33, `decide` is the kernel evaluation of the certificate checks described below (no `native_decide`: the proof term is `of_decide_eq_true (Eq.refl true)`, re-checked by the kernel).
-- Clean build time for the whole package (P33 dominates): about 100 s wall clock (`rm -rf .lake && python3 scripts/check_formal.py`: 1 min 48 s including the axiom audit) on the development container.
+- Clean build time for the whole package (P33 dominates): about 100 s wall clock (`rm -rf .lake && python3 scripts/check_formal.py`: 2 min 2 s including the axiom audit after P34, of which `Singularity/Visibility.lean` takes about 16 s) on the development container.
 
 Files:
 
@@ -34,6 +34,7 @@ Files:
 | `Singularity/Thresholds.lean` | P08. |
 | `Singularity/CertificateData.lean` | P33: Lean literals transcribed from the two certificates. Generated; do not edit. |
 | `Singularity/Certificates.lean` | P33: enumerator, histogram correctness, table/difference/factorization checks and the certificate theorems. |
+| `Singularity/Visibility.lean` | P34 (partial): truncated power series over a commutative ring, finite cancellation, the certificate quotient laws, and the conditional analytic theorem. |
 | `tools/gen_certificates.py` | P33 transcription script (JSON → `CertificateData.lean`); `--check` detects a stale data file. |
 | `AxiomAudit.lean` | `#print axioms` for the main theorems. It is not part of the library. |
 
@@ -146,8 +147,79 @@ For each pair (`spectral`: `spectral.json`, first discrepancy at volume 2; `bina
 
 ## What is not proved here
 
-- No generating functions or formal power series appear. SNG-F02 is formalized coefficientwise (`allCount_eq_shiftSum`, `allCount_rec`); the series identity `B = (1 - x^n)L` is that statement read off coefficients.
+- P07/P08/P33 use no generating functions or formal power series (P34 introduces truncated series, see its section). SNG-F02 is formalized coefficientwise (`allCount_eq_shiftSum`, `allCount_rec`); the series identity `B = (1 - x^n)L` is that statement read off coefficients.
 - The span-marked version (the `z` variable of SNG-F02) is not formalized. Span invariance under shift follows from `lmin_shift`, `lmax_map_sub` and similar lemmas, but no `(volume, energy, span)` count identity is stated.
 - The model represents a graph as an edge list with natural-number indices, not as a separate `Graph` type with simplicity validation. The theorems are more general than simple graphs, and they do not check that a given edge list is simple or loopless.
 - There is no link to the Python implementation: nothing here proves that `src/singularity/heights.py` computes these functions. The correspondence of definitions (`normalize_heights` ↔ `norm`, `threshold_sets` ↔ `thr`, `nested_energy` ↔ the right side of `energy_nested`) holds by inspection only.
-- The independent P02 histogram comparison, primewise lift, analytic statements and anything beyond P07/P08/P33 are outside this package. For P33, the span-marked and Euler-exponent parts of the certificates remain unchecked (see the trusted boundary above).
+- The independent P02 histogram comparison and the primewise lift are outside this package. Analytic statements appear only in P34 and only as a conditional theorem: its real-analytic premises are not verified (see the P34 section). For P33, the span-marked and Euler-exponent parts of the certificates remain unchecked (see the trusted boundary above).
+
+## Theorems: P34 (`Singularity/Visibility.lean`) — PARTIAL
+
+Status: **partial formalization.** The finite power-series cancellation behind manuscript theorem SNG-A11 is proved in general and connected to the P33 certificates. The analytic statement is proved only *conditionally*, from an explicit structure of real-analytic premises over an abstract type. Core Lean 4.12 has no real numbers, limits, infinite products or zeta function, so none of those premises is verified. SNG-A11 is **not** formally verified.
+
+### Algebraic setting
+
+- `VRing R` is a commutative ring class. Its ring laws are fields of the class, so they are hypotheses on `R`, not axioms. Every theorem in Parts A and B holds for every commutative ring: `ℤ`, `ℚ`, `ℝ`, or polynomial and function rings. The file defines `ncast` (natural cast), `icast` (integer cast, with `icast_add` and `icast_mul`), `npow` and `fsum` (finite sums).
+- A formal power series in `x` over `R` is a coefficient function `Nat → R`. `conv` is the Cauchy product, and `mono c r` is `c x^r`. `TruncEq N F G` means `F ≡ G (mod x^(N+1))`. `sinv B` is the formal inverse, defined by `C_0 = 1` and `C_k = -Σ_{j<k} B_(k-j) C_j`. `xder A` is `x A'`, and `logDer A = x A'/A`.
+- Coefficients that are polynomials in `q` are elements of `R` evaluated at `q : R`. `ell G n V q = Σ_{a ∈ comps n V} q^(E_G a)` is `[x^V] L_G(x,q)`, summed over P33's complete, duplicate-free enumeration of the profiles of volume `V`. `lseries G n q` is the series `V ↦ ell G n V q`. `pevalR` evaluates a dense integer polynomial in `R`.
+
+### Part A: finite cancellation (kernel-checked, for all `r` and all series)
+
+| Name | Statement |
+|---|---|
+| `conv_sinv` | If `B 0 = 1`, then `B · B⁻¹ = 1` in every degree. |
+| `conv_quot` | If `B 0 = 1`, `B · C ≡ 1 (mod x^(r+1))` and `A_k = B_k` for `k < r`, then `A · C ≡ 1 + (A_r - B_r) x^r (mod x^(r+1))`. |
+| `quotient_first_discrepancy` | **Quotient law:** if `B 0 = 1` and `A_k = B_k` for `k < r`, then `A · B⁻¹ ≡ 1 + (A_r - B_r) x^r (mod x^(r+1))`. |
+| `first_difference` | Under the same agreement, `A - B ≡ (A_r - B_r) x^r (mod x^(r+1))`. |
+| `sinv_agree` | Inverse coefficients below `r` depend only on coefficients below `r`. |
+| `logDer_first_discrepancy` | If `A_k = B_k` for `k < r`, then `x A'/A - x B'/B ≡ r (A_r - B_r) x^r (mod x^(r+1))`. |
+| `log_first_discrepancy` | Assume `R` has no additive torsion (`k a = 0` with `k ≥ 1` forces `a = 0`). Let `lA`, `lB` be formal logarithms, characterized by `k (log A)_k = (x A'/A)_k` for `1 ≤ k ≤ r`. Then `log A - log B` vanishes in degrees `1..r-1` and has coefficient `A_r - B_r` in degree `r`. Lean defines no rational numbers here, so the logarithm itself is defined only through this derivative characterization. Over `ℚ` or `ℝ` it is the usual `log A = Σ (-1)^(j+1) (A-1)^j / j`. |
+| `binom_cancel` | Let `r ≥ 1`. If `F ≡ 1 - δ x^r` (the expansion of `(1 - x^r)^δ`) and `Q ≡ 1 + δ x^r (mod x^(r+1))`, then `F · Q ≡ 1 (mod x^(r+1))`. The zeta factor cancels the first discrepancy. |
+
+### Part B: the two certificates (kernel-checked)
+
+Bridge lemmas: `ell_eq_counts` writes `ℓ_{G,V}(q) = Σ_{k<N} allCount G n V k · q^k` (P07 coefficients), provided every energy at volume `V` lies in `[0, N)`. `ell_eq_of_counts` and `ell_sub_of_dense` carry P33's coefficientwise equalities and differences into `R`. `pevalR_expandFac` shows that P33's `expandFac c m fs` evaluates in every commutative ring to `c · x^m · ∏ (1 - x^k)^mult`. The energy range at volumes `≤ 2` (`< 17`) and `≤ 3` (`< 37`) is evaluated by `decide` in `spectral_energy_range` and `binary_energy_range`. The coefficient data come only from the P33 theorems `Cert.spectral_agree_below`, `Cert.spectral_factorization`, `Cert.binary_agree_below` and `Cert.binary_factorization`. No coefficient is restated.
+
+| Name | Statement (for every commutative ring `R` and every `q : R`) |
+|---|---|
+| `spectral_const`, `binary_const` | `ℓ_{G,0}(q) = ℓ_{G',0}(q) = 1`. |
+| `spectral_agree`, `binary_agree` | `ℓ_{G,V}(q) = ℓ_{G',V}(q)` for `V < d` (`d = 2`, resp. `3`). |
+| `spectral_delta` | `ℓ_{G,2}(q) - ℓ_{G',2}(q) = 2 q^2 (1-q)^2 (1-q^2)`. |
+| `binary_delta` | `ℓ_{G,3}(q) - ℓ_{G',3}(q) = q^3 (1-q) (1-q^3)^2 (1-q^4)^2`. |
+| `spectral_quotient` | `L_G / L_G' ≡ 1 + 2 q^2 (1-q)^2 (1-q^2) x^2 (mod x^3)`. |
+| `binary_quotient` | `L_G / L_G' ≡ 1 + q^3 (1-q) (1-q^3)^2 (1-q^4)^2 x^3 (mod x^4)`. |
+| `spectral_logDer`, `binary_logDer` | The logarithmic-derivative form, with first term `d Δ x^d`. |
+
+In Lean the factorizations print with trivial factors such as `icast 2 * npow q 2 * (npow (1 - npow q 1) 2 * (npow (1 - npow q 2) 1 * 1))`. The certificate graphs are P33's literal edge lists, `n = 7`.
+
+### Part C: the analytic boundary (premises, NOT verified)
+
+`RealFacts K` is a structure over an abstract commutative ring `K` with uninterpreted operations: `lt`, `inv`, `rpow`, `pms p s = p^(-s)`, `zeta`, `HasProdP` (absolutely convergent positive product over primes), `RightLim` (limit as real `s ↓ a`), `Expands` (convergent power series near `0`) and `Good` (positive and continuous on `(0,1)`). Its fields are the missing analytic inputs, each a standard fact when `K = ℝ` is read with those meanings:
+
+| Packet item | Fields |
+|---|---|
+| Euler product for real zeta | `euler`: `ζ(σ) = ∏_p (1 - p^(-σ))^(-1)`, `σ > 1`. |
+| Simple boundary asymptotic, from the right on the positive real axis | `pole`: `(σ - 1) ζ(σ) → 1` as `σ ↓ 1`. |
+| Convergence and nonvanishing of infinite products | `prod_unique`, `prod_pos`, `prod_congr`, `prod_mul`, `prod_rpow`. |
+| Summability over primes and remainder estimates | `prod_crit`: if `f` is positive and continuous on `(0,1)` and `f(t) = 1 + O(t^(m+1))` as a convergent power series, then `∏_p f(p^(-s))` converges absolutely to a positive `P(s)` for real `(m+1)s > 1`, and `P` is continuous there. This packages `Σ_p p^(-(m+1)s) < ∞`, `|log f(t)| ≤ C t^(m+1)` near `0`, and local uniform convergence. |
+| Local power-series division and logarithms over the reals | `exp_mul`, `exp_inv` (the reciprocal of a series with constant term `1` has the formal inverse as its expansion), `exp_binom` (`(1 - t^r)^δ = 1 - δ t^r + O(t^(r+1))`), `good_mul`, `good_inv`, `good_binom`. |
+| Real powers, order and right limits | `rpow_inv_cancel`, `rpow_mul`, `rpow_one`, `pms_pow`, `one_sub_pos`, `zero_lt_one`, `sub_pos`, `scale_mono`, `scale_right`, `scale_succ`, `lim_mul`, `lim_rpow`, `lim_scale`, `lim_congr`. |
+
+The pair-specific analytic inputs are separate hypotheses: `M.Expands LG (lseries G n q)` and `M.Good LG`, and the same for `H`. They say that `L_G(·,q)` is a real function, positive and continuous on `(0,1)`, given near `0` by the power series with coefficients `ℓ_{G,V}(q)`. This holds for `0 ≤ q ≤ 1`. The admissibility of `q` enters only through these hypotheses.
+
+| Name | Statement |
+|---|---|
+| `visibility_conditional` | Assume `M : RealFacts K`, the pair-specific inputs, `ℓ_{H,0}(q) = 1`, `r ≥ 1`, `r s0 = 1` and `ℓ_{G,V}(q) = ℓ_{H,V}(q)` for `V < r`. Let `δ = ℓ_{G,r}(q) - ℓ_{H,r}(q)` (`firstDelta`). Then there exist `R`, `Kr` with: `R(s) = ∏_p L_G(p^(-s))/L_H(p^(-s))` for real `rs > 1`; `Kr(s) = ∏_p (1 - p^(-rs))^δ L_G/L_H` for real `(r+1)s > 1`; `R(s) = ζ(rs)^δ Kr(s)` for `rs > 1`; `Kr(1/r) > 0`; and `(rs - 1)^δ R(s) → Kr(1/r)` as real `s ↓ 1/r`. |
+| `spectral_visibility_conditional` | The instance `r = 2`, `δ = 2 q^2 (1-q)^2 (1-q^2)` (`spectral_delta`), discharging agreement and constant term from P33. |
+| `binary_visibility_conditional` | The instance `r = 3`, `δ = q^3 (1-q) (1-q^3)^2 (1-q^4)^2` (`binary_delta`). |
+| `realFacts_consistent` | `RealFacts Unit` is inhabited by a degenerate one-point model. The premises are therefore not contradictory, so the conditional theorem is not vacuous by inconsistency. The model says nothing about `ℝ`. |
+
+How the proof uses the premises: Part A's `quotient_first_discrepancy` and `binom_cancel` discharge the expansion hypotheses of `prod_crit`, for the ratio factor (`m = r - 1`) and for the regularized factor (`m = r`). `euler`, `prod_rpow`, `prod_mul`, `prod_congr` and `prod_unique` give the factorization. `pole`, `lim_scale`, `lim_rpow`, `lim_mul`, `lim_congr` and the continuity part of `prod_crit` give the asymptotic. No premise mentions the ratio product, its regularization, the factorization or the asymptotic.
+
+### Unformalized boundary (what P34 does not verify)
+
+- **No real analysis is checked.** `RealFacts` is a list of hypotheses. Lean does not construct `ℝ`, `ζ`, convergent products or limits, so it does not check that a faithful model exists or that the abstract operations mean what their names say. The degenerate `Unit` model satisfies every premise, which shows that the premises do not by themselves force the intended meaning. Verifying SNG-A11 requires an instance `RealFacts ℝ` with the intended operations, for example from Mathlib's real analysis and `riemannZeta`, together with proofs of `Expands` and `Good` for the actual local series at `0 ≤ q ≤ 1`. Neither exists here.
+- The conditional theorem concerns the **positive real axis only**: the factorization for real `rs > 1` and the right-hand limit as `s ↓ 1/r`. It states nothing about complex `s`, the local holomorphic branch of SNG-A11, or any global meromorphic continuation. It also omits the identification of `R` with `Z_G/Z_H` on `s > 1`. For nonintegral `δ` the singularity is a branch point, not a pole. The statement makes no claim about it either way.
+- The real logarithm and the binomial series are premises (`exp_binom`). Part A treats the formal logarithm only through `k (log A)_k = (x A'/A)_k`, because there are no rationals.
+- The effective tail bound SNG-A14 is not formalized.
+- The concrete exponents are kernel-checked only as elements of an arbitrary commutative ring. The numerical exponents at `q = 1/2` are not formalized. These are `δ = 3/32` for the spectral pair and `δ = 11025/262144` for the binary pair; the manuscript writes the exponents as `-δ`.

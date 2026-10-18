@@ -626,8 +626,22 @@ software-level exact checks relative to the Python interpreter.</p>
 boundary only where stated. It kernel-checks the coefficientwise
 normalization identity of Proposition 1, the nested energy identity of
 Proposition 2, and the decisive unmarked coefficient tables of the first
-two pairs, as listed in Section 3. It does not formalize generating
-functions, the span-marked series, the prime products or any analytic
+two pairs, as listed in Section 3. It also kernel-checks the finite
+cancellation behind Theorem 3. A first coefficient discrepancy at volume
+r gives the quotient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mi>δ</mi><msup><mi>x</mi><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">1+\delta x^r</annotation></semantics></math>
+modulo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">x^{r+1}</annotation></semantics></math>
+for any series over any commutative ring, and the binomial factor
+cancels it. For the first two pairs the quotients are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>2</mn><msup><mi>q</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1+2q^2(1-q)^2(1-q^2)x^2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><msup><mi>q</mi><mn>3</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>q</mi><mn>4</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">1+q^3(1-q)(1-q^3)^2(1-q^4)^2x^3</annotation></semantics></math>.
+The analytic conclusion appears in Lean only as a conditional theorem.
+Its real-analysis premises (the Euler product, the pole of zeta,
+convergence of products and the local series expansions) are stated, not
+proved. The Lean package does not formalize the span-marked series, the
+prime products over the real numbers or any unconditional analytic
 statement of Sections 4 and 5. It is not linked to the Python
 implementation.</p>
 <p>An exhaustive enumeration covers all labeled simple graphs on one to
@@ -673,8 +687,8 @@ polynomial of a graph</em>, Discrete Applied Mathematics 157 (2009),
 2515-2524. DOI: 10.1016/j.dam.2009.02.021.</p>
 <p>[BPR2024] R. Bauerschmidt, J. Park and P.-F. Rodriguez, <em>The
 Discrete Gaussian model, I. Renormalisation group flow at high
-temperature</em>, Annals of Probability 52 (2024), 1253-1359.
-arXiv:2202.02286.</p>
+temperature</em>, Annals of Probability 52 (2024), no. 4, 1253-1359.
+DOI: 10.1214/23-AOP1658. arXiv:2202.02286.</p>
 <p>[Moree2005] P. Moree, <em>The formal series Witt transform</em>,
 Discrete Mathematics 295 (2005), 143-160. DOI:
 10.1016/j.disc.2005.03.004.</p>

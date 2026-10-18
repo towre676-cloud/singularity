@@ -2,3 +2,4 @@ import Singularity.Normalization
 import Singularity.Thresholds
 import Singularity.CertificateData
 import Singularity.Certificates
+import Singularity.Visibility

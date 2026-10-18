@@ -14,11 +14,11 @@ Use original dependencies as **completion gates**. Preparatory research may proc
 
 | Status | Meaning | Push count |
 |---|---|---:|
-| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 1 |
-| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 1 |
-| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 7 |
-| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 4 |
-| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 23 |
+| `planned` | The target is specified, but its substantive deliverable is absent. Preparatory work can proceed while dependencies remain open. | 0 |
+| `partial` | Some substantive deliverables exist, but important own acceptance requirements remain unsatisfied. | 2 |
+| `implemented_pending_acceptance` | The central target is implemented or proved in exposition, but explicit acceptance checks, dependency closure or publication bookkeeping remain outstanding. | 0 |
+| `blocked` | The central deliverable is absent and a named prerequisite must be established before its original acceptance criterion can be evaluated. | 1 |
+| `complete` | All original acceptance requirements and declared dependencies have evidence-backed closure. The baseline audit gave it to no push; see the session log for later acceptances. | 33 |
 
 **Effort** estimates remaining work for the push itself, excluding prerequisites: S = contained addition or acceptance work; M = substantial implementation or proof work; L = structural or formal research with uncertain resolution. These are scope judgments, not promised durations. **Priority** 0–3 orders suggested attention; smaller comes first and never overrides dependencies.
 
@@ -81,7 +81,7 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 | [P31](#p31) | Resolve targeted collisions structurally | `complete` | P16, P30 | L | 2 |
 | [P32](#p32) | Seek a separation bound for one graph family | `complete` | P06, P12, P31 | L | 2 |
 | [P33](#p33) | Verify concrete coefficient certificates in a kernel | `complete` | P07, P08, P23 | L | 3 |
-| [P34](#p34) | Formalize the visibility comparison boundary | `blocked` | P26, P33 | L | 3 |
+| [P34](#p34) | Formalize the visibility comparison boundary | `partial` | P26, P33 | L | 3 |
 | [P35](#p35) | Release the first focused manuscript | `partial` | P04, P05, P26, P27, P33 | M | 3 |
 | [P36](#p36) | Choose the second paper from actual results | `blocked` | P19, P22, P31, P32, P35 | L | 3 |
 
@@ -651,18 +651,19 @@ Manuscript proofs are mathematical exposition. Passing Python tests or replaying
 
 ### P34
 
-**Formalize the visibility comparison boundary.** Status: `blocked`. Dependencies: P26, P33. Remaining effort: L; priority: 3.
+**Formalize the visibility comparison boundary.** Status: `partial`. Dependencies: P26, P33. Remaining effort: L; priority: 3.
 
-**Existing work:** The first-discrepancy ratio law and real zeta-factor asymptotic are proved in mathematical exposition with explicit branch and convergence scope.
+**Existing work:** Kernel-checked in core Lean 4.12.0 (formal/Singularity/Visibility.lean, 28 audited theorems, 91 in total, axioms only propext/Quot.sound/Classical.choice): general finite cancellation over any commutative ring (quotient_first_discrepancy, first_difference, logDer_first_discrepancy, log_first_discrepancy for torsion-free rings, binom_cancel); spectral_quotient L_G/L_G' = 1+2q^2(1-q)^2(1-q^2)x^2 mod x^3 and binary_quotient L_G/L_G' = 1+q^3(1-q)(1-q^3)^2(1-q^4)^2x^3 mod x^4, with coefficient data taken from P33's Cert theorems rather than reasserted. Analytic boundary: visibility_conditional derives the positive-real asymptotic (rs-1)^delta R(s) -> K_r(1/r) > 0 from an explicit premise structure RealFacts (Euler product, simple pole of real zeta, product/limit algebra, local series expansion, product convergence criterion) plus pair-specific Expands/Good inputs; no premise mentions the ratio product, its regularization, factorization or asymptotic. realFacts_consistent exhibits a degenerate model (non-contradiction only, not faithfulness).
 
-**Evidence:** [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md); [docs/chapters/06_euler_analysis.md](../docs/chapters/06_euler_analysis.md); [docs/papers/visibility.md](../docs/papers/visibility.md).
+**Evidence:** [docs/chapters/07_visibility_singularities.md](../docs/chapters/07_visibility_singularities.md); [docs/chapters/06_euler_analysis.md](../docs/chapters/06_euler_analysis.md); [docs/papers/visibility.md](../docs/papers/visibility.md); [formal/Singularity/Visibility.lean](../formal/Singularity/Visibility.lean); [formal/AxiomAudit.lean](../formal/AxiomAudit.lean); [formal/README.md](../formal/README.md); [scripts/check_formal.py](../scripts/check_formal.py).
 
 **Acceptance still missing:**
 
-- P26 is complete; P33 remains open and no formal analysis project exists.
-- No exposed list of imported analytic theorems, compiling local-expansion-to-asymptotic chain or precisely recorded unformalized boundary is supplied.
+- RealFacts is an uninterpreted premise structure: no real analysis (reals, zeta, convergent products, limits, real powers, logarithm/binomial series) is kernel-checked, and faithfulness of the premises to R (e.g. prod_pos requires HasProdP to mean a convergent product of positive factors) is unverified.
+- Expands/Good for the actual local series L_G(p^-s,q) at admissible q are premises, not proved; the SNG-A14 tail bound is not formalized.
+- The concrete exponents at q=1/2 (3/32 spectral, 11025/262144 binary) are not formalized; the theorem is positive-real only and does not identify R with Z_G/Z_H nor claim complex or meromorphic continuation.
 
-**Next concrete action:** Inventory the chosen proof assistant's actual analytic libraries, formalize the finite local expansion first, and record every remaining analytic assumption without claiming full-chain verification until it compiles.
+**Next concrete action:** Discharge RealFacts for the real numbers (e.g. via Mathlib's real zeta, Euler product and tprod) and prove Expands/Good for the actual local series at 0<=q<=1; then add the q=1/2 exponents 3/32 and 11025/262144.
 
 ### P35
 
