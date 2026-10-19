@@ -1,0 +1,197 @@
+{
+  "schema": "singularity.nx36-recovery-group/1",
+  "group": "b",
+  "tracks": [
+    {
+      "id": "NX07",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX07-A",
+          "status": "accepted",
+          "evidence": "Exact activation/set-cover dynamic program; three-candidate independent installation/panel bit-loop oracle; both N=1 tied optima retained."
+        },
+        {
+          "id": "NX07-B",
+          "status": "accepted",
+          "evidence": "Five-option synthetic4x4 hardware catalogue; exact reflection intertwining for oldall-word blindness; actuallocal-sensor witness and independent conservativeflux outputchecks; deploymentfrontiers1,2,10,100."
+        },
+        {
+          "id": "NX07-C",
+          "status": "accepted",
+          "evidence": "All79originalNX03configurationIDs/masks retained; originaltarget finitecatalogue unseparable (75responseclasses); exact installation/run Paretofrontiers for separatelylabelled maximalobservablequotient; all originalfaultreconstruction kept."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/language_design.py",
+        "tests/test_language_design.py",
+        "docs/research/LANGUAGE_DESIGN.md",
+        "results/nx_07_decision_recovery.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_language_design",
+        "PYTHONPATH=src python scripts/nx_decision_recovery.py --track NX07 --check"
+      ],
+      "scope_notes": "NX07-C originalidentity objective is an accepted finite null result; quotientfrontiers labelled separately. No hardware-global/all-word completeness claim for expandedcatalogue."
+    },
+    {
+      "id": "NX09",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX09-A",
+          "status": "accepted",
+          "evidence": "Typed physical/computational/source/transformation/reduction/execution composition; exactfinite evaluator/panel assignment; independenttiny loops; strictthreshold,domain/horizon/sensor/setup binding rejection."
+        },
+        {
+          "id": "NX09-B",
+          "status": "accepted",
+          "evidence": "Actual source-byte-pinned DynaComp uniform rank1/2 and exact-dotbinary64 routes;32fixed-input/candidate/rank/arithmeticchecks plus8nondegenerateinputboxvertexchecks; complete upstreamreplay and independentfullflux outputs."
+        },
+        {
+          "id": "NX09-C",
+          "status": "accepted",
+          "evidence": "Setup-inclusive two-candidate/two-horizon thermalplan; rank/arithmetic menu; full16-stateexact andsame-rank references; deployments1,2,10,100; actualretained certification/setup/preparation/cold/warm timings plus measured anddeclaredprice break-even."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/fidelity_design.py",
+        "tests/test_fidelity_design.py",
+        "docs/research/FIDELITY_DESIGN.md",
+        "results/nx_09_decision_recovery.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_fidelity_design",
+        "PYTHONPATH=src python scripts/nx_decision_recovery.py --track NX09 --check"
+      ],
+      "scope_notes": "Twoactualcandidate models andfinitefixed-inputmenus; sourcepin certifies declared discrete equations, not physicalcalibration; exactandactualspecifiedbinary64 only. Timingsinformational."
+    },
+    {
+      "id": "NX10",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX10-B",
+          "status": "accepted",
+          "evidence": "Draftdecisionroutines validated with independentanalytic finiteglobaloptimum,lateimpossibility andunattainedepsilonlimit; strictthreshold and source/steadystatetamper checks; completefieldreplay."
+        },
+        {
+          "id": "NX10-C",
+          "status": "accepted",
+          "evidence": "Four4x4thermalcandidatepairs,twofixedchronologicalblocks, explicitP=Icontraction acceptance, allphases tested, independentneighbourflux shortprefixes; feasibleandinconclusivecases retained withoutarbitraryswitchingclaim."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/horizon_design.py",
+        "tests/test_horizon_decisions.py",
+        "docs/research/HORIZON_DESIGN.md",
+        "results/nx_10_decision_recovery.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_horizon_decisions",
+        "PYTHONPATH=src python scripts/nx_decision_recovery.py --track NX10 --check"
+      ],
+      "scope_notes": "Onlyone independentlyreset scalarreading underfixedstep/blockfamily. ExistingNX10-A is preserved andnotreclaimed."
+    },
+    {
+      "id": "NX11",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX11-A",
+          "status": "accepted",
+          "evidence": "Actual optionalupstreamGF adapter; source-derivedfractions,Hankelwitness,zero/invisiblemode/polynomialtransient/delayedimpulse; closedformindices0..32; strictportablecanonicalreceipt."
+        },
+        {
+          "id": "NX11-B",
+          "status": "accepted",
+          "evidence": "Source-boundcandidatepair cancellationandall-indexzeroequality; actualnominal/heater-half4x4repeatedblocks,physicalsamplemapsandallindices0..32fluxverified; actualprogressionderivation replay."
+        },
+        {
+          "id": "NX11-C",
+          "status": "accepted",
+          "evidence": "Finiteexactremotequeryexperimentselector; conservativeoutputbitpreflight andhugeexactrefusal; separatelylabelledhuge-indexmodularresidue; actualcold/warm/bitmeasurements with setupdominance andno-speedup result; explicitsetupinclusiveaccountingbreak-even."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/remote_queries.py",
+        "tests/test_remote_queries.py",
+        "docs/research/REMOTE_QUERIES.md",
+        "results/nx_11_decision_recovery.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_remote_queries",
+        "PYTHONPATH=src python scripts/nx_decision_recovery.py --track NX11 --check"
+      ],
+      "scope_notes": "Finite-statephysicaltime sequences, notpositiveqgraphheight rationality. Modularvalues are residues. Runtimeexample honestlyshows noGFspeedup atsmallindex."
+    },
+    {
+      "id": "NX12",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX12-A",
+          "status": "accepted",
+          "evidence": "Exactdeterministicgrammar/resourcecompletioncounts andoriginalword/sensor rank/unrank;22/6examples,20randomtinyindependentCartesianoracles; empty/unreachable/zero-cost/resource/mappingguards."
+        },
+        {
+          "id": "NX12-B",
+          "status": "accepted",
+          "evidence": "108originalbounded4x4protocols with independentfluxoutputs; completevs28-member matchingbaseline underidenticalpair/noise/costconstraints both optimumcost3; shortcompletepanel independentlyexhaustivelychecked."
+        },
+        {
+          "id": "NX12-C",
+          "status": "accepted",
+          "evidence": "Completecost-orderedrobustsingle-experimentsearch with originalwitnesses andallcheaperfailurepairrecords; exactpopulationcount andlocallycheckable completionDAG; no linear-dependence/noise pruning."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/protocol_population.py",
+        "tests/test_protocol_population.py",
+        "docs/research/PROTOCOL_POPULATIONS.md",
+        "results/nx_12_decision_recovery.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_protocol_population",
+        "PYTHONPATH=src python scripts/nx_decision_recovery.py --track NX12 --check"
+      ],
+      "scope_notes": "Deterministicnonadaptiveprotocols,finiteDFA/resources,one terminalscalarreadout. Fairbaseline optimum unchanged."
+    }
+  ],
+  "new_acceptance_units": 14,
+  "targeted_tests": 23,
+  "shared_artifacts": [
+    "src/singularity/dynacomp_adapter.py",
+    "scripts/nx_decision_recovery.py",
+    "scripts/decision_benchmarks.py",
+    "results/nx_decision_benchmarks.json"
+  ],
+  "checks": [
+    "PYTHONPATH=src python -m unittest tests.test_remote_queries tests.test_fidelity_design tests.test_protocol_population tests.test_language_design tests.test_horizon_decisions -q",
+    "PYTHONPATH=src python scripts/nx_decision_recovery.py --track all --check",
+    "python scripts/decision_benchmarks.py --check"
+  ],
+  "peer_review": {
+    "reviewer": "groupD",
+    "fixed": [
+      "physicalindexmapandelapsedcostbinding",
+      "NX09commonsensoridentity",
+      "positiveNX07tie/searchbudgets",
+      "distinctNX12candidateIDs",
+      "declaredresetlabel",
+      "upstream option centre/radius replay at optimization entry, not labels alone"
+    ],
+    "reviewed_groupC": [
+      "Smithimage/kernel/operatoridentities",
+      "LPprimaldualcertificate",
+      "realizabilityboundedsearchscope",
+      "residueonehotbehaviorclosure"
+    ],
+    "confirmed_groupC_fixes": [
+      "algebraicexceptionisolationagainstcustomdomain",
+      "initialresidueseedbudget",
+      "originalrationalmatrix/rowscalebinding"
+    ]
+  },
+  "blockers": []
+}

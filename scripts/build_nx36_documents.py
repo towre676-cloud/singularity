@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+"""Build the implemented NX36 mathematical companion from accepted evidence."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+import build_documents as builder
+
+
+def source_paths():
+    roadmap = json.loads((ROOT / 'handoff/nx36/roadmap.json').read_text())
+    names = ['docs/research/NX36_IMPLEMENTATION.md']
+    for track in roadmap['tracks']:
+        for unit in track['pushes']:
+            for name in unit.get('evidence', {}).get('artifacts', []):
+                if name.startswith('docs/research/') and name.endswith('.md') and name not in names:
+                    names.append(name)
+    names += ['handoff/nx36/recovery/INDEPENDENT_REVIEW.md',
+              'handoff/nx36/recovery/CLAUDE_AUDIT.md']
+    return names
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--no-pdf', action='store_true')
+    args = parser.parse_args()
+    names = source_paths()
+    if len(names) < 25:
+        raise SystemExit('Expected accepted mathematical notes across all NX36 groups')
+    counts = {}; hashes = {}; parts = []
+    for name in names:
+        path = ROOT / name
+        text = path.read_text()
+        if '\ufffd' in text:
+            raise SystemExit('Replacement glyph in ' + name)
+        counts[name] = len(text.split())
+        hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        parts.append(builder.assembled_links(text, path))
+    source = ROOT / 'docs/NX36_MANUSCRIPT.md'
+    source.write_text('\n\n'.join(parts) + '\n')
+    builder.HEADER = builder.HEADER.replace(
+        'Singularity: Relational Heights and Arithmetic Visibility',
+        'Singularity: Certified Experiments and Observable States')
+    builder.render(source, 'nx36_implementation',
+                   'Singularity: Certified Experiments and Observable States',
+                   'NX36 implementation companion: proofs, contracts, pilots and limits',
+                   book=True, pdf=not args.no_pdf, date='19 October 2026')
+    report = {'schema': 'singularity.nx36-manuscript/1',
+              'source_word_counts': counts, 'source_sha256': hashes,
+              'source_words': sum(counts.values()),
+              'count_method': 'whitespace-delimited source words; mathematics included',
+              'baseline_monograph_modified': False}
+    (ROOT / 'results/nx36_manuscript.json').write_text(
+        json.dumps(report, sort_keys=True, indent=2) + '\n')
+    print(json.dumps({'sources': len(names), 'words': report['source_words']}))
+
+
+if __name__ == '__main__':
+    main()

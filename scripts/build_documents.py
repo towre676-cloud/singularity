@@ -65,7 +65,7 @@ def assembled_links(text, source):
     return re.sub(r'(!?\[[^\]]*\]\()([^\s)]+)(\))', replace, text)
 
 
-def render(source,stem,title,subtitle,book=False,pdf=True):
+def render(source,stem,title,subtitle,book=False,pdf=True,date='18 October 2026'):
     tmp=ROOT/'tmp'/'build';tmp.mkdir(parents=True,exist_ok=True)
     output=ROOT/'output'/'pdf';output.mkdir(parents=True,exist_ok=True)
     header=tmp/'header.tex';header.write_text(HEADER)
@@ -78,7 +78,7 @@ def render(source,stem,title,subtitle,book=False,pdf=True):
         article=re.sub(r'^## ', '# ',article,flags=re.M)
         article=article.replace('# Abstract\n','# Abstract {.unnumbered}\n').replace('# References\n','# References {.unnumbered}\n')
         source=tmp/'article.md';source.write_text(article)
-    common=['pandoc',str(source),'--from=markdown+tex_math_single_backslash+tex_math_dollars+pipe_tables','--standalone','--number-sections','--resource-path=.:docs:docs/assets','--metadata','title='+title,'--metadata','subtitle='+subtitle,'--metadata','author=Singularity project contributors','--metadata','date=18 October 2026']
+    common=['pandoc',str(source),'--from=markdown+tex_math_single_backslash+tex_math_dollars+pipe_tables','--standalone','--number-sections','--resource-path=.:docs:docs/assets','--metadata','title='+title,'--metadata','subtitle='+subtitle,'--metadata','author=Singularity project contributors','--metadata','date='+date]
     if book:
         common+=['--toc','--toc-depth=2']
     tex=ROOT/'docs'/(stem+'.tex')

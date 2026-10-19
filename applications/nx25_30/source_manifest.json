@@ -1,0 +1,98 @@
+{
+  "schema": "singularity.application-source-manifest/1",
+  "recovered_at_utc": "2026-10-19T04:59:23.573584+00:00",
+  "historical_source_status": "Actual source bytes recovered; original NEXRAD272-volume claim not replayed. ASOS is separately measured wind.",
+  "WIND_archive": {
+    "filename": "WIND_ATLAS_STORM_CONTINUATION_20261008T0300Z.zip",
+    "bytes": 2368711,
+    "sha256": "590dc6a35fa40f6f1ca6234bad1e2d1a04a1e06e9c53478ce5824c1e93fe06d4",
+    "Library_identity": "libfile_7239850214448191bfbaa83e67de6248",
+    "station_receipt": {
+      "file": "BOS_asos.csv",
+      "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=BOS&data=all&year1=2026&month1=9&day1=25&year2=2026&month2=10&day2=4&tz=Etc%2FUTC&format=onlycomma&latlon=yes&elev=yes&missing=M&trace=T&direct=no&report_type=1&report_type=2",
+      "bytes": 548467,
+      "sha256": "a7def62ca977d281a51fbae632252dce6afefc8c45aed5afbb032f1372a2c21a",
+      "retrieved_at": "2026-10-08T02:59:44.187647+00:00",
+      "status": "OK"
+    }
+  },
+  "NFL_archive_provenance": {
+    "official_source_commit": "8e058dff6268bed1174e30434c8054f900d39ea5",
+    "adapter": "perfectjet.applications.nfl_scouting.official",
+    "archive_ids": [
+      "libfile_7d17446da430819195d2b731b3f8ee0c",
+      "libfile_8ad2b872b7888191beafc054a7860b67"
+    ],
+    "archive_download_bytes": 599589591,
+    "ingested_files_sha256": {
+      "combine_results.csv": "e4773ef68167d508f3916d446cd411dfd77a87e5765d3babcb986201fb143b86",
+      "combine_tracking.csv": "541c69f6629f5f803b08033c5c386735582120973562134b2c1e7ec6553fb0d3",
+      "player_play.csv": "68926a268c0a49e58616001fb35ea179018d9cbbce1c5c31e7a4095273c35b2a",
+      "games.csv": "ca33543f6939af4ee393c568c60920c476ba91ddbfbdce5a06578b9492fa11fd"
+    },
+    "restricted": "Only aggregate outputs published. Raw inputs and individual linked rows remain outside repository.",
+    "identity_namespace": "official nfl_id; no cross-namespace numeric identity assumption"
+  },
+  "ozone_benchmark": {
+    "repository": "r-devel/r-svn",
+    "path": "src/library/datasets/data/airquality.tab",
+    "git_blob": "d39db693a2c5dd470ed48aa7c86b6a360527b164",
+    "documentation": "https://www.stat.ethz.ch/R-manual/R-devel/RHOME/library/datasets/html/airquality.html",
+    "license": "R distributed data fixture, COPYING.R-datasets (GPL2) retained separately; measurement facts attributed to NY State Department of Conservation and National Weather Service",
+    "source_method_limits": "Benchmark records 1300-1500h mean ozone ppb; no instrument/detection-limit metadata or UTC offset is supplied; cannot validate named reaction mechanism"
+  },
+  "failed_source_attempts": [
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/daily_44201_2024.zip",
+      "status": "anonymous_HTTP_timeout",
+      "attempts": 2
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/daily_42602_2024.zip",
+      "status": "anonymous_HTTP_timeout",
+      "attempts": 2
+    }
+  ],
+  "public_files": [
+    {
+      "path": "applications/nx25_30/BOS_20260925_28.csv",
+      "bytes": 44457,
+      "sha256": "364ecd15807f661efab7a07213875ffb9a6ced347bfa2d9a7a4cfabde73bbb50"
+    },
+    {
+      "path": "applications/nx25_30/airquality.tab",
+      "bytes": 2890,
+      "sha256": "0d9453a2e5196f06fa3b2ede9fcea8ab309ad147f64940dc0f4eb685857ed048"
+    },
+    {
+      "path": "applications/nx25_30/COPYING.R-datasets",
+      "bytes": 18011,
+      "sha256": "e6d6a009505e345fe949e1310334fcb0747f28dae2856759de102ab66b722cb4"
+    }
+  ],
+  "pilot_freeze_sha256": "a15a24c6b279ad447ea27db66a305c0418d27ee416dfba966fc1b261378199bf",
+  "freeze_scope": "Configuration retained before model fitting; not an externally timestamped preregistration",
+  "core_optional_dependency": "Exact modules stdlib; empirical regression runner requires NumPy",
+  "empirical_aggregate_files": [
+    {
+      "path": "results/forecast_targets_empirical.json",
+      "sha256": "c4037b1bc6ef9f7afa7d4ad68b3b2349b866a2d90bd483d10bc02836d130890a",
+      "public_replay": "exact-rational OLS point metrics against public source; frozen bootstrap integrity"
+    },
+    {
+      "path": "results/multiscale_transport_empirical.json",
+      "sha256": "1488408ad79699183f1e2d51e041d00a21b58fd53d1e1de18e484ae9309e79da",
+      "public_replay": "exact-rational AR point metrics against public source; frozen bootstrap integrity"
+    },
+    {
+      "path": "results/reactive_transport_empirical.json",
+      "sha256": "4b5acc4317ffdc7596d0734de6e927f0d345383d587c9bc369779e4a515f6e41",
+      "public_replay": "complete exact primary benchmark re-fit and score replay"
+    },
+    {
+      "path": "results/movement_empirical.json",
+      "sha256": "8e007d05b8454b0d40a2d13e9204cf785093d3626297ce983a530d23c0a9084d",
+      "public_replay": "source/hash and aggregate integrity only; restricted raw recomputation optional separately"
+    }
+  ]
+}

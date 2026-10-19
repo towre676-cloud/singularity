@@ -1,0 +1,892 @@
+{
+  "chart_scope": "Legendre excludes0,1; gauge second coordinate t excludes0; no claim of holonomy from a local gauge law",
+  "external_constant_parameter_rank_strata": [
+    [
+      -1,
+      2
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "gauged": {
+    "basis": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    ],
+    "connection": {
+      "chart": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "interpretation": "supplied rational differential system",
+      "matrix": [
+        [
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          },
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "-1"
+            ]
+          }
+        ],
+        [
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          },
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          }
+        ]
+      ],
+      "source_revision": "explicit-input"
+    },
+    "excluded_polynomials": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "reduced_connection": [
+      [
+        {
+          "denominator": [
+            "1",
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        }
+      ]
+    ],
+    "target_coordinates": [
+      [
+        {
+          "denominator": [
+            "1",
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        }
+      ]
+    ],
+    "targets": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    ]
+  },
+  "independent_predictions": [
+    {
+      "outputs": [
+        {
+          "centre": [
+            5321904198147691706588044088371588409220966606933595585782795983786329043263637076322298166040918167,
+            4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648
+          ],
+          "initial_error": [
+            288744850745287837087894972181,
+            11150372599265311570767859136324180752990208
+          ],
+          "interval": [
+            [
+              5321904195299126690629628084457861426444754738670911452176417809940360223921065751096531898392919615,
+              4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648
+            ],
+            [
+              5321904200996256722546460092285315391997178475196279719389174157632297862606208401548064433688916719,
+              4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648
+            ]
+          ],
+          "numerical_error": [
+            356056466988523116001679164551798878168698073684744631658003446191303842616893298941892427,
+            546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456
+          ]
+        }
+      ],
+      "schema": "singularity.period-target-transport/1",
+      "scope": "declared regular real chart and supplied initial enclosure",
+      "source_revision": "pinned-PerfectPower-certified_period_transport.py:Legendre",
+      "transport": {
+        "certified": true,
+        "matrix": [
+          [
+            [
+              "39692088878560138199027728631/39614081257132168796771975168",
+              "0"
+            ],
+            [
+              "4981055215480976448195459983/39614081257132168796771975168",
+              "0"
+            ]
+          ],
+          [
+            [
+              "353928558588111612502612555/9903520314283042199192993792",
+              "0"
+            ],
+            [
+              "45361920733406248415721151773/39614081257132168796771975168",
+              "0"
+            ]
+          ]
+        ],
+        "rounding_bits": 96,
+        "row_error_bound": "2731697191197735611/4951760157141521099596496896",
+        "schema": "pp-certified-complex-transport/1",
+        "scope": "ordinary analytic continuation along this polygon; fundamental matrix starts at identity; singular endpoints and automatic integer monodromy recognition are excluded",
+        "steps": [
+          {
+            "connection_row_bound": "10/3",
+            "end": [
+              "17/32",
+              "0"
+            ],
+            "order": 16,
+            "radius": "1/8",
+            "start": [
+              "1/2",
+              "0"
+            ],
+            "step_row_error_bound": "3/12113149952"
+          },
+          {
+            "connection_row_bound": "40/11",
+            "end": [
+              "9/16",
+              "0"
+            ],
+            "order": 16,
+            "radius": "1/8",
+            "start": [
+              "17/32",
+              "0"
+            ],
+            "step_row_error_bound": "121/465467080704"
+          }
+        ],
+        "tail_argument": "On the pole-free radius-R disk ||S||<=exp(MR); Cauchy tail <= dimension*exp(MR)*rho^(N+1)/(1-rho). All modulus estimates and arithmetic are rational upper bounds."
+      }
+    },
+    {
+      "outputs": [
+        {
+          "centre": [
+            5321904198147691706588044088371588409220966606933595585782795983786329043263637076322298166040918167,
+            4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648
+          ],
+          "initial_error": [
+            288744850745287837087894972181,
+            11150372599265311570767859136324180752990208
+          ],
+          "interval": [
+            [
+              5321904195299126690629628084457861426444754738670911452176417809940360223921065751096531898392919615,
+              4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648
+            ],
+            [
+              5321904200996256722546460092285315391997178475196279719389174157632297862606208401548064433688916719,
+              4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648
+            ]
+          ],
+          "numerical_error": [
+            356056466988523116001679164551798878168698073684744631658003446191303842616893298941892427,
+            546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456
+          ]
+        }
+      ],
+      "schema": "singularity.period-target-transport/1",
+      "scope": "declared regular real chart and supplied initial enclosure",
+      "source_revision": "pinned-PerfectPower-certified_period_transport.py:Legendre",
+      "transport": {
+        "certified": true,
+        "matrix": [
+          [
+            [
+              "39692088878560138199027728631/39614081257132168796771975168",
+              "0"
+            ],
+            [
+              "4981055215480976448195459983/39614081257132168796771975168",
+              "0"
+            ]
+          ],
+          [
+            [
+              "353928558588111612502612555/9903520314283042199192993792",
+              "0"
+            ],
+            [
+              "45361920733406248415721151773/39614081257132168796771975168",
+              "0"
+            ]
+          ]
+        ],
+        "rounding_bits": 96,
+        "row_error_bound": "2731697191197735611/4951760157141521099596496896",
+        "schema": "pp-certified-complex-transport/1",
+        "scope": "ordinary analytic continuation along this polygon; fundamental matrix starts at identity; singular endpoints and automatic integer monodromy recognition are excluded",
+        "steps": [
+          {
+            "connection_row_bound": "10/3",
+            "end": [
+              "17/32",
+              "0"
+            ],
+            "order": 16,
+            "radius": "1/8",
+            "start": [
+              "1/2",
+              "0"
+            ],
+            "step_row_error_bound": "3/12113149952"
+          },
+          {
+            "connection_row_bound": "40/11",
+            "end": [
+              "9/16",
+              "0"
+            ],
+            "order": 16,
+            "radius": "1/8",
+            "start": [
+              "17/32",
+              "0"
+            ],
+            "step_row_error_bound": "121/465467080704"
+          }
+        ],
+        "tail_argument": "On the pole-free radius-R disk ||S||<=exp(MR); Cauchy tail <= dimension*exp(MR)*rho^(N+1)/(1-rho). All modulus estimates and arithmetic are rational upper bounds."
+      }
+    }
+  ],
+  "leakage": {
+    "exposure_rates": [
+      [
+        1,
+        1
+      ]
+    ],
+    "hidden": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "parameter": [
+      0,
+      1
+    ]
+  },
+  "legendre_chart": {
+    "basis": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ],
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    ],
+    "connection": {
+      "chart": [
+        [
+          1,
+          8
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "interpretation": "normalized Legendre period F(t)=2K(t)/pi",
+      "matrix": [
+        [
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          },
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "1"
+            ]
+          }
+        ],
+        [
+          {
+            "denominator": [
+              "0",
+              "-1",
+              "1"
+            ],
+            "numerator": [
+              "-1/4"
+            ]
+          },
+          {
+            "denominator": [
+              "0",
+              "-1",
+              "1"
+            ],
+            "numerator": [
+              "1",
+              "-2"
+            ]
+          }
+        ]
+      ],
+      "source_revision": "pinned-PerfectPower-certified_period_transport.py:Legendre"
+    },
+    "excluded_polynomials": [
+      [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "reduced_connection": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        },
+        {
+          "denominator": [
+            "0",
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        }
+      ],
+      [
+        {
+          "denominator": [
+            "-1",
+            "1"
+          ],
+          "numerator": [
+            "-1/4"
+          ]
+        },
+        {
+          "denominator": [
+            "-1",
+            "1"
+          ],
+          "numerator": [
+            "-1"
+          ]
+        }
+      ]
+    ],
+    "target_coordinates": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ]
+    ],
+    "targets": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ]
+    ]
+  },
+  "legendre_full": {
+    "basis": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ],
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        }
+      ]
+    ],
+    "connection": {
+      "chart": [
+        [
+          1,
+          8
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "interpretation": "normalized Legendre period F(t)=2K(t)/pi",
+      "matrix": [
+        [
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          },
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "1"
+            ]
+          }
+        ],
+        [
+          {
+            "denominator": [
+              "0",
+              "-1",
+              "1"
+            ],
+            "numerator": [
+              "-1/4"
+            ]
+          },
+          {
+            "denominator": [
+              "0",
+              "-1",
+              "1"
+            ],
+            "numerator": [
+              "1",
+              "-2"
+            ]
+          }
+        ]
+      ],
+      "source_revision": "pinned-PerfectPower-certified_period_transport.py:Legendre"
+    },
+    "excluded_polynomials": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "reduced_connection": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        }
+      ],
+      [
+        {
+          "denominator": [
+            "0",
+            "-1",
+            "1"
+          ],
+          "numerator": [
+            "-1/4"
+          ]
+        },
+        {
+          "denominator": [
+            "0",
+            "-1",
+            "1"
+          ],
+          "numerator": [
+            "1",
+            "-2"
+          ]
+        }
+      ]
+    ],
+    "target_coordinates": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ]
+    ],
+    "targets": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ]
+    ]
+  },
+  "moving_constant": {
+    "basis": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    ],
+    "connection": {
+      "chart": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "interpretation": "supplied rational differential system",
+      "matrix": [
+        [
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          },
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "-1"
+            ]
+          }
+        ],
+        [
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          },
+          {
+            "denominator": [
+              "1"
+            ],
+            "numerator": [
+              "0"
+            ]
+          }
+        ]
+      ],
+      "source_revision": "explicit-input"
+    },
+    "excluded_polynomials": [],
+    "reduced_connection": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0"
+          ]
+        }
+      ]
+    ],
+    "target_coordinates": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        }
+      ]
+    ],
+    "targets": [
+      [
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "1"
+          ]
+        },
+        {
+          "denominator": [
+            "1"
+          ],
+          "numerator": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    ]
+  },
+  "schema": "nx33.acceptance/1"
+}

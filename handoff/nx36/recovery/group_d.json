@@ -1,0 +1,172 @@
+{
+  "schema": "singularity.nx36-recovery-group/1",
+  "group": "d",
+  "tracks": [
+    {
+      "id": "NX17",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX17-A",
+          "status": "accepted",
+          "evidence": "Exact sign-correct rank-one identity, zero/partial/full blockage and orientation reversal; direct sparse and independent flux checks."
+        },
+        {
+          "id": "NX17-B",
+          "status": "accepted",
+          "evidence": "Small-matrix coefficient Woodbury for fault sets; arbitrary short exact input words and nonzero initial states; conductance bounds."
+        },
+        {
+          "id": "NX17-C",
+          "status": "accepted",
+          "evidence": "Every original264plate bond at H6 with four sensor channels;264 reflection checks; setup-inclusive benchmark, bits and measured owned-cache memory."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/fault_transport.py",
+        "tests/test_fault_transport.py",
+        "scripts/fault_transport.py",
+        "docs/research/FAULT_TRANSPORT.md",
+        "results/fault_transport.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_fault_transport.py -v",
+        "PYTHONPATH=src python scripts/fault_transport.py --check"
+      ],
+      "scope_notes": "Finite exact source-derived discrete model; no continuum or uncertainty transport theorem."
+    },
+    {
+      "id": "NX21",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX21-A",
+          "status": "accepted",
+          "evidence": "Exact involution projectors and two-state all-time blindness, broken commutation rejected."
+        },
+        {
+          "id": "NX21-B",
+          "status": "accepted",
+          "evidence": "Full finite rational representation checks; C3 Q-versus-C convention; Klein repeated irreducibles and witness-carrying original closure adapter; transformed noise factors/Grams."
+        },
+        {
+          "id": "NX21-C",
+          "status": "accepted",
+          "evidence": "Original thermal reflected-candidate conjugacy, robust local-sensor repair at cost3; exhaustive32panels and asymmetric-but-failing sensor."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/symmetry_channels.py",
+        "tests/test_symmetry_channels.py",
+        "scripts/symmetry_channels.py",
+        "docs/research/SYMMETRY_CHANNELS.md",
+        "results/symmetry_channels.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_symmetry_channels.py -v",
+        "PYTHONPATH=src python scripts/symmetry_channels.py --check"
+      ],
+      "scope_notes": "Q representations; no undocumented rational-cyclotomic fields; commutation alone does not justify summing observable ranks."
+    },
+    {
+      "id": "NX22",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX22-A",
+          "status": "accepted",
+          "evidence": "Strict no-alias complete DFT recovery with direct original histograms and mass checks; edge M5 success/M4 alias."
+        },
+        {
+          "id": "NX22-B",
+          "status": "accepted",
+          "evidence": "Independent direct and periodic-residue routes across11graphs; compositeM6, isolates, nonprimitive phases; rational interpolation benchmark."
+        },
+        {
+          "id": "NX22-C",
+          "status": "accepted",
+          "evidence": "Finite-candidate optimum by exhaustive32panels; conditional known-support uniqueness by full exact rational column rank, aliasing support rejected."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/phase_probes.py",
+        "tests/test_phase_probes.py",
+        "scripts/phase_probes.py",
+        "docs/research/PHASE_PROBES.md",
+        "results/phase_probes.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_phase_probes.py -v",
+        "PYTHONPATH=src python scripts/phase_probes.py --check"
+      ],
+      "scope_notes": "Finite-volume full histogram vs finite-candidate vs externally known-support uniqueness kept separate."
+    },
+    {
+      "id": "NX23",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX23-A",
+          "status": "accepted",
+          "evidence": "Original IDs, mass/target pushforwards, signed features, zero weights, exact tilted moments and binary multiplicities."
+        },
+        {
+          "id": "NX23-B",
+          "status": "accepted",
+          "evidence": "Normalized original-ID channels, exact target posteriors/Bayes risk, insufficient compression rejected, unsupported observation model rejection."
+        },
+        {
+          "id": "NX23-C",
+          "status": "accepted",
+          "evidence": "NX03 original masks plus NX19 integer fibres; exhaustive costed panels, explicit prior/loss, deterministic Bayes/minimax disagreement and original reconstruction maps."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/population_geometry.py",
+        "tests/test_population_geometry.py",
+        "scripts/population_geometry.py",
+        "docs/research/POPULATION_GEOMETRY.md",
+        "results/population_geometry.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_population_geometry.py -v",
+        "PYTHONPATH=src python scripts/population_geometry.py --check"
+      ],
+      "scope_notes": "Declared synthetic rational prior and observation channels; deterministic minimax excludes randomized decision rules."
+    },
+    {
+      "id": "NX24",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX24-A",
+          "status": "accepted",
+          "evidence": "Strict existing finite-state/periodic scope, canonical rational parsing and delayed/temporary-ideal/guessed-recurrence rejection."
+        },
+        {
+          "id": "NX24-B",
+          "status": "accepted",
+          "evidence": "New one-edge-plus-known-isolates nonperiodic graph ideal-generation theorem, cutoff1, polynomial all-future witnesses; supplemental common binomial-ODE comparison recurrence."
+        },
+        {
+          "id": "NX24-C",
+          "status": "accepted",
+          "evidence": "196 graph-family parameter comparisons checked throughvolume10; q0/q1 strata,684 common recurrence identities, negative/zero/positive parameter census, forged/zero-denominator rejection."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/prefix_certificates.py",
+        "tests/test_prefix_certificates.py",
+        "scripts/prefix_certificates.py",
+        "docs/research/EFFECTIVE_PREFIX.md",
+        "results/effective_prefix.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_prefix_certificates.py -v",
+        "PYTHONPATH=src python scripts/prefix_certificates.py --check"
+      ],
+      "scope_notes": "New cutoff applies to explicitly declared restricted families, never arbitrary fixed-q graph completeness."
+    }
+  ],
+  "external_scope": "NX19/NX20 owned by finish_nx14_20; no global ledgers changed here"
+}

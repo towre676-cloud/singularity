@@ -1,0 +1,104 @@
+{
+  "schema": "singularity.application-pilot-freeze/1",
+  "evidence": "pre-fit configuration, not a result",
+  "NX25": {
+    "source": "recovered WIND ATLAS BOS_asos.csv",
+    "target": "reported ASOS sustained wind speed at +60 minutes",
+    "units": "knots as reported",
+    "train_dates": [
+      "2026-09-25",
+      "2026-09-26"
+    ],
+    "evaluation_dates": [
+      "2026-09-27",
+      "2026-09-28"
+    ],
+    "sampling": "exact 5-minute timestamp alignment; no interpolation",
+    "policies": {
+      "direct_target": [
+        "sknt_now",
+        "sknt_30min_ago"
+      ],
+      "driver_aware": [
+        "sknt_now",
+        "alti_now-alti_30min_ago"
+      ],
+      "generic_information": [
+        "alti_now",
+        "drct_now"
+      ]
+    },
+    "cost": "two declared scalar features per policy; no acquisition superiority claim",
+    "fit": "training-only intercept+two-feature ordinary least squares",
+    "primary_score": "held-out mean absolute error on identical complete cases",
+    "uncertainty": "seed 25030 day-block bootstrap 512 replicates; descriptive small-sample interval"
+  },
+  "NX27": {
+    "source": "same recovered BOS ASOS observations",
+    "fine": "5-minute reported wind series",
+    "coarse": "non-overlapping 15-minute averages of three exact samples",
+    "target": "mean reported wind over next 15-minute block",
+    "split": "same dates as NX25",
+    "models": "training-only scalar AR(1) separately at fine and coarse cadence",
+    "comparison": "coarse vs fine numerical model predictions and each vs measured window reported separately",
+    "scope": "temporal averaging benchmark, not a spatial atmospheric multiscale validation"
+  },
+  "NX28": {
+    "source": "EPA AQS daily_44201_2024.zip and daily_42602_2024.zip",
+    "site": "25-025-0042 if both species complete; otherwise earliest lexical common site",
+    "target": "next-day arithmetic mean ozone ppm for 1-hour sample duration",
+    "train": "2024-01-01 through 2024-08-31",
+    "evaluation": "2024-09-01 through 2024-12-31",
+    "mechanism": "two-species reduced discrete loss/conversion family; fitted rate with no claim of named atmospheric mechanism validity",
+    "baseline": "ozone persistence",
+    "primary_score": "next-day MAE on identical complete dates",
+    "missingness": "no interpolation, unit/time/base/site joins exact"
+  },
+  "NX29_NX30": {
+    "source": "recovered official NFL BDB 2027 restricted input archives; raw rows remain private",
+    "max_athletes": 20,
+    "selection": "first 20 lexical official nfl_id with valid 2023 or 2024 combine attempts and future game outcome",
+    "split": "draft cohort chronological plus player-held-out; earliest cohort train, latest evaluation",
+    "target": "mean future player_get_off on valid non-nullified matched plays",
+    "conventional": [
+      "forty_time",
+      "vertical_jump",
+      "broad_jump",
+      "weight"
+    ],
+    "NX29_extra": "identified bilinear movement target plus exact design rank and uncertainty",
+    "NX30_extra": "level-two x,y,time signatures of combine attempt; full attempt available at deployment",
+    "segmentation": "at most eight candidate boundaries, three phases; no evaluation outcome in extraction",
+    "primary_score": "held-out squared error on identical athletes",
+    "uncertainty": "fixed seed 2930 player bootstrap 512 repeats",
+    "calibration": "training residual radius and held-out coverage",
+    "restriction": "publish aggregates/source hashes only, no individual restricted trajectories or fitted per-player outputs"
+  },
+  "amendments_before_fitting": [
+    {
+      "id": "A01",
+      "reason": "Official schema uses forty/vertical/combine_weight, and lexical IDs could select a single cohort. Freeze balanced chronological cohorts before extracting outcome values or fitting.",
+      "athlete_selection": "first ten lexical eligible IDs in each 2023 and 2024 draft cohort; twenty maximum",
+      "conventional_columns": [
+        "forty",
+        "vertical",
+        "broad_jump",
+        "combine_weight"
+      ],
+      "split": "train 2023 cohort; evaluate 2024 cohort; disjoint nfl_id namespaces verified"
+    },
+    {
+      "id": "A02",
+      "reason": "EPA anonymous bulk endpoints timed out twice before any chemical measurements were obtained. Switch to maintainer-distributed R airquality primary benchmark before fitting.",
+      "source": "r-devel/r-svn src/library/datasets/data/airquality.tab",
+      "site": "Roosevelt Island, New York",
+      "target": "next-day mean ozone at 1300-1500 hours ppb",
+      "train": "1973-05-01 through 1973-07-31",
+      "evaluation": "1973-08-01 through 1973-09-30",
+      "model": "positive open-box O3 -> unobserved sink with constant source: c_next=rho*c+b; rho grid0..1 step1/100; b>=0 training-only least squares",
+      "baseline": "persistence",
+      "primary_score": "next-day MAE on identical consecutive observed days",
+      "scope": "empirical reduced one-species loss/source mismatch; no named atmospheric mechanism validation; no latent species scored as measured"
+    }
+  ]
+}

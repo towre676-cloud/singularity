@@ -1,0 +1,61 @@
+{
+  "normalization": "F=2K/pi at9/16; seed at1/2",
+  "records": {
+    "direct_euler_quadrature": {
+      "cells": 128,
+      "seconds_including_setup": 0.035508025001036,
+      "target_interval": [
+        [
+          22401128454105094759,
+          18446744073709551616
+        ],
+        [
+          11241281734611932457,
+          9223372036854775808
+        ]
+      ],
+      "width": [
+        81435015118770155,
+        18446744073709551616
+      ]
+    },
+    "full": {
+      "rank": 2,
+      "seconds_including_setup": 0.022605919002671726,
+      "target_interval": [
+        [
+          1402614186626940521,
+          1152921504606846976
+        ],
+        [
+          22441827007394937267,
+          18446744073709551616
+        ]
+      ],
+      "width": [
+        21363888931,
+        18446744073709551616
+      ]
+    },
+    "target_reduced": {
+      "rank": 2,
+      "seconds_including_setup": 0.03331779201107565,
+      "target_interval": [
+        [
+          1402614186626940521,
+          1152921504606846976
+        ],
+        [
+          22441827007394937267,
+          18446744073709551616
+        ]
+      ],
+      "width": [
+        21363888931,
+        18446744073709551616
+      ]
+    }
+  },
+  "schema": "nx31.setup-inclusive-benchmark/1",
+  "scope": "wall-clock on this machine; rank-two Legendre target has no dimension reduction; not rerun in CI"
+}

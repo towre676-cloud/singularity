@@ -1,0 +1,160 @@
+{
+  "accepted_units": 18,
+  "commands": [
+    "PYTHONPATH=src python scripts/nx_analytic_decisions.py --check",
+    "PYTHONPATH=src python scripts/check_nx_decision.py",
+    "python scripts/check_nx_decision_formal.py"
+  ],
+  "formal": "Lean4.12 three scoped semantic theorems compile; all three report no axiom dependencies",
+  "group": "F",
+  "original_frontiers": "fixed-pinning completeness and graph-realizability conjectures remain open; this work does not infer full equality from finite agreement",
+  "schema": "nx36.recovery-group/1",
+  "slow_replay": "PYTHONPATH=src python scripts/nx_analytic_decisions.py --check --slow",
+  "tests": "23 focused tests plus3 analytic peer-review regressions; all pass",
+  "tracks": {
+    "NX31": {
+      "evidence": {
+        "docs/research/NX31_PERIOD_OBSERVATIONS.md": "49f9e6f105259c4a778d04c5b764b8d1b74d692e92377dd4d22344d5547266ad",
+        "results/nx36/nx31_acceptance.json": "fe5fb2f1e584e6a4266466162ec261530715d8a8bcfd66da6655e3a4ba250f3b",
+        "results/nx36/nx31_benchmark.json": "9ecf10bf19478084a8dc66d5f853ed490fe40e181c26aa389052bee07e7b6dc5",
+        "src/singularity/period_observations.py": "bef4f1683243014acf015dac9974a7a4fc191b1360dc6be573c090fe95bf6a98",
+        "tests/test_period_observations.py": "ad5e4daffb02c8be64dfa115713dfe45577e42910d3279df24515e74e86debf9"
+      },
+      "files": [
+        "src/singularity/period_observations.py",
+        "tests/test_period_observations.py",
+        "docs/research/NX31_PERIOD_OBSERVATIONS.md",
+        "results/nx36/nx31_acceptance.json",
+        "results/nx36/nx31_benchmark.json"
+      ],
+      "scope": "Q(t)dim<=4 degree<=6, regular real charts and normalized Legendre integral; rank2 geometric target has no reduction benefit",
+      "status": "accepted",
+      "units": {
+        "NX31-A": "accepted",
+        "NX31-B": "accepted",
+        "NX31-C": "accepted"
+      }
+    },
+    "NX32": {
+      "evidence": {
+        "docs/research/NX32_MONODROMY_EXPERIMENTS.md": "cc0d8919c017d73c551f13196f1f1e23e5050fd9f5bcbfb7738246f27abc7d91",
+        "results/nx36/nx32_acceptance.json": "6b4aedde457bf72521e6d9d0f5c05e46c8bf1715b16bfc8ccf7e572b5b9bd710",
+        "results/nx36/nx32_legendre_loop0.json": "b896dfc6fdc5b18b5bc38cc812527280ad3f50ac727e48978da5c895f840ffd1",
+        "results/nx36/nx32_legendre_loop1.json": "f0f06d067013ebd265f91104d8d6fab6bcb1d5b3ecb6ebae7f446db59d2fc553",
+        "src/singularity/monodromy_experiments.py": "cc6a0274dfb97f6fcff584fa593f33206c98059b44db45cd311981252318e8d5",
+        "tests/test_monodromy_experiments.py": "cd14943c45a597222b77ba161bb2384fece2ffce209151bc196fb9cfc914e3cd"
+      },
+      "files": [
+        "src/singularity/monodromy_experiments.py",
+        "tests/test_monodromy_experiments.py",
+        "docs/research/NX32_MONODROMY_EXPERIMENTS.md",
+        "results/nx36/nx32_acceptance.json",
+        "results/nx36/nx32_legendre_loop0.json",
+        "results/nx36/nx32_legendre_loop1.json"
+      ],
+      "scope": "exact rational loop language plus marked Legendre integral-cycle source and two validated polygons; integrality premise explicit",
+      "status": "accepted",
+      "units": {
+        "NX32-A": "accepted",
+        "NX32-B": "accepted",
+        "NX32-C": "accepted"
+      }
+    },
+    "NX33": {
+      "evidence": {
+        "docs/research/NX33_MOVING_QUOTIENTS.md": "daa20e567a47f89e6810bce479fd91b84e50776fc17c08ec17e012852e1160e6",
+        "results/nx36/nx33_acceptance.json": "d116b08f2e78cd908599793d3ecc8fc487473ea7d82750d86eb3145cde73606c",
+        "src/singularity/moving_quotients.py": "65f8feae35e6dfbb92e5c09138f3aaf3de33794af171c1ad357d7c5c7ade6f21",
+        "tests/test_moving_quotients.py": "d41da355ef86485518ef761ac34be64fb949568ce53fc283f66a9225250dec19"
+      },
+      "files": [
+        "src/singularity/moving_quotients.py",
+        "tests/test_moving_quotients.py",
+        "docs/research/NX33_MOVING_QUOTIENTS.md",
+        "results/nx36/nx33_acceptance.json"
+      ],
+      "scope": "one-parameter Q(t) moving quotients, regular chart overlap and Legendre gauge; no general multidimensional holonomy solver",
+      "status": "accepted",
+      "units": {
+        "NX33-A": "accepted",
+        "NX33-B": "accepted",
+        "NX33-C": "accepted"
+      }
+    },
+    "NX34": {
+      "evidence": {
+        "docs/research/NX34_COMPLEX_VISIBILITY.md": "319bb01864cfe8330185a605a1052bf9895db600ce4005e674cf6a2de68be296",
+        "results/nx36/nx34_acceptance.json": "0d718ce0e7a8d49efa8b63211a0b30a999cc339f0cdb5a850501e500a1412b74",
+        "src/singularity/complex_visibility.py": "0e72f8882fa16b7ad0ea72106f654775c106bffa9668dbb2044e07dfb0c39381",
+        "tests/test_complex_visibility.py": "ec4f59451e76019979fbcd55127db133040ccc72299220d10c0c9b1ac9c48a62"
+      },
+      "files": [
+        "src/singularity/complex_visibility.py",
+        "tests/test_complex_visibility.py",
+        "docs/research/NX34_COMPLEX_VISIBILITY.md",
+        "results/nx36/nx34_acceptance.json"
+      ],
+      "scope": "supported exact polynomial classes, rational local domains and fourfold spectral-pair disc enlargement; no global continuation",
+      "status": "accepted",
+      "units": {
+        "NX34-A": "accepted",
+        "NX34-B": "accepted",
+        "NX34-C": "accepted"
+      }
+    },
+    "NX35": {
+      "evidence": {
+        "docs/research/NX35_REFINEMENT_PLANNER.md": "f2674675d4eeb217ec42c1d7bc9abc304b9f44c1aeb1be3166c64ffa98099be1",
+        "results/nx36/nx35_acceptance.json": "2594a0494c8e7701eef8638a203f4dd438e66ab15f37352915d1d78d8cec76d9",
+        "src/singularity/refinement_planner.py": "54d42dd49c24229d5b22326b6d945e72baae78d669f5a1cb1f289f0dbcc8fe68",
+        "tests/test_refinement_planner.py": "a70a1fd649e018f16160f41d9ebef9f5eb0d01cbce46139ac8f4a605aa72258f"
+      },
+      "files": [
+        "src/singularity/refinement_planner.py",
+        "tests/test_refinement_planner.py",
+        "docs/research/NX35_REFINEMENT_PLANNER.md",
+        "results/nx36/nx35_acceptance.json"
+      ],
+      "scope": "finite positive-cost independent-scalar-box pool; actual source-bound 4x4 three-model two-protocol pilot; two refined model evaluations vs six baseline",
+      "status": "accepted",
+      "units": {
+        "NX35-A": "accepted",
+        "NX35-B": "accepted",
+        "NX35-C": "accepted"
+      }
+    },
+    "NX36": {
+      "evidence": {
+        "docs/research/NX36_DECISION_CERTIFICATES.md": "1caa27a0d2a5aa6fae3592af7669e9ef81338b3978a39e8ff024c8d3f011520a",
+        "docs/research/NX36_IMPLEMENTATION.md": "83079d804d843997d5263fc22d55697b534fe1c66ef3621471e898fec242e694",
+        "formal/NXDecisionAudit.lean": "30d122f5f47e06e7319d27f9715970fe169d3c3882c897a5e209645277f728c3",
+        "formal/Singularity/NXDecision.lean": "7aa23971a8a5ae76de3a23dbbd3d481520699059f7ae9a33d38297edff697de6",
+        "results/nx36/nx36_acceptance.json": "c7c21b91f40e2910b88fd72147a17b6874ef89be40252f1555bc9fbe79cfcbe1",
+        "results/nx36/nx36_formal_audit.json": "3df54af9dc7936ea65ffe0de9f685dfc171136eb05f2b9eec1f443fa9d6cd809",
+        "scripts/check_nx_decision.py": "4a4b0dde13c115425754a412058c467228c6f36e68cde587f91203ab002a6ca6",
+        "scripts/check_nx_decision_formal.py": "9526a8f8b1bb489346d5957c2bda14db69a5c9963cbbb74f05181725c10f1766",
+        "src/singularity/decision_certificates.py": "9fccb26656ed4e20ce1ea11e4b1ec8469cba376831ddb643c997f39519781d7c",
+        "tests/test_decision_certificates.py": "cac4c6ddde5f83e8304e741b71005c85b9e43b0e263680a1cd1924fdd8741974"
+      },
+      "files": [
+        "src/singularity/decision_certificates.py",
+        "tests/test_decision_certificates.py",
+        "docs/research/NX36_DECISION_CERTIFICATES.md",
+        "docs/research/NX36_IMPLEMENTATION.md",
+        "results/nx36/nx36_acceptance.json",
+        "results/nx36/nx36_formal_audit.json",
+        "scripts/check_nx_decision.py",
+        "scripts/check_nx_decision_formal.py",
+        "formal/Singularity/NXDecision.lean",
+        "formal/NXDecisionAudit.lean"
+      ],
+      "scope": "primitive exact scalar-interval catalogue decision checker and rational contrast helper; compiled semantic Lean theorem only, not Python or calibration verification",
+      "status": "accepted",
+      "units": {
+        "NX36-A": "accepted",
+        "NX36-B": "accepted",
+        "NX36-C": "accepted"
+      }
+    }
+  }
+}

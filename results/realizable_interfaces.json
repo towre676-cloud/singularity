@@ -1,0 +1,157 @@
+{
+  "boundary": "No unrestricted graph realization, full-series collision or arbitrary-graph completeness asserted.",
+  "charge_filter_tiny_graphs": 64,
+  "constructor_completeness": "trees checked independently by all (n-1)-edge subsets and Cayley counts; dominating interiors enumerate every labeled adjacency bit mask",
+  "families": {
+    "dominating_interiors_le_4": {
+      "composition_profiles": 3004,
+      "constructor_count": 76,
+      "equality": "fixed rational specialization within each known graph-order stratum; original labeled heights",
+      "frontier_volume": 11,
+      "groups": [],
+      "independent_kernel_checks": 19,
+      "isomorphism_classes": 19,
+      "language": "simple swap-symmetric edge-free contexts; symmetric interface sums without averaging",
+      "parameter": [
+        1,
+        2
+      ],
+      "prefix_volume": 4,
+      "schema": "singularity.realizability-search/1",
+      "scope": "nonzero frontier differences excluded only when every distinct graph class already differs in this required lower kernel prefix",
+      "state": "complete_bounded_exclusion",
+      "surviving_nonisomorphic_groups": 0
+    },
+    "trees_n_le_5": {
+      "composition_profiles": 2395,
+      "constructor_count": 145,
+      "equality": "fixed rational specialization within each known graph-order stratum; original labeled heights",
+      "frontier_volume": 11,
+      "groups": [],
+      "independent_kernel_checks": 24,
+      "isomorphism_classes": 24,
+      "language": "simple swap-symmetric edge-free contexts; symmetric interface sums without averaging",
+      "parameter": [
+        1,
+        2
+      ],
+      "prefix_volume": 4,
+      "schema": "singularity.realizability-search/1",
+      "scope": "nonzero frontier differences excluded only when every distinct graph class already differs in this required lower kernel prefix",
+      "state": "complete_bounded_exclusion",
+      "surviving_nonisomorphic_groups": 0
+    }
+  },
+  "formal_frontiers": {
+    "edge_free": {
+      "annihilator": [
+        [
+          0,
+          1
+        ]
+      ],
+      "budget": 11,
+      "interior_volumes": [
+        6,
+        4
+      ],
+      "states": [
+        [
+          0,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "vector": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ]
+    },
+    "scope": "formal candidates only; no realizing pair asserted",
+    "terminal_edge": {
+      "annihilator": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "budget": 38,
+      "interior_volumes": [
+        19,
+        15,
+        13
+      ],
+      "states": [
+        [
+          1,
+          18
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          10,
+          15
+        ]
+      ],
+      "vector": [
+        [
+          79228162514264337593543950335,
+          2658455991569831745807614120560689152
+        ],
+        [
+          -29642774844752946028434172162224104410437116074403984394101141506025761187823615,
+          994646472819573284310764496293641680200912301594695434880927953786318994025066751066112
+        ],
+        [
+          374144419156711147060143317175368453031918731001855,
+          994646472819573284310764496293641680200912301594695434880927953786318994025066751066112
+        ]
+      ]
+    }
+  },
+  "structural_exclusions": [
+    {
+      "excluded": "distinct dominating blocks with promised threshold interiors of equal known order and equal closure prefix",
+      "maximum_interior_order": 1048575,
+      "parameter": [
+        1,
+        2
+      ],
+      "scope": "structural family exclusion; no unrestricted graph completeness or general symmetric-kernel realizability claim",
+      "theorem": "FR05 threshold inverse plus unit-triangular raw closure transport",
+      "volume": 11
+    },
+    {
+      "excluded": "distinct dominating blocks with promised threshold interiors of equal known order and equal closure prefix",
+      "maximum_interior_order": 18889465931478580854783,
+      "parameter": [
+        1,
+        2
+      ],
+      "scope": "structural family exclusion; no unrestricted graph completeness or general symmetric-kernel realizability claim",
+      "theorem": "FR05 threshold inverse plus unit-triangular raw closure transport",
+      "volume": 38
+    }
+  ],
+  "track": "NX15",
+  "units": [
+    "NX15-A",
+    "NX15-B",
+    "NX15-C"
+  ]
+}

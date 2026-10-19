@@ -1,0 +1,26 @@
+{
+  "schema": "singularity.claude-recovery-validation/1",
+  "source_commit": "926dce28c4018e55b37e89e48325e802d97376ef",
+  "source_tree": "49cf9378b1d25477425dd83bd91bfd2a6dd5811a",
+  "new_test_count": 83,
+  "targeted_unit_suites": "all six passed",
+  "retained_replays": [
+    "candidate_box_thermal",
+    "target_recovery",
+    "typed_contexts",
+    "incremental_locality"
+  ],
+  "retained_replay_status": "passed",
+  "metadata_tracks_complete": 4,
+  "metadata_units_complete": 13,
+  "remaining_units": 95,
+  "github_observed": {
+    "python_3_12": "success",
+    "formal_lean": "success",
+    "formal_analysis": "success",
+    "python_3_10": "success",
+    "workflow_run": 39199980956,
+    "all_four_jobs": "success"
+  },
+  "source_recovery": "31 Git blobs,11 signed commits,all hashes verified;no history rewritten"
+}

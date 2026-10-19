@@ -1,0 +1,101 @@
+{
+  "affine_quadratic": {
+    "linear_coefficients": [
+      "0"
+    ],
+    "quadratic_hessian": [
+      [
+        "2"
+      ]
+    ],
+    "relatively_open": true,
+    "status": "nonconstant_on_relatively_open_fibre",
+    "symmetrized_target_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ]
+  },
+  "circle_two_charts": [
+    "-4",
+    "-4"
+  ],
+  "evidence": "synthetic_exact",
+  "finite_repair": {
+    "cost": "1",
+    "coverage_scope": "retained_finite_pairs_only",
+    "global_fibre_constancy": false,
+    "selected": [
+      "x"
+    ],
+    "status": "optimal_finite_witness_repair"
+  },
+  "missed_new_branch": {
+    "old_observation": "x^2+y^2=1",
+    "repair_sensor": "x=0 for both",
+    "states": [
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "target": "x+y differs by 2"
+  },
+  "parabola": {
+    "constraint_curvatures": [
+      "-2"
+    ],
+    "corrected_hessian": [
+      [
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "multipliers": [
+      "1"
+    ],
+    "one_compatible_acceleration": [
+      "0",
+      "2"
+    ],
+    "second_variation": "2",
+    "status": "regular_stationary"
+  },
+  "quadratic_witness": {
+    "complete_diameter": null,
+    "diameter_lower_bound": "1",
+    "observation": [
+      "0"
+    ],
+    "states": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "status": "verified_ambiguity",
+    "target_gap": "1"
+  },
+  "schema": "singularity.nonlinear-fibres/1",
+  "special_case_complete_diameter": {
+    "upper_bound_proof": "0<=x2^2<=1 on [-1,1]; witness attains both endpoints",
+    "value": 1
+  }
+}

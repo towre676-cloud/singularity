@@ -1,0 +1,181 @@
+{
+  "schema": "singularity.nx36-recovery-group/1",
+  "group": "a",
+  "tracks": [
+    {
+      "id": "NX02",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX02-A",
+          "status": "accepted",
+          "evidence": "Exact bounded rational Fourier\u2013Motzkin feasibility returns a primal overlap or a strict contrast extracted from a nonnegative Farkas combination. Support, projection, zero generators, rank deficiency, touching, malformed dimensions and false correlation are checked."
+        },
+        {
+          "id": "NX02-B",
+          "status": "accepted",
+          "evidence": "The optimizer exhausts all finite panel subsets in cost order and retains witnesses on successful and cheaper rejected panels. Independent active-vertex enumeration agrees on 24 pair instances and every subset of 12 three-candidate families. Outer-enclosure outcomes explicitly say not certified or optimal for the enclosure; they never claim physical impossibility. Boolean pair indices are rejected."
+        },
+        {
+          "id": "NX02-C",
+          "status": "accepted",
+          "evidence": "The affine thermal map preserves persistent output offset, separately reset initial cells and fresh sensor error. Independent substitution matches the old simulator. Joint optimum is 14; every scalar box overlaps, and replacing the shared offset by independent columns gives a verified overlap."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/joint_uncertainty.py",
+        "tests/test_joint_uncertainty.py",
+        "docs/research/JOINT_UNCERTAINTY.md",
+        "scripts/joint_thermal.py",
+        "results/joint_thermal.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_joint_uncertainty.py -v",
+        "PYTHONPATH=src python scripts/joint_thermal.py --check"
+      ],
+      "scope_notes": "Source-derived synthetic model; exact for the declared catalogue, domains and costs. No empirical calibration or unrestricted all-future claim."
+    },
+    {
+      "id": "NX03",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX03-A",
+          "status": "accepted",
+          "evidence": "General signed integer Boolean constraints use residual-state completion counting, exact lexicographic rank/unrank and conditioning. Literal products check coupled constraints; every feasible tiny rank and every prefix partition is checked, with invalid and budget cases."
+        },
+        {
+          "id": "NX03-B",
+          "status": "accepted",
+          "evidence": "The simultaneous blocked-bond constructor preserves original mask IDs, heater and sensors. All 11 tiny physical masks agree with independent flux evolution, including two bonds sharing an endpoint; symmetry, nonnegativity and row sums are checked."
+        },
+        {
+          "id": "NX03-C",
+          "status": "accepted",
+          "evidence": "All 79 original masks are assembled, retained with a source-model digest and decoded from their central readings. Eight declared protocols have independent flux spots. Sixty exact behavioral classes imply completed finite-pool infeasibility, with every original multiplicity and positive-noise comparison retained."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/fault_population.py",
+        "tests/test_fault_population.py",
+        "docs/research/FAULT_POPULATIONS.md",
+        "scripts/fault_population_diagnostics.py",
+        "results/fault_population_diagnostics.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_fault_population.py -v",
+        "PYTHONPATH=src python scripts/fault_population_diagnostics.py --check"
+      ],
+      "scope_notes": "Source-derived synthetic model; exact for the declared catalogue, domains and costs. No empirical calibration or unrestricted all-future claim."
+    },
+    {
+      "id": "NX04",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX04-A",
+          "status": "accepted",
+          "evidence": "Rational severity zero and one reproduce nominal and full blockage exactly; intermediate severities match independent edge flux. Admissible calibration/severity domains and independent nuisance assignments across hypotheses are explicit. The scalar uncertain-gain example is retained."
+        },
+        {
+          "id": "NX04-B",
+          "status": "accepted",
+          "evidence": "Sparse polynomial maps have exact full-domain rational subdivision certificates. A manual two-step expansion verifies every coefficient. Strict, overlap, touching and unresolved cases, nonmonotone subdivision and a tampered covering boundary are checked."
+        },
+        {
+          "id": "NX04-C",
+          "status": "accepted",
+          "evidence": "Four declared bonds include a reflected pair. Horizon-one through horizon-four center readings cover the closed severity bands {0}, [1/2,3/4] and [3/4,1] with explicit overlap witnesses or strict covering proofs. Physical calibration coordinates are explicitly fixed and flux samples are independent."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/thermal_parameters.py",
+        "tests/test_thermal_parameters.py",
+        "docs/research/THERMAL_PARAMETERS.md",
+        "scripts/thermal_severity.py",
+        "results/thermal_severity.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_thermal_parameters.py -v",
+        "PYTHONPATH=src python scripts/thermal_severity.py --check"
+      ],
+      "scope_notes": "Source-derived synthetic model; exact for the declared catalogue, domains and costs. No empirical calibration or unrestricted all-future claim."
+    },
+    {
+      "id": "NX05",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX05-A",
+          "status": "accepted",
+          "evidence": "Every closed endpoint and intervening open observation cell is compiled exactly, including rejection rays and point/nested/duplicate/touching intervals. Direct inequalities verify membership and original target labels remain separate."
+        },
+        {
+          "id": "NX05-B",
+          "status": "accepted",
+          "evidence": "The proper-policy Bellman solver has an explicit belief budget and a proof allowing deletion of same-belief branches. The worked example gives adaptive cost two versus fixed-panel cost three. Twenty-five random tiny families agree with an independent finite-depth tree oracle; every branch, cost and optimum is checked."
+        },
+        {
+          "id": "NX05-C",
+          "status": "accepted",
+          "evidence": "The unchanged six-candidate, 112-protocol thermal contract gives static and adaptive optimum 20 with identical costs and radii. A bounded eight-original-mask subset is also completely solved and is impossible in its declared twelve-protocol pool. Policies and Bellman evidence are retained."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/reset_policies.py",
+        "tests/test_reset_policies.py",
+        "docs/research/RESET_POLICIES.md",
+        "scripts/adaptive_thermal.py",
+        "results/adaptive_thermal.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_reset_policies.py -v",
+        "PYTHONPATH=src python scripts/adaptive_thermal.py --check"
+      ],
+      "scope_notes": "Source-derived synthetic model; exact for the declared catalogue, domains and costs. No empirical calibration or unrestricted all-future claim."
+    },
+    {
+      "id": "NX06",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX06-A",
+          "status": "accepted",
+          "evidence": "Finite history beliefs retain original targets under partial legal and nondeterministic actions. Erasure remains ambiguous while observing first identifies the original bit. All sixteen four-action words are independently evolved; illegal actions remain distinct from ambiguous outputs. Duplicate action identifiers are rejected before search; a regression reproduces the former producer/verifier cost mismatch and verifies the uniquely named replacement."
+        },
+        {
+          "id": "NX06-B",
+          "status": "accepted",
+          "evidence": "Exact affine images and rational latent-polytope constraints preserve gain through time while allowing fresh sensor errors and reset-local coordinates. Shared two-slope transcripts separate, final-only readings overlap, and robust contrasts, noncommuting actions and reset semantics are checked."
+        },
+        {
+          "id": "NX06-C",
+          "status": "accepted",
+          "evidence": "Three source-derived four-by-four defects have every transition in the complete at-most-two-control language independently flux-checked. Shared-history optimum is nine including setup, versus static fourteen in the identical language under exact zero initial/error assumptions. Fixed six-reading costs eighteen versus forty-two are separately labelled."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/history_experiments.py",
+        "tests/test_history_experiments.py",
+        "docs/research/HISTORY_EXPERIMENTS.md",
+        "scripts/history_thermal.py",
+        "results/history_thermal.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest discover -s tests -p test_history_experiments.py -v",
+        "PYTHONPATH=src python scripts/history_thermal.py --check"
+      ],
+      "scope_notes": "Source-derived synthetic model; exact for the declared catalogue, domains and costs. No empirical calibration or unrestricted all-future claim."
+    }
+  ],
+  "test_methods": 26,
+  "independent_case_counts": {
+    "joint_pair_vertex_instances": 24,
+    "joint_complete_subset_families": 12,
+    "reset_tree_instances": 25,
+    "tiny_physical_masks": 11,
+    "pilot_original_masks": 79,
+    "finite_erase_words": 16
+  },
+  "notes": "Accepted units have their declared finite or polytopic scope. General research frontiers and empirical calibration remain separate. All policy checkers bind schema, semantics and outcome status; impossible claims are recomputed."
+}

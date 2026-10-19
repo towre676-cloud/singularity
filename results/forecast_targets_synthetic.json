@@ -1,0 +1,69 @@
+{
+  "admissible_state_box": {
+    "center": [
+      "0",
+      "0"
+    ],
+    "radii": [
+      "1",
+      "2"
+    ]
+  },
+  "attaining_error": [
+    "1/10",
+    "1/5"
+  ],
+  "box_error_radius": "7/10",
+  "constrained_factorization": [
+    [
+      "1"
+    ]
+  ],
+  "evidence": "synthetic_exact",
+  "factorization": [
+    [
+      "1",
+      "3"
+    ]
+  ],
+  "horizon": 3,
+  "known_inputs": "zero in retained pilot; general known-input compiler available",
+  "null_witness_position_only": [
+    "0",
+    "1"
+  ],
+  "panel": {
+    "affine_offset": "0",
+    "cost": "2",
+    "decoder_contract": "target = affine_offset + weights dot raw_readings + known_input_offset; deterministic error bounded separately",
+    "domain_id": "[-1,1]x[-2,2]",
+    "error_radius": "7/10",
+    "horizon": 3,
+    "known_input_offset": "not_included; compile from declared known inputs",
+    "noise_geometry": "deterministic_coordinate_box",
+    "panels_checked": 8,
+    "selected": [
+      "position",
+      "velocity"
+    ],
+    "status": "optimal_finite_catalogue",
+    "weights": [
+      "1",
+      "3"
+    ]
+  },
+  "schema": "singularity.forecast-targets/1",
+  "strict_boundary": {
+    "null_witness": null,
+    "panels_checked": 8,
+    "status": "infeasible_catalogue"
+  },
+  "target_row": [
+    "1",
+    "3"
+  ],
+  "target_values_same_position": [
+    3,
+    -3
+  ]
+}

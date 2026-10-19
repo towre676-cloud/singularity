@@ -1,0 +1,188 @@
+{
+  "binary": {
+    "certificate": {
+      "A": [
+        [
+          2,
+          2
+        ]
+      ],
+      "U": [
+        [
+          1
+        ]
+      ],
+      "V": [
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "coordinate_order": [
+        0,
+        1
+      ],
+      "diagonal": [
+        2
+      ],
+      "dimension": 2,
+      "original_matrix": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "rank": 1,
+      "resources": {
+        "maximum_entry_bits": 2,
+        "operations": 3
+      },
+      "row_scales": [
+        1
+      ],
+      "schema": "singularity.integer-image/1"
+    },
+    "original_states": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "pushforward": {
+      "(0,)": 1,
+      "(2,)": 2,
+      "(4,)": 1
+    },
+    "y1_in_image": false,
+    "y2_fibre": {
+      "kernel_basis": [
+        [
+          -1,
+          1
+        ]
+      ],
+      "particular": [
+        1,
+        0
+      ]
+    }
+  },
+  "boundary": "Image membership is necessary arithmetic compatibility, never sufficient graph realizability. Fibres need explicit finite original-coordinate bounds.",
+  "denominator_clearing": {
+    "A": [
+      [
+        1,
+        1
+      ]
+    ],
+    "U": [
+      [
+        1
+      ]
+    ],
+    "V": [
+      [
+        1,
+        -1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "coordinate_order": [
+      0,
+      1
+    ],
+    "diagonal": [
+      1
+    ],
+    "dimension": 2,
+    "original_matrix": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ],
+    "rank": 1,
+    "resources": {
+      "maximum_entry_bits": 1,
+      "operations": 3
+    },
+    "row_scales": [
+      2
+    ],
+    "schema": "singularity.integer-image/1"
+  },
+  "independent_original_states": 8019,
+  "matrix_corpus": 837,
+  "saturation_regression": {
+    "kernel_basis": [
+      [
+        1,
+        -2,
+        0
+      ],
+      [
+        0,
+        -1,
+        1
+      ]
+    ],
+    "particular": [
+      0,
+      0,
+      0
+    ]
+  },
+  "short_transition_checks": 100,
+  "swap_operator": {
+    "M": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "domain": "certified image lattice A Z^D",
+    "identity": "QA=AM",
+    "quotient_map": [
+      [
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "schema": "singularity.integer-operator/1"
+  },
+  "track": "NX19",
+  "units": [
+    "NX19-A",
+    "NX19-B",
+    "NX19-C"
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "behavior": {
+    "classes": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "rank": 5,
+    "seed_to_class": {
+      "negative": 5,
+      "positive": 0,
+      "same_residue_distinct_original": 0
+    },
+    "state_to_class": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "boundary": "All-future equivalence concerns these finite seed images, legal actions and sensors. No global Pell seed completeness is asserted.",
+  "cheapest_witness": {
+    "actions": [
+      "unit"
+    ],
+    "cost": [
+      1,
+      1
+    ],
+    "difference": [
+      1,
+      1
+    ],
+    "sensor": "y",
+    "symbol": 2,
+    "word": [
+      0
+    ]
+  },
+  "conjugation_witness": {
+    "J_then_unit": [
+      3,
+      2
+    ],
+    "unit_then_J": [
+      3,
+      3
+    ],
+    "verified": true
+  },
+  "cycle": {
+    "cycle": [
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "prefix": [],
+    "preperiod": 0
+  },
+  "forever_equivalent": {
+    "classes": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "rank": 1,
+    "seed_to_class": {
+      "negative": 0,
+      "positive": 0
+    },
+    "state_to_class": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "norm_congruence_counterexample": {
+    "chosen_seed_generated_states": [
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "modulus": 4,
+    "norm_congruence_states": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "unlicensed_residue": [
+      1,
+      2
+    ]
+  },
+  "remote": {
+    "decimal_digits": 6000,
+    "index_mod_cycle": 0,
+    "method": "decimal-stream binary matrix powering plus independent cycle remainder",
+    "pattern": "9876543210 repeated 600 times",
+    "residue": [
+      1,
+      0
+    ]
+  },
+  "signed_noncommuting": {
+    "D": 2,
+    "action_costs": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "actions": {
+      "conjugation": "conjugation",
+      "unit": [
+        3,
+        2
+      ]
+    },
+    "limits": {
+      "max_dense_states": 128,
+      "max_states": 512
+    },
+    "modulus": 5,
+    "observation_costs": [
+      [
+        0,
+        1
+      ]
+    ],
+    "observations": [
+      "y"
+    ],
+    "provenance": "user-declared finite seeds",
+    "schema": "singularity.arithmetic-orbit/1",
+    "scope": "finite declared seed images and generated residue closure; no global Pell completeness",
+    "seed_norms": {
+      "positive": 1
+    },
+    "seed_to_modular_state": {
+      "positive": 0
+    },
+    "seeds": {
+      "positive": [
+        1,
+        0
+      ]
+    },
+    "signed_states": true,
+    "states": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "transitions": [
+      [
+        3,
+        5,
+        4,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        4,
+        3,
+        5
+      ]
+    ],
+    "unit": [
+      3,
+      2
+    ]
+  },
+  "system": {
+    "D": 2,
+    "action_costs": [
+      [
+        1,
+        1
+      ]
+    ],
+    "actions": {
+      "unit": [
+        3,
+        2
+      ]
+    },
+    "limits": {
+      "max_dense_states": 128,
+      "max_states": 512
+    },
+    "modulus": 5,
+    "observation_costs": [
+      [
+        0,
+        1
+      ]
+    ],
+    "observations": [
+      "y"
+    ],
+    "provenance": "user-declared finite seeds",
+    "schema": "singularity.arithmetic-orbit/1",
+    "scope": "finite declared seed images and generated residue closure; no global Pell completeness",
+    "seed_norms": {
+      "negative": 16,
+      "positive": 1,
+      "same_residue_distinct_original": 36
+    },
+    "seed_to_modular_state": {
+      "negative": 5,
+      "positive": 0,
+      "same_residue_distinct_original": 0
+    },
+    "seeds": {
+      "negative": [
+        4,
+        0
+      ],
+      "positive": [
+        1,
+        0
+      ],
+      "same_residue_distinct_original": [
+        6,
+        0
+      ]
+    },
+    "signed_states": false,
+    "states": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "transitions": [
+      [
+        3,
+        5,
+        4,
+        1,
+        0,
+        2
+      ]
+    ],
+    "unit": [
+      3,
+      2
+    ]
+  },
+  "track": "NX20",
+  "units": [
+    "NX20-A",
+    "NX20-B",
+    "NX20-C"
+  ]
+}

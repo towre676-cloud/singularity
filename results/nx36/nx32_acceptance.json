@@ -1,0 +1,107 @@
+{
+  "actual_matrices": [
+    [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        -2,
+        1
+      ]
+    ]
+  ],
+  "cheapest_exact": {
+    "cost": [
+      1,
+      1
+    ],
+    "observation": 0,
+    "row": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "word": [
+      0
+    ]
+  },
+  "cheapest_robust": [
+    [
+      3,
+      1
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    0,
+    [
+      3,
+      100
+    ],
+    true
+  ],
+  "closure_rank": 2,
+  "continuation_files": {
+    "results/nx36/nx32_legendre_loop0.json": "b896dfc6fdc5b18b5bc38cc812527280ad3f50ac727e48978da5c895f840ffd1",
+    "results/nx36/nx32_legendre_loop1.json": "f0f06d067013ebd265f91104d8d6fab6bcb1d5b3ecb6ebae7f446db59d2fc553"
+  },
+  "integrality_premise": "continuation of the explicitly marked integral a,b cycles, not numerical proximity",
+  "paths": [
+    [
+      "1/2",
+      [
+        0,
+        "1/2"
+      ],
+      "-1/2",
+      [
+        0,
+        "-1/2"
+      ],
+      "1/2"
+    ],
+    [
+      "1/2",
+      [
+        1,
+        "-1/2"
+      ],
+      "3/2",
+      [
+        1,
+        "1/2"
+      ],
+      "1/2"
+    ]
+  ],
+  "relations_checked": "each determinant1; each unipotent (T-I)^2=0; commutator nonidentity; no unsupported finite-presentation claim",
+  "schema": "nx32.acceptance/1",
+  "toy_chronological_readings": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ]
+  ]
+}

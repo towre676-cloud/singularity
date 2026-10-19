@@ -1,0 +1,136 @@
+{
+  "evidence": "restricted_official_measured_trajectory_and_game_outcome_aggregate",
+  "source_sha256": {
+    "combine_results.csv": "e4773ef68167d508f3916d446cd411dfd77a87e5765d3babcb986201fb143b86",
+    "combine_tracking.csv": "541c69f6629f5f803b08033c5c386735582120973562134b2c1e7ec6553fb0d3",
+    "player_play.csv": "68926a268c0a49e58616001fb35ea179018d9cbbce1c5c31e7a4095273c35b2a",
+    "games.csv": "ca33543f6939af4ee393c568c60920c476ba91ddbfbdce5a06578b9492fa11fd"
+  },
+  "ingested_files": [
+    "combine_results.csv",
+    "combine_tracking.csv",
+    "player_play.csv",
+    "games.csv"
+  ],
+  "unused_game_tracking_files": "not_ingested",
+  "athletes": 20,
+  "training_athletes": 10,
+  "evaluation_athletes": 10,
+  "attempts": 20,
+  "identity_join": "exact official nfl_id; event/attempt identities retained privately; no recruiting joins",
+  "player_overlap": 0,
+  "chronology": "2023 combine cohort training; 2024 cohort heldout; outcome games occur in or after draft season",
+  "outcome": "mean non-nullified measured player_get_off",
+  "full_design_rank_counts": {
+    "4": 20
+  },
+  "target_identifiable_count": 20,
+  "retained_segmentation_variants_total": 560,
+  "phase_feature_range_max": 619.1433334342,
+  "measurement_domain": "reported official x,y yards/time seconds; movement response is raw a; no intrinsic ability claim",
+  "model_limits": [
+    "Only twenty selected athletes: exploratory sample, no population generalization.",
+    "Bilinear response mismatch is empirical residual, not a certified bounded physical error.",
+    "Ridge lambda=1 and feature families frozen before fitting; no tuning on heldout players.",
+    "Train residual uncertainty features are heuristic; coverage below records their actual heldout behavior.",
+    "Complete attempt available for offline scouting; not a real-time forecast.",
+    "Conventional baseline has fewer channels than ordered; order-specific comparison uses order_insensitive with matched same geometric channels."
+  ],
+  "missingness_counts": {
+    "missing_game_or_getoff": 166615,
+    "nullified_or_unknown_penalty": 7947
+  },
+  "scores": {
+    "conventional": {
+      "n": 10,
+      "mae": 0.18272746830400646,
+      "mse": 0.04572712034061985,
+      "bias": 0.00010765401179819722,
+      "mae_day_or_player_bootstrap_95": [
+        0.11775971590810876,
+        0.2572123906241108
+      ],
+      "bootstrap_groups": 10,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee",
+      "training_residual_90_radius": 0.2576846634929488,
+      "heldout_coverage": 0.8,
+      "calibration_status": "empirical_training_radius_not_distribution_free"
+    },
+    "identified_capability": {
+      "n": 10,
+      "mae": 0.25381917706997836,
+      "mse": 0.07450240496323388,
+      "bias": 0.16297135900533485,
+      "mae_day_or_player_bootstrap_95": [
+        0.18598617314661747,
+        0.31519769890167737
+      ],
+      "bootstrap_groups": 10,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee",
+      "training_residual_90_radius": 0.18664238266887725,
+      "heldout_coverage": 0.4,
+      "calibration_status": "empirical_training_radius_not_distribution_free"
+    },
+    "uncertainty_aware_capability": {
+      "n": 10,
+      "mae": 0.24609265855603182,
+      "mse": 0.06902244333071325,
+      "bias": 0.15002010593337817,
+      "mae_day_or_player_bootstrap_95": [
+        0.19030206564522037,
+        0.30276368788541874
+      ],
+      "bootstrap_groups": 10,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee",
+      "training_residual_90_radius": 0.18856991156920744,
+      "heldout_coverage": 0.3,
+      "calibration_status": "empirical_training_radius_not_distribution_free"
+    },
+    "order_insensitive": {
+      "n": 10,
+      "mae": 0.946960471836601,
+      "mse": 3.0546424791240234,
+      "bias": 0.8144196539658054,
+      "mae_day_or_player_bootstrap_95": [
+        0.17291238912954018,
+        1.8641805257860822
+      ],
+      "bootstrap_groups": 10,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee",
+      "training_residual_90_radius": 0.2151033504807786,
+      "heldout_coverage": 0.6,
+      "calibration_status": "empirical_training_radius_not_distribution_free"
+    },
+    "ordered": {
+      "n": 10,
+      "mae": 1.4624946532902232,
+      "mse": 6.560173176626885,
+      "bias": 0.8938674911201663,
+      "mae_day_or_player_bootstrap_95": [
+        0.2459263402775361,
+        2.802572883845907
+      ],
+      "bootstrap_groups": 10,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee",
+      "training_residual_90_radius": 0.05696254581357183,
+      "heldout_coverage": 0.1,
+      "calibration_status": "empirical_training_radius_not_distribution_free"
+    },
+    "uncertainty_aware_ordered": {
+      "n": 10,
+      "mae": 0.8590872021096054,
+      "mse": 1.603533448856918,
+      "bias": 0.5666225177385031,
+      "mae_day_or_player_bootstrap_95": [
+        0.3426460203126054,
+        1.4421598426628797
+      ],
+      "bootstrap_groups": 10,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee",
+      "training_residual_90_radius": 0.09431685013886845,
+      "heldout_coverage": 0.1,
+      "calibration_status": "empirical_training_radius_not_distribution_free"
+    }
+  },
+  "restricted_rows_published": false
+}

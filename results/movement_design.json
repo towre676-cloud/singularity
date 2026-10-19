@@ -1,0 +1,70 @@
+{
+  "costed_repair": {
+    "affine_offset": "0",
+    "cost": "2",
+    "decoder_contract": "target = affine_offset + weights dot raw_readings + known_input_offset; deterministic error bounded separately",
+    "domain_id": "declared drill response",
+    "error_radius": "1/10",
+    "estimator_sensor_order": [
+      "existing",
+      "interaction"
+    ],
+    "horizon": 0,
+    "known_input_offset": "not_included; compile from declared known inputs",
+    "noise_geometry": "deterministic_coordinate_box",
+    "panels_checked": 8,
+    "selected": [
+      "interaction"
+    ],
+    "status": "optimal_finite_catalogue",
+    "weights": [
+      "0",
+      "0",
+      "0",
+      "1"
+    ]
+  },
+  "evidence": "synthetic_exact",
+  "fourth_condition_identifies": true,
+  "null_witness": [
+    "0",
+    "0",
+    "0",
+    "1"
+  ],
+  "repeat_error_model": {
+    "error_model": "independent_symmetric_two_point",
+    "variance": "1/4",
+    "worst_case_radius": "1"
+  },
+  "replication_adds_structural_rank": false,
+  "restricted_target_identifiable": true,
+  "schema": "singularity.movement-design/1",
+  "target": [
+    "1",
+    "1",
+    "1",
+    "1"
+  ],
+  "target_identifiable": false,
+  "three_condition_design": [
+    [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "1",
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "1",
+      "0",
+      "1",
+      "0"
+    ]
+  ]
+}

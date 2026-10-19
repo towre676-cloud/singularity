@@ -1,0 +1,56 @@
+{
+  "schema": "singularity.reactive-measured-pilot/1",
+  "evidence": "measured_primary_maintainer_benchmark",
+  "application_scope": "anonymous atmospheric reactive-transport proxy with a reduced one-box loss/source map",
+  "physical_reaction_rate_identification": false,
+  "uniform_physical_model_error": "not_identified_from_daily_ozone",
+  "source_url": "https://github.com/r-devel/r-svn/blob/main/src/library/datasets/data/airquality.tab",
+  "source_git_blob": "d39db693a2c5dd470ed48aa7c86b6a360527b164",
+  "source_sha256": "0d9453a2e5196f06fa3b2ede9fcea8ab309ad147f64940dc0f4eb685857ed048",
+  "source_description_url": "https://www.stat.ethz.ch/R-manual/R-devel/RHOME/library/datasets/html/airquality.html",
+  "original_measurement_agencies": [
+    "New York State Department of Conservation",
+    "National Weather Service"
+  ],
+  "site": "Roosevelt Island NYC ozone monitor",
+  "target_units": "ppb",
+  "target_clock": "mean ozone 1300-1500 hours; next daily window",
+  "all_days": 153,
+  "observed_ozone_days": 116,
+  "missing_ozone_days": 37,
+  "train_consecutive_pairs": 48,
+  "evaluation_consecutive_pairs": 49,
+  "train_dates": "1973-05-01 to 1973-07-31; target also training",
+  "evaluation_dates": "1973-08-01 to 1973-09-30",
+  "model": "c_next=rho*c+b, 0<=rho<=1, b>=0; O3 -> unobserved sink plus constant external source",
+  "fitted_rho": "47/100",
+  "fitted_daily_loss": "53/100",
+  "fitted_source_ppb_per_step": "46897/2400",
+  "model_score": {
+    "mae": "507611/23520",
+    "mse": "261108346129/282240000",
+    "bias": "-123091/23520"
+  },
+  "persistence_score": {
+    "mae": "1133/49",
+    "mse": "52543/49",
+    "bias": "-67/49"
+  },
+  "training_near_optimal_rate_population": 48,
+  "rate_hull_heldout_coverage": "8/49",
+  "rate_set_status": "training loss tolerance only; not a calibrated confidence set",
+  "positivity_domain": "nonnegative concentration; fitted map preserves it",
+  "conservation": "open measured ozone box; unobserved sink and source make observed species mass nonconserved",
+  "latent_species_scored_as_measured": false,
+  "measurement_method": "archived agency ozone summary; instrument and detection limit not retained by benchmark",
+  "missing_value_code": "NA",
+  "time_zone": "historical local sampling window; UTC offset not provided in source",
+  "unit_conversion": "none; all ozone ppb",
+  "limits": [
+    "Benchmark tests a deliberately reduced open-box model; it does not validate named atmospheric reaction rates.",
+    "No spatial transport measurement is present; two-cell transport toy remains synthetic.",
+    "Unknown forcing, seasonal changes and missing observations can dominate mismatch.",
+    "Meteorological channels have different sites/windows and are not conflated with simultaneous species observations.",
+    "EPA 2024 bulk endpoints timed out; fallback was frozen before fitting."
+  ]
+}

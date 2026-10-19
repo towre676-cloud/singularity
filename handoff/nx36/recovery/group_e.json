@@ -1,0 +1,381 @@
+{
+  "schema": "singularity.nx36-recovery-group/1",
+  "group": "e",
+  "tracks": [
+    {
+      "id": "NX25",
+      "units": [
+        {
+          "id": "NX25-A",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/FORECAST_TARGETS.md",
+            "results/forecast_targets_synthetic.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Horizon rows0..8, exact factorization/null directions, affine constraints and center offset, known-input offset and independently enumerated error extrema.",
+          "independent_checks": "test_rows_against_direct_trajectories; test_factorization_and_null; test_affine_center_offset_is_not_lost; test_existing_target_recovery_crosswalk"
+        },
+        {
+          "id": "NX25-B",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/FORECAST_TARGETS.md",
+            "results/forecast_targets_synthetic.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Independent determinant oracle over64panels, equal-rank different conditioning, closed and strict7/10noise boundary.",
+          "independent_checks": "test_independent_panel_oracle; test_panel_exhaustive_and_boundary; test_l1_support_optimizer_against_box_vertex_oracle"
+        },
+        {
+          "id": "NX25-C",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/FORECAST_TARGETS.md",
+            "results/forecast_targets_synthetic.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py",
+            "applications/nx25_30/PILOT_FREEZE.json",
+            "applications/nx25_30/source_manifest.json"
+          ],
+          "acceptance_result": "Actual source receipt verified;192training/57heldout matched ASOS cases; frozen horizon and equal two-feature bookkeeping cost; negative/near-zero advantage retained.",
+          "independent_checks": "results/forecast_targets_empirical.json; public exact-rational OLS metric replay"
+        }
+      ],
+      "artifacts": [
+        "src/singularity/forecast_targets.py",
+        "docs/research/FORECAST_TARGETS.md",
+        "results/forecast_targets_synthetic.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python3 -m unittest discover -s tests -p test_nx25_30_applications.py",
+        "python3 scripts/nx25_30_replay.py --check"
+      ],
+      "scope_notes": "Finite exact sensor model plus a small measured ASOS pilot; not atmospheric forecast validation.",
+      "status": "accepted"
+    },
+    {
+      "id": "NX26",
+      "units": [
+        {
+          "id": "NX26-A",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/NONLINEAR_FIBRES.md",
+            "results/nonlinear_fibres.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Original polynomial witness replay and independent quadratic substitution; exact lower-bound versus special-case complete diameter separated.",
+          "independent_checks": "test_quadratic_witness_and_diameter; test_affine_criterion_direct_expansion; test_disconnected_branches"
+        },
+        {
+          "id": "NX26-B",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/NONLINEAR_FIBRES.md",
+            "results/nonlinear_fibres.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Parabola corrected variation2; overlapping rational circle charts both give-4 with their actual tangent; singular strata refused.",
+          "independent_checks": "test_parabola_curvature; test_circle_two_charts_and_singular"
+        },
+        {
+          "id": "NX26-C",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/NONLINEAR_FIBRES.md",
+            "results/nonlinear_fibres.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Bounded degree<=4, variables<=4, six-sensor exact finite repair; a new branch remains after all retained pairs are repaired.",
+          "independent_checks": "test_finite_repair_is_not_global; results/nonlinear_fibres.json"
+        }
+      ],
+      "artifacts": [
+        "src/singularity/nonlinear_fibres.py",
+        "docs/research/NONLINEAR_FIBRES.md",
+        "results/nonlinear_fibres.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python3 -m unittest discover -s tests -p test_nx25_30_applications.py",
+        "python3 scripts/nx25_30_replay.py --check"
+      ],
+      "scope_notes": "Exact bounded synthetic witnesses and finite repairs; no complete general semialgebraic diameter solver.",
+      "status": "accepted"
+    },
+    {
+      "id": "NX27",
+      "units": [
+        {
+          "id": "NX27-A",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/MULTISCALE_TRANSPORT.md",
+            "results/multiscale_transport.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Fourcell flux oracle and fractions, exact mass quotient, unit-conversion fixture.",
+          "independent_checks": "test_flux_and_defect; test_three_scale_composition_and_units"
+        },
+        {
+          "id": "NX27-B",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/MULTISCALE_TRANSPORT.md",
+            "results/multiscale_transport.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Exact correlated zonotopes and bounded independent forcing; sixteen-box-vertex horizon checks; one extra defect coordinate reduces valid defect bound1/8to0.",
+          "independent_checks": "test_box_vertices_and_enrichment; test_reachable_and_horizon; test_bounded_inputs_correlated_domain"
+        },
+        {
+          "id": "NX27-C",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/MULTISCALE_TRANSPORT.md",
+            "results/multiscale_transport.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py",
+            "applications/nx25_30/PILOT_FREEZE.json",
+            "applications/nx25_30/source_manifest.json"
+          ],
+          "acceptance_result": "Recovered primary ASOS archive, frozen temporal coarse/fine relationship,14matched measured target windows; numerical reference and measurement errors separated.",
+          "independent_checks": "results/multiscale_transport_empirical.json; independent exact AR metric replay"
+        }
+      ],
+      "artifacts": [
+        "src/singularity/multiscale_transport.py",
+        "docs/research/MULTISCALE_TRANSPORT.md",
+        "results/multiscale_transport.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python3 -m unittest discover -s tests -p test_nx25_30_applications.py",
+        "python3 scripts/nx25_30_replay.py --check"
+      ],
+      "scope_notes": "Exact finite transfers plus measured temporal aggregation; no spatial atmospheric transfer theorem.",
+      "status": "accepted"
+    },
+    {
+      "id": "NX28",
+      "units": [
+        {
+          "id": "NX28-A",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/REACTIVE_TRANSPORT.md",
+            "results/reactive_transport.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Original reaction then flux oracle, positivity, all simplex-vertex conservation, HM=DH, horizon0..8blindness and species-selective repair.",
+          "independent_checks": "test_conservative_oracle_and_blindness; test_weighted_conservation_and_rate_uncertainty"
+        },
+        {
+          "id": "NX28-B",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/REACTIVE_TRANSPORT.md",
+            "results/reactive_transport.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Finite species/location/time-style reading catalogue with independent subset oracle; uncertain rate has actually attainable common noisy reading3/4.",
+          "independent_checks": "test_exhaustive_species_panel_oracle; results/reactive_transport.json"
+        },
+        {
+          "id": "NX28-C",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/REACTIVE_TRANSPORT.md",
+            "results/reactive_transport.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py",
+            "applications/nx25_30/PILOT_FREEZE.json",
+            "applications/nx25_30/source_manifest.json"
+          ],
+          "acceptance_result": "Primary R maintainer measured ozone benchmark frozen before fit;48train/49heldout; positive one-box proxy and persistence baseline; complete exact re-fit replay.",
+          "independent_checks": "results/reactive_transport_empirical.json; applications/nx25_30/airquality.tab; applications/nx25_30/reactive_measured_pilot.py"
+        }
+      ],
+      "artifacts": [
+        "src/singularity/reactive_transport.py",
+        "docs/research/REACTIVE_TRANSPORT.md",
+        "results/reactive_transport.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python3 -m unittest discover -s tests -p test_nx25_30_applications.py",
+        "python3 scripts/nx25_30_replay.py --check"
+      ],
+      "scope_notes": "Measured daily ozone is an anonymous atmospheric reactive-transport proxy; chemical rates and uniform physical model error remain unidentified.",
+      "status": "accepted"
+    },
+    {
+      "id": "NX29",
+      "units": [
+        {
+          "id": "NX29-A",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/MOVEMENT_DESIGN.md",
+            "results/movement_design.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Four-condition direct bilinear polynomial substitution; missing interaction witness and restricted already-identifiable target.",
+          "independent_checks": "test_four_conditions_and_restricted_target"
+        },
+        {
+          "id": "NX29-B",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/MOVEMENT_DESIGN.md",
+            "results/movement_design.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Finite robust drill repair with fixed original/candidate noise; costs and infeasible catalogue; independent repeat variance distinguished from unchanged structural rank and adversarial radius.",
+          "independent_checks": "test_robust_minimum_repair_and_replication; test_no_repair_and_bad_scaling"
+        },
+        {
+          "id": "NX29-C",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/MOVEMENT_DESIGN.md",
+            "results/movement_design.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py",
+            "applications/nx25_30/PILOT_FREEZE.json",
+            "applications/nx25_30/source_manifest.json"
+          ],
+          "acceptance_result": "Recovered official hashes and exact nfl_id linkage;20athletes,2023train10/2024heldout10, no overlap; capability hurts matched prediction.",
+          "independent_checks": "results/movement_empirical.json; applications/nx25_30/source_manifest.json; private actual-source original execution, public aggregate-integrity replay only"
+        }
+      ],
+      "artifacts": [
+        "src/singularity/movement_design.py",
+        "docs/research/MOVEMENT_DESIGN.md",
+        "results/movement_design.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python3 -m unittest discover -s tests -p test_nx25_30_applications.py",
+        "python3 scripts/nx25_30_replay.py --check"
+      ],
+      "scope_notes": "Exact declared bilinear design; restricted actual-source20-athlete pilot, only aggregates public; predictive result negative.",
+      "status": "accepted"
+    },
+    {
+      "id": "NX30",
+      "units": [
+        {
+          "id": "NX30-A",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/ORDERED_MOVEMENT.md",
+            "results/ordered_movement.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Independent triangular segment integral versus streaming; Chen associativity, translation, time augmentation, monotone reparametrization, reflection/reversal and frame preservation.",
+          "independent_checks": "test_axis_order_and_independent_integral; test_chen_associative_three_segments; test_translation_scaling_reparam_reflection_reversal; test_coordinate_frames_preserved"
+        },
+        {
+          "id": "NX30-B",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/ORDERED_MOVEMENT.md",
+            "results/ordered_movement.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py"
+          ],
+          "acceptance_result": "Original identities/multiplicities preserved; complete small segmentation enumeration; unsafe partial merging and overlapping attainable sets explicitly refused.",
+          "independent_checks": "test_population_multiplicity_and_segmentation; test_unsafe_partial_merge_and_overlap"
+        },
+        {
+          "id": "NX30-C",
+          "status": "accepted",
+          "evidence": [
+            "docs/research/ORDERED_MOVEMENT.md",
+            "results/ordered_movement.json",
+            "tests/test_nx25_30_applications.py",
+            "scripts/nx25_30_replay.py",
+            "applications/nx25_30/PILOT_FREEZE.json",
+            "applications/nx25_30/source_manifest.json"
+          ],
+          "acceptance_result": "Same source-bound20athletes/20attempts,560finite segmentation variants, frozen same-channel order-insensitive and ordered baselines; negative ordered prediction retained with calibration diagnostics.",
+          "independent_checks": "results/movement_empirical.json; applications/nx25_30/source_manifest.json; private original execution and frozen public aggregate integrity"
+        }
+      ],
+      "artifacts": [
+        "src/singularity/ordered_movement.py",
+        "docs/research/ORDERED_MOVEMENT.md",
+        "results/ordered_movement.json"
+      ],
+      "checks": [
+        "PYTHONPATH=src python3 -m unittest discover -s tests -p test_nx25_30_applications.py",
+        "python3 scripts/nx25_30_replay.py --check"
+      ],
+      "scope_notes": "Exact low-order geometry and finite segmentation population; same restricted measured athlete sample with negative ordered prediction.",
+      "status": "accepted"
+    }
+  ],
+  "artifacts": [
+    "src/singularity/_application_exact.py",
+    "tests/test_nx25_30_applications.py",
+    "scripts/nx25_30_replay.py",
+    "applications/nx25_30/BOS_20260925_28.csv",
+    "applications/nx25_30/COPYING.R-datasets",
+    "applications/nx25_30/PILOT_FREEZE.json",
+    "applications/nx25_30/README.md",
+    "applications/nx25_30/airquality.tab",
+    "applications/nx25_30/empirical_pilots.py",
+    "applications/nx25_30/reactive_measured_pilot.py",
+    "applications/nx25_30/source_manifest.json"
+  ],
+  "checks": {
+    "focused_unit_tests": 35,
+    "focused_test_result": "all_pass",
+    "exact_receipts_replayed": 6,
+    "public_measured_forecast_cases": 57,
+    "public_measured_scale_windows": 14,
+    "public_measured_ozone_pairs": 49,
+    "restricted_original_run": {
+      "athletes": 20,
+      "training": 10,
+      "evaluation": 10,
+      "attempts": 20,
+      "segmentation_variants": 560,
+      "source_hashes_verified": 4,
+      "raw_rows_published": false
+    },
+    "public_NFL_check": "frozen aggregate/source integrity only; does not raw-recompute private athlete rows"
+  },
+  "source_acquisition": {
+    "personal_context": "unavailable",
+    "Library": "actual WIND continuation and NFL source backups recovered",
+    "EPA": "two primary anonymous bulk source attempts timed out; fallback frozen to primary maintainer airquality benchmark",
+    "download_bytes_restricted_archives": 599589591,
+    "measurement_truth": "Actual ASOS reports, actual archived agency ozone summaries, actual official trajectories and game outcomes; no synthetic values scored as measured."
+  },
+  "peer_review": {
+    "reviewer_group": "A",
+    "issues_fixed": [
+      "affine decoder offset retained on constrained nonzero-center domains",
+      "signature coordinate-frame metadata preserved through factories, composition and population grouping"
+    ],
+    "regression_tests": true
+  },
+  "scope_notes": [
+    "All18pushes have narrowly scoped acceptance evidence. These are implementation/pilot acceptances, not universal physical or predictive validity claims.",
+    "Core exact APIs stdlib; empirical regression runner optional NumPy.",
+    "Public CI re-fits measured public wind/scale/ozone point scores; private NFL original computation is independently source-bound but public CI checks aggregates only.",
+    "Internal pre-fit freeze retained; not an externally timestamped preregistration.",
+    "No historical NEXRAD272-volume,93.2percentpanel or previous football performance number is claimed newly reproduced."
+  ]
+}

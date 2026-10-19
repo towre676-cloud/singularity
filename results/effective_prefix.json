@@ -1,0 +1,537 @@
+{
+  "schema": "singularity.effective-prefix/1",
+  "source_sha256": "43be70dae1739411994215ba8c215014be1f2694d9175dfe5f3eb2531b8cc56a",
+  "new_graph_theorem": {
+    "family": "one q-weighted edge plus k known isolates, same k in comparison",
+    "parameter_domain": "rational 0<=q<=1; theorem algebraic in q and eta",
+    "cutoff": 1,
+    "generator": "f1(q)-f1(eta)=2(q-eta)",
+    "all_coefficient_witness": "q^m-eta^m=(q-eta) sum(q^(m-1-i)*eta^i)",
+    "nonperiodic": "0<q<1; B=1+2 sum(q^(d*d)*x^d) entire nonpolynomial, hence L is nonrational",
+    "exceptional_strata": {
+      "q0": "L=1/((1-x)^k*(1-x^2))",
+      "q1": "L=(1-x)^(-k-2)"
+    },
+    "original_coefficients_checked": 308,
+    "parameter_comparisons": 196,
+    "census": [
+      {
+        "isolates": 0,
+        "q": [
+          0,
+          1
+        ],
+        "stratum": "zero-edge-weight",
+        "coefficient1": [
+          0,
+          1
+        ],
+        "coefficient10": [
+          1,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 0,
+        "q": [
+          1,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          2,
+          5
+        ],
+        "coefficient10": [
+          7913852601280588008459590510478010028094786350266076624393463134765627,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 0,
+        "q": [
+          1,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          2,
+          3
+        ],
+        "coefficient10": [
+          528102915559313587744818005081503553184274342811,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 0,
+        "q": [
+          1,
+          2
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          1,
+          1
+        ],
+        "coefficient10": [
+          713072805459939616551119880193,
+          633825300114114700748351602688
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 0,
+        "q": [
+          2,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          4,
+          3
+        ],
+        "coefficient10": [
+          720553188285818587490842427875371601569681867761,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 0,
+        "q": [
+          4,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          8,
+          5
+        ],
+        "coefficient10": [
+          14800176704364899751779798470938491399897296672547752490346499977243377,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 0,
+        "q": [
+          1,
+          1
+        ],
+        "stratum": "unit-weight-rational",
+        "coefficient1": [
+          2,
+          1
+        ],
+        "coefficient10": [
+          11,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          0,
+          1
+        ],
+        "stratum": "zero-edge-weight",
+        "coefficient1": [
+          1,
+          1
+        ],
+        "coefficient10": [
+          6,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          1,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          7,
+          5
+        ],
+        "coefficient10": [
+          63235122474672574639542906157693715307743787037907168269195556640625002,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          1,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          5,
+          3
+        ],
+        "coefficient10": [
+          4874026614819537033514490217252190568731829008046,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          1,
+          2
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          2,
+          1
+        ],
+        "coefficient10": [
+          7378200118785462099495642202113,
+          633825300114114700748351602688
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          2,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          7,
+          3
+        ],
+        "coefficient10": [
+          7659795076457822402649493800172191353479122508706,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          4,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          13,
+          5
+        ],
+        "coefficient10": [
+          153193712638279099989576047201743419153343292777802368930795260963571502,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 1,
+        "q": [
+          1,
+          1
+        ],
+        "stratum": "unit-weight-rational",
+        "coefficient1": [
+          3,
+          1
+        ],
+        "coefficient10": [
+          66,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          0,
+          1
+        ],
+        "stratum": "zero-edge-weight",
+        "coefficient1": [
+          2,
+          1
+        ],
+        "coefficient10": [
+          36,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          1,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          12,
+          5
+        ],
+        "coefficient10": [
+          379284484790630227165557618058261418525489716674201190471725463867187502,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          1,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          8,
+          3
+        ],
+        "coefficient10": [
+          29180323171812686488152760102599790848533201450006,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          1,
+          2
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          3,
+          1
+        ],
+        "coefficient10": [
+          43863001410482631808517581832193,
+          633825300114114700748351602688
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          2,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          10,
+          3
+        ],
+        "coefficient10": [
+          44820688297311074501917206607837493633024499270956,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          4,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          18,
+          5
+        ],
+        "coefficient10": [
+          874422013145704141733600612870991858502785218804684961371553012428415252,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 2,
+        "q": [
+          1,
+          1
+        ],
+        "stratum": "unit-weight-rational",
+        "coefficient1": [
+          4,
+          1
+        ],
+        "coefficient10": [
+          286,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          0,
+          1
+        ],
+        "stratum": "zero-edge-weight",
+        "coefficient1": [
+          3,
+          1
+        ],
+        "coefficient10": [
+          161,
+          1
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          1,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          17,
+          5
+        ],
+        "coefficient10": [
+          1666895212628873528356862506447956540522881141645484603941555023193359377,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          1,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          11,
+          3
+        ],
+        "coefficient10": [
+          127136484741328741652753059164633664490451438419741,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          1,
+          2
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          4,
+          1
+        ],
+        "coefficient10": [
+          188974991302537102411284600061953,
+          633825300114114700748351602688
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          2,
+          3
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          13,
+          3
+        ],
+        "coefficient10": [
+          190171320692434618918747089011064505616702901092621,
+          515377520732011331036461129765621272702107522001
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          4,
+          5
+        ],
+        "stratum": "nonperiodic-nonrational",
+        "coefficient1": [
+          23,
+          5
+        ],
+        "coefficient10": [
+          3634289132082997486929124899445399610474278107460713496440694400367868377,
+          7888609052210118054117285652827862296732064351090230047702789306640625
+        ],
+        "cutoff": 1
+      },
+      {
+        "isolates": 3,
+        "q": [
+          1,
+          1
+        ],
+        "stratum": "unit-weight-rational",
+        "coefficient1": [
+          5,
+          1
+        ],
+        "coefficient10": [
+          1001,
+          1
+        ],
+        "cutoff": 1
+      }
+    ]
+  },
+  "recurrence_theorem": {
+    "family": "formal binomial ODE (1-x)F_prime=aF; supplemental family, not an arbitrary graph series",
+    "comparison_recurrence": "(n+1)(n+2)y[n+2]-(n+1)(2n+a+b+1)y[n+1]+(n+a)(n+b)y[n]=0",
+    "leading_term": "(n+1)(n+2)>0 for all integer n>=0, no singular index",
+    "cutoff": 1,
+    "parameters": [
+      [
+        -2,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "identities_checked": 684
+  },
+  "baselines": "combined finite-state Cayley-Hamilton and existing periodic palindromic cutoff preserve original scope",
+  "false_stopping_rules_rejected": [
+    "delayed_b_x^100",
+    "temporary_ideal_stabilization",
+    "guessed_recurrence"
+  ],
+  "denominator_domain": "canonical reduced rational pairs with positive denominator; denominators 0 rejected before construction",
+  "resource_limits": "finite-state dimension and coefficient bit growth are caller-declared; corpus R=10, n<=5; exact refusal is not inequivalence"
+}

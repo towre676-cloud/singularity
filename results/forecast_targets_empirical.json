@@ -1,0 +1,56 @@
+{
+  "evidence": "measured_ASOS_reported_wind",
+  "target": "+60 minute reported sustained wind knots; not independently validated ten-metre flow",
+  "source_sha256": "a7def62ca977d281a51fbae632252dce6afefc8c45aed5afbb032f1372a2c21a",
+  "redistributable_subset_sha256": "364ecd15807f661efab7a07213875ffb9a6ced347bfa2d9a7a4cfabde73bbb50",
+  "source_rows": 2698,
+  "subset_rows": 1219,
+  "matched_train": 192,
+  "matched_evaluation": 57,
+  "missingness": {
+    "exact_lag_or_future_timestamp": 258,
+    "field_missing": 705
+  },
+  "radar_geometry": "not_applicable_ASOS_station_pilot; original NEXRAD claims not reproduced",
+  "policies": {
+    "direct_target": {
+      "declared_feature_cost": 2,
+      "n": 57,
+      "mae": 2.1864784930130443,
+      "mse": 8.493121317914209,
+      "bias": 1.6089988687184764,
+      "mae_day_or_player_bootstrap_95": [
+        2.1173240350505114,
+        4.088226086982701
+      ],
+      "bootstrap_groups": 2,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee"
+    },
+    "driver_aware": {
+      "declared_feature_cost": 2,
+      "n": 57,
+      "mae": 2.168575830851312,
+      "mse": 8.148116189967988,
+      "bias": 1.4275662984030377,
+      "mae_day_or_player_bootstrap_95": [
+        2.0797687030770122,
+        4.610771844644544
+      ],
+      "bootstrap_groups": 2,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee"
+    },
+    "generic_information": {
+      "declared_feature_cost": 2,
+      "n": 57,
+      "mae": 5.339626043321519,
+      "mse": 35.54742341364201,
+      "bias": 5.302384583264288,
+      "mae_day_or_player_bootstrap_95": [
+        2.9746715629318032,
+        5.425624388062962
+      ],
+      "bootstrap_groups": 2,
+      "interval_status": "descriptive_small_frozen_pilot_not_asymptotic_guarantee"
+    }
+  }
+}

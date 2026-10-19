@@ -1,0 +1,195 @@
+{
+  "schema": "singularity.nx36-recovery-group/1",
+  "group": "c",
+  "tracks": [
+    {
+      "id": "NX14",
+      "title": "Parameter-wide observable modules",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX14-A",
+          "status": "accepted",
+          "evidence": "Both module inclusions are retained as exact polynomial identities; false/true interior exceptions, divisor replay and tampering tests pass."
+        },
+        {
+          "id": "NX14-B",
+          "status": "accepted",
+          "evidence": "Actual R5 graph compilation has dimension34; symbolic calculation explicitly refused at dimension22 budget; exact rational closures at 1/3 and1/2 both rank34, without interval claim."
+        },
+        {
+          "id": "NX14-C",
+          "status": "accepted",
+          "evidence": "Complete actual-word chart coverage for the two fixtures; exact exceptional ranks; common rational denominator guard and independent specialization checks."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/parameter_receipts.py",
+        "tests/test_parameter_module_receipts.py",
+        "scripts/parameter_module_receipts.py",
+        "results/parameter_module_receipts.json",
+        "docs/research/PARAMETER_MODULE_CERTIFICATES.md"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_parameter_module_receipts -q",
+        "python scripts/parameter_module_receipts.py --check"
+      ],
+      "scope_notes": "NX14-B acceptance is its explicitly permitted bounded refusal. No R5 parameter-wide rank or universal factor theorem is claimed."
+    },
+    {
+      "id": "NX15",
+      "title": "Graph-realizable invisible directions",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX15-A",
+          "status": "accepted",
+          "evidence": "Both formal frontier vectors, necessary charge semigroup/population filters, all64 labeled four-vertex filter checks and inconsistent-relaxation rejections."
+        },
+        {
+          "id": "NX15-B",
+          "status": "accepted",
+          "evidence": "Complete constructor populations145trees /76dominating blocks;24/19 terminal-swap classes; all43representatives independently bag/composition checked throughvolume4, within known-order strata."
+        },
+        {
+          "id": "NX15-C",
+          "status": "accepted",
+          "evidence": "Structural exclusion for dominating threshold interiors using FR05: at q1/2 equal-order m<2^20 cannot realize R11 ambiguity; m<2^74 analogous R38 exclusion."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/realizable_interfaces.py",
+        "tests/test_realizable_interfaces.py",
+        "scripts/realizable_interfaces.py",
+        "results/realizable_interfaces.json",
+        "docs/research/REALIZABLE_INTERFACES.md"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_realizable_interfaces -q",
+        "python scripts/realizable_interfaces.py --check"
+      ],
+      "scope_notes": "No unrestricted realization or full-series collision. Two finite exclusions are known-order strata; graph-family hypotheses retained."
+    },
+    {
+      "id": "NX18",
+      "title": "Recovery conditioning and bit complexity",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX18-A",
+          "status": "accepted",
+          "evidence": "Exact left inverses and sharp box propagation,33/32 epsilon vertex witnesses, physical dependent-sensor versus rescaling counterexample."
+        },
+        {
+          "id": "NX18-B",
+          "status": "accepted",
+          "evidence": "18direct actual glued graph checks for common A_K2 target throughvolume3; generic full-interface inverse maps compare edge-free,weighted andcharge measurements; conditional R7collision moments kept separate."
+        },
+        {
+          "id": "NX18-C",
+          "status": "accepted",
+          "evidence": "Rational primal/dual target certificates verified independently of optimizer; finite-menu least-cost design and exact compact interval Vandermonde bound10."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/recovery_metrics.py",
+        "tests/test_recovery_metrics.py",
+        "scripts/recovery_metrics.py",
+        "results/recovery_metrics.json",
+        "docs/research/RECOVERY_METRICS.md"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_recovery_metrics -q",
+        "python scripts/recovery_metrics.py --check"
+      ],
+      "scope_notes": "Full delayed-budget raw inverse wrapper explicitly refuses delayed budgets pending nuisance-coordinate elimination. Existing exact delayed recovery remains unchanged. No sharp all-budget conditioning claimed."
+    },
+    {
+      "id": "NX19",
+      "title": "Integer-compatible observational quotients",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX19-A",
+          "status": "accepted",
+          "evidence": "Exact Smith U A V identities/unimodularity/divisibility, rational row clearing, saturated affine fibres;837tiny matrices and8019original states."
+        },
+        {
+          "id": "NX19-B",
+          "status": "accepted",
+          "evidence": "Original lexicographic finite-box completion populations count/rank/unrank; binary(2,2) multiplicities1,2,1; direct fibres and total pushforward mass checked."
+        },
+        {
+          "id": "NX19-C",
+          "status": "accepted",
+          "evidence": "Integral ambient transition and kernel invariance certification QA=AM;100short swap updates plus fractional induced-map image-lattice test; nonintegral ambient transition rejected."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/integer_quotients.py",
+        "tests/test_integer_quotients.py",
+        "scripts/integer_quotients.py",
+        "results/integer_quotients.json",
+        "docs/research/INTEGER_QUOTIENTS.md"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_integer_quotients -q",
+        "python scripts/integer_quotients.py --check"
+      ],
+      "scope_notes": "Image membership is necessary arithmetic compatibility, not adjacency realization. Finite fibre bounds mandatory; no global integral-point theorem."
+    },
+    {
+      "id": "NX20",
+      "title": "Pell and residue experiment automata",
+      "status": "accepted",
+      "units": [
+        {
+          "id": "NX20-A",
+          "status": "accepted",
+          "evidence": "Certified norm-one units, original stable seed maps, exact residue closure/cycles, strict reconstructed receipts, composite and modulus-one edge cases."
+        },
+        {
+          "id": "NX20-B",
+          "status": "accepted",
+          "evidence": "Indicator sensors and costed rational closure; exact cheapest one-action fixture; independent finite-machine partition refinement and forever-equivalent norm sensor."
+        },
+        {
+          "id": "NX20-C",
+          "status": "accepted",
+          "evidence": "6000digit remote index by decimal-stream matrix powers plus independent cycle remainder; commuting units and signed conjugation chronology; norm-congruence enlargement regression."
+        }
+      ],
+      "artifacts": [
+        "src/singularity/arithmetic_automata.py",
+        "tests/test_arithmetic_automata.py",
+        "scripts/arithmetic_automata.py",
+        "results/arithmetic_automata.json",
+        "docs/research/ARITHMETIC_AUTOMATA.md"
+      ],
+      "checks": [
+        "PYTHONPATH=src python -m unittest tests.test_arithmetic_automata -q",
+        "python scripts/arithmetic_automata.py --check"
+      ],
+      "scope_notes": "Completeness is finite declared seed images/language only; no global Pell seed completeness or giant exact-coordinate computation."
+    }
+  ],
+  "shared_artifacts": [
+    "scripts/nx_group_c_receipts.py"
+  ],
+  "validation": {
+    "targeted_tests": 32,
+    "command": "PYTHONPATH=src python -m unittest tests.test_integer_quotients tests.test_arithmetic_automata tests.test_recovery_metrics tests.test_parameter_module_receipts tests.test_realizable_interfaces -q"
+  },
+  "peer_review": {
+    "reviewer": "finish_nx07_12",
+    "fixed": [
+      "algebraic rank roots refined against rational domain boundaries",
+      "algebraic denominator poles excluded by factor gcd",
+      "strict rational specialization and open-domain guard",
+      "Smith row scales bound to canonical original rational matrix",
+      "weighted probe count uses collision multiplicity",
+      "initial residue seed-state budget preflight"
+    ],
+    "validation": "32 targeted tests pass; all five retained receipts regenerated"
+  }
+}

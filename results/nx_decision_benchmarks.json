@@ -1,0 +1,182 @@
+{
+  "NX09": {
+    "candidate_ids": [
+      "nominal",
+      "heater_half"
+    ],
+    "declared_cost_break_even": {
+      "first_strict_break_even_N": 1,
+      "full_per_diagnosis": 36,
+      "full_setup": 32,
+      "reduced_per_diagnosis": 6,
+      "reduced_setup": 2,
+      "reduced_strictly_cheaper_for_all_positive_N": true
+    },
+    "fixed_word": [
+      1,
+      1
+    ],
+    "rows": [
+      {
+        "actual_ranks": [
+          1,
+          1
+        ],
+        "arithmetic": "exact_rational",
+        "certification_setup_median_ns": 13198244,
+        "cold_one_query_total_ns": 13351389,
+        "executor_preparation_ns": 72368,
+        "full_exact_pair_query_median_ns": 348839,
+        "measured_first_strict_break_even_queries": 50,
+        "requested_rank": 1,
+        "setup_bindings": [
+          "730866b0e0338a94589c745c6331cf106513f0352488767f907a1df66e8c36fa",
+          "acd0b2d9a0865c5b9262d8411b294834ed824d92792a6b5171d7f24d0dabbd8b"
+        ],
+        "total_setup_ns": 13270612,
+        "warm_pair_query_median_ns": 80777
+      },
+      {
+        "actual_ranks": [
+          1,
+          1
+        ],
+        "arithmetic": "binary64_exact_dot",
+        "certification_setup_median_ns": 23171299,
+        "cold_one_query_total_ns": 24689309,
+        "executor_preparation_ns": 1269581,
+        "full_exact_pair_query_median_ns": 348839,
+        "measured_first_strict_break_even_queries": 244,
+        "requested_rank": 1,
+        "setup_bindings": [
+          "cf743d66e777ecfa857311fe9337cc1fddfd12180483ce13faf352464f57ba8e",
+          "9ee0435efd2f8440473be716011af0a094dbc0ad7c368aca11d2da11a897dc00"
+        ],
+        "total_setup_ns": 24440880,
+        "warm_pair_query_median_ns": 248429
+      },
+      {
+        "actual_ranks": [
+          2,
+          2
+        ],
+        "arithmetic": "exact_rational",
+        "certification_setup_median_ns": 14280858,
+        "cold_one_query_total_ns": 14564205,
+        "executor_preparation_ns": 142100,
+        "full_exact_pair_query_median_ns": 348839,
+        "measured_first_strict_break_even_queries": 70,
+        "requested_rank": 2,
+        "setup_bindings": [
+          "248e5d5ffccb80c0ce8c86466626c644406c4ed5b6f63c0ef8b6b64ab9d7dbce",
+          "88592c9023f9eb2000fd8741261f314c910d3bb71dc71fb64cfae51fd415182a"
+        ],
+        "total_setup_ns": 14422958,
+        "warm_pair_query_median_ns": 141247
+      },
+      {
+        "actual_ranks": [
+          2,
+          2
+        ],
+        "arithmetic": "binary64_exact_dot",
+        "certification_setup_median_ns": 20336551,
+        "cold_one_query_total_ns": 22246261,
+        "executor_preparation_ns": 1617166,
+        "full_exact_pair_query_median_ns": 348839,
+        "measured_first_strict_break_even_queries": 390,
+        "requested_rank": 2,
+        "setup_bindings": [
+          "bdffce4538d0077627fa78760cac93f4b7194d85f0d2b3735efea9dd2e930f92",
+          "a72c0b998c5ef039da0e187f542fd4029d266c214e9666d6e0954061f6c0b3a6"
+        ],
+        "total_setup_ns": 21953717,
+        "warm_pair_query_median_ns": 292544
+      }
+    ],
+    "sensor": 2
+  },
+  "NX11": {
+    "cold_compile_plus_index128_ns": 4164900,
+    "declared_cost_example": {
+      "break_even_N": 12,
+      "compiled_query": 1,
+      "direct_query": 10,
+      "setup": 100
+    },
+    "direct_step_index128_median_ns": 177467,
+    "gf_compile_median_ns": 1091197,
+    "measured_first_strict_break_even_index128_queries": null,
+    "one_query_index1": {
+      "compiled_cold_ns": 3991855,
+      "direct_ns": 2055
+    },
+    "output_bits": 331,
+    "stages_upper": 8,
+    "warm_index128_median_ns": 3073703
+  },
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "upstream": {
+      "adapter": "singularity.dynacomp-source/1",
+      "modules": [
+        "__init__.py",
+        "adaptive.py",
+        "binary64.py",
+        "bounds.py",
+        "cli.py",
+        "enclosures.py",
+        "engineering.py",
+        "enrich.py",
+        "explorer.py",
+        "families.py",
+        "fastforward.py",
+        "finite.py",
+        "forever.py",
+        "generating.py",
+        "krylov.py",
+        "linear.py",
+        "machine.py",
+        "memory.py",
+        "metrics.py",
+        "native.py",
+        "network.py",
+        "network_cli.py",
+        "network_numeric.py",
+        "parametric.py",
+        "pilot.py",
+        "polynomial.py",
+        "prepared.py",
+        "proposals.py",
+        "ramanujan.py",
+        "rational.py",
+        "realization.py",
+        "robust.py",
+        "sparse.py",
+        "sparse_family.py",
+        "spectral.py",
+        "stability.py",
+        "stable_proposals.py",
+        "structure.py",
+        "switched.py",
+        "thermal.py",
+        "thermal_numeric.py",
+        "uniform.py",
+        "upoly.py",
+        "validated.py",
+        "validated_numeric.py",
+        "zonotope.py"
+      ],
+      "scope": "source bytes, not physical calibration",
+      "sha256": "d9769b6f6f06d2daa5e52dd769a0a8f3e876bdbceb1024818e5a0a84985a4c4a"
+    }
+  },
+  "schema": "singularity.nx-decision-benchmark/1",
+  "source_sha256": {
+    "dynacomp_adapter.py": "f40fa5a24063404268196d867c1f8a1c5f3f086c4fd3178df36b4a4d0b15d3df",
+    "fidelity_design.py": "31b9d32bc70b01533ac847b5b4efadf1e2188c8ecfa2860b381e6b11ec91ce27",
+    "remote_queries.py": "cb1d1b86fffbbf72381c0dd91cafad9678e7d3604e64e1471fc78774bd562705"
+  },
+  "timing_semantics": "perf_counter_ns medians; observed on this machine; informational and never an exact cost law"
+}
