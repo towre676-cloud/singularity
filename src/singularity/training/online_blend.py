@@ -153,3 +153,140 @@ def score_online_probabilities(neural, counts, targets, count_weights=DEFAULT_CO
         losses[index] = state._observe_target_probabilities(neural[index, target], counts[index, target])
     return {"target_nll_nats": losses, "target_correct": correct,
             "prior_to_target_count_weights": weights, "audit": state.guarantee()}
+
+
+class VectorizedBlendState:
+    """Chunked NumPy form of the same causal posterior.
+
+    With grid log-likelihoods l_{s,k}=log p_{s,k}(y_s), the posterior used at
+    row t is proportional to prior_k*exp(S_{t,k}), where S_{t,k} is the
+    *exclusive* prefix sum over s<t. Prepending the carried S to each chunk
+    and accumulating sequentially gives the same float additions in the same
+    order for every chunking, so chunked, resumed and whole-stream scoring
+    agree exactly. Row t never reads target t when forming its weights.
+    """
+
+    def __init__(self, count_weights=DEFAULT_COUNT_WEIGHTS):
+        import numpy as np
+
+        check = BayesianByteBlend(count_weights)
+        self.count_weights = np.asarray(check.count_weights, dtype=np.float64)
+        self.log_prior = np.full(len(self.count_weights), -math.log(len(self.count_weights)))
+        self.cumulative_log_likelihood = np.zeros(len(self.count_weights), dtype=np.float64)
+        self.targets_seen = 0
+        self.online_cumulative_nll = 0.
+
+    def _grid_log_likelihoods(self, neural_target, count_target):
+        import numpy as np
+
+        alpha = self.count_weights[None, :]
+        probabilities = (1-alpha)*neural_target[:, None] + alpha*count_target[:, None]
+        # Endpoint experts retain their own probability exactly, as in the loop.
+        probabilities[:, self.count_weights == 0] = neural_target[:, None]
+        probabilities[:, self.count_weights == 1] = count_target[:, None]
+        with np.errstate(divide="ignore"):
+            return np.log(probabilities)
+
+    def score_chunk(self, neural, counts, targets, validate=True):
+        import numpy as np
+
+        neural, counts = np.asarray(neural, dtype=np.float64), np.asarray(counts, dtype=np.float64)
+        targets = np.asarray(targets)
+        if (neural.ndim != 2 or neural.shape != counts.shape or targets.ndim != 1 or len(targets) != len(neural)
+                or not np.issubdtype(targets.dtype, np.integer) or neural.shape[1] < 1
+                or np.any(targets < 0) or np.any(targets >= neural.shape[1])):
+            raise ValueError("expected aligned two-dimensional expert probabilities and integer targets")
+        if validate:
+            for values in (neural, counts):
+                # min() propagates NaN; an infinite entry makes its row sum fail.
+                if not values.min() >= 0 or not np.all(np.abs(values.sum(1) - 1.) <= 1e-6):
+                    raise ValueError("expert probabilities must be normalized and nonnegative")
+        rows = np.arange(len(targets))
+        grid = self._grid_log_likelihoods(neural[rows, targets], counts[rows, targets])
+        prefix = np.add.accumulate(np.vstack((self.cumulative_log_likelihood[None, :], grid)), axis=0)
+        before = self.log_prior[None, :] + prefix[:-1]
+        with np.errstate(invalid="ignore"):
+            top = before.max(1, keepdims=True)
+            log_weights = before - (top + np.log(np.exp(before-top).sum(1, keepdims=True)))
+            joint = log_weights + grid
+            joint_top = joint.max(1, keepdims=True)
+            log_predictive = joint_top[:, 0] + np.log(np.exp(joint-joint_top).sum(1))
+        if not np.isfinite(log_predictive).all():
+            raise ValueError("at least one fixed-grid expert must assign positive target probability")
+        alpha = (np.exp(log_weights) * self.count_weights).sum(1)
+        # (1-a)*n + a*c = n + a*(c-n), formed in one buffer to avoid temporaries.
+        mixture = np.subtract(counts, neural)
+        np.multiply(mixture, alpha[:, None], out=mixture)
+        np.add(mixture, neural, out=mixture)
+        predicted = mixture.argmax(1)
+        losses = -log_predictive
+        self.cumulative_log_likelihood = prefix[-1].copy()
+        self.targets_seen += len(targets)
+        self.online_cumulative_nll += math.fsum(losses)
+        return {"target_nll_nats": losses, "target_correct": predicted == targets,
+                "prior_to_target_count_weights": alpha}
+
+    def guarantee(self):
+        import numpy as np
+
+        grid_nll = -self.cumulative_log_likelihood
+        best = float(grid_nll.min())
+        log_k = math.log(len(self.count_weights))
+        evidence = -_logsumexp([float(-loss-log_k) for loss in grid_nll])
+        return {"targets": self.targets_seen, "grid_size": len(self.count_weights),
+                "online_cumulative_nll": self.online_cumulative_nll, "best_fixed_grid_cumulative_nll": best,
+                "best_fixed_grid_count_weight": float(self.count_weights[int(np.argmin(grid_nll))]),
+                "log_grid_size_nats": log_k, "regret_nats": self.online_cumulative_nll-best,
+                "bound_slack_nats": best+log_k-self.online_cumulative_nll,
+                "marginal_likelihood_cumulative_nll": evidence,
+                "marginal_likelihood_identity_error_nats": self.online_cumulative_nll-evidence}
+
+    def to_dict(self):
+        """Exact resumable state: floats are stored as IEEE hexadecimal."""
+        return {"schema": "singularity.online-blend-state/1",
+                "count_weights": [float(w).hex() for w in self.count_weights],
+                "cumulative_log_likelihood": [float(v).hex() for v in self.cumulative_log_likelihood],
+                "targets_seen": self.targets_seen, "online_cumulative_nll": self.online_cumulative_nll.hex()}
+
+    @classmethod
+    def from_dict(cls, payload):
+        import numpy as np
+
+        if payload.get("schema") != "singularity.online-blend-state/1":
+            raise ValueError("unsupported online blend state")
+        state = cls([float.fromhex(w) for w in payload["count_weights"]])
+        values = np.array([float.fromhex(v) for v in payload["cumulative_log_likelihood"]], dtype=np.float64)
+        if values.shape != state.count_weights.shape or np.isnan(values).any() or np.any(values > 0):
+            raise ValueError("cumulative log-likelihoods must be nonpositive, one per grid weight")
+        targets = payload["targets_seen"]
+        if not isinstance(targets, int) or isinstance(targets, bool) or targets < 0:
+            raise ValueError("targets_seen must be a nonnegative integer")
+        state.cumulative_log_likelihood, state.targets_seen = values, targets
+        state.online_cumulative_nll = float.fromhex(payload["online_cumulative_nll"])
+        return state
+
+
+def score_online_probabilities_fast(neural, counts, targets, count_weights=DEFAULT_COUNT_WEIGHTS,
+                                    chunk_size=4096):
+    """Vectorized replacement for ``score_online_probabilities``.
+
+    Returns the same fields. Per-target results do not depend on
+    ``chunk_size`` (None scores one chunk); the reference loop agrees to
+    floating-point rounding (tests check 1e-9). The default bounds memory
+    at chunk_size*(2*vocabulary+3*grid) doubles beyond the inputs.
+    """
+    import numpy as np
+
+    state = VectorizedBlendState(count_weights)
+    length = len(targets)
+    if chunk_size is None:
+        chunk_size = max(length, 1)
+    if isinstance(chunk_size, bool) or not isinstance(chunk_size, int) or chunk_size < 1:
+        raise ValueError("chunk_size must be a positive integer")
+    if length < 1:
+        raise ValueError("expected aligned two-dimensional expert probabilities and integer targets")
+    parts = [state.score_chunk(neural[start:start+chunk_size], counts[start:start+chunk_size],
+                               targets[start:start+chunk_size]) for start in range(0, length, chunk_size)]
+    result = {key: np.concatenate([part[key] for part in parts]) for key in parts[0]}
+    result["audit"] = state.guarantee()
+    return result

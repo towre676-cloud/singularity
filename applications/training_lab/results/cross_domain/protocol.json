@@ -1,0 +1,88 @@
+{
+  "calibrated_count_weights": {
+    "1000": 0.35,
+    "1001": 0.35,
+    "1002": 0.4
+  },
+  "checkpoint_sha256": {
+    "1000": "6f9b2e5ea6a5c370e3a17b06f7989bd66294e0848d1a82da0a5e1025c0c9f5c7",
+    "1001": "bbb4b1ef573f3d740758fb28480f6e700dc2eaa84d34c94e4940f1c12866da25",
+    "1002": "9f054bd7b08ebabaecd06be1ed4bdb8c074686ff1959c93acb69711a47541bde"
+  },
+  "count_expert_sha256": "1791ea95f9da91b5544481c8a9e43bf44b12f71d93facb8dd802ec2a0e1581e1",
+  "dependency_sha256": {
+    "scripts/confirm_cross_domain.py": "05802daa143872374d9d4e4d9ddfbddda77b5be42d9d20c2551fa55f2ac48275",
+    "scripts/confirm_predictive_mixture.py": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
+    "src/singularity/training/byte_experts.py": "78401a2a44632aa2a5efe5d0c43558a7aca061d034eaa804661fbd387f109d6c",
+    "src/singularity/training/data.py": "46473e94bff05947216e38481831a43052487f7bacc8fd9a346f9dfaa3bc8cb3",
+    "src/singularity/training/models.py": "e8400476c4fcf67391e57a56c228147df5ffdeab04a00759a10e1a7f3de9b5a1",
+    "src/singularity/training/online_blend.py": "d4b595091b5d05c05272c0e5889a0b2aefa3a901814c7534a4eebed955f8a53e",
+    "src/singularity/training/runner.py": "08ce776d740fa051604a8458ca5bbab5408e52dfb4496279dbeb530ba1c01efb"
+  },
+  "documents_scored_before_freeze": false,
+  "documents_sha256": "1602f307f1c7d2c3e00b092b6ae3d1d3f972f0b9565c363ee9949d8ca0e4a75d",
+  "frozen_at_utc": "2026-10-19T13:40:16.194331+00:00",
+  "protocol": {
+    "arms": {
+      "adaptive_count": "stronger count baseline: in-document Witten-Bell order 4 over the TRAIN trigram base; order declared, not tuned",
+      "calibrated_fixed_blend": "0.7.0 deployment recipe per-seed count weights (0.35, 0.35, 0.40), selected earlier on WikiText TUNE",
+      "count": "TRAIN-only order-3 alpha=0.01 counts saved in predictive_mixture/count_expert.json",
+      "neural": "neural softmax",
+      "online_adaptive_blend": "secondary: same Bayesian aggregation over neural+adaptive_count",
+      "online_blend": "equal-prior Bayesian aggregation over count weights k/20 of neural+TRAIN-count, vectorized scorer, posterior reset per document"
+    },
+    "document_boundaries": "Each document is scored independently. Neural windows (64 inputs) and TRAIN-count history start at the document start; adaptive counts and online posteriors reset at every document.",
+    "document_rule": "candidates with at least 2048 bytes; order by sha256('singularity-0.8.0-cross-domain/'+domain+'/'+name); take the declared count; keep only the first 32768 bytes",
+    "domains": {
+      "legal_prose": {
+        "documents": 8,
+        "license": "verbatim copying of each license text is permitted by its publisher",
+        "source": "/usr/share/common-licenses license texts, symlinks resolved, duplicate contents removed"
+      },
+      "reference_prose": {
+        "documents": 16,
+        "license": "Python Software Foundation License",
+        "source": "Python reference-manual topic texts in pydoc_data.topics of the build interpreter"
+      },
+      "source_code": {
+        "documents": 16,
+        "license": "Python Software Foundation License",
+        "source": "top-level Python standard-library modules *.py of the build interpreter"
+      }
+    },
+    "equivalence": "online_blend also scored by the 0.7.0 reference loop; max absolute per-target difference must be <= 1e-9 nats",
+    "metrics": [
+      "NLL nats/byte",
+      "bits/byte",
+      "top-1 accuracy",
+      "regret versus best grid weight per document"
+    ],
+    "neural_experts": "three retained fixed AdamW WikiText byte transformers; no neural updates",
+    "primary_comparisons": [
+      "online_blend minus neural, per domain and seed",
+      "online_blend minus calibrated_fixed_blend, per domain and seed",
+      "adaptive_count minus count, per domain"
+    ],
+    "purpose": "Prospective byte prediction comparison on documents from domains absent from WikiText training",
+    "schema": "singularity.cross-domain-protocol/1",
+    "scope": "Three small frozen byte models trained on WikiText; documents from one build environment; results are conditional on these documents and do not establish behavior on other corpora or tokenizers.",
+    "seeds": [
+      1000,
+      1001,
+      1002
+    ],
+    "test_policy": "documents selected by hash rule before scoring; protocol committed before execute; one execution; no arm, document or weight changes after scores",
+    "timing": {
+      "cold_start": "fresh interpreter: import torch and singularity, load one checkpoint and the count JSON",
+      "cold_start_repeats": 5,
+      "measured_rounds": 11,
+      "order_seed": 6113,
+      "target": "online fast median within 2x fixed blending (engineering target, reported either way)",
+      "threads": 1,
+      "warmup_rounds": 2,
+      "workload": "seed 1000, every document separately, all domains; fixed = mix + validated loss/argmax; online fast = vectorized scorer; online reference = 0.7.0 loop"
+    },
+    "uncertainty": "paired document-cluster bootstrap within each domain, seed-averaged differences, 10000 draws, rng seed 80023; descriptive"
+  },
+  "protocol_sha256": "d226acd022eec54fa38f5f8ff752b9294bbcc5b457ae2ae97c77339c2146209a"
+}

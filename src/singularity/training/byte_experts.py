@@ -274,3 +274,79 @@ def score_frozen_mixture(model, expert, raw, neural_weight, batch_size=64,
             "corpus_bytes": len(raw), "experts": summaries,
             "weight_fitting": "none; caller supplied a frozen weight",
             "window_convention": "one target shift; every noninitial byte once; padding ignored"}
+
+
+class AdaptiveDocumentCounts:
+    """Causal in-document Witten-Bell counts over a fixed base distribution.
+
+    For history h_k (the previous k document bytes, k <= max_order), counts
+    c(h_k, y) come only from earlier positions of the current document.
+    With u(h_k) distinct followers and n(h_k) total followers,
+
+        p_k(y) = (c(h_k, y) + u(h_k) p_{k-1}(y)) / (n(h_k) + u(h_k)),
+
+    and p_{-1} is the supplied base distribution (here the TRAIN trigram).
+    An unseen context leaves p_{k-1} unchanged. ``update`` must follow the
+    prediction of the same target; ``reset`` starts a new document. This is a
+    standard adaptive compression model, not a new estimator; its order is a
+    declared constant rather than a fitted value.
+    """
+
+    def __init__(self, max_order=4):
+        if not isinstance(max_order, int) or isinstance(max_order, bool) or not 0 <= max_order <= 8:
+            raise ValueError("max_order must be an integer between 0 and 8")
+        self.max_order = max_order
+        self.reset()
+
+    def reset(self):
+        self.history = b""
+        self.tables = [dict() for _ in range(self.max_order + 1)]
+
+    def probabilities(self, base):
+        """Return a normalized 256-entry NumPy distribution for the next byte."""
+        import numpy as np
+
+        distribution = np.array(base, dtype=np.float64)
+        if distribution.shape != (VOCABULARY_SIZE,) or not distribution.min() >= 0 or abs(distribution.sum() - 1) > 1e-9:
+            raise ValueError("base must be a normalized 256-byte distribution")
+        for order in range(min(self.max_order, len(self.history)) + 1):
+            context = self.history[len(self.history) - order:] if order else b""
+            row = self.tables[order].get(context)
+            if not row:
+                continue
+            distinct, total = len(row), sum(row.values())
+            distribution *= distinct
+            for byte, count in row.items():
+                distribution[byte] += count
+            distribution /= total + distinct
+        return distribution
+
+    def update(self, target):
+        if not isinstance(target, int) or isinstance(target, bool) or not 0 <= target < VOCABULARY_SIZE:
+            raise ValueError("target must be a byte")
+        for order in range(min(self.max_order, len(self.history)) + 1):
+            context = self.history[len(self.history) - order:] if order else b""
+            row = self.tables[order].setdefault(context, {})
+            row[target] = row.get(target, 0) + 1
+        self.history = (self.history + bytes((target,)))[-self.max_order:] if self.max_order else b""
+
+
+def adaptive_document_probabilities(expert, raw, max_order=4):
+    """[len(raw)-1, 256] causal predictions for one document's noninitial bytes.
+
+    The base is the TRAIN count expert with its own window convention. The
+    adaptive tables first see raw[0] as context, then each target only after
+    its row has been emitted.
+    """
+    import numpy as np
+
+    adaptive = AdaptiveDocumentCounts(max_order)
+    adaptive.history = raw[:1][-max_order:] if max_order else b""
+    output = np.empty((len(raw) - 1, VOCABULARY_SIZE), dtype=np.float64)
+    cache = {}
+    for index, (history, target) in enumerate(byte_events(raw, expert.sequence_length)):
+        if history not in cache:
+            cache[history] = expert.probabilities(history)
+        output[index] = adaptive.probabilities(cache[history])
+        adaptive.update(target)
+    return output
