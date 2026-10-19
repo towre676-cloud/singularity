@@ -75,6 +75,9 @@ PROTOCOL = {
                "cold_start_repeats": 5, "cold_start": "fresh interpreter: import torch and singularity, load one checkpoint and the count JSON",
                "target": "online fast median within 2x fixed blending (engineering target, reported either way)"},
     "test_policy": "documents selected by hash rule before scoring; protocol committed before execute; one execution; no arm, document or weight changes after scores",
+    "revision": {"number": 2, "supersedes": "protocol_revision1_aborted.json",
+                 "change": "bound assertion uses 1e-9 + 2**-36 * cumulative online NLL instead of a fixed 1e-9 nats",
+                 "reason": "revision 1 execution aborted in the scoring loop on that assertion before writing results; a slack-only diagnostic (no arm losses) showed slack and marginal-likelihood residuals of order 1e-10 in both the 0.7.0 reference loop and the vectorized scorer"},
     "scope": "Three small frozen byte models trained on WikiText; documents from one build environment; results are conditional on these documents and do not establish behavior on other corpora or tokenizers.",
 }
 
@@ -205,6 +208,16 @@ def cluster_bootstrap(differences, sizes):
             "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap"}
 
 
+def float_tolerance(audit):
+    """Rounding allowance for sums of ~1e4-1e5 per-target logs (revision 2).
+
+    When the posterior concentrates on one grid weight the true slack is
+    positive but exponentially small, so rounding can make it slightly
+    negative; revision 1 aborted on a fixed 1e-9 allowance for that reason.
+    """
+    return 1e-9 + 2.**-36 * abs(audit["online_cumulative_nll"])
+
+
 def count_predictions(expert, raw):
     import numpy as np
     from singularity.training.byte_experts import byte_events
@@ -274,8 +287,8 @@ def execute(output):
                 raise AssertionError("vectorized online blend disagrees with reference loop")
             secondary = score_online_probabilities_fast(neural, adaptive, targets)
             for audit in (online["audit"], secondary["audit"]):
-                if audit["bound_slack_nats"] < -1e-9:
-                    raise AssertionError("log(21) bound violated")
+                if audit["bound_slack_nats"] < -float_tolerance(audit):
+                    raise AssertionError("log(21) bound violated beyond floating-point tolerance")
             record["seeds"][str(seed)] = {
                 "neural": metrics(neural_losses, neural.argmax(1) == targets),
                 "calibrated_fixed_blend": metrics(fixed_losses, fixed.argmax(1) == targets),

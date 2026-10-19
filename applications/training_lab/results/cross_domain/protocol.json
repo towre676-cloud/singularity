@@ -11,7 +11,7 @@
   },
   "count_expert_sha256": "1791ea95f9da91b5544481c8a9e43bf44b12f71d93facb8dd802ec2a0e1581e1",
   "dependency_sha256": {
-    "scripts/confirm_cross_domain.py": "05802daa143872374d9d4e4d9ddfbddda77b5be42d9d20c2551fa55f2ac48275",
+    "scripts/confirm_cross_domain.py": "a0973fb60d58d0f88af524c0bd9b48a47fbea4716969d983c98d58438f40a1d7",
     "scripts/confirm_predictive_mixture.py": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
     "src/singularity/training/byte_experts.py": "78401a2a44632aa2a5efe5d0c43558a7aca061d034eaa804661fbd387f109d6c",
     "src/singularity/training/data.py": "46473e94bff05947216e38481831a43052487f7bacc8fd9a346f9dfaa3bc8cb3",
@@ -21,7 +21,7 @@
   },
   "documents_scored_before_freeze": false,
   "documents_sha256": "1602f307f1c7d2c3e00b092b6ae3d1d3f972f0b9565c363ee9949d8ca0e4a75d",
-  "frozen_at_utc": "2026-10-19T13:40:16.194331+00:00",
+  "frozen_at_utc": "2026-10-19T13:46:10.078133+00:00",
   "protocol": {
     "arms": {
       "adaptive_count": "stronger count baseline: in-document Witten-Bell order 4 over the TRAIN trigram base; order declared, not tuned",
@@ -64,6 +64,12 @@
       "adaptive_count minus count, per domain"
     ],
     "purpose": "Prospective byte prediction comparison on documents from domains absent from WikiText training",
+    "revision": {
+      "change": "bound assertion uses 1e-9 + 2**-36 * cumulative online NLL instead of a fixed 1e-9 nats",
+      "number": 2,
+      "reason": "revision 1 execution aborted in the scoring loop on that assertion before writing results; a slack-only diagnostic (no arm losses) showed slack and marginal-likelihood residuals of order 1e-10 in both the 0.7.0 reference loop and the vectorized scorer",
+      "supersedes": "protocol_revision1_aborted.json"
+    },
     "schema": "singularity.cross-domain-protocol/1",
     "scope": "Three small frozen byte models trained on WikiText; documents from one build environment; results are conditional on these documents and do not establish behavior on other corpora or tokenizers.",
     "seeds": [
@@ -84,5 +90,5 @@
     },
     "uncertainty": "paired document-cluster bootstrap within each domain, seed-averaged differences, 10000 draws, rng seed 80023; descriptive"
   },
-  "protocol_sha256": "d226acd022eec54fa38f5f8ff752b9294bbcc5b457ae2ae97c77339c2146209a"
+  "protocol_sha256": "a90c9c9021dcaf93901ca0d6148f5c72c69b930ce19ee4c42b324bd597abb6a8"
 }

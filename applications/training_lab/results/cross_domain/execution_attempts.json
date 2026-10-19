@@ -1,0 +1,12 @@
+{
+  "attempts": [
+    {
+      "revision": 1,
+      "started": "2026-10-19 after commit 8d95d6c",
+      "outcome": "aborted by AssertionError('log(21) bound violated') inside the scoring loop; no results, losses or summaries were written or printed",
+      "diagnostic_after_abort": "Seed-1000-only script printed, per document and blend, bound slack, marginal-likelihood identity residual and best grid count weight. Slack values were between -2.3e-10 and 4.4e-7 nats (reference loop down to -2.3e-10, vectorized down to -1.1e-11). No arm NLL, accuracy or comparison was printed.",
+      "resolution": "Revision 2 changes only the floating-point allowance of that assertion; documents, arms, checkpoints, weights and every other rule are unchanged."
+    }
+  ],
+  "schema": "singularity.execution-attempts/1"
+}
