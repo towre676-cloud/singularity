@@ -54,7 +54,15 @@ These functions use exact Gram matrices: `monomial_gram`, `RationalMetric` (posi
 | `is_palindromic`, `periodic_cutoff(n, M)` | \(\lfloor n(M-1)/2\rfloor\). |
 | `compare_models(first, second)` | Needs equal \(n\) and \(M\). Returns `PeriodicComparison(cutoff, equal, first_difference, first_coefficient, second_coefficient)`. `equal=True` is a proof of full-series equality by SNG-O09. |
 
-## 6. Compatibility
+## 6. Margins, panels and compression (added after the 0.3.0 freeze)
+
+| Module | Contract |
+|---|---|
+| `robust_search` | `bounded_margin_search(system, difference, noise, budget)` and `bounded_family_search(system, states, noise, budget)` return the exact bounded maximum of the normalized margin (SNG-O15), with `exhaustive_*` reference searches. The noise vector holds one positive rational per observation. Exceeding `max_nodes` raises ValueError and is not a mathematical result. |
+| `panels` | `experiment_pool`, `minimum_cost_panel(pool, epsilon=None)` (exact branch-and-bound, worst-case exponential), `exhaustive_minimum_panel`, `greedy_panel` (heuristic), and box and Euclidean consistency decoders (SNG-O16). |
+| `compression` | `independent_star`, `star_transition`, `reachable_subspace(system, states)` (Krylov closure of the transposed system), `cyclicity_certificate(system)` (the hypotheses of SNG-O13), `star_reconstruction(system)` (SNG-O14, verified on held-out alpha). |
+
+## 7. Compatibility
 
 - `quotient_state(system, certificate, state)` and `minimum_distinguishing_experiment(system, difference, certificate=None)` keep their checkpoint signatures.
 - Certificates retained before this version replay unchanged. The retained R=4 certificate was regenerated with identical content; only its key order changed.

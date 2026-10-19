@@ -2,7 +2,7 @@
 
 This chapter adds an experimental layer to the boundary machinery of Chapter 10. A two-terminal graph state is changed by attaching declared contexts and is read through its local coefficients. The questions are which states can ever be told apart, by which experiment, at what cost, and how much state an observer must keep. Three ingredients are standard: linear observability, minimal realization of weighted automata, and the invariant-subspace computation behind them. The graph-specific parts are new to this project. They are the context compiler and its correctness conditions, the experiment language with costs, independently replayable certificates that tie the retained rows to actual experiment words, the cost-filtered pruning theorem, the top-volume corank bound and the periodic cutoff. The last section integrates the October 2026 edge-factor supplement.
 
-Throughout, \(\mathbb Q\) is the field of rationals and every computation is exact. "Proved" refers to the proofs written here. "Checked" refers to an exact finite computation with a declared population and budget, retained in `results/operator_experiments.json` and replayed by `scripts/operator_experiments.py --check`. None of the new statements is formalized in Lean unless Section 15.10 says so.
+Throughout, \(\mathbb Q\) is the field of rationals and every computation is exact. "Proved" refers to the proofs written here. "Checked" refers to an exact finite computation with a declared population and budget, retained in `results/operator_experiments.json` and replayed by `scripts/operator_experiments.py --check`. None of the new statements is formalized in Lean unless Section 15.11 says so.
 
 ## 15.1 Background and what is new
 
@@ -66,7 +66,7 @@ The identities say that the retained space contains every future observation. Th
 
 *Proof.* (1) If \(Bv=0\), then \(BM_iv=T_iBv=0\). (2) By SNG-O01 every experiment row is a combination of rows of \(B\), so it vanishes on \(N\). Conversely, if \(d\notin N\), some row \(b_k\) of \(B\) is nonzero on \(d\), and \(b_k\) is an experiment. (3) \(BM_iv=T_iBv\) and \(Lv=ABv\). (4) If \(\phi(d)=0\), then \(d\) and \(0\) lie in one fibre, so every experiment, and in particular every \(b_k\), vanishes on \(d\); hence \(d\in N\). Then \(\operatorname{rank}\phi=n-\dim\ker\phi\ge n-\dim N=\operatorname{rank}B\). \(\square\)
 
-Part (4) is minimality among **linear** compressions of the **full declared formal state space**. It says nothing about nonlinear encodings. It also says nothing about the smaller set of states that graphs actually realize: a family occupying an affine subspace or a semialgebraic subset can need fewer coordinates. Section 15.11 lists this as open.
+Part (4) is minimality among **linear** compressions of the **full declared formal state space**. It says nothing about nonlinear encodings. It also says nothing about the smaller set of states that graphs actually realize: a family occupying an affine subspace or a semialgebraic subset can need fewer coordinates. Section 15.12 lists this as open.
 
 **Theorem SNG-O03 (cost-filtered pruning and cheapest witnesses).** Assume the following:
 
@@ -216,7 +216,52 @@ and a source interface complete through \(R\) suffices for output budget \(R\).
 
 These are applications of standard principles, not new algebraic geometry. They are implemented in `edge_factors.py` and `charges.py` and checked by `scripts/vakil_bridge.py --check`.
 
-## 15.9 Interfaces and runnable examples
+## 15.9 Margins, panels and family compression
+
+SNG-O03 optimizes cost alone. This section treats three different objectives: margin under a cost budget, shared panels for several candidate pairs, and the smallest state needed for a restricted family. Each is posed and solved separately.
+
+**Proposition SNG-O15 (bounded maximum margin).** Let observation \(j\) carry a deterministic error bound \(\sigma_j>0\) and fix a budget \(C\). The normalized margin \(|L_jM_wd|/\sigma_j\) attains a maximum over the finitely many experiments of cost at most \(C\). Branch-and-bound with the following bound returns that maximum. For the vector \(\infty\)-norm put \(\kappa(b)=\max\{\prod_{i\in u}\|M_i\|_\infty:\ c(u)\le b\}\). Then every extension \(w\cdot u\) of a word \(w\) satisfies
+\[
+\frac{|L_jM_uM_wd|}{\sigma_j}\ \le\ \frac{\|L_j\|_1}{\sigma_j}\,\kappa\bigl(C-c(w)-\gamma_j\bigr)\,\|M_wd\|_\infty .
+\]
+
+*Proof.* There are finitely many experiments because the attachment costs are bounded below by a positive constant. The bound follows from \(|Lv|\le\|L\|_1\|v\|_\infty\) and \(\|Mv\|_\infty\le\|M\|_\infty\|v\|_\infty\), applied letter by letter. The quantity \(\kappa\) is computed exactly by dynamic programming over the reachable cost sums, since a product of norms does not depend on letter order. A pruned subtree contains no experiment above its bound, and that bound is at most the incumbent, so the optimum survives. \(\square\)
+
+There are three cautions. First, without a budget no optimum need exist: the amplification example has bounded optimum \(2^{\lfloor C\rfloor}\). Second, a finite supremum need not be attained. For \(M=\bigl(\begin{smallmatrix}1&1\\0&1/2\end{smallmatrix}\bigr)\), \(L=(1,0)\) and \(d=(0,1)\), the readings are \(2-2^{1-k}\). Third, dependence pruning can discard the optimal-margin row. In the two-generator example of `docs/research/ROBUST_SEARCH.md`, the cheapest witness has margin \(1\), while a budget-two experiment whose row is a multiple of a retained row reaches margin \(3\). On the path fixture with \(\sigma=1\) and costs \((2,1)\), the bounded optimum at budgets \(1,\ldots,6\) is \(1/8,3/16,\ldots,63/256\). The pattern \(1/4-2^{-(C+2)}\) is checked only for \(C\le6\).
+
+**Proposition SNG-O16 (shared panels under box noise).** Let a panel \(\mathcal P\) of experiments be read with errors \(|\eta_e|\le\varepsilon_e\). Call a candidate \(c\) consistent if \(|y_e-r_e(v_c)|\le\varepsilon_e\) for every \(e\in\mathcal P\). Then the following are equivalent:
+
+- for every possible true candidate, every admissible reading leaves only that candidate consistent;
+- every pair of candidates is robustly separated by some \(e\in\mathcal P\), meaning \(|r_e(v_a)-r_e(v_b)|>2\varepsilon_e\).
+
+*Proof.* If \(e\) robustly separates the true \(t\) from \(c\), then \(|y_e-r_e(v_c)|\ge|r_e(v_t)-r_e(v_c)|-\varepsilon_e>\varepsilon_e\), so \(c\) is excluded. Conversely, suppose no member robustly separates \(a\) and \(b\). Then the midpoint readings \(y_e=\tfrac12(r_e(v_a)+r_e(v_b))\) are admissible for both, so both remain consistent. \(\square\)
+
+Finding a cheapest certifying panel is therefore a weighted set-cover problem over pairs. That problem is NP-hard in general, so the exact branch-and-bound in `panels.py` is worst-case exponential. Its lower bound packs pairs that no single experiment covers twice. A Euclidean-ball noise model is treated separately. There, several readings jointly certify a pair that no single reading separates robustly. Take six three-vertex candidates at \(R=3\), \(q=1/2\), costs \((2,1)\) and budget \(4\). Exactly one pair is never separable: the endpoint–middle and middle–endpoint placements on the path, which coincide under the path automorphism. The other classes are separated at cost \(1\). A robust panel exists if and only if \(\varepsilon<278513/2097152\).
+
+**Theorem SNG-O13 (cyclicity of realizable states).** Let \(A\) be the unital algebra generated by the compiled operators of a context language at budget \(R\) and \(q\in\mathbb Q\cap(0,1)\).
+
+1. For every realizable graph state \(v\), the reachable space \(\operatorname{span}\{M_wv\}\) equals \(Av\) and has dimension \(\dim A\).
+2. Suppose some context \(C\) in the language has pairwise distinct orbit constants \(q^{d_C(s^2+t^2)}\) over the orbits with \(s+t\le R\), and \([x^1]\kappa_{C,o}\ne0\) in every block of length at least two. Then \(A=\bigoplus_o\mathbb Q[x]/x^{m_o}\) with \(m_o=R+1-s-t\). In that case every realizable state is cyclic, and no attachment-closed family of graph states admits a linear compression, compatible with the attachments and outputs, of dimension below the formal quotient rank.
+
+*Proof.* (1) By SNG-O05 each operator acts on block \(o\) as multiplication by a truncated series. So \(A\) is a commutative subalgebra of \(\mathcal B=\bigoplus_o\mathbb Q[x]/x^{m_o}\), acting on states by multiplication. The block of a realizable state has constant term \([x^0]x^{-s-t}\cdot x^{s+t}K^+_G(o)>0\), since the counts are positive and \(q>0\). So \(v\) is a unit of \(\mathcal B\), and \(a\mapsto av\) is injective on \(A\). The reachable space is \(\{av:\ a\in A\}\).
+
+(2) Taking constant terms is an algebra homomorphism \(\chi:A\to\mathbb Q^{\text{orbits}}\). Since the values \(\chi(M_C)_o\) are distinct, Lagrange interpolation gives a polynomial \(p\) with \(\chi(p(M_C))=e_{o^*}\). The element \(b=p(M_C)^{N}\), with \(N\ge\max m_o\), is zero in every block \(o\ne o^*\), because there it is a nilpotent power. In block \(o^*\) it is a unit \(u\). Since \(u^{-1}\in\mathbb Q[u]\), some polynomial \(h\) gives \(bh(b)=e_{o^*}\in A\). Then \(z=e_{o^*}\bigl(M_C-\chi(M_C)_{o^*}\bigr)\) is multiplication by \(x\cdot(\text{unit})\) in block \(o^*\). Its powers together with \(e_{o^*}\) span \(\mathbb Q[x]/x^{m_{o^*}}\). Hence \(A=\mathcal B\), and every unit is cyclic. For an attachment-closed family, the space a compatible linear compression must preserve contains the reachable space of each member, which is the whole space here. By SNG-O02, the least dimension is then the formal quotient rank. \(\square\)
+
+For the standard contexts the pendant-leaf pair satisfies the hypotheses exactly when \(R\le6\): the first collision is \(0^2+5^2=3^2+4^2\). Its first-order terms \(q^{(1-s)^2+t^2}+q^{s^2+(1-t)^2}\) are positive. Krylov closure confirms full reachability from several seeds for \(R\le4\). At \(R=7\), reachability from two different seeds has dimension \(69\), equal to the formal quotient rank. That is a finite computation, not a theorem for larger \(R\).
+
+**Theorem SNG-O14 (star family: initial-state compression with growing savings).** Let \(S_\alpha\) be the block with \(\alpha\) leaves attached to terminal \(0\) and an isolated terminal \(1\). There is a matrix \(C\), independent of \(\alpha\), such that
+\[
+Y(S_\alpha)=C\,\bigl(\alpha^kq^{\alpha r^2}\bigr)_{0\le r\le R,\ 0\le k\le R-r}.
+\]
+Hence \(\dim\operatorname{span}\{Y(S_\alpha):\alpha\ge0\}\le(R+1)(R+2)/2\), while the formal dimension is \(\sum_{s\le t,\ s+t\le R}(R+1-s-t)\), a cubic polynomial in \(R\).
+
+*Proof.* The interior kernel is \(K(s,t)=f(s)^\alpha\) with \(f(s)=\sum_hx^hq^{(h-s)^2}=q^{s^2}(1+g_s)\) and \(g_s=O(x)\). Then \([x^j]f(s)^\alpha=q^{\alpha s^2}\sum_{k\le j}\binom{\alpha}{k}[x^j]g_s^k\), which is \(q^{\alpha s^2}\) times a polynomial in \(\alpha\) of degree at most \(j\le R-s\) whose coefficients do not depend on \(\alpha\). The swapped term \(K(t,s)\) contributes the same with \(r=t\). \(\square\)
+
+At \(q=1/2\) the span equals the bound for \(R\le7\), which is a finite check. The reconstruction \(C\) is fitted on \(\alpha<d\) and verified exactly on held-out \(\alpha\). The observable part equals the span, and the saving against the formal quotient is \(0,1,3,7,13,22,33\) for \(R=1,\ldots,7\).
+
+The compressed coordinates are the explicit numbers \(\alpha^kq^{\alpha r^2}\). With \(q=a/b\), each has bit length \(O(R\log\alpha+\alpha R^2\log b)\). The \(n\) uncompressed coordinates have the same order each, so the storage ratio is \(n/d\sim R/6\). This family is not attachment-closed, because the pendant pair also adds leaves at terminal \(1\). By SNG-O13, closing it under the standard attachments removes every saving for \(R\le6\). Initial-state compression and attachment-closed compression are thus genuinely different problems.
+
+## 15.10 Interfaces and runnable examples
 
 The public contracts are specified in `docs/specifications/OPERATORS-v1.md`. A minimal session:
 
@@ -242,17 +287,17 @@ result = compare_models(PeriodicModel(Graph(3, ((0, 1), (1, 2))), 2), PeriodicMo
 assert result.equal and result.cutoff == 1
 ```
 
-## 15.10 Formal status
+## 15.11 Formal status
 
-The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O12. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
+The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O16. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
 
-## 15.11 Open questions
+## 15.12 Open questions
 
 The following are open:
 
-- **Restricted state families.** Find the minimal dimension of a compression that is exact only on the states graphs actually realize, and decide whether such a family can be closed under attachment with typed transitions.
-- **Sharpness of the corank bound.** Is SNG-O06 sharp for every budget, and does the visible rank have a closed form in \(R\)?
-- **Margins.** Develop bounded maximum-margin experiment search under a cost budget. An unrestricted optimum need not exist, because signals can grow without bound (SNG-O04).
-- **Shared panels.** Find minimum-cost shared panels that separate every pair in a candidate family, ideally with joint robustness. Exact methods face set-cover hardness in general.
-- **Parameter dependence.** Determine where the rank depends on \(q\): generic rank over \(\mathbb Q(q)\) versus rank at every specialization.
+- **Restricted families.** SNG-O13 settles attachment-closed graph families at \(R\le6\): they admit no savings. For \(R\ge7\) only finite data exist. Initial-state families such as the stars do compress (SNG-O14). Can any attachment-closed family compress at large \(R\), and does the reachable dimension always equal the formal quotient rank?
+- **Corank.** Is the corank bound SNG-O06 sharp for every budget? It is attained at \(R=4\) and \(R=7\) in the retained receipts; one unretained run gave corank \(1\) at \(R=8\), also equal to the bound. Does the visible rank have a closed form in \(R\)?
+- **Margins.** SNG-O15 handles a fixed budget. The \(\infty\)-norm bound can be loose: nothing is pruned on the path fixture. Better metric-specific bounds remain to be proved.
+- **Panels.** Panels are exact only within a declared pool and candidate family. No polynomial-time exact method exists in general, unless P = NP.
+- **Parameter dependence.** Determine where the rank depends on \(q\): generic rank over \(\mathbb Q(q)\) versus rank at every specialization (OE09).
 - **Sharper periodic cutoffs and noncommuting operations.** Find periodic cutoffs below \(\lfloor K/2\rfloor\) for structured families, and genuinely noncommuting graph operations with closed state semantics.

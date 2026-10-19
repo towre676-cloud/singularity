@@ -1,0 +1,101 @@
+{
+  "budgets": [
+    {
+      "cyclicity_certificate": true,
+      "formal_dimension": 3,
+      "formal_quotient": 3,
+      "krylov_reachable_from_seeds": [
+        3
+      ],
+      "max_volume": 1,
+      "saving_over_formal_quotient": 0,
+      "star_bound": 3,
+      "star_observable": 3,
+      "star_reconstruction_verified_through_alpha": 7,
+      "star_span": 3
+    },
+    {
+      "cyclicity_certificate": true,
+      "formal_dimension": 7,
+      "formal_quotient": 7,
+      "krylov_reachable_from_seeds": [
+        7
+      ],
+      "max_volume": 2,
+      "saving_over_formal_quotient": 1,
+      "star_bound": 6,
+      "star_observable": 6,
+      "star_reconstruction_verified_through_alpha": 10,
+      "star_span": 6
+    },
+    {
+      "cyclicity_certificate": true,
+      "formal_dimension": 13,
+      "formal_quotient": 13,
+      "krylov_reachable_from_seeds": [
+        13
+      ],
+      "max_volume": 3,
+      "saving_over_formal_quotient": 3,
+      "star_bound": 10,
+      "star_observable": 10,
+      "star_reconstruction_verified_through_alpha": 14,
+      "star_span": 10
+    },
+    {
+      "cyclicity_certificate": true,
+      "formal_dimension": 22,
+      "formal_quotient": 22,
+      "krylov_reachable_from_seeds": [
+        22
+      ],
+      "max_volume": 4,
+      "saving_over_formal_quotient": 7,
+      "star_bound": 15,
+      "star_observable": 15,
+      "star_reconstruction_verified_through_alpha": 19,
+      "star_span": 15
+    },
+    {
+      "cyclicity_certificate": true,
+      "formal_dimension": 34,
+      "formal_quotient": 34,
+      "max_volume": 5,
+      "saving_over_formal_quotient": 13,
+      "star_bound": 21,
+      "star_observable": 21,
+      "star_reconstruction_verified_through_alpha": 25,
+      "star_span": 21
+    },
+    {
+      "cyclicity_certificate": true,
+      "formal_dimension": 50,
+      "formal_quotient": 50,
+      "max_volume": 6,
+      "saving_over_formal_quotient": 22,
+      "star_bound": 28,
+      "star_observable": 28,
+      "star_reconstruction_verified_through_alpha": 32,
+      "star_span": 28
+    },
+    {
+      "cyclicity_certificate": false,
+      "formal_dimension": 70,
+      "formal_quotient": 69,
+      "max_volume": 7,
+      "saving_over_formal_quotient": 33,
+      "star_bound": 36,
+      "star_observable": 36,
+      "star_reconstruction_verified_through_alpha": 40,
+      "star_span": 36
+    }
+  ],
+  "contexts": [
+    "pendant_leaf_pair",
+    "shared_neighbor"
+  ],
+  "family": "independent stars: alpha leaves at terminal 0 (initial-state family, not attachment-closed)",
+  "q": "1/2",
+  "schema": "singularity.family-compression/1",
+  "scope": "Exact finite receipts. SNG-O13 and SNG-O14 are proved in Chapter 15; equality of the star span with its bound is checked here for R <= 7 only."
+}
