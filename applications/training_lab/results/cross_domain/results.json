@@ -1,0 +1,5099 @@
+{
+  "created_at_utc": "2026-10-19T13:56:37.246723+00:00",
+  "documents": [
+    {
+      "adaptive_count": {
+        "accuracy": 0.6094809737988148,
+        "bits_per_byte": 2.462388295298156,
+        "nll_nats_per_byte": 1.7067975043297268,
+        "valid_targets": 14007
+      },
+      "count": {
+        "accuracy": 0.24651959734418505,
+        "bits_per_byte": 4.873266619583456,
+        "nll_nats_per_byte": 3.3778910174811676,
+        "valid_targets": 14007
+      },
+      "document": 0,
+      "domain": "reference_prose",
+      "name": "attribute-access",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2996358963375455,
+            "bits_per_byte": 4.533318579381877,
+            "nll_nats_per_byte": 3.1422569918785643,
+            "valid_targets": 14007
+          },
+          "neural": {
+            "accuracy": 0.2984222174626972,
+            "bits_per_byte": 5.669438201745111,
+            "nll_nats_per_byte": 3.9297551048984696,
+            "valid_targets": 14007
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6174055829228243,
+            "bits_per_byte": 2.2688065703452684,
+            "nll_nats_per_byte": 1.5726168774707021,
+            "valid_targets": 14007
+          },
+          "online_adaptive_regret_nats": 3.0445050267881015,
+          "online_blend": {
+            "accuracy": 0.2970657528378668,
+            "bits_per_byte": 4.5069437600370845,
+            "nll_nats_per_byte": 3.1239753602119436,
+            "valid_targets": 14007
+          },
+          "online_final_count_weight_mean": 0.5499731241415661,
+          "online_regret_nats": 3.0439887402171735,
+          "reference_loop_max_abs_difference_nats": 3.6362024502523127e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2969229670878846,
+            "bits_per_byte": 4.5713615312277245,
+            "nll_nats_per_byte": 3.1686263566906914,
+            "valid_targets": 14007
+          },
+          "neural": {
+            "accuracy": 0.2937816805882773,
+            "bits_per_byte": 5.470192941695257,
+            "nll_nats_per_byte": 3.7916488146549803,
+            "valid_targets": 14007
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6163346897979581,
+            "bits_per_byte": 2.274949044875773,
+            "nll_nats_per_byte": 1.5768745163731825,
+            "valid_targets": 14007
+          },
+          "online_adaptive_regret_nats": 3.0445224370669166,
+          "online_blend": {
+            "accuracy": 0.296351824087956,
+            "bits_per_byte": 4.534815201344879,
+            "nll_nats_per_byte": 3.1432943711725834,
+            "valid_targets": 14007
+          },
+          "online_final_count_weight_mean": 0.5506892021519895,
+          "online_regret_nats": 3.029390454707027,
+          "reference_loop_max_abs_difference_nats": 1.663835735854491e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2984222174626972,
+            "bits_per_byte": 4.572049416329773,
+            "nll_nats_per_byte": 3.169103162309726,
+            "valid_targets": 14007
+          },
+          "neural": {
+            "accuracy": 0.28921253658884843,
+            "bits_per_byte": 5.501363991662386,
+            "nll_nats_per_byte": 3.8132549400547897,
+            "valid_targets": 14007
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6153351895480831,
+            "bits_per_byte": 2.276473131797735,
+            "nll_nats_per_byte": 1.577930932926069,
+            "valid_targets": 14007
+          },
+          "online_adaptive_regret_nats": 3.044522437507112,
+          "online_blend": {
+            "accuracy": 0.2932819304633398,
+            "bits_per_byte": 4.551280814746112,
+            "nll_nats_per_byte": 3.154707464677838,
+            "valid_targets": 14007
+          },
+          "online_final_count_weight_mean": 0.5522671052085556,
+          "online_regret_nats": 2.9994599746278254,
+          "reference_loop_max_abs_difference_nats": 8.412381902189736e-12
+        }
+      },
+      "targets": 14007
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6355442176870748,
+        "bits_per_byte": 2.4140046608187733,
+        "nll_nats_per_byte": 1.6732605245050998,
+        "valid_targets": 5880
+      },
+      "count": {
+        "accuracy": 0.229421768707483,
+        "bits_per_byte": 5.704461772618241,
+        "nll_nats_per_byte": 3.954031594302321,
+        "valid_targets": 5880
+      },
+      "document": 1,
+      "domain": "reference_prose",
+      "name": "numeric-types",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.29523809523809524,
+            "bits_per_byte": 5.399915972986548,
+            "nll_nats_per_byte": 3.7429365319362398,
+            "valid_targets": 5880
+          },
+          "neural": {
+            "accuracy": 0.2848639455782313,
+            "bits_per_byte": 7.343395086621802,
+            "nll_nats_per_byte": 5.090053600029657,
+            "valid_targets": 5880
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6430272108843538,
+            "bits_per_byte": 2.22817069166343,
+            "nll_nats_per_byte": 1.5444502327328098,
+            "valid_targets": 5880
+          },
+          "online_adaptive_regret_nats": 3.0445224374016107,
+          "online_blend": {
+            "accuracy": 0.28554421768707483,
+            "bits_per_byte": 5.303461098086194,
+            "nll_nats_per_byte": 3.676079107347797,
+            "valid_targets": 5880
+          },
+          "online_final_count_weight_mean": 0.6500012230024785,
+          "online_regret_nats": 3.0444814353759284,
+          "reference_loop_max_abs_difference_nats": 1.8185453143360064e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.291156462585034,
+            "bits_per_byte": 5.421493329811632,
+            "nll_nats_per_byte": 3.7578928159834826,
+            "valid_targets": 5880
+          },
+          "neural": {
+            "accuracy": 0.26785714285714285,
+            "bits_per_byte": 7.015183224236343,
+            "nll_nats_per_byte": 4.862554472990848,
+            "valid_targets": 5880
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6413265306122449,
+            "bits_per_byte": 2.224111727853261,
+            "nll_nats_per_byte": 1.5416367734117962,
+            "valid_targets": 5880
+          },
+          "online_adaptive_regret_nats": 3.04452243770902,
+          "online_blend": {
+            "accuracy": 0.28860544217687073,
+            "bits_per_byte": 5.320710952979611,
+            "nll_nats_per_byte": 3.6880357956322367,
+            "valid_targets": 5880
+          },
+          "online_final_count_weight_mean": 0.6500128210140066,
+          "online_regret_nats": 3.044244748831261,
+          "reference_loop_max_abs_difference_nats": 3.367972567502875e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2835034013605442,
+            "bits_per_byte": 5.414570884582782,
+            "nll_nats_per_byte": 3.753094542590524,
+            "valid_targets": 5880
+          },
+          "neural": {
+            "accuracy": 0.2649659863945578,
+            "bits_per_byte": 7.186230699272783,
+            "nll_nats_per_byte": 4.9811155480542535,
+            "valid_targets": 5880
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6423469387755102,
+            "bits_per_byte": 2.224601443428708,
+            "nll_nats_per_byte": 1.5419762183821935,
+            "valid_targets": 5880
+          },
+          "online_adaptive_regret_nats": 3.044522437685373,
+          "online_blend": {
+            "accuracy": 0.2816326530612245,
+            "bits_per_byte": 5.342380785637098,
+            "nll_nats_per_byte": 3.70305617904198,
+            "valid_targets": 5880
+          },
+          "online_final_count_weight_mean": 0.650538489467595,
+          "online_regret_nats": 3.0347497099755856,
+          "reference_loop_max_abs_difference_nats": 2.362110507192483e-12
+        }
+      },
+      "targets": 5880
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6228742389250472,
+        "bits_per_byte": 2.4149739605099843,
+        "nll_nats_per_byte": 1.6739323918531803,
+        "valid_targets": 19052
+      },
+      "count": {
+        "accuracy": 0.26175729582196094,
+        "bits_per_byte": 5.103659955257405,
+        "nll_nats_per_byte": 3.537587508523367,
+        "valid_targets": 19052
+      },
+      "document": 2,
+      "domain": "reference_prose",
+      "name": "match",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3015431450766324,
+            "bits_per_byte": 4.750960728218768,
+            "nll_nats_per_byte": 3.2931150337158637,
+            "valid_targets": 19052
+          },
+          "neural": {
+            "accuracy": 0.29408985933235354,
+            "bits_per_byte": 5.48632203872836,
+            "nll_nats_per_byte": 3.802828652788454,
+            "valid_targets": 19052
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6273882007138358,
+            "bits_per_byte": 2.2691233473502694,
+            "nll_nats_per_byte": 1.5728364505585848,
+            "valid_targets": 19052
+          },
+          "online_adaptive_regret_nats": 3.0445224370960204,
+          "online_blend": {
+            "accuracy": 0.3021730002099517,
+            "bits_per_byte": 4.717552612813903,
+            "nll_nats_per_byte": 3.26995829271516,
+            "valid_targets": 19052
+          },
+          "online_final_count_weight_mean": 0.5500000000755791,
+          "online_regret_nats": 3.0445224364375463,
+          "reference_loop_max_abs_difference_nats": 3.638866985511413e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.29492966617677935,
+            "bits_per_byte": 4.807406923383556,
+            "nll_nats_per_byte": 3.332240554747673,
+            "valid_targets": 19052
+          },
+          "neural": {
+            "accuracy": 0.2834872979214781,
+            "bits_per_byte": 5.493822227774361,
+            "nll_nats_per_byte": 3.808027387679356,
+            "valid_targets": 19052
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6286479109804745,
+            "bits_per_byte": 2.2717682560534795,
+            "nll_nats_per_byte": 1.5746697615690533,
+            "valid_targets": 19052
+          },
+          "online_adaptive_regret_nats": 3.0445224373943347,
+          "online_blend": {
+            "accuracy": 0.29823640562670584,
+            "bits_per_byte": 4.759905735645851,
+            "nll_nats_per_byte": 3.2993152403940336,
+            "valid_targets": 19052
+          },
+          "online_final_count_weight_mean": 0.5999999999651064,
+          "online_regret_nats": 3.0445224363866146,
+          "reference_loop_max_abs_difference_nats": 3.637534717881863e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.29781650220449296,
+            "bits_per_byte": 4.817901629984269,
+            "nll_nats_per_byte": 3.339514931038761,
+            "valid_targets": 19052
+          },
+          "neural": {
+            "accuracy": 0.2828049548603821,
+            "bits_per_byte": 5.605053866821351,
+            "nll_nats_per_byte": 3.885127284673839,
+            "valid_targets": 19052
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6273357127860592,
+            "bits_per_byte": 2.27747194649437,
+            "nll_nats_per_byte": 1.5786232585169429,
+            "valid_targets": 19052
+          },
+          "online_adaptive_regret_nats": 3.0445224365903414,
+          "online_blend": {
+            "accuracy": 0.29954860382112114,
+            "bits_per_byte": 4.782067747491669,
+            "nll_nats_per_byte": 3.3146767764204985,
+            "valid_targets": 19052
+          },
+          "online_final_count_weight_mean": 0.6000024302694308,
+          "online_regret_nats": 3.0444707888527773,
+          "reference_loop_max_abs_difference_nats": 5.9330318435968366e-12
+        }
+      },
+      "targets": 19052
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6129848229342327,
+        "bits_per_byte": 2.509829059211127,
+        "nll_nats_per_byte": 1.7396809360796126,
+        "valid_targets": 13046
+      },
+      "count": {
+        "accuracy": 0.23516786754560784,
+        "bits_per_byte": 5.698436839520147,
+        "nll_nats_per_byte": 3.9498554289123153,
+        "valid_targets": 13046
+      },
+      "document": 3,
+      "domain": "reference_prose",
+      "name": "typesmapping",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.29181358270734326,
+            "bits_per_byte": 5.208091999979173,
+            "nll_nats_per_byte": 3.60997428588237,
+            "valid_targets": 13046
+          },
+          "neural": {
+            "accuracy": 0.28913076805151006,
+            "bits_per_byte": 6.123218663398662,
+            "nll_nats_per_byte": 4.244291752486819,
+            "valid_targets": 13046
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6181204967039705,
+            "bits_per_byte": 2.3497208739391864,
+            "nll_nats_per_byte": 1.6287023988737976,
+            "valid_targets": 13046
+          },
+          "online_adaptive_regret_nats": 3.044522437689011,
+          "online_blend": {
+            "accuracy": 0.2928867085696765,
+            "bits_per_byte": 5.170540993506712,
+            "nll_nats_per_byte": 3.583945911618796,
+            "valid_targets": 13046
+          },
+          "online_final_count_weight_mean": 0.5499999997937266,
+          "online_regret_nats": 3.044522433032398,
+          "reference_loop_max_abs_difference_nats": 3.637978807091713e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.288977464356891,
+            "bits_per_byte": 5.258485160480141,
+            "nll_nats_per_byte": 3.6449041630031207,
+            "valid_targets": 13046
+          },
+          "neural": {
+            "accuracy": 0.28131227962593897,
+            "bits_per_byte": 6.272209607004627,
+            "nll_nats_per_byte": 4.34756440497626,
+            "valid_targets": 13046
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.61819714855128,
+            "bits_per_byte": 2.347291254949433,
+            "nll_nats_per_byte": 1.6270183153212152,
+            "valid_targets": 13046
+          },
+          "online_adaptive_regret_nats": 3.0445224375762336,
+          "online_blend": {
+            "accuracy": 0.292810056722367,
+            "bits_per_byte": 5.211076171262759,
+            "nll_nats_per_byte": 3.612042755793896,
+            "valid_targets": 13046
+          },
+          "online_final_count_weight_mean": 0.5525397968935235,
+          "online_regret_nats": 2.995685441936075,
+          "reference_loop_max_abs_difference_nats": 5.56865664691486e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.29028054576115286,
+            "bits_per_byte": 5.268336924217144,
+            "nll_nats_per_byte": 3.6517328852609676,
+            "valid_targets": 13046
+          },
+          "neural": {
+            "accuracy": 0.28215544994634373,
+            "bits_per_byte": 6.367042442384484,
+            "nll_nats_per_byte": 4.413297517444313,
+            "valid_targets": 13046
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6174306300781849,
+            "bits_per_byte": 2.353438270970155,
+            "nll_nats_per_byte": 1.6312791021448354,
+            "valid_targets": 13046
+          },
+          "online_adaptive_regret_nats": 3.0445224377872364,
+          "online_blend": {
+            "accuracy": 0.2877510347999387,
+            "bits_per_byte": 5.2332389217297886,
+            "nll_nats_per_byte": 3.627404803793571,
+            "valid_targets": 13046
+          },
+          "online_final_count_weight_mean": 0.5999999928863291,
+          "online_regret_nats": 3.0445222947892034,
+          "reference_loop_max_abs_difference_nats": 3.637978807091713e-12
+        }
+      },
+      "targets": 13046
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6537975269049308,
+        "bits_per_byte": 2.2034433226928596,
+        "nll_nats_per_byte": 1.5273105266481932,
+        "valid_targets": 32429
+      },
+      "count": {
+        "accuracy": 0.2079003361189059,
+        "bits_per_byte": 5.836854157199336,
+        "nll_nats_per_byte": 4.045799002402315,
+        "valid_targets": 32429
+      },
+      "document": 4,
+      "domain": "reference_prose",
+      "name": "string-methods",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2706219741589318,
+            "bits_per_byte": 5.405222918190526,
+            "nll_nats_per_byte": 3.7466150260417623,
+            "valid_targets": 32429
+          },
+          "neural": {
+            "accuracy": 0.2613709950969811,
+            "bits_per_byte": 6.425689494339651,
+            "nll_nats_per_byte": 4.45394855615519,
+            "valid_targets": 32429
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6557402325079404,
+            "bits_per_byte": 2.1091524106418706,
+            "nll_nats_per_byte": 1.4619530468076247,
+            "valid_targets": 32429
+          },
+          "online_adaptive_regret_nats": 3.0445224372888333,
+          "online_blend": {
+            "accuracy": 0.26621234080606865,
+            "bits_per_byte": 5.351349969105712,
+            "nll_nats_per_byte": 3.7092731432751744,
+            "valid_targets": 32429
+          },
+          "online_final_count_weight_mean": 0.5999999546945277,
+          "online_regret_nats": 3.04452160053188,
+          "reference_loop_max_abs_difference_nats": 1.634981039444483e-11
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.26519473310925407,
+            "bits_per_byte": 5.4608965204836615,
+            "nll_nats_per_byte": 3.785205026502865,
+            "valid_targets": 32429
+          },
+          "neural": {
+            "accuracy": 0.25841068179715687,
+            "bits_per_byte": 6.603240089314487,
+            "nll_nats_per_byte": 4.577017250468738,
+            "valid_targets": 32429
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6558944154923063,
+            "bits_per_byte": 2.106994655428202,
+            "nll_nats_per_byte": 1.4604574048649317,
+            "valid_targets": 32429
+          },
+          "online_adaptive_regret_nats": 3.044522437892738,
+          "online_blend": {
+            "accuracy": 0.2626044589719079,
+            "bits_per_byte": 5.3973149721417775,
+            "nll_nats_per_byte": 3.741133655534053,
+            "valid_targets": 32429
+          },
+          "online_final_count_weight_mean": 0.6,
+          "online_regret_nats": 3.0445224339928245,
+          "reference_loop_max_abs_difference_nats": 7.423395231853647e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.25612877362854236,
+            "bits_per_byte": 5.498430344471644,
+            "nll_nats_per_byte": 3.811221490775769,
+            "valid_targets": 32429
+          },
+          "neural": {
+            "accuracy": 0.24792623886027937,
+            "bits_per_byte": 6.7013808094662695,
+            "nll_nats_per_byte": 4.645043213940069,
+            "valid_targets": 32429
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6550001541829844,
+            "bits_per_byte": 2.113848783676644,
+            "nll_nats_per_byte": 1.4652083245355354,
+            "valid_targets": 32429
+          },
+          "online_adaptive_regret_nats": 3.0445224377326667,
+          "online_blend": {
+            "accuracy": 0.25418606802553273,
+            "bits_per_byte": 5.443454952769495,
+            "nll_nats_per_byte": 3.7731154530172457,
+            "valid_targets": 32429
+          },
+          "online_final_count_weight_mean": 0.65000000000044,
+          "online_regret_nats": 3.044522432915983,
+          "reference_loop_max_abs_difference_nats": 1.9842794074520498e-11
+        }
+      },
+      "targets": 32429
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.572972972972973,
+        "bits_per_byte": 2.6999365180065187,
+        "nll_nats_per_byte": 1.8714533851470545,
+        "valid_targets": 6845
+      },
+      "count": {
+        "accuracy": 0.2742147552958364,
+        "bits_per_byte": 4.926652861038847,
+        "nll_nats_per_byte": 3.4148955402266647,
+        "valid_targets": 6845
+      },
+      "document": 5,
+      "domain": "reference_prose",
+      "name": "sequence-types",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.33294375456537617,
+            "bits_per_byte": 4.575956657869129,
+            "nll_nats_per_byte": 3.171811455766497,
+            "valid_targets": 6845
+          },
+          "neural": {
+            "accuracy": 0.32388604821037253,
+            "bits_per_byte": 5.601537473829112,
+            "nll_nats_per_byte": 3.8826899067855276,
+            "valid_targets": 6845
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5846603360116873,
+            "bits_per_byte": 2.4866178014771374,
+            "nll_nats_per_byte": 1.7235921182240477,
+            "valid_targets": 6845
+          },
+          "online_adaptive_regret_nats": 3.0445081257312268,
+          "online_blend": {
+            "accuracy": 0.33002191380569756,
+            "bits_per_byte": 4.544790009012407,
+            "nll_nats_per_byte": 3.150208380983958,
+            "valid_targets": 6845
+          },
+          "online_final_count_weight_mean": 0.5499964938603491,
+          "online_regret_nats": 3.0442968737115734,
+          "reference_loop_max_abs_difference_nats": 1.8179902028236938e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.32899926953981007,
+            "bits_per_byte": 4.601010094989124,
+            "nll_nats_per_byte": 3.1891771750695574,
+            "valid_targets": 6845
+          },
+          "neural": {
+            "accuracy": 0.3162892622352082,
+            "bits_per_byte": 5.493109981041459,
+            "nll_nats_per_byte": 3.8075336958645822,
+            "valid_targets": 6845
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5868517165814463,
+            "bits_per_byte": 2.4906776374944575,
+            "nll_nats_per_byte": 1.7264061821129886,
+            "valid_targets": 6845
+          },
+          "online_adaptive_regret_nats": 3.0445203584076808,
+          "online_blend": {
+            "accuracy": 0.3294375456537619,
+            "bits_per_byte": 4.562601596318423,
+            "nll_nats_per_byte": 3.1625544325064205,
+            "valid_targets": 6845
+          },
+          "online_final_count_weight_mean": 0.5562385106180272,
+          "online_regret_nats": 2.900278670622356,
+          "reference_loop_max_abs_difference_nats": 2.595257342363766e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3227173119065011,
+            "bits_per_byte": 4.60729887447501,
+            "nll_nats_per_byte": 3.1935362248393626,
+            "valid_targets": 6845
+          },
+          "neural": {
+            "accuracy": 0.3075237399561724,
+            "bits_per_byte": 5.532757316026787,
+            "nll_nats_per_byte": 3.8350151343263774,
+            "valid_targets": 6845
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5829072315558802,
+            "bits_per_byte": 2.4959993643704146,
+            "nll_nats_per_byte": 1.7300949220927684,
+            "valid_targets": 6845
+          },
+          "online_adaptive_regret_nats": 3.044522436128318,
+          "online_blend": {
+            "accuracy": 0.3233016800584368,
+            "bits_per_byte": 4.582819491977412,
+            "nll_nats_per_byte": 3.176568409879304,
+            "valid_targets": 6845
+          },
+          "online_final_count_weight_mean": 0.5972082131801686,
+          "online_regret_nats": 2.9868690486546257,
+          "reference_loop_max_abs_difference_nats": 2.3376856006507296e-12
+        }
+      },
+      "targets": 6845
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6281929990539262,
+        "bits_per_byte": 2.3638151712698745,
+        "nll_nats_per_byte": 1.6384718213305378,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.2659688100833155,
+        "bits_per_byte": 5.058596276936017,
+        "nll_nats_per_byte": 3.5063517469492362,
+        "valid_targets": 32767
+      },
+      "document": 6,
+      "domain": "reference_prose",
+      "name": "compound",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.31574449903866697,
+            "bits_per_byte": 4.718772878737258,
+            "nll_nats_per_byte": 3.2708041165994666,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.3086642048402356,
+            "bits_per_byte": 5.440857779132823,
+            "nll_nats_per_byte": 3.7713152294335623,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6316415906247139,
+            "bits_per_byte": 2.207359432211397,
+            "nll_nats_per_byte": 1.5300249669197317,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224375871476,
+          "online_blend": {
+            "accuracy": 0.315042573320719,
+            "bits_per_byte": 4.683426111762432,
+            "nll_nats_per_byte": 3.246303604728957,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.550000000004982,
+          "online_regret_nats": 3.0445224355062237,
+          "reference_loop_max_abs_difference_nats": 7.275957614183426e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3052156132694479,
+            "bits_per_byte": 4.768800656339603,
+            "nll_nats_per_byte": 3.3054807295942124,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.29410687582018497,
+            "bits_per_byte": 5.464839147407559,
+            "nll_nats_per_byte": 3.7879378472391645,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6314889980773339,
+            "bits_per_byte": 2.2126353485822197,
+            "nll_nats_per_byte": 1.5336819534770374,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445222743874183,
+          "online_blend": {
+            "accuracy": 0.3080538346507157,
+            "bits_per_byte": 4.719220526302348,
+            "nll_nats_per_byte": 3.271114402247094,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.6,
+          "online_regret_nats": 3.0445224366994807,
+          "reference_loop_max_abs_difference_nats": 7.759126674500294e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3075045014801477,
+            "bits_per_byte": 4.76996534568264,
+            "nll_nats_per_byte": 3.3062880307285667,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.29514450514236884,
+            "bits_per_byte": 5.557713785856686,
+            "nll_nats_per_byte": 3.8523136410257015,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6317941831720939,
+            "bits_per_byte": 2.216252447222328,
+            "nll_nats_per_byte": 1.5361891352012356,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.041613398156187,
+          "online_blend": {
+            "accuracy": 0.30893887142551957,
+            "bits_per_byte": 4.73504524665883,
+            "nll_nats_per_byte": 3.2820832625453384,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.6000000000344337,
+          "online_regret_nats": 3.044522435084218,
+          "reference_loop_max_abs_difference_nats": 7.275957614183426e-12
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.589321608040201,
+        "bits_per_byte": 2.7522950182066643,
+        "nll_nats_per_byte": 1.9077455319391328,
+        "valid_targets": 7960
+      },
+      "count": {
+        "accuracy": 0.28693467336683415,
+        "bits_per_byte": 4.61979852027412,
+        "nll_nats_per_byte": 3.2022003190830137,
+        "valid_targets": 7960
+      },
+      "document": 7,
+      "domain": "reference_prose",
+      "name": "function",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3244974874371859,
+            "bits_per_byte": 4.373621430360984,
+            "nll_nats_per_byte": 3.0315633632912715,
+            "valid_targets": 7960
+          },
+          "neural": {
+            "accuracy": 0.3113065326633166,
+            "bits_per_byte": 5.0897446432430655,
+            "nll_nats_per_byte": 3.5279421492340157,
+            "valid_targets": 7960
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5962311557788945,
+            "bits_per_byte": 2.415874575696932,
+            "nll_nats_per_byte": 1.6745566507307825,
+            "valid_targets": 7960
+          },
+          "online_adaptive_regret_nats": 2.929711096548999,
+          "online_blend": {
+            "accuracy": 0.32047738693467337,
+            "bits_per_byte": 4.330957828439986,
+            "nll_nats_per_byte": 3.0019912079071993,
+            "valid_targets": 7960
+          },
+          "online_final_count_weight_mean": 0.5999894549156688,
+          "online_regret_nats": 3.044286076903518,
+          "reference_loop_max_abs_difference_nats": 2.4560353750757713e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3260050251256281,
+            "bits_per_byte": 4.407943165013362,
+            "nll_nats_per_byte": 3.055353376897493,
+            "valid_targets": 7960
+          },
+          "neural": {
+            "accuracy": 0.31959798994974875,
+            "bits_per_byte": 5.073022215111078,
+            "nll_nats_per_byte": 3.516351045322212,
+            "valid_targets": 7960
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5976130653266332,
+            "bits_per_byte": 2.4249106545212853,
+            "nll_nats_per_byte": 1.6808199832912005,
+            "valid_targets": 7960
+          },
+          "online_adaptive_regret_nats": 2.5732371845188027,
+          "online_blend": {
+            "accuracy": 0.3237437185929648,
+            "bits_per_byte": 4.357026522475769,
+            "nll_nats_per_byte": 3.020060649678982,
+            "valid_targets": 7960
+          },
+          "online_final_count_weight_mean": 0.6031272585481763,
+          "online_regret_nats": 2.9767605308879865,
+          "reference_loop_max_abs_difference_nats": 4.699352018633363e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.32688442211055274,
+            "bits_per_byte": 4.375038922049181,
+            "nll_nats_per_byte": 3.032545893658412,
+            "valid_targets": 7960
+          },
+          "neural": {
+            "accuracy": 0.3136934673366834,
+            "bits_per_byte": 5.095282726575118,
+            "nll_nats_per_byte": 3.531780856081334,
+            "valid_targets": 7960
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.596356783919598,
+            "bits_per_byte": 2.4223397516692433,
+            "nll_nats_per_byte": 1.679037969227814,
+            "valid_targets": 7960
+          },
+          "online_adaptive_regret_nats": 2.499478273870409,
+          "online_blend": {
+            "accuracy": 0.32675879396984925,
+            "bits_per_byte": 4.348308388244169,
+            "nll_nats_per_byte": 3.0140176995166055,
+            "valid_targets": 7960
+          },
+          "online_final_count_weight_mean": 0.6000013543205606,
+          "online_regret_nats": 3.0443469710153295,
+          "reference_loop_max_abs_difference_nats": 3.681055460447169e-12
+        }
+      },
+      "targets": 7960
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5973684210526315,
+        "bits_per_byte": 2.544147204054586,
+        "nll_nats_per_byte": 1.7634684614199039,
+        "valid_targets": 10640
+      },
+      "count": {
+        "accuracy": 0.30140977443609024,
+        "bits_per_byte": 4.359565930709415,
+        "nll_nats_per_byte": 3.0218208333364247,
+        "valid_targets": 10640
+      },
+      "document": 8,
+      "domain": "reference_prose",
+      "name": "naming",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.350281954887218,
+            "bits_per_byte": 4.042295810913929,
+            "nll_nats_per_byte": 2.8019059443242678,
+            "valid_targets": 10640
+          },
+          "neural": {
+            "accuracy": 0.3393796992481203,
+            "bits_per_byte": 4.550678669859221,
+            "nll_nats_per_byte": 3.1542900896472013,
+            "valid_targets": 10640
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6039473684210527,
+            "bits_per_byte": 2.310390872149084,
+            "nll_nats_per_byte": 1.6014409190215706,
+            "valid_targets": 10640
+          },
+          "online_adaptive_regret_nats": 3.0445224376016995,
+          "online_blend": {
+            "accuracy": 0.34924812030075186,
+            "bits_per_byte": 4.034171049522441,
+            "nll_nats_per_byte": 2.796274288873035,
+            "valid_targets": 10640
+          },
+          "online_final_count_weight_mean": 0.4530248806716628,
+          "online_regret_nats": 2.9793089909908304,
+          "reference_loop_max_abs_difference_nats": 4.876987702573388e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.34191729323308273,
+            "bits_per_byte": 4.0299082714074945,
+            "nll_nats_per_byte": 2.7933195562413076,
+            "valid_targets": 10640
+          },
+          "neural": {
+            "accuracy": 0.33421052631578946,
+            "bits_per_byte": 4.4332627715343484,
+            "nll_nats_per_byte": 3.0729035907704025,
+            "valid_targets": 10640
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6034774436090226,
+            "bits_per_byte": 2.312391497880779,
+            "nll_nats_per_byte": 1.6028276471068508,
+            "valid_targets": 10640
+          },
+          "online_adaptive_regret_nats": 3.0445224377472186,
+          "online_blend": {
+            "accuracy": 0.34191729323308273,
+            "bits_per_byte": 4.024223353725771,
+            "nll_nats_per_byte": 2.789379071578505,
+            "valid_targets": 10640
+          },
+          "online_final_count_weight_mean": 0.4499999640888476,
+          "online_regret_nats": 3.0444832024622883,
+          "reference_loop_max_abs_difference_nats": 6.199485369506874e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3429511278195489,
+            "bits_per_byte": 4.075036735982241,
+            "nll_nats_per_byte": 2.8246002242242927,
+            "valid_targets": 10640
+          },
+          "neural": {
+            "accuracy": 0.3298872180451128,
+            "bits_per_byte": 4.618592052760493,
+            "nll_nats_per_byte": 3.201364059527506,
+            "valid_targets": 10640
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6021616541353384,
+            "bits_per_byte": 2.32018181734604,
+            "nll_nats_per_byte": 1.6082274850798577,
+            "valid_targets": 10640
+          },
+          "online_adaptive_regret_nats": 3.0445224375762336,
+          "online_blend": {
+            "accuracy": 0.3431390977443609,
+            "bits_per_byte": 4.068330805958261,
+            "nll_nats_per_byte": 2.8199520277351384,
+            "valid_targets": 10640
+          },
+          "online_final_count_weight_mean": 0.5001428351955762,
+          "online_regret_nats": 3.041386032862647,
+          "reference_loop_max_abs_difference_nats": 5.309530592967349e-12
+        }
+      },
+      "targets": 10640
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5917181423015329,
+        "bits_per_byte": 2.4940597470152404,
+        "nll_nats_per_byte": 1.7287504817916644,
+        "valid_targets": 21855
+      },
+      "count": {
+        "accuracy": 0.30853351635781284,
+        "bits_per_byte": 4.301204804175034,
+        "nll_nats_per_byte": 2.9813679830248168,
+        "valid_targets": 21855
+      },
+      "document": 9,
+      "domain": "reference_prose",
+      "name": "execmodel",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3563486616334935,
+            "bits_per_byte": 3.972537015941114,
+            "nll_nats_per_byte": 2.7535528322696017,
+            "valid_targets": 21855
+          },
+          "neural": {
+            "accuracy": 0.34724319377716767,
+            "bits_per_byte": 4.3540954520084645,
+            "nll_nats_per_byte": 3.0180289864485474,
+            "valid_targets": 21855
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5983985358041638,
+            "bits_per_byte": 2.2880678041425324,
+            "nll_nats_per_byte": 1.5859677473713816,
+            "valid_targets": 21855
+          },
+          "online_adaptive_regret_nats": 3.0445224375725957,
+          "online_blend": {
+            "accuracy": 0.35378631892015555,
+            "bits_per_byte": 3.9670239584775593,
+            "nll_nats_per_byte": 2.7497314720324737,
+            "valid_targets": 21855
+          },
+          "online_final_count_weight_mean": 0.4499999999053466,
+          "online_regret_nats": 3.044522435433464,
+          "reference_loop_max_abs_difference_nats": 9.78328529299688e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3509951956074125,
+            "bits_per_byte": 3.9976804969760376,
+            "nll_nats_per_byte": 2.7709809652584214,
+            "valid_targets": 21855
+          },
+          "neural": {
+            "accuracy": 0.34221002059025396,
+            "bits_per_byte": 4.342270177722884,
+            "nll_nats_per_byte": 3.009832330918149,
+            "valid_targets": 21855
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.598627316403569,
+            "bits_per_byte": 2.2913440119300725,
+            "nll_nats_per_byte": 1.5882386415622434,
+            "valid_targets": 21855
+          },
+          "online_adaptive_regret_nats": 3.0445224374052486,
+          "online_blend": {
+            "accuracy": 0.35053763440860214,
+            "bits_per_byte": 3.9896402085901808,
+            "nll_nats_per_byte": 2.765407862032876,
+            "valid_targets": 21855
+          },
+          "online_final_count_weight_mean": 0.4506986014848741,
+          "online_regret_nats": 3.028901548423164,
+          "reference_loop_max_abs_difference_nats": 1.0093259561472223e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.34422328986501943,
+            "bits_per_byte": 4.011562890474689,
+            "nll_nats_per_byte": 2.7806035071714357,
+            "valid_targets": 21855
+          },
+          "neural": {
+            "accuracy": 0.3345229924502402,
+            "bits_per_byte": 4.426823547133528,
+            "nll_nats_per_byte": 3.068440260531981,
+            "valid_targets": 21855
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5975749256463052,
+            "bits_per_byte": 2.297658009012658,
+            "nll_nats_per_byte": 1.5926151708381013,
+            "valid_targets": 21855
+          },
+          "online_adaptive_regret_nats": 3.044522181757202,
+          "online_blend": {
+            "accuracy": 0.3448638755433539,
+            "bits_per_byte": 4.005423034516283,
+            "nll_nats_per_byte": 2.776347683324822,
+            "valid_targets": 21855
+          },
+          "online_final_count_weight_mean": 0.5000000064638352,
+          "online_regret_nats": 3.0445223062997684,
+          "reference_loop_max_abs_difference_nats": 7.484679542812955e-12
+        }
+      },
+      "targets": 21855
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5097980997624703,
+        "bits_per_byte": 3.2439251734437504,
+        "nll_nats_per_byte": 2.248517587919967,
+        "valid_targets": 3368
+      },
+      "count": {
+        "accuracy": 0.2642517814726841,
+        "bits_per_byte": 4.427149528806525,
+        "nll_nats_per_byte": 3.0686662138095326,
+        "valid_targets": 3368
+      },
+      "document": 10,
+      "domain": "reference_prose",
+      "name": "class",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3194774346793349,
+            "bits_per_byte": 4.108897495812627,
+            "nll_nats_per_byte": 2.848070714432342,
+            "valid_targets": 3368
+          },
+          "neural": {
+            "accuracy": 0.32007125890736343,
+            "bits_per_byte": 4.616853470446241,
+            "nll_nats_per_byte": 3.200158966098211,
+            "valid_targets": 3368
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5326603325415677,
+            "bits_per_byte": 2.806130970203952,
+            "nll_nats_per_byte": 1.945061770278813,
+            "valid_targets": 3368
+          },
+          "online_adaptive_regret_nats": 3.012740895898787,
+          "online_blend": {
+            "accuracy": 0.3147268408551069,
+            "bits_per_byte": 4.101707499869298,
+            "nll_nats_per_byte": 2.843086989015986,
+            "valid_targets": 3368
+          },
+          "online_final_count_weight_mean": 0.4625343055961543,
+          "online_regret_nats": 2.7430654024592513,
+          "reference_loop_max_abs_difference_nats": 9.865441796819141e-13
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.32600950118764843,
+            "bits_per_byte": 4.149714333071304,
+            "nll_nats_per_byte": 2.876362790097568,
+            "valid_targets": 3368
+          },
+          "neural": {
+            "accuracy": 0.32066508313539194,
+            "bits_per_byte": 4.60253997178984,
+            "nll_nats_per_byte": 3.190237604860578,
+            "valid_targets": 3368
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.536520190023753,
+            "bits_per_byte": 2.823782798184555,
+            "nll_nats_per_byte": 1.957297085075297,
+            "valid_targets": 3368
+          },
+          "online_adaptive_regret_nats": 2.4395056326366102,
+          "online_blend": {
+            "accuracy": 0.3221496437054632,
+            "bits_per_byte": 4.133985845303189,
+            "nll_nats_per_byte": 2.8654606331466277,
+            "valid_targets": 3368
+          },
+          "online_final_count_weight_mean": 0.5089594976129784,
+          "online_regret_nats": 2.822194282813143,
+          "reference_loop_max_abs_difference_nats": 9.681144774731365e-13
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3248218527315915,
+            "bits_per_byte": 4.123938210461849,
+            "nll_nats_per_byte": 2.858496143385057,
+            "valid_targets": 3368
+          },
+          "neural": {
+            "accuracy": 0.32125890736342044,
+            "bits_per_byte": 4.604862834820091,
+            "nll_nats_per_byte": 3.191847690820823,
+            "valid_targets": 3368
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5302850356294537,
+            "bits_per_byte": 2.8157479818066364,
+            "nll_nats_per_byte": 1.9517277747566262,
+            "valid_targets": 3368
+          },
+          "online_adaptive_regret_nats": 2.7729278651931963,
+          "online_blend": {
+            "accuracy": 0.32125890736342044,
+            "bits_per_byte": 4.119654613648579,
+            "nll_nats_per_byte": 2.855526980331283,
+            "valid_targets": 3368
+          },
+          "online_final_count_weight_mean": 0.4985776256162261,
+          "online_regret_nats": 2.9740724076018523,
+          "reference_loop_max_abs_difference_nats": 1.021405182655144e-12
+        }
+      },
+      "targets": 3368
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5975386226760933,
+        "bits_per_byte": 2.618699739678467,
+        "nll_nats_per_byte": 1.8151443412911918,
+        "valid_targets": 11457
+      },
+      "count": {
+        "accuracy": 0.29798376538360827,
+        "bits_per_byte": 4.43223361943869,
+        "nll_nats_per_byte": 3.0721902368969296,
+        "valid_targets": 11457
+      },
+      "document": 11,
+      "domain": "reference_prose",
+      "name": "assignment",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.35218643623985335,
+            "bits_per_byte": 4.134483717205447,
+            "nll_nats_per_byte": 2.865805731651958,
+            "valid_targets": 11457
+          },
+          "neural": {
+            "accuracy": 0.34284716767041984,
+            "bits_per_byte": 4.698721927428699,
+            "nll_nats_per_byte": 3.2569058562323945,
+            "valid_targets": 11457
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6046958191498647,
+            "bits_per_byte": 2.3615249445380213,
+            "nll_nats_per_byte": 1.6368843571285105,
+            "valid_targets": 11457
+          },
+          "online_adaptive_regret_nats": 3.0445224369177595,
+          "online_blend": {
+            "accuracy": 0.3510517587501091,
+            "bits_per_byte": 4.108565723905193,
+            "nll_nats_per_byte": 2.8478407476701153,
+            "valid_targets": 11457
+          },
+          "online_final_count_weight_mean": 0.549999254091202,
+          "online_regret_nats": 3.0445053138464573,
+          "reference_loop_max_abs_difference_nats": 3.4869884757426917e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.346862180326438,
+            "bits_per_byte": 4.142824825091815,
+            "nll_nats_per_byte": 2.8715873470661406,
+            "valid_targets": 11457
+          },
+          "neural": {
+            "accuracy": 0.33883215501440167,
+            "bits_per_byte": 4.6010144410675915,
+            "nll_nats_per_byte": 3.1891801875415937,
+            "valid_targets": 11457
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6038229903115999,
+            "bits_per_byte": 2.3569515705002058,
+            "nll_nats_per_byte": 1.6337143358085529,
+            "valid_targets": 11457
+          },
+          "online_adaptive_regret_nats": 3.0445224376308033,
+          "online_blend": {
+            "accuracy": 0.34564021995286726,
+            "bits_per_byte": 4.120696339296968,
+            "nll_nats_per_byte": 2.856249049527381,
+            "valid_targets": 11457
+          },
+          "online_final_count_weight_mean": 0.5498195030074432,
+          "online_regret_nats": 3.0405053780123126,
+          "reference_loop_max_abs_difference_nats": 4.7908343958624755e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.346687614558785,
+            "bits_per_byte": 4.1516437472067365,
+            "nll_nats_per_byte": 2.8777001580656756,
+            "valid_targets": 11457
+          },
+          "neural": {
+            "accuracy": 0.33376974775246576,
+            "bits_per_byte": 4.722270055096517,
+            "nll_nats_per_byte": 3.273228174532808,
+            "valid_targets": 11457
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6028628785895086,
+            "bits_per_byte": 2.370761311991724,
+            "nll_nats_per_byte": 1.6432865191876602,
+            "valid_targets": 11457
+          },
+          "online_adaptive_regret_nats": 3.0445224375871476,
+          "online_blend": {
+            "accuracy": 0.3416252072968491,
+            "bits_per_byte": 4.13541827115798,
+            "nll_nats_per_byte": 2.8664535150892374,
+            "valid_targets": 11457
+          },
+          "online_final_count_weight_mean": 0.550108718275394,
+          "online_regret_nats": 3.042586743729771,
+          "reference_loop_max_abs_difference_nats": 3.5018654642726688e-12
+        }
+      },
+      "targets": 11457
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5904888814857999,
+        "bits_per_byte": 2.540898127884848,
+        "nll_nats_per_byte": 1.7612163734334256,
+        "valid_targets": 24014
+      },
+      "count": {
+        "accuracy": 0.2701340884484051,
+        "bits_per_byte": 5.00731363043737,
+        "nll_nats_per_byte": 3.4708053251170465,
+        "valid_targets": 24014
+      },
+      "document": 12,
+      "domain": "reference_prose",
+      "name": "debugger",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3246856000666278,
+            "bits_per_byte": 4.585295200189647,
+            "nll_nats_per_byte": 3.1782844400465042,
+            "valid_targets": 24014
+          },
+          "neural": {
+            "accuracy": 0.31344215874073456,
+            "bits_per_byte": 5.155129571095185,
+            "nll_nats_per_byte": 3.5732635276258273,
+            "valid_targets": 24014
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5942783376363788,
+            "bits_per_byte": 2.3868696099582336,
+            "nll_nats_per_byte": 1.654451940506766,
+            "valid_targets": 24014
+          },
+          "online_adaptive_regret_nats": 3.04452243752894,
+          "online_blend": {
+            "accuracy": 0.32306154743066545,
+            "bits_per_byte": 4.569933641655677,
+            "nll_nats_per_byte": 3.167636619059676,
+            "valid_targets": 24014
+          },
+          "online_final_count_weight_mean": 0.49999999995471145,
+          "online_regret_nats": 3.0445224365394097,
+          "reference_loop_max_abs_difference_nats": 1.4934720127257606e-11
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3205213625385192,
+            "bits_per_byte": 4.630278211061837,
+            "nll_nats_per_byte": 3.20946428720566,
+            "valid_targets": 24014
+          },
+          "neural": {
+            "accuracy": 0.3106937619721829,
+            "bits_per_byte": 5.2169788717572665,
+            "nll_nats_per_byte": 3.6161341959993534,
+            "valid_targets": 24014
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.59586074789706,
+            "bits_per_byte": 2.3922051117046017,
+            "nll_nats_per_byte": 1.6581502284991336,
+            "valid_targets": 24014
+          },
+          "online_adaptive_regret_nats": 3.044522437376145,
+          "online_blend": {
+            "accuracy": 0.3190638794036812,
+            "bits_per_byte": 4.608784788176505,
+            "nll_nats_per_byte": 3.1945661817321094,
+            "valid_targets": 24014
+          },
+          "online_final_count_weight_mean": 0.5000197578164933,
+          "online_regret_nats": 3.044097140649683,
+          "reference_loop_max_abs_difference_nats": 7.275513524973576e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3130257349879237,
+            "bits_per_byte": 4.657339845089848,
+            "nll_nats_per_byte": 3.2282219825335203,
+            "valid_targets": 24014
+          },
+          "neural": {
+            "accuracy": 0.3025734987923711,
+            "bits_per_byte": 5.33145738063692,
+            "nll_nats_per_byte": 3.695484651663992,
+            "valid_targets": 24014
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5950279003914384,
+            "bits_per_byte": 2.3980081073634745,
+            "nll_nats_per_byte": 1.662172558578883,
+            "valid_targets": 24014
+          },
+          "online_adaptive_regret_nats": 3.044522437703563,
+          "online_blend": {
+            "accuracy": 0.31352544349129674,
+            "bits_per_byte": 4.640099867794951,
+            "nll_nats_per_byte": 3.2162721408786448,
+            "valid_targets": 24014
+          },
+          "online_final_count_weight_mean": 0.5500000000001277,
+          "online_regret_nats": 3.0445224379072897,
+          "reference_loop_max_abs_difference_nats": 7.272404900504625e-12
+        }
+      },
+      "targets": 24014
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6576128421887875,
+        "bits_per_byte": 2.065824349191005,
+        "nll_nats_per_byte": 1.4319203231738291,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.23343607898190252,
+        "bits_per_byte": 5.228496202524882,
+        "nll_nats_per_byte": 3.624117401348503,
+        "valid_targets": 32767
+      },
+      "document": 13,
+      "domain": "reference_prose",
+      "name": "types",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.27909176915799433,
+            "bits_per_byte": 5.148949515552361,
+            "nll_nats_per_byte": 3.568979839550615,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.27213354899746695,
+            "bits_per_byte": 6.563247580182002,
+            "nll_nats_per_byte": 4.549296555520038,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6613971373638111,
+            "bits_per_byte": 1.9718939400016353,
+            "nll_nats_per_byte": 1.3668127248753754,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044522437157866,
+          "online_blend": {
+            "accuracy": 0.27326273384807886,
+            "bits_per_byte": 5.00476323392837,
+            "nll_nats_per_byte": 3.4690375249675234,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7500000000026307,
+          "online_regret_nats": 3.044522436452098,
+          "reference_loop_max_abs_difference_nats": 8.218670188853139e-11
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.27750480666524246,
+            "bits_per_byte": 5.149778090776986,
+            "nll_nats_per_byte": 3.5695541641314463,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.27143162327951903,
+            "bits_per_byte": 6.25265477780408,
+            "nll_nats_per_byte": 4.334010030249569,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.662068544572283,
+            "bits_per_byte": 1.9728134405983127,
+            "nll_nats_per_byte": 1.3674500741214854,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044522437652631,
+          "online_blend": {
+            "accuracy": 0.27253028962065495,
+            "bits_per_byte": 5.014400914739932,
+            "nll_nats_per_byte": 3.4757178562491946,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7499999797508294,
+          "online_regret_nats": 3.0445219625980826,
+          "reference_loop_max_abs_difference_nats": 5.5633719853176444e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2703634754478591,
+            "bits_per_byte": 5.158090825485401,
+            "nll_nats_per_byte": 3.5753161127573265,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.25937681203650015,
+            "bits_per_byte": 6.473229294346903,
+            "nll_nats_per_byte": 4.4869006344946,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6606341746269112,
+            "bits_per_byte": 1.9750903642852762,
+            "nll_nats_per_byte": 1.3690283173554545,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224377253908,
+          "online_blend": {
+            "accuracy": 0.26569414349803155,
+            "bits_per_byte": 5.034756396015675,
+            "nll_nats_per_byte": 3.4898272007044167,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7500000000000009,
+          "online_regret_nats": 3.044522435302497,
+          "reference_loop_max_abs_difference_nats": 1.0840150999058551e-10
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5626123427201918,
+        "bits_per_byte": 3.0204994790183903,
+        "nll_nats_per_byte": 2.0936506977643807,
+        "valid_targets": 3338
+      },
+      "count": {
+        "accuracy": 0.26243259436788496,
+        "bits_per_byte": 5.243649098142909,
+        "nll_nats_per_byte": 3.6346205882234575,
+        "valid_targets": 3338
+      },
+      "document": 14,
+      "domain": "reference_prose",
+      "name": "with",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3220491312162972,
+            "bits_per_byte": 4.868023490397146,
+            "nll_nats_per_byte": 3.3742567572683657,
+            "valid_targets": 3338
+          },
+          "neural": {
+            "accuracy": 0.31545835829838226,
+            "bits_per_byte": 5.871490244103381,
+            "nll_nats_per_byte": 4.069806908385483,
+            "valid_targets": 3338
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5751947273816657,
+            "bits_per_byte": 2.6385031796198337,
+            "nll_nats_per_byte": 1.8288710398519386,
+            "valid_targets": 3338
+          },
+          "online_adaptive_regret_nats": 3.0185956473815168,
+          "online_blend": {
+            "accuracy": 0.316956261234272,
+            "bits_per_byte": 4.832453924077716,
+            "nll_nats_per_byte": 3.3496018126603126,
+            "valid_targets": 3338
+          },
+          "online_final_count_weight_mean": 0.5518154459683118,
+          "online_regret_nats": 3.0017375605821144,
+          "reference_loop_max_abs_difference_nats": 1.0200729150255938e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.32474535650089875,
+            "bits_per_byte": 4.878975595917503,
+            "nll_nats_per_byte": 3.3818481783309964,
+            "valid_targets": 3338
+          },
+          "neural": {
+            "accuracy": 0.31725584182144995,
+            "bits_per_byte": 5.758871522555794,
+            "nll_nats_per_byte": 3.991745559066508,
+            "valid_targets": 3338
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5766926303175555,
+            "bits_per_byte": 2.6494968929420804,
+            "nll_nats_per_byte": 1.836491301245138,
+            "valid_targets": 3338
+          },
+          "online_adaptive_regret_nats": 3.0361691542047993,
+          "online_blend": {
+            "accuracy": 0.31935290593169563,
+            "bits_per_byte": 4.83824826831885,
+            "nll_nats_per_byte": 3.3536181460342487,
+            "valid_targets": 3338
+          },
+          "online_final_count_weight_mean": 0.5619404788895298,
+          "online_regret_nats": 2.7634747643351147,
+          "reference_loop_max_abs_difference_nats": 1.70219394135529e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3103654883163571,
+            "bits_per_byte": 4.902514802700202,
+            "nll_nats_per_byte": 3.3981643131450414,
+            "valid_targets": 3338
+          },
+          "neural": {
+            "accuracy": 0.3037747153984422,
+            "bits_per_byte": 5.775755185818048,
+            "nll_nats_per_byte": 4.003448422654263,
+            "valid_targets": 3338
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5754943079688436,
+            "bits_per_byte": 2.659704615814918,
+            "nll_nats_per_byte": 1.8435667555743829,
+            "valid_targets": 3338
+          },
+          "online_adaptive_regret_nats": 3.043809376009449,
+          "online_blend": {
+            "accuracy": 0.30826842420611145,
+            "bits_per_byte": 4.875784001350115,
+            "nll_nats_per_byte": 3.3796359335551207,
+            "valid_targets": 3338
+          },
+          "online_final_count_weight_mean": 0.5958691623726756,
+          "online_regret_nats": 2.963162305431979,
+          "reference_loop_max_abs_difference_nats": 1.425526363618701e-12
+        }
+      },
+      "targets": 3338
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6298329355608592,
+        "bits_per_byte": 2.4638962285381214,
+        "nll_nats_per_byte": 1.7078427240034815,
+        "valid_targets": 8380
+      },
+      "count": {
+        "accuracy": 0.27350835322195705,
+        "bits_per_byte": 5.136524765493962,
+        "nll_nats_per_byte": 3.560367659078474,
+        "valid_targets": 8380
+      },
+      "document": 15,
+      "domain": "reference_prose",
+      "name": "try",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.32589498806682576,
+            "bits_per_byte": 4.814912421549309,
+            "nll_nats_per_byte": 3.337442969639962,
+            "valid_targets": 8380
+          },
+          "neural": {
+            "accuracy": 0.3130071599045346,
+            "bits_per_byte": 5.5644258667081425,
+            "nll_nats_per_byte": 3.8569661009435787,
+            "valid_targets": 8380
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6337708830548926,
+            "bits_per_byte": 2.2154970050715654,
+            "nll_nats_per_byte": 1.5356655026043584,
+            "valid_targets": 8380
+          },
+          "online_adaptive_regret_nats": 3.0411426752452826,
+          "online_blend": {
+            "accuracy": 0.32159904534606204,
+            "bits_per_byte": 4.775071233542708,
+            "nll_nats_per_byte": 3.309827162503028,
+            "valid_targets": 8380
+          },
+          "online_final_count_weight_mean": 0.5691572699132217,
+          "online_regret_nats": 2.5892179137372295,
+          "reference_loop_max_abs_difference_nats": 4.5526915570803794e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3081145584725537,
+            "bits_per_byte": 4.856172409878584,
+            "nll_nats_per_byte": 3.366042214220336,
+            "valid_targets": 8380
+          },
+          "neural": {
+            "accuracy": 0.2904534606205251,
+            "bits_per_byte": 5.599233985290572,
+            "nll_nats_per_byte": 3.881093250199586,
+            "valid_targets": 8380
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6342482100238663,
+            "bits_per_byte": 2.2264593718863837,
+            "nll_nats_per_byte": 1.5432640362543135,
+            "valid_targets": 8380
+          },
+          "online_adaptive_regret_nats": 3.0445223697533947,
+          "online_blend": {
+            "accuracy": 0.31324582338902146,
+            "bits_per_byte": 4.796416662322289,
+            "nll_nats_per_byte": 3.324622686279438,
+            "valid_targets": 8380
+          },
+          "online_final_count_weight_mean": 0.6037198882634756,
+          "online_regret_nats": 2.961047456905362,
+          "reference_loop_max_abs_difference_nats": 2.5295321393059567e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3168257756563246,
+            "bits_per_byte": 4.840919221513912,
+            "nll_nats_per_byte": 3.3554695097108134,
+            "valid_targets": 8380
+          },
+          "neural": {
+            "accuracy": 0.30250596658711215,
+            "bits_per_byte": 5.717074685204903,
+            "nll_nats_per_byte": 3.9627741991004153,
+            "valid_targets": 8380
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.633890214797136,
+            "bits_per_byte": 2.2290529431009327,
+            "nll_nats_per_byte": 1.5450617628292596,
+            "valid_targets": 8380
+          },
+          "online_adaptive_regret_nats": 3.044522398537083,
+          "online_blend": {
+            "accuracy": 0.31897374701670644,
+            "bits_per_byte": 4.802440735908376,
+            "nll_nats_per_byte": 3.3287982559011198,
+            "valid_targets": 8380
+          },
+          "online_final_count_weight_mean": 0.6057542138310723,
+          "online_regret_nats": 2.9304559968695685,
+          "reference_loop_max_abs_difference_nats": 3.5200731218765213e-12
+        }
+      },
+      "targets": 8380
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6390433482810164,
+        "bits_per_byte": 2.2762106841343797,
+        "nll_nats_per_byte": 1.5777490180681695,
+        "valid_targets": 16725
+      },
+      "count": {
+        "accuracy": 0.29500747384155457,
+        "bits_per_byte": 4.534728982810934,
+        "nll_nats_per_byte": 3.143234609038868,
+        "valid_targets": 16725
+      },
+      "document": 16,
+      "domain": "legal_prose",
+      "name": "MPL-2.0",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3257997010463378,
+            "bits_per_byte": 4.322566286531321,
+            "nll_nats_per_byte": 2.9961746342926574,
+            "valid_targets": 16725
+          },
+          "neural": {
+            "accuracy": 0.32203288490284004,
+            "bits_per_byte": 5.208251716002421,
+            "nll_nats_per_byte": 3.6100849925935745,
+            "valid_targets": 16725
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6444843049327355,
+            "bits_per_byte": 2.089101380729085,
+            "nll_nats_per_byte": 1.4480547319562542,
+            "valid_targets": 16725
+          },
+          "online_adaptive_regret_nats": 3.0445224374016107,
+          "online_blend": {
+            "accuracy": 0.32789237668161436,
+            "bits_per_byte": 4.272489474779366,
+            "nll_nats_per_byte": 2.9614640334153592,
+            "valid_targets": 16725
+          },
+          "online_final_count_weight_mean": 0.6000010447115114,
+          "online_regret_nats": 3.044502258337161,
+          "reference_loop_max_abs_difference_nats": 4.7126746949288645e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3271150971599402,
+            "bits_per_byte": 4.321993992252896,
+            "nll_nats_per_byte": 2.9957779501271165,
+            "valid_targets": 16725
+          },
+          "neural": {
+            "accuracy": 0.3170104633781764,
+            "bits_per_byte": 4.935072641148505,
+            "nll_nats_per_byte": 3.420731687070609,
+            "valid_targets": 16725
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6446038863976083,
+            "bits_per_byte": 2.087236433831901,
+            "nll_nats_per_byte": 1.4467620492725768,
+            "valid_targets": 16725
+          },
+          "online_adaptive_regret_nats": 3.0445224374379904,
+          "online_blend": {
+            "accuracy": 0.3305231689088191,
+            "bits_per_byte": 4.271413948161387,
+            "nll_nats_per_byte": 2.9607185351724894,
+            "valid_targets": 16725
+          },
+          "online_final_count_weight_mean": 0.6004370609283393,
+          "online_regret_nats": 3.0351737991150003,
+          "reference_loop_max_abs_difference_nats": 7.458922368641652e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.32484304932735425,
+            "bits_per_byte": 4.311240242118739,
+            "nll_nats_per_byte": 2.98832401854118,
+            "valid_targets": 16725
+          },
+          "neural": {
+            "accuracy": 0.3237668161434978,
+            "bits_per_byte": 5.147938408816143,
+            "nll_nats_per_byte": 3.56827899376716,
+            "valid_targets": 16725
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6442451420029895,
+            "bits_per_byte": 2.0907336470019837,
+            "nll_nats_per_byte": 1.449186132721237,
+            "valid_targets": 16725
+          },
+          "online_adaptive_regret_nats": 3.044522437503474,
+          "online_blend": {
+            "accuracy": 0.32286995515695066,
+            "bits_per_byte": 4.279783328501736,
+            "nll_nats_per_byte": 2.966519747558437,
+            "valid_targets": 16725
+          },
+          "online_final_count_weight_mean": 0.600019500391173,
+          "online_regret_nats": 3.0441021897349856,
+          "reference_loop_max_abs_difference_nats": 7.347900066179136e-12
+        }
+      },
+      "targets": 16725
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5349794238683128,
+        "bits_per_byte": 2.9465676677893513,
+        "nll_nats_per_byte": 2.0424050712572823,
+        "valid_targets": 7047
+      },
+      "count": {
+        "accuracy": 0.3205619412515964,
+        "bits_per_byte": 4.382361024727583,
+        "nll_nats_per_byte": 3.037621188485717,
+        "valid_targets": 7047
+      },
+      "document": 17,
+      "domain": "legal_prose",
+      "name": "CC0-1.0",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.37022846601390663,
+            "bits_per_byte": 3.928140583630037,
+            "nll_nats_per_byte": 2.7227795703862583,
+            "valid_targets": 7047
+          },
+          "neural": {
+            "accuracy": 0.35930183056619835,
+            "bits_per_byte": 4.138900200269597,
+            "nll_nats_per_byte": 2.868867004435864,
+            "valid_targets": 7047
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5494536682276145,
+            "bits_per_byte": 2.6241298804869952,
+            "nll_nats_per_byte": 1.818908228082667,
+            "valid_targets": 7047
+          },
+          "online_adaptive_regret_nats": 3.044517403033751,
+          "online_blend": {
+            "accuracy": 0.37008656165744286,
+            "bits_per_byte": 3.9276152396552244,
+            "nll_nats_per_byte": 2.7224154296912926,
+            "valid_targets": 7047
+          },
+          "online_final_count_weight_mean": 0.3998249640171213,
+          "online_regret_nats": 3.0407230222299404,
+          "reference_loop_max_abs_difference_nats": 1.84474657771716e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3659713353199943,
+            "bits_per_byte": 3.960241390113605,
+            "nll_nats_per_byte": 2.7450301538940436,
+            "valid_targets": 7047
+          },
+          "neural": {
+            "accuracy": 0.35220661274301124,
+            "bits_per_byte": 4.20068114546516,
+            "nll_nats_per_byte": 2.9116902924104973,
+            "valid_targets": 7047
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5474670072371222,
+            "bits_per_byte": 2.636201534256191,
+            "nll_nats_per_byte": 1.827275660857481,
+            "valid_targets": 7047
+          },
+          "online_adaptive_regret_nats": 3.0445210286306974,
+          "online_blend": {
+            "accuracy": 0.3662551440329218,
+            "bits_per_byte": 3.957573988982869,
+            "nll_nats_per_byte": 2.7431812523208516,
+            "valid_targets": 7047
+          },
+          "online_final_count_weight_mean": 0.4292584956521849,
+          "online_regret_nats": 2.5531203195314447,
+          "reference_loop_max_abs_difference_nats": 3.3084646133829665e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.35944373492266213,
+            "bits_per_byte": 3.9671475837473853,
+            "nll_nats_per_byte": 2.7498171625396997,
+            "valid_targets": 7047
+          },
+          "neural": {
+            "accuracy": 0.3499361430395913,
+            "bits_per_byte": 4.210045719975253,
+            "nll_nats_per_byte": 2.9181813208293117,
+            "valid_targets": 7047
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5436355896126011,
+            "bits_per_byte": 2.64253434814874,
+            "nll_nats_per_byte": 1.831665232952112,
+            "valid_targets": 7047
+          },
+          "online_adaptive_regret_nats": 3.044522139874971,
+          "online_blend": {
+            "accuracy": 0.35915992620973464,
+            "bits_per_byte": 3.9676816808177824,
+            "nll_nats_per_byte": 2.7501873704181907,
+            "valid_targets": 7047
+          },
+          "online_final_count_weight_mean": 0.4163600347760771,
+          "online_regret_nats": 2.6088549196465465,
+          "reference_loop_max_abs_difference_nats": 4.149569576838985e-12
+        }
+      },
+      "targets": 7047
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5471358428805237,
+        "bits_per_byte": 2.917867298779146,
+        "nll_nats_per_byte": 2.0225114913968287,
+        "valid_targets": 6110
+      },
+      "count": {
+        "accuracy": 0.33600654664484453,
+        "bits_per_byte": 4.018085447741452,
+        "nll_nats_per_byte": 2.785124599350933,
+        "valid_targets": 6110
+      },
+      "document": 18,
+      "domain": "legal_prose",
+      "name": "Artistic",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3795417348608838,
+            "bits_per_byte": 3.7405813767062286,
+            "nll_nats_per_byte": 2.592773434918961,
+            "valid_targets": 6110
+          },
+          "neural": {
+            "accuracy": 0.3702127659574468,
+            "bits_per_byte": 3.9930402948905233,
+            "nll_nats_per_byte": 2.7677646222656187,
+            "valid_targets": 6110
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5608837970540098,
+            "bits_per_byte": 2.571537927152692,
+            "nll_nats_per_byte": 1.7824542639088545,
+            "valid_targets": 6110
+          },
+          "online_adaptive_regret_nats": 3.021137272433407,
+          "online_blend": {
+            "accuracy": 0.37937806873977087,
+            "bits_per_byte": 3.7358819971113677,
+            "nll_nats_per_byte": 2.589516073202402,
+            "valid_targets": 6110
+          },
+          "online_final_count_weight_mean": 0.45015552883397986,
+          "online_regret_nats": 3.0343682582479232,
+          "reference_loop_max_abs_difference_nats": 1.3726797476465435e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3751227495908347,
+            "bits_per_byte": 3.753897489882484,
+            "nll_nats_per_byte": 2.6020034612230996,
+            "valid_targets": 6110
+          },
+          "neural": {
+            "accuracy": 0.36202945990180035,
+            "bits_per_byte": 4.021677128185401,
+            "nll_nats_per_byte": 2.787614162524129,
+            "valid_targets": 6110
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5590834697217676,
+            "bits_per_byte": 2.575729629063257,
+            "nll_nats_per_byte": 1.7853597302699102,
+            "valid_targets": 6110
+          },
+          "online_adaptive_regret_nats": 3.0441279854676395,
+          "online_blend": {
+            "accuracy": 0.3772504091653028,
+            "bits_per_byte": 3.7476395768927464,
+            "nll_nats_per_byte": 2.5976658064780733,
+            "valid_targets": 6110
+          },
+          "online_final_count_weight_mean": 0.45799151190093956,
+          "online_regret_nats": 2.861609292876892,
+          "reference_loop_max_abs_difference_nats": 1.6245893519339916e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.37921440261865796,
+            "bits_per_byte": 3.765450319313253,
+            "nll_nats_per_byte": 2.610011272370527,
+            "valid_targets": 6110
+          },
+          "neural": {
+            "accuracy": 0.36661211129296234,
+            "bits_per_byte": 4.060191696336971,
+            "nll_nats_per_byte": 2.814310426848873,
+            "valid_targets": 6110
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5613747954173486,
+            "bits_per_byte": 2.584585762774804,
+            "nll_nats_per_byte": 1.7914983343827309,
+            "valid_targets": 6110
+          },
+          "online_adaptive_regret_nats": 3.0444515302206128,
+          "online_blend": {
+            "accuracy": 0.3801963993453355,
+            "bits_per_byte": 3.7623063479635896,
+            "nll_nats_per_byte": 2.6078320374937465,
+            "valid_targets": 6110
+          },
+          "online_final_count_weight_mean": 0.49774572911297654,
+          "online_regret_nats": 2.992956265099565,
+          "reference_loop_max_abs_difference_nats": 1.1857181902996672e-12
+        }
+      },
+      "targets": 6110
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6420361885532344,
+        "bits_per_byte": 2.3651132900396634,
+        "nll_nats_per_byte": 1.6393716086958487,
+        "valid_targets": 25754
+      },
+      "count": {
+        "accuracy": 0.28321814087132097,
+        "bits_per_byte": 4.818060591022098,
+        "nll_nats_per_byte": 3.339625114433951,
+        "valid_targets": 25754
+      },
+      "document": 19,
+      "domain": "legal_prose",
+      "name": "MPL-1.1",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3342005125417411,
+            "bits_per_byte": 4.412063849664151,
+            "nll_nats_per_byte": 3.0582096178451645,
+            "valid_targets": 25754
+          },
+          "neural": {
+            "accuracy": 0.32554166343092333,
+            "bits_per_byte": 4.8650643880420645,
+            "nll_nats_per_byte": 3.3722056638139524,
+            "valid_targets": 25754
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6467344878465481,
+            "bits_per_byte": 2.150015529824874,
+            "nll_nats_per_byte": 1.4902772026582083,
+            "valid_targets": 25754
+          },
+          "online_adaptive_regret_nats": 3.044522437347041,
+          "online_blend": {
+            "accuracy": 0.3328803292692397,
+            "bits_per_byte": 4.3963211949842185,
+            "nll_nats_per_byte": 3.0472976411392403,
+            "valid_targets": 25754
+          },
+          "online_final_count_weight_mean": 0.5000000000008593,
+          "online_regret_nats": 3.04452243547712,
+          "reference_loop_max_abs_difference_nats": 7.265077428542099e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.33482177525821233,
+            "bits_per_byte": 4.4259297575977214,
+            "nll_nats_per_byte": 3.0678207328352225,
+            "valid_targets": 25754
+          },
+          "neural": {
+            "accuracy": 0.3252310320726877,
+            "bits_per_byte": 4.883231849778897,
+            "nll_nats_per_byte": 3.3847983886947692,
+            "valid_targets": 25754
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6454919624136056,
+            "bits_per_byte": 2.148786144518592,
+            "nll_nats_per_byte": 1.4894250576993373,
+            "valid_targets": 25754
+          },
+          "online_adaptive_regret_nats": 3.0445224369250354,
+          "online_blend": {
+            "accuracy": 0.33610312961093425,
+            "bits_per_byte": 4.407897704217169,
+            "nll_nats_per_byte": 3.0553218658747863,
+            "valid_targets": 25754
+          },
+          "online_final_count_weight_mean": 0.500000000012555,
+          "online_regret_nats": 3.044522437659907,
+          "reference_loop_max_abs_difference_nats": 7.275291480368651e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3305505940824726,
+            "bits_per_byte": 4.451102324311871,
+            "nll_nats_per_byte": 3.0852690264805926,
+            "valid_targets": 25754
+          },
+          "neural": {
+            "accuracy": 0.3210763376562864,
+            "bits_per_byte": 4.854475541784078,
+            "nll_nats_per_byte": 3.3648660348848467,
+            "valid_targets": 25754
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6461132251300769,
+            "bits_per_byte": 2.1579421832272185,
+            "nll_nats_per_byte": 1.4957715401153193,
+            "valid_targets": 25754
+          },
+          "online_adaptive_regret_nats": 3.0445224376235274,
+          "online_blend": {
+            "accuracy": 0.3303952784033548,
+            "bits_per_byte": 4.441745458438822,
+            "nll_nats_per_byte": 3.0787833412818113,
+            "valid_targets": 25754
+          },
+          "online_final_count_weight_mean": 0.5000176177850895,
+          "online_regret_nats": 3.0441347882151604,
+          "reference_loop_max_abs_difference_nats": 1.1868728222452773e-11
+        }
+      },
+      "targets": 25754
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5947824384513729,
+        "bits_per_byte": 2.476034131864119,
+        "nll_nats_per_byte": 1.7162560774718059,
+        "valid_targets": 20431
+      },
+      "count": {
+        "accuracy": 0.34452547599236455,
+        "bits_per_byte": 4.018802371005249,
+        "nll_nats_per_byte": 2.7856215326899116,
+        "valid_targets": 20431
+      },
+      "document": 20,
+      "domain": "legal_prose",
+      "name": "GFDL-1.2",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3829474817679017,
+            "bits_per_byte": 3.6707510605699682,
+            "nll_nats_per_byte": 2.5443707481715023,
+            "valid_targets": 20431
+          },
+          "neural": {
+            "accuracy": 0.3735010523224512,
+            "bits_per_byte": 3.83530757653417,
+            "nll_nats_per_byte": 2.6584326332548565,
+            "valid_targets": 20431
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6071166364837747,
+            "bits_per_byte": 2.28436328232237,
+            "nll_nats_per_byte": 1.583399968516413,
+            "valid_targets": 20431
+          },
+          "online_adaptive_regret_nats": 3.0445224375907856,
+          "online_blend": {
+            "accuracy": 0.3834369340707748,
+            "bits_per_byte": 3.670102700739681,
+            "nll_nats_per_byte": 2.5439213393831506,
+            "valid_targets": 20431
+          },
+          "online_final_count_weight_mean": 0.399999732905768,
+          "online_regret_nats": 3.0445175377681153,
+          "reference_loop_max_abs_difference_nats": 3.6557423754857155e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.37722088982428664,
+            "bits_per_byte": 3.713573462700723,
+            "nll_nats_per_byte": 2.574052975473239,
+            "valid_targets": 20431
+          },
+          "neural": {
+            "accuracy": 0.3653271988644707,
+            "bits_per_byte": 3.9034658472026935,
+            "nll_nats_per_byte": 2.705676346400585,
+            "valid_targets": 20431
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6035925799030885,
+            "bits_per_byte": 2.286306886608969,
+            "nll_nats_per_byte": 1.5847471723477935,
+            "valid_targets": 20431
+          },
+          "online_adaptive_regret_nats": 3.044522437550768,
+          "online_blend": {
+            "accuracy": 0.37854241104204395,
+            "bits_per_byte": 3.711210168821526,
+            "nll_nats_per_byte": 2.5724148649840393,
+            "valid_targets": 20431
+          },
+          "online_final_count_weight_mean": 0.42122274868246634,
+          "online_regret_nats": 2.446494516065286,
+          "reference_loop_max_abs_difference_nats": 6.8114403006802604e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3776613968968724,
+            "bits_per_byte": 3.705587323273943,
+            "nll_nats_per_byte": 2.5685174054460083,
+            "valid_targets": 20431
+          },
+          "neural": {
+            "accuracy": 0.36792129606969803,
+            "bits_per_byte": 3.8989124467988443,
+            "nll_nats_per_byte": 2.7025201697486967,
+            "valid_targets": 20431
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6046204297391219,
+            "bits_per_byte": 2.2968576145489163,
+            "nll_nats_per_byte": 1.592060379672223,
+            "valid_targets": 20431
+          },
+          "online_adaptive_regret_nats": 3.0445224367467745,
+          "online_blend": {
+            "accuracy": 0.37849346581175664,
+            "bits_per_byte": 3.705391233922486,
+            "nll_nats_per_byte": 2.568381486664908,
+            "valid_targets": 20431
+          },
+          "online_final_count_weight_mean": 0.449844980246407,
+          "online_regret_nats": 3.041554819443263,
+          "reference_loop_max_abs_difference_nats": 6.552092202127824e-12
+        }
+      },
+      "targets": 20431
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5862490149724192,
+        "bits_per_byte": 2.5150959857475303,
+        "nll_nats_per_byte": 1.743331691358537,
+        "valid_targets": 25380
+      },
+      "count": {
+        "accuracy": 0.32257683215130023,
+        "bits_per_byte": 4.191921323464738,
+        "nll_nats_per_byte": 2.905618446488698,
+        "valid_targets": 25380
+      },
+      "document": 21,
+      "domain": "legal_prose",
+      "name": "LGPL-2",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.36233254531126874,
+            "bits_per_byte": 3.8603211044621815,
+            "nll_nats_per_byte": 2.675770689614015,
+            "valid_targets": 25380
+          },
+          "neural": {
+            "accuracy": 0.35267927501970053,
+            "bits_per_byte": 4.06262282835437,
+            "nll_nats_per_byte": 2.8159955591523023,
+            "valid_targets": 25380
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5928684003152088,
+            "bits_per_byte": 2.3172125310395715,
+            "nll_nats_per_byte": 1.6061693326482536,
+            "valid_targets": 25380
+          },
+          "online_adaptive_regret_nats": 3.0445224375871476,
+          "online_blend": {
+            "accuracy": 0.3624113475177305,
+            "bits_per_byte": 3.85759273448061,
+            "nll_nats_per_byte": 2.6738795276537646,
+            "valid_targets": 25380
+          },
+          "online_final_count_weight_mean": 0.4384113154727232,
+          "online_regret_nats": 2.766754433439928,
+          "reference_loop_max_abs_difference_nats": 1.404742988597718e-11
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3598502758077226,
+            "bits_per_byte": 3.8545994284740988,
+            "nll_nats_per_byte": 2.671804726034798,
+            "valid_targets": 25380
+          },
+          "neural": {
+            "accuracy": 0.34893617021276596,
+            "bits_per_byte": 4.0624038193871135,
+            "nll_nats_per_byte": 2.815843753704131,
+            "valid_targets": 25380
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5929866036249015,
+            "bits_per_byte": 2.317260232767041,
+            "nll_nats_per_byte": 1.606202396966157,
+            "valid_targets": 25380
+          },
+          "online_adaptive_regret_nats": 3.0445224371069344,
+          "online_blend": {
+            "accuracy": 0.35969267139479905,
+            "bits_per_byte": 3.8520936895939393,
+            "nll_nats_per_byte": 2.670067880194796,
+            "valid_targets": 25380
+          },
+          "online_final_count_weight_mean": 0.4045387231588057,
+          "online_regret_nats": 2.9380952179490123,
+          "reference_loop_max_abs_difference_nats": 9.71578373309967e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.35279747832939323,
+            "bits_per_byte": 3.895534405239065,
+            "nll_nats_per_byte": 2.700178689765721,
+            "valid_targets": 25380
+          },
+          "neural": {
+            "accuracy": 0.3421985815602837,
+            "bits_per_byte": 4.124583591966893,
+            "nll_nats_per_byte": 2.8589434877556634,
+            "valid_targets": 25380
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5929866036249015,
+            "bits_per_byte": 2.3261051274691864,
+            "nll_nats_per_byte": 1.6123332107912987,
+            "valid_targets": 25380
+          },
+          "online_adaptive_regret_nats": 3.044522437892738,
+          "online_blend": {
+            "accuracy": 0.35394011032308903,
+            "bits_per_byte": 3.893995750076255,
+            "nll_nats_per_byte": 2.6991121752777656,
+            "valid_targets": 25380
+          },
+          "online_final_count_weight_mean": 0.4500000151860136,
+          "online_regret_nats": 3.0445221028930973,
+          "reference_loop_max_abs_difference_nats": 7.270628543665225e-12
+        }
+      },
+      "targets": 25380
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5618263224807916,
+        "bits_per_byte": 2.730024461129263,
+        "nll_nats_per_byte": 1.8923087580914326,
+        "valid_targets": 18091
+      },
+      "count": {
+        "accuracy": 0.3071140346028412,
+        "bits_per_byte": 4.386387998259218,
+        "nll_nats_per_byte": 3.0404124738353597,
+        "valid_targets": 18091
+      },
+      "document": 22,
+      "domain": "legal_prose",
+      "name": "GPL-2",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3495108064783594,
+            "bits_per_byte": 3.995585339661958,
+            "nll_nats_per_byte": 2.7695287128733375,
+            "valid_targets": 18091
+          },
+          "neural": {
+            "accuracy": 0.33989276435796806,
+            "bits_per_byte": 4.189150651172682,
+            "nll_nats_per_byte": 2.9036979628012034,
+            "valid_targets": 18091
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5708916035597811,
+            "bits_per_byte": 2.4787718336934166,
+            "nll_nats_per_byte": 1.7181537077759972,
+            "valid_targets": 18091
+          },
+          "online_adaptive_regret_nats": 3.044522409167257,
+          "online_blend": {
+            "accuracy": 0.34962135868663974,
+            "bits_per_byte": 3.9946355212698297,
+            "nll_nats_per_byte": 2.76887034893279,
+            "valid_targets": 18091
+          },
+          "online_final_count_weight_mean": 0.3999999824099633,
+          "online_regret_nats": 3.0445221169575234,
+          "reference_loop_max_abs_difference_nats": 3.646860591288714e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.34022442098280914,
+            "bits_per_byte": 4.012619892466479,
+            "nll_nats_per_byte": 2.781336165121891,
+            "valid_targets": 18091
+          },
+          "neural": {
+            "accuracy": 0.32983251340445524,
+            "bits_per_byte": 4.2257529712323425,
+            "nll_nats_per_byte": 2.9290687577525096,
+            "valid_targets": 18091
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5706704991432204,
+            "bits_per_byte": 2.480594665405384,
+            "nll_nats_per_byte": 1.7194171984377828,
+            "valid_targets": 18091
+          },
+          "online_adaptive_regret_nats": 3.0388467502962158,
+          "online_blend": {
+            "accuracy": 0.34188270410701455,
+            "bits_per_byte": 4.0105521555960815,
+            "nll_nats_per_byte": 2.779902919140035,
+            "valid_targets": 18091
+          },
+          "online_final_count_weight_mean": 0.4000168017215104,
+          "online_regret_nats": 3.0441453423554776,
+          "reference_loop_max_abs_difference_nats": 1.0042633391549316e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.338953070587585,
+            "bits_per_byte": 4.052829972350161,
+            "nll_nats_per_byte": 2.809207668623355,
+            "valid_targets": 18091
+          },
+          "neural": {
+            "accuracy": 0.3286717152175115,
+            "bits_per_byte": 4.272312167425865,
+            "nll_nats_per_byte": 2.9613411333231867,
+            "valid_targets": 18091
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5710021557680615,
+            "bits_per_byte": 2.4949533885989146,
+            "nll_nats_per_byte": 1.7293699069358193,
+            "valid_targets": 18091
+          },
+          "online_adaptive_regret_nats": 3.017086115316488,
+          "online_blend": {
+            "accuracy": 0.33856613785860373,
+            "bits_per_byte": 4.052380655205959,
+            "nll_nats_per_byte": 2.8088962257116745,
+            "valid_targets": 18091
+          },
+          "online_final_count_weight_mean": 0.44999199046994026,
+          "online_regret_nats": 3.0443522740679327,
+          "reference_loop_max_abs_difference_nats": 9.983125437429408e-12
+        }
+      },
+      "targets": 18091
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.5879980398808851,
+        "bits_per_byte": 2.499154686015683,
+        "nll_nats_per_byte": 1.7322820243949457,
+        "valid_targets": 26529
+      },
+      "count": {
+        "accuracy": 0.3210448942666516,
+        "bits_per_byte": 4.198274288354378,
+        "nll_nats_per_byte": 2.9100219861901477,
+        "valid_targets": 26529
+      },
+      "document": 23,
+      "domain": "legal_prose",
+      "name": "LGPL-2.1",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.36262203626220363,
+            "bits_per_byte": 3.8542083628948474,
+            "nll_nats_per_byte": 2.671533660031126,
+            "valid_targets": 26529
+          },
+          "neural": {
+            "accuracy": 0.35432922462211164,
+            "bits_per_byte": 4.046296263191561,
+            "nll_nats_per_byte": 2.8046788465414725,
+            "valid_targets": 26529
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5957254325455162,
+            "bits_per_byte": 2.3015569916639342,
+            "nll_nats_per_byte": 1.5953177396698857,
+            "valid_targets": 26529
+          },
+          "online_adaptive_regret_nats": 3.044522437317937,
+          "online_blend": {
+            "accuracy": 0.3616419767047382,
+            "bits_per_byte": 3.8521601326304338,
+            "nll_nats_per_byte": 2.67011393499821,
+            "valid_targets": 26529
+          },
+          "online_final_count_weight_mean": 0.40000371196772866,
+          "online_regret_nats": 3.04444741619227,
+          "reference_loop_max_abs_difference_nats": 8.824052599720744e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.3592672170078028,
+            "bits_per_byte": 3.852593918635919,
+            "nll_nats_per_byte": 2.6704146125448784,
+            "valid_targets": 26529
+          },
+          "neural": {
+            "accuracy": 0.3502205134004297,
+            "bits_per_byte": 4.053385680223391,
+            "nll_nats_per_byte": 2.809592855968899,
+            "valid_targets": 26529
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.5952354027667836,
+            "bits_per_byte": 2.3032032149242814,
+            "nll_nats_per_byte": 1.5964588146813674,
+            "valid_targets": 26529
+          },
+          "online_adaptive_regret_nats": 3.044522437034175,
+          "online_blend": {
+            "accuracy": 0.3587771872290701,
+            "bits_per_byte": 3.85048179651493,
+            "nll_nats_per_byte": 2.6689506010517166,
+            "valid_targets": 26529
+          },
+          "online_final_count_weight_mean": 0.4000046314049579,
+          "online_regret_nats": 3.044418652483728,
+          "reference_loop_max_abs_difference_nats": 7.281175662399164e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.35278374608918545,
+            "bits_per_byte": 3.8924147313817143,
+            "nll_nats_per_byte": 2.698016296627232,
+            "valid_targets": 26529
+          },
+          "neural": {
+            "accuracy": 0.3417392287685175,
+            "bits_per_byte": 4.109771527933961,
+            "nll_nats_per_byte": 2.848676547332963,
+            "valid_targets": 26529
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.592747559274756,
+            "bits_per_byte": 2.313634032565121,
+            "nll_nats_per_byte": 1.6036889065200501,
+            "valid_targets": 26529
+          },
+          "online_adaptive_regret_nats": 3.044522436983243,
+          "online_blend": {
+            "accuracy": 0.3539899732368352,
+            "bits_per_byte": 3.891217270571169,
+            "nll_nats_per_byte": 2.6971862800425717,
+            "valid_targets": 26529
+          },
+          "online_final_count_weight_mean": 0.45000000001613777,
+          "online_regret_nats": 3.044522437019623,
+          "reference_loop_max_abs_difference_nats": 7.26996240985045e-12
+        }
+      },
+      "targets": 26529
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6463188379564686,
+        "bits_per_byte": 2.3563006614866397,
+        "nll_nats_per_byte": 1.6332631600609984,
+        "valid_targets": 22099
+      },
+      "count": {
+        "accuracy": 0.14118285895289379,
+        "bits_per_byte": 6.827869885358641,
+        "nll_nats_per_byte": 4.732718760266499,
+        "valid_targets": 22099
+      },
+      "document": 24,
+      "domain": "source_code",
+      "name": "gettext.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.1904158559210824,
+            "bits_per_byte": 6.42196377266258,
+            "nll_nats_per_byte": 4.4513660826791766,
+            "valid_targets": 22099
+          },
+          "neural": {
+            "accuracy": 0.18439748404905199,
+            "bits_per_byte": 7.6478914494647094,
+            "nll_nats_per_byte": 5.301114395424976,
+            "valid_targets": 22099
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6499841621792841,
+            "bits_per_byte": 2.2611106687834353,
+            "nll_nats_per_byte": 1.5672824850012506,
+            "valid_targets": 22099
+          },
+          "online_adaptive_regret_nats": 3.0445224374343525,
+          "online_blend": {
+            "accuracy": 0.18946558667813024,
+            "bits_per_byte": 6.307830339889495,
+            "nll_nats_per_byte": 4.372254815544885,
+            "valid_targets": 22099
+          },
+          "online_final_count_weight_mean": 0.65,
+          "online_regret_nats": 3.0445224362192675,
+          "reference_loop_max_abs_difference_nats": 7.272737967412013e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19507670030318114,
+            "bits_per_byte": 6.44240154116488,
+            "nll_nats_per_byte": 4.465532464293483,
+            "valid_targets": 22099
+          },
+          "neural": {
+            "accuracy": 0.19258789990497308,
+            "bits_per_byte": 7.793856090352742,
+            "nll_nats_per_byte": 5.402289374717961,
+            "valid_targets": 22099
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6491696456853251,
+            "bits_per_byte": 2.2563769349728626,
+            "nll_nats_per_byte": 1.5640013107569308,
+            "valid_targets": 22099
+          },
+          "online_adaptive_regret_nats": 3.0445224374707323,
+          "online_blend": {
+            "accuracy": 0.192542648988642,
+            "bits_per_byte": 6.31241784988133,
+            "nll_nats_per_byte": 4.375434635161516,
+            "valid_targets": 22099
+          },
+          "online_final_count_weight_mean": 0.650000000018828,
+          "online_regret_nats": 3.0445224364375463,
+          "reference_loop_max_abs_difference_nats": 1.5137224806949234e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18932983392913708,
+            "bits_per_byte": 6.421537906040767,
+            "nll_nats_per_byte": 4.4510708944309725,
+            "valid_targets": 22099
+          },
+          "neural": {
+            "accuracy": 0.18521200054301099,
+            "bits_per_byte": 7.787229321885919,
+            "nll_nats_per_byte": 5.397696048838959,
+            "valid_targets": 22099
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6485361328566903,
+            "bits_per_byte": 2.262932643376956,
+            "nll_nats_per_byte": 1.568545381553801,
+            "valid_targets": 22099
+          },
+          "online_adaptive_regret_nats": 3.0445224376380793,
+          "online_blend": {
+            "accuracy": 0.19055160867007556,
+            "bits_per_byte": 6.332154839005297,
+            "nll_nats_per_byte": 4.389115273525536,
+            "valid_targets": 22099
+          },
+          "online_final_count_weight_mean": 0.650000001871193,
+          "online_regret_nats": 3.0445224007125944,
+          "reference_loop_max_abs_difference_nats": 3.4720670782917296e-11
+        }
+      },
+      "targets": 22099
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6334999657604602,
+        "bits_per_byte": 2.5112466123498978,
+        "nll_nats_per_byte": 1.7406635090410456,
+        "valid_targets": 14603
+      },
+      "count": {
+        "accuracy": 0.1557899061836609,
+        "bits_per_byte": 6.604385487085671,
+        "nll_nats_per_byte": 4.577811179704454,
+        "valid_targets": 14603
+      },
+      "document": 25,
+      "domain": "source_code",
+      "name": "poplib.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19317948366773952,
+            "bits_per_byte": 6.3506156671954,
+            "nll_nats_per_byte": 4.401911344536307,
+            "valid_targets": 14603
+          },
+          "neural": {
+            "accuracy": 0.18722180373895775,
+            "bits_per_byte": 7.649808354889585,
+            "nll_nats_per_byte": 5.302443093015629,
+            "valid_targets": 14603
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6378826268574951,
+            "bits_per_byte": 2.398106311171048,
+            "nll_nats_per_byte": 1.6622406282712225,
+            "valid_targets": 14603
+          },
+          "online_adaptive_regret_nats": 3.044522437667183,
+          "online_blend": {
+            "accuracy": 0.19331644182702185,
+            "bits_per_byte": 6.206125834532784,
+            "nll_nats_per_byte": 4.301758624406637,
+            "valid_targets": 14603
+          },
+          "online_final_count_weight_mean": 0.6999999999009006,
+          "online_regret_nats": 3.044522436139232,
+          "reference_loop_max_abs_difference_nats": 6.389111462112851e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19304252550845716,
+            "bits_per_byte": 6.3652231256659135,
+            "nll_nats_per_byte": 4.41203646319029,
+            "valid_targets": 14603
+          },
+          "neural": {
+            "accuracy": 0.18722180373895775,
+            "bits_per_byte": 7.755663113958773,
+            "nll_nats_per_byte": 5.375816020813289,
+            "valid_targets": 14603
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6373347942203657,
+            "bits_per_byte": 2.3915927038123588,
+            "nll_nats_per_byte": 1.6577257396952727,
+            "valid_targets": 14603
+          },
+          "online_adaptive_regret_nats": 3.0445224376126134,
+          "online_blend": {
+            "accuracy": 0.1942751489419982,
+            "bits_per_byte": 6.211619736190883,
+            "nll_nats_per_byte": 4.305566706851222,
+            "valid_targets": 14603
+          },
+          "online_final_count_weight_mean": 0.7000000000000082,
+          "online_regret_nats": 3.044522437892738,
+          "reference_loop_max_abs_difference_nats": 3.6362024502523127e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19591864685338628,
+            "bits_per_byte": 6.36122192928906,
+            "nll_nats_per_byte": 4.409263045202808,
+            "valid_targets": 14603
+          },
+          "neural": {
+            "accuracy": 0.1905087995617339,
+            "bits_per_byte": 7.801320122048764,
+            "nll_nats_per_byte": 5.407463047243668,
+            "valid_targets": 14603
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6379511059371362,
+            "bits_per_byte": 2.399589216931061,
+            "nll_nats_per_byte": 1.6632685002178118,
+            "valid_targets": 14603
+          },
+          "online_adaptive_regret_nats": 3.0445224377363047,
+          "online_blend": {
+            "accuracy": 0.19495993973840992,
+            "bits_per_byte": 6.241379950093451,
+            "nll_nats_per_byte": 4.326194915210648,
+            "valid_targets": 14603
+          },
+          "online_final_count_weight_mean": 0.700000000614822,
+          "online_regret_nats": 3.044522424133902,
+          "reference_loop_max_abs_difference_nats": 3.6353142718326126e-12
+        }
+      },
+      "targets": 14603
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6956153442781655,
+        "bits_per_byte": 2.083407092137191,
+        "nll_nats_per_byte": 1.444107751873488,
+        "valid_targets": 24791
+      },
+      "count": {
+        "accuracy": 0.14404420959219072,
+        "bits_per_byte": 6.771026709705401,
+        "nll_nats_per_byte": 4.693318073328382,
+        "valid_targets": 24791
+      },
+      "document": 26,
+      "domain": "source_code",
+      "name": "webbrowser.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18240490500584888,
+            "bits_per_byte": 6.42929499243851,
+            "nll_nats_per_byte": 4.4564476969969276,
+            "valid_targets": 24791
+          },
+          "neural": {
+            "accuracy": 0.17784679924166027,
+            "bits_per_byte": 7.647467193443316,
+            "nll_nats_per_byte": 5.300820323559912,
+            "valid_targets": 24791
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6974708563591626,
+            "bits_per_byte": 1.9917914978138964,
+            "nll_nats_per_byte": 1.3806046609729727,
+            "valid_targets": 24791
+          },
+          "online_adaptive_regret_nats": 3.04452243749256,
+          "online_blend": {
+            "accuracy": 0.18454277762091081,
+            "bits_per_byte": 6.303845655131577,
+            "nll_nats_per_byte": 4.369492842539514,
+            "valid_targets": 24791
+          },
+          "online_final_count_weight_mean": 0.6499999999967379,
+          "online_regret_nats": 3.0445224341383437,
+          "reference_loop_max_abs_difference_nats": 8.750333790885634e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18458311484006293,
+            "bits_per_byte": 6.453147838312434,
+            "nll_nats_per_byte": 4.47298122986277,
+            "valid_targets": 24791
+          },
+          "neural": {
+            "accuracy": 0.18216288169093622,
+            "bits_per_byte": 7.804331120352266,
+            "nll_nats_per_byte": 5.409550112228413,
+            "valid_targets": 24791
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6972691702634021,
+            "bits_per_byte": 1.9880316116255663,
+            "nll_nats_per_byte": 1.3779985064623055,
+            "valid_targets": 24791
+          },
+          "online_adaptive_regret_nats": 3.044522437012347,
+          "online_blend": {
+            "accuracy": 0.1858335686337784,
+            "bits_per_byte": 6.316617884372828,
+            "nll_nats_per_byte": 4.378345877227552,
+            "valid_targets": 24791
+          },
+          "online_final_count_weight_mean": 0.6992554797935296,
+          "online_regret_nats": 3.03058416787826,
+          "reference_loop_max_abs_difference_nats": 5.197620112085133e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18385704489532492,
+            "bits_per_byte": 6.429019772252715,
+            "nll_nats_per_byte": 4.456256928901111,
+            "valid_targets": 24791
+          },
+          "neural": {
+            "accuracy": 0.17857286918639828,
+            "bits_per_byte": 7.875393683480907,
+            "nll_nats_per_byte": 5.458806927504393,
+            "valid_targets": 24791
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6970674841676415,
+            "bits_per_byte": 1.9929347179423473,
+            "nll_nats_per_byte": 1.381397080781768,
+            "valid_targets": 24791
+          },
+          "online_adaptive_regret_nats": 3.0445224371069344,
+          "online_blend": {
+            "accuracy": 0.1859545802912347,
+            "bits_per_byte": 6.329692103871198,
+            "nll_nats_per_byte": 4.387408235610869,
+            "valid_targets": 24791
+          },
+          "online_final_count_weight_mean": 0.6999999957852482,
+          "online_regret_nats": 3.044522358686663,
+          "reference_loop_max_abs_difference_nats": 4.433431399775145e-11
+        }
+      },
+      "targets": 24791
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6655312785577802,
+        "bits_per_byte": 2.3141359364942877,
+        "nll_nats_per_byte": 1.6040367998134641,
+        "valid_targets": 12037
+      },
+      "count": {
+        "accuracy": 0.1687297499376921,
+        "bits_per_byte": 6.344528188861051,
+        "nll_nats_per_byte": 4.397691826092133,
+        "valid_targets": 12037
+      },
+      "document": 27,
+      "domain": "source_code",
+      "name": "string.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.20769294674752845,
+            "bits_per_byte": 6.127393630901959,
+            "nll_nats_per_byte": 4.247185619440659,
+            "valid_targets": 12037
+          },
+          "neural": {
+            "accuracy": 0.1998836919498214,
+            "bits_per_byte": 7.46338851592862,
+            "nll_nats_per_byte": 5.173226707239397,
+            "valid_targets": 12037
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6676912852039545,
+            "bits_per_byte": 2.180466228822418,
+            "nll_nats_per_byte": 1.5113840188144356,
+            "valid_targets": 12037
+          },
+          "online_adaptive_regret_nats": 3.0445224375580437,
+          "online_blend": {
+            "accuracy": 0.21060064800199385,
+            "bits_per_byte": 5.976355788791779,
+            "nll_nats_per_byte": 4.14249416502413,
+            "valid_targets": 12037
+          },
+          "online_final_count_weight_mean": 0.7000000000009464,
+          "online_regret_nats": 3.0445224374416284,
+          "reference_loop_max_abs_difference_nats": 3.680833415842244e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2080252554623245,
+            "bits_per_byte": 6.142270480037904,
+            "nll_nats_per_byte": 4.257497465474855,
+            "valid_targets": 12037
+          },
+          "neural": {
+            "accuracy": 0.2015452355238016,
+            "bits_per_byte": 7.606354580775569,
+            "nll_nats_per_byte": 5.27232323200381,
+            "valid_targets": 12037
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6685220569909446,
+            "bits_per_byte": 2.177669734843441,
+            "nll_nats_per_byte": 1.509445636897455,
+            "valid_targets": 12037
+          },
+          "online_adaptive_regret_nats": 3.0445224376271653,
+          "online_blend": {
+            "accuracy": 0.21143141978898397,
+            "bits_per_byte": 5.983368385237943,
+            "nll_nats_per_byte": 4.147354926479193,
+            "valid_targets": 12037
+          },
+          "online_final_count_weight_mean": 0.700000000147379,
+          "online_regret_nats": 3.0445224348441116,
+          "reference_loop_max_abs_difference_nats": 3.637978807091713e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2065298662457423,
+            "bits_per_byte": 6.107805530596549,
+            "nll_nats_per_byte": 4.233608182941438,
+            "valid_targets": 12037
+          },
+          "neural": {
+            "accuracy": 0.20004984630721942,
+            "bits_per_byte": 7.556356002008683,
+            "nll_nats_per_byte": 5.237666858099539,
+            "valid_targets": 12037
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6681897482761485,
+            "bits_per_byte": 2.1831497726535325,
+            "nll_nats_per_byte": 1.5132441096548817,
+            "valid_targets": 12037
+          },
+          "online_adaptive_regret_nats": 3.0445224376126134,
+          "online_blend": {
+            "accuracy": 0.20927141314280967,
+            "bits_per_byte": 5.99218541531584,
+            "nll_nats_per_byte": 4.153466426018599,
+            "valid_targets": 12037
+          },
+          "online_final_count_weight_mean": 0.7000000101605949,
+          "online_regret_nats": 3.0445222253911197,
+          "reference_loop_max_abs_difference_nats": 3.645306279054239e-12
+        }
+      },
+      "targets": 12037
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6726584673604541,
+        "bits_per_byte": 2.174294057420829,
+        "nll_nats_per_byte": 1.5071057956094915,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.15387432477797786,
+        "bits_per_byte": 6.587246988169407,
+        "nll_nats_per_byte": 4.565931677501616,
+        "valid_targets": 32767
+      },
+      "document": 28,
+      "domain": "source_code",
+      "name": "ast.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19980468153935363,
+            "bits_per_byte": 6.25089248213348,
+            "nll_nats_per_byte": 4.33278849997418,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.19467757194738608,
+            "bits_per_byte": 7.48378349171303,
+            "nll_nats_per_byte": 5.18736342720195,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.674794763023774,
+            "bits_per_byte": 2.0872248404238394,
+            "nll_nats_per_byte": 1.4467540133344658,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044521995987452,
+          "online_blend": {
+            "accuracy": 0.2001403851435896,
+            "bits_per_byte": 6.140460455824692,
+            "nll_nats_per_byte": 4.256242852294721,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.65,
+          "online_regret_nats": 3.044522436335683,
+          "reference_loop_max_abs_difference_nats": 7.269296276035675e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2021240882595294,
+            "bits_per_byte": 6.286628769355681,
+            "nll_nats_per_byte": 4.357559006705928,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.1999572740867336,
+            "bits_per_byte": 7.624508353203917,
+            "nll_nats_per_byte": 5.284906468179047,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.674245429853206,
+            "bits_per_byte": 2.088092702904375,
+            "nll_nats_per_byte": 1.4473555697659632,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044511955238704,
+          "online_blend": {
+            "accuracy": 0.20053712576677754,
+            "bits_per_byte": 6.161169897372046,
+            "nll_nats_per_byte": 4.270597543314241,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.6500000192387221,
+          "online_regret_nats": 3.0445220232359134,
+          "reference_loop_max_abs_difference_nats": 2.247446673209197e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.20020142216254158,
+            "bits_per_byte": 6.258901311168606,
+            "nll_nats_per_byte": 4.338339797239464,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.19513534958952605,
+            "bits_per_byte": 7.582789221634575,
+            "nll_nats_per_byte": 5.2559889697563476,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.673390911587878,
+            "bits_per_byte": 2.0891415605322172,
+            "nll_nats_per_byte": 1.4480825824735106,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044522436292027,
+          "online_blend": {
+            "accuracy": 0.19968260750144962,
+            "bits_per_byte": 6.173006307398888,
+            "nll_nats_per_byte": 4.278801917552298,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.6500075070932454,
+          "online_regret_nats": 3.044361354986904,
+          "reference_loop_max_abs_difference_nats": 1.8279155966638427e-11
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6612750633259071,
+        "bits_per_byte": 2.210218944152488,
+        "nll_nats_per_byte": 1.532007029559476,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.1717886898403882,
+        "bits_per_byte": 6.414276314322394,
+        "nll_nats_per_byte": 4.446037542605005,
+        "valid_targets": 32767
+      },
+      "document": 29,
+      "domain": "source_code",
+      "name": "pdb.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.20303964354380932,
+            "bits_per_byte": 6.204775835571903,
+            "nll_nats_per_byte": 4.300822876433143,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.19476912747581407,
+            "bits_per_byte": 7.608084593792393,
+            "nll_nats_per_byte": 5.273522385648754,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6638080996124149,
+            "bits_per_byte": 2.126841692487488,
+            "nll_nats_per_byte": 1.4742143226450446,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445135950794793,
+          "online_blend": {
+            "accuracy": 0.20954008606219673,
+            "bits_per_byte": 6.047221043245861,
+            "nll_nats_per_byte": 4.191614216348639,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7,
+          "online_regret_nats": 3.0445224365394097,
+          "reference_loop_max_abs_difference_nats": 2.0233148489978703e-11
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.20584734641560107,
+            "bits_per_byte": 6.252702367315348,
+            "nll_nats_per_byte": 4.334043016785129,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.1965392010254219,
+            "bits_per_byte": 7.705311020850486,
+            "nll_nats_per_byte": 5.340914609439988,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6625568407238991,
+            "bits_per_byte": 2.1271960672678496,
+            "nll_nats_per_byte": 1.4744599565249137,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0403052337787813,
+          "online_blend": {
+            "accuracy": 0.21024201178014465,
+            "bits_per_byte": 6.0739246767520045,
+            "nll_nats_per_byte": 4.210123764624129,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7499980311381018,
+          "online_regret_nats": 3.0444855751411524,
+          "reference_loop_max_abs_difference_nats": 3.148770133520884e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.20181890316476944,
+            "bits_per_byte": 6.200820342694442,
+            "nll_nats_per_byte": 4.298081137697406,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.19333475753044221,
+            "bits_per_byte": 7.625966948953808,
+            "nll_nats_per_byte": 5.28591748971066,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6627094332712791,
+            "bits_per_byte": 2.128462616051172,
+            "nll_nats_per_byte": 1.4753378612431154,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 2.94921184067789,
+          "online_blend": {
+            "accuracy": 0.2088381603442488,
+            "bits_per_byte": 6.076838246581668,
+            "nll_nats_per_byte": 4.212143297336925,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7000002994426511,
+          "online_regret_nats": 3.0445160410017706,
+          "reference_loop_max_abs_difference_nats": 1.4546142068638801e-11
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.7038874490929286,
+        "bits_per_byte": 1.9113383825326682,
+        "nll_nats_per_byte": 1.3248388109485252,
+        "valid_targets": 13505
+      },
+      "count": {
+        "accuracy": 0.1951129211403184,
+        "bits_per_byte": 6.0547525306132135,
+        "nll_nats_per_byte": 4.196834645582743,
+        "valid_targets": 13505
+      },
+      "document": 30,
+      "domain": "source_code",
+      "name": "queue.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2327286190299889,
+            "bits_per_byte": 5.760733126518557,
+            "nll_nats_per_byte": 3.9930359246046163,
+            "valid_targets": 13505
+          },
+          "neural": {
+            "accuracy": 0.22228804146612366,
+            "bits_per_byte": 6.76642157147305,
+            "nll_nats_per_byte": 4.690126034746538,
+            "valid_targets": 13505
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.7092928544983339,
+            "bits_per_byte": 1.7982554827352517,
+            "nll_nats_per_byte": 1.2464557177844031,
+            "valid_targets": 13505
+          },
+          "online_adaptive_regret_nats": 3.0445224377326667,
+          "online_blend": {
+            "accuracy": 0.23443169196593855,
+            "bits_per_byte": 5.659123364492838,
+            "nll_nats_per_byte": 3.922605404539122,
+            "valid_targets": 13505
+          },
+          "online_final_count_weight_mean": 0.650000000009326,
+          "online_regret_nats": 3.0445224374634563,
+          "reference_loop_max_abs_difference_nats": 4.661160346586257e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.23383931877082562,
+            "bits_per_byte": 5.814953757365456,
+            "nll_nats_per_byte": 4.030618802004326,
+            "valid_targets": 13505
+          },
+          "neural": {
+            "accuracy": 0.22539800074046648,
+            "bits_per_byte": 6.945303448083932,
+            "nll_nats_per_byte": 4.8141175031726435,
+            "valid_targets": 13505
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.7098111810440577,
+            "bits_per_byte": 1.799274011078984,
+            "nll_nats_per_byte": 1.2471617078341815,
+            "valid_targets": 13505
+          },
+          "online_adaptive_regret_nats": 3.0445224376380793,
+          "online_blend": {
+            "accuracy": 0.23258052573121066,
+            "bits_per_byte": 5.7007366867025855,
+            "nll_nats_per_byte": 3.9514495615025416,
+            "valid_targets": 13505
+          },
+          "online_final_count_weight_mean": 0.6524064854591666,
+          "online_regret_nats": 3.001961473681149,
+          "reference_loop_max_abs_difference_nats": 9.254819133275305e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.230877452795261,
+            "bits_per_byte": 5.806682083989492,
+            "nll_nats_per_byte": 4.024885314925264,
+            "valid_targets": 13505
+          },
+          "neural": {
+            "accuracy": 0.2191780821917808,
+            "bits_per_byte": 6.885963673194757,
+            "nll_nats_per_byte": 4.77298630551315,
+            "valid_targets": 13505
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.7078859681599408,
+            "bits_per_byte": 1.8004817263100372,
+            "nll_nats_per_byte": 1.2479988322415054,
+            "valid_targets": 13505
+          },
+          "online_adaptive_regret_nats": 3.044522437714477,
+          "online_blend": {
+            "accuracy": 0.23095149944465013,
+            "bits_per_byte": 5.7201289658778744,
+            "nll_nats_per_byte": 3.964891265137524,
+            "valid_targets": 13505
+          },
+          "online_final_count_weight_mean": 0.6999985403449716,
+          "online_regret_nats": 3.0444893747917376,
+          "reference_loop_max_abs_difference_nats": 3.637534717881863e-12
+        }
+      },
+      "targets": 13505
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.7242347483748893,
+        "bits_per_byte": 1.7513275562570911,
+        "nll_nats_per_byte": 1.2139277578565417,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.033356730857264934,
+        "bits_per_byte": 8.381751128907956,
+        "nll_nats_per_byte": 5.809787163157688,
+        "valid_targets": 32767
+      },
+      "document": 31,
+      "domain": "source_code",
+      "name": "_sysconfigdata__x86_64-linux-gnu.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.08267464217047639,
+            "bits_per_byte": 7.930435690931537,
+            "nll_nats_per_byte": 5.496959139781157,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.0815759758293405,
+            "bits_per_byte": 9.716146296662076,
+            "nll_nats_per_byte": 6.734719411439272,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.7246620075075534,
+            "bits_per_byte": 1.7356636505188598,
+            "nll_nats_per_byte": 1.20307036575753,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224374707323,
+          "online_blend": {
+            "accuracy": 0.08545182653279214,
+            "bits_per_byte": 7.78614984061404,
+            "nll_nats_per_byte": 5.396947809438889,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.65,
+          "online_regret_nats": 3.044522436626721,
+          "reference_loop_max_abs_difference_nats": 1.9728219058379182e-11
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.08435316019165624,
+            "bits_per_byte": 8.07364870201358,
+            "nll_nats_per_byte": 5.596226834632175,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.0825830866420484,
+            "bits_per_byte": 10.204670133645262,
+            "nll_nats_per_byte": 7.073338331680493,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.7248451185644094,
+            "bits_per_byte": 1.7375143123767502,
+            "nll_nats_per_byte": 1.2043531468064965,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224376016995,
+          "online_blend": {
+            "accuracy": 0.08575701162755212,
+            "bits_per_byte": 7.872001875463729,
+            "nll_nats_per_byte": 5.4564559053402855,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7,
+          "online_regret_nats": 3.0445224352006335,
+          "reference_loop_max_abs_difference_nats": 2.0536461420306296e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.08383434553056429,
+            "bits_per_byte": 7.980822299565103,
+            "nll_nats_per_byte": 5.531884475493491,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.08011108737449263,
+            "bits_per_byte": 9.901691800302677,
+            "nll_nats_per_byte": 6.863329754153329,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.7244788964506973,
+            "bits_per_byte": 1.7338671473270273,
+            "nll_nats_per_byte": 1.2018251246352443,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224374052486,
+          "online_blend": {
+            "accuracy": 0.08676412244026002,
+            "bits_per_byte": 7.851047992446807,
+            "nll_nats_per_byte": 5.441931780405323,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7,
+          "online_regret_nats": 3.0445224333088845,
+          "reference_loop_max_abs_difference_nats": 7.275069435763726e-12
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6971648304696798,
+        "bits_per_byte": 2.009963663361864,
+        "nll_nats_per_byte": 1.393200646287215,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.1380352183599353,
+        "bits_per_byte": 6.808796810542838,
+        "nll_nats_per_byte": 4.719498312233316,
+        "valid_targets": 32767
+      },
+      "document": 32,
+      "domain": "source_code",
+      "name": "enum.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.1912900173955504,
+            "bits_per_byte": 6.529202573798531,
+            "nll_nats_per_byte": 4.52569835533319,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.1878109073152867,
+            "bits_per_byte": 8.140369981763381,
+            "nll_nats_per_byte": 5.6424745015741005,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6980803857539598,
+            "bits_per_byte": 1.925167052554457,
+            "nll_nats_per_byte": 1.334424114585022,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044522437194246,
+          "online_blend": {
+            "accuracy": 0.1891842402417066,
+            "bits_per_byte": 6.375482655601991,
+            "nll_nats_per_byte": 4.419147827439353,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7,
+          "online_regret_nats": 3.044522433716338,
+          "reference_loop_max_abs_difference_nats": 9.547918011776346e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19055757316812647,
+            "bits_per_byte": 6.570979213814065,
+            "nll_nats_per_byte": 4.554655715573225,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.18640705587939085,
+            "bits_per_byte": 8.263669167617751,
+            "nll_nats_per_byte": 5.727938984614394,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6983550523392438,
+            "bits_per_byte": 1.9242879339519396,
+            "nll_nats_per_byte": 1.3338147560043092,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224380891887,
+          "online_blend": {
+            "accuracy": 0.19095431379131445,
+            "bits_per_byte": 6.391647242671616,
+            "nll_nats_per_byte": 4.430352265391579,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7,
+          "online_regret_nats": 3.0445224358700216,
+          "reference_loop_max_abs_difference_nats": 7.275069435763726e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18503372295297096,
+            "bits_per_byte": 6.530218035102702,
+            "nll_nats_per_byte": 4.526402219473144,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.17770928067873165,
+            "bits_per_byte": 8.09577319227072,
+            "nll_nats_per_byte": 5.611562362675237,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6978057191686758,
+            "bits_per_byte": 1.925095198621565,
+            "nll_nats_per_byte": 1.3343743092340257,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224372815574,
+          "online_blend": {
+            "accuracy": 0.18665120395519882,
+            "bits_per_byte": 6.405158434616852,
+            "nll_nats_per_byte": 4.4397175099944235,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.7,
+          "online_regret_nats": 3.044522437208798,
+          "reference_loop_max_abs_difference_nats": 1.500333191017944e-11
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6953520478601013,
+        "bits_per_byte": 2.0572263146758996,
+        "nll_nats_per_byte": 1.4259606197913266,
+        "valid_targets": 26076
+      },
+      "count": {
+        "accuracy": 0.14434729252952908,
+        "bits_per_byte": 6.732609374633121,
+        "nll_nats_per_byte": 4.666689205838404,
+        "valid_targets": 26076
+      },
+      "document": 33,
+      "domain": "source_code",
+      "name": "calendar.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19669427826353736,
+            "bits_per_byte": 6.351059157441492,
+            "nll_nats_per_byte": 4.402218748549992,
+            "valid_targets": 26076
+          },
+          "neural": {
+            "accuracy": 0.19335787697499615,
+            "bits_per_byte": 7.5394056302289165,
+            "nll_nats_per_byte": 5.225917755690951,
+            "valid_targets": 26076
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6962724344224575,
+            "bits_per_byte": 1.9842267104350118,
+            "nll_nats_per_byte": 1.3753611499297633,
+            "valid_targets": 26076
+          },
+          "online_adaptive_regret_nats": 3.044522437485284,
+          "online_blend": {
+            "accuracy": 0.1967709771437337,
+            "bits_per_byte": 6.240102304960501,
+            "nll_nats_per_byte": 4.325309319088987,
+            "valid_targets": 26076
+          },
+          "online_final_count_weight_mean": 0.65,
+          "online_regret_nats": 3.044522436815896,
+          "reference_loop_max_abs_difference_nats": 8.682832230988424e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19619573554226108,
+            "bits_per_byte": 6.385276815097914,
+            "nll_nats_per_byte": 4.425936621479906,
+            "valid_targets": 26076
+          },
+          "neural": {
+            "accuracy": 0.1932811780947998,
+            "bits_per_byte": 7.7312691595745635,
+            "nll_nats_per_byte": 5.358907420109166,
+            "valid_targets": 26076
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6962340849823593,
+            "bits_per_byte": 1.9835438153462535,
+            "nll_nats_per_byte": 1.3748878031243723,
+            "valid_targets": 26076
+          },
+          "online_adaptive_regret_nats": 3.0445224377326667,
+          "online_blend": {
+            "accuracy": 0.1964641816229483,
+            "bits_per_byte": 6.260137501375074,
+            "nll_nats_per_byte": 4.339196658995713,
+            "valid_targets": 26076
+          },
+          "online_final_count_weight_mean": 0.6500000000000346,
+          "online_regret_nats": 3.0445224343857262,
+          "reference_loop_max_abs_difference_nats": 7.274181257344026e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.1887942936033134,
+            "bits_per_byte": 6.415603708264392,
+            "nll_nats_per_byte": 4.446957621973393,
+            "valid_targets": 26076
+          },
+          "neural": {
+            "accuracy": 0.1859180855959503,
+            "bits_per_byte": 7.854517467918607,
+            "nll_nats_per_byte": 5.444336637546623,
+            "valid_targets": 26076
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6965792299432428,
+            "bits_per_byte": 1.9847427324809641,
+            "nll_nats_per_byte": 1.375718829156022,
+            "valid_targets": 26076
+          },
+          "online_adaptive_regret_nats": 3.044522437667183,
+          "online_blend": {
+            "accuracy": 0.19316612977450529,
+            "bits_per_byte": 6.31267926361149,
+            "nll_nats_per_byte": 4.375615833351536,
+            "valid_targets": 26076
+          },
+          "online_final_count_weight_mean": 0.7000000000000003,
+          "online_regret_nats": 3.0445224393188255,
+          "reference_loop_max_abs_difference_nats": 1.2716716568661468e-11
+        }
+      },
+      "targets": 26076
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6808452500227707,
+        "bits_per_byte": 2.1555038242029814,
+        "nll_nats_per_byte": 1.4940813984324766,
+        "valid_targets": 10979
+      },
+      "count": {
+        "accuracy": 0.1348938883322707,
+        "bits_per_byte": 7.180693616234994,
+        "nll_nats_per_byte": 4.977277534558084,
+        "valid_targets": 10979
+      },
+      "document": 34,
+      "domain": "source_code",
+      "name": "operator.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2012022952910101,
+            "bits_per_byte": 6.665616099019949,
+            "nll_nats_per_byte": 4.620253005730659,
+            "valid_targets": 10979
+          },
+          "neural": {
+            "accuracy": 0.19455323799981783,
+            "bits_per_byte": 8.966716143586916,
+            "nll_nats_per_byte": 6.215254013808616,
+            "valid_targets": 10979
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.682757992531196,
+            "bits_per_byte": 2.0482581942816145,
+            "nll_nats_per_byte": 1.4197443924251059,
+            "valid_targets": 10979
+          },
+          "online_adaptive_regret_nats": 3.04451539587717,
+          "online_blend": {
+            "accuracy": 0.203479369705802,
+            "bits_per_byte": 6.559110228477475,
+            "nll_nats_per_byte": 4.54642876185106,
+            "valid_targets": 10979
+          },
+          "online_final_count_weight_mean": 0.647688997329008,
+          "online_regret_nats": 3.0007489760173485,
+          "reference_loop_max_abs_difference_nats": 6.420641796012205e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.1990163038528099,
+            "bits_per_byte": 6.707842976144517,
+            "nll_nats_per_byte": 4.649522446553404,
+            "valid_targets": 10979
+          },
+          "neural": {
+            "accuracy": 0.19437107204663448,
+            "bits_per_byte": 8.611602139442507,
+            "nll_nats_per_byte": 5.969107743058566,
+            "valid_targets": 10979
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6822114946716459,
+            "bits_per_byte": 2.0515164162378263,
+            "nll_nats_per_byte": 1.4220028197876924,
+            "valid_targets": 10979
+          },
+          "online_adaptive_regret_nats": 3.0445224364284513,
+          "online_blend": {
+            "accuracy": 0.2005647144548684,
+            "bits_per_byte": 6.578434956727231,
+            "nll_nats_per_byte": 4.559823642752466,
+            "valid_targets": 10979
+          },
+          "online_final_count_weight_mean": 0.6500000000008291,
+          "online_regret_nats": 3.044522437368869,
+          "reference_loop_max_abs_difference_nats": 7.474465490986404e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2053010292376355,
+            "bits_per_byte": 6.675512977236395,
+            "nll_nats_per_byte": 4.627112998962733,
+            "valid_targets": 10979
+          },
+          "neural": {
+            "accuracy": 0.20147554422078515,
+            "bits_per_byte": 8.845605637987694,
+            "nll_nats_per_byte": 6.131306608316326,
+            "valid_targets": 10979
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6823936606248292,
+            "bits_per_byte": 2.04610493208221,
+            "nll_nats_per_byte": 1.418251864802582,
+            "valid_targets": 10979
+          },
+          "online_adaptive_regret_nats": 3.044522354055516,
+          "online_blend": {
+            "accuracy": 0.20429911649512705,
+            "bits_per_byte": 6.596001736963117,
+            "nll_nats_per_byte": 4.572000006944487,
+            "valid_targets": 10979
+          },
+          "online_final_count_weight_mean": 0.6499999994921547,
+          "online_regret_nats": 3.044522427895572,
+          "reference_loop_max_abs_difference_nats": 4.127809205556332e-12
+        }
+      },
+      "targets": 10979
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6048671149535703,
+        "bits_per_byte": 2.725690715899178,
+        "nll_nats_per_byte": 1.889304834803934,
+        "valid_targets": 6246
+      },
+      "count": {
+        "accuracy": 0.19612552033301311,
+        "bits_per_byte": 5.966714060414817,
+        "nll_nats_per_byte": 4.135811028183913,
+        "valid_targets": 6246
+      },
+      "document": 35,
+      "domain": "source_code",
+      "name": "genericpath.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.24079410822926672,
+            "bits_per_byte": 5.511918816333855,
+            "nll_nats_per_byte": 3.8205709870171227,
+            "valid_targets": 6246
+          },
+          "neural": {
+            "accuracy": 0.23647134165866154,
+            "bits_per_byte": 6.438506622013779,
+            "nll_nats_per_byte": 4.462832712065389,
+            "valid_targets": 6246
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6090297790585975,
+            "bits_per_byte": 2.4975274569746566,
+            "nll_nats_per_byte": 1.7311541151730332,
+            "valid_targets": 6246
+          },
+          "online_adaptive_regret_nats": 3.0445199001624133,
+          "online_blend": {
+            "accuracy": 0.24159462055715658,
+            "bits_per_byte": 5.460075341645383,
+            "nll_nats_per_byte": 3.784635828706377,
+            "valid_targets": 6246
+          },
+          "online_final_count_weight_mean": 0.589369667241883,
+          "online_regret_nats": 2.8233056428252894,
+          "reference_loop_max_abs_difference_nats": 4.654054919228656e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.24639769452449567,
+            "bits_per_byte": 5.5302381200367785,
+            "nll_nats_per_byte": 3.8332689607286254,
+            "valid_targets": 6246
+          },
+          "neural": {
+            "accuracy": 0.23855267371117514,
+            "bits_per_byte": 6.582367442897017,
+            "nll_nats_per_byte": 4.562549434453644,
+            "valid_targets": 6246
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6098302913864874,
+            "bits_per_byte": 2.4998060772328574,
+            "nll_nats_per_byte": 1.732733534380572,
+            "valid_targets": 6246
+          },
+          "online_adaptive_regret_nats": 3.0445200461599597,
+          "online_blend": {
+            "accuracy": 0.24767851424911944,
+            "bits_per_byte": 5.4653267825759695,
+            "nll_nats_per_byte": 3.7882758501812903,
+            "valid_targets": 6246
+          },
+          "online_final_count_weight_mean": 0.5999982088624829,
+          "online_regret_nats": 3.0444839070623857,
+          "reference_loop_max_abs_difference_nats": 1.9335644196871726e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2398334934357989,
+            "bits_per_byte": 5.532594371682042,
+            "nll_nats_per_byte": 3.8349021899132296,
+            "valid_targets": 6246
+          },
+          "neural": {
+            "accuracy": 0.23198847262247838,
+            "bits_per_byte": 6.6138494507439765,
+            "nll_nats_per_byte": 4.58437109943113,
+            "valid_targets": 6246
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6079090617995517,
+            "bits_per_byte": 2.5054290062267985,
+            "nll_nats_per_byte": 1.736631051759211,
+            "valid_targets": 6246
+          },
+          "online_adaptive_regret_nats": 3.044522364694785,
+          "online_blend": {
+            "accuracy": 0.24031380083253281,
+            "bits_per_byte": 5.489833223255968,
+            "nll_nats_per_byte": 3.8052624204441914,
+            "valid_targets": 6246
+          },
+          "online_final_count_weight_mean": 0.6000411013396273,
+          "online_regret_nats": 3.043642353914038,
+          "reference_loop_max_abs_difference_nats": 1.8185453143360064e-12
+        }
+      },
+      "targets": 6246
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6263313699758903,
+        "bits_per_byte": 2.41546819800226,
+        "nll_nats_per_byte": 1.6742749711774783,
+        "valid_targets": 32767
+      },
+      "count": {
+        "accuracy": 0.20578630939664908,
+        "bits_per_byte": 6.063012505054031,
+        "nll_nats_per_byte": 4.202560023577893,
+        "valid_targets": 32767
+      },
+      "document": 36,
+      "domain": "source_code",
+      "name": "difflib.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2587054048280282,
+            "bits_per_byte": 5.689899585991991,
+            "nll_nats_per_byte": 3.9439378556995486,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.25238807336649677,
+            "bits_per_byte": 6.727270356726757,
+            "nll_nats_per_byte": 4.662988480629649,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6292001098666341,
+            "bits_per_byte": 2.301521701666282,
+            "nll_nats_per_byte": 1.5952932785075111,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224370414508,
+          "online_blend": {
+            "accuracy": 0.25806451612903225,
+            "bits_per_byte": 5.598214025821853,
+            "nll_nats_per_byte": 3.880386268169558,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.6500000000000002,
+          "online_regret_nats": 3.0445224327850156,
+          "reference_loop_max_abs_difference_nats": 8.313350008393172e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.26163518173772393,
+            "bits_per_byte": 5.714121279298836,
+            "nll_nats_per_byte": 3.960727054123576,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.25376140629291666,
+            "bits_per_byte": 6.8366715447208435,
+            "nll_nats_per_byte": 4.738819605637659,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6308175908688619,
+            "bits_per_byte": 2.296017231998789,
+            "nll_nats_per_byte": 1.5914778708770103,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.0445224376089755,
+          "online_blend": {
+            "accuracy": 0.2625507370220038,
+            "bits_per_byte": 5.614489234692462,
+            "nll_nats_per_byte": 3.8916673833112445,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.65,
+          "online_regret_nats": 3.044522437863634,
+          "reference_loop_max_abs_difference_nats": 1.6999956997665322e-11
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.2543717764824366,
+            "bits_per_byte": 5.7206063796832805,
+            "nll_nats_per_byte": 3.965222183170702,
+            "valid_targets": 32767
+          },
+          "neural": {
+            "accuracy": 0.24619281594286935,
+            "bits_per_byte": 6.862609759028821,
+            "nll_nats_per_byte": 4.756798605753993,
+            "valid_targets": 32767
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.629963072603534,
+            "bits_per_byte": 2.3005981068751575,
+            "nll_nats_per_byte": 1.5946530913820631,
+            "valid_targets": 32767
+          },
+          "online_adaptive_regret_nats": 3.044522437179694,
+          "online_blend": {
+            "accuracy": 0.25717947935422836,
+            "bits_per_byte": 5.644532293570441,
+            "nll_nats_per_byte": 3.9124916448679126,
+            "valid_targets": 32767
+          },
+          "online_final_count_weight_mean": 0.6500000000190799,
+          "online_regret_nats": 3.0445224300201517,
+          "reference_loop_max_abs_difference_nats": 7.275957614183426e-12
+        }
+      },
+      "targets": 32767
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6758398413288708,
+        "bits_per_byte": 2.3092431029690474,
+        "nll_nats_per_byte": 1.6006453460504948,
+        "valid_targets": 8067
+      },
+      "count": {
+        "accuracy": 0.13115160530556588,
+        "bits_per_byte": 7.005665423175455,
+        "nll_nats_per_byte": 4.8559572360203624,
+        "valid_targets": 8067
+      },
+      "document": 37,
+      "domain": "source_code",
+      "name": "reprlib.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.185198958720714,
+            "bits_per_byte": 6.609961037674398,
+            "nll_nats_per_byte": 4.5816758568750995,
+            "valid_targets": 8067
+          },
+          "neural": {
+            "accuracy": 0.18383537870335936,
+            "bits_per_byte": 8.003524304386215,
+            "nll_nats_per_byte": 5.5476203061283025,
+            "valid_targets": 8067
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6785670013635801,
+            "bits_per_byte": 2.1858148580763515,
+            "nll_nats_per_byte": 1.5150914061016598,
+            "valid_targets": 8067
+          },
+          "online_adaptive_regret_nats": 3.044522437679916,
+          "online_blend": {
+            "accuracy": 0.18532292054047353,
+            "bits_per_byte": 6.47980136201776,
+            "nll_nats_per_byte": 4.491456044671104,
+            "valid_targets": 8067
+          },
+          "online_final_count_weight_mean": 0.6500001400414144,
+          "online_regret_nats": 3.0445194228814216,
+          "reference_loop_max_abs_difference_nats": 3.637090628672013e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18197595140696665,
+            "bits_per_byte": 6.686089358961011,
+            "nll_nats_per_byte": 4.6344439881356765,
+            "valid_targets": 8067
+          },
+          "neural": {
+            "accuracy": 0.17131523490764844,
+            "bits_per_byte": 8.281851868806019,
+            "nll_nats_per_byte": 5.740542272678006,
+            "valid_targets": 8067
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6773273831659848,
+            "bits_per_byte": 2.1897766292294434,
+            "nll_nats_per_byte": 1.5178374966064494,
+            "valid_targets": 8067
+          },
+          "online_adaptive_regret_nats": 3.044522437674459,
+          "online_blend": {
+            "accuracy": 0.18544688236023305,
+            "bits_per_byte": 6.516887181813496,
+            "nll_nats_per_byte": 4.5171619761012725,
+            "valid_targets": 8067
+          },
+          "online_final_count_weight_mean": 0.699999999773458,
+          "online_regret_nats": 3.0445224331633653,
+          "reference_loop_max_abs_difference_nats": 3.637978807091713e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.17862898227345977,
+            "bits_per_byte": 6.621350328429055,
+            "nll_nats_per_byte": 4.5895703116502675,
+            "valid_targets": 8067
+          },
+          "neural": {
+            "accuracy": 0.17404239494235776,
+            "bits_per_byte": 8.173138063516358,
+            "nll_nats_per_byte": 5.665187605053535,
+            "valid_targets": 8067
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6769554977067064,
+            "bits_per_byte": 2.1855607408799553,
+            "nll_nats_per_byte": 1.5149152654834461,
+            "valid_targets": 8067
+          },
+          "online_adaptive_regret_nats": 3.0445224375580437,
+          "online_blend": {
+            "accuracy": 0.18296764596504278,
+            "bits_per_byte": 6.517467463555692,
+            "nll_nats_per_byte": 4.517564196754806,
+            "valid_targets": 8067
+          },
+          "online_final_count_weight_mean": 0.6947787312547755,
+          "online_regret_nats": 2.936725046594802,
+          "reference_loop_max_abs_difference_nats": 7.614797681299024e-12
+        }
+      },
+      "targets": 8067
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6355283307810107,
+        "bits_per_byte": 2.5387381926543804,
+        "nll_nats_per_byte": 1.759719220418235,
+        "valid_targets": 7183
+      },
+      "count": {
+        "accuracy": 0.143811777808715,
+        "bits_per_byte": 7.067074059377186,
+        "nll_nats_per_byte": 4.898522459065624,
+        "valid_targets": 7183
+      },
+      "document": 38,
+      "domain": "source_code",
+      "name": "quopri.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18961436725602115,
+            "bits_per_byte": 6.552630015539638,
+            "nll_nats_per_byte": 4.54193702052377,
+            "valid_targets": 7183
+          },
+          "neural": {
+            "accuracy": 0.18209661701239035,
+            "bits_per_byte": 7.701677648395791,
+            "nll_nats_per_byte": 5.338396147567092,
+            "valid_targets": 7183
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6391479883057218,
+            "bits_per_byte": 2.4116593722973185,
+            "nll_nats_per_byte": 1.6716348943788537,
+            "valid_targets": 7183
+          },
+          "online_adaptive_regret_nats": 3.0445224375944235,
+          "online_blend": {
+            "accuracy": 0.1936516775720451,
+            "bits_per_byte": 6.461507370069441,
+            "nll_nats_per_byte": 4.47877561573094,
+            "valid_targets": 7183
+          },
+          "online_final_count_weight_mean": 0.6000295021741139,
+          "online_regret_nats": 3.0438849408601527,
+          "reference_loop_max_abs_difference_nats": 2.1529444893531036e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.19170263121258527,
+            "bits_per_byte": 6.568258704381971,
+            "nll_nats_per_byte": 4.552770002130682,
+            "valid_targets": 7183
+          },
+          "neural": {
+            "accuracy": 0.18752610329945704,
+            "bits_per_byte": 7.907752422100337,
+            "nll_nats_per_byte": 5.481236295944927,
+            "valid_targets": 7183
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6380342475288876,
+            "bits_per_byte": 2.414012163161068,
+            "nll_nats_per_byte": 1.6732657247325087,
+            "valid_targets": 7183
+          },
+          "online_adaptive_regret_nats": 3.0445224377508566,
+          "online_blend": {
+            "accuracy": 0.1942085479604622,
+            "bits_per_byte": 6.4637290876079865,
+            "nll_nats_per_byte": 4.4803155929787835,
+            "valid_targets": 7183
+          },
+          "online_final_count_weight_mean": 0.645696184545835,
+          "online_regret_nats": 2.961151780524233,
+          "reference_loop_max_abs_difference_nats": 4.197087122292942e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.18919671446470834,
+            "bits_per_byte": 6.613729174934527,
+            "nll_nats_per_byte": 4.58428773059292,
+            "valid_targets": 7183
+          },
+          "neural": {
+            "accuracy": 0.18209661701239035,
+            "bits_per_byte": 7.974036787042542,
+            "nll_nats_per_byte": 5.527181116619823,
+            "valid_targets": 7183
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6373381595433663,
+            "bits_per_byte": 2.4200533027210973,
+            "nll_nats_per_byte": 1.6774531235859125,
+            "valid_targets": 7183
+          },
+          "online_adaptive_regret_nats": 3.044522437656269,
+          "online_blend": {
+            "accuracy": 0.1932340247807323,
+            "bits_per_byte": 6.532405737770888,
+            "nll_nats_per_byte": 4.5279186194095,
+            "valid_targets": 7183
+          },
+          "online_final_count_weight_mean": 0.6500000020093922,
+          "online_regret_nats": 3.0445223475035164,
+          "reference_loop_max_abs_difference_nats": 2.9878322038712213e-12
+        }
+      },
+      "targets": 7183
+    },
+    {
+      "adaptive_count": {
+        "accuracy": 0.6973536036036037,
+        "bits_per_byte": 2.1389342439607057,
+        "nll_nats_per_byte": 1.4825962406044815,
+        "valid_targets": 7104
+      },
+      "count": {
+        "accuracy": 0.10261824324324324,
+        "bits_per_byte": 7.345431399622921,
+        "nll_nats_per_byte": 5.091465064645121,
+        "valid_targets": 7104
+      },
+      "document": 39,
+      "domain": "source_code",
+      "name": "netrc.py",
+      "seeds": {
+        "1000": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.14245495495495494,
+            "bits_per_byte": 7.04977749181867,
+            "nll_nats_per_byte": 4.886533392029074,
+            "valid_targets": 7104
+          },
+          "neural": {
+            "accuracy": 0.13710585585585586,
+            "bits_per_byte": 8.555677546333207,
+            "nll_nats_per_byte": 5.930343769020893,
+            "valid_targets": 7104
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6967905405405406,
+            "bits_per_byte": 2.04915920171365,
+            "nll_nats_per_byte": 1.4203689231862848,
+            "valid_targets": 7104
+          },
+          "online_adaptive_regret_nats": 3.0445208033725066,
+          "online_blend": {
+            "accuracy": 0.14597409909909909,
+            "bits_per_byte": 6.86510883819941,
+            "nll_nats_per_byte": 4.758530835435082,
+            "valid_targets": 7104
+          },
+          "online_final_count_weight_mean": 0.7000000004484529,
+          "online_regret_nats": 3.0445224278155365,
+          "reference_loop_max_abs_difference_nats": 3.623767952376511e-12
+        },
+        "1001": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.13865427927927929,
+            "bits_per_byte": 7.071133313532502,
+            "nll_nats_per_byte": 4.901336119638557,
+            "valid_targets": 7104
+          },
+          "neural": {
+            "accuracy": 0.13935810810810811,
+            "bits_per_byte": 8.72944942727181,
+            "nll_nats_per_byte": 6.050793258354084,
+            "valid_targets": 7104
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6970720720720721,
+            "bits_per_byte": 2.0489663600038885,
+            "nll_nats_per_byte": 1.4202352554988693,
+            "valid_targets": 7104
+          },
+          "online_adaptive_regret_nats": 3.044520403660499,
+          "online_blend": {
+            "accuracy": 0.14245495495495494,
+            "bits_per_byte": 6.8641762602994385,
+            "nll_nats_per_byte": 4.757884421693065,
+            "valid_targets": 7104
+          },
+          "online_final_count_weight_mean": 0.7001408652196864,
+          "online_regret_nats": 3.0415037003112957,
+          "reference_loop_max_abs_difference_nats": 3.6202152386977104e-12
+        },
+        "1002": {
+          "calibrated_fixed_blend": {
+            "accuracy": 0.14287725225225226,
+            "bits_per_byte": 7.021799819639983,
+            "nll_nats_per_byte": 4.8671407474397865,
+            "valid_targets": 7104
+          },
+          "neural": {
+            "accuracy": 0.14203265765765766,
+            "bits_per_byte": 8.630308459499771,
+            "nll_nats_per_byte": 5.98207397606491,
+            "valid_targets": 7104
+          },
+          "online_adaptive_blend": {
+            "accuracy": 0.6980574324324325,
+            "bits_per_byte": 2.051255967079502,
+            "nll_nats_per_byte": 1.421822290187921,
+            "valid_targets": 7104
+          },
+          "online_adaptive_regret_nats": 3.04452233970369,
+          "online_blend": {
+            "accuracy": 0.14653716216216217,
+            "bits_per_byte": 6.880867903967553,
+            "nll_nats_per_byte": 4.769454187440529,
+            "valid_targets": 7104
+          },
+          "online_final_count_weight_mean": 0.700000514093595,
+          "online_regret_nats": 3.0445114213143825,
+          "reference_loop_max_abs_difference_nats": 3.6282088444750116e-12
+        }
+      },
+      "targets": 7104
+    }
+  ],
+  "domains": {
+    "legal_prose": {
+      "arms": {
+        "adaptive_count": {
+          "accuracy": 0.5965070823663113,
+          "bits_per_byte": 2.5172237368623223,
+          "nll_nats_per_byte": 1.7448065360446883
+        },
+        "calibrated_fixed_blend": {
+          "accuracy": 0.3523383105013453,
+          "bits_per_byte": 4.012862535089544,
+          "nll_nats_per_byte": 2.7815043521719525
+        },
+        "count": {
+          "accuracy": 0.3138217393387966,
+          "bits_per_byte": 4.3445128141842835,
+          "nll_nats_per_byte": 3.0113868080583894
+        },
+        "neural": {
+          "accuracy": 0.3428768989573278,
+          "bits_per_byte": 4.32708905439371,
+          "nll_nats_per_byte": 2.9993095780848
+        },
+        "online_adaptive_blend": {
+          "accuracy": 0.6038941033909097,
+          "bits_per_byte": 2.303511354826557,
+          "nll_nats_per_byte": 1.5966724009858477
+        },
+        "online_blend": {
+          "accuracy": 0.3527262603234589,
+          "bits_per_byte": 4.004036461372099,
+          "nll_nats_per_byte": 2.7753865840592904
+        }
+      },
+      "documents": 8,
+      "paired": {
+        "adaptive_count_minus_count": {
+          "documents": 8,
+          "documents_with_negative_mean": 8,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -1.266580272013701,
+          "percentile_95_interval": [
+            -1.4670210112370239,
+            -1.0908652240186891
+          ]
+        },
+        "calibrated_fixed_blend_minus_neural": {
+          "documents": 8,
+          "documents_with_negative_mean": 8,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.21780522591284746,
+          "percentile_95_interval": [
+            -0.3235695924290598,
+            -0.1419946246336693
+          ]
+        },
+        "online_adaptive_blend_minus_adaptive_count": {
+          "documents": 8,
+          "documents_with_negative_mean": 8,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.14813413505884054,
+          "percentile_95_interval": [
+            -0.16739212704505274,
+            -0.13642029918914034
+          ]
+        },
+        "online_adaptive_blend_minus_online_blend": {
+          "documents": 8,
+          "documents_with_negative_mean": 8,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -1.1787141830734422,
+          "percentile_95_interval": [
+            -1.368824941078813,
+            -1.0115766636581458
+          ]
+        },
+        "online_blend_minus_calibrated_fixed_blend": {
+          "documents": 8,
+          "documents_with_negative_mean": 8,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.006117768112662457,
+          "percentile_95_interval": [
+            -0.013842601425757594,
+            -0.0011078896088170937
+          ]
+        },
+        "online_blend_minus_neural": {
+          "documents": 8,
+          "documents_with_negative_mean": 8,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.2239229940255099,
+          "percentile_95_interval": [
+            -0.3374198892234755,
+            -0.14313227208037424
+          ]
+        }
+      },
+      "per_seed": {
+        "calibrated_fixed_blend": {
+          "1000": {
+            "accuracy": 0.355638166047088,
+            "nll_nats_per_byte": 2.771147376520698
+          },
+          "1001": {
+            "accuracy": 0.3525163110079621,
+            "nll_nats_per_byte": 2.778977949296959
+          },
+          "1002": {
+            "accuracy": 0.3488604544489857,
+            "nll_nats_per_byte": 2.7943877306981997
+          }
+        },
+        "neural": {
+          "1000": {
+            "accuracy": 0.34706675703615464,
+            "nll_nats_per_byte": 2.992290751337025
+          },
+          "1001": {
+            "accuracy": 0.3419663579042494,
+            "nll_nats_per_byte": 2.986342561065545
+          },
+          "1002": {
+            "accuracy": 0.33959758193157935,
+            "nll_nats_per_byte": 3.019295421851829
+          }
+        },
+        "online_adaptive_blend": {
+          "1000": {
+            "accuracy": 0.6046334901107027,
+            "nll_nats_per_byte": 1.593982773435882
+          },
+          "1001": {
+            "accuracy": 0.6036681796709729,
+            "nll_nats_per_byte": 1.5947676510706947
+          },
+          "1002": {
+            "accuracy": 0.6033806403910534,
+            "nll_nats_per_byte": 1.6012667784509664
+          }
+        },
+        "online_blend": {
+          "1000": {
+            "accuracy": 0.35554916579377954,
+            "nll_nats_per_byte": 2.7643642952205045
+          },
+          "1001": {
+            "accuracy": 0.3535090061410175,
+            "nll_nats_per_byte": 2.771514841192613
+          },
+          "1002": {
+            "accuracy": 0.34912060903557957,
+            "nll_nats_per_byte": 2.7902806157647526
+          }
+        }
+      },
+      "relative_online_reduction_vs_neural": 0.0746581798896847,
+      "seeds_where_online_beats_calibrated": 3,
+      "seeds_where_online_beats_neural": 3,
+      "targets": 146067
+    },
+    "reference_prose": {
+      "arms": {
+        "adaptive_count": {
+          "accuracy": 0.6185185932487238,
+          "bits_per_byte": 2.4159380148590284,
+          "nll_nats_per_byte": 1.6746006234071267
+        },
+        "calibrated_fixed_blend": {
+          "accuracy": 0.30560857663619917,
+          "bits_per_byte": 4.773234703204628,
+          "nll_nats_per_byte": 3.3085541766771756
+        },
+        "count": {
+          "accuracy": 0.25840075866104395,
+          "bits_per_byte": 5.0729735698135086,
+          "nll_nats_per_byte": 3.5163173269713544
+        },
+        "neural": {
+          "accuracy": 0.29620736735201736,
+          "bits_per_byte": 5.626134551249749,
+          "nll_nats_per_byte": 3.8997393016496567
+        },
+        "online_adaptive_blend": {
+          "accuracy": 0.6236382101517995,
+          "bits_per_byte": 2.247686753985334,
+          "nll_nats_per_byte": 1.5579777363068696
+        },
+        "online_blend": {
+          "accuracy": 0.3041692728825757,
+          "bits_per_byte": 4.725958811931011,
+          "nll_nats_per_byte": 3.275785025932409
+        }
+      },
+      "documents": 16,
+      "paired": {
+        "adaptive_count_minus_count": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -1.8417167035642277,
+          "percentile_95_interval": [
+            -2.065816527002833,
+            -1.5762419446225904
+          ]
+        },
+        "calibrated_fixed_blend_minus_neural": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.5911851249724812,
+          "percentile_95_interval": [
+            -0.711685223001815,
+            -0.4675647558507238
+          ]
+        },
+        "online_adaptive_blend_minus_adaptive_count": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.11662288710025698,
+          "percentile_95_interval": [
+            -0.14581135853759794,
+            -0.09715978983508108
+          ]
+        },
+        "online_adaptive_blend_minus_online_blend": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -1.7178072896255392,
+          "percentile_95_interval": [
+            -1.9182767967950523,
+            -1.478952749523697
+          ]
+        },
+        "online_blend_minus_calibrated_fixed_blend": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.03276915074476662,
+          "percentile_95_interval": [
+            -0.051065274232941014,
+            -0.017974063964211952
+          ]
+        },
+        "online_blend_minus_neural": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.6239542757172478,
+          "percentile_95_interval": [
+            -0.759111315680562,
+            -0.48635597325541347
+          ]
+        }
+      },
+      "per_seed": {
+        "calibrated_fixed_blend": {
+          "1000": {
+            "accuracy": 0.3100946308589415,
+            "nll_nats_per_byte": 3.2900468696008183
+          },
+          "1001": {
+            "accuracy": 0.304856641310708,
+            "nll_nats_per_byte": 3.313605586086938
+          },
+          "1002": {
+            "accuracy": 0.30187445773894794,
+            "nll_nats_per_byte": 3.3220100743437704
+          }
+        },
+        "neural": {
+          "1000": {
+            "accuracy": 0.30201569782692034,
+            "nll_nats_per_byte": 3.8895988789862757
+          },
+          "1001": {
+            "accuracy": 0.29592623231976756,
+            "nll_nats_per_byte": 3.8660542822257034
+          },
+          "1002": {
+            "accuracy": 0.29068017190936424,
+            "nll_nats_per_byte": 3.9435647437369914
+          }
+        },
+        "online_adaptive_blend": {
+          "1000": {
+            "accuracy": 0.6237000867617684,
+            "nll_nats_per_byte": 1.5556168135238488
+          },
+          "1001": {
+            "accuracy": 0.624095559008091,
+            "nll_nats_per_byte": 1.5574915845557566
+          },
+          "1002": {
+            "accuracy": 0.6231189846855391,
+            "nll_nats_per_byte": 1.5608248108410037
+          }
+        },
+        "online_blend": {
+          "1000": {
+            "accuracy": 0.30741510461855087,
+            "nll_nats_per_byte": 3.257613107656299
+          },
+          "1001": {
+            "accuracy": 0.3043481769940074,
+            "nll_nats_per_byte": 3.2769234235330797
+          },
+          "1002": {
+            "accuracy": 0.3007445370351688,
+            "nll_nats_per_byte": 3.292818546607848
+          }
+        }
+      },
+      "relative_online_reduction_vs_neural": 0.15999897107309302,
+      "seeds_where_online_beats_calibrated": 3,
+      "seeds_where_online_beats_neural": 3,
+      "targets": 247805
+    },
+    "source_code": {
+      "arms": {
+        "adaptive_count": {
+          "accuracy": 0.6743827501777111,
+          "bits_per_byte": 2.1689157058698325,
+          "nll_nats_per_byte": 1.503377806395858
+        },
+        "calibrated_fixed_blend": {
+          "accuracy": 0.19120132690940683,
+          "bits_per_byte": 6.458372958060998,
+          "nll_nats_per_byte": 4.476603006884575
+        },
+        "count": {
+          "accuracy": 0.1451765263407314,
+          "bits_per_byte": 6.782693950825249,
+          "nll_nats_per_byte": 4.701405188615517
+        },
+        "neural": {
+          "accuracy": 0.18590211410367796,
+          "bits_per_byte": 7.889941210353209,
+          "nll_nats_per_byte": 5.468890504740049
+        },
+        "online_adaptive_blend": {
+          "accuracy": 0.6764036542663824,
+          "bits_per_byte": 2.077790270397933,
+          "nll_nats_per_byte": 1.4402144677212139
+        },
+        "online_blend": {
+          "accuracy": 0.19273464444619962,
+          "bits_per_byte": 6.333107435698116,
+          "nll_nats_per_byte": 4.389775563237374
+        }
+      },
+      "documents": 16,
+      "paired": {
+        "adaptive_count_minus_count": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -3.198027382219659,
+          "percentile_95_interval": [
+            -3.5562786717853876,
+            -2.9178224553241545
+          ]
+        },
+        "calibrated_fixed_blend_minus_neural": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.9922874978554747,
+          "percentile_95_interval": [
+            -1.1011881160167316,
+            -0.8986700962078586
+          ]
+        },
+        "online_adaptive_blend_minus_adaptive_count": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.06316333867464419,
+          "percentile_95_interval": [
+            -0.07532341782516065,
+            -0.050372939511853704
+          ]
+        },
+        "online_adaptive_blend_minus_online_blend": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -2.9495610955161604,
+          "percentile_95_interval": [
+            -3.2772422176131952,
+            -2.690986495172615
+          ]
+        },
+        "online_blend_minus_calibrated_fixed_blend": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -0.0868274436472005,
+          "percentile_95_interval": [
+            -0.09650544184985134,
+            -0.07695133805435544
+          ]
+        },
+        "online_blend_minus_neural": {
+          "documents": 16,
+          "documents_with_negative_mean": 16,
+          "interpretation": "negative favors the first arm; descriptive document-cluster bootstrap",
+          "mean_difference_nats": -1.079114941502675,
+          "percentile_95_interval": [
+            -1.196121572461802,
+            -0.9772392471227859
+          ]
+        }
+      },
+      "per_seed": {
+        "calibrated_fixed_blend": {
+          "1000": {
+            "accuracy": 0.19132138061764473,
+            "nll_nats_per_byte": 4.462214007646522
+          },
+          "1001": {
+            "accuracy": 0.19267672379748835,
+            "nll_nats_per_byte": 4.493118755151485
+          },
+          "1002": {
+            "accuracy": 0.18960587631308742,
+            "nll_nats_per_byte": 4.474476257855716
+          }
+        },
+        "neural": {
+          "1000": {
+            "accuracy": 0.18609588500118474,
+            "nll_nats_per_byte": 5.403497344781134
+          },
+          "1001": {
+            "accuracy": 0.18791564647342232,
+            "nll_nats_per_byte": 5.515594456967329
+          },
+          "1002": {
+            "accuracy": 0.18369481083642683,
+            "nll_nats_per_byte": 5.4875797124716845
+          }
+        },
+        "online_adaptive_blend": {
+          "1000": {
+            "accuracy": 0.6765816286233315,
+            "nll_nats_per_byte": 1.4402526240465428
+          },
+          "1001": {
+            "accuracy": 0.6765089645367665,
+            "nll_nats_per_byte": 1.4395044762288436
+          },
+          "1002": {
+            "accuracy": 0.6761203696390491,
+            "nll_nats_per_byte": 1.4408863028882553
+          }
+        },
+        "online_blend": {
+          "1000": {
+            "accuracy": 0.19259774109470026,
+            "nll_nats_per_byte": 4.374870065890793
+          },
+          "1001": {
+            "accuracy": 0.19363399415528,
+            "nll_nats_per_byte": 4.391622983116237
+          },
+          "1002": {
+            "accuracy": 0.1919721980886186,
+            "nll_nats_per_byte": 4.402833640705092
+          }
+        }
+      },
+      "relative_online_reduction_vs_neural": 0.19731880544460967,
+      "seeds_where_online_beats_calibrated": 3,
+      "seeds_where_online_beats_neural": 3,
+      "targets": 316525
+    }
+  },
+  "environment": {
+    "device": "cpu",
+    "numpy": "2.3.5",
+    "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+    "threads": 1,
+    "torch": "2.14.1+cu130"
+  },
+  "events": [
+    {
+      "at_utc": "2026-10-19T13:46:10.078133+00:00",
+      "event": "protocol_frozen"
+    },
+    {
+      "at_utc": "2026-10-19T13:46:17.280964+00:00",
+      "event": "execute_started"
+    },
+    {
+      "at_utc": "2026-10-19T13:50:38.386379+00:00",
+      "event": "all_arms_scored"
+    },
+    {
+      "at_utc": "2026-10-19T13:56:37.246689+00:00",
+      "event": "timing_completed"
+    }
+  ],
+  "interpretation": "Descriptive, prospectively frozen comparison on these documents only. The log(21) bound is a per-document guarantee against the declared grid; it is not a guarantee against other predictors.",
+  "neural_training_updates": 0,
+  "protocol_receipt_sha256": "787b1fac41d40b54415d552c9acdd63072c6aab15918a373bfccc27a738d7363",
+  "protocol_sha256": "a90c9c9021dcaf93901ca0d6148f5c72c69b930ce19ee4c42b324bd597abb6a8",
+  "reference_loop_max_abs_difference_nats": 1.0840150999058551e-10,
+  "schema": "singularity.cross-domain-results/1",
+  "scoring_wall_seconds": 264.4866395700001,
+  "stage_seconds": {
+    "adaptive_count": 47.89211184500027,
+    "count": 19.245790446000456,
+    "neural": {
+      "1000": 27.157757528999582,
+      "1001": 7.6121161649994065,
+      "1002": 8.78114555100069
+    }
+  },
+  "target_losses_sha256": "167252c80c786fb9c839188b743817e7bbcf5ae530f167746e7781adea8341d8",
+  "timing": {
+    "cold_start": {
+      "median_process_wall_seconds": 2.6807110780000585,
+      "records": [
+        {
+          "import_and_load_seconds": 1.8659760270002153,
+          "process_wall_seconds": 2.699753860000328
+        },
+        {
+          "import_and_load_seconds": 2.0759026939999785,
+          "process_wall_seconds": 2.6807110780000585
+        },
+        {
+          "import_and_load_seconds": 2.0570715879998716,
+          "process_wall_seconds": 2.7748701880000226
+        },
+        {
+          "import_and_load_seconds": 2.030621402000179,
+          "process_wall_seconds": 2.62507569599984
+        },
+        {
+          "import_and_load_seconds": 1.8962253959998634,
+          "process_wall_seconds": 2.64016330000004
+        }
+      ]
+    },
+    "conditions": "CPU, torch/numpy single thread requested via environment before import, warmup excluded, randomized order",
+    "documents": 40,
+    "meets_2x_target": true,
+    "online_fast_over_fixed": 0.43850688969548973,
+    "records": [
+      {
+        "fixed_blend": 4.968238906000124,
+        "online_fast": 1.9014341580000291,
+        "online_reference_loop": 15.746905481000113,
+        "order": [
+          "fixed_blend",
+          "online_fast",
+          "online_reference_loop"
+        ],
+        "repeat": 0
+      },
+      {
+        "fixed_blend": 6.7354422680000425,
+        "online_fast": 1.9367996789999324,
+        "online_reference_loop": 16.431828835000033,
+        "order": [
+          "fixed_blend",
+          "online_reference_loop",
+          "online_fast"
+        ],
+        "repeat": 1
+      },
+      {
+        "fixed_blend": 8.24735221700007,
+        "online_fast": 1.7053098320000117,
+        "online_reference_loop": 16.64686663899988,
+        "order": [
+          "fixed_blend",
+          "online_reference_loop",
+          "online_fast"
+        ],
+        "repeat": 2
+      },
+      {
+        "fixed_blend": 4.437032747000103,
+        "online_fast": 1.749244236000095,
+        "online_reference_loop": 16.428495223000027,
+        "order": [
+          "online_fast",
+          "online_reference_loop",
+          "fixed_blend"
+        ],
+        "repeat": 3
+      },
+      {
+        "fixed_blend": 1.1803218000000015,
+        "online_fast": 1.805407355999705,
+        "online_reference_loop": 15.695600040000045,
+        "order": [
+          "fixed_blend",
+          "online_fast",
+          "online_reference_loop"
+        ],
+        "repeat": 4
+      },
+      {
+        "fixed_blend": 3.3940317669998876,
+        "online_fast": 1.7836176450000494,
+        "online_reference_loop": 16.076165187000242,
+        "order": [
+          "online_reference_loop",
+          "online_fast",
+          "fixed_blend"
+        ],
+        "repeat": 5
+      },
+      {
+        "fixed_blend": 2.153620907000004,
+        "online_fast": 1.8246248350001224,
+        "online_reference_loop": 17.092540245000237,
+        "order": [
+          "fixed_blend",
+          "online_fast",
+          "online_reference_loop"
+        ],
+        "repeat": 6
+      },
+      {
+        "fixed_blend": 7.059186322000187,
+        "online_fast": 1.748086401999899,
+        "online_reference_loop": 18.03187325099998,
+        "order": [
+          "online_reference_loop",
+          "online_fast",
+          "fixed_blend"
+        ],
+        "repeat": 7
+      },
+      {
+        "fixed_blend": 2.9970204430001104,
+        "online_fast": 1.7558279960003347,
+        "online_reference_loop": 16.362438135999582,
+        "order": [
+          "fixed_blend",
+          "online_fast",
+          "online_reference_loop"
+        ],
+        "repeat": 8
+      },
+      {
+        "fixed_blend": 2.1556829780001863,
+        "online_fast": 1.7421363079997718,
+        "online_reference_loop": 16.435590524999952,
+        "order": [
+          "online_fast",
+          "fixed_blend",
+          "online_reference_loop"
+        ],
+        "repeat": 9
+      },
+      {
+        "fixed_blend": 4.06747918200017,
+        "online_fast": 1.8583617780000168,
+        "online_reference_loop": 16.162101700999756,
+        "order": [
+          "online_fast",
+          "fixed_blend",
+          "online_reference_loop"
+        ],
+        "repeat": 10
+      }
+    ],
+    "reference_over_fast": 9.210771865289308,
+    "summary": {
+      "fixed_blend": {
+        "median_seconds": 4.06747918200017,
+        "min_seconds": 1.1803218000000015,
+        "p90_seconds": 7.059186322000187
+      },
+      "online_fast": {
+        "median_seconds": 1.7836176450000494,
+        "min_seconds": 1.7053098320000117,
+        "p90_seconds": 1.9014341580000291
+      },
+      "online_reference_loop": {
+        "median_seconds": 16.428495223000027,
+        "min_seconds": 15.695600040000045,
+        "p90_seconds": 17.092540245000237
+      }
+    },
+    "targets": 710397
+  }
+}
