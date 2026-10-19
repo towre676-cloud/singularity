@@ -1,0 +1,280 @@
+{
+  "bytes": 16384,
+  "characters": 16384,
+  "domain": "technical_reference",
+  "fresh_corpus_overlap": {
+    "containment_5word": 0.0006038647342995169,
+    "domain": "technical_reference",
+    "jaccard_5word": 0.000267022696929239,
+    "name": "itertools.rst"
+  },
+  "gutenberg_start_marker": null,
+  "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+  "license_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/LICENSE",
+  "name": "asyncio-task.rst",
+  "normalization": "UTF-8-sig strict; CRLF/CR to LF; fixed Unicode-character offsets; no other edits",
+  "offset_characters": 0,
+  "prior_overlap": {
+    "all_matches": [
+      {
+        "containment_5word": 0.0021208907741251328,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0006598482349059716,
+        "name": "sequence-types"
+      },
+      {
+        "containment_5word": 0.0009569377990430622,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0003068425897514575,
+        "name": "compound"
+      },
+      {
+        "containment_5word": 0.0008771929824561404,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0003096934035305048,
+        "name": "try"
+      },
+      {
+        "containment_5word": 0.000859106529209622,
+        "domain": "source_code",
+        "jaccard_5word": 0.0003074085459575776,
+        "name": "string.py"
+      },
+      {
+        "containment_5word": 0.0006265664160401002,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.000271370420624152,
+        "name": "naming"
+      },
+      {
+        "containment_5word": 0.0006238303181534623,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.00027085590465872155,
+        "name": "assignment"
+      },
+      {
+        "containment_5word": 0.0004784688995215311,
+        "domain": "source_code",
+        "jaccard_5word": 0.0002204585537918871,
+        "name": "webbrowser.py"
+      },
+      {
+        "containment_5word": 0.0004784688995215311,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.00018521948508983145,
+        "name": "execmodel"
+      },
+      {
+        "containment_5word": 0.0004784688995215311,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.00016792611251049538,
+        "name": "types"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "attribute-access"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "numeric-types"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "match"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "typesmapping"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "string-methods"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "function"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "class"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "debugger"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "with"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "MPL-2.0"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "CC0-1.0"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "Artistic"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "MPL-1.1"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "GFDL-1.2"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "LGPL-2"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "GPL-2"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "LGPL-2.1"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "gettext.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "poplib.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "ast.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "pdb.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "queue.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "_sysconfigdata__x86_64-linux-gnu.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "enum.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "calendar.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "operator.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "genericpath.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "difflib.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "reprlib.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "quopri.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "netrc.py"
+      }
+    ],
+    "exact_match": false,
+    "max_5word_containment_match": {
+      "containment_5word": 0.0021208907741251328,
+      "domain": "reference_prose",
+      "jaccard_5word": 0.0006598482349059716,
+      "name": "sequence-types"
+    }
+  },
+  "selection": "source body from character0, retaining comments and license notices",
+  "sha256": "85ef992e7511892e860319bd65c78ec3f73ee13895d105fb7d3f65c700907921",
+  "source_bytes": 44016,
+  "source_identifier": "python/cpython@0fb18b02c8ad56299d6a2910be0bab8ad601ef24:Doc/library/asyncio-task.rst",
+  "source_release": "v3.12.0",
+  "source_revision": "0fb18b02c8ad56299d6a2910be0bab8ad601ef24",
+  "source_sha256": "0c1c68c396513e56f06b6709c02efe5095048e591f0e9e241041cbf8b8303b1e",
+  "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/asyncio-task.rst",
+  "split": "heldout",
+  "split_key_sha256": "f01a3fb71af0ccc08a511798d8deb77fbf1554d411ed00f3b8f345be8c40ad99",
+  "split_rank": 11,
+  "text": ".. currentmodule:: asyncio\n\n\n====================\nCoroutines and Tasks\n====================\n\nThis section outlines high-level asyncio APIs to work with coroutines\nand Tasks.\n\n.. contents::\n   :depth: 1\n   :local:\n\n\n.. _coroutine:\n\nCoroutines\n==========\n\n**Source code:** :source:`Lib/asyncio/coroutines.py`\n\n----------------------------------------------------\n\n:term:`Coroutines <coroutine>` declared with the async/await syntax is the\npreferred way of writing asyncio applications.  For example, the following\nsnippet of code prints \"hello\", waits 1 second,\nand then prints \"world\"::\n\n    >>> import asyncio\n\n    >>> async def main():\n    ...     print('hello')\n    ...     await asyncio.sleep(1)\n    ...     print('world')\n\n    >>> asyncio.run(main())\n    hello\n    world\n\nNote that simply calling a coroutine will not schedule it to\nbe executed::\n\n    >>> main()\n    <coroutine object main at 0x1053bb7c8>\n\nTo actually run a coroutine, asyncio provides the following mechanisms:\n\n* The :func:`asyncio.run` function to run the top-level\n  entry point \"main()\" function (see the above example.)\n\n* Awaiting on a coroutine.  The following snippet of code will\n  print \"hello\" after waiting for 1 second, and then print \"world\"\n  after waiting for *another* 2 seconds::\n\n      import asyncio\n      import time\n\n      async def say_after(delay, what):\n          await asyncio.sleep(delay)\n          print(what)\n\n      async def main():\n          print(f\"started at {time.strftime('%X')}\")\n\n          await say_after(1, 'hello')\n          await say_after(2, 'world')\n\n          print(f\"finished at {time.strftime('%X')}\")\n\n      asyncio.run(main())\n\n  Expected output::\n\n      started at 17:13:52\n      hello\n      world\n      finished at 17:13:55\n\n* The :func:`asyncio.create_task` function to run coroutines\n  concurrently as asyncio :class:`Tasks <Task>`.\n\n  Let's modify the above example and run two ``say_after`` coroutines\n  *concurrently*::\n\n      async def main():\n          task1 = asyncio.create_task(\n              say_after(1, 'hello'))\n\n          task2 = asyncio.create_task(\n              say_after(2, 'world'))\n\n          print(f\"started at {time.strftime('%X')}\")\n\n          # Wait until both tasks are completed (should take\n          # around 2 seconds.)\n          await task1\n          await task2\n\n          print(f\"finished at {time.strftime('%X')}\")\n\n  Note that expected output now shows that the snippet runs\n  1 second faster than before::\n\n      started at 17:14:32\n      hello\n      world\n      finished at 17:14:34\n\n* The :class:`asyncio.TaskGroup` class provides a more modern\n  alternative to :func:`create_task`.\n  Using this API, the last example becomes::\n\n      async def main():\n          async with asyncio.TaskGroup() as tg:\n              task1 = tg.create_task(\n                  say_after(1, 'hello'))\n\n              task2 = tg.create_task(\n                  say_after(2, 'world'))\n\n              print(f\"started at {time.strftime('%X')}\")\n\n          # The await is implicit when the context manager exits.\n\n          print(f\"finished at {time.strftime('%X')}\")\n\n  The timing and output should be the same as for the previous version.\n\n  .. versionadded:: 3.11\n     :class:`asyncio.TaskGroup`.\n\n\n.. _asyncio-awaitables:\n\nAwaitables\n==========\n\nWe say that an object is an **awaitable** object if it can be used\nin an :keyword:`await` expression.  Many asyncio APIs are designed to\naccept awaitables.\n\nThere are three main types of *awaitable* objects:\n**coroutines**, **Tasks**, and **Futures**.\n\n\n.. rubric:: Coroutines\n\nPython coroutines are *awaitables* and therefore can be awaited from\nother coroutines::\n\n    import asyncio\n\n    async def nested():\n        return 42\n\n    async def main():\n        # Nothing happens if we just call \"nested()\".\n        # A coroutine object is created but not awaited,\n        # so it *won't run at all*.\n        nested()\n\n        # Let's do it differently now and await it:\n        print(await nested())  # will print \"42\".\n\n    asyncio.run(main())\n\n.. important::\n\n   In this documentation the term \"coroutine\" can be used for\n   two closely related concepts:\n\n   * a *coroutine function*: an :keyword:`async def` function;\n\n   * a *coroutine object*: an object returned by calling a\n     *coroutine function*.\n\n\n.. rubric:: Tasks\n\n*Tasks* are used to schedule coroutines *concurrently*.\n\nWhen a coroutine is wrapped into a *Task* with functions like\n:func:`asyncio.create_task` the coroutine is automatically\nscheduled to run soon::\n\n    import asyncio\n\n    async def nested():\n        return 42\n\n    async def main():\n        # Schedule nested() to run soon concurrently\n        # with \"main()\".\n        task = asyncio.create_task(nested())\n\n        # \"task\" can now be used to cancel \"nested()\", or\n        # can simply be awaited to wait until it is complete:\n        await task\n\n    asyncio.run(main())\n\n\n.. rubric:: Futures\n\nA :class:`Future` is a special **low-level** awaitable object that\nrepresents an **eventual result** of an asynchronous operation.\n\nWhen a Future object is *awaited* it means that the coroutine will\nwait until the Future is resolved in some other place.\n\nFuture objects in asyncio are needed to allow callback-based code\nto be used with async/await.\n\nNormally **there is no need** to create Future objects at the\napplication level code.\n\nFuture objects, sometimes exposed by libraries and some asyncio\nAPIs, can be awaited::\n\n    async def main():\n        await function_that_returns_a_future_object()\n\n        # this is also valid:\n        await asyncio.gather(\n            function_that_returns_a_future_object(),\n            some_python_coroutine()\n        )\n\nA good example of a low-level function that returns a Future object\nis :meth:`loop.run_in_executor`.\n\n\nCreating Tasks\n==============\n\n**Source code:** :source:`Lib/asyncio/tasks.py`\n\n-----------------------------------------------\n\n.. function:: create_task(coro, *, name=None, context=None)\n\n   Wrap the *coro* :ref:`coroutine <coroutine>` into a :class:`Task`\n   and schedule its execution.  Return the Task object.\n\n   If *name* is not ``None``, it is set as the name of the task using\n   :meth:`Task.set_name`.\n\n   An optional keyword-only *context* argument allows specifying a\n   custom :class:`contextvars.Context` for the *coro* to run in.\n   The current context copy is created when no *context* is provided.\n\n   The task is executed in the loop returned by :func:`get_running_loop`,\n   :exc:`RuntimeError` is raised if there is no running loop in\n   current thread.\n\n   .. note::\n\n      :meth:`asyncio.TaskGroup.create_task` is a new alternative\n      leveraging structural concurrency; it allows for waiting\n      for a group of related tasks with strong safety guarantees.\n\n   .. important::\n\n      Save a reference to the result of this function, to avoid\n      a task disappearing mid-execution. The event loop only keeps\n      weak references to tasks. A task that isn't referenced elsewhere\n      may get garbage collected at any time, even before it's done.\n      For reliable \"fire-and-forget\" background tasks, gather them in\n      a collection::\n\n          background_tasks = set()\n\n          for i in range(10):\n              task = asyncio.create_task(some_coro(param=i))\n\n              # Add task to the set. This creates a strong reference.\n              background_tasks.add(task)\n\n              # To prevent keeping references to finished tasks forever,\n              # make each task remove its own reference from the set after\n              # completion:\n              task.add_done_callback(background_tasks.discard)\n\n   .. versionadded:: 3.7\n\n   .. versionchanged:: 3.8\n      Added the *name* parameter.\n\n   .. versionchanged:: 3.11\n      Added the *context* parameter.\n\n\nTask Cancellation\n=================\n\nTasks can easily and safely be cancelled.\nWhen a task is cancelled, :exc:`asyncio.CancelledError` will be raised\nin the task at the next opportunity.\n\nIt is recommended that coroutines use ``try/finally`` blocks to robustly\nperform clean-up logic. In case :exc:`asyncio.CancelledError`\nis explicitly caught, it should generally be propagated when\nclean-up is complete. :exc:`asyncio.CancelledError` directly subclasses\n:exc:`BaseException` so most code will not need to be aware of it.\n\nThe asyncio components that enable structured concurrency, like\n:class:`asyncio.TaskGroup` and :func:`asyncio.timeout`,\nare implemented using cancellation internally and might misbehave if\na coroutine swallows :exc:`asyncio.CancelledError`. Similarly, user code\nshould not generally call :meth:`uncancel <asyncio.Task.uncancel>`.\nHowever, in cases when suppressing :exc:`asyncio.CancelledError` is\ntruly desired, it is necessary to also call ``uncancel()`` to completely\nremove the cancellation state.\n\n.. _taskgroups:\n\nTask Groups\n===========\n\nTask groups combine a task creation API with a convenient\nand reliable way to wait for all tasks in the group to finish.\n\n.. class:: TaskGroup()\n\n   An :ref:`asynchronous context manager <async-context-managers>`\n   holding a group of tasks.\n   Tasks can be added to the group using :meth:`create_task`.\n   All tasks are awaited when the context manager exits.\n\n   .. versionadded:: 3.11\n\n   .. method:: create_task(coro, *, name=None, context=None)\n\n      Create a task in this task group.\n      The signature matches that of :func:`asyncio.create_task`.\n\nExample::\n\n    async def main():\n        async with asyncio.TaskGroup() as tg:\n            task1 = tg.create_task(some_coro(...))\n            task2 = tg.create_task(another_coro(...))\n        print(f\"Both tasks have completed now: {task1.result()}, {task2.result()}\")\n\nThe ``async with`` statement will wait for all tasks in the group to finish.\nWhile waiting, new tasks may still be added to the group\n(for example, by passing ``tg`` into one of the coroutines\nand calling ``tg.create_task()`` in that coroutine).\nOnce the last task has finished and the ``async with`` block is exited,\nno new tasks may be added to the group.\n\nThe first time any of the tasks belonging to the group fails\nwith an exception other than :exc:`asyncio.CancelledError`,\nthe remaining tasks in the group are cancelled.\nNo further tasks can then be added to the group.\nAt this point, if the body of the ``async with`` statement is still active\n(i.e., :meth:`~object.__aexit__` hasn't been called yet),\nthe task directly containing the ``async with`` statement is also cancelled.\nThe resulting :exc:`asyncio.CancelledError` will interrupt an ``await``,\nbut it will not bubble out of the containing ``async with`` statement.\n\nOnce all tasks have finished, if any tasks have failed\nwith an exception other than :exc:`asyncio.CancelledError`,\nthose exceptions are combined in an\n:exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`\n(as appropriate; see their documentation)\nwhich is then raised.\n\nTwo base exceptions are treated specially:\nIf any task fails with :exc:`KeyboardInterrupt` or :exc:`SystemExit`,\nthe task group still cancels the remaining tasks and waits for them,\nbut then the initial :exc:`KeyboardInterrupt` or :exc:`SystemExit`\nis re-raised instead of :exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`.\n\nIf the body of the ``async with`` statement exits with an exception\n(so :meth:`~object.__aexit__` is called with an exception set),\nthis is treated the same as if one of the tasks failed:\nthe remaining tasks are cancelled and then waited for,\nand non-cancellation exceptions are grouped into an\nexception group and raised.\nThe exception passed into :meth:`~object.__aexit__`,\nunless it is :exc:`asyncio.CancelledError`,\nis also included in the exception group.\nThe same special case is made for\n:exc:`KeyboardInterrupt` and :exc:`SystemExit` as in the previous paragraph.\n\n\nSleeping\n========\n\n.. coroutinefunction:: sleep(delay, result=None)\n\n   Block for *delay* seconds.\n\n   If *result* is provided, it is returned to the caller\n   when the coroutine completes.\n\n   ``sleep()`` always suspends the current task, allowing other tasks\n   to run.\n\n   Setting the delay to 0 provides an optimized path to allow other\n   tasks to run. This can be used by long-running functions to avoid\n   blocking the event loop for the full duration of the function call.\n\n   .. _asyncio_example_sleep:\n\n   Example of coroutine displaying the current date every second\n   for 5 seconds::\n\n    import asyncio\n    import datetime\n\n    async def display_date():\n        loop = asyncio.get_running_loop()\n        end_time = loop.time() + 5.0\n        while True:\n            print(datetime.datetime.now())\n            if (loop.time() + 1.0) >= end_time:\n                break\n            await asyncio.sleep(1)\n\n    asyncio.run(display_date())\n\n\n   .. versionchanged:: 3.10\n      Removed the *loop* parameter.\n\n\nRunning Tasks Concurrently\n==========================\n\n.. awaitablefunction:: gather(*aws, return_exceptions=False)\n\n   Run :ref:`awaitable objects <asyncio-awaitables>` in the *aws*\n   sequence *concurrently*.\n\n   If any awaitable in *aws* is a coroutine, it is automatically\n   scheduled as a Task.\n\n   If all awaitables are completed successfully, the result is an\n   aggregate list of returned values.  The order of result values\n   corresponds to the order of awaitables in *aws*.\n\n   If *return_exceptions* is ``False`` (default), the first\n   raised exception is immediately propagated to the task that\n   awaits on ``gather()``.  Other awaitables in the *aws* sequence\n   **won't be cancelled** and will continue to run.\n\n   If *return_exceptions* is ``True``, exceptions are treated the\n   same as successful results, and aggregated in the result list.\n\n   If ``gather()`` is *cancelled*, all submitted awaitables\n   (that have not completed yet) are also *cancelled*.\n\n   If any Task or Future from the *aws* sequence is *cancelled*, it is\n   treated as if it raised :exc:`CancelledError` -- the ``gather()``\n   call is **not** cancelled in this case.  This is to prevent the\n   cancellation of one submitted Task/Future to cause other\n   Tasks/Futures to be cancelled.\n\n   .. note::\n      A new alternative to create and run tasks concurrently and\n      wait for their completion is :class:`asyncio.TaskGroup`. *TaskGroup*\n      provides stronger safety guarantees than *gather* for scheduling a nesting of subtasks:\n      if a task (or a subtask, a task scheduled by a task)\n      raises an exception, *TaskGroup* will, while *gather* will not,\n      cancel the remaining scheduled tasks).\n\n   .. _asyncio_example_gather:\n\n   Example::\n\n      import asyncio\n\n      async def factorial(name, number):\n          f = 1\n          for i in range(2, number + 1):\n              print(f\"Task {name}: Compute factorial({number}), currently i={i}...\")\n              await asyncio.sleep(1)\n              f *= i\n          print(f\"Task {name}: factorial({number}) = {f}\")\n          return f\n\n      async def main():\n          # Schedule three calls *concurrently*:\n          L = await asyncio.gather(\n              factorial(\"A\", 2),\n              factorial(\"B\", 3),\n              factorial(\"C\", 4),\n          )\n          print(L)\n\n      asyncio.run(main())\n\n      # Expected output:\n      #\n      #     Task A: Compute factorial(2), currently i=2...\n      #     Task B: Compute factorial(3), currently i=2...\n      #     Task C: Compute factorial(4), currently i=2...\n      #     Task A: factorial(2) = 2\n      #     Task B: Compute factorial(3), currently i=3...\n      #     Task C: Compute factorial(4), currently i=3...\n      #     Task B: factorial(3) = 6\n      #     Task C: Compute factorial(4), currently i=4...\n      #     Task C: factorial(4) = 24\n      #     [2, 6, 24]\n\n   .. note::\n      If *return_exceptions* is False, cancelling gather() after it\n      has been marked done won't cancel any submitted awaitables.\n      For instance, gather can be marked done after propagating an\n      exception to the caller, therefore, calling ``gather.cancel()``\n      after catching an exception (raised by one of the awaitables) from\n      gather won't cancel any other awaitables.\n\n   .. versionchanged:: 3.7\n      If the *gather* itself is cancelled, the cancellation is\n      propagated regardless of *return_exceptions*.\n\n   .. versionchanged:: 3.10\n      Removed the *loop* parameter.\n\n   .. deprecated:: 3.10\n      Deprecation warning is emitted if no positional arguments are provided\n    "
+}

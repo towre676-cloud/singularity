@@ -1,0 +1,638 @@
+{
+  "context": "entire available prefix, one causal forward over first max_targets inputs",
+  "count_model": "order4 document-local uniform-vocabulary-backed Witten-Bell; initial token initializes history, counts update only after each prediction",
+  "dependency_sha256": {
+    "scripts/confirm_pretrained_gating.py": "d901d31fcca40582e96395350735b77839accebb1b202494bbcac15868b6ac17",
+    "scripts/confirm_pretrained_prediction.py": "881a6b6839ebdffc374bcb656158f4dd781c63eddde745d41f429b67ff6c8ce7",
+    "scripts/report_pretrained_gating.py": "d9f47902493c6df4fb0fd77a27d848ef2c13ae189eba8c48a246858e1083f533",
+    "src/singularity/training/online_blend.py": "d4b595091b5d05c05272c0e5889a0b2aefa3a901814c7534a4eebed955f8a53e",
+    "src/singularity/training/repetition_blend.py": "85f2bcf95ffc698489f9c1162988fd544a3342417e7a0bd5b470699bf57e05e3",
+    "src/singularity/training/token_experts.py": "210e666b3cdefa48d950d2f83a4d977f969e1e050495ebe8ca2c2776ff85ea1d"
+  },
+  "documents": [
+    {
+      "bytes": 16494,
+      "document": 0,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "dracula",
+      "sha256": "c3a0453aba1d51aef5166a1de93efededf42c6a97590da8c04b56aea58ae8365",
+      "source_id": "https://www.gutenberg.org/cache/epub/345/pg345.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/dracula.json",
+      "source_record_sha256": "180cc77b9fce39725d8e8d5e103002856389133d2010ddaa80672105deaa1404",
+      "source_url": "https://www.gutenberg.org/cache/epub/345/pg345.txt",
+      "split": "development"
+    },
+    {
+      "bytes": 16794,
+      "document": 1,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "great_expectations",
+      "sha256": "303aeaba210a8edec63d35e325c74253314ba928fdd230916ddfee9eede08ada",
+      "source_id": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/great_expectations.json",
+      "source_record_sha256": "d07b9f1cc83c592475876f169ae6c751bfa1af3cb409a801623c77c17edcace2",
+      "source_url": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt",
+      "split": "development"
+    },
+    {
+      "bytes": 16948,
+      "document": 2,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "adventures_of_sherlock_holmes",
+      "sha256": "29ceed88eb45672662b9ebcb5cf055054e4ce0f31c05399f80b20e50f760c078",
+      "source_id": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/adventures_of_sherlock_holmes.json",
+      "source_record_sha256": "a54b3ef4b7841e0e32fad012251c25d620f42b764d75e6b345a234f194deb3ef",
+      "source_url": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
+      "split": "development"
+    },
+    {
+      "bytes": 16662,
+      "document": 3,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "jane_eyre",
+      "sha256": "985b2dc4d8141ff0ec798f86e9f0b85d5ba190629f486a41cb8e46903da0aa47",
+      "source_id": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/jane_eyre.json",
+      "source_record_sha256": "4e3fdcbc91fd6f2da6d754dc6764497ce7209377474440118441986d8f43ef94",
+      "source_url": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
+      "split": "development"
+    },
+    {
+      "bytes": 16480,
+      "document": 4,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "scarlet_letter",
+      "sha256": "cb339bbe6e2247676f1ec025183053195b14e0ff32c3862ffa680b758ad5b319",
+      "source_id": "https://www.gutenberg.org/cache/epub/33/pg33.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/scarlet_letter.json",
+      "source_record_sha256": "8bd0873fd0c1253e037516db1f7f513fe1be8e703d85199e4596125e4c4b2fb1",
+      "source_url": "https://www.gutenberg.org/cache/epub/33/pg33.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16800,
+      "document": 5,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "alice_in_wonderland",
+      "sha256": "cae1176afaede052524568f3d10d88f60a756c2a7a54a2f4e7c3618291412ce0",
+      "source_id": "https://www.gutenberg.org/cache/epub/11/pg11.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/alice_in_wonderland.json",
+      "source_record_sha256": "8b5d7d62d45e7713e8c915ee1bdc176c8537c64c37220a1a4256aa0d13ec9e1e",
+      "source_url": "https://www.gutenberg.org/cache/epub/11/pg11.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16844,
+      "document": 6,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "time_machine",
+      "sha256": "8ea79ddf14004ec66c81457d98b674f234e2febc38b9f59e5e8c35b1e76eb4e9",
+      "source_id": "https://www.gutenberg.org/cache/epub/35/pg35.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/time_machine.json",
+      "source_record_sha256": "f7b70330dfcf0ee19901b19030dcd52d660a2925d435f0fbdefc46e44cbe7ead",
+      "source_url": "https://www.gutenberg.org/cache/epub/35/pg35.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 17021,
+      "document": 7,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "count_of_monte_cristo",
+      "sha256": "f519b9f14c40bd27bf0fe6a4b513c1b3392b1785b8264c7b59e39422badd8a89",
+      "source_id": "https://www.gutenberg.org/cache/epub/1184/pg1184.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/count_of_monte_cristo.json",
+      "source_record_sha256": "9245136392667bcbc0f911897f7ff60313986799fb23bbbfd2a4be8898e5b3bf",
+      "source_url": "https://www.gutenberg.org/cache/epub/1184/pg1184.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16868,
+      "document": 8,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "moby_dick",
+      "sha256": "b8dc9a40a5db7d8901ad0d91e9b1bc4b586741d4212e35f680cb1a6e1248a5ff",
+      "source_id": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/moby_dick.json",
+      "source_record_sha256": "bfbc3fd8bb3d0ec4bab2d3002098739819f360d566d047e9031305314c874216",
+      "source_url": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16428,
+      "document": 9,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "war_of_the_worlds",
+      "sha256": "b34b3c065f96988a66a1b9332ff5409bab693f73b5a3833333da2cc8431a04b3",
+      "source_id": "https://www.gutenberg.org/cache/epub/36/pg36.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/war_of_the_worlds.json",
+      "source_record_sha256": "0a4906b8673c8848e4eeb7e04a07f0e33aa5be8c8d72f639698c0cb8d2c80a5c",
+      "source_url": "https://www.gutenberg.org/cache/epub/36/pg36.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16486,
+      "document": 10,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "pride_and_prejudice",
+      "sha256": "b9953966a7c8fcb58bc2503cd0c8888557bbdcd1bff74ba6074665454181f9d8",
+      "source_id": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/pride_and_prejudice.json",
+      "source_record_sha256": "7b414f2a18c0b321729eca1b22645009cb266ff82e8e0ab39593573361395d07",
+      "source_url": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16422,
+      "document": 11,
+      "domain": "literary_prose",
+      "license": "Public domain in the United States; book text only, Gutenberg header/footer excluded",
+      "name": "frankenstein",
+      "sha256": "73f79003ddec74785d9ed910e4551c290d0d69b720e4fe14b8a58bba4837c8b3",
+      "source_id": "https://www.gutenberg.org/cache/epub/84/pg84.txt",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/literary_prose/frankenstein.json",
+      "source_record_sha256": "6f47d335af6cd19d8a401c6e9cab046bcb3dbd05599bd4303a45470b7d4679d4",
+      "source_url": "https://www.gutenberg.org/cache/epub/84/pg84.txt",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 12,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "argparse.py",
+      "sha256": "1dc6e3b079dad6395555d5890f103a84a8f07849225448efd5627e6541f63efe",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/argparse.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/argparse.py.json",
+      "source_record_sha256": "cd11c3ffd89b7e12f6d7c17004531f433e8f77336f3534167130e8c3a086fec5",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/argparse.py",
+      "split": "development"
+    },
+    {
+      "bytes": 16384,
+      "document": 13,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "traceback.py",
+      "sha256": "f0b0ee007c5052fa4c7c6becdad8e1ba4b12e7b23467bba2b1c3723c04ad59e1",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/traceback.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/traceback.py.json",
+      "source_record_sha256": "491ab8e371df98b668c6f920604d7d6eaf67da7ff75c446318c11e29b9ae51f2",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/traceback.py",
+      "split": "development"
+    },
+    {
+      "bytes": 16384,
+      "document": 14,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "statistics.py",
+      "sha256": "a65110155172cf9e829d8b2fb525aad0f8358227670f5ad02fd48c2e5fa53c98",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/statistics.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/statistics.py.json",
+      "source_record_sha256": "74f6f388a3481c30f784d0d8abf7315af5d6947538b0bdfd485bae2f0ab118ba",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/statistics.py",
+      "split": "development"
+    },
+    {
+      "bytes": 16384,
+      "document": 15,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "pathlib.py",
+      "sha256": "83181c64cb9b96164441a467d14f866c0983d4a4e2f542748ab955dccdb5770c",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/pathlib.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/pathlib.py.json",
+      "source_record_sha256": "d9d71403957bcf4093d6471a46b820f05e454e91c7446da4eb6be0b409974da2",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/pathlib.py",
+      "split": "development"
+    },
+    {
+      "bytes": 16384,
+      "document": 16,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "shutil.py",
+      "sha256": "3e8f9668164b639b52503c1a46deb7b7087c87c7b29b8aa866738e57ce7c4688",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/shutil.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/shutil.py.json",
+      "source_record_sha256": "0d20f2fd84dea35ce8a6dddab9da7aff5a91de28021bb548e980d15884347f8d",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/shutil.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 17,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "inspect.py",
+      "sha256": "a7a62164f4e85903a21281dc1e824c08a0f145435fea8b18032ab0a5aaceec4b",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/inspect.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/inspect.py.json",
+      "source_record_sha256": "607c687d18499af19bcbe44286f44ec1085f584e89fc0bbbd17022d5a1cc9687",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/inspect.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 18,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "threading.py",
+      "sha256": "b95a838c9d8c38a8ff23f9b89bf5751f07847e3fde2d0fd223a422a798af82b3",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/threading.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/threading.py.json",
+      "source_record_sha256": "6248fd2f28cba73e1bb9739fbac8bdaa12076c492e479671658b8678b25c0531",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/threading.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 19,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "subprocess.py",
+      "sha256": "78421358b561501778f66ff34dc3c57d93a06b7ebf5cf40c6999bfb1c031f387",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/subprocess.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/subprocess.py.json",
+      "source_record_sha256": "55159b31659a2919522124030d298db7d812cd3f2e9a37f9b6749c6a6043591e",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/subprocess.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 20,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "ipaddress.py",
+      "sha256": "b48ef862c8481572dfefd9ca2864d84ecbeb644883fb3518ed03d3c95d9a5135",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/ipaddress.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/ipaddress.py.json",
+      "source_record_sha256": "2979648ad89e281a32bf05137b07d5740c9337704502f9e700da708b7384a610",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/ipaddress.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 21,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "fractions.py",
+      "sha256": "21f688e8d24ffca2fcab6f8a6301f5901aea44c8427a9c8b1471bf7206cfe76d",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/fractions.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/fractions.py.json",
+      "source_record_sha256": "4e936985a0911971f5276cc0b4b15a3050e9539341fa552855fdde2f3ffd35a4",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/fractions.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 22,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "tokenize.py",
+      "sha256": "53b518bba9483436c12b33cfa40c97c462e3150a7b64642b954364265154858b",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/tokenize.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/tokenize.py.json",
+      "source_record_sha256": "32ced0ce1fa76c4cf3a1619ee51f0f806cbe67ecb09ca41073f458b7816c3c98",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/tokenize.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 23,
+      "domain": "python_source",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "configparser.py",
+      "sha256": "f59020ab426419c391028b4cb7cc77d812fe3f582f52bab44aa6f2c6a3faf67f",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/configparser.py",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/python_source/configparser.py.json",
+      "source_record_sha256": "eb36def68768226e509e883624a435bb2166e0a7456a17b361bf662f7c49d8fd",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/configparser.py",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16387,
+      "document": 24,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "sqlite3.rst",
+      "sha256": "c6909a3812ac1b3f2fec7089c3014ccd8b769f2a0a9e409df640fafaffb9a227",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/sqlite3.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/sqlite3.rst.json",
+      "source_record_sha256": "d8453da5a1b7dbe6c193e5c360d6775d4b67352b56e6605e4d2a10d30b8e1956",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/sqlite3.rst",
+      "split": "development"
+    },
+    {
+      "bytes": 16386,
+      "document": 25,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "decimal.rst",
+      "sha256": "a4b4cdf0da3fe5b4eb0e943eefbdc2f966343b2116874aefc153daa4d34d73e5",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/decimal.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/decimal.rst.json",
+      "source_record_sha256": "b163ce433b0c9307ce3dd19956c375d1defde0635791f069dab7f4cb50dd3211",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/decimal.rst",
+      "split": "development"
+    },
+    {
+      "bytes": 16385,
+      "document": 26,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "functools.rst",
+      "sha256": "df3dab751f559c6cf26a3bb4851a768cf96f607d76b76f63874412c181578489",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/functools.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/functools.rst.json",
+      "source_record_sha256": "0a1bf59f6c6a945f2e8ef43cc1f4af66b6882982985c8c4fcff4ee3347225348",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/functools.rst",
+      "split": "development"
+    },
+    {
+      "bytes": 16384,
+      "document": 27,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "multiprocessing.rst",
+      "sha256": "83180b546cfb078c485e59c8c6c6a451640b55e4121049d4241bf6b7d43be485",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/multiprocessing.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/multiprocessing.rst.json",
+      "source_record_sha256": "b9d50de6d8c6789e46d2fa4dc3389945502ba0fbed9aef7bae7cc72e53089fdc",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/multiprocessing.rst",
+      "split": "development"
+    },
+    {
+      "bytes": 16385,
+      "document": 28,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "itertools.rst",
+      "sha256": "dc847d61e8312cf655335a2da32bc1714656ba0bbb332b60675d9214614bb54e",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/itertools.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/itertools.rst.json",
+      "source_record_sha256": "d358dbd4c094f466466559f1b5210e2ff838efad30099145e9fb9b0bbfed5f8e",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/itertools.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 29,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "unittest.rst",
+      "sha256": "cadaa52e326b6ef7b985354460ca86940f59889161ab706541521c0c2198cf57",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/unittest.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/unittest.rst.json",
+      "source_record_sha256": "9991602b0cb288b87d296ff1dd1899343edbec0362d9a7e57a1a8f1065d6d7e7",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/unittest.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 30,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "argparse.rst",
+      "sha256": "0ed6ec80cd5213b0b5e07ec6af355f6024b1671203b498fd0a30e9e5a5534015",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/argparse.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/argparse.rst.json",
+      "source_record_sha256": "19eaddc2295f7222a0888f951351e10ea6c8af7de88557c2ba6fea786b3f1e15",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/argparse.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 31,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "logging.rst",
+      "sha256": "effb90911968a0697fc508f4cc276fb658f73a7c2d0d5e598b66330b730451b4",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/logging.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/logging.rst.json",
+      "source_record_sha256": "5a21f59589b9dade976ffe4c85c958e8b6072cc26ebf243cba59c2539f976bd7",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/logging.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 32,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "concurrent.futures.rst",
+      "sha256": "a0118b1ac08e9cba9e47af923228208d837be26bc183201af14b117dc131ac0a",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/concurrent.futures.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/concurrent.futures.rst.json",
+      "source_record_sha256": "0f43b13afa05cb6e450439c4e3ebf44ee113837da89b805d24df7bfbf257214a",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/concurrent.futures.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 33,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "typing.rst",
+      "sha256": "6a46142ba657b00c933663c6d4b1447b3016783507e4485987ae77149ba30a6c",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/typing.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/typing.rst.json",
+      "source_record_sha256": "37fe8b9b1bdaa2100da56b87fdbefb9fa34881989a49d4e7130c82f26f6ee614",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/typing.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16385,
+      "document": 34,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "pathlib.rst",
+      "sha256": "c3fbaac846a1dc5799b3a6e267954b60df1bbbe65b847a479a3dd8a964225f3f",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/pathlib.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/pathlib.rst.json",
+      "source_record_sha256": "5e5d38a279a604084cd1b3d21ffc7576f0bde4551257ccd219e34c10c92965e1",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/pathlib.rst",
+      "split": "heldout"
+    },
+    {
+      "bytes": 16384,
+      "document": 35,
+      "domain": "technical_reference",
+      "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+      "name": "asyncio-task.rst",
+      "sha256": "85ef992e7511892e860319bd65c78ec3f73ee13895d105fb7d3f65c700907921",
+      "source_id": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/asyncio-task.rst",
+      "source_record_path": "applications/training_lab/data/fresh_transfer/documents/technical_reference/asyncio-task.rst.json",
+      "source_record_sha256": "391a9338da0414d9c76753bd5b7d7e924364856b994ec194c1e31ae11373ab8c",
+      "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/library/asyncio-task.rst",
+      "split": "heldout"
+    }
+  ],
+  "documents_scored_before_freeze": false,
+  "execution": {
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "neural_training_updates": 0,
+    "threads": 4,
+    "transformers_attention": "eager"
+  },
+  "freshness": "no complete-document SHA256 repeats the earlier cross-domain corpus; pretraining overlap remains possible",
+  "frozen_at_utc": "2026-10-19T16:05:33.157335+00:00",
+  "gate": "longest previously observed context row has order >= min_order and total prior followers >= min_support; no target or neural prediction used to choose gate",
+  "guarantee": "each protected arm cumulative loss <= pure neural cumulative loss - log(.95), exact arithmetic, each document reset; this ceiling is not a predictive gain",
+  "max_targets": 512,
+  "metrics": "paired per-document loss; document-cluster percentile bootstrap10000 draws seed7102026, descriptive; no cross-tokenizer ranking",
+  "models": {
+    "gpt2": {
+      "identity_path": "model_identities/gpt2.json",
+      "sha256": "78b1d52c251c6f98d01868bfcd9182e3ffa42518a39a2b033edb850a03e57cb8"
+    },
+    "qwen25-1_5b": {
+      "identity_path": "model_identities/qwen25-1_5b.json",
+      "sha256": "266fbfacb6e91e660e1d65e737f8b296167553311d071aad678bd3a3042280fe"
+    },
+    "smollm2-1_7b": {
+      "identity_path": "model_identities/smollm2-1_7b.json",
+      "sha256": "6e122321864bd20f90fbc81be83625ff151b03ffc30e7644e1728533b0ffe84a"
+    },
+    "smollm2-360m": {
+      "identity_path": "model_identities/smollm2-360m.json",
+      "sha256": "f59882c4ddc15ed3c29f5c1d8446582f782f38453fa753f83475716767d96745"
+    }
+  },
+  "policies": [
+    {
+      "alpha": 0.25,
+      "id": "order1_support1_alpha025",
+      "min_order": 1,
+      "min_support": 1
+    },
+    {
+      "alpha": 0.5,
+      "id": "order1_support1_alpha050",
+      "min_order": 1,
+      "min_support": 1
+    },
+    {
+      "alpha": 1.0,
+      "id": "order1_support1_alpha100",
+      "min_order": 1,
+      "min_support": 1
+    },
+    {
+      "alpha": 0.25,
+      "id": "order1_support2_alpha025",
+      "min_order": 1,
+      "min_support": 2
+    },
+    {
+      "alpha": 0.5,
+      "id": "order1_support2_alpha050",
+      "min_order": 1,
+      "min_support": 2
+    },
+    {
+      "alpha": 1.0,
+      "id": "order1_support2_alpha100",
+      "min_order": 1,
+      "min_support": 2
+    },
+    {
+      "alpha": 0.25,
+      "id": "order2_support1_alpha025",
+      "min_order": 2,
+      "min_support": 1
+    },
+    {
+      "alpha": 0.5,
+      "id": "order2_support1_alpha050",
+      "min_order": 2,
+      "min_support": 1
+    },
+    {
+      "alpha": 1.0,
+      "id": "order2_support1_alpha100",
+      "min_order": 2,
+      "min_support": 1
+    },
+    {
+      "alpha": 0.25,
+      "id": "order2_support2_alpha025",
+      "min_order": 2,
+      "min_support": 2
+    },
+    {
+      "alpha": 0.5,
+      "id": "order2_support2_alpha050",
+      "min_order": 2,
+      "min_support": 2
+    },
+    {
+      "alpha": 1.0,
+      "id": "order2_support2_alpha100",
+      "min_order": 2,
+      "min_support": 2
+    },
+    {
+      "alpha": 0.25,
+      "id": "order3_support1_alpha025",
+      "min_order": 3,
+      "min_support": 1
+    },
+    {
+      "alpha": 0.5,
+      "id": "order3_support1_alpha050",
+      "min_order": 3,
+      "min_support": 1
+    },
+    {
+      "alpha": 1.0,
+      "id": "order3_support1_alpha100",
+      "min_order": 3,
+      "min_support": 1
+    },
+    {
+      "alpha": 0.25,
+      "id": "order3_support2_alpha025",
+      "min_order": 3,
+      "min_support": 2
+    },
+    {
+      "alpha": 0.5,
+      "id": "order3_support2_alpha050",
+      "min_order": 3,
+      "min_support": 2
+    },
+    {
+      "alpha": 1.0,
+      "id": "order3_support2_alpha100",
+      "min_order": 3,
+      "min_support": 2
+    }
+  ],
+  "primary": "heldout selected protected policy (possibly pure neural) minus neural, aggregate nats/native-token within model",
+  "protected_policy": "per-document Bayesian mixture of pure neural (prior .95) and one gated expert (prior .05)",
+  "retention": "all sources, frozen native token IDs, target-level neural/count losses, pretarget context features, all18 gate outcomes and weights, attempts including aborts; no rerun or deletion of completed evidence",
+  "schema": "singularity.pretrained-gating-protocol/1",
+  "secondary": "hierarchy_protected and ungated_protected minus neural; all18 protected and raw gated outcomes retained as diagnostics, not used for heldout selection",
+  "secondary_arms": {
+    "adaptive_count": "unprotected count-only diagnostic",
+    "hierarchy_protected": "95% pure neural and .05/18 per gated expert, Bayesian updated per target",
+    "ungated_protected": "95% neural/5% fixed alpha=.5 policy, Bayesian updated per target"
+  },
+  "selection": "per model choose minimum development aggregate NLL from pure neural plus18 protected policies; ties choose lexical arm ID; write and freeze selection receipt before heldout inference",
+  "source_path": "applications/training_lab/data/fresh_transfer/manifest.json",
+  "source_sha256": "705615dd3ce39a05ca6e3a07025ae49fe209f21fed925efb4c82db3768d1bb4a",
+  "source_split": "source_id groups are disjoint; all document identities and splits fixed before any model forward"
+}

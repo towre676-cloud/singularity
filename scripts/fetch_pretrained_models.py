@@ -21,6 +21,7 @@ MODELS = {
     "gpt2": "openai-community/gpt2",
     "smollm2-360m": "HuggingFaceTB/SmolLM2-360M",
     "smollm2-1.7b": "HuggingFaceTB/SmolLM2-1.7B",
+    "qwen2.5-1.5b": "Qwen/Qwen2.5-1.5B",
 }
 SMALL_FILES = {"config.json", "generation_config.json", "tokenizer.json",
                "tokenizer_config.json", "special_tokens_map.json", "vocab.json",

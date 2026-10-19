@@ -1,0 +1,280 @@
+{
+  "bytes": 16384,
+  "characters": 16384,
+  "domain": "python_source",
+  "fresh_corpus_overlap": {
+    "containment_5word": 0.004563605248146035,
+    "domain": "technical_reference",
+    "jaccard_5word": 0.002191780821917808,
+    "name": "pathlib.rst"
+  },
+  "gutenberg_start_marker": null,
+  "license": "Python Software Foundation License Version 2, with retained CPython license notices",
+  "license_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/LICENSE",
+  "name": "pathlib.py",
+  "normalization": "UTF-8-sig strict; CRLF/CR to LF; fixed Unicode-character offsets; no other edits",
+  "offset_characters": 0,
+  "prior_overlap": {
+    "all_matches": [
+      {
+        "containment_5word": 0.0011409013120365088,
+        "domain": "source_code",
+        "jaccard_5word": 0.000385579332947754,
+        "name": "pdb.py"
+      },
+      {
+        "containment_5word": 0.0006265664160401002,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0002986857825567503,
+        "name": "naming"
+      },
+      {
+        "containment_5word": 0.0005704506560182544,
+        "domain": "source_code",
+        "jaccard_5word": 0.00023815194093831864,
+        "name": "webbrowser.py"
+      },
+      {
+        "containment_5word": 0.0005704506560182544,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.00019755037534571315,
+        "name": "execmodel"
+      },
+      {
+        "containment_5word": 0.0005704506560182544,
+        "domain": "source_code",
+        "jaccard_5word": 0.00019062142584826535,
+        "name": "ast.py"
+      },
+      {
+        "containment_5word": 0.0005704506560182544,
+        "domain": "source_code",
+        "jaccard_5word": 0.00016578249336870026,
+        "name": "difflib.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "attribute-access"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "numeric-types"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "match"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "typesmapping"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "string-methods"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "sequence-types"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "compound"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "function"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "class"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "assignment"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "debugger"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "types"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "with"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "reference_prose",
+        "jaccard_5word": 0.0,
+        "name": "try"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "MPL-2.0"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "CC0-1.0"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "Artistic"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "MPL-1.1"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "GFDL-1.2"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "LGPL-2"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "GPL-2"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "legal_prose",
+        "jaccard_5word": 0.0,
+        "name": "LGPL-2.1"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "gettext.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "poplib.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "string.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "queue.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "_sysconfigdata__x86_64-linux-gnu.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "enum.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "calendar.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "operator.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "genericpath.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "reprlib.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "quopri.py"
+      },
+      {
+        "containment_5word": 0.0,
+        "domain": "source_code",
+        "jaccard_5word": 0.0,
+        "name": "netrc.py"
+      }
+    ],
+    "exact_match": false,
+    "max_5word_containment_match": {
+      "containment_5word": 0.0011409013120365088,
+      "domain": "source_code",
+      "jaccard_5word": 0.000385579332947754,
+      "name": "pdb.py"
+    }
+  },
+  "selection": "source body from character0, retaining comments and license notices",
+  "sha256": "83181c64cb9b96164441a467d14f866c0983d4a4e2f542748ab955dccdb5770c",
+  "source_bytes": 51149,
+  "source_identifier": "python/cpython@0fb18b02c8ad56299d6a2910be0bab8ad601ef24:Lib/pathlib.py",
+  "source_release": "v3.12.0",
+  "source_revision": "0fb18b02c8ad56299d6a2910be0bab8ad601ef24",
+  "source_sha256": "b48c9afd06eaf5b60ed3a0be4232fd3e3a72564e10c84d03b7ba388e0b703199",
+  "source_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Lib/pathlib.py",
+  "split": "dev",
+  "split_key_sha256": "66ad18f2547bf2c77e15ccb7e2525888b842a72a36f15ed16f21753019dcaf2b",
+  "split_rank": 3,
+  "text": "\"\"\"Object-oriented filesystem paths.\n\nThis module provides classes to represent abstract paths and concrete\npaths with operations that have semantics appropriate for different\noperating systems.\n\"\"\"\n\nimport fnmatch\nimport functools\nimport io\nimport ntpath\nimport os\nimport posixpath\nimport re\nimport sys\nimport warnings\nfrom _collections_abc import Sequence\nfrom errno import ENOENT, ENOTDIR, EBADF, ELOOP\nfrom stat import S_ISDIR, S_ISLNK, S_ISREG, S_ISSOCK, S_ISBLK, S_ISCHR, S_ISFIFO\nfrom urllib.parse import quote_from_bytes as urlquote_from_bytes\n\n\n__all__ = [\n    \"PurePath\", \"PurePosixPath\", \"PureWindowsPath\",\n    \"Path\", \"PosixPath\", \"WindowsPath\",\n    ]\n\n#\n# Internals\n#\n\n# Reference for Windows paths can be found at\n# https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file .\n_WIN_RESERVED_NAMES = frozenset(\n    {'CON', 'PRN', 'AUX', 'NUL', 'CONIN$', 'CONOUT$'} |\n    {f'COM{c}' for c in '123456789\\xb9\\xb2\\xb3'} |\n    {f'LPT{c}' for c in '123456789\\xb9\\xb2\\xb3'}\n)\n\n_WINERROR_NOT_READY = 21  # drive exists but is not accessible\n_WINERROR_INVALID_NAME = 123  # fix for bpo-35306\n_WINERROR_CANT_RESOLVE_FILENAME = 1921  # broken symlink pointing to itself\n\n# EBADF - guard against macOS `stat` throwing EBADF\n_IGNORED_ERRNOS = (ENOENT, ENOTDIR, EBADF, ELOOP)\n\n_IGNORED_WINERRORS = (\n    _WINERROR_NOT_READY,\n    _WINERROR_INVALID_NAME,\n    _WINERROR_CANT_RESOLVE_FILENAME)\n\ndef _ignore_error(exception):\n    return (getattr(exception, 'errno', None) in _IGNORED_ERRNOS or\n            getattr(exception, 'winerror', None) in _IGNORED_WINERRORS)\n\n\n@functools.cache\ndef _is_case_sensitive(flavour):\n    return flavour.normcase('Aa') == 'Aa'\n\n#\n# Globbing helpers\n#\n\n\n# fnmatch.translate() returns a regular expression that includes a prefix and\n# a suffix, which enable matching newlines and ensure the end of the string is\n# matched, respectively. These features are undesirable for our implementation\n# of PurePatch.match(), which represents path separators as newlines and joins\n# pattern segments together. As a workaround, we define a slice object that\n# can remove the prefix and suffix from any translate() result. See the\n# _compile_pattern_lines() function for more details.\n_FNMATCH_PREFIX, _FNMATCH_SUFFIX = fnmatch.translate('_').split('_')\n_FNMATCH_SLICE = slice(len(_FNMATCH_PREFIX), -len(_FNMATCH_SUFFIX))\n_SWAP_SEP_AND_NEWLINE = {\n    '/': str.maketrans({'/': '\\n', '\\n': '/'}),\n    '\\\\': str.maketrans({'\\\\': '\\n', '\\n': '\\\\'}),\n}\n\n\n@functools.lru_cache()\ndef _make_selector(pattern_parts, flavour, case_sensitive):\n    pat = pattern_parts[0]\n    if not pat:\n        return _TerminatingSelector()\n    if pat == '**':\n        child_parts_idx = 1\n        while child_parts_idx < len(pattern_parts) and pattern_parts[child_parts_idx] == '**':\n            child_parts_idx += 1\n        child_parts = pattern_parts[child_parts_idx:]\n        if '**' in child_parts:\n            cls = _DoubleRecursiveWildcardSelector\n        else:\n            cls = _RecursiveWildcardSelector\n    else:\n        child_parts = pattern_parts[1:]\n        if pat == '..':\n            cls = _ParentSelector\n        elif '**' in pat:\n            raise ValueError(\"Invalid pattern: '**' can only be an entire path component\")\n        else:\n            cls = _WildcardSelector\n    return cls(pat, child_parts, flavour, case_sensitive)\n\n\n@functools.lru_cache(maxsize=256)\ndef _compile_pattern(pat, case_sensitive):\n    flags = re.NOFLAG if case_sensitive else re.IGNORECASE\n    return re.compile(fnmatch.translate(pat), flags).match\n\n\n@functools.lru_cache()\ndef _compile_pattern_lines(pattern_lines, case_sensitive):\n    \"\"\"Compile the given pattern lines to an `re.Pattern` object.\n\n    The *pattern_lines* argument is a glob-style pattern (e.g. '*/*.py') with\n    its path separators and newlines swapped (e.g. '*\\n*.py`). By using\n    newlines to separate path components, and not setting `re.DOTALL`, we\n    ensure that the `*` wildcard cannot match path separators.\n\n    The returned `re.Pattern` object may have its `match()` method called to\n    match a complete pattern, or `search()` to match from the right. The\n    argument supplied to these methods must also have its path separators and\n    newlines swapped.\n    \"\"\"\n\n    # Match the start of the path, or just after a path separator\n    parts = ['^']\n    for part in pattern_lines.splitlines(keepends=True):\n        if part == '*\\n':\n            part = r'.+\\n'\n        elif part == '*':\n            part = r'.+'\n        else:\n            # Any other component: pass to fnmatch.translate(). We slice off\n            # the common prefix and suffix added by translate() to ensure that\n            # re.DOTALL is not set, and the end of the string not matched,\n            # respectively. With DOTALL not set, '*' wildcards will not match\n            # path separators, because the '.' characters in the pattern will\n            # not match newlines.\n            part = fnmatch.translate(part)[_FNMATCH_SLICE]\n        parts.append(part)\n    # Match the end of the path, always.\n    parts.append(r'\\Z')\n    flags = re.MULTILINE\n    if not case_sensitive:\n        flags |= re.IGNORECASE\n    return re.compile(''.join(parts), flags=flags)\n\n\nclass _Selector:\n    \"\"\"A selector matches a specific glob pattern part against the children\n    of a given path.\"\"\"\n\n    def __init__(self, child_parts, flavour, case_sensitive):\n        self.child_parts = child_parts\n        if child_parts:\n            self.successor = _make_selector(child_parts, flavour, case_sensitive)\n            self.dironly = True\n        else:\n            self.successor = _TerminatingSelector()\n            self.dironly = False\n\n    def select_from(self, parent_path):\n        \"\"\"Iterate over all child paths of `parent_path` matched by this\n        selector.  This can contain parent_path itself.\"\"\"\n        path_cls = type(parent_path)\n        scandir = path_cls._scandir\n        if not parent_path.is_dir():\n            return iter([])\n        return self._select_from(parent_path, scandir)\n\n\nclass _TerminatingSelector:\n\n    def _select_from(self, parent_path, scandir):\n        yield parent_path\n\n\nclass _ParentSelector(_Selector):\n\n    def __init__(self, name, child_parts, flavour, case_sensitive):\n        _Selector.__init__(self, child_parts, flavour, case_sensitive)\n\n    def _select_from(self,  parent_path, scandir):\n        path = parent_path._make_child_relpath('..')\n        for p in self.successor._select_from(path, scandir):\n            yield p\n\n\nclass _WildcardSelector(_Selector):\n\n    def __init__(self, pat, child_parts, flavour, case_sensitive):\n        _Selector.__init__(self, child_parts, flavour, case_sensitive)\n        if case_sensitive is None:\n            # TODO: evaluate case-sensitivity of each directory in _select_from()\n            case_sensitive = _is_case_sensitive(flavour)\n        self.match = _compile_pattern(pat, case_sensitive)\n\n    def _select_from(self, parent_path, scandir):\n        try:\n            # We must close the scandir() object before proceeding to\n            # avoid exhausting file descriptors when globbing deep trees.\n            with scandir(parent_path) as scandir_it:\n                entries = list(scandir_it)\n        except OSError:\n            pass\n        else:\n            for entry in entries:\n                if self.dironly:\n                    try:\n                        if not entry.is_dir():\n                            continue\n                    except OSError:\n                        continue\n                name = entry.name\n                if self.match(name):\n                    path = parent_path._make_child_relpath(name)\n                    for p in self.successor._select_from(path, scandir):\n                        yield p\n\n\nclass _RecursiveWildcardSelector(_Selector):\n\n    def __init__(self, pat, child_parts, flavour, case_sensitive):\n        _Selector.__init__(self, child_parts, flavour, case_sensitive)\n\n    def _iterate_directories(self, parent_path):\n        yield parent_path\n        for dirpath, dirnames, _ in parent_path.walk():\n            for dirname in dirnames:\n                yield dirpath._make_child_relpath(dirname)\n\n    def _select_from(self, parent_path, scandir):\n        successor_select = self.successor._select_from\n        for starting_point in self._iterate_directories(parent_path):\n            for p in successor_select(starting_point, scandir):\n                yield p\n\n\nclass _DoubleRecursiveWildcardSelector(_RecursiveWildcardSelector):\n    \"\"\"\n    Like _RecursiveWildcardSelector, but also de-duplicates results from\n    successive selectors. This is necessary if the pattern contains\n    multiple non-adjacent '**' segments.\n    \"\"\"\n\n    def _select_from(self, parent_path, scandir):\n        yielded = set()\n        try:\n            for p in super()._select_from(parent_path, scandir):\n                if p not in yielded:\n                    yield p\n                    yielded.add(p)\n        finally:\n            yielded.clear()\n\n\n#\n# Public API\n#\n\nclass _PathParents(Sequence):\n    \"\"\"This object provides sequence-like access to the logical ancestors\n    of a path.  Don't try to construct it yourself.\"\"\"\n    __slots__ = ('_path', '_drv', '_root', '_tail')\n\n    def __init__(self, path):\n        self._path = path\n        self._drv = path.drive\n        self._root = path.root\n        self._tail = path._tail\n\n    def __len__(self):\n        return len(self._tail)\n\n    def __getitem__(self, idx):\n        if isinstance(idx, slice):\n            return tuple(self[i] for i in range(*idx.indices(len(self))))\n\n        if idx >= len(self) or idx < -len(self):\n            raise IndexError(idx)\n        if idx < 0:\n            idx += len(self)\n        return self._path._from_parsed_parts(self._drv, self._root,\n                                             self._tail[:-idx - 1])\n\n    def __repr__(self):\n        return \"<{}.parents>\".format(type(self._path).__name__)\n\n\nclass PurePath(object):\n    \"\"\"Base class for manipulating paths without I/O.\n\n    PurePath represents a filesystem path and offers operations which\n    don't imply any actual filesystem I/O.  Depending on your system,\n    instantiating a PurePath will return either a PurePosixPath or a\n    PureWindowsPath object.  You can also instantiate either of these classes\n    directly, regardless of your system.\n    \"\"\"\n\n    __slots__ = (\n        # The `_raw_paths` slot stores unnormalized string paths. This is set\n        # in the `__init__()` method.\n        '_raw_paths',\n\n        # The `_drv`, `_root` and `_tail_cached` slots store parsed and\n        # normalized parts of the path. They are set when any of the `drive`,\n        # `root` or `_tail` properties are accessed for the first time. The\n        # three-part division corresponds to the result of\n        # `os.path.splitroot()`, except that the tail is further split on path\n        # separators (i.e. it is a list of strings), and that the root and\n        # tail are normalized.\n        '_drv', '_root', '_tail_cached',\n\n        # The `_str` slot stores the string representation of the path,\n        # computed from the drive, root and tail when `__str__()` is called\n        # for the first time. It's used to implement `_str_normcase`\n        '_str',\n\n        # The `_str_normcase_cached` slot stores the string path with\n        # normalized case. It is set when the `_str_normcase` property is\n        # accessed for the first time. It's used to implement `__eq__()`\n        # `__hash__()`, and `_parts_normcase`\n        '_str_normcase_cached',\n\n        # The `_parts_normcase_cached` slot stores the case-normalized\n        # string path after splitting on path separators. It's set when the\n        # `_parts_normcase` property is accessed for the first time. It's used\n        # to implement comparison methods like `__lt__()`.\n        '_parts_normcase_cached',\n\n        # The `_lines_cached` slot stores the string path with path separators\n        # and newlines swapped. This is used to implement `match()`.\n        '_lines_cached',\n\n        # The `_hash` slot stores the hash of the case-normalized string\n        # path. It's set when `__hash__()` is called for the first time.\n        '_hash',\n    )\n    _flavour = os.path\n\n    def __new__(cls, *args, **kwargs):\n        \"\"\"Construct a PurePath from one or several strings and or existing\n        PurePath objects.  The strings and path objects are combined so as\n        to yield a canonicalized path, which is incorporated into the\n        new PurePath object.\n        \"\"\"\n        if cls is PurePath:\n            cls = PureWindowsPath if os.name == 'nt' else PurePosixPath\n        return object.__new__(cls)\n\n    def __reduce__(self):\n        # Using the parts tuple helps share interned path parts\n        # when pickling related paths.\n        return (self.__class__, self.parts)\n\n    def __init__(self, *args):\n        paths = []\n        for arg in args:\n            if isinstance(arg, PurePath):\n                if arg._flavour is ntpath and self._flavour is posixpath:\n                    # GH-103631: Convert separators for backwards compatibility.\n                    paths.extend(path.replace('\\\\', '/') for path in arg._raw_paths)\n                else:\n                    paths.extend(arg._raw_paths)\n            else:\n                try:\n                    path = os.fspath(arg)\n                except TypeError:\n                    path = arg\n                if not isinstance(path, str):\n                    raise TypeError(\n                        \"argument should be a str or an os.PathLike \"\n                        \"object where __fspath__ returns a str, \"\n                        f\"not {type(path).__name__!r}\")\n                paths.append(path)\n        self._raw_paths = paths\n\n    def with_segments(self, *pathsegments):\n        \"\"\"Construct a new path object from any number of path-like objects.\n        Subclasses may override this method to customize how new path objects\n        are created from methods like `iterdir()`.\n        \"\"\"\n        return type(self)(*pathsegments)\n\n    @classmethod\n    def _parse_path(cls, path):\n        if not path:\n            return '', '', []\n        sep = cls._flavour.sep\n        altsep = cls._flavour.altsep\n        if altsep:\n            path = path.replace(altsep, sep)\n        drv, root, rel = cls._flavour.splitroot(path)\n        if not root and drv.startswith(sep) and not drv.endswith(sep):\n            drv_parts = drv.split(sep)\n            if len(drv_parts) == 4 and drv_parts[2] not in '?.':\n                # e.g. //server/share\n                root = sep\n            elif len(drv_parts) == 6:\n                # e.g. //?/unc/server/share\n                root = sep\n        parsed = [sys.intern(str(x)) for x in rel.split(sep) if x and x != '.']\n        return drv, root, parsed\n\n    def _load_parts(self):\n        paths = self._raw_paths\n        if len(paths) == 0:\n            path = ''\n        elif len(paths) == 1:\n            path = paths[0]\n        else:\n            path = self._flavour.join(*paths)\n        drv, root, tail = self._parse_path(path)\n        self._drv = drv\n        self._root = root\n        self._tail_cached = tail\n\n    def _from_parsed_parts(self, drv, root, tail):\n        path_str = self._format_parsed_parts(drv, root, tail)\n        path = self.with_segments(path_str)\n        path._str = path_str or '.'\n        path._drv = drv\n        path._root = root\n        path._tail_cached = tail\n        return path\n\n    @classmethod\n    def _format_parsed_parts(cls, drv, root, tail):\n        if drv or root:\n            return drv + root + cls._flavour.sep.join(tail)\n        elif tail and cls._flavour.splitdrive(tail[0])[0]:\n            tail = ['.'] + tail\n        return cls._flavour.sep.join(tail)\n\n    def __str__(self):\n        \"\"\"Return the string representation of the path, suitable for\n        passing to system calls.\"\"\"\n        try:\n            return self._str\n        except AttributeError:\n            self._str = self._format_parsed_parts(self.drive, self.root,\n                                                  self._tail) or '.'\n            return self._str\n\n    def __fspath__(self):\n        return str(self)\n\n    def as_posix(self):\n        \"\"\"Return the string representation of the path with forward (/)\n        slashes.\"\"\"\n        f = self._flavour\n        return str(self).replace(f.sep, '/')\n\n    def "
+}
