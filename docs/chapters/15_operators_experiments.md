@@ -320,6 +320,25 @@ The implementation `separator_compiler.py` extends `charges.py`, reusing its for
 
 The cell bound is loose: observed cells are 1–29% of it. Wall times are measurements on one machine and are not retained.
 
+**Theorem SNG-O22 (the all-budget path margin).** Fix \(0<q<1\), volume budget one, and the endpoint and adjacent terminal placements of the path with edges \(01,12\). Give pendant-leaf pairs cost two, shared neighbors cost one, and both direct observations cost zero. With unit noise normalization, the maximum absolute discrepancy over every affordable single experiment at any real budget \(C\ge0\) is
+
+\[
+\mu^*(C)=q(1-q)\bigl(1-q^{\lfloor C\rfloor}\bigr).
+\]
+
+For \(C\ge1\) it is attained uniquely by \(\lfloor C\rfloor\) shared-neighbor attachments and the volume-one readout. The unrestricted supremum is \(q(1-q)\) and is not attained. Under adversarial scalar observation error bounded by \(\varepsilon\), a finite robustly distinguishing experiment exists exactly when \(2\varepsilon<q(1-q)\).
+
+*Proof.* In coordinate order \(((0,0),0),((0,0),1),((0,1),1)\), the two graph states are \((1,q^2,2q)\) and \((1,q,q+q^2)\). Set \(a=q(1-q)\). Their difference is \(d=(0,-a,a)\). The context matrices are
+
+\[
+M_{\rm leaf}=\begin{pmatrix}1&0&0\\2q&1&0\\0&0&q\end{pmatrix},\qquad
+M_{\rm shared}=\begin{pmatrix}1&0&0\\q^2&1&0\\0&0&q\end{pmatrix}.
+\]
+
+Either sends \((0,-a,aq^k)\) to \((0,-a,aq^{k+1})\). Every length-\(k\) word therefore has volume-one discrepancy \(-a(1-q^k)\); the volume-zero discrepancy is zero. The magnitude strictly increases with \(k\). Positive attachment costs force \(k\le\lfloor C\rfloor\), and shared-neighbor repetition attains that bound. At maximal length any leaf pair raises cost to at least \(\lfloor C\rfloor+1>C\). The limit and nonattainment follow from \(0<q<1\). Scalar uncertainty intervals are disjoint exactly when the discrepancy exceeds \(2\varepsilon\); taking the supremum proves the final equivalence. \(\square\)
+
+The implementation now exposes `OrderedContextAttachment` for contexts without swap symmetry, retaining the original strict `ContextAttachment` in the symmetric compiler. Independent assembled-graph checks include 255 asymmetric word/base comparisons. [The ordered-context supplement](../research/ORDERED_CONTEXTS.md) gives the full API, the all-budget proof, and independent checks at several rational parameters. The theorem is about a single experiment; a shared panel has its separately stated noise and cost model.
+
 ## 15.10 Interfaces and runnable examples
 
 The public contracts are specified in `docs/specifications/OPERATORS-v1.md`. A minimal session:

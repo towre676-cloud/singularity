@@ -33,6 +33,7 @@ operators.  Words are chronological, exactly as in observability.
 """
 from __future__ import annotations
 
+from dataclasses import dataclass
 from fractions import Fraction
 from typing import Sequence
 
@@ -45,12 +46,44 @@ from .terminals import _check_terminals, glue_graphs, terminal_kernel
 EXTEND_A, EXTEND_B = "extend_a", "extend_b"
 
 
+@dataclass(frozen=True)
+class OrderedContextAttachment:
+    """A checked context for ordered kernels, with no symmetry assumption.
+
+    Terminal order is part of the data.  No terminal-terminal edge is
+    permitted, so repeated attachments with fresh interiors remain simple
+    graphs.  Unlike :class:`ContextAttachment`, this type deliberately does
+    not assert a terminal-swap automorphism and cannot be passed to the
+    symmetric boundary compiler.
+    """
+
+    name: str
+    graph: Graph
+    terminals: tuple[int, int] = (0, 1)
+
+    def __post_init__(self):
+        if not isinstance(self.name, str) or not self.name:
+            raise ValueError("context name must be a nonempty string")
+        if not isinstance(self.graph, Graph):
+            raise TypeError("context graph must be a Graph")
+        terminals = _check_terminals(self.graph, self.terminals)
+        if len(terminals) != 2:
+            raise ValueError("a context must have exactly two terminals")
+        object.__setattr__(self, "terminals", terminals)
+        if tuple(sorted(terminals)) in self.graph.edges:
+            raise ValueError("context terminal edges are forbidden")
+
+
+_CONTEXT_TYPES = (ContextAttachment, OrderedContextAttachment)
+
+
 class OrderedMoveSystem:
     """Ordered truncated kernels under contexts and terminal extensions.
 
-    ``moves`` is a sequence whose items are ContextAttachment objects or the
-    strings "extend_a" / "extend_b".  Output v is the local coefficient at
-    volume v of the current graph.
+    ``moves`` contains checked ContextAttachment or OrderedContextAttachment
+    objects, or the strings "extend_a" / "extend_b".  The first context type
+    is accepted for compatibility; only the second permits asymmetry.
+    Output v is the local coefficient at volume v of the current graph.
     """
 
     def __init__(self, max_volume: int, q, moves=None):
@@ -60,8 +93,9 @@ class OrderedMoveSystem:
             raise ValueError("q must lie strictly between zero and one")
         moves = tuple(standard_attachments()) + (EXTEND_A, EXTEND_B) if moves is None else tuple(moves)
         for m in moves:
-            if not (isinstance(m, ContextAttachment) or m in (EXTEND_A, EXTEND_B)):
-                raise TypeError("moves must be ContextAttachment objects or 'extend_a'/'extend_b'")
+            if not (isinstance(m, _CONTEXT_TYPES)
+                    or isinstance(m, str) and m in (EXTEND_A, EXTEND_B)):
+                raise TypeError("moves must be checked context objects or 'extend_a'/'extend_b'")
         self.moves = moves
         R = self.max_volume
         self.coordinates = tuple(((s, t), v) for s in range(R + 1) for t in range(R + 1 - s)
@@ -73,7 +107,7 @@ class OrderedMoveSystem:
         operators = []
         for move in moves:
             matrix = [[Fraction(0)] * self.dimension for _ in range(self.dimension)]
-            if isinstance(move, ContextAttachment):
+            if isinstance(move, _CONTEXT_TYPES):
                 kernel = terminal_kernel(move.graph, move.terminals, R)
                 for (st, v), row in index.items():
                     cells = kernel.get(st, {})
@@ -106,14 +140,17 @@ class OrderedMoveSystem:
         return tuple(sum((Fraction(c) * self.q ** e for (j, e), c in kernel.get(st, {}).items()
                           if j == v - sum(st)), Fraction(0)) for st, v in self.coordinates)
 
+    def _word(self, word):
+        result = tuple(_integer(i, "move index", minimum=0) for i in word)
+        if any(i >= len(self.moves) for i in result):
+            raise ValueError("move index outside the declared language")
+        return result
+
     def apply_word(self, state, word=()):
         state = tuple(_exact(x, "state entry") for x in state)
         if len(state) != self.dimension:
             raise ValueError("state has the wrong dimension")
-        for i in word:
-            i = _integer(i, "move index", minimum=0)
-            if i >= len(self.moves):
-                raise ValueError("move index outside the declared language")
+        for i in self._word(word):
             state = tuple(sum((a * b for a, b in zip(row, state)), Fraction(0)) for row in self.operators[i])
         return state
 
@@ -124,9 +161,11 @@ class OrderedMoveSystem:
     def assemble(self, graph: Graph, terminals: Sequence[int] = (0, 1), word=()):
         """The actual graph and terminals after the chronological word."""
         terminals = tuple(_check_terminals(graph, terminals))
-        for i in word:
-            move = self.moves[_integer(i, "move index", minimum=0)]
-            if isinstance(move, ContextAttachment):
+        if len(terminals) != 2:
+            raise ValueError("the graph must have exactly two terminals")
+        for i in self._word(word):
+            move = self.moves[i]
+            if isinstance(move, _CONTEXT_TYPES):
                 graph, _ = glue_graphs(graph, terminals, move.graph, move.terminals)
             else:
                 k = 0 if move == EXTEND_A else 1
