@@ -1,0 +1,477 @@
+{
+  "abstract_examples": {
+    "equality_case": {
+      "ambiguous_reading": "1/2",
+      "certified": false,
+      "consistent": [
+        0,
+        1
+      ],
+      "epsilon": "1/2",
+      "readings": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "greedy_gadget": {
+      "costs": [
+        "1",
+        "1",
+        "19/10"
+      ],
+      "greedy_cost": "2",
+      "optimum": "19/10",
+      "readings": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    "l2_versus_box": {
+      "box_panel_feasible": false,
+      "epsilon": "3/5",
+      "l2_min_panel_cost": "2",
+      "l2_pair_certifies": true,
+      "l2_single_ambiguous_reading": [
+        "1/2"
+      ],
+      "l2_single_certifies": false,
+      "readings": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "graph_instance": {
+    "candidates": [
+      "path 0-1-2, terminals (0,2)",
+      "path 0-1-2, terminals (0,1)",
+      "path 0-1-2, terminals (1,2)",
+      "triangle, terminals (0,1)",
+      "edge 01 + isolated 2, terminals (0,1)",
+      "edge 01 + isolated 2, terminals (0,2)"
+    ],
+    "cheapest_witnesses_SNG_O03": [
+      {
+        "cost": "1",
+        "pair": [
+          "path 0-1-2, terminals (0,2)",
+          "path 0-1-2, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "cost": "1",
+        "pair": [
+          "path 0-1-2, terminals (0,2)",
+          "path 0-1-2, terminals (1,2)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (0,2)",
+          "triangle, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (0,2)",
+          "edge 01 + isolated 2, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (0,2)",
+          "edge 01 + isolated 2, terminals (0,2)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": null,
+        "pair": [
+          "path 0-1-2, terminals (0,1)",
+          "path 0-1-2, terminals (1,2)"
+        ],
+        "status": "future_equivalent",
+        "witness": null
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (0,1)",
+          "triangle, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (0,1)",
+          "edge 01 + isolated 2, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (0,1)",
+          "edge 01 + isolated 2, terminals (0,2)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (1,2)",
+          "triangle, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (1,2)",
+          "edge 01 + isolated 2, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "path 0-1-2, terminals (1,2)",
+          "edge 01 + isolated 2, terminals (0,2)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "triangle, terminals (0,1)",
+          "edge 01 + isolated 2, terminals (0,1)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "0",
+        "pair": [
+          "triangle, terminals (0,1)",
+          "edge 01 + isolated 2, terminals (0,2)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          []
+        ]
+      },
+      {
+        "cost": "1",
+        "pair": [
+          "edge 01 + isolated 2, terminals (0,1)",
+          "edge 01 + isolated 2, terminals (0,2)"
+        ],
+        "status": "within_budget",
+        "witness": [
+          1,
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "direct_enumerations": 72,
+    "direct_observation_vectors": {
+      "edge 01 + isolated 2, terminals (0,1)": [
+        "1",
+        "2",
+        "25/8",
+        "1057/256"
+      ],
+      "edge 01 + isolated 2, terminals (0,2)": [
+        "1",
+        "2",
+        "25/8",
+        "1057/256"
+      ],
+      "path 0-1-2, terminals (0,1)": [
+        "1",
+        "5/4",
+        "353/256",
+        "427009/262144"
+      ],
+      "path 0-1-2, terminals (0,2)": [
+        "1",
+        "5/4",
+        "353/256",
+        "427009/262144"
+      ],
+      "path 0-1-2, terminals (1,2)": [
+        "1",
+        "5/4",
+        "353/256",
+        "427009/262144"
+      ],
+      "triangle, terminals (0,1)": [
+        "1",
+        "3/4",
+        "195/256",
+        "286723/262144"
+      ]
+    },
+    "full_family_exact_panel": {
+      "feasible": false,
+      "uncoverable_pairs": [
+        [
+          "path 0-1-2, terminals (0,1)",
+          "path 0-1-2, terminals (1,2)"
+        ]
+      ]
+    },
+    "observation_cost_one_variant": {
+      "cost": "2",
+      "feasible": true,
+      "nodes": 2,
+      "panel": [
+        {
+          "cost": "2",
+          "observation_volume": 1,
+          "word": [
+            1
+          ]
+        }
+      ],
+      "root_lower_bound": "2"
+    },
+    "pool_size": 48,
+    "readings_checked_by_direct_enumeration": 288,
+    "reduced_exact_greedy_cost": "1",
+    "reduced_exact_panel": {
+      "cost": "1",
+      "feasible": true,
+      "nodes": 1,
+      "panel": [
+        {
+          "cost": "0",
+          "observation_volume": 1,
+          "word": []
+        },
+        {
+          "cost": "1",
+          "observation_volume": 1,
+          "word": [
+            1
+          ]
+        }
+      ],
+      "root_lower_bound": "1"
+    },
+    "reduced_family": [
+      "path 0-1-2, terminals (0,2)",
+      "path 0-1-2, terminals (0,1)",
+      "triangle, terminals (0,1)",
+      "edge 01 + isolated 2, terminals (0,1)",
+      "edge 01 + isolated 2, terminals (0,2)"
+    ],
+    "robust_panels": {
+      "1/16": {
+        "cost": "1",
+        "feasible": true,
+        "greedy_cost": "1",
+        "nodes": 1,
+        "panel": [
+          {
+            "cost": "0",
+            "observation_volume": 1,
+            "word": []
+          },
+          {
+            "cost": "1",
+            "observation_volume": 3,
+            "word": [
+              1
+            ]
+          }
+        ],
+        "root_lower_bound": "1"
+      },
+      "1/64": {
+        "cost": "1",
+        "feasible": true,
+        "greedy_cost": "1",
+        "nodes": 1,
+        "panel": [
+          {
+            "cost": "0",
+            "observation_volume": 1,
+            "word": []
+          },
+          {
+            "cost": "1",
+            "observation_volume": 1,
+            "word": [
+              1
+            ]
+          }
+        ],
+        "root_lower_bound": "1"
+      },
+      "1/8": {
+        "cost": "4",
+        "feasible": true,
+        "greedy_cost": "5",
+        "nodes": 2,
+        "panel": [
+          {
+            "cost": "4",
+            "observation_volume": 2,
+            "word": [
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "root_lower_bound": "4"
+      },
+      "278513/2097152": {
+        "ambiguous_pair_whole_pool": [
+          "path 0-1-2, terminals (0,2)",
+          "path 0-1-2, terminals (0,1)"
+        ],
+        "feasible": false,
+        "greedy_cost": null,
+        "uncoverable_pairs": [
+          [
+            "path 0-1-2, terminals (0,2)",
+            "path 0-1-2, terminals (0,1)"
+          ]
+        ]
+      }
+    },
+    "robust_threshold_per_pair": {
+      "edge 01 + isolated 2, terminals (0,1) | edge 01 + isolated 2, terminals (0,2)": "153137577473/137438953472",
+      "path 0-1-2, terminals (0,1) | edge 01 + isolated 2, terminals (0,1)": "353459241471/137438953472",
+      "path 0-1-2, terminals (0,1) | edge 01 + isolated 2, terminals (0,2)": "207753576447/137438953472",
+      "path 0-1-2, terminals (0,1) | triangle, terminals (0,1)": "117464367615/137438953472",
+      "path 0-1-2, terminals (0,2) | edge 01 + isolated 2, terminals (0,1)": "1288047/524288",
+      "path 0-1-2, terminals (0,2) | edge 01 + isolated 2, terminals (0,2)": "374898687/268435456",
+      "path 0-1-2, terminals (0,2) | path 0-1-2, terminals (0,1)": "278513/2097152",
+      "path 0-1-2, terminals (0,2) | triangle, terminals (0,1)": "66634908159/68719476736",
+      "triangle, terminals (0,1) | edge 01 + isolated 2, terminals (0,1)": "235461804543/68719476736",
+      "triangle, terminals (0,1) | edge 01 + isolated 2, terminals (0,2)": "162608972031/68719476736"
+    },
+    "robust_threshold_uniform_eps": "278513/2097152",
+    "system": {
+      "attachment_costs": [
+        2,
+        1
+      ],
+      "budget": 4,
+      "contexts": [
+        "pendant_leaf_pair",
+        "shared_neighbor"
+      ],
+      "dimension": 13,
+      "max_volume": 3,
+      "observation_costs": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "q": "1/2"
+    }
+  },
+  "schema": "singularity.panels/1",
+  "scope": "Exact finite receipts over declared pools. Weighted set cover is NP-hard in general; branch and bound is worst-case exponential. Greedy is a heuristic. No statement beyond the declared budget, volume truncation and family.",
+  "seeded_comparison": {
+    "branch_and_bound_equals_exhaustive": true,
+    "greedy_max_absolute_gap": "2",
+    "greedy_max_ratio_positive_optimum": "3/2",
+    "greedy_positive_gap_instances": 3,
+    "infeasible": 31,
+    "instances": 80,
+    "max_nodes": 5,
+    "population": "seed 20261018; k in 2..4 candidates; 1..10 experiments; costs 0..5; readings -2..2; every 8th instance forces readings of candidates 0 and 1 equal; odd instances use uniform box epsilon in {1/2, 1, 3/2}"
+  }
+}
