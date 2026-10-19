@@ -4,6 +4,10 @@ Detailed mathematical results, engines, documents, releases, and development rec
 
 ## Read or download
 
+[0.8.0 audit toolkit guide](../applications/training_lab/AUDIT_TOOLKIT.md) · [Robust audit evidence](../applications/training_lab/results/robust_audit/audit.json) · [Cross-domain confirmation](../applications/training_lab/results/cross_domain/results.json)
+
+Version 0.8.0 adds portable behavioral audit packages for PyTorch and Hugging Face causal models, exact minimum-cost panels that tolerate missing probe results (r-fold coverage with checkable witnesses), a vectorized causal online blend equivalent to the 0.7.0 loop, and a prospectively frozen prose/legal/code confirmation in which an adaptive count baseline outperforms the neural experts. No companion PDF was rebuilt for 0.8.0; the guide is the reference document.
+
 [Confirmed advantages - PDF](../output/pdf/confirmed_advantages.pdf) · [Editable companion](papers/confirmed_advantages.md) · [Runnable confirmation guide](../applications/training_lab/CONFIRMED_ADVANTAGES.md) · [Independent audit](../applications/training_lab/results/confirmed_advantages_audit.json)
 
 Version 0.7.0 confirms fresh-text neural/count prediction gains, finite-grid causal aggregation with a cumulative log-loss bound, and smaller behavioral smoke tests with measured resident inference savings. It includes portable count artifacts, frozen recipes, cached golden outputs and exact/source-bound receipts. The companion separates the empirical gains, mathematical guarantees and workload costs.

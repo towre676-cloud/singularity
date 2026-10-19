@@ -101,6 +101,16 @@ class CoreTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             check_package(package, observer(self.reference), contract, missing=["nope"])
 
+    def test_frozen_panel_reports_coverage_that_did_not_transfer(self):
+        package = self.package(panel_ids=["p1", "p3"])
+        self.assertEqual(package["deficient_faults"], ["b"])
+        self.assertEqual(package["coverage"], {"a": 2, "b": 1})
+        report = verify_package(package)
+        self.assertFalse(report["verified"])
+        self.assertTrue(any("deficient" in problem for problem in report["problems"]))
+        with self.assertRaises(ValueError):
+            self.package(panel_ids=["p1", "p1"])
+
     def test_infeasible_requirement_is_an_error_not_a_package(self):
         with self.assertRaises(ValueError):
             self.package(requirement=4)

@@ -6,11 +6,19 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 ![The cube and Möbius ladder agree through volume three, then separate at volume four by an exact polynomial.](docs/assets/singularity-observation.svg)
 
-[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Use the confirmed AI tools**](applications/training_lab/CONFIRMED_ADVANTAGES.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Audit your model**](applications/training_lab/AUDIT_TOOLKIT.md) · [**Use the confirmed AI tools**](applications/training_lab/CONFIRMED_ADVANTAGES.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+
+## Audit your own model. Survive missing results. Blend faster.
+
+**New in 0.8.0: a portable audit tool.** `singularity.model_audit` turns a resident PyTorch callable, one of our byte transformers or a Hugging Face causal model into a self-contained audit package. The package holds only the chosen probe inputs, the expected observations, tolerances frozen from clean reruns and the declared execution contract. A deployment is then checked against that file alone: no dataset download and no second reference pass. Observations are sensitive to probability as well as to the winning token, so a temperature change that leaves every argmax intact is still caught.
+
+**Exact robust coverage.** Every declared fault must be separated by two probes, so one missing result cannot hide it. Across seven realistic silent faults (padding mask, position offsets, truncation, Unicode handling, temperature and localized quantization), the exact panel costs **195 of 961 pool tokens**; greedy selection costs 224. On a checkpoint excluded from selection, the frozen panel separates every construction fault twice and detects all five held-out faults, including an excluded CRLF family, with **no false alarms** in twelve clean controls. A conventional panel of typical sentences misses half of these faults. A resident check takes **4.7 ms**.
+
+**Same predictions, 9.2× faster blending.** The causal Bayesian blend is now vectorized. It reproduces the 0.7.0 loop to 10⁻¹⁰ nats, gives bit-identical results for any chunk size, saves and resumes exactly, and keeps its log(21) bound. A prospectively frozen confirmation on new prose, legal text and Python source shows online blending beating the neural model by **7.5–19.7%** in every document. It also shows something more useful: a simple adaptive in-document count model beats all of these neural arms on such out-of-domain text, and blending with it is best everywhere. Read the [**0.8.0 audit toolkit guide**](applications/training_lab/AUDIT_TOOLKIT.md).
 
 ## Better predictions. Smaller checks. Measured results.
 
-Singularity now connects exact observation mathematics to useful tools for trained AI models. The **0.7.0 confirmation release** improves fresh-text predictions, builds economical behavioral smoke tests, and supplies a causal probability-combination API with a proved finite-grid log-loss bound.
+The **0.7.0 confirmation release** connected exact observation mathematics to trained AI models. It improves fresh-text predictions, builds economical behavioral smoke tests, and supplies a causal probability-combination API with a proved finite-grid log-loss bound.
 
 ![Every retained neural seed improves with a tuning-selected count mixture on fresh WikiText text; a stronger three-model ensemble improves too.](docs/assets/confirmed-prediction.svg)
 
