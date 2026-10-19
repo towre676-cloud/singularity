@@ -795,8 +795,32 @@
             "Two exact scalar examples and nonnormal/marginal cases.",
             "Independent closed-form/matrix-power checks and metric tamper rejection."
           ],
-          "status": "proposed",
-          "depends_on": []
+          "status": "complete",
+          "depends_on": [],
+          "evidence": {
+            "summary": "Constant-input response-tail certificates proved and implemented with exact semidefinite metrics; two exact scalar examples, nonnormal and marginal cases, independent closed-form and forward-iteration checks, and metric tamper rejection.",
+            "artifacts": [
+              "src/singularity/horizon_design.py",
+              "tests/test_horizon_design.py",
+              "scripts/horizon_design.py",
+              "results/horizon_design.json",
+              "docs/research/HORIZON_DESIGN.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_horizon_design",
+                "exit_code": 0,
+                "scope": "7 tests: scalar closed forms, nonnormal transient, marginal refusals, tamper rejection, exact inputs"
+              },
+              {
+                "command": "PYTHONPATH=src python scripts/horizon_design.py --check",
+                "exit_code": 0,
+                "scope": "four retained cases, bound checked for k < 40"
+              }
+            ],
+            "commit": "e308c83",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX10-B",
@@ -825,7 +849,7 @@
           ]
         }
       ],
-      "status": "proposed",
+      "status": "in_progress",
       "packet": "packets/NX10.md",
       "execution_rank": 10,
       "supporting_tracks": []
