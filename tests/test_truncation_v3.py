@@ -2,6 +2,9 @@
 import copy
 import importlib.util
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 import random
 import tempfile
@@ -200,6 +203,33 @@ class RunnerContractTests(unittest.TestCase):
         observed["calibration/c"][0]["argmax"].pop()
         with self.assertRaisesRegex(ValueError, "shape"):
             self.m.calibrated(p, observed)
+
+
+@unittest.skipUnless(importlib.util.find_spec("torch") and importlib.util.find_spec("transformers"),
+                     "optional pretrained dependencies unavailable")
+class RealCPUIntegration(unittest.TestCase):
+    def test_random_qwen_end_to_end_freeze_run_and_independent_verify(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d) / "prospective"
+            command = [sys.executable, str(ROOT / "scripts/colab_deployment_audit_v3.py"),
+                       "--local-test", "--output", str(out)]
+            env = {**os.environ, "OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}
+            run = subprocess.run(command, capture_output=True, text=True, timeout=300, env=env)
+            self.assertEqual(run.returncode, 0, run.stderr[-5000:])
+            result = json.loads((out / "results.json").read_text())
+            protocol = json.loads((out / "protocol.json").read_text())
+            self.assertTrue(result["local_test"])
+            self.assertEqual(protocol["maximum_cap"], 127)
+            self.assertTrue(result["comparison"]["panels"]["exact"]["satisfies_requirement"])
+            self.assertFalse(result["evaluation"]["exact"]["false_alarms"])
+            self.assertGreaterEqual(sum(p["tokens"] > 127 for p in protocol["probes"]), 2)
+            replay = subprocess.run([sys.executable, str(ROOT / "scripts/colab_deployment_audit_v3.py"),
+                                     "--phase", "verify", "--output", str(out)],
+                                    capture_output=True, text=True, timeout=120, env=env)
+            self.assertEqual(replay.returncode, 0, replay.stderr[-5000:])
+            again = subprocess.run(command, capture_output=True, text=True, timeout=60, env=env)
+            self.assertNotEqual(again.returncode, 0)
+            self.assertIn("new empty directory", again.stderr)
 
 
 if __name__ == "__main__":
