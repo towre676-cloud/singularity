@@ -211,3 +211,16 @@ The linked June 11, 2013 Vakil draft yields a Noetherian finite-determination pr
 - OE05: `periodic.py` (delegated agent, reviewed), with 524-model exhaustion.
 - OE06: `scripts/operator_experiments.py --check` added to CI. Chapter 15 written, with SNG-O01 to SNG-O12. Added OPERATORS-v1, version 0.3.0, README, ledger and D015.
 - The background references (Schützenberger, Kalman, Carlyle–Paz, Berstel–Reutenauer) were recorded with their primary-record check open: publisher and Crossref hosts were unreachable.
+
+## 2026-10-19: expansion units after 0.3.0
+
+- **CI.** Runs 53 (source 6761037) and 54 (archive 6d6b333) were green, so OE06 is complete.
+- **Container restart.** The container restarted once mid-session, most likely from memory exhaustion while a Mathlib build ran beside four agents. All files survived and the agents were resumed. Lean builds now run alone.
+- **OE07 (robust_search).** Proved: the bounded maximum-margin search returns the exhaustive optimum. Counterexamples: amplification, a supremum that is not attained, and an optimum that dependence pruning discards.
+- **OE08 (panels).** Box-noise identification is proved in both directions. The graph robust threshold is 278513/2097152.
+- **OE09 (parametric).** SNG-O19 proved. Full rank on (0,1) for R ≤ 4; D_r factors into q, q±1 and cyclotomic polynomials.
+- **OE10 (compression).** SNG-O13: cyclicity, so attachment-closed families have no savings for R ≤ 6. SNG-O14: star-family bound (R+1)(R+2)/2, with savings 0, 1, 3, 7, 13, 22, 33 for R = 1..7.
+- **OE13.** SNG-O17 (period reduction, attained at M=4), SNG-O18 (closed form at M=2), SNG-O20 (ordered terminal moves). The M=3 gap is open.
+- **OE11 (separator_compiler).** SNG-O21: exactness, cell and bit bounds proved. Benchmarks to n=200.
+- **Finite, not retained.** The R=8 corank of 1 equals the bound (one run, 182 s). The R=9 run was lost in the restart.
+- **OE12.** Lean formalization resumed alone in formal-analysis.
