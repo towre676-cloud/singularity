@@ -30,9 +30,11 @@ from singularity.observability import (OperatorSystem, apply_word, certificate_b
                                        experiment, minimum_distinguishing_experiment,
                                        observable_closure, quotient_output, quotient_state,
                                        quotient_update, replay_bundle, verify_certificate)
-from singularity.periodic import (PeriodicModel, compare_models, direct_coefficients,  # noqa: E402
-                                  is_palindromic, periodic_cutoff, residue_numerator,
+from singularity.periodic import (PeriodicModel, compare_models, compare_models_reduced,  # noqa: E402
+                                  direct_coefficients, effective_modulus, is_palindromic,
+                                  odd_vertex_count, periodic_cutoff, residue_numerator,
                                   series_from_numerator)
+from singularity.terminal_moves import OrderedMoveSystem  # noqa: E402
 
 HALF = F(1, 2)
 PATH = Graph(3, ((0, 1), (1, 2)))
@@ -210,6 +212,47 @@ def periodic(timings):
             'cutoff_examples': {f'n={n},M={M}': periodic_cutoff(n, M) for n in (3, 4) for M in (2, 3)}}
 
 
+def periodic_reduction():
+    path, split = Graph(3, ((0, 1), (1, 2))), Graph(3, ((0, 1),))
+    four = [PeriodicModel(g, 4) for g in (path, split, Graph(3, ((0, 1), (1, 2), (0, 2))))]
+    worst = {}
+    for n in (2, 3, 4):
+        pairs = [(u, v) for u in range(n) for v in range(u + 1, n)]
+        reps = {}
+        for mask in range(1 << len(pairs)):
+            m = PeriodicModel(Graph(n, [p for i, p in enumerate(pairs) if mask >> i & 1]), 4)
+            reps.setdefault(tuple(direct_coefficients(m, 3 * n + 8)), m)
+        reps = list(reps.values())
+        worst[str(n)] = max((compare_models_reduced(a, b).first_difference
+                             for i, a in enumerate(reps) for b in reps[i + 1:]), default=None)
+    return {'effective_modulus_M4': [effective_modulus(m) for m in four],
+            'reduced_cutoff_M4_n3': compare_models_reduced(four[0], four[1]).cutoff,
+            'worst_first_difference_M4_exponent1_by_n': worst,
+            'M2_odd_vertex_counts': {'path': odd_vertex_count(PeriodicModel(path, 2)),
+                                     'edge_plus_isolated': odd_vertex_count(PeriodicModel(split, 2))}}
+
+
+def terminal_moves():
+    system = OrderedMoveSystem(2, HALF)
+    operators = system.operator_system(attachment_costs=(2, 1, 1, 1))
+    cert = observable_closure(operators)
+    d = tuple(a - b for a, b in zip(system.compile_graph(PATH, (0, 1)), system.compile_graph(PATH, (1, 2))))
+    witness = minimum_distinguishing_experiment(operators, d, cert)
+    checked = 0
+    for terminals in ((0, 2), (0, 1), (1, 0)):
+        state = system.compile_graph(PATH, terminals)
+        for word in (w for m in range(4) for w in product(range(4), repeat=m)):
+            assert system.observe(state, word) == system.direct_observations(PATH, terminals, word)
+            checked += 1
+    return {'max_volume': 2, 'moves': [m if isinstance(m, str) else m.name for m in system.moves],
+            'ordered_dimension': system.dimension, 'ordered_rank': cert.rank,
+            'symmetric_blind_pair': 'path(0,1) vs path(1,2)',
+            'witness': {'word': [system.moves[i] if isinstance(system.moves[i], str) else system.moves[i].name
+                                 for i in witness.word], 'cost': s(witness.cost),
+                        'observation_volume': witness.observation},
+            'words_checked_against_enumeration': checked}
+
+
 def experiment_report(timings):
     r4, operators, cert = r4_closure(timings)
     return {'schema': 'singularity.operator-experiments/1',
@@ -218,7 +261,8 @@ def experiment_report(timings):
                       'graph-realizable states, or maximum-margin experiments.'),
             'closure_R4': r4, 'closure_R7': r7_invisible(timings), 'top_volume_corank_bound': corank_bound(),
             'path_fixture': path_fixture(timings), 'amplification_counterexample': amplification(),
-            'word_order': word_order(), 'metrics': metrics(), 'periodic': periodic(timings)}, operators, cert
+            'word_order': word_order(), 'metrics': metrics(), 'periodic': periodic(timings),
+            'periodic_reduction': periodic_reduction(), 'terminal_moves': terminal_moves()}, operators, cert
 
 
 def main():

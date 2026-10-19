@@ -87,6 +87,7 @@ jobs:
           PYTHONPATH=src python scripts/robust_search.py --check
           PYTHONPATH=src python scripts/panels.py --check
           PYTHONPATH=src python scripts/compression.py --check
+          PYTHONPATH=src python scripts/parametric_observability.py --check
       - name: Repository and manuscript checks
         run: python scripts/check_repository.py
       - name: Published document links

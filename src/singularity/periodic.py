@@ -240,3 +240,103 @@ def compare_models(first: PeriodicModel, second: PeriodicModel,
     if p1 != p2:  # pragma: no cover - excluded by the theorem
         raise ArithmeticError("series agree through the cutoff but numerators differ")
     return PeriodicComparison(cutoff, True)
+
+
+# ---------------------------------------------------------------------------
+# Sharper cutoffs (OE13): period reduction and the closed form at M = 2.
+
+def square_period(exponent: int, modulus: int) -> int:
+    """Least p >= 1 with a((d+p)^2 - d^2) = 0 (mod M) for every integer d.
+
+    Equivalently M | 2ap and M | ap^2.  The weight zeta_M^(a d^2) depends
+    only on d modulo this period (SNG-O17)."""
+    a = _exact_int(exponent, "exponent")
+    M = _exact_int(modulus, "modulus", minimum=1)
+    return next(p for p in range(1, M + 1) if (2 * a * p) % M == 0 and (a * p * p) % M == 0)
+
+
+def effective_modulus(model: PeriodicModel) -> int:
+    """M* = lcm of the square periods of the edge exponents; M* divides M."""
+    model = _check_model(model)
+    from math import lcm
+    result = 1
+    for _, a in model.phases:
+        result = lcm(result, square_period(a, model.modulus))
+    return result
+
+
+def reduced_numerator(model: PeriodicModel, period: int | None = None, max_profiles: int = 1_000_000) -> list:
+    """Numerator of F = P*(x)/(1 - x^p)^n for a period p of every edge weight.
+
+    p defaults to effective_modulus(model) and must be a multiple of it.
+    Values lie in the model's ring Z[t]/Phi_M; degree <= n(p-1)."""
+    model = _check_model(model)
+    p = effective_modulus(model) if period is None else _exact_int(period, "period", minimum=1)
+    if p % effective_modulus(model):
+        raise ValueError("period must be a multiple of the effective modulus")
+    max_profiles = _exact_int(max_profiles, "max_profiles", minimum=0)
+    if p ** model.n > max_profiles:
+        raise ValueError(f"residue box has {p ** model.n} profiles; budget is {max_profiles}")
+    ring = model.ring
+    numerator = [ring.zero for _ in range(model.n * (p - 1) + 1)]
+    for rho in product(range(p), repeat=model.n):
+        k = sum(rho)
+        numerator[k] = ring.add(numerator[k], ring.phase(model.phase_exponent(rho)))
+    return numerator
+
+
+def series_from_reduced(model: PeriodicModel, numerator, period: int, max_volume: int) -> list:
+    """Expand P*/(1 - x^p)^n into F_0..F_R."""
+    model = _check_model(model)
+    p = _exact_int(period, "period", minimum=1)
+    R = _exact_int(max_volume, "max_volume", minimum=0)
+    ring, n = model.ring, model.n
+    out = [ring.zero for _ in range(R + 1)]
+    for j, coefficient in enumerate(numerator):
+        m = 0
+        while j + p * m <= R:
+            out[j + p * m] = ring.add(out[j + p * m], ring.scale(tuple(coefficient), comb(m + n - 1, n - 1)))
+            m += 1
+    return out
+
+
+def reduced_cutoff(first: PeriodicModel, second: PeriodicModel) -> int:
+    """floor(n(L-1)/2) with L = lcm of the two effective moduli (SNG-O17)."""
+    from math import lcm
+    first, second = _check_model(first), _check_model(second)
+    if first.n != second.n or first.modulus != second.modulus:
+        raise ValueError("reduced_cutoff requires equal n and modulus")
+    L = lcm(effective_modulus(first), effective_modulus(second))
+    return first.n * (L - 1) // 2
+
+
+def compare_models_reduced(first: PeriodicModel, second: PeriodicModel,
+                           max_profiles: int = 1_000_000) -> PeriodicComparison:
+    """compare_models with the period-reduced cutoff; equal=True proves equality."""
+    from math import lcm
+    first, second = _check_model(first), _check_model(second)
+    cutoff = reduced_cutoff(first, second)
+    L = lcm(effective_modulus(first), effective_modulus(second))
+    p1, p2 = reduced_numerator(first, L, max_profiles), reduced_numerator(second, L, max_profiles)
+    f1, f2 = series_from_reduced(first, p1, L, cutoff), series_from_reduced(second, p2, L, cutoff)
+    for k, (a, b) in enumerate(zip(f1, f2)):
+        if a != b:
+            return PeriodicComparison(cutoff, False, k, a, b)
+    if p1 != p2:  # pragma: no cover - excluded by SNG-O17
+        raise ArithmeticError("series agree through the reduced cutoff but numerators differ")
+    return PeriodicComparison(cutoff, True)
+
+
+def odd_vertex_count(model: PeriodicModel) -> int:
+    """For M = 2: the number of vertices meeting an odd number of odd-exponent
+    edges.  F = (1-x)^-(n-o) (1+x)^-o determines and is determined by o
+    (SNG-O18)."""
+    model = _check_model(model)
+    if model.modulus != 2:
+        raise ValueError("odd_vertex_count applies to modulus 2")
+    parity = [0] * model.n
+    for (u, v), a in model.phases:
+        if a % 2:
+            parity[u] ^= 1
+            parity[v] ^= 1
+    return sum(parity)

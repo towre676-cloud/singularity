@@ -368,8 +368,45 @@
     "identity_checked_through": "K + 2M + 1",
     "population": "all graphs on n <= 3 labelled vertices, M in 1..4, edge exponents in {-1,0,1,2}"
   },
+  "periodic_reduction": {
+    "M2_odd_vertex_counts": {
+      "edge_plus_isolated": 2,
+      "path": 2
+    },
+    "effective_modulus_M4": [
+      2,
+      2,
+      2
+    ],
+    "reduced_cutoff_M4_n3": 1,
+    "worst_first_difference_M4_exponent1_by_n": {
+      "2": 1,
+      "3": 1,
+      "4": 2
+    }
+  },
   "schema": "singularity.operator-experiments/1",
   "scope": "Exact finite receipts. Closure is fixed-budget formal closure; it does not prove an untruncated rational generating function, minimality on graph-realizable states, or maximum-margin experiments.",
+  "terminal_moves": {
+    "max_volume": 2,
+    "moves": [
+      "pendant_leaf_pair",
+      "shared_neighbor",
+      "extend_a",
+      "extend_b"
+    ],
+    "ordered_dimension": 10,
+    "ordered_rank": 10,
+    "symmetric_blind_pair": "path(0,1) vs path(1,2)",
+    "witness": {
+      "cost": "1",
+      "observation_volume": 1,
+      "word": [
+        "extend_a"
+      ]
+    },
+    "words_checked_against_enumeration": 255
+  },
   "top_volume_corank_bound": [
     {
       "colliding_orbit_classes": [],

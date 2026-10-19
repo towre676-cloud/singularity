@@ -200,6 +200,26 @@ This is a sufficient cutoff, not a sharpness claim. The argument uses squared ed
 - **A certified equal pair (SNG-E012).** At \(n=3\), \(M=2\), with every exponent one, the path \(0-1-2\) and the edge \(01\) with isolated vertex \(2\) have the same numerator \((1,-1,-1,1)\). The cutoff is \(1\), so their complete series are equal. Direct enumeration confirms agreement through volume \(14\). At \(M=3\) the same pair separates at volume one, with \(F_1=2\zeta+\zeta^2\) versus \(2\zeta+1\).
 - **Exhaustive population.** Every graph on \(n\le3\) labeled vertices, every \(M\in\{1,2,3,4\}\) and every exponent assignment from \(\{-1,0,1,2\}\): \(524\) models. The residue identity was checked against direct height enumeration through volume \(K+2M+1\), the palindrome on every numerator, and the cutoff theorem on every pair with equal \((n,M)\).
 
+**Theorem SNG-O17 (period reduction).** For an edge exponent \(a\), let \(p_a\) be the least \(p\ge1\) with \(M\mid 2ap\) and \(M\mid ap^2\), and put \(M^*=\operatorname{lcm}_ep_{a_e}\), which divides \(M\). Then
+\[
+F=\frac{P^*(x)}{(1-x^{M^*})^n},\qquad \deg P^*\le n(M^*-1),\qquad P^*_k=P^*_{n(M^*-1)-k}.
+\]
+For two models with the same \(n\) and \(M\), let \(L\) be the lcm of their reduced moduli. Agreement of the two series through \(\lfloor n(L-1)/2\rfloor\) proves that they are equal.
+
+*Proof.* We have \(a\bigl((d+p)^2-d^2\bigr)=a(2pd+p^2)\equiv0\pmod M\) for every \(d\) exactly when \(M\mid 2ap\) and \(M\mid ap^2\). So every edge weight depends only on \(d \bmod M^*\). The proofs of SNG-O08 and SNG-O09 then apply verbatim with \(M^*\) in place of \(M\). Each model's weights are periodic modulo \(L\), so both series have the form \(P/(1-x^L)^n\). \(\square\)
+
+For \(M=4\) with odd exponents, \(M^*=2\). The cutoff drops from \(\lfloor 3n/2\rfloor\) to \(\lfloor n/2\rfloor\), and this reduced cutoff is attained: across all graphs on \(n\le4\) vertices with exponents from a declared set, the worst first discrepancy among distinct series equals \(\lfloor n/2\rfloor\). For \(M=3\) there is no reduction. There the observed worst first discrepancy is \(2\) for \(n=4,5\), well below the cutoffs \(4\) and \(5\). Explaining that gap is open.
+
+**Proposition SNG-O18 (closed form at \(M=2\)).** Let \(d^{\mathrm{odd}}_v\) be the number of odd-exponent edges at \(v\), and let \(o\) be the number of vertices with \(d^{\mathrm{odd}}_v\) odd. Then
+\[
+F(x)=(1-x)^{-(n-o)}(1+x)^{-o}.
+\]
+Two models with equal \(n\) have equal series if and only if their volume-one coefficients \(n-2o\) agree.
+
+*Proof.* Modulo \(2\), \(d^2\equiv d\), so \((-1)^{a(h_u-h_v)^2}=(-1)^{a(h_u+h_v)}\). The product over edges is therefore \(\prod_v(-1)^{d^{\mathrm{odd}}_vh_v}\), and the height sum factorizes over vertices into geometric series. \(\square\)
+
+This explains the data at \(M=2\): every graph on \(n\le5\) vertices falls into one of at most three classes, and all of them separate at volume one.
+
 ## 15.8 Edge-factor families and compressed interfaces
 
 The October 2026 supplement `docs/research/VAKIL_BRIDGES.md` gives full proofs of three results, recorded here with identifiers. It applies standard tools from Vakil's draft of *Foundations of Algebraic Geometry* to the height series.
@@ -238,6 +258,14 @@ There are three cautions. First, without a budget no optimum need exist: the amp
 
 Finding a cheapest certifying panel is therefore a weighted set-cover problem over pairs. That problem is NP-hard in general, so the exact branch-and-bound in `panels.py` is worst-case exponential. Its lower bound packs pairs that no single experiment covers twice. A Euclidean-ball noise model is treated separately. There, several readings jointly certify a pair that no single reading separates robustly. Take six three-vertex candidates at \(R=3\), \(q=1/2\), costs \((2,1)\) and budget \(4\). Exactly one pair is never separable: the endpoint–middle and middle–endpoint placements on the path, which coincide under the path automorphism. The other classes are separated at cost \(1\). A robust panel exists if and only if \(\varepsilon<278513/2097152\).
 
+**Theorem SNG-O19 (exceptional parameters).** Let the generators and observations have entries in \(\mathbb Q[q]\). Let \(W\) be the matrix of all experiment rows of word length at most \(n-1\), let \(r\) be its rank over \(\mathbb Q(q)\), and let \(D_r\) be the gcd of its \(r\times r\) minors. Then at every \(\alpha\) in a field extending \(\mathbb Q\), the observable rank of the specialized system is at most \(r\). It equals \(r\) if and only if \(D_r(\alpha)\ne0\).
+
+*Proof.* At every specialization, the span of rows of length at most \(k\) is nondecreasing in \(k\) and constant from its first non-increase. So length \(n-1\) suffices at \(\alpha\) as well as over \(\mathbb Q(q)\). Minors commute with evaluation, so \(\operatorname{rank}W(\alpha)<r\) exactly when every \(r\times r\) minor vanishes at \(\alpha\). By Bézout in \(\mathbb Q[q]\), that happens exactly when the minors' gcd vanishes at \(\alpha\). \(\square\)
+
+The minors of the generic closure basis alone are not enough. Their gcd can vanish where other words restore the rank. In the synthetic example \(L_1=(1,0)\), \(L_2=(0,q)\), \(M=\bigl(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\bigr)\), we have \(D_2(B)=q\) but \(D_2(W)=1\). The implementation `parametric.py` computes \(D_r\) through Hermite forms of the row modules of length at most \(k\), without listing \(W\). It factors \(D_r\) over \(\mathbb Q\) with certificates, isolates real roots by Sturm sequences, and replays rational exceptional values exactly.
+
+For the standard contexts at \(R=1,\ldots,4\), every irreducible factor of \(D_r\) is \(q\), \(q\pm1\) or cyclotomic. For example, at \(R=2\) the divisor is \(q^4(q-1)^7(q+1)^3\Phi_3\Phi_4\). Hence the closure has full rank \(n\) at **every** \(q\in(0,1)\), not only at \(q=1/2\). The rank drops at \(q=0\), at \(q=1\), where it equals the number of observations \(R+1\), and at \(q=-1\) for \(R\ge2\). This is an exact result for \(R\le4\). Whether the factor pattern persists for larger \(R\) is open.
+
 **Theorem SNG-O13 (cyclicity of realizable states).** Let \(A\) be the unital algebra generated by the compiled operators of a context language at budget \(R\) and \(q\in\mathbb Q\cap(0,1)\).
 
 1. For every realizable graph state \(v\), the reachable space \(\operatorname{span}\{M_wv\}\) equals \(Av\) and has dimension \(\dim A\).
@@ -260,6 +288,16 @@ Hence \(\dim\operatorname{span}\{Y(S_\alpha):\alpha\ge0\}\le(R+1)(R+2)/2\), whil
 At \(q=1/2\) the span equals the bound for \(R\le7\), which is a finite check. The reconstruction \(C\) is fitted on \(\alpha<d\) and verified exactly on held-out \(\alpha\). The observable part equals the span, and the saving against the formal quotient is \(0,1,3,7,13,22,33\) for \(R=1,\ldots,7\).
 
 The compressed coordinates are the explicit numbers \(\alpha^kq^{\alpha r^2}\). With \(q=a/b\), each has bit length \(O(R\log\alpha+\alpha R^2\log b)\). The \(n\) uncompressed coordinates have the same order each, so the storage ratio is \(n/d\sim R/6\). This family is not attachment-closed, because the pendant pair also adds leaves at terminal \(1\). By SNG-O13, closing it under the standard attachments removes every saving for \(R\le6\). Initial-state compression and attachment-closed compression are thus genuinely different problems.
+
+**Proposition SNG-O20 (noncommuting terminal moves with closed semantics).** Keep the ordered truncated kernels \(Y_{(s,t)}[v]=[x^v]x^{s+t}K_G(s,t)\), with \(s+t\le v\le R\), without symmetrization. Extending terminal \(a\) means joining a new vertex \(\ell\) to \(a\), making \(\ell\) the terminal and \(a\) interior. This move acts by
+\[
+Y'_{(s',t)}[v]=\sum_sq^{(s-s')^2}\,Y_{(s,t)}[v-s'],
+\]
+and symmetrically for \(b\). Any context without a terminal edge, symmetric or not, acts blockwise as in SNG-O05. The truncated ordered space is closed under every such word. Extension does not commute with attaching a shared neighbour.
+
+*Proof.* The new kernel is \(K'(s',t)=\sum_sx^sq^{(s-s')^2}K(s,t)\). The only new edge is \(a\ell\), and the old terminal height joins the interior volume. Extracting \([x^v]x^{s'+t}\) gives the formula, which reads \(Y\) only at volumes \(v-s'\le v\). Noncommutation is witnessed by the two orders, which give different graphs with different readings. \(\square\)
+
+All \(85\) words of length at most three over the four moves agree with direct enumeration on six base blocks at \(R=2,3\). The ordered closure has full rank \(10\) and \(20\) there: within those finite budgets the expanded language distinguishes every pair of ordered states. One consequence: path\((0,1)\) and path\((1,2)\) have identical symmetric states, so no symmetric context can separate them, yet a single terminal extension separates them at cost one. Completeness at larger budgets is not claimed.
 
 ## 15.10 Interfaces and runnable examples
 
@@ -289,7 +327,7 @@ assert result.equal and result.cutoff == 1
 
 ## 15.11 Formal status
 
-The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O16. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
+The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O20. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
 
 ## 15.12 Open questions
 
@@ -299,5 +337,5 @@ The following are open:
 - **Corank.** Is the corank bound SNG-O06 sharp for every budget? It is attained at \(R=4\) and \(R=7\) in the retained receipts; one unretained run gave corank \(1\) at \(R=8\), also equal to the bound. Does the visible rank have a closed form in \(R\)?
 - **Margins.** SNG-O15 handles a fixed budget. The \(\infty\)-norm bound can be loose: nothing is pruned on the path fixture. Better metric-specific bounds remain to be proved.
 - **Panels.** Panels are exact only within a declared pool and candidate family. No polynomial-time exact method exists in general, unless P = NP.
-- **Parameter dependence.** Determine where the rank depends on \(q\): generic rank over \(\mathbb Q(q)\) versus rank at every specialization (OE09).
-- **Sharper periodic cutoffs and noncommuting operations.** Find periodic cutoffs below \(\lfloor K/2\rfloor\) for structured families, and genuinely noncommuting graph operations with closed state semantics.
+- **Parameter dependence.** SNG-O19 settles \(R\le4\): full rank on all of \((0,1)\). Does \(D_r\) factor into \(q\), \(q\pm1\) and cyclotomic polynomials for every \(R\)? Rational-function entries, with pole guards, are not yet implemented.
+- **Sharper periodic cutoffs and noncommuting operations.** SNG-O17 and SNG-O18 sharpen the periodic cutoff when weights have smaller periods. At \(M=3\), the observed worst discrepancy of \(2\) is unexplained. Noncommuting terminal moves (SNG-O20) are complete only at the finite budgets checked.

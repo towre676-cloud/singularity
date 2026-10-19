@@ -236,3 +236,82 @@ class ValidationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SharperCutoffTests(unittest.TestCase):
+    """OE13: period reduction (SNG-O17) and the M = 2 closed form (SNG-O18)."""
+
+    def models(self, n, M, exponents=(-1, 0, 1, 2, 3)):
+        pairs = [(u, v) for u in range(n) for v in range(u + 1, n)]
+        for mask in range(1 << len(pairs)):
+            edges = [p for i, p in enumerate(pairs) if mask >> i & 1]
+            for exps in product(exponents, repeat=len(edges)):
+                yield PeriodicModel(Graph(n, edges), M, dict(zip(edges, exps)))
+
+    def test_square_periods(self):
+        from singularity.periodic import square_period
+        self.assertEqual([square_period(1, M) for M in range(1, 9)], [1, 2, 3, 2, 5, 6, 7, 4])
+        self.assertEqual(square_period(2, 4), 2)  # 2d^2 mod 4 is 0 or 2 by parity
+        self.assertEqual(square_period(4, 8), 2)
+        self.assertEqual(square_period(0, 7), 1)
+        self.assertEqual(square_period(3, 9), 3)
+        for M in range(1, 13):
+            for a in range(-3, 4):
+                p = square_period(a, M)
+                self.assertEqual(M % p, 0)
+                for d in range(-6, 7):
+                    self.assertEqual((a * (d + p) ** 2) % M, (a * d * d) % M)
+
+    def test_reduced_numerator_identity_and_palindrome(self):
+        from singularity.periodic import effective_modulus, reduced_numerator, series_from_reduced
+        for n in (1, 2, 3):
+            for M in (2, 3, 4, 6, 8):
+                for model in self.models(n, M, (-1, 1, 2)):
+                    p = effective_modulus(model)
+                    P = reduced_numerator(model)
+                    self.assertEqual(len(P), n * (p - 1) + 1)
+                    self.assertTrue(is_palindromic(P))
+                    R = n * (M - 1) + 2 * M
+                    self.assertEqual(series_from_reduced(model, P, p, R), direct_coefficients(model, R))
+
+    def test_reduced_cutoff_is_valid_and_attained(self):
+        # Exhaustive on n <= 4, M = 4 with exponents in {-1,0,1,2,3}: agreement
+        # through the reduced cutoff forces agreement far beyond it, and the
+        # worst first discrepancy equals the reduced cutoff floor(n/2).
+        from singularity.periodic import compare_models_reduced, reduced_cutoff
+        for n in (2, 3, 4):
+            exps = (-1, 0, 1, 2, 3) if n < 4 else (1, 2)
+            by_series, worst = {}, 0
+            models = list(self.models(n, 4, exps))
+            for m in models:
+                key = tuple(direct_coefficients(m, n * 3 + 8))
+                by_series.setdefault(key, m)
+            reps = list(by_series.values())
+            for i, a in enumerate(reps):
+                for b in reps[i + 1:]:
+                    c = compare_models_reduced(a, b)
+                    self.assertFalse(c.equal)
+                    self.assertLessEqual(c.first_difference, reduced_cutoff(a, b))
+                    worst = max(worst, c.first_difference)
+            self.assertEqual(worst, n // 2)
+            for m in models[:40]:
+                self.assertTrue(compare_models_reduced(m, by_series[tuple(direct_coefficients(m, n * 3 + 8))]).equal)
+
+    def test_modulus_two_closed_form(self):
+        from singularity.periodic import odd_vertex_count
+        for n in (1, 2, 3, 4):
+            for model in self.models(n, 2, (0, 1, 3)):
+                o = odd_vertex_count(model)
+                R = 7
+                # (1-x)^-(n-o) (1+x)^-o, coefficient by coefficient.
+                coeffs = []
+                for k in range(R + 1):
+                    total = 0
+                    for j in range(k + 1):
+                        even = comb(k - j + n - o - 1, n - o - 1) if n - o else int(k == j)
+                        odd = (-1) ** j * (comb(j + o - 1, o - 1) if o else int(j == 0))
+                        total += even * odd
+                    coeffs.append((total,))
+                self.assertEqual(direct_coefficients(model, R), coeffs)
+        with self.assertRaises(ValueError):
+            odd_vertex_count(PeriodicModel(Graph(2, ((0, 1),)), 3))
