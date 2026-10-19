@@ -299,6 +299,27 @@ and symmetrically for \(b\). Any context without a terminal edge, symmetric or n
 
 All \(85\) words of length at most three over the four moves agree with direct enumeration on six base blocks at \(R=2,3\). The ordered closure has full rank \(10\) and \(20\) there: within those finite budgets the expanded language distinguishes every pair of ordered states. One consequence: path\((0,1)\) and path\((1,2)\) have identical symmetric states, so no symmetric context can separate them, yet a single terminal extension separates them at cost one. Completeness at larger budgets is not claimed.
 
+**Theorem SNG-O21 (charge-aware separator compiler).** Process a graph along a vertex order using three operations on charge interfaces:
+
+- introduce a boundary vertex with its edges to current boundary vertices;
+- forget a boundary vertex once all its neighbours have been introduced (SNG-O12);
+- optionally join two interfaces at a tree-decomposition join node.
+
+The final interface, on an empty boundary, gives \([x^j]L_G\) exactly for \(j\le R\).
+
+If at most \(k\) boundary vertices have interior neighbours and the maximum degree is \(D\), every interface has charges \(0\le Q_i\le j\) and energies \(0\le E\le Dj^2\). Hence it has at most \((R+1)^{k+1}(DR^2+1)\) cells. On \(N\) vertices, every count is below \(N^R\), so it has at most \(R\log_2N+1\) bits.
+
+*Proof.* The invariant is that, after each step, the interface is the exact charge interface of the subgraph induced by the vertices introduced so far, with the current boundary. Introduction leaves the interior unchanged and adds only terminal metadata. Forgetting is SNG-O12. A vertex is forgotten only after all its neighbours have been introduced, so no later vertex has an edge to it. A count at interior volume \(j\) is at most the number \(\binom{j+m-1}{m-1}\le m^j\) of weak compositions. The range bounds follow from \(Q_i=\sum h_u\) over the interior neighbours of \(i\), and from the energy of at most \(D\) edges per unit of height. \(\square\)
+
+The implementation `separator_compiler.py` extends `charges.py`, reusing its forget and join operations. It agrees with direct enumeration on all \(1099\) graphs with at most \(5\) vertices under several orders, and with the decomposition and connected-support compilers. On paths, cycles, ladders and \(3\times n\) strips up to \(n=200\) at \(R=4\), the following hold:
+
+- **Storage.** Peak storage is constant in \(n\), at 74 to 339 cells.
+- **Work.** Total work grows linearly.
+- **Bit growth.** The maximum count bit length stays within three bits of \(R\log_2n\).
+- **Reusable steps.** For periodic strips, a reusable step operator gives a constant-factor saving over recompiling.
+
+The cell bound is loose: observed cells are 1–29% of it. Wall times are measurements on one machine and are not retained.
+
 ## 15.10 Interfaces and runnable examples
 
 The public contracts are specified in `docs/specifications/OPERATORS-v1.md`. A minimal session:
@@ -327,7 +348,7 @@ assert result.equal and result.cutoff == 1
 
 ## 15.11 Formal status
 
-The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O20. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
+The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O21. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
 
 ## 15.12 Open questions
 
