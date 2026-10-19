@@ -1,0 +1,39 @@
+{
+  "corpora": {
+    "test": {
+      "bytes": 32768,
+      "path": "/workspace/scratch/464161e046ff/training-data/wikitext2/test.txt",
+      "sha256": "1e839a40ef222f5da88d06360e9df6e50aa054fb73edb672454cb01105418acd"
+    },
+    "train": {
+      "bytes": 262144,
+      "path": "/workspace/scratch/464161e046ff/training-data/wikitext2/train.txt",
+      "sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8"
+    },
+    "tune": {
+      "bytes": 32768,
+      "path": "/workspace/scratch/464161e046ff/training-data/wikitext2/tune.txt",
+      "sha256": "a4d96a0914bd0c498c08ebe2b8221fb590416c2f4eab0cd7a6bcf36be9c081b3"
+    }
+  },
+  "counts": {
+    "test": {
+      "examples": 512,
+      "valid_targets": 32767
+    },
+    "train": {
+      "examples": 4096,
+      "valid_targets": 262143
+    },
+    "tune": {
+      "examples": 512,
+      "valid_targets": 32767
+    }
+  },
+  "padding_target": -100,
+  "seq_len": 64,
+  "split_sha256": "bb2f092b9aa45f26b39a7eddeeaad87887af668b536ef8368a43e2f320821d32",
+  "target_shift": "one byte, constructed here; model returns unshifted logits",
+  "task": "byte_lm",
+  "vocabulary": "raw bytes 0..255"
+}

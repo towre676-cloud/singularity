@@ -6,7 +6,19 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 ![The cube and Möbius ladder agree through volume three, then separate at volume four by an exact polynomial.](docs/assets/singularity-observation.svg)
 
-[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Download the complete release**](https://github.com/towre676-cloud/singularity/raw/refs/heads/main/releases/Singularity-v0.4.0-complete.zip) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Train and inspect real models**](applications/training_lab/README.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+
+## Train a model. Choose what to observe.
+
+A model's score tells only part of its story. Singularity now connects its exact observation engine to real PyTorch training: saved weights, complete update logs, frozen experimental plans, separate tuning and test data, and independently checked diagnostic panels.
+
+![Accuracy merges trained checkpoints that a richer output histogram separates. An exact panel uses 23 of 239 construction examples; its separation holds on independent audit examples.](docs/assets/training-observations.svg)
+
+In the retained experiment, accuracy counts cannot distinguish **any of 12 trained MLP checkpoints**. Keeping their predicted-class histograms distinguishes **all 12**. Among eight declared probe blocks, exact selection finds a unique cheapest block using **23 of 239 construction examples**, 90.4% fewer than the full panel. Its separation holds for **all 66 checkpoint pairs on separate audit examples**, for both the MLP and transformer catalogues. Greedy selection matches the optimum here. The guarantee concerns these finite tables and costs; discovering the table already required evaluating the full panel.
+
+The same release contains **63 actual training runs and 557,700 planned optimizer updates**, plus fully documented integrity replays. An 84,544-parameter byte transformer trained from scratch reaches **39.73% mean next-byte test accuracy**, compared with **37.22%** for a tuned trigram reference, on fixed small WikiText-2 prefixes. On the byte task, our adaptive AdamW tuner does **not** beat selected fixed AdamW on mean test loss, and no modular-addition run reaches the declared grokking threshold. Those outcomes remain in the release alongside the successes.
+
+The [training lab](applications/training_lab/README.md) provides commands and checkpoints. The [new research companion](output/pdf/training_observation.pdf) develops the coordinate-change experiment, optimizer method, finite observation result, and limitations; its [editable source](docs/papers/training_observation.md) links every result to retained evidence.
 
 ## A small difference with a long reach
 

@@ -1,0 +1,77 @@
+{
+  "checkpoint_bytes": 1069067,
+  "checkpoint_sha256": "df0169c2066c6c5c18177c35dc886d39c17aa70d60acc71505da1cd69dd7c8b0",
+  "counts": {
+    "test": {
+      "examples": 512,
+      "valid_targets": 32767
+    },
+    "train": {
+      "examples": 4096,
+      "valid_targets": 262143
+    },
+    "tune": {
+      "examples": 512,
+      "valid_targets": 32767
+    }
+  },
+  "feature_telemetry": "actual-update CountSketch, centered and uncentered",
+  "final_model_sha256": "ad099a86a05ae86baa271abf06948ce3ce74ed2b3a9d81b1c82da1471aa8ea6a",
+  "final_test": {
+    "accuracy": 0.39692373424481947,
+    "examples": 512,
+    "loss": 2.11035218836787,
+    "perplexity": 8.251146730864644,
+    "valid_targets": 32767
+  },
+  "final_train": {
+    "accuracy": 0.4489267308301194,
+    "examples": 4096,
+    "loss": 1.881158300884441,
+    "perplexity": 6.561100190657857,
+    "valid_targets": 262143
+  },
+  "final_tune": {
+    "accuracy": 0.4000976592303232,
+    "examples": 512,
+    "loss": 2.1253410681859797,
+    "perplexity": 8.375753704139454,
+    "valid_targets": 32767
+  },
+  "initial_model_sha256": "f8de21d86e741d04dfde11ef18ad437d926b67160b87cfc58f4dc3bf6138e8d6",
+  "meta_calls": 15,
+  "meta_probe": {
+    "indices": [
+      130,
+      490,
+      57,
+      281,
+      395,
+      108,
+      264,
+      431,
+      114,
+      179,
+      52,
+      11,
+      400,
+      261,
+      313,
+      471
+    ],
+    "indices_sha256": "0289b69862c3fcb308e9d7d71f01cdcf4d8bd22fdf02a079722bad7ff05e7ddf",
+    "rows": 16,
+    "seed": 271828,
+    "selection": "uniform shuffled fixed TUNE row indices without replacement"
+  },
+  "metrics_sha256": "02334d6f7407b0974ebe68896c456d6264107ea0c51f59e1ebeaff01796ae440",
+  "optimizer_updates": 1500,
+  "output_dir": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/meta/seed_1000",
+  "parameter_count": 84544,
+  "plan_sha256": "e1a6cf19065ddea8d575187e3c75b5722d9b3c8a34d091d98243cf7ba3c5274e",
+  "sampler_seed": 105729,
+  "seed": 1000,
+  "split_sha256": "bb2f092b9aa45f26b39a7eddeeaad87887af668b536ef8368a43e2f320821d32",
+  "test_evaluations": 1,
+  "wall_seconds_including_monitoring": 71.84134477600037
+}

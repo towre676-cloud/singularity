@@ -1,0 +1,102 @@
+{
+  "initial_function_matches": [
+    {
+      "Q_QT_max_error_float32_storage": 3.527824432580928e-08,
+      "feature_squared_norm_max_error": 5.582589324149012e-08,
+      "fourier_initial_tensor_sha256": "f2eef9407d854152446ac8a160002147cb8b759c346a874d457ced863abb86e2",
+      "interpretation": "parameter hashes differ under transport; complete initial functions agree within declared tolerance",
+      "onehot_initial_tensor_sha256": "d57eeed9759db8084f1f30f7f75c6086c214527de0185846ac8564224c3447af",
+      "ordinary_vs_basis_identity_max_error": 0.0,
+      "ordinary_vs_fourier_max_error": 5.21540641784668e-08,
+      "pairs_checked": 961,
+      "parameter_counts": [
+        12063,
+        12063,
+        12063
+      ],
+      "seed": 3000
+    },
+    {
+      "Q_QT_max_error_float32_storage": 3.527824432580928e-08,
+      "feature_squared_norm_max_error": 5.582589324149012e-08,
+      "fourier_initial_tensor_sha256": "249adc1c02fcc551bc5dcc213e339bfb7dc999f7d00867b5bb4e5b9d441e16e8",
+      "interpretation": "parameter hashes differ under transport; complete initial functions agree within declared tolerance",
+      "onehot_initial_tensor_sha256": "63012cc3eac1bb2f8f2899c1095d53ef3af9ff843e064cb6cde75ec328eb7861",
+      "ordinary_vs_basis_identity_max_error": 0.0,
+      "ordinary_vs_fourier_max_error": 5.21540641784668e-08,
+      "pairs_checked": 961,
+      "parameter_counts": [
+        12063,
+        12063,
+        12063
+      ],
+      "seed": 3001
+    },
+    {
+      "Q_QT_max_error_float32_storage": 3.527824432580928e-08,
+      "feature_squared_norm_max_error": 5.582589324149012e-08,
+      "fourier_initial_tensor_sha256": "0de486d264564b36243160df2e0f8e98f6e73f0085a9839e96ccfe13df3f322a",
+      "interpretation": "parameter hashes differ under transport; complete initial functions agree within declared tolerance",
+      "onehot_initial_tensor_sha256": "b88dbf0452a974ae969f741f49a50002bd318cb80eebf9ecdfdf1719988dd4e1",
+      "ordinary_vs_basis_identity_max_error": 0.0,
+      "ordinary_vs_fourier_max_error": 5.960464477539063e-08,
+      "pairs_checked": 961,
+      "parameter_counts": [
+        12063,
+        12063,
+        12063
+      ],
+      "seed": 3002
+    }
+  ],
+  "one_step_controls": {
+    "controls": [
+      {
+        "coordinate_transform": "fourier",
+        "initial_function_max_error": 5.21540641784668e-08,
+        "interpretation": "numerical single-step control, not proof of an eventual accuracy difference",
+        "optimizer": "SGD",
+        "parameter_error_back_in_onehot_coordinates": 9.659855491389576e-07,
+        "post_step_function_max_error": 5.960464477539063e-08,
+        "relative_parameter_error": 1.317111404163371e-07,
+        "train_losses_before_step": [
+          3.437427043914795,
+          3.437427043914795
+        ]
+      },
+      {
+        "coordinate_transform": "permutation",
+        "initial_function_max_error": 0.0,
+        "interpretation": "numerical single-step control, not proof of an eventual accuracy difference",
+        "optimizer": "AdamW",
+        "parameter_error_back_in_onehot_coordinates": 0.0,
+        "post_step_function_max_error": 0.0,
+        "relative_parameter_error": 0.0,
+        "train_losses_before_step": [
+          3.437427043914795,
+          3.437427043914795
+        ]
+      },
+      {
+        "coordinate_transform": "fourier",
+        "initial_function_max_error": 5.21540641784668e-08,
+        "interpretation": "numerical single-step control, not proof of an eventual accuracy difference",
+        "optimizer": "AdamW",
+        "parameter_error_back_in_onehot_coordinates": 0.07546775404087917,
+        "post_step_function_max_error": 0.0027079135179519653,
+        "relative_parameter_error": 0.010288176005084106,
+        "train_losses_before_step": [
+          3.437427043914795,
+          3.437427043914795
+        ]
+      }
+    ],
+    "seed": 6000,
+    "test_evaluations": 0,
+    "train_batch_indices_sha256": "5d4ff4aba6b1acc6404550160f04441134f24c470ca06bf6d4057d1edeb3105a",
+    "train_batch_size": 128
+  },
+  "protocol_sha256": "3179035a26560346a2cf4f23f04fc405bdaa3a4324163026f39089eee3e5adbf",
+  "training_runs_launched": 0,
+  "wall_seconds_controls_and_matching": 0.037886570999944524
+}

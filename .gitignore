@@ -14,3 +14,7 @@ tmp/
 *.synctex.gz
 
 *.xdv
+
+# Training retains lossless compressed logs and explicit small checkpoints.
+/applications/training_lab/results/**/metrics.jsonl
+/applications/training_lab/data_cache/

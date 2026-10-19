@@ -1,0 +1,39 @@
+{
+  "batch_size": 128,
+  "betas": [
+    0.9,
+    0.99
+  ],
+  "eps": 1e-08,
+  "eval_every": 200,
+  "evaluate_test": true,
+  "exclude_bias_norm_decay": true,
+  "grad_clip": 1.0,
+  "lr": 0.001,
+  "model": {
+    "basis": "onehot",
+    "basis_source_sha256": "834c5beded8655adc0f8cb4c7bdb4a3bd1400e8497b5c485cec2b5e905325160",
+    "hidden": 128,
+    "name": "basis_mlp"
+  },
+  "optimizer": "adamw",
+  "p": 31,
+  "seed": 3000,
+  "split": {
+    "split_seed": 31415,
+    "test_orbits_per_label": 4,
+    "train_orbits_per_label": 8,
+    "tune_orbits_per_label": 4
+  },
+  "steps": 20000,
+  "study_protocol_sha256": "3179035a26560346a2cf4f23f04fc405bdaa3a4324163026f39089eee3e5adbf",
+  "task": "modular_addition",
+  "telemetry": {
+    "ffn_rank": false,
+    "sketch_dimension": 16,
+    "sketch_window": 32
+  },
+  "threads": 1,
+  "variant": "baseline",
+  "weight_decay": 1.0
+}

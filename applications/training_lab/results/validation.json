@@ -1,0 +1,239 @@
+{
+  "additional_checks": [
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests",
+        "applications/training_lab/basis_study.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 0,
+        "output": "",
+        "path": "/tmp/singularity-final-compile.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "source_compile",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_repository.py"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 127,
+        "output": "{\"chapters\": 16, \"declared_result_ids\": 112, \"main_chapter_source_words\": 58014, \"required_artifacts\": 19, \"status\": \"passed\"}\n",
+        "path": "/tmp/singularity-final-repository.log",
+        "sha256": "a70ba726f0368d56cd5ac236361709976d5671b201fd0f5638e2d2f1f13b41ac"
+      },
+      "name": "repository_completeness_and_ast",
+      "result": {
+        "chapters": 16,
+        "declared_result_ids": 112,
+        "main_chapter_source_words": 58014,
+        "required_artifacts": 19,
+        "status": "passed"
+      },
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_links.py",
+        "README.md",
+        "docs/MONOGRAPH.md",
+        "docs/PROJECT_REFERENCE.md",
+        "docs/assets/README.md",
+        "docs/research/ARITHMETIC_AUTOMATA.md",
+        "docs/research/CANDIDATE_BOXES.md",
+        "docs/research/EFFECTIVE_PREFIX.md",
+        "docs/research/FAULT_POPULATIONS.md",
+        "docs/research/FAULT_TRANSPORT.md",
+        "docs/research/FIDELITY_DESIGN.md",
+        "docs/research/FORECAST_TARGETS.md",
+        "docs/research/FR01_POLE_DIVISORS.md",
+        "docs/research/FR02_DENOMINATOR_RECOVERY.md",
+        "docs/research/FR03_TREE_POSITIVITY.md",
+        "docs/research/FR04_PINNED_THETA.md",
+        "docs/research/FR05_THRESHOLD_RECONSTRUCTION.md",
+        "docs/research/FRONTIER_COMPANION.md",
+        "docs/research/FR_INDEPENDENT_REVIEW.md",
+        "docs/research/HISTORY_EXPERIMENTS.md",
+        "docs/research/HORIZON_DESIGN.md",
+        "docs/research/INCREMENTAL_LOCALITY.md",
+        "docs/research/INTEGER_QUOTIENTS.md",
+        "docs/research/JOINT_UNCERTAINTY.md",
+        "docs/research/LANGUAGE_DESIGN.md",
+        "docs/research/MOVEMENT_DESIGN.md",
+        "docs/research/MULTISCALE_TRANSPORT.md",
+        "docs/research/NONLINEAR_FIBRES.md",
+        "docs/research/NX31_PERIOD_OBSERVATIONS.md",
+        "docs/research/NX32_MONODROMY_EXPERIMENTS.md",
+        "docs/research/NX33_MOVING_QUOTIENTS.md",
+        "docs/research/NX34_COMPLEX_VISIBILITY.md",
+        "docs/research/NX35_REFINEMENT_PLANNER.md",
+        "docs/research/NX36_DECISION_CERTIFICATES.md",
+        "docs/research/NX36_IMPLEMENTATION.md",
+        "docs/research/OPERATOR_CHECKPOINT.md",
+        "docs/research/OPERATOR_LITERATURE.md",
+        "docs/research/ORDERED_CONTEXTS.md",
+        "docs/research/ORDERED_MOVEMENT.md",
+        "docs/research/PANELS.md",
+        "docs/research/PARAMETER_MODULE_CERTIFICATES.md",
+        "docs/research/PARAMETRIC_OBSERVABILITY.md",
+        "docs/research/PHASE_PROBES.md",
+        "docs/research/POPULATION_GEOMETRY.md",
+        "docs/research/PROTOCOL_POPULATIONS.md",
+        "docs/research/REACTIVE_TRANSPORT.md",
+        "docs/research/REALIZABLE_INTERFACES.md",
+        "docs/research/RECOVERY_METRICS.md",
+        "docs/research/REMOTE_QUERIES.md",
+        "docs/research/RESET_POLICIES.md",
+        "docs/research/ROBUST_SEARCH.md",
+        "docs/research/SEPARATOR_COMPILER.md",
+        "docs/research/SYMMETRY_CHANNELS.md",
+        "docs/research/TARGET_RECOVERY.md",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "docs/research/THERMAL_PARAMETERS.md",
+        "docs/research/TYPED_OBSERVABILITY.md",
+        "docs/research/VAKIL_BRIDGES.md",
+        "applications/training_lab/README.md",
+        "docs/papers/training_observation.md"
+      ],
+      "exit_code": 0,
+      "log": {
+        "bytes": 96,
+        "output": "{\n  \"status\": \"passed\",\n  \"mode\": \"local\",\n  \"checked_relative_targets\": 142,\n  \"missing\": []\n}\n",
+        "path": "/tmp/singularity-final-links.log",
+        "sha256": "a6cb830e73b66fd142cebf5e8068b63758672b593c8e56e0b3d4bfcc42c48c9b"
+      },
+      "name": "relative_links",
+      "result": {
+        "checked_relative_targets": 142,
+        "missing": [],
+        "mode": "local",
+        "status": "passed"
+      },
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/reproduce.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "log": {
+        "bytes": 130,
+        "output": "Exact examples, three graph comparisons, four independent packet replays and remote conductor coefficient match retained outputs.\n",
+        "path": "/tmp/singularity-final-examples.log",
+        "sha256": "0e08d9239cab9d5bd554d92b568a202fe0c46e2345b83307d6a25c5cd759bfb1"
+      },
+      "name": "retained_exact_examples",
+      "status": "passed"
+    }
+  ],
+  "created_at_utc": "2026-10-19T09:09:21.515625+00:00",
+  "environment": {
+    "git_head_at_receipt": "407a44997a9d9c7663703bbe639502d4219a2451",
+    "host_cpu_count": 9,
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python_executable": "/workspace/scratch/464161e046ff/train-env/bin/python",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "repository": "/workspace/scratch/464161e046ff/singularity-neural",
+    "torch_cuda_available": false,
+    "torch_version": "2.14.1+cpu",
+    "working_tree_dirty": true
+  },
+  "execution_boundaries": {
+    "lean_projects_rebuilt": false,
+    "raw_neural_test_metrics_used_to_select_validation": false,
+    "remote_ci_observed": false,
+    "research_models_retrained": false,
+    "small_training_unit_fixtures_executed": true
+  },
+  "post_validation_formatting": {
+    "change": "Removed extra final blank lines from three scripts and insignificant trailing SVG whitespace; no executable statements or numerical artifacts changed.",
+    "recheck": "compileall and repository AST checks passed after formatting",
+    "scripts": [
+      "scripts/draw_training_observation.py",
+      "scripts/replay_training_integrity.py",
+      "scripts/run_grokking_followup.py"
+    ]
+  },
+  "release_receipt_metadata_update": {
+    "change": "version field 0.5.0 to 0.6.0 only",
+    "evidence": "Fresh reproduce.compute() comparison established that every other field and every other retained output was identical before the metadata edit; final --check passed.",
+    "mathematical_fields_unchanged": true,
+    "path": "results/exact_examples.json"
+  },
+  "schema": "singularity.training-validation/1",
+  "scope": "Local final working-tree validation. This receipt does not assert a remote GitHub Actions run or a fresh Lean build.",
+  "source_file_sha256": {
+    "applications/training_lab/basis_study.py": "834c5beded8655adc0f8cb4c7bdb4a3bd1400e8497b5c485cec2b5e905325160",
+    "scripts/analyze_training_revision.py": "fddd0525b845a209d1602db979c9d23477b90a7afb0fbcd01aa74913d26f4c21",
+    "scripts/build_training_prediction_table.py": "35b54897897b3763c5b1f4d9de88e31759f26b6ffe0abf0fae91727fc1eed36d",
+    "scripts/byte_reference_baselines.py": "15891e31f390bc83b9637698b92b719d57cc7ef7cab6947e1b9acaf7a12ba4d8",
+    "scripts/run_training_revision.py": "e233468e08e002853c72d094f3571b032d7723ad861151e92e1fb4cdff009f59",
+    "scripts/training_output_language.py": "bb706c9ef2e6c4891b7e8b77a43055d94fc3211b70aceed04a605db216a211e1",
+    "src/singularity/training/__init__.py": "ec5d60c76059c9c58abdd23e46ab43ab84c694db253bf1644e2f10268346c267",
+    "src/singularity/training/cli.py": "1001729ce6870b2c17890bda25df751c12b27da5f152f29e9c8eb3533c040593",
+    "src/singularity/training/data.py": "46473e94bff05947216e38481831a43052487f7bacc8fd9a346f9dfaa3bc8cb3",
+    "src/singularity/training/models.py": "e8400476c4fcf67391e57a56c228147df5ffdeab04a00759a10e1a7f3de9b5a1",
+    "src/singularity/training/optim.py": "9e7ae68ff17be3ccab42c632a7bf8b619388baa5f35c9d543f22ccf24b8e5576",
+    "src/singularity/training/runner.py": "08ce776d740fa051604a8458ca5bbab5408e52dfb4496279dbeb530ba1c01efb",
+    "src/singularity/training/telemetry.py": "fc55d533ff49b820b4c8648705bd193ace3b1e149733fe581cb624409051f6a4",
+    "src/singularity/training_panels.py": "196d48e95de5675faa274ed20af1ae2eb67c5d5c01b51b46377f1edea54145f0",
+    "tests/test_byte_reference_baselines.py": "92e7fdb1c84d67b0d21702ffdc2918eb1dc6919daa0b11e94d0abc689d550129",
+    "tests/test_training_lab.py": "d543f335c26d9d71d5ef627b903af01ee17deab1d6241e93e97f7a517f83016d",
+    "tests/test_training_log_persistence.py": "af8439a7ba1462c08387b57211a2336fcbf997c03f07b9769844d43b6535cc89",
+    "tests/test_training_panels.py": "51074f2392ef504bcb6ae6e5aae60c1c69962da2f7abcc1b1cc99c7ea2a1dd59"
+  },
+  "status": "passed",
+  "unit_tests": {
+    "command": [
+      "/workspace/scratch/464161e046ff/train-env/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "counts_source": "successful unittest completion footer and process exit code",
+    "documented_convention": "Makefile test target and research workflow use unittest discover -s tests -v.",
+    "elapsed_seconds": 119.257,
+    "environment": {
+      "PYTHONPATH": "src"
+    },
+    "errors": 0,
+    "exit_code": 0,
+    "expected_failures": 0,
+    "failures": 0,
+    "raw_log": {
+      "bytes": 95023,
+      "path": "/tmp/singularity-final-tests.log",
+      "sha256": "237c2f0c15a30b6df44c6cec8369d2f149c13fb8a6cc3b3dc798a1104c9c0c32"
+    },
+    "retained_log": {
+      "bytes": 16789,
+      "encoding": "gzip; mtime=0; decompression verified byte-identical to raw log",
+      "path": "applications/training_lab/results/final_validation.log.gz",
+      "sha256": "c66332c0d77e553c98a047e9e1f1c82db2704e7c7421c12ee93112b4b276774b"
+    },
+    "skipped": 0,
+    "status": "passed",
+    "tests_run": 736,
+    "unexpected_successes": 0
+  }
+}

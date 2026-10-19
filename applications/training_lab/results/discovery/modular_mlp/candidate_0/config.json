@@ -1,0 +1,52 @@
+{
+  "batch_size": 128,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "eval_batch_size": 128,
+  "eval_every": 200,
+  "evaluate_test": false,
+  "grad_clip": 1.0,
+  "layer_decay": 0.8,
+  "lr": 0.001,
+  "max_parameters": 1000000,
+  "meta": {
+    "batch_size": 64,
+    "every": 100,
+    "grad_clip": 1.0,
+    "hyper_lr": 0.1,
+    "max_backtracks": 6,
+    "max_lr": 0.01,
+    "max_weight_decay": 1.0,
+    "min_lr": 0.0001,
+    "min_weight_decay": 0.0
+  },
+  "model": {
+    "hidden": 128,
+    "name": "mlp"
+  },
+  "optimizer": "adamw",
+  "p": 31,
+  "phase": "discovery",
+  "protocol_sha256": "0a46f161a714b1de8be13ee989511551ba01c00cd8477e5960e243e60522fa33",
+  "seed": 9000,
+  "split": {
+    "split_seed": 1729,
+    "test_orbits_per_label": 4,
+    "train_orbits_per_label": 8,
+    "tune_orbits_per_label": 4
+  },
+  "steps": 1000,
+  "task": "modular_addition",
+  "telemetry": {
+    "ffn_rank": false,
+    "sketch_dimension": 16,
+    "sketch_seed": 314159,
+    "sketch_window": 32
+  },
+  "threads": 1,
+  "variant": "baseline",
+  "weight_decay": 0.1
+}

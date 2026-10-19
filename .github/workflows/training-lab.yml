@@ -1,0 +1,25 @@
+name: Neural training contracts
+on:
+  push:
+    paths:
+      - 'src/singularity/training/**'
+      - 'src/singularity/training_panels.py'
+      - 'tests/test_training*.py'
+      - 'scripts/*training*.py'
+      - '.github/workflows/training-lab.yml'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  cpu-scientific-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the measured CPU framework
+        run: python -m pip install 'torch==2.14.1+cpu' --index-url https://download.pytorch.org/whl/cpu
+      - name: Data, causality, hypergradient, state and exact panel contracts
+        run: PYTHONPATH=src python -m unittest discover -s tests -p 'test_training*.py' -v

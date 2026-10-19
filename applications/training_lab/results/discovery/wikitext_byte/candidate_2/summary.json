@@ -1,0 +1,44 @@
+{
+  "checkpoint_bytes": 1068555,
+  "checkpoint_sha256": "19379f1d94ad9ea0d857cb1bb002ff097161dbbe44d8916ece96729bee545059",
+  "counts": {
+    "test": {
+      "examples": 512,
+      "valid_targets": 32767
+    },
+    "train": {
+      "examples": 4096,
+      "valid_targets": 262143
+    },
+    "tune": {
+      "examples": 512,
+      "valid_targets": 32767
+    }
+  },
+  "feature_telemetry": "actual-update CountSketch, centered and uncentered",
+  "final_test": null,
+  "final_train": {
+    "accuracy": 0.30133171589552266,
+    "examples": 4096,
+    "loss": 2.421510821681773,
+    "perplexity": 11.262862644229967,
+    "valid_targets": 262143
+  },
+  "final_tune": {
+    "accuracy": 0.2870571001312296,
+    "examples": 512,
+    "loss": 2.5209109012115847,
+    "perplexity": 12.439923045160883,
+    "valid_targets": 32767
+  },
+  "meta_calls": 0,
+  "metrics_sha256": "0614287020e1b031f293864dd2350510c705cd1c5d3add4e4120e23072552a63",
+  "optimizer_updates": 300,
+  "output_dir": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/discovery/wikitext_byte/candidate_2",
+  "parameter_count": 84544,
+  "plan_sha256": "d368c0b21fa90c64b4e92990b7e32a5efffb188f1ecbdd677a89318ce9556b62",
+  "seed": 9000,
+  "split_sha256": "bb2f092b9aa45f26b39a7eddeeaad87887af668b536ef8368a43e2f320821d32",
+  "test_evaluations": 0,
+  "wall_seconds_including_monitoring": 12.97521853499984
+}

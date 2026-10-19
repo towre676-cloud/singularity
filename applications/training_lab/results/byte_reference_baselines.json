@@ -1,0 +1,306 @@
+{
+  "corpora": {
+    "test": {
+      "bytes": 32768,
+      "path": "/workspace/scratch/464161e046ff/training-data/wikitext2/test.txt",
+      "sha256": "1e839a40ef222f5da88d06360e9df6e50aa054fb73edb672454cb01105418acd",
+      "valid_targets": 32767
+    },
+    "train": {
+      "bytes": 262144,
+      "path": "/workspace/scratch/464161e046ff/training-data/wikitext2/train.txt",
+      "sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+      "valid_targets": 262143
+    },
+    "tune": {
+      "bytes": 32768,
+      "path": "/workspace/scratch/464161e046ff/training-data/wikitext2/tune.txt",
+      "sha256": "a4d96a0914bd0c498c08ebe2b8221fb590416c2f4eab0cd7a6bcf36be9c081b3",
+      "valid_targets": 32767
+    }
+  },
+  "created_at_utc": "2026-10-19T08:54:06.694265+00:00",
+  "fit_train_targets": 262143,
+  "limitations": "Small fixed raw-byte prefixes; short-memory count references, not full-corpus language models. Alpha selection uses TUNE. No neural TEST metric was read to choose these references.",
+  "protocol": {
+    "accuracy_tie_break": "smallest byte value",
+    "alpha_grid": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "backoff": "shorter history only when the current causal window lacks enough preceding bytes",
+    "comparison": "post-training reference count models; no neural settings selected",
+    "context_convention": "target raw[i+1]; available input starts at floor(i/64)*64",
+    "fit_split": "TRAIN only",
+    "orders": [
+      1,
+      2,
+      3
+    ],
+    "selection": "independently for each order, minimum TUNE NLL; ties choose smaller alpha",
+    "sequence_length": 64,
+    "smoothing": "(count(context,target)+alpha)/(count(context)+256*alpha)",
+    "test": "one scoring call per selected order, after all alpha selections are frozen",
+    "unseen_context": "uniform Dirichlet predictive distribution; no frequency-dependent backoff",
+    "vocabulary": "all 256 raw bytes"
+  },
+  "protocol_sha256": "32d41e41c6e44a4e7cc2dbe1378e3863e2cc8e037211dbaa188a8ac6d3fa3176",
+  "references": [
+    {
+      "name": "unigram",
+      "order": 1,
+      "selected_alpha": 0.1,
+      "size": {
+        "dense_probability_cells": 256,
+        "nonzero_transition_counts": 148,
+        "observed_contexts_by_history_length": {
+          "0": 1
+        },
+        "observed_contexts_total": 1,
+        "parameter_count_interpretation": "count-table probability cells and simplex dimensions, not neural weights",
+        "selected_smoothing_hyperparameters": 1,
+        "simplex_degrees_of_freedom": 255
+      },
+      "test": {
+        "accuracy": 0.19617297891170996,
+        "bits_per_byte": 4.589226261999275,
+        "correct": 6428,
+        "nll_nats_per_byte": 3.181009244456454,
+        "targets_by_available_history_length": {
+          "0": 32767
+        },
+        "valid_targets": 32767
+      },
+      "test_scoring_calls": 1,
+      "tune": {
+        "accuracy": 0.19067964720603045,
+        "bits_per_byte": 4.671540258570276,
+        "correct": 6248,
+        "nll_nats_per_byte": 3.2380649591002646,
+        "targets_by_available_history_length": {
+          "0": 32767
+        },
+        "valid_targets": 32767
+      },
+      "tune_candidates": [
+        {
+          "alpha": 0.01,
+          "tune": {
+            "accuracy": 0.19067964720603045,
+            "bits_per_byte": 4.6717082156583185,
+            "correct": 6248,
+            "nll_nats_per_byte": 3.238181378082296,
+            "targets_by_available_history_length": {
+              "0": 32767
+            },
+            "valid_targets": 32767
+          }
+        },
+        {
+          "alpha": 0.1,
+          "tune": {
+            "accuracy": 0.19067964720603045,
+            "bits_per_byte": 4.671540258570276,
+            "correct": 6248,
+            "nll_nats_per_byte": 3.2380649591002646,
+            "targets_by_available_history_length": {
+              "0": 32767
+            },
+            "valid_targets": 32767
+          }
+        },
+        {
+          "alpha": 1.0,
+          "tune": {
+            "accuracy": 0.19067964720603045,
+            "bits_per_byte": 4.671770397614057,
+            "correct": 6248,
+            "nll_nats_per_byte": 3.238224479329598,
+            "targets_by_available_history_length": {
+              "0": 32767
+            },
+            "valid_targets": 32767
+          }
+        }
+      ]
+    },
+    {
+      "name": "bigram",
+      "order": 2,
+      "selected_alpha": 0.1,
+      "size": {
+        "dense_probability_cells": 37888,
+        "nonzero_transition_counts": 1367,
+        "observed_contexts_by_history_length": {
+          "1": 148
+        },
+        "observed_contexts_total": 148,
+        "parameter_count_interpretation": "count-table probability cells and simplex dimensions, not neural weights",
+        "selected_smoothing_hyperparameters": 1,
+        "simplex_degrees_of_freedom": 37740
+      },
+      "test": {
+        "accuracy": 0.2869350260933256,
+        "bits_per_byte": 3.6115053393572913,
+        "correct": 9402,
+        "nll_nats_per_byte": 2.503304743552695,
+        "targets_by_available_history_length": {
+          "1": 32767
+        },
+        "valid_targets": 32767
+      },
+      "test_scoring_calls": 1,
+      "tune": {
+        "accuracy": 0.2792443617053743,
+        "bits_per_byte": 3.637231385456557,
+        "correct": 9150,
+        "nll_nats_per_byte": 2.521136679873356,
+        "targets_by_available_history_length": {
+          "1": 32767
+        },
+        "valid_targets": 32767
+      },
+      "tune_candidates": [
+        {
+          "alpha": 0.01,
+          "tune": {
+            "accuracy": 0.2792443617053743,
+            "bits_per_byte": 3.638214617448515,
+            "correct": 9150,
+            "nll_nats_per_byte": 2.521818204356418,
+            "targets_by_available_history_length": {
+              "1": 32767
+            },
+            "valid_targets": 32767
+          }
+        },
+        {
+          "alpha": 0.1,
+          "tune": {
+            "accuracy": 0.2792443617053743,
+            "bits_per_byte": 3.637231385456557,
+            "correct": 9150,
+            "nll_nats_per_byte": 2.521136679873356,
+            "targets_by_available_history_length": {
+              "1": 32767
+            },
+            "valid_targets": 32767
+          }
+        },
+        {
+          "alpha": 1.0,
+          "tune": {
+            "accuracy": 0.2792443617053743,
+            "bits_per_byte": 3.709301946768852,
+            "correct": 9150,
+            "nll_nats_per_byte": 2.5710921862483462,
+            "targets_by_available_history_length": {
+              "1": 32767
+            },
+            "valid_targets": 32767
+          }
+        }
+      ]
+    },
+    {
+      "name": "trigram",
+      "order": 3,
+      "selected_alpha": 0.01,
+      "size": {
+        "dense_probability_cells": 387328,
+        "nonzero_transition_counts": 9979,
+        "observed_contexts_by_history_length": {
+          "1": 148,
+          "2": 1365
+        },
+        "observed_contexts_total": 1513,
+        "parameter_count_interpretation": "count-table probability cells and simplex dimensions, not neural weights",
+        "selected_smoothing_hyperparameters": 1,
+        "simplex_degrees_of_freedom": 385815
+      },
+      "test": {
+        "accuracy": 0.3722037415692618,
+        "bits_per_byte": 3.2003079098095304,
+        "correct": 12196,
+        "nll_nats_per_byte": 2.2182844046081676,
+        "targets_by_available_history_length": {
+          "1": 512,
+          "2": 32255
+        },
+        "valid_targets": 32767
+      },
+      "test_scoring_calls": 1,
+      "tune": {
+        "accuracy": 0.3751029999694815,
+        "bits_per_byte": 3.2498006673342203,
+        "correct": 12291,
+        "nll_nats_per_byte": 2.2525901699445434,
+        "targets_by_available_history_length": {
+          "1": 512,
+          "2": 32255
+        },
+        "valid_targets": 32767
+      },
+      "tune_candidates": [
+        {
+          "alpha": 0.01,
+          "tune": {
+            "accuracy": 0.3751029999694815,
+            "bits_per_byte": 3.2498006673342203,
+            "correct": 12291,
+            "nll_nats_per_byte": 2.2525901699445434,
+            "targets_by_available_history_length": {
+              "1": 512,
+              "2": 32255
+            },
+            "valid_targets": 32767
+          }
+        },
+        {
+          "alpha": 0.1,
+          "tune": {
+            "accuracy": 0.3751029999694815,
+            "bits_per_byte": 3.27427622397914,
+            "correct": 12291,
+            "nll_nats_per_byte": 2.269555333025605,
+            "targets_by_available_history_length": {
+              "1": 512,
+              "2": 32255
+            },
+            "valid_targets": 32767
+          }
+        },
+        {
+          "alpha": 1.0,
+          "tune": {
+            "accuracy": 0.3751029999694815,
+            "bits_per_byte": 3.6442283663762036,
+            "correct": 12291,
+            "nll_nats_per_byte": 2.525986617470241,
+            "targets_by_available_history_length": {
+              "1": 512,
+              "2": 32255
+            },
+            "valid_targets": 32767
+          }
+        }
+      ]
+    }
+  ],
+  "schema": "singularity.byte-reference-baselines/1",
+  "source_sha256": "15891e31f390bc83b9637698b92b719d57cc7ef7cab6947e1b9acaf7a12ba4d8",
+  "timing_seconds": {
+    "all_tune_selection": 0.43317152799954783,
+    "selected_test_scoring": 0.11564210899996397,
+    "shared_train_count_fit": 0.25946355200085236,
+    "total_including_input_and_hashing": 0.8095799850007097
+  },
+  "uniform_256_reference": {
+    "accuracy": 0.0,
+    "accuracy_if_uniform_random_sampling": 0.00390625,
+    "bits_per_byte": 8.0,
+    "deterministic_prediction": 0,
+    "nll_nats_per_byte": 5.545177444479562
+  }
+}

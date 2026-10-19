@@ -1,0 +1,95 @@
+{
+  "authored": "2026-10-19",
+  "confirmation_arms": [
+    "baseline",
+    "cosine",
+    "layer_decay",
+    "meta"
+  ],
+  "confirmation_seeds": [
+    1000,
+    1001,
+    1002
+  ],
+  "diagnostic_panel": "Choose panel only on finalTUNE prediction blocks of frozen checkpoints; audit on separateTEST blocks without reselection. Exactfinite-table guarantee only.",
+  "discovery_seed": 9000,
+  "fixed_discovery_grid": [
+    {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "lr": 0.001,
+      "weight_decay": 0.1
+    },
+    {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "lr": 0.003,
+      "weight_decay": 0.3
+    },
+    {
+      "betas": [
+        0.9,
+        0.99
+      ],
+      "lr": 0.003,
+      "weight_decay": 0.1
+    }
+  ],
+  "grokking_definition": {
+    "generalization": "TUNE accuracy>=0.95 for3consecutive scheduled evaluations",
+    "memorization": "TRAIN accuracy>=0.99 for3consecutive scheduled evaluations",
+    "scope": "Only modular tasks; uncrossed thresholds right-censored at declared step cap. A delay must separate thresholds to call delayed generalization."
+  },
+  "primary_comparison": "meta minus selected fixed AdamW final TEST cross-entropy at equal optimizer updates; account for all extra computation.",
+  "schema": "singularity.training-revision-protocol/1",
+  "scope": "Small realPyTorch models. ByteLM uses declared officialWikiText2 prefixes and byte-level loss, not standard word perplexity or pretrainedGPT2.",
+  "secondary_comparisons": "cosine and layer_decay versus selected fixed AdamW; report all arms and all seeds.",
+  "selection": "For each architecture, lowest final TUNE cross-entropy on seed9000 after fixed discovery cap; all candidates use baselineAdamW.",
+  "tasks": {
+    "modular_mlp": {
+      "batch_size": 128,
+      "confirmation_steps": 12000,
+      "discovery_steps": 1000,
+      "eval_every": 200,
+      "model": {
+        "hidden": 128,
+        "name": "mlp"
+      },
+      "p": 31,
+      "task": "modular_addition"
+    },
+    "modular_transformer": {
+      "batch_size": 128,
+      "confirmation_steps": 6000,
+      "discovery_steps": 600,
+      "eval_every": 100,
+      "model": {
+        "d_model": 32,
+        "heads": 4,
+        "layers": 1,
+        "name": "transformer"
+      },
+      "p": 31,
+      "task": "modular_addition"
+    },
+    "wikitext_byte": {
+      "batch_size": 16,
+      "confirmation_steps": 1500,
+      "discovery_steps": 300,
+      "eval_every": 100,
+      "model": {
+        "d_model": 48,
+        "heads": 4,
+        "layers": 2,
+        "name": "transformer"
+      },
+      "task": "byte_lm"
+    }
+  },
+  "test_policy": "No TEST metrics in discovery or policy feedback. Confirmation TEST is evaluated once at end of each frozen run.",
+  "timing": "One CPUthread perrun. Sharedhost timings including monitoring, meta calls, evaluations and saving; not dedicated hardware speed benchmarks."
+}

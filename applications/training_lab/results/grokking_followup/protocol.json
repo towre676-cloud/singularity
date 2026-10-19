@@ -1,0 +1,63 @@
+{
+  "authored": "2026-10-19",
+  "confirmation_arms": [
+    "original_fixed",
+    "retuned_fixed",
+    "retuned_meta"
+  ],
+  "confirmation_seeds": [
+    2000,
+    2001,
+    2002
+  ],
+  "confirmation_steps": 20000,
+  "discovery_grid": [
+    {
+      "betas": [
+        0.9,
+        0.99
+      ],
+      "lr": 0.001,
+      "weight_decay": 0.3
+    },
+    {
+      "betas": [
+        0.9,
+        0.99
+      ],
+      "lr": 0.001,
+      "weight_decay": 1.0
+    },
+    {
+      "betas": [
+        0.9,
+        0.99
+      ],
+      "lr": 0.001,
+      "weight_decay": 3.0
+    }
+  ],
+  "discovery_seed": 9001,
+  "discovery_steps": 6000,
+  "grokking_threshold": "TRAIN>=.99 and TUNE>=.95 each on3consecutive scheduled evals; report both confirmation times and censoring.",
+  "model": {
+    "hidden": 128,
+    "name": "mlp"
+  },
+  "motivation": "The original discovery and confirmation TUNE curves show memorization without generalization. Expand decay range as a new declared experiment; retain the entire original study.",
+  "orbits_per_label": [
+    8,
+    4,
+    4
+  ],
+  "p": 31,
+  "primary": "Retuned fixed AdamW versus original fixed AdamW final TEST loss/accuracy at equal updates; report all seeds.",
+  "schema": "singularity.grokking-followup/1",
+  "scope": "Follow-up declared after observing original study TUNE failure, not an independent preregistration before all prior research.",
+  "secondary": "Local differentiable tuner versus retuned fixed AdamW with same selected start settings.",
+  "selection": "Lowest final TUNE loss from three fixed capped discovery runs, never TEST.",
+  "split_seed": 27183,
+  "task": "modular_addition",
+  "test_policy": "No discovery TEST evaluation; each confirmation run scores TEST once at completion.",
+  "timing": "All additional search and monitoring counted; shared CPU host."
+}

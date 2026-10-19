@@ -1,0 +1,45 @@
+{
+  "checkpoint_bytes": 225845,
+  "checkpoint_sha256": "b66f83fc91b5a15c73c035bd0edfeb0c1ff9e012f185e2ed6ac910e27484454a",
+  "counts": {
+    "test": {
+      "examples": 239,
+      "orbits": 124,
+      "valid_targets": 239
+    },
+    "train": {
+      "examples": 483,
+      "orbits": 248,
+      "valid_targets": 483
+    },
+    "tune": {
+      "examples": 239,
+      "orbits": 124,
+      "valid_targets": 239
+    }
+  },
+  "feature_telemetry": "actual-update CountSketch, centered and uncentered",
+  "final_test": null,
+  "final_train": {
+    "accuracy": 0.9523809523809523,
+    "examples": 483,
+    "loss": 0.2293748638397912,
+    "valid_targets": 483
+  },
+  "final_tune": {
+    "accuracy": 0.0,
+    "examples": 239,
+    "loss": 6.675507485617155,
+    "valid_targets": 239
+  },
+  "meta_calls": 0,
+  "metrics_sha256": "2fb8ecbdded4cf69836484767f2a15ec6aba9c9037430df7364a09f3d8fd9bcb",
+  "optimizer_updates": 600,
+  "output_dir": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/discovery/modular_transformer/candidate_0",
+  "parameter_count": 14911,
+  "plan_sha256": "377fa815f9cecca2fb4b166de27b20b52d22e4837e39ed521f3f8f5471fd0ce1",
+  "seed": 9000,
+  "split_sha256": "9ad111ce200e4f03c618344e3fd36de3ac514d8f240c1a123daad153cdce8288",
+  "test_evaluations": 0,
+  "wall_seconds_including_monitoring": 2.1245909010003743
+}

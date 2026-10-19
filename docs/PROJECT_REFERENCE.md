@@ -4,6 +4,10 @@ Detailed mathematical results, engines, documents, releases, and development rec
 
 ## Read or download
 
+[Learning, coordinates, and the cost of observation - PDF](../output/pdf/training_observation.pdf) · [Editable companion](papers/training_observation.md) · [Training lab](../applications/training_lab/README.md) · [Measured analysis](../applications/training_lab/results/analysis.json)
+
+The v0.6.0 revision connects real PyTorch checkpoints to exact finite observation panels. It retains 63 planned training runs, complete compressed trajectories, byte-model references, a coordinate-change study, and disclosed integrity replays. No grokking was observed, and the local meta tuner did not improve mean byte-model test loss. Predicted-class histograms distinguish all twelve checkpoints per architecture using a 23-example construction panel, with all 66 pairs separated again on separate audit examples. These are finite catalogue results. Build the companion with `python scripts/build_training_documents.py` (Pandoc, XeLaTeX, and DejaVu fonts required); package the committed source, PDFs, checkpoints, and evidence with `python scripts/package_training_revision.py`.
+
 [NX36 implementation companion — PDF](../output/pdf/nx36_implementation.pdf) · [HTML](../docs/nx36_implementation.html) · [Editable manuscript](../docs/NX36_MANUSCRIPT.md) · [Acceptance ledger](../handoff/nx36/roadmap.json) · [Recovery audit](../handoff/nx36/recovery/CLAUDE_AUDIT.md)
 
 The implemented NX36 programme adds uncertainty-aware experiment design, original-population reconstruction, typed and arithmetic observation languages, source-bound physical transport, measured application pilots, validated period transport, a larger local analytic disc and independently replayable decision certificates. The [integration review](../handoff/nx36/recovery/INDEPENDENT_REVIEW.md) records cross-review fixes. The [validation report](../results/nx36_validation.json) states actual checks and empirical limitations. A complete source/PDF ZIP is generated with `python scripts/package_nx36.py`; the archive excludes restricted raw athlete data and build caches.

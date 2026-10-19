@@ -1,0 +1,54 @@
+{
+  "checkpoint_bytes": 174389,
+  "checkpoint_sha256": "6eb028096b8a98aa207856871d8393d5a57e759b3703424aa598f25c5ee34662",
+  "counts": {
+    "test": {
+      "examples": 239,
+      "orbits": 124,
+      "valid_targets": 239
+    },
+    "train": {
+      "examples": 483,
+      "orbits": 248,
+      "valid_targets": 483
+    },
+    "tune": {
+      "examples": 239,
+      "orbits": 124,
+      "valid_targets": 239
+    }
+  },
+  "feature_telemetry": "actual-update CountSketch, centered and uncentered",
+  "final_model_sha256": "17ee6c1ade65e2550c6a198669e00d89822ec9de353991a8735a961d90696e96",
+  "final_test": {
+    "accuracy": 0.0,
+    "examples": 239,
+    "loss": 17.04482534240978,
+    "valid_targets": 239
+  },
+  "final_train": {
+    "accuracy": 1.0,
+    "examples": 483,
+    "loss": 0.002738216587228558,
+    "valid_targets": 483
+  },
+  "final_tune": {
+    "accuracy": 0.0,
+    "examples": 239,
+    "loss": 16.830543933054393,
+    "valid_targets": 239
+  },
+  "initial_model_sha256": "ac8fbd72c28bfc77fc92d32a05c2a69ce0d88036f42772b9743c9c6b560d1c3c",
+  "meta_calls": 0,
+  "meta_probe": null,
+  "metrics_sha256": "9b3fad6b26fbaf136533025e50d3f519f70af7b24f7d2c08bd8c48ee299f22fa",
+  "optimizer_updates": 12000,
+  "output_dir": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/modular_mlp/cosine/seed_1002",
+  "parameter_count": 12063,
+  "plan_sha256": "0efd54fc5fa4cb1fe97ebdeff42180f519a8d5c6c9f52c3f786f1d4afd678b0e",
+  "sampler_seed": 105731,
+  "seed": 1002,
+  "split_sha256": "9ad111ce200e4f03c618344e3fd36de3ac514d8f240c1a123daad153cdce8288",
+  "test_evaluations": 1,
+  "wall_seconds_including_monitoring": 15.681803909000337
+}

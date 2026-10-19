@@ -1,0 +1,53 @@
+{
+  "batch_size": 16,
+  "betas": [
+    0.9,
+    0.99
+  ],
+  "data": {
+    "seq_len": 64,
+    "test_path": "/workspace/scratch/464161e046ff/training-data/wikitext2/test.txt",
+    "train_path": "/workspace/scratch/464161e046ff/training-data/wikitext2/train.txt",
+    "tune_path": "/workspace/scratch/464161e046ff/training-data/wikitext2/tune.txt"
+  },
+  "eps": 1e-08,
+  "eval_batch_size": 128,
+  "eval_every": 100,
+  "evaluate_test": true,
+  "grad_clip": 1.0,
+  "layer_decay": 0.8,
+  "lr": 0.003,
+  "max_parameters": 1000000,
+  "meta": {
+    "batch_size": 16,
+    "every": 100,
+    "grad_clip": 1.0,
+    "hyper_lr": 0.1,
+    "max_backtracks": 6,
+    "max_lr": 0.01,
+    "max_weight_decay": 1.0,
+    "min_lr": 0.0001,
+    "min_weight_decay": 0.0
+  },
+  "model": {
+    "d_model": 48,
+    "heads": 4,
+    "layers": 2,
+    "name": "transformer"
+  },
+  "optimizer": "adamw",
+  "phase": "confirmation",
+  "protocol_sha256": "0a46f161a714b1de8be13ee989511551ba01c00cd8477e5960e243e60522fa33",
+  "seed": 1002,
+  "steps": 1500,
+  "task": "byte_lm",
+  "telemetry": {
+    "ffn_rank": false,
+    "sketch_dimension": 16,
+    "sketch_seed": 314159,
+    "sketch_window": 32
+  },
+  "threads": 1,
+  "variant": "cosine",
+  "weight_decay": 0.1
+}
