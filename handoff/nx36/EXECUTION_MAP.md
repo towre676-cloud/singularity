@@ -1,6 +1,6 @@
 # Execution map
 
-The ledger is authoritative for hard dependencies. Historical or packet prose links can be supporting connections. All 108 units initially remain proposed.
+The live ledger is authoritative for current acceptance and hard dependencies. Historical packet links can be supporting connections. All 108 units were initially proposed; the implementation checkpoint and CSV mirrors now record their reviewed status. A completed bounded task can retain a scoped negative result or an explicitly permitted resource refusal.
 
 | Track | Design | Hard prerequisites | Supporting tracks | Units |
 |---|---|---|---|---|

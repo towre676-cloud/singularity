@@ -1,0 +1,151 @@
+{
+  "accepted_before_recovery": 13,
+  "accepted_in_recovery": 95,
+  "accepted_tracks": 36,
+  "accepted_units": 108,
+  "baseline_reproduction": "passed; firstdiscrepancies2,3,4unchanged",
+  "document": {
+    "pdf_pages": 139,
+    "pdf_sha256": "a5115e00111e619fa7effac4bca832916cc7d2b715f9a5571839a28870304ef9",
+    "source_words": 41460,
+    "sources": 39,
+    "visual_qa": "12 representative rendered pages inspected; no clipping, missing glyphs, overfull boxes or MathML conversion failures."
+  },
+  "empirical": {
+    "nfl_athletes": 20,
+    "nfl_segmentation_variants": 560,
+    "ozone_pairs": 49,
+    "pilot_limits": "small frozen heldout samples; negative movement findings retained; atmospheric proxy does not identify chemical rates",
+    "public_nfl_scope": "aggregates/provenance only; restricted original-source execution retained, raw rows excluded",
+    "temporal_scale_windows": 14,
+    "wind_forecasts": 57
+  },
+  "formal": {
+    "fresh_core_declarations": 128,
+    "fresh_nx_semantic_declarations": 3,
+    "mathlib_analysis": "Earlier unchanged79-declaration project passed on recovered Claude commit; newCI reruns it.",
+    "nx_axioms": []
+  },
+  "implementation_commit": "34e0723d6d3347f67bacbca3a7b92be678d0ddf3",
+  "period_continuation": {
+    "both_215_step_paths_independently_replayed": true,
+    "command": "PYTHONPATH=src python scripts/nx_analytic_decisions.py --check --slow",
+    "exit_code": 0
+  },
+  "portable_cli": "Supplied canonical receipt accepted; supplied altered selected-cost receipt rejected.",
+  "publication": "localvalidatedcheckpoint;remoteverificationrecordedseparately",
+  "receipts": {
+    "checks": [
+      {
+        "exit_code": 0,
+        "script": "candidate_box_thermal"
+      },
+      {
+        "exit_code": 0,
+        "script": "joint_thermal"
+      },
+      {
+        "exit_code": 0,
+        "script": "fault_population_diagnostics"
+      },
+      {
+        "exit_code": 0,
+        "script": "thermal_severity"
+      },
+      {
+        "exit_code": 0,
+        "script": "adaptive_thermal"
+      },
+      {
+        "exit_code": 0,
+        "script": "history_thermal"
+      },
+      {
+        "exit_code": 0,
+        "script": "nx_decision_recovery"
+      },
+      {
+        "exit_code": 0,
+        "script": "target_recovery"
+      },
+      {
+        "exit_code": 0,
+        "script": "horizon_design"
+      },
+      {
+        "exit_code": 0,
+        "script": "typed_contexts"
+      },
+      {
+        "exit_code": 0,
+        "script": "parameter_module_receipts"
+      },
+      {
+        "exit_code": 0,
+        "script": "realizable_interfaces"
+      },
+      {
+        "exit_code": 0,
+        "script": "incremental_locality"
+      },
+      {
+        "exit_code": 0,
+        "script": "fault_transport"
+      },
+      {
+        "exit_code": 0,
+        "script": "recovery_metrics"
+      },
+      {
+        "exit_code": 0,
+        "script": "integer_quotients"
+      },
+      {
+        "exit_code": 0,
+        "script": "arithmetic_automata"
+      },
+      {
+        "exit_code": 0,
+        "script": "symmetry_channels"
+      },
+      {
+        "exit_code": 0,
+        "script": "phase_probes"
+      },
+      {
+        "exit_code": 0,
+        "script": "population_geometry"
+      },
+      {
+        "exit_code": 0,
+        "script": "prefix_certificates"
+      },
+      {
+        "exit_code": 0,
+        "script": "nx25_30_replay"
+      },
+      {
+        "exit_code": 0,
+        "script": "nx_analytic_decisions"
+      }
+    ],
+    "empirical_nfl": "aggregate/provenance replay; restricted raw rerun excluded",
+    "network_required": false,
+    "period_loop_continuation_replayed": false,
+    "schema": "singularity.nx36-replay/1"
+  },
+  "recovered_claude_commit": "926dce28c4018e55b37e89e48325e802d97376ef",
+  "schema": "singularity.nx36-final-validation/1",
+  "scope_limits": [
+    "NX14 R5 symbolic computation refused at its declared dimension budget; rational full ranks do not establish an interval theorem.",
+    "Some expanded fault catalogues remain unseparable; quotient frontiers preserve original masks.",
+    "Finite graph-family exclusions do not establish universal realizability theorems.",
+    "Fixed-pinning completeness and efficient general graph reconstruction remain open."
+  ],
+  "tests": {
+    "count": 714,
+    "log_sha256": "5422dd9f2df317848fb9f68d4b335ef764690601b37269e5c992640dfea2e33b",
+    "python": "3.12.14",
+    "status": "passed"
+  }
+}

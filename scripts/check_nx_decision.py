@@ -2,7 +2,7 @@
 """Standalone NX36 source/decision replay, without proposal/search compilers."""
 from fractions import Fraction as Q
 from pathlib import Path
-import hashlib,json,sys
+import argparse,hashlib,json,sys
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from singularity.decision_certificates import verify_decision_certificate
 
@@ -41,4 +41,8 @@ def check(path=ROOT/'results/nx36/nx36_acceptance.json'):
             'selected_cost':cert['selected_cost'],'source_reconstruction':True,'decision_replay':True,
             'scope':'three declared original hypotheses; exactly two reset protocols; physical radius1/100000 premise'}
 
-if __name__=='__main__':print(json.dumps(check(),sort_keys=True))
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('receipt',nargs='?',type=Path,default=ROOT/'results/nx36/nx36_acceptance.json')
+    args=parser.parse_args()
+    print(json.dumps(check(args.receipt),sort_keys=True))

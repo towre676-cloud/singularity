@@ -14,6 +14,10 @@ The Python core uses Python 3.10+ and the standard library. The repository inclu
 
 ## Read or download
 
+[NX36 implementation companion — PDF](output/pdf/nx36_implementation.pdf) · [HTML](docs/nx36_implementation.html) · [Editable manuscript](docs/NX36_MANUSCRIPT.md) · [Acceptance ledger](handoff/nx36/roadmap.json) · [Recovery audit](handoff/nx36/recovery/CLAUDE_AUDIT.md)
+
+The implemented NX36 programme adds uncertainty-aware experiment design, original-population reconstruction, typed and arithmetic observation languages, source-bound physical transport, measured application pilots, validated period transport, a larger local analytic disc and independently replayable decision certificates. The [integration review](handoff/nx36/recovery/INDEPENDENT_REVIEW.md) records cross-review fixes. The [validation report](results/nx36_validation.json) states actual checks and empirical limitations. A complete source/PDF ZIP is generated with `python scripts/package_nx36.py`; the archive excludes restricted raw athlete data and build caches.
+
 [Frontier companion — PDF](output/pdf/frontier_companion.pdf) · [HTML](docs/frontier_companion.html) · [Editable manuscript](docs/FRONTIER_MANUSCRIPT.md) · [Claude integration note](handoff/frontier/START_HERE.md)
 
 This separate companion adds exact connected poles, rational-coefficient degree recovery (including fixed pinning), ordered-tree positivity, centered pinned theta limits, and reconstruction of promised threshold graphs from a sufficient logarithmic coefficient prefix. It accompanies the open reconstruction questions and does not implement the proposed NX36 programme.
@@ -79,16 +83,19 @@ PYTHONPATH=src python scripts/operator_experiments.py --check
 PYTHONPATH=src python scripts/thermal_diagnostics.py --check
 python scripts/check_repository.py
 python scripts/check_links.py
+python scripts/nx36_replay.py --check
+python handoff/nx36/tools/handoff.py verify
+python scripts/check_nx_decision.py
 ```
 
 Advanced transfer, locality, moment, terminal and charge-chart engines are available through their Python modules and retained-result scripts. Counts and rank/unrank preserve original labeled assignments. Forest transfer rejects cycles and conductor calculations retain explicit work budgets.
 
 On Windows PowerShell, first set `$env:PYTHONPATH='src'` and omit the `PYTHONPATH=src` prefixes. Optional installation is `python -m pip install -e .`; the command is then `singularity`.
 
-`python scripts/build_documents.py` rebuilds the monograph and both papers with Pandoc and XeLaTeX. `python scripts/package_release.py` creates the complete archive and verifies every manifest hash. [GitHub Actions](https://github.com/towre676-cloud/singularity/actions) runs the exact Python checks, the pinned core Lean build, and the actual Mathlib analysis build.
+`python scripts/build_documents.py` rebuilds the monograph and both papers with Pandoc and XeLaTeX. `python scripts/build_nx36_documents.py` builds the separate NX36 companion. `python scripts/package_nx36.py` creates the current complete archive and verifies every member hash. [GitHub Actions](https://github.com/towre676-cloud/singularity/actions) runs the exact Python checks, NX36 receipts, the pinned core Lean builds, and the Mathlib analysis build.
 
 ## Continue the research
 
-The [NX36 Claude Code handoff](handoff/nx36/START_HERE.md) prepares **36 new expansion tracks and 108 acceptance-sized pushes**, with an equation-rich [expansion handbook](handoff/nx36/HANDBOOK.pdf), source-grounded packets, a dependency ledger, and pinned companion engines. The handoff ZIP itself (repository snapshot plus an offline Git recovery bundle) is distributed separately; its repository content is merged here. These are proposed implementation designs; the existing release results and ledgers remain intact.
+The [NX36 handoff](handoff/nx36/START_HERE.md) preserves the original **36 expansion tracks and 108 acceptance units**, with an equation-rich [design handbook](handoff/nx36/HANDBOOK.pdf), source-grounded packets and pinned companion engines. The live ledger and implementation companion record what was built and the exact scope accepted. A unit may legitimately conclude with a proved obstruction, a negative measured result or an explicitly permitted resource-bound refusal; completion does not mean every broader research question was solved. Earlier release ledgers remain intact.
 
 The [original 36-push ledger](handoff/PUSH_AUDIT.md), [session log](handoff/SESSION_LOG.md), [current task selector](handoff/START_HERE.md), and [second-paper decision](docs/papers/second_paper_choice.md) record achieved scope and precise open questions. The main research frontiers are efficient reconstruction beyond cycle interiors, completeness or a full-series collision for fixed pinning, and realization of the surviving symmetric-interface ambiguities. Finite prefix agreement alone settles none of those questions.

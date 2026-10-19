@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,12 +40,41 @@ def main():
             raise SystemExit('Replacement glyph in ' + name)
         counts[name] = len(text.split())
         hashes[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+        # Preserve authored sources. Some historical notes use mathematical
+        # Unicode in prose; supply the missing print glyphs as actual math.
+        text = text.replace('⪰', r'\(\succeq\)').replace('∎', r'\(\square\)')
+        text = text.replace('Source: src/singularity/forecast_targets.py.',
+                            'Source: `src/singularity/forecast_targets.py`.')
+        text = re.sub(r'\\rm\s+([A-Za-z]+)', r'\\mathrm{\1}', text)
+        text = re.sub(r'(?<![`\w])([0-9a-f]{64})(?![`\w])', r'`\1`', text)
+        text = re.sub(r'(?<=\s)(https?://[^\s)>`]+)', lambda m:
+                      '<' + m.group(1).rstrip('.,;') + '>'
+                      + m.group(1)[len(m.group(1).rstrip('.,;')):], text)
         parts.append(builder.assembled_links(text, path))
     source = ROOT / 'docs/NX36_MANUSCRIPT.md'
-    source.write_text('\n\n'.join(parts) + '\n')
+    source.write_text('\n\n'.join(part.strip() for part in parts) + '\n')
     builder.HEADER = builder.HEADER.replace(
         'Singularity: Relational Heights and Arithmetic Visibility',
         'Singularity: Certified Experiments and Observable States')
+    builder.HEADER += '\n' + r'\usepackage{adjustbox}' + '\n'
+    original_run = builder.run
+    def fitted_run(command, log):
+        result = original_run(command, log)
+        if command[0] == 'pandoc' and '--to=latex' in command:
+            tex = ROOT / 'docs/nx36_implementation.tex'
+            body = tex.read_text().replace(r'\^{}', r'\textasciicircum{}')
+            body = body.replace(r'\begin{split}', r'\begin{aligned}').replace(
+                r'\end{split}', r'\end{aligned}')
+            # Preserve long formulas while shrinking only those wider than
+            # the text block. Short equations retain the ordinary font size.
+            body = re.sub(r'\\\[(.*?)\\\]', lambda m:
+                          '\\begin{center}\n\\begin{adjustbox}{max width=\\linewidth}\n'
+                          '$\\displaystyle ' + m.group(1) + '$\n'
+                          '\\end{adjustbox}\n\\end{center}', body, flags=re.S)
+            tex.write_text('\n'.join(line.rstrip() for line in body.splitlines()) + '\n')
+        return result
+
+    builder.run = fitted_run
     builder.render(source, 'nx36_implementation',
                    'Singularity: Certified Experiments and Observable States',
                    'NX36 implementation companion: proofs, contracts, pilots and limits',

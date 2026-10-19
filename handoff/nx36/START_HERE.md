@@ -1,4 +1,10 @@
-# Start here: the 36-track Claude Code expansion handoff
+# Start here: the implemented NX36 programme
+
+The live acceptance record is `roadmap.json`; CSV mirrors and the implementation companion describe the current checkpoint. Read `recovery/CLAUDE_AUDIT.md` for what the interrupted Claude session actually completed, `recovery/INDEPENDENT_REVIEW.md` for subsequent corrections, and the [mathematical synthesis](../../docs/research/NX36_IMPLEMENTATION.md). Run `python scripts/nx36_replay.py --check` and the full test suite before further changes. Use `python scripts/package_nx36.py` to create the current complete archive.
+
+The handbook and packet prose below preserve the original design. Their initial proposed statuses, first-batch recommendations and original outer-ZIP layout are historical. They do not supersede accepted evidence in the live roadmap. The current archive has a `Singularity-NX36/` repository root and excludes Git history and restricted raw athlete data.
+
+## Original design context
 
 This package prepares all NX01-NX36 designs from the expansion discussion. It contains mathematical implementation packets, 108 acceptance-sized push units, a dependency ledger, complete Singularity v0.4.0 baseline source, pinned companion reference code, and an assembled equation-rendered handbook. It is a handoff for new implementation. All NX units begin proposed; writing this package does not complete their mathematics or code.
 

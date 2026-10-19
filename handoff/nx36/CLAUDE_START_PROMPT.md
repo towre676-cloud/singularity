@@ -1,5 +1,9 @@
 # Paste this into Claude Code
 
+CURRENT CHECKPOINT OVERRIDE: inspect the live roadmap before following the historical first-batch instructions below. The NX36 recovery implements and audits all bounded acceptance tracks; do not reimplement accepted units because an old packet says proposed. Begin by reading `handoff/nx36/recovery/CLAUDE_AUDIT.md`, `handoff/nx36/recovery/INDEPENDENT_REVIEW.md`, `results/nx36_validation.json`, and `docs/research/NX36_IMPLEMENTATION.md`. Run the roadmap verifier, full Python tests and `python scripts/nx36_replay.py --check`. Preserve negative results and explicit resource-bound refusals. The broad fixed-pinning completeness, efficient graph reconstruction and surviving graph-realizability questions remain research frontiers. A new task needs a new declared scope and independent evidence. The earlier prompt is retained below to explain the design's provenance.
+
+## Historical implementation prompt
+
 You are continuing Singularity using the complete NX36 handoff. Work from the repository root. Read `CLAUDE.md`, `handoff/nx36/START_HERE.md`, and `handoff/nx36/architecture/PROGRAM_DESIGN.md`; run the new handoff CLI `verify`, `status`, and `next`. The old P01-P36 and OE01-OE14 programs are completed at the supplied release baseline. Preserve their evidence. NX01-NX36 are new proposed expansion tracks with 108 acceptance units; they have not been implemented merely because their packets exist.
 
 Inspect the working tree and remote before editing, preserve unrelated changes, and integrate any newer compatible main work. The frozen reference is main `438ed423d7d389a1a483c61e0b50eca6a9fc0827`; do not reset a newer checkout to it. Run the core baseline suite. Use the bundle only for offline recovery, following its guide.

@@ -4,7 +4,9 @@ You are developing an exact mathematical research project, with working code and
 
 ## Current NX expansion scope
 
-The original P01-P36 and OE01-OE14 programs are complete at the supplied v0.4.0 baseline. For the new 36-track expansion, start with `handoff/nx36/START_HERE.md` and `handoff/nx36/CLAUDE_START_PROMPT.md`, then run `python handoff/nx36/tools/handoff.py verify` and `next --limit 3`. Its separate ledger has 108 proposed acceptance units; the first recommended session is NX01-A/B/C. Preserve the original ledgers and apply the bounded-session, mathematical and release contracts below. A handoff design is not an accepted implementation.
+The original P01-P36 and OE01-OE14 programs are complete at the supplied v0.4.0 baseline. For the new 36-track expansion, start with `handoff/nx36/START_HERE.md` and `handoff/nx36/CLAUDE_START_PROMPT.md`, then run `python handoff/nx36/tools/handoff.py verify`, `status`, and `next --limit 3`. Its separate ledger has 108 acceptance units; inspect current evidence before selecting work. The user explicitly authorized completion of all unfinished NX36 work for this recovery, superseding the routine three-unit session limit. Preserve the original ledgers and apply the mathematical and release contracts below. A handoff design is not an accepted implementation. The recovery audit is `handoff/nx36/recovery/CLAUDE_AUDIT.md`.
+
+The recovery checkpoint accepts all 108 bounded NX units, with 714 passing Python tests, 23 retained replay routes, a 41,460-word implementation companion and separately scoped Lean decision proofs. Read `results/nx36_validation.json` and each unit's limits before making claims. NX14's permitted resource refusal, unseparable fault catalogues and negative measured pilots remain explicit results. The fixed-pinning completeness and general graph-realizability frontiers remain open. Do not reopen accepted units merely because the original design handbook says proposed.
 
 ## Authority and working mode
 

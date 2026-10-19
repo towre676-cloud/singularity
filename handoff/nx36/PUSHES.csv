@@ -1,181 +1,181 @@
 unit,track,title,status,dependencies,acceptance
-NX01-A,NX01,Contract and heterogeneous geometry,proposed,,"Validated radii matrix, masks, decoder and ambiguity witnesses match independent interval checks."
-NX01-B,NX01,Exact optimization and dual comparison,proposed,NX01-A,Bounded exact solver matches independent subset and cover-state optimum on tiny pools.
-NX01-C,NX01,Thermal integration and retained result,proposed,NX01-B,"Unchanged source-derived pool has a retained, independently checked heterogeneous optimum or explicit incomplete status."
-NX02-A,NX02,Joint sets and rational witness checker,proposed,NX01-C,Exact support and primal/contrast certificates pass independent tiny algebraic checks.
-NX02-B,NX02,Complete small-panel optimizer,proposed,NX02-A,Bounded full-subset search and independent polytope oracle agree in feasibility and cost.
-NX02-C,NX02,Persistent thermal nuisance pilot,proposed,NX02-B,Source-derived centers and justified persistent-error generators support retained box-versus-joint comparisons.
-NX03-A,NX03,Exact constrained mask population,proposed,NX01-C,"Boolean populations, constraints, count/rank/unrank and conditioning match exhaustive originals."
-NX03-B,NX03,Physical candidate compilation,proposed,NX03-A,All tiny defect matrices and trajectories match independent undirected flux evolution.
-NX03-C,NX03,Seventy-nine-configuration diagnosis,proposed,NX03-B,"Retained exact population, readings, bounds, coverage and solver status preserve every original mask."
-NX04-A,NX04,Family semantics and exact sample oracle,proposed,NX03-C;NX02-C,"Parameter admissibility, severity conventions and exact sample trajectories are independently verified."
-NX04-B,NX04,Certified small-domain separation,proposed,NX04-A,"Complete tiny-domain cover, analytic example and overlap witness replay independently."
-NX04-C,NX04,Location/severity frontier pilot,proposed,NX04-B,"Declared small location family has certified separation bands, ambiguity strata and explicit unresolved cells."
-NX05-A,NX05,Exact observation-cell compiler,proposed,NX01-C;NX03-C,"Endpoint, point, nested and open-cell memberships match direct inequality checks."
-NX05-B,NX05,Bellman solver and independent tree oracle,proposed,NX05-A,The exact two-versus-three fixture and tiny exhaustive policy comparisons agree.
-NX05-C,NX05,Reset thermal policy comparison,proposed,NX05-B,Retained robust thermal policies have complete branch replay and fair static-panel comparisons.
-NX06-A,NX06,Exact finite-history semantics,proposed,NX05-C;NX02-C;NX03-C,"Belief updates and legality agree with exhaustive histories, including observe-before-erase counterexamples."
-NX06-B,NX06,Bounded exact affine conditioning,proposed,NX06-A,Shared-gain two-slope identification and final-only ambiguity are certified with retained history variables.
-NX06-C,NX06,Shared-history thermal pilot,proposed,NX06-B,"Short small-plate histories have independently checked centers, uncertainty semantics and complete cost accounting."
-NX07-A,NX07,Catalogue semantics and exact activation objective,proposed,NX01-C;NX03-C,"Validated capability requirements and exact installation/runtime costs.
+NX01-A,NX01,Contract and heterogeneous geometry,complete,,"Validated radii matrix, masks, decoder and ambiguity witnesses match independent interval checks."
+NX01-B,NX01,Exact optimization and dual comparison,complete,NX01-A,Bounded exact solver matches independent subset and cover-state optimum on tiny pools.
+NX01-C,NX01,Thermal integration and retained result,complete,NX01-B,"Unchanged source-derived pool has a retained, independently checked heterogeneous optimum or explicit incomplete status."
+NX02-A,NX02,Joint sets and rational witness checker,complete,NX01-C,Exact support and primal/contrast certificates pass independent tiny algebraic checks.
+NX02-B,NX02,Complete small-panel optimizer,complete,NX02-A,Bounded full-subset search and independent polytope oracle agree in feasibility and cost.
+NX02-C,NX02,Persistent thermal nuisance pilot,complete,NX02-B,Source-derived centers and justified persistent-error generators support retained box-versus-joint comparisons.
+NX03-A,NX03,Exact constrained mask population,complete,NX01-C,"Boolean populations, constraints, count/rank/unrank and conditioning match exhaustive originals."
+NX03-B,NX03,Physical candidate compilation,complete,NX03-A,All tiny defect matrices and trajectories match independent undirected flux evolution.
+NX03-C,NX03,Seventy-nine-configuration diagnosis,complete,NX03-B,"Retained exact population, readings, bounds, coverage and solver status preserve every original mask."
+NX04-A,NX04,Family semantics and exact sample oracle,complete,NX03-C;NX02-C,"Parameter admissibility, severity conventions and exact sample trajectories are independently verified."
+NX04-B,NX04,Certified small-domain separation,complete,NX04-A,"Complete tiny-domain cover, analytic example and overlap witness replay independently."
+NX04-C,NX04,Location/severity frontier pilot,complete,NX04-B,"Declared small location family has certified separation bands, ambiguity strata and explicit unresolved cells."
+NX05-A,NX05,Exact observation-cell compiler,complete,NX01-C;NX03-C,"Endpoint, point, nested and open-cell memberships match direct inequality checks."
+NX05-B,NX05,Bellman solver and independent tree oracle,complete,NX05-A,The exact two-versus-three fixture and tiny exhaustive policy comparisons agree.
+NX05-C,NX05,Reset thermal policy comparison,complete,NX05-B,Retained robust thermal policies have complete branch replay and fair static-panel comparisons.
+NX06-A,NX06,Exact finite-history semantics,complete,NX05-C;NX02-C;NX03-C,"Belief updates and legality agree with exhaustive histories, including observe-before-erase counterexamples."
+NX06-B,NX06,Bounded exact affine conditioning,complete,NX06-A,Shared-gain two-slope identification and final-only ambiguity are certified with retained history variables.
+NX06-C,NX06,Shared-history thermal pilot,complete,NX06-B,"Short small-plate histories have independently checked centers, uncertainty semantics and complete cost accounting."
+NX07-A,NX07,Catalogue semantics and exact activation objective,complete,NX01-C;NX03-C,"Validated capability requirements and exact installation/runtime costs.
 Three-candidate tied-optimum example plus target coarsening.
 Independent exhaustive capability/panel subset oracle."
-NX07-B,NX07,Symmetry-aware thermal capability catalogue,proposed,NX07-A,"At most eight declared sensor/heater capabilities on a small synthetic plate.
+NX07-B,NX07,Symmetry-aware thermal capability catalogue,complete,NX07-A,"At most eight declared sensor/heater capabilities on a small synthetic plate.
 Old all-word blindness certificate and real separating protocol after installation.
 Independent flux replay and deployment counts 1,2,10,100."
-NX07-C,NX07,Expanded-population optimization and release evidence,proposed,NX07-B,"Bounded expanded fault population preserving original fault IDs.
+NX07-C,NX07,Expanded-population optimization and release evidence,complete,NX07-B,"Bounded expanded fault population preserving original fault IDs.
 Certified installation/per-diagnosis Pareto frontier.
 Independent coverage/cost replay, manuscript and complete release archive."
-NX08-A,NX08,Kernel and exact bound semantics,proposed,,"Validated admissible basis and target row-space/decoder identities.
+NX08-A,NX08,Kernel and exact bound semantics,complete,,"Validated admissible basis and target row-space/decoder identities.
 PSD certificates with zero pivots and all tiny examples.
 Independent tiny PSD oracle and tamper rejection."
-NX08-B,NX08,Sensor-layout optimization,proposed,NX08-A,"Minimum-cost bounded sensor catalogue meeting a target amplification ceiling.
+NX08-B,NX08,Sensor-layout optimization,complete,NX08-A,"Minimum-cost bounded sensor catalogue meeting a target amplification ceiling.
 Equal-rank but differently conditioned examples.
 Independent exhaustive catalogue optimum."
-NX08-C,NX08,Forecast and model integration,proposed,NX08-B,"One small thermal target and one synthetic forecast target.
+NX08-C,NX08,Forecast and model integration,complete,NX08-B,"One small thermal target and one synthetic forecast target.
 Adversarial error witnesses and source/units binding.
 Clear distinction between exact linear claims and future nonlinear/calibrated work."
-NX09-A,NX09,Typed error and cost composition,proposed,NX01-C;NX08-C,"Validated finite evaluator menu and source-bound reading intervals.
+NX09-A,NX09,Typed error and cost composition,complete,NX01-C;NX08-C,"Validated finite evaluator menu and source-bound reading intervals.
 Tiny cheap-evaluator versus changed-experiment example.
 Exhaustive evaluator/panel oracle and stale-domain rejection."
-NX09-B,NX09,Source-pinned DynaComp evaluator adapter,proposed,NX09-A,"Two actual ranks and supported exact/binary64 protocols for a small thermal family.
+NX09-B,NX09,Source-pinned DynaComp evaluator adapter,complete,NX09-A,"Two actual ranks and supported exact/binary64 protocols for a small thermal family.
 Replayable upstream reduction/execution evidence.
 Independent rational trajectories contained in every claimed bound."
-NX09-C,NX09,Setup-inclusive optimal diagnostic plan,proposed,NX09-B,"Selected physical experiment, fidelity and arithmetic with certified separation.
+NX09-C,NX09,Setup-inclusive optimal diagnostic plan,complete,NX09-B,"Selected physical experiment, fidelity and arithmetic with certified separation.
 Comparison with full-exact and uniform-rank baselines.
 Setup/run accounting, measured timings and explicit break-even."
-NX10-A,NX10,Pair-tail theorem and replay,proposed,,"Constant-input source-bound response-tail certificates.
+NX10-A,NX10,Pair-tail theorem and replay,complete,,"Constant-input source-bound response-tail certificates.
 Two exact scalar examples and nonnormal/marginal cases.
 Independent closed-form/matrix-power checks and metric tamper rejection."
-NX10-B,NX10,All-horizon decision integration,proposed,NX10-A,"Checked prefix plus valid future upper/lower bounds.
+NX10-B,NX10,All-horizon decision integration,complete,NX10-A,"Checked prefix plus valid future upper/lower bounds.
 One global finite optimum and one late-time impossibility.
 Epsilon-optimal unattained-limit case without false attainment claim."
-NX10-C,NX10,Thermal and repeated-block demonstration,proposed,NX10-B,"At most four small-plate pairs and two fixed blocks.
+NX10-C,NX10,Thermal and repeated-block demonstration,complete,NX10-B,"At most four small-plate pairs and two fixed blocks.
 Independent neighbour-flux prefix replay.
 Comparison with original finite pool, retaining inconclusive cases."
-NX11-A,NX11,Source-bound scalar query adapter,proposed,,"Two-mode sequence, zero and transient indexing fixtures.
+NX11-A,NX11,Source-bound scalar query adapter,complete,,"Two-mode sequence, zero and transient indexing fixtures.
 Optional upstream adapter preserving exact source bindings.
 Independent small-index sparse/closed-form checks."
-NX11-B,NX11,Pair-response and repeated-block compilation,proposed,NX11-A,"Actual pair differences and fixed repeated blocks.
+NX11-B,NX11,Pair-response and repeated-block compilation,complete,NX11-A,"Actual pair differences and fixed repeated blocks.
 Every index 0..32 compared with independent stepping.
 Order cancellation and scoped all-index equality certificate."
-NX11-C,NX11,Resource-aware distant experiment integration,proposed,NX11-B,"Integration into an accepted finite/horizon selector.
+NX11-C,NX11,Resource-aware distant experiment integration,complete,NX11-B,"Integration into an accepted finite/horizon selector.
 Separate setup, query and answer-size costs.
 Exact oversized-answer refusal and separately labeled modular demonstration if implemented."
-NX12-A,NX12,Complete constrained counts and inverses,proposed,NX01-C,"Exact deterministic completion DP and rank/unrank.
+NX12-A,NX12,Complete constrained counts and inverses,complete,NX01-C,"Exact deterministic completion DP and rank/unrank.
 22-member and budget-4 six-member tiny examples.
 Independent Cartesian-product and randomized grammar enumeration."
-NX12-B,NX12,Physical protocol adapter and complete optimization,proposed,NX12-A,"Correct alphabet-ID to amplitude and terminal-sensor mapping.
+NX12-B,NX12,Physical protocol adapter and complete optimization,complete,NX12-A,"Correct alphabet-ID to amplitude and terminal-sensor mapping.
 Bounded small-plate complete population and independent flux outputs.
 Comparison with handpicked baseline, even if no optimum improvement."
-NX12-C,NX12,Completion-aware search and certificates,proposed,NX12-B,"One grammar/resource-aware decision objective.
+NX12-C,NX12,Completion-aware search and certificates,complete,NX12-B,"One grammar/resource-aware decision objective.
 Proved pruning and original protocol witnesses.
 All cheaper protocols excluded while multiplicities remain reconstructible."
-NX13-A,NX13,Typed algebra contract,proposed,,"Prove typed closure, quotient invariance and linear minimality; test exact rectangular fixture, empty outputs, malformed dimensions and illegal paths."
-NX13-B,NX13,Graph adapters,proposed,NX13-A,"Compile a finite boundary grammar and independently enumerate actual graphs for every retained short legal path, including noncommuting order and duplicate-edge rejection."
-NX13-C,NX13,Certificates and costs,proposed,NX13-B,"Replay portable identities without compiler invocation and compare cheapest witnesses with bounded exhaustive legal-path search, including rank-zero types and chronology tampering."
-NX14-A,NX14,Resource-bounded module certificates,proposed,,"Implement strict receipt states, replay module/divisor identities and tamper tests; compare tiny explicit-word minors with independent polynomial arithmetic."
-NX14-B,NX14,Next graph budgets,proposed,NX14-A,Attempt R=5 first with logged resource bounds; compare rational specializations with exact closure and report any refusal without a false interval theorem.
-NX14-C,NX14,Parameter atlas and explanation,proposed,NX14-B,"Produce certified parameter-cell bases and exceptional ranks, plus a bounded rational-function example with explicit pole guards and independent specialization checks."
-NX15-A,NX15,Realization specification and filters,proposed,,Reproduce frontier vectors and slice restrictions; validate degree/charge filters against direct tiny graph kernels.
-NX15-B,NX15,Complete bounded families,proposed,NX15-A,"Exhaust at least two declared bounded structural families, independently check constructor completeness and surviving kernels, and record every bound and resource limit."
-NX15-C,NX15,Witness or rigidity advance,proposed,NX15-B,"Exhibit an actual full truncated-kernel witness and glued-observation checks, or prove a new stated structural exclusion; never turn finite agreement into full-series equality."
-NX16-A,NX16,Weighted locality contract,proposed,,"Prove the union-support difference identity, implement nonnegative integral weight changes and reproduce the exact two-vertex coefficient/log example."
-NX16-B,NX16,Incremental cache and updates,proposed,NX16-A,"Check all small edge edits, sequential edits, reversal, pinning changes, stale patches and cross-graph cache isolation against full recompilation and direct energy enumeration."
-NX16-C,NX16,Scaling and reusable receipts,proposed,NX16-B,"Demonstrate exact bounded-degree local reuse at fixed budget; report updated supports, polynomial operations, coefficient bits, setup cost and replay time separately."
-NX17-A,NX17,Exact rank-one contract,proposed,,"Reproduce two-node transfer cancellation, partial/zero blockage, bond reversal and source sign/row-sum checks using independent flux and power oracles."
-NX17-B,NX17,Multi-fault and protocol reuse,proposed,NX17-A,"Check every pair in a small catalogue at multiple severities, arbitrary short input words and nonzero initial states; reject impossible removal severities."
-NX17-C,NX17,Full plate population benchmark,proposed,NX17-B,"Cover all 264 bonds at a declared horizon, independently verify selected outputs and reflected blindness, and report setup-inclusive break-even count, bits and runtime."
-NX18-A,NX18,Exact amplification contract,proposed,,"Prove and implement inverse error bounds, attain 32epsilon/33epsilon tiny-example bounds by box vertices, and retain dependent-row robust and rescaling counterexamples."
-NX18-B,NX18,Recovery family comparison,proposed,NX18-A,"Compare finite differences, weighted restoration and charge charts against direct tiny graph kernels with complete volume/cost/noise/bit accounting."
-NX18-C,NX18,Certified target design,proposed,NX18-B,Certify the least-cost design from a bounded menu satisfying target error; replay rational primal/dual witnesses and compact-interval bounds independently.
-NX19-A,NX19,Exact image-lattice certificates,proposed,,"Strict exact matrix validation; Smith identity, divisibility and unimodularity replay.
+NX13-A,NX13,Typed algebra contract,complete,,"Prove typed closure, quotient invariance and linear minimality; test exact rectangular fixture, empty outputs, malformed dimensions and illegal paths."
+NX13-B,NX13,Graph adapters,complete,NX13-A,"Compile a finite boundary grammar and independently enumerate actual graphs for every retained short legal path, including noncommuting order and duplicate-edge rejection."
+NX13-C,NX13,Certificates and costs,complete,NX13-B,"Replay portable identities without compiler invocation and compare cheapest witnesses with bounded exhaustive legal-path search, including rank-zero types and chronology tampering."
+NX14-A,NX14,Resource-bounded module certificates,complete,,"Implement strict receipt states, replay module/divisor identities and tamper tests; compare tiny explicit-word minors with independent polynomial arithmetic."
+NX14-B,NX14,Next graph budgets,complete,NX14-A,Attempt R=5 first with logged resource bounds; compare rational specializations with exact closure and report any refusal without a false interval theorem.
+NX14-C,NX14,Parameter atlas and explanation,complete,NX14-B,"Produce certified parameter-cell bases and exceptional ranks, plus a bounded rational-function example with explicit pole guards and independent specialization checks."
+NX15-A,NX15,Realization specification and filters,complete,,Reproduce frontier vectors and slice restrictions; validate degree/charge filters against direct tiny graph kernels.
+NX15-B,NX15,Complete bounded families,complete,NX15-A,"Exhaust at least two declared bounded structural families, independently check constructor completeness and surviving kernels, and record every bound and resource limit."
+NX15-C,NX15,Witness or rigidity advance,complete,NX15-B,"Exhibit an actual full truncated-kernel witness and glued-observation checks, or prove a new stated structural exclusion; never turn finite agreement into full-series equality."
+NX16-A,NX16,Weighted locality contract,complete,,"Prove the union-support difference identity, implement nonnegative integral weight changes and reproduce the exact two-vertex coefficient/log example."
+NX16-B,NX16,Incremental cache and updates,complete,NX16-A,"Check all small edge edits, sequential edits, reversal, pinning changes, stale patches and cross-graph cache isolation against full recompilation and direct energy enumeration."
+NX16-C,NX16,Scaling and reusable receipts,complete,NX16-B,"Demonstrate exact bounded-degree local reuse at fixed budget; report updated supports, polynomial operations, coefficient bits, setup cost and replay time separately."
+NX17-A,NX17,Exact rank-one contract,complete,,"Reproduce two-node transfer cancellation, partial/zero blockage, bond reversal and source sign/row-sum checks using independent flux and power oracles."
+NX17-B,NX17,Multi-fault and protocol reuse,complete,NX17-A,"Check every pair in a small catalogue at multiple severities, arbitrary short input words and nonzero initial states; reject impossible removal severities."
+NX17-C,NX17,Full plate population benchmark,complete,NX17-B,"Cover all 264 bonds at a declared horizon, independently verify selected outputs and reflected blindness, and report setup-inclusive break-even count, bits and runtime."
+NX18-A,NX18,Exact amplification contract,complete,,"Prove and implement inverse error bounds, attain 32epsilon/33epsilon tiny-example bounds by box vertices, and retain dependent-row robust and rescaling counterexamples."
+NX18-B,NX18,Recovery family comparison,complete,NX18-A,"Compare finite differences, weighted restoration and charge charts against direct tiny graph kernels with complete volume/cost/noise/bit accounting."
+NX18-C,NX18,Certified target design,complete,NX18-B,Certify the least-cost design from a bounded menu satisfying target error; replay rational primal/dual witnesses and compact-interval bounds independently.
+NX19-A,NX19,Exact image-lattice certificates,complete,,"Strict exact matrix validation; Smith identity, divisibility and unimodularity replay.
 Declared tiny bounded-entry corpus checked against exhaustive integer enumeration."
-NX19-B,NX19,Original-object fibre populations,proposed,NX19-A,"Original-coordinate constraints, certified finiteness, count/rank/unrank.
+NX19-B,NX19,Original-object fibre populations,complete,NX19-A,"Original-coordinate constraints, certified finiteness, count/rank/unrank.
 Pushforward mass conservation and direct lexicographic fibre oracle."
-NX19-C,NX19,Operator-compatible lattice quotients,proposed,NX19-B,"Realizable quotient updates match original integer transitions.
+NX19-C,NX19,Operator-compatible lattice quotients,complete,NX19-B,"Realizable quotient updates match original integer transitions.
 Reject non-invariant rational transitions and preserve existing rational API semantics."
-NX20-A,NX20,Arithmetic residue adapter,proposed,,"Exact finite seed populations, unit validation, cycle discovery and strict serialization.
+NX20-A,NX20,Arithmetic residue adapter,complete,,"Exact finite seed populations, unit validation, cycle discovery and strict serialization.
 Independent quadratic multiplication and bounded-index matrix powers agree."
-NX20-B,NX20,Costed observation closure,proposed,NX20-A,"Indicator observations correctly preserve finite residue output equality.
+NX20-B,NX20,Costed observation closure,complete,NX20-A,"Indicator observations correctly preserve finite residue output equality.
 Direct finite-machine partition refinement agrees with observable closure and cheapest witnesses."
-NX20-C,NX20,Remote indices and restricted noncommuting language,proposed,NX20-B,"Huge-index residues agree with independent modular powering and retained cycle.
+NX20-C,NX20,Remote indices and restricted noncommuting language,complete,NX20-B,"Huge-index residues agree with independent modular powering and retained cycle.
 Separate commuting-unit and conjugation-order examples retain original coordinate provenance."
-NX21-A,NX21,Rational reflection channels,proposed,,"Exact involution projectors and the two-state all-time blindness example.
+NX21-A,NX21,Rational reflection channels,complete,,"Exact involution projectors and the two-state all-time blindness example.
 Reject broken commutation hypotheses."
-NX21-B,NX21,Finite-group decompositions,proposed,NX21-A,"Checked group representation and exact per-channel closure.
+NX21-B,NX21,Finite-group decompositions,complete,NX21-A,"Checked group representation and exact per-channel closure.
 Full closure rank agrees with channel decomposition under verified assumptions."
-NX21-C,NX21,Costed symmetry repair,proposed,NX21-B,"Reproduce thermal reflection blindness and a target-separating repair.
+NX21-C,NX21,Costed symmetry repair,complete,NX21-B,"Reproduce thermal reflection blindness and a target-separating repair.
 Exhaust smaller installations/experiments; retain robust noise and physical sensor semantics."
-NX22-A,NX22,Exact complete phase transforms,proposed,,"Strict degree-bound and exact complete-transform certificates.
+NX22-A,NX22,Exact complete phase transforms,complete,,"Strict degree-bound and exact complete-transform certificates.
 Direct histogram oracle, mass conservation, and explicit aliasing counterexample."
-NX22-B,NX22,Compiler and periodic integration,proposed,NX22-A,"Independent direct/periodic/compiler phase routes agree under their assumptions.
+NX22-B,NX22,Compiler and periodic integration,complete,NX22-A,"Independent direct/periodic/compiler phase routes agree under their assumptions.
 Composite orders and nonprimitive phases share a correct ambient field."
-NX22-C,NX22,Sparse and candidate-specific probe design,proposed,NX22-B,"Exact optimum within a declared finite candidate panel problem.
+NX22-C,NX22,Sparse and candidate-specific probe design,complete,NX22-B,"Exact optimum within a declared finite candidate panel problem.
 Any unrestricted sparse recovery statement has a separate uniqueness proof."
-NX23-A,NX23,Exact weighted pushforwards,proposed,NX03-C;NX19-C,"Mass, target tables and tilted moments agree with direct original-object sums.
+NX23-A,NX23,Exact weighted pushforwards,complete,NX03-C;NX19-C,"Mass, target tables and tilted moments agree with direct original-object sums.
 Retain binary population multiplicities 1,2,1 and zero-weight/signed-feature cases."
-NX23-B,NX23,Finite-channel target decisions,proposed,NX23-A,"Exact channel normalization, posterior and risk checks.
+NX23-B,NX23,Finite-channel target decisions,complete,NX23-A,"Exact channel normalization, posterior and risk checks.
 Reject insufficient compression keys and define zero-probability model rejection."
-NX23-C,NX23,Costed population-aware experiment design,proposed,NX23-B,"Finite-population expected-risk optimum with original-object reconstruction.
+NX23-C,NX23,Costed population-aware experiment design,complete,NX23-B,"Finite-population expected-risk optimum with original-object reconstruction.
 Explicit prior/loss assumptions and comparison against robust optimum."
-NX24-A,NX24,Unified effective-cutoff contracts,proposed,,"Encode current periodic and finite-state certificates without enlarging their scope.
+NX24-A,NX24,Unified effective-cutoff contracts,complete,,"Encode current periodic and finite-state certificates without enlarging their scope.
 Reject delayed-coefficient and temporary-ideal-stabilization false stopping examples."
-NX24-B,NX24,One new restricted nonperiodic theorem,proposed,NX24-A,"Proved recurrence or generation mechanism with explicit sufficient comparison cutoff.
+NX24-B,NX24,One new restricted nonperiodic theorem,complete,NX24-A,"Proved recurrence or generation mechanism with explicit sufficient comparison cutoff.
 Independent original coefficients and exact exceptional-index handling."
-NX24-C,NX24,Family comparison and exceptional strata,proposed,NX24-B,"Retained parameter census matches independent coefficient oracle.
+NX24-C,NX24,Family comparison and exceptional strata,complete,NX24-B,"Retained parameter census matches independent coefficient oracle.
 Forged recurrence, denominator-degeneration and singular-parameter cases are handled correctly."
-NX25-A,NX25,Exact forecast-target specification,proposed,NX08-C;NX10-C,"Replay the rational position/driver example and constrained-state case.
+NX25-A,NX25,Exact forecast-target specification,complete,NX08-C;NX10-C,"Replay the rational position/driver example and constrained-state case.
 Direct powers through horizon eight agree; retained witnesses prove infeasibility."
-NX25-B,NX25,Costed robust forecast-target panel,proposed,NX25-A,"Enumerate at most 4096 panels and compare exact optimizer.
+NX25-B,NX25,Costed robust forecast-target panel,complete,NX25-A,"Enumerate at most 4096 panels and compare exact optimizer.
 Retain equal-rank/different-conditioning and strict noise-boundary cases."
-NX25-C,NX25,Frozen provenance-bound forecast pilot,proposed,NX25-B,"Recover actual source manifests and independently measured target truth.
+NX25-C,NX25,Frozen provenance-bound forecast pilot,complete,NX25-B,"Recover actual source manifests and independently measured target truth.
 Freeze dates and matched-cost baselines; publish negative results as well as positive ones."
-NX26-A,NX26,Exact affine-fibre constancy and witnesses,proposed,,"Verify both quadratic coefficient conditions by substitution.
+NX26-A,NX26,Exact affine-fibre constancy and witnesses,complete,,"Verify both quadratic coefficient conditions by substitution.
 Keep gap lower bounds distinct from complete diameter certificates."
-NX26-B,NX26,Curvature-aware local fibre analysis,proposed,NX26-A,"Parabola target curvature equals two despite zero ambient target Hessian.
+NX26-B,NX26,Curvature-aware local fibre analysis,complete,NX26-A,"Parabola target curvature equals two despite zero ambient target Hessian.
 Independent parametrizations agree at regular stationary points; singular cases are refused."
-NX26-C,NX26,Bounded nonlinear sensor repair,proposed,NX26-B,"At most four variables and degree four; exact or validated witnesses.
+NX26-C,NX26,Bounded nonlinear sensor repair,complete,NX26-B,"At most four variables and degree four; exact or validated witnesses.
 Retain a branch ambiguity missed by finite witness coverage."
-NX27-A,NX27,Exact scale-transfer algebra,proposed,NX08-C;NX09-C,"Independent cell-flux update reproduces every displayed fraction.
+NX27-A,NX27,Exact scale-transfer algebra,complete,NX08-C;NX09-C,"Independent cell-flux update reproduces every displayed fraction.
 One-dimensional mass target closes while pair averages fail to close."
-NX27-B,NX27,Certified scale-error transport and enrichment,proposed,NX27-A,"Bounded-domain and correlated-domain errors maintain declared norms.
+NX27-B,NX27,Certified scale-error transport and enrichment,complete,NX27-A,"Bounded-domain and correlated-domain errors maintain declared norms.
 One added target-relevant coordinate improves a retained valid bound."
-NX27-C,NX27,One provenance-bound physical scale pilot,proposed,NX27-B,"Recover existing manifest or anonymous primary benchmark.
+NX27-C,NX27,One provenance-bound physical scale pilot,complete,NX27-B,"Recover existing manifest or anonymous primary benchmark.
 Freeze scalar target and report numerical-reference and measurement agreement separately."
-NX28-A,NX28,Conservative toy and structural blindness,proposed,NX25-C;NX26-C;NX27-C,"Verify HM=DH and all simplex-vertex mass balances.
+NX28-A,NX28,Conservative toy and structural blindness,complete,NX25-C;NX26-C;NX27-C,"Verify HM=DH and all simplex-vertex mass balances.
 Species-selective repair separates the retained same-total initial states."
-NX28-B,NX28,Costed species/location/time panel,proposed,NX28-A,"At most twelve experiments; exhaustive panel oracle.
+NX28-B,NX28,Costed species/location/time panel,complete,NX28-A,"At most twelve experiments; exhaustive panel oracle.
 Uncertain-rate case demonstrates nominal-rank recovery can fail robust separation."
-NX28-C,NX28,Provenance-bound reaction/measurement pilot,proposed,NX28-B,"Acquire one primary anonymous source with units and method metadata.
+NX28-C,NX28,Provenance-bound reaction/measurement pilot,complete,NX28-B,"Acquire one primary anonymous source with units and method metadata.
 Freeze mechanism/domain and separate validation residuals from physical model error claims."
-NX29-A,NX29,Exact movement design and target witnesses,proposed,NX08-C,"Direct polynomial substitution agrees with row-span and nullspace certificates.
+NX29-A,NX29,Exact movement design and target witnesses,complete,NX08-C,"Direct polynomial substitution agrees with row-span and nullspace certificates.
 A recoverable target is retained even when the full coefficient profile is underidentified."
-NX29-B,NX29,Robust minimum-cost drill repair,proposed,NX29-A,"At most twelve candidate conditions; compare exhaustive subsets.
+NX29-B,NX29,Robust minimum-cost drill repair,complete,NX29-A,"At most twelve candidate conditions; compare exhaustive subsets.
 Separate structural new-condition gains from repetitions under an explicit dependence model."
-NX29-C,NX29,Frozen multi-source athlete pilot,proposed,NX29-B,"Recover original manifests and verify linked identities across namespace boundaries.
+NX29-C,NX29,Frozen multi-source athlete pilot,complete,NX29-B,"Recover original manifests and verify linked identities across namespace boundaries.
 Predeclare outcome and split; no athlete leakage across linked attempts."
-NX30-A,NX30,Exact level-two geometry and concatenation,proposed,NX29-C,"Streaming and direct segment integration agree.
+NX30-A,NX30,Exact level-two geometry and concatenation,complete,NX29-C,"Streaming and direct segment integration agree.
 Associativity, translation, time augmentation and monotone reparametrization fixtures replay."
-NX30-B,NX30,Exact segmentation populations and robust features,proposed,NX30-A,"At most 1024 variants; compare full enumeration.
+NX30-B,NX30,Exact segmentation populations and robust features,complete,NX30-A,"At most 1024 variants; compare full enumeration.
 Overlapping attainable feature sets prevent a false robust-identification claim."
-NX30-C,NX30,Frozen ordered-movement prediction pilot,proposed,NX30-B,"Recover source hashes and verified athlete links; freeze one outcome.
+NX30-C,NX30,Frozen ordered-movement prediction pilot,complete,NX30-B,"Recover source hashes and verified athlete links; freeze one outcome.
 Separate segmentation reliability from predictive skill and preserve negative findings."
-NX31-A,NX31,Differential observation closure,proposed,,"Adapt the existing pinned PerfectPower differential-observable implementation for dimensions at most four and coefficient degrees at most six. Add a new backend only after documenting a concrete interoperability gap; do not duplicate the existing scalar-equation engine. Deliver the new module, focused tests, and a mathematical note deriving the scalar relation. Acceptance requires direct symbolic equality of every returned row identity, the exact three-state example above, a target with zero output, a full-dimensional case, and a parameter pivot requiring chart splitting. An independent oracle differentiates explicit polynomial solutions on nilpotent examples instead of calling the closure routine."
-NX31-B,NX31,Target transport with explicit error,proposed,NX31-A,"Connect a verified external or newly bounded numerical transport routine on a regular chart. Return target intervals with initial-condition and numerical errors separated. Acceptance requires containment of an independently computed solution, propagation of uncertainty in all initially required derivative coordinates, and honest refusal when the path crosses an excluded pole. Start with rational/nilpotent examples; do not begin with a difficult geometric family."
-NX31-C,NX31,One source-grounded geometric application,proposed,NX31-B,"Select a curve or period family whose source connection and independent period integral are actually available. Compare full transport, target-reduced transport, and direct quadrature under the same normalization. Publish setup-inclusive runtime and enclosure widths. If the mirror-quintic source cannot be recovered, retain that dependency as unavailable and finish on the supported family. No flux-vacuum claim follows without the separate integral symplectic basis and flux covectors."
-NX32-A,NX32,Exact loop-language adapter,proposed,,"Implement the adapter around existing operator closure. Deliver the exact toy example, gauge-transformed copies, inverse-loop validation, and a source schema. Acceptance requires chronological replay of every returned word and exact equality of all readings under several invertible rational basis changes. Exhaustive words through length six provide an independent finite comparison, while invariant closure supplies the all-future statement."
-NX32-B,NX32,Costed and robust continuation experiments,proposed,NX32-A,"Assign costs reflecting a declared continuation workload, initially loop counts and later path length or precision. Return cheapest distinguishing words and finite-budget robust alternatives. Acceptance requires exhaustive agreement on the toy language, including a case in which the cheapest nonzero response is poorly conditioned and a more expensive response tolerates larger error. Report the scalar error model used in the comparison."
-NX32-C,NX32,Actual monodromy source integration,proposed,NX32-B,"Choose a recovered, explicitly normalized family. Bind the matrices to source equations and paths. Compare exact matrix relations with independently validated continuation around the loops. Record the representation relations actually checked. If exact recovery from numerics requires integrality, prove or supply the prerequisite lattice normalization; otherwise retain validated enclosures and a correspondingly limited statement."
-NX33-A,NX33,Exact compatibility and obstruction,proposed,NX31-C,"Deliver an identity checker and a constructor for the reduced connection on a chosen regular chart. Acceptance includes both examples above, zero and full-rank cases, a reduction that closes but loses its target, and a polynomial identity valid only after an explicitly recorded exclusion. Independently compare with explicit solutions for nilpotent or diagonal source systems."
-NX33-B,NX33,Chart and gauge transport,proposed,NX33-A,"Implement overlap transformations between two reductions of the same constant-rank observable subspace. Verify \(\widetilde B=GB\), the derivative gauge law, and target transformation. Acceptance requires transport along two subdivided paths to give compatible target enclosures and deliberately corrupted overlap maps to fail exact identities. A chart singularity must trigger a switch or refusal, not an unbounded numerical division."
-NX33-C,NX33,One integrated parameter-family application,proposed,NX33-B,"Choose a source-grounded parameter-dependent dynamical or period family. Publish the observable rank strata, reductions on regular cells, overlap maps, and an example of hidden-information leakage when an invalid smaller reduction is attempted. Include independently checked target predictions. Claims about loop holonomy require actual continuation around a valid loop, not merely a local gauge formula."
-NX34-A,NX34,Local series tail and zero-free certificates,proposed,,"Implement exact combinatorial tails and validated bounds for a declared small polynomial/domain class. Deliver the geometric-series example, a case with a genuine zero, a case in which subdivision is necessary, and tests against independently known polynomial root locations. Separate `zero_count` from `zero_free` in the result schema."
-NX34-B,NX34,Small-prime image transport,proposed,NX34-A,"Map a proposed complex \(s\)-disc into certified local \(z\)-domains for each retained small prime. Check factor nonvanishing and logarithm branches. Independently compare pointwise enclosures at rational sample parameters, but use domain bounds for the actual theorem. Record directed rounding and transcendental-function bounds; ordinary complex floating point is only exploratory."
-NX34-C,NX34,Improved retained visibility region,proposed,NX34-B,"For a reference graph pair, combine local certificates with the existing large-prime tail machinery and publish a strictly larger disc than its current retained certificate. Report which bound limits the new radius. If improvement fails, retain the exact local obstructions and a bounded negative method result rather than claiming the actual analytic domain is small. Distinguish a fractional branch point from a pole whenever the discrepancy exponent is nonintegral."
-NX35-A,NX35,Enclosure-to-coverage bounds,proposed,NX01-C;NX09-C,"Implement strict margin classification and optimistic/conservative cover construction. Deliver the exact example and cases with equality, negative bounds, zero-radius candidates, and inconsistent oracle records. Independently enumerate every panel in tiny pools to verify both bounding inequalities."
-NX35-B,NX35,Deterministic refinement planner,proposed,NX35-A,"Implement an explicit bounded queue and incumbent/lower-bound updates. Acceptance requires the same optimum as exhaustive full-fidelity search, monotone enclosures or recorded reconciliation of different valid bounds, and a retained instance with fewer full evaluations. Report total setup and refinement work, not only the count of cheap oracle calls."
-NX35-C,NX35,DynaComp/thermal integration,proposed,NX35-B,Use actual source-bound error contracts for several fidelity choices on the existing thermal application. Compare the chosen experiment and finite-pool optimum with full exact predictions. Each fault/sensor/reduction combination must carry an appropriate bound; the nominal model certificate cannot be reused without justification. Retain a case where arithmetic refinement fails to help because source uncertainty dominates.
-NX36-A,NX36,Exact robust feasibility records,proposed,NX01-C;NX35-C,"Implement strict scalar-interval and rational-contrast checkers in a proposed `src/singularity/decision_certificates.py`. Deliver schema documentation, finite examples, serialization round trips, and an independent direct-set checker for tiny cases. Deliberately alter costs, endpoints, target labels, dimensions, and source bindings; every alteration that invalidates the claim must be rejected. Avoid tests that only mirror parser branches."
-NX36-B,NX36,Optimality and reconstruction composition,proposed,NX36-A,"Add a finite-pool lower-bound certificate and original-population reconstruction checks. Verify the complete toy catalogue by independent enumeration, then retain one thermal result. Distinguish a catalogue optimum from an optimum over all legal protocols. If the catalogue is generated by NX12, bind the completeness evidence or state the finite-pool limitation explicitly."
-NX36-C,NX36,Scoped formal theorem and release integration,proposed,NX36-B,"Formalize the finite soundness statement connecting accepted pair-separation witnesses and a cost lower bound to target identification and optimality. Reuse existing finite operator facts where their hypotheses match; rational cost scaling needs an explicit positive common denominator if a natural-number cost theorem is used. Compile the actual proof files and report their coverage. No blanket statement about the Python optimizer, external interval engine, or physical model should follow from a narrower checker theorem."
+NX31-A,NX31,Differential observation closure,complete,,"Adapt the existing pinned PerfectPower differential-observable implementation for dimensions at most four and coefficient degrees at most six. Add a new backend only after documenting a concrete interoperability gap; do not duplicate the existing scalar-equation engine. Deliver the new module, focused tests, and a mathematical note deriving the scalar relation. Acceptance requires direct symbolic equality of every returned row identity, the exact three-state example above, a target with zero output, a full-dimensional case, and a parameter pivot requiring chart splitting. An independent oracle differentiates explicit polynomial solutions on nilpotent examples instead of calling the closure routine."
+NX31-B,NX31,Target transport with explicit error,complete,NX31-A,"Connect a verified external or newly bounded numerical transport routine on a regular chart. Return target intervals with initial-condition and numerical errors separated. Acceptance requires containment of an independently computed solution, propagation of uncertainty in all initially required derivative coordinates, and honest refusal when the path crosses an excluded pole. Start with rational/nilpotent examples; do not begin with a difficult geometric family."
+NX31-C,NX31,One source-grounded geometric application,complete,NX31-B,"Select a curve or period family whose source connection and independent period integral are actually available. Compare full transport, target-reduced transport, and direct quadrature under the same normalization. Publish setup-inclusive runtime and enclosure widths. If the mirror-quintic source cannot be recovered, retain that dependency as unavailable and finish on the supported family. No flux-vacuum claim follows without the separate integral symplectic basis and flux covectors."
+NX32-A,NX32,Exact loop-language adapter,complete,,"Implement the adapter around existing operator closure. Deliver the exact toy example, gauge-transformed copies, inverse-loop validation, and a source schema. Acceptance requires chronological replay of every returned word and exact equality of all readings under several invertible rational basis changes. Exhaustive words through length six provide an independent finite comparison, while invariant closure supplies the all-future statement."
+NX32-B,NX32,Costed and robust continuation experiments,complete,NX32-A,"Assign costs reflecting a declared continuation workload, initially loop counts and later path length or precision. Return cheapest distinguishing words and finite-budget robust alternatives. Acceptance requires exhaustive agreement on the toy language, including a case in which the cheapest nonzero response is poorly conditioned and a more expensive response tolerates larger error. Report the scalar error model used in the comparison."
+NX32-C,NX32,Actual monodromy source integration,complete,NX32-B,"Choose a recovered, explicitly normalized family. Bind the matrices to source equations and paths. Compare exact matrix relations with independently validated continuation around the loops. Record the representation relations actually checked. If exact recovery from numerics requires integrality, prove or supply the prerequisite lattice normalization; otherwise retain validated enclosures and a correspondingly limited statement."
+NX33-A,NX33,Exact compatibility and obstruction,complete,NX31-C,"Deliver an identity checker and a constructor for the reduced connection on a chosen regular chart. Acceptance includes both examples above, zero and full-rank cases, a reduction that closes but loses its target, and a polynomial identity valid only after an explicitly recorded exclusion. Independently compare with explicit solutions for nilpotent or diagonal source systems."
+NX33-B,NX33,Chart and gauge transport,complete,NX33-A,"Implement overlap transformations between two reductions of the same constant-rank observable subspace. Verify \(\widetilde B=GB\), the derivative gauge law, and target transformation. Acceptance requires transport along two subdivided paths to give compatible target enclosures and deliberately corrupted overlap maps to fail exact identities. A chart singularity must trigger a switch or refusal, not an unbounded numerical division."
+NX33-C,NX33,One integrated parameter-family application,complete,NX33-B,"Choose a source-grounded parameter-dependent dynamical or period family. Publish the observable rank strata, reductions on regular cells, overlap maps, and an example of hidden-information leakage when an invalid smaller reduction is attempted. Include independently checked target predictions. Claims about loop holonomy require actual continuation around a valid loop, not merely a local gauge formula."
+NX34-A,NX34,Local series tail and zero-free certificates,complete,,"Implement exact combinatorial tails and validated bounds for a declared small polynomial/domain class. Deliver the geometric-series example, a case with a genuine zero, a case in which subdivision is necessary, and tests against independently known polynomial root locations. Separate `zero_count` from `zero_free` in the result schema."
+NX34-B,NX34,Small-prime image transport,complete,NX34-A,"Map a proposed complex \(s\)-disc into certified local \(z\)-domains for each retained small prime. Check factor nonvanishing and logarithm branches. Independently compare pointwise enclosures at rational sample parameters, but use domain bounds for the actual theorem. Record directed rounding and transcendental-function bounds; ordinary complex floating point is only exploratory."
+NX34-C,NX34,Improved retained visibility region,complete,NX34-B,"For a reference graph pair, combine local certificates with the existing large-prime tail machinery and publish a strictly larger disc than its current retained certificate. Report which bound limits the new radius. If improvement fails, retain the exact local obstructions and a bounded negative method result rather than claiming the actual analytic domain is small. Distinguish a fractional branch point from a pole whenever the discrepancy exponent is nonintegral."
+NX35-A,NX35,Enclosure-to-coverage bounds,complete,NX01-C;NX09-C,"Implement strict margin classification and optimistic/conservative cover construction. Deliver the exact example and cases with equality, negative bounds, zero-radius candidates, and inconsistent oracle records. Independently enumerate every panel in tiny pools to verify both bounding inequalities."
+NX35-B,NX35,Deterministic refinement planner,complete,NX35-A,"Implement an explicit bounded queue and incumbent/lower-bound updates. Acceptance requires the same optimum as exhaustive full-fidelity search, monotone enclosures or recorded reconciliation of different valid bounds, and a retained instance with fewer full evaluations. Report total setup and refinement work, not only the count of cheap oracle calls."
+NX35-C,NX35,DynaComp/thermal integration,complete,NX35-B,Use actual source-bound error contracts for several fidelity choices on the existing thermal application. Compare the chosen experiment and finite-pool optimum with full exact predictions. Each fault/sensor/reduction combination must carry an appropriate bound; the nominal model certificate cannot be reused without justification. Retain a case where arithmetic refinement fails to help because source uncertainty dominates.
+NX36-A,NX36,Exact robust feasibility records,complete,NX01-C;NX35-C,"Implement strict scalar-interval and rational-contrast checkers in a proposed `src/singularity/decision_certificates.py`. Deliver schema documentation, finite examples, serialization round trips, and an independent direct-set checker for tiny cases. Deliberately alter costs, endpoints, target labels, dimensions, and source bindings; every alteration that invalidates the claim must be rejected. Avoid tests that only mirror parser branches."
+NX36-B,NX36,Optimality and reconstruction composition,complete,NX36-A,"Add a finite-pool lower-bound certificate and original-population reconstruction checks. Verify the complete toy catalogue by independent enumeration, then retain one thermal result. Distinguish a catalogue optimum from an optimum over all legal protocols. If the catalogue is generated by NX12, bind the completeness evidence or state the finite-pool limitation explicitly."
+NX36-C,NX36,Scoped formal theorem and release integration,complete,NX36-B,"Formalize the finite soundness statement connecting accepted pair-separation witnesses and a cost lower bound to target identification and optimality. Reuse existing finite operator facts where their hypotheses match; rational cost scaling needs an explicit positive common denominator if a natural-number cost theorem is used. Compile the actual proof files and report their coverage. No blanket statement about the Python optimizer, external interval engine, or physical model should follow from a narrower checker theorem."

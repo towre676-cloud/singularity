@@ -1,0 +1,37 @@
+name: NX36 acceptance evidence
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  exact-receipts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Retained exact and public measured evidence
+        run: python scripts/nx36_replay.py --check
+      - name: NX36 dependency and evidence integrity
+        run: python handoff/nx36/tools/handoff.py verify
+      - name: New mathematical-note links
+        run: python scripts/check_links.py docs/research/*.md
+      - name: Portable finite decision certificate
+        run: python scripts/check_nx_decision.py results/nx36/nx36_acceptance.json
+  finite-decision-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean 4.12.0 core
+        run: |
+          curl -fsSL -o lean.tar.zst https://github.com/leanprover/lean4/releases/download/v4.12.0/lean-4.12.0-linux.tar.zst
+          tar --zstd -xf lean.tar.zst
+          echo "$PWD/lean-4.12.0-linux/bin" >> "$GITHUB_PATH"
+      - name: Compile finite semantic soundness and audit actual axioms
+        run: python scripts/check_nx_decision_formal.py
