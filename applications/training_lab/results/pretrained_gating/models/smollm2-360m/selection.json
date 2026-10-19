@@ -1,0 +1,88 @@
+{
+  "development_candidate_losses": {
+    "neural": {
+      "loss_sum_nats_hex": "0x1.a1a011c93efb1p+13",
+      "nll_nats_per_token": 2.1751316218469348
+    },
+    "order1_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order1_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order1_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order1_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec02bdp+13",
+      "nll_nats_per_token": 2.1752318040625096
+    },
+    "order1_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order1_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order2_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.a1a4fe171f940p+13",
+      "nll_nats_per_token": 2.1752317818264637
+    },
+    "order2_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec02c7p+13",
+      "nll_nats_per_token": 2.1752318040625123
+    },
+    "order2_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order2_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.a1a4c1516b2fap+13",
+      "nll_nats_per_token": 2.1752269520792784
+    },
+    "order2_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.a1a4fcbd4476ep+13",
+      "nll_nats_per_token": 2.1752316744586575
+    },
+    "order2_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5ec0315p+13",
+      "nll_nats_per_token": 2.1752318040625354
+    },
+    "order3_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.a1a40ac6e5589p+13",
+      "nll_nats_per_token": 2.175212445015672
+    },
+    "order3_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.a1a47e890dadep+13",
+      "nll_nats_per_token": 2.1752216446689747
+    },
+    "order3_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.a1a4fe5e8e855p+13",
+      "nll_nats_per_token": 2.1752318040023004
+    },
+    "order3_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.a1a34bcaf6f99p+13",
+      "nll_nats_per_token": 2.1751972669626105
+    },
+    "order3_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.a1a437d650d37p+13",
+      "nll_nats_per_token": 2.175216026081308
+    },
+    "order3_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.a1a4939d8808ep+13",
+      "nll_nats_per_token": 2.175223319956221
+    }
+  },
+  "development_results_sha256": "beedb728e55715f8fd89be07893df91907d083f99ab3cc1724132f09344ea2cd",
+  "frozen_at_utc": "2026-10-19T16:20:25.682772+00:00",
+  "heldout_scored_before_selection": false,
+  "model": "smollm2-360m",
+  "protocol_sha256": "b7a9de8c3dd3163ceb41483ec5d025590aabacbc9e12686d5ea12166fe9eb376",
+  "schema": "singularity.pretrained-gating-selection/1",
+  "selected_arm": "neural",
+  "selection_rule": "per model choose minimum development aggregate NLL from pure neural plus18 protected policies; ties choose lexical arm ID; write and freeze selection receipt before heldout inference"
+}
