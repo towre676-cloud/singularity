@@ -1,0 +1,1457 @@
+{
+ "eligible_faults": [
+  "service_mask_shift_right",
+  "service_position_ids_zero",
+  "service_truncate48",
+  "service_unicode_nfkc",
+  "service_logit_scale_1.3",
+  "service_cache_prefix_dropped_half"
+ ],
+ "exact": {
+  "cost": 192,
+  "indices": [
+   12,
+   13
+  ],
+  "nodes": 21,
+  "probe_ids": [
+   "long_unicode",
+   "long_unicode_newline"
+  ]
+ },
+ "frozen_before_heldout": true,
+ "full_pool": {
+  "cost": 1089,
+  "indices": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17
+  ],
+  "probe_ids": [
+   "plain_city",
+   "plain_science",
+   "pad48_history",
+   "pad64_science",
+   "pad96_code",
+   "pad80_unicode",
+   "unicode_ligature",
+   "unicode_accents",
+   "newline_list",
+   "newline_code",
+   "long_reference",
+   "long_code",
+   "long_unicode",
+   "long_unicode_newline",
+   "long_accent_newline",
+   "pad96_unicode_newline",
+   "pad64_unicode_newline",
+   "pad48_unicode_newline"
+  ]
+ },
+ "greedy": {
+  "cost": 239,
+  "indices": [
+   0,
+   1,
+   6,
+   10,
+   12
+  ],
+  "probe_ids": [
+   "plain_city",
+   "plain_science",
+   "unicode_ligature",
+   "long_reference",
+   "long_unicode"
+  ]
+ },
+ "independent_enumeration": {
+  "minimizing_panels": [
+   [
+    12,
+    13
+   ]
+  ],
+  "minimum_cost": 192,
+  "subsets": 262144
+ },
+ "pool_separator_counts": {
+  "service_cache_prefix_dropped_half": 18,
+  "service_logit_scale_1.3": 18,
+  "service_mask_shift_right": 18,
+  "service_position_ids_zero": 18,
+  "service_truncate48": 5,
+  "service_unicode_nfkc": 7
+ },
+ "protocol_sha256": "4647a0e1b89001427a0293b87db683fc949ee306ca139a787cd0e38830fb1e39",
+ "pruned_greedy": {
+  "cost": 214,
+  "indices": [
+   6,
+   10,
+   12
+  ],
+  "probe_ids": [
+   "unicode_ligature",
+   "long_reference",
+   "long_unicode"
+  ],
+  "subsets_checked": 32
+ },
+ "random_median": {
+  "cost": 256,
+  "indices": [
+   11,
+   13,
+   16
+  ],
+  "probe_ids": [
+   "long_code",
+   "long_unicode_newline",
+   "pad64_unicode_newline"
+  ],
+  "subsets_checked": 512,
+  "trial": 16,
+  "unpruned_cost": 543,
+  "unpruned_indices": [
+   1,
+   2,
+   5,
+   8,
+   9,
+   11,
+   13,
+   15,
+   16
+  ]
+ },
+ "random_panels": [
+  {
+   "cost": 240,
+   "indices": [
+    11,
+    13,
+    17
+   ],
+   "subsets_checked": 64,
+   "trial": 0,
+   "unpruned_cost": 364,
+   "unpruned_indices": [
+    0,
+    7,
+    11,
+    13,
+    14,
+    17
+   ]
+  },
+  {
+   "cost": 262,
+   "indices": [
+    6,
+    10,
+    11,
+    17
+   ],
+   "subsets_checked": 256,
+   "trial": 1,
+   "unpruned_cost": 504,
+   "unpruned_indices": [
+    2,
+    3,
+    6,
+    9,
+    10,
+    11,
+    15,
+    17
+   ]
+  },
+  {
+   "cost": 262,
+   "indices": [
+    6,
+    10,
+    11,
+    17
+   ],
+   "subsets_checked": 128,
+   "trial": 2,
+   "unpruned_cost": 404,
+   "unpruned_indices": [
+    0,
+    3,
+    6,
+    10,
+    11,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 288,
+   "indices": [
+    11,
+    12,
+    15
+   ],
+   "subsets_checked": 128,
+   "trial": 3,
+   "unpruned_cost": 496,
+   "unpruned_indices": [
+    0,
+    3,
+    4,
+    9,
+    11,
+    12,
+    15
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 4,
+   "trial": 4,
+   "unpruned_cost": 192,
+   "unpruned_indices": [
+    12,
+    13
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    10,
+    13,
+    16
+   ],
+   "subsets_checked": 256,
+   "trial": 5,
+   "unpruned_cost": 557,
+   "unpruned_indices": [
+    1,
+    3,
+    4,
+    9,
+    10,
+    11,
+    13,
+    16
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 64,
+   "trial": 6,
+   "unpruned_cost": 414,
+   "unpruned_indices": [
+    0,
+    2,
+    3,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "cost": 278,
+   "indices": [
+    6,
+    10,
+    14,
+    16
+   ],
+   "subsets_checked": 128,
+   "trial": 7,
+   "unpruned_cost": 387,
+   "unpruned_indices": [
+    1,
+    3,
+    6,
+    9,
+    10,
+    14,
+    16
+   ]
+  },
+  {
+   "cost": 272,
+   "indices": [
+    5,
+    10,
+    12
+   ],
+   "subsets_checked": 256,
+   "trial": 8,
+   "unpruned_cost": 475,
+   "unpruned_indices": [
+    1,
+    2,
+    5,
+    7,
+    9,
+    10,
+    12,
+    15
+   ]
+  },
+  {
+   "cost": 272,
+   "indices": [
+    5,
+    10,
+    13
+   ],
+   "subsets_checked": 64,
+   "trial": 9,
+   "unpruned_cost": 450,
+   "unpruned_indices": [
+    3,
+    4,
+    5,
+    8,
+    10,
+    13
+   ]
+  },
+  {
+   "cost": 240,
+   "indices": [
+    11,
+    12,
+    17
+   ],
+   "subsets_checked": 32,
+   "trial": 10,
+   "unpruned_cost": 269,
+   "unpruned_indices": [
+    1,
+    8,
+    11,
+    12,
+    17
+   ]
+  },
+  {
+   "cost": 288,
+   "indices": [
+    10,
+    12,
+    15
+   ],
+   "subsets_checked": 64,
+   "trial": 11,
+   "unpruned_cost": 459,
+   "unpruned_indices": [
+    1,
+    3,
+    10,
+    12,
+    14,
+    15
+   ]
+  },
+  {
+   "cost": 288,
+   "indices": [
+    11,
+    13,
+    15
+   ],
+   "subsets_checked": 32,
+   "trial": 12,
+   "unpruned_cost": 336,
+   "unpruned_indices": [
+    0,
+    9,
+    11,
+    13,
+    15
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    10,
+    12
+   ],
+   "subsets_checked": 8,
+   "trial": 13,
+   "unpruned_cost": 214,
+   "unpruned_indices": [
+    6,
+    10,
+    12
+   ]
+  },
+  {
+   "cost": 240,
+   "indices": [
+    12,
+    14,
+    17
+   ],
+   "subsets_checked": 64,
+   "trial": 14,
+   "unpruned_cost": 365,
+   "unpruned_indices": [
+    1,
+    4,
+    8,
+    12,
+    14,
+    17
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    11,
+    13
+   ],
+   "subsets_checked": 8192,
+   "trial": 15,
+   "unpruned_cost": 719,
+   "unpruned_indices": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    11,
+    13,
+    15,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    11,
+    13,
+    16
+   ],
+   "subsets_checked": 512,
+   "trial": 16,
+   "unpruned_cost": 543,
+   "unpruned_indices": [
+    1,
+    2,
+    5,
+    8,
+    9,
+    11,
+    13,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    11,
+    12,
+    16
+   ],
+   "subsets_checked": 64,
+   "trial": 17,
+   "unpruned_cost": 414,
+   "unpruned_indices": [
+    2,
+    7,
+    11,
+    12,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 294,
+   "indices": [
+    5,
+    6,
+    10,
+    14
+   ],
+   "subsets_checked": 32,
+   "trial": 18,
+   "unpruned_cost": 305,
+   "unpruned_indices": [
+    1,
+    5,
+    6,
+    10,
+    14
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    11,
+    13
+   ],
+   "subsets_checked": 256,
+   "trial": 19,
+   "unpruned_cost": 532,
+   "unpruned_indices": [
+    3,
+    5,
+    6,
+    7,
+    11,
+    13,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 32,
+   "trial": 20,
+   "unpruned_cost": 272,
+   "unpruned_indices": [
+    7,
+    8,
+    12,
+    13,
+    17
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    11,
+    13
+   ],
+   "subsets_checked": 512,
+   "trial": 21,
+   "unpruned_cost": 534,
+   "unpruned_indices": [
+    0,
+    2,
+    4,
+    5,
+    6,
+    8,
+    11,
+    13,
+    16
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 32,
+   "trial": 22,
+   "unpruned_cost": 382,
+   "unpruned_indices": [
+    4,
+    5,
+    7,
+    12,
+    13
+   ]
+  },
+  {
+   "cost": 240,
+   "indices": [
+    11,
+    12,
+    17
+   ],
+   "subsets_checked": 256,
+   "trial": 23,
+   "unpruned_cost": 466,
+   "unpruned_indices": [
+    3,
+    7,
+    8,
+    9,
+    11,
+    12,
+    14,
+    17
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    13,
+    14
+   ],
+   "subsets_checked": 4096,
+   "trial": 24,
+   "unpruned_cost": 627,
+   "unpruned_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    17
+   ]
+  },
+  {
+   "cost": 288,
+   "indices": [
+    10,
+    13,
+    15
+   ],
+   "subsets_checked": 512,
+   "trial": 25,
+   "unpruned_cost": 640,
+   "unpruned_indices": [
+    0,
+    2,
+    3,
+    4,
+    9,
+    10,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    11,
+    12
+   ],
+   "subsets_checked": 32,
+   "trial": 26,
+   "unpruned_cost": 308,
+   "unpruned_indices": [
+    0,
+    5,
+    6,
+    11,
+    12
+   ]
+  },
+  {
+   "cost": 262,
+   "indices": [
+    6,
+    11,
+    14,
+    17
+   ],
+   "subsets_checked": 4096,
+   "trial": 27,
+   "unpruned_cost": 659,
+   "unpruned_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    9,
+    11,
+    14,
+    15,
+    17
+   ]
+  },
+  {
+   "cost": 288,
+   "indices": [
+    11,
+    13,
+    15
+   ],
+   "subsets_checked": 32,
+   "trial": 28,
+   "unpruned_cost": 366,
+   "unpruned_indices": [
+    3,
+    7,
+    11,
+    13,
+    15
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    11,
+    12,
+    16
+   ],
+   "subsets_checked": 32,
+   "trial": 29,
+   "unpruned_cost": 288,
+   "unpruned_indices": [
+    0,
+    8,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "cost": 240,
+   "indices": [
+    11,
+    13,
+    17
+   ],
+   "subsets_checked": 128,
+   "trial": 30,
+   "unpruned_cost": 478,
+   "unpruned_indices": [
+    3,
+    7,
+    11,
+    13,
+    15,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 32,
+   "trial": 31,
+   "unpruned_cost": 285,
+   "unpruned_indices": [
+    1,
+    3,
+    8,
+    12,
+    13
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    11,
+    12,
+    16
+   ],
+   "subsets_checked": 16,
+   "trial": 32,
+   "unpruned_cost": 320,
+   "unpruned_indices": [
+    3,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "cost": 272,
+   "indices": [
+    5,
+    10,
+    12
+   ],
+   "subsets_checked": 512,
+   "trial": 33,
+   "unpruned_cost": 652,
+   "unpruned_indices": [
+    0,
+    3,
+    4,
+    5,
+    7,
+    10,
+    11,
+    12,
+    14
+   ]
+  },
+  {
+   "cost": 336,
+   "indices": [
+    5,
+    10,
+    11,
+    16
+   ],
+   "subsets_checked": 512,
+   "trial": 34,
+   "unpruned_cost": 491,
+   "unpruned_indices": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    8,
+    10,
+    11,
+    16
+   ]
+  },
+  {
+   "cost": 262,
+   "indices": [
+    6,
+    10,
+    14,
+    17
+   ],
+   "subsets_checked": 2048,
+   "trial": 35,
+   "unpruned_cost": 595,
+   "unpruned_indices": [
+    0,
+    1,
+    4,
+    6,
+    8,
+    9,
+    10,
+    14,
+    15,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 294,
+   "indices": [
+    5,
+    6,
+    11,
+    14
+   ],
+   "subsets_checked": 1024,
+   "trial": 36,
+   "unpruned_cost": 515,
+   "unpruned_indices": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    14
+   ]
+  },
+  {
+   "cost": 288,
+   "indices": [
+    10,
+    13,
+    15
+   ],
+   "subsets_checked": 1024,
+   "trial": 37,
+   "unpruned_cost": 573,
+   "unpruned_indices": [
+    0,
+    1,
+    2,
+    3,
+    8,
+    9,
+    10,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 16,
+   "trial": 38,
+   "unpruned_cost": 274,
+   "unpruned_indices": [
+    3,
+    8,
+    12,
+    13
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    10,
+    12,
+    16
+   ],
+   "subsets_checked": 256,
+   "trial": 39,
+   "unpruned_cost": 540,
+   "unpruned_indices": [
+    0,
+    3,
+    4,
+    7,
+    10,
+    12,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 32,
+   "trial": 40,
+   "unpruned_cost": 324,
+   "unpruned_indices": [
+    0,
+    6,
+    12,
+    13,
+    15
+   ]
+  },
+  {
+   "cost": 310,
+   "indices": [
+    6,
+    10,
+    14,
+    15
+   ],
+   "subsets_checked": 256,
+   "trial": 41,
+   "unpruned_cost": 470,
+   "unpruned_indices": [
+    2,
+    3,
+    6,
+    7,
+    9,
+    10,
+    14,
+    15
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    13,
+    14
+   ],
+   "subsets_checked": 512,
+   "trial": 42,
+   "unpruned_cost": 586,
+   "unpruned_indices": [
+    4,
+    5,
+    6,
+    8,
+    9,
+    13,
+    14,
+    15,
+    17
+   ]
+  },
+  {
+   "cost": 304,
+   "indices": [
+    10,
+    14,
+    16,
+    17
+   ],
+   "subsets_checked": 1024,
+   "trial": 43,
+   "unpruned_cost": 521,
+   "unpruned_indices": [
+    0,
+    1,
+    3,
+    4,
+    7,
+    8,
+    10,
+    14,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    13,
+    14
+   ],
+   "subsets_checked": 8192,
+   "trial": 44,
+   "unpruned_cost": 673,
+   "unpruned_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    10,
+    13
+   ],
+   "subsets_checked": 256,
+   "trial": 45,
+   "unpruned_cost": 449,
+   "unpruned_indices": [
+    0,
+    1,
+    4,
+    6,
+    8,
+    10,
+    13,
+    15
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    12,
+    14
+   ],
+   "subsets_checked": 64,
+   "trial": 46,
+   "unpruned_cost": 369,
+   "unpruned_indices": [
+    1,
+    5,
+    6,
+    12,
+    14,
+    16
+   ]
+  },
+  {
+   "cost": 304,
+   "indices": [
+    10,
+    14,
+    16,
+    17
+   ],
+   "subsets_checked": 256,
+   "trial": 47,
+   "unpruned_cost": 427,
+   "unpruned_indices": [
+    1,
+    3,
+    7,
+    9,
+    10,
+    14,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    11,
+    12
+   ],
+   "subsets_checked": 32,
+   "trial": 48,
+   "unpruned_cost": 374,
+   "unpruned_indices": [
+    4,
+    6,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    11,
+    12,
+    16
+   ],
+   "subsets_checked": 8,
+   "trial": 49,
+   "unpruned_cost": 256,
+   "unpruned_indices": [
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "cost": 240,
+   "indices": [
+    10,
+    13,
+    17
+   ],
+   "subsets_checked": 256,
+   "trial": 50,
+   "unpruned_cost": 471,
+   "unpruned_indices": [
+    0,
+    1,
+    4,
+    7,
+    10,
+    13,
+    15,
+    17
+   ]
+  },
+  {
+   "cost": 272,
+   "indices": [
+    5,
+    13,
+    14
+   ],
+   "subsets_checked": 16,
+   "trial": 51,
+   "unpruned_cost": 320,
+   "unpruned_indices": [
+    2,
+    5,
+    13,
+    14
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    10,
+    12
+   ],
+   "subsets_checked": 256,
+   "trial": 52,
+   "unpruned_cost": 435,
+   "unpruned_indices": [
+    1,
+    5,
+    6,
+    8,
+    10,
+    12,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 8192,
+   "trial": 53,
+   "unpruned_cost": 694,
+   "unpruned_indices": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12,
+    13,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    11,
+    13,
+    16
+   ],
+   "subsets_checked": 128,
+   "trial": 54,
+   "unpruned_cost": 391,
+   "unpruned_indices": [
+    0,
+    1,
+    4,
+    7,
+    11,
+    13,
+    16
+   ]
+  },
+  {
+   "cost": 352,
+   "indices": [
+    11,
+    14,
+    15,
+    16
+   ],
+   "subsets_checked": 32,
+   "trial": 55,
+   "unpruned_cost": 366,
+   "unpruned_indices": [
+    7,
+    11,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 128,
+   "trial": 56,
+   "unpruned_cost": 398,
+   "unpruned_indices": [
+    0,
+    2,
+    7,
+    9,
+    10,
+    12,
+    13
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    10,
+    12
+   ],
+   "subsets_checked": 4096,
+   "trial": 57,
+   "unpruned_cost": 701,
+   "unpruned_indices": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10,
+    12,
+    15,
+    16,
+    17
+   ]
+  },
+  {
+   "cost": 256,
+   "indices": [
+    10,
+    12,
+    16
+   ],
+   "subsets_checked": 256,
+   "trial": 58,
+   "unpruned_cost": 512,
+   "unpruned_indices": [
+    2,
+    3,
+    7,
+    9,
+    10,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "cost": 278,
+   "indices": [
+    6,
+    10,
+    14,
+    16
+   ],
+   "subsets_checked": 64,
+   "trial": 59,
+   "unpruned_cost": 470,
+   "unpruned_indices": [
+    4,
+    6,
+    10,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 352,
+   "indices": [
+    10,
+    14,
+    15,
+    16
+   ],
+   "subsets_checked": 16,
+   "trial": 60,
+   "unpruned_cost": 352,
+   "unpruned_indices": [
+    10,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "cost": 214,
+   "indices": [
+    6,
+    11,
+    12
+   ],
+   "subsets_checked": 256,
+   "trial": 61,
+   "unpruned_cost": 442,
+   "unpruned_indices": [
+    2,
+    3,
+    6,
+    8,
+    9,
+    11,
+    12,
+    16
+   ]
+  },
+  {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "subsets_checked": 2048,
+   "trial": 62,
+   "unpruned_cost": 649,
+   "unpruned_indices": [
+    0,
+    1,
+    2,
+    3,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "cost": 304,
+   "indices": [
+    10,
+    11,
+    16,
+    17
+   ],
+   "subsets_checked": 1024,
+   "trial": 63,
+   "unpruned_cost": 603,
+   "unpruned_indices": [
+    1,
+    3,
+    4,
+    7,
+    8,
+    10,
+    11,
+    14,
+    16,
+    17
+   ]
+  }
+ ],
+ "selection_seconds": {
+  "exact_and_basic_greedy_and_independent_oracle": 0.45670985100150574,
+  "optimal_pruning_greedy": 7.259900303324685e-05,
+  "random64_optimal_pruning": 0.15863597000134178
+ },
+ "unavailable_faults": {}
+}

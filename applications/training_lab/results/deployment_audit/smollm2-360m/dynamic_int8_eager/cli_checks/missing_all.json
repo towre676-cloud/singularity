@@ -1,0 +1,54 @@
+{
+ "calibration_envelope": {
+  "approved_int8_execution": {
+   "attention_backends": [
+    "eager"
+   ],
+   "batch_size": 1,
+   "cache_execution": "full prefill"
+  },
+  "requested": {
+   "backend": "eager",
+   "batch_size": 1,
+   "cache_split_denominator": 0
+  },
+  "status": "inside"
+ },
+ "construction_faults_still_separated": {
+  "service_cache_prefix_dropped_half": false,
+  "service_logit_scale_1.3": false,
+  "service_mask_shift_right": false,
+  "service_position_ids_zero": false,
+  "service_truncate48": false,
+  "service_unicode_nfkc": false
+ },
+ "contract_mismatches": [],
+ "deployment_status": "inconclusive_missing_results",
+ "execution": {
+  "backend": "eager",
+  "batch_size": 1,
+  "cache_execution": "full prefill",
+  "cache_receipts": [],
+  "cache_split_denominator": 0,
+  "graph_calls": 0,
+  "representation": "dynamic_int8",
+  "threads": 2,
+  "torch": "2.8.0+cpu",
+  "transformers": "4.57.1"
+ },
+ "exit_code": 4,
+ "flagged_probes": [],
+ "interpretation": "Missing probe results remove retained construction coverage; the remaining unchanged observations are inconclusive.",
+ "missing_probes": [
+  "long_unicode",
+  "long_unicode_newline"
+ ],
+ "package_sha256": "d47ad1600f0d5ff1b3ae249efc46a5b87f85669b194b1740915d06e6440493af",
+ "probes": [],
+ "seconds": {
+  "artifact_validation_and_load": 6.269536104999133,
+  "resident_check": 0.0005459339954541065,
+  "total": 6.2700820389945875
+ },
+ "verdict": "unchanged"
+}

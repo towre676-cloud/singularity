@@ -1,0 +1,1369 @@
+{
+  "audits": [
+    {
+      "basic_greedy_cost": 239,
+      "clean_panel_flags": {
+        "reversed_order": [],
+        "threads_2": []
+      },
+      "clean_pool_cases_without_flags": 2,
+      "clean_pool_flags": {
+        "reversed_order": [],
+        "threads_2": []
+      },
+      "cli": {
+        "exit_code": 0,
+        "process_wall_seconds": 10.093822517002991,
+        "report": {
+          "construction_faults_still_separated": {
+            "padding_mask_dropped": true,
+            "position_ids_all_zero": true,
+            "temperature_1.3": true,
+            "truncate_48": true,
+            "unicode_nfkc": true
+          },
+          "contract_mismatches": [],
+          "flagged_probes": [],
+          "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+          "missing_probes": [],
+          "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+          "seconds": {
+            "check": 2.4748122840028373,
+            "startup_and_load": 6.430332843003271
+          },
+          "verdict": "unchanged"
+        },
+        "stderr": "`torch_dtype` is deprecated! Use `dtype` instead!\n"
+      },
+      "construction_covered": 5,
+      "construction_unavailable": {},
+      "exact_cost": 192,
+      "exact_saving_vs_pruned_percent": 10.697674418604652,
+      "exact_seconds": 1.9740976710018003,
+      "full_seconds": 12.012561652998556,
+      "heldout": {
+        "crlf_newlines": {
+          "detected": true,
+          "heldout": true,
+          "robust": false,
+          "separating_probes": 1
+        },
+        "left_pad_absolute_positions": {
+          "detected": false,
+          "heldout": true,
+          "robust": false,
+          "separating_probes": 0
+        },
+        "temperature_1.1": {
+          "detected": true,
+          "heldout": true,
+          "robust": true,
+          "separating_probes": 2
+        },
+        "truncate_64": {
+          "detected": true,
+          "heldout": true,
+          "robust": true,
+          "separating_probes": 2
+        },
+        "unicode_nfd": {
+          "detected": false,
+          "heldout": true,
+          "robust": false,
+          "separating_probes": 0
+        }
+      },
+      "heldout_detected": 3,
+      "heldout_missed": [
+        "left_pad_absolute_positions",
+        "unicode_nfd"
+      ],
+      "heldout_total": 5,
+      "id": "qwen_native",
+      "label": "Qwen2.5 1.54B\nnative BF16",
+      "model_id": "Qwen/Qwen2.5-1.5B",
+      "parameters": 1543714304,
+      "pool_cost": 1088,
+      "pruned_comparator_status": "post hoc deterministic comparator on frozen construction observations; zero new model forwards",
+      "pruned_greedy_cost": 215,
+      "representation": "native_bfloat16",
+      "speed_ratio": 6.0850898258253405,
+      "timing_scope": "native BF16; full pool observation only, exact includes package verification/comparison"
+    },
+    {
+      "artifact": {
+        "artifact_manifest_sha256": "81839812dfc86c8953eebd2e16eabeee5c0c695b070581388fba813eb4d24d5b",
+        "artifacts": {
+          "causal_graph.pt": {
+            "bytes": 1448206011,
+            "sha256": "46c2fb940f29d3e4d36caf907c7aa0a55459c47f14e5010c20701bf36b272764"
+          },
+          "config.json": {
+            "bytes": 721,
+            "sha256": "986b530f95546409d3c6461d17f5339460a08e4d8d8ee454ee60b4a2536a77c5"
+          },
+          "generation_config.json": {
+            "bytes": 111,
+            "sha256": "6e3ede8c97ef97dd195ee04aa45ff0efd82d0c99c4d737f3a6bcd1914b62e4fd"
+          },
+          "model.safetensors": {
+            "bytes": 1447317080,
+            "sha256": "dd1230cc6b7684875ae6502349b65b60d4d733dd6c0de20b1ca6badb79643bef"
+          }
+        },
+        "expected_target_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+        "float_parameter_count": 361821120,
+        "graph_export": true,
+        "graph_manifest": {
+          "artifact_bytes": 1448206011,
+          "artifact_sha256": "46c2fb940f29d3e4d36caf907c7aa0a55459c47f14e5010c20701bf36b272764",
+          "attention": "explicit additive causal and key-padding mask",
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "format": "torch.jit.trace executable graph with parameters; no KV cache",
+          "graph_export": true,
+          "inputs": "three CPU int64 rank-two tensors of equal shape: token ids, binary mask, position ids",
+          "max_batch_size": 3,
+          "max_context": 96,
+          "max_position_id": 95,
+          "missing_attention_mask": "all token positions are visible subject to causality",
+          "model_class": "LlamaForCausalLM",
+          "model_type": "llama",
+          "schema": "singularity.causal-torchscript/1",
+          "torch_version": "2.8.0+cpu",
+          "trace_shape": [
+            2,
+            8
+          ],
+          "transformers_version": "4.57.1",
+          "use_cache": false,
+          "vocabulary_size": 49152
+        },
+        "kind": "float32",
+        "load_seconds": 1.5626341059978586,
+        "quantized_linear_count": 0,
+        "reloaded_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+        "serialization_conversion_reload_seconds": 10.168899637996219,
+        "source_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+        "state_reload_identical": true,
+        "weights_only_load": false
+      },
+      "basic_greedy_cost": 239,
+      "clean_panel_flags": {
+        "eager_batch1_threads2_reverse": [],
+        "eager_batch3_threads2_reverse": [],
+        "eager_cache_third_threads2": [],
+        "sdpa_batch3_threads2_reverse": [],
+        "torchscript_batch3_threads2_reverse": []
+      },
+      "clean_pool_cases_without_flags": 5,
+      "clean_pool_flags": {
+        "eager_batch1_threads2_reverse": [],
+        "eager_batch3_threads2_reverse": [],
+        "eager_cache_third_threads2": [],
+        "sdpa_batch3_threads2_reverse": [],
+        "torchscript_batch3_threads2_reverse": []
+      },
+      "cli": {
+        "eager_cache_third": {
+          "calibration_envelope": {
+            "approved_int8_execution": {
+              "attention_backends": [
+                "eager"
+              ],
+              "batch_size": 1,
+              "cache_execution": "full prefill"
+            },
+            "requested": {
+              "backend": "eager",
+              "batch_size": 1,
+              "cache_split_denominator": 3
+            },
+            "status": "inside"
+          },
+          "construction_faults_still_separated": {
+            "service_cache_prefix_dropped_half": true,
+            "service_logit_scale_1.3": true,
+            "service_mask_shift_right": true,
+            "service_position_ids_zero": true,
+            "service_truncate48": true,
+            "service_unicode_nfkc": true
+          },
+          "contract_mismatches": [],
+          "deployment_status": "unchanged",
+          "execution": {
+            "backend": "eager",
+            "batch_size": 1,
+            "cache_execution": "two chunks, split after 1/N of input",
+            "cache_split_denominator": 3,
+            "graph_calls": 0,
+            "representation": "float32",
+            "threads": 2,
+            "torch": "2.8.0+cpu",
+            "transformers": "4.57.1"
+          },
+          "exit_code": 0,
+          "flagged_probes": [],
+          "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+          "missing_probes": [],
+          "package_sha256": "564f50dc6203b93911dec6a21131d6616862aaa0a15b9cd41bc8d6dacc14d6c6",
+          "seconds": {
+            "artifact_validation_and_load": 4.148920243002067,
+            "resident_check": 2.040546650001488,
+            "total": 6.189466893003555
+          },
+          "verdict": "unchanged"
+        },
+        "sdpa_batch3": {
+          "calibration_envelope": {
+            "approved_int8_execution": {
+              "attention_backends": [
+                "eager"
+              ],
+              "batch_size": 1,
+              "cache_execution": "full prefill"
+            },
+            "requested": {
+              "backend": "sdpa",
+              "batch_size": 3,
+              "cache_split_denominator": 0
+            },
+            "status": "inside"
+          },
+          "construction_faults_still_separated": {
+            "service_cache_prefix_dropped_half": true,
+            "service_logit_scale_1.3": true,
+            "service_mask_shift_right": true,
+            "service_position_ids_zero": true,
+            "service_truncate48": true,
+            "service_unicode_nfkc": true
+          },
+          "contract_mismatches": [],
+          "deployment_status": "unchanged",
+          "execution": {
+            "backend": "sdpa",
+            "batch_size": 3,
+            "cache_execution": "full prefill",
+            "cache_split_denominator": 0,
+            "graph_calls": 0,
+            "representation": "float32",
+            "threads": 2,
+            "torch": "2.8.0+cpu",
+            "transformers": "4.57.1"
+          },
+          "exit_code": 0,
+          "flagged_probes": [],
+          "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+          "missing_probes": [],
+          "package_sha256": "564f50dc6203b93911dec6a21131d6616862aaa0a15b9cd41bc8d6dacc14d6c6",
+          "seconds": {
+            "artifact_validation_and_load": 4.2373629869980505,
+            "resident_check": 1.3516752310024458,
+            "total": 5.589038218000496
+          },
+          "verdict": "unchanged"
+        },
+        "torchscript_batch3": {
+          "calibration_envelope": {
+            "approved_int8_execution": {
+              "attention_backends": [
+                "eager"
+              ],
+              "batch_size": 1,
+              "cache_execution": "full prefill"
+            },
+            "requested": {
+              "backend": "torchscript",
+              "batch_size": 3,
+              "cache_split_denominator": 0
+            },
+            "status": "inside"
+          },
+          "construction_faults_still_separated": {
+            "service_cache_prefix_dropped_half": true,
+            "service_logit_scale_1.3": true,
+            "service_mask_shift_right": true,
+            "service_position_ids_zero": true,
+            "service_truncate48": true,
+            "service_unicode_nfkc": true
+          },
+          "contract_mismatches": [],
+          "deployment_status": "unchanged",
+          "execution": {
+            "backend": "torchscript",
+            "batch_size": 3,
+            "cache_execution": "full prefill",
+            "cache_split_denominator": 0,
+            "graph_calls": 1,
+            "representation": "float32",
+            "threads": 2,
+            "torch": "2.8.0+cpu",
+            "transformers": "4.57.1"
+          },
+          "exit_code": 0,
+          "flagged_probes": [],
+          "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+          "missing_probes": [],
+          "package_sha256": "564f50dc6203b93911dec6a21131d6616862aaa0a15b9cd41bc8d6dacc14d6c6",
+          "seconds": {
+            "artifact_validation_and_load": 4.520478874001128,
+            "resident_check": 1.7434944250053377,
+            "total": 6.263973299006466
+          },
+          "verdict": "unchanged"
+        }
+      },
+      "construction_covered": 6,
+      "construction_unavailable": {},
+      "display_representation": "FP32 (prospective)",
+      "exact_cost": 192,
+      "exact_saving_vs_pruned_percent": 10.280373831775702,
+      "exact_seconds": 1.1649616509967018,
+      "folder": "float32",
+      "full_seconds": 6.8043549499998335,
+      "heldout": {
+        "service_cache_prefix_dropped_third": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_crlf": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 1,
+          "two_witness": false
+        },
+        "service_dropped_mask": {
+          "detected": false,
+          "heldout": true,
+          "separating_probes": 0,
+          "two_witness": false
+        },
+        "service_logit_scale_1.1": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_output_vocabulary_rolled": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_truncate64": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_unicode_nfd": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        }
+      },
+      "heldout_detected": 6,
+      "heldout_missed": [
+        "service_dropped_mask"
+      ],
+      "heldout_total": 7,
+      "id": "smol_float32",
+      "label": "SmolLM2 362M\nFP32",
+      "model_id": "HuggingFaceTB/SmolLM2-360M",
+      "parameters": 361821120,
+      "pool_cost": 1089,
+      "protocol": {
+        "status": "prospective deployment extension of the published 0.9 probe pool"
+      },
+      "pruned_greedy_cost": 214,
+      "random_exact_matches": 10,
+      "random_max_cost": 352,
+      "random_median_cost": 256,
+      "random_min_cost": 192,
+      "random_trials": 64,
+      "representation": "float32",
+      "speed_ratio": 5.840840292191814,
+      "timing": {
+        "amortization": {
+          "exact": {
+            "conservative_incremental_build_checks": 8,
+            "conservative_incremental_seconds": 44.79498256499937,
+            "full_pool_over_panel": 5.840840292191814,
+            "gross_all_comparators_build_checks": 15,
+            "including_artifact_checks": 17,
+            "seconds_saved_per_check": 5.639393299003132
+          },
+          "pruned_greedy": {
+            "conservative_incremental_build_checks": 8,
+            "conservative_incremental_seconds": 44.795029647000774,
+            "full_pool_over_panel": 5.719995829663057,
+            "gross_all_comparators_build_checks": 15,
+            "including_artifact_checks": 17,
+            "seconds_saved_per_check": 5.614781538999523
+          },
+          "random_median": {
+            "conservative_incremental_build_checks": 9,
+            "conservative_incremental_seconds": 44.79443609200098,
+            "full_pool_over_panel": 4.706509681913094,
+            "gross_all_comparators_build_checks": 16,
+            "including_artifact_checks": 18,
+            "seconds_saved_per_check": 5.358622250001645
+          }
+        },
+        "common_calibration_seconds": 30.68713016300171,
+        "common_reference_seconds": 8.102190515994153,
+        "construction_fault_seconds": 44.29419838399917,
+        "construction_seconds": 83.6234821439939,
+        "full_pool_includes": "complete 18-probe package verification, observation and comparison",
+        "incremental_caveat": "conservative: charges all comparator selection work to each panel; common reference+calibration and fullpool package creation excluded",
+        "median_seconds": {
+          "exact": 1.1649616509967018,
+          "full_pool": 6.8043549499998335,
+          "pruned_greedy": 1.1895734110003104,
+          "random_median": 1.4457326999981888
+        },
+        "package_seconds": {
+          "exact": 0.009418763998837676,
+          "full_pool": 0.01323228600085713,
+          "pruned_greedy": 0.009465846000239253,
+          "random_median": 0.00887229100044351
+        },
+        "pairs": [
+          {
+            "exact": 1.1649616509967018,
+            "full_pool": 6.805416017996322,
+            "order": [
+              "pruned_greedy",
+              "full_pool",
+              "random_median",
+              "exact"
+            ],
+            "pruned_greedy": 1.125994873997115,
+            "random_median": 1.3595293600010336,
+            "repeat": 0
+          },
+          {
+            "exact": 1.0871621140031493,
+            "full_pool": 6.453375525998126,
+            "order": [
+              "exact",
+              "random_median",
+              "full_pool",
+              "pruned_greedy"
+            ],
+            "pruned_greedy": 1.256648814996879,
+            "random_median": 1.4815928869938944,
+            "repeat": 1
+          },
+          {
+            "exact": 1.185186340000655,
+            "full_pool": 6.8043549499998335,
+            "order": [
+              "exact",
+              "full_pool",
+              "random_median",
+              "pruned_greedy"
+            ],
+            "pruned_greedy": 1.1895734110003104,
+            "random_median": 1.4457326999981888,
+            "repeat": 2
+          }
+        ],
+        "selection_seconds": 0.4913654170013615
+      },
+      "timing_scope": "complete 18-probe package verification, observation and comparison"
+    },
+    {
+      "artifact": {
+        "artifact_manifest_sha256": "b634ba1296603a720ba85832ea4a92d62a995c8ba214a4b345396b153cb55ee2",
+        "artifacts": {
+          "quantized_state.pt": {
+            "bytes": 551047181,
+            "sha256": "548b36f2371e374749cb293412a5173fa7c778037b55923d95cbfe24463d1ff9"
+          }
+        },
+        "expected_target_state_sha256": "c692dd94d8d5629279969b49a34aaceed9fe2d116df7c36e83f114a3f7aff1b8",
+        "float_parameter_count": 361821120,
+        "graph_export": false,
+        "graph_manifest": null,
+        "kind": "dynamic_int8",
+        "load_seconds": 1.7463884789976873,
+        "quantized_linear_count": 225,
+        "reloaded_state_sha256": "c692dd94d8d5629279969b49a34aaceed9fe2d116df7c36e83f114a3f7aff1b8",
+        "serialization_conversion_reload_seconds": 11.40938544099481,
+        "source_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+        "state_reload_identical": true,
+        "weights_only_load": true
+      },
+      "basic_greedy_cost": 239,
+      "clean_panel_flags": {
+        "eager_batch1_threads2_reverse": [],
+        "eager_batch3_threads2_reverse": [
+          "long_unicode",
+          "long_unicode_newline"
+        ],
+        "eager_cache_third_threads2": [
+          "long_unicode",
+          "long_unicode_newline"
+        ],
+        "sdpa_batch1_threads2_reverse": [
+          "long_unicode",
+          "long_unicode_newline"
+        ],
+        "sdpa_batch3_threads2_reverse": [
+          "long_unicode",
+          "long_unicode_newline"
+        ]
+      },
+      "clean_pool_cases_without_flags": 1,
+      "clean_pool_flags": {
+        "eager_batch1_threads2_reverse": [],
+        "eager_batch3_threads2_reverse": [
+          "plain_city",
+          "pad48_history",
+          "pad64_science",
+          "unicode_accents",
+          "long_reference",
+          "long_code",
+          "long_unicode",
+          "long_unicode_newline",
+          "long_accent_newline",
+          "pad96_unicode_newline",
+          "pad64_unicode_newline",
+          "pad48_unicode_newline"
+        ],
+        "eager_cache_third_threads2": [
+          "plain_city",
+          "plain_science",
+          "pad48_history",
+          "pad64_science",
+          "pad96_code",
+          "pad80_unicode",
+          "unicode_ligature",
+          "unicode_accents",
+          "newline_list",
+          "newline_code",
+          "long_reference",
+          "long_code",
+          "long_unicode",
+          "long_unicode_newline",
+          "long_accent_newline",
+          "pad96_unicode_newline",
+          "pad64_unicode_newline",
+          "pad48_unicode_newline"
+        ],
+        "sdpa_batch1_threads2_reverse": [
+          "pad48_history",
+          "pad64_science",
+          "pad96_code",
+          "pad80_unicode",
+          "unicode_ligature",
+          "unicode_accents",
+          "newline_list",
+          "newline_code",
+          "long_reference",
+          "long_code",
+          "long_unicode",
+          "long_unicode_newline",
+          "long_accent_newline",
+          "pad96_unicode_newline",
+          "pad64_unicode_newline",
+          "pad48_unicode_newline"
+        ],
+        "sdpa_batch3_threads2_reverse": [
+          "plain_city",
+          "pad48_history",
+          "pad64_science",
+          "pad96_code",
+          "pad80_unicode",
+          "unicode_ligature",
+          "unicode_accents",
+          "newline_list",
+          "newline_code",
+          "long_reference",
+          "long_code",
+          "long_unicode",
+          "long_unicode_newline",
+          "long_accent_newline",
+          "pad96_unicode_newline",
+          "pad64_unicode_newline",
+          "pad48_unicode_newline"
+        ]
+      },
+      "cli": {
+        "approved_eager": {
+          "calibration_envelope": {
+            "approved_int8_execution": {
+              "attention_backends": [
+                "eager"
+              ],
+              "batch_size": 1,
+              "cache_execution": "full prefill"
+            },
+            "requested": {
+              "backend": "eager",
+              "batch_size": 1,
+              "cache_split_denominator": 0
+            },
+            "status": "inside"
+          },
+          "construction_faults_still_separated": {
+            "service_cache_prefix_dropped_half": true,
+            "service_logit_scale_1.3": true,
+            "service_mask_shift_right": true,
+            "service_position_ids_zero": true,
+            "service_truncate48": true,
+            "service_unicode_nfkc": true
+          },
+          "contract_mismatches": [],
+          "deployment_status": "unchanged",
+          "execution": {
+            "backend": "eager",
+            "batch_size": 1,
+            "cache_execution": "full prefill",
+            "cache_split_denominator": 0,
+            "graph_calls": 0,
+            "representation": "dynamic_int8",
+            "threads": 2,
+            "torch": "2.8.0+cpu",
+            "transformers": "4.57.1"
+          },
+          "exit_code": 0,
+          "flagged_probes": [],
+          "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+          "missing_probes": [],
+          "package_sha256": "d47ad1600f0d5ff1b3ae249efc46a5b87f85669b194b1740915d06e6440493af",
+          "seconds": {
+            "artifact_validation_and_load": 6.428067954002472,
+            "resident_check": 0.49966016299731564,
+            "total": 6.927728116999788
+          },
+          "verdict": "unchanged"
+        },
+        "missing_all": {
+          "calibration_envelope": {
+            "approved_int8_execution": {
+              "attention_backends": [
+                "eager"
+              ],
+              "batch_size": 1,
+              "cache_execution": "full prefill"
+            },
+            "requested": {
+              "backend": "eager",
+              "batch_size": 1,
+              "cache_split_denominator": 0
+            },
+            "status": "inside"
+          },
+          "construction_faults_still_separated": {
+            "service_cache_prefix_dropped_half": false,
+            "service_logit_scale_1.3": false,
+            "service_mask_shift_right": false,
+            "service_position_ids_zero": false,
+            "service_truncate48": false,
+            "service_unicode_nfkc": false
+          },
+          "contract_mismatches": [],
+          "deployment_status": "inconclusive_missing_results",
+          "execution": {
+            "backend": "eager",
+            "batch_size": 1,
+            "cache_execution": "full prefill",
+            "cache_split_denominator": 0,
+            "graph_calls": 0,
+            "representation": "dynamic_int8",
+            "threads": 2,
+            "torch": "2.8.0+cpu",
+            "transformers": "4.57.1"
+          },
+          "exit_code": 4,
+          "flagged_probes": [],
+          "interpretation": "Missing probe results remove retained construction coverage; the remaining unchanged observations are inconclusive.",
+          "missing_probes": [
+            "long_unicode",
+            "long_unicode_newline"
+          ],
+          "package_sha256": "d47ad1600f0d5ff1b3ae249efc46a5b87f85669b194b1740915d06e6440493af",
+          "seconds": {
+            "artifact_validation_and_load": 6.269536104999133,
+            "resident_check": 0.0005459339954541065,
+            "total": 6.2700820389945875
+          },
+          "verdict": "unchanged"
+        },
+        "outside_sdpa": {
+          "calibration_envelope": {
+            "approved_int8_execution": {
+              "attention_backends": [
+                "eager"
+              ],
+              "batch_size": 1,
+              "cache_execution": "full prefill"
+            },
+            "requested": {
+              "backend": "sdpa",
+              "batch_size": 1,
+              "cache_split_denominator": 0
+            },
+            "status": "outside"
+          },
+          "construction_faults_still_separated": {
+            "service_cache_prefix_dropped_half": true,
+            "service_logit_scale_1.3": true,
+            "service_mask_shift_right": true,
+            "service_position_ids_zero": true,
+            "service_truncate48": true,
+            "service_unicode_nfkc": true
+          },
+          "contract_mismatches": [],
+          "deployment_status": "outside_calibration",
+          "execution": {
+            "backend": "sdpa",
+            "batch_size": 1,
+            "cache_execution": "full prefill",
+            "cache_split_denominator": 0,
+            "graph_calls": 0,
+            "representation": "dynamic_int8",
+            "threads": 2,
+            "torch": "2.8.0+cpu",
+            "transformers": "4.57.1"
+          },
+          "exit_code": 3,
+          "flagged_probes": [
+            "long_unicode",
+            "long_unicode_newline"
+          ],
+          "interpretation": "This execution is outside the calibrated INT8 backend/batch/cache envelope. The raw behavioral verdict measures drift only and does not classify the deployment as faulty.",
+          "missing_probes": [],
+          "package_sha256": "d47ad1600f0d5ff1b3ae249efc46a5b87f85669b194b1740915d06e6440493af",
+          "seconds": {
+            "artifact_validation_and_load": 6.852462759001355,
+            "resident_check": 0.5494847660011146,
+            "total": 7.40194752500247
+          },
+          "verdict": "changed"
+        }
+      },
+      "construction_covered": 6,
+      "construction_unavailable": {},
+      "display_representation": "INT8 eager (post-calibration repair)",
+      "exact_cost": 192,
+      "exact_saving_vs_pruned_percent": 10.280373831775702,
+      "exact_seconds": 0.39960227900155587,
+      "folder": "dynamic_int8_eager",
+      "full_seconds": 2.6630291510009556,
+      "heldout": {
+        "service_cache_prefix_dropped_third": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_crlf": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 1,
+          "two_witness": false
+        },
+        "service_dropped_mask": {
+          "detected": false,
+          "heldout": true,
+          "separating_probes": 0,
+          "two_witness": false
+        },
+        "service_logit_scale_1.1": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_output_vocabulary_rolled": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_truncate64": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        },
+        "service_unicode_nfd": {
+          "detected": true,
+          "heldout": true,
+          "separating_probes": 2,
+          "two_witness": true
+        }
+      },
+      "heldout_detected": 6,
+      "heldout_missed": [
+        "service_dropped_mask"
+      ],
+      "heldout_total": 7,
+      "id": "smol_dynamic_int8",
+      "label": "SmolLM2 362M\nINT8 eager repair",
+      "model_id": "HuggingFaceTB/SmolLM2-360M",
+      "parameters": 361821120,
+      "pool_cost": 1089,
+      "protocol": {
+        "approved_int8_execution": {
+          "attention_backends": [
+            "eager"
+          ],
+          "batch_size": 1,
+          "cache_execution": "full prefill"
+        },
+        "parent_calibration_failure_file_sha256": "f4800c3b5572fcfe3c740888614e7afaa27b7f6762fb4cb6e479c91676f0f90a",
+        "parent_protocol_file_sha256": "ab326332281b420c7779701a202c878b75571234bfde13d6eac148f5bd21b5d6",
+        "status": "POST-CALIBRATION eager-only INT8 contract repair; original SDPA calibration failure retained"
+      },
+      "pruned_greedy_cost": 214,
+      "random_exact_matches": 10,
+      "random_max_cost": 352,
+      "random_median_cost": 256,
+      "random_min_cost": 192,
+      "random_trials": 64,
+      "representation": "dynamic_int8",
+      "speed_ratio": 6.664199107309363,
+      "timing": {
+        "amortization": {
+          "exact": {
+            "conservative_incremental_build_checks": 8,
+            "conservative_incremental_seconds": 17.180934374009666,
+            "full_pool_over_panel": 6.664199107309363,
+            "gross_all_comparators_build_checks": 13,
+            "including_artifact_checks": 19,
+            "seconds_saved_per_check": 2.2634268719993997
+          },
+          "pruned_greedy": {
+            "conservative_incremental_build_checks": 9,
+            "conservative_incremental_seconds": 17.185241931001656,
+            "full_pool_over_panel": 4.856185452481249,
+            "gross_all_comparators_build_checks": 14,
+            "including_artifact_checks": 20,
+            "seconds_saved_per_check": 2.1146503510026378
+          },
+          "random_median": {
+            "conservative_incremental_build_checks": 9,
+            "conservative_incremental_seconds": 17.18038056899968,
+            "full_pool_over_panel": 4.030804391333153,
+            "gross_all_comparators_build_checks": 15,
+            "including_artifact_checks": 21,
+            "seconds_saved_per_check": 2.002359742997214
+          }
+        },
+        "common_calibration_seconds": 7.912455655001395,
+        "common_reference_seconds": 3.086253321998811,
+        "construction_fault_seconds": 16.55611379200127,
+        "construction_seconds": 28.223797906000982,
+        "full_pool_includes": "complete 18-probe package verification, observation and comparison",
+        "incremental_caveat": "conservative: charges all comparator selection work to each panel; common reference+calibration and fullpool package creation excluded",
+        "median_seconds": {
+          "exact": 0.39960227900155587,
+          "full_pool": 2.6630291510009556,
+          "pruned_greedy": 0.5483787999983178,
+          "random_median": 0.6606694080037414
+        },
+        "package_seconds": {
+          "exact": 0.009317503005149774,
+          "full_pool": 0.012442765997548122,
+          "pruned_greedy": 0.013625059997139033,
+          "random_median": 0.008763697995163966
+        },
+        "pairs": [
+          {
+            "exact": 0.5522794610005803,
+            "full_pool": 2.6908185989959748,
+            "order": [
+              "pruned_greedy",
+              "full_pool",
+              "random_median",
+              "exact"
+            ],
+            "pruned_greedy": 0.4549702529984643,
+            "random_median": 0.7073787089975667,
+            "repeat": 0
+          },
+          {
+            "exact": 0.39960227900155587,
+            "full_pool": 2.6630291510009556,
+            "order": [
+              "exact",
+              "random_median",
+              "full_pool",
+              "pruned_greedy"
+            ],
+            "pruned_greedy": 0.6626990340009797,
+            "random_median": 0.6606694080037414,
+            "repeat": 1
+          },
+          {
+            "exact": 0.393276208997122,
+            "full_pool": 2.3745894280000357,
+            "order": [
+              "exact",
+              "full_pool",
+              "random_median",
+              "pruned_greedy"
+            ],
+            "pruned_greedy": 0.5483787999983178,
+            "random_median": 0.625248336000368,
+            "repeat": 2
+          }
+        ],
+        "selection_seconds": 0.615503079003247
+      },
+      "timing_scope": "complete 18-probe package verification, observation and comparison"
+    }
+  ],
+  "corpus_counts": [
+    {
+      "documents": 4,
+      "domain": "literary_prose",
+      "split": "development"
+    },
+    {
+      "documents": 4,
+      "domain": "python_source",
+      "split": "development"
+    },
+    {
+      "documents": 4,
+      "domain": "technical_reference",
+      "split": "development"
+    },
+    {
+      "documents": 8,
+      "domain": "literary_prose",
+      "split": "heldout"
+    },
+    {
+      "documents": 8,
+      "domain": "python_source",
+      "split": "heldout"
+    },
+    {
+      "documents": 8,
+      "domain": "technical_reference",
+      "split": "heldout"
+    }
+  ],
+  "evaluated_targets": 73728,
+  "neural_training_updates": 0,
+  "original_int8_calibration_failure": {
+    "diagnostics": [
+      {
+        "calibration": 0,
+        "non_tie_discrete_changes": 232,
+        "unstable_probe_count": 16
+      },
+      {
+        "calibration": 1,
+        "non_tie_discrete_changes": 0,
+        "unstable_probe_count": 0
+      }
+    ],
+    "error": "clean rerun changed discrete output of probe 2; reference unstable",
+    "no_package_built": true,
+    "quantized_linear_count": 225,
+    "refinement_status": "post-calibration eager-only contract repair",
+    "state_reload_identical": true
+  },
+  "predictions": [
+    {
+      "ceiling_nats_per_document": 0.05129329438755058,
+      "comparisons": {
+        "all_domains": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": -0.2532779465637101,
+            "loss_reduction_percent": 7.454812960470313
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": -0.25024092685421206,
+            "loss_reduction_percent": 7.3654233622098415
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": -0.09278420576920525,
+            "loss_reduction_percent": 2.730947992431032
+          }
+        },
+        "literary_prose": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": -0.03310934446341407,
+            "loss_reduction_percent": 0.9101232879596611
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": -0.033200338701958154,
+            "loss_reduction_percent": 0.9126245750407339
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560120777,
+            "loss_reduction_percent": -0.0027538499760590206
+          }
+        },
+        "python_source": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": -0.4381997564829224,
+            "loss_reduction_percent": 13.638397084978758
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": -0.4325545052477533,
+            "loss_reduction_percent": 13.462695987817828
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": -0.2087146436165872,
+            "loss_reduction_percent": 6.495971631613122
+          }
+        },
+        "technical_reference": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": -0.28852473874479395,
+            "loss_reduction_percent": 8.634213226226693
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": -0.28496793661292474,
+            "loss_reduction_percent": 8.52777456123157
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": -0.06973815590662974,
+            "loss_reduction_percent": 2.0869410045087404
+          }
+        }
+      },
+      "development_candidate_count": 19,
+      "development_documents": 12,
+      "heldout_documents": 24,
+      "id": "gpt2",
+      "label": "GPT-2 124M",
+      "primary": {
+        "arm": "order1_support1_alpha025",
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 7102026,
+        "candidate_nll_nats_per_token": 3.1442311245120442,
+        "descriptive_paired_document_bootstrap_95_interval": [
+          -0.3300768200464184,
+          -0.17622107873758613
+        ],
+        "difference_nats_per_token": -0.2532779465637101,
+        "document_tie_allowance_nats": 1e-10,
+        "documents": 24,
+        "documents_improved": 18,
+        "documents_numerically_tied": 0,
+        "documents_worse": 6,
+        "interpretation": "negative difference favors candidate; descriptive document bootstrap, not independent token inference",
+        "loss_reduction_percent": 7.454812960470313,
+        "neural_nll_nats_per_token": 3.397509071075754,
+        "targets": 12288
+      },
+      "scope": "Fresh experimental document/source split; source projects and pretraining may overlap. NLL is within native tokenizer. No neural weight updates, cross-tokenizer ranking or universal gain claim.",
+      "selected_arm": "order1_support1_alpha025"
+    },
+    {
+      "ceiling_nats_per_document": 0.05129329438755058,
+      "comparisons": {
+        "all_domains": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 8.89022187646656e-05,
+            "loss_reduction_percent": -0.004275728069444408
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560054164,
+            "loss_reduction_percent": -0.004818236454099085
+          }
+        },
+        "literary_prose": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 7.202637960715408e-05,
+            "loss_reduction_percent": -0.0028168858355049
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560109675,
+            "loss_reduction_percent": -0.003918034831629464
+          }
+        },
+        "python_source": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.7000690171406e-05,
+            "loss_reduction_percent": -0.005233664578637903
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221559970897,
+            "loss_reduction_percent": -0.005405323531879074
+          }
+        },
+        "technical_reference": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.767958651543673e-05,
+            "loss_reduction_percent": -0.005345451664602922
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560081919,
+            "loss_reduction_percent": -0.005482406409059588
+          }
+        }
+      },
+      "development_candidate_count": 19,
+      "development_documents": 12,
+      "heldout_documents": 24,
+      "id": "smollm2-360m",
+      "label": "SmolLM2 362M",
+      "primary": {
+        "arm": "neural",
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 7102026,
+        "candidate_nll_nats_per_token": 2.0792299538427126,
+        "descriptive_paired_document_bootstrap_95_interval": [
+          0.0,
+          0.0
+        ],
+        "difference_nats_per_token": 0.0,
+        "document_tie_allowance_nats": 1e-10,
+        "documents": 24,
+        "documents_improved": 0,
+        "documents_numerically_tied": 24,
+        "documents_worse": 0,
+        "interpretation": "negative difference favors candidate; descriptive document bootstrap, not independent token inference",
+        "loss_reduction_percent": 0.0,
+        "neural_nll_nats_per_token": 2.0792299538427126,
+        "targets": 12288
+      },
+      "scope": "Fresh experimental document/source split; source projects and pretraining may overlap. NLL is within native tokenizer. No neural weight updates, cross-tokenizer ranking or universal gain claim.",
+      "selected_arm": "neural"
+    },
+    {
+      "ceiling_nats_per_document": 0.05129329438755058,
+      "comparisons": {
+        "all_domains": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 8.840714669851545e-05,
+            "loss_reduction_percent": -0.0054107941891499015
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560042136,
+            "loss_reduction_percent": -0.00613146527482507
+          }
+        },
+        "literary_prose": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 7.695665122824796e-05,
+            "loss_reduction_percent": -0.003992708366559768
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221559995877,
+            "loss_reduction_percent": -0.005197710191664534
+          }
+        },
+        "python_source": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.01586745744587e-05,
+            "loss_reduction_percent": -0.0058218082197285395
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560065266,
+            "loss_reduction_percent": -0.006469057459048341
+          }
+        },
+        "technical_reference": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.810611429283966e-05,
+            "loss_reduction_percent": -0.0068815333808122815
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560065266,
+            "loss_reduction_percent": -0.007027158967496959
+          }
+        }
+      },
+      "development_candidate_count": 19,
+      "development_documents": 12,
+      "heldout_documents": 24,
+      "id": "smollm2-1_7b",
+      "label": "SmolLM2 1.71B",
+      "primary": {
+        "arm": "neural",
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 7102026,
+        "candidate_nll_nats_per_token": 1.6339033348509886,
+        "descriptive_paired_document_bootstrap_95_interval": [
+          0.0,
+          0.0
+        ],
+        "difference_nats_per_token": 0.0,
+        "document_tie_allowance_nats": 1e-10,
+        "documents": 24,
+        "documents_improved": 0,
+        "documents_numerically_tied": 24,
+        "documents_worse": 0,
+        "interpretation": "negative difference favors candidate; descriptive document bootstrap, not independent token inference",
+        "loss_reduction_percent": 0.0,
+        "neural_nll_nats_per_token": 1.6339033348509886,
+        "targets": 12288
+      },
+      "scope": "Fresh experimental document/source split; source projects and pretraining may overlap. NLL is within native tokenizer. No neural weight updates, cross-tokenizer ranking or universal gain claim.",
+      "selected_arm": "neural"
+    },
+    {
+      "ceiling_nats_per_document": 0.05129329438755058,
+      "comparisons": {
+        "all_domains": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.076938701042814e-05,
+            "loss_reduction_percent": -0.005012848788392611
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560111988,
+            "loss_reduction_percent": -0.005532683591182273
+          }
+        },
+        "literary_prose": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 8.137128044671815e-05,
+            "loss_reduction_percent": -0.0034279846630215233
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560176288,
+            "loss_reduction_percent": -0.0042204460431991275
+          }
+        },
+        "python_source": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.550011147017867e-05,
+            "loss_reduction_percent": -0.006139613562181291
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560091634,
+            "loss_reduction_percent": -0.006440621692720622
+          }
+        },
+        "technical_reference": {
+          "primary_selected_minus_neural": {
+            "difference_nats_per_token": 0.0,
+            "loss_reduction_percent": 0.0
+          },
+          "secondary_hierarchy_minus_neural": {
+            "difference_nats_per_token": 9.543676911438759e-05,
+            "loss_reduction_percent": -0.006349776219527311
+          },
+          "secondary_ungated_minus_neural": {
+            "difference_nats_per_token": 0.00010018221560068041,
+            "loss_reduction_percent": -0.006665509071029618
+          }
+        }
+      },
+      "development_candidate_count": 19,
+      "development_documents": 12,
+      "heldout_documents": 24,
+      "id": "qwen25-1_5b",
+      "label": "Qwen2.5 1.54B",
+      "primary": {
+        "arm": "neural",
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 7102026,
+        "candidate_nll_nats_per_token": 1.8107345910916521,
+        "descriptive_paired_document_bootstrap_95_interval": [
+          0.0,
+          0.0
+        ],
+        "difference_nats_per_token": 0.0,
+        "document_tie_allowance_nats": 1e-10,
+        "documents": 24,
+        "documents_improved": 0,
+        "documents_numerically_tied": 24,
+        "documents_worse": 0,
+        "interpretation": "negative difference favors candidate; descriptive document bootstrap, not independent token inference",
+        "loss_reduction_percent": 0.0,
+        "neural_nll_nats_per_token": 1.8107345910916521,
+        "targets": 12288
+      },
+      "scope": "Fresh experimental document/source split; source projects and pretraining may overlap. NLL is within native tokenizer. No neural weight updates, cross-tokenizer ranking or universal gain claim.",
+      "selected_arm": "neural"
+    }
+  ],
+  "release": "0.10.0",
+  "schema": "singularity.deployment-transfer-summary/1",
+  "scope": "CPU study; all exact coverage is catalogue-specific; no universal prediction gain or generation acceleration",
+  "sources_sha256": {
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8/artifact.json": "e41cb235c79a8c58a793234ae07f71642851be9ff33ff44e5a6182009feeea52",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8/calibration_failure.json": "f4800c3b5572fcfe3c740888614e7afaa27b7f6762fb4cb6e479c91676f0f90a",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8/protocol.json": "ab326332281b420c7779701a202c878b75571234bfde13d6eac148f5bd21b5d6",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8_eager/cli_checks/approved_eager.json": "4911918bd752876b8980e72ecb002d15593f3055af43276375de99512dde0481",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8_eager/cli_checks/missing_all.json": "6d2ae8dfcca21769a11bd064ec4f089c0b610ec052b6ad62f91239b34db659ab",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8_eager/cli_checks/outside_sdpa.json": "8189f6071efb6d3249cff4f44c7ff9ccb974ccd27a74fa92108593224a2e713a",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8_eager/protocol.json": "081db08d2f4a904da31cc7b57215e58dba1af559c0f1b85a9ab6bb13732879f8",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8_eager/results.json": "6b1d83894f4f4abebe140b6392b059b264d376340ceb83780171309679896481",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/float32/cli_checks/eager_cache_third.json": "7f6a648e468f978ebb979a215032da7b8755e61e2e2159080ba8e661ea11a3f0",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/float32/cli_checks/sdpa_batch3.json": "eebd5979faebe9467a440af3767d44f664b4e02be734e8cec9e6f20ea75917f7",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/float32/cli_checks/torchscript_batch3.json": "f95cf29ffcc857f3a0e87d2ea41d37328c838f5134d4ce4d7a04848757a3e551",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/float32/protocol.json": "7c97243b05abfb3fda6f321f062ec29f79490507c702f730f38b1eaaa55bfa85",
+    "applications/training_lab/results/deployment_audit/smollm2-360m/float32/results.json": "a4fafc3a9f38dd0595196b8223a5721370c9a9b07a7a05ab71e7593b527a1ec4",
+    "applications/training_lab/results/new_family_audit/qwen2.5-1.5b/cli_check.json": "3c8217652212135ec59281ae464025787f9fed58bb559b8d33d59ab8e3530a3b",
+    "applications/training_lab/results/new_family_audit/qwen2.5-1.5b/pruned_greedy_posthoc.json": "dac4581343890e0cff66c342648aa3710ff031d9e4743f339f04d92c19061f29",
+    "applications/training_lab/results/new_family_audit/qwen2.5-1.5b/results.json": "4189939f4ebebd7b72dbe7efa71668e79b38fbf9cb205fffffe0d25dd8ed10a0",
+    "applications/training_lab/results/pretrained_gating/models/gpt2/development/results.json": "284741d1e26d39a44231a08960671184f9bbb000090139a09be44984717978d8",
+    "applications/training_lab/results/pretrained_gating/models/gpt2/heldout/results.json": "40c188c78db7cc2ac546ef1f8c2f3d8b28123b7b092a9481a553a58f75a32fb3",
+    "applications/training_lab/results/pretrained_gating/models/gpt2/heldout_analysis.json": "fb1f3cbd1be464ea3a4d2734041d0f570e298ce986dce22f32d767dfcb0a8d62",
+    "applications/training_lab/results/pretrained_gating/models/gpt2/selection.json": "ea20479053f26afaa844820a66044c510f99921aed2e5947d47b346ff6b880c7",
+    "applications/training_lab/results/pretrained_gating/models/qwen25-1_5b/development/results.json": "5c0c2fbd9c2c0692c31ea289e3ac9ad11b0d9d6719f6d71e039832277c4994cc",
+    "applications/training_lab/results/pretrained_gating/models/qwen25-1_5b/heldout/results.json": "d515697c36c7a394929df30cef4ff10c8dacf7723312765553b39eb20552dde8",
+    "applications/training_lab/results/pretrained_gating/models/qwen25-1_5b/heldout_analysis.json": "5b6e8571b906ca2447299eb1f20948cc20ae8340286742fca9933d1bc4e85279",
+    "applications/training_lab/results/pretrained_gating/models/qwen25-1_5b/selection.json": "2804e3e54ba90f0f4c6ee0c2b88e4316248ce9d7d9c530ef89876bd3dbb4c2f8",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-1_7b/development/results.json": "d1d9defd370bce09a131c6692d2933306b23e44807f78be62e31a93d21f1f0ff",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-1_7b/heldout/results.json": "8d2bacfacaa9974b53bbac71250eae2a7f62dcf846dd83923b7f8930f9ed1faa",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-1_7b/heldout_analysis.json": "2e684303758677f5bcb840c7a61e2273f242b50582243bb01ce132ad43bc3f3c",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-1_7b/selection.json": "df0147539833cb58b7b73cda560c72d34a0facf85c9a44fc21c042ef7c6c08ec",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-360m/development/results.json": "beedb728e55715f8fd89be07893df91907d083f99ab3cc1724132f09344ea2cd",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-360m/heldout/results.json": "f1eaf857051577a4950301bd72d3a220793883a3bd6258f49c24390cb8c0a837",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-360m/heldout_analysis.json": "34d8f897458f18b83e0f914f201789c6dc1a3d71ccdfa56701b582a52cefbdc6",
+    "applications/training_lab/results/pretrained_gating/models/smollm2-360m/selection.json": "fe94351cdfaeac59e467ca758329611df6414b7df271ced493aa8b0d086731bc",
+    "applications/training_lab/results/pretrained_gating/protocol.json": "b7a9de8c3dd3163ceb41483ec5d025590aabacbc9e12686d5ea12166fe9eb376"
+  }
+}

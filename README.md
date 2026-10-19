@@ -6,7 +6,17 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 ![The cube and Möbius ladder agree through volume three, then separate at volume four by an exact polynomial.](docs/assets/singularity-observation.svg)
 
-[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**See the pretrained results**](applications/training_lab/PRETRAINED_RESULTS.md) · [**Audit your model**](applications/training_lab/AUDIT_TOOLKIT.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Deployment evidence**](applications/training_lab/DEPLOYMENT_RESULTS.md) · [**See the pretrained results**](applications/training_lab/PRETRAINED_RESULTS.md) · [**Audit your model**](applications/training_lab/AUDIT_TOOLKIT.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+
+<!-- BEGIN deployment-transfer -->
+## Make every model check count.
+
+**New in 0.10.0: real deployment artifacts and an untouched model family.** On Qwen2.5-1.5B, a certified panel uses **192 input tokens instead of 215** for optimally pruned greedy selection, while a resident audit takes **1.97s instead of 12.01s**. The deployment study then checks actual Safetensors reloads, an executable TorchScript graph, dynamic INT8 modules, SDPA attention and KV caches. FP32 clean graph/cache/backend controls pass, and exact selection retains two witnesses for every covered construction distinction.
+
+![Exact audit costs, resident check times, and prospectively selected prediction outcomes on fresh held-out documents.](docs/assets/deployment-transfer.svg)
+
+**7.45% lower GPT-2 loss on fresh held-out text.** A protected repetition gate, selected on 12 development documents before evaluation, improves 18/24 held-out documents. The same selection rule retains pure neural for SmolLM2 362M, SmolLM2 1.71B, Qwen2.5 1.54B. All **73,728 evaluated targets**, clean-transfer limits and missed fault variants are retained. The original INT8 SDPA calibration fails; a separately frozen post-calibration eager-only contract provides the bounded deployment package. Read the [**complete 0.10.0 evidence**](applications/training_lab/DEPLOYMENT_RESULTS.md) or [**check a saved deployment artifact**](applications/training_lab/DEPLOYMENT_GUIDE.md).
+<!-- END deployment-transfer -->
 
 ## Real pretrained models. Exact checks. Evidence you can replay.
 

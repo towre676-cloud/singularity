@@ -1,0 +1,77 @@
+{
+ "calibration_envelope": {
+  "approved_int8_execution": {
+   "attention_backends": [
+    "eager"
+   ],
+   "batch_size": 1,
+   "cache_execution": "full prefill"
+  },
+  "requested": {
+   "backend": "sdpa",
+   "batch_size": 1,
+   "cache_split_denominator": 0
+  },
+  "status": "outside"
+ },
+ "construction_faults_still_separated": {
+  "service_cache_prefix_dropped_half": true,
+  "service_logit_scale_1.3": true,
+  "service_mask_shift_right": true,
+  "service_position_ids_zero": true,
+  "service_truncate48": true,
+  "service_unicode_nfkc": true
+ },
+ "contract_mismatches": [],
+ "deployment_status": "outside_calibration",
+ "execution": {
+  "backend": "sdpa",
+  "batch_size": 1,
+  "cache_execution": "full prefill",
+  "cache_receipts": [],
+  "cache_split_denominator": 0,
+  "graph_calls": 0,
+  "representation": "dynamic_int8",
+  "threads": 2,
+  "torch": "2.8.0+cpu",
+  "transformers": "4.57.1"
+ },
+ "exit_code": 3,
+ "flagged_probes": [
+  "long_unicode",
+  "long_unicode_newline"
+ ],
+ "interpretation": "This execution is outside the calibrated INT8 backend/batch/cache envelope. The raw behavioral verdict measures drift only and does not classify the deployment as faulty.",
+ "missing_probes": [],
+ "package_sha256": "d47ad1600f0d5ff1b3ae249efc46a5b87f85669b194b1740915d06e6440493af",
+ "probes": [
+  {
+   "discrete_mismatches": 21,
+   "flags": true,
+   "length_mismatch": false,
+   "max_abs": {
+    "entropy": 3.8340719002218218,
+    "top_logprob": 1.9689309543196458
+   },
+   "probe": "long_unicode",
+   "tie_positions_ignored": 0
+  },
+  {
+   "discrete_mismatches": 33,
+   "flags": true,
+   "length_mismatch": false,
+   "max_abs": {
+    "entropy": 3.7034738525697586,
+    "top_logprob": 2.0048896106499234
+   },
+   "probe": "long_unicode_newline",
+   "tie_positions_ignored": 1
+  }
+ ],
+ "seconds": {
+  "artifact_validation_and_load": 6.852462759001355,
+  "resident_check": 0.5494847660011146,
+  "total": 7.40194752500247
+ },
+ "verdict": "changed"
+}

@@ -1,0 +1,338 @@
+{
+ "base": {
+  "claim_boundary": "Every listed construction fault flags at least `requirement` panel probes on the construction observations, so that many minus one missing results cannot hide it there. Other models, faults and false-alarm rates are empirical; passing is not equivalence.",
+  "constants": {
+   "tie_margin": 0.001,
+   "tolerance_factor": 4.0,
+   "tolerance_floor": 1e-05
+  },
+  "contract": {
+   "adapter": "TorchCallableAdapter",
+   "attention_mask": true,
+   "decoding": "greedy, no logits processors",
+   "max_context": 96,
+   "model_id": "HuggingFaceTB/SmolLM2-360M",
+   "normalization": "none",
+   "pad_id": 0,
+   "padding_side": "left",
+   "position_ids": "offset by left padding",
+   "representation": "dynamic_int8",
+   "revision": "f8027fd0eaeea54caa13c31d31b9fdc459c38b49",
+   "source_snapshot_sha256": "084341a486cfdee2455d50771d24c356ea4404eb2ba02b3be1cf0b981dd0152a",
+   "target_artifact_sha256": "b634ba1296603a720ba85832ea4a92d62a995c8ba214a4b345396b153cb55ee2",
+   "temperature": 1.0,
+   "tokenizer_backend_format": "fast-tokenizer-json; explicit padding/truncation overrides excluded",
+   "tokenizer_backend_sha256": "e3708f39ab97dd726710373ba03ce5204e09d2748a304c793c8f0d5473d39930",
+   "tokenizer_class": "GPT2TokenizerFast",
+   "tokenizer_special_tokens": {
+    "additional_special_tokens": "['<|endoftext|>', '<|im_start|>', '<|im_end|>', '<repo_name>', '<reponame>', '<file_sep>', '<filename>', '<gh_stars>', '<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<jupyter_script>', '<empty_output>']",
+    "bos_token": "<|endoftext|>",
+    "eos_token": "<|endoftext|>",
+    "unk_token": "<|endoftext|>"
+   },
+   "tokenizer_vocabulary_sha256": "450fd25da1a689ff7a201bc70f43cf6fd9765685d8b15598bd2fa1597ae33cc6",
+   "tokenizer_vocabulary_size": 49152,
+   "truncate_to": 96,
+   "truncation": "keep last tokens",
+   "use_cache": false
+  },
+  "coverage": {
+   "service_cache_prefix_dropped_half": 18,
+   "service_logit_scale_1.3": 18,
+   "service_mask_shift_right": 18,
+   "service_position_ids_zero": 18,
+   "service_truncate48": 5,
+   "service_unicode_nfkc": 7
+  },
+  "deficient_faults": [],
+  "metadata": {
+   "calibration_envelope": {
+    "attention_backends": [
+     "eager"
+    ],
+    "batch_size": 1,
+    "cache_execution": "full prefill"
+   },
+   "original_failure_file_sha256": "f4800c3b5572fcfe3c740888614e7afaa27b7f6762fb4cb6e479c91676f0f90a",
+   "original_protocol_file_sha256": "ab326332281b420c7779701a202c878b75571234bfde13d6eac148f5bd21b5d6",
+   "post_calibration_refinement": true,
+   "protocol_sha256": "4647a0e1b89001427a0293b87db683fc949ee306ca139a787cd0e38830fb1e39",
+   "target": "dynamic_int8"
+  },
+  "package_sha256": "3489157c951b6a54798c8f6e038e40c98575f0bb3085f45edc5416f7976d109f",
+  "probes": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "requirement": 2,
+  "schema": "singularity.audit-package/1",
+  "selection": {
+   "deficient_faults": [],
+   "exact_cost": 192,
+   "exact_nodes": 21,
+   "feasible": true,
+   "frozen_panel": true,
+   "greedy_cost": 239,
+   "greedy_panel": [
+    "plain_city",
+    "plain_science",
+    "unicode_ligature",
+    "long_reference",
+    "long_unicode"
+   ],
+   "pool_cost": 1089,
+   "pool_probe_count": 18,
+   "pool_separator_counts": {
+    "service_cache_prefix_dropped_half": 18,
+    "service_logit_scale_1.3": 18,
+    "service_mask_shift_right": 18,
+    "service_position_ids_zero": 18,
+    "service_truncate48": 5,
+    "service_unicode_nfkc": 7
+   },
+   "requirement": 2
+  },
+  "witness": [
+   {
+    "distinction": "service_mask_shift_right",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   },
+   {
+    "distinction": "service_position_ids_zero",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   },
+   {
+    "distinction": "service_truncate48",
+    "separating_probes": [
+     "long_reference",
+     "long_code"
+    ]
+   },
+   {
+    "distinction": "service_unicode_nfkc",
+    "separating_probes": [
+     "pad80_unicode",
+     "unicode_ligature"
+    ]
+   },
+   {
+    "distinction": "service_logit_scale_1.3",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   },
+   {
+    "distinction": "service_cache_prefix_dropped_half",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   }
+  ]
+ },
+ "schema": "singularity.readable-evidence-shards/1",
+ "serialization": {
+  "ensure_ascii": true,
+  "indent": 1,
+  "sort_keys": true,
+  "trailing_newline": true
+ },
+ "shards": [
+  {
+   "bytes": 21091,
+   "file": "00000.json",
+   "path": [
+    "fault_evidence"
+   ],
+   "sha256": "3f1cdfea9b14578e1b803ddbc1c3ba8eac872d26b3e1f7b922f24bad154dea60"
+  },
+  {
+   "bytes": 1587,
+   "file": "00001.json",
+   "path": [
+    "probes",
+    0
+   ],
+   "sha256": "6389670a276fafff5655b29e817511784bfcd2d3677ae5d462d21ff4d7053f56"
+  },
+  {
+   "bytes": 1356,
+   "file": "00002.json",
+   "path": [
+    "probes",
+    1
+   ],
+   "sha256": "083998aaafaa01ffb9aca82821ef4aa503687ea95d2dada7369b0e13080aa3ac"
+  },
+  {
+   "bytes": 1275,
+   "file": "00003.json",
+   "path": [
+    "probes",
+    2
+   ],
+   "sha256": "7e41feca35c27cd86866bc842d680c061fa34ce58ca8c661921115b0c0ab6175"
+  },
+  {
+   "bytes": 1033,
+   "file": "00004.json",
+   "path": [
+    "probes",
+    3
+   ],
+   "sha256": "017bd19670da974a4be5b1769e1e4f40460426cb32c73f4dc3e8232ababb68e3"
+  },
+  {
+   "bytes": 1342,
+   "file": "00005.json",
+   "path": [
+    "probes",
+    4
+   ],
+   "sha256": "99fac227a6e64bc0d469fe51b52b41b585d2b3038723f04d6cb4c2cc9758ece1"
+  },
+  {
+   "bytes": 2099,
+   "file": "00006.json",
+   "path": [
+    "probes",
+    5
+   ],
+   "sha256": "d9810b698927b446969a5f060877c79f6322a84b468da37477c8581ae57f698b"
+  },
+  {
+   "bytes": 2269,
+   "file": "00007.json",
+   "path": [
+    "probes",
+    6
+   ],
+   "sha256": "4ba55783f786723a143ffd1c9b3a7871121cc8caac120cdc88afc13fe9c63326"
+  },
+  {
+   "bytes": 1602,
+   "file": "00008.json",
+   "path": [
+    "probes",
+    7
+   ],
+   "sha256": "822935e75cc6fea590650a59a60a1f062aeb6486b14043ca609c366b50b097b1"
+  },
+  {
+   "bytes": 1938,
+   "file": "00009.json",
+   "path": [
+    "probes",
+    8
+   ],
+   "sha256": "0c06894f807ba113d369b424fd787b9e204e1e202d5b42f9bc3b45bfb0f60577"
+  },
+  {
+   "bytes": 3307,
+   "file": "00010.json",
+   "path": [
+    "probes",
+    9
+   ],
+   "sha256": "64f2ce8fe8ce962a766b53a05e82be320b3cd95dc8b3dc909ad3b3fdcd466a95"
+  },
+  {
+   "bytes": 9169,
+   "file": "00011.json",
+   "path": [
+    "probes",
+    10
+   ],
+   "sha256": "150798e3f0d02509c91546e4f222ba00411052925d3939550dfe7f0a88dea61c"
+  },
+  {
+   "bytes": 8705,
+   "file": "00012.json",
+   "path": [
+    "probes",
+    11
+   ],
+   "sha256": "9b2d9ebfc29b857093a2dccb08769d414a311b05c4655495c4ce4d08636cbe44"
+  },
+  {
+   "bytes": 9160,
+   "file": "00013.json",
+   "path": [
+    "probes",
+    12
+   ],
+   "sha256": "071c519840c05078b113d9e57928b43c0da0526a2ac237f76e8da92dd735a9b1"
+  },
+  {
+   "bytes": 9069,
+   "file": "00014.json",
+   "path": [
+    "probes",
+    13
+   ],
+   "sha256": "4117df2064e7257d5cb2d5a841f706f680be708257e49deae6a1bbd20a12a88e"
+  },
+  {
+   "bytes": 9053,
+   "file": "00015.json",
+   "path": [
+    "probes",
+    14
+   ],
+   "sha256": "3c8020da295ce7fff601e701eb17d395dae9fb81a56f38a56e0cb1f45557f5bc"
+  },
+  {
+   "bytes": 2200,
+   "file": "00016.json",
+   "path": [
+    "probes",
+    15
+   ],
+   "sha256": "e98e447dc60a39f495a203d288d87d3f0e2f6755ab137461e037f6a589d6c7f9"
+  },
+  {
+   "bytes": 1768,
+   "file": "00017.json",
+   "path": [
+    "probes",
+    16
+   ],
+   "sha256": "4c52b6477ec26cd2f4a16a8a2d36830017c8f398a8debaf0f872c6e142edba95"
+  },
+  {
+   "bytes": 1442,
+   "file": "00018.json",
+   "path": [
+    "probes",
+    17
+   ],
+   "sha256": "c744757fe8d00bb1bb94af11f1c87cf4e7515ac127f0f7351fe5346a2007404a"
+  }
+ ],
+ "target_bytes": 94988,
+ "target_relative_to_results": "deployment_audit/smollm2-360m/dynamic_int8_eager/package_full_pool.json",
+ "target_sha256": "be6a8a8c90d1a4c146d4c4617cd715c5e78c431f993b6c45a26530a859f98daf"
+}

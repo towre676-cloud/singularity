@@ -1,0 +1,325 @@
+{
+ "base": {
+  "environment": {
+   "device": "cpu",
+   "dtype": "float32",
+   "quantization_engine": "fbgemm",
+   "threads": 4,
+   "torch": "2.8.0+cpu",
+   "transformers": "4.57.1"
+  },
+  "execution_receipts": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "full_pool_cost": 1089,
+  "model_id": "HuggingFaceTB/SmolLM2-360M",
+  "pool_clean_false_alarms": {
+   "eager_batch1_threads2_reverse": [],
+   "eager_batch3_threads2_reverse": [
+    "plain_city",
+    "pad48_history",
+    "pad64_science",
+    "unicode_accents",
+    "long_reference",
+    "long_code",
+    "long_unicode",
+    "long_unicode_newline",
+    "long_accent_newline",
+    "pad96_unicode_newline",
+    "pad64_unicode_newline",
+    "pad48_unicode_newline"
+   ],
+   "eager_cache_third_threads2": [
+    "plain_city",
+    "plain_science",
+    "pad48_history",
+    "pad64_science",
+    "pad96_code",
+    "pad80_unicode",
+    "unicode_ligature",
+    "unicode_accents",
+    "newline_list",
+    "newline_code",
+    "long_reference",
+    "long_code",
+    "long_unicode",
+    "long_unicode_newline",
+    "long_accent_newline",
+    "pad96_unicode_newline",
+    "pad64_unicode_newline",
+    "pad48_unicode_newline"
+   ],
+   "sdpa_batch1_threads2_reverse": [
+    "pad48_history",
+    "pad64_science",
+    "pad96_code",
+    "pad80_unicode",
+    "unicode_ligature",
+    "unicode_accents",
+    "newline_list",
+    "newline_code",
+    "long_reference",
+    "long_code",
+    "long_unicode",
+    "long_unicode_newline",
+    "long_accent_newline",
+    "pad96_unicode_newline",
+    "pad64_unicode_newline",
+    "pad48_unicode_newline"
+   ],
+   "sdpa_batch3_threads2_reverse": [
+    "plain_city",
+    "pad48_history",
+    "pad64_science",
+    "pad96_code",
+    "pad80_unicode",
+    "unicode_ligature",
+    "unicode_accents",
+    "newline_list",
+    "newline_code",
+    "long_reference",
+    "long_code",
+    "long_unicode",
+    "long_unicode_newline",
+    "long_accent_newline",
+    "pad96_unicode_newline",
+    "pad64_unicode_newline",
+    "pad48_unicode_newline"
+   ]
+  },
+  "pool_separator_counts": {
+   "service_cache_prefix_dropped_half": 18,
+   "service_cache_prefix_dropped_third": 18,
+   "service_crlf": 9,
+   "service_dropped_mask": 7,
+   "service_logit_scale_1.1": 18,
+   "service_logit_scale_1.3": 18,
+   "service_mask_shift_right": 18,
+   "service_output_vocabulary_rolled": 18,
+   "service_position_ids_zero": 18,
+   "service_truncate48": 5,
+   "service_truncate64": 5,
+   "service_unicode_nfd": 8,
+   "service_unicode_nfkc": 7
+  },
+  "protocol_sha256": "4647a0e1b89001427a0293b87db683fc949ee306ca139a787cd0e38830fb1e39",
+  "revision": "f8027fd0eaeea54caa13c31d31b9fdc459c38b49",
+  "schema": "singularity.deployment-audit-results/1",
+  "scope": "two-witness guarantee applies only to retained construction observations; unseen faults and clean cases are empirical; passing is not behavioral equivalence",
+  "target": "dynamic_int8",
+  "timing": {
+   "amortization": {
+    "exact": {
+     "conservative_incremental_build_checks": 8,
+     "conservative_incremental_seconds": 17.180934374009666,
+     "full_pool_over_panel": 6.664199107309363,
+     "gross_all_comparators_build_checks": 13,
+     "including_artifact_checks": 19,
+     "seconds_saved_per_check": 2.2634268719993997
+    },
+    "pruned_greedy": {
+     "conservative_incremental_build_checks": 9,
+     "conservative_incremental_seconds": 17.185241931001656,
+     "full_pool_over_panel": 4.856185452481249,
+     "gross_all_comparators_build_checks": 14,
+     "including_artifact_checks": 20,
+     "seconds_saved_per_check": 2.1146503510026378
+    },
+    "random_median": {
+     "conservative_incremental_build_checks": 9,
+     "conservative_incremental_seconds": 17.18038056899968,
+     "full_pool_over_panel": 4.030804391333153,
+     "gross_all_comparators_build_checks": 15,
+     "including_artifact_checks": 21,
+     "seconds_saved_per_check": 2.002359742997214
+    }
+   },
+   "common_calibration_seconds": 7.912455655001395,
+   "common_reference_seconds": 3.086253321998811,
+   "construction_fault_seconds": 16.55611379200127,
+   "construction_seconds": 28.223797906000982,
+   "full_pool_includes": "complete 18-probe package verification, observation and comparison",
+   "incremental_caveat": "conservative: charges all comparator selection work to each panel; common reference+calibration and fullpool package creation excluded",
+   "median_seconds": {
+    "exact": 0.39960227900155587,
+    "full_pool": 2.6630291510009556,
+    "pruned_greedy": 0.5483787999983178,
+    "random_median": 0.6606694080037414
+   },
+   "package_seconds": {
+    "exact": 0.009317503005149774,
+    "full_pool": 0.012442765997548122,
+    "pruned_greedy": 0.013625059997139033,
+    "random_median": 0.008763697995163966
+   },
+   "pairs": [
+    {
+     "exact": 0.5522794610005803,
+     "full_pool": 2.6908185989959748,
+     "order": [
+      "pruned_greedy",
+      "full_pool",
+      "random_median",
+      "exact"
+     ],
+     "pruned_greedy": 0.4549702529984643,
+     "random_median": 0.7073787089975667,
+     "repeat": 0
+    },
+    {
+     "exact": 0.39960227900155587,
+     "full_pool": 2.6630291510009556,
+     "order": [
+      "exact",
+      "random_median",
+      "full_pool",
+      "pruned_greedy"
+     ],
+     "pruned_greedy": 0.6626990340009797,
+     "random_median": 0.6606694080037414,
+     "repeat": 1
+    },
+    {
+     "exact": 0.393276208997122,
+     "full_pool": 2.3745894280000357,
+     "order": [
+      "exact",
+      "full_pool",
+      "random_median",
+      "pruned_greedy"
+     ],
+     "pruned_greedy": 0.5483787999983178,
+     "random_median": 0.625248336000368,
+     "repeat": 2
+    }
+   ],
+   "selection_seconds": 0.615503079003247
+  },
+  "total_seconds": 97.36667676600337
+ },
+ "schema": "singularity.readable-evidence-shards/1",
+ "serialization": {
+  "ensure_ascii": true,
+  "indent": 1,
+  "sort_keys": true,
+  "trailing_newline": true
+ },
+ "shards": [
+  {
+   "bytes": 9324,
+   "file": "00000.json",
+   "path": [
+    "artifact"
+   ],
+   "sha256": "1d8d123d631c96a45ae218c24792e90993e77caa50289898c787a00f0d40a821"
+  },
+  {
+   "bytes": 9514,
+   "file": "00001.json",
+   "path": [
+    "execution_receipts",
+    0
+   ],
+   "sha256": "d45ea732d2362f2aa4c0cdc813fc0de2277acb714d430b782ee5b34bbb2a7862"
+  },
+  {
+   "bytes": 9514,
+   "file": "00002.json",
+   "path": [
+    "execution_receipts",
+    1
+   ],
+   "sha256": "18ddf337798950934f5a821e6e2b0c6604c1107dcc681a36a4ce34c56195724f"
+  },
+  {
+   "bytes": 9514,
+   "file": "00003.json",
+   "path": [
+    "execution_receipts",
+    2
+   ],
+   "sha256": "c80d14ec138cec88d959bc5b9046e986c7699abba07c894de20aeb5b39637686"
+  },
+  {
+   "bytes": 11908,
+   "file": "00004.json",
+   "path": [
+    "execution_receipts",
+    3
+   ],
+   "sha256": "586e13047211aa233b52bdc44cdc0d8549341ed336bd8b9ee09c3229370fb5ef"
+  },
+  {
+   "bytes": 9515,
+   "file": "00005.json",
+   "path": [
+    "execution_receipts",
+    4
+   ],
+   "sha256": "56795d664ca9a748a38bc10cf221386893a4503fc470a0dfd32aa2b507e033ce"
+  },
+  {
+   "bytes": 9514,
+   "file": "00006.json",
+   "path": [
+    "execution_receipts",
+    5
+   ],
+   "sha256": "e6c22657b6b3f8d426568db6c0ff7642e95c12e7359c8821124ec220a1923b13"
+  },
+  {
+   "bytes": 11867,
+   "file": "00007.json",
+   "path": [
+    "execution_receipts",
+    6
+   ],
+   "sha256": "75a041e4c821649e2018b7a737a888b003040a805f5a93ebaff863e2004033af"
+  },
+  {
+   "bytes": 9514,
+   "file": "00008.json",
+   "path": [
+    "execution_receipts",
+    7
+   ],
+   "sha256": "a9ba8e07d3dc8006f28ce8f927e2bf9c542406d830ce3411abe9338640f7df58"
+  },
+  {
+   "bytes": 9515,
+   "file": "00009.json",
+   "path": [
+    "execution_receipts",
+    8
+   ],
+   "sha256": "58e60ee21f522cfc35dd7284d67d9ae28005f908614af5ced1bff96155d08364"
+  },
+  {
+   "bytes": 18343,
+   "file": "00010.json",
+   "path": [
+    "panels"
+   ],
+   "sha256": "84573fc7fd250f24620b1747f575eb0ce15f7ae551c05e0e2e247e02ee5fbc00"
+  },
+  {
+   "bytes": 17981,
+   "file": "00011.json",
+   "path": [
+    "selection"
+   ],
+   "sha256": "962488aa3c2d829f6aaa14b834e1c12943588394d6a5b6f3000d8d5e64c6ec25"
+  }
+ ],
+ "target_bytes": 142586,
+ "target_relative_to_results": "deployment_audit/smollm2-360m/dynamic_int8_eager/results.json",
+ "target_sha256": "6b1d83894f4f4abebe140b6392b059b264d376340ceb83780171309679896481"
+}

@@ -1,0 +1,74 @@
+{
+ "calibration_envelope": {
+  "approved_int8_execution": {
+   "attention_backends": [
+    "eager"
+   ],
+   "batch_size": 1,
+   "cache_execution": "full prefill"
+  },
+  "requested": {
+   "backend": "eager",
+   "batch_size": 1,
+   "cache_split_denominator": 0
+  },
+  "status": "inside"
+ },
+ "construction_faults_still_separated": {
+  "service_cache_prefix_dropped_half": true,
+  "service_logit_scale_1.3": true,
+  "service_mask_shift_right": true,
+  "service_position_ids_zero": true,
+  "service_truncate48": true,
+  "service_unicode_nfkc": true
+ },
+ "contract_mismatches": [],
+ "deployment_status": "unchanged",
+ "execution": {
+  "backend": "eager",
+  "batch_size": 1,
+  "cache_execution": "full prefill",
+  "cache_receipts": [],
+  "cache_split_denominator": 0,
+  "graph_calls": 0,
+  "representation": "dynamic_int8",
+  "threads": 2,
+  "torch": "2.8.0+cpu",
+  "transformers": "4.57.1"
+ },
+ "exit_code": 0,
+ "flagged_probes": [],
+ "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+ "missing_probes": [],
+ "package_sha256": "d47ad1600f0d5ff1b3ae249efc46a5b87f85669b194b1740915d06e6440493af",
+ "probes": [
+  {
+   "discrete_mismatches": 0,
+   "flags": false,
+   "length_mismatch": false,
+   "max_abs": {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   "probe": "long_unicode",
+   "tie_positions_ignored": 0
+  },
+  {
+   "discrete_mismatches": 0,
+   "flags": false,
+   "length_mismatch": false,
+   "max_abs": {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   "probe": "long_unicode_newline",
+   "tie_positions_ignored": 0
+  }
+ ],
+ "seconds": {
+  "artifact_validation_and_load": 6.428067954002472,
+  "resident_check": 0.49966016299731564,
+  "total": 6.927728116999788
+ },
+ "verdict": "unchanged"
+}

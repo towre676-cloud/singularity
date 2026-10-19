@@ -419,7 +419,9 @@ def verify_directory(directory):
     verify_random(frozen, result, flags)
     verify_timing(frozen, result)
     return {"directory": str(directory), "model_id": result["model_id"], "target": result["target"],
-            "verified": True, **summary}
+            "verified": True,
+            "post_calibration_refinement": "parent_calibration_failure_file_sha256" in frozen["protocol"],
+            **summary}
 
 
 def verify_calibration_failure(directory):

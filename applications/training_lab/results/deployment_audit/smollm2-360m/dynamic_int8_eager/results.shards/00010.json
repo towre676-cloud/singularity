@@ -1,0 +1,718 @@
+{
+ "path": [
+  "panels"
+ ],
+ "payload": {
+  "exact": {
+   "all_single_probe_erasures": {
+    "long_unicode": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    }
+   },
+   "clean_false_alarms": {
+    "eager_batch1_threads2_reverse": [],
+    "eager_batch3_threads2_reverse": [
+     "long_unicode",
+     "long_unicode_newline"
+    ],
+    "eager_cache_third_threads2": [
+     "long_unicode",
+     "long_unicode_newline"
+    ],
+    "sdpa_batch1_threads2_reverse": [
+     "long_unicode",
+     "long_unicode_newline"
+    ],
+    "sdpa_batch3_threads2_reverse": [
+     "long_unicode",
+     "long_unicode_newline"
+    ]
+   },
+   "faults": {
+    "service_cache_prefix_dropped_half": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_cache_prefix_dropped_third": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_crlf": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 1,
+     "two_witness": false
+    },
+    "service_dropped_mask": {
+     "detected": false,
+     "heldout": true,
+     "separating_probes": 0,
+     "two_witness": false
+    },
+    "service_logit_scale_1.1": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_logit_scale_1.3": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_mask_shift_right": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_output_vocabulary_rolled": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_position_ids_zero": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_truncate48": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_truncate64": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_unicode_nfd": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_unicode_nfkc": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    }
+   },
+   "verification": {
+    "faults": 6,
+    "panel_probes": 2,
+    "problems": [],
+    "requirement": 2,
+    "verified": true
+   }
+  },
+  "full_pool": {
+   "all_single_probe_erasures": {
+    "long_accent_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_code": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_reference": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_unicode": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "newline_code": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "newline_list": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad48_history": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad48_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad64_science": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad64_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad80_unicode": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad96_code": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad96_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "plain_city": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "plain_science": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "unicode_accents": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "unicode_ligature": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    }
+   },
+   "clean_false_alarms": {
+    "eager_batch1_threads2_reverse": [],
+    "eager_batch3_threads2_reverse": [
+     "plain_city",
+     "pad48_history",
+     "pad64_science",
+     "unicode_accents",
+     "long_reference",
+     "long_code",
+     "long_unicode",
+     "long_unicode_newline",
+     "long_accent_newline",
+     "pad96_unicode_newline",
+     "pad64_unicode_newline",
+     "pad48_unicode_newline"
+    ],
+    "eager_cache_third_threads2": [
+     "plain_city",
+     "plain_science",
+     "pad48_history",
+     "pad64_science",
+     "pad96_code",
+     "pad80_unicode",
+     "unicode_ligature",
+     "unicode_accents",
+     "newline_list",
+     "newline_code",
+     "long_reference",
+     "long_code",
+     "long_unicode",
+     "long_unicode_newline",
+     "long_accent_newline",
+     "pad96_unicode_newline",
+     "pad64_unicode_newline",
+     "pad48_unicode_newline"
+    ],
+    "sdpa_batch1_threads2_reverse": [
+     "pad48_history",
+     "pad64_science",
+     "pad96_code",
+     "pad80_unicode",
+     "unicode_ligature",
+     "unicode_accents",
+     "newline_list",
+     "newline_code",
+     "long_reference",
+     "long_code",
+     "long_unicode",
+     "long_unicode_newline",
+     "long_accent_newline",
+     "pad96_unicode_newline",
+     "pad64_unicode_newline",
+     "pad48_unicode_newline"
+    ],
+    "sdpa_batch3_threads2_reverse": [
+     "plain_city",
+     "pad48_history",
+     "pad64_science",
+     "pad96_code",
+     "pad80_unicode",
+     "unicode_ligature",
+     "unicode_accents",
+     "newline_list",
+     "newline_code",
+     "long_reference",
+     "long_code",
+     "long_unicode",
+     "long_unicode_newline",
+     "long_accent_newline",
+     "pad96_unicode_newline",
+     "pad64_unicode_newline",
+     "pad48_unicode_newline"
+    ]
+   },
+   "faults": {
+    "service_cache_prefix_dropped_half": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_cache_prefix_dropped_third": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_crlf": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 9,
+     "two_witness": true
+    },
+    "service_dropped_mask": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 7,
+     "two_witness": true
+    },
+    "service_logit_scale_1.1": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_logit_scale_1.3": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_mask_shift_right": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_output_vocabulary_rolled": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_position_ids_zero": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 18,
+     "two_witness": true
+    },
+    "service_truncate48": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 5,
+     "two_witness": true
+    },
+    "service_truncate64": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 5,
+     "two_witness": true
+    },
+    "service_unicode_nfd": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 8,
+     "two_witness": true
+    },
+    "service_unicode_nfkc": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 7,
+     "two_witness": true
+    }
+   },
+   "verification": {
+    "faults": 6,
+    "panel_probes": 18,
+    "problems": [],
+    "requirement": 2,
+    "verified": true
+   }
+  },
+  "pruned_greedy": {
+   "all_single_probe_erasures": {
+    "long_reference": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_unicode": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "unicode_ligature": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    }
+   },
+   "clean_false_alarms": {
+    "eager_batch1_threads2_reverse": [],
+    "eager_batch3_threads2_reverse": [
+     "long_reference",
+     "long_unicode"
+    ],
+    "eager_cache_third_threads2": [
+     "unicode_ligature",
+     "long_reference",
+     "long_unicode"
+    ],
+    "sdpa_batch1_threads2_reverse": [
+     "unicode_ligature",
+     "long_reference",
+     "long_unicode"
+    ],
+    "sdpa_batch3_threads2_reverse": [
+     "unicode_ligature",
+     "long_reference",
+     "long_unicode"
+    ]
+   },
+   "faults": {
+    "service_cache_prefix_dropped_half": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_cache_prefix_dropped_third": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_crlf": {
+     "detected": false,
+     "heldout": true,
+     "separating_probes": 0,
+     "two_witness": false
+    },
+    "service_dropped_mask": {
+     "detected": false,
+     "heldout": true,
+     "separating_probes": 0,
+     "two_witness": false
+    },
+    "service_logit_scale_1.1": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_logit_scale_1.3": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_mask_shift_right": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_output_vocabulary_rolled": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_position_ids_zero": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_truncate48": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_truncate64": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_unicode_nfd": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 1,
+     "two_witness": false
+    },
+    "service_unicode_nfkc": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    }
+   },
+   "verification": {
+    "faults": 6,
+    "panel_probes": 3,
+    "problems": [],
+    "requirement": 2,
+    "verified": true
+   }
+  },
+  "random_median": {
+   "all_single_probe_erasures": {
+    "long_code": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "long_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    },
+    "pad64_unicode_newline": {
+     "service_cache_prefix_dropped_half": true,
+     "service_logit_scale_1.3": true,
+     "service_mask_shift_right": true,
+     "service_position_ids_zero": true,
+     "service_truncate48": true,
+     "service_unicode_nfkc": true
+    }
+   },
+   "clean_false_alarms": {
+    "eager_batch1_threads2_reverse": [],
+    "eager_batch3_threads2_reverse": [
+     "long_code",
+     "long_unicode_newline",
+     "pad64_unicode_newline"
+    ],
+    "eager_cache_third_threads2": [
+     "long_code",
+     "long_unicode_newline",
+     "pad64_unicode_newline"
+    ],
+    "sdpa_batch1_threads2_reverse": [
+     "long_code",
+     "long_unicode_newline",
+     "pad64_unicode_newline"
+    ],
+    "sdpa_batch3_threads2_reverse": [
+     "long_code",
+     "long_unicode_newline",
+     "pad64_unicode_newline"
+    ]
+   },
+   "faults": {
+    "service_cache_prefix_dropped_half": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_cache_prefix_dropped_third": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_crlf": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_dropped_mask": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 1,
+     "two_witness": false
+    },
+    "service_logit_scale_1.1": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_logit_scale_1.3": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_mask_shift_right": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_output_vocabulary_rolled": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_position_ids_zero": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 3,
+     "two_witness": true
+    },
+    "service_truncate48": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_truncate64": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_unicode_nfd": {
+     "detected": true,
+     "heldout": true,
+     "separating_probes": 2,
+     "two_witness": true
+    },
+    "service_unicode_nfkc": {
+     "detected": true,
+     "heldout": false,
+     "separating_probes": 2,
+     "two_witness": true
+    }
+   },
+   "verification": {
+    "faults": 6,
+    "panel_probes": 3,
+    "problems": [],
+    "requirement": 2,
+    "verified": true
+   }
+  }
+ },
+ "schema": "singularity.readable-evidence-shard/1"
+}
