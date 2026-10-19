@@ -1,0 +1,317 @@
+[
+  {
+    "id": "NX25",
+    "title": "Forecast-target sensor design",
+    "depends_on": [
+      "NX08",
+      "NX10"
+    ],
+    "priority": "application-high",
+    "summary": "Compile horizon-specific target rows, detect missing forecast information, and design costed sensor panels under explicit deterministic uncertainty. Historical WIND driver gains remain chat-derived until their manifests and held-out truth are recovered.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/panels.py",
+      "src/singularity/thermal_diagnostics.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/linear.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/uniform.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/forecast_targets.py",
+      "applications/forecast_targets/",
+      "docs/research/FORECAST_TARGETS.md",
+      "results/forecast_targets_synthetic.json"
+    ],
+    "acceptance": [
+      "Exact horizon-row/factorization and null witnesses with direct trajectory comparison.",
+      "Robust panel compared against exhaustive subsets under identical costs and uncertainty.",
+      "Source-bound archive pilot with frozen target/horizon and no synthetic-to-empirical claim transfer."
+    ],
+    "pushes": [
+      {
+        "id": "NX25-A",
+        "title": "Exact forecast-target specification",
+        "acceptance": [
+          "Replay the rational position/driver example and constrained-state case.",
+          "Direct powers through horizon eight agree; retained witnesses prove infeasibility."
+        ]
+      },
+      {
+        "id": "NX25-B",
+        "title": "Costed robust forecast-target panel",
+        "acceptance": [
+          "Enumerate at most 4096 panels and compare exact optimizer.",
+          "Retain equal-rank/different-conditioning and strict noise-boundary cases."
+        ]
+      },
+      {
+        "id": "NX25-C",
+        "title": "Frozen provenance-bound forecast pilot",
+        "acceptance": [
+          "Recover actual source manifests and independently measured target truth.",
+          "Freeze dates and matched-cost baselines; publish negative results as well as positive ones."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX26",
+    "title": "Nonlinear ambiguity witnesses",
+    "depends_on": [],
+    "priority": "mathematical-high",
+    "summary": "Construct exact same-observation/different-target states and distinguish local tangent tests from complete fibre constancy. Include the constraint-curvature correction to second variations on curved observation fibres.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/panels.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/polynomial.py"
+    ],
+    "proposed_sources": [
+      "applications/nonlinear_fibres/",
+      "docs/research/NONLINEAR_FIBRES.md",
+      "results/nonlinear_fibres.json"
+    ],
+    "acceptance": [
+      "Exact affine-quadratic constancy criterion and independent witness replay.",
+      "Parabola regression confirms corrected Hessian; disconnected branches invalidate local-to-global inference.",
+      "Bounded sensor repair clearly distinguishes finite witness coverage from complete fibre separation."
+    ],
+    "pushes": [
+      {
+        "id": "NX26-A",
+        "title": "Exact affine-fibre constancy and witnesses",
+        "acceptance": [
+          "Verify both quadratic coefficient conditions by substitution.",
+          "Keep gap lower bounds distinct from complete diameter certificates."
+        ]
+      },
+      {
+        "id": "NX26-B",
+        "title": "Curvature-aware local fibre analysis",
+        "acceptance": [
+          "Parabola target curvature equals two despite zero ambient target Hessian.",
+          "Independent parametrizations agree at regular stationary points; singular cases are refused."
+        ]
+      },
+      {
+        "id": "NX26-C",
+        "title": "Bounded nonlinear sensor repair",
+        "acceptance": [
+          "At most four variables and degree four; exact or validated witnesses.",
+          "Retain a branch ambiguity missed by finite witness coverage."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX27",
+    "title": "Target-preserving multiscale transport",
+    "depends_on": [
+      "NX08",
+      "NX09"
+    ],
+    "priority": "application-research",
+    "summary": "Certify coarse/fine commutation defects and propagate them into target-specific horizon errors. Exact closure of a mass target must be distinguished from approximate closure of coarse spatial averages.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/panels.py",
+      "src/singularity/thermal_diagnostics.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/bounds.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/uniform.py"
+    ],
+    "proposed_sources": [
+      "applications/multiscale_transport/",
+      "docs/research/MULTISCALE_TARGETS.md",
+      "results/multiscale_transport.json"
+    ],
+    "acceptance": [
+      "Four-cell rational diffusion example reproduces defect (-1/32,1/32).",
+      "Finite-horizon bounds validated against direct trajectories and box vertices under justified linear hypotheses.",
+      "Real-data-facing scale transfer keeps model/reference/measurement and target representation errors separate."
+    ],
+    "pushes": [
+      {
+        "id": "NX27-A",
+        "title": "Exact scale-transfer algebra",
+        "acceptance": [
+          "Independent cell-flux update reproduces every displayed fraction.",
+          "One-dimensional mass target closes while pair averages fail to close."
+        ]
+      },
+      {
+        "id": "NX27-B",
+        "title": "Certified scale-error transport and enrichment",
+        "acceptance": [
+          "Bounded-domain and correlated-domain errors maintain declared norms.",
+          "One added target-relevant coordinate improves a retained valid bound."
+        ]
+      },
+      {
+        "id": "NX27-C",
+        "title": "One provenance-bound physical scale pilot",
+        "acceptance": [
+          "Recover existing manifest or anonymous primary benchmark.",
+          "Freeze scalar target and report numerical-reference and measurement agreement separately."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX28",
+    "title": "Reactive transport observability",
+    "depends_on": [
+      "NX25",
+      "NX26",
+      "NX27"
+    ],
+    "priority": "application-research",
+    "summary": "Build conservative rational transport/reaction toys and prove that accurate total concentration can leave species targets structurally invisible. Design species/location/time readings before any empirical chemistry claim.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/panels.py",
+      "src/singularity/thermal_diagnostics.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/polynomial.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/linear.py"
+    ],
+    "proposed_sources": [
+      "applications/reactive_transport/",
+      "docs/research/REACTIVE_OBSERVABILITY.md",
+      "results/reactive_transport.json"
+    ],
+    "acceptance": [
+      "Independent reaction/flux update and positive conservation verify the four-state toy.",
+      "All-time total-observation blindness and species target gap (3/4)^T are exact.",
+      "Frozen sourced pilot never substitutes simulated latent species for independent target truth."
+    ],
+    "pushes": [
+      {
+        "id": "NX28-A",
+        "title": "Conservative toy and structural blindness",
+        "acceptance": [
+          "Verify HM=DH and all simplex-vertex mass balances.",
+          "Species-selective repair separates the retained same-total initial states."
+        ]
+      },
+      {
+        "id": "NX28-B",
+        "title": "Costed species/location/time panel",
+        "acceptance": [
+          "At most twelve experiments; exhaustive panel oracle.",
+          "Uncertain-rate case demonstrates nominal-rank recovery can fail robust separation."
+        ]
+      },
+      {
+        "id": "NX28-C",
+        "title": "Provenance-bound reaction/measurement pilot",
+        "acceptance": [
+          "Acquire one primary anonymous source with units and method metadata.",
+          "Freeze mechanism/domain and separate validation residuals from physical model error claims."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX29",
+    "title": "Identifiable movement-test design",
+    "depends_on": [
+      "NX08"
+    ],
+    "priority": "application-high",
+    "summary": "Choose additional movement conditions that identify a declared capability and quantify its estimation error. Maintain the distinction among structural identifiability, measurement reliability, and NFL prediction, including prior negative held-out results.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/panels.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/linear.py"
+    ],
+    "proposed_sources": [
+      "applications/movement_design/",
+      "docs/research/MOVEMENT_DESIGN.md",
+      "results/movement_design_synthetic.json"
+    ],
+    "acceptance": [
+      "Three-condition null witness and determinant-one fourth-condition repair replay exactly.",
+      "Target-specific robust repair compared with exhaustive catalogue subsets.",
+      "Frozen chronological/player-held-out pilot validates identity namespaces and reports matched-sample negative outcomes."
+    ],
+    "pushes": [
+      {
+        "id": "NX29-A",
+        "title": "Exact movement design and target witnesses",
+        "acceptance": [
+          "Direct polynomial substitution agrees with row-span and nullspace certificates.",
+          "A recoverable target is retained even when the full coefficient profile is underidentified."
+        ]
+      },
+      {
+        "id": "NX29-B",
+        "title": "Robust minimum-cost drill repair",
+        "acceptance": [
+          "At most twelve candidate conditions; compare exhaustive subsets.",
+          "Separate structural new-condition gains from repetitions under an explicit dependence model."
+        ]
+      },
+      {
+        "id": "NX29-C",
+        "title": "Frozen multi-source athlete pilot",
+        "acceptance": [
+          "Recover original manifests and verify linked identities across namespace boundaries.",
+          "Predeclare outcome and split; no athlete leakage across linked attempts."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX30",
+    "title": "Ordered movement signatures",
+    "depends_on": [
+      "NX29"
+    ],
+    "priority": "application-high",
+    "summary": "Compile exact level-two path signatures with Chen composition, preserve segmentation populations, and test whether reliable order contrasts improve a frozen task. Historical extraction stability does not imply predictive advantage.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/panels.py",
+      "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/polynomial.py"
+    ],
+    "proposed_sources": [
+      "applications/ordered_movement/",
+      "docs/research/ORDERED_MOVEMENT.md",
+      "results/ordered_movement_synthetic.json"
+    ],
+    "acceptance": [
+      "Axis-order paths have equal endpoints and opposite unit oriented areas under independent integration.",
+      "Segmentation compression preserves original identities and multiplicities and refuses unsafe current-summary merging.",
+      "Matched-channel order-insensitive and ordered baselines evaluated on identical held-out athletes."
+    ],
+    "pushes": [
+      {
+        "id": "NX30-A",
+        "title": "Exact level-two geometry and concatenation",
+        "acceptance": [
+          "Streaming and direct segment integration agree.",
+          "Associativity, translation, time augmentation and monotone reparametrization fixtures replay."
+        ]
+      },
+      {
+        "id": "NX30-B",
+        "title": "Exact segmentation populations and robust features",
+        "acceptance": [
+          "At most 1024 variants; compare full enumeration.",
+          "Overlapping attainable feature sets prevent a false robust-identification claim."
+        ]
+      },
+      {
+        "id": "NX30-C",
+        "title": "Frozen ordered-movement prediction pilot",
+        "acceptance": [
+          "Recover source hashes and verified athlete links; freeze one outcome.",
+          "Separate segmentation reliability from predictive skill and preserve negative findings."
+        ]
+      }
+    ]
+  }
+]

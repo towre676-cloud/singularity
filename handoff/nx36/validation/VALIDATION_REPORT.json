@@ -1,0 +1,34 @@
+{
+  "scope": "Planning handoff and packaged unchanged runtime baseline; NX01-NX36 implementation remains proposed",
+  "baseline_tests": {
+    "passed": 432,
+    "seconds": 90.162
+  },
+  "handoff_tool_tests": {
+    "passed": 20
+  },
+  "companion_checks": {
+    "pinned_files": 301,
+    "tests_passed": 117,
+    "additional_exact_api_cases": 3,
+    "scope": "Selected documented smoke scopes, not all companion repositories"
+  },
+  "handbook": {
+    "pages": 178,
+    "words": 55799,
+    "overfull_boxes": 0,
+    "missing_glyphs": 0,
+    "rendering": "PDF rendered and separately inspected; see PDF_VISUAL_REVIEW.md"
+  },
+  "mathematical_packet_review": [
+    "PACKET_MATH_REVIEW.md",
+    "CROSS_TRACK_REVIEW.md"
+  ],
+  "roadmap": {
+    "tracks": 36,
+    "units": 108,
+    "all_proposed": true,
+    "acyclic": true
+  },
+  "clean_extraction": "Recorded separately after final archive extraction; no result inferred here"
+}

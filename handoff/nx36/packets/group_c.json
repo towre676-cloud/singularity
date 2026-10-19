@@ -1,0 +1,272 @@
+[
+  {
+    "id": "NX13",
+    "title": "Typed operator languages",
+    "depends_on": [],
+    "priority": "P1",
+    "summary": "Extend single-space exact observability to finite typed action graphs with rectangular maps, legal-path witnesses, per-type minimal linear quotients and independently replayed graph adapters.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/terminal_moves.py",
+      "src/singularity/charges.py",
+      "src/singularity/separator_compiler.py",
+      "tests/test_observability.py",
+      "tests/test_terminal_moves.py",
+      "docs/research/ORDERED_CONTEXTS.md"
+    ],
+    "proposed_sources": [
+      "src/singularity/typed_observability.py",
+      "tests/test_typed_observability.py",
+      "scripts/typed_contexts.py",
+      "results/typed_contexts.json",
+      "docs/research/TYPED_OBSERVABILITY.md"
+    ],
+    "acceptance": [
+      "Finite declared type grammar genuinely closes at fixed budget.",
+      "Certify L_b=A_b B_b and B_target M_a=T_a B_source with actual legal experiment witnesses.",
+      "Compare all short legal graph paths against direct assembled-graph height enumeration.",
+      "Verify cheapest exact witnesses separately from robust margin optimization."
+    ],
+    "pushes": [
+      {
+        "id": "NX13-A",
+        "title": "Typed algebra contract",
+        "acceptance": "Prove typed closure, quotient invariance and linear minimality; test exact rectangular fixture, empty outputs, malformed dimensions and illegal paths."
+      },
+      {
+        "id": "NX13-B",
+        "title": "Graph adapters",
+        "acceptance": "Compile a finite boundary grammar and independently enumerate actual graphs for every retained short legal path, including noncommuting order and duplicate-edge rejection."
+      },
+      {
+        "id": "NX13-C",
+        "title": "Certificates and costs",
+        "acceptance": "Replay portable identities without compiler invocation and compare cheapest witnesses with bounded exhaustive legal-path search, including rank-zero types and chronology tampering."
+      }
+    ]
+  },
+  {
+    "id": "NX14",
+    "title": "Parameter-wide observable modules",
+    "depends_on": [],
+    "priority": "P1",
+    "summary": "Extend existing Q[q] observation modules beyond current budgets, with exact rank strata, denominator guards, module-generation certificates and resource-aware exceptional-parameter classification.",
+    "existing_sources": [
+      "src/singularity/parametric.py",
+      "src/singularity/observability.py",
+      "src/singularity/graph_experiments.py",
+      "tests/test_parametric.py",
+      "docs/research/PARAMETRIC_OBSERVABILITY.md",
+      "results/parametric_observability.json"
+    ],
+    "proposed_sources": [
+      "docs/research/PARAMETER_MODULE_CERTIFICATES.md",
+      "scripts/parameter_module_receipts.py",
+      "results/parameter_module_receipts.json",
+      "tests/test_parameter_module_receipts.py"
+    ],
+    "acceptance": [
+      "Preserve distinction between generic rank and complete polynomial observation module.",
+      "Reproduce false and true q=1/2 exceptional examples independently.",
+      "Attempt next budget under explicit degree, bit, step and time limits; incomplete factorization is explicit.",
+      "Provide exact roots/ranks and bases on certified parameter regions; sampling alone is insufficient."
+    ],
+    "pushes": [
+      {
+        "id": "NX14-A",
+        "title": "Resource-bounded module certificates",
+        "acceptance": "Implement strict receipt states, replay module/divisor identities and tamper tests; compare tiny explicit-word minors with independent polynomial arithmetic."
+      },
+      {
+        "id": "NX14-B",
+        "title": "Next graph budgets",
+        "acceptance": "Attempt R=5 first with logged resource bounds; compare rational specializations with exact closure and report any refusal without a false interval theorem."
+      },
+      {
+        "id": "NX14-C",
+        "title": "Parameter atlas and explanation",
+        "acceptance": "Produce certified parameter-cell bases and exceptional ranks, plus a bounded rational-function example with explicit pole guards and independent specialization checks."
+      }
+    ]
+  },
+  {
+    "id": "NX15",
+    "title": "Graph-realizable invisible directions",
+    "depends_on": [],
+    "priority": "P2",
+    "summary": "Search actual two-terminal graph pairs constrained by degree, slice and charge compatibility, distinguishing formal null vectors from realizations and bounded exclusions from full-series theorems.",
+    "existing_sources": [
+      "src/singularity/contexts.py",
+      "src/singularity/terminals.py",
+      "src/singularity/charges.py",
+      "src/singularity/separator_compiler.py",
+      "src/singularity/population.py",
+      "tests/test_contexts.py",
+      "docs/chapters/10_inverse_problems.md"
+    ],
+    "proposed_sources": [
+      "scripts/realizable_interfaces.py",
+      "tests/test_realizable_interfaces.py",
+      "results/realizable_interfaces.json",
+      "docs/research/REALIZABLE_INTERFACES.md"
+    ],
+    "acceptance": [
+      "Retain rational-parameter interpolation and exact context-language hypotheses.",
+      "Reproduce R=38 and R=11 as candidate frontiers only.",
+      "Verify filters never discard a valid tiny pair, and preserve labeled height multiplicities.",
+      "Return a fully checked graph pair or a complete explicitly bounded exclusion with population completeness evidence."
+    ],
+    "pushes": [
+      {
+        "id": "NX15-A",
+        "title": "Realization specification and filters",
+        "acceptance": "Reproduce frontier vectors and slice restrictions; validate degree/charge filters against direct tiny graph kernels."
+      },
+      {
+        "id": "NX15-B",
+        "title": "Complete bounded families",
+        "acceptance": "Exhaust at least two declared bounded structural families, independently check constructor completeness and surviving kernels, and record every bound and resource limit."
+      },
+      {
+        "id": "NX15-C",
+        "title": "Witness or rigidity advance",
+        "acceptance": "Exhibit an actual full truncated-kernel witness and glued-observation checks, or prove a new stated structural exclusion; never turn finite agreement into full-series equality."
+      }
+    ]
+  },
+  {
+    "id": "NX16",
+    "title": "Incremental connected-support compilation",
+    "depends_on": [],
+    "priority": "P0",
+    "summary": "Compile exact local changes to nonnegative integral weighted graph energies using union-graph supports, ambient-degree-aware cache invalidation and independent full-recompilation checks.",
+    "existing_sources": [
+      "src/singularity/locality.py",
+      "src/singularity/weighted.py",
+      "src/singularity/charges.py",
+      "tests/test_locality.py",
+      "tests/test_charges.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/incremental_locality.py",
+      "scripts/incremental_locality.py",
+      "tests/test_incremental_locality.py",
+      "results/incremental_locality.json",
+      "docs/research/INCREMENTAL_LOCALITY.md"
+    ],
+    "acceptance": [
+      "Use the union of old/new support graphs for insertion/deletion completeness.",
+      "Invalidate every support touching changed endpoints, including singleton ambient-degree changes.",
+      "Verify weighted nonnegative energy and ordinary integral q exponents with zero edges represented as absence.",
+      "Compare sequential/reversed edits to independent composition enumeration and report setup-inclusive bit/runtime costs."
+    ],
+    "pushes": [
+      {
+        "id": "NX16-A",
+        "title": "Weighted locality contract",
+        "acceptance": "Prove the union-support difference identity, implement nonnegative integral weight changes and reproduce the exact two-vertex coefficient/log example."
+      },
+      {
+        "id": "NX16-B",
+        "title": "Incremental cache and updates",
+        "acceptance": "Check all small edge edits, sequential edits, reversal, pinning changes, stale patches and cross-graph cache isolation against full recompilation and direct energy enumeration."
+      },
+      {
+        "id": "NX16-C",
+        "title": "Scaling and reusable receipts",
+        "acceptance": "Demonstrate exact bounded-degree local reuse at fixed budget; report updated supports, polynomial operations, coefficient bits, setup cost and replay time separately."
+      }
+    ]
+  },
+  {
+    "id": "NX17",
+    "title": "Low-rank physical fault transport",
+    "depends_on": [],
+    "priority": "P0",
+    "summary": "Reuse a nominal discrete thermal resolvent across rank-one bond removals and small multi-fault corrections, preserving fault identity, source provenance, finite-horizon exactness and uncertainty contracts.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "scripts/thermal_diagnostics.py",
+      "tests/test_thermal_diagnostics.py",
+      "applications/thermal_diagnostics/source_fixture.json",
+      "applications/thermal_diagnostics/dynacomp_plate_source.py.txt",
+      "docs/research/THERMAL_DIAGNOSTICS.md"
+    ],
+    "proposed_sources": [
+      "src/singularity/fault_transport.py",
+      "scripts/fault_transport.py",
+      "tests/test_fault_transport.py",
+      "results/fault_transport.json",
+      "docs/research/FAULT_TRANSPORT.md"
+    ],
+    "acceptance": [
+      "Use A_fault=A_nominal+delta*b*b^T for removed nonnegative conductance.",
+      "Check rank-one and Woodbury formulas against independent neighbor-flux updates and direct sparse powers.",
+      "Preserve row sums, candidate identities, source-derived units and finite-horizon uncertainty boundaries.",
+      "Benchmark all 264 plate bonds with setup, coefficient-bit and memory costs, without presupposing speedup."
+    ],
+    "pushes": [
+      {
+        "id": "NX17-A",
+        "title": "Exact rank-one contract",
+        "acceptance": "Reproduce two-node transfer cancellation, partial/zero blockage, bond reversal and source sign/row-sum checks using independent flux and power oracles."
+      },
+      {
+        "id": "NX17-B",
+        "title": "Multi-fault and protocol reuse",
+        "acceptance": "Check every pair in a small catalogue at multiple severities, arbitrary short input words and nonzero initial states; reject impossible removal severities."
+      },
+      {
+        "id": "NX17-C",
+        "title": "Full plate population benchmark",
+        "acceptance": "Cover all 264 bonds at a declared horizon, independently verify selected outputs and reflected blindness, and report setup-inclusive break-even count, bits and runtime."
+      }
+    ]
+  },
+  {
+    "id": "NX18",
+    "title": "Recovery conditioning and bit complexity",
+    "depends_on": [],
+    "priority": "P1",
+    "summary": "Quantify exact inverse noise amplification, target-specific recovery, finite-difference cancellation and encoded bit growth across delayed, weighted and charge-based interface recovery.",
+    "existing_sources": [
+      "src/singularity/contexts.py",
+      "src/singularity/charges.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/robust_search.py",
+      "tests/test_charges.py",
+      "docs/research/ROBUST_SEARCH.md",
+      "docs/research/ORDERED_CONTEXTS.md"
+    ],
+    "proposed_sources": [
+      "src/singularity/recovery_metrics.py",
+      "scripts/recovery_metrics.py",
+      "tests/test_recovery_metrics.py",
+      "results/recovery_metrics.json",
+      "docs/research/RECOVERY_METRICS.md"
+    ],
+    "acceptance": [
+      "Verify exact left-inverse identities and componentwise box-noise bounds.",
+      "Separate physical noise from rescaling/postprocessing noise and exact-rank pruning from robust optimization.",
+      "Compare probe count, volume, cost, amplification and encoded bits on equal declared targets.",
+      "Certify one target-error design optimum and any parameter-wide bounds, without inferring interval results from samples."
+    ],
+    "pushes": [
+      {
+        "id": "NX18-A",
+        "title": "Exact amplification contract",
+        "acceptance": "Prove and implement inverse error bounds, attain 32epsilon/33epsilon tiny-example bounds by box vertices, and retain dependent-row robust and rescaling counterexamples."
+      },
+      {
+        "id": "NX18-B",
+        "title": "Recovery family comparison",
+        "acceptance": "Compare finite differences, weighted restoration and charge charts against direct tiny graph kernels with complete volume/cost/noise/bit accounting."
+      },
+      {
+        "id": "NX18-C",
+        "title": "Certified target design",
+        "acceptance": "Certify the least-cost design from a bounded menu satisfying target error; replay rational primal/dual witnesses and compact-interval bounds independently."
+      }
+    ]
+  }
+]

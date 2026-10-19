@@ -1,0 +1,286 @@
+[
+  {
+    "id": "NX01",
+    "title": "Candidate-specific uncertainty",
+    "depends_on": [],
+    "priority": "A1 \u2014 first implementation batch",
+    "summary": "Use the candidate-specific radii already computed by protocol_pool to solve and decode heterogeneous closed-box experiment panels with an exact weighted-cover certificate.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "tests/test_thermal_diagnostics.py",
+      "docs/research/THERMAL_DIAGNOSTICS.md",
+      "tests/test_panels.py",
+      "scripts/thermal_diagnostics.py",
+      "src/singularity/robust_search.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/candidate_boxes.py",
+      "tests/test_candidate_boxes.py",
+      "docs/research/CANDIDATE_BOXES.md",
+      "scripts/candidate_box_thermal.py",
+      "results/candidate_box_thermal.json"
+    ],
+    "acceptance": [
+      "Strict heterogeneous interval separation including zero-radius and touching-endpoint cases is proved and checked.",
+      "Production optimum agrees with separate direct-interval exhaustive and cover-state oracles on bounded fixtures.",
+      "Original thermal centers/radii and common-envelope incumbent are preserved; a cost improvement is not required."
+    ],
+    "pushes": [
+      {
+        "id": "NX01-A",
+        "title": "Contract and heterogeneous geometry",
+        "acceptance": "Validated radii matrix, masks, decoder and ambiguity witnesses match independent interval checks."
+      },
+      {
+        "id": "NX01-B",
+        "title": "Exact optimization and dual comparison",
+        "acceptance": "Bounded exact solver matches independent subset and cover-state optimum on tiny pools."
+      },
+      {
+        "id": "NX01-C",
+        "title": "Thermal integration and retained result",
+        "acceptance": "Unchanged source-derived pool has a retained, independently checked heterogeneous optimum or explicit incomplete status."
+      }
+    ]
+  },
+  {
+    "id": "NX02",
+    "title": "Correlated observation geometry",
+    "depends_on": [
+      "NX01"
+    ],
+    "priority": "A2 \u2014 after scalar uncertainty contract",
+    "summary": "Retain persistent nuisance generators across panel readings and certify pair separation or overlap through exact rational joint-set witnesses.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "tests/test_thermal_diagnostics.py",
+      "docs/research/THERMAL_DIAGNOSTICS.md",
+      "src/singularity/experiment_design.py",
+      "tests/test_panels.py",
+      "docs/research/PANELS.md"
+    ],
+    "proposed_sources": [
+      "src/singularity/joint_uncertainty.py",
+      "tests/test_joint_uncertainty.py",
+      "docs/research/JOINT_UNCERTAINTY.md",
+      "scripts/joint_thermal.py",
+      "results/joint_thermal.json"
+    ],
+    "acceptance": [
+      "Joint-set projection and support inequalities preserve generator provenance and exact/enclosure status.",
+      "Overlap or strict separating witnesses replay with rational arithmetic; complete tiny feasibility is independently compared.",
+      "Finite-panel optimization treats joint separation directly rather than pretending it is scalar pair coverage."
+    ],
+    "pushes": [
+      {
+        "id": "NX02-A",
+        "title": "Joint sets and rational witness checker",
+        "acceptance": "Exact support and primal/contrast certificates pass independent tiny algebraic checks."
+      },
+      {
+        "id": "NX02-B",
+        "title": "Complete small-panel optimizer",
+        "acceptance": "Bounded full-subset search and independent polytope oracle agree in feasibility and cost."
+      },
+      {
+        "id": "NX02-C",
+        "title": "Persistent thermal nuisance pilot",
+        "acceptance": "Source-derived centers and justified persistent-error generators support retained box-versus-joint comparisons."
+      }
+    ]
+  },
+  {
+    "id": "NX03",
+    "title": "Whole populations of faults",
+    "depends_on": [
+      "NX01"
+    ],
+    "priority": "A1 \u2014 first population expansion",
+    "summary": "Count, rank, reconstruct and diagnose the original constrained bond-fault masks, beginning with twelve bonds and at most two faults, exactly 79 configurations.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "tests/test_thermal_diagnostics.py",
+      "docs/research/THERMAL_DIAGNOSTICS.md",
+      "src/singularity/population.py",
+      "applications/thermal_diagnostics/source_fixture.json",
+      "scripts/thermal_diagnostics.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/fault_population.py",
+      "tests/test_fault_population.py",
+      "docs/research/FAULT_POPULATIONS.md",
+      "scripts/fault_population_diagnostics.py",
+      "results/fault_population_diagnostics.json"
+    ],
+    "acceptance": [
+      "Completion counts and all tiny rank/unrank inverses agree with direct Boolean enumeration.",
+      "Arbitrary declared bond removals preserve the physical stencil and match an independent flux oracle.",
+      "All 79 original IDs and multiplicities survive diagnosis, with honest exact-optimum or budget-limited status."
+    ],
+    "pushes": [
+      {
+        "id": "NX03-A",
+        "title": "Exact constrained mask population",
+        "acceptance": "Boolean populations, constraints, count/rank/unrank and conditioning match exhaustive originals."
+      },
+      {
+        "id": "NX03-B",
+        "title": "Physical candidate compilation",
+        "acceptance": "All tiny defect matrices and trajectories match independent undirected flux evolution."
+      },
+      {
+        "id": "NX03-C",
+        "title": "Seventy-nine-configuration diagnosis",
+        "acceptance": "Retained exact population, readings, bounds, coverage and solver status preserve every original mask."
+      }
+    ]
+  },
+  {
+    "id": "NX04",
+    "title": "Continuous severity and calibration freedom",
+    "depends_on": [
+      "NX03",
+      "NX02"
+    ],
+    "priority": "B1 \u2014 certified continuum frontier",
+    "summary": "Replace fully blocked point hypotheses by severity and calibration families, allowing independent nuisance values under competing worlds and retaining exact overlap or separation evidence.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "tests/test_thermal_diagnostics.py",
+      "docs/research/THERMAL_DIAGNOSTICS.md",
+      "src/singularity/parameters.py",
+      "src/singularity/parametric.py",
+      "applications/thermal_diagnostics/source_fixture.json"
+    ],
+    "proposed_sources": [
+      "src/singularity/thermal_parameters.py",
+      "tests/test_thermal_parameters.py",
+      "docs/research/THERMAL_PARAMETERS.md",
+      "scripts/thermal_severity.py",
+      "results/thermal_severity.json"
+    ],
+    "acceptance": [
+      "Severity zero/one endpoints and rational intermediate samples match independent flux assembly.",
+      "Full-domain proofs or validated covers distinguish strict separation, overlap and unresolved cells.",
+      "Detectable-severity claims retain positive lower thresholds, source assumptions and calibration freedom."
+    ],
+    "pushes": [
+      {
+        "id": "NX04-A",
+        "title": "Family semantics and exact sample oracle",
+        "acceptance": "Parameter admissibility, severity conventions and exact sample trajectories are independently verified."
+      },
+      {
+        "id": "NX04-B",
+        "title": "Certified small-domain separation",
+        "acceptance": "Complete tiny-domain cover, analytic example and overlap witness replay independently."
+      },
+      {
+        "id": "NX04-C",
+        "title": "Location/severity frontier pilot",
+        "acceptance": "Declared small location family has certified separation bands, ambiguity strata and explicit unresolved cells."
+      }
+    ]
+  },
+  {
+    "id": "NX05",
+    "title": "Adaptive experiments with resets",
+    "depends_on": [
+      "NX01",
+      "NX03"
+    ],
+    "priority": "B1 \u2014 after robust finite population",
+    "summary": "Construct globally cheapest worst-case reset decision trees from exact interval observation cells under memoryless adversarial errors.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "tests/test_thermal_diagnostics.py",
+      "docs/research/THERMAL_DIAGNOSTICS.md",
+      "src/singularity/robust_search.py",
+      "docs/research/PANELS.md",
+      "tests/test_panels.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/reset_policies.py",
+      "tests/test_reset_policies.py",
+      "docs/research/RESET_POLICIES.md",
+      "scripts/adaptive_thermal.py",
+      "results/adaptive_thermal.json"
+    ],
+    "acceptance": [
+      "Continuous readings are partitioned into exact endpoint and open-interval membership cells.",
+      "Proper Bellman policies and bounded independent tree enumeration agree on every retained tiny case.",
+      "Thermal static/adaptive costs use identical contracts and expose worst-case branches and unresolved search bounds."
+    ],
+    "pushes": [
+      {
+        "id": "NX05-A",
+        "title": "Exact observation-cell compiler",
+        "acceptance": "Endpoint, point, nested and open-cell memberships match direct inequality checks."
+      },
+      {
+        "id": "NX05-B",
+        "title": "Bellman solver and independent tree oracle",
+        "acceptance": "The exact two-versus-three fixture and tiny exhaustive policy comparisons agree."
+      },
+      {
+        "id": "NX05-C",
+        "title": "Reset thermal policy comparison",
+        "acceptance": "Retained robust thermal policies have complete branch replay and fair static-panel comparisons."
+      }
+    ]
+  },
+  {
+    "id": "NX06",
+    "title": "Experiments with shared physical history",
+    "depends_on": [
+      "NX05",
+      "NX02",
+      "NX03"
+    ],
+    "priority": "B2 \u2014 stateful control and diagnosis",
+    "summary": "Retain original targets, current state and persistent nuisance through controls, intermediate observations and destructive resets; begin with exact tiny history semantics.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "tests/test_thermal_diagnostics.py",
+      "docs/research/THERMAL_DIAGNOSTICS.md",
+      "src/singularity/robust_search.py",
+      "tests/test_thermal_diagnostics.py",
+      "src/singularity/observability.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/history_experiments.py",
+      "tests/test_history_experiments.py",
+      "docs/research/HISTORY_EXPERIMENTS.md",
+      "scripts/history_thermal.py",
+      "results/history_thermal.json"
+    ],
+    "acceptance": [
+      "Destructive actions never erase the original target identity from the belief.",
+      "Exact small affine shared-history conditioning matches independent substitution and rational witness replay.",
+      "Thermal schedules match flux trajectories and account fairly for resets, observations, shared state and persistent nuisance."
+    ],
+    "pushes": [
+      {
+        "id": "NX06-A",
+        "title": "Exact finite-history semantics",
+        "acceptance": "Belief updates and legality agree with exhaustive histories, including observe-before-erase counterexamples."
+      },
+      {
+        "id": "NX06-B",
+        "title": "Bounded exact affine conditioning",
+        "acceptance": "Shared-gain two-slope identification and final-only ambiguity are certified with retained history variables."
+      },
+      {
+        "id": "NX06-C",
+        "title": "Shared-history thermal pilot",
+        "acceptance": "Short small-plate histories have independently checked centers, uncertainty semantics and complete cost accounting."
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perfectpower"
+version = "0.10.2"
+description = "Exact classification, complete enumeration and Lean certificates for perfect-power values of polynomials"
+readme = "python/README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = []          # standard library only
+
+[project.optional-dependencies]
+differential = ["sympy>=1.14,<1.15"]
+test = ["pytest>=8"]
+industrial = ["z3-solver==5.1.0.0"]
+planning-benchmark = ["ortools==9.15.6755"]
+analytic = ["numpy>=1.23", "scipy>=1.9"]
+intervals = ["python-flint>=0.9,<0.10", "numpy>=1.23", "scipy>=1.9", "sympy>=1.12"]
+research = ["z3-solver==5.1.0.0", "python-flint>=0.9,<0.10", "numpy>=1.23", "scipy>=1.9", "sympy>=1.12"]
+
+[project.scripts]
+perfectpower = "perfectpower.__main__:main"
+perfectpower-blast = "perfectpower.blast_cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "python" }
+packages = ["perfectpower"]
+
+[tool.setuptools.package-data]
+perfectpower = ["blast_data/*.html"]

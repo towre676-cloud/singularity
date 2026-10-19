@@ -2,6 +2,10 @@
 
 You are developing an exact mathematical research project, with working code and a substantial manuscript. The task is to advance the existing 36-push program with reviewable evidence. Read this file before changing code. Start with `handoff/START_HERE.md`, then follow `handoff/CLAUDE_START_PROMPT.md` and `handoff/SESSION_PROTOCOL.md`.
 
+## Current NX expansion scope
+
+The original P01-P36 and OE01-OE14 programs are complete at the supplied v0.4.0 baseline. For the new 36-track expansion, start with `handoff/nx36/START_HERE.md` and `handoff/nx36/CLAUDE_START_PROMPT.md`, then run `python handoff/nx36/tools/handoff.py verify` and `next --limit 3`. Its separate ledger has 108 proposed acceptance units; the first recommended session is NX01-A/B/C. Preserve the original ledgers and apply the bounded-session, mathematical and release contracts below. A handoff design is not an accepted implementation.
+
 ## Authority and working mode
 
 The user has authorized continued implementation, mathematical expansion, commits and pushes to `https://github.com/towre676-cloud/singularity`. Proceed within that scope without asking for routine confirmation. The primary session integrates and commits accepted work; delegated agents write only their assigned files and leave integration to the primary session. This is the meaning of the ownership paragraph in `PROJECT_CONTRACT.md`, which originated during the initial coordinated build. A research push is an acceptance unit, not a synonym for one Git commit or network push.

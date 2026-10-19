@@ -1,0 +1,17 @@
+{
+  "schema": "singularity.nx-baseline/1",
+  "repository": "https://github.com/towre676-cloud/singularity",
+  "published_commit": "438ed423d7d389a1a483c61e0b50eca6a9fc0827",
+  "tree": "47a88f7b9ebf4fc24bf2c8cf589ebd9ed3ab87b0",
+  "baseline_version": "0.4.0",
+  "core_test_check": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -q",
+    "tests": 432,
+    "exit_code": 0,
+    "seconds": 90.162,
+    "scope": "Existing baseline executable source before handoff-only edits"
+  },
+  "remote_ci": "Not used as a substitute for the local handoff checks; publication status must be checked separately",
+  "nx_implementation_status": "All 36 tracks and 108 units proposed",
+  "baseline_pdf": "output/pdf/monograph.pdf"
+}

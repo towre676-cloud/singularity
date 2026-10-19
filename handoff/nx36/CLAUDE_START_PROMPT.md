@@ -1,0 +1,19 @@
+# Paste this into Claude Code
+
+You are continuing Singularity using the complete NX36 handoff. Work from the repository root. Read `CLAUDE.md`, `handoff/nx36/START_HERE.md`, and `handoff/nx36/architecture/PROGRAM_DESIGN.md`; run the new handoff CLI `verify`, `status`, and `next`. The old P01-P36 and OE01-OE14 programs are completed at the supplied release baseline. Preserve their evidence. NX01-NX36 are new proposed expansion tracks with 108 acceptance units; they have not been implemented merely because their packets exist.
+
+Inspect the working tree and remote before editing, preserve unrelated changes, and integrate any newer compatible main work. The frozen reference is main `438ed423d7d389a1a483c61e0b50eca6a9fc0827`; do not reset a newer checkout to it. Run the core baseline suite. Use the bundle only for offline recovery, following its guide.
+
+Begin with NX01-A/B/C unless a newer accepted checkpoint makes another unit dependency-ready. Read the complete packet and actual source before implementing. The thermal records already contain candidate-specific error bounds; reuse them. Build the exact heterogeneous scalar layer and independently check a finite-pool optimum. Keep reset semantics, strict separation, original candidate identities, rational costs, and measurement units explicit.
+
+Use at most three accepted NX units in one bounded session unless I explicitly give a wider implementation scope. A research push is an acceptance unit, not one Git commit. Complete the proof or exact finite result, implementation, independent checks, retained evidence, manuscript update, and release/checkpoint needed by the selected scope. Commit and push compatible completed work without asking routine permission. Never force-push or discard another contributor's changes.
+
+Reuse the pinned PerfectJet, PerfectPower, and DynaComp reference engines before creating a competing implementation. Inspect `COMPANION_SOURCES.json`: selected companion source is not a promise that every external runtime asset is present. In particular, PerfectPower already has differential-observable algorithms; NX31 should adapt them, then add target transport. DynaComp already has stability, correlated bounds, reduction, and recurrence machinery; new tracks integrate them into experiment selection.
+
+Read the packet's hypotheses literally. Keep formal interface vectors separate from graph-realizable kernels, fixed-budget results separate from full-series results, scalar box panels separate from joint correlated sets, fixed parameters separate from adversarial switching, and finite candidate recognition separate from arbitrary fault discovery. Preserve the negative held-out scouting evidence and distinguish synthetic pilots from archive or physical measurements.
+
+Use the exact standard-library core when sufficient. Optional heavy solvers need a concrete purpose, bounded work, and an explicit trust/dependency record. Estimate state spaces before enumeration. Return exact refusals or bounded unresolved intervals when resources are exhausted. Do not turn failed proof routes into negative mathematical theorems.
+
+Update only the NX progress records relevant to accepted work. Each completed unit needs a concrete summary, existing evidence artifacts, checks actually run with scope, mathematical status, and a commit. A metadata validator cannot establish that a proof or physical model is true; supply the actual argument and independent comparison required by the packet. Keep proposed branches visibly proposed.
+
+Finish with the accepted IDs and exact result, what changed and why, validation, commit and verified remote state, a complete packaged ZIP, the readable monograph/handbook link, and the next ready unit. The output should be understandable in plain words as well as formally specified in the documents.

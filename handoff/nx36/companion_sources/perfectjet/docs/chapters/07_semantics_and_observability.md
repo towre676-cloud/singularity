@@ -1,0 +1,11 @@
+# Semantics and target-relative observability
+
+SOE starts with $\pi:I\to S$ and legal fibres $\pi^{-1}(s)\cap L$. An implementation may be selected afterward by cost. Future equivalence identifies states that yield identical behavior under every finite permitted action word. For partial actions, whether a word is defined is part of behavior. The executable finite Moore-machine quotient supplies shortest distinguishing words via pair BFS, checks observation and transition preservation, and returns the exact equivalence blocks. It is Python mathematics, not a newly imported Lean theorem.
+
+The historical Lean result `SOESemantics.quotient_complete` and324 two-state examples are documented upstream. The specialized generator used Fin2 and saved witnesses; general Python refinement was tested rather than universally formally verified. Historical adaptive diagnosis required two probes versus three in every fixed schedule for a retained example. The game bridge reported14->7 and68->34 phase/symbolic models; those are declared abstractions, not complete original games.
+
+For linear dynamics, the observable row space is $\mathrm{span}\{\mathrm{rows}(CA^k):k\ge0\}$. Its annihilator is $\bigcap_k\ker(CA^k)$. Exact target recovery is $\ker\mathcal O\subseteq\ker G\iff G=L\mathcal O$. The rational implementation returns a hidden vector with nonzero target response on failure. Delay observations add rows C,CA,...; nonlinear delay sufficiency needs separate assumptions.
+
+For quadratic target $T=g^Tx+\tfrac12x^TQx$ on fibre $x_0+\mathrm{im}N$, symmetric Q, constancy is equivalent to $N^T(g+Qx_0)=0$ and $N^TQN=0$. Linear sensitivity and hidden curvature are different obstructions. New sensors repair exactly when $\ker(H_{new}N)\subseteq\ker(GN)$. Repeated copies of the same row may reduce noise without repairing the nullspace.
+
+A representation is relative to its question family. Enlarging Q refines equivalence. Joint coordinates $(q_1,q_2)$ preserve both question families, after which redundancy can be removed. The proposed preservation profile records exact questions, bounded questions, error, domain, and cost. This is a mathematical interface, not a universal scalar compression score.

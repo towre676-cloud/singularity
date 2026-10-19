@@ -1,0 +1,337 @@
+[
+  {
+    "id": "NX07",
+    "title": "Purchase the intervention language",
+    "depends_on": [
+      "NX01",
+      "NX03"
+    ],
+    "priority": "immediate",
+    "summary": "Choose sensors and actuators jointly with repeated diagnostic panels, retaining all-word blindness proofs and installation/runtime accounting.",
+    "existing_sources": [
+      "src/singularity/panels.py",
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/observability.py",
+      "DynaComp:src/dynacomp/thermal.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/language_design.py",
+      "tests/test_language_design.py",
+      "scripts/language_design.py",
+      "docs/research/LANGUAGE_DESIGN.md"
+    ],
+    "acceptance": [
+      "Exact finite installation-plus-panel optimum under a declared capability catalogue and target map.",
+      "Old-language symmetry blindness and actual new-language distinguishing witnesses.",
+      "Independent exhaustive tiny oracle, source-bound thermal replay, setup/deployment frontier and explicit resource limits."
+    ],
+    "pushes": [
+      {
+        "id": "NX07-A",
+        "title": "Catalogue semantics and exact activation objective",
+        "acceptance": [
+          "Validated capability requirements and exact installation/runtime costs.",
+          "Three-candidate tied-optimum example plus target coarsening.",
+          "Independent exhaustive capability/panel subset oracle."
+        ]
+      },
+      {
+        "id": "NX07-B",
+        "title": "Symmetry-aware thermal capability catalogue",
+        "acceptance": [
+          "At most eight declared sensor/heater capabilities on a small synthetic plate.",
+          "Old all-word blindness certificate and real separating protocol after installation.",
+          "Independent flux replay and deployment counts 1,2,10,100."
+        ]
+      },
+      {
+        "id": "NX07-C",
+        "title": "Expanded-population optimization and release evidence",
+        "acceptance": [
+          "Bounded expanded fault population preserving original fault IDs.",
+          "Certified installation/per-diagnosis Pareto frontier.",
+          "Independent coverage/cost replay, manuscript and complete release archive."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX08",
+    "title": "Stable target recovery",
+    "depends_on": [],
+    "priority": "high",
+    "summary": "Compute target-specific recovery conditioning after admissible constraints, with exact kernel, decoder and positive-semidefinite certificates.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/thermal_diagnostics.py",
+      "DynaComp:src/dynacomp/rational.py",
+      "DynaComp:src/dynacomp/stability.py",
+      "DynaComp:src/dynacomp/linear.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/target_recovery.py",
+      "tests/test_target_recovery.py",
+      "scripts/target_recovery.py",
+      "docs/research/TARGET_RECOVERY.md"
+    ],
+    "acceptance": [
+      "Admissible-subspace target identifiability with hidden-target counterwitnesses.",
+      "Exact PSD upper certificates and attained rational lower witnesses for amplification.",
+      "Independent singular/zero cases, bounded sensor frontier and explicit units."
+    ],
+    "pushes": [
+      {
+        "id": "NX08-A",
+        "title": "Kernel and exact bound semantics",
+        "acceptance": [
+          "Validated admissible basis and target row-space/decoder identities.",
+          "PSD certificates with zero pivots and all tiny examples.",
+          "Independent tiny PSD oracle and tamper rejection."
+        ]
+      },
+      {
+        "id": "NX08-B",
+        "title": "Sensor-layout optimization",
+        "acceptance": [
+          "Minimum-cost bounded sensor catalogue meeting a target amplification ceiling.",
+          "Equal-rank but differently conditioned examples.",
+          "Independent exhaustive catalogue optimum."
+        ]
+      },
+      {
+        "id": "NX08-C",
+        "title": "Forecast and model integration",
+        "acceptance": [
+          "One small thermal target and one synthetic forecast target.",
+          "Adversarial error witnesses and source/units binding.",
+          "Clear distinction between exact linear claims and future nonlinear/calibrated work."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX09",
+    "title": "Joint experiment, rank, and precision selection",
+    "depends_on": [
+      "NX01",
+      "NX08"
+    ],
+    "priority": "high",
+    "summary": "Integrate existing model-reduction and specified execution-error certificates into an exact finite evaluator/experiment decision with shared setup costs.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/panels.py",
+      "DynaComp:src/dynacomp/uniform.py",
+      "DynaComp:src/dynacomp/validated.py",
+      "DynaComp:src/dynacomp/machine.py",
+      "DynaComp:src/dynacomp/native.py",
+      "DynaComp:src/dynacomp/engineering.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/fidelity_design.py",
+      "tests/test_fidelity_design.py",
+      "scripts/fidelity_design.py",
+      "docs/research/FIDELITY_DESIGN.md"
+    ],
+    "acceptance": [
+      "Typed output-unit error composition binding source/domain/horizon/protocol.",
+      "Finite menu restricted to genuinely certified evaluator arithmetic.",
+      "Setup-inclusive optimum and independent full rational model checks."
+    ],
+    "pushes": [
+      {
+        "id": "NX09-A",
+        "title": "Typed error and cost composition",
+        "acceptance": [
+          "Validated finite evaluator menu and source-bound reading intervals.",
+          "Tiny cheap-evaluator versus changed-experiment example.",
+          "Exhaustive evaluator/panel oracle and stale-domain rejection."
+        ]
+      },
+      {
+        "id": "NX09-B",
+        "title": "Source-pinned DynaComp evaluator adapter",
+        "acceptance": [
+          "Two actual ranks and supported exact/binary64 protocols for a small thermal family.",
+          "Replayable upstream reduction/execution evidence.",
+          "Independent rational trajectories contained in every claimed bound."
+        ]
+      },
+      {
+        "id": "NX09-C",
+        "title": "Setup-inclusive optimal diagnostic plan",
+        "acceptance": [
+          "Selected physical experiment, fidelity and arithmetic with certified separation.",
+          "Comparison with full-exact and uniform-rank baselines.",
+          "Setup/run accounting, measured timings and explicit break-even."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX10",
+    "title": "All-horizon stopping certificates",
+    "depends_on": [],
+    "priority": "high",
+    "summary": "Use stable response tails and error contracts to certify useful horizons, late-time impossibility or an epsilon-optimal limit for fixed protocol families.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/robust_search.py",
+      "tests/test_path_margin.py",
+      "DynaComp:src/dynacomp/stability.py",
+      "DynaComp:src/dynacomp/forever.py",
+      "DynaComp:src/dynacomp/fastforward.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/horizon_design.py",
+      "tests/test_horizon_design.py",
+      "scripts/horizon_design.py",
+      "docs/research/HORIZON_DESIGN.md"
+    ],
+    "acceptance": [
+      "Correct steady-state and contraction certificates with squared-gamma convention.",
+      "Exact prefix plus uniform tail proves only the declared fixed-input/repeated-block conclusion.",
+      "Finite optimum, late-time no-separation and unattained-supremum examples independently checked."
+    ],
+    "pushes": [
+      {
+        "id": "NX10-A",
+        "title": "Pair-tail theorem and replay",
+        "acceptance": [
+          "Constant-input source-bound response-tail certificates.",
+          "Two exact scalar examples and nonnormal/marginal cases.",
+          "Independent closed-form/matrix-power checks and metric tamper rejection."
+        ]
+      },
+      {
+        "id": "NX10-B",
+        "title": "All-horizon decision integration",
+        "acceptance": [
+          "Checked prefix plus valid future upper/lower bounds.",
+          "One global finite optimum and one late-time impossibility.",
+          "Epsilon-optimal unattained-limit case without false attainment claim."
+        ]
+      },
+      {
+        "id": "NX10-C",
+        "title": "Thermal and repeated-block demonstration",
+        "acceptance": [
+          "At most four small-plate pairs and two fixed blocks.",
+          "Independent neighbour-flux prefix replay.",
+          "Comparison with original finite pool, retaining inconclusive cases."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX11",
+    "title": "Remote-time evaluation",
+    "depends_on": [],
+    "priority": "supporting",
+    "summary": "Bind existing exact rational generating functions and realizations to physical experiment queries, preserving transients, input indexing and bit budgets.",
+    "existing_sources": [
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/observability.py",
+      "DynaComp:src/dynacomp/generating.py",
+      "DynaComp:src/dynacomp/realization.py",
+      "DynaComp:src/dynacomp/fastforward.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/remote_queries.py",
+      "tests/test_remote_queries.py",
+      "scripts/remote_queries.py",
+      "docs/research/REMOTE_QUERIES.md"
+    ],
+    "acceptance": [
+      "Source-bound scalar response with correct physical index map.",
+      "Pair cancellation, minimal Hankel evidence and exact all-index equality when applicable.",
+      "Resource-aware remote queries with honest answer-bit growth and optional explicitly modular mode."
+    ],
+    "pushes": [
+      {
+        "id": "NX11-A",
+        "title": "Source-bound scalar query adapter",
+        "acceptance": [
+          "Two-mode sequence, zero and transient indexing fixtures.",
+          "Optional upstream adapter preserving exact source bindings.",
+          "Independent small-index sparse/closed-form checks."
+        ]
+      },
+      {
+        "id": "NX11-B",
+        "title": "Pair-response and repeated-block compilation",
+        "acceptance": [
+          "Actual pair differences and fixed repeated blocks.",
+          "Every index 0..32 compared with independent stepping.",
+          "Order cancellation and scoped all-index equality certificate."
+        ]
+      },
+      {
+        "id": "NX11-C",
+        "title": "Resource-aware distant experiment integration",
+        "acceptance": [
+          "Integration into an accepted finite/horizon selector.",
+          "Separate setup, query and answer-size costs.",
+          "Exact oversized-answer refusal and separately labeled modular demonstration if implemented."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX12",
+    "title": "Complete constrained protocol populations",
+    "depends_on": [
+      "NX01"
+    ],
+    "priority": "high",
+    "summary": "Count, rank, reconstruct and optimize every legal chronological protocol under deterministic grammar, cost, heat, switch and horizon constraints.",
+    "existing_sources": [
+      "src/singularity/panels.py",
+      "src/singularity/observability.py",
+      "src/singularity/robust_search.py",
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/population.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/protocol_population.py",
+      "tests/test_protocol_population.py",
+      "scripts/protocol_population.py",
+      "docs/research/PROTOCOL_POPULATIONS.md"
+    ],
+    "acceptance": [
+      "Exact original-word completion counts and rank/unrank inverses.",
+      "Declared DFA/resource semantics, including zero-cost and ambiguous-grammar refusals.",
+      "Complete bounded physical pool and independently checked grammar-aware optimization."
+    ],
+    "pushes": [
+      {
+        "id": "NX12-A",
+        "title": "Complete constrained counts and inverses",
+        "acceptance": [
+          "Exact deterministic completion DP and rank/unrank.",
+          "22-member and budget-4 six-member tiny examples.",
+          "Independent Cartesian-product and randomized grammar enumeration."
+        ]
+      },
+      {
+        "id": "NX12-B",
+        "title": "Physical protocol adapter and complete optimization",
+        "acceptance": [
+          "Correct alphabet-ID to amplitude and terminal-sensor mapping.",
+          "Bounded small-plate complete population and independent flux outputs.",
+          "Comparison with handpicked baseline, even if no optimum improvement."
+        ]
+      },
+      {
+        "id": "NX12-C",
+        "title": "Completion-aware search and certificates",
+        "acceptance": [
+          "One grammar/resource-aware decision objective.",
+          "Proved pruning and original protocol witnesses.",
+          "All cheaper protocols excluded while multiplicities remain reconstructible."
+        ]
+      }
+    ]
+  }
+]

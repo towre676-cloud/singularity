@@ -1,0 +1,15 @@
+{
+  "scope": "Core executable/test bytes from clean extraction, bound to final payload by EXECUTABLE_FINGERPRINT.json",
+  "tested_archive_sha256": "031e2216d7fdb96b425e0806f1c63820ff4d1c08a7d2e4acb1287b96f08dc8a3",
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -q",
+  "exit_code": 0,
+  "tests": 432,
+  "seconds": 87.786,
+  "core_files_matched": 87,
+  "later_changes": "Handoff documentation, validation records and a read-only launcher; final core source/test bytes are identical",
+  "offline_git_recovery": {
+    "bundle_verify": "passed: complete history",
+    "clone": "passed",
+    "recovered_commit": "438ed423d7d389a1a483c61e0b50eca6a9fc0827"
+  }
+}

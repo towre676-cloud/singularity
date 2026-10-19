@@ -1,0 +1,147 @@
+{
+  "name": "The branching laboratory",
+  "description": "Identify a hidden bit by choosing the second experiment after seeing the first result. A wrong-family inspection irreversibly loses the bit.",
+  "states": [
+    "hidden:alpha:0",
+    "hidden:alpha:1",
+    "hidden:beta:0",
+    "hidden:beta:1",
+    "routed:alpha:0",
+    "routed:alpha:1",
+    "routed:beta:0",
+    "routed:beta:1",
+    "read:alpha:0",
+    "read:alpha:1",
+    "read:beta:0",
+    "read:beta:1"
+  ],
+  "actions": [
+    {
+      "name": "route",
+      "cost": 1
+    },
+    {
+      "name": "inspect alpha",
+      "cost": 1
+    },
+    {
+      "name": "inspect beta",
+      "cost": 1
+    }
+  ],
+  "transitions": [
+    [
+      4,
+      null,
+      null
+    ],
+    [
+      5,
+      null,
+      null
+    ],
+    [
+      6,
+      null,
+      null
+    ],
+    [
+      7,
+      null,
+      null
+    ],
+    [
+      null,
+      8,
+      null
+    ],
+    [
+      null,
+      9,
+      null
+    ],
+    [
+      null,
+      null,
+      10
+    ],
+    [
+      null,
+      null,
+      11
+    ],
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ]
+  ],
+  "observations": [
+    "unread",
+    "unread",
+    "unread",
+    "unread",
+    "alpha",
+    "alpha",
+    "beta",
+    "beta",
+    "bit 0",
+    "bit 1",
+    "bit 0",
+    "bit 1"
+  ],
+  "targets": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1
+  ],
+  "accepting": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "initial": 0,
+  "initial_belief": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "mathematics": {
+    "adaptive_worst_cost": 2,
+    "preset_identification_possible": false
+  }
+}

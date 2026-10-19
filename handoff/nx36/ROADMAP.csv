@@ -1,0 +1,37 @@
+id,title,priority,status,hard_dependencies,supporting_tracks,packet,pushes
+NX01,Candidate-specific uncertainty,A1 — first implementation batch,proposed,,,packets/NX01.md,NX01-A;NX01-B;NX01-C
+NX02,Correlated observation geometry,A2 — after scalar uncertainty contract,proposed,NX01,,packets/NX02.md,NX02-A;NX02-B;NX02-C
+NX03,Whole populations of faults,A1 — first population expansion,proposed,NX01,,packets/NX03.md,NX03-A;NX03-B;NX03-C
+NX04,Continuous severity and calibration freedom,B1 — certified continuum frontier,proposed,NX03;NX02,,packets/NX04.md,NX04-A;NX04-B;NX04-C
+NX05,Adaptive experiments with resets,B1 — after robust finite population,proposed,NX01;NX03,,packets/NX05.md,NX05-A;NX05-B;NX05-C
+NX06,Experiments with shared physical history,B2 — stateful control and diagnosis,proposed,NX05;NX02;NX03,,packets/NX06.md,NX06-A;NX06-B;NX06-C
+NX07,Purchase the intervention language,immediate,proposed,NX01;NX03,,packets/NX07.md,NX07-A;NX07-B;NX07-C
+NX08,Stable target recovery,high,proposed,,,packets/NX08.md,NX08-A;NX08-B;NX08-C
+NX09,"Joint experiment, rank, and precision selection",high,proposed,NX01;NX08,,packets/NX09.md,NX09-A;NX09-B;NX09-C
+NX10,All-horizon stopping certificates,high,proposed,,,packets/NX10.md,NX10-A;NX10-B;NX10-C
+NX11,Remote-time evaluation,supporting,proposed,,,packets/NX11.md,NX11-A;NX11-B;NX11-C
+NX12,Complete constrained protocol populations,high,proposed,NX01,,packets/NX12.md,NX12-A;NX12-B;NX12-C
+NX13,Typed operator languages,P1,proposed,,,packets/NX13.md,NX13-A;NX13-B;NX13-C
+NX14,Parameter-wide observable modules,P1,proposed,,,packets/NX14.md,NX14-A;NX14-B;NX14-C
+NX15,Graph-realizable invisible directions,P2,proposed,,,packets/NX15.md,NX15-A;NX15-B;NX15-C
+NX16,Incremental connected-support compilation,P0,proposed,,,packets/NX16.md,NX16-A;NX16-B;NX16-C
+NX17,Low-rank physical fault transport,P0,proposed,,,packets/NX17.md,NX17-A;NX17-B;NX17-C
+NX18,Recovery conditioning and bit complexity,P1,proposed,,,packets/NX18.md,NX18-A;NX18-B;NX18-C
+NX19,Integer-compatible observational quotients,P1,proposed,,,packets/NX19.md,NX19-A;NX19-B;NX19-C
+NX20,Pell and residue experiment automata,P2,proposed,,NX19,packets/NX20.md,NX20-A;NX20-B;NX20-C
+NX21,Symmetry-adapted experiment channels,P1,proposed,,NX07;NX13,packets/NX21.md,NX21-A;NX21-B;NX21-C
+NX22,Multi-frequency arithmetic probing,P2,proposed,,NX14,packets/NX22.md,NX22-A;NX22-B;NX22-C
+NX23,Population geometry with preserved multiplicities,P1,proposed,NX03;NX19,,packets/NX23.md,NX23-A;NX23-B;NX23-C
+NX24,Effective finite-prefix theorems,R,proposed,,NX13;NX14,packets/NX24.md,NX24-A;NX24-B;NX24-C
+NX25,Forecast-target sensor design,application-high,proposed,NX08;NX10,,packets/NX25.md,NX25-A;NX25-B;NX25-C
+NX26,Nonlinear ambiguity witnesses,mathematical-high,proposed,,,packets/NX26.md,NX26-A;NX26-B;NX26-C
+NX27,Target-preserving multiscale transport,application-research,proposed,NX08;NX09,,packets/NX27.md,NX27-A;NX27-B;NX27-C
+NX28,Reactive transport observability,application-research,proposed,NX25;NX26;NX27,,packets/NX28.md,NX28-A;NX28-B;NX28-C
+NX29,Identifiable movement-test design,application-high,proposed,NX08,,packets/NX29.md,NX29-A;NX29-B;NX29-C
+NX30,Ordered movement signatures,application-high,proposed,NX29,,packets/NX30.md,NX30-A;NX30-B;NX30-C
+NX31,Target-directed period transport,R,proposed,,,packets/NX31.md,NX31-A;NX31-B;NX31-C
+NX32,Monodromy as an experiment language,R,proposed,,NX31,packets/NX32.md,NX32-A;NX32-B;NX32-C
+NX33,Moving observable quotients,R,proposed,NX31,,packets/NX33.md,NX33-A;NX33-B;NX33-C
+NX34,Larger certified analytic visibility regions,R,proposed,,,packets/NX34.md,NX34-A;NX34-B;NX34-C
+NX35,Proof-directed computational refinement,P1,proposed,NX01;NX09,,packets/NX35.md,NX35-A;NX35-B;NX35-C
+NX36,End-to-end experiment certificates,P1,proposed,NX01;NX35,,packets/NX36.md,NX36-A;NX36-B;NX36-C

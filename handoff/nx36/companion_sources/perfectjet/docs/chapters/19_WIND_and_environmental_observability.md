@@ -1,0 +1,11 @@
+# WIND and environmental observability
+
+WIND connects measurements to target questions rather than treating a reconstructed field as uniquely observed. Radar support, beam geometry, averaging windows, noise, staleness and target functionals are explicit. The historical corpus had272 NEXRAD volumes, and a lower velocity split in54/54 NewEngland volumes with mean absolute difference .74->1.556m/s. These are saved empirical reports; original radar bytes are not in PerfectJet and have not been replayed here.
+
+The signed vorticity ledger is zeta=v_x-u_y,S=(zeta+f)w_z,T=-v_z w_x+u_z w_y,D=-(zeta+f)div(u),B=(rho_x p_y-rho_y p_x)/rho2,F=(curl forcing)_z,P_beta=-beta v, total=S+T+D+B+F+P_beta. A complete budget needs compatible signs, supports and fields. Surface geostrophic inference,3D Lorenz energy budgets,and storm impact targets are different quantities.
+
+Information J=H^T R^-1H,hidden-target optimization over ker H intersect ker M,exact linear SDE F=e^{A dt},Qd=int e^{As}LL^T e^{A^Ts}ds,innovation I=sum K_i nu_i^T S_i^-1 nu_i,constraint injection C=delta_xC^T Q delta_xC,and residual R=norm(W[partial_t x+N(x)-F(x)])2 were recovered. K_i can mean a spatial support kernel; do not silently read every K as a Kalman gain.
+
+Expiry criteria compare structural ambiguity or propagated uncertainty to positive baselines. The exterior law v=c r^-p,p=1+2h used quadrant threshold radii; pooled earlier p~.5123/.5445 and continuation .593829/.459171 are different fits/windows, not a universal exponent. A simultaneous quadratic pressure fit needs rank6 and at least7 stations for residual capacity, plus time alignment and conditioning. Repeated radial rows cannot repair a hidden crosswind; an independent crossbeam can in the declared linear model.
+
+The source archive distinguishes frozen target truth from changed reporting windows, sustained winds from gusts,one-minute from ten-minute means,height/datum from other quantities,and missing from zero. Chemistry/aerosols were described as reduced HOx-NOx-VOC-ozone,two-moment microphysics,and4D transport, but individual rate equations and source states remain unrecovered. We preserve their integration plan without inventing reaction constants or claiming complete atmospheric chemistry.

@@ -1,0 +1,73 @@
+{
+  "name": "The irreversible button",
+  "description": "Inspecting a hidden bit costs three units. Reset costs one unit and merges both possibilities forever. A planner can distinguish cheap motion from useful information.",
+  "states": [
+    "hidden 0",
+    "hidden 1",
+    "erased",
+    "read 0",
+    "read 1"
+  ],
+  "actions": [
+    {
+      "name": "inspect",
+      "cost": 3
+    },
+    {
+      "name": "reset",
+      "cost": 1
+    }
+  ],
+  "transitions": [
+    [
+      3,
+      2
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      4,
+      2
+    ]
+  ],
+  "observations": [
+    "unread",
+    "unread",
+    "erased",
+    "bit 0",
+    "bit 1"
+  ],
+  "targets": [
+    0,
+    1,
+    "erased",
+    0,
+    1
+  ],
+  "accepting": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "initial": 0,
+  "initial_belief": [
+    0,
+    1
+  ],
+  "mathematics": {
+    "initial_identification_cost": 3,
+    "after_reset_identification_possible": false
+  }
+}

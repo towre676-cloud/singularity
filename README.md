@@ -89,4 +89,6 @@ On Windows PowerShell, first set `$env:PYTHONPATH='src'` and omit the `PYTHONPAT
 
 ## Continue the research
 
+The [NX36 Claude Code handoff](handoff/nx36/START_HERE.md) prepares **36 new expansion tracks and 108 acceptance-sized pushes**, with an equation-rich [expansion handbook](handoff/nx36/HANDBOOK.pdf), source-grounded packets, a dependency ledger, and pinned companion engines. The handoff ZIP itself (repository snapshot plus an offline Git recovery bundle) is distributed separately; its repository content is merged here. These are proposed implementation designs; the existing release results and ledgers remain intact.
+
 The [original 36-push ledger](handoff/PUSH_AUDIT.md), [session log](handoff/SESSION_LOG.md), [current task selector](handoff/START_HERE.md), and [second-paper decision](docs/papers/second_paper_choice.md) record achieved scope and precise open questions. The main research frontiers are efficient reconstruction beyond cycle interiors, completeness or a full-series collision for fixed pinning, and realization of the surviving symmetric-interface ambiguities. Finite prefix agreement alone settles none of those questions.

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perfectjet"
+version = "0.17.0"
+description = "Exact representations, populations, closure defects, and arithmetic research atlas"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+scouting = ["numpy==2.3.5", "pandas==2.2.3", "scikit-learn==1.8.0", "scipy==1.17.0"]
+
+[project.scripts]
+perfectjet = "perfectjet.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"perfectjet.observatory" = ["assets/*.html"]
+"perfectjet" = ["resources/*.json"]

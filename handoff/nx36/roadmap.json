@@ -1,0 +1,2436 @@
+{
+  "schema": "singularity.nx-roadmap/1",
+  "baseline_commit": "438ed423d7d389a1a483c61e0b50eca6a9fc0827",
+  "planning_only": true,
+  "tracks": [
+    {
+      "id": "NX01",
+      "title": "Candidate-specific uncertainty",
+      "depends_on": [],
+      "priority": "A1 — first implementation batch",
+      "summary": "Use the candidate-specific radii already computed by protocol_pool to solve and decode heterogeneous closed-box experiment panels with an exact weighted-cover certificate.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "tests/test_thermal_diagnostics.py",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "tests/test_panels.py",
+        "scripts/thermal_diagnostics.py",
+        "src/singularity/robust_search.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/candidate_boxes.py",
+        "tests/test_candidate_boxes.py",
+        "docs/research/CANDIDATE_BOXES.md",
+        "scripts/candidate_box_thermal.py",
+        "results/candidate_box_thermal.json"
+      ],
+      "acceptance": [
+        "Strict heterogeneous interval separation including zero-radius and touching-endpoint cases is proved and checked.",
+        "Production optimum agrees with separate direct-interval exhaustive and cover-state oracles on bounded fixtures.",
+        "Original thermal centers/radii and common-envelope incumbent are preserved; a cost improvement is not required."
+      ],
+      "pushes": [
+        {
+          "id": "NX01-A",
+          "title": "Contract and heterogeneous geometry",
+          "acceptance": [
+            "Validated radii matrix, masks, decoder and ambiguity witnesses match independent interval checks."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX01-B",
+          "title": "Exact optimization and dual comparison",
+          "acceptance": [
+            "Bounded exact solver matches independent subset and cover-state optimum on tiny pools."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-A"
+          ]
+        },
+        {
+          "id": "NX01-C",
+          "title": "Thermal integration and retained result",
+          "acceptance": [
+            "Unchanged source-derived pool has a retained, independently checked heterogeneous optimum or explicit incomplete status."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX01.md",
+      "execution_rank": 1,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX02",
+      "title": "Correlated observation geometry",
+      "depends_on": [
+        "NX01"
+      ],
+      "priority": "A2 — after scalar uncertainty contract",
+      "summary": "Retain persistent nuisance generators across panel readings and certify pair separation or overlap through exact rational joint-set witnesses.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "tests/test_thermal_diagnostics.py",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "src/singularity/experiment_design.py",
+        "tests/test_panels.py",
+        "docs/research/PANELS.md"
+      ],
+      "proposed_sources": [
+        "src/singularity/joint_uncertainty.py",
+        "tests/test_joint_uncertainty.py",
+        "docs/research/JOINT_UNCERTAINTY.md",
+        "scripts/joint_thermal.py",
+        "results/joint_thermal.json"
+      ],
+      "acceptance": [
+        "Joint-set projection and support inequalities preserve generator provenance and exact/enclosure status.",
+        "Overlap or strict separating witnesses replay with rational arithmetic; complete tiny feasibility is independently compared.",
+        "Finite-panel optimization treats joint separation directly rather than pretending it is scalar pair coverage."
+      ],
+      "pushes": [
+        {
+          "id": "NX02-A",
+          "title": "Joint sets and rational witness checker",
+          "acceptance": [
+            "Exact support and primal/contrast certificates pass independent tiny algebraic checks."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C"
+          ]
+        },
+        {
+          "id": "NX02-B",
+          "title": "Complete small-panel optimizer",
+          "acceptance": [
+            "Bounded full-subset search and independent polytope oracle agree in feasibility and cost."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX02-A"
+          ]
+        },
+        {
+          "id": "NX02-C",
+          "title": "Persistent thermal nuisance pilot",
+          "acceptance": [
+            "Source-derived centers and justified persistent-error generators support retained box-versus-joint comparisons."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX02-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX02.md",
+      "execution_rank": 2,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX03",
+      "title": "Whole populations of faults",
+      "depends_on": [
+        "NX01"
+      ],
+      "priority": "A1 — first population expansion",
+      "summary": "Count, rank, reconstruct and diagnose the original constrained bond-fault masks, beginning with twelve bonds and at most two faults, exactly 79 configurations.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "tests/test_thermal_diagnostics.py",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "src/singularity/population.py",
+        "applications/thermal_diagnostics/source_fixture.json",
+        "scripts/thermal_diagnostics.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/fault_population.py",
+        "tests/test_fault_population.py",
+        "docs/research/FAULT_POPULATIONS.md",
+        "scripts/fault_population_diagnostics.py",
+        "results/fault_population_diagnostics.json"
+      ],
+      "acceptance": [
+        "Completion counts and all tiny rank/unrank inverses agree with direct Boolean enumeration.",
+        "Arbitrary declared bond removals preserve the physical stencil and match an independent flux oracle.",
+        "All 79 original IDs and multiplicities survive diagnosis, with honest exact-optimum or budget-limited status."
+      ],
+      "pushes": [
+        {
+          "id": "NX03-A",
+          "title": "Exact constrained mask population",
+          "acceptance": [
+            "Boolean populations, constraints, count/rank/unrank and conditioning match exhaustive originals."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C"
+          ]
+        },
+        {
+          "id": "NX03-B",
+          "title": "Physical candidate compilation",
+          "acceptance": [
+            "All tiny defect matrices and trajectories match independent undirected flux evolution."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX03-A"
+          ]
+        },
+        {
+          "id": "NX03-C",
+          "title": "Seventy-nine-configuration diagnosis",
+          "acceptance": [
+            "Retained exact population, readings, bounds, coverage and solver status preserve every original mask."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX03-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX03.md",
+      "execution_rank": 3,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX04",
+      "title": "Continuous severity and calibration freedom",
+      "depends_on": [
+        "NX03",
+        "NX02"
+      ],
+      "priority": "B1 — certified continuum frontier",
+      "summary": "Replace fully blocked point hypotheses by severity and calibration families, allowing independent nuisance values under competing worlds and retaining exact overlap or separation evidence.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "tests/test_thermal_diagnostics.py",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "src/singularity/parameters.py",
+        "src/singularity/parametric.py",
+        "applications/thermal_diagnostics/source_fixture.json"
+      ],
+      "proposed_sources": [
+        "src/singularity/thermal_parameters.py",
+        "tests/test_thermal_parameters.py",
+        "docs/research/THERMAL_PARAMETERS.md",
+        "scripts/thermal_severity.py",
+        "results/thermal_severity.json"
+      ],
+      "acceptance": [
+        "Severity zero/one endpoints and rational intermediate samples match independent flux assembly.",
+        "Full-domain proofs or validated covers distinguish strict separation, overlap and unresolved cells.",
+        "Detectable-severity claims retain positive lower thresholds, source assumptions and calibration freedom."
+      ],
+      "pushes": [
+        {
+          "id": "NX04-A",
+          "title": "Family semantics and exact sample oracle",
+          "acceptance": [
+            "Parameter admissibility, severity conventions and exact sample trajectories are independently verified."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX03-C",
+            "NX02-C"
+          ]
+        },
+        {
+          "id": "NX04-B",
+          "title": "Certified small-domain separation",
+          "acceptance": [
+            "Complete tiny-domain cover, analytic example and overlap witness replay independently."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX04-A"
+          ]
+        },
+        {
+          "id": "NX04-C",
+          "title": "Location/severity frontier pilot",
+          "acceptance": [
+            "Declared small location family has certified separation bands, ambiguity strata and explicit unresolved cells."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX04-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX04.md",
+      "execution_rank": 4,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX05",
+      "title": "Adaptive experiments with resets",
+      "depends_on": [
+        "NX01",
+        "NX03"
+      ],
+      "priority": "B1 — after robust finite population",
+      "summary": "Construct globally cheapest worst-case reset decision trees from exact interval observation cells under memoryless adversarial errors.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "tests/test_thermal_diagnostics.py",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "src/singularity/robust_search.py",
+        "docs/research/PANELS.md",
+        "tests/test_panels.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/reset_policies.py",
+        "tests/test_reset_policies.py",
+        "docs/research/RESET_POLICIES.md",
+        "scripts/adaptive_thermal.py",
+        "results/adaptive_thermal.json"
+      ],
+      "acceptance": [
+        "Continuous readings are partitioned into exact endpoint and open-interval membership cells.",
+        "Proper Bellman policies and bounded independent tree enumeration agree on every retained tiny case.",
+        "Thermal static/adaptive costs use identical contracts and expose worst-case branches and unresolved search bounds."
+      ],
+      "pushes": [
+        {
+          "id": "NX05-A",
+          "title": "Exact observation-cell compiler",
+          "acceptance": [
+            "Endpoint, point, nested and open-cell memberships match direct inequality checks."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C",
+            "NX03-C"
+          ]
+        },
+        {
+          "id": "NX05-B",
+          "title": "Bellman solver and independent tree oracle",
+          "acceptance": [
+            "The exact two-versus-three fixture and tiny exhaustive policy comparisons agree."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX05-A"
+          ]
+        },
+        {
+          "id": "NX05-C",
+          "title": "Reset thermal policy comparison",
+          "acceptance": [
+            "Retained robust thermal policies have complete branch replay and fair static-panel comparisons."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX05-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX05.md",
+      "execution_rank": 5,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX06",
+      "title": "Experiments with shared physical history",
+      "depends_on": [
+        "NX05",
+        "NX02",
+        "NX03"
+      ],
+      "priority": "B2 — stateful control and diagnosis",
+      "summary": "Retain original targets, current state and persistent nuisance through controls, intermediate observations and destructive resets; begin with exact tiny history semantics.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "tests/test_thermal_diagnostics.py",
+        "docs/research/THERMAL_DIAGNOSTICS.md",
+        "src/singularity/robust_search.py",
+        "tests/test_thermal_diagnostics.py",
+        "src/singularity/observability.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/history_experiments.py",
+        "tests/test_history_experiments.py",
+        "docs/research/HISTORY_EXPERIMENTS.md",
+        "scripts/history_thermal.py",
+        "results/history_thermal.json"
+      ],
+      "acceptance": [
+        "Destructive actions never erase the original target identity from the belief.",
+        "Exact small affine shared-history conditioning matches independent substitution and rational witness replay.",
+        "Thermal schedules match flux trajectories and account fairly for resets, observations, shared state and persistent nuisance."
+      ],
+      "pushes": [
+        {
+          "id": "NX06-A",
+          "title": "Exact finite-history semantics",
+          "acceptance": [
+            "Belief updates and legality agree with exhaustive histories, including observe-before-erase counterexamples."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX05-C",
+            "NX02-C",
+            "NX03-C"
+          ]
+        },
+        {
+          "id": "NX06-B",
+          "title": "Bounded exact affine conditioning",
+          "acceptance": [
+            "Shared-gain two-slope identification and final-only ambiguity are certified with retained history variables."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX06-A"
+          ]
+        },
+        {
+          "id": "NX06-C",
+          "title": "Shared-history thermal pilot",
+          "acceptance": [
+            "Short small-plate histories have independently checked centers, uncertainty semantics and complete cost accounting."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX06-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX06.md",
+      "execution_rank": 6,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX07",
+      "title": "Purchase the intervention language",
+      "depends_on": [
+        "NX01",
+        "NX03"
+      ],
+      "priority": "immediate",
+      "summary": "Choose sensors and actuators jointly with repeated diagnostic panels, retaining all-word blindness proofs and installation/runtime accounting.",
+      "existing_sources": [
+        "src/singularity/panels.py",
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/observability.py",
+        "DynaComp:src/dynacomp/thermal.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/language_design.py",
+        "tests/test_language_design.py",
+        "scripts/language_design.py",
+        "docs/research/LANGUAGE_DESIGN.md"
+      ],
+      "acceptance": [
+        "Exact finite installation-plus-panel optimum under a declared capability catalogue and target map.",
+        "Old-language symmetry blindness and actual new-language distinguishing witnesses.",
+        "Independent exhaustive tiny oracle, source-bound thermal replay, setup/deployment frontier and explicit resource limits."
+      ],
+      "pushes": [
+        {
+          "id": "NX07-A",
+          "title": "Catalogue semantics and exact activation objective",
+          "acceptance": [
+            "Validated capability requirements and exact installation/runtime costs.",
+            "Three-candidate tied-optimum example plus target coarsening.",
+            "Independent exhaustive capability/panel subset oracle."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C",
+            "NX03-C"
+          ]
+        },
+        {
+          "id": "NX07-B",
+          "title": "Symmetry-aware thermal capability catalogue",
+          "acceptance": [
+            "At most eight declared sensor/heater capabilities on a small synthetic plate.",
+            "Old all-word blindness certificate and real separating protocol after installation.",
+            "Independent flux replay and deployment counts 1,2,10,100."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX07-A"
+          ]
+        },
+        {
+          "id": "NX07-C",
+          "title": "Expanded-population optimization and release evidence",
+          "acceptance": [
+            "Bounded expanded fault population preserving original fault IDs.",
+            "Certified installation/per-diagnosis Pareto frontier.",
+            "Independent coverage/cost replay, manuscript and complete release archive."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX07-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX07.md",
+      "execution_rank": 7,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX08",
+      "title": "Stable target recovery",
+      "depends_on": [],
+      "priority": "high",
+      "summary": "Compute target-specific recovery conditioning after admissible constraints, with exact kernel, decoder and positive-semidefinite certificates.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/thermal_diagnostics.py",
+        "DynaComp:src/dynacomp/rational.py",
+        "DynaComp:src/dynacomp/stability.py",
+        "DynaComp:src/dynacomp/linear.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/target_recovery.py",
+        "tests/test_target_recovery.py",
+        "scripts/target_recovery.py",
+        "docs/research/TARGET_RECOVERY.md"
+      ],
+      "acceptance": [
+        "Admissible-subspace target identifiability with hidden-target counterwitnesses.",
+        "Exact PSD upper certificates and attained rational lower witnesses for amplification.",
+        "Independent singular/zero cases, bounded sensor frontier and explicit units."
+      ],
+      "pushes": [
+        {
+          "id": "NX08-A",
+          "title": "Kernel and exact bound semantics",
+          "acceptance": [
+            "Validated admissible basis and target row-space/decoder identities.",
+            "PSD certificates with zero pivots and all tiny examples.",
+            "Independent tiny PSD oracle and tamper rejection."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX08-B",
+          "title": "Sensor-layout optimization",
+          "acceptance": [
+            "Minimum-cost bounded sensor catalogue meeting a target amplification ceiling.",
+            "Equal-rank but differently conditioned examples.",
+            "Independent exhaustive catalogue optimum."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX08-A"
+          ]
+        },
+        {
+          "id": "NX08-C",
+          "title": "Forecast and model integration",
+          "acceptance": [
+            "One small thermal target and one synthetic forecast target.",
+            "Adversarial error witnesses and source/units binding.",
+            "Clear distinction between exact linear claims and future nonlinear/calibrated work."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX08-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX08.md",
+      "execution_rank": 8,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX09",
+      "title": "Joint experiment, rank, and precision selection",
+      "depends_on": [
+        "NX01",
+        "NX08"
+      ],
+      "priority": "high",
+      "summary": "Integrate existing model-reduction and specified execution-error certificates into an exact finite evaluator/experiment decision with shared setup costs.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/panels.py",
+        "DynaComp:src/dynacomp/uniform.py",
+        "DynaComp:src/dynacomp/validated.py",
+        "DynaComp:src/dynacomp/machine.py",
+        "DynaComp:src/dynacomp/native.py",
+        "DynaComp:src/dynacomp/engineering.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/fidelity_design.py",
+        "tests/test_fidelity_design.py",
+        "scripts/fidelity_design.py",
+        "docs/research/FIDELITY_DESIGN.md"
+      ],
+      "acceptance": [
+        "Typed output-unit error composition binding source/domain/horizon/protocol.",
+        "Finite menu restricted to genuinely certified evaluator arithmetic.",
+        "Setup-inclusive optimum and independent full rational model checks."
+      ],
+      "pushes": [
+        {
+          "id": "NX09-A",
+          "title": "Typed error and cost composition",
+          "acceptance": [
+            "Validated finite evaluator menu and source-bound reading intervals.",
+            "Tiny cheap-evaluator versus changed-experiment example.",
+            "Exhaustive evaluator/panel oracle and stale-domain rejection."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C",
+            "NX08-C"
+          ]
+        },
+        {
+          "id": "NX09-B",
+          "title": "Source-pinned DynaComp evaluator adapter",
+          "acceptance": [
+            "Two actual ranks and supported exact/binary64 protocols for a small thermal family.",
+            "Replayable upstream reduction/execution evidence.",
+            "Independent rational trajectories contained in every claimed bound."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX09-A"
+          ]
+        },
+        {
+          "id": "NX09-C",
+          "title": "Setup-inclusive optimal diagnostic plan",
+          "acceptance": [
+            "Selected physical experiment, fidelity and arithmetic with certified separation.",
+            "Comparison with full-exact and uniform-rank baselines.",
+            "Setup/run accounting, measured timings and explicit break-even."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX09-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX09.md",
+      "execution_rank": 9,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX10",
+      "title": "All-horizon stopping certificates",
+      "depends_on": [],
+      "priority": "high",
+      "summary": "Use stable response tails and error contracts to certify useful horizons, late-time impossibility or an epsilon-optimal limit for fixed protocol families.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/robust_search.py",
+        "tests/test_path_margin.py",
+        "DynaComp:src/dynacomp/stability.py",
+        "DynaComp:src/dynacomp/forever.py",
+        "DynaComp:src/dynacomp/fastforward.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/horizon_design.py",
+        "tests/test_horizon_design.py",
+        "scripts/horizon_design.py",
+        "docs/research/HORIZON_DESIGN.md"
+      ],
+      "acceptance": [
+        "Correct steady-state and contraction certificates with squared-gamma convention.",
+        "Exact prefix plus uniform tail proves only the declared fixed-input/repeated-block conclusion.",
+        "Finite optimum, late-time no-separation and unattained-supremum examples independently checked."
+      ],
+      "pushes": [
+        {
+          "id": "NX10-A",
+          "title": "Pair-tail theorem and replay",
+          "acceptance": [
+            "Constant-input source-bound response-tail certificates.",
+            "Two exact scalar examples and nonnormal/marginal cases.",
+            "Independent closed-form/matrix-power checks and metric tamper rejection."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX10-B",
+          "title": "All-horizon decision integration",
+          "acceptance": [
+            "Checked prefix plus valid future upper/lower bounds.",
+            "One global finite optimum and one late-time impossibility.",
+            "Epsilon-optimal unattained-limit case without false attainment claim."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX10-A"
+          ]
+        },
+        {
+          "id": "NX10-C",
+          "title": "Thermal and repeated-block demonstration",
+          "acceptance": [
+            "At most four small-plate pairs and two fixed blocks.",
+            "Independent neighbour-flux prefix replay.",
+            "Comparison with original finite pool, retaining inconclusive cases."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX10-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX10.md",
+      "execution_rank": 10,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX11",
+      "title": "Remote-time evaluation",
+      "depends_on": [],
+      "priority": "supporting",
+      "summary": "Bind existing exact rational generating functions and realizations to physical experiment queries, preserving transients, input indexing and bit budgets.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/observability.py",
+        "DynaComp:src/dynacomp/generating.py",
+        "DynaComp:src/dynacomp/realization.py",
+        "DynaComp:src/dynacomp/fastforward.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/remote_queries.py",
+        "tests/test_remote_queries.py",
+        "scripts/remote_queries.py",
+        "docs/research/REMOTE_QUERIES.md"
+      ],
+      "acceptance": [
+        "Source-bound scalar response with correct physical index map.",
+        "Pair cancellation, minimal Hankel evidence and exact all-index equality when applicable.",
+        "Resource-aware remote queries with honest answer-bit growth and optional explicitly modular mode."
+      ],
+      "pushes": [
+        {
+          "id": "NX11-A",
+          "title": "Source-bound scalar query adapter",
+          "acceptance": [
+            "Two-mode sequence, zero and transient indexing fixtures.",
+            "Optional upstream adapter preserving exact source bindings.",
+            "Independent small-index sparse/closed-form checks."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX11-B",
+          "title": "Pair-response and repeated-block compilation",
+          "acceptance": [
+            "Actual pair differences and fixed repeated blocks.",
+            "Every index 0..32 compared with independent stepping.",
+            "Order cancellation and scoped all-index equality certificate."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX11-A"
+          ]
+        },
+        {
+          "id": "NX11-C",
+          "title": "Resource-aware distant experiment integration",
+          "acceptance": [
+            "Integration into an accepted finite/horizon selector.",
+            "Separate setup, query and answer-size costs.",
+            "Exact oversized-answer refusal and separately labeled modular demonstration if implemented."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX11-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX11.md",
+      "execution_rank": 11,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX12",
+      "title": "Complete constrained protocol populations",
+      "depends_on": [
+        "NX01"
+      ],
+      "priority": "high",
+      "summary": "Count, rank, reconstruct and optimize every legal chronological protocol under deterministic grammar, cost, heat, switch and horizon constraints.",
+      "existing_sources": [
+        "src/singularity/panels.py",
+        "src/singularity/observability.py",
+        "src/singularity/robust_search.py",
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/population.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/protocol_population.py",
+        "tests/test_protocol_population.py",
+        "scripts/protocol_population.py",
+        "docs/research/PROTOCOL_POPULATIONS.md"
+      ],
+      "acceptance": [
+        "Exact original-word completion counts and rank/unrank inverses.",
+        "Declared DFA/resource semantics, including zero-cost and ambiguous-grammar refusals.",
+        "Complete bounded physical pool and independently checked grammar-aware optimization."
+      ],
+      "pushes": [
+        {
+          "id": "NX12-A",
+          "title": "Complete constrained counts and inverses",
+          "acceptance": [
+            "Exact deterministic completion DP and rank/unrank.",
+            "22-member and budget-4 six-member tiny examples.",
+            "Independent Cartesian-product and randomized grammar enumeration."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C"
+          ]
+        },
+        {
+          "id": "NX12-B",
+          "title": "Physical protocol adapter and complete optimization",
+          "acceptance": [
+            "Correct alphabet-ID to amplitude and terminal-sensor mapping.",
+            "Bounded small-plate complete population and independent flux outputs.",
+            "Comparison with handpicked baseline, even if no optimum improvement."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX12-A"
+          ]
+        },
+        {
+          "id": "NX12-C",
+          "title": "Completion-aware search and certificates",
+          "acceptance": [
+            "One grammar/resource-aware decision objective.",
+            "Proved pruning and original protocol witnesses.",
+            "All cheaper protocols excluded while multiplicities remain reconstructible."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX12-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX12.md",
+      "execution_rank": 12,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX13",
+      "title": "Typed operator languages",
+      "depends_on": [],
+      "priority": "P1",
+      "summary": "Extend single-space exact observability to finite typed action graphs with rectangular maps, legal-path witnesses, per-type minimal linear quotients and independently replayed graph adapters.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/terminal_moves.py",
+        "src/singularity/charges.py",
+        "src/singularity/separator_compiler.py",
+        "tests/test_observability.py",
+        "tests/test_terminal_moves.py",
+        "docs/research/ORDERED_CONTEXTS.md"
+      ],
+      "proposed_sources": [
+        "src/singularity/typed_observability.py",
+        "tests/test_typed_observability.py",
+        "scripts/typed_contexts.py",
+        "results/typed_contexts.json",
+        "docs/research/TYPED_OBSERVABILITY.md"
+      ],
+      "acceptance": [
+        "Finite declared type grammar genuinely closes at fixed budget.",
+        "Certify L_b=A_b B_b and B_target M_a=T_a B_source with actual legal experiment witnesses.",
+        "Compare all short legal graph paths against direct assembled-graph height enumeration.",
+        "Verify cheapest exact witnesses separately from robust margin optimization."
+      ],
+      "pushes": [
+        {
+          "id": "NX13-A",
+          "title": "Typed algebra contract",
+          "acceptance": [
+            "Prove typed closure, quotient invariance and linear minimality; test exact rectangular fixture, empty outputs, malformed dimensions and illegal paths."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX13-B",
+          "title": "Graph adapters",
+          "acceptance": [
+            "Compile a finite boundary grammar and independently enumerate actual graphs for every retained short legal path, including noncommuting order and duplicate-edge rejection."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX13-A"
+          ]
+        },
+        {
+          "id": "NX13-C",
+          "title": "Certificates and costs",
+          "acceptance": [
+            "Replay portable identities without compiler invocation and compare cheapest witnesses with bounded exhaustive legal-path search, including rank-zero types and chronology tampering."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX13-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX13.md",
+      "execution_rank": 13,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX14",
+      "title": "Parameter-wide observable modules",
+      "depends_on": [],
+      "priority": "P1",
+      "summary": "Extend existing Q[q] observation modules beyond current budgets, with exact rank strata, denominator guards, module-generation certificates and resource-aware exceptional-parameter classification.",
+      "existing_sources": [
+        "src/singularity/parametric.py",
+        "src/singularity/observability.py",
+        "src/singularity/graph_experiments.py",
+        "tests/test_parametric.py",
+        "docs/research/PARAMETRIC_OBSERVABILITY.md",
+        "results/parametric_observability.json"
+      ],
+      "proposed_sources": [
+        "docs/research/PARAMETER_MODULE_CERTIFICATES.md",
+        "scripts/parameter_module_receipts.py",
+        "results/parameter_module_receipts.json",
+        "tests/test_parameter_module_receipts.py"
+      ],
+      "acceptance": [
+        "Preserve distinction between generic rank and complete polynomial observation module.",
+        "Reproduce false and true q=1/2 exceptional examples independently.",
+        "Attempt next budget under explicit degree, bit, step and time limits; incomplete factorization is explicit.",
+        "Provide exact roots/ranks and bases on certified parameter regions; sampling alone is insufficient."
+      ],
+      "pushes": [
+        {
+          "id": "NX14-A",
+          "title": "Resource-bounded module certificates",
+          "acceptance": [
+            "Implement strict receipt states, replay module/divisor identities and tamper tests; compare tiny explicit-word minors with independent polynomial arithmetic."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX14-B",
+          "title": "Next graph budgets",
+          "acceptance": [
+            "Attempt R=5 first with logged resource bounds; compare rational specializations with exact closure and report any refusal without a false interval theorem."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX14-A"
+          ]
+        },
+        {
+          "id": "NX14-C",
+          "title": "Parameter atlas and explanation",
+          "acceptance": [
+            "Produce certified parameter-cell bases and exceptional ranks, plus a bounded rational-function example with explicit pole guards and independent specialization checks."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX14-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX14.md",
+      "execution_rank": 14,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX15",
+      "title": "Graph-realizable invisible directions",
+      "depends_on": [],
+      "priority": "P2",
+      "summary": "Search actual two-terminal graph pairs constrained by degree, slice and charge compatibility, distinguishing formal null vectors from realizations and bounded exclusions from full-series theorems.",
+      "existing_sources": [
+        "src/singularity/contexts.py",
+        "src/singularity/terminals.py",
+        "src/singularity/charges.py",
+        "src/singularity/separator_compiler.py",
+        "src/singularity/population.py",
+        "tests/test_contexts.py",
+        "docs/chapters/10_inverse_problems.md"
+      ],
+      "proposed_sources": [
+        "scripts/realizable_interfaces.py",
+        "tests/test_realizable_interfaces.py",
+        "results/realizable_interfaces.json",
+        "docs/research/REALIZABLE_INTERFACES.md"
+      ],
+      "acceptance": [
+        "Retain rational-parameter interpolation and exact context-language hypotheses.",
+        "Reproduce R=38 and R=11 as candidate frontiers only.",
+        "Verify filters never discard a valid tiny pair, and preserve labeled height multiplicities.",
+        "Return a fully checked graph pair or a complete explicitly bounded exclusion with population completeness evidence."
+      ],
+      "pushes": [
+        {
+          "id": "NX15-A",
+          "title": "Realization specification and filters",
+          "acceptance": [
+            "Reproduce frontier vectors and slice restrictions; validate degree/charge filters against direct tiny graph kernels."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX15-B",
+          "title": "Complete bounded families",
+          "acceptance": [
+            "Exhaust at least two declared bounded structural families, independently check constructor completeness and surviving kernels, and record every bound and resource limit."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX15-A"
+          ]
+        },
+        {
+          "id": "NX15-C",
+          "title": "Witness or rigidity advance",
+          "acceptance": [
+            "Exhibit an actual full truncated-kernel witness and glued-observation checks, or prove a new stated structural exclusion; never turn finite agreement into full-series equality."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX15-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX15.md",
+      "execution_rank": 15,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX16",
+      "title": "Incremental connected-support compilation",
+      "depends_on": [],
+      "priority": "P0",
+      "summary": "Compile exact local changes to nonnegative integral weighted graph energies using union-graph supports, ambient-degree-aware cache invalidation and independent full-recompilation checks.",
+      "existing_sources": [
+        "src/singularity/locality.py",
+        "src/singularity/weighted.py",
+        "src/singularity/charges.py",
+        "tests/test_locality.py",
+        "tests/test_charges.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/incremental_locality.py",
+        "scripts/incremental_locality.py",
+        "tests/test_incremental_locality.py",
+        "results/incremental_locality.json",
+        "docs/research/INCREMENTAL_LOCALITY.md"
+      ],
+      "acceptance": [
+        "Use the union of old/new support graphs for insertion/deletion completeness.",
+        "Invalidate every support touching changed endpoints, including singleton ambient-degree changes.",
+        "Verify weighted nonnegative energy and ordinary integral q exponents with zero edges represented as absence.",
+        "Compare sequential/reversed edits to independent composition enumeration and report setup-inclusive bit/runtime costs."
+      ],
+      "pushes": [
+        {
+          "id": "NX16-A",
+          "title": "Weighted locality contract",
+          "acceptance": [
+            "Prove the union-support difference identity, implement nonnegative integral weight changes and reproduce the exact two-vertex coefficient/log example."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX16-B",
+          "title": "Incremental cache and updates",
+          "acceptance": [
+            "Check all small edge edits, sequential edits, reversal, pinning changes, stale patches and cross-graph cache isolation against full recompilation and direct energy enumeration."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX16-A"
+          ]
+        },
+        {
+          "id": "NX16-C",
+          "title": "Scaling and reusable receipts",
+          "acceptance": [
+            "Demonstrate exact bounded-degree local reuse at fixed budget; report updated supports, polynomial operations, coefficient bits, setup cost and replay time separately."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX16-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX16.md",
+      "execution_rank": 16,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX17",
+      "title": "Low-rank physical fault transport",
+      "depends_on": [],
+      "priority": "P0",
+      "summary": "Reuse a nominal discrete thermal resolvent across rank-one bond removals and small multi-fault corrections, preserving fault identity, source provenance, finite-horizon exactness and uncertainty contracts.",
+      "existing_sources": [
+        "src/singularity/thermal_diagnostics.py",
+        "scripts/thermal_diagnostics.py",
+        "tests/test_thermal_diagnostics.py",
+        "applications/thermal_diagnostics/source_fixture.json",
+        "applications/thermal_diagnostics/dynacomp_plate_source.py.txt",
+        "docs/research/THERMAL_DIAGNOSTICS.md"
+      ],
+      "proposed_sources": [
+        "src/singularity/fault_transport.py",
+        "scripts/fault_transport.py",
+        "tests/test_fault_transport.py",
+        "results/fault_transport.json",
+        "docs/research/FAULT_TRANSPORT.md"
+      ],
+      "acceptance": [
+        "Use A_fault=A_nominal+delta*b*b^T for removed nonnegative conductance.",
+        "Check rank-one and Woodbury formulas against independent neighbor-flux updates and direct sparse powers.",
+        "Preserve row sums, candidate identities, source-derived units and finite-horizon uncertainty boundaries.",
+        "Benchmark all 264 plate bonds with setup, coefficient-bit and memory costs, without presupposing speedup."
+      ],
+      "pushes": [
+        {
+          "id": "NX17-A",
+          "title": "Exact rank-one contract",
+          "acceptance": [
+            "Reproduce two-node transfer cancellation, partial/zero blockage, bond reversal and source sign/row-sum checks using independent flux and power oracles."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX17-B",
+          "title": "Multi-fault and protocol reuse",
+          "acceptance": [
+            "Check every pair in a small catalogue at multiple severities, arbitrary short input words and nonzero initial states; reject impossible removal severities."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX17-A"
+          ]
+        },
+        {
+          "id": "NX17-C",
+          "title": "Full plate population benchmark",
+          "acceptance": [
+            "Cover all 264 bonds at a declared horizon, independently verify selected outputs and reflected blindness, and report setup-inclusive break-even count, bits and runtime."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX17-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX17.md",
+      "execution_rank": 17,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX18",
+      "title": "Recovery conditioning and bit complexity",
+      "depends_on": [],
+      "priority": "P1",
+      "summary": "Quantify exact inverse noise amplification, target-specific recovery, finite-difference cancellation and encoded bit growth across delayed, weighted and charge-based interface recovery.",
+      "existing_sources": [
+        "src/singularity/contexts.py",
+        "src/singularity/charges.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/robust_search.py",
+        "tests/test_charges.py",
+        "docs/research/ROBUST_SEARCH.md",
+        "docs/research/ORDERED_CONTEXTS.md"
+      ],
+      "proposed_sources": [
+        "src/singularity/recovery_metrics.py",
+        "scripts/recovery_metrics.py",
+        "tests/test_recovery_metrics.py",
+        "results/recovery_metrics.json",
+        "docs/research/RECOVERY_METRICS.md"
+      ],
+      "acceptance": [
+        "Verify exact left-inverse identities and componentwise box-noise bounds.",
+        "Separate physical noise from rescaling/postprocessing noise and exact-rank pruning from robust optimization.",
+        "Compare probe count, volume, cost, amplification and encoded bits on equal declared targets.",
+        "Certify one target-error design optimum and any parameter-wide bounds, without inferring interval results from samples."
+      ],
+      "pushes": [
+        {
+          "id": "NX18-A",
+          "title": "Exact amplification contract",
+          "acceptance": [
+            "Prove and implement inverse error bounds, attain 32epsilon/33epsilon tiny-example bounds by box vertices, and retain dependent-row robust and rescaling counterexamples."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX18-B",
+          "title": "Recovery family comparison",
+          "acceptance": [
+            "Compare finite differences, weighted restoration and charge charts against direct tiny graph kernels with complete volume/cost/noise/bit accounting."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX18-A"
+          ]
+        },
+        {
+          "id": "NX18-C",
+          "title": "Certified target design",
+          "acceptance": [
+            "Certify the least-cost design from a bounded menu satisfying target error; replay rational primal/dual witnesses and compact-interval bounds independently."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX18-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX18.md",
+      "execution_rank": 18,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX19",
+      "title": "Integer-compatible observational quotients",
+      "depends_on": [],
+      "priority": "P1",
+      "summary": "Preserve the exact image lattice, original integer fibres, and labeled multiplicities behind rational observable quotients.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/population.py",
+        "tests/test_observability.py",
+        "tests/test_population.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/integer_quotients.py",
+        "scripts/integer_quotients.py",
+        "tests/test_integer_quotients.py",
+        "docs/research/INTEGER_QUOTIENTS.md",
+        "results/integer_quotients.json"
+      ],
+      "acceptance": [
+        "Replay Smith identities and integer inverse/unimodularity evidence without trusting the constructor.",
+        "Distinguish rational-span membership from image-lattice membership; reject output 1 for A=(2,2).",
+        "Count and rank all original bounded fibre members with preserved multiplicities.",
+        "Verify integer-lattice invariance before transporting rational quotient transitions."
+      ],
+      "pushes": [
+        {
+          "id": "NX19-A",
+          "title": "Exact image-lattice certificates",
+          "acceptance": [
+            "Strict exact matrix validation; Smith identity, divisibility and unimodularity replay.",
+            "Declared tiny bounded-entry corpus checked against exhaustive integer enumeration."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX19-B",
+          "title": "Original-object fibre populations",
+          "acceptance": [
+            "Original-coordinate constraints, certified finiteness, count/rank/unrank.",
+            "Pushforward mass conservation and direct lexicographic fibre oracle."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX19-A"
+          ]
+        },
+        {
+          "id": "NX19-C",
+          "title": "Operator-compatible lattice quotients",
+          "acceptance": [
+            "Realizable quotient updates match original integer transitions.",
+            "Reject non-invariant rational transitions and preserve existing rational API semantics."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX19-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX19.md",
+      "execution_rank": 19,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX20",
+      "title": "Pell and residue experiment automata",
+      "depends_on": [],
+      "priority": "P2",
+      "summary": "Compile declared quadratic-unit seed populations modulo m into exact costed experiment systems, with remote residue evaluation and explicit action legality.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/conductor.py",
+        "src/singularity/congruence.py",
+        "src/singularity/population.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/arithmetic_automata.py",
+        "scripts/arithmetic_automata.py",
+        "tests/test_arithmetic_automata.py",
+        "docs/research/ARITHMETIC_AUTOMATA.md",
+        "results/arithmetic_automata.json"
+      ],
+      "acceptance": [
+        "Check certified unit identity a^2-D*b^2=1 and integer norm preservation.",
+        "Compare residue transitions, cycles, and distant indices with independent direct/powering oracles.",
+        "Preserve original seed IDs and multiplicities through modular and behavioral projections.",
+        "State that unit actions in one quadratic field commute; any conjugation or partial action has separate legality semantics.",
+        "Never infer global Pell seed completeness from a finite residue calculation."
+      ],
+      "pushes": [
+        {
+          "id": "NX20-A",
+          "title": "Arithmetic residue adapter",
+          "acceptance": [
+            "Exact finite seed populations, unit validation, cycle discovery and strict serialization.",
+            "Independent quadratic multiplication and bounded-index matrix powers agree."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX20-B",
+          "title": "Costed observation closure",
+          "acceptance": [
+            "Indicator observations correctly preserve finite residue output equality.",
+            "Direct finite-machine partition refinement agrees with observable closure and cheapest witnesses."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX20-A"
+          ]
+        },
+        {
+          "id": "NX20-C",
+          "title": "Remote indices and restricted noncommuting language",
+          "acceptance": [
+            "Huge-index residues agree with independent modular powering and retained cycle.",
+            "Separate commuting-unit and conjugation-order examples retain original coordinate provenance."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX20-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX20.md",
+      "execution_rank": 20,
+      "supporting_tracks": [
+        "NX19"
+      ]
+    },
+    {
+      "id": "NX21",
+      "title": "Symmetry-adapted experiment channels",
+      "depends_on": [],
+      "priority": "P1",
+      "summary": "Certify hidden symmetry channels and conjugate-model blindness, then select implementable costed sensors or actions that actually repair target observability.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/conductor.py",
+        "src/singularity/periodic.py",
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/contexts.py",
+        "src/singularity/terminal_moves.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/symmetry_channels.py",
+        "scripts/symmetry_channels.py",
+        "tests/test_symmetry_channels.py",
+        "docs/research/SYMMETRY_CHANNELS.md",
+        "results/symmetry_channels.json"
+      ],
+      "acceptance": [
+        "Check representation, projector and operator commutation identities exactly.",
+        "Distinguish one-system isotypic blindness from conjugate-candidate model blindness.",
+        "Handle coefficient-field divisions and transformed uncertainty correctly.",
+        "Independently prove cheapest robust repair within a declared finite capability catalogue.",
+        "Keep a symmetry-breaking but still insufficient repair as a counterexample."
+      ],
+      "pushes": [
+        {
+          "id": "NX21-A",
+          "title": "Rational reflection channels",
+          "acceptance": [
+            "Exact involution projectors and the two-state all-time blindness example.",
+            "Reject broken commutation hypotheses."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX21-B",
+          "title": "Finite-group decompositions",
+          "acceptance": [
+            "Checked group representation and exact per-channel closure.",
+            "Full closure rank agrees with channel decomposition under verified assumptions."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX21-A"
+          ]
+        },
+        {
+          "id": "NX21-C",
+          "title": "Costed symmetry repair",
+          "acceptance": [
+            "Reproduce thermal reflection blindness and a target-separating repair.",
+            "Exhaust smaller installations/experiments; retain robust noise and physical sensor semantics."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX21-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX21.md",
+      "execution_rank": 21,
+      "supporting_tracks": [
+        "NX07",
+        "NX13"
+      ]
+    },
+    {
+      "id": "NX22",
+      "title": "Multi-frequency arithmetic probing",
+      "depends_on": [],
+      "priority": "P2",
+      "summary": "Recover finite-volume energy histograms from exact complete phase samples with a proved exponent bound, while exposing aliasing and preserving original profile multiplicities.",
+      "existing_sources": [
+        "src/singularity/conductor.py",
+        "src/singularity/periodic.py",
+        "src/singularity/heights.py",
+        "src/singularity/polynomials.py",
+        "src/singularity/edge_factors.py",
+        "tests/test_periodic.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/phase_probes.py",
+        "scripts/phase_probes.py",
+        "tests/test_phase_probes.py",
+        "docs/research/PHASE_PROBES.md",
+        "results/phase_probes.json"
+      ],
+      "acceptance": [
+        "For unweighted nonnegative heights use M>Delta*R^2, with exact inverse DFT in one consistent cyclotomic field.",
+        "Recover P_2(q)=1+2*q^4 for a single edge at M=5; retain M=4 aliasing.",
+        "Compare at least two sample routes and original polynomial enumeration.",
+        "Separate finite-volume reconstruction, finite-candidate identification, and existing periodic full-series equality.",
+        "Reject forged bounds, missing samples and unsupported sparse uniqueness claims."
+      ],
+      "pushes": [
+        {
+          "id": "NX22-A",
+          "title": "Exact complete phase transforms",
+          "acceptance": [
+            "Strict degree-bound and exact complete-transform certificates.",
+            "Direct histogram oracle, mass conservation, and explicit aliasing counterexample."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX22-B",
+          "title": "Compiler and periodic integration",
+          "acceptance": [
+            "Independent direct/periodic/compiler phase routes agree under their assumptions.",
+            "Composite orders and nonprimitive phases share a correct ambient field."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX22-A"
+          ]
+        },
+        {
+          "id": "NX22-C",
+          "title": "Sparse and candidate-specific probe design",
+          "acceptance": [
+            "Exact optimum within a declared finite candidate panel problem.",
+            "Any unrestricted sparse recovery statement has a separate uniqueness proof."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX22-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX22.md",
+      "execution_rank": 22,
+      "supporting_tracks": [
+        "NX14"
+      ]
+    },
+    {
+      "id": "NX23",
+      "title": "Population geometry with preserved multiplicities",
+      "depends_on": [
+        "NX03",
+        "NX19"
+      ],
+      "priority": "P1",
+      "summary": "Push original finite populations into weighted sufficient statistics, exact tilted moments, and rational-channel target decisions without changing object counts or inventing priors.",
+      "existing_sources": [
+        "src/singularity/population.py",
+        "src/singularity/panels.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/robust_search.py",
+        "src/singularity/thermal_diagnostics.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/population_geometry.py",
+        "scripts/population_geometry.py",
+        "tests/test_population_geometry.py",
+        "docs/research/POPULATION_GEOMETRY.md",
+        "results/population_geometry.json"
+      ],
+      "acceptance": [
+        "Preserve original-object total mass and target ambiguity inside compressed classes.",
+        "At rational tilts compute exact normalization, moments and covariance.",
+        "Validate rational observation likelihoods and exact zero-one Bayes risk.",
+        "Keep robust consistency-set decisions separate from posterior inference and declare every prior/loss model.",
+        "Independently exhaust tiny costed populations, retaining a Bayes/worst-case disagreement example."
+      ],
+      "pushes": [
+        {
+          "id": "NX23-A",
+          "title": "Exact weighted pushforwards",
+          "acceptance": [
+            "Mass, target tables and tilted moments agree with direct original-object sums.",
+            "Retain binary population multiplicities 1,2,1 and zero-weight/signed-feature cases."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX03-C",
+            "NX19-C"
+          ]
+        },
+        {
+          "id": "NX23-B",
+          "title": "Finite-channel target decisions",
+          "acceptance": [
+            "Exact channel normalization, posterior and risk checks.",
+            "Reject insufficient compression keys and define zero-probability model rejection."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX23-A"
+          ]
+        },
+        {
+          "id": "NX23-C",
+          "title": "Costed population-aware experiment design",
+          "acceptance": [
+            "Finite-population expected-risk optimum with original-object reconstruction.",
+            "Explicit prior/loss assumptions and comparison against robust optimum."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX23-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX23.md",
+      "execution_rank": 23,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX24",
+      "title": "Effective finite-prefix theorems",
+      "depends_on": [],
+      "priority": "R",
+      "summary": "Obtain an explicit comparison cutoff for a restricted nonperiodic family from a proved transition, recurrence, or ideal-generation closure rather than temporary ideal stabilization.",
+      "existing_sources": [
+        "scripts/vakil_bridge.py",
+        "docs/research/VAKIL_BRIDGES.md",
+        "src/singularity/observability.py",
+        "src/singularity/periodic.py",
+        "tests/test_periodic.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/prefix_certificates.py",
+        "scripts/prefix_certificates.py",
+        "tests/test_prefix_certificates.py",
+        "docs/research/EFFECTIVE_PREFIX.md",
+        "results/effective_prefix.json"
+      ],
+      "acceptance": [
+        "Noetherian existence and constructive cutoff are explicitly distinguished.",
+        "Temporary equality I_N=I_(N+1), parameter count, or finite sample agreement cannot certify completeness.",
+        "Comparison recurrences must control the difference across parameter values; individual recurrences alone are insufficient.",
+        "Handle parameter denominators, singular indices, and exceptional strata exactly.",
+        "Deliver one source-supported new restricted nonperiodic theorem or leave its research pushes open."
+      ],
+      "pushes": [
+        {
+          "id": "NX24-A",
+          "title": "Unified effective-cutoff contracts",
+          "acceptance": [
+            "Encode current periodic and finite-state certificates without enlarging their scope.",
+            "Reject delayed-coefficient and temporary-ideal-stabilization false stopping examples."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX24-B",
+          "title": "One new restricted nonperiodic theorem",
+          "acceptance": [
+            "Proved recurrence or generation mechanism with explicit sufficient comparison cutoff.",
+            "Independent original coefficients and exact exceptional-index handling."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX24-A"
+          ]
+        },
+        {
+          "id": "NX24-C",
+          "title": "Family comparison and exceptional strata",
+          "acceptance": [
+            "Retained parameter census matches independent coefficient oracle.",
+            "Forged recurrence, denominator-degeneration and singular-parameter cases are handled correctly."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX24-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX24.md",
+      "execution_rank": 24,
+      "supporting_tracks": [
+        "NX13",
+        "NX14"
+      ]
+    },
+    {
+      "id": "NX25",
+      "title": "Forecast-target sensor design",
+      "depends_on": [
+        "NX08",
+        "NX10"
+      ],
+      "priority": "application-high",
+      "summary": "Compile horizon-specific target rows, detect missing forecast information, and design costed sensor panels under explicit deterministic uncertainty. Historical WIND driver gains remain chat-derived until their manifests and held-out truth are recovered.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/panels.py",
+        "src/singularity/thermal_diagnostics.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/linear.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/uniform.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/forecast_targets.py",
+        "applications/forecast_targets/",
+        "docs/research/FORECAST_TARGETS.md",
+        "results/forecast_targets_synthetic.json"
+      ],
+      "acceptance": [
+        "Exact horizon-row/factorization and null witnesses with direct trajectory comparison.",
+        "Robust panel compared against exhaustive subsets under identical costs and uncertainty.",
+        "Source-bound archive pilot with frozen target/horizon and no synthetic-to-empirical claim transfer."
+      ],
+      "pushes": [
+        {
+          "id": "NX25-A",
+          "title": "Exact forecast-target specification",
+          "acceptance": [
+            "Replay the rational position/driver example and constrained-state case.",
+            "Direct powers through horizon eight agree; retained witnesses prove infeasibility."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX08-C",
+            "NX10-C"
+          ]
+        },
+        {
+          "id": "NX25-B",
+          "title": "Costed robust forecast-target panel",
+          "acceptance": [
+            "Enumerate at most 4096 panels and compare exact optimizer.",
+            "Retain equal-rank/different-conditioning and strict noise-boundary cases."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX25-A"
+          ]
+        },
+        {
+          "id": "NX25-C",
+          "title": "Frozen provenance-bound forecast pilot",
+          "acceptance": [
+            "Recover actual source manifests and independently measured target truth.",
+            "Freeze dates and matched-cost baselines; publish negative results as well as positive ones."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX25-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX25.md",
+      "execution_rank": 25,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX26",
+      "title": "Nonlinear ambiguity witnesses",
+      "depends_on": [],
+      "priority": "mathematical-high",
+      "summary": "Construct exact same-observation/different-target states and distinguish local tangent tests from complete fibre constancy. Include the constraint-curvature correction to second variations on curved observation fibres.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/panels.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/polynomial.py"
+      ],
+      "proposed_sources": [
+        "applications/nonlinear_fibres/",
+        "docs/research/NONLINEAR_FIBRES.md",
+        "results/nonlinear_fibres.json"
+      ],
+      "acceptance": [
+        "Exact affine-quadratic constancy criterion and independent witness replay.",
+        "Parabola regression confirms corrected Hessian; disconnected branches invalidate local-to-global inference.",
+        "Bounded sensor repair clearly distinguishes finite witness coverage from complete fibre separation."
+      ],
+      "pushes": [
+        {
+          "id": "NX26-A",
+          "title": "Exact affine-fibre constancy and witnesses",
+          "acceptance": [
+            "Verify both quadratic coefficient conditions by substitution.",
+            "Keep gap lower bounds distinct from complete diameter certificates."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX26-B",
+          "title": "Curvature-aware local fibre analysis",
+          "acceptance": [
+            "Parabola target curvature equals two despite zero ambient target Hessian.",
+            "Independent parametrizations agree at regular stationary points; singular cases are refused."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX26-A"
+          ]
+        },
+        {
+          "id": "NX26-C",
+          "title": "Bounded nonlinear sensor repair",
+          "acceptance": [
+            "At most four variables and degree four; exact or validated witnesses.",
+            "Retain a branch ambiguity missed by finite witness coverage."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX26-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX26.md",
+      "execution_rank": 26,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX27",
+      "title": "Target-preserving multiscale transport",
+      "depends_on": [
+        "NX08",
+        "NX09"
+      ],
+      "priority": "application-research",
+      "summary": "Certify coarse/fine commutation defects and propagate them into target-specific horizon errors. Exact closure of a mass target must be distinguished from approximate closure of coarse spatial averages.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/panels.py",
+        "src/singularity/thermal_diagnostics.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/bounds.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/uniform.py"
+      ],
+      "proposed_sources": [
+        "applications/multiscale_transport/",
+        "docs/research/MULTISCALE_TARGETS.md",
+        "results/multiscale_transport.json"
+      ],
+      "acceptance": [
+        "Four-cell rational diffusion example reproduces defect (-1/32,1/32).",
+        "Finite-horizon bounds validated against direct trajectories and box vertices under justified linear hypotheses.",
+        "Real-data-facing scale transfer keeps model/reference/measurement and target representation errors separate."
+      ],
+      "pushes": [
+        {
+          "id": "NX27-A",
+          "title": "Exact scale-transfer algebra",
+          "acceptance": [
+            "Independent cell-flux update reproduces every displayed fraction.",
+            "One-dimensional mass target closes while pair averages fail to close."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX08-C",
+            "NX09-C"
+          ]
+        },
+        {
+          "id": "NX27-B",
+          "title": "Certified scale-error transport and enrichment",
+          "acceptance": [
+            "Bounded-domain and correlated-domain errors maintain declared norms.",
+            "One added target-relevant coordinate improves a retained valid bound."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX27-A"
+          ]
+        },
+        {
+          "id": "NX27-C",
+          "title": "One provenance-bound physical scale pilot",
+          "acceptance": [
+            "Recover existing manifest or anonymous primary benchmark.",
+            "Freeze scalar target and report numerical-reference and measurement agreement separately."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX27-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX27.md",
+      "execution_rank": 27,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX28",
+      "title": "Reactive transport observability",
+      "depends_on": [
+        "NX25",
+        "NX26",
+        "NX27"
+      ],
+      "priority": "application-research",
+      "summary": "Build conservative rational transport/reaction toys and prove that accurate total concentration can leave species targets structurally invisible. Design species/location/time readings before any empirical chemistry claim.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/panels.py",
+        "src/singularity/thermal_diagnostics.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/polynomial.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/linear.py"
+      ],
+      "proposed_sources": [
+        "applications/reactive_transport/",
+        "docs/research/REACTIVE_OBSERVABILITY.md",
+        "results/reactive_transport.json"
+      ],
+      "acceptance": [
+        "Independent reaction/flux update and positive conservation verify the four-state toy.",
+        "All-time total-observation blindness and species target gap (3/4)^T are exact.",
+        "Frozen sourced pilot never substitutes simulated latent species for independent target truth."
+      ],
+      "pushes": [
+        {
+          "id": "NX28-A",
+          "title": "Conservative toy and structural blindness",
+          "acceptance": [
+            "Verify HM=DH and all simplex-vertex mass balances.",
+            "Species-selective repair separates the retained same-total initial states."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX25-C",
+            "NX26-C",
+            "NX27-C"
+          ]
+        },
+        {
+          "id": "NX28-B",
+          "title": "Costed species/location/time panel",
+          "acceptance": [
+            "At most twelve experiments; exhaustive panel oracle.",
+            "Uncertain-rate case demonstrates nominal-rank recovery can fail robust separation."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX28-A"
+          ]
+        },
+        {
+          "id": "NX28-C",
+          "title": "Provenance-bound reaction/measurement pilot",
+          "acceptance": [
+            "Acquire one primary anonymous source with units and method metadata.",
+            "Freeze mechanism/domain and separate validation residuals from physical model error claims."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX28-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX28.md",
+      "execution_rank": 28,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX29",
+      "title": "Identifiable movement-test design",
+      "depends_on": [
+        "NX08"
+      ],
+      "priority": "application-high",
+      "summary": "Choose additional movement conditions that identify a declared capability and quantify its estimation error. Maintain the distinction among structural identifiability, measurement reliability, and NFL prediction, including prior negative held-out results.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/panels.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/linear.py"
+      ],
+      "proposed_sources": [
+        "applications/movement_design/",
+        "docs/research/MOVEMENT_DESIGN.md",
+        "results/movement_design_synthetic.json"
+      ],
+      "acceptance": [
+        "Three-condition null witness and determinant-one fourth-condition repair replay exactly.",
+        "Target-specific robust repair compared with exhaustive catalogue subsets.",
+        "Frozen chronological/player-held-out pilot validates identity namespaces and reports matched-sample negative outcomes."
+      ],
+      "pushes": [
+        {
+          "id": "NX29-A",
+          "title": "Exact movement design and target witnesses",
+          "acceptance": [
+            "Direct polynomial substitution agrees with row-span and nullspace certificates.",
+            "A recoverable target is retained even when the full coefficient profile is underidentified."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX08-C"
+          ]
+        },
+        {
+          "id": "NX29-B",
+          "title": "Robust minimum-cost drill repair",
+          "acceptance": [
+            "At most twelve candidate conditions; compare exhaustive subsets.",
+            "Separate structural new-condition gains from repetitions under an explicit dependence model."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX29-A"
+          ]
+        },
+        {
+          "id": "NX29-C",
+          "title": "Frozen multi-source athlete pilot",
+          "acceptance": [
+            "Recover original manifests and verify linked identities across namespace boundaries.",
+            "Predeclare outcome and split; no athlete leakage across linked attempts."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX29-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX29.md",
+      "execution_rank": 29,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX30",
+      "title": "Ordered movement signatures",
+      "depends_on": [
+        "NX29"
+      ],
+      "priority": "application-high",
+      "summary": "Compile exact level-two path signatures with Chen composition, preserve segmentation populations, and test whether reliable order contrasts improve a frozen task. Historical extraction stability does not imply predictive advantage.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/experiment_design.py",
+        "src/singularity/panels.py",
+        "https://github.com/towre676-cloud/DynaComp/blob/main/src/dynacomp/polynomial.py"
+      ],
+      "proposed_sources": [
+        "applications/ordered_movement/",
+        "docs/research/ORDERED_MOVEMENT.md",
+        "results/ordered_movement_synthetic.json"
+      ],
+      "acceptance": [
+        "Axis-order paths have equal endpoints and opposite unit oriented areas under independent integration.",
+        "Segmentation compression preserves original identities and multiplicities and refuses unsafe current-summary merging.",
+        "Matched-channel order-insensitive and ordered baselines evaluated on identical held-out athletes."
+      ],
+      "pushes": [
+        {
+          "id": "NX30-A",
+          "title": "Exact level-two geometry and concatenation",
+          "acceptance": [
+            "Streaming and direct segment integration agree.",
+            "Associativity, translation, time augmentation and monotone reparametrization fixtures replay."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX29-C"
+          ]
+        },
+        {
+          "id": "NX30-B",
+          "title": "Exact segmentation populations and robust features",
+          "acceptance": [
+            "At most 1024 variants; compare full enumeration.",
+            "Overlapping attainable feature sets prevent a false robust-identification claim."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX30-A"
+          ]
+        },
+        {
+          "id": "NX30-C",
+          "title": "Frozen ordered-movement prediction pilot",
+          "acceptance": [
+            "Recover source hashes and verified athlete links; freeze one outcome.",
+            "Separate segmentation reliability from predictive skill and preserve negative findings."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX30-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX30.md",
+      "execution_rank": 30,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX31",
+      "title": "Target-directed period transport",
+      "depends_on": [],
+      "priority": "R",
+      "summary": "This is a proposed integration track, not an accepted result. Its aim is to make the period combinations needed by a particular question the primary computational object. The historical bridge is the user's August 2026 V11 account of an exact connection and validated transport engine exercised on a rank-four mirror-quintic family, together with the October PerfectPower observable-row construction. Those historical descriptions are context, not proof that the corresponding source or integral normalization is present in this archive. Inspect the companion-source manifest before importing an external engine. The current Singularity repository supplies exact finite-dimensional observation closure in `src/singularity/observability.py`, especially `OperatorSystem`, `observable_closure`, and `verify_certificate`. Its differential extension remains proposed.",
+      "existing_sources": [
+        "src/singularity/observability.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/period_observations.py"
+      ],
+      "acceptance": [
+        "Implement exact row differentiation and dependence detection for dimensions at most four and coefficient degrees at most six. Deliver the new module, focused tests, and a mathematical note deriving the scalar relation. Acceptance requires direct symbolic equality of every returned row identity, the exact three-state example above, a target with zero output, a full-dimensional case, and a parameter pivot requiring chart splitting. An independent oracle differentiates explicit polynomial solutions on nilpotent examples instead of calling the closure routine.",
+        "Connect a verified external or newly bounded numerical transport routine on a regular chart. Return target intervals with initial-condition and numerical errors separated. Acceptance requires containment of an independently computed solution, propagation of uncertainty in all initially required derivative coordinates, and honest refusal when the path crosses an excluded pole. Start with rational/nilpotent examples; do not begin with a difficult geometric family.",
+        "Select a curve or period family whose source connection and independent period integral are actually available. Compare full transport, target-reduced transport, and direct quadrature under the same normalization. Publish setup-inclusive runtime and enclosure widths. If the mirror-quintic source cannot be recovered, retain that dependency as unavailable and finish on the supported family. No flux-vacuum claim follows without the separate integral symplectic basis and flux covectors."
+      ],
+      "pushes": [
+        {
+          "id": "NX31-A",
+          "title": "Differential observation closure",
+          "acceptance": [
+            "Adapt the existing pinned PerfectPower differential-observable implementation for dimensions at most four and coefficient degrees at most six. Add a new backend only after documenting a concrete interoperability gap; do not duplicate the existing scalar-equation engine. Deliver the new module, focused tests, and a mathematical note deriving the scalar relation. Acceptance requires direct symbolic equality of every returned row identity, the exact three-state example above, a target with zero output, a full-dimensional case, and a parameter pivot requiring chart splitting. An independent oracle differentiates explicit polynomial solutions on nilpotent examples instead of calling the closure routine."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX31-B",
+          "title": "Target transport with explicit error",
+          "acceptance": [
+            "Connect a verified external or newly bounded numerical transport routine on a regular chart. Return target intervals with initial-condition and numerical errors separated. Acceptance requires containment of an independently computed solution, propagation of uncertainty in all initially required derivative coordinates, and honest refusal when the path crosses an excluded pole. Start with rational/nilpotent examples; do not begin with a difficult geometric family."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX31-A"
+          ]
+        },
+        {
+          "id": "NX31-C",
+          "title": "One source-grounded geometric application",
+          "acceptance": [
+            "Select a curve or period family whose source connection and independent period integral are actually available. Compare full transport, target-reduced transport, and direct quadrature under the same normalization. Publish setup-inclusive runtime and enclosure widths. If the mirror-quintic source cannot be recovered, retain that dependency as unavailable and finish on the supported family. No flux-vacuum claim follows without the separate integral symplectic basis and flux covectors."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX31-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX31.md",
+      "execution_rank": 31,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX32",
+      "title": "Monodromy as an experiment language",
+      "depends_on": [],
+      "priority": "R",
+      "summary": "This proposed track connects the user's October 2025 anchor-period and continuation-loop ideas to the later noncommuting arithmetic experiments and Singularity's finite operator closure. The useful question is precise: which period-state differences can be exposed by analytically continuing around an allowed collection of loops and reading declared linear functionals? It concerns continuation experiments in a specified mathematical family. It does not claim that a continuation loop is automatically a laboratory operation.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/robust_search.py",
+        "src/singularity/terminal_moves.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/monodromy_experiments.py"
+      ],
+      "acceptance": [
+        "Implement the adapter around existing operator closure. Deliver the exact toy example, gauge-transformed copies, inverse-loop validation, and a source schema. Acceptance requires chronological replay of every returned word and exact equality of all readings under several invertible rational basis changes. Exhaustive words through length six provide an independent finite comparison, while invariant closure supplies the all-future statement.",
+        "Assign costs reflecting a declared continuation workload, initially loop counts and later path length or precision. Return cheapest distinguishing words and finite-budget robust alternatives. Acceptance requires exhaustive agreement on the toy language, including a case in which the cheapest nonzero response is poorly conditioned and a more expensive response tolerates larger error. Report the scalar error model used in the comparison.",
+        "Choose a recovered, explicitly normalized family. Bind the matrices to source equations and paths. Compare exact matrix relations with independently validated continuation around the loops. Record the representation relations actually checked. If exact recovery from numerics requires integrality, prove or supply the prerequisite lattice normalization; otherwise retain validated enclosures and a correspondingly limited statement."
+      ],
+      "pushes": [
+        {
+          "id": "NX32-A",
+          "title": "Exact loop-language adapter",
+          "acceptance": [
+            "Implement the adapter around existing operator closure. Deliver the exact toy example, gauge-transformed copies, inverse-loop validation, and a source schema. Acceptance requires chronological replay of every returned word and exact equality of all readings under several invertible rational basis changes. Exhaustive words through length six provide an independent finite comparison, while invariant closure supplies the all-future statement."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX32-B",
+          "title": "Costed and robust continuation experiments",
+          "acceptance": [
+            "Assign costs reflecting a declared continuation workload, initially loop counts and later path length or precision. Return cheapest distinguishing words and finite-budget robust alternatives. Acceptance requires exhaustive agreement on the toy language, including a case in which the cheapest nonzero response is poorly conditioned and a more expensive response tolerates larger error. Report the scalar error model used in the comparison."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX32-A"
+          ]
+        },
+        {
+          "id": "NX32-C",
+          "title": "Actual monodromy source integration",
+          "acceptance": [
+            "Choose a recovered, explicitly normalized family. Bind the matrices to source equations and paths. Compare exact matrix relations with independently validated continuation around the loops. Record the representation relations actually checked. If exact recovery from numerics requires integrality, prove or supply the prerequisite lattice normalization; otherwise retain validated enclosures and a correspondingly limited statement."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX32-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX32.md",
+      "execution_rank": 32,
+      "supporting_tracks": [
+        "NX31"
+      ]
+    },
+    {
+      "id": "NX33",
+      "title": "Moving observable quotients",
+      "depends_on": [
+        "NX31"
+      ],
+      "priority": "R",
+      "summary": "This proposed track gives a precise mathematical form to the user's older ambient-system, quotient, obstruction, lift, gauge, and holonomy chain. It combines the present finite operator quotient with the differential pullback in NX31. The goal is an exact reduced system whose meaningful coordinates can vary over parameter space. No canonical manifold, motivic identification, or universal physical reduction is assumed.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/parametric.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/moving_quotients.py"
+      ],
+      "acceptance": [
+        "Deliver an identity checker and a constructor for the reduced connection on a chosen regular chart. Acceptance includes both examples above, zero and full-rank cases, a reduction that closes but loses its target, and a polynomial identity valid only after an explicitly recorded exclusion. Independently compare with explicit solutions for nilpotent or diagonal source systems.",
+        "Implement overlap transformations between two reductions of the same constant-rank observable subspace. Verify \\(\\widetilde B=GB\\), the derivative gauge law, and target transformation. Acceptance requires transport along two subdivided paths to give compatible target enclosures and deliberately corrupted overlap maps to fail exact identities. A chart singularity must trigger a switch or refusal, not an unbounded numerical division.",
+        "Choose a source-grounded parameter-dependent dynamical or period family. Publish the observable rank strata, reductions on regular cells, overlap maps, and an example of hidden-information leakage when an invalid smaller reduction is attempted. Include independently checked target predictions. Claims about loop holonomy require actual continuation around a valid loop, not merely a local gauge formula."
+      ],
+      "pushes": [
+        {
+          "id": "NX33-A",
+          "title": "Exact compatibility and obstruction",
+          "acceptance": [
+            "Deliver an identity checker and a constructor for the reduced connection on a chosen regular chart. Acceptance includes both examples above, zero and full-rank cases, a reduction that closes but loses its target, and a polynomial identity valid only after an explicitly recorded exclusion. Independently compare with explicit solutions for nilpotent or diagonal source systems."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX31-C"
+          ]
+        },
+        {
+          "id": "NX33-B",
+          "title": "Chart and gauge transport",
+          "acceptance": [
+            "Implement overlap transformations between two reductions of the same constant-rank observable subspace. Verify \\(\\widetilde B=GB\\), the derivative gauge law, and target transformation. Acceptance requires transport along two subdivided paths to give compatible target enclosures and deliberately corrupted overlap maps to fail exact identities. A chart singularity must trigger a switch or refusal, not an unbounded numerical division."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX33-A"
+          ]
+        },
+        {
+          "id": "NX33-C",
+          "title": "One integrated parameter-family application",
+          "acceptance": [
+            "Choose a source-grounded parameter-dependent dynamical or period family. Publish the observable rank strata, reductions on regular cells, overlap maps, and an example of hidden-information leakage when an invalid smaller reduction is attempted. Include independently checked target predictions. Claims about loop holonomy require actual continuation around a valid loop, not merely a local gauge formula."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX33-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX33.md",
+      "execution_rank": 33,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX34",
+      "title": "Larger certified analytic visibility regions",
+      "depends_on": [],
+      "priority": "R",
+      "summary": "This proposed track returns to the original analytic purpose of Singularity: explaining where a first unmatched local graph coefficient becomes visible in a primewise lift. The real-axis comparison is already established. Do not repackage its proof as a new result. Read `docs/chapters/07_visibility_singularities.md`, `src/singularity/arithmetic.py`, `src/singularity/certified.py`, `scripts/certified_k.py`, and their tests. The existing explicit complex discs are deliberately small because the derivative bound for small-prime factors is crude. This track replaces that bottleneck with validated local zero analysis.",
+      "existing_sources": [
+        "src/singularity/arithmetic.py",
+        "src/singularity/certified.py",
+        "docs/chapters/07_visibility_singularities.md"
+      ],
+      "proposed_sources": [
+        "src/singularity/complex_visibility.py"
+      ],
+      "acceptance": [
+        "Implement exact combinatorial tails and validated bounds for a declared small polynomial/domain class. Deliver the geometric-series example, a case with a genuine zero, a case in which subdivision is necessary, and tests against independently known polynomial root locations. Separate `zero_count` from `zero_free` in the result schema.",
+        "Map a proposed complex \\(s\\)-disc into certified local \\(z\\)-domains for each retained small prime. Check factor nonvanishing and logarithm branches. Independently compare pointwise enclosures at rational sample parameters, but use domain bounds for the actual theorem. Record directed rounding and transcendental-function bounds; ordinary complex floating point is only exploratory.",
+        "For a reference graph pair, combine local certificates with the existing large-prime tail machinery and publish a strictly larger disc than its current retained certificate. Report which bound limits the new radius. If improvement fails, retain the exact local obstructions and a bounded negative method result rather than claiming the actual analytic domain is small. Distinguish a fractional branch point from a pole whenever the discrepancy exponent is nonintegral."
+      ],
+      "pushes": [
+        {
+          "id": "NX34-A",
+          "title": "Local series tail and zero-free certificates",
+          "acceptance": [
+            "Implement exact combinatorial tails and validated bounds for a declared small polynomial/domain class. Deliver the geometric-series example, a case with a genuine zero, a case in which subdivision is necessary, and tests against independently known polynomial root locations. Separate `zero_count` from `zero_free` in the result schema."
+          ],
+          "status": "proposed",
+          "depends_on": []
+        },
+        {
+          "id": "NX34-B",
+          "title": "Small-prime image transport",
+          "acceptance": [
+            "Map a proposed complex \\(s\\)-disc into certified local \\(z\\)-domains for each retained small prime. Check factor nonvanishing and logarithm branches. Independently compare pointwise enclosures at rational sample parameters, but use domain bounds for the actual theorem. Record directed rounding and transcendental-function bounds; ordinary complex floating point is only exploratory."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX34-A"
+          ]
+        },
+        {
+          "id": "NX34-C",
+          "title": "Improved retained visibility region",
+          "acceptance": [
+            "For a reference graph pair, combine local certificates with the existing large-prime tail machinery and publish a strictly larger disc than its current retained certificate. Report which bound limits the new radius. If improvement fails, retain the exact local obstructions and a bounded negative method result rather than claiming the actual analytic domain is small. Distinguish a fractional branch point from a pole whenever the discrepancy exponent is nonintegral."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX34-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX34.md",
+      "execution_rank": 34,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX35",
+      "title": "Proof-directed computational refinement",
+      "depends_on": [
+        "NX01",
+        "NX09"
+      ],
+      "priority": "P1",
+      "summary": "This proposed integration asks the experiment optimizer to decide where better simulation is worth its cost. It joins DynaComp error contracts, PerfectPower finite optimization, and Singularity robust experiment panels. Existing implementation references are `src/singularity/experiment_design.py`, `src/singularity/panels.py`, `src/singularity/robust_search.py`, and `src/singularity/thermal_diagnostics.py`. Read the actual signatures before extending them. The new orchestrator is proposed as `src/singularity/refinement_planner.py`.",
+      "existing_sources": [
+        "src/singularity/panels.py",
+        "src/singularity/thermal_diagnostics.py",
+        "src/singularity/robust_search.py"
+      ],
+      "proposed_sources": [
+        "src/singularity/refinement_planner.py"
+      ],
+      "acceptance": [
+        "Implement strict margin classification and optimistic/conservative cover construction. Deliver the exact example and cases with equality, negative bounds, zero-radius candidates, and inconsistent oracle records. Independently enumerate every panel in tiny pools to verify both bounding inequalities.",
+        "Implement an explicit bounded queue and incumbent/lower-bound updates. Acceptance requires the same optimum as exhaustive full-fidelity search, monotone enclosures or recorded reconciliation of different valid bounds, and a retained instance with fewer full evaluations. Report total setup and refinement work, not only the count of cheap oracle calls.",
+        "Use actual source-bound error contracts for several fidelity choices on the existing thermal application. Compare the chosen experiment and finite-pool optimum with full exact predictions. Each fault/sensor/reduction combination must carry an appropriate bound; the nominal model certificate cannot be reused without justification. Retain a case where arithmetic refinement fails to help because source uncertainty dominates."
+      ],
+      "pushes": [
+        {
+          "id": "NX35-A",
+          "title": "Enclosure-to-coverage bounds",
+          "acceptance": [
+            "Implement strict margin classification and optimistic/conservative cover construction. Deliver the exact example and cases with equality, negative bounds, zero-radius candidates, and inconsistent oracle records. Independently enumerate every panel in tiny pools to verify both bounding inequalities."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C",
+            "NX09-C"
+          ]
+        },
+        {
+          "id": "NX35-B",
+          "title": "Deterministic refinement planner",
+          "acceptance": [
+            "Implement an explicit bounded queue and incumbent/lower-bound updates. Acceptance requires the same optimum as exhaustive full-fidelity search, monotone enclosures or recorded reconciliation of different valid bounds, and a retained instance with fewer full evaluations. Report total setup and refinement work, not only the count of cheap oracle calls."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX35-A"
+          ]
+        },
+        {
+          "id": "NX35-C",
+          "title": "DynaComp/thermal integration",
+          "acceptance": [
+            "Use actual source-bound error contracts for several fidelity choices on the existing thermal application. Compare the chosen experiment and finite-pool optimum with full exact predictions. Each fault/sensor/reduction combination must carry an appropriate bound; the nominal model certificate cannot be reused without justification. Retain a case where arithmetic refinement fails to help because source uncertainty dominates."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX35-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX35.md",
+      "execution_rank": 35,
+      "supporting_tracks": []
+    },
+    {
+      "id": "NX36",
+      "title": "End-to-end experiment certificates",
+      "depends_on": [
+        "NX01",
+        "NX35"
+      ],
+      "priority": "P1",
+      "summary": "This proposed track makes a completed experimental decision independently checkable from its declared mathematical inputs. It extends the project's existing exact closure, graph certificate, formal, and cost evidence with uncertainty-set separation and finite-panel optimality. It is not a request for a new permission workflow or a promise that a software certificate establishes physical calibration. The point is that another implementation can check the result without trusting the optimizer's search history.",
+      "existing_sources": [
+        "src/singularity/observability.py",
+        "src/singularity/certificates.py",
+        "formal/README.md"
+      ],
+      "proposed_sources": [
+        "src/singularity/decision_certificates.py"
+      ],
+      "acceptance": [
+        "Implement strict scalar-interval and rational-contrast checkers in a proposed `src/singularity/decision_certificates.py`. Deliver schema documentation, finite examples, serialization round trips, and an independent direct-set checker for tiny cases. Deliberately alter costs, endpoints, target labels, dimensions, and source bindings; every alteration that invalidates the claim must be rejected. Avoid tests that only mirror parser branches.",
+        "Add a finite-pool lower-bound certificate and original-population reconstruction checks. Verify the complete toy catalogue by independent enumeration, then retain one thermal result. Distinguish a catalogue optimum from an optimum over all legal protocols. If the catalogue is generated by NX12, bind the completeness evidence or state the finite-pool limitation explicitly.",
+        "Formalize the finite soundness statement connecting accepted pair-separation witnesses and a cost lower bound to target identification and optimality. Reuse existing finite operator facts where their hypotheses match; rational cost scaling needs an explicit positive common denominator if a natural-number cost theorem is used. Compile the actual proof files and report their coverage. No blanket statement about the Python optimizer, external interval engine, or physical model should follow from a narrower checker theorem."
+      ],
+      "pushes": [
+        {
+          "id": "NX36-A",
+          "title": "Exact robust feasibility records",
+          "acceptance": [
+            "Implement strict scalar-interval and rational-contrast checkers in a proposed `src/singularity/decision_certificates.py`. Deliver schema documentation, finite examples, serialization round trips, and an independent direct-set checker for tiny cases. Deliberately alter costs, endpoints, target labels, dimensions, and source bindings; every alteration that invalidates the claim must be rejected. Avoid tests that only mirror parser branches."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX01-C",
+            "NX35-C"
+          ]
+        },
+        {
+          "id": "NX36-B",
+          "title": "Optimality and reconstruction composition",
+          "acceptance": [
+            "Add a finite-pool lower-bound certificate and original-population reconstruction checks. Verify the complete toy catalogue by independent enumeration, then retain one thermal result. Distinguish a catalogue optimum from an optimum over all legal protocols. If the catalogue is generated by NX12, bind the completeness evidence or state the finite-pool limitation explicitly."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX36-A"
+          ]
+        },
+        {
+          "id": "NX36-C",
+          "title": "Scoped formal theorem and release integration",
+          "acceptance": [
+            "Formalize the finite soundness statement connecting accepted pair-separation witnesses and a cost lower bound to target identification and optimality. Reuse existing finite operator facts where their hypotheses match; rational cost scaling needs an explicit positive common denominator if a natural-number cost theorem is used. Compile the actual proof files and report their coverage. No blanket statement about the Python optimizer, external interval engine, or physical model should follow from a narrower checker theorem."
+          ],
+          "status": "proposed",
+          "depends_on": [
+            "NX36-B"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "packet": "packets/NX36.md",
+      "execution_rank": 36,
+      "supporting_tracks": []
+    }
+  ],
+  "dependency_note": "Hard dependencies are executable prerequisites. Supporting tracks are useful integrations, not blockers for a narrow first result. All shipped units are proposed."
+}

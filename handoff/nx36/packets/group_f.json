@@ -1,0 +1,267 @@
+[
+  {
+    "id": "NX31",
+    "title": "Target-directed period transport",
+    "depends_on": [],
+    "priority": "R",
+    "summary": "This is a proposed integration track, not an accepted result. Its aim is to make the period combinations needed by a particular question the primary computational object. The historical bridge is the user's August 2026 V11 account of an exact connection and validated transport engine exercised on a rank-four mirror-quintic family, together with the October PerfectPower observable-row construction. Those historical descriptions are context, not proof that the corresponding source or integral normalization is present in this archive. Inspect the companion-source manifest before importing an external engine. The current Singularity repository supplies exact finite-dimensional observation closure in `src/singularity/observability.py`, especially `OperatorSystem`, `observable_closure`, and `verify_certificate`. Its differential extension remains proposed.",
+    "existing_sources": [
+      "src/singularity/observability.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/period_observations.py"
+    ],
+    "acceptance": [
+      "Implement exact row differentiation and dependence detection for dimensions at most four and coefficient degrees at most six. Deliver the new module, focused tests, and a mathematical note deriving the scalar relation. Acceptance requires direct symbolic equality of every returned row identity, the exact three-state example above, a target with zero output, a full-dimensional case, and a parameter pivot requiring chart splitting. An independent oracle differentiates explicit polynomial solutions on nilpotent examples instead of calling the closure routine.",
+      "Connect a verified external or newly bounded numerical transport routine on a regular chart. Return target intervals with initial-condition and numerical errors separated. Acceptance requires containment of an independently computed solution, propagation of uncertainty in all initially required derivative coordinates, and honest refusal when the path crosses an excluded pole. Start with rational/nilpotent examples; do not begin with a difficult geometric family.",
+      "Select a curve or period family whose source connection and independent period integral are actually available. Compare full transport, target-reduced transport, and direct quadrature under the same normalization. Publish setup-inclusive runtime and enclosure widths. If the mirror-quintic source cannot be recovered, retain that dependency as unavailable and finish on the supported family. No flux-vacuum claim follows without the separate integral symplectic basis and flux covectors."
+    ],
+    "pushes": [
+      {
+        "id": "NX31-A",
+        "title": "Differential observation closure",
+        "acceptance": [
+          "Adapt the existing pinned PerfectPower differential-observable implementation for dimensions at most four and coefficient degrees at most six. Add a new backend only after documenting a concrete interoperability gap; do not duplicate the existing scalar-equation engine. Deliver the new module, focused tests, and a mathematical note deriving the scalar relation. Acceptance requires direct symbolic equality of every returned row identity, the exact three-state example above, a target with zero output, a full-dimensional case, and a parameter pivot requiring chart splitting. An independent oracle differentiates explicit polynomial solutions on nilpotent examples instead of calling the closure routine."
+        ]
+      },
+      {
+        "id": "NX31-B",
+        "title": "Target transport with explicit error",
+        "acceptance": [
+          "Connect a verified external or newly bounded numerical transport routine on a regular chart. Return target intervals with initial-condition and numerical errors separated. Acceptance requires containment of an independently computed solution, propagation of uncertainty in all initially required derivative coordinates, and honest refusal when the path crosses an excluded pole. Start with rational/nilpotent examples; do not begin with a difficult geometric family."
+        ]
+      },
+      {
+        "id": "NX31-C",
+        "title": "One source-grounded geometric application",
+        "acceptance": [
+          "Select a curve or period family whose source connection and independent period integral are actually available. Compare full transport, target-reduced transport, and direct quadrature under the same normalization. Publish setup-inclusive runtime and enclosure widths. If the mirror-quintic source cannot be recovered, retain that dependency as unavailable and finish on the supported family. No flux-vacuum claim follows without the separate integral symplectic basis and flux covectors."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX32",
+    "title": "Monodromy as an experiment language",
+    "depends_on": [
+      "NX31"
+    ],
+    "priority": "R",
+    "summary": "This proposed track connects the user's October 2025 anchor-period and continuation-loop ideas to the later noncommuting arithmetic experiments and Singularity's finite operator closure. The useful question is precise: which period-state differences can be exposed by analytically continuing around an allowed collection of loops and reading declared linear functionals? It concerns continuation experiments in a specified mathematical family. It does not claim that a continuation loop is automatically a laboratory operation.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/robust_search.py",
+      "src/singularity/terminal_moves.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/monodromy_experiments.py"
+    ],
+    "acceptance": [
+      "Implement the adapter around existing operator closure. Deliver the exact toy example, gauge-transformed copies, inverse-loop validation, and a source schema. Acceptance requires chronological replay of every returned word and exact equality of all readings under several invertible rational basis changes. Exhaustive words through length six provide an independent finite comparison, while invariant closure supplies the all-future statement.",
+      "Assign costs reflecting a declared continuation workload, initially loop counts and later path length or precision. Return cheapest distinguishing words and finite-budget robust alternatives. Acceptance requires exhaustive agreement on the toy language, including a case in which the cheapest nonzero response is poorly conditioned and a more expensive response tolerates larger error. Report the scalar error model used in the comparison.",
+      "Choose a recovered, explicitly normalized family. Bind the matrices to source equations and paths. Compare exact matrix relations with independently validated continuation around the loops. Record the representation relations actually checked. If exact recovery from numerics requires integrality, prove or supply the prerequisite lattice normalization; otherwise retain validated enclosures and a correspondingly limited statement."
+    ],
+    "pushes": [
+      {
+        "id": "NX32-A",
+        "title": "Exact loop-language adapter",
+        "acceptance": [
+          "Implement the adapter around existing operator closure. Deliver the exact toy example, gauge-transformed copies, inverse-loop validation, and a source schema. Acceptance requires chronological replay of every returned word and exact equality of all readings under several invertible rational basis changes. Exhaustive words through length six provide an independent finite comparison, while invariant closure supplies the all-future statement."
+        ]
+      },
+      {
+        "id": "NX32-B",
+        "title": "Costed and robust continuation experiments",
+        "acceptance": [
+          "Assign costs reflecting a declared continuation workload, initially loop counts and later path length or precision. Return cheapest distinguishing words and finite-budget robust alternatives. Acceptance requires exhaustive agreement on the toy language, including a case in which the cheapest nonzero response is poorly conditioned and a more expensive response tolerates larger error. Report the scalar error model used in the comparison."
+        ]
+      },
+      {
+        "id": "NX32-C",
+        "title": "Actual monodromy source integration",
+        "acceptance": [
+          "Choose a recovered, explicitly normalized family. Bind the matrices to source equations and paths. Compare exact matrix relations with independently validated continuation around the loops. Record the representation relations actually checked. If exact recovery from numerics requires integrality, prove or supply the prerequisite lattice normalization; otherwise retain validated enclosures and a correspondingly limited statement."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX33",
+    "title": "Moving observable quotients",
+    "depends_on": [
+      "NX31"
+    ],
+    "priority": "R",
+    "summary": "This proposed track gives a precise mathematical form to the user's older ambient-system, quotient, obstruction, lift, gauge, and holonomy chain. It combines the present finite operator quotient with the differential pullback in NX31. The goal is an exact reduced system whose meaningful coordinates can vary over parameter space. No canonical manifold, motivic identification, or universal physical reduction is assumed.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/parametric.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/moving_quotients.py"
+    ],
+    "acceptance": [
+      "Deliver an identity checker and a constructor for the reduced connection on a chosen regular chart. Acceptance includes both examples above, zero and full-rank cases, a reduction that closes but loses its target, and a polynomial identity valid only after an explicitly recorded exclusion. Independently compare with explicit solutions for nilpotent or diagonal source systems.",
+      "Implement overlap transformations between two reductions of the same constant-rank observable subspace. Verify \\(\\widetilde B=GB\\), the derivative gauge law, and target transformation. Acceptance requires transport along two subdivided paths to give compatible target enclosures and deliberately corrupted overlap maps to fail exact identities. A chart singularity must trigger a switch or refusal, not an unbounded numerical division.",
+      "Choose a source-grounded parameter-dependent dynamical or period family. Publish the observable rank strata, reductions on regular cells, overlap maps, and an example of hidden-information leakage when an invalid smaller reduction is attempted. Include independently checked target predictions. Claims about loop holonomy require actual continuation around a valid loop, not merely a local gauge formula."
+    ],
+    "pushes": [
+      {
+        "id": "NX33-A",
+        "title": "Exact compatibility and obstruction",
+        "acceptance": [
+          "Deliver an identity checker and a constructor for the reduced connection on a chosen regular chart. Acceptance includes both examples above, zero and full-rank cases, a reduction that closes but loses its target, and a polynomial identity valid only after an explicitly recorded exclusion. Independently compare with explicit solutions for nilpotent or diagonal source systems."
+        ]
+      },
+      {
+        "id": "NX33-B",
+        "title": "Chart and gauge transport",
+        "acceptance": [
+          "Implement overlap transformations between two reductions of the same constant-rank observable subspace. Verify \\(\\widetilde B=GB\\), the derivative gauge law, and target transformation. Acceptance requires transport along two subdivided paths to give compatible target enclosures and deliberately corrupted overlap maps to fail exact identities. A chart singularity must trigger a switch or refusal, not an unbounded numerical division."
+        ]
+      },
+      {
+        "id": "NX33-C",
+        "title": "One integrated parameter-family application",
+        "acceptance": [
+          "Choose a source-grounded parameter-dependent dynamical or period family. Publish the observable rank strata, reductions on regular cells, overlap maps, and an example of hidden-information leakage when an invalid smaller reduction is attempted. Include independently checked target predictions. Claims about loop holonomy require actual continuation around a valid loop, not merely a local gauge formula."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX34",
+    "title": "Larger certified analytic visibility regions",
+    "depends_on": [],
+    "priority": "R",
+    "summary": "This proposed track returns to the original analytic purpose of Singularity: explaining where a first unmatched local graph coefficient becomes visible in a primewise lift. The real-axis comparison is already established. Do not repackage its proof as a new result. Read `docs/chapters/07_visibility_singularities.md`, `src/singularity/arithmetic.py`, `src/singularity/certified.py`, `scripts/certified_k.py`, and their tests. The existing explicit complex discs are deliberately small because the derivative bound for small-prime factors is crude. This track replaces that bottleneck with validated local zero analysis.",
+    "existing_sources": [
+      "src/singularity/arithmetic.py",
+      "src/singularity/certified.py",
+      "docs/chapters/07_visibility_singularities.md"
+    ],
+    "proposed_sources": [
+      "src/singularity/complex_visibility.py"
+    ],
+    "acceptance": [
+      "Implement exact combinatorial tails and validated bounds for a declared small polynomial/domain class. Deliver the geometric-series example, a case with a genuine zero, a case in which subdivision is necessary, and tests against independently known polynomial root locations. Separate `zero_count` from `zero_free` in the result schema.",
+      "Map a proposed complex \\(s\\)-disc into certified local \\(z\\)-domains for each retained small prime. Check factor nonvanishing and logarithm branches. Independently compare pointwise enclosures at rational sample parameters, but use domain bounds for the actual theorem. Record directed rounding and transcendental-function bounds; ordinary complex floating point is only exploratory.",
+      "For a reference graph pair, combine local certificates with the existing large-prime tail machinery and publish a strictly larger disc than its current retained certificate. Report which bound limits the new radius. If improvement fails, retain the exact local obstructions and a bounded negative method result rather than claiming the actual analytic domain is small. Distinguish a fractional branch point from a pole whenever the discrepancy exponent is nonintegral."
+    ],
+    "pushes": [
+      {
+        "id": "NX34-A",
+        "title": "Local series tail and zero-free certificates",
+        "acceptance": [
+          "Implement exact combinatorial tails and validated bounds for a declared small polynomial/domain class. Deliver the geometric-series example, a case with a genuine zero, a case in which subdivision is necessary, and tests against independently known polynomial root locations. Separate `zero_count` from `zero_free` in the result schema."
+        ]
+      },
+      {
+        "id": "NX34-B",
+        "title": "Small-prime image transport",
+        "acceptance": [
+          "Map a proposed complex \\(s\\)-disc into certified local \\(z\\)-domains for each retained small prime. Check factor nonvanishing and logarithm branches. Independently compare pointwise enclosures at rational sample parameters, but use domain bounds for the actual theorem. Record directed rounding and transcendental-function bounds; ordinary complex floating point is only exploratory."
+        ]
+      },
+      {
+        "id": "NX34-C",
+        "title": "Improved retained visibility region",
+        "acceptance": [
+          "For a reference graph pair, combine local certificates with the existing large-prime tail machinery and publish a strictly larger disc than its current retained certificate. Report which bound limits the new radius. If improvement fails, retain the exact local obstructions and a bounded negative method result rather than claiming the actual analytic domain is small. Distinguish a fractional branch point from a pole whenever the discrepancy exponent is nonintegral."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX35",
+    "title": "Proof-directed computational refinement",
+    "depends_on": [
+      "NX01",
+      "NX09"
+    ],
+    "priority": "P1",
+    "summary": "This proposed integration asks the experiment optimizer to decide where better simulation is worth its cost. It joins DynaComp error contracts, PerfectPower finite optimization, and Singularity robust experiment panels. Existing implementation references are `src/singularity/experiment_design.py`, `src/singularity/panels.py`, `src/singularity/robust_search.py`, and `src/singularity/thermal_diagnostics.py`. Read the actual signatures before extending them. The new orchestrator is proposed as `src/singularity/refinement_planner.py`.",
+    "existing_sources": [
+      "src/singularity/panels.py",
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/robust_search.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/refinement_planner.py"
+    ],
+    "acceptance": [
+      "Implement strict margin classification and optimistic/conservative cover construction. Deliver the exact example and cases with equality, negative bounds, zero-radius candidates, and inconsistent oracle records. Independently enumerate every panel in tiny pools to verify both bounding inequalities.",
+      "Implement an explicit bounded queue and incumbent/lower-bound updates. Acceptance requires the same optimum as exhaustive full-fidelity search, monotone enclosures or recorded reconciliation of different valid bounds, and a retained instance with fewer full evaluations. Report total setup and refinement work, not only the count of cheap oracle calls.",
+      "Use actual source-bound error contracts for several fidelity choices on the existing thermal application. Compare the chosen experiment and finite-pool optimum with full exact predictions. Each fault/sensor/reduction combination must carry an appropriate bound; the nominal model certificate cannot be reused without justification. Retain a case where arithmetic refinement fails to help because source uncertainty dominates."
+    ],
+    "pushes": [
+      {
+        "id": "NX35-A",
+        "title": "Enclosure-to-coverage bounds",
+        "acceptance": [
+          "Implement strict margin classification and optimistic/conservative cover construction. Deliver the exact example and cases with equality, negative bounds, zero-radius candidates, and inconsistent oracle records. Independently enumerate every panel in tiny pools to verify both bounding inequalities."
+        ]
+      },
+      {
+        "id": "NX35-B",
+        "title": "Deterministic refinement planner",
+        "acceptance": [
+          "Implement an explicit bounded queue and incumbent/lower-bound updates. Acceptance requires the same optimum as exhaustive full-fidelity search, monotone enclosures or recorded reconciliation of different valid bounds, and a retained instance with fewer full evaluations. Report total setup and refinement work, not only the count of cheap oracle calls."
+        ]
+      },
+      {
+        "id": "NX35-C",
+        "title": "DynaComp/thermal integration",
+        "acceptance": [
+          "Use actual source-bound error contracts for several fidelity choices on the existing thermal application. Compare the chosen experiment and finite-pool optimum with full exact predictions. Each fault/sensor/reduction combination must carry an appropriate bound; the nominal model certificate cannot be reused without justification. Retain a case where arithmetic refinement fails to help because source uncertainty dominates."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX36",
+    "title": "End-to-end experiment certificates",
+    "depends_on": [
+      "NX01",
+      "NX35"
+    ],
+    "priority": "P1",
+    "summary": "This proposed track makes a completed experimental decision independently checkable from its declared mathematical inputs. It extends the project's existing exact closure, graph certificate, formal, and cost evidence with uncertainty-set separation and finite-panel optimality. It is not a request for a new permission workflow or a promise that a software certificate establishes physical calibration. The point is that another implementation can check the result without trusting the optimizer's search history.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/certificates.py",
+      "formal/README.md"
+    ],
+    "proposed_sources": [
+      "src/singularity/decision_certificates.py"
+    ],
+    "acceptance": [
+      "Implement strict scalar-interval and rational-contrast checkers in a proposed `src/singularity/decision_certificates.py`. Deliver schema documentation, finite examples, serialization round trips, and an independent direct-set checker for tiny cases. Deliberately alter costs, endpoints, target labels, dimensions, and source bindings; every alteration that invalidates the claim must be rejected. Avoid tests that only mirror parser branches.",
+      "Add a finite-pool lower-bound certificate and original-population reconstruction checks. Verify the complete toy catalogue by independent enumeration, then retain one thermal result. Distinguish a catalogue optimum from an optimum over all legal protocols. If the catalogue is generated by NX12, bind the completeness evidence or state the finite-pool limitation explicitly.",
+      "Formalize the finite soundness statement connecting accepted pair-separation witnesses and a cost lower bound to target identification and optimality. Reuse existing finite operator facts where their hypotheses match; rational cost scaling needs an explicit positive common denominator if a natural-number cost theorem is used. Compile the actual proof files and report their coverage. No blanket statement about the Python optimizer, external interval engine, or physical model should follow from a narrower checker theorem."
+    ],
+    "pushes": [
+      {
+        "id": "NX36-A",
+        "title": "Exact robust feasibility records",
+        "acceptance": [
+          "Implement strict scalar-interval and rational-contrast checkers in a proposed `src/singularity/decision_certificates.py`. Deliver schema documentation, finite examples, serialization round trips, and an independent direct-set checker for tiny cases. Deliberately alter costs, endpoints, target labels, dimensions, and source bindings; every alteration that invalidates the claim must be rejected. Avoid tests that only mirror parser branches."
+        ]
+      },
+      {
+        "id": "NX36-B",
+        "title": "Optimality and reconstruction composition",
+        "acceptance": [
+          "Add a finite-pool lower-bound certificate and original-population reconstruction checks. Verify the complete toy catalogue by independent enumeration, then retain one thermal result. Distinguish a catalogue optimum from an optimum over all legal protocols. If the catalogue is generated by NX12, bind the completeness evidence or state the finite-pool limitation explicitly."
+        ]
+      },
+      {
+        "id": "NX36-C",
+        "title": "Scoped formal theorem and release integration",
+        "acceptance": [
+          "Formalize the finite soundness statement connecting accepted pair-separation witnesses and a cost lower bound to target identification and optimality. Reuse existing finite operator facts where their hypotheses match; rational cost scaling needs an explicit positive common denominator if a natural-number cost theorem is used. Compile the actual proof files and report their coverage. No blanket statement about the Python optimizer, external interval engine, or physical model should follow from a narrower checker theorem."
+        ]
+      }
+    ]
+  }
+]

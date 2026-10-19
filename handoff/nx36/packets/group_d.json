@@ -1,0 +1,338 @@
+[
+  {
+    "id": "NX19",
+    "title": "Integer-compatible observational quotients",
+    "depends_on": [],
+    "priority": "P1",
+    "summary": "Preserve the exact image lattice, original integer fibres, and labeled multiplicities behind rational observable quotients.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/population.py",
+      "tests/test_observability.py",
+      "tests/test_population.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/integer_quotients.py",
+      "scripts/integer_quotients.py",
+      "tests/test_integer_quotients.py",
+      "docs/research/INTEGER_QUOTIENTS.md",
+      "results/integer_quotients.json"
+    ],
+    "acceptance": [
+      "Replay Smith identities and integer inverse/unimodularity evidence without trusting the constructor.",
+      "Distinguish rational-span membership from image-lattice membership; reject output 1 for A=(2,2).",
+      "Count and rank all original bounded fibre members with preserved multiplicities.",
+      "Verify integer-lattice invariance before transporting rational quotient transitions."
+    ],
+    "pushes": [
+      {
+        "id": "NX19-A",
+        "title": "Exact image-lattice certificates",
+        "acceptance": [
+          "Strict exact matrix validation; Smith identity, divisibility and unimodularity replay.",
+          "Declared tiny bounded-entry corpus checked against exhaustive integer enumeration."
+        ]
+      },
+      {
+        "id": "NX19-B",
+        "title": "Original-object fibre populations",
+        "acceptance": [
+          "Original-coordinate constraints, certified finiteness, count/rank/unrank.",
+          "Pushforward mass conservation and direct lexicographic fibre oracle."
+        ]
+      },
+      {
+        "id": "NX19-C",
+        "title": "Operator-compatible lattice quotients",
+        "acceptance": [
+          "Realizable quotient updates match original integer transitions.",
+          "Reject non-invariant rational transitions and preserve existing rational API semantics."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX20",
+    "title": "Pell and residue experiment automata",
+    "depends_on": [
+      "NX19"
+    ],
+    "priority": "P2",
+    "summary": "Compile declared quadratic-unit seed populations modulo m into exact costed experiment systems, with remote residue evaluation and explicit action legality.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/conductor.py",
+      "src/singularity/congruence.py",
+      "src/singularity/population.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/arithmetic_automata.py",
+      "scripts/arithmetic_automata.py",
+      "tests/test_arithmetic_automata.py",
+      "docs/research/ARITHMETIC_AUTOMATA.md",
+      "results/arithmetic_automata.json"
+    ],
+    "acceptance": [
+      "Check certified unit identity a^2-D*b^2=1 and integer norm preservation.",
+      "Compare residue transitions, cycles, and distant indices with independent direct/powering oracles.",
+      "Preserve original seed IDs and multiplicities through modular and behavioral projections.",
+      "State that unit actions in one quadratic field commute; any conjugation or partial action has separate legality semantics.",
+      "Never infer global Pell seed completeness from a finite residue calculation."
+    ],
+    "pushes": [
+      {
+        "id": "NX20-A",
+        "title": "Arithmetic residue adapter",
+        "acceptance": [
+          "Exact finite seed populations, unit validation, cycle discovery and strict serialization.",
+          "Independent quadratic multiplication and bounded-index matrix powers agree."
+        ]
+      },
+      {
+        "id": "NX20-B",
+        "title": "Costed observation closure",
+        "acceptance": [
+          "Indicator observations correctly preserve finite residue output equality.",
+          "Direct finite-machine partition refinement agrees with observable closure and cheapest witnesses."
+        ]
+      },
+      {
+        "id": "NX20-C",
+        "title": "Remote indices and restricted noncommuting language",
+        "acceptance": [
+          "Huge-index residues agree with independent modular powering and retained cycle.",
+          "Separate commuting-unit and conjugation-order examples retain original coordinate provenance."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX21",
+    "title": "Symmetry-adapted experiment channels",
+    "depends_on": [
+      "NX07",
+      "NX13"
+    ],
+    "priority": "P1",
+    "summary": "Certify hidden symmetry channels and conjugate-model blindness, then select implementable costed sensors or actions that actually repair target observability.",
+    "existing_sources": [
+      "src/singularity/observability.py",
+      "src/singularity/conductor.py",
+      "src/singularity/periodic.py",
+      "src/singularity/thermal_diagnostics.py",
+      "src/singularity/contexts.py",
+      "src/singularity/terminal_moves.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/symmetry_channels.py",
+      "scripts/symmetry_channels.py",
+      "tests/test_symmetry_channels.py",
+      "docs/research/SYMMETRY_CHANNELS.md",
+      "results/symmetry_channels.json"
+    ],
+    "acceptance": [
+      "Check representation, projector and operator commutation identities exactly.",
+      "Distinguish one-system isotypic blindness from conjugate-candidate model blindness.",
+      "Handle coefficient-field divisions and transformed uncertainty correctly.",
+      "Independently prove cheapest robust repair within a declared finite capability catalogue.",
+      "Keep a symmetry-breaking but still insufficient repair as a counterexample."
+    ],
+    "pushes": [
+      {
+        "id": "NX21-A",
+        "title": "Rational reflection channels",
+        "acceptance": [
+          "Exact involution projectors and the two-state all-time blindness example.",
+          "Reject broken commutation hypotheses."
+        ]
+      },
+      {
+        "id": "NX21-B",
+        "title": "Finite-group decompositions",
+        "acceptance": [
+          "Checked group representation and exact per-channel closure.",
+          "Full closure rank agrees with channel decomposition under verified assumptions."
+        ]
+      },
+      {
+        "id": "NX21-C",
+        "title": "Costed symmetry repair",
+        "acceptance": [
+          "Reproduce thermal reflection blindness and a target-separating repair.",
+          "Exhaust smaller installations/experiments; retain robust noise and physical sensor semantics."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX22",
+    "title": "Multi-frequency arithmetic probing",
+    "depends_on": [
+      "NX14"
+    ],
+    "priority": "P2",
+    "summary": "Recover finite-volume energy histograms from exact complete phase samples with a proved exponent bound, while exposing aliasing and preserving original profile multiplicities.",
+    "existing_sources": [
+      "src/singularity/conductor.py",
+      "src/singularity/periodic.py",
+      "src/singularity/heights.py",
+      "src/singularity/polynomials.py",
+      "src/singularity/edge_factors.py",
+      "tests/test_periodic.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/phase_probes.py",
+      "scripts/phase_probes.py",
+      "tests/test_phase_probes.py",
+      "docs/research/PHASE_PROBES.md",
+      "results/phase_probes.json"
+    ],
+    "acceptance": [
+      "For unweighted nonnegative heights use M>Delta*R^2, with exact inverse DFT in one consistent cyclotomic field.",
+      "Recover P_2(q)=1+2*q^4 for a single edge at M=5; retain M=4 aliasing.",
+      "Compare at least two sample routes and original polynomial enumeration.",
+      "Separate finite-volume reconstruction, finite-candidate identification, and existing periodic full-series equality.",
+      "Reject forged bounds, missing samples and unsupported sparse uniqueness claims."
+    ],
+    "pushes": [
+      {
+        "id": "NX22-A",
+        "title": "Exact complete phase transforms",
+        "acceptance": [
+          "Strict degree-bound and exact complete-transform certificates.",
+          "Direct histogram oracle, mass conservation, and explicit aliasing counterexample."
+        ]
+      },
+      {
+        "id": "NX22-B",
+        "title": "Compiler and periodic integration",
+        "acceptance": [
+          "Independent direct/periodic/compiler phase routes agree under their assumptions.",
+          "Composite orders and nonprimitive phases share a correct ambient field."
+        ]
+      },
+      {
+        "id": "NX22-C",
+        "title": "Sparse and candidate-specific probe design",
+        "acceptance": [
+          "Exact optimum within a declared finite candidate panel problem.",
+          "Any unrestricted sparse recovery statement has a separate uniqueness proof."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX23",
+    "title": "Population geometry with preserved multiplicities",
+    "depends_on": [
+      "NX03",
+      "NX19"
+    ],
+    "priority": "P1",
+    "summary": "Push original finite populations into weighted sufficient statistics, exact tilted moments, and rational-channel target decisions without changing object counts or inventing priors.",
+    "existing_sources": [
+      "src/singularity/population.py",
+      "src/singularity/panels.py",
+      "src/singularity/experiment_design.py",
+      "src/singularity/robust_search.py",
+      "src/singularity/thermal_diagnostics.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/population_geometry.py",
+      "scripts/population_geometry.py",
+      "tests/test_population_geometry.py",
+      "docs/research/POPULATION_GEOMETRY.md",
+      "results/population_geometry.json"
+    ],
+    "acceptance": [
+      "Preserve original-object total mass and target ambiguity inside compressed classes.",
+      "At rational tilts compute exact normalization, moments and covariance.",
+      "Validate rational observation likelihoods and exact zero-one Bayes risk.",
+      "Keep robust consistency-set decisions separate from posterior inference and declare every prior/loss model.",
+      "Independently exhaust tiny costed populations, retaining a Bayes/worst-case disagreement example."
+    ],
+    "pushes": [
+      {
+        "id": "NX23-A",
+        "title": "Exact weighted pushforwards",
+        "acceptance": [
+          "Mass, target tables and tilted moments agree with direct original-object sums.",
+          "Retain binary population multiplicities 1,2,1 and zero-weight/signed-feature cases."
+        ]
+      },
+      {
+        "id": "NX23-B",
+        "title": "Finite-channel target decisions",
+        "acceptance": [
+          "Exact channel normalization, posterior and risk checks.",
+          "Reject insufficient compression keys and define zero-probability model rejection."
+        ]
+      },
+      {
+        "id": "NX23-C",
+        "title": "Costed population-aware experiment design",
+        "acceptance": [
+          "Finite-population expected-risk optimum with original-object reconstruction.",
+          "Explicit prior/loss assumptions and comparison against robust optimum."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NX24",
+    "title": "Effective finite-prefix theorems",
+    "depends_on": [
+      "NX13",
+      "NX14"
+    ],
+    "priority": "R",
+    "summary": "Obtain an explicit comparison cutoff for a restricted nonperiodic family from a proved transition, recurrence, or ideal-generation closure rather than temporary ideal stabilization.",
+    "existing_sources": [
+      "scripts/vakil_bridge.py",
+      "docs/research/VAKIL_BRIDGES.md",
+      "src/singularity/observability.py",
+      "src/singularity/periodic.py",
+      "tests/test_periodic.py"
+    ],
+    "proposed_sources": [
+      "src/singularity/prefix_certificates.py",
+      "scripts/prefix_certificates.py",
+      "tests/test_prefix_certificates.py",
+      "docs/research/EFFECTIVE_PREFIX.md",
+      "results/effective_prefix.json"
+    ],
+    "acceptance": [
+      "Noetherian existence and constructive cutoff are explicitly distinguished.",
+      "Temporary equality I_N=I_(N+1), parameter count, or finite sample agreement cannot certify completeness.",
+      "Comparison recurrences must control the difference across parameter values; individual recurrences alone are insufficient.",
+      "Handle parameter denominators, singular indices, and exceptional strata exactly.",
+      "Deliver one source-supported new restricted nonperiodic theorem or leave its research pushes open."
+    ],
+    "pushes": [
+      {
+        "id": "NX24-A",
+        "title": "Unified effective-cutoff contracts",
+        "acceptance": [
+          "Encode current periodic and finite-state certificates without enlarging their scope.",
+          "Reject delayed-coefficient and temporary-ideal-stabilization false stopping examples."
+        ]
+      },
+      {
+        "id": "NX24-B",
+        "title": "One new restricted nonperiodic theorem",
+        "acceptance": [
+          "Proved recurrence or generation mechanism with explicit sufficient comparison cutoff.",
+          "Independent original coefficients and exact exceptional-index handling."
+        ]
+      },
+      {
+        "id": "NX24-C",
+        "title": "Family comparison and exceptional strata",
+        "acceptance": [
+          "Retained parameter census matches independent coefficient oracle.",
+          "Forged recurrence, denominator-degeneration and singular-parameter cases are handled correctly."
+        ]
+      }
+    ]
+  }
+]

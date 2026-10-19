@@ -1,0 +1,2283 @@
+{
+  "scope": "AST inventory, not an API correctness proof",
+  "modules": [
+    {
+      "path": "src/singularity/__init__.py",
+      "sha256": "f480f9baf75e343852f966efeb18086783fd56562d9025bb913a2a8c2638c438",
+      "symbols": []
+    },
+    {
+      "path": "src/singularity/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "symbols": []
+    },
+    {
+      "path": "src/singularity/arithmetic.py",
+      "sha256": "46c540275fda4cafe6a157382f44cd3fe2d7fcc7ca7c00c54eb35a6142e62cc0",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "prime_valuations",
+          "line": 6
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "valuation_energy",
+          "line": 22
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "dirichlet_coefficients",
+          "line": 30
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "normalized_ratio_tail_constant",
+          "line": 50
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "boundary_prime_tail_bound",
+          "line": 74
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regularized_tail_constant",
+          "line": 89
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regularized_prime_tail_bound",
+          "line": 115
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "certified_tail_record",
+          "line": 140
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "complex_disc_certificate",
+          "line": 192
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/certificates.py",
+      "sha256": "5be87557604f5067781124a2d51510d58fcc37681140c902854ce28fdd36cf7f",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "build_certificate",
+          "line": 59
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "parse_certificate",
+          "line": 221
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "replay_certificate",
+          "line": 341
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/certified.py",
+      "sha256": "9ddfa8c57706aff9954b8204973a7127ce5caa508f60eb50e6c9ffbc27ff66a8",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "to_fixed",
+          "line": 49
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "from_fixed",
+          "line": 54
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "iroot",
+          "line": 58
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "prime_power_enclosure",
+          "line": 76
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "log_enclosure",
+          "line": 114
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "exp_enclosure",
+          "line": 141
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "diameter",
+          "line": 168
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "greedy_decomposition",
+          "line": 184
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "height_tail_bound",
+          "line": 198
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "min_zero_box_sum",
+          "line": 224
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "normalized_factor_enclosure",
+          "line": 289
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "coefficient_aware_tail_constant",
+          "line": 307
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "primes_up_to",
+          "line": 331
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "certified_k",
+          "line": 340
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/chains.py",
+      "sha256": "488d08de81c5c86839306734952cc02344e7e172ed17b9ad35b15c99962f8149",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "level_chains",
+          "line": 47
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chain_energy",
+          "line": 91
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "validate_chain",
+          "line": 102
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chain_heights",
+          "line": 117
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "heights_chain",
+          "line": 123
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chain_marked_coefficients",
+          "line": 169
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "strict_chain_marked_coefficients",
+          "line": 183
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chain_normalized_coefficients",
+          "line": 192
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chain_local_coefficients",
+          "line": 200
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chain_census",
+          "line": 213
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/chambers.py",
+      "sha256": "c211ba2342ddfb91fb559ea55c4c2cbeae61abaeb9a64add27ff55154b4c0853",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "gap_form",
+          "line": 32
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "descents",
+          "line": 56
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chamber_of",
+          "line": 61
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chamber_profile",
+          "line": 71
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chamber_marked_coefficients",
+          "line": 101
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chamber_local_coefficients",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/charges.py",
+      "sha256": "06959ef324d6fb85beed1cc75723b5734900a086b76456648f9063f126bba29f",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "charge_interface",
+          "line": 49
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "parallel_interfaces",
+          "line": 92
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "forget_terminal",
+          "line": 128
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "kernel_from_charges",
+          "line": 166
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "pattern_dimension",
+          "line": 186
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "interface_sizes",
+          "line": 206
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "dominating_block",
+          "line": 216
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "dominating_sequence",
+          "line": 225
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "closure_operator",
+          "line": 241
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "apply",
+          "line": 268
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recover_sequence",
+          "line": 272
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "transport",
+          "line": 280
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "charge_chart",
+          "line": 290
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chart_observations",
+          "line": 320
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chart_matrix",
+          "line": 332
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recover_from_chart",
+          "line": 358
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chart_transport",
+          "line": 368
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/cli.py",
+      "sha256": "e4780504538840023498e2463ffee52f0e812123ed4940cc4d49535f391a6889",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "build_parser",
+          "line": 49
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "run",
+          "line": 98
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "main",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/compression.py",
+      "sha256": "58bb8970cd0d0fa52540d6a4c3e1251bf8d8251cf97fd97e32d299c4f974ffb2",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "independent_star",
+          "line": 44
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "star_transition",
+          "line": 62
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "reachable_subspace",
+          "line": 88
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "observable_dimension",
+          "line": 100
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "compression_report",
+          "line": 109
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "cyclicity_certificate",
+          "line": 121
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "star_function_dimension",
+          "line": 145
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "star_coordinates",
+          "line": 151
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "star_reconstruction",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/conductor.py",
+      "sha256": "2688b3c8765ebf5564dc5558d27dc7625c3aee7283a9850cc11114d789597139",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "cyclotomic_polynomial",
+          "line": 35
+        },
+        {
+          "kind": "ClassDef",
+          "name": "CyclotomicRing",
+          "line": 46,
+          "methods": [
+            "reduce",
+            "add",
+            "scale",
+            "multiply",
+            "power",
+            "phase"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "residue_numerator",
+          "line": 93
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "remote_coefficient",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/congruence.py",
+      "sha256": "3cb755a2f27de5d417bda845e90a0b8aa636bd852e5f16c47a380113172bf4fc",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "volume_residue",
+          "line": 45
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "twisted_series",
+          "line": 55
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "character_average",
+          "line": 77
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "residue_class_coefficients",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/contexts.py",
+      "sha256": "e6e864dfc7f6ba877980882645e9f8136a12c35b1fa52ba7f3d44ac0754e4c68",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "symmetrize",
+          "line": 43
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "orbits",
+          "line": 53
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "orbit_groups",
+          "line": 58
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "top_degree_defect",
+          "line": 66
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "symmetric_context",
+          "line": 72
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "symmetric_probe_set",
+          "line": 109
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recover_symmetrized_kernel",
+          "line": 137
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "symmetric_interface_rank",
+          "line": 177
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "max_group_size",
+          "line": 246
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "diagonal_defects",
+          "line": 251
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "interface_status",
+          "line": 270
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "top_degree_kernel",
+          "line": 287
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "interior_zero_coefficient",
+          "line": 320
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "weighted_probe",
+          "line": 331
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "symmetric_interface_rank_mod",
+          "line": 346
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "top_block_rank_mod",
+          "line": 418
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "lower_degree_condition",
+          "line": 435
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "tau",
+          "line": 475
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "finite_difference_budget",
+          "line": 482
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "finite_difference_probe_set",
+          "line": 488
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recover_by_finite_differences",
+          "line": 499
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "boundary_determinant",
+          "line": 557
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "interpolation_rank",
+          "line": 574
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/decomposition.py",
+      "sha256": "ba9fd8db482d2ba22cc69bafbbcf8b224a9f4c81d6f50fc586078aa42e85d43c",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "TreeDecomposition",
+          "line": 39,
+          "methods": [
+            "to_dict",
+            "from_dict",
+            "width"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "check_decomposition",
+          "line": 63
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "charge_owners",
+          "line": 144
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "decomposition_histogram",
+          "line": 242
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "marked_decomposition_coefficients",
+          "line": 267
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "decomposition_statistics",
+          "line": 289
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "elimination_decomposition",
+          "line": 298
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "forest_decomposition",
+          "line": 322
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/edge_factors.py",
+      "sha256": "7f1cfe9e22594270bfc21fb1e60d8ee27795d38f91ecb9471f33de79fab2394b",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "edge_factor_moments",
+          "line": 17
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "edge_factor_coefficients",
+          "line": 37
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "evaluate_factors",
+          "line": 53
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "factor_gradient",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/euler.py",
+      "sha256": "5cf72dda57e2187302a8cbec42dad47aaec13a9f450386fd2610e59cb89e6c38",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "log_coefficients",
+          "line": 17
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "euler_exponents",
+          "line": 21
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "euler_exponents_mobius",
+          "line": 53
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recompose_euler",
+          "line": 64
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "first_difference",
+          "line": 86
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "first_difference_at_q",
+          "line": 99
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "finite_signature",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/examples.py",
+      "sha256": "1bac6d36832ad64cfa70f839011cf53cb8352f8ff26f1273b4fc6ae54ac50c16",
+      "symbols": []
+    },
+    {
+      "path": "src/singularity/experiment_design.py",
+      "sha256": "379ae0104f0d8af12f70461606f60a64681ff7cca16301399ed9c33f1162cfc3",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "monomial_gram",
+          "line": 59
+        },
+        {
+          "kind": "ClassDef",
+          "name": "RationalMetric",
+          "line": 72,
+          "methods": [
+            "dimension",
+            "ldl",
+            "inner",
+            "squared_norm",
+            "distance_squared",
+            "pullback"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "integral_inner_product",
+          "line": 133
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "integral_distance_squared",
+          "line": 139
+        },
+        {
+          "kind": "ClassDef",
+          "name": "OrthogonalPolynomialBasis",
+          "line": 146,
+          "methods": [
+            "metric",
+            "coordinates",
+            "polynomial"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "orthogonal_polynomial_basis",
+          "line": 170
+        },
+        {
+          "kind": "ClassDef",
+          "name": "Separation",
+          "line": 186,
+          "methods": [
+            "squared",
+            "guarantees_identification"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "minimum_separation",
+          "line": 201
+        },
+        {
+          "kind": "ClassDef",
+          "name": "NearestCandidate",
+          "line": 213,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "nearest_candidate",
+          "line": 223
+        },
+        {
+          "kind": "ClassDef",
+          "name": "Experiment",
+          "line": 245,
+          "methods": []
+        },
+        {
+          "kind": "ClassDef",
+          "name": "ExperimentScore",
+          "line": 264,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "rank_experiments",
+          "line": 273
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/families.py",
+      "sha256": "dfcd0871bf60ad7cc4c4e32bef8b604ba45a17ba8c1d4253b6750c91974c0a9d",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "pendant_cycle",
+          "line": 30
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "chebyshev_u",
+          "line": 55
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "binary_discrepancy_closed_form",
+          "line": 68
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "binary_discrepancy_enumerated",
+          "line": 80
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "first_discrepancy",
+          "line": 90
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "optimal_probe",
+          "line": 96
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "decorated_deck",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/gauss.py",
+      "sha256": "fe7edc0899af0437572bd6bde2397692d7fd83da38254f324d510c62e936de60",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "legendre",
+          "line": 35
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "diagonalize",
+          "line": 63
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "laplacian_invariants",
+          "line": 119
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "gauss_sum_direct",
+          "line": 139
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "gauss_sum_formula",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/graph.py",
+      "sha256": "26a3f963a88428a457c13c5e6eaf05fb9e464c956bba4fead0d919e49299d568",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "Graph",
+          "line": 23,
+          "methods": [
+            "degrees",
+            "neighbors",
+            "components",
+            "connected",
+            "laplacian",
+            "validate_heights",
+            "energy",
+            "cut_size",
+            "relabel",
+            "to_dict",
+            "from_dict"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/graph_experiments.py",
+      "sha256": "376f4007630e76b04bc045bbf3c764345ce5a9110614b661bfaaeeb780298680",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "ContextAttachment",
+          "line": 20,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "standard_attachments",
+          "line": 56
+        },
+        {
+          "kind": "ClassDef",
+          "name": "BoundaryExperimentSystem",
+          "line": 78,
+          "methods": [
+            "compile_graph",
+            "apply_word",
+            "observe",
+            "attached_graph",
+            "direct_observations",
+            "operator_system"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/heights.py",
+      "sha256": "25ed6cbe2bca5a2be8e5d3386ebbfba39f514dc442abe61eadf0945baf66b7a9",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "weak_compositions",
+          "line": 17
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "local_coefficients",
+          "line": 33
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "normalize_local_coefficients",
+          "line": 45
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "normalized_coefficients",
+          "line": 59
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "componentwise_normalized_coefficients",
+          "line": 68
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "marked_coefficients",
+          "line": 86
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "normalize_heights",
+          "line": 97
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "threshold_sets",
+          "line": 108
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "nested_energy",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/invariants.py",
+      "sha256": "9183d3e2860182dbec7fb87dccfc732cec6ce47c0b1574b138eb73d37d06a80b",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "binary_cut_profile",
+          "line": 12
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "minimum_cut_profile",
+          "line": 21
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "laplacian_characteristic_polynomial",
+          "line": 37
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "first_difference",
+          "line": 64
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/locality.py",
+      "sha256": "8192488b0b58e0e5a18f31afbe8e2d39522108009920285b923b5e1cce0986ec",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "connected_sets",
+          "line": 34
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "exact_support_log",
+          "line": 160
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "pinned_log",
+          "line": 181
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_from_log",
+          "line": 205
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "pinned_series",
+          "line": 218
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "pinned_series_by_enumeration",
+          "line": 223
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "cycle",
+          "line": 236
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "disjoint_union",
+          "line": 240
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "kappa",
+          "line": 248
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "cycle_log_difference",
+          "line": 253
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "reconstruct_cycle_type",
+          "line": 274
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "moment_series",
+          "line": 311
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "moment_series_by_enumeration",
+          "line": 322
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "specialize_moments",
+          "line": 333
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "moments_from_pinnings",
+          "line": 344
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "connected_supersets",
+          "line": 372
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regular_tree_ball",
+          "line": 414
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regular_background",
+          "line": 428
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regular_cycle_term",
+          "line": 441
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "girth_threshold",
+          "line": 478
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regular_log_prediction",
+          "line": 484
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "overlap_correction",
+          "line": 500
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/lowvolume.py",
+      "sha256": "ac66ac16bf757b4e7d8b81c2cb439bd578cbfd6eda669aadcdfca267a4db1c6c",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "degree_histogram",
+          "line": 53
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "ordered_pair_statistics",
+          "line": 57
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "triple_statistics",
+          "line": 70
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "pattern_sectors",
+          "line": 82
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "low_volume_local",
+          "line": 102
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "low_volume_marked",
+          "line": 111
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "low_volume_normalized",
+          "line": 123
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "regular_low_volume_local",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/nested_census.py",
+      "sha256": "6e1f3a2d5278472a60af051487806c7e8d6ef6b075e4b9c80670db0fdaeabd04",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "nested_pair_census",
+          "line": 23
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "span_two_projection",
+          "line": 43
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "reflect",
+          "line": 52
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "binary_marginal",
+          "line": 57
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "census_difference",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/observability.py",
+      "sha256": "8640fd003a64e211b5053a4a8e7733316c7e4dc1fae4cf025c821c32854371f3",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "row_times_matrix",
+          "line": 47
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "matrix_times_vector",
+          "line": 63
+        },
+        {
+          "kind": "ClassDef",
+          "name": "OperatorSystem",
+          "line": 70,
+          "methods": []
+        },
+        {
+          "kind": "ClassDef",
+          "name": "Experiment",
+          "line": 102,
+          "methods": []
+        },
+        {
+          "kind": "ClassDef",
+          "name": "ClosureCertificate",
+          "line": 110,
+          "methods": [
+            "rank",
+            "invisible_subspace",
+            "rows",
+            "quotient_operators",
+            "quotient_observations"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "experiment",
+          "line": 195
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "apply_word",
+          "line": 206
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "observable_closure",
+          "line": 264
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "verify_certificate",
+          "line": 300
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "quotient_state",
+          "line": 352
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "quotient_update",
+          "line": 358
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "quotient_output",
+          "line": 365
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "future_equivalent",
+          "line": 370
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "minimum_distinguishing_experiment",
+          "line": 375
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "certificate_bundle",
+          "line": 395
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "replay_bundle",
+          "line": 448
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/orders.py",
+      "sha256": "94fcbfac315daa072f7feedbde7af51c7c12d1568bf0995127c863298f53ef88",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "Poset",
+          "line": 31,
+          "methods": [
+            "is_weak",
+            "is_strict",
+            "linear_extensions",
+            "natural_labeling",
+            "relabel"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "count_direct",
+          "line": 81
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "count_by_chambers",
+          "line": 88
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "count_by_linear_extensions",
+          "line": 116
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "weighted_histogram",
+          "line": 123
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "order_polynomial",
+          "line": 135
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "evaluate_order_polynomial",
+          "line": 158
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "p_partition_series",
+          "line": 162
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "p_partition_rational",
+          "line": 179
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/panels.py",
+      "sha256": "5a333407d8a648406801597d9ed14d6aaac5fd3ea3351e60d3cd4d89960a799f",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "PanelPool",
+          "line": 77,
+          "methods": [
+            "size"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "reading_pool",
+          "line": 90
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "experiment_pool",
+          "line": 141
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "explicit_pool",
+          "line": 175
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "candidate_pairs",
+          "line": 188
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "coverage_masks",
+          "line": 210
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "panel_cost",
+          "line": 231
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "separates_all",
+          "line": 235
+        },
+        {
+          "kind": "ClassDef",
+          "name": "PanelResult",
+          "line": 244,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "greedy_panel",
+          "line": 288
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "minimum_cost_panel",
+          "line": 313
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "exhaustive_minimum_panel",
+          "line": 403
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "consistent_candidates",
+          "line": 429
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "certifies_identification",
+          "line": 443
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "ambiguous_reading",
+          "line": 452
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "l2_separates",
+          "line": 478
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "l2_certifies",
+          "line": 490
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "l2_consistent_candidates",
+          "line": 495
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "l2_ambiguous_reading",
+          "line": 506
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "minimum_cost_l2_panel",
+          "line": 514
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "pairwise_cheapest_witnesses",
+          "line": 537
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/parameters.py",
+      "sha256": "a8c546966dfe9b1d57c490e0d115be6a5950af890c60422be40cfad537089ecc",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "gcd",
+          "line": 47
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "squarefree",
+          "line": 58
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "sturm_sequence",
+          "line": 66
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "count_roots",
+          "line": 79
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "isolate_roots",
+          "line": 88
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "rational_roots",
+          "line": 132
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "vanishes_at",
+          "line": 157
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "multiplicity",
+          "line": 171
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "parameter_strata",
+          "line": 192
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/parametric.py",
+      "sha256": "86ea754d0f95b8b8f7c315e906cabb222aad3e44c9709a458b6c7880eee747e0",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "to_polynomial",
+          "line": 185
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "polynomial_json",
+          "line": 213
+        },
+        {
+          "kind": "ClassDef",
+          "name": "PolynomialOperatorSystem",
+          "line": 237,
+          "methods": [
+            "specialize",
+            "operator_entries"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "experiment_row",
+          "line": 298
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "generic_rank",
+          "line": 355
+        },
+        {
+          "kind": "ClassDef",
+          "name": "GenericExperiment",
+          "line": 374,
+          "methods": [
+            "row_polynomials"
+          ]
+        },
+        {
+          "kind": "ClassDef",
+          "name": "GenericClosure",
+          "line": 386,
+          "methods": [
+            "rank",
+            "matrix"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "generic_closure",
+          "line": 400
+        },
+        {
+          "kind": "ClassDef",
+          "name": "ObservationModule",
+          "line": 465,
+          "methods": [
+            "length_bound",
+            "at_length_bound",
+            "full"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "observation_module",
+          "line": 491
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "smith_invariant_factors",
+          "line": 521
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "determinantal_divisor",
+          "line": 605
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "determinantal_divisor_by_minors",
+          "line": 632
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "factor_over_q",
+          "line": 952
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "rank_at_rational",
+          "line": 1041
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "rank_at_algebraic",
+          "line": 1048
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "real_roots",
+          "line": 1115
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "parametric_observability",
+          "line": 1169
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "symbolic_boundary_system",
+          "line": 1240
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/periodic.py",
+      "sha256": "9039530b96a8d3a3cb7105019d5efd8856871af6409fa9076270c2e27f03b8b7",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "PeriodicModel",
+          "line": 69,
+          "methods": [
+            "n",
+            "ring",
+            "K",
+            "phase_exponent"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "residue_numerator",
+          "line": 126
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_from_numerator",
+          "line": 143
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "direct_coefficients",
+          "line": 172
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "is_palindromic",
+          "line": 197
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "periodic_cutoff",
+          "line": 202
+        },
+        {
+          "kind": "ClassDef",
+          "name": "PeriodicComparison",
+          "line": 210,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "compare_models",
+          "line": 225
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "square_period",
+          "line": 248
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "effective_modulus",
+          "line": 258
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "reduced_numerator",
+          "line": 268
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_from_reduced",
+          "line": 288
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "reduced_cutoff",
+          "line": 303
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "compare_models_reduced",
+          "line": 313
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "odd_vertex_count",
+          "line": 330
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/polynomials.py",
+      "sha256": "3a34001cd71b55d58c7f19b18a1769370187817e996bccb5fe71a4226f1b1b93",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "normalize",
+          "line": 23
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "constant",
+          "line": 36
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "add",
+          "line": 40
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "scale",
+          "line": 47
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "sub",
+          "line": 52
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "mul",
+          "line": 56
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "power",
+          "line": 64
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "evaluate",
+          "line": 76
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "derivative",
+          "line": 83
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "from_factors",
+          "line": 87
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "verify_factorization",
+          "line": 108
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "normalized_series",
+          "line": 117
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_add",
+          "line": 124
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_mul",
+          "line": 131
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_inverse",
+          "line": 143
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_log",
+          "line": 158
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "series_exp",
+          "line": 172
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "polynomial_to_json",
+          "line": 186
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "polynomial_from_json",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/population.py",
+      "sha256": "ff71ea973205b855fbabb10ec9ff8904880522096ed11a0ac4863cd7dbd6e5bf",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "HeightPopulation",
+          "line": 35,
+          "methods": [
+            "count",
+            "contains",
+            "rank",
+            "unrank",
+            "iter_tuples",
+            "witness",
+            "to_dict"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/primitive.py",
+      "sha256": "0ef02a960e2a12bd21d76421a9161bbb588073c17eeae4e1173b7468dc4663aa",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "mobius",
+          "line": 7
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "primitive_marked_coefficients",
+          "line": 20
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "direct_primitive_marked_coefficients",
+          "line": 37
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recompose_primitive_counts",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/robust_search.py",
+      "sha256": "58c86f35244ec86e60cb1499a225acda2d0fa9f9ec0e9372cfdf32174d6b29bb",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "row_one_norm",
+          "line": 166
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "vector_inf_norm",
+          "line": 171
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "matrix_inf_norm",
+          "line": 176
+        },
+        {
+          "kind": "ClassDef",
+          "name": "PrunedNode",
+          "line": 182,
+          "methods": []
+        },
+        {
+          "kind": "ClassDef",
+          "name": "SearchResult",
+          "line": 190,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "kappa_table",
+          "line": 245
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "margin",
+          "line": 257
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "family_margin",
+          "line": 266
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "exhaustive_margin_search",
+          "line": 370
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "exhaustive_family_search",
+          "line": 377
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "bounded_margin_search",
+          "line": 385
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "bounded_family_search",
+          "line": 395
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/separator_compiler.py",
+      "sha256": "000665c439981daff69569b625bbeef686c2d1d2e8e60bf99e6cc951782b0627",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "empty_interface",
+          "line": 80
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "introduce_terminal",
+          "line": 87
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "boundary_block",
+          "line": 126
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "closed_coefficients",
+          "line": 149
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "interface_statistics",
+          "line": 162
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "cell_bound",
+          "line": 176
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "count_bit_bound",
+          "line": 188
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "elimination_schedule",
+          "line": 203
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "schedule_width",
+          "line": 229
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "order_width",
+          "line": 238
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "run_schedule",
+          "line": 242
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "compile_interface",
+          "line": 284
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "compile_graph",
+          "line": 298
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "compile_decomposition",
+          "line": 307
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "build_step_operator",
+          "line": 374
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "operator_size",
+          "line": 409
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "apply_step_operator",
+          "line": 415
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "strip_graph",
+          "line": 449
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "periodic_plan",
+          "line": 474
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "periodic_compile",
+          "line": 550
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/terminal_moves.py",
+      "sha256": "a86122842c96c1b90cd7679903352363b34b071c31bc96daea9978e3b8699ea0",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "OrderedContextAttachment",
+          "line": 50,
+          "methods": []
+        },
+        {
+          "kind": "ClassDef",
+          "name": "OrderedMoveSystem",
+          "line": 80,
+          "methods": [
+            "compile_graph",
+            "apply_word",
+            "observe",
+            "assemble",
+            "direct_observations",
+            "operator_system"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/terminals.py",
+      "sha256": "7844ca606bf29f0a207e247949faf1ad085b4222d8d7518184aa8886b5371895",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "kernel_by_enumeration",
+          "line": 46
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "terminal_kernel",
+          "line": 58
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "glue",
+          "line": 101
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "glue_graphs",
+          "line": 121
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "antisymmetric_part",
+          "line": 145
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "twist_difference",
+          "line": 158
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "marked_glue",
+          "line": 181
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "star_probe",
+          "line": 219
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recover_kernel_from_probes",
+          "line": 233
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "rooted_deck",
+          "line": 292
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "asymmetry_order",
+          "line": 321
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "recover_kernel_from_simplex_probes",
+          "line": 327
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "twist_lattice_map",
+          "line": 382
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "circuits",
+          "line": 407
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/thermal_diagnostics.py",
+      "sha256": "a75082b209fa38823cb2c1d91d59227376fe9e27ed61152326ed94d76dba34e6",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "AffineCandidate",
+          "line": 51,
+          "methods": [
+            "step",
+            "observe"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "build_plate_candidates",
+          "line": 105
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "simulate_protocol",
+          "line": 158
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "default_protocols",
+          "line": 169
+        },
+        {
+          "kind": "ClassDef",
+          "name": "DiagnosticPool",
+          "line": 189,
+          "methods": [
+            "panel_epsilon"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "protocol_pool",
+          "line": 205
+        },
+        {
+          "kind": "ClassDef",
+          "name": "AffineOperatorCompilation",
+          "line": 275,
+          "methods": []
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "affine_operator_system",
+          "line": 282
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/transfer.py",
+      "sha256": "d26a565f5fabb950ce1f64d5b28f4e60b6872b1bb6ce3f10513abc3b2f5fdf81",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "root_messages",
+          "line": 120
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "transfer_statistics",
+          "line": 132
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "bounded_height_histogram",
+          "line": 146
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "brute_bounded_height_histogram",
+          "line": 176
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "marked_forest_coefficients",
+          "line": 195
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "histogram_coefficients",
+          "line": 225
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/visibility.py",
+      "sha256": "6d6d18874cda5f09cdbcb8b2c1a334449cf9049be2309fb5f8e02f626955599c",
+      "symbols": [
+        {
+          "kind": "FunctionDef",
+          "name": "visibility_filtration",
+          "line": 65
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "first_split_volume",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "src/singularity/weighted.py",
+      "sha256": "4c7d494f1e83dab11db3833891e361b7563745972df372a58eed58363d5a179c",
+      "symbols": [
+        {
+          "kind": "ClassDef",
+          "name": "WeightedGraph",
+          "line": 8,
+          "methods": [
+            "n",
+            "energy",
+            "volume",
+            "contract"
+          ]
+        },
+        {
+          "kind": "FunctionDef",
+          "name": "weighted_coefficients",
+          "line": 61
+        }
+      ]
+    }
+  ]
+}
