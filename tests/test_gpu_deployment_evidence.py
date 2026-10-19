@@ -12,7 +12,9 @@ import unittest
 
 from singularity.model_audit.core import deviation, flags, load_package, tolerances_from_clean, verify_package
 
-RUN = Path(__file__).resolve().parents[1] / "applications/training_lab/results/gpu_deployment_audit/v2_t4_qwen2.5-1.5b"
+ARCHIVE = Path(__file__).resolve().parents[1] / "applications/training_lab/results/gpu_deployment_audit"
+RUN = ARCHIVE / "v2_t4_qwen2.5-1.5b"
+V1_RERUN = ARCHIVE / "v1_rerun_t4_qwen2.5-1.5b"
 
 
 def stable_reference(reference, calibration, tie_margin):
@@ -97,6 +99,54 @@ class VersionTwoT4Replay(unittest.TestCase):
         self.assertEqual(missed, ["heldout/truncate_to_72"])
         self.assertEqual(self.results["candidates"]["eager_attention"]["status"], "not_approved_numerical_health_failure")
         self.assertEqual(sum(self.results["numerical_health_failures"]["candidate/eager_attention"].values()), 1348)
+
+
+class VersionOneRerunReplay(unittest.TestCase):
+    """Version-1 rule: batch-size-only calibration; a continuation that changes in
+    calibration is dropped entirely. Reproduces the cache-path false alarm."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.protocol = json.loads((V1_RERUN / "protocol.json").read_text())
+        cls.results = json.loads((V1_RERUN / "results.json").read_text())
+        observed = json.loads((V1_RERUN / "observations.json").read_text())
+        spec = cls.protocol["tolerance"]
+        reference = observed["reference/reference"]
+        calibration = [observed[f"calibration/{n}"] for n in cls.protocol["calibration_clean_runs"]]
+        stable = copy.deepcopy(reference)
+        for e, expected in enumerate(stable):
+            for run in calibration:
+                for i, (a, b) in enumerate(zip(run[e]["argmax"], expected["argmax"])):
+                    if a != b and expected["top_gap"][i] > spec["tie_margin"]:
+                        expected["top_gap"][i] = 0.
+                if "continuation" in expected and run[e].get("continuation") != expected["continuation"]:
+                    del expected["continuation"], expected["continuation_logprob"]
+        tolerances, _ = tolerances_from_clean(stable, calibration, spec["factor"], spec["floor"], spec["tie_margin"])
+        cls.tables = {k: [flags(deviation(o, s, spec["tie_margin"]), t) for o, s, t in zip(v, stable, tolerances)]
+                      for k, v in observed.items() if k.split("/")[0] in ("construction", "heldout", "control")}
+
+    def test_identity_and_order(self):
+        body = {k: v for k, v in self.protocol.items() if k not in ("frozen_at_utc", "protocol_sha256")}
+        digest = hashlib.sha256(json.dumps(body, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        self.assertEqual((digest[:16], self.results["protocol_sha256"]), ("16b658137ff946d2", digest))
+        self.assertLess(self.protocol["frozen_at_utc"], self.results["created_at_utc"])
+        self.assertTrue(verify_package(load_package(V1_RERUN / "package.json"))["verified"])
+
+    def test_separators_minimum_miss_and_false_alarms_replay(self):
+        self.assertEqual({k: sum(v) for k, v in self.tables.items()}, self.results["full_pool_separators"])
+        ids = [p["id"] for p in self.protocol["probes"]]
+        costs = [p["cost"] for p in self.protocol["probes"]]
+        masks = [sum(1 << e for e in range(len(ids)) if v[e]) for k, v in self.tables.items()
+                 if k.startswith("construction/") and sum(v) >= 2]
+        best = min(sum(costs[e] for e in range(len(ids)) if s >> e & 1) for s in range(1 << len(ids))
+                   if all(bin(s & m).count("1") >= 2 for m in masks))
+        self.assertEqual(best, 261)
+        exact = [ids.index(i) for i in self.results["panels"]["exact"]["probe_ids"]]
+        missed = [k for k, v in self.tables.items() if k.startswith("heldout/") and not any(v[e] for e in exact)]
+        self.assertEqual(missed, ["heldout/truncate_to_72"])
+        self.assertEqual(sum(self.tables["control/kv_cache_disabled"]), 4)
+        self.assertTrue(any(self.tables["control/kv_cache_disabled"][e] for e in exact))
+        self.assertEqual(self.results["nonfinite_values"], {"control/eager_attention_backend": 1348})
 
 
 if __name__ == "__main__":

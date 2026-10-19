@@ -6,4 +6,4 @@ Retained unchanged from the Colab archive `deployment_audit_v2_20261019_195015.z
 - Protocol `0ecf6e6d1cc7b8b0`, frozen 2026-10-19T19:50:37Z before any forward pass; results written 19:55:31Z.
 - `tests/test_gpu_deployment_evidence.py` recomputes tolerances, every separation, the exact minimum and the false-alarm counts from `observations.json`.
 
-Version 1 (protocol `47b381aacf9182f3`) results are not yet archived here.
+The original version-1 run (protocol `47b381aacf9182f3`) is not retained; a later re-run of the same version-1 script (protocol `16b658137ff946d2`) is archived in `../v1_rerun_t4_qwen2.5-1.5b/`.
