@@ -32,7 +32,7 @@ Qwen2.5-3B, otherwise Qwen2.5-1.5B (all Apache-2.0, not gated). Override with
 --model. ``--local-test`` runs every code path on CPU with a tiny random
 Qwen2 model and skips the CUDA-only quantized variants.
 
-Results are in --output (default deployment_audit/), including summary.md and
+Results are in --output (default: a new deployment_audit_<UTC time>/ per run), including summary.md and
 a zip of everything. Exactness covers only the declared construction table.
 Detection of held-out variants and false-alarm counts are measurements; a
 passing check is not proof of equivalence.
@@ -851,12 +851,17 @@ def ensure_dependencies(local_test):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--model", help="Hub model id (default: chosen from GPU memory)")
-    parser.add_argument("--output", type=Path, default=Path("deployment_audit"))
+    parser.add_argument("--output", type=Path,
+                        help="results folder (default: a new deployment_audit_<UTC time> folder per run)")
     parser.add_argument("--phase", choices=("all", "freeze", "run", "cold-check"), default="all")
     parser.add_argument("--local-test", action="store_true", help="CPU smoke test with a tiny random Qwen2 model")
     parser.add_argument("--skip-cold", action="store_true", help="skip fresh-process cold checks")
     # parse_known_args ignores the kernel arguments a notebook passes (e.g. -f kernel.json).
     args, _ = parser.parse_known_args(argv)
+    if args.output is None:
+        if args.phase in ("run", "cold-check"):
+            parser.error("--phase run/cold-check needs --output pointing at a frozen run")
+        args.output = Path("deployment_audit_" + datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S"))
     output = args.output.resolve()
     if args.phase == "cold-check":
         return cold_check(output)
