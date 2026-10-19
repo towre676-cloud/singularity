@@ -1,0 +1,7986 @@
+{
+ "NX08-A": {
+  "examples": {
+   "H_a_diag_1_1/100": {
+    "hidden_witness": null,
+    "lower": [
+     10000,
+     1
+    ],
+    "lower_witness": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "minimum_norm_decoder": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       100,
+       1
+      ]
+     ]
+    ],
+    "rank": 2,
+    "row_space_decoder": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       100,
+       1
+      ]
+     ]
+    ],
+    "row_space_decoder_gain_squared": [
+     [
+      10000,
+      1
+     ],
+     [
+      10000,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     10000,
+     1
+    ],
+    "upper_zero_pivots": [
+     1
+    ]
+   },
+   "H_b_identity": {
+    "hidden_witness": null,
+    "lower": [
+     1,
+     1
+    ],
+    "lower_witness": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "minimum_norm_decoder": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    ],
+    "rank": 2,
+    "row_space_decoder": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    ],
+    "row_space_decoder_gain_squared": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ],
+    "upper_zero_pivots": [
+     1
+    ]
+   },
+   "constrained_x2_eq_2x1": {
+    "hidden_witness": null,
+    "lower": [
+     4,
+     1
+    ],
+    "lower_witness": [
+     [
+      1,
+      1
+     ]
+    ],
+    "minimum_norm_decoder": [
+     [
+      [
+       2,
+       1
+      ]
+     ]
+    ],
+    "rank": 1,
+    "row_space_decoder": [
+     [
+      [
+       2,
+       1
+      ]
+     ]
+    ],
+    "row_space_decoder_gain_squared": [
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     4,
+     1
+    ],
+    "upper_zero_pivots": [
+     0
+    ]
+   },
+   "hidden_target_H_10": {
+    "hidden_witness": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "lower": null,
+    "lower_witness": null,
+    "rank": 1,
+    "status": "unobservable",
+    "upper": null,
+    "upper_zero_pivots": null
+   },
+   "irrational_two_row_target": {
+    "hidden_witness": null,
+    "lower": [
+     735018799153,
+     237386844858
+    ],
+    "lower_witness": [
+     [
+      162128,
+      1
+     ],
+     [
+      -298075,
+      1
+     ]
+    ],
+    "minimum_norm_decoder": [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       3,
+       2
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       -1,
+       2
+      ],
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "rank": 2,
+    "row_space_decoder": [
+     [
+      [
+       3,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      [
+       -2,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "row_space_decoder_gain_squared": [
+     [
+      829456518325,
+      63364839562
+     ],
+     [
+      16114,
+      1231
+     ]
+    ],
+    "status": "bracketed_sharp_constant",
+    "upper": [
+     5177,
+     1672
+    ],
+    "upper_zero_pivots": []
+   },
+   "nonzero_target_no_sensors": {
+    "hidden_witness": [
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "lower": null,
+    "lower_witness": null,
+    "rank": 0,
+    "status": "unobservable",
+    "upper": null,
+    "upper_zero_pivots": null
+   },
+   "zero_dimensional_admissible": {
+    "hidden_witness": null,
+    "lower": [
+     0,
+     1
+    ],
+    "lower_witness": null,
+    "minimum_norm_decoder": [
+     [
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "rank": 0,
+    "row_space_decoder": [
+     [
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "row_space_decoder_gain_squared": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     0,
+     1
+    ],
+    "upper_zero_pivots": []
+   },
+   "zero_target_no_sensors": {
+    "hidden_witness": null,
+    "lower": [
+     0,
+     1
+    ],
+    "lower_witness": null,
+    "minimum_norm_decoder": [
+     []
+    ],
+    "rank": 0,
+    "row_space_decoder": [
+     []
+    ],
+    "row_space_decoder_gain_squared": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     0,
+     1
+    ],
+    "upper_zero_pivots": [
+     0,
+     1
+    ]
+   }
+  },
+  "psd_oracle_population": {
+   "matrices": 600,
+   "oracle": "all principal minors, permutation expansion",
+   "psd": 539,
+   "psd_with_zero_pivot": 376,
+   "seed": 20261019
+  },
+  "receipts": {
+   "H_a_diag_1_1/100": {
+    "admissible_basis_sha256": "2da7887bce19f37eecddc591f5515ae71271c98b49979461e2de4e7546f607aa",
+    "amplification_squared": {
+     "lower": [
+      10000,
+      1
+     ],
+     "lower_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "steps": 0,
+     "upper": [
+      10000,
+      1
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        10000,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 2,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 2
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      10000,
+      1
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        10000,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 2,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 2
+      }
+     },
+     "matrix": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         100,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [],
+     "pivot_rows": [
+      0,
+      1
+     ],
+     "rank": 2,
+     "row_space_decoder": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         100,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         100
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "35eb2ea64b94e6eda4004f7c770600704988302e554f1748e9d5042864e812ed",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "H_a_diag_1_1/100",
+     "unit": "NX08-A"
+    },
+    "status": "exact_sharp_constant"
+   },
+   "H_b_identity": {
+    "admissible_basis_sha256": "2da7887bce19f37eecddc591f5515ae71271c98b49979461e2de4e7546f607aa",
+    "amplification_squared": {
+     "lower": [
+      1,
+      1
+     ],
+     "lower_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "steps": 0,
+     "upper": [
+      1,
+      1
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 2,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 2
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      1,
+      1
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 2,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 2
+      }
+     },
+     "matrix": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [],
+     "pivot_rows": [
+      0,
+      1
+     ],
+     "rank": 2,
+     "row_space_decoder": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "1742924fedd102375ca3f687ffd904f8de132db0d21873115a6b51a63e0cdb42",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "H_b_identity",
+     "unit": "NX08-A"
+    },
+    "status": "exact_sharp_constant"
+   },
+   "constrained_x2_eq_2x1": {
+    "admissible_basis_sha256": "9891a32bf22c967e0b9edefb2b071c70b3a76b100d6487f82f4726b7106950af",
+    "amplification_squared": {
+     "lower": [
+      4,
+      1
+     ],
+     "lower_witness": [
+      [
+       1,
+       1
+      ]
+     ],
+     "steps": 0,
+     "upper": [
+      4,
+      1
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 1,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 1
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      4,
+      1
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 1,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 1
+      }
+     },
+     "matrix": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         2,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [],
+     "pivot_rows": [
+      0
+     ],
+     "rank": 1,
+     "row_space_decoder": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         2,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         2,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "db729893dc87cf72f45efe6839b6cf688f92a1eaaa85ed8e5062c68487e572dd",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "constrained_x2_eq_2x1",
+     "unit": "NX08-A"
+    },
+    "status": "exact_sharp_constant"
+   },
+   "hidden_target_H_10": {
+    "admissible_basis_sha256": "2da7887bce19f37eecddc591f5515ae71271c98b49979461e2de4e7546f607aa",
+    "hidden_witness": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "problem": {
+     "admissible_basis": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "5300e8d0ca12d6f0e1314b81adf198bc9484dc8942bff140ad0ce4321b5143dd",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "hidden_target_H_10",
+     "unit": "NX08-A"
+    },
+    "status": "unobservable"
+   },
+   "irrational_two_row_target": {
+    "admissible_basis_sha256": "f27d916dbaddd2e86dd3fb347dbbd28cc894f22f8a3d6ed97749ffc6a535ff04",
+    "amplification_squared": {
+     "lower": [
+      735018799153,
+      237386844858
+     ],
+     "lower_witness": [
+      [
+       162128,
+       1
+      ],
+      [
+       -298075,
+       1
+      ]
+     ],
+     "steps": 18,
+     "upper": [
+      5177,
+      1672
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        8425,
+        418
+       ],
+       [
+        1,
+        563464
+       ]
+      ],
+      "lower": {
+       "columns": 2,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          1833,
+          3370
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 2
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      5177,
+      1672
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        4759,
+        1672
+       ],
+       [
+        3172207,
+        7957048
+       ],
+       [
+        9393889111,
+        5303930104
+       ],
+       [
+        25885,
+        3033915896
+       ]
+      ],
+      "lower": {
+       "columns": 4,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          -1254,
+          4759
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          -418,
+          4759
+         ],
+         [
+          -4502696,
+          3172207
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          -418,
+          4759
+         ],
+         [
+          -6491958,
+          3172207
+         ],
+         [
+          -1465090,
+          1814543
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 4
+      }
+     },
+     "matrix": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         1,
+         2
+        ],
+        [
+         3,
+         2
+        ],
+        [
+         1,
+         2
+        ],
+        [
+         1,
+         2
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         2
+        ],
+        [
+         -1,
+         2
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [],
+     "pivot_rows": [
+      0,
+      1
+     ],
+     "rank": 2,
+     "row_space_decoder": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         3,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         -2,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 3
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 4
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 3,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         2,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 4
+     },
+     "target": {
+      "columns": 3,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         2,
+         1
+        ],
+        [
+         3,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "target_metric": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {
+      "observations": [
+       "K",
+       "K",
+       "K",
+       "K"
+      ],
+      "state": [
+       "K",
+       "K",
+       "K"
+      ],
+      "target": [
+       "K",
+       "K"
+      ]
+     }
+    },
+    "problem_sha256": "0c797bae6eb8f28f266692cfbcbdb7e819800ee53e7fe5240dbc3f8954ed5e9e",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "irrational_two_row_target",
+     "unit": "NX08-A"
+    },
+    "status": "bracketed_sharp_constant"
+   },
+   "nonzero_target_no_sensors": {
+    "admissible_basis_sha256": "2da7887bce19f37eecddc591f5515ae71271c98b49979461e2de4e7546f607aa",
+    "hidden_witness": [
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "problem": {
+     "admissible_basis": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 0,
+      "entries": [],
+      "rows": 0
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [],
+      "rows": 0
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "834b1930f892c0e54bb659ce7bb00abfab2e5989de97b05b74a9529ce1e730e9",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "nonzero_target_no_sensors",
+     "unit": "NX08-A"
+    },
+    "status": "unobservable"
+   },
+   "zero_dimensional_admissible": {
+    "admissible_basis_sha256": "ca2c43d87667397ca76df18f723141b159a1b862a954136e57deebd0f66d5802",
+    "amplification_squared": {
+     "lower": [
+      0,
+      1
+     ],
+     "lower_witness": null,
+     "steps": 0,
+     "upper": [
+      0,
+      1
+     ],
+     "upper_ldl": {
+      "diagonal": [],
+      "lower": {
+       "columns": 0,
+       "entries": [],
+       "rows": 0
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      0,
+      1
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 1,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 1
+      }
+     },
+     "matrix": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [],
+     "pivot_rows": [],
+     "rank": 0,
+     "row_space_decoder": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 0,
+      "entries": [
+       [],
+       []
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         3,
+         1
+        ],
+        [
+         4,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "28b013c054fb46a3223d1b1a0e10ff04df18ba6731107039b789a8b3dbd8f819",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "zero_dimensional_admissible",
+     "unit": "NX08-A"
+    },
+    "status": "exact_sharp_constant"
+   },
+   "zero_target_no_sensors": {
+    "admissible_basis_sha256": "2da7887bce19f37eecddc591f5515ae71271c98b49979461e2de4e7546f607aa",
+    "amplification_squared": {
+     "lower": [
+      0,
+      1
+     ],
+     "lower_witness": null,
+     "steps": 0,
+     "upper": [
+      0,
+      1
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        0,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 2,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 2
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      0,
+      1
+     ],
+     "ldl": {
+      "diagonal": [],
+      "lower": {
+       "columns": 0,
+       "entries": [],
+       "rows": 0
+      }
+     },
+     "matrix": {
+      "columns": 0,
+      "entries": [
+       []
+      ],
+      "rows": 1
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [
+      [
+       [
+        1,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "pivot_rows": [],
+     "rank": 0,
+     "row_space_decoder": {
+      "columns": 0,
+      "entries": [
+       []
+      ],
+      "rows": 1
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 0,
+      "entries": [],
+      "rows": 0
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 2,
+      "entries": [],
+      "rows": 0
+     },
+     "target": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {}
+    },
+    "problem_sha256": "5b75924ab5f4587ed63f13b7ed56f8ee84e63816b0f3bf494afce8404f5b3717",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "zero_target_no_sensors",
+     "unit": "NX08-A"
+    },
+    "status": "exact_sharp_constant"
+   }
+  },
+  "tamper": {
+   "rejected": 14,
+   "tampered": 14
+  },
+  "target_error_squared_at_eps_1/1000": {
+   "H_a_diag_1_1/100": [
+    1,
+    100
+   ],
+   "H_b_identity": [
+    1,
+    1000000
+   ]
+  }
+ },
+ "NX08-B": {
+  "catalogue": [
+   {
+    "cost": [
+     1,
+     1
+    ],
+    "id": "cheap_x1",
+    "noise_shape_diagonal": [
+     [
+      1,
+      1
+     ]
+    ],
+    "rows": [
+     [
+      1,
+      0,
+      0
+     ]
+    ]
+   },
+   {
+    "cost": [
+     1,
+     1
+    ],
+    "id": "cheap_x1_weak_x2",
+    "noise_shape_diagonal": [
+     [
+      1,
+      1
+     ]
+    ],
+    "rows": [
+     [
+      1,
+      [
+       1,
+       50
+      ],
+      0
+     ]
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "id": "direct_x2",
+    "noise_shape_diagonal": [
+     [
+      1,
+      1
+     ]
+    ],
+    "rows": [
+     [
+      0,
+      1,
+      0
+     ]
+    ]
+   },
+   {
+    "cost": [
+     3,
+     1
+    ],
+    "id": "pair_x2x3_x3",
+    "noise_shape_diagonal": [
+     [
+      1,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ],
+    "rows": [
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "cost": [
+     1,
+     1
+    ],
+    "id": "cheap_x3",
+    "noise_shape_diagonal": [
+     [
+      1,
+      1
+     ]
+    ],
+    "rows": [
+     [
+      0,
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "cost": [
+     2,
+     1
+    ],
+    "id": "noisy_sum",
+    "noise_shape_diagonal": [
+     [
+      9,
+      1
+     ]
+    ],
+    "rows": [
+     [
+      1,
+      1,
+      1
+     ]
+    ]
+   }
+  ],
+  "cost_units": "normalized installation units",
+  "equal_rank_example": {
+   "cheap_cost": [
+    2,
+    1
+   ],
+   "cheap_kappa_squared": {
+    "hidden_witness": null,
+    "lower": [
+     5000,
+     1
+    ],
+    "lower_witness": [
+     [
+      1,
+      1
+     ],
+     [
+      -100,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     1
+    ],
+    "upper_zero_pivots": [
+     1,
+     2
+    ]
+   },
+   "cheap_layout": [
+    "cheap_x1",
+    "cheap_x1_weak_x2"
+   ],
+   "cheap_rank": 2,
+   "comparison_cost": [
+    6,
+    1
+   ],
+   "comparison_kappa_squared": {
+    "hidden_witness": null,
+    "lower": [
+     1,
+     1
+    ],
+    "lower_witness": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ],
+    "upper_zero_pivots": [
+     1,
+     2
+    ]
+   },
+   "comparison_layout": [
+    "cheap_x1",
+    "direct_x2"
+   ],
+   "comparison_rank": 2
+  },
+  "frontier": [
+   {
+    "cost": null,
+    "identifiers": [],
+    "kappa_max_squared": [
+     1,
+     2
+    ],
+    "layout": [],
+    "status": "infeasible"
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "kappa_max_squared": [
+     2,
+     3
+    ],
+    "layout": [
+     2,
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     14
+    ],
+    "status": "feasible",
+    "upper": [
+     9,
+     14
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "direct_x2"
+    ],
+    "kappa_max_squared": [
+     1,
+     1
+    ],
+    "layout": [
+     2
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "status": "feasible",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "direct_x2"
+    ],
+    "kappa_max_squared": [
+     3,
+     2
+    ],
+    "layout": [
+     2
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "status": "feasible",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "kappa_max_squared": [
+     2,
+     1
+    ],
+    "layout": [
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     5
+    ],
+    "status": "feasible",
+    "upper": [
+     9,
+     5
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3"
+    ],
+    "kappa_max_squared": [
+     5,
+     1
+    ],
+    "layout": [
+     3
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "status": "feasible",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3"
+    ],
+    "kappa_max_squared": [
+     12,
+     1
+    ],
+    "layout": [
+     3
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "status": "feasible",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3"
+    ],
+    "kappa_max_squared": [
+     100,
+     1
+    ],
+    "layout": [
+     3
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "status": "feasible",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "bracket_status": "exact_sharp_constant",
+    "cost": [
+     2,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2"
+    ],
+    "kappa_max_squared": [
+     5000,
+     1
+    ],
+    "layout": [
+     0,
+     1
+    ],
+    "lower": [
+     5000,
+     1
+    ],
+    "status": "feasible",
+    "upper": [
+     5000,
+     1
+    ]
+   }
+  ],
+  "layout_table": [
+   {
+    "cost": [
+     0,
+     1
+    ],
+    "identifiers": [],
+    "layout": [],
+    "lower": null,
+    "rank": 0,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     1,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1"
+    ],
+    "layout": [
+     0
+    ],
+    "lower": null,
+    "rank": 1,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     1,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2"
+    ],
+    "layout": [
+     1
+    ],
+    "lower": null,
+    "rank": 1,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     2,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2"
+    ],
+    "layout": [
+     0,
+     1
+    ],
+    "lower": [
+     5000,
+     1
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     1
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "direct_x2"
+    ],
+    "layout": [
+     2
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 1,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2"
+    ],
+    "layout": [
+     0,
+     2
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2"
+    ],
+    "layout": [
+     1,
+     2
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2"
+    ],
+    "layout": [
+     0,
+     1,
+     2
+    ],
+    "lower": [
+     5000,
+     5001
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     5001
+    ]
+   },
+   {
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     3
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     0,
+     3
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     1,
+     3
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     0,
+     1,
+     3
+    ],
+    "lower": [
+     5000,
+     1001
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     1001
+    ]
+   },
+   {
+    "cost": [
+     8,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     2,
+     3
+    ],
+    "lower": [
+     5,
+     6
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     6
+    ]
+   },
+   {
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     0,
+     2,
+     3
+    ],
+    "lower": [
+     5,
+     6
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     6
+    ]
+   },
+   {
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     1,
+     2,
+     3
+    ],
+    "lower": [
+     5,
+     6
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     6
+    ]
+   },
+   {
+    "cost": [
+     10,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "lower": [
+     5000,
+     6001
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     6001
+    ]
+   },
+   {
+    "cost": [
+     1,
+     1
+    ],
+    "identifiers": [
+     "cheap_x3"
+    ],
+    "layout": [
+     4
+    ],
+    "lower": null,
+    "rank": 1,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     2,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     4
+    ],
+    "lower": null,
+    "rank": 2,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     2,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "cheap_x3"
+    ],
+    "layout": [
+     1,
+     4
+    ],
+    "lower": null,
+    "rank": 2,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     1,
+     4
+    ],
+    "lower": [
+     5000,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     1
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "cheap_x3"
+    ],
+    "layout": [
+     2,
+     4
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     2,
+     4
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "cheap_x3"
+    ],
+    "layout": [
+     1,
+     2,
+     4
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     8,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     4
+    ],
+    "lower": [
+     5000,
+     5001
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     5001
+    ]
+   },
+   {
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     5
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     5
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     5
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     5
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     1,
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     5
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     5
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     1,
+     3,
+     4
+    ],
+    "lower": [
+     45000,
+     25009
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     45000,
+     25009
+    ]
+   },
+   {
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     2,
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     14
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     14
+    ]
+   },
+   {
+    "cost": [
+     10,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     2,
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     14
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     14
+    ]
+   },
+   {
+    "cost": [
+     10,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "lower": [
+     9,
+     14
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     14
+    ]
+   },
+   {
+    "cost": [
+     11,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "lower": [
+     45000,
+     70009
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     45000,
+     70009
+    ]
+   },
+   {
+    "cost": [
+     2,
+     1
+    ],
+    "identifiers": [
+     "noisy_sum"
+    ],
+    "layout": [
+     5
+    ],
+    "lower": null,
+    "rank": 1,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     5
+    ],
+    "lower": null,
+    "rank": 2,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     5
+    ],
+    "lower": null,
+    "rank": 2,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     5
+    ],
+    "lower": [
+     5000,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     1
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "noisy_sum"
+    ],
+    "layout": [
+     2,
+     5
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 2,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     8,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     2,
+     5
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     8,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     2,
+     5
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     5
+    ],
+    "lower": [
+     5000,
+     5001
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5000,
+     5001
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     3,
+     5
+    ],
+    "lower": [
+     5,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     1
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     3,
+     5
+    ],
+    "lower": [
+     54,
+     11
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     54,
+     11
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     3,
+     5
+    ],
+    "lower": [
+     1000,
+     203
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1000,
+     203
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     3,
+     5
+    ],
+    "lower": [
+     128750,
+     26227
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     128750,
+     26227
+    ]
+   },
+   {
+    "cost": [
+     10,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     2,
+     3,
+     5
+    ],
+    "lower": [
+     5,
+     6
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     5,
+     6
+    ]
+   },
+   {
+    "cost": [
+     11,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     2,
+     3,
+     5
+    ],
+    "lower": [
+     54,
+     65
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     54,
+     65
+    ]
+   },
+   {
+    "cost": [
+     11,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     2,
+     3,
+     5
+    ],
+    "lower": [
+     1000,
+     1203
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1000,
+     1203
+    ]
+   },
+   {
+    "cost": [
+     12,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     3,
+     5
+    ],
+    "lower": [
+     128750,
+     154977
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     128750,
+     154977
+    ]
+   },
+   {
+    "cost": [
+     3,
+     1
+    ],
+    "identifiers": [
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     4,
+     5
+    ],
+    "lower": null,
+    "rank": 2,
+    "status": "unobservable",
+    "upper": null
+   },
+   {
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     4,
+     5
+    ],
+    "lower": [
+     11,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     11,
+     1
+    ]
+   },
+   {
+    "cost": [
+     4,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     4,
+     5
+    ],
+    "lower": [
+     27500,
+     2401
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     27500,
+     2401
+    ]
+   },
+   {
+    "cost": [
+     5,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     4,
+     5
+    ],
+    "lower": [
+     17500,
+     1637
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     17500,
+     1637
+    ]
+   },
+   {
+    "cost": [
+     8,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     2,
+     4,
+     5
+    ],
+    "lower": [
+     1,
+     1
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     1,
+     1
+    ]
+   },
+   {
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     2,
+     4,
+     5
+    ],
+    "lower": [
+     11,
+     12
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     11,
+     12
+    ]
+   },
+   {
+    "cost": [
+     9,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     2,
+     4,
+     5
+    ],
+    "lower": [
+     27500,
+     29901
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     27500,
+     29901
+    ]
+   },
+   {
+    "cost": [
+     10,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     4,
+     5
+    ],
+    "lower": [
+     17500,
+     19137
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     17500,
+     19137
+    ]
+   },
+   {
+    "cost": [
+     6,
+     1
+    ],
+    "identifiers": [
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     9,
+     5
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     5
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     94,
+     55
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     94,
+     55
+    ]
+   },
+   {
+    "cost": [
+     7,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     235000,
+     137009
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     235000,
+     137009
+    ]
+   },
+   {
+    "cost": [
+     8,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     223750,
+     131047
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     223750,
+     131047
+    ]
+   },
+   {
+    "cost": [
+     11,
+     1
+    ],
+    "identifiers": [
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     9,
+     14
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     9,
+     14
+    ]
+   },
+   {
+    "cost": [
+     12,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     2,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     94,
+     149
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     94,
+     149
+    ]
+   },
+   {
+    "cost": [
+     12,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     235000,
+     372009
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     235000,
+     372009
+    ]
+   },
+   {
+    "cost": [
+     13,
+     1
+    ],
+    "identifiers": [
+     "cheap_x1",
+     "cheap_x1_weak_x2",
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3",
+     "noisy_sum"
+    ],
+    "layout": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "lower": [
+     223750,
+     354797
+    ],
+    "rank": 3,
+    "status": "exact_sharp_constant",
+    "upper": [
+     223750,
+     354797
+    ]
+   }
+  ],
+  "noise_contract": "joint ellipsoid eta^T R^-1 eta <= eps^2, R block diagonal by sensor",
+  "optimum_comparisons": [
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     2,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": null,
+    "layout": [
+     "cheap_x1",
+     "cheap_x1_weak_x2"
+    ],
+    "objective": "kernel",
+    "pruned_tests": 18,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": null,
+    "exhaustive_tests": 64,
+    "kappa_max_squared": [
+     1,
+     2
+    ],
+    "layout": [],
+    "objective": "conditioning",
+    "pruned_tests": 2,
+    "status": "infeasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     9,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": [
+     2,
+     3
+    ],
+    "layout": [
+     "direct_x2",
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 32,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     5,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": 1,
+    "layout": [
+     "direct_x2"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 16,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     5,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": [
+     3,
+     2
+    ],
+    "layout": [
+     "direct_x2"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 16,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     4,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": 2,
+    "layout": [
+     "pair_x2x3_x3",
+     "cheap_x3"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 31,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     3,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": 5,
+    "layout": [
+     "pair_x2x3_x3"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 21,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     3,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": 12,
+    "layout": [
+     "pair_x2x3_x3"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 27,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     3,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": 100,
+    "layout": [
+     "pair_x2x3_x3"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 27,
+    "status": "feasible"
+   },
+   {
+    "brute_force_agrees": true,
+    "cost": [
+     2,
+     1
+    ],
+    "exhaustive_tests": 64,
+    "kappa_max_squared": 5000,
+    "layout": [
+     "cheap_x1",
+     "cheap_x1_weak_x2"
+    ],
+    "objective": "conditioning",
+    "pruned_tests": 18,
+    "status": "feasible"
+   }
+  ],
+  "target": [
+   [
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "NX08-C": {
+  "forecast": {
+   "admissible_basis": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "admissible_meaning": "calibrated sensor: bias fixed at its known centre 0",
+   "horizons": [
+    {
+     "adversarial_attained_ratio": [
+      32378059563489599823872,
+      1261459648897552150897
+     ],
+     "decoder_errors_squared": [
+      [
+       2529535903397624986240,
+       1
+      ],
+      [
+       2529535903397624986240,
+       1
+      ]
+     ],
+     "noise_squared": [
+      6307298244487760754485,
+      64
+     ],
+     "position_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       1069,
+       46
+      ],
+      "lower_witness": [
+       [
+        1069,
+        1
+       ],
+       [
+        -345,
+        1
+       ],
+       [
+        -1152,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       1069,
+       46
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "position_velocity_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       32378059563489599823872,
+       1261459648897552150897
+      ],
+      "lower_witness": [
+       [
+        47849544808,
+        1
+       ],
+       [
+        -15490544376,
+        1
+       ],
+       [
+        -51515029169,
+        1
+       ]
+      ],
+      "status": "bracketed_sharp_constant",
+      "upper": [
+       72407,
+       2821
+      ],
+      "upper_zero_pivots": []
+     },
+     "tau": 0
+    },
+    {
+     "adversarial_attained_ratio": [
+      28232348589624693837451264,
+      2155461298106497004706109
+     ],
+     "decoder_errors_squared": [
+      [
+       441130446712885841210176,
+       1
+      ],
+      [
+       441130446712885841210176,
+       1
+      ]
+     ],
+     "noise_squared": [
+      2155461298106497004706109,
+      64
+     ],
+     "position_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       247,
+       23
+      ],
+      "lower_witness": [
+       [
+        362,
+        1
+       ],
+       [
+        -115,
+        1
+       ],
+       [
+        -392,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       247,
+       23
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "position_velocity_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       28232348589624693837451264,
+       2155461298106497004706109
+      ],
+      "lower_witness": [
+       [
+        884074813256,
+        1
+       ],
+       [
+        -283392663576,
+        1
+       ],
+       [
+        -954710863005,
+        1
+       ]
+      ],
+      "status": "bracketed_sharp_constant",
+      "upper": [
+       16831,
+       1285
+      ],
+      "upper_zero_pivots": []
+     },
+     "tau": 1
+    },
+    {
+     "adversarial_attained_ratio": [
+      20223181199873284513792,
+      3747300473450847868005
+     ],
+     "decoder_errors_squared": [
+      [
+       315987206248020070528,
+       1
+      ],
+      [
+       315987206248020070528,
+       1
+      ]
+     ],
+     "noise_squared": [
+      3747300473450847868005,
+      64
+     ],
+     "position_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       149,
+       46
+      ],
+      "lower_witness": [
+       [
+        379,
+        1
+       ],
+       [
+        -115,
+        1
+       ],
+       [
+        -416,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       149,
+       46
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "position_velocity_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       20223181199873284513792,
+       3747300473450847868005
+      ],
+      "lower_witness": [
+       [
+        36685623496,
+        1
+       ],
+       [
+        -11614177112,
+        1
+       ],
+       [
+        -39767379273,
+        1
+       ]
+      ],
+      "status": "bracketed_sharp_constant",
+      "upper": [
+       5618,
+       1041
+      ],
+      "upper_zero_pivots": []
+     },
+     "tau": 2
+    },
+    {
+     "adversarial_attained_ratio": [
+      5,
+      2
+     ],
+     "decoder_errors_squared": [
+      [
+       25,
+       1
+      ],
+      [
+       25,
+       1
+      ]
+     ],
+     "noise_squared": [
+      10,
+      1
+     ],
+     "position_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       17,
+       23
+      ],
+      "lower_witness": [
+       [
+        17,
+        1
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        -24,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       17,
+       23
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "position_velocity_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       5,
+       2
+      ],
+      "lower_witness": [
+       [
+        15,
+        1
+       ],
+       [
+        -5,
+        1
+       ],
+       [
+        -16,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       5,
+       2
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "tau": 3
+    },
+    {
+     "adversarial_attained_ratio": [
+      8083325342073048675393536,
+      1497818200906856489172469
+     ],
+     "decoder_errors_squared": [
+      [
+       126301958469891385553024,
+       1
+      ],
+      [
+       126301958469891385553024,
+       1
+      ]
+     ],
+     "noise_squared": [
+      1497818200906856489172469,
+      64
+     ],
+     "position_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       149,
+       46
+      ],
+      "lower_witness": [
+       [
+        311,
+        1
+       ],
+       [
+        -115,
+        1
+       ],
+       [
+        -320,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       149,
+       46
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "position_velocity_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       8083325342073048675393536,
+       1497818200906856489172469
+      ],
+      "lower_witness": [
+       [
+        659746128792,
+        1
+       ],
+       [
+        -232198140040,
+        1
+       ],
+       [
+        -691012930415,
+        1
+       ]
+      ],
+      "status": "bracketed_sharp_constant",
+      "upper": [
+       5618,
+       1041
+      ],
+      "upper_zero_pivots": []
+     },
+     "tau": 4
+    },
+    {
+     "adversarial_attained_ratio": [
+      35135063001509862719488,
+      2682464346381702872829
+     ],
+     "decoder_errors_squared": [
+      [
+       548985359398591604992,
+       1
+      ],
+      [
+       548985359398591604992,
+       1
+      ]
+     ],
+     "noise_squared": [
+      2682464346381702872829,
+      64
+     ],
+     "position_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       247,
+       23
+      ],
+      "lower_witness": [
+       [
+        328,
+        1
+       ],
+       [
+        -115,
+        1
+       ],
+       [
+        -344,
+        1
+       ]
+      ],
+      "status": "exact_sharp_constant",
+      "upper": [
+       247,
+       23
+      ],
+      "upper_zero_pivots": [
+       2
+      ]
+     },
+     "position_velocity_kappa_squared": {
+      "hidden_witness": null,
+      "lower": [
+       35135063001509862719488,
+       2682464346381702872829
+      ],
+      "lower_witness": [
+       [
+        28796296816,
+        1
+       ],
+       [
+        -9997363136,
+        1
+       ],
+       [
+        -30303384195,
+        1
+       ]
+      ],
+      "status": "bracketed_sharp_constant",
+      "upper": [
+       16831,
+       1285
+      ],
+      "upper_zero_pivots": []
+     },
+     "tau": 5
+    }
+   ],
+   "observation_times": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "receipt": {
+    "admissible_basis_sha256": "d18e02f457aff48b1fe1644c777d2c1056c0c5bcd9a404a40503443dc2e07abc",
+    "amplification_squared": {
+     "lower": [
+      35135063001509862719488,
+      2682464346381702872829
+     ],
+     "lower_witness": [
+      [
+       28796296816,
+       1
+      ],
+      [
+       -9997363136,
+       1
+      ],
+      [
+       -30303384195,
+       1
+      ]
+     ],
+     "steps": 21,
+     "upper": [
+      16831,
+      1285
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        66039,
+        1285
+       ],
+       [
+        882577603,
+        16972023
+       ],
+       [
+        218803,
+        11341122198550
+       ]
+      ],
+      "lower": {
+       "columns": 3,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          94561,
+          66039
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          84155,
+          176104
+         ],
+         [
+          -5823408183,
+          17651552060
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 3
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      16831,
+      1285
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        33618791,
+        2719060
+       ],
+       [
+        374781559146,
+        43200146435
+       ],
+       [
+        2957092460395388,
+        240797151751305
+       ],
+       [
+        40259752,
+        56441444531045
+       ]
+      ],
+      "lower": {
+       "columns": 4,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          4731370,
+          33618791
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          1666645,
+          33618791
+         ],
+         [
+          -32752636405,
+          187390779573
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          -6293930,
+          33618791
+         ],
+         [
+          129083143280,
+          187390779573
+         ],
+         [
+          21605510695,
+          87846606274
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 4
+      }
+     },
+     "matrix": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         16,
+         23
+        ],
+        [
+         -41,
+         23
+        ],
+        [
+         -12,
+         23
+        ],
+        [
+         60,
+         23
+        ]
+       ],
+       [
+        [
+         1,
+         2
+        ],
+        [
+         -1,
+         1
+        ],
+        [
+         -1,
+         2
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [],
+     "pivot_rows": [
+      0,
+      1,
+      2
+     ],
+     "rank": 3,
+     "row_space_decoder": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         2,
+         1
+        ],
+        [
+         -7,
+         1
+        ],
+        [
+         6,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         -3,
+         1
+        ],
+        [
+         2,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 3,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 4
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 4
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         2
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         2,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         4
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         3,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         8
+        ]
+       ]
+      ],
+      "rows": 4
+     },
+     "target": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         5,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "target_metric": {
+      "columns": 2,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 2
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {
+      "observations": [
+       "m",
+       "m",
+       "m",
+       "m"
+      ],
+      "state": [
+       "m",
+       "m/step",
+       "m",
+       "m"
+      ],
+      "target": [
+       "m",
+       "m/step"
+      ]
+     }
+    },
+    "problem_sha256": "7829d03859c21d0a05fbb552e544f1166de7d56c3bcce6f19176757aa2d88def",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "example": "forecast tau=5",
+     "unit": "NX08-C"
+    },
+    "status": "bracketed_sharp_constant"
+   },
+   "sensor": [
+    [
+     1,
+     0,
+     1,
+     1
+    ]
+   ],
+   "transition": [
+    [
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     [
+      1,
+      2
+     ]
+    ]
+   ],
+   "unconstrained_bias": {
+    "hidden_witness": [
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      -1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "meaning": "position +1 with bias -1 leaves every reading unchanged",
+    "status": "unobservable"
+   },
+   "units": {
+    "observations": "m",
+    "state": [
+     "m",
+     "m/step",
+     "m",
+     "m"
+    ],
+    "target": "m"
+   }
+  },
+  "scope": "exact linear claims for fixed known transitions and declared ellipsoids; no calibrated physical, statistical or nonlinear-global claim",
+  "thermal": {
+   "catalogue_frontier": [
+    {
+     "bracket_status": "exact_sharp_constant",
+     "cost": [
+      4,
+      1
+     ],
+     "identifiers": [
+      "corner_mean",
+      "center_mean",
+      "left_center_mean"
+     ],
+     "kappa_max_squared": [
+      1,
+      2
+     ],
+     "layout": [
+      0,
+      1,
+      2
+     ],
+     "lower": [
+      10816598752530774860541213768309765521319,
+      22346552472079228900512767500000000000000
+     ],
+     "status": "feasible",
+     "upper": [
+      10816598752530774860541213768309765521319,
+      22346552472079228900512767500000000000000
+     ]
+    },
+    {
+     "bracket_status": "exact_sharp_constant",
+     "cost": [
+      2,
+      1
+     ],
+     "identifiers": [
+      "corner_mean",
+      "center_mean"
+     ],
+     "kappa_max_squared": [
+      1,
+      1
+     ],
+     "layout": [
+      0,
+      1
+     ],
+     "lower": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "status": "feasible",
+     "upper": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ]
+    },
+    {
+     "bracket_status": "exact_sharp_constant",
+     "cost": [
+      2,
+      1
+     ],
+     "identifiers": [
+      "corner_mean",
+      "center_mean"
+     ],
+     "kappa_max_squared": [
+      3,
+      1
+     ],
+     "layout": [
+      0,
+      1
+     ],
+     "lower": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "status": "feasible",
+     "upper": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ]
+    },
+    {
+     "bracket_status": "exact_sharp_constant",
+     "cost": [
+      1,
+      1
+     ],
+     "identifiers": [
+      "corner_mean"
+     ],
+     "kappa_max_squared": [
+      200,
+      1
+     ],
+     "layout": [
+      0
+     ],
+     "lower": [
+      610021617711970565854269,
+      3906250000000000000000
+     ],
+     "status": "feasible",
+     "upper": [
+      610021617711970565854269,
+      3906250000000000000000
+     ]
+    }
+   ],
+   "chosen": {
+    "adversarial": {
+     "attained_ratio": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "certified_error_squared_bound": [
+      155404038250158110756833735188801,
+      40000000000000000
+     ],
+     "conservatism_upper_minus_attained": [
+      0,
+      1
+     ],
+     "minimum_norm_decoder_errors_squared": [
+      [
+       155404038250158110756833735188801,
+       40000000000000000
+      ],
+      [
+       155404038250158110756833735188801,
+       40000000000000000
+      ]
+     ],
+     "noise_squared": [
+      44457239212907001,
+      8
+     ],
+     "target_gap_squared": [
+      155404038250158110756833735188801,
+      40000000000000000
+     ],
+     "z": [
+      [
+       21133700,
+       1
+      ],
+      [
+       -150908501,
+       1
+      ],
+      [
+       21133700,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    "kappa_squared": {
+     "hidden_witness": null,
+     "lower": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "lower_witness": [
+      [
+       21133700,
+       1
+      ],
+      [
+       -150908501,
+       1
+      ],
+      [
+       21133700,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "status": "exact_sharp_constant",
+     "upper": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "upper_zero_pivots": [
+      2,
+      3
+     ]
+    },
+    "kernel_basis_admissible_coordinates": [
+     [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    ],
+    "nuisance_interpretation": "left-right antisymmetric mode is invisible and leaves the plate mean unchanged",
+    "row_space_decoder_gain_squared": [
+     [
+      257233538465671286277,
+      50000000000000000000
+     ],
+     [
+      257233538465671286277,
+      50000000000000000000
+     ]
+    ],
+    "sensors": [
+     "corner_mean",
+     "center_mean"
+    ],
+    "times": [
+     0,
+     1,
+     2
+    ]
+   },
+   "receipt": {
+    "admissible_basis_sha256": "e684125970b51f273a60f154a322697377de0ba1bb5edb0f9493e1d748114bc7",
+    "amplification_squared": {
+     "lower": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "lower_witness": [
+      [
+       21133700,
+       1
+      ],
+      [
+       -150908501,
+       1
+      ],
+      [
+       21133700,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "steps": 0,
+     "upper": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "upper_ldl": {
+      "diagonal": [
+       [
+        431372309868187422714159324756777,
+        342572201000000000000000000000000
+       ],
+       [
+        56141852009152537834853147900191557683919,
+        2274836385207740709547979687500000000000000
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 4,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          6378509975167400,
+          46748825809898377
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          -1202074461764375,
+          46748825809898377
+         ],
+         [
+          150908501,
+          21133700
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 4
+      }
+     }
+    },
+    "decoder": {
+     "beta_squared": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "ldl": {
+      "diagonal": [
+       [
+        377256537286395373790610402066201,
+        586778564489922005000000000000000
+       ],
+       [
+        44679680676937226682023852738663738081001,
+        70028905666026770956796005000000000000000
+       ],
+       [
+        80011504319734971883127356754388424091001,
+        127817479788616494418392010000000000000000
+       ],
+       [
+        1177727454759924840036783467190822867,
+        1907442167837499575820766750000000000
+       ],
+       [
+        1197490090931891398214001,
+        3425722010000000000000000
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "lower": {
+       "columns": 6,
+       "entries": [
+        [
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          -3573066205520000,
+          40884173007387001
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          3734440983082600,
+          40884173007387001
+         ],
+         [
+          3734440983082600,
+          37311106801867001
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          3734440983082600,
+          40884173007387001
+         ],
+         [
+          3734440983082600,
+          37311106801867001
+         ],
+         [
+          -7806208255857001,
+          66816005347877001
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          7260267071260000,
+          40884173007387001
+         ],
+         [
+          7260267071260000,
+          37311106801867001
+         ],
+         [
+          -15176342860455100,
+          66816005347877001
+         ],
+         [
+          -88352749,
+          343539800
+         ],
+         [
+          1,
+          1
+         ],
+         [
+          0,
+          1
+         ]
+        ],
+        [
+         [
+          7260267071260000,
+          40884173007387001
+         ],
+         [
+          7260267071260000,
+          37311106801867001
+         ],
+         [
+          -15176342860455100,
+          66816005347877001
+         ],
+         [
+          -88352749,
+          343539800
+         ],
+         [
+          -1,
+          1
+         ],
+         [
+          1,
+          1
+         ]
+        ]
+       ],
+       "rows": 6
+      }
+     },
+     "matrix": {
+      "columns": 6,
+      "entries": [
+       [
+        [
+         -20300947896537,
+         85643050250000
+        ],
+        [
+         -20300947896537,
+         85643050250000
+        ],
+        [
+         8487129816193149,
+         34257220100000000
+        ],
+        [
+         8487129816193149,
+         34257220100000000
+        ],
+        [
+         165001480578099,
+         342572201000000
+        ],
+        [
+         165001480578099,
+         342572201000000
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "identifiability": {
+     "kernel_basis": [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        1
+       ]
+      ]
+     ],
+     "pivot_rows": [
+      0,
+      1,
+      2
+     ],
+     "rank": 3,
+     "row_space_decoder": {
+      "columns": 6,
+      "entries": [
+       [
+        [
+         -11815330923,
+         10000000000
+        ],
+        [
+         96059601,
+         400000000
+        ],
+        [
+         96059601,
+         50000000
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     }
+    },
+    "problem": {
+     "admissible_basis": {
+      "columns": 4,
+      "entries": [
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         -1,
+         1
+        ]
+       ]
+      ],
+      "rows": 16
+     },
+     "centre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "observation_metric": {
+      "columns": 6,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 6
+     },
+     "observation_metric_semantics": "ellipsoid shape R: eta^T R^-1 eta <= eps^2",
+     "observations": {
+      "columns": 16,
+      "entries": [
+       [
+        [
+         1,
+         4
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         4
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         4
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         4
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         4
+        ],
+        [
+         1,
+         4
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         4
+        ],
+        [
+         1,
+         4
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         37,
+         200
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         37,
+         200
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         37,
+         200
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         37,
+         200
+        ]
+       ],
+       [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         37,
+         200
+        ],
+        [
+         37,
+         200
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         37,
+         200
+        ],
+        [
+         37,
+         200
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         1,
+         32
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       [
+        [
+         11577,
+         80000
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         11577,
+         80000
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         1,
+         128
+        ],
+        [
+         1,
+         128
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         1,
+         128
+        ],
+        [
+         1,
+         128
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         11577,
+         80000
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         11577,
+         80000
+        ]
+       ],
+       [
+        [
+         1,
+         128
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         1,
+         128
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         11577,
+         80000
+        ],
+        [
+         11577,
+         80000
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         11577,
+         80000
+        ],
+        [
+         11577,
+         80000
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         1,
+         128
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         37,
+         800
+        ],
+        [
+         1,
+         128
+        ]
+       ]
+      ],
+      "rows": 6
+     },
+     "target": {
+      "columns": 16,
+      "entries": [
+       [
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ],
+        [
+         96059601,
+         1600000000
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric": {
+      "columns": 1,
+      "entries": [
+       [
+        [
+         1,
+         1
+        ]
+       ]
+      ],
+      "rows": 1
+     },
+     "target_metric_semantics": "target error norm ||e||_P^2 = e^T P e",
+     "units": {
+      "observations": [
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature"
+      ],
+      "state": [
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature",
+       "K_model excess temperature"
+      ],
+      "target": [
+       "K_model excess temperature"
+      ],
+      "time": "model steps"
+     }
+    },
+    "problem_sha256": "72e281ff957c9b0a331dcf15269653f497e0845a6f0759dbf5c9ee4d1be5f506",
+    "schema": "singularity.target-recovery/1",
+    "source": {
+     "admissible_modes": [
+      "centre",
+      "edge_ring",
+      "corners",
+      "left_right_antisymmetric"
+     ],
+     "arguments": {
+      "grid": 4
+     },
+     "candidate": "nominal",
+     "input": "zero heater input (free decay); a known input is a subtracted centre",
+     "model_sha256": "6080c9cd69b531db52f1a5989236a0f6df04bd7382e8627b4156d41d14a6096a",
+     "module": "singularity.thermal_diagnostics.build_plate_candidates",
+     "target": "plate-mean excess temperature after 4 steps"
+    },
+    "status": "exact_sharp_constant"
+   },
+   "source": {
+    "admissible_modes": [
+     "centre",
+     "edge_ring",
+     "corners",
+     "left_right_antisymmetric"
+    ],
+    "arguments": {
+     "grid": 4
+    },
+    "candidate": "nominal",
+    "input": "zero heater input (free decay); a known input is a subtracted centre",
+    "model_sha256": "6080c9cd69b531db52f1a5989236a0f6df04bd7382e8627b4156d41d14a6096a",
+    "module": "singularity.thermal_diagnostics.build_plate_candidates",
+    "target": "plate-mean excess temperature after 4 steps"
+   },
+   "sweep": [
+    {
+     "hidden_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "status": "unobservable",
+     "times": [
+      0
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      447533966562334068911769,
+      386900000000000000000000
+     ],
+     "lower_witness": [
+      [
+       15781075,
+       1
+      ],
+      [
+       -158156982,
+       1
+      ],
+      [
+       9531075,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1
+     ],
+     "upper": [
+      447533966562334068911769,
+      386900000000000000000000
+     ],
+     "upper_zero_pivots": [
+      2
+     ]
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      42434195170224126201126520314483,
+      118691366251625830000000000000000
+     ],
+     "lower_witness": [
+      [
+       848228616539600,
+       1
+      ],
+      [
+       -5212835838882983,
+       1
+      ],
+      [
+       380057169664600,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1,
+      2
+     ],
+     "upper": [
+      42434195170224126201126520314483,
+      118691366251625830000000000000000
+     ],
+     "upper_zero_pivots": [
+      2
+     ]
+    },
+    {
+     "hidden_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      0,
+      1
+     ],
+     "status": "unobservable",
+     "times": [
+      0
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      114429569556006371601,
+      50000000000000000000
+     ],
+     "lower_witness": [
+      [
+       1225,
+       1
+      ],
+      [
+       -13626,
+       1
+      ],
+      [
+       1225,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      0,
+      1
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1
+     ],
+     "upper": [
+      114429569556006371601,
+      50000000000000000000
+     ],
+     "upper_zero_pivots": [
+      2,
+      3
+     ]
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "lower_witness": [
+      [
+       21133700,
+       1
+      ],
+      [
+       -150908501,
+       1
+      ],
+      [
+       21133700,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      0,
+      1
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1,
+      2
+     ],
+     "upper": [
+      1197490090931891398214001,
+      1712861005000000000000000
+     ],
+     "upper_zero_pivots": [
+      2,
+      3
+     ]
+    },
+    {
+     "hidden_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      1
+     ],
+     "status": "unobservable",
+     "times": [
+      0
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      1
+     ],
+     "status": "unobservable",
+     "times": [
+      0,
+      1
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      610021617711970565854269,
+      3906250000000000000000
+     ],
+     "lower_witness": [
+      [
+       1133125,
+       1
+      ],
+      [
+       -18729050,
+       1
+      ],
+      [
+       300762851,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      1
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1,
+      2
+     ],
+     "upper": [
+      610021617711970565854269,
+      3906250000000000000000
+     ],
+     "upper_zero_pivots": [
+      2,
+      3
+     ]
+    },
+    {
+     "hidden_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      2,
+      3
+     ],
+     "status": "unobservable",
+     "times": [
+      0
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      2,
+      3
+     ],
+     "status": "unobservable",
+     "times": [
+      0,
+      1
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      610021617711970565854269,
+      7812500000000000000000
+     ],
+     "lower_witness": [
+      [
+       1133125,
+       1
+      ],
+      [
+       -18729050,
+       1
+      ],
+      [
+       300762851,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      2,
+      3
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1,
+      2
+     ],
+     "upper": [
+      610021617711970565854269,
+      7812500000000000000000
+     ],
+     "upper_zero_pivots": [
+      2
+     ]
+    },
+    {
+     "hidden_witness": [
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      0
+     ],
+     "status": "unobservable",
+     "times": [
+      0
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": [
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "lower": null,
+     "lower_witness": null,
+     "sensors": [
+      0
+     ],
+     "status": "unobservable",
+     "times": [
+      0,
+      1
+     ],
+     "upper": null,
+     "upper_zero_pivots": null
+    },
+    {
+     "hidden_witness": null,
+     "lower": [
+      610021617711970565854269,
+      3906250000000000000000
+     ],
+     "lower_witness": [
+      [
+       300762851,
+       1
+      ],
+      [
+       -18729050,
+       1
+      ],
+      [
+       1133125,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "sensors": [
+      0
+     ],
+     "status": "exact_sharp_constant",
+     "times": [
+      0,
+      1,
+      2
+     ],
+     "upper": [
+      610021617711970565854269,
+      3906250000000000000000
+     ],
+     "upper_zero_pivots": [
+      2,
+      3
+     ]
+    }
+   ],
+   "units": {
+    "observations": "K_model excess temperature",
+    "state": "K_model excess temperature",
+    "target": "K_model excess temperature",
+    "time": "model steps"
+   }
+  }
+ },
+ "rational_encoding": "[numerator, denominator]",
+ "schema": "singularity.nx08-receipt/1",
+ "tolerance_kappa_squared": [
+  1,
+  1000000
+ ],
+ "track": "NX08"
+}

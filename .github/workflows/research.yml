@@ -94,6 +94,7 @@ jobs:
           PYTHONPATH=src python scripts/typed_contexts.py --replay results/typed_contexts.json
           PYTHONPATH=src python scripts/thermal_diagnostics.py --check
           PYTHONPATH=src python scripts/incremental_locality.py --check
+          PYTHONPATH=src python scripts/target_recovery.py --check
       - name: Repository and manuscript checks
         run: python scripts/check_repository.py
       - name: Published document links
