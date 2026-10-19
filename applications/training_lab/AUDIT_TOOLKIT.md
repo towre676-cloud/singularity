@@ -130,3 +130,21 @@ PYTHONPATH=src python scripts/confirm_cross_domain.py {select,freeze,execute}   
 ```
 
 Use `--output` with an empty directory to rerun a study without touching the retained evidence. The cross-domain `select` phase reads the build interpreter's standard library and `pydoc_data`; stored documents make later replays independent of the interpreter version.
+
+## GPU deployment audit (Colab)
+
+`scripts/colab_deployment_audit.py` runs a frozen deployment audit of a pretrained causal model on one GPU. In a Colab GPU runtime:
+
+```python
+!git clone -q https://github.com/towre676-cloud/singularity
+%cd singularity
+!python scripts/colab_deployment_audit.py            # add --model ID to override the default
+```
+
+It chooses Qwen2.5 by GPU memory (7B at ≥38 GB, 3B at ≥20 GB, otherwise 1.5B). Qwen2.5 is a family not used in the GPT-2/SmolLM2 studies. Before the first forward pass, it freezes the model's immutable Hub revision, the hardware, 18 probes, every variant, the tolerance rule, the comparators and the timing plan. It then measures:
+
+- **construction changes:** dropped padding mask, unoffset positions under left padding, 48-token truncation, NFKC normalization, temperature 1.3, an int8 bitsandbytes load and an export reloaded in the other half-precision dtype;
+- **held-out changes:** NF4 4-bit, KV-cache position reset, right-padded generation, halved RoPE base, CRLF newlines, temperature 1.1 and 72-token truncation;
+- **clean controls:** batch size 1 and 8 for calibration; for false alarms, eager attention instead of SDPA, KV cache disabled, a same-dtype export round-trip and reversed order.
+
+The script compares the exact 2-robust panel with greedy, optimally pruned greedy, a typical-text panel and random panels under the same requirement. It confirms the optimum by an independent scan of all 2^18 subsets. It also builds and verifies a standalone package, times resident checks with CUDA synchronization, runs fresh-process cold checks, and reports break-even counts. Output: `deployment_audit/summary.md`, every receipt and a zip. `--local-test` runs every code path on CPU with a tiny random Qwen2 model; the quantized variants are then skipped. Construction variants with fewer than two separating probes, such as position offsets that RoPE makes invisible, are reported and excluded from the guarantee rather than hidden.
