@@ -1,0 +1,174 @@
+{
+  "ci_scope": "Local outcomes above are complete. Fresh GitHub Actions outcomes are external and must be read for the published commit; this record does not assert future CI success.",
+  "clean_extraction": {
+    "relative_link_targets": 177,
+    "scope": "All code, proof sources, data and mathematical documents match the clean tested extraction. Final release record and archive manifest are metadata; README archive targets were made absolute and rechecked in the extraction.",
+    "status": "passed",
+    "tested_commands": [
+      "PYTHONPATH=src python -m unittest discover -s tests -q",
+      "PYTHONPATH=src python scripts/thermal_diagnostics.py --check",
+      "PYTHONPATH=src python scripts/reproduce.py --check",
+      "python scripts/check_repository.py",
+      "python scripts/check_links.py README.md docs/MONOGRAPH.md docs/THEOREM_INDEX.md docs/chapters/*.md docs/research/*.md applications/thermal_diagnostics/*.md handoff/OPERATOR_LEDGER.md",
+      "python scripts/handoff.py verify"
+    ],
+    "tests": 432
+  },
+  "core_lean": {
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "new_operator_periodic_theorems": 37,
+    "source_bound_receipt": "results/formal_operator_audit.json",
+    "status": "passed",
+    "theorems": 128
+  },
+  "documents": [
+    {
+      "pages": 165,
+      "path": "output/pdf/monograph.pdf",
+      "sha256": "f5e1fb73e8481b8e5d4cb309982a32f367c42a30cba7f0e2d2e2217e7a2410b6"
+    },
+    {
+      "pages": 10,
+      "path": "output/pdf/visibility_paper.pdf",
+      "sha256": "82c59f9dbbddfd520a146a42b275502b9d81dd2ae471f77570b2794c5b216ea5"
+    },
+    {
+      "pages": 8,
+      "path": "output/pdf/locality_paper.pdf",
+      "sha256": "074de2739900050624df10bbdd782ee535c8a991736bef2f45673e0232b2cc07"
+    }
+  ],
+  "html": "All three HTML documents contain complete closing html elements; monograph links are rebased from chapter sources and published atomically.",
+  "mathlib_analysis": {
+    "scope": "Existing analysis sources unchanged; previous audit is historical; new CI build reported separately.",
+    "theorems": 79
+  },
+  "python_suite": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -q",
+    "status": "passed",
+    "tests": 432
+  },
+  "retained_replays": [
+    {
+      "returncode": 0,
+      "script": "reproduce",
+      "seconds": 2.288
+    },
+    {
+      "returncode": 0,
+      "script": "chain_agreement",
+      "seconds": 2.814
+    },
+    {
+      "returncode": 0,
+      "script": "census_manifest",
+      "seconds": 3.354
+    },
+    {
+      "returncode": 0,
+      "script": "pendant_family",
+      "seconds": 6.684
+    },
+    {
+      "returncode": 0,
+      "script": "whitney_switches",
+      "seconds": 6.94
+    },
+    {
+      "returncode": 0,
+      "script": "collision_census",
+      "seconds": 0.4
+    },
+    {
+      "returncode": 0,
+      "script": "symmetric_contexts",
+      "seconds": 54.724
+    },
+    {
+      "returncode": 0,
+      "script": "charge_interfaces",
+      "seconds": 3.198
+    },
+    {
+      "returncode": 0,
+      "script": "vakil_bridge",
+      "seconds": 0.085
+    },
+    {
+      "returncode": 0,
+      "script": "locality_family",
+      "seconds": 11.223
+    },
+    {
+      "returncode": 0,
+      "script": "overlap_hierarchy",
+      "seconds": 12.281
+    },
+    {
+      "returncode": 0,
+      "script": "loop_series",
+      "seconds": 28.093
+    },
+    {
+      "returncode": 0,
+      "script": "collision_cases",
+      "seconds": 0.107
+    },
+    {
+      "returncode": 0,
+      "script": "operator_experiments",
+      "seconds": 299.609
+    },
+    {
+      "returncode": 0,
+      "script": "robust_search",
+      "seconds": 0.081
+    },
+    {
+      "returncode": 0,
+      "script": "panels",
+      "seconds": 0.553
+    },
+    {
+      "returncode": 0,
+      "script": "compression",
+      "seconds": 65.512
+    },
+    {
+      "returncode": 0,
+      "script": "parametric_observability",
+      "seconds": 20.582
+    },
+    {
+      "returncode": 0,
+      "script": "separator_compiler",
+      "seconds": 5.742
+    },
+    {
+      "returncode": 0,
+      "script": "thermal_diagnostics",
+      "seconds": 8.796
+    }
+  ],
+  "reviewed_source_commit": "38b5ac1ac9c8fb50640931bf0cafb42ba85f4db5",
+  "schema": "singularity.release-verification/1",
+  "source_scope": "Exact code, proofs, and authored documents; release record and archive metadata are added afterwards.",
+  "thermal": {
+    "candidate_models": 6,
+    "experiments": 112,
+    "fixed_protocol_cost": "44",
+    "greedy_cost": "31",
+    "independently_checked_readings": 672,
+    "initial_radius": "1/100",
+    "robust_optimum": "20",
+    "scope": "Exact synthetic discrete model; declared finite pool and common box envelope; normalized costs.",
+    "sensor_noise": "1/100",
+    "states_per_candidate": 144
+  },
+  "version": "0.4.0",
+  "visual_review": "All 183 PDF pages inspected as contact sheets; dense new theorem and application pages inspected at reading size. Final build has no overfull boxes, missing characters, undefined references, LaTeX errors, or MathML conversion failures."
+}

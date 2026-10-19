@@ -2,9 +2,9 @@
   "excluded": "git object directory, earlier releases, build caches (including Lean .lake), temporary and TeX auxiliary files",
   "files": [
     {
-      "bytes": 4269,
+      "bytes": 4691,
       "path": ".github/workflows/research.yml",
-      "sha256": "468cc47bf8823e35ac8d857b84fd276c94f342c1ae2a460d14547aa22c7a09d8"
+      "sha256": "65d4f67671153ef0ab3d438eea3c34b2476158babc46d6d61f8d49c6692d858b"
     },
     {
       "bytes": 133,
@@ -14,7 +14,7 @@
     {
       "bytes": 621,
       "path": "CITATION.cff",
-      "sha256": "916bc59b6e512d10829d2b988e887674dd1dd8f634f50c73c8868c671418bd55"
+      "sha256": "f46cd5469eaeea584ca0916ed2b942dc9ffb2afd528a32986d0069c06da59b5d"
     },
     {
       "bytes": 9401,
@@ -32,9 +32,24 @@
       "sha256": "7e84b890f0a3619b1a6398eccf6263ecee91ebfe712ab9cf650967f059f05f27"
     },
     {
-      "bytes": 8710,
+      "bytes": 11619,
       "path": "README.md",
-      "sha256": "4920b0d9ec6ff9f871273a96b02f20df49100f02fcc31f4d05bc02c235ec0134"
+      "sha256": "d29d93ded887b3c58407cd38e1517f695440c1792ee59a2b3110f43732be1373"
+    },
+    {
+      "bytes": 2753,
+      "path": "applications/thermal_diagnostics/README.md",
+      "sha256": "9abb95405018cbeb8d26ed315a879a13d0d9a2a67a217990d71d9159dcda0d4e"
+    },
+    {
+      "bytes": 946,
+      "path": "applications/thermal_diagnostics/dynacomp_plate_source.py.txt",
+      "sha256": "461e8e105ed1c623481bd990a905f2425bf7ad162f399d83f5bf958598a13418"
+    },
+    {
+      "bytes": 45678,
+      "path": "applications/thermal_diagnostics/source_fixture.json",
+      "sha256": "7b28054e746a264bb94d538cad1f402e41f42bf2211c2f3bdfca33b8142c867c"
     },
     {
       "bytes": 270,
@@ -72,14 +87,14 @@
       "sha256": "88ff44a6df4df6c70b5f6d2d3da02acff5fccf5db33e4ceacfc6507d8915c811"
     },
     {
-      "bytes": 430635,
+      "bytes": 463185,
       "path": "docs/MONOGRAPH.md",
-      "sha256": "3212fa9a8d4a5479d4df864332113af186364c610385b79dc620971ff515c484"
+      "sha256": "8bc52e9cc03c3e9f004a4c85197bb4c7c1aa5470942a322ca5635a4d8e72329f"
     },
     {
-      "bytes": 31595,
+      "bytes": 36282,
       "path": "docs/THEOREM_INDEX.md",
-      "sha256": "8bf562a35cacc190ed61a8b7645a912e548b70e1c399814aade17fb3008ac6f4"
+      "sha256": "a9cd807660d33a8c4da2d9abfe17c73034f1de7d0b38b240362c22d731726946"
     },
     {
       "bytes": 226193,
@@ -162,9 +177,14 @@
       "sha256": "4782686003db1698f60610413fb43f212c1b91e88287cf63c909d3592ab515b8"
     },
     {
-      "bytes": 27208,
+      "bytes": 47941,
       "path": "docs/chapters/15_operators_experiments.md",
-      "sha256": "15b51231c83b5ae4112d20e8543499461f9988179f96b6a5ffee8d2954e9558d"
+      "sha256": "853ce800ddd9aff197480b21fbfa8a03ddd3d39e37e0df664134d9376716f382"
+    },
+    {
+      "bytes": 11650,
+      "path": "docs/chapters/16_thermal_diagnostics.md",
+      "sha256": "bbca0bc59c49668fb679f505083f533451fed4f3cc481642f26c83a7f6bb2cb4"
     },
     {
       "bytes": 7692,
@@ -187,14 +207,14 @@
       "sha256": "ecc8607c4b56b2d02d1b12a085a2f13725cec83e33818979b81573ac6b03840b"
     },
     {
-      "bytes": 2083202,
+      "bytes": 2222380,
       "path": "docs/monograph.html",
-      "sha256": "a1ddcb4202b618d328403ef39ba387eb87efa4c5c951822319f0be761063d202"
+      "sha256": "f628db0f00c2addaceefd5a005d687ba36e865ba17aea5a6b5573ed7abe1f5b3"
     },
     {
-      "bytes": 477532,
+      "bytes": 511763,
       "path": "docs/monograph.tex",
-      "sha256": "c80329108e0efcefbf286310c58746dbfe7cfd183487433340719facd5ed9719"
+      "sha256": "3befc05d19384e80c7098ea15f6fef9dc998ae0c96c03930be7752fb98d6f569"
     },
     {
       "bytes": 6019,
@@ -232,14 +252,49 @@
       "sha256": "ef5b295c45226046e614991826995600967cf52b8f2a06f8cf2f9deb782304e1"
     },
     {
-      "bytes": 6484,
+      "bytes": 6832,
       "path": "docs/references.bib",
-      "sha256": "8e920bacf6a219afecf72cd4f981de21a23ca3d3ee0ecb1611fb9a3a995402da"
+      "sha256": "a89bddb4a1d2ce7e3adaf0012b28288e08ef28d29176fe5a56795ac1a6bf0e53"
     },
     {
       "bytes": 1431,
       "path": "docs/research/OPERATOR_CHECKPOINT.md",
       "sha256": "bf84c037a2fb4a8ad20e5edb77575a415b6744bc0d8246ede589da9bb7317e94"
+    },
+    {
+      "bytes": 5085,
+      "path": "docs/research/OPERATOR_LITERATURE.md",
+      "sha256": "eebbedc3a63f269b62cb0b7f2f91c93bb809a54a32f354bb5f9892663ca38095"
+    },
+    {
+      "bytes": 5970,
+      "path": "docs/research/ORDERED_CONTEXTS.md",
+      "sha256": "e4e5a0d11bf568da93c13aa1c87cc17a93108ec813dd389b36c72b8ce84ec4a5"
+    },
+    {
+      "bytes": 18130,
+      "path": "docs/research/PANELS.md",
+      "sha256": "d9172877e43f07013f1459073a6ecc2dd67411616cccf54369b41b1e93395def"
+    },
+    {
+      "bytes": 21193,
+      "path": "docs/research/PARAMETRIC_OBSERVABILITY.md",
+      "sha256": "246468cdbcec562103fcadd06eb151cca796c7931647fb6bffb5e93d7559150f"
+    },
+    {
+      "bytes": 13332,
+      "path": "docs/research/ROBUST_SEARCH.md",
+      "sha256": "2eeb63abaeb3ccde79c841046e19345ccd9170d495927ba6f24ef56b35f639c2"
+    },
+    {
+      "bytes": 25698,
+      "path": "docs/research/SEPARATOR_COMPILER.md",
+      "sha256": "4bb83e5b38d35101df456f4ac09025b0ca58a708460796625b50fb606c5bdc1b"
+    },
+    {
+      "bytes": 13846,
+      "path": "docs/research/THERMAL_DIAGNOSTICS.md",
+      "sha256": "5ff1b4a459b72b9b9908645b414d6d883c0d4b2c84634f254c8eaa0735ab3ece"
     },
     {
       "bytes": 15005,
@@ -267,9 +322,9 @@
       "sha256": "247cf21cd6badc6ca39c17216a2bc5c995666024f08fadd71705baaa311dd90c"
     },
     {
-      "bytes": 6192,
+      "bytes": 7184,
       "path": "docs/specifications/OPERATORS-v1.md",
-      "sha256": "64e4a5a082f60754036ed597a1159fd6fc233d9bb720fcd6be47cca960b903ad"
+      "sha256": "a9068866ac48fa9b4c3ea33465e8e6e2bcf7713a86258c68f9ae29ac232703f5"
     },
     {
       "bytes": 84638,
@@ -367,19 +422,24 @@
       "sha256": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3"
     },
     {
-      "bytes": 3459,
+      "bytes": 5125,
       "path": "formal/AxiomAudit.lean",
-      "sha256": "6c0cad325a98464ef204bf6baf6835edf72944166f6b3cf716f4bcb57ad855b4"
+      "sha256": "d748ddd643032007b77c53c9ef338f59ce2d6ac584d2d0e525e956dec957236b"
     },
     {
-      "bytes": 28429,
+      "bytes": 2131,
+      "path": "formal/OperatorAxiomAudit.lean",
+      "sha256": "a1125379e45709d9143e414fd3c94b8d69be14f112612f38e016a70768d1616d"
+    },
+    {
+      "bytes": 34700,
       "path": "formal/README.md",
-      "sha256": "43742b34f370772a394319ce4697b65d5f5ddae82a22c4de400478ec9d2f9e3f"
+      "sha256": "8d29cbf07b61048637d5830342501d3dab7272a7d28a87656ee8781711570a69"
     },
     {
-      "bytes": 160,
+      "bytes": 287,
       "path": "formal/Singularity.lean",
-      "sha256": "d3d514f7af983dde4e1bdf59359f8c5030117796340c96f5af51d844ebb6944d"
+      "sha256": "62c898094682937270e54030dc2d2ce67c2c66fff8e528287242188f636a4676"
     },
     {
       "bytes": 6300,
@@ -395,6 +455,26 @@
       "bytes": 21575,
       "path": "formal/Singularity/Normalization.lean",
       "sha256": "44f0ae308b20db25808a8dfed90e85ca87f3b75307403bba2657ecc48694f753"
+    },
+    {
+      "bytes": 3005,
+      "path": "formal/Singularity/OperatorExamples.lean",
+      "sha256": "0468d544de2ba334467bf8bd130132a2fd7369a4899c439cba38a9bf03f54a29"
+    },
+    {
+      "bytes": 11430,
+      "path": "formal/Singularity/Operators.lean",
+      "sha256": "8b9b47a7e679419be3d0ab1dec7c954a3da60b2ecbdde8e5c80fe2f342033f97"
+    },
+    {
+      "bytes": 8851,
+      "path": "formal/Singularity/Periodic.lean",
+      "sha256": "a3e90257c32309b2c4d98d9536ee8477473b325292c985efd97dcb5696ffcd3f"
+    },
+    {
+      "bytes": 2626,
+      "path": "formal/Singularity/PeriodicSeries.lean",
+      "sha256": "d0d4aba12be272e58cb26c21ba32a2ff58e2421e7f3e1cf6b066ad81b3c30fb8"
     },
     {
       "bytes": 18821,
@@ -452,9 +532,9 @@
       "sha256": "1487916b77032b82bd4772fa1deddf829da24ea2e6d7dabc1025a60a4f8f7cdc"
     },
     {
-      "bytes": 2523,
+      "bytes": 4618,
       "path": "handoff/OPERATOR_LEDGER.md",
-      "sha256": "aed67f4b7c52d75ce0c4d66a05751865d69e3f38a36f171f2f4da8892e4fc60a"
+      "sha256": "028eb9dc288145ad1a54307fd1069974f15eb8069d736ac9eb7cab32cd4ca2f2"
     },
     {
       "bytes": 69406,
@@ -467,9 +547,9 @@
       "sha256": "31761a9b8272373096c55ce9156c5255d96d0a48e36557f63aa2e91d26703799"
     },
     {
-      "bytes": 27657,
+      "bytes": 32368,
       "path": "handoff/SESSION_LOG.md",
-      "sha256": "fc97c89452c3d7fd9ff5053230092e95abaad3ebf97291343b46a2efb182ad74"
+      "sha256": "b51daf4cd2e684ecb56b3ce4177cb411759a58381c5afce1705408a74ed6e287"
     },
     {
       "bytes": 5955,
@@ -672,24 +752,24 @@
       "sha256": "47a361bfd8e36b9389c17ae3e67f6e35571dd59ec4b9dde7a76042ede9507732"
     },
     {
-      "bytes": 101847,
+      "bytes": 93236,
       "path": "output/pdf/locality_paper.pdf",
-      "sha256": "76cf6e227c89b87799e1b78cb095de7580548e138de5d4d2e82263c3c87bb8f2"
+      "sha256": "074de2739900050624df10bbdd782ee535c8a991736bef2f45673e0232b2cc07"
     },
     {
-      "bytes": 949393,
+      "bytes": 984734,
       "path": "output/pdf/monograph.pdf",
-      "sha256": "ee1ea72a13b917719fa6bcfad2b17dfbf86de831e6c27fa7a50caf04bc0482c1"
+      "sha256": "f5e1fb73e8481b8e5d4cb309982a32f367c42a30cba7f0e2d2e2217e7a2410b6"
     },
     {
-      "bytes": 115371,
+      "bytes": 106984,
       "path": "output/pdf/visibility_paper.pdf",
-      "sha256": "4df2091b7c0192aad3c19bb9fcf3e6ac1c03c4a06d0554ead6f692b967f84f38"
+      "sha256": "82c59f9dbbddfd520a146a42b275502b9d81dd2ae471f77570b2794c5b216ea5"
     },
     {
       "bytes": 548,
       "path": "pyproject.toml",
-      "sha256": "f61119c5789f6e909430905f1b292fa03c8dd93211090700b50b1f27c2fcd7e9"
+      "sha256": "15bab5b1cb228d7c7526432d0558b5e9988ddfe8c2a450373511d25c42741cbe"
     },
     {
       "bytes": 88941,
@@ -724,7 +804,7 @@
     {
       "bytes": 1856,
       "path": "results/chain_agreement.json",
-      "sha256": "c0ae3fb56a77ebcc4aea6470f1936ba8c2f13881507e256564dc2c6d56be1231"
+      "sha256": "58e037dffdb62117c2fc8835a89e2e4963115704c25f5e9480da748490e85023"
     },
     {
       "bytes": 4663,
@@ -747,6 +827,11 @@
       "sha256": "c5546badb84fd1cc79460b24ed7f63c035d58e46117c604e997c4d042ba00587"
     },
     {
+      "bytes": 2764,
+      "path": "results/compression.json",
+      "sha256": "e4712f5678b8e337fb04aff5e1d40a3beb004c6249eef403f93b80191cfb304f"
+    },
+    {
       "bytes": 774,
       "path": "results/conductor_example.json",
       "sha256": "0c28603d230889445f41e1d8ca95fee4717051f7d266f85453cdb1b9af5aca2a"
@@ -764,12 +849,17 @@
     {
       "bytes": 9161,
       "path": "results/exact_examples.json",
-      "sha256": "4d4751521e811cf2f882b59619a5c683fea693f0aedb4c2dcceb96b757000c6e"
+      "sha256": "713fd1d7f96d5cb9891883e165d34d6e793fcad30ed7296eb58fef370dbb3bd0"
     },
     {
       "bytes": 12685,
       "path": "results/formal_analysis_audit.json",
       "sha256": "7278b6fcbda36c205e651ddeacb22775dcd9dd664c64202803e829ea2abf3423"
+    },
+    {
+      "bytes": 6483,
+      "path": "results/formal_operator_audit.json",
+      "sha256": "e7cbb66bacf61f6c8cb1483cd0a6f7956db7a927af5f0ff0af279cbac5605299"
     },
     {
       "bytes": 15032,
@@ -792,9 +882,9 @@
       "sha256": "b53ffa75f79170be66cdae2296e2a79fc355418d9e958ea17bfa85d57570c64b"
     },
     {
-      "bytes": 1150,
+      "bytes": 1203,
       "path": "results/manuscript_counts.json",
-      "sha256": "70f5c0596ad8add0993a2e32496177b4c72a1c9dad48b479c2c6c43bea9a116a"
+      "sha256": "cf3775a5fd83c391a29510340a11ef183196be81314f7556c12bbb0f8e61b5ae"
     },
     {
       "bytes": 178141,
@@ -812,9 +902,9 @@
       "sha256": "c175fd7537ec998a91e4a79d4f3a9526993fe882d273a2ddf6755c5c7a473e6b"
     },
     {
-      "bytes": 8002,
+      "bytes": 8734,
       "path": "results/operator_experiments.json",
-      "sha256": "7137ff9b3b67c4e4c82903151510c5832eda9e3d68dc2e0e2551aa698821a842"
+      "sha256": "da0b6e450ade03d98bd14cf18119bd1c500246b162f0cc5b41713b1ac5c16e4f"
     },
     {
       "bytes": 7561,
@@ -827,9 +917,19 @@
       "sha256": "bb063ffb79da0c229611ad55bae54d8b837465a0ea1f1f6809dfdf4965f1f6cb"
     },
     {
+      "bytes": 10898,
+      "path": "results/panels.json",
+      "sha256": "a52e73214e220466ef461c01e7895616d16562677b4e59e3e075eee0bdc13086"
+    },
+    {
       "bytes": 794,
       "path": "results/parameter_strata.json",
       "sha256": "70e58dcb4f5fc670f0cfeef67ce6782f01549717657b12c2bbc5fe21f03baea9"
+    },
+    {
+      "bytes": 37784,
+      "path": "results/parametric_observability.json",
+      "sha256": "7a35fd33a9f240bd48a6af4307e8fc47d002d961897ac5d1e7112493142e900f"
     },
     {
       "bytes": 13498,
@@ -840,6 +940,21 @@
       "bytes": 20610,
       "path": "results/publication_release.json",
       "sha256": "1fb63a8233a591299d05360a27f00016b46ce05d212f1bd17c9ad9ec4e7390b9"
+    },
+    {
+      "bytes": 5105,
+      "path": "results/release_0_4.json",
+      "sha256": "e4da3dc4f1a632a7115a6531d2ee798dfee642458c7bc8193bc53a0e7d6c9493"
+    },
+    {
+      "bytes": 16879,
+      "path": "results/robust_search.json",
+      "sha256": "2b3a5355012541991576b8c5a7f53acdf73f948614914ad7fc39b6cc2b52a0cf"
+    },
+    {
+      "bytes": 38722,
+      "path": "results/separator_compiler.json",
+      "sha256": "1fce597ebf8ecd1ee765b4b4b3bfba23e7549653c30111ed646247ecfe20ae26"
     },
     {
       "bytes": 87164,
@@ -857,9 +972,14 @@
       "sha256": "a5d812692fc7b8adfae95c6b99d408c046d2ef97c5a129015deb0b4a97f4a64f"
     },
     {
-      "bytes": 38333,
+      "bytes": 43883,
       "path": "results/theorem_index.json",
-      "sha256": "9da8830ec2cc04aca573ac73623623c469804a3af288d6d7023d7e912fe283b4"
+      "sha256": "3f085b7901c46bac8459ccedc1838bf2dae14e1efb8001338db75468ac652603"
+    },
+    {
+      "bytes": 8232,
+      "path": "results/thermal_diagnostics.json",
+      "sha256": "dbc052ca36478d637d40be28db63f1e4290ecd47ebb5ac6996aa0582b9b2ce59"
     },
     {
       "bytes": 12620,
@@ -892,9 +1012,9 @@
       "sha256": "836c6071610d4d53d9054b0f45702d3464cbb035d7cce0918037d54854b42f85"
     },
     {
-      "bytes": 9714,
+      "bytes": 11043,
       "path": "scripts/build_documents.py",
-      "sha256": "975f1ee4c35de4249337862f017231a57aa551f0391eae8684582fd1bd64c8ce"
+      "sha256": "1d8f6cf4d2c5353a0246832d10fbfe2fbe33c7e5ee5ff36a546e78fb8ee7f39d"
     },
     {
       "bytes": 4445,
@@ -922,9 +1042,9 @@
       "sha256": "7cc7030f5499173f9fc49c6918bf11478fa93cf9a7a89315d9d81366c37b2848"
     },
     {
-      "bytes": 1518,
+      "bytes": 5850,
       "path": "scripts/check_formal.py",
-      "sha256": "2361063d7f88d378f2ac7bcd82af9553894264d6d371145123f870f765e23491"
+      "sha256": "55373556126045ac95afe89ad7cb55a1cab522fe4e0fbce8de4c957ab0d68edb"
     },
     {
       "bytes": 3653,
@@ -939,7 +1059,7 @@
     {
       "bytes": 2711,
       "path": "scripts/check_repository.py",
-      "sha256": "4ab2c47424e75c29b3967f1b97fed9cb3e2b8f76b1d3f28c0a26742660c93ba8"
+      "sha256": "948a014b828ba6f903b5ed200d8acaa80b1c053d418c574461327789c91ba5f0"
     },
     {
       "bytes": 3747,
@@ -950,6 +1070,11 @@
       "bytes": 5471,
       "path": "scripts/collision_census.py",
       "sha256": "d3cea8a23aa6370b6865c0979507e42db9f64a3f7086c15b7e1b3a1060da374a"
+    },
+    {
+      "bytes": 4010,
+      "path": "scripts/compression.py",
+      "sha256": "357a1099ea14ee5dce69caa2d3e8ba2803e6f01f5faf272855a563d20df8179d"
     },
     {
       "bytes": 1679,
@@ -977,9 +1102,9 @@
       "sha256": "808a07e4fafc1cfe3057e84d925f6147169c07b62479e2aea4be5ee6106baba9"
     },
     {
-      "bytes": 12099,
+      "bytes": 14728,
       "path": "scripts/operator_experiments.py",
-      "sha256": "9f6bc72ff26553c6293673d0e8cf69fb46496318b4e1658dcb78789f43489850"
+      "sha256": "8dfdcd7a61ed67326dd8511dcae1d5a1f37cbb685ec9bda2bad037c9a190d61c"
     },
     {
       "bytes": 12200,
@@ -992,6 +1117,16 @@
       "sha256": "ed3c42d448d9fee5bb5375ee09c524fd3873679d37a7ec164802455b2e10f162"
     },
     {
+      "bytes": 10493,
+      "path": "scripts/panels.py",
+      "sha256": "2e4c27b89e34d0b7b370656d46d362ba919314c3bea51e78f8945ae7c8a78857"
+    },
+    {
+      "bytes": 7202,
+      "path": "scripts/parametric_observability.py",
+      "sha256": "f92d96f5d35ceece51c9c412ee32864fba5cd52920efd3a02dd5134d5f609279"
+    },
+    {
       "bytes": 2908,
       "path": "scripts/pendant_family.py",
       "sha256": "ca53efb56cbb8cf590ea5a18a9877090903326c88947e7b58d8832e9229b7a10"
@@ -1002,9 +1137,24 @@
       "sha256": "15d4d3b62116afa87e783a513a9f42d58758d454564e9df2c53e87c54534bd61"
     },
     {
+      "bytes": 6347,
+      "path": "scripts/robust_search.py",
+      "sha256": "5712a28b78f5cd399de15c27937fa3c12befc3fef793d4d110d3cfb029720a9c"
+    },
+    {
+      "bytes": 9158,
+      "path": "scripts/separator_compiler.py",
+      "sha256": "f153ac72c9d4dd2490edc50222f25d0759309ba9d7ff0e1c05d2cf7e05c7243c"
+    },
+    {
       "bytes": 14092,
       "path": "scripts/symmetric_contexts.py",
       "sha256": "8c4a722b9c61eb9e2c31b06cbdce145310b1e7fe72d8952a973b7364b61d9ce8"
+    },
+    {
+      "bytes": 14459,
+      "path": "scripts/thermal_diagnostics.py",
+      "sha256": "4c6d8cd9216fac6e7085e647f695fbb70622031f3743cbff6c7ba7a01bac454a"
     },
     {
       "bytes": 4641,
@@ -1019,7 +1169,7 @@
     {
       "bytes": 111,
       "path": "src/singularity/__init__.py",
-      "sha256": "ef8d5587940845db3baebfecf118e7124e97122b41f49c9c7a1d425640f68ab5"
+      "sha256": "f480f9baf75e343852f966efeb18086783fd56562d9025bb913a2a8c2638c438"
     },
     {
       "bytes": 48,
@@ -1060,6 +1210,11 @@
       "bytes": 13019,
       "path": "src/singularity/cli.py",
       "sha256": "e4780504538840023498e2463ffee52f0e812123ed4940cc4d49535f391a6889"
+    },
+    {
+      "bytes": 9305,
+      "path": "src/singularity/compression.py",
+      "sha256": "58bb8970cd0d0fa52540d6a4c3e1251bf8d8251cf97fd97e32d299c4f974ffb2"
     },
     {
       "bytes": 4484,
@@ -1157,14 +1312,24 @@
       "sha256": "94fcbfac315daa072f7feedbde7af51c7c12d1568bf0995127c863298f53ef88"
     },
     {
+      "bytes": 23390,
+      "path": "src/singularity/panels.py",
+      "sha256": "5a333407d8a648406801597d9ed14d6aaac5fd3ea3351e60d3cd4d89960a799f"
+    },
+    {
       "bytes": 9234,
       "path": "src/singularity/parameters.py",
       "sha256": "a8c546966dfe9b1d57c490e0d115be6a5950af890c60422be40cfad537089ecc"
     },
     {
-      "bytes": 9659,
+      "bytes": 46008,
+      "path": "src/singularity/parametric.py",
+      "sha256": "86ea754d0f95b8b8f7c315e906cabb222aad3e44c9709a458b6c7880eee747e0"
+    },
+    {
+      "bytes": 14137,
       "path": "src/singularity/periodic.py",
-      "sha256": "6cbe672074feb4b30da110b508165458db4b174853509b6229f4422055883247"
+      "sha256": "9039530b96a8d3a3cb7105019d5efd8856871af6409fa9076270c2e27f03b8b7"
     },
     {
       "bytes": 8345,
@@ -1182,9 +1347,29 @@
       "sha256": "0ef02a960e2a12bd21d76421a9161bbb588073c17eeae4e1173b7468dc4663aa"
     },
     {
+      "bytes": 16919,
+      "path": "src/singularity/robust_search.py",
+      "sha256": "58c86f35244ec86e60cb1499a225acda2d0fa9f9ec0e9372cfdf32174d6b29bb"
+    },
+    {
+      "bytes": 26388,
+      "path": "src/singularity/separator_compiler.py",
+      "sha256": "000665c439981daff69569b625bbeef686c2d1d2e8e60bf99e6cc951782b0627"
+    },
+    {
+      "bytes": 9089,
+      "path": "src/singularity/terminal_moves.py",
+      "sha256": "a86122842c96c1b90cd7679903352363b34b071c31bc96daea9978e3b8699ea0"
+    },
+    {
       "bytes": 19023,
       "path": "src/singularity/terminals.py",
       "sha256": "7844ca606bf29f0a207e247949faf1ad085b4222d8d7518184aa8886b5371895"
+    },
+    {
+      "bytes": 15582,
+      "path": "src/singularity/thermal_diagnostics.py",
+      "sha256": "a75082b209fa38823cb2c1d91d59227376fe9e27ed61152326ed94d76dba34e6"
     },
     {
       "bytes": 11507,
@@ -1250,6 +1435,11 @@
       "bytes": 1481,
       "path": "tests/test_collision_cases.py",
       "sha256": "c5c204691d9d7e86b6dd19cdf67dda9d2f0d7c134c21e03ef70216c777ce5f56"
+    },
+    {
+      "bytes": 6153,
+      "path": "tests/test_compression.py",
+      "sha256": "331085abe60701e18457c2e9784513813f1055d5f1899e2f8dc6816173409065"
     },
     {
       "bytes": 7457,
@@ -1337,14 +1527,29 @@
       "sha256": "c8ea64bc971852705f08a85be31f51c904d634485d4e0812d46b357196215834"
     },
     {
+      "bytes": 14921,
+      "path": "tests/test_panels.py",
+      "sha256": "da9aa7369071756a85f12d996e4b37f54f42dbdc125f3ca744e851f1eb03d95b"
+    },
+    {
       "bytes": 5539,
       "path": "tests/test_parameters.py",
       "sha256": "369e8a5aac7d0d5048ab27db5785bd4747f1a4435664745ae53c9b4948c13e87"
     },
     {
-      "bytes": 10136,
+      "bytes": 18701,
+      "path": "tests/test_parametric.py",
+      "sha256": "5286df0a397c0ca8a6c55327139c2eeeff9cffc4f280a632357ba6d7011f2a74"
+    },
+    {
+      "bytes": 2882,
+      "path": "tests/test_path_margin.py",
+      "sha256": "73d88a8ca36229f8071aed039aaec94d28c0e524ab3ba3252b1e142221d2009e"
+    },
+    {
+      "bytes": 14134,
       "path": "tests/test_periodic.py",
-      "sha256": "256b27e9ee046094b7a3b62d5c216e27c9d9b9a7af2fda033c124bdc24614bfa"
+      "sha256": "ed4822ffa0969913ed8b1ddd2697eb10b5178c7f4b8c51255310cfd2a46e78a7"
     },
     {
       "bytes": 6164,
@@ -1362,9 +1567,29 @@
       "sha256": "e7fe54e97ca1aafb232d5247e02066c62ac533c4f396241efd3588ff8e671fc9"
     },
     {
+      "bytes": 12628,
+      "path": "tests/test_robust_search.py",
+      "sha256": "c9b69e0ba5dac4f6eb3de995602868c2edb96f73963c38969c0b095be0e572b6"
+    },
+    {
+      "bytes": 17612,
+      "path": "tests/test_separator_compiler.py",
+      "sha256": "a5f5b53591447ea4d1252b524a10a8b1a73aec1ecd9b71620262cb04943b0a22"
+    },
+    {
+      "bytes": 6588,
+      "path": "tests/test_terminal_moves.py",
+      "sha256": "00766a1ac4a8fc7d4c7f15146b17916ba6364d37f9fc9a79a1ada28640e2d224"
+    },
+    {
       "bytes": 9467,
       "path": "tests/test_terminals.py",
       "sha256": "841ee1d45f93c40354445074599bf99d44b810ecca59ff9f1df95e654ed3fcfe"
+    },
+    {
+      "bytes": 12163,
+      "path": "tests/test_thermal_diagnostics.py",
+      "sha256": "85cdecb9c02ee27fa6edd7185fc915c637ed5ab3e4d006216200b68a88ebaa8d"
     },
     {
       "bytes": 12186,
@@ -1379,5 +1604,5 @@
   ],
   "schema": "singularity.release-manifest/1",
   "self_hash_excluded": "results/archive_manifest.json",
-  "version": "0.3.0"
+  "version": "0.4.0"
 }
