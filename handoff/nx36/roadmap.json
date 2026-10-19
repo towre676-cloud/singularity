@@ -1219,8 +1219,27 @@
           "acceptance": [
             "Prove the union-support difference identity, implement nonnegative integral weight changes and reproduce the exact two-vertex coefficient/log example."
           ],
-          "status": "proposed",
-          "depends_on": []
+          "status": "complete",
+          "depends_on": [],
+          "evidence": {
+            "summary": "Weighted locality contract: union-support difference identity proved for nonnegative integral weights with pinning; two-vertex example reproduced; compiler matches direct enumeration, weighted coefficients, local coefficients and pinned_log.",
+            "artifacts": [
+              "src/singularity/incremental_locality.py",
+              "tests/test_incremental_locality.py",
+              "scripts/incremental_locality.py",
+              "results/incremental_locality.json",
+              "docs/research/INCREMENTAL_LOCALITY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_incremental_locality",
+                "exit_code": 0,
+                "scope": "16 tests including 30 random weighted pinned graphs against direct enumeration"
+              }
+            ],
+            "commit": "e8cf9d5",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX16-B",
@@ -1228,10 +1247,34 @@
           "acceptance": [
             "Check all small edge edits, sequential edits, reversal, pinning changes, stale patches and cross-graph cache isolation against full recompilation and direct energy enumeration."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX16-A"
-          ]
+          ],
+          "evidence": {
+            "summary": "Incremental cache and updates: every single-edge edit on all 729 weightings of K4 (R=3) and 256 pinning edits equal full recompilation and direct enumeration; sequential batches reverse exactly; stale patches refused; cache keys isolated; update records replayed independently.",
+            "artifacts": [
+              "src/singularity/incremental_locality.py",
+              "tests/test_incremental_locality.py",
+              "scripts/incremental_locality.py",
+              "results/incremental_locality.json",
+              "docs/research/INCREMENTAL_LOCALITY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_incremental_locality",
+                "exit_code": 0,
+                "scope": "exhaustive K4 edit population, pinning edits, sequential batches, tamper rejection"
+              },
+              {
+                "command": "PYTHONPATH=src python scripts/incremental_locality.py --check",
+                "exit_code": 0,
+                "scope": "retained exhaustive counts and update-record replay"
+              }
+            ],
+            "commit": "e8cf9d5",
+            "math_status": "exact_finite"
+          }
         },
         {
           "id": "NX16-C",
@@ -1239,13 +1282,32 @@
           "acceptance": [
             "Demonstrate exact bounded-degree local reuse at fixed budget; report updated supports, polynomial operations, coefficient bits, setup cost and replay time separately."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX16-B"
-          ]
+          ],
+          "evidence": {
+            "summary": "Locality bound proved (fixed parameter); on ladders up to 1024 vertices at R=4 per-edit support, operation and cache counts are identical for every size, with setup, storage and coefficient bit growth reported separately; two update receipts retained.",
+            "artifacts": [
+              "src/singularity/incremental_locality.py",
+              "tests/test_incremental_locality.py",
+              "scripts/incremental_locality.py",
+              "results/incremental_locality.json",
+              "docs/research/INCREMENTAL_LOCALITY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python scripts/incremental_locality.py --check",
+                "exit_code": 0,
+                "scope": "ladder scaling family m=16..512 and retained update receipts"
+              }
+            ],
+            "commit": "e8cf9d5",
+            "math_status": "proved"
+          }
         }
       ],
-      "status": "proposed",
+      "status": "complete",
       "packet": "packets/NX16.md",
       "execution_rank": 16,
       "supporting_tracks": []
