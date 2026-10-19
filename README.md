@@ -14,6 +14,10 @@ The Python core uses Python 3.10+ and the standard library. The repository inclu
 
 ## Read or download
 
+[Frontier companion — PDF](output/pdf/frontier_companion.pdf) · [HTML](docs/frontier_companion.html) · [Editable manuscript](docs/FRONTIER_MANUSCRIPT.md) · [Claude integration note](handoff/frontier/START_HERE.md)
+
+This separate companion adds exact connected poles, rational-coefficient degree recovery (including fixed pinning), ordered-tree positivity, and centered pinned theta limits. It accompanies the open reconstruction questions and does not implement the proposed NX36 programme.
+
 [Research monograph — PDF](output/pdf/monograph.pdf) · [HTML](docs/monograph.html) · [Editable source](docs/MONOGRAPH.md)
 
 [Paper 1: arithmetic visibility — PDF](output/pdf/visibility_paper.pdf) · [Source](docs/papers/visibility.md) · [Claim register](docs/papers/visibility_claims.md)

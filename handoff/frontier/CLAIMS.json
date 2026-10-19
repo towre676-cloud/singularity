@@ -1,0 +1,92 @@
+{
+  "schema": "singularity.frontier-claims/1",
+  "ordinary_mathematical_proofs": true,
+  "new_kernel_checked_results": 0,
+  "nx36_statuses_modified": 0,
+  "claims": [
+    {
+      "id": "FR01.1",
+      "proof_document": "docs/research/FR01_POLE_DIVISORS.md",
+      "statement": "Exact connected nth-root pole divisor",
+      "scope": "connected graph;0<q<1;complete unpinned local series"
+    },
+    {
+      "id": "FR01.2",
+      "proof_document": "docs/research/FR01_POLE_DIVISORS.md",
+      "statement": "Connectedness and connected order from full local series",
+      "scope": "analytic poles, not a finite-prefix oracle"
+    },
+    {
+      "id": "FR01.3",
+      "proof_document": "docs/research/FR01_POLE_DIVISORS.md",
+      "statement": "Spanning-tree Gaussian majorant",
+      "scope": "connected component;absolute bound"
+    },
+    {
+      "id": "FR01.4",
+      "proof_document": "docs/research/FR01_POLE_DIVISORS.md",
+      "statement": "Zero-free sector and component-size inversion",
+      "scope": "strict certified theta bound;or stated equal-size component sector"
+    },
+    {
+      "id": "FR01.5",
+      "proof_document": "docs/research/FR01_POLE_DIVISORS.md",
+      "statement": "Cluster-graph completeness in the stated sectors",
+      "scope": "local L only;not pinned A completeness"
+    },
+    {
+      "id": "SNG-R02.1",
+      "proof_document": "docs/research/FR02_DENOMINATOR_RECOVERY.md",
+      "statement": "Extremal energy and two-case gap",
+      "scope": "simple graph;integer shift>=0;R>=2"
+    },
+    {
+      "id": "SNG-R02.2",
+      "proof_document": "docs/research/FR02_DENOMINATOR_RECOVERY.md",
+      "statement": "Maximum degree and multiplicity from one rational coefficient",
+      "scope": "known n;exact q=A/B;B^(2(R-1))>n"
+    },
+    {
+      "id": "SNG-R02.3",
+      "proof_document": "docs/research/FR02_DENOMINATOR_RECOVERY.md",
+      "statement": "Complete-split reconstruction under a class promise",
+      "scope": "known order and family membership;coefficient generation cost separate"
+    },
+    {
+      "id": "FR03-A",
+      "proof_document": "docs/research/FR03_TREE_POSITIVITY.md",
+      "statement": "Strict total positivity of ordered tree kernels",
+      "scope": "full kernel or Cartesian height box;not global volume truncation"
+    },
+    {
+      "id": "FR03-B",
+      "proof_document": "docs/research/FR03_TREE_POSITIVITY.md",
+      "statement": "All-order leading-minor hierarchy",
+      "scope": "ordered tree terminals;consecutive pins"
+    },
+    {
+      "id": "FR04.1",
+      "proof_document": "docs/research/FR04_PINNED_THETA.md",
+      "statement": "Order from pinned coefficient decay",
+      "scope": "positive known uniform pinning and q;complete sequence"
+    },
+    {
+      "id": "FR04.2",
+      "proof_document": "docs/research/FR04_PINNED_THETA.md",
+      "statement": "Residue theta limits and reflection",
+      "scope": "necessary full-series invariants;no converse"
+    },
+    {
+      "id": "FR04.3",
+      "proof_document": "docs/research/FR04_PINNED_THETA.md",
+      "statement": "Gaussian boundary correction",
+      "scope": "positive pinning;explicit domains"
+    },
+    {
+      "id": "FR04-rational-lift",
+      "proof_document": "docs/research/FR04_PINNED_THETA.md",
+      "statement": "Exact affine-lift enclosures at every rational q including one half",
+      "scope": "integer pinning in executable exact arithmetic;interval overlap inconclusive"
+    }
+  ]
+}

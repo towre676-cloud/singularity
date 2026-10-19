@@ -1,0 +1,31 @@
+name: Frontier companion
+on:
+  push:
+    paths:
+      - 'src/singularity/pole_divisors.py'
+      - 'src/singularity/denominator_recovery.py'
+      - 'src/singularity/tree_positivity.py'
+      - 'src/singularity/pinned_theta.py'
+      - 'scripts/fr0*.py'
+      - 'scripts/frontier_companion.py'
+      - 'tests/test_pole_divisors.py'
+      - 'tests/test_denominator_recovery.py'
+      - 'tests/test_tree_positivity.py'
+      - 'tests/test_pinned_theta.py'
+      - '.github/workflows/frontier-companion.yml'
+  pull_request:
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exact frontier receipts
+        run: PYTHONPATH=src python scripts/frontier_companion.py --check
+      - name: Complete Python suite
+        run: PYTHONPATH=src python -m unittest discover -s tests

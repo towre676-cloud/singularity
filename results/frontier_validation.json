@@ -1,0 +1,23 @@
+{
+  "schema": "singularity.frontier-validation/1",
+  "full_python_suite": {
+    "tests": 466,
+    "status": "passed",
+    "seconds": 89.067
+  },
+  "frontier_unit_tests": 34,
+  "receipts": [
+    "fr01_pole_divisors",
+    "fr02_denominator_recovery",
+    "fr03_tree_positivity",
+    "fr04_pinned_theta"
+  ],
+  "exact_replay": "passed",
+  "baseline_reproduction": "passed",
+  "repository_check": "passed",
+  "original_handoff_check": "passed",
+  "links": "passed",
+  "independent_review": "docs/research/FR_INDEPENDENT_REVIEW.md",
+  "nx36_changed": false,
+  "formal_proof_scope": "No new Lean proof claimed; baseline formal projects unchanged."
+}

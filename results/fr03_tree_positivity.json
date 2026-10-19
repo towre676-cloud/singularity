@@ -1,0 +1,244 @@
+{
+  "box_minor": {
+    "determinant": "1035125/14495514624",
+    "graph": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "n": 5
+    },
+    "height_bound": 2,
+    "matrix": [
+      [
+        "4095463/2985984",
+        "5241097/5971968",
+        "10382713/47775744"
+      ],
+      [
+        "5000977/5971968",
+        "216149/373248",
+        "1006297/5971968"
+      ],
+      [
+        "8817073/47775744",
+        "891457/5971968",
+        "167983/2985984"
+      ]
+    ],
+    "pins": [
+      0,
+      1,
+      2
+    ],
+    "q": "1/2",
+    "terminals": [
+      0,
+      3
+    ],
+    "x": "1/3"
+  },
+  "census": [
+    {
+      "labeled_trees": 1,
+      "terminal_pairs": 1,
+      "vertices": 2
+    },
+    {
+      "labeled_trees": 3,
+      "terminal_pairs": 9,
+      "vertices": 3
+    },
+    {
+      "labeled_trees": 16,
+      "terminal_pairs": 96,
+      "vertices": 4
+    },
+    {
+      "labeled_trees": 125,
+      "terminal_pairs": 1250,
+      "vertices": 5
+    }
+  ],
+  "format": "singularity.fr03.tree-positivity/1",
+  "negative_volume_cutoff_example": {
+    "determinant": "-1/64",
+    "graph": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "n": 4
+    },
+    "interior_volume_cutoff": 1,
+    "pins": [
+      0,
+      1
+    ],
+    "q": "1/2",
+    "terminals": [
+      0,
+      3
+    ],
+    "x": "1/3"
+  },
+  "oracle": "direct weak compositions and permutation determinant; independent of tree messages",
+  "ordered_census_sha256": "35654af9106862b4110b4cd82cbc3883345f5e3ec49efefe0aa93c68f7e41403",
+  "scope": "ordered tree kernels; no symmetrized-interface rejection claim",
+  "total_labeled_trees": 145,
+  "total_terminal_pairs": 1356,
+  "worked_leading_minors": [
+    {
+      "coefficient": "27/64",
+      "distance": 3,
+      "first_volume": 2,
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "n": 4
+      },
+      "name": "bare_path_order_2",
+      "off_path_edges": 0,
+      "order": 2,
+      "q": "1/2",
+      "terminals": [
+        0,
+        3
+      ]
+    },
+    {
+      "coefficient": "2000/59049",
+      "distance": 3,
+      "first_volume": 2,
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ],
+        "n": 8
+      },
+      "name": "branched_path_order_2",
+      "off_path_edges": 4,
+      "order": 2,
+      "q": "2/3",
+      "terminals": [
+        0,
+        3
+      ]
+    },
+    {
+      "coefficient": "2640625/43046721",
+      "distance": 2,
+      "first_volume": 3,
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "n": 3
+      },
+      "name": "path_order_3",
+      "off_path_edges": 0,
+      "order": 3,
+      "q": "2/3",
+      "terminals": [
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": "123343635009765625/12157665459056928801",
+      "distance": 2,
+      "first_volume": 6,
+      "graph": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "n": 3
+      },
+      "name": "path_order_4",
+      "off_path_edges": 0,
+      "order": 4,
+      "q": "2/3",
+      "terminals": [
+        0,
+        2
+      ]
+    }
+  ]
+}

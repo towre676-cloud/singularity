@@ -1,0 +1,84 @@
+{
+  "schema": "singularity.fr02-denominator-recovery/1",
+  "series": "sum_h x^sum(h) q^(E_G(h)+lambda*sum(h_i^2))",
+  "population": {
+    "all_labeled_simple_graphs_through_order": 5,
+    "graphs": 1099
+  },
+  "pinnings": [
+    "1/2",
+    "2/3",
+    "5/6"
+  ],
+  "diagonal_shifts": [
+    0,
+    2
+  ],
+  "exact_decoder_checks": 6594,
+  "profile_evaluations": 138570,
+  "independent_oracle": "stars-and-bars separators, direct edge energy, exact rational evaluation",
+  "first_coefficient_collision": [
+    {
+      "multipartite_parts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3
+      ],
+      "coefficient_1": "9/32768",
+      "coefficient_R": "540015103743396204372144806636200283188310682830811543585292648710147/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "profiles_at_R": 5985,
+      "decoded": {
+        "order": 18,
+        "q": "1/2",
+        "volume": 4,
+        "maximum_degree": 17,
+        "multiplicity": 12,
+        "diagonal_shift": 0,
+        "denominator_depth": 270,
+        "maximum_energy": 272,
+        "energy_gap": 16,
+        "modulus": 65536
+      }
+    },
+    {
+      "multipartite_parts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "coefficient_1": "9/32768",
+      "coefficient_R": "29185208761380739279708173285787657281895112763099443258663632905/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+      "profiles_at_R": 5985,
+      "decoded": {
+        "order": 18,
+        "q": "1/2",
+        "volume": 4,
+        "maximum_degree": 16,
+        "multiplicity": 18,
+        "diagonal_shift": 0,
+        "denominator_depth": 255,
+        "maximum_energy": 256,
+        "energy_gap": 16,
+        "modulus": 65536
+      }
+    }
+  ],
+  "scope": "maximum degree and multiplicity only; no general completeness or full-series collision claim"
+}
