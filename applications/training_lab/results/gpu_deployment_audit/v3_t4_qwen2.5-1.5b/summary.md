@@ -1,0 +1,30 @@
+# Actual version-3 T4 result: stronger coverage at 379 tokens
+
+This is a new GPU experiment, not the earlier conservative design replay. The uploaded archive records Qwen2.5-1.5B revision `8faed761d45a263340a0528343f099c05c9a4323`, float16 on a Tesla T4, using PyTorch 2.11.0+cu130 and Transformers 5.20.1. Protocol `3364a6d5eb7df397ed656e15cfc23f9a662f54be2f081a765463404ad4ac9888` was frozen at 22:53:08 UTC on October 19, panels at 22:55:14, and results completed at 22:57:04. Frozen version 2 remains unchanged.
+
+The actual exact panel costs **379 token units**, matching the prior conservative cap-127 prediction. It is the unique minimum for the measured construction/structural coverage table. Optimally pruned greedy also costs 379; ordinary greedy costs 557. The original representative panel costs 286 and fails the requirements; its minimum-cost feasible completion costs 665. The expanded pool costs 923. Under identical coverage requirements, exact saves 31.96% versus ordinary greedy and 43.01% versus completed representative selection, and ties optimally pruned greedy. It uses 58.94% fewer token units than the expanded full pool. None of these percentages is a measured GPU latency saving.
+
+There is a short independent proof of the optimum. Cap 127 forces both 128-token guards, costing **256**. The cheapest pair of Unicode-normalization witnesses costs **43** (`uni_ligature`, 24; `uni_width`, 19). The cheapest pair of dropped-mask witnesses costs **80** (`pad_capital`, 40; `nl_list`, 40). These three coverer groups are disjoint, so every valid panel costs at least **256 + 43 + 80 = 379**. The selected six probes attain that bound and cover all remaining construction faults. Each group's cheapest pair is unique, establishing uniqueness of the optimum on this table.
+
+All six declared construction faults have at least two selected witnesses. Both guards contain 128 real tokens. They provide two shape witnesses for **every integer truncation cap 1–127**, conditional on the full teacher-forced observation contract. Seven actual cap implementations were executed, at 1, 32, 48, 64, 72, 96 and 127; all flag at least two selected probes. Other caps are covered by the structural theorem, not individually executed GPU variants. All nine exposed v2 fault cases are detected on retest; CRLF has only one selected witness, so the two-witness guarantee must not be extended to every retest.
+
+All four independent clean-validation configurations have **zero flags across the full 20-probe pool**, including cached batch size 3, uncached batch size 4, reversed order and the same-dtype export/reload. Calibration introduces zero extra unstable argmax ties and retains all eight generation tokens on each of the eight generation probes. These are results for this run, not population false-alarm estimates.
+
+The two clearly destructive new held-out wrappers—alternating attention masking and output-vocabulary permutation—each flag all six selected probes and all twenty pool probes. Vocabulary permutation mostly preserves probability summaries: maximum teacher-forced top-logprob and entropy drifts are about 5.79e-7 and 4.77e-6 nats, below tolerance, while token identities change. This illustrates the value of observing both token identity and probability summaries.
+
+The nominally invariant **uniform-logit translation is a numerical-sensitivity control**, not a substantive third semantic detection success. It flags only `uni_ligature` in the selected panel, with no length or token-identity mismatch. Its maximum top-logprob drift is 0.000254035 nats and entropy drift 0.000366926 nats, each above the 0.0001 floor. Ten of twenty pool probes flag this wrapper. Softmax remains invariant under uniform translation in exact arithmetic. The wrapper adds 1.0 before the adapter casts logits to float32; finite-precision rounding is a plausible explanation, but raw logits and their output dtype were not saved, so this experiment cannot establish that causal explanation. Do not summarize this as three independently verified semantic-fault detections.
+
+The left-padding position-offset diagnostic remains invisible: zero of twenty probes flag. Eager attention remains **not approved for numerical health**, with 2,116 non-finite continuous entries across the pool. These are separate health failures, never construction evidence or an acceptable alternative implementation.
+
+## Evidence and replay
+
+`evidence.zip` preserves the original uploaded archive byte for byte, including raw observations, protocol, frozen panels, portable package, combined certificate, environment, execution log and launcher receipts. Its SHA-256 is `00c93a09723250547e9039c624f8f45fe1fb15d695a508826468a4851fbce66a`. All eight launcher evidence hashes match. All five protocol-bound source files match pinned source commit `1b54e3cbf78d7732a2986dd216bcb758e01ddc56`. The archive's `verified` label was independently replayed; it is not trusted on its own.
+
+```bash
+python scripts/verify_v3_t4_evidence.py
+PYTHONPATH=src python -m unittest discover -s tests -p test_v3_t4_evidence.py -v
+```
+
+The replay reconstructs tolerances and every coverage/evaluation result, checks both certificates, independently checks the tight disjoint-set lower bound and compares the deterministic `verification.json` receipt. A separate review also reconstructed calibration/flags without repository imports and independently enumerated the possible original-probe subsets with the mandatory guards fixed, obtaining the same unique optimum.
+
+This experiment evaluates panels by restricting full-pool observations. Fresh standalone-panel execution can have different batch shapes; standalone-panel clean behavior and wall-clock latency still need separate measurements. Hardware/model identity is recorded provenance, not remote hardware attestation. Hidden-context truncation that preserves output shape remains outside the structural theorem. A100 transfer and universal semantic equivalence are not established. The narrower 269-token design using two 73-token guards remains unmeasured.

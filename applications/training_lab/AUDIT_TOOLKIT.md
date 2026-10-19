@@ -166,3 +166,5 @@ That run exposed two problems with its "clean" controls. Disabling the KV cache 
 ## Separate version-3 truncation protocol
 
 [TRUNCATION_V3.md](TRUNCATION_V3.md) develops all-integer-cap two-witness coverage, source-bound retrospective replay and a separately frozen prospective GPU runner. The measured-data replay costs 271 tokens for guaranteed shape coverage through cap 71; exact ties optimally pruned greedy. A conservative, unmeasured longer-probe design through cap 127 costs 379. Neither calculation is a new GPU experiment. All old v2 held-out cases are explicitly retests. Version 2 and any A100 run using its frozen protocol remain unchanged.
+
+The subsequent [actual v3 T4 experiment](results/gpu_deployment_audit/v3_t4_qwen2.5-1.5b/summary.md) confirms the 379-token cap-127 design and zero clean flags. Replay its original ZIP with `python scripts/verify_v3_t4_evidence.py`. The result explicitly separates two destructive held-out faults from the uniform-logit-shift numerical-sensitivity control; fresh standalone-panel latency and A100 transfer remain unmeasured.

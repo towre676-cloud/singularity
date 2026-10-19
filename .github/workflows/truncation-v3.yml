@@ -7,6 +7,8 @@ on:
       - 'scripts/*truncation*.py'
       - 'scripts/colab_deployment_audit*.py'
       - 'tests/test_truncation_v3.py'
+      - 'tests/test_v3_t4_evidence.py'
+      - 'scripts/verify_v3_t4_evidence.py'
       - 'tests/test_gpu_deployment_evidence.py'
       - 'applications/training_lab/results/gpu_deployment_audit/**'
       - '.github/workflows/truncation-v3.yml'
@@ -16,6 +18,8 @@ on:
       - 'scripts/*truncation*.py'
       - 'scripts/colab_deployment_audit*.py'
       - 'tests/test_truncation_v3.py'
+      - 'tests/test_v3_t4_evidence.py'
+      - 'scripts/verify_v3_t4_evidence.py'
       - 'tests/test_gpu_deployment_evidence.py'
       - 'applications/training_lab/results/gpu_deployment_audit/**'
       - '.github/workflows/truncation-v3.yml'
@@ -31,13 +35,16 @@ jobs:
         with:
           python-version: '3.12'
       - name: Independent source replay and exact-optimum certificate
-        run: python scripts/confirm_truncation_v3.py --verify
+        run: |
+          python scripts/confirm_truncation_v3.py --verify
+          python scripts/verify_v3_t4_evidence.py
       - name: Quantified families, numerical health and immutable GPU evidence
         env:
           PYTHONPATH: src
         run: |
           python -m unittest discover -s tests -p test_truncation_v3.py -v
           python -m unittest discover -s tests -p test_gpu_deployment_evidence.py -v
+          python -m unittest discover -s tests -p test_v3_t4_evidence.py -v
           python -m unittest discover -s tests -p test_robust_coverage.py -v
   cpu-model-smoke:
     runs-on: ubuntu-latest

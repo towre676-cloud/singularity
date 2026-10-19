@@ -1,0 +1,169 @@
+{
+  "all_integer_caps_1_127_have_two_shape_witnesses": true,
+  "archive_sha256": "00c93a09723250547e9039c624f8f45fe1fb15d695a508826468a4851fbce66a",
+  "claim_boundary": "Recorded full-pool observations; no fresh standalone-panel batching/timing, hardware attestation, A100 transfer or universal semantic-equivalence claim.",
+  "continuation_prefixes": {
+    "1": 8,
+    "11": 8,
+    "15": 8,
+    "16": 8,
+    "4": 8,
+    "5": 8,
+    "6": 8,
+    "8": 8
+  },
+  "dtype": "float16",
+  "exact_evaluation": {
+    "candidate_status": {
+      "candidate/eager_attention": "not_approved_numerical_health"
+    },
+    "false_alarms": [],
+    "new_heldout_missed": [],
+    "separators": {
+      "candidate/eager_attention": 6,
+      "construction/half_precision_export_swap": 6,
+      "construction/int8_bitsandbytes": 6,
+      "construction/padding_mask_dropped": 2,
+      "construction/temperature_1.3": 6,
+      "construction/truncate_to_48": 2,
+      "construction/unicode_nfkc": 2,
+      "diagnostic/positions_not_offset_for_left_padding": 0,
+      "family_check/suffix_cap_1": 6,
+      "family_check/suffix_cap_127": 2,
+      "family_check/suffix_cap_32": 2,
+      "family_check/suffix_cap_48": 2,
+      "family_check/suffix_cap_64": 2,
+      "family_check/suffix_cap_72": 2,
+      "family_check/suffix_cap_96": 2,
+      "known_v2_retest/crlf_newlines": 1,
+      "known_v2_retest/kv_cache_positions_reset": 3,
+      "known_v2_retest/nf4_4bit_bitsandbytes": 6,
+      "known_v2_retest/prefix_token_injected": 6,
+      "known_v2_retest/repetition_penalty_1.2": 3,
+      "known_v2_retest/right_padding_generation": 2,
+      "known_v2_retest/rope_base_halved": 6,
+      "known_v2_retest/temperature_1.1": 6,
+      "known_v2_retest/truncate_to_72": 2,
+      "new_heldout/alternating_attention_mask": 6,
+      "new_heldout/output_vocabulary_permutation": 6,
+      "new_heldout/uniform_logit_translation": 1,
+      "validation/cached_batch_size_3": 0,
+      "validation/reversed_order": 0,
+      "validation/same_dtype_export_roundtrip": 0,
+      "validation/uncached_batch_size_4": 0
+    }
+  },
+  "exact_probe_ids": [
+    "pad_capital",
+    "uni_ligature",
+    "uni_width",
+    "nl_list",
+    "length_guard_history",
+    "length_guard_experiment"
+  ],
+  "full_pool_clean_validation_flags": {
+    "cached_batch_size_3": 0,
+    "reversed_order": 0,
+    "same_dtype_export_roundtrip": 0,
+    "uncached_batch_size_4": 0
+  },
+  "hardware": {
+    "bf16": false,
+    "compute_capability": "7.5",
+    "device": "cuda",
+    "gpu": "Tesla T4",
+    "memory_gb": 14.6
+  },
+  "health_nonfinite_values": 2116,
+  "independent_tight_lower_bound": {
+    "cost": 379,
+    "terms": {
+      "cap_127": {
+        "coverers": [
+          "length_guard_history",
+          "length_guard_experiment"
+        ],
+        "minimum_cost": 256,
+        "unique_cheapest_witnesses": [
+          "length_guard_history",
+          "length_guard_experiment"
+        ]
+      },
+      "padding_mask_dropped": {
+        "coverers": [
+          "pad_born",
+          "pad_river",
+          "pad_capital",
+          "nl_list"
+        ],
+        "minimum_cost": 80,
+        "unique_cheapest_witnesses": [
+          "pad_capital",
+          "nl_list"
+        ]
+      },
+      "unicode_nfkc": {
+        "coverers": [
+          "uni_ligature",
+          "uni_padded",
+          "uni_width"
+        ],
+        "minimum_cost": 43,
+        "unique_cheapest_witnesses": [
+          "uni_ligature",
+          "uni_width"
+        ]
+      }
+    },
+    "unique_optimum": true
+  },
+  "model": "Qwen/Qwen2.5-1.5B",
+  "panel_costs": {
+    "exact": 379,
+    "greedy": 557,
+    "pruned_greedy": 379,
+    "representative": 286,
+    "representative_completed": 665
+  },
+  "panel_feasible": {
+    "exact": true,
+    "greedy": true,
+    "pruned_greedy": true,
+    "representative": false,
+    "representative_completed": true
+  },
+  "pool_cost": 923,
+  "probe_count": 20,
+  "protocol_sha256": "3364a6d5eb7df397ed656e15cfc23f9a662f54be2f081a765463404ad4ac9888",
+  "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+  "schema": "singularity.actual-v3-t4-replay/1",
+  "software": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.20.1"
+  },
+  "source_commit": "1b54e3cbf78d7732a2986dd216bcb758e01ddc56",
+  "ties_added": 0,
+  "uniform_translation": {
+    "classification": "finite-precision numerical sensitivity, not evidence of semantic change",
+    "full_pool_flags": 10,
+    "selected_flag_reports": [
+      {
+        "discrete_mismatches": 0,
+        "id": "uni_ligature",
+        "length_mismatch": false,
+        "max_abs": {
+          "continuation_logprob": 0.00015854835510253906,
+          "entropy": 0.0003669261932373047,
+          "top_logprob": 0.00025403499603271484
+        },
+        "selected": true,
+        "tolerance": {
+          "continuation_logprob": 0.022270066833496093,
+          "entropy": 0.0001,
+          "top_logprob": 0.0001
+        }
+      }
+    ]
+  }
+}
