@@ -38,6 +38,10 @@ The additional cost over v2 is **10 tokens, or 3.83%**. The pool still costs 667
 
 The complete exact cost frontier is retained in `results/gpu_deployment_audit/v3_retrospective_t4/results.json`. Costs stay 261 through cap 65, rise to 271 for caps 66–71, and become structurally infeasible for a two-witness guarantee at caps 72–75. At cap 76 and above no original probe is longer than the cap, so even one structural witness is impossible. Merely adding the two historically flagged probes cannot change that length limit.
 
+## Conservative repair through cap 72
+
+A narrower projected repair uses two distinct 73-token guards and declares **every cap 1–72**, rather than selecting the two previously flagged original probes. The independently certified conservative cost is **269 tokens**, only **8 more than v2 (3.07%)**, again tying optimally pruned greedy. These new guard observations are unmeasured. The original four non-length probes cost 123 and the guards cost 146. Although the original pool's cap-71 guarantee costs 271, adding suitable probes changes the feasible set and can reduce the panel cost even while strengthening the guarantee. Comparators are evaluated on the same expanded pool. The runner supports this design with `--maximum-cap 72`; its default 127 gives a broader declared family.
+
 ## Conservative design through cap 127
 
 Add two distinct 128-token inputs. Give them no unmeasured coverage credit for quantization, Unicode, masking, temperature or dtype changes. Credit their truncation-to-48 separation only by the same conditional shape theorem. An exact solution of this conservative design costs **379**, comprising 256 tokens for the guards plus 123 for `pad_capital`, `uni_ligature`, `uni_width` and `nl_list`. It is optimal for this explicitly conservative coverage table, not a measured optimum for a new GPU observation table. Actual long-probe measurements may reveal additional coverage and a cheaper panel.

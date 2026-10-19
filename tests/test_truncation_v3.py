@@ -127,6 +127,10 @@ class RetrospectiveTests(unittest.TestCase):
         self.assertEqual([panels[k]["cost"] for k in ("exact", "pruned_greedy", "greedy", "representative")], [271, 271, 301, 286])
         self.assertFalse(panels["representative"]["satisfies_requirement"])
         self.assertEqual(report["extra_cost_at_two_witness_frontier"], 10)
+        repair = report["conservative_72_design"]
+        self.assertTrue(verify_certificate(repair))
+        self.assertEqual(repair["comparison"]["panels"]["exact"]["cost"], 269)
+        self.assertEqual(repair["comparison"]["panels"]["pruned_greedy"]["cost"], 269)
         projected = report["conservative_127_design"]
         self.assertTrue(verify_certificate(projected))
         self.assertEqual(projected["comparison"]["panels"]["exact"]["cost"], 379)

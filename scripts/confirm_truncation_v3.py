@@ -103,18 +103,23 @@ def evaluate(source=SOURCE):
     # Conservative prospective design, NOT new numerical observations.
     # Two distinct 128-token inputs guarantee every cap through 127. Other
     # fault coverage is credited only to the original measured probes.
-    design_probes = probes + [{"id": "new_guard_a", "tokens": 128, "cost": 128},
-                              {"id": "new_guard_b", "tokens": 128, "cost": 128}]
-    design_table = {k: v + ([True, True] if k == "truncate_to_48" else [False, False]) for k, v in construction.items()}
-    design_spec = specification(design_probes, design_table, 127)
-    design_comparison = compare(design_spec, protocol["typical_panel"])
-    design_cert = certificate(design_spec, design_comparison,
-                              {"kind": "conservative projected design; new probe inputs/output values unmeasured",
-                               "new_probes_nontruncation_coverage": "no credit", "truncate_to_48_new_coverage": "conditional shape theorem"})
-    if not verify_certificate(design_cert):
-        raise ArithmeticError("projected-design certificate failed")
+    def projected(maximum):
+        length = maximum + 1
+        design_probes = probes + [{"id": "new_guard_a", "tokens": length, "cost": length},
+                                  {"id": "new_guard_b", "tokens": length, "cost": length}]
+        design_table = {k: v + ([True, True] if k == "truncate_to_48" else [False, False]) for k, v in construction.items()}
+        design_spec = specification(design_probes, design_table, maximum)
+        design_comparison = compare(design_spec, protocol["typical_panel"])
+        design_cert = certificate(design_spec, design_comparison,
+                                  {"kind": "conservative projected design; new probe inputs/output values unmeasured",
+                                   "new_probes_nontruncation_coverage": "no credit", "truncate_to_48_new_coverage": "conditional shape theorem"})
+        if not verify_certificate(design_cert):
+            raise ArithmeticError("projected-design certificate failed")
+        return design_cert
+    design_cert = projected(127)
+    repair_cert = projected(72)
     report = {"status": "retrospective_only", "certificate": cert, "panel_replay": panel_replay, "cost_frontier": curve,
-              "v2_exact_cost": 261, "conservative_127_design": design_cert, "extra_cost_at_two_witness_frontier": comparison["panels"]["exact"]["cost"] - 261,
+              "v2_exact_cost": 261, "conservative_127_design": design_cert, "conservative_72_design": repair_cert, "extra_cost_at_two_witness_frontier": comparison["panels"]["exact"]["cost"] - 261,
               "unavailable_original_construction_faults_outside_guarantee": unavailable,
               "two_witness_shape_frontier": frontier, "one_witness_shape_frontier": lengths[0] - 1,
               "observed_72_signals": measured, "new_gpu_measurements": False,
