@@ -1,0 +1,1060 @@
+{
+ "break_even_checks": {
+  "construction_only": 93,
+  "construction_plus_audit": 181
+ },
+ "clean_calibration_maxima": [
+  {
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "continuation_logprob": 0.0,
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "continuation_logprob": 0.008345603942871094,
+   "entropy": 0.014874935150146484,
+   "top_logprob": 0.024623513221740723
+  },
+  {
+   "continuation_logprob": 0.009464502334594727,
+   "entropy": 0.01650691032409668,
+   "top_logprob": 0.009526729583740234
+  },
+  {
+   "continuation_logprob": 0.009459733963012695,
+   "entropy": 0.007505893707275391,
+   "top_logprob": 0.008168399333953857
+  },
+  {
+   "entropy": 0.006191730499267578,
+   "top_logprob": 0.009082317352294922
+  },
+  {
+   "continuation_logprob": 0.0,
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "continuation_logprob": 0.0,
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "entropy": 0.013743877410888672,
+   "top_logprob": 0.012551069259643555
+  },
+  {
+   "entropy": 0.01281881332397461,
+   "top_logprob": 0.012385129928588867
+  },
+  {
+   "continuation_logprob": 0.0,
+   "entropy": 0.0,
+   "top_logprob": 0.0
+  },
+  {
+   "continuation_logprob": 0.009932875633239746,
+   "entropy": 0.020493268966674805,
+   "top_logprob": 0.012929081916809082
+  },
+  {
+   "entropy": 0.018014073371887207,
+   "top_logprob": 0.012973785400390625
+  }
+ ],
+ "construction_excluded_fewer_than_two_separators": {
+  "positions_not_offset_for_left_padding": 0
+ },
+ "construction_separators": {
+  "half_precision_export_swap": 18,
+  "int8_bitsandbytes": 18,
+  "padding_mask_dropped": 4,
+  "positions_not_offset_for_left_padding": 0,
+  "temperature_1.3": 18,
+  "truncate_to_48": 4,
+  "unicode_nfkc": 3
+ },
+ "contract": {
+  "adapter": "colab_deployment_audit",
+  "attention": "sdpa",
+  "attention_mask": true,
+  "decoding": "greedy, no processors",
+  "dtype": "float16",
+  "model": "Qwen/Qwen2.5-1.5B",
+  "model_config_sha256": "9f338ba8a91f48bd1fd5ad13025f4a147a715c91cf57813cf28650a43331c6c1",
+  "newline": "\\n",
+  "normalization": "none",
+  "padding_side": "left",
+  "position_ids": "offset by left padding",
+  "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+  "temperature": 1.0,
+  "tokenizer_vocabulary_sha256": "a0f9b47c37a571dfddc63585403de9b56385ed4b292a8081ce8b9a08acdec617",
+  "use_cache": true
+ },
+ "coverable": [
+  "half_precision_export_swap",
+  "int8_bitsandbytes",
+  "padding_mask_dropped",
+  "temperature_1.3",
+  "truncate_to_48",
+  "unicode_nfkc"
+ ],
+ "created_at_utc": "2026-10-19T20:17:17.832115+00:00",
+ "exact_vs_pruned_greedy_token_saving": 0.0,
+ "full_pool_separators": {
+  "construction/half_precision_export_swap": 18,
+  "construction/int8_bitsandbytes": 18,
+  "construction/padding_mask_dropped": 4,
+  "construction/positions_not_offset_for_left_padding": 0,
+  "construction/temperature_1.3": 18,
+  "construction/truncate_to_48": 4,
+  "construction/unicode_nfkc": 3,
+  "control/eager_attention_backend": 18,
+  "control/kv_cache_disabled": 4,
+  "control/reversed_order": 0,
+  "control/same_dtype_export_roundtrip": 0,
+  "heldout/crlf_newlines": 3,
+  "heldout/kv_cache_positions_reset": 8,
+  "heldout/nf4_4bit_bitsandbytes": 18,
+  "heldout/right_padding_generation": 4,
+  "heldout/rope_base_halved": 18,
+  "heldout/temperature_1.1": 18,
+  "heldout/truncate_to_72": 2
+ },
+ "independent_enumeration": {
+  "minimum_cost": 261,
+  "subsets": 262144
+ },
+ "nonfinite_values": {
+  "control/eager_attention_backend": 1348
+ },
+ "package": {
+  "checks": {
+   "construction/half_precision_export_swap": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "construction/int8_bitsandbytes": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "construction/padding_mask_dropped": {
+    "flagged_probes": [
+     "pad_capital",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "construction/positions_not_offset_for_left_padding": {
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "construction/temperature_1.3": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "construction/truncate_to_48": {
+    "flagged_probes": [
+     "full_science",
+     "full_music"
+    ],
+    "verdict": "changed"
+   },
+   "construction/unicode_nfkc": {
+    "flagged_probes": [
+     "uni_ligature",
+     "uni_width"
+    ],
+    "verdict": "changed"
+   },
+   "control/eager_attention_backend": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "control/kv_cache_disabled": {
+    "flagged_probes": [
+     "full_science",
+     "uni_ligature"
+    ],
+    "verdict": "changed"
+   },
+   "control/reversed_order": {
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "control/same_dtype_export_roundtrip": {
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "heldout/crlf_newlines": {
+    "flagged_probes": [
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "heldout/kv_cache_positions_reset": {
+    "flagged_probes": [
+     "full_science",
+     "pad_capital",
+     "uni_ligature",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "heldout/nf4_4bit_bitsandbytes": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "heldout/right_padding_generation": {
+    "flagged_probes": [
+     "pad_capital",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "heldout/rope_base_halved": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "heldout/temperature_1.1": {
+    "flagged_probes": [
+     "full_science",
+     "full_music",
+     "pad_capital",
+     "uni_ligature",
+     "uni_width",
+     "nl_list"
+    ],
+    "verdict": "changed"
+   },
+   "heldout/truncate_to_72": {
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   }
+  },
+  "checks_use": "stored full-pool observations of each variant, restricted by the package to its panel",
+  "file": "package.json",
+  "verification": {
+   "faults": 6,
+   "panel_probes": 6,
+   "problems": [],
+   "requirement": 2,
+   "verified": true
+  }
+ },
+ "panels": {
+  "exact": {
+   "construction_robust": 6,
+   "cost": 261,
+   "false_alarms": [
+    "control/eager_attention_backend",
+    "control/kv_cache_disabled"
+   ],
+   "heldout_detected": 6,
+   "probe_ids": [
+    "full_science",
+    "full_music",
+    "pad_capital",
+    "uni_ligature",
+    "uni_width",
+    "nl_list"
+   ],
+   "variants": {
+    "construction/half_precision_export_swap": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "construction/int8_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "construction/padding_mask_dropped": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "construction/positions_not_offset_for_left_padding": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "construction/temperature_1.3": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "construction/truncate_to_48": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "construction/unicode_nfkc": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "control/eager_attention_backend": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "control/kv_cache_disabled": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "control/reversed_order": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "control/same_dtype_export_roundtrip": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "heldout/crlf_newlines": {
+     "detected": true,
+     "robust": false,
+     "separating_probes": 1
+    },
+    "heldout/kv_cache_positions_reset": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "heldout/nf4_4bit_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "heldout/right_padding_generation": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "heldout/rope_base_halved": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "heldout/temperature_1.1": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "heldout/truncate_to_72": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    }
+   }
+  },
+  "greedy": {
+   "construction_robust": 6,
+   "cost": 272,
+   "false_alarms": [
+    "control/eager_attention_backend",
+    "control/kv_cache_disabled"
+   ],
+   "heldout_detected": 6,
+   "probe_ids": [
+    "full_science",
+    "full_music",
+    "pad_capital",
+    "short_first",
+    "short_known",
+    "uni_ligature",
+    "uni_width",
+    "nl_list"
+   ],
+   "variants": {
+    "construction/half_precision_export_swap": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "construction/int8_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "construction/padding_mask_dropped": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "construction/positions_not_offset_for_left_padding": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "construction/temperature_1.3": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "construction/truncate_to_48": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "construction/unicode_nfkc": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "control/eager_attention_backend": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "control/kv_cache_disabled": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "control/reversed_order": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "control/same_dtype_export_roundtrip": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "heldout/crlf_newlines": {
+     "detected": true,
+     "robust": false,
+     "separating_probes": 1
+    },
+    "heldout/kv_cache_positions_reset": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "heldout/nf4_4bit_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "heldout/right_padding_generation": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "heldout/rope_base_halved": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "heldout/temperature_1.1": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 8
+    },
+    "heldout/truncate_to_72": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    }
+   }
+  },
+  "pruned_greedy": {
+   "construction_robust": 6,
+   "cost": 261,
+   "false_alarms": [
+    "control/eager_attention_backend",
+    "control/kv_cache_disabled"
+   ],
+   "heldout_detected": 6,
+   "probe_ids": [
+    "full_science",
+    "full_music",
+    "pad_capital",
+    "uni_ligature",
+    "uni_width",
+    "nl_list"
+   ],
+   "variants": {
+    "construction/half_precision_export_swap": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "construction/int8_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "construction/padding_mask_dropped": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "construction/positions_not_offset_for_left_padding": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "construction/temperature_1.3": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "construction/truncate_to_48": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "construction/unicode_nfkc": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "control/eager_attention_backend": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "control/kv_cache_disabled": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "control/reversed_order": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "control/same_dtype_export_roundtrip": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "heldout/crlf_newlines": {
+     "detected": true,
+     "robust": false,
+     "separating_probes": 1
+    },
+    "heldout/kv_cache_positions_reset": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "heldout/nf4_4bit_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "heldout/right_padding_generation": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "heldout/rope_base_halved": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "heldout/temperature_1.1": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 6
+    },
+    "heldout/truncate_to_72": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    }
+   }
+  },
+  "typical": {
+   "construction_robust": 4,
+   "cost": 286,
+   "false_alarms": [
+    "control/eager_attention_backend",
+    "control/kv_cache_disabled"
+   ],
+   "heldout_detected": 5,
+   "probe_ids": [
+    "full_history",
+    "full_science",
+    "full_sport",
+    "full_music"
+   ],
+   "variants": {
+    "construction/half_precision_export_swap": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "construction/int8_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "construction/padding_mask_dropped": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "construction/positions_not_offset_for_left_padding": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "construction/temperature_1.3": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "construction/truncate_to_48": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "construction/unicode_nfkc": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "control/eager_attention_backend": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "control/kv_cache_disabled": {
+     "detected": true,
+     "robust": false,
+     "separating_probes": 1
+    },
+    "control/reversed_order": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "control/same_dtype_export_roundtrip": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "heldout/crlf_newlines": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "heldout/kv_cache_positions_reset": {
+     "detected": true,
+     "robust": false,
+     "separating_probes": 1
+    },
+    "heldout/nf4_4bit_bitsandbytes": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "heldout/right_padding_generation": {
+     "detected": false,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "heldout/rope_base_halved": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "heldout/temperature_1.1": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "heldout/truncate_to_72": {
+     "detected": true,
+     "robust": true,
+     "separating_probes": 2
+    }
+   }
+  }
+ },
+ "protocol_sha256": "16b658137ff946d279f602bbf98484ba295f52f28c7a4eb4b9c4e65c2058eddc",
+ "random_at_exact_budget": {
+  "draws": 1000,
+  "mean_cost": 256.962,
+  "meeting_requirement": 0
+ },
+ "schema": "singularity.gpu-deployment-audit/1",
+ "seconds": {
+  "audit": 98.2378951249998,
+  "construction": 102.67548107499988,
+  "development_total": 200.91337619999968,
+  "observations": {
+   "calibration/batch_size_1": 2.5804788700002064,
+   "calibration/batch_size_8": 2.0495327720000205,
+   "construction/half_precision_export_swap": 66.25327712900025,
+   "construction/int8_bitsandbytes": 19.19186919399999,
+   "construction/padding_mask_dropped": 2.1309171950001655,
+   "construction/positions_not_offset_for_left_padding": 2.0481852830002936,
+   "construction/temperature_1.3": 2.1113309409997782,
+   "construction/truncate_to_48": 1.7170220879997942,
+   "construction/unicode_nfkc": 2.0899955289996797,
+   "control/eager_attention_backend": 2.034060189000229,
+   "control/kv_cache_disabled": 2.0887244719997398,
+   "control/reversed_order": 1.9783693569997922,
+   "control/same_dtype_export_roundtrip": 73.13814594800033,
+   "heldout/crlf_newlines": 2.0558553209998536,
+   "heldout/kv_cache_positions_reset": 2.011838513999919,
+   "heldout/nf4_4bit_bitsandbytes": 6.611417067000275,
+   "heldout/right_padding_generation": 2.09250604700037,
+   "heldout/rope_base_halved": 2.1165337089996683,
+   "heldout/temperature_1.1": 2.093783630999951,
+   "heldout/truncate_to_72": 1.958546651999768,
+   "load_reference": 5.845708457000001,
+   "reference/reference": 2.014344341999731
+  }
+ },
+ "skipped_variants": [],
+ "timing": {
+  "full_pool_median_seconds": 2.0546164249999492,
+  "includes": "panel time includes package verification and comparison; full-pool time is observation only",
+  "panel_check_median_seconds": 0.9390253994999966,
+  "records": [
+   {
+    "full_pool": 2.1182043600001634,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9255610749996777,
+    "repeat": 0
+   },
+   {
+    "full_pool": 2.050154320999809,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9299508819999573,
+    "repeat": 1
+   },
+   {
+    "full_pool": 2.0044268830001783,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9258011140000235,
+    "repeat": 2
+   },
+   {
+    "full_pool": 2.0624085879999257,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9395718949999718,
+    "repeat": 3
+   },
+   {
+    "full_pool": 2.012025958999857,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9297359080001115,
+    "repeat": 4
+   },
+   {
+    "full_pool": 2.065862847000062,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9273313819999203,
+    "repeat": 5
+   },
+   {
+    "full_pool": 2.074262039000132,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9522961640000176,
+    "repeat": 6
+   },
+   {
+    "full_pool": 2.0244291449998855,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9384789040000214,
+    "repeat": 7
+   },
+   {
+    "full_pool": 2.0225463870001477,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.932805007999832,
+    "repeat": 8
+   },
+   {
+    "full_pool": 2.073655391000102,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.925762554999892,
+    "repeat": 9
+   },
+   {
+    "full_pool": 2.0590785290000895,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.920516187999965,
+    "repeat": 10
+   },
+   {
+    "full_pool": 2.0108423860001494,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9935959479998928,
+    "repeat": 11
+   },
+   {
+    "full_pool": 2.0041542000003574,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9464558509998824,
+    "repeat": 12
+   },
+   {
+    "full_pool": 1.9931088869998348,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9768311839998205,
+    "repeat": 13
+   },
+   {
+    "full_pool": 2.041279589000169,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9357009309997011,
+    "repeat": 14
+   },
+   {
+    "full_pool": 2.023259222999968,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9516609920001429,
+    "repeat": 15
+   },
+   {
+    "full_pool": 2.0754263950002496,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.9431196079999609,
+    "repeat": 16
+   },
+   {
+    "full_pool": 2.0683495389998825,
+    "order": [
+     "panel_check",
+     "full_pool"
+    ],
+    "panel_check": 0.9855728530001215,
+    "repeat": 17
+   },
+   {
+    "full_pool": 2.0649476890002916,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 0.958407397999963,
+    "repeat": 18
+   },
+   {
+    "full_pool": 2.138244284999928,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 1.0413148160000674,
+    "repeat": 19
+   }
+  ],
+  "resident_reference_verdict": "unchanged",
+  "speed_ratio": 2.188030724295607
+ },
+ "tolerances": [
+  {
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "continuation_logprob": 0.0001,
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "continuation_logprob": 0.03348241577148438,
+   "entropy": 0.05959974060058594,
+   "top_logprob": 0.0985940528869629
+  },
+  {
+   "continuation_logprob": 0.03795800933837891,
+   "entropy": 0.06612764129638672,
+   "top_logprob": 0.03820691833496094
+  },
+  {
+   "continuation_logprob": 0.037938935852050784,
+   "entropy": 0.030123574829101562,
+   "top_logprob": 0.03277359733581543
+  },
+  {
+   "entropy": 0.024866921997070312,
+   "top_logprob": 0.03642926940917969
+  },
+  {
+   "continuation_logprob": 0.0001,
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "continuation_logprob": 0.0001,
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "entropy": 0.05507550964355469,
+   "top_logprob": 0.05030427703857422
+  },
+  {
+   "entropy": 0.05137525329589844,
+   "top_logprob": 0.04964051971435547
+  },
+  {
+   "continuation_logprob": 0.0001,
+   "entropy": 0.0001,
+   "top_logprob": 0.0001
+  },
+  {
+   "continuation_logprob": 0.03983150253295899,
+   "entropy": 0.08207307586669922,
+   "top_logprob": 0.05181632766723633
+  },
+  {
+   "entropy": 0.07215629348754883,
+   "top_logprob": 0.0519951416015625
+  }
+ ],
+ "unstable_reference": {
+  "continuations_removed": [],
+  "tie_positions_added": 0
+ }
+}

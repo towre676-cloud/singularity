@@ -130,3 +130,39 @@ PYTHONPATH=src python scripts/confirm_cross_domain.py {select,freeze,execute}   
 ```
 
 Use `--output` with an empty directory to rerun a study without touching the retained evidence. The cross-domain `select` phase reads the build interpreter's standard library and `pydoc_data`; stored documents make later replays independent of the interpreter version.
+
+## GPU deployment audit (Colab)
+
+`scripts/colab_deployment_audit.py` runs a frozen deployment audit of a pretrained causal model on one GPU. In a Colab GPU runtime:
+
+```python
+!git clone -q https://github.com/towre676-cloud/singularity
+%cd singularity
+!python scripts/colab_deployment_audit.py            # add --model ID to override the default
+```
+
+It chooses Qwen2.5 by GPU memory (7B at ≥38 GB, 3B at ≥20 GB, otherwise 1.5B). Qwen2.5 is a family not used in the GPT-2/SmolLM2 studies. Before the first forward pass, it freezes the model's immutable Hub revision, the hardware, 18 probes, every variant, the tolerance rule, the comparators and the timing plan. It then measures:
+
+- **construction changes:** dropped padding mask, unoffset positions under left padding, 48-token truncation, NFKC normalization, temperature 1.3, an int8 bitsandbytes load and an export reloaded in the other half-precision dtype;
+- **held-out changes:** NF4 4-bit, KV-cache position reset, right-padded generation, halved RoPE base, CRLF newlines, temperature 1.1 and 72-token truncation;
+- **clean controls:** batch size 1 and 8 for calibration; for false alarms, eager attention instead of SDPA, KV cache disabled, a same-dtype export round-trip and reversed order.
+
+The script compares the exact 2-robust panel with greedy, optimally pruned greedy, a typical-text panel and random panels under the same requirement. It confirms the optimum by an independent scan of all 2^18 subsets. It also builds and verifies a standalone package, times resident checks with CUDA synchronization, runs fresh-process cold checks, and reports break-even counts. Output: a new `deployment_audit_<UTC time>/` folder per run (or `--output`) with `summary.md`, every receipt and a zip. `--local-test` runs every code path on CPU with a tiny random Qwen2 model; the quantized variants are then skipped. Construction variants with fewer than two separating probes, such as position offsets that RoPE makes invisible, are reported and excluded from the guarantee rather than hidden.
+
+### Version 2 of the GPU deployment audit
+
+Version 1 (`scripts/colab_deployment_audit.py`, commit a9bfb31) ran on a T4 with Qwen2.5-1.5B in float16 under protocol `47b381aacf9182f3`. It is preserved unchanged.
+
+That run exposed two problems with its "clean" controls. Disabling the KV cache flagged 4 continuation probes, because tolerances had been calibrated only on batch size. Eager attention emitted 1,348 non-finite log-probabilities. The exact panel tied optimally pruned greedy at 261 tokens.
+
+`scripts/colab_deployment_audit_v2.py` repairs the contract and freezes it before any forward pass:
+
+- **Calibration envelope.** Calibration covers cached and uncached execution at batch sizes 1 and 8. Tolerances are 4 × the largest calibration deviation + 10⁻⁴ nats. Continuations are compared only on the prefix shared by every calibration run.
+- **Separate clean validation runs.** Uncached batch 4, cached batch 3, reversed order and a same-dtype export round-trip never enter calibration. Any flag on them is a false alarm.
+- **Numerical health.** Non-finite output is a separate failure and never widens a tolerance. It aborts the run when it appears in the reference or calibration runs.
+- **Candidate configurations.** Eager attention is approved as clean only for the exact model, revision, dtype and GPU tested, and only if it is numerically healthy and no probe flags.
+- **Variant labels.** Variants repeated from version 1 are labelled retests. An injected prefix token and a generation-path repetition penalty are new held-out variants.
+
+## Separate version-3 truncation protocol
+
+[TRUNCATION_V3.md](TRUNCATION_V3.md) develops all-integer-cap two-witness coverage, source-bound retrospective replay and a separately frozen prospective GPU runner. The measured-data replay costs 271 tokens for guaranteed shape coverage through cap 71; exact ties optimally pruned greedy. A conservative, unmeasured longer-probe design through cap 127 costs 379. Neither calculation is a new GPU experiment. All old v2 held-out cases are explicitly retests. Version 2 and any A100 run using its frozen protocol remain unchanged.
