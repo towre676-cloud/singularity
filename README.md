@@ -22,6 +22,8 @@ The arithmetic connection goes further. Feed these local counts into a product o
 
 **Find the experiment that makes the difference.** Attachments to a graph become operators on an exact interface. The engine discovers everything the allowed operators can reveal, preserves the information needed for every future attachment sequence, and returns a cheapest distinguishing experiment under the declared costs. It also searches for robust shared panels when observations carry bounded uncertainty. The [operator chapter](docs/chapters/15_operators_experiments.md) connects these guarantees to runnable algorithms.
 
+![The same path has two terminal choices with equal passive readings. One shared-neighbor attachment separates their readings by exactly one eighth.](docs/assets/chosen-experiment.svg)
+
 **Count enormous populations through their structure.** A retained experiment on a 96-vertex path counts **2,506,262,962,660,245 labeled height profiles** under its stated bounds. Locality, separator methods, and exact generating functions make those populations accessible without listing each profile. The [implementation guide](docs/IMPLEMENTATION.md) describes which method fits which problem.
 
 **Prove when observation cannot succeed.** Symmetry and invisible interface directions can make two states indistinguishable under every experiment in a specified language. Singularity returns the invisible space and the observable quotient. That turns a failed search into an explanation of what information is missing—and what kind of new observation is needed.
@@ -30,9 +32,13 @@ The arithmetic connection goes further. Feed these local counts into a product o
 
 Consider a heated plate with six possible fault hypotheses. A symmetric sensor cannot distinguish two reflected faults, however long the original heater protocol runs. Changing the observations breaks the symmetry. Singularity then chooses a diagnostic panel robust to the declared reset and sensor errors.
 
+![Exact simulated thermal fields for reflected blocked bonds, the fixed left sensor, and diagnostic costs of 20, 31 and 44.](docs/assets/thermal-diagnosis.svg)
+
 On the exact 144-state model, its optimal robust panel costs **20**, compared with **31** for greedy selection and **44** for a fixed protocol. An independent heat-flux simulator checks all 672 candidate predictions, and a separate optimization confirms the minimum. These are constructed faults and normalized model costs, not field measurements. The [thermal diagnostic example](applications/thermal_diagnostics/README.md) gives the complete model, uncertainty assumptions, and reproduction command.
 
 ## The mathematics underneath
+
+![A five-cycle with heights 0, 1, 3, 2, 0 has total height six, squared-edge energy ten, and three nested threshold sets.](docs/assets/height-profile.svg)
 
 One series starts the story:
 
@@ -61,3 +67,4 @@ The [**research monograph**](output/pdf/monograph.pdf) develops the original the
 For developers and researchers, that reference also preserves the complete engine catalogue, reproduction commands, release history, handoff ledgers, proof audits, and [validation results](results/nx36_validation.json). The packaged release is a versioned snapshot; [download current main](https://github.com/towre676-cloud/singularity/archive/refs/heads/main.zip) for subsequent work.
 
 **The next question is yours:** which hidden structures can your observations distinguish, what will they always miss, and what is the best experiment to perform next?
+

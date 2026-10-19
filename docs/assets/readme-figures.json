@@ -1,0 +1,36 @@
+{
+  "schema": "singularity.readme-figures/1",
+  "experiment": {
+    "source": "results/operator_experiments.json#path_fixture",
+    "q": "1/2",
+    "passive": "5/4",
+    "readings": {
+      "endpoints": "1",
+      "adjacent": "9/8"
+    },
+    "attachment": "shared_neighbor",
+    "cost": "1"
+  },
+  "thermal": {
+    "source": "results/thermal_diagnostics.json#robust_panel",
+    "grid": 12,
+    "word": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "sensor": "left_center_mean",
+    "nominal_reading": "26065922358243061/12800000000000000",
+    "blocked_left_reading": "117669922135919069/51200000000000000",
+    "blocked_right_reading": "107343290948255369/51200000000000000",
+    "optimal_cost": "20",
+    "greedy_cost": "31",
+    "fixed_cost": "44",
+    "error_radius": "19227446944279201/1000000000000000000"
+  }
+}
