@@ -1,0 +1,1510 @@
+{
+  "checks": [
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "elapsed_seconds": 126.91890391400011,
+      "exit_code": 0,
+      "log_bytes": 99770,
+      "log_sha256": "79cc354b1c4e242e5f27699a1e09d657353840dc12f77ffa8a658ba0487b5093",
+      "name": "unit_tests",
+      "raw_log_path": "/tmp/singularity-advantage-unit_tests.log",
+      "retained_log": {
+        "decompressed_sha256": "79cc354b1c4e242e5f27699a1e09d657353840dc12f77ffa8a658ba0487b5093",
+        "encoding": "gzip; mtime=0",
+        "path": "applications/training_lab/results/advantage_validation.log.gz",
+        "sha256": "54d20b5a2c1e4e023383ae8afe23317ce037c05b1497796b26ddb2bcb53fffcd"
+      },
+      "skipped": 0,
+      "status": "passed",
+      "tests_run": 767,
+      "unittest_elapsed_seconds": 124.842
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests",
+        "applications/training_lab/basis_study.py"
+      ],
+      "elapsed_seconds": 0.044141489001049194,
+      "exit_code": 0,
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "source_compile",
+      "output": "",
+      "raw_log_path": "/tmp/singularity-advantage-source_compile.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "-c",
+        "import unittest; suite=unittest.defaultTestLoader.discover(\"tests\"); errors=unittest.defaultTestLoader.errors; print({\"test_cases_discovered\":suite.countTestCases(),\"import_errors\":errors}); raise SystemExit(bool(errors))"
+      ],
+      "elapsed_seconds": 0.23717722799847252,
+      "exit_code": 0,
+      "log_bytes": 52,
+      "log_sha256": "3ea7c65a0e3a2a908d09dc7359d46030fb582d3119e9b49f7a4861feeb55f3ce",
+      "name": "stdlib_imports",
+      "output": "{'test_cases_discovered': 767, 'import_errors': []}\n",
+      "raw_log_path": "/tmp/singularity-advantage-stdlib_imports.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_repository.py"
+      ],
+      "elapsed_seconds": 0.37468705300125293,
+      "exit_code": 0,
+      "log_bytes": 127,
+      "log_sha256": "a70ba726f0368d56cd5ac236361709976d5671b201fd0f5638e2d2f1f13b41ac",
+      "name": "repository",
+      "output": "{\"chapters\": 16, \"declared_result_ids\": 112, \"main_chapter_source_words\": 58014, \"required_artifacts\": 19, \"status\": \"passed\"}\n",
+      "raw_log_path": "/tmp/singularity-advantage-repository.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/reproduce.py",
+        "--check"
+      ],
+      "elapsed_seconds": 2.121221469999,
+      "exit_code": 0,
+      "log_bytes": 130,
+      "log_sha256": "0e08d9239cab9d5bd554d92b568a202fe0c46e2345b83307d6a25c5cd759bfb1",
+      "name": "retained_examples",
+      "output": "Exact examples, three graph comparisons, four independent packet replays and remote conductor coefficient match retained outputs.\n",
+      "raw_log_path": "/tmp/singularity-advantage-retained_examples.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_links.py"
+      ],
+      "elapsed_seconds": 0.13498688699837658,
+      "exit_code": 0,
+      "log_bytes": 95,
+      "log_sha256": "e8d12bd0be3ddba150ba916b6034e8f82adfbe6ad08d8d35b0844176649c8476",
+      "name": "document_links",
+      "output": "{\n  \"status\": \"passed\",\n  \"mode\": \"local\",\n  \"checked_relative_targets\": 33,\n  \"missing\": []\n}\n",
+      "raw_log_path": "/tmp/singularity-advantage-document_links.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "-m",
+        "singularity.training.cli",
+        "--help"
+      ],
+      "elapsed_seconds": 0.0323359049980354,
+      "exit_code": 0,
+      "log_bytes": 195,
+      "log_sha256": "8ffad0d9a662575de404bdb4225e314339e2a17900ff8d33d4c9f946cf7db3e8",
+      "name": "training_cli_help_without_site_packages",
+      "output": "usage: cli.py [-h] --config CONFIG --output OUTPUT\n\nJSON-configured optional PyTorch experiments.\n\noptions:\n  -h, --help       show this help message and exit\n  --config CONFIG\n  --output OUTPUT\n",
+      "raw_log_path": "/tmp/singularity-advantage-training_cli_help_without_site_packages.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/score_byte_mixture.py",
+        "--help"
+      ],
+      "elapsed_seconds": 0.04083692099811742,
+      "exit_code": 0,
+      "log_bytes": 862,
+      "log_sha256": "4217e4b280e6118ce193897556e01e74ee620b07bee95048de49258a9994d40b",
+      "name": "byte_cli_help_without_site_packages",
+      "output": "usage: score_byte_mixture.py [-h] {fit-counts,score} ...\n\nFit portable TRAIN counts, or score a frozen neural/count probability mix. The\nscore command accepts one already trained, trusted Singularity byte-model\ncheckpoint. It never trains a neural model, chooses alpha, or fits a blend\nweight. Choose hyperparameters on a separate TUNE corpus before using TEST.\n\npositional arguments:\n  {fit-counts,score}\n    fit-counts        Fit portable JSON counts using TRAIN only; no alpha\n                      selection\n    score             Score one trusted checkpoint and a FROZEN supplied\n                      mixture weight\n\noptions:\n  -h, --help          show this help message and exit\n\nRun with PYTHONPATH=src, or install the package. fit-counts needs only Python;\nscore needs the training extra. Checkpoints contain pickle and must come from\na trusted source.\n",
+      "raw_log_path": "/tmp/singularity-advantage-byte_cli_help_without_site_packages.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/score_byte_mixture.py",
+        "score",
+        "--help"
+      ],
+      "elapsed_seconds": 0.04174497400163091,
+      "exit_code": 0,
+      "log_bytes": 1533,
+      "log_sha256": "6ab7c1445107fca65cb93d84e4ec1436c967dc8737d2e6fa1a029ad8cbec9039",
+      "name": "byte_score_help_without_site_packages",
+      "output": "usage: score_byte_mixture.py score [-h] --checkpoint CHECKPOINT\n                                   [--expected-checkpoint-sha256 EXPECTED_CHECKPOINT_SHA256]\n                                   --counts COUNTS --corpus CORPUS\n                                   --neural-weight NEURAL_WEIGHT\n                                   [--weight-receipt WEIGHT_RECEIPT]\n                                   [--split {tune,test,audit,other}]\n                                   [--batch-size BATCH_SIZE]\n                                   [--threads THREADS] --output OUTPUT\n\noptions:\n  -h, --help            show this help message and exit\n  --checkpoint CHECKPOINT\n                        Trusted Singularity byte-model checkpoint.pt\n  --expected-checkpoint-sha256 EXPECTED_CHECKPOINT_SHA256\n                        Optional expected file hash checked before loading\n  --counts COUNTS       TRAIN-only JSON from fit-counts, same TRAIN as\n                        checkpoint\n  --corpus CORPUS       Raw bytes to score; each noninitial byte is a target\n                        once\n  --neural-weight NEURAL_WEIGHT\n                        Frozen number in [0,1]; count weight is 1 minus this\n  --weight-receipt WEIGHT_RECEIPT\n                        Optional existing selection receipt linked by SHA256;\n                        not used for fitting\n  --split {tune,test,audit,other}\n                        Receipt label only; never changes scoring\n  --batch-size BATCH_SIZE\n  --threads THREADS\n  --output OUTPUT       Metrics and hashes JSON receipt\n",
+      "raw_log_path": "/tmp/singularity-advantage-byte_score_help_without_site_packages.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/confirm_checkpoint_panels.py",
+        "--help"
+      ],
+      "elapsed_seconds": 0.04363343300065026,
+      "exit_code": 0,
+      "log_bytes": 714,
+      "log_sha256": "3dc0a56800afbe319e727edd501137203b47377d295452ba0136fff3daf2b1a8",
+      "name": "panel_cli_help_without_site_packages",
+      "output": "usage: confirm_checkpoint_panels.py [-h] [--results RESULTS] [--output OUTPUT]\n                                    --source-dir SOURCE_DIR\n                                    {freeze,construct,audit,timing}\n\nFrozen finite-catalog regression smoke tests for trained byte transformers.\nThis selects a reusable set of complete 64-byte causal windows, never\ntruncates context, never infers model quality from a fingerprint, and keeps\nconstruction, audit, and timing as separately executable phases. Original\ntraining is untouched.\n\npositional arguments:\n  {freeze,construct,audit,timing}\n\noptions:\n  -h, --help            show this help message and exit\n  --results RESULTS\n  --output OUTPUT\n  --source-dir SOURCE_DIR\n",
+      "raw_log_path": "/tmp/singularity-advantage-panel_cli_help_without_site_packages.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/score_byte_mixture.py",
+        "fit-counts",
+        "--train-path",
+        "/tmp/singularity-count-cli-076rungt/train.txt",
+        "--alpha",
+        ".01",
+        "--output",
+        "/tmp/singularity-count-cli-076rungt/counts.json",
+        "--receipt",
+        "/tmp/singularity-count-cli-076rungt/fit.json"
+      ],
+      "elapsed_seconds": 0.04130152200013981,
+      "exit_code": 0,
+      "log_bytes": 674,
+      "log_sha256": "f0e39b8d1edea6fc96820778cd109285ed8639d8bacd60a49266abdc18ee9d46",
+      "name": "byte_fit_cli_without_site_packages",
+      "output": "{\"alpha\": 0.01, \"count_expert_path\": \"/tmp/singularity-count-cli-076rungt/counts.json\", \"count_expert_sha256\": \"2239175d666f8c96a257af10979cc982d3acaee4ce23fe68a1326420a56454e1\", \"created_at_utc\": \"2026-10-19T12:18:42.721238+00:00\", \"fit_split\": \"TRAIN only; this command opens only --train-path\", \"hyperparameter_selection\": \"none; supplied order and alpha are frozen\", \"order\": 3, \"schema\": \"singularity.byte-count-fit/1\", \"sequence_length\": 64, \"train_bytes\": 17, \"train_path\": \"/tmp/singularity-count-cli-076rungt/train.txt\", \"train_sha256\": \"706e1bed4c2cb4adb6c7ce89b103d65f05cd5daf749a2fec76bff523961db589\", \"train_targets\": 16, \"wall_seconds\": 0.0005287169988150708}\n",
+      "raw_log_path": "/tmp/singularity-advantage-byte_fit_cli_without_site_packages.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "elapsed_seconds": 0.0056541819976700936,
+      "exit_code": 0,
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "whitespace",
+      "output": "",
+      "raw_log_path": "/tmp/singularity-advantage-whitespace.log",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/check_checkpoint_smoke.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "log_sha256": "41d0437e9673a20515ca5ace60c4fd73a71721728e42a2a0fd2db3010e7bd2a9",
+      "name": "check_checkpoint_smoke.py_help_without_site_packages",
+      "output": "usage: check_checkpoint_smoke.py [-h] --checkpoint CHECKPOINT --source-dir\n                                 SOURCE_DIR\n                                 [--reference-seed {1000,1001,1002}]\n                                 [--study STUDY] [--output OUTPUT]\n\nCheck one trusted byte-transformer checkpoint against cached golden outputs.\npython scripts/check_checkpoint_smoke.py --checkpoint PATH/checkpoint.pt\n--source-dir PATH/wikitext2 --reference-seed 1002 --output smoke.json Only\nselected complete contexts are forwarded. Exact equality is a regression smoke\ntest, not semantic equivalence or a statement about predictive quality.\nNonzero exit status means observed output drift against the selected\nreference.\n\noptions:\n  -h, --help            show this help message and exit\n  --checkpoint CHECKPOINT\n                        trusted training-engine checkpoint\n  --source-dir SOURCE_DIR\n                        pinned WikiText parquet cache\n  --reference-seed {1000,1001,1002}\n  --study STUDY\n  --output OUTPUT\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/check_runtime_pipeline.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "log_sha256": "6cc89d1fa519ee8713e8f1fa81a5812c4b4a9eec9a893b4d1265faaa714e1642",
+      "name": "check_runtime_pipeline.py_help_without_site_packages",
+      "output": "usage: check_runtime_pipeline.py [-h] --source-dir SOURCE_DIR\n                                 [--results RESULTS] [--study STUDY]\n                                 [--output OUTPUT]\n\nShow that an unchanged checkpoint can have a changed runtime pipeline. A\nforward hook zeros positional-embedding OUTPUTS without modifying any saved\nweights. One selected-context pass is compared with existing cached healthy\nand no-position outputs. This is a post-study engineering equivalence\ndemonstration, not another independent statistical confirmation or a new\nfault-selection study.\n\noptions:\n  -h, --help            show this help message and exit\n  --source-dir SOURCE_DIR\n                        pinned WikiText parquet cache\n  --results RESULTS\n  --study STUDY\n  --output OUTPUT\n",
+      "status": "passed"
+    }
+  ],
+  "created_at_utc": "2026-10-19T12:28:26.812322+00:00",
+  "environment": {
+    "cuda_available": false,
+    "git_head_at_receipt": "c056ae32213b3a2894cc3f2e7009da03ce315fd2",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "torch": "2.14.1+cpu",
+    "working_tree_dirty": true
+  },
+  "execution_boundaries": {
+    "final_publication_CI_success_asserted": false,
+    "fixture_training_executed": true,
+    "historical_exact_mathematics_recomputed": true,
+    "local_Lean_projects_rebuilt": false,
+    "remote_Lean_success_observed_for_previous_publication": true,
+    "research_TEST_inference_repeated": false,
+    "research_models_retrained": false
+  },
+  "historical_exact_workflow_checks": [
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/chain_agreement.py",
+        "--check"
+      ],
+      "elapsed_seconds": 2.767870914998639,
+      "exit_code": 0,
+      "log_sha256": "58e7153738adc26d7a11b5eebb7dfb446fb7bd17ba4345322125653c0bb0d122",
+      "output": "Chain agreement matches retained output: {\"labeled_graphs\": 1099, \"profiles_compared\": 479963, \"marked_cells_compared\": 142416, \"disagreements\": 0}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/census_manifest.py",
+        "--check"
+      ],
+      "elapsed_seconds": 2.974793782999768,
+      "exit_code": 0,
+      "log_sha256": "395a76a559b0aa4b78bb181dffe07be4bcdcc6e93673a8fb6536e5789910c633",
+      "output": "Census manifest matches: [1, 1, 2, 6, 21, 112]\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/pendant_family.py",
+        "--check"
+      ],
+      "elapsed_seconds": 6.25931786000001,
+      "exit_code": 0,
+      "log_sha256": "f311200ffd851b540ab434c9c9ed0e956b0b5775258228920052cb8065f53a06",
+      "output": "Pendant family receipt matches: 15 depth checks, 21 binary checks\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/whitney_switches.py",
+        "--check"
+      ],
+      "elapsed_seconds": 7.156287977999455,
+      "exit_code": 0,
+      "log_sha256": "8c9ad8c751144a4a3648cbd957f437539c3d655bb4a290118ae3b1a8cd822416",
+      "output": "Whitney switch receipt matches: {'isomorphic graphs': 68, 'separated at volume 1': 28, 'separated at volume 2': 28}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/collision_census.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.3286878000035358,
+      "exit_code": 0,
+      "log_sha256": "52f00b185583c5d39e3ac71a547ca33d0f78614692a6b1a3056c7ad6eb319e2d",
+      "output": "Collision census matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/symmetric_contexts.py",
+        "--check"
+      ],
+      "elapsed_seconds": 54.14030499599903,
+      "exit_code": 0,
+      "log_sha256": "8ceb98c41ced7c22f5344515998d5d6168661f0dfb36b44b7b1e382aac65a0b6",
+      "output": "Symmetric context receipt matches 54.1 s\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/charge_interfaces.py",
+        "--check"
+      ],
+      "elapsed_seconds": 3.488255360000039,
+      "exit_code": 0,
+      "log_sha256": "4f1b04eb48485126f0bc14992e6813d5ef7e9dcbe4c6b179aa9a4c92bded9b9d",
+      "output": "Charge interface receipt matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/vakil_bridge.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.08817642700159922,
+      "exit_code": 0,
+      "log_sha256": "274b203239662c6b404a9332f675c62971af855141b0970a01eed232a8973397",
+      "output": "Exact Vakil bridge experiment matches retained report\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/locality_family.py",
+        "--check"
+      ],
+      "elapsed_seconds": 12.02806643400254,
+      "exit_code": 0,
+      "log_sha256": "e14444d83eb3453a6fa64d9ff87bdde8a600b086081addfe2ec66c47d1ef25f6",
+      "output": "Locality receipt matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/overlap_hierarchy.py",
+        "--check"
+      ],
+      "elapsed_seconds": 13.493604939998477,
+      "exit_code": 0,
+      "log_sha256": "1dc1baa37d445f435767d3366721f10df4ff3438ecf0dbfe3d335f2d9e6987f0",
+      "output": "Overlap receipt matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/loop_series.py",
+        "--check"
+      ],
+      "elapsed_seconds": 30.59739095199984,
+      "exit_code": 0,
+      "log_sha256": "2326f740a9bc897c056720c669ff2d8d491b1041536f6667e7bc764b8d0a1baf",
+      "output": "Loop-series receipt matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/collision_cases.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.13477762099864776,
+      "exit_code": 0,
+      "log_sha256": "e4a2e1fc75a5fa8d912cceb34f476830536b5332db30701989fcbb78e8a60841",
+      "output": "Collision cases match\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/operator_experiments.py",
+        "--check"
+      ],
+      "elapsed_seconds": 312.4717892869994,
+      "exit_code": 0,
+      "log_sha256": "4486011b44c65d9ca7d0d67806fe6cc427158515cdb64c35c68e8be60054a122",
+      "output": "python 3.12.14; seconds replay_retained_R4=0.10, discover_R4=0.21, discover_R7=25.10, path_fixture=0.03, periodic=0.53\nOperator experiments match the retained report; R=4 certificate replays\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/robust_search.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.06741739199787844,
+      "exit_code": 0,
+      "log_sha256": "c44f8c3233d0c94859e3dd0170f537a399107c477c8f0d915544ca100067fe61",
+      "output": "python 3.12.14; seconds=0.01\nRobust search matches the retained report\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/panels.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.5461780009973154,
+      "exit_code": 0,
+      "log_sha256": "48b3d481b4f7c9e192a427bb418811a04cc5aa58be4df5d27f0da7b4edea8db2",
+      "output": "python 3.12.14; seconds compile_and_pool=0.02, direct_enumeration=0.02, total=0.49\nPanel receipts match the retained report\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/compression.py",
+        "--check"
+      ],
+      "elapsed_seconds": 71.60878423500253,
+      "exit_code": 0,
+      "log_sha256": "fd91bdda429a16454226a6c3757f30300469926d8e5b21fa0d2eed788de879e4",
+      "output": "Family compression receipt matches the retained report\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/parametric_observability.py",
+        "--check"
+      ],
+      "elapsed_seconds": 22.345582384998124,
+      "exit_code": 0,
+      "log_sha256": "f3a1fdc48658649c1370b6ad38032aaaf950d0e3c471a3269df6b3f6a89f0bc3",
+      "output": "python 3.12.14; seconds R1_analysis=0.00, R1_crosscheck=0.01, R2_analysis=0.02, R2_crosscheck=0.05, R3_analysis=0.23, R3_crosscheck=0.26, R4_analysis=18.44, R4_crosscheck=3.26\nR=1: n=3 generic rank 3, deg D_r 1, exceptional in (0,1): 0, real: ['1/1']\nR=2: n=7 generic rank 7, deg D_r 18, exceptional in (0,1): 0, real: ['-1/1', '0/1', '1/1']\nR=3: n=13 generic rank 13, deg D_r 93, exceptional in (0,1): 0, real: ['-1/1', '0/1', '1/1']\nR=4: n=22 generic rank 22, deg D_r 371, exceptional in (0,1): 0, real: ['-1/1', '0/1', '1/1']\nParametric observability matches the retained report\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/separator_compiler.py",
+        "--check"
+      ],
+      "elapsed_seconds": 6.149676723998709,
+      "exit_code": 0,
+      "log_sha256": "2ae3ef5cd6a21e11b30455fc3863ce4c6396fea2c684ea9b0b5644925d50413c",
+      "output": "measurement (seconds; not retained)                          time\nP_n n=5 R=3: compile                                         0.0004\nP_n n=5 R=3: query                                           0.0000\nP_n n=5 R=3: prefix                                          0.0000\nP_n n=5 R=3: operator construction                           0.0001\nP_n n=5 R=3: operator application x2                         0.0001\nP_n n=5 R=3: direct enumeration                              0.0001\nP_n n=5 R=3: connected-support compiler                      0.0033\nP_n n=10 R=3: compile                                        0.0007\nP_n n=10 R=3: query                                          0.0000\nP_n n=10 R=3: prefix                                         0.0000\nP_n n=10 R=3: operator construction                          0.0001\nP_n n=10 R=3: operator application x7                        0.0002\nP_n n=10 R=3: direct enumeration                             0.0010\nP_n n=10 R=3: connected-support compiler                     0.0035\nP_n n=20 R=3: compile                                        0.0012\nP_n n=20 R=3: query                                          0.0000\nP_n n=20 R=3: prefix                                         0.0000\nP_n n=20 R=3: operator construction                          0.0001\nP_n n=20 R=3: operator application x17                       0.0005\nP_n n=20 R=3: direct enumeration                             0.0116\nP_n n=20 R=3: connected-support compiler                     0.0038\nP_n n=40 R=3: compile                                        0.0025\nP_n n=40 R=3: query                                          0.0000\nP_n n=40 R=3: prefix                                         0.0000\nP_n n=40 R=3: operator construction                          0.0001\nP_n n=40 R=3: operator application x37                       0.0012\nP_n n=40 R=3: connected-support compiler                     0.0041\nP_n n=80 R=3: compile                                        0.0050\nP_n n=80 R=3: query                                          0.0000\nP_n n=80 R=3: prefix                                         0.0000\nP_n n=80 R=3: operator construction                          0.0001\nP_n n=80 R=3: operator application x77                       0.0026\nP_n n=80 R=3: connected-support compiler                     0.0049\nP_n n=160 R=3: compile                                       0.0110\nP_n n=160 R=3: query                                         0.0000\nP_n n=160 R=3: prefix                                        0.0001\nP_n n=160 R=3: operator construction                         0.0001\nP_n n=160 R=3: operator application x157                     0.0052\nP_n n=200 R=3: compile                                       0.0130\nP_n n=200 R=3: query                                         0.0000\nP_n n=200 R=3: prefix                                        0.0000\nP_n n=200 R=3: operator construction                         0.0001\nP_n n=200 R=3: operator application x197                     0.0067\nP_n n=5 R=4: compile                                         0.0004\nP_n n=5 R=4: query                                           0.0000\nP_n n=5 R=4: prefix                                          0.0000\nP_n n=5 R=4: operator construction                           0.0003\nP_n n=5 R=4: operator application x2                         0.0001\nP_n n=5 R=4: direct enumeration                              0.0003\nP_n n=5 R=4: connected-support compiler                      0.0198\nP_n n=10 R=4: compile                                        0.0012\nP_n n=10 R=4: query                                          0.0000\nP_n n=10 R=4: prefix                                         0.0000\nP_n n=10 R=4: operator construction                          0.0003\nP_n n=10 R=4: operator application x7                        0.0003\nP_n n=10 R=4: direct enumeration                             0.0044\nP_n n=10 R=4: connected-support compiler                     0.0127\nP_n n=20 R=4: compile                                        0.0023\nP_n n=20 R=4: query                                          0.0000\nP_n n=20 R=4: prefix                                         0.0000\nP_n n=20 R=4: operator construction                          0.0002\nP_n n=20 R=4: operator application x17                       0.0009\nP_n n=20 R=4: direct enumeration                             0.0690\nP_n n=20 R=4: connected-support compiler                     0.0135\nP_n n=40 R=4: compile                                        0.0044\nP_n n=40 R=4: query                                          0.0000\nP_n n=40 R=4: prefix                                         0.0000\nP_n n=40 R=4: operator construction                          0.0002\nP_n n=40 R=4: operator application x37                       0.0022\nP_n n=40 R=4: connected-support compiler                     0.0155\nP_n n=80 R=4: compile                                        0.0083\nP_n n=80 R=4: query                                          0.0000\nP_n n=80 R=4: prefix                                         0.0001\nP_n n=80 R=4: operator construction                          0.0002\nP_n n=80 R=4: operator application x77                       0.0053\nP_n n=80 R=4: connected-support compiler                     0.0188\nP_n n=160 R=4: compile                                       0.0172\nP_n n=160 R=4: query                                         0.0000\nP_n n=160 R=4: prefix                                        0.0001\nP_n n=160 R=4: operator construction                         0.0002\nP_n n=160 R=4: operator application x157                     0.0160\nP_n n=200 R=4: compile                                       0.0334\nP_n n=200 R=4: query                                         0.0000\nP_n n=200 R=4: prefix                                        0.0001\nP_n n=200 R=4: operator construction                         0.0003\nP_n n=200 R=4: operator application x197                     0.0126\nC_n n=5 R=3: compile                                         0.0003\nC_n n=5 R=3: query                                           0.0000\nC_n n=5 R=3: prefix                                          0.0000\nC_n n=5 R=3: operator construction                           0.0003\nC_n n=5 R=3: operator application x1                         0.0000\nC_n n=5 R=3: direct enumeration                              0.0002\nC_n n=5 R=3: connected-support compiler                      0.0015\nC_n n=10 R=3: compile                                        0.0008\nC_n n=10 R=3: query                                          0.0000\nC_n n=10 R=3: prefix                                         0.0000\nC_n n=10 R=3: operator construction                          0.0004\nC_n n=10 R=3: operator application x6                        0.0003\nC_n n=10 R=3: direct enumeration                             0.0010\nC_n n=10 R=3: connected-support compiler                     0.0018\nC_n n=20 R=3: compile                                        0.0020\nC_n n=20 R=3: query                                          0.0000\nC_n n=20 R=3: prefix                                         0.0000\nC_n n=20 R=3: operator construction                          0.0005\nC_n n=20 R=3: operator application x16                       0.0007\nC_n n=20 R=3: direct enumeration                             0.0137\nC_n n=20 R=3: connected-support compiler                     0.0022\nC_n n=40 R=3: compile                                        0.0053\nC_n n=40 R=3: query                                          0.0000\nC_n n=40 R=3: prefix                                         0.0000\nC_n n=40 R=3: operator construction                          0.0003\nC_n n=40 R=3: operator application x36                       0.0017\nC_n n=40 R=3: connected-support compiler                     0.0026\nC_n n=80 R=3: compile                                        0.0132\nC_n n=80 R=3: query                                          0.0000\nC_n n=80 R=3: prefix                                         0.0000\nC_n n=80 R=3: operator construction                          0.0003\nC_n n=80 R=3: operator application x76                       0.0043\nC_n n=80 R=3: connected-support compiler                     0.0031\nC_n n=160 R=3: compile                                       0.0245\nC_n n=160 R=3: query                                         0.0000\nC_n n=160 R=3: prefix                                        0.0001\nC_n n=160 R=3: operator construction                         0.0003\nC_n n=160 R=3: operator application x156                     0.0094\nC_n n=200 R=3: compile                                       0.0239\nC_n n=200 R=3: query                                         0.0000\nC_n n=200 R=3: prefix                                        0.0001\nC_n n=200 R=3: operator construction                         0.0003\nC_n n=200 R=3: operator application x196                     0.0100\nC_n n=5 R=4: compile                                         0.0005\nC_n n=5 R=4: query                                           0.0000\nC_n n=5 R=4: prefix                                          0.0000\nC_n n=5 R=4: operator construction                           0.0005\nC_n n=5 R=4: operator application x1                         0.0000\nC_n n=5 R=4: direct enumeration                              0.0003\nC_n n=5 R=4: connected-support compiler                      0.0059\nC_n n=10 R=4: compile                                        0.0015\nC_n n=10 R=4: query                                          0.0000\nC_n n=10 R=4: prefix                                         0.0000\nC_n n=10 R=4: operator construction                          0.0005\nC_n n=10 R=4: operator application x6                        0.0004\nC_n n=10 R=4: direct enumeration                             0.0034\nC_n n=10 R=4: connected-support compiler                     0.0056\nC_n n=20 R=4: compile                                        0.0030\nC_n n=20 R=4: query                                          0.0000\nC_n n=20 R=4: prefix                                         0.0000\nC_n n=20 R=4: operator construction                          0.0005\nC_n n=20 R=4: operator application x16                       0.0013\nC_n n=20 R=4: direct enumeration                             0.0703\nC_n n=20 R=4: connected-support compiler                     0.0067\nC_n n=40 R=4: compile                                        0.0068\nC_n n=40 R=4: query                                          0.0000\nC_n n=40 R=4: prefix                                         0.0000\nC_n n=40 R=4: operator construction                          0.0008\nC_n n=40 R=4: operator application x36                       0.0034\nC_n n=40 R=4: connected-support compiler                     0.0072\nC_n n=80 R=4: compile                                        0.0170\nC_n n=80 R=4: query                                          0.0000\nC_n n=80 R=4: prefix                                         0.0000\nC_n n=80 R=4: operator construction                          0.0005\nC_n n=80 R=4: operator application x76                       0.0071\nC_n n=80 R=4: connected-support compiler                     0.0084\nC_n n=160 R=4: compile                                       0.0304\nC_n n=160 R=4: query                                         0.0000\nC_n n=160 R=4: prefix                                        0.0001\nC_n n=160 R=4: operator construction                         0.0005\nC_n n=160 R=4: operator application x156                     0.0138\nC_n n=200 R=4: compile                                       0.0386\nC_n n=200 R=4: query                                         0.0000\nC_n n=200 R=4: prefix                                        0.0001\nC_n n=200 R=4: operator construction                         0.0005\nC_n n=200 R=4: operator application x196                     0.0173\nP_2 x P_n n=5 R=3: compile                                   0.0010\nP_2 x P_n n=5 R=3: query                                     0.0000\nP_2 x P_n n=5 R=3: prefix                                    0.0001\nP_2 x P_n n=5 R=3: operator construction                     0.0011\nP_2 x P_n n=5 R=3: operator application x2                   0.0001\nP_2 x P_n n=5 R=3: direct enumeration                        0.0012\nP_2 x P_n n=5 R=3: connected-support compiler                0.0057\nP_2 x P_n n=10 R=3: compile                                  0.0020\nP_2 x P_n n=10 R=3: query                                    0.0000\nP_2 x P_n n=10 R=3: prefix                                   0.0001\nP_2 x P_n n=10 R=3: operator construction                    0.0006\nP_2 x P_n n=10 R=3: operator application x7                  0.0005\nP_2 x P_n n=10 R=3: direct enumeration                       0.0130\nP_2 x P_n n=10 R=3: connected-support compiler               0.0060\nP_2 x P_n n=20 R=3: compile                                  0.0045\nP_2 x P_n n=20 R=3: query                                    0.0000\nP_2 x P_n n=20 R=3: prefix                                   0.0001\nP_2 x P_n n=20 R=3: operator construction                    0.0006\nP_2 x P_n n=20 R=3: operator application x17                 0.0012\nP_2 x P_n n=20 R=3: connected-support compiler               0.0065\nP_2 x P_n n=40 R=3: compile                                  0.0085\nP_2 x P_n n=40 R=3: query                                    0.0000\nP_2 x P_n n=40 R=3: prefix                                   0.0001\nP_2 x P_n n=40 R=3: operator construction                    0.0006\nP_2 x P_n n=40 R=3: operator application x37                 0.0031\nP_2 x P_n n=40 R=3: connected-support compiler               0.0096\nP_2 x P_n n=80 R=3: compile                                  0.0213\nP_2 x P_n n=80 R=3: query                                    0.0000\nP_2 x P_n n=80 R=3: prefix                                   0.0001\nP_2 x P_n n=80 R=3: operator construction                    0.0006\nP_2 x P_n n=80 R=3: operator application x77                 0.0074\nP_2 x P_n n=80 R=3: connected-support compiler               0.0156\nP_2 x P_n n=160 R=3: compile                                 0.0387\nP_2 x P_n n=160 R=3: query                                   0.0000\nP_2 x P_n n=160 R=3: prefix                                  0.0001\nP_2 x P_n n=160 R=3: operator construction                   0.0007\nP_2 x P_n n=160 R=3: operator application x157               0.0120\nP_2 x P_n n=200 R=3: compile                                 0.0461\nP_2 x P_n n=200 R=3: query                                   0.0000\nP_2 x P_n n=200 R=3: prefix                                  0.0001\nP_2 x P_n n=200 R=3: operator construction                   0.0006\nP_2 x P_n n=200 R=3: operator application x197               0.0147\nP_2 x P_n n=5 R=4: compile                                   0.0016\nP_2 x P_n n=5 R=4: query                                     0.0000\nP_2 x P_n n=5 R=4: prefix                                    0.0001\nP_2 x P_n n=5 R=4: operator construction                     0.0013\nP_2 x P_n n=5 R=4: operator application x2                   0.0002\nP_2 x P_n n=5 R=4: direct enumeration                        0.0040\nP_2 x P_n n=5 R=4: connected-support compiler                0.0364\nP_2 x P_n n=10 R=4: compile                                  0.0041\nP_2 x P_n n=10 R=4: query                                    0.0000\nP_2 x P_n n=10 R=4: prefix                                   0.0001\nP_2 x P_n n=10 R=4: operator construction                    0.0014\nP_2 x P_n n=10 R=4: operator application x7                  0.0009\nP_2 x P_n n=10 R=4: direct enumeration                       0.0747\nP_2 x P_n n=10 R=4: connected-support compiler               0.0377\nP_2 x P_n n=20 R=4: compile                                  0.0088\nP_2 x P_n n=20 R=4: query                                    0.0000\nP_2 x P_n n=20 R=4: prefix                                   0.0001\nP_2 x P_n n=20 R=4: operator construction                    0.0011\nP_2 x P_n n=20 R=4: operator application x17                 0.0028\nP_2 x P_n n=20 R=4: connected-support compiler               0.0401\nP_2 x P_n n=40 R=4: compile                                  0.0187\nP_2 x P_n n=40 R=4: query                                    0.0000\nP_2 x P_n n=40 R=4: prefix                                   0.0001\nP_2 x P_n n=40 R=4: operator construction                    0.0015\nP_2 x P_n n=40 R=4: operator application x37                 0.0064\nP_2 x P_n n=40 R=4: connected-support compiler               0.0459\nP_2 x P_n n=80 R=4: compile                                  0.0380\nP_2 x P_n n=80 R=4: query                                    0.0000\nP_2 x P_n n=80 R=4: prefix                                   0.0001\nP_2 x P_n n=80 R=4: operator construction                    0.0011\nP_2 x P_n n=80 R=4: operator application x77                 0.0112\nP_2 x P_n n=80 R=4: connected-support compiler               0.0592\nP_2 x P_n n=160 R=4: compile                                 0.0751\nP_2 x P_n n=160 R=4: query                                   0.0000\nP_2 x P_n n=160 R=4: prefix                                  0.0001\nP_2 x P_n n=160 R=4: operator construction                   0.0014\nP_2 x P_n n=160 R=4: operator application x157               0.0274\nP_2 x P_n n=200 R=4: compile                                 0.0937\nP_2 x P_n n=200 R=4: query                                   0.0000\nP_2 x P_n n=200 R=4: prefix                                  0.0001\nP_2 x P_n n=200 R=4: operator construction                   0.0011\nP_2 x P_n n=200 R=4: operator application x197               0.0392\nP_3 x P_n n=5 R=3: compile                                   0.0020\nP_3 x P_n n=5 R=3: query                                     0.0000\nP_3 x P_n n=5 R=3: prefix                                    0.0003\nP_3 x P_n n=5 R=3: operator construction                     0.0022\nP_3 x P_n n=5 R=3: operator application x2                   0.0004\nP_3 x P_n n=5 R=3: direct enumeration                        0.0052\nP_3 x P_n n=5 R=3: connected-support compiler                0.0144\nP_3 x P_n n=10 R=3: compile                                  0.0050\nP_3 x P_n n=10 R=3: query                                    0.0000\nP_3 x P_n n=10 R=3: prefix                                   0.0001\nP_3 x P_n n=10 R=3: operator construction                    0.0025\nP_3 x P_n n=10 R=3: operator application x7                  0.0010\nP_3 x P_n n=10 R=3: connected-support compiler               0.0161\nP_3 x P_n n=20 R=3: compile                                  0.0122\nP_3 x P_n n=20 R=3: query                                    0.0000\nP_3 x P_n n=20 R=3: prefix                                   0.0001\nP_3 x P_n n=20 R=3: operator construction                    0.0019\nP_3 x P_n n=20 R=3: operator application x17                 0.0028\nP_3 x P_n n=20 R=3: connected-support compiler               0.0162\nP_3 x P_n n=40 R=3: compile                                  0.0248\nP_3 x P_n n=40 R=3: query                                    0.0000\nP_3 x P_n n=40 R=3: prefix                                   0.0001\nP_3 x P_n n=40 R=3: operator construction                    0.0030\nP_3 x P_n n=40 R=3: operator application x37                 0.0049\nP_3 x P_n n=40 R=3: connected-support compiler               0.0181\nP_3 x P_n n=80 R=3: compile                                  0.0461\nP_3 x P_n n=80 R=3: query                                    0.0000\nP_3 x P_n n=80 R=3: prefix                                   0.0002\nP_3 x P_n n=80 R=3: operator construction                    0.0018\nP_3 x P_n n=80 R=3: operator application x77                 0.0105\nP_3 x P_n n=80 R=3: connected-support compiler               0.0305\nP_3 x P_n n=160 R=3: compile                                 0.0898\nP_3 x P_n n=160 R=3: query                                   0.0000\nP_3 x P_n n=160 R=3: prefix                                  0.0002\nP_3 x P_n n=160 R=3: operator construction                   0.0020\nP_3 x P_n n=160 R=3: operator application x157               0.0210\nP_3 x P_n n=200 R=3: compile                                 0.1156\nP_3 x P_n n=200 R=3: query                                   0.0000\nP_3 x P_n n=200 R=3: prefix                                  0.0002\nP_3 x P_n n=200 R=3: operator construction                   0.0019\nP_3 x P_n n=200 R=3: operator application x197               0.0298\nP_3 x P_n n=5 R=4: compile                                   0.0040\nP_3 x P_n n=5 R=4: query                                     0.0000\nP_3 x P_n n=5 R=4: prefix                                    0.0002\nP_3 x P_n n=5 R=4: operator construction                     0.0044\nP_3 x P_n n=5 R=4: operator application x2                   0.0005\nP_3 x P_n n=5 R=4: direct enumeration                        0.0209\nP_3 x P_n n=5 R=4: connected-support compiler                0.1099\nP_3 x P_n n=10 R=4: compile                                  0.0108\nP_3 x P_n n=10 R=4: query                                    0.0000\nP_3 x P_n n=10 R=4: prefix                                   0.0002\nP_3 x P_n n=10 R=4: operator construction                    0.0040\nP_3 x P_n n=10 R=4: operator application x7                  0.0020\nP_3 x P_n n=10 R=4: connected-support compiler               0.1329\nP_3 x P_n n=20 R=4: compile                                  0.0236\nP_3 x P_n n=20 R=4: query                                    0.0000\nP_3 x P_n n=20 R=4: prefix                                   0.0002\nP_3 x P_n n=20 R=4: operator construction                    0.0039\nP_3 x P_n n=20 R=4: operator application x17                 0.0052\nP_3 x P_n n=20 R=4: connected-support compiler               0.1331\nP_3 x P_n n=40 R=4: compile                                  0.0493\nP_3 x P_n n=40 R=4: query                                    0.0000\nP_3 x P_n n=40 R=4: prefix                                   0.0002\nP_3 x P_n n=40 R=4: operator construction                    0.0037\nP_3 x P_n n=40 R=4: operator application x37                 0.0118\nP_3 x P_n n=40 R=4: connected-support compiler               0.1355\nP_3 x P_n n=80 R=4: compile                                  0.1062\nP_3 x P_n n=80 R=4: query                                    0.0000\nP_3 x P_n n=80 R=4: prefix                                   0.0002\nP_3 x P_n n=80 R=4: operator construction                    0.0046\nP_3 x P_n n=80 R=4: operator application x77                 0.0265\nP_3 x P_n n=80 R=4: connected-support compiler               0.1598\nP_3 x P_n n=160 R=4: compile                                 0.2110\nP_3 x P_n n=160 R=4: query                                   0.0000\nP_3 x P_n n=160 R=4: prefix                                  0.0002\nP_3 x P_n n=160 R=4: operator construction                   0.0038\nP_3 x P_n n=160 R=4: operator application x157               0.0526\nP_3 x P_n n=200 R=4: compile                                 0.2580\nP_3 x P_n n=200 R=4: query                                   0.0000\nP_3 x P_n n=200 R=4: prefix                                  0.0002\nP_3 x P_n n=200 R=4: operator construction                   0.0040\nP_3 x P_n n=200 R=4: operator application x197               0.0655\ntotal 6.10 s; Python 3.12.14\nSeparator compiler receipt matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/candidate_box_thermal.py",
+        "--check"
+      ],
+      "elapsed_seconds": 9.505951598999673,
+      "exit_code": 0,
+      "log_sha256": "1eb779c462001d02ff9ea77d4584ec3acc484a200306b4aa43629c3a8e09272f",
+      "output": "Candidate-box thermal panel: readings, radii, incumbent, optimum and oracles agree.\n{\"heterogeneous_cost\": \"20\", \"common_envelope_cost\": \"20\", \"comparison\": \"unchanged\", \"gained_bits\": 0, \"seconds\": 9.46}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/typed_contexts.py",
+        "--check"
+      ],
+      "elapsed_seconds": 8.20235399500234,
+      "exit_code": 0,
+      "log_sha256": "51118c296a555eaee64ce05eeeaf6d33ed67bbaafd9ee379581ef55343caadeb",
+      "output": "built receipt in 8.11s\nNX13 receipt matches; replayed 4 certificates in 0.03s\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/thermal_diagnostics.py",
+        "--check"
+      ],
+      "elapsed_seconds": 9.090579199000786,
+      "exit_code": 0,
+      "log_sha256": "3bc225b7e4aed5524644aa99cdca337e7d7e696f23cf7be4a874ee670ee79cf0",
+      "output": "Thermal diagnosis source, exact optimization, noisy decoding, and independent stencil replay passed.\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/incremental_locality.py",
+        "--check"
+      ],
+      "elapsed_seconds": 13.291722055000719,
+      "exit_code": 0,
+      "log_sha256": "68c90073634ed3dbf4405f5727dcd609a32dc1cb30cd4ab525e0310a5d6324f5",
+      "output": "measurement (seconds; not retained)                              time\nexhaustive K4 weightings: compile + 8748 updates + oracle        4.5543\nladder m=16: setup compile (n=32)                                0.0233\nladder m=16: update cold [rung reweight 1->3]                    0.0202\nladder m=16: query exp [rung reweight 1->3]                      0.0018\nladder m=16: full recompile [rung reweight 1->3]                 0.0425\nladder m=16: update warm [rung reweight 1->3]                    0.0025\nladder m=16: update cold [rail deletion]                         0.0089\nladder m=16: query exp [rail deletion]                           0.0011\nladder m=16: full recompile [rail deletion]                      0.0300\nladder m=16: locality.pinned_log [rail deletion]                 0.0599\nladder m=16: update warm [rail deletion]                         0.0018\nladder m=16: update cold [diagonal insertion]                    0.0342\nladder m=16: query exp [diagonal insertion]                      0.0017\nladder m=16: full recompile [diagonal insertion]                 0.0569\nladder m=16: locality.pinned_log [diagonal insertion]            0.1126\nladder m=16: update warm [diagonal insertion]                    0.0031\nladder m=16: update cold [pinning 0->2]                          0.0052\nladder m=16: query exp [pinning 0->2]                            0.0017\nladder m=16: full recompile [pinning 0->2]                       0.0362\nladder m=16: update warm [pinning 0->2]                          0.0020\nladder m=32: setup compile (n=64)                                0.0312\nladder m=32: update cold [rung reweight 1->3]                    0.0218\nladder m=32: query exp [rung reweight 1->3]                      0.0017\nladder m=32: full recompile [rung reweight 1->3]                 0.0506\nladder m=32: update warm [rung reweight 1->3]                    0.0030\nladder m=32: update cold [rail deletion]                         0.0093\nladder m=32: query exp [rail deletion]                           0.0015\nladder m=32: full recompile [rail deletion]                      0.0377\nladder m=32: locality.pinned_log [rail deletion]                 0.0660\nladder m=32: update warm [rail deletion]                         0.0018\nladder m=32: update cold [diagonal insertion]                    0.0348\nladder m=32: query exp [diagonal insertion]                      0.0018\nladder m=32: full recompile [diagonal insertion]                 0.0565\nladder m=32: locality.pinned_log [diagonal insertion]            0.1119\nladder m=32: update warm [diagonal insertion]                    0.0027\nladder m=32: update cold [pinning 0->2]                          0.0053\nladder m=32: query exp [pinning 0->2]                            0.0019\nladder m=32: full recompile [pinning 0->2]                       0.0410\nladder m=32: update warm [pinning 0->2]                          0.0015\nladder m=64: setup compile (n=128)                               0.0511\nladder m=64: update cold [rung reweight 1->3]                    0.0226\nladder m=64: query exp [rung reweight 1->3]                      0.0019\nladder m=64: full recompile [rung reweight 1->3]                 0.0597\nladder m=64: update warm [rung reweight 1->3]                    0.0023\nladder m=64: update cold [rail deletion]                         0.0090\nladder m=64: query exp [rail deletion]                           0.0011\nladder m=64: full recompile [rail deletion]                      0.0476\nladder m=64: locality.pinned_log [rail deletion]                 0.0731\nladder m=64: update warm [rail deletion]                         0.0018\nladder m=64: update cold [diagonal insertion]                    0.0380\nladder m=64: query exp [diagonal insertion]                      0.0026\nladder m=64: full recompile [diagonal insertion]                 0.0726\nladder m=64: locality.pinned_log [diagonal insertion]            0.1167\nladder m=64: update warm [diagonal insertion]                    0.0033\nladder m=64: update cold [pinning 0->2]                          0.0056\nladder m=64: query exp [pinning 0->2]                            0.0018\nladder m=64: full recompile [pinning 0->2]                       0.0578\nladder m=64: update warm [pinning 0->2]                          0.0013\nladder m=128: setup compile (n=256)                              0.0640\nladder m=128: update cold [rung reweight 1->3]                   0.0201\nladder m=128: query exp [rung reweight 1->3]                     0.0027\nladder m=128: full recompile [rung reweight 1->3]                0.0974\nladder m=128: update warm [rung reweight 1->3]                   0.0033\nladder m=128: update cold [rail deletion]                        0.0120\nladder m=128: query exp [rail deletion]                          0.0015\nladder m=128: full recompile [rail deletion]                     0.0930\nladder m=128: locality.pinned_log [rail deletion]                0.0995\nladder m=128: update warm [rail deletion]                        0.0031\nladder m=128: update cold [diagonal insertion]                   0.0431\nladder m=128: query exp [diagonal insertion]                     0.0027\nladder m=128: full recompile [diagonal insertion]                0.1021\nladder m=128: locality.pinned_log [diagonal insertion]           0.1335\nladder m=128: update warm [diagonal insertion]                   0.0038\nladder m=128: update cold [pinning 0->2]                         0.0061\nladder m=128: query exp [pinning 0->2]                           0.0018\nladder m=128: full recompile [pinning 0->2]                      0.0836\nladder m=128: update warm [pinning 0->2]                         0.0022\nladder m=256: setup compile (n=512)                              0.1164\nladder m=256: update cold [rung reweight 1->3]                   0.0225\nladder m=256: query exp [rung reweight 1->3]                     0.0018\nladder m=256: full recompile [rung reweight 1->3]                0.1612\nladder m=256: update warm [rung reweight 1->3]                   0.0023\nladder m=256: update cold [rail deletion]                        0.0099\nladder m=256: query exp [rail deletion]                          0.0012\nladder m=256: full recompile [rail deletion]                     0.1403\nladder m=256: locality.pinned_log [rail deletion]                0.1477\nladder m=256: update warm [rail deletion]                        0.0019\nladder m=256: update cold [diagonal insertion]                   0.0335\nladder m=256: query exp [diagonal insertion]                     0.0019\nladder m=256: full recompile [diagonal insertion]                0.1610\nladder m=256: locality.pinned_log [diagonal insertion]           0.2593\nladder m=256: update warm [diagonal insertion]                   0.0030\nladder m=256: update cold [pinning 0->2]                         0.0064\nladder m=256: query exp [pinning 0->2]                           0.0023\nladder m=256: full recompile [pinning 0->2]                      0.1590\nladder m=256: update warm [pinning 0->2]                         0.0020\nladder m=512: setup compile (n=1024)                             0.2898\nladder m=512: update cold [rung reweight 1->3]                   0.0319\nladder m=512: query exp [rung reweight 1->3]                     0.0021\nladder m=512: full recompile [rung reweight 1->3]                0.2891\nladder m=512: update warm [rung reweight 1->3]                   0.0027\nladder m=512: update cold [rail deletion]                        0.0102\nladder m=512: query exp [rail deletion]                          0.0013\nladder m=512: full recompile [rail deletion]                     0.2612\nladder m=512: locality.pinned_log [rail deletion]                0.2046\nladder m=512: update warm [rail deletion]                        0.0021\nladder m=512: update cold [diagonal insertion]                   0.0400\nladder m=512: query exp [diagonal insertion]                     0.0017\nladder m=512: full recompile [diagonal insertion]                0.2686\nladder m=512: locality.pinned_log [diagonal insertion]           0.2598\nladder m=512: update warm [diagonal insertion]                   0.0028\nladder m=512: update cold [pinning 0->2]                         0.0050\nladder m=512: query exp [pinning 0->2]                           0.0019\nladder m=512: full recompile [pinning 0->2]                      0.2336\nladder m=512: update warm [pinning 0->2]                         0.0014\nreceipt ladder m=3: replay                                       0.0612\nreceipt ladder m=5: replay                                       0.0791\ntotal 13.08 s; Python 3.12.14\nIncremental locality receipt matches; retained update records replay\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/target_recovery.py",
+        "--check"
+      ],
+      "elapsed_seconds": 1.5671974990000308,
+      "exit_code": 0,
+      "log_sha256": "e44bc08e1a7b7156af48125bf551b005602550239fd00c8616abb425174c4642",
+      "output": "NX08-C computed in 0.70s\ntimings (not retained): A 0.11s, B 0.68s, C 0.70s\nNX08 check passed: 10 receipts replayed, 14 tampered receipts rejected, 1.51s\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/horizon_design.py",
+        "--check"
+      ],
+      "elapsed_seconds": 0.06593755799985956,
+      "exit_code": 0,
+      "log_sha256": "35a910494e44f2618d5452338ee5abdc1281441c88476ab6ef2bda9bc8196e35",
+      "output": "NX10-A response-tail receipt matches\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/typed_contexts.py",
+        "--replay",
+        "results/typed_contexts.json"
+      ],
+      "elapsed_seconds": 0.0874527069972828,
+      "exit_code": 0,
+      "log_sha256": "96c1c3796dd69f2e29c6cfa384364445ef8199f9814aebe11bfeeb614024d42a",
+      "output": "replayed 4 typed certificates without closure in 0.03s\n  boundary_grammar_R2_q2_3: {'closed': 3, 'one': 6, 'two': 10, 'two_adj': 10}\n  packet_example: {'a': 1, 'b': 1}\n  symmetric_sublanguage_R2_q2_3: {'closed': 3, 'one': 3, 'two': 7, 'two_adj': 7}\n  zoo: {'a': 3, 'b': 1, 'c': 0, 'z': 0}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/handoff.py",
+        "verify"
+      ],
+      "elapsed_seconds": 0.05986796399884042,
+      "exit_code": 0,
+      "log_sha256": "ad9262ff9ac2bd995b89edf84187be356ff0685f627ca228872b1a540017b32a",
+      "output": "{\n  \"status\": \"passed\",\n  \"pushes\": 36,\n  \"task_packets\": 36,\n  \"dependency_graph\": \"acyclic\"\n}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_links.py",
+        "CLAUDE.md",
+        "handoff/ARCHITECTURE.md",
+        "handoff/CLAUDE_START_PROMPT.md",
+        "handoff/DECISIONS.md",
+        "handoff/ENVIRONMENT.md",
+        "handoff/FIRST_BATCH.md",
+        "handoff/OPERATOR_LEDGER.md",
+        "handoff/PUSH_AUDIT.md",
+        "handoff/RESEARCH_CONTEXT.md",
+        "handoff/SESSION_LOG.md",
+        "handoff/SESSION_PROTOCOL.md",
+        "handoff/START_HERE.md",
+        "handoff/STRATEGIC_EXTENSIONS.md",
+        "handoff/tasks/P01.md",
+        "handoff/tasks/P02.md",
+        "handoff/tasks/P03.md",
+        "handoff/tasks/P04.md",
+        "handoff/tasks/P05.md",
+        "handoff/tasks/P06.md",
+        "handoff/tasks/P07.md",
+        "handoff/tasks/P08.md",
+        "handoff/tasks/P09.md",
+        "handoff/tasks/P10.md",
+        "handoff/tasks/P11.md",
+        "handoff/tasks/P12.md",
+        "handoff/tasks/P13.md",
+        "handoff/tasks/P14.md",
+        "handoff/tasks/P15.md",
+        "handoff/tasks/P16.md",
+        "handoff/tasks/P17.md",
+        "handoff/tasks/P18.md",
+        "handoff/tasks/P19.md",
+        "handoff/tasks/P20.md",
+        "handoff/tasks/P21.md",
+        "handoff/tasks/P22.md",
+        "handoff/tasks/P23.md",
+        "handoff/tasks/P24.md",
+        "handoff/tasks/P25.md",
+        "handoff/tasks/P26.md",
+        "handoff/tasks/P27.md",
+        "handoff/tasks/P28.md",
+        "handoff/tasks/P29.md",
+        "handoff/tasks/P30.md",
+        "handoff/tasks/P31.md",
+        "handoff/tasks/P32.md",
+        "handoff/tasks/P33.md",
+        "handoff/tasks/P34.md",
+        "handoff/tasks/P35.md",
+        "handoff/tasks/P36.md",
+        "docs/specifications/CENSUS-v1.md",
+        "docs/specifications/COEFFICIENTS-v1.md",
+        "docs/specifications/OPERATORS-v1.md",
+        "docs/IMPLEMENTATION.md"
+      ],
+      "elapsed_seconds": 0.10548847600148292,
+      "exit_code": 0,
+      "log_sha256": "a84b980ca8138111ef1d76bfdc737e8078b63de2837cc02fade489d8df81fe8c",
+      "output": "{\n  \"status\": \"passed\",\n  \"mode\": \"local\",\n  \"checked_relative_targets\": 204,\n  \"missing\": []\n}\n",
+      "status": "passed"
+    }
+  ],
+  "historical_exact_workflow_log": {
+    "decompressed_sha256": "c1028ef4a58209c20245bc1a6533f7686e3a9361624e7e6a9ddcd991ee37e136",
+    "encoding": "gzip; mtime=0; lossless decompression verified",
+    "path": "applications/training_lab/results/advantage_retained_checks.log.gz",
+    "sha256": "0c1dbf866241eb9ab8221dcb8c0cc4ffa87fb36ece24d6ae87592a106fdc616f"
+  },
+  "historical_scope_review": {
+    "approved_local_commit": "c056ae32213b3a2894cc3f2e7009da03ce315fd2",
+    "content_identical_publication": "4d38c456bcadfa4a492ffc35045806611c0952d2",
+    "interpretation": "All changed scientific source and new contracts were exercised by the complete 767-test suite. All 27 additional historical exact workflow commands also completed successfully.",
+    "not_rerun_unchanged": 0,
+    "performed_handoff_checks": 2,
+    "performed_replays": 25,
+    "release_metadata_dependencies": [
+      "scripts/reproduce.py",
+      "scripts/chain_agreement.py"
+    ],
+    "release_metadata_dependencies_recomputed_and_passed": true,
+    "time_budget_censored": 0,
+    "unchanged_file_sha256": {
+      "results/adaptive_thermal.json": "e646790d2a5ac4f6fd5aa9a11356f050f8c7ca9a28fca858bd72ea5b65451d6e",
+      "results/archive_manifest.json": "c16f8add54fb6c9a0f6d5435a2235d0030601b94bb16093620ce594dbeeef3a3",
+      "results/arithmetic_automata.json": "e31923aa7be1c5917f67c8f7202f9869d91aea09bdb0dc0a34e2b389eaa9af6d",
+      "results/candidate_box_thermal.json": "d71b4ae896a14c4e41521b7ab1c9b5571c2f56eb356ce4a21eb5ee846d1fb6c2",
+      "results/census_manifest.json": "10d9d2d0bcbc86171354244c1012f703bd1a9d834fbb4d1e5e3f0ce049d0e8a1",
+      "results/certificates/binary_census.json": "e654012d141c080b457816b880807a2b9c47ed3af610c46d309e54ae4663e4b2",
+      "results/certificates/regular_cube_mobius.json": "14851e0b01eeab5f1b3cecc18d2c04163d659c898d4f76e28cbb5937758b0441",
+      "results/certificates/spectral.json": "379d5c47c53588d28b2295da1dd4ecf41cd64de53fa8445b52c0a4290b7ec6b2",
+      "results/certificates/translation.json": "7b403eed9b2590238ee2a1d726b06f6b72d687e48ec66d5701937eb176f8ffae",
+      "results/certified_k.json": "479c5b82613fcffb67a940cb02a12313e452fb88e6e82b8fc0fa1f45d7353ec6",
+      "results/charge_interfaces.json": "20da62db92ed228024d415e38d1129f9492d00e50333dafceefc941d5827e056",
+      "results/collision_cases.json": "64fd1f227e597f8bc42410c9a476681610a461c7555651b35952878b891e2382",
+      "results/collision_census.json": "6f957c9665c916d52e69df126445c3afbbd8a0e05a95246684d7588f6d95531c",
+      "results/complex_discs.json": "c5546badb84fd1cc79460b24ed7f63c035d58e46117c604e997c4d042ba00587",
+      "results/compression.json": "e4712f5678b8e337fb04aff5e1d40a3beb004c6249eef403f93b80191cfb304f",
+      "results/conductor_example.json": "0c28603d230889445f41e1d8ca95fee4717051f7d266f85453cdb1b9af5aca2a",
+      "results/conductor_fixtures.json": "0b077362069bc688d21eee36b373f1249f78b292150821a4401e046e71af5a88",
+      "results/document_quality.json": "ed2fc8d5e017d37bb11be925c3d4c7399619547e840430a4c05369b216ed4ec2",
+      "results/effective_prefix.json": "1553d693f9abb9937321998eca34d25f5bc7218ed443d1bb8b0f5c928fffe69d",
+      "results/fault_population_diagnostics.json": "b77a575f1bdfe750c8f60e997e5e3747e12ae20bdfde4afa6fcfb8cc97f663eb",
+      "results/fault_transport.json": "5ab6a9c3e2ea02d0d688c1ca60b86225570a761d6057a912b5e192bfbca1f2bb",
+      "results/forecast_targets_empirical.json": "c4037b1bc6ef9f7afa7d4ad68b3b2349b866a2d90bd483d10bc02836d130890a",
+      "results/forecast_targets_synthetic.json": "fee4264bb19c4633ff2becad9039c26bbe59d5b50f945f9081e66307a04f9f25",
+      "results/formal_analysis_audit.json": "7278b6fcbda36c205e651ddeacb22775dcd9dd664c64202803e829ea2abf3423",
+      "results/formal_operator_audit.json": "d5c8d75715e4b07754cbb91399c1ef33d0ce3295368a90c911a41f082e0aed63",
+      "results/fr01_pole_divisors.json": "c7a3de157760b6b0c6dd04e7b94d5a10cccbd36742f8d23eeca8534665dc101e",
+      "results/fr02_denominator_recovery.json": "4ba4baea94cf8a269ad0c5238558f9a21689c3b3d2eb2aad79891a342907c055",
+      "results/fr03_tree_positivity.json": "dee6d77a13204318be322462ded5275565b30531856815ee8680d747acdc934d",
+      "results/fr04_pinned_theta.json": "e9e2b43702c77921042160c4a5fa71ccbe58c619927fbf7936e2652b9b6659d2",
+      "results/fr05_threshold_reconstruction.json": "e3dad2602014c2ebf2a746a53cbefbc50e4f4113e4c12b85b578ce2cfcfdd0dc",
+      "results/frontier_manuscript.json": "f5c1f6a7560b6ed03eb9af9698ee8ae4e91092cb1d281c951730b902caff3003",
+      "results/frontier_validation.json": "6fc24b0abfd597592a60ec4b175678667643ca1bc9f3edf7deb818d608cd374a",
+      "results/gauss_fixtures.json": "715cacdf018b195d27e7b39d8deffc24948a34ecce765065b826fdd3b1d11da9",
+      "results/history_thermal.json": "4415714de3033de4f6e9ff79ed0dfa44052ef3af266dea4197f773fe62c1d0e1",
+      "results/horizon_design.json": "bb81123d9e7445cd205a656ec5600715286071112a6b652ea47548fdaef47710",
+      "results/incremental_locality.json": "6dca505592e2f265a7ff17f57a50e37db788ee389a490e610428a7192fc18d72",
+      "results/integer_quotients.json": "3365f309f8a2782b3552333b616d3eff79ca63d83d2a069d7e05738580723003",
+      "results/joint_thermal.json": "e91fc467c1e02ccc650c4483714f913ba6bdaf2580828b55102763f7ba86d578",
+      "results/late_collisions.json": "239da70663023c35eae21ac5daa5475ba2a37b87a025ad64df6cf861894e4468",
+      "results/locality_family.json": "ddd5251118612d1d465093d864310169223b5438cdcb3d5841b6600561364733",
+      "results/loop_series.json": "b53ffa75f79170be66cdae2296e2a79fc355418d9e958ea17bfa85d57570c64b",
+      "results/manuscript_counts.json": "cf3775a5fd83c391a29510340a11ef183196be81314f7556c12bbb0f8e61b5ae",
+      "results/movement_design.json": "4ae269a3de3de6140e253fef2126e0efa5132aa57c70832724cc3e29851f87a6",
+      "results/movement_empirical.json": "8e007d05b8454b0d40a2d13e9204cf785093d3626297ce983a530d23c0a9084d",
+      "results/multiscale_transport.json": "086ba2e5eb123fc19eb6c154bfac368ef764e5f301abbef1c0c679595a0a9df0",
+      "results/multiscale_transport_empirical.json": "1488408ad79699183f1e2d51e041d00a21b58fd53d1e1de18e484ae9309e79da",
+      "results/nested_census.json": "8ca3548c30c911ad7c8543d86481af88310d69c07893c8698a2b068877d83ed5",
+      "results/nonlinear_fibres.json": "4c991dc68560a435ece21b0abaa7862ce908280221ff65780d4a9831c6e8026d",
+      "results/nx36/nx31_acceptance.json": "fe5fb2f1e584e6a4266466162ec261530715d8a8bcfd66da6655e3a4ba250f3b",
+      "results/nx36/nx31_benchmark.json": "9ecf10bf19478084a8dc66d5f853ed490fe40e181c26aa389052bee07e7b6dc5",
+      "results/nx36/nx32_acceptance.json": "6b4aedde457bf72521e6d9d0f5c05e46c8bf1715b16bfc8ccf7e572b5b9bd710",
+      "results/nx36/nx32_legendre_loop0.json": "b896dfc6fdc5b18b5bc38cc812527280ad3f50ac727e48978da5c895f840ffd1",
+      "results/nx36/nx32_legendre_loop1.json": "f0f06d067013ebd265f91104d8d6fab6bcb1d5b3ecb6ebae7f446db59d2fc553",
+      "results/nx36/nx33_acceptance.json": "d116b08f2e78cd908599793d3ecc8fc487473ea7d82750d86eb3145cde73606c",
+      "results/nx36/nx34_acceptance.json": "0d718ce0e7a8d49efa8b63211a0b30a999cc339f0cdb5a850501e500a1412b74",
+      "results/nx36/nx35_acceptance.json": "2594a0494c8e7701eef8638a203f4dd438e66ab15f37352915d1d78d8cec76d9",
+      "results/nx36/nx36_acceptance.json": "c7c21b91f40e2910b88fd72147a17b6874ef89be40252f1555bc9fbe79cfcbe1",
+      "results/nx36/nx36_formal_audit.json": "3df54af9dc7936ea65ffe0de9f685dfc171136eb05f2b9eec1f443fa9d6cd809",
+      "results/nx36_manuscript.json": "43b8b0b751c5d2c4c09c15b6729a75e5ff04487638843fb56243187093d49f9d",
+      "results/nx36_validation.json": "3fb9c099e58312b920cc26d2c680ab0b78595cecd9e7d7c26beabd4b7ed883f1",
+      "results/nx_07_decision_recovery.json": "3766f230a280223a9e37536134c9b8218183041c63ae3224989994203085e592",
+      "results/nx_09_decision_recovery.json": "99c941e47a15cd35d2f0ae1a92b733bb8f4e51212b09293e23be21c903cd7ae6",
+      "results/nx_10_decision_recovery.json": "5c1348aaec0fb453c2e2a9c5e99fd1cf3a95660796ea348158f15a77f2b8dbbe",
+      "results/nx_11_decision_recovery.json": "ec3ff44afadaae5f35c76ff8e03191b3408712c64976ddf1389095d2b07da762",
+      "results/nx_12_decision_recovery.json": "79ce9a56c6d22fe7dec2b901def91ac1d425aa02298e641e313a5bd401b2ca2c",
+      "results/nx_decision_benchmarks.json": "429a192a99dc619b74d18da951b2097b4cfc52a240184ddf32ad6ffb875bd106",
+      "results/operator_checkpoint.json": "2055e89cd4e8dbf5531e942aa6079011f01678eaa6f8e034c0240a86c924e597",
+      "results/operator_closure_certificate.json": "c175fd7537ec998a91e4a79d4f3a9526993fe882d273a2ddf6755c5c7a473e6b",
+      "results/operator_experiments.json": "da0b6e450ade03d98bd14cf18119bd1c500246b162f0cc5b41713b1ac5c16e4f",
+      "results/ordered_movement.json": "fd7efa31cca06fdb7fd8eb8bd27c7bc5f9900ac6c999fc06929f3fb563a1f28e",
+      "results/overlap_hierarchy.json": "5d8f7f6e0723278534341a5692c10146f45cd85c0ccac9f4ea35eb9640b01c30",
+      "results/pair_acceptance.json": "bb063ffb79da0c229611ad55bae54d8b837465a0ea1f1f6809dfdf4965f1f6cb",
+      "results/panels.json": "a52e73214e220466ef461c01e7895616d16562677b4e59e3e075eee0bdc13086",
+      "results/parameter_module_receipts.json": "f2eafbf412a26394cd4e309faaed725f4f0dada99b6907806a08f50068c67224",
+      "results/parameter_strata.json": "70e58dcb4f5fc670f0cfeef67ce6782f01549717657b12c2bbc5fe21f03baea9",
+      "results/parametric_observability.json": "7a35fd33a9f240bd48a6af4307e8fc47d002d961897ac5d1e7112493142e900f",
+      "results/pendant_family.json": "f4cdb3c9d9e8b59d41b58ae52c85b7a14fe578571dd4e425234125b12faa808e",
+      "results/phase_probes.json": "4c40f8fc4205b910cc719598ef9d25f30faef0eee3e372a9e1b9a032b6a6a865",
+      "results/phase_probes_benchmark.json": "5ec066bacdbdafceac943b5660f6a2c00163ff143f7b26ce0caef03825ac6e8d",
+      "results/population_geometry.json": "5e5627f699c555898247f5bc5e4b580b7965f93dfe8b05492b67593ae4f4cc3c",
+      "results/publication_release.json": "1fb63a8233a591299d05360a27f00016b46ce05d212f1bd17c9ad9ec4e7390b9",
+      "results/reactive_transport.json": "8d25e978eb1e0864cb606af5b5d0e963d89a20c1f843db4d77741da30e18667e",
+      "results/reactive_transport_empirical.json": "4b5acc4317ffdc7596d0734de6e927f0d345383d587c9bc369779e4a515f6e41",
+      "results/realizable_interfaces.json": "2fae2866673bd9141f3c3088abf190cd330dcd09d1188859cb96a0fcde28ab60",
+      "results/recovery_metrics.json": "570b2487608123a53cb87982fd4872cb626c2429a0b51766971ddc3fe63f9525",
+      "results/release_0_4.json": "e4da3dc4f1a632a7115a6531d2ee798dfee642458c7bc8193bc53a0e7d6c9493",
+      "results/robust_search.json": "2b3a5355012541991576b8c5a7f53acdf73f948614914ad7fc39b6cc2b52a0cf",
+      "results/separator_compiler.json": "1fce597ebf8ecd1ee765b4b4b3bfba23e7549653c30111ed646247ecfe20ae26",
+      "results/small_census.json": "69a26a43c8da1ed89451e07bec771df5bfa189eda9bc29e6a99dcc1bf1a90802",
+      "results/symmetric_contexts.json": "b6b100d1e97ac4bbc079daf73a5da6ed2915f669bd4e090472e18ca6d6e689cd",
+      "results/symmetry_channels.json": "1b4088152e664b86d5f5e7abad2261d4a1531d3d8591820cf12e4340ed995c5e",
+      "results/tail_records.json": "a5d812692fc7b8adfae95c6b99d408c046d2ef97c5a129015deb0b4a97f4a64f",
+      "results/target_recovery.json": "d4a1efa64789060e00f16a02dc99434105374ddb4f9246298babf571e6eb11a0",
+      "results/theorem_index.json": "3f085b7901c46bac8459ccedc1838bf2dae14e1efb8001338db75468ac652603",
+      "results/thermal_diagnostics.json": "dbc052ca36478d637d40be28db63f1e4290ecd47ebb5ac6996aa0582b9b2ce59",
+      "results/thermal_severity.json": "7e23a37f13f5845a48a8b4d8ff10f18d68502f92c3017cf00948993b32c1b5fd",
+      "results/transfer_benchmark.json": "ba719c9fe3c6e14925d2e2e207fb05ad84bbb5958f9e9edf233505d4b8ba3e05",
+      "results/typed_contexts.json": "bba94e56456f76f038fabb8140b2e88a4862556362183b613a53b688cfd3705e",
+      "results/vakil_bridge.json": "f9c12b5c52fd52a967ec2b4228185cf0811c37c75f8274cc4e174c8943dfd3cf",
+      "results/validation.json": "42f76176d9414c3e2dda7b0907a8204e4aec9f74828e2da55d625c37bb6f5199",
+      "results/visibility_filtration.json": "747bc4e2189d7c1a3834276d31caf29566d419c13ca1f0b83a86d17e57561913",
+      "results/whitney_switches.json": "52618e7d4248aa8fc8ba59b18c66bc4807cefb1ae6898690d55bbb07dc9e3361",
+      "scripts/candidate_box_thermal.py": "e82c78275a41a550aff2ba8cdfec90148a096d58ef381a3e5d93f11c4091853d",
+      "scripts/compression.py": "357a1099ea14ee5dce69caa2d3e8ba2803e6f01f5faf272855a563d20df8179d",
+      "scripts/horizon_design.py": "9c5307d92530c65ba7687cc58a09ef6c8d515de90d93d9bf87b4abd0c077784a",
+      "scripts/incremental_locality.py": "e772676e232c66de22930dc5b7c7cedbf5ac2af6b2fb01185c4344ef7d7ca300",
+      "scripts/operator_experiments.py": "8dfdcd7a61ed67326dd8511dcae1d5a1f37cbb685ec9bda2bad037c9a190d61c",
+      "scripts/panels.py": "2e4c27b89e34d0b7b370656d46d362ba919314c3bea51e78f8945ae7c8a78857",
+      "scripts/parametric_observability.py": "f92d96f5d35ceece51c9c412ee32864fba5cd52920efd3a02dd5134d5f609279",
+      "scripts/robust_search.py": "5712a28b78f5cd399de15c27937fa3c12befc3fef793d4d110d3cfb029720a9c",
+      "scripts/separator_compiler.py": "f153ac72c9d4dd2490edc50222f25d0759309ba9d7ff0e1c05d2cf7e05c7243c",
+      "scripts/target_recovery.py": "6f02a0ce8549726bd37d8845b2499f05e318e70b43c0f9b7a772d590de9f6158",
+      "scripts/thermal_diagnostics.py": "4c6d8cd9216fac6e7085e647f695fbb70622031f3743cbff6c7ba7a01bac454a",
+      "scripts/typed_contexts.py": "dcafc55cd06d215b16e98d80f843bc1216ef98e2d96c6e051903726bd929ae5e",
+      "src/singularity/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/singularity/_application_exact.py": "fc285077026fe8b84511bc4a79be09e0039cd1a65de94b2200c40aa454f0491b",
+      "src/singularity/arithmetic.py": "46c540275fda4cafe6a157382f44cd3fe2d7fcc7ca7c00c54eb35a6142e62cc0",
+      "src/singularity/arithmetic_automata.py": "76ae554aade97c643af5dc0bb2d8856e6c84e23b2e59700490d6089a351a4280",
+      "src/singularity/candidate_box_oracles.py": "9bd271f59f0a54066e50f6d3a36efd920907e664f5b4970b088fdd97540a074f",
+      "src/singularity/candidate_boxes.py": "590a5e799b70c000ab983c05f52c93001d94e7e4329fb37dcbdbc463141ae842",
+      "src/singularity/certificates.py": "5be87557604f5067781124a2d51510d58fcc37681140c902854ce28fdd36cf7f",
+      "src/singularity/certified.py": "9ddfa8c57706aff9954b8204973a7127ce5caa508f60eb50e6c9ffbc27ff66a8",
+      "src/singularity/chains.py": "488d08de81c5c86839306734952cc02344e7e172ed17b9ad35b15c99962f8149",
+      "src/singularity/chambers.py": "c211ba2342ddfb91fb559ea55c4c2cbeae61abaeb9a64add27ff55154b4c0853",
+      "src/singularity/charges.py": "06959ef324d6fb85beed1cc75723b5734900a086b76456648f9063f126bba29f",
+      "src/singularity/cli.py": "e4780504538840023498e2463ffee52f0e812123ed4940cc4d49535f391a6889",
+      "src/singularity/complex_visibility.py": "0e72f8882fa16b7ad0ea72106f654775c106bffa9668dbb2044e07dfb0c39381",
+      "src/singularity/compression.py": "58bb8970cd0d0fa52540d6a4c3e1251bf8d8251cf97fd97e32d299c4f974ffb2",
+      "src/singularity/conductor.py": "2688b3c8765ebf5564dc5558d27dc7625c3aee7283a9850cc11114d789597139",
+      "src/singularity/congruence.py": "3cb755a2f27de5d417bda845e90a0b8aa636bd852e5f16c47a380113172bf4fc",
+      "src/singularity/contexts.py": "e6e864dfc7f6ba877980882645e9f8136a12c35b1fa52ba7f3d44ac0754e4c68",
+      "src/singularity/decision_certificates.py": "9fccb26656ed4e20ce1ea11e4b1ec8469cba376831ddb643c997f39519781d7c",
+      "src/singularity/decomposition.py": "ba9fd8db482d2ba22cc69bafbbcf8b224a9f4c81d6f50fc586078aa42e85d43c",
+      "src/singularity/denominator_recovery.py": "66de1caecf02d513a3157a19f6c807d26074ebbb7a8d7f78c2929bd09e2df48e",
+      "src/singularity/dynacomp_adapter.py": "f40fa5a24063404268196d867c1f8a1c5f3f086c4fd3178df36b4a4d0b15d3df",
+      "src/singularity/edge_factors.py": "7f1cfe9e22594270bfc21fb1e60d8ee27795d38f91ecb9471f33de79fab2394b",
+      "src/singularity/euler.py": "5cf72dda57e2187302a8cbec42dad47aaec13a9f450386fd2610e59cb89e6c38",
+      "src/singularity/examples.py": "1bac6d36832ad64cfa70f839011cf53cb8352f8ff26f1273b4fc6ae54ac50c16",
+      "src/singularity/experiment_design.py": "379ae0104f0d8af12f70461606f60a64681ff7cca16301399ed9c33f1162cfc3",
+      "src/singularity/families.py": "dfcd0871bf60ad7cc4c4e32bef8b604ba45a17ba8c1d4253b6750c91974c0a9d",
+      "src/singularity/fault_population.py": "01651732b5da6841f7c09003ab7dc1cc975501703868d975a2a1b57967ef7c35",
+      "src/singularity/fault_transport.py": "0abced72618dd4ebe66fda7007a4b20bd1cc2c4096dca966f6982bc84014122b",
+      "src/singularity/fidelity_design.py": "31b9d32bc70b01533ac847b5b4efadf1e2188c8ecfa2860b381e6b11ec91ce27",
+      "src/singularity/forecast_targets.py": "ef098e7ee9838c57dad10f3768927c79e8af4623dd6192d32f57041aff72150e",
+      "src/singularity/gauss.py": "fe7edc0899af0437572bd6bde2397692d7fd83da38254f324d510c62e936de60",
+      "src/singularity/graph.py": "26a3f963a88428a457c13c5e6eaf05fb9e464c956bba4fead0d919e49299d568",
+      "src/singularity/graph_experiments.py": "376f4007630e76b04bc045bbf3c764345ce5a9110614b661bfaaeeb780298680",
+      "src/singularity/heights.py": "25ed6cbe2bca5a2be8e5d3386ebbfba39f514dc442abe61eadf0945baf66b7a9",
+      "src/singularity/history_experiments.py": "7555a32b8f6667ef4862d53a2e71692303984bbfabb88e824750418b4a94f8f9",
+      "src/singularity/horizon_design.py": "9aa6feb5dcfdba70997ef77aa4a48d7f2cb21062c0916a5b7d331b8363b4f012",
+      "src/singularity/incremental_locality.py": "30c1409c0fd6813cac5c460de0c0b95bda61e9ff9b076bd7d999863a0eedc453",
+      "src/singularity/integer_quotients.py": "9deeea6c63f114deb49416e9c73041601308091f1ff69ee4538167cb0ab59196",
+      "src/singularity/invariants.py": "9183d3e2860182dbec7fb87dccfc732cec6ce47c0b1574b138eb73d37d06a80b",
+      "src/singularity/joint_uncertainty.py": "4817defa9f8c1f3b030a004973aedfc18993509d37911d382fe303dc6c0d395b",
+      "src/singularity/language_design.py": "36891b6ae8cd3ad4f1acca13fdeaafc5d429776b79754c1e0a5ad0642d2585ce",
+      "src/singularity/locality.py": "8192488b0b58e0e5a18f31afbe8e2d39522108009920285b923b5e1cce0986ec",
+      "src/singularity/lowvolume.py": "ac66ac16bf757b4e7d8b81c2cb439bd578cbfd6eda669aadcdfca267a4db1c6c",
+      "src/singularity/monodromy_experiments.py": "cc6a0274dfb97f6fcff584fa593f33206c98059b44db45cd311981252318e8d5",
+      "src/singularity/movement_design.py": "6f7264b485398dfa20321ea3939d0d9478f585dedaee28da91ca1a9aae809f32",
+      "src/singularity/moving_quotients.py": "65f8feae35e6dfbb92e5c09138f3aaf3de33794af171c1ad357d7c5c7ade6f21",
+      "src/singularity/multiscale_transport.py": "7bf48dccfdc5d82e687c998442ca22df4055e72690c997c5674022c94c9edf8a",
+      "src/singularity/nested_census.py": "6e1f3a2d5278472a60af051487806c7e8d6ef6b075e4b9c80670db0fdaeabd04",
+      "src/singularity/nonlinear_fibres.py": "01fc538399a14d63e11c433d775efc976109a9977d0f4f5cf02f9e0c3c7ee2a5",
+      "src/singularity/observability.py": "8640fd003a64e211b5053a4a8e7733316c7e4dc1fae4cf025c821c32854371f3",
+      "src/singularity/ordered_movement.py": "734d6a866b21c06fe44287724b61cc80381262beb0e495bdbbd0c5222baa8209",
+      "src/singularity/orders.py": "94fcbfac315daa072f7feedbde7af51c7c12d1568bf0995127c863298f53ef88",
+      "src/singularity/panels.py": "5a333407d8a648406801597d9ed14d6aaac5fd3ea3351e60d3cd4d89960a799f",
+      "src/singularity/parameter_receipts.py": "d7d0908b4f147c3fb0a0e150a0847bb68ff3a165754e26e8caa019c939c9f85c",
+      "src/singularity/parameters.py": "a8c546966dfe9b1d57c490e0d115be6a5950af890c60422be40cfad537089ecc",
+      "src/singularity/parametric.py": "86ea754d0f95b8b8f7c315e906cabb222aad3e44c9709a458b6c7880eee747e0",
+      "src/singularity/period_observations.py": "bef4f1683243014acf015dac9974a7a4fc191b1360dc6be573c090fe95bf6a98",
+      "src/singularity/periodic.py": "9039530b96a8d3a3cb7105019d5efd8856871af6409fa9076270c2e27f03b8b7",
+      "src/singularity/phase_probes.py": "e881138f195e402031601792a71df0fd98ff19e1612668f27eb922605f8fd774",
+      "src/singularity/pinned_theta.py": "a668fd704989bf81a3abd090c90e93ccab92f329f6ad0d77b499264fbf62c2c2",
+      "src/singularity/pole_divisors.py": "98ead8091f0a4f65ba0bcd1ac1c68ca4f873de342ba5807774af3cf9a0bac4c4",
+      "src/singularity/polynomials.py": "3a34001cd71b55d58c7f19b18a1769370187817e996bccb5fe71a4226f1b1b93",
+      "src/singularity/population.py": "ff71ea973205b855fbabb10ec9ff8904880522096ed11a0ac4863cd7dbd6e5bf",
+      "src/singularity/population_geometry.py": "3391a80ec692fd21a575f4165b21a03bc3bdded6dfbb6c33ba65f6a745b7b328",
+      "src/singularity/prefix_certificates.py": "43be70dae1739411994215ba8c215014be1f2694d9175dfe5f3eb2531b8cc56a",
+      "src/singularity/primitive.py": "0ef02a960e2a12bd21d76421a9161bbb588073c17eeae4e1173b7468dc4663aa",
+      "src/singularity/protocol_population.py": "cdbf59e1954281ddd177e40e08111127575a2639804879e45d652562b640cf18",
+      "src/singularity/reactive_transport.py": "0382012e43d10688ed6a0f0ab04ea1f854ac9f832d6f89e26e0964502ab64054",
+      "src/singularity/realizable_interfaces.py": "ddde969991429e7e8a176c05c46e7858afb8b2848f543a246d0cc949eaaafd3c",
+      "src/singularity/recovery_metrics.py": "30e4a7c3f902e0c97e972723da40e9eb37373591b3b4cf25a853c2edce83bb73",
+      "src/singularity/refinement_planner.py": "54d42dd49c24229d5b22326b6d945e72baae78d669f5a1cb1f289f0dbcc8fe68",
+      "src/singularity/remote_queries.py": "cb1d1b86fffbbf72381c0dd91cafad9678e7d3604e64e1471fc78774bd562705",
+      "src/singularity/reset_policies.py": "8397cbf629bd13cda047eefe072e991fba72920455c610cb4af2b0a210faaffa",
+      "src/singularity/robust_search.py": "58c86f35244ec86e60cb1499a225acda2d0fa9f9ec0e9372cfdf32174d6b29bb",
+      "src/singularity/separator_compiler.py": "000665c439981daff69569b625bbeef686c2d1d2e8e60bf99e6cc951782b0627",
+      "src/singularity/symmetry_channels.py": "df1c04a618c0620aecf7146286958f67637037ff16f9a013fb373edc75eb5771",
+      "src/singularity/target_recovery.py": "807561d52e1d5f16d335cd798f1ad60fb54dc01e5ef68ce7f3696c7439511d58",
+      "src/singularity/terminal_moves.py": "a86122842c96c1b90cd7679903352363b34b071c31bc96daea9978e3b8699ea0",
+      "src/singularity/terminals.py": "7844ca606bf29f0a207e247949faf1ad085b4222d8d7518184aa8886b5371895",
+      "src/singularity/thermal_diagnostics.py": "a75082b209fa38823cb2c1d91d59227376fe9e27ed61152326ed94d76dba34e6",
+      "src/singularity/thermal_parameters.py": "58fcc0cdd49fd07939069f73e4bfff9cf89ec4d6a3f5569ca40154c2aa868cec",
+      "src/singularity/threshold_reconstruction.py": "2a384a4f740aa04bdb8ea0b3a96ce3f5bb83a04986fdfe12928837fa25c6fd74",
+      "src/singularity/training_panels.py": "196d48e95de5675faa274ed20af1ae2eb67c5d5c01b51b46377f1edea54145f0",
+      "src/singularity/transfer.py": "d26a565f5fabb950ce1f64d5b28f4e60b6872b1bb6ce3f10513abc3b2f5fdf81",
+      "src/singularity/tree_positivity.py": "3c8ecbeae4d544dcc4bf38e391d598f2df5048d0306c48b1876a99ccd091bc69",
+      "src/singularity/typed_contexts.py": "354646b1ecaf1a68441a974297e00baa6de617ae262eba0b14aaf36420112d04",
+      "src/singularity/typed_observability.py": "551f0be614f3e569f8fd490e08d4b512557fc885227514868e0b67e5ffec7af6",
+      "src/singularity/visibility.py": "6d6d18874cda5f09cdbcb8b2c1a334449cf9049be2309fb5f8e02f626955599c",
+      "src/singularity/weighted.py": "4c7d494f1e83dab11db3833891e361b7563745972df372a58eed58363d5a179c"
+    }
+  },
+  "methodological_audit": {
+    "neural_inference_repeated_by_validator": false,
+    "path": "applications/training_lab/results/confirmed_advantages_audit.json",
+    "sha256": "30dc93d810e1122d96e6fef97ee1b1a5a90936e9e3aebf572fc2ba68551be4d4",
+    "status": "passed"
+  },
+  "portable_count_artifact": {
+    "TRAIN_bytes": 262144,
+    "TRAIN_sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+    "alpha": 0.01,
+    "order": 3,
+    "path": "applications/training_lab/results/predictive_mixture/count_expert.json",
+    "sequence_length": 64,
+    "sha256": "1791ea95f9da91b5544481c8a9e43bf44b12f71d93facb8dd802ec2a0e1581e1",
+    "validation": "Loaded portable JSON and checked pinned TRAIN identity, length, order, smoothing and causal-window length; no held-out corpus was scored."
+  },
+  "post_validation_checks": [
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts",
+        "tests",
+        "applications/training_lab/basis_study.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_repository.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "a70ba726f0368d56cd5ac236361709976d5671b201fd0f5638e2d2f1f13b41ac",
+      "output": "{\"chapters\": 16, \"declared_result_ids\": 112, \"main_chapter_source_words\": 58014, \"required_artifacts\": 19, \"status\": \"passed\"}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/464161e046ff/train-env/bin/python",
+        "scripts/check_links.py",
+        "README.md",
+        "applications/training_lab/README.md",
+        "applications/training_lab/CONFIRMED_ADVANTAGES.md",
+        "docs/papers/confirmed_advantages.md",
+        "docs/papers/training_observation.md"
+      ],
+      "exit_code": 0,
+      "log_sha256": "45b32b7a22c25b64d3938e2bfe4a6f9c1e9ff80e08ca986875a2d58fb0417805",
+      "output": "{\n  \"status\": \"passed\",\n  \"mode\": \"local\",\n  \"checked_relative_targets\": 87,\n  \"missing\": []\n}\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/draw_confirmed_advantages.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "log_sha256": "840a74c1e9a327295a5ea86ae70a129ca93c3d27945fe718291a41e5ad3e6362",
+      "output": "usage: draw_confirmed_advantages.py [-h] [--results RESULTS]\n                                    [--output-dir OUTPUT_DIR]\n\nDraw the retained predictive and deployment confirmation results.\n\noptions:\n  -h, --help            show this help message and exit\n  --results RESULTS\n  --output-dir OUTPUT_DIR\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/build_training_documents.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "log_sha256": "05e742ed3c115303774e9ac6dc855e07c4a4fbf9b741d3905c6cab27dbd8ec8d",
+      "output": "usage: build_training_documents.py [-h] [--output OUTPUT] [--confirmation]\n\nBuild the measured-training companion with Pandoc and XeLaTeX.\n\noptions:\n  -h, --help       show this help message and exit\n  --output OUTPUT\n  --confirmation   Build the 0.7.0 confirmed-advantages companion\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-S",
+        "scripts/package_training_revision.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "log_sha256": "977f803663dfa84c59464771b8a26b8d329ee9a638a4abe2e8198791322da6fa",
+      "output": "usage: package_training_revision.py [-h] [--output OUTPUT]\n\nPackage committed Singularity source, publications and measured training\nevidence.\n\noptions:\n  -h, --help       show this help message and exit\n  --output OUTPUT\n",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "",
+      "status": "passed"
+    }
+  ],
+  "previous_publication_ci_corrections_in_validated_tree": [
+    {
+      "correction": "Install measured numpy==2.3.5 explicitly and run complete suite; matching local dependency environment passed all 767 tests.",
+      "observed_failure": "torch installed without NumPy; tensor hashing raised RuntimeError: Numpy is not available",
+      "workflow": "Neural training contracts"
+    },
+    {
+      "correction": "Recomputed mathematical fields unchanged, refreshed release version only, and ran all 27 exact workflow replay/handoff commands successfully.",
+      "observed_failure": "All 736 unit tests passed; chain agreement receipt compared obsolete release version 0.4.0.",
+      "workflow": "Exact research checks"
+    }
+  ],
+  "previous_publication_remote_ci": {
+    "commit": "4d38c456bcadfa4a492ffc35045806611c0952d2",
+    "observed_at_utc": "2026-10-19T12:19:51.429Z",
+    "runs": [
+      {
+        "conclusion": "failure",
+        "created_at": "2026-10-19T12:11:52Z",
+        "head_sha": "4d38c456bcadfa4a492ffc35045806611c0952d2",
+        "id": 39250174807,
+        "jobs": [
+          {
+            "conclusion": "failure",
+            "id": 118051756149,
+            "name": "cpu-scientific-contracts",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Install the measured CPU framework",
+                "status": "completed"
+              },
+              {
+                "conclusion": "failure",
+                "name": "Data, causality, hypergradient, state and exact panel contracts",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Post Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174807/job/118051756149"
+          }
+        ],
+        "name": "Neural training contracts",
+        "status": "completed",
+        "total_jobs": 1,
+        "updated_at": "2026-10-19T12:12:40Z",
+        "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174807"
+      },
+      {
+        "conclusion": "success",
+        "created_at": "2026-10-19T12:11:52Z",
+        "head_sha": "4d38c456bcadfa4a492ffc35045806611c0952d2",
+        "id": 39250174732,
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 118051757240,
+            "name": "finite-decision-proof",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Install pinned Lean 4.12.0 core",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Compile finite semantic soundness and audit actual axioms",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174732/job/118051757240"
+          },
+          {
+            "conclusion": "success",
+            "id": 118051757568,
+            "name": "exact-receipts (3.12)",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Retained exact and public measured evidence",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "NX36 dependency and evidence integrity",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "New mathematical-note links",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Portable finite decision certificate",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174732/job/118051757568"
+          },
+          {
+            "conclusion": "success",
+            "id": 118051757583,
+            "name": "exact-receipts (3.10)",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Retained exact and public measured evidence",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "NX36 dependency and evidence integrity",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "New mathematical-note links",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Portable finite decision certificate",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174732/job/118051757583"
+          }
+        ],
+        "name": "NX36 acceptance evidence",
+        "status": "completed",
+        "total_jobs": 3,
+        "updated_at": "2026-10-19T12:15:08Z",
+        "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174732"
+      },
+      {
+        "conclusion": "failure",
+        "created_at": "2026-10-19T12:11:52Z",
+        "head_sha": "4d38c456bcadfa4a492ffc35045806611c0952d2",
+        "id": 39250174762,
+        "jobs": [
+          {
+            "conclusion": "cancelled",
+            "id": 118051755716,
+            "name": "exact-python (3.10)",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "cancelled",
+                "name": "Standard-library exact suite",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Reproduce retained experiments",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Retained finite populations (chain agreement, census manifest)",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Repository and manuscript checks",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Published document links",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Claude handoff ledger and dependency checks",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Post Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174762/job/118051755716"
+          },
+          {
+            "conclusion": "failure",
+            "id": 118051756022,
+            "name": "exact-python (3.12)",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Standard-library exact suite",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Reproduce retained experiments",
+                "status": "completed"
+              },
+              {
+                "conclusion": "failure",
+                "name": "Retained finite populations (chain agreement, census manifest)",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Repository and manuscript checks",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Published document links",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Claude handoff ledger and dependency checks",
+                "status": "completed"
+              },
+              {
+                "conclusion": "skipped",
+                "name": "Post Run actions/setup-python@v5",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174762/job/118051756022"
+          },
+          {
+            "conclusion": "success",
+            "id": 118051756216,
+            "name": "formal-lean",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Install the pinned Lean 4.12.0 release (core library only)",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Kernel build and source-bound axiom audit (P07, P08, P33, OE12)",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174762/job/118051756216"
+          },
+          {
+            "conclusion": "success",
+            "id": 118051756221,
+            "name": "formal-analysis",
+            "status": "completed",
+            "steps": [
+              {
+                "conclusion": "success",
+                "name": "Set up job",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Install the pinned Lean 4.12.0 release",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Initialize the pinned Mathlib dependencies",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Download the exact analysis import cache",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Actual real visibility theorem and axiom audit (P34)",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "name": "Complete job",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174762/job/118051756221"
+          }
+        ],
+        "name": "Exact research checks",
+        "status": "completed",
+        "total_jobs": 4,
+        "updated_at": "2026-10-19T12:15:35Z",
+        "url": "https://github.com/towre676-cloud/singularity/actions/runs/39250174762"
+      }
+    ]
+  },
+  "retained_receipt_metadata_correction": {
+    "field": "version",
+    "new": "0.7.0",
+    "old": "0.4.0",
+    "path": "results/chain_agreement.json",
+    "totals": {
+      "disagreements": 0,
+      "labeled_graphs": 1099,
+      "marked_cells_compared": 142416,
+      "profiles_compared": 479963
+    },
+    "validation": "Fresh recomputation established equality of every field except version, elapsed_seconds and environment before changing only version; final --check passed."
+  },
+  "schema": "singularity.advantage-validation/1",
+  "scope": "Local v0.7.0 working-tree validation. The previous-publication remote CI snapshot below is separate and does not assert final-release CI success.",
+  "source_file_sha256": {
+    ".github/workflows/training-lab.yml": "5eaad3d7ee2df5344b8c6901f855b8f2f236222a98d740f7764bad41d5c80dc4",
+    "pyproject.toml": "3014f295a8866d60b8f5895d2689daaea13d045b7ea13611217f354ec7625242",
+    "results/chain_agreement.json": "55c48bcdb6c1213461c3dc16fb96978a4c5b2817229b3f87e5c146bb4147b1c9",
+    "results/exact_examples.json": "d4c8273b04a5d2387e099cfc5f6317d86d13ea50372afa447cf3b203715199af",
+    "scripts/build_training_documents.py": "1fc32a6ebf7f2525ecff0b59c5066195a48059b280bd0808cf763049ddce8287",
+    "scripts/byte_reference_baselines.py": "15891e31f390bc83b9637698b92b719d57cc7ef7cab6947e1b9acaf7a12ba4d8",
+    "scripts/check_checkpoint_smoke.py": "a62faf31e4d04ba75b93e1fb5c6ba2e6c5ad44b6fb3c3c2f2c1e64e79f09ffba",
+    "scripts/check_runtime_pipeline.py": "acad58fd9be09cd14d8774aecea511291361b176a6938faf4f961997010323ab",
+    "scripts/confirm_checkpoint_panels.py": "962f5074e6e23bf4aa07bab950f2e3f7d20e44e3494512c552f2e6b4acff6fe3",
+    "scripts/confirm_online_blend.py": "c168508ceb5aadea9d40dabc8e19cbee989b05c2182fd49ff814347b379cd4f9",
+    "scripts/confirm_predictive_mixture.py": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
+    "scripts/draw_confirmed_advantages.py": "2c550cb429d4255ea1c1535a4b35c559dc24bbde7213e2eb85f5f002dad2b5c6",
+    "scripts/package_training_revision.py": "80bbc1af456674d8c87b083c6ec0ecce1ec387c27c0b7663f8699042d93c5410",
+    "scripts/score_byte_mixture.py": "48bf86b77adf16a22eff1b257c39028d5e27afaed08e0a9b48316c40d0efde98",
+    "src/singularity/__init__.py": "8ea34f5fc9a2ecce7e6979bfa04f89fa268e4c41796e6a8a9d4c7a93156164b2",
+    "src/singularity/training/__init__.py": "ec5d60c76059c9c58abdd23e46ab43ab84c694db253bf1644e2f10268346c267",
+    "src/singularity/training/byte_experts.py": "e679468eab6a0822b71e4b39367001c38ef4b1675a864de7ac1379d7cb353e5e",
+    "src/singularity/training/cli.py": "2bcdbb62f69c217b69edd6f9646bc9f359baaf0ff200b8d26f46bd696c604bd0",
+    "src/singularity/training/data.py": "46473e94bff05947216e38481831a43052487f7bacc8fd9a346f9dfaa3bc8cb3",
+    "src/singularity/training/models.py": "e8400476c4fcf67391e57a56c228147df5ffdeab04a00759a10e1a7f3de9b5a1",
+    "src/singularity/training/online_blend.py": "51b21eb5b883b7d11016f05c764ad1af033a21877b6a074be25d2012240f8fa8",
+    "src/singularity/training/optim.py": "9e7ae68ff17be3ccab42c632a7bf8b619388baa5f35c9d543f22ccf24b8e5576",
+    "src/singularity/training/runner.py": "08ce776d740fa051604a8458ca5bbab5408e52dfb4496279dbeb530ba1c01efb",
+    "src/singularity/training/telemetry.py": "fc55d533ff49b820b4c8648705bd193ace3b1e149733fe581cb624409051f6a4",
+    "src/singularity/training_panels.py": "196d48e95de5675faa274ed20af1ae2eb67c5d5c01b51b46377f1edea54145f0",
+    "tests/test_byte_experts.py": "3d3e3ba525eb7c4678ce5181da26406821821e458745ca1b5cb486750f689346",
+    "tests/test_byte_reference_baselines.py": "92e7fdb1c84d67b0d21702ffdc2918eb1dc6919daa0b11e94d0abc689d550129",
+    "tests/test_checkpoint_regressions.py": "8fc4c2bd6ed513a831bdee390a2d9068a4535e34678a6a519e773369c843f7ae",
+    "tests/test_online_blend.py": "d7e0bf8c450e1e2174c9f5766e57b3e7aa9d5a0133adf02e02874abf301ce822",
+    "tests/test_predictive_mixture.py": "f1f8d00ec91b063909b0b4d9e66d234493dd07eb8e599d59929d511512b59c48",
+    "tests/test_training_cli.py": "2dc0c6dab6d261f79dd63439dfd573559903950692ba30166a674eeab4ab59d2",
+    "tests/test_training_lab.py": "d543f335c26d9d71d5ef627b903af01ee17deab1d6241e93e97f7a517f83016d",
+    "tests/test_training_log_persistence.py": "af8439a7ba1462c08387b57211a2336fcbf997c03f07b9769844d43b6535cc89",
+    "tests/test_training_panels.py": "51074f2392ef504bcb6ae6e5aae60c1c69962da2f7abcc1b1cc99c7ea2a1dd59"
+  },
+  "status": "passed"
+}

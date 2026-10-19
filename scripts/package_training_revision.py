@@ -4,10 +4,12 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+VERSION = re.search(r'^version = "([^"]+)"', (ROOT/'pyproject.toml').read_text(), re.M).group(1)
 
 
 def sha(payload):
@@ -17,7 +19,7 @@ def sha(payload):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path,
-                        default=ROOT.parent/'deliverables/Singularity-v0.6.0-training.zip')
+                        default=ROOT.parent/f'deliverables/Singularity-v{VERSION}-complete.zip')
     args = parser.parse_args()
     if subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT).strip():
         raise SystemExit('Commit validated source before packaging: working tree is dirty')
@@ -38,20 +40,30 @@ def main():
                 'applications/training_lab/results/validation.json']
     if any(name not in files for name in required):
         raise SystemExit('Source, publication, and complete evidence are required')
+    confirmation_receipt = ROOT/'applications/training_lab/results/advantage_validation.json'
+    if confirmation_receipt.exists():
+        if json.loads(confirmation_receipt.read_text()).get('status') != 'passed':
+            raise SystemExit('Passing confirmation validation required')
+        for name in ('output/pdf/confirmed_advantages.pdf',
+                     'docs/papers/confirmed_advantages.md',
+                     'applications/training_lab/results/confirmed_advantages_audit.json'):
+            if name not in files:
+                raise SystemExit('Missing confirmation artifact: '+name)
     hashes = {name: sha((ROOT/name).read_bytes()) for name in files}
     manifest = {'schema': 'singularity.training-archive/1', 'source_commit': commit,
-                'version': '0.6.0', 'files': hashes, 'compute': analysis['compute'],
+                'version': VERSION, 'files': hashes, 'historical_neural_compute': analysis['compute'],
                 'validation_receipt_sha256': hashes['applications/training_lab/results/validation.json'],
                 'excluded': ['git history', 'build caches', 'older nested release ZIPs',
                              'uncompressed copies of retained gzip logs',
-                             'external WikiText source text; use pinned download script',
+                             'full WikiText text/parquet files; use pinned download script (audit arrays retain selected target bytes)',
                              'restricted raw athlete rows'],
-                'scope': '63 planned training runs plus documented integrity repeats; no grokking demonstrated'}
+                'scope': 'Frozen training evidence plus separately declared post-training confirmations; read the claim-specific receipts',
+                'confirmation_validation_sha256': hashes.get('applications/training_lab/results/advantage_validation.json')}
     # Read the receipt here so a corrupt JSON validation file fails before writing.
     if not isinstance(validation, dict) or validation.get('status') != 'passed':
         raise SystemExit('Passing validation receipt required')
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    prefix = 'Singularity-v0.6.0/'
+    prefix = f'Singularity-v{VERSION}/'
     with zipfile.ZipFile(args.output, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for name in files:
             archive.write(ROOT/name, prefix+name)

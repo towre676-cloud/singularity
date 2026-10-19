@@ -6,19 +6,23 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 ![The cube and Möbius ladder agree through volume three, then separate at volume four by an exact polynomial.](docs/assets/singularity-observation.svg)
 
-[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Train and inspect real models**](applications/training_lab/README.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Use the confirmed AI tools**](applications/training_lab/CONFIRMED_ADVANTAGES.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
 
-## Train a model. Choose what to observe.
+## Better predictions. Smaller checks. Measured results.
 
-A model's score tells only part of its story. Singularity now connects its exact observation engine to real PyTorch training: saved weights, complete update logs, frozen experimental plans, separate tuning and test data, and independently checked diagnostic panels.
+Singularity now connects exact observation mathematics to useful tools for trained AI models. The **0.7.0 confirmation release** improves fresh-text predictions, builds economical behavioral smoke tests, and supplies a causal probability-combination API with a proved finite-grid log-loss bound.
 
-![Accuracy merges trained checkpoints that a richer output histogram separates. An exact panel uses 23 of 239 construction examples; its separation holds on independent audit examples.](docs/assets/training-observations.svg)
+![Every retained neural seed improves with a tuning-selected count mixture on fresh WikiText text; a stronger three-model ensemble improves too.](docs/assets/confirmed-prediction.svg)
 
-In the retained experiment, accuracy counts cannot distinguish **any of 12 trained MLP checkpoints**. Keeping their predicted-class histograms distinguishes **all 12**. Among eight declared probe blocks, exact selection finds a unique cheapest block using **23 of 239 construction examples**, 90.4% fewer than the full panel. Its separation holds for **all 66 checkpoint pairs on separate audit examples**, for both the MLP and transformer catalogues. Greedy selection matches the optimum here. The guarantee concerns these finite tables and costs; discovering the table already required evaluating the full panel.
+**Improve the models already trained.** A blend of our frozen byte transformer and TRAIN-only text counts reduces mean fresh TEST loss by **2.82%**, with improvements in all three seeds and all sixteen text blocks. Mean next-byte accuracy rises from **41.35% to 42.20%**. The stronger three-model ensemble also improves by **0.47%** in loss. Settings were selected on separate TUNE text before TEST; the new study performs **zero neural training updates**. These are small, real WikiText-2 byte-model results, with saved per-target losses and complete comparators.
 
-The same release contains **63 actual training runs and 557,700 planned optimizer updates**, plus fully documented integrity replays. An 84,544-parameter byte transformer trained from scratch reaches **39.73% mean next-byte test accuracy**, compared with **37.22%** for a tuned trigram reference, on fixed small WikiText-2 prefixes. On the byte task, our adaptive AdamW tuner does **not** beat selected fixed AdamW on mean test loss, and no modular-addition run reaches the declared grokking threshold. Those outcomes remain in the release alongside the successes.
+**Adapt a blend without calibrating its weight.** A separate causal Bayesian blend improves loss by **2.87%** over the neural model on another fresh passage. Its cumulative log loss stays within **log(21) nats** of the best declared fixed grid mixture. Predictions precede the current target; only earlier targets update the blending weights. This standard aggregation guarantee is implemented and independently replayed. Count smoothing still uses earlier TUNE, and online bookkeeping adds runtime.
 
-The [training lab](applications/training_lab/README.md) provides commands and checkpoints. The [new research companion](output/pdf/training_observation.pdf) develops the coordinate-change experiment, optimizer method, finite observation result, and limitations; its [editable source](docs/papers/training_observation.md) links every result to retained evidence.
+![A selected behavioral smoke panel uses eight times fewer input tokens and reduces median resident CPU prediction from 131.7 to 15.9 milliseconds.](docs/assets/confirmed-deployment.svg)
+
+**Check executed behavior with less inference.** A frozen panel uses **4,096 instead of 32,768 input tokens**, retaining full contexts. It detects all eight declared output changes on a checkpoint excluded from selection, including perturbation strengths absent from construction. Thirty paired CPU measurements show **131.7 ms to 15.9 ms median resident prediction**, an **8.27× speedup**. Construction and the complete development audit amortize after **103 checks**. The runtime demonstration catches changed predictions even when the weight file and every state tensor remain identical. Cold CLI setup is separate; simple one-block selectors match the exact optimum in this example.
+
+Use the [**confirmation guide and commands**](applications/training_lab/CONFIRMED_ADVANTAGES.md), read the [**new research companion**](output/pdf/confirmed_advantages.pdf), or inspect the [**independent result audit**](applications/training_lab/results/confirmed_advantages_audit.json). The [training lab](applications/training_lab/README.md) retains the original 63 training runs, checkpoints, compressed logs, and earlier outcomes. The guarantees concern the stated finite workloads and observation languages; all source, cost and transfer boundaries remain explicit.
 
 ## A small difference with a long reach
 

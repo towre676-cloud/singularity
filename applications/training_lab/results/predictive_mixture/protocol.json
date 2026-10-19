@@ -1,0 +1,121 @@
+{
+  "checkpoints": {
+    "1000": {
+      "checkpoint": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/baseline/seed_1000/checkpoint.pt",
+      "checkpoint_sha256": "6f9b2e5ea6a5c370e3a17b06f7989bd66294e0848d1a82da0a5e1025c0c9f5c7",
+      "model_tensor_sha256": "e59485dcca8ce73bf98ecbabc848bd43b5d6d8cdd1af553d126d258d9ee3eb91",
+      "parameter_count": 84544
+    },
+    "1001": {
+      "checkpoint": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/baseline/seed_1001/checkpoint.pt",
+      "checkpoint_sha256": "bbb4b1ef573f3d740758fb28480f6e700dc2eaa84d34c94e4940f1c12866da25",
+      "model_tensor_sha256": "8f80abfc18b76725f801cde76d684dbc4e0f5ac95abf67e1cbb64c7dfa1efa48",
+      "parameter_count": 84544
+    },
+    "1002": {
+      "checkpoint": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/baseline/seed_1002/checkpoint.pt",
+      "checkpoint_sha256": "9f054bd7b08ebabaecd06be1ed4bdb8c074686ff1959c93acb69711a47541bde",
+      "model_tensor_sha256": "0b35a1b3ba3136113b0b02d1be8f9c41319dd7a1c496de2fb8161a252b1269d8",
+      "parameter_count": 84544
+    }
+  },
+  "count_reference_source_sha256": "15891e31f390bc83b9637698b92b719d57cc7ef7cab6947e1b9acaf7a12ba4d8",
+  "frozen_at_utc": "2026-10-19T12:09:34.494953+00:00",
+  "protocol": {
+    "aggregate": "Arithmetic mean across three model seeds, equivalently target-weighted over all three equal-length predictions; same TEST bytes are repeated measures, not independent corpora",
+    "baselines": [
+      "each frozen neural checkpoint",
+      "TRAIN-only trigram with fresh-TUNE selected smoothing",
+      "equal-weight probability ensemble of all three neural checkpoints"
+    ],
+    "count_weight_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "ensemble_cost": "Requires all three neural forward passes, separately stated; no inexpensive-ensemble or faster-inference claim",
+    "ensemble_selection": "Same count-weight grid and tie rule fitted once on fresh TUNE; neural ensemble probabilities arithmetic mean of all three checkpoints",
+    "fresh_intervals": {
+      "test": [
+        32768,
+        65536
+      ],
+      "train": [
+        0,
+        262144
+      ],
+      "tune": [
+        32768,
+        65536
+      ]
+    },
+    "interval_convention": "zero-based half-open; TUNE and TEST are distinct official splits; neither suffix was used previously",
+    "metrics": [
+      "target-weighted NLL nats/byte",
+      "bits/byte",
+      "top-1 accuracy",
+      "paired per-target mixture-minus-baseline NLL"
+    ],
+    "mixture": "P=(1-w)*P_neural+w*P_trigram, same scalar w for every prediction within one checkpoint",
+    "neural_exposure": "TRAIN prefix [0,262144), previous TUNE prefix [0,32768); prior TEST prefix [0,32768) was already reported",
+    "neural_models": "All three existing wikitext_byte/baseline/fixed AdamW final checkpoints; no seed selection",
+    "primary_comparison": "Each seed's TUNE-selected mixture versus its same frozen neural checkpoint; mean over all three seeds",
+    "purpose": "One prospective confirmation of an ordinary probability mixture, after earlier neural study",
+    "schema": "singularity.predictive-mixture-protocol/1",
+    "secondary_comparison": "TUNE-selected ensemble/count mixture versus equal-weight neural probability ensemble and strongest unblended comparator selected only by TUNE",
+    "seeds": [
+      1000,
+      1001,
+      1002
+    ],
+    "sequence_length": 64,
+    "smoothing_grid": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "smoothing_selection": "Minimum fresh-TUNE trigram NLL; exact tie chooses smaller smoothing",
+    "source": {
+      "configuration": "wikitext-2-raw-v1",
+      "dataset": "Salesforce/wikitext",
+      "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "stream": "UTF-8 of newline-joined nonempty, non-whitespace rows, with terminal newline"
+    },
+    "strongest_unblended_reference": "Minimum fresh-TUNE NLL among three individual checkpoints, their equal-weight neural probability ensemble, and selected trigram; ties alphabetical",
+    "targets": "Every noninitial suffix byte exactly once; target raw[i+1], context starts at floor(i/64)*64; no overlap with earlier prefix context",
+    "test_policy": "Freeze all three TUNE selections before reading fresh TEST; one neural inference pass per checkpoint and one count prediction pass on TEST; score declared comparisons together",
+    "test_search": "No alternative model, window, mixture grid, smoothing grid or suffix after seeing TEST",
+    "train_counts": "One count hierarchy from TRAIN only; max two preceding bytes; same reset windows as neural model",
+    "training_updates": 0,
+    "uncertainty": {
+      "block_bytes": 2048,
+      "block_windows": 32,
+      "bootstrap_draws": 10000,
+      "kind": "paired contiguous-block bootstrap, conditional on these three frozen models and this source interval",
+      "limitation": "Descriptive interval for finite suffix; 16 blocks do not establish broader-corpus or architecture superiority",
+      "rng_seed": 731923,
+      "seed_aggregation": "average each byte's loss over the three models before resampling blocks; never treat seed copies of same text as independent"
+    },
+    "weight_selection": "Minimum fresh-TUNE NLL independently for each retained checkpoint; exact tie chooses smaller w"
+  },
+  "protocol_sha256": "0fe5eb05f898835b31c4e9704e8ee590a90e904ce230410cdf850ff5a7bb7ec8",
+  "source_sha256": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef"
+}

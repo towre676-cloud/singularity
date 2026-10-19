@@ -31,13 +31,20 @@ HEADER = r"""
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=ROOT/'output/pdf/training_observation.pdf')
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--confirmation', action='store_true', help='Build the 0.7.0 confirmed-advantages companion')
     args = parser.parse_args()
+    name = 'confirmed_advantages' if args.confirmation else 'training_observation'
+    args.output = args.output or ROOT/'output/pdf'/f'{name}.pdf'
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='singularity-training-pdf-') as temporary:
         header = Path(temporary)/'header.tex'
-        header.write_text(HEADER)
-        command = ['pandoc', 'docs/papers/training_observation.md', '--from=markdown',
+        header_text = HEADER
+        if args.confirmation:
+            header_text = header_text.replace('0.6.0', '0.7.0').replace(
+                'Learning, Coordinates, and Observation', 'Confirmed Prediction and Behavioral Checks')
+        header.write_text(header_text)
+        command = ['pandoc', f'docs/papers/{name}.md', '--from=markdown',
                    '--pdf-engine=xelatex', '--resource-path=docs/papers:.',
                    '--include-in-header='+str(header)]
         for setting in ('documentclass=article', 'fontsize=10.5pt', 'mainfont=DejaVu Serif',

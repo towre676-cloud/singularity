@@ -1,0 +1,835 @@
+{
+  "corpora": {
+    "train": {
+      "byte_interval_half_open": [
+        0,
+        262144
+      ],
+      "bytes": 262144,
+      "first_source_target_offset": 1,
+      "last_source_target_offset": 262143,
+      "official_split": "train",
+      "overlap_with_prior_evaluation_bytes": null,
+      "parquet_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+      "prior_prefix_sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+      "sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+      "source_rows": 36718,
+      "source_stream_bytes": 10938612,
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "valid_targets": 262143
+    },
+    "tune": {
+      "byte_interval_half_open": [
+        32768,
+        65536
+      ],
+      "bytes": 32768,
+      "first_source_target_offset": 32769,
+      "last_source_target_offset": 65535,
+      "official_split": "validation",
+      "overlap_with_prior_evaluation_bytes": 0,
+      "parquet_sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+      "prior_prefix_sha256": "a4d96a0914bd0c498c08ebe2b8221fb590416c2f4eab0cd7a6bcf36be9c081b3",
+      "sha256": "88190cb1deee3b42f87df51b2d56684fa5399efe1ccda3a02fbf89624f3f71bd",
+      "source_rows": 3760,
+      "source_stream_bytes": 1146709,
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/validation-00000-of-00001.parquet",
+      "valid_targets": 32767
+    }
+  },
+  "ensemble": {
+    "count_weight": 0.1,
+    "tune": {
+      "accuracy": 0.4334543900875881,
+      "bits_per_byte": 2.82492970097045,
+      "correct": 14203,
+      "count_weight": 0.1,
+      "nll_nats_per_byte": 1.9580920575077168,
+      "valid_targets": 32767
+    },
+    "tune_candidates": [
+      {
+        "accuracy": 0.4335459456160161,
+        "bits_per_byte": 2.8306032613239003,
+        "correct": 14206,
+        "count_weight": 0.0,
+        "nll_nats_per_byte": 1.9620246698704475,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.43342387157811213,
+        "bits_per_byte": 2.82605928198538,
+        "correct": 14202,
+        "count_weight": 0.05,
+        "nll_nats_per_byte": 1.9588750234034293,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4334543900875881,
+        "bits_per_byte": 2.82492970097045,
+        "correct": 14203,
+        "count_weight": 0.1,
+        "nll_nats_per_byte": 1.9580920575077168,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.43400372325815606,
+        "bits_per_byte": 2.8256287645265035,
+        "correct": 14221,
+        "count_weight": 0.15,
+        "nll_nats_per_byte": 1.9585766114406273,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4336680196539201,
+        "bits_per_byte": 2.827770822149755,
+        "correct": 14210,
+        "count_weight": 0.2,
+        "nll_nats_per_byte": 1.9600613726427811,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4324777977843562,
+        "bits_per_byte": 2.831170772100676,
+        "correct": 14171,
+        "count_weight": 0.25,
+        "nll_nats_per_byte": 1.962418038365307,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.43195898312326425,
+        "bits_per_byte": 2.835728094779919,
+        "correct": 14154,
+        "count_weight": 0.3,
+        "nll_nats_per_byte": 1.9655769337313262,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4294259468367565,
+        "bits_per_byte": 2.841389911444449,
+        "correct": 14071,
+        "count_weight": 0.35,
+        "nll_nats_per_byte": 1.9695014059891924,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.42652668843653674,
+        "bits_per_byte": 2.848135757779384,
+        "correct": 13976,
+        "count_weight": 0.4,
+        "nll_nats_per_byte": 1.9741772703567435,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.423810541093173,
+        "bits_per_byte": 2.855970953807728,
+        "correct": 13887,
+        "count_weight": 0.45,
+        "nll_nats_per_byte": 1.9796082143929246,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4210028382213813,
+        "bits_per_byte": 2.86492444697279,
+        "correct": 13795,
+        "count_weight": 0.5,
+        "nll_nats_per_byte": 1.9858143029364501,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4174321726126896,
+        "bits_per_byte": 2.8750497926150143,
+        "correct": 13678,
+        "count_weight": 0.55,
+        "nll_nats_per_byte": 1.9928326577205524,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.41434980315561387,
+        "bits_per_byte": 2.8864292175859463,
+        "correct": 13577,
+        "count_weight": 0.6,
+        "nll_nats_per_byte": 2.0007202740555474,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.40928373058259837,
+        "bits_per_byte": 2.8991817661486765,
+        "correct": 13411,
+        "count_weight": 0.65,
+        "nll_nats_per_byte": 2.0095596671367577,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.4044007690664388,
+        "bits_per_byte": 2.9134781049401792,
+        "correct": 13251,
+        "count_weight": 0.7,
+        "nll_nats_per_byte": 2.0194691340624176,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.40061647389141514,
+        "bits_per_byte": 2.929567913692176,
+        "correct": 13127,
+        "count_weight": 0.75,
+        "nll_nats_per_byte": 2.030621739634613,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.3988769188512833,
+        "bits_per_byte": 2.9478344537756143,
+        "correct": 13070,
+        "count_weight": 0.8,
+        "nll_nats_per_byte": 2.0432831403920333,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.39609973448896757,
+        "bits_per_byte": 2.9689178707383173,
+        "correct": 12979,
+        "count_weight": 0.85,
+        "nll_nats_per_byte": 2.0578970514163006,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.3932309945982238,
+        "bits_per_byte": 2.9940566002759796,
+        "correct": 12885,
+        "count_weight": 0.9,
+        "nll_nats_per_byte": 2.0753218909181905,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.3839228492080447,
+        "bits_per_byte": 3.0264586904881243,
+        "correct": 12580,
+        "count_weight": 0.95,
+        "nll_nats_per_byte": 2.0977813083929875,
+        "valid_targets": 32767
+      },
+      {
+        "accuracy": 0.37763603625598924,
+        "bits_per_byte": 3.093553718078556,
+        "correct": 12374,
+        "count_weight": 1.0,
+        "nll_nats_per_byte": 2.144288037596887,
+        "valid_targets": 32767
+      }
+    ]
+  },
+  "fresh_test_read_before_selection": false,
+  "frozen_at_utc": "2026-10-19T12:10:11.478704+00:00",
+  "per_seed": {
+    "1000": {
+      "count_weight": 0.35,
+      "tune": {
+        "accuracy": 0.423718985564745,
+        "bits_per_byte": 2.8793307220095876,
+        "correct": 13884,
+        "count_weight": 0.35,
+        "nll_nats_per_byte": 1.9957999718605772,
+        "valid_targets": 32767
+      },
+      "tune_candidates": [
+        {
+          "accuracy": 0.4173100985747856,
+          "bits_per_byte": 2.9361994947302286,
+          "correct": 13674,
+          "count_weight": 0.0,
+          "nll_nats_per_byte": 2.0352184013337937,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41886654255806144,
+          "bits_per_byte": 2.913509177763114,
+          "correct": 13725,
+          "count_weight": 0.05,
+          "nll_nats_per_byte": 2.0194906721020267,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4195379497665334,
+          "bits_per_byte": 2.900385739958586,
+          "correct": 13747,
+          "count_weight": 0.1,
+          "nll_nats_per_byte": 2.0103941981885645,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4202703939939573,
+          "bits_per_byte": 2.8913399985774646,
+          "correct": 13771,
+          "count_weight": 0.15,
+          "nll_nats_per_byte": 2.0041241680541657,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.42200994903408917,
+          "bits_per_byte": 2.8851747142865074,
+          "correct": 13828,
+          "count_weight": 0.2,
+          "nll_nats_per_byte": 1.9998507186305383,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4230170598467971,
+          "bits_per_byte": 2.8813154648789077,
+          "correct": 13861,
+          "count_weight": 0.25,
+          "nll_nats_per_byte": 1.997175690784583,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.42335276345103307,
+          "bits_per_byte": 2.8794341858460566,
+          "correct": 13872,
+          "count_weight": 0.3,
+          "nll_nats_per_byte": 1.9958716875271156,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.423718985564745,
+          "bits_per_byte": 2.8793307220095876,
+          "correct": 13884,
+          "count_weight": 0.35,
+          "nll_nats_per_byte": 1.9957999718605772,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4230475783562731,
+          "bits_per_byte": 2.880883354378642,
+          "correct": 13862,
+          "count_weight": 0.4,
+          "nll_nats_per_byte": 1.9968761746096333,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4209723197119053,
+          "bits_per_byte": 2.8840252471165115,
+          "correct": 13794,
+          "count_weight": 0.45,
+          "nll_nats_per_byte": 1.9990539687025095,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41993469038972137,
+          "bits_per_byte": 2.8887330293192814,
+          "correct": 13760,
+          "count_weight": 0.5,
+          "nll_nats_per_byte": 2.0023171546630496,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4169438764610736,
+          "bits_per_byte": 2.895022364601964,
+          "correct": 13662,
+          "count_weight": 0.55,
+          "nll_nats_per_byte": 2.0066765896818373,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4139225440229499,
+          "bits_per_byte": 2.902948734486565,
+          "correct": 13563,
+          "count_weight": 0.6,
+          "nll_nats_per_byte": 2.012170730619424,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4098025452436903,
+          "bits_per_byte": 2.9126135719654083,
+          "correct": 13428,
+          "count_weight": 0.65,
+          "nll_nats_per_byte": 2.018869885468454,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4065675832392346,
+          "bits_per_byte": 2.924177824425484,
+          "correct": 13322,
+          "count_weight": 0.7,
+          "nll_nats_per_byte": 2.026885614456439,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40266121402630695,
+          "bits_per_byte": 2.937888461589481,
+          "correct": 13194,
+          "count_weight": 0.75,
+          "nll_nats_per_byte": 2.0363891039503437,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.3990295113986633,
+          "bits_per_byte": 2.954131827522945,
+          "correct": 13075,
+          "count_weight": 0.8,
+          "nll_nats_per_byte": 2.047648147249928,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.3958250679036836,
+          "bits_per_byte": 2.9735532778583353,
+          "correct": 12970,
+          "count_weight": 0.85,
+          "nll_nats_per_byte": 2.0611100707922887,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39091158787804803,
+          "bits_per_byte": 2.9973835157462854,
+          "correct": 12809,
+          "count_weight": 0.9,
+          "nll_nats_per_byte": 2.077627932996394,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.3841059602649007,
+          "bits_per_byte": 3.028728097009454,
+          "correct": 12586,
+          "count_weight": 0.95,
+          "nll_nats_per_byte": 2.0993543411247915,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.37763603625598924,
+          "bits_per_byte": 3.093553718078556,
+          "correct": 12374,
+          "count_weight": 1.0,
+          "nll_nats_per_byte": 2.144288037596887,
+          "valid_targets": 32767
+        }
+      ]
+    },
+    "1001": {
+      "count_weight": 0.35,
+      "tune": {
+        "accuracy": 0.42149113437299723,
+        "bits_per_byte": 2.8862707726159433,
+        "correct": 13811,
+        "count_weight": 0.35,
+        "nll_nats_per_byte": 2.000610448371316,
+        "valid_targets": 32767
+      },
+      "tune_candidates": [
+        {
+          "accuracy": 0.412793359172338,
+          "bits_per_byte": 2.9467950859203933,
+          "correct": 13526,
+          "count_weight": 0.0,
+          "nll_nats_per_byte": 2.0425627054936224,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41450239570299385,
+          "bits_per_byte": 2.9238164804490783,
+          "correct": 13582,
+          "count_weight": 0.05,
+          "nll_nats_per_byte": 2.026635149897981,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41663869136631365,
+          "bits_per_byte": 2.9101257463139913,
+          "correct": 13652,
+          "count_weight": 0.1,
+          "nll_nats_per_byte": 2.0171454561324498,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41874446852015745,
+          "bits_per_byte": 2.9005078335015306,
+          "correct": 13721,
+          "count_weight": 0.15,
+          "nll_nats_per_byte": 2.010478826983621,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4198736533707694,
+          "bits_per_byte": 2.893775055228775,
+          "correct": 13758,
+          "count_weight": 0.2,
+          "nll_nats_per_byte": 2.0058120207065255,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4215826899014252,
+          "bits_per_byte": 2.8893556040967026,
+          "correct": 13814,
+          "count_weight": 0.25,
+          "nll_nats_per_byte": 2.0027486906147067,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.42222357860042115,
+          "bits_per_byte": 2.8869213201965827,
+          "correct": 13835,
+          "count_weight": 0.3,
+          "nll_nats_per_byte": 2.0010613735926563,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.42149113437299723,
+          "bits_per_byte": 2.8862707726159433,
+          "correct": 13811,
+          "count_weight": 0.35,
+          "nll_nats_per_byte": 2.000610448371316,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4217963194677572,
+          "bits_per_byte": 2.8872803887261163,
+          "correct": 13821,
+          "count_weight": 0.4,
+          "nll_nats_per_byte": 2.0013102609315303,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4204229865413373,
+          "bits_per_byte": 2.8898811486048572,
+          "correct": 13776,
+          "count_weight": 0.45,
+          "nll_nats_per_byte": 2.003112970308793,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41865291299172946,
+          "bits_per_byte": 2.8940472650827473,
+          "correct": 13718,
+          "count_weight": 0.5,
+          "nll_nats_per_byte": 2.006000702199327,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41676076540421764,
+          "bits_per_byte": 2.899791786695109,
+          "correct": 13656,
+          "count_weight": 0.55,
+          "nll_nats_per_byte": 2.009982501158601,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4147770622882778,
+          "bits_per_byte": 2.9071673930453668,
+          "correct": 13591,
+          "count_weight": 0.6,
+          "nll_nats_per_byte": 2.015094881905202,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41041291543321023,
+          "bits_per_byte": 2.9162725565783814,
+          "correct": 13448,
+          "count_weight": 0.65,
+          "nll_nats_per_byte": 2.0214061003366486,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40592669454023866,
+          "bits_per_byte": 2.9272652119992553,
+          "correct": 13301,
+          "count_weight": 0.7,
+          "nll_nats_per_byte": 2.0290256284484944,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40168462172307506,
+          "bits_per_byte": 2.9403895954543247,
+          "correct": 13162,
+          "count_weight": 0.75,
+          "nll_nats_per_byte": 2.0381227578369634,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39939573351237523,
+          "bits_per_byte": 2.956030558641683,
+          "correct": 13087,
+          "count_weight": 0.8,
+          "nll_nats_per_byte": 2.0489642473715226,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39707632679219945,
+          "bits_per_byte": 2.9748360887028875,
+          "correct": 13011,
+          "count_weight": 0.85,
+          "nll_nats_per_byte": 2.061999247512382,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39417706839197975,
+          "bits_per_byte": 2.998053377180372,
+          "correct": 12916,
+          "count_weight": 0.9,
+          "nll_nats_per_byte": 2.078092245560797,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.3848078859828486,
+          "bits_per_byte": 3.0288605417751047,
+          "correct": 12609,
+          "count_weight": 0.95,
+          "nll_nats_per_byte": 2.099446144840682,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.37763603625598924,
+          "bits_per_byte": 3.093553718078556,
+          "correct": 12374,
+          "count_weight": 1.0,
+          "nll_nats_per_byte": 2.144288037596887,
+          "valid_targets": 32767
+        }
+      ]
+    },
+    "1002": {
+      "count_weight": 0.4,
+      "tune": {
+        "accuracy": 0.41233558153019806,
+        "bits_per_byte": 2.914983809642955,
+        "correct": 13511,
+        "count_weight": 0.4,
+        "nll_nats_per_byte": 2.0205128090319024,
+        "valid_targets": 32767
+      },
+      "tune_candidates": [
+        {
+          "accuracy": 0.4055299539170507,
+          "bits_per_byte": 2.987435386053306,
+          "correct": 13288,
+          "count_weight": 0.0,
+          "nll_nats_per_byte": 2.0707324149478605,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40800195318460647,
+          "bits_per_byte": 2.9627357163396497,
+          "correct": 13369,
+          "count_weight": 0.05,
+          "nll_nats_per_byte": 2.053611908525078,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40949736014893034,
+          "bits_per_byte": 2.947369552089644,
+          "correct": 13418,
+          "count_weight": 0.1,
+          "nll_nats_per_byte": 2.0429608950991653,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4096499526963103,
+          "bits_per_byte": 2.9361530339087727,
+          "correct": 13423,
+          "count_weight": 0.15,
+          "nll_nats_per_byte": 2.035186197146395,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41038239692373424,
+          "bits_per_byte": 2.927850192559602,
+          "correct": 13447,
+          "count_weight": 0.2,
+          "nll_nats_per_byte": 2.029431106074581,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4113284707174902,
+          "bits_per_byte": 2.921864810254316,
+          "correct": 13478,
+          "count_weight": 0.25,
+          "nll_nats_per_byte": 2.0252823552050985,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41227454451124607,
+          "bits_per_byte": 2.917853603228483,
+          "correct": 13509,
+          "count_weight": 0.3,
+          "nll_nats_per_byte": 2.0225019983645005,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41230506302072206,
+          "bits_per_byte": 2.9156041519749154,
+          "correct": 13510,
+          "count_weight": 0.35,
+          "nll_nats_per_byte": 2.020942797570283,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41233558153019806,
+          "bits_per_byte": 2.914983809642955,
+          "correct": 13511,
+          "count_weight": 0.4,
+          "nll_nats_per_byte": 2.0205128090319024,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41242713705862605,
+          "bits_per_byte": 2.915915247379691,
+          "correct": 13514,
+          "count_weight": 0.45,
+          "nll_nats_per_byte": 2.0211584324729883,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.41169469283120214,
+          "bits_per_byte": 2.918364419609517,
+          "correct": 13490,
+          "count_weight": 0.5,
+          "nll_nats_per_byte": 2.022856069298798,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40931424909207437,
+          "bits_per_byte": 2.9223356214085348,
+          "correct": 13412,
+          "count_weight": 0.55,
+          "nll_nats_per_byte": 2.0256086966292215,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4077272865993225,
+          "bits_per_byte": 2.9278717680081687,
+          "correct": 13360,
+          "count_weight": 0.6,
+          "nll_nats_per_byte": 2.0294460610359244,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.40485854670857874,
+          "bits_per_byte": 2.9350599660427377,
+          "correct": 13266,
+          "count_weight": 0.65,
+          "nll_nats_per_byte": 2.0344285402368922,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.4031189916684469,
+          "bits_per_byte": 2.9440443970188164,
+          "correct": 13209,
+          "count_weight": 0.7,
+          "nll_nats_per_byte": 2.040656073236897,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.3988769188512833,
+          "bits_per_byte": 2.9550519750514272,
+          "correct": 13070,
+          "count_weight": 0.75,
+          "nll_nats_per_byte": 2.0482859449149946,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39634388256477554,
+          "bits_per_byte": 2.968444658152215,
+          "correct": 12987,
+          "count_weight": 0.8,
+          "nll_nats_per_byte": 2.057569045446438,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39402447584459976,
+          "bits_per_byte": 2.984838002260455,
+          "correct": 12911,
+          "count_weight": 0.85,
+          "nll_nats_per_byte": 2.0689320456950138,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.39146092104861596,
+          "bits_per_byte": 3.005427148886923,
+          "correct": 12827,
+          "count_weight": 0.9,
+          "nll_nats_per_byte": 2.0832033546292856,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.3836481826227607,
+          "bits_per_byte": 3.033276992335938,
+          "correct": 12571,
+          "count_weight": 0.95,
+          "nll_nats_per_byte": 2.102507395095006,
+          "valid_targets": 32767
+        },
+        {
+          "accuracy": 0.37763603625598924,
+          "bits_per_byte": 3.093553718078556,
+          "correct": 12374,
+          "count_weight": 1.0,
+          "nll_nats_per_byte": 2.144288037596887,
+          "valid_targets": 32767
+        }
+      ]
+    }
+  },
+  "protocol_sha256": "0fe5eb05f898835b31c4e9704e8ee590a90e904ce230410cdf850ff5a7bb7ec8",
+  "schema": "singularity.predictive-mixture-selection/1",
+  "selected_smoothing": 0.01,
+  "smoothing_candidates": [
+    {
+      "accuracy": 0.37763603625598924,
+      "bits_per_byte": 3.093553718078556,
+      "correct": 12374,
+      "nll_nats_per_byte": 2.144288037596887,
+      "smoothing": 0.01,
+      "valid_targets": 32767
+    },
+    {
+      "accuracy": 0.37763603625598924,
+      "bits_per_byte": 3.137941505562036,
+      "correct": 12374,
+      "nll_nats_per_byte": 2.175055307342355,
+      "smoothing": 0.1,
+      "valid_targets": 32767
+    },
+    {
+      "accuracy": 0.37763603625598924,
+      "bits_per_byte": 3.521394501592286,
+      "correct": 12374,
+      "nll_nats_per_byte": 2.4408446704179867,
+      "smoothing": 1.0,
+      "valid_targets": 32767
+    }
+  ],
+  "strongest_unblended_reference": "neural_ensemble",
+  "unblended_reference_tune_metrics": {
+    "count": {
+      "accuracy": 0.37763603625598924,
+      "bits_per_byte": 3.093553718078556,
+      "correct": 12374,
+      "nll_nats_per_byte": 2.144288037596887,
+      "valid_targets": 32767
+    },
+    "neural_ensemble": {
+      "accuracy": 0.4335459456160161,
+      "bits_per_byte": 2.8306032613239003,
+      "correct": 14206,
+      "nll_nats_per_byte": 1.9620246698704475,
+      "valid_targets": 32767
+    },
+    "neural_seed_1000": {
+      "accuracy": 0.4173100985747856,
+      "bits_per_byte": 2.9361994947302286,
+      "correct": 13674,
+      "nll_nats_per_byte": 2.0352184013337937,
+      "valid_targets": 32767
+    },
+    "neural_seed_1001": {
+      "accuracy": 0.412793359172338,
+      "bits_per_byte": 2.9467950859203933,
+      "correct": 13526,
+      "nll_nats_per_byte": 2.0425627054936224,
+      "valid_targets": 32767
+    },
+    "neural_seed_1002": {
+      "accuracy": 0.4055299539170507,
+      "bits_per_byte": 2.987435386053306,
+      "correct": 13288,
+      "nll_nats_per_byte": 2.0707324149478605,
+      "valid_targets": 32767
+    }
+  }
+}

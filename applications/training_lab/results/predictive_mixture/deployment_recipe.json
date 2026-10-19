@@ -1,0 +1,50 @@
+{
+  "count_order": 3,
+  "ensemble": {
+    "count_weight": 0.1,
+    "forward_passes": 3,
+    "neural_probability_weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "neural_weight": 0.9,
+    "seeds": [
+      1000,
+      1001,
+      1002
+    ]
+  },
+  "individuals": [
+    {
+      "checkpoint_relative_to_results": "confirmation/wikitext_byte/baseline/seed_1000/checkpoint.pt",
+      "count_weight": 0.35,
+      "neural_weight": 0.65,
+      "seed": 1000
+    },
+    {
+      "checkpoint_relative_to_results": "confirmation/wikitext_byte/baseline/seed_1001/checkpoint.pt",
+      "count_weight": 0.35,
+      "neural_weight": 0.65,
+      "seed": 1001
+    },
+    {
+      "checkpoint_relative_to_results": "confirmation/wikitext_byte/baseline/seed_1002/checkpoint.pt",
+      "count_weight": 0.4,
+      "neural_weight": 0.6,
+      "seed": 1002
+    }
+  ],
+  "schema": "singularity.frozen-byte-mixture-recipe/1",
+  "scope": "Frozen ordinary neural/count probability mixture. Do not refit weights on reportedTEST. Three-modelensemble requires three models; individual recipe requires one.",
+  "selection_sha256": "1427a71b5ea07fff3a783fb49b7155f20dc9e00c4c75860c47782252c61440e9",
+  "selection_source": "fresh official validation split interval[32768,65536), frozen before freshTEST",
+  "sequence_length": 64,
+  "smoothing": 0.01,
+  "train_byte_interval_half_open": [
+    0,
+    262144
+  ],
+  "train_sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+  "vocabulary": "raw bytes0..255"
+}

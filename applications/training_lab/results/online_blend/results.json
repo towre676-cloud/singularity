@@ -1,0 +1,522 @@
+{
+  "aggregate": {
+    "count": {
+      "accuracy": 0.3779107028412732,
+      "bits_per_byte": 3.127870392713874,
+      "correct": 12383,
+      "nll_nats_per_byte": 2.1680745438665507,
+      "valid_targets": 32767
+    },
+    "fixed_mixture": {
+      "accuracy": 0.4099958291370383,
+      "bits_per_byte": 2.9268424619486844,
+      "nll_nats_per_byte": 2.028732600442859
+    },
+    "neural": {
+      "accuracy": 0.4030172633035269,
+      "bits_per_byte": 3.01312272258861,
+      "nll_nats_per_byte": 2.088537519843401
+    },
+    "online": {
+      "accuracy": 0.40990427360861026,
+      "bits_per_byte": 2.926552390994526,
+      "nll_nats_per_byte": 2.028531538578822
+    },
+    "paired_online_minus_count": {
+      "block_count": 16,
+      "block_mean_differences": [
+        -0.13784555254624886,
+        -0.13079187801628306,
+        -0.1344913241098983,
+        -0.1540046643981947,
+        -0.143293850802074,
+        -0.15150035521818295,
+        -0.11506941007758936,
+        -0.15795711304591975,
+        -0.13417009322885284,
+        -0.15275265680928815,
+        -0.10791264724677013,
+        -0.11318909771927227,
+        -0.16327964176128693,
+        -0.15371470817531205,
+        -0.1462063939746718,
+        -0.13650721515440786
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 16,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.1395430052877284,
+      "percentile_95_interval": [
+        -0.14700753359449323,
+        -0.13131970930953835
+      ]
+    },
+    "paired_online_minus_fixed_mixture": {
+      "block_count": 16,
+      "block_mean_differences": [
+        0.001089888065848563,
+        -0.00016727407354974135,
+        5.853871155067068e-05,
+        0.0003218674917926152,
+        -0.0004371178483150283,
+        -0.000355812734074291,
+        -0.00020585043843379962,
+        -0.00011675493091612591,
+        -0.00010541482594879118,
+        0.00020074011554164234,
+        -0.001100794391305038,
+        -0.0005831940424015669,
+        -0.00044976144985749866,
+        -0.0003496393239052979,
+        -0.00036841085451935285,
+        -0.0006482176338774208
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 12,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.0002010618640370137,
+      "percentile_95_interval": [
+        -0.0004184567593752987,
+        4.314198033684758e-05
+      ]
+    },
+    "paired_online_minus_neural": {
+      "block_count": 16,
+      "block_mean_differences": [
+        -0.041776665752217584,
+        -0.056778727005318545,
+        -0.0525293861981599,
+        -0.037415821071493625,
+        -0.07191762156776386,
+        -0.06364308218787616,
+        -0.04371516961033067,
+        -0.05366790964192759,
+        -0.04362497414548625,
+        -0.0452873341062484,
+        -0.09852070332974672,
+        -0.05845697211372825,
+        -0.07387700511063953,
+        -0.0752270536557879,
+        -0.06666882414871188,
+        -0.07699674686007997
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 16,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.06000598126457834,
+      "percentile_95_interval": [
+        -0.0680287894316557,
+        -0.05259447672191316
+      ]
+    },
+    "relative_online_nll_reduction_vs_fixed_mixture": 9.910712924576792e-05,
+    "relative_online_nll_reduction_vs_neural": 0.028731100444428725
+  },
+  "corpora": {
+    "test": {
+      "byte_interval_half_open": [
+        98304,
+        131072
+      ],
+      "bytes": 32768,
+      "first_source_target_offset": 98305,
+      "last_source_target_offset": 131071,
+      "official_split": "test",
+      "overlap_with_prior_test_intervals": 0,
+      "parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "sha256": "4f89fb314b5d5948b090e588fdb8ae2793cfba1912d84773ed90ef8fca388027",
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+      "valid_targets": 32767
+    },
+    "train": {
+      "byte_interval_half_open": [
+        0,
+        262144
+      ],
+      "bytes": 262144,
+      "first_source_target_offset": 1,
+      "last_source_target_offset": 262143,
+      "official_split": "train",
+      "overlap_with_prior_test_intervals": null,
+      "parquet_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+      "sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "valid_targets": 262143
+    }
+  },
+  "count_expert_and_neural_parameters_unchanged": true,
+  "count_expert_sha256": "79e59ea2e451caa351f334f61130a4c546eed4dd49811f7c706a9614f0c2f123",
+  "created_at_utc": "2026-10-19T12:16:11.104608+00:00",
+  "events": [
+    {
+      "at_utc": "2026-10-19T12:15:24.369321+00:00",
+      "event": "protocol_frozen"
+    },
+    {
+      "at_utc": "2026-10-19T12:16:06.796847+00:00",
+      "event": "fresh_TEST_first_read_started"
+    },
+    {
+      "at_utc": "2026-10-19T12:16:11.104588+00:00",
+      "event": "all_declared_TEST_comparisons_completed"
+    }
+  ],
+  "interpretation": "Standard universal cumulative log-loss bound versus fixed grid, numerically checked; positive empirical effects are conditional on this suffix. Online posterior sees only earlier TEST targets; fixed comparator uses earlier separate TUNE. No optimizer, training acceleration, model accuracy universality or inference speedup claim.",
+  "neural_training_updates": 0,
+  "past_target_posterior_updates_per_seed": 32767,
+  "per_seed": [
+    {
+      "fixed_comparator_count_weight": 0.35,
+      "fixed_mixture": {
+        "accuracy": 0.413220618305002,
+        "bits_per_byte": 2.91080799365251,
+        "correct": 13540,
+        "nll_nats_per_byte": 2.0176183539515886,
+        "valid_targets": 32767
+      },
+      "neural": {
+        "accuracy": 0.40705587939085053,
+        "bits_per_byte": 2.987289214680973,
+        "correct": 13338,
+        "nll_nats_per_byte": 2.0706310966732495,
+        "valid_targets": 32767
+      },
+      "neural_inference_passes": 1,
+      "neural_tensors_unchanged": true,
+      "online": {
+        "accuracy": 0.412945951719718,
+        "bits_per_byte": 2.910941498436747,
+        "correct": 13531,
+        "nll_nats_per_byte": 2.017710892416374,
+        "valid_targets": 32767
+      },
+      "regret_audit": {
+        "best_fixed_grid_count_weight": 0.35,
+        "best_fixed_grid_cumulative_nll": 66111.3006039312,
+        "bound_slack_nats": 0.012314561594394036,
+        "final_posterior": [
+          0.0,
+          0.0,
+          8.35541848296986e-310,
+          5.274421605954936e-193,
+          1.4911767150218992e-109,
+          3.620706215444349e-52,
+          9.936300446535547e-17,
+          0.9877609518356838,
+          0.01223904816431591,
+          1.4118014557307719e-21,
+          3.4668027639434445e-57,
+          1.4607355228604754e-109,
+          2.982544479640576e-179,
+          2.506304496359295e-267,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "final_posterior_count_weight": 0.3506119524082157,
+        "fixed_grid_cumulative_nll": [
+          67848.36914469232,
+          67204.05974268787,
+          66822.96675794906,
+          66554.02434329248,
+          66361.87049895564,
+          66229.7360451116,
+          66148.13604118764,
+          66111.3006039312,
+          66115.69141313898,
+          66159.29770980569,
+          66241.29240689406,
+          66361.8911244149,
+          66522.3582442273,
+          66725.15969984328,
+          66974.31646239223,
+          67276.10660186205,
+          67640.49205670974,
+          68084.3424330604,
+          68640.2826475631,
+          69391.76906276523,
+          71041.29857887536
+        ],
+        "grid_size": 21,
+        "log_grid_size_nats": 3.044522437723423,
+        "marginal_likelihood_cumulative_nll": 66114.33281180683,
+        "marginal_likelihood_identity_error_nats": 4.94765117764473e-10,
+        "online_cumulative_nll": 66114.33281180733,
+        "regret_nats": 3.032207876123721,
+        "targets": 32767
+      },
+      "relative_online_nll_reduction_vs_fixed_mixture": -4.586519774862907e-05,
+      "relative_online_nll_reduction_vs_neural": 0.025557524148989708,
+      "seed": 1000
+    },
+    {
+      "fixed_comparator_count_weight": 0.35,
+      "fixed_mixture": {
+        "accuracy": 0.4105349894711142,
+        "bits_per_byte": 2.926343827593913,
+        "correct": 13452,
+        "nll_nats_per_byte": 2.0283869734457194,
+        "valid_targets": 32767
+      },
+      "neural": {
+        "accuracy": 0.4028443250831629,
+        "bits_per_byte": 3.0197021008464255,
+        "correct": 13200,
+        "nll_nats_per_byte": 2.0930979973326433,
+        "valid_targets": 32767
+      },
+      "neural_inference_passes": 1,
+      "neural_tensors_unchanged": true,
+      "online": {
+        "accuracy": 0.41032135990478225,
+        "bits_per_byte": 2.9252061420872475,
+        "correct": 13445,
+        "nll_nats_per_byte": 2.0275983899444103,
+        "valid_targets": 32767
+      },
+      "regret_audit": {
+        "best_fixed_grid_count_weight": 0.4,
+        "best_fixed_grid_cumulative_nll": 66435.27192632263,
+        "bound_slack_nats": 5.451860488392413e-06,
+        "final_posterior": [
+          0.0,
+          0.0,
+          0.0,
+          1.3325317486035508e-275,
+          3.8359255402771234e-172,
+          1.0861443147554261e-96,
+          1.1356848490980683e-44,
+          2.856417404381834e-13,
+          0.9999945482231751,
+          5.4517765391594546e-06,
+          1.4726504789654085e-28,
+          2.109193734244031e-68,
+          5.841903704685246e-126,
+          3.392346848929295e-202,
+          9.494311611045251e-299,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "final_posterior_count_weight": 0.40000027258881266,
+        "fixed_grid_cumulative_nll": [
+          68584.54207859834,
+          67833.03410980254,
+          67389.44431109058,
+          67068.19574074123,
+          66829.9721461201,
+          66656.23745569916,
+          66536.45842910223,
+          66464.1559588964,
+          66435.27192632263,
+          66447.39148990283,
+          66499.35723965052,
+          66591.10140143635,
+          66723.63258586779,
+          66899.17258768748,
+          67121.49417083476,
+          67396.60463233318,
+          67734.14694701231,
+          68150.58389307655,
+          68677.986619475,
+          69399.1604502216,
+          71041.29857887536
+        ],
+        "grid_size": 21,
+        "log_grid_size_nats": 3.044522437723423,
+        "marginal_likelihood_cumulative_nll": 66438.31644330856,
+        "marginal_likelihood_identity_error_nats": -7.275957614183426e-11,
+        "online_cumulative_nll": 66438.31644330849,
+        "regret_nats": 3.0445169858576264,
+        "targets": 32767
+      },
+      "relative_online_nll_reduction_vs_fixed_mixture": 0.0003887736963570365,
+      "relative_online_nll_reduction_vs_neural": 0.03129313939036915,
+      "seed": 1001
+    },
+    {
+      "fixed_comparator_count_weight": 0.4,
+      "fixed_mixture": {
+        "accuracy": 0.4062318796349986,
+        "bits_per_byte": 2.943375564599629,
+        "correct": 13311,
+        "nll_nats_per_byte": 2.04019247393127,
+        "valid_targets": 32767
+      },
+      "neural": {
+        "accuracy": 0.39915158543656726,
+        "bits_per_byte": 3.0323768522384302,
+        "correct": 13079,
+        "nll_nats_per_byte": 2.1018834655243097,
+        "valid_targets": 32767
+      },
+      "neural_inference_passes": 1,
+      "neural_tensors_unchanged": true,
+      "online": {
+        "accuracy": 0.4064455092013306,
+        "bits_per_byte": 2.9435095324595832,
+        "correct": 13318,
+        "nll_nats_per_byte": 2.040285333375683,
+        "valid_targets": 32767
+      },
+      "regret_audit": {
+        "best_fixed_grid_count_weight": 0.4,
+        "best_fixed_grid_cumulative_nll": 66850.98679330658,
+        "bound_slack_nats": 0.001797023302060552,
+        "final_posterior": [
+          0.0,
+          0.0,
+          0.0,
+          2.96162568868563e-265,
+          2.237357611391665e-167,
+          1.4873956403846734e-95,
+          1.917862536147433e-45,
+          2.1798459728470547e-14,
+          0.9982045910281389,
+          0.001795408971839258,
+          3.8281397045141054e-22,
+          1.0642795697012922e-56,
+          1.5719691893765787e-107,
+          1.6425954935349947e-175,
+          3.857084421588348e-262,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "final_posterior_count_weight": 0.4000897704485909,
+        "fixed_grid_cumulative_nll": [
+          68872.41551483447,
+          68181.68416750655,
+          67763.17108048481,
+          67460.08430759034,
+          67234.71141128145,
+          67069.33355341972,
+          66953.95011416476,
+          66882.4419333655,
+          66850.98679330658,
+          66857.30751872703,
+          66900.29948936091,
+          66979.86746338132,
+          67096.90927213898,
+          67253.4411099489,
+          67452.91237908088,
+          67700.84810146487,
+          68006.17552772154,
+          68384.26248349172,
+          68865.37004129958,
+          69528.6375574682,
+          71041.29857887536
+        ],
+        "grid_size": 21,
+        "log_grid_size_nats": 3.044522437723423,
+        "marginal_likelihood_cumulative_nll": 66854.02951872165,
+        "marginal_likelihood_identity_error_nats": -6.548361852765083e-10,
+        "online_cumulative_nll": 66854.029518721,
+        "regret_nats": 3.0427254144160543,
+        "targets": 32767
+      },
+      "relative_online_nll_reduction_vs_fixed_mixture": -4.551504115402061e-05,
+      "relative_online_nll_reduction_vs_neural": 0.029306159527384246,
+      "seed": 1002
+    }
+  ],
+  "protocol_receipt_sha256": "d531577ceaa6393ffaf7d45f10b6d4c3a2a3cce19b22d9c3d5524f6323ebd151",
+  "protocol_sha256": "1659fee6015a5ca804c8b5a56ab71e91f2dada9145b5f36a2c2c1b1419b0abd1",
+  "schema": "singularity.online-blend-results/1",
+  "target_audit_file": "target_audit.npz",
+  "target_audit_sha256": "237ee741f87477f05cf55b4a009f79271774aa3280dfe56c94ab9e6caec5e7d9",
+  "timing_seconds": {
+    "TEST_count_predictions": 0.06336306400044123,
+    "TRAIN_count_fit": 0.18856152899752487,
+    "per_seed": {
+      "1000": {
+        "checkpoint_load": 0.019821734000288416,
+        "fixed_mixture_blend_and_score": 0.041473265999229625,
+        "inclusive_fixed_inference_plus_shared_count_predictions": 0.47718299299958744,
+        "inclusive_online_inference_plus_shared_count_predictions": 1.4106857930019032,
+        "neural_inference": 0.3723466629999166,
+        "online_blend_update_and_score": 0.9749760660015454
+      },
+      "1001": {
+        "checkpoint_load": 0.009278393001295626,
+        "fixed_mixture_blend_and_score": 0.04140696200192906,
+        "inclusive_fixed_inference_plus_shared_count_predictions": 0.4079369220016815,
+        "inclusive_online_inference_plus_shared_count_predictions": 1.3343391989983502,
+        "neural_inference": 0.30316689599931124,
+        "online_blend_update_and_score": 0.9678092389985977
+      },
+      "1002": {
+        "checkpoint_load": 0.018346988999837777,
+        "fixed_mixture_blend_and_score": 0.04184426599749713,
+        "inclusive_fixed_inference_plus_shared_count_predictions": 0.4020020559983095,
+        "inclusive_online_inference_plus_shared_count_predictions": 1.327785159999621,
+        "neural_inference": 0.29679472600037116,
+        "online_blend_update_and_score": 0.9676273699988087
+      }
+    },
+    "total": 6.0531900730020425
+  },
+  "uniform_regret_penalty_nats": 3.044522437723423,
+  "uniform_regret_penalty_nats_per_target": 9.291428686554836e-05
+}

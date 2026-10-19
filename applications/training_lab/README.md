@@ -1,8 +1,10 @@
 # Singularity training lab
 
-This optional v0.6.0 lab connects real PyTorch training to Singularity’s exact observation machinery. It provides small causal models, reproducible AdamW comparisons, a working one-step hyperparameter derivative, and exact diagnostic panels built from frozen predictions. The retained experiments did **not** produce grokking or a successful new general-purpose optimizer. Their clearest positive result concerns observation: full predicted-class histograms distinguish checkpoints that accuracy alone cannot distinguish, using an exactly minimized panel within the declared probe family.
+This optional lab connects real PyTorch training to Singularity’s exact observation machinery. It provides small causal models, reproducible AdamW comparisons, a working one-step hyperparameter derivative, and exact diagnostic panels built from frozen predictions. The retained experiments did **not** produce grokking or a successful new general-purpose optimizer. Their clearest positive result concerns observation: full predicted-class histograms distinguish checkpoints that accuracy alone cannot distinguish, using an exactly minimized panel within the declared probe family.
 
 The [retained analysis](results/analysis.json) covers 36 original confirmation runs, a nine-run declared follow-up, and a six-run coordinate-basis study. Twelve discovery runs bring the initial training total to 63 logical runs. Verification replays are recorded separately; they are additional computation, not additional independent seeds. The [original protocol](results/protocol.json), [follow-up declaration](results/grokking_followup/protocol.json), [basis protocol](results/basis_study/protocol.json), and [integrity replay receipt](results/integrity_replays.json) preserve those distinctions.
+
+The v0.7.0 [confirmed advantages guide](CONFIRMED_ADVANTAGES.md) adds fresh predictive gains, a causal online blend and measured behavioral smoke tests using these retained models. The historical training findings below remain the original study.
 
 ## Install and run a small check
 

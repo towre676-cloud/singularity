@@ -5,7 +5,19 @@ on:
       - 'src/singularity/training/**'
       - 'src/singularity/training_panels.py'
       - 'tests/test_training*.py'
+      - 'tests/test_byte_experts.py'
+      - 'tests/test_byte_reference_baselines.py'
+      - 'tests/test_checkpoint_regressions.py'
+      - 'tests/test_predictive_mixture.py'
+      - 'tests/test_online_blend.py'
       - 'scripts/*training*.py'
+      - 'scripts/score_byte_mixture.py'
+      - 'scripts/confirm_checkpoint_panels.py'
+      - 'scripts/check_checkpoint_smoke.py'
+      - 'scripts/check_runtime_pipeline.py'
+      - 'scripts/confirm_predictive_mixture.py'
+      - 'scripts/byte_reference_baselines.py'
+      - 'scripts/*online*.py'
       - '.github/workflows/training-lab.yml'
   pull_request:
 permissions:
@@ -21,5 +33,7 @@ jobs:
           python-version: '3.12'
       - name: Install the measured CPU framework
         run: python -m pip install 'torch==2.14.1+cpu' --index-url https://download.pytorch.org/whl/cpu
-      - name: Data, causality, hypergradient, state and exact panel contracts
-        run: PYTHONPATH=src python -m unittest discover -s tests -p 'test_training*.py' -v
+      - name: Install the measured array dependency
+        run: python -m pip install 'numpy==2.3.5'
+      - name: Complete exact and optional scientific contracts
+        run: PYTHONPATH=src python -m unittest discover -s tests -v

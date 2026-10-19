@@ -1,0 +1,132 @@
+{
+  "checkpoints": {
+    "1000": {
+      "checkpoint": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/baseline/seed_1000/checkpoint.pt",
+      "checkpoint_sha256": "6f9b2e5ea6a5c370e3a17b06f7989bd66294e0848d1a82da0a5e1025c0c9f5c7",
+      "model_tensor_sha256": "e59485dcca8ce73bf98ecbabc848bd43b5d6d8cdd1af553d126d258d9ee3eb91",
+      "parameter_count": 84544
+    },
+    "1001": {
+      "checkpoint": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/baseline/seed_1001/checkpoint.pt",
+      "checkpoint_sha256": "bbb4b1ef573f3d740758fb28480f6e700dc2eaa84d34c94e4940f1c12866da25",
+      "model_tensor_sha256": "8f80abfc18b76725f801cde76d684dbc4e0f5ac95abf67e1cbb64c7dfa1efa48",
+      "parameter_count": 84544
+    },
+    "1002": {
+      "checkpoint": "/workspace/scratch/464161e046ff/singularity-neural/applications/training_lab/results/confirmation/wikitext_byte/baseline/seed_1002/checkpoint.pt",
+      "checkpoint_sha256": "9f054bd7b08ebabaecd06be1ed4bdb8c074686ff1959c93acb69711a47541bde",
+      "model_tensor_sha256": "0b35a1b3ba3136113b0b02d1be8f9c41319dd7a1c496de2fb8161a252b1269d8",
+      "parameter_count": 84544
+    }
+  },
+  "dependency_sha256": {
+    "scripts/confirm_online_blend.py": "c168508ceb5aadea9d40dabc8e19cbee989b05c2182fd49ff814347b379cd4f9",
+    "scripts/confirm_predictive_mixture.py": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
+    "src/singularity/training/byte_experts.py": "e679468eab6a0822b71e4b39367001c38ef4b1675a864de7ac1379d7cb353e5e",
+    "src/singularity/training/data.py": "46473e94bff05947216e38481831a43052487f7bacc8fd9a346f9dfaa3bc8cb3",
+    "src/singularity/training/models.py": "e8400476c4fcf67391e57a56c228147df5ffdeab04a00759a10e1a7f3de9b5a1",
+    "src/singularity/training/online_blend.py": "51b21eb5b883b7d11016f05c764ad1af033a21877b6a074be25d2012240f8fa8",
+    "src/singularity/training/runner.py": "08ce776d740fa051604a8458ca5bbab5408e52dfb4496279dbeb530ba1c01efb"
+  },
+  "fixed_comparator_count_weights": {
+    "1000": 0.35,
+    "1001": 0.35,
+    "1002": 0.4
+  },
+  "fresh_test_suffix_read_before_freeze": false,
+  "frozen_at_utc": "2026-10-19T12:15:24.369321+00:00",
+  "primary_selection_sha256": "1427a71b5ea07fff3a783fb49b7155f20dc9e00c4c75860c47782252c61440e9",
+  "protocol": {
+    "causal_order": "for t: obtain causal expert predictions; predict with posterior from targets strictly before t; score target t; only then multiply posterior by expert likelihood of target t and renormalize",
+    "comparator": "same neural and count experts, plus each seed's fixed mixture weight selected earlier on a separate official TUNE suffix",
+    "context": "64-input masked windows; every noninitial suffix byte once; count contexts reset with neural windows; blend posterior persists across windows",
+    "count_expert": {
+      "fit": "same original TRAIN prefix only",
+      "order": 3,
+      "smoothing": 0.01,
+      "smoothing_source": "already frozen primary predictive_mixture fresh-TUNE selection; not selected on this TEST suffix"
+    },
+    "count_weight_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "expert_prediction": "p_alpha=(1-alpha)*p_neural+alpha*p_count",
+    "fresh_interval_selection": "Fixed before reading this suffix; no alternate suffix after scores",
+    "fresh_official_test_interval_half_open": [
+      98304,
+      131072
+    ],
+    "guarantee": "L_online=-log((1/K)*sum_alpha exp(-L_alpha)) <= min_alpha L_alpha + log(K), K=21, cumulative natural-log loss",
+    "method": "Standard equal-prior Bayesian aggregation of 21 fixed convex neural/count mixtures; no novelty claim",
+    "metrics": [
+      "NLL nats/byte",
+      "bits/byte",
+      "top-1 accuracy",
+      "exact marginal-likelihood identity residual",
+      "regret bound slack",
+      "all seed paired effects"
+    ],
+    "neural_experts": "All three retained fixed AdamW wikitext_byte baseline checkpoints; no seed selection or neural updates",
+    "one_neural_forward_pass_per_checkpoint": true,
+    "online_adaptation": "Past TEST targets update only mixture posterior, never expert parameters/counts. This is a causal online predictor, not a frozen-weight predictor.",
+    "online_prediction": "posterior probability average of all fixed-grid experts, equivalent to mixture at prior-to-current-target posterior mean alpha",
+    "posterior_numerics": "stable logsumexp with normalized log posterior; no clipping or target-dependent tuning",
+    "prior": "equal 1/21 mass on every fixed grid weight, reset once at start of this new suffix",
+    "prior_official_test_intervals": [
+      [
+        0,
+        32768
+      ],
+      [
+        32768,
+        65536
+      ],
+      [
+        65536,
+        98304
+      ]
+    ],
+    "purpose": "Prospective causal prediction and exact log-loss-regret audit on a new disjoint suffix",
+    "regret_reference": "best fixed grid weight evaluated retrospectively only for audit; never used to choose online predictions",
+    "schema": "singularity.online-blend-protocol/1",
+    "scope": "Same dataset, one new32KiB interval, three frozen models. Universal log-loss bound needs positive target mass from at least one grid expert; empirical improvements do not establish superiority on new corpora.",
+    "seeds": [
+      1000,
+      1001,
+      1002
+    ],
+    "source": {
+      "configuration": "wikitext-2-raw-v1",
+      "dataset": "Salesforce/wikitext",
+      "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "stream": "UTF-8 newline join of nonempty non-whitespace rows with terminal newline"
+    },
+    "test_policy": "freeze protocol, dependencies and previous primary selection before first new TEST read; one pass per seed; no tuning after suffix scores",
+    "timing": "report model load, TRAIN fit, count prediction, neural inference, frozen blending, online update/prediction and total wall seconds; shared CPU, no speedup claim",
+    "train_interval_half_open": [
+      0,
+      262144
+    ],
+    "uncertainty": "paired contiguous2048-target block bootstrap,10000draws,seed731923; average same-byte model losses before resampling; descriptive conditional on this suffix and these frozen models"
+  },
+  "protocol_sha256": "1659fee6015a5ca804c8b5a56ab71e91f2dada9145b5f36a2c2c1b1419b0abd1"
+}

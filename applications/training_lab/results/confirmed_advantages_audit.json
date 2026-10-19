@@ -1,0 +1,281 @@
+{
+  "auditor": "independent advantage_audit agent; did not implement study scripts",
+  "created_at_utc": "2026-10-19T12:10:13.354254+00:00",
+  "diagnostic_probes": {
+    "additional_neural_inference_by_auditor": 0,
+    "approved_claim": "For this finite deployed-byte-model variant study, a frozen one-block behavioral smoke test preserves every pair distinction and declared mutant drift found by the full eight-block suite, including a heldout checkpoint and heldout quantization strengths. It uses eight times fewer forwarded input tokens and measured about 8.27 times lower resident-model prediction time on this CPU.",
+    "artifact_sha256": {
+      "audit.json": "b3b8470038dee9d5f57ddf136905304ffbb6dd5c3d7deb06176ac78c4fe63e3a",
+      "construction.json": "22b12efce59aa2460ae55a470be96339b0bb77c866dbdc08b9549c4ad6682033",
+      "frozen_panel.json": "92c270c9747dac9638b6f1f2925dd62dab143b9080642ed83b668b8bd2d54054",
+      "protocol.json": "718ffc9ec1197b171f7d67b1b2eef10c181f0ba94629f609f99207a6e451ae81",
+      "timing.json": "c6bff9376a7508091f3e03d0aef638c3ed3f1cfdabfc267985cebdd1d19365b0"
+    },
+    "block_windows": 64,
+    "claim_limits": [
+      "Synthetic fake-quantization, positional-embedding removal, dropped layer and stale-checkpoint variants; changed argmax behavior is not evidence of lower model quality.",
+      "Minimum is only within the eight declared equal-cost blocks; all eight singleton blocks and simple references are equally optimal.",
+      "No guarantee for unseen regressions, arbitrary inputs, semantic equivalence or new architectures.",
+      "Pure weight-file identity should use a file hash; this checks behavior of an executed deployment pipeline.",
+      "Timing includes forward, argmax and concatenation on one resident healthy model; excludes source/model loading, hashing/golden comparison and CI startup.",
+      "Shared CPU timing, not a GPU, dedicated-host or end-to-end deployment benchmark.",
+      "Construction and development audit costs are explicit; repeated benchmark/warmup overhead is research validation, not included in deployment break-even."
+    ],
+    "clarifications": [
+      "Final pool is eight 64-window blocks covering the complete 512-window suffix, superseding preliminary smaller-pool discussion.",
+      "Timing covers resident-model forward, argmax and concatenation; hashing/golden-output comparison and setup are outside timed interval.",
+      "Pure file identity is cheaper via a file hash; this study measures behavioral smoke testing after declared deployed model transformations."
+    ],
+    "confirmed_work_reduction": {
+      "construction_break_even_checks": 46,
+      "construction_plus_audit_break_even_checks": 103,
+      "construction_seconds": 5.221035443999426,
+      "construction_token_budget_break_even_checks": 16,
+      "development_audit_seconds": 6.670873318998929,
+      "full_forward_calls": 32,
+      "full_input_tokens": 32768,
+      "full_prediction_median_seconds": 0.13165731899971433,
+      "input_token_ratio": 8,
+      "ratio_of_median_prediction_times": 8.268356332296234,
+      "same_batch_shape": [
+        16,
+        64
+      ],
+      "selected_forward_calls": 4,
+      "selected_input_tokens": 4096,
+      "selected_prediction_median_seconds": 0.01592303399957018
+    },
+    "design_reviewed_before_audit_execution": true,
+    "frozen_preinference_protocol_declared_by_study_owner": true,
+    "independent_posttest_checks": [
+      "Study/model source and all three checkpoint file hashes match frozen protocol.",
+      "Pinned official parquet, full normalized stream, selected byte excerpt and int64 model input-window hashes independently reconstructed.",
+      "All recorded full 32768-byte argmax sequences decoded from hexadecimal and split into the eight declared blocks.",
+      "Independent enumeration of all 256 block subsets confirms 4096-token optimum and all eight singleton minimizers.",
+      "Greedy, first block and all 100 seeded random same-cardinality references tie the optimum; no superiority claim for exact search.",
+      "Known-checkpoint new-text 89/89 pair separations and heldout-checkpoint TUNE/TEST 44/44 each independently reproduced.",
+      "Every full/selected drift count independently reproduced against own healthy reference; all eight nonclean heldout variants detected and clean clone produces zero drift.",
+      "Frozen panel byte hash is identical before/after audit and audit does not select another panel.",
+      "All 30 paired random execution orders reconstructed from seed41073; repeated output hashes match saved full and selected healthy audit sequences exactly.",
+      "Median/P90 prediction times, speed ratio, input-token budget, construction-only and construction-plus-audit break-even counts independently recomputed."
+    ],
+    "material_pretest_issues": [],
+    "protocol_blocks": 8,
+    "protocol_file_sha256": "718ffc9ec1197b171f7d67b1b2eef10c181f0ba94629f609f99207a6e451ae81",
+    "protocol_pool_tokens": 32768,
+    "protocol_pool_windows": 512,
+    "required_claim_limits": [
+      "Finite declared mutant catalog; exact minimum only within eight declared 64-window blocks.",
+      "Primary inference cost comparison uses the same full 512-window candidate pool.",
+      "Greedy, first block and seeded random references reported even though all tie.",
+      "Heldout seed1002 and extra7/5-bit strengths are not used for selection.",
+      "Construction/planning and development-audit costs are explicit; timings use same model API, batch size and execution conditions."
+    ],
+    "results_audited_at_utc": "2026-10-19T12:16:21.894221+00:00",
+    "reviewed_at_utc": "2026-10-19T12:13:31.776401+00:00",
+    "source_range_half_open": [
+      65536,
+      98304
+    ],
+    "source_read_scope": "Freeze reconstructed and hashed TEST input covariates before selection; no TEST model outputs used for selection.",
+    "status": "passed"
+  },
+  "final_prose_and_figure_claims_review": {
+    "checks": [
+      "README, guide and paper distinguish fixed TEST[32768,65536), diagnostic TEST[65536,98304), and online TEST[98304,131072); TUNE belongs to separate official validation split.",
+      "Online past-TEST posterior adaptation is explicit and current-target prediction precedes observation; only blend-weight calibration is removed, count smoothing still inherits earlier TUNE.",
+      "Online bookkeeping overhead is stated; no online inference-speed claim or superiority over calibrated fixed blending.",
+      "8.268x deployment timing is explicitly resident prediction; cold setup is separately stated and103check amortization includes construction plus complete development audit.",
+      "Simple first/greedy/random one-block selectors tie exact optimum; no exact-search superiority claim.",
+      "Synthetic variant output drift is distinguished from model-quality deterioration and unknown-fault guarantees.",
+      "Fixed predictive figure contains the2.82%three-seed mean and0.47%stronger ensemble effects, with one fresh32KiB suffix scope.",
+      "Deployment figure uses precise checkpoint-excluded-from-selection and new-strength wording; all8changes refer to detections on heldout checkpoint, not8unseen fault types.",
+      "Actual exported online class BayesianByteBlend is named correctly; log-space implementation claim identifies the public scoring API.",
+      "Both generated PNG counterparts visually inspected: numbers, labels, scope text and legends are readable."
+    ],
+    "defects_corrected_before_finalization": [
+      "Guide incorrectly named nonexistent CausalBlendGrid; corrected to BayesianByteBlend without changing frozen scientific code.",
+      "Paper generic log-space claim clarified to public scoring API; frozen confirmation experiment used double-precision probability blending.",
+      "Deployment standalone figure clarified heldout checkpoint and new perturbation strengths, avoiding implication of8unseen fault types."
+    ],
+    "normalized_utf8_sha256": {
+      "README.md": "bc039349990e1eab532647d5761318ec80d70fd44ccdc8c615cc70696200f537",
+      "applications/training_lab/CONFIRMED_ADVANTAGES.md": "d422ebd3b885d7e182b7c7c1dee56c75dff482c95cebb03cd1a7778622fe1187",
+      "docs/assets/confirmed-deployment.svg": "3a46180c92b5eff145df377fd92360117c7715074a3a8a2fb896f44811d41e67",
+      "docs/assets/confirmed-prediction.svg": "4e5dc487b6044e7dab8c6cf0df0a491b13a455e4ef463673ba3077137f26d011",
+      "docs/papers/confirmed_advantages.md": "111b4dd7dc249ca5548b8ccb30a74d73397bf5caa4b8ecb7c9f102aa4b4de0ae"
+    },
+    "remaining_material_claim_defects": [],
+    "reviewed_at_utc": "2026-10-19T12:25:45.137567+00:00",
+    "status": "passed",
+    "text_normalization": "Decode UTF-8; normalize CRLF/CR to LF; trim final trailing whitespace; append one terminal LF. Hash changes only with substantive final-text changes, except trailing EOF formatting."
+  },
+  "online_blend": {
+    "additional_neural_inference_by_auditor": 0,
+    "approved_claim": "The causal online blend removes the need to calibrate the mixture weight and obeys the standard cumulative log(21) regret bound against the best of21 fixed grid weights. On this new suffix it lowers mean NLL by about2.87% versus the three retained neural experts.",
+    "artifact_sha256": {
+      "protocol.json": "d531577ceaa6393ffaf7d45f10b6d4c3a2a3cce19b22d9c3d5524f6323ebd151",
+      "results.json": "176eb8556fe498b25c19d6a929200716ade747927e4b1fbe88e579ae6a686f6c",
+      "target_audit.npz": "237ee741f87477f05cf55b4a009f79271774aa3280dfe56c94ab9e6caec5e7d9"
+    },
+    "bootstrap_checks": [
+      {
+        "comparator": "neural",
+        "independently_reproduced_percentile_95_interval": [
+          -0.0680287894316557,
+          -0.05259447672191316
+        ]
+      },
+      {
+        "comparator": "fixed_mixture",
+        "independently_reproduced_percentile_95_interval": [
+          -0.0004184567593753,
+          4.314198033684823e-05
+        ]
+      }
+    ],
+    "claim_limits": [
+      "Online posterior updates use preceding TEST targets; this is causal online prediction, not a frozen predictor.",
+      "Count smoothing alpha.01 still comes from earlier separate TUNE selection; only mixture-weight calibration is removed.",
+      "Fixed-mixture comparison has a bootstrap interval containing zero, so no empirical superiority claim over calibrated fixed blending.",
+      "The guarantee concerns cumulative log loss against a fixed finite grid, not top1accuracy, arbitrary comparators or neural training optimization.",
+      "One new32KiB interval from the same corpus and three frozen neural models; no external-corpus superiority claim.",
+      "PurePython online updates add measured inference overhead; no inference speedup claim."
+    ],
+    "confirmed": {
+      "all_three_numerical_regret_bounds_pass": true,
+      "all_three_seeds_improve_vs_neural": true,
+      "fixed_mixture_mean_nll": 2.028732600442859,
+      "neural_mean_nll": 2.088537519843401,
+      "online_mean_nll": 2.028531538578822,
+      "regret_penalty_nats_per_target": 9.291428686554836e-05,
+      "relative_online_nll_reduction_vs_neural": 0.028731100444428725,
+      "universal_grid_regret_penalty_nats": 3.044522437723423
+    },
+    "findings": [
+      "Standard equal-prior Bayesian aggregation of 21 fixed neural/count mixtures is causal under predict-then-observe.",
+      "Stable log-posterior update yields marginal-likelihood identity and log(21) cumulative regret relative to best fixed grid mixture.",
+      "Count alpha and fixed comparator weights inherited from previous distinct TUNE selection.",
+      "Fresh official TEST suffix [98304,131072) is disjoint from all earlier evaluated intervals.",
+      "Online adaptation uses preceding TEST targets, so it is explicitly distinct from frozen-mixture evaluation."
+    ],
+    "independent_posttest_checks": [
+      "All frozen protocol, source dependency, primary TUNE selection, neural checkpoint and NPZ byte hashes match.",
+      "Pinned official TEST source reconstructs declared [98304,131072) slice and exact32767targetarray; interval disjoint from all previous evaluations.",
+      "Every prior-to-current-target posterior mean weight independently reconstructed from cumulative past archived neural/count target losses, maximum error below4.1e-12.",
+      "Every online and inherited-fixed-mixture target loss independently reconstructed without new neural inference.",
+      "Every per-seed NLL, grid cumulative loss, marginal-likelihood identity and log(21) cumulative regret bound independently reproduced.",
+      "Primary and fixed-mixture paired2048-target bootstrap intervals independently reproduced; protocol/read/completion event timestamps ordered."
+    ],
+    "material_pretest_issues": [],
+    "protocol_file_sha256": "d531577ceaa6393ffaf7d45f10b6d4c3a2a3cce19b22d9c3d5524f6323ebd151",
+    "protocol_reviewed_before_fresh_test_execution": true,
+    "protocol_sha256": "1659fee6015a5ca804c8b5a56ab71e91f2dada9145b5f36a2c2c1b1419b0abd1",
+    "results_audited_at_utc": "2026-10-19T12:18:26.509558+00:00",
+    "reviewed_at_utc": "2026-10-19T12:16:21.898011+00:00",
+    "status": "passed"
+  },
+  "overall_audit_passed": true,
+  "predictive_mixture": {
+    "additional_neural_inference_by_auditor": 0,
+    "approved_claim": "On the fixed fresh 32KiB official TEST suffix, TUNE-frozen count/neural mixtures lower NLL for every retained neural seed and also improve the equal-probability neural ensemble selected as strongest unblended TUNE reference.",
+    "artifact_sha256": {
+      "paired_test_losses.npz": "3d8bb42bfc95996de3dbf36252c4c32c0e4407f71da1a56513ce35dc9f69bebe",
+      "protocol.json": "825e0237c99d378ba5d28310b8ba822b96785292c742fa4af3cef4c58c783327",
+      "results.json": "5175219be87c79aeb3844cde980fe490770212fa15b50177a2b5eb6c71c0729f",
+      "selection.json": "1427a71b5ea07fff3a783fb49b7155f20dc9e00c4c75860c47782252c61440e9"
+    },
+    "auditor_source_access": "Read pinned source for hash/target reconstruction only; no new predictions, selections or alternative windows.",
+    "bootstrap_checks": [
+      {
+        "all_16_contiguous_blocks_improve": true,
+        "bootstrap_independently_reproduced": true,
+        "comparison": "mean_seed",
+        "percentile_95_interval": [
+          -0.06632803855988759,
+          -0.05157177853372622
+        ]
+      },
+      {
+        "all_16_contiguous_blocks_improve": true,
+        "bootstrap_independently_reproduced": true,
+        "comparison": "ensemble",
+        "percentile_95_interval": [
+          -0.01243759342371533,
+          -0.0066324229012425665
+        ]
+      }
+    ],
+    "claim_limits": [
+      "One new suffix from the same source corpus, not independent external datasets.",
+      "Three retained model initializations, not three independent test corpora.",
+      "Ordinary probability blending, not an original optimization algorithm or a training acceleration.",
+      "Secondary ensemble requires all three neural forward passes.",
+      "Descriptive bootstrap interval is conditional on fixed models and this finite text interval."
+    ],
+    "confirmed_primary": {
+      "all_three_seeds_improved": true,
+      "mixture_mean_nll": 2.020105227628629,
+      "model_seeds": [
+        1000,
+        1001,
+        1002
+      ],
+      "neural_mean_nll": 2.0786960551156426,
+      "relative_nll_reduction": 0.028186336979291626
+    },
+    "confirmed_secondary": {
+      "mixture_nll": 1.9784878710034566,
+      "reference_nll": 1.987765960344245,
+      "relative_nll_reduction": 0.004667596450430023,
+      "unblended_reference_selected_on_tune": "neural_ensemble"
+    },
+    "findings": [
+      "All three retained fixed AdamW model seeds are included; no new seed selection.",
+      "Fresh TUNE and TEST suffixes are distinct official splits and do not overlap previously evaluated prefixes.",
+      "Smoothing, individual mixture weights, ensemble mixture weight and strongest unblended comparator are selected only on fresh TUNE before TEST is opened.",
+      "Equal-weight probability ensemble is included as an unblended baseline.",
+      "Byte targets and short-memory count contexts use the same 64-byte causal reset convention.",
+      "Paired text uncertainty is conditional on fixed models and finite suffix; three seed copies of each target are not treated as independent corpora."
+    ],
+    "independent_posttest_checks": [
+      "Protocol/source/count-reference hashes match frozen files.",
+      "All three checkpoint byte hashes match frozen protocol; model tensor unchanged assertions inspected.",
+      "All per-target NPZ loss arrays reproduce NLL means in published per-seed/count/ensemble metrics.",
+      "Pinned official parquet source bytes reconstruct identical selected slice hashes and exact TEST target array.",
+      "TUNE-selected smoothing/weights/strongest comparator reproduce documented finite-grid minima.",
+      "Recorded protocol, TUNE selection and TEST-read timestamps are ordered; code persists selection before opening TEST.",
+      "16-block bootstrap independently reimplemented and reproduces both primary and secondary confidence intervals."
+    ],
+    "material_pretest_issues": [],
+    "protocol_file_sha256": "825e0237c99d378ba5d28310b8ba822b96785292c742fa4af3cef4c58c783327",
+    "protocol_reviewed_before_fresh_test": true,
+    "protocol_sha256": "0fe5eb05f898835b31c4e9704e8ee590a90e904ce230410cdf850ff5a7bb7ec8",
+    "results_audited_at_utc": "2026-10-19T12:11:40.213499+00:00",
+    "reviewed_at_utc": "2026-10-19T12:10:13.354286+00:00",
+    "source_sha256": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
+    "status": "passed"
+  },
+  "runtime_pipeline_demonstration": {
+    "additional_neural_inference_by_auditor": 0,
+    "all30_state_tensors_and_mutation_versions_unchanged": true,
+    "all_previous_study_artifact_hashes_preserved": true,
+    "audited_claim": "A runtime positional-embedding output hook leaves the checkpoint file and all weights unchanged while changing2583of4096selectedpredictions, so behavioral smoke testing exercises a deployment failure that weight-file hashing cannot detect.",
+    "changed_selected_predictions": 2583,
+    "checkpoint_file_hash_unchanged": true,
+    "claim_limits": [
+      "One deliberately injected runtime hook, already represented by the declared no_position variant.",
+      "No new unseen-regression coverage, quality guarantee or statistical error rate."
+    ],
+    "prediction_hash_matches_cached_no_position_variant": true,
+    "receipt_sha256": "b60ce37c69e098a180793744f7b8920581ab15248ff20e5aef19ff9cb71ca586",
+    "role": "Post-study implementation-equivalence demonstration, not independent statistical confirmation",
+    "script_sha256": "acad58fd9be09cd14d8774aecea511291361b176a6938faf4f961997010323ab",
+    "selected_predictions": 4096,
+    "status": "passed"
+  },
+  "schema": "singularity.confirmed-advantages-independent-audit/1",
+  "scope": "Independent code/receipt/numeric replay audit of three prospectively frozen finite studies and one post-study engineering equivalence demonstration. No neural inference or parameter training performed by auditor.",
+  "status": "passed",
+  "updated_at_utc": "2026-10-19T12:25:45.137653+00:00"
+}

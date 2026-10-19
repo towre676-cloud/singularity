@@ -4,6 +4,10 @@ Detailed mathematical results, engines, documents, releases, and development rec
 
 ## Read or download
 
+[Confirmed advantages - PDF](../output/pdf/confirmed_advantages.pdf) · [Editable companion](papers/confirmed_advantages.md) · [Runnable confirmation guide](../applications/training_lab/CONFIRMED_ADVANTAGES.md) · [Independent audit](../applications/training_lab/results/confirmed_advantages_audit.json)
+
+Version 0.7.0 confirms fresh-text neural/count prediction gains, finite-grid causal aggregation with a cumulative log-loss bound, and smaller behavioral smoke tests with measured resident inference savings. It includes portable count artifacts, frozen recipes, cached golden outputs and exact/source-bound receipts. The companion separates the empirical gains, mathematical guarantees and workload costs.
+
 [Learning, coordinates, and the cost of observation - PDF](../output/pdf/training_observation.pdf) · [Editable companion](papers/training_observation.md) · [Training lab](../applications/training_lab/README.md) · [Measured analysis](../applications/training_lab/results/analysis.json)
 
 The v0.6.0 revision connects real PyTorch checkpoints to exact finite observation panels. It retains 63 planned training runs, complete compressed trajectories, byte-model references, a coordinate-change study, and disclosed integrity replays. No grokking was observed, and the local meta tuner did not improve mean byte-model test loss. Predicted-class histograms distinguish all twelve checkpoints per architecture using a 23-example construction panel, with all 66 pairs separated again on separate audit examples. These are finite catalogue results. Build the companion with `python scripts/build_training_documents.py` (Pandoc, XeLaTeX, and DejaVu fonts required); package the committed source, PDFs, checkpoints, and evidence with `python scripts/package_training_revision.py`.

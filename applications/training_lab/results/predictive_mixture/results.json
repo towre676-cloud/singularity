@@ -1,0 +1,426 @@
+{
+  "aggregate": {
+    "count": {
+      "accuracy": 0.39188818018127997,
+      "bits_per_byte": 3.116214588384474,
+      "correct": 12841,
+      "nll_nats_per_byte": 2.1599953559584684,
+      "valid_targets": 32767
+    },
+    "mixture": {
+      "accuracy": 0.42203029470707315,
+      "bits_per_byte": 2.9143957939736933,
+      "nll_nats_per_byte": 2.020105227628629
+    },
+    "mixture_relative_nll_reduction_vs_count": 0.06476408754488505,
+    "mixture_relative_nll_reduction_vs_neural": 0.028186336979291626,
+    "neural": {
+      "accuracy": 0.41354614907274595,
+      "bits_per_byte": 2.9989244902307894,
+      "nll_nats_per_byte": 2.0786960551156426
+    },
+    "paired_mixture_minus_count": {
+      "block_count": 16,
+      "block_mean_differences": [
+        -0.17272382609587322,
+        -0.13626768819564672,
+        -0.17417072999923666,
+        -0.13408295651635513,
+        -0.15719520656633879,
+        -0.11187132729505475,
+        -0.12614263062468503,
+        -0.14172966105887946,
+        -0.17447128776700332,
+        -0.16783372147320436,
+        -0.1408196556520215,
+        -0.0912438057801507,
+        -0.1014110840674548,
+        -0.14247470825903238,
+        -0.12101855826749665,
+        -0.14478759700111932
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 16,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.13989012832983927,
+      "percentile_95_interval": [
+        -0.151822006903273,
+        -0.12748206327755224
+      ]
+    },
+    "paired_mixture_minus_neural": {
+      "block_count": 16,
+      "block_mean_differences": [
+        -0.04993177791239982,
+        -0.053595007272253185,
+        -0.054236837177437075,
+        -0.06649095966909038,
+        -0.07878522497387169,
+        -0.037045292985028365,
+        -0.05014175223001635,
+        -0.04869265758738463,
+        -0.0540825593952656,
+        -0.07067970586043407,
+        -0.0953289989944737,
+        -0.07509351375796564,
+        -0.06244593521876053,
+        -0.05568361638273944,
+        -0.049281290363986985,
+        -0.03592704371043875
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 16,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.05859082748701365,
+      "percentile_95_interval": [
+        -0.06632803855988759,
+        -0.05157177853372622
+      ]
+    }
+  },
+  "corpora": {
+    "test": {
+      "byte_interval_half_open": [
+        32768,
+        65536
+      ],
+      "bytes": 32768,
+      "first_source_target_offset": 32769,
+      "last_source_target_offset": 65535,
+      "official_split": "test",
+      "overlap_with_prior_evaluation_bytes": 0,
+      "parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "prior_prefix_sha256": "1e839a40ef222f5da88d06360e9df6e50aa054fb73edb672454cb01105418acd",
+      "sha256": "ba6af49571b3cfe163234098d34eec518d62cf9e48e19f172ec01e7c80167e79",
+      "source_rows": 4358,
+      "source_stream_bytes": 1290547,
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+      "valid_targets": 32767
+    },
+    "train": {
+      "byte_interval_half_open": [
+        0,
+        262144
+      ],
+      "bytes": 262144,
+      "first_source_target_offset": 1,
+      "last_source_target_offset": 262143,
+      "official_split": "train",
+      "overlap_with_prior_evaluation_bytes": null,
+      "parquet_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+      "prior_prefix_sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+      "sha256": "496c14820345f8dcfa9add44a6b408377f10c2171d157f8a88ea9d15e57635d8",
+      "source_rows": 36718,
+      "source_stream_bytes": 10938612,
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "valid_targets": 262143
+    },
+    "tune": {
+      "byte_interval_half_open": [
+        32768,
+        65536
+      ],
+      "bytes": 32768,
+      "first_source_target_offset": 32769,
+      "last_source_target_offset": 65535,
+      "official_split": "validation",
+      "overlap_with_prior_evaluation_bytes": 0,
+      "parquet_sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+      "prior_prefix_sha256": "a4d96a0914bd0c498c08ebe2b8221fb590416c2f4eab0cd7a6bcf36be9c081b3",
+      "sha256": "88190cb1deee3b42f87df51b2d56684fa5399efe1ccda3a02fbf89624f3f71bd",
+      "source_rows": 3760,
+      "source_stream_bytes": 1146709,
+      "source_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/validation-00000-of-00001.parquet",
+      "valid_targets": 32767
+    }
+  },
+  "count_test": {
+    "accuracy": 0.39188818018127997,
+    "bits_per_byte": 3.116214588384474,
+    "correct": 12841,
+    "nll_nats_per_byte": 2.1599953559584684,
+    "valid_targets": 32767
+  },
+  "created_at_utc": "2026-10-19T12:10:13.057027+00:00",
+  "events": [
+    {
+      "at_utc": "2026-10-19T12:09:34.494953+00:00",
+      "event": "protocol_already_frozen"
+    },
+    {
+      "at_utc": "2026-10-19T12:10:06.485520+00:00",
+      "event": "TRAIN_and_fresh_TUNE_read"
+    },
+    {
+      "at_utc": "2026-10-19T12:10:11.478704+00:00",
+      "event": "all_TUNE_selections_frozen"
+    },
+    {
+      "at_utc": "2026-10-19T12:10:11.487875+00:00",
+      "event": "fresh_TEST_first_read"
+    },
+    {
+      "at_utc": "2026-10-19T12:10:12.980975+00:00",
+      "event": "declared_TEST_comparisons_completed"
+    }
+  ],
+  "neural_parameter_count_each": 84544,
+  "paired_losses_file": "paired_test_losses.npz",
+  "paired_losses_sha256": "3d8bb42bfc95996de3dbf36252c4c32c0e4407f71da1a56513ce35dc9f69bebe",
+  "per_seed": [
+    {
+      "count_weight": 0.35,
+      "mixture": {
+        "accuracy": 0.4226203192236091,
+        "bits_per_byte": 2.907254300199811,
+        "correct": 13848,
+        "nll_nats_per_byte": 2.0151551213542755,
+        "valid_targets": 32767
+      },
+      "mixture_minus_count_nats": -0.14484023460419282,
+      "mixture_minus_neural_nats": -0.05598818525636773,
+      "model_tensor_sha256_after": "e59485dcca8ce73bf98ecbabc848bd43b5d6d8cdd1af553d126d258d9ee3eb91",
+      "neural": {
+        "accuracy": 0.41438032166508987,
+        "bits_per_byte": 2.988028177417545,
+        "correct": 13578,
+        "nll_nats_per_byte": 2.0711433066106433,
+        "valid_targets": 32767
+      },
+      "neural_tensors_unchanged": true,
+      "neural_test_inference_passes": 1,
+      "relative_nll_reduction_vs_neural": 0.027032501844592605,
+      "seed": 1000
+    },
+    {
+      "count_weight": 0.35,
+      "mixture": {
+        "accuracy": 0.42542802209540087,
+        "bits_per_byte": 2.897739438053054,
+        "correct": 13940,
+        "nll_nats_per_byte": 2.0085599214838346,
+        "valid_targets": 32767
+      },
+      "mixture_minus_count_nats": -0.1514354344746338,
+      "mixture_minus_neural_nats": -0.052115478382840585,
+      "model_tensor_sha256_after": "8f80abfc18b76725f801cde76d684dbc4e0f5ac95abf67e1cbb64c7dfa1efa48",
+      "neural": {
+        "accuracy": 0.4183782464064455,
+        "bits_per_byte": 2.972926180269534,
+        "correct": 13709,
+        "nll_nats_per_byte": 2.060675399866675,
+        "valid_targets": 32767
+      },
+      "neural_tensors_unchanged": true,
+      "neural_test_inference_passes": 1,
+      "relative_nll_reduction_vs_neural": 0.025290484074402264,
+      "seed": 1001
+    },
+    {
+      "count_weight": 0.4,
+      "mixture": {
+        "accuracy": 0.41804254280220954,
+        "bits_per_byte": 2.938193643668216,
+        "correct": 13698,
+        "nll_nats_per_byte": 2.0366006400477765,
+        "valid_targets": 32767
+      },
+      "mixture_minus_count_nats": -0.12339471591069184,
+      "mixture_minus_neural_nats": -0.06766881882183329,
+      "model_tensor_sha256_after": "0b35a1b3ba3136113b0b02d1be8f9c41319dd7a1c496de2fb8161a252b1269d8",
+      "neural": {
+        "accuracy": 0.4078798791467025,
+        "bits_per_byte": 3.0358191130052887,
+        "correct": 13365,
+        "nll_nats_per_byte": 2.10426945886961,
+        "valid_targets": 32767
+      },
+      "neural_tensors_unchanged": true,
+      "neural_test_inference_passes": 1,
+      "relative_nll_reduction_vs_neural": 0.032157867680208674,
+      "seed": 1002
+    }
+  ],
+  "protocol_sha256": "0fe5eb05f898835b31c4e9704e8ee590a90e904ce230410cdf850ff5a7bb7ec8",
+  "schema": "singularity.predictive-mixture-results/1",
+  "scope": "A new suffix from the same named official dataset splits, not a new corpus. Ordinary count/neural ensembling improves if measured; no optimizer or training acceleration claim. All three previously retained fixed AdamW seeds reported.",
+  "secondary_ensemble": {
+    "count_weight": 0.1,
+    "ensemble_mixture": {
+      "accuracy": 0.4357737968077639,
+      "bits_per_byte": 2.85435463995565,
+      "correct": 14279,
+      "nll_nats_per_byte": 1.9784878710034566,
+      "valid_targets": 32767
+    },
+    "neural_ensemble": {
+      "accuracy": 0.43458357493820005,
+      "bits_per_byte": 2.8677400934365305,
+      "correct": 14240,
+      "nll_nats_per_byte": 1.987765960344245,
+      "valid_targets": 32767
+    },
+    "neural_models_per_prediction": 3,
+    "neural_parameter_count": 253632,
+    "paired_mixture_minus_neural_ensemble": {
+      "block_count": 16,
+      "block_mean_differences": [
+        -0.007896688181344324,
+        -0.006283918850778655,
+        -0.007663224014570814,
+        -0.01046158815283378,
+        -0.01508463141461857,
+        -0.0023748934065579447,
+        -0.005796035140285475,
+        -0.004381414889954182,
+        -0.006603318627884383,
+        -0.014187538177827495,
+        -0.025855151891876232,
+        -0.016423187113905186,
+        -0.008302809174532515,
+        -0.008988180551379841,
+        -0.007406819675308581,
+        -0.0007358591781345088
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 16,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.009278089340788382,
+      "percentile_95_interval": [
+        -0.01243759342371533,
+        -0.0066324229012425665
+      ]
+    },
+    "paired_mixture_minus_strongest_reference": {
+      "block_count": 16,
+      "block_mean_differences": [
+        -0.007896688181344324,
+        -0.006283918850778655,
+        -0.007663224014570814,
+        -0.01046158815283378,
+        -0.01508463141461857,
+        -0.0023748934065579447,
+        -0.005796035140285475,
+        -0.004381414889954182,
+        -0.006603318627884383,
+        -0.014187538177827495,
+        -0.025855151891876232,
+        -0.016423187113905186,
+        -0.008302809174532515,
+        -0.008988180551379841,
+        -0.007406819675308581,
+        -0.0007358591781345088
+      ],
+      "block_target_counts": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2047
+      ],
+      "blocks_with_negative_mean": 16,
+      "interpretation": "negative favors mixture; paired descriptive block bootstrap, conditional on frozen models and this suffix",
+      "mean_difference_nats": -0.009278089340788382,
+      "percentile_95_interval": [
+        -0.01243759342371533,
+        -0.0066324229012425665
+      ]
+    },
+    "relative_nll_reduction_vs_neural_ensemble": 0.004667596450430023,
+    "relative_nll_reduction_vs_strongest_reference": 0.004667596450430023,
+    "strongest_unblended_reference": {
+      "accuracy": 0.43458357493820005,
+      "bits_per_byte": 2.8677400934365305,
+      "correct": 14240,
+      "nll_nats_per_byte": 1.987765960344245,
+      "valid_targets": 32767
+    },
+    "strongest_unblended_reference_selected_on_TUNE": "neural_ensemble"
+  },
+  "selected_smoothing": 0.01,
+  "selection_sha256": "1427a71b5ea07fff3a783fb49b7155f20dc9e00c4c75860c47782252c61440e9",
+  "source_sha256": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
+  "state_unchanged": true,
+  "timing_seconds": {
+    "neural_inference": {
+      "1000": {
+        "fresh_test_seconds": 0.2881725350016495,
+        "fresh_tune_seconds": 0.3529438410005241
+      },
+      "1001": {
+        "fresh_test_seconds": 0.3194587859979947,
+        "fresh_tune_seconds": 0.2618484310005442
+      },
+      "1002": {
+        "fresh_test_seconds": 0.31965037300324184,
+        "fresh_tune_seconds": 0.2872480109981552
+      }
+    },
+    "test_count_predictions": 0.23433945200304152,
+    "total": 8.11874808200082,
+    "train_count_fit": 0.19831774300109828
+  },
+  "training_updates": 0
+}

@@ -1,0 +1,118 @@
+{
+  "audit": "Apply frozen block IDs on TEST suffix and heldout seed1002 on TUNE+TEST. For each variant report all drift against own healthy reference, selected drift, clean controls and all pairwise separation. No reselection.",
+  "audit_variants": [
+    "healthy",
+    "quantize_8",
+    "quantize_6",
+    "quantize_4",
+    "no_position",
+    "drop_layer_0",
+    "stale",
+    "quantize_7",
+    "quantize_5",
+    "clean_clone"
+  ],
+  "checkpoints": {
+    "1000": {
+      "relative_path": "confirmation/wikitext_byte/baseline/seed_1000/checkpoint.pt",
+      "sha256": "6f9b2e5ea6a5c370e3a17b06f7989bd66294e0848d1a82da0a5e1025c0c9f5c7"
+    },
+    "1001": {
+      "relative_path": "confirmation/wikitext_byte/baseline/seed_1001/checkpoint.pt",
+      "sha256": "bbb4b1ef573f3d740758fb28480f6e700dc2eaa84d34c94e4940f1c12866da25"
+    },
+    "1002": {
+      "relative_path": "confirmation/wikitext_byte/baseline/seed_1002/checkpoint.pt",
+      "sha256": "9f054bd7b08ebabaecd06be1ed4bdb8c074686ff1959c93acb69711a47541bde"
+    }
+  },
+  "claim_boundary": "Finite exact discrimination of observed deployment variants and measured inference work. Missing drift is retained. No bound on unseen regressions, semantic equivalence, model quality, neural training improvement, GPU speed or unique advantage over simple panels.",
+  "construction_seeds": [
+    1000,
+    1001
+  ],
+  "construction_variants": [
+    "healthy",
+    "quantize_8",
+    "quantize_6",
+    "quantize_4",
+    "no_position",
+    "drop_layer_0",
+    "stale"
+  ],
+  "heldout_meaning": "Previously trained checkpoint, never used in this panel's construction or selection",
+  "heldout_seed": 1002,
+  "heldout_variant_strengths": [
+    7,
+    5
+  ],
+  "model_source_sha256": "e8400476c4fcf67391e57a56c228147df5ffdeab04a00759a10e1a7f3de9b5a1",
+  "other_variants": {
+    "clean_clone": "bit-identical deepcopy control",
+    "drop_layer_0": "remove first of two encoder layers",
+    "no_position": "zero entire positional embedding",
+    "stale": "load declared other seed checkpoint"
+  },
+  "probe_pool": {
+    "block_windows": 64,
+    "complete_pool_tokens": 32768,
+    "complete_pool_windows": 512,
+    "context_length": 64,
+    "cost_input_tokens_each": 4096,
+    "count": 8,
+    "readout": "all argmax byte predictions in chronological order; injective sentinel-prefixed base256 integer",
+    "rule": "eight consecutive nonoverlapping 64-window blocks covering the complete declared suffix"
+  },
+  "quantization_definition": "For each weight tensor ndim>=2 independently: qmax=2**(bits-1)-1; scale=max(abs(W))/qmax; W'=clamp(round(W/scale),-qmax,qmax)*scale. Bias/norm vectors unchanged. FP32 storage and compute; no acceleration claim.",
+  "role": "Confirmatory finite regression smoke-test study; no new training or quality claim",
+  "schema": "singularity.checkpoint-regression-confirmation/1",
+  "script_sha256": "962f5074e6e23bf4aa07bab950f2e3f7d20e44e3494512c552f2e6b4acff6fe3",
+  "selection": "TUNE with seeds1000/1001 only; quotient exactly equal complete signatures; minimum exact pair-distinguishing panel; direct enumeration of all256subsets and greedy comparator; seeded100random panels at same cardinality; retain selected block IDs without adaptation",
+  "sources": {
+    "test": {
+      "context_length": 64,
+      "excerpt_sha256": "f4e1311d85651191573482fae69e021a92cbcf3815cd02da7a812a67495b82c9",
+      "forwarded_input_tokens": 32768,
+      "input_windows": 512,
+      "parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "range_half_open": [
+        65536,
+        98304
+      ],
+      "split": "test",
+      "stream_sha256": "4e1fce0451434081dfce26182c4fc7235f295c4133507ef9ae8e573952a5a148",
+      "stream_total_bytes": 1290547,
+      "window_sha256": "7912fb4a59a723493d120c44e19322fae97e758bb1ba6906025632e9633895b5"
+    },
+    "tune": {
+      "context_length": 64,
+      "excerpt_sha256": "4817b503bbf5b61b7ced8d493f929c0e94f4fd064d20afc56e91db515f1cb10e",
+      "forwarded_input_tokens": 32768,
+      "input_windows": 512,
+      "parquet_sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+      "range_half_open": [
+        65536,
+        98304
+      ],
+      "split": "tune",
+      "stream_sha256": "7ffe866bb723736027b30046f5db623588285ef0f3c061872d53793c589327b0",
+      "stream_total_bytes": 1146709,
+      "window_sha256": "b19841e7beafc9c76c6b35e996ae60ee633b4ce3cc30759dd337cf1bb939e5b0"
+    }
+  },
+  "stale_reference_seed": {
+    "1000": 1001,
+    "1001": 1000,
+    "1002": 1000
+  },
+  "timing": {
+    "batch_size": 16,
+    "context_length": 64,
+    "measured_pairs": 30,
+    "order_seed": 41073,
+    "rule": "one resident healthy model, identical prediction API and exact16x64batches for full and selected; randomize paired order; reportP50/P90; host shared; construction/source/model loading+solver charged once for break-even",
+    "threads": 2,
+    "warmup_pairs": 5,
+    "workload_model_seed": 1002
+  }
+}

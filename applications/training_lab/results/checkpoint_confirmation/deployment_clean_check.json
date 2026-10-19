@@ -1,0 +1,32 @@
+{
+  "batch_shape": [
+    16,
+    64
+  ],
+  "candidate_output_sha256": "36b378b03ab7de59dada5132f5776a2a73b144be25446814c696cd507c1b8d49",
+  "changed_prediction_count": 0,
+  "changed_prediction_indices": [],
+  "checkpoint_sha256": "9f054bd7b08ebabaecd06be1ed4bdb8c074686ff1959c93acb69711a47541bde",
+  "claim_boundary": "Exact selected-output comparison only. Unchanged does not establish semantic equivalence, predictive quality, no probability drift, or absence of unseen regressions. Golden predictions are cached; reference model is not forwarded.",
+  "context_length": 64,
+  "forward_calls": 4,
+  "forwarded_input_tokens": 4096,
+  "frozen_panel_sha256": "92c270c9747dac9638b6f1f2925dd62dab143b9080642ed83b668b8bd2d54054",
+  "full_reference_input_tokens": 32768,
+  "golden_output_sha256": "36b378b03ab7de59dada5132f5776a2a73b144be25446814c696cd507c1b8d49",
+  "known_catalog_states_with_identical_selected_outputs": [
+    "seed_1002/clean_clone",
+    "seed_1002/healthy"
+  ],
+  "protocol_sha256": "718ffc9ec1197b171f7d67b1b2eef10c181f0ba94629f609f99207a6e451ae81",
+  "reference_id": "seed_1002/healthy",
+  "resident_prediction_seconds": 0.02396355000018957,
+  "schema": "singularity.checkpoint-smoke-check/1",
+  "selected_blocks": [
+    0
+  ],
+  "setup_seconds_including_import_source_load_checkpoint_load": 2.3603614649982774,
+  "total_check_seconds_within_main": 2.386089916999481,
+  "total_prediction_count": 4096,
+  "unchanged": true
+}

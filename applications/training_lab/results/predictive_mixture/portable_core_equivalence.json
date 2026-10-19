@@ -1,0 +1,44 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "differences": {
+        "accuracy": 0.0,
+        "bits_per_byte": 0.0,
+        "correct": 0,
+        "nll_nats_per_byte": 0.0,
+        "valid_targets": 0
+      },
+      "seed": 1000,
+      "tensor_hash_unchanged": true
+    },
+    {
+      "differences": {
+        "accuracy": 0.0,
+        "bits_per_byte": 0.0,
+        "correct": 0,
+        "nll_nats_per_byte": 0.0,
+        "valid_targets": 0
+      },
+      "seed": 1001,
+      "tensor_hash_unchanged": true
+    },
+    {
+      "differences": {
+        "accuracy": 0.0,
+        "bits_per_byte": 0.0,
+        "correct": 0,
+        "nll_nats_per_byte": 0.0,
+        "valid_targets": 0
+      },
+      "seed": 1002,
+      "tensor_hash_unchanged": true
+    }
+  ],
+  "core_source_sha256": "e679468eab6a0822b71e4b39367001c38ef4b1675a864de7ac1379d7cb353e5e",
+  "evaluation_split": "fresh TUNE only; no TEST read or scored",
+  "research_source_sha256": "f679078ae2e72d9cf5302d0070ce7589ef05bc9d447403177a8476d86e744cef",
+  "schema": "singularity.byte-mixture-core-equivalence/1",
+  "tolerance": 1e-12,
+  "tune_sha256": "88190cb1deee3b42f87df51b2d56684fa5399efe1ccda3a02fbf89624f3f71bd"
+}
