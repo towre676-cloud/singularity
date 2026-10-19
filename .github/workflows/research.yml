@@ -90,6 +90,8 @@ jobs:
           PYTHONPATH=src python scripts/parametric_observability.py --check
           PYTHONPATH=src python scripts/separator_compiler.py --check
           PYTHONPATH=src python scripts/candidate_box_thermal.py --check
+          PYTHONPATH=src python scripts/typed_contexts.py --check
+          PYTHONPATH=src python scripts/typed_contexts.py --replay results/typed_contexts.json
           PYTHONPATH=src python scripts/thermal_diagnostics.py --check
       - name: Repository and manuscript checks
         run: python scripts/check_repository.py
