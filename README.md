@@ -20,7 +20,7 @@ The Python core uses Python 3.10+ and the standard library. The repository inclu
 
 [Paper 2: exact observation depth — PDF](output/pdf/locality_paper.pdf) · [Source](docs/papers/locality.md) · [Claim register](docs/papers/locality_claims.md) · [Selection and literature comparison](docs/papers/second_paper_choice.md)
 
-[Complete v0.2.0 download](releases/Singularity-v0.2.0-complete.zip) · [Release manifest](results/archive_manifest.json) · [Publication checks](results/publication_release.json) · [Operator release record (v0.3.0 source)](results/operator_checkpoint.json)
+[Complete v0.3.0 download](releases/Singularity-v0.3.0-complete.zip) · [Release manifest](results/archive_manifest.json) · [Operator release record](results/operator_checkpoint.json) · [Earlier v0.2.0 archive](releases/Singularity-v0.2.0-complete.zip) and [its publication checks](results/publication_release.json)
 
 The archive contains the source, all three PDFs, editable mathematical documents, exact results, tests, proof sources and dependency manifests. Lean and Mathlib build caches are excluded. No document compiler is needed to read the PDFs.
 
