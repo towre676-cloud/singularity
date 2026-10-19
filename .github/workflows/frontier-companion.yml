@@ -29,5 +29,9 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Exact frontier receipts
         run: PYTHONPATH=src python scripts/frontier_companion.py --check
+      - name: Restore frozen pretrained evidence with the standard library
+        run: |
+          python -S scripts/materialize_pretrained_evidence.py materialize
+          python -S scripts/materialize_pretrained_evidence.py materialize --output applications/training_lab/results/pretrained_context512
       - name: Complete Python suite
         run: PYTHONPATH=src python -m unittest discover -s tests
