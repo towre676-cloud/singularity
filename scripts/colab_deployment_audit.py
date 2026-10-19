@@ -74,8 +74,11 @@ def _locate_root():
         pass
     here = Path.cwd().resolve()
     candidates += [here, *here.parents, here / "singularity", Path("/content/singularity")]
-    for candidate in candidates:
+    for index, candidate in enumerate(candidates):
         if (candidate / "src/singularity/model_audit/core.py").is_file():
+            if index > 0 and (candidate / ".git").is_dir() and "__file__" not in globals():
+                # A pasted cell reuses an earlier clone: bring it to this branch's latest commit.
+                subprocess.run(["git", "-C", str(candidate), "pull", "-q", "--ff-only", "origin", BRANCH], check=False)
             return candidate
     target = Path("/content/singularity") if Path("/content").is_dir() else here / "singularity"
     print(f"Cloning {REPOSITORY} ({BRANCH}) into {target}", flush=True)
@@ -242,6 +245,36 @@ def local_test_model(directory):
     return str(directory)
 
 
+def _dtype_keyword():
+    try:
+        import transformers
+        major, minor = (int(part) for part in transformers.__version__.split(".")[:2])
+        return "dtype" if (major, minor) >= (4, 56) else "torch_dtype"
+    except Exception:
+        return "torch_dtype"
+
+
+DTYPE_KEYWORD = _dtype_keyword()
+
+
+def sanitize(rows):
+    """Replace non-finite log-probabilities by a finite sentinel and count them.
+
+    A deployment that emits NaN or infinite values has changed behavior; the
+    sentinel (-1e9 nats) guarantees such probes flag, and the count is reported.
+    """
+    count = 0
+    for observation in rows:
+        for key, values in observation.items():
+            if key in ("argmax", "continuation"):
+                continue
+            for position, value in enumerate(values):
+                if not math.isfinite(value):
+                    values[position] = -1e9
+                    count += 1
+    return rows, count
+
+
 class Deployment:
     """Loaded reference model plus on-demand variant models."""
 
@@ -256,7 +289,7 @@ class Deployment:
         if self.tokenizer.pad_token_id is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
         self.kwargs = kwargs
-        self.model = self._load(torch_dtype=self.dtype)
+        self.model = self._load(**{DTYPE_KEYWORD: self.dtype})
 
     def _load(self, path=None, **extra):
         from transformers import AutoModelForCausalLM
@@ -278,7 +311,7 @@ class Deployment:
             from transformers import BitsAndBytesConfig
             config = (BitsAndBytesConfig(load_in_8bit=True) if kind == "int8" else
                       BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=self.dtype))
-            return self._load(quantization_config=config, torch_dtype=self.dtype)
+            return self._load(quantization_config=config, **{DTYPE_KEYWORD: self.dtype})
         # Export the deployed checkpoint as safetensors shards, then load it as a deployment would:
         # in the same dtype (clean control) or in the other half-precision dtype (deployment change).
         target = self.dtype if kind == "export_same_dtype" else (
@@ -287,7 +320,7 @@ class Deployment:
         shutil.rmtree(directory, ignore_errors=True)
         self.model.save_pretrained(directory, safe_serialization=True, max_shard_size="2GB")
         self.tokenizer.save_pretrained(directory)
-        model = self._load(str(directory), torch_dtype=target)
+        model = self._load(str(directory), **{DTYPE_KEYWORD: target})
         shutil.rmtree(directory, ignore_errors=True)
         return model
 
@@ -577,11 +610,16 @@ def run(args, output):
     torch_seconds["load_reference"] = time.perf_counter() - started
     contract = deployment.contract()
 
-    observed = {}
+    observed, nonfinite = {}, {}
 
     def capture(group, name, change):
         t0 = time.perf_counter()
         rows = run_change(deployment, probes, change)
+        if rows is not None:
+            rows, bad = sanitize(rows)
+            if bad:
+                nonfinite[f"{group}/{name}"] = bad
+                log(f"  {group}/{name}: {bad} non-finite log-probability values (recorded as a behavioral change)")
         observed[f"{group}/{name}"] = rows
         torch_seconds[f"{group}/{name}"] = time.perf_counter() - t0
         log(f"  {group}/{name}: {'skipped (needs CUDA)' if rows is None else f'{time.perf_counter() - t0:.1f}s'}")
@@ -684,6 +722,7 @@ def run(args, output):
         "package": {"file": "package.json", "verification": verification, "checks": package_checks,
                     "checks_use": "stored full-pool observations of each variant, restricted by the package to its panel"},
         "skipped_variants": [k.split("/", 1)[1] for k, v in observed.items() if v is None],
+        "nonfinite_values": nonfinite,
         "seconds": {"observations": torch_seconds, "construction": construction_seconds, "audit": audit_seconds,
                     "development_total": development},
         "timing": timing,
@@ -780,7 +819,8 @@ def write_summary(output, protocol, results):
                   f"{100 * results['exact_vs_pruned_greedy_token_saving']:.2f}% of tokens versus optimally pruned greedy. "
                   f"Random panels at the exact budget meeting the requirement: {results['random_at_exact_budget']['meeting_requirement']}/1000.",
               f"Excluded construction variants (fewer than two separating probes): {results['construction_excluded_fewer_than_two_separators'] or 'none'}.",
-              f"Skipped variants: {results['skipped_variants'] or 'none'}.", "",
+              f"Skipped variants: {results['skipped_variants'] or 'none'}.",
+              f"Configurations emitting non-finite log-probabilities: {results['nonfinite_values'] or 'none'}.", "",
               f"Resident: full pool {timing['full_pool_median_seconds']:.4f}s vs panel check {timing['panel_check_median_seconds']:.4f}s "
               f"({timing['speed_ratio']:.2f}x). Break-even: {results['break_even_checks']['construction_only']} checks "
               f"(construction), {results['break_even_checks']['construction_plus_audit']} (construction + audit).",
