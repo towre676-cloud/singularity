@@ -1,0 +1,32 @@
+{
+ "construction_sha256": "91227c830d3cff8fe29f5c5b8ab9f8b44decd88452637a43a3f777be41f595a5",
+ "frozen_before_audit": true,
+ "panels": {
+  "exact": [
+   "pad32_war",
+   "uni_padded",
+   "uni_long",
+   "nl_long"
+  ],
+  "fixed_all_short": [
+   "pad32_war",
+   "pad32_film",
+   "short_city",
+   "short_first",
+   "short_known"
+  ],
+  "fixed_typical": [
+   "full_history",
+   "full_season",
+   "full_album",
+   "full_species"
+  ],
+  "greedy": [
+   "pad32_war",
+   "pad32_film",
+   "uni_ligature",
+   "uni_long",
+   "nl_long"
+  ]
+ }
+}

@@ -1,0 +1,834 @@
+{
+ "calibration_clean_maxima": {
+  "1000": [
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   }
+  ],
+  "1001": [
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   }
+  ]
+ },
+ "comparators": {
+  "exact": {
+   "cost": 195,
+   "distinctions_detected": 14,
+   "distinctions_meeting_requirement": 14,
+   "erasure_tolerance": 1,
+   "panel": [
+    8,
+    15,
+    16,
+    18
+   ],
+   "probe_ids": [
+    "pad32_war",
+    "uni_padded",
+    "uni_long",
+    "nl_long"
+   ],
+   "satisfies_requirement": true
+  },
+  "fixed_all_short": {
+   "cost": 126,
+   "distinctions_detected": 8,
+   "distinctions_meeting_requirement": 8,
+   "erasure_tolerance": -1,
+   "panel": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "probe_ids": [
+    "pad32_war",
+    "pad32_film",
+    "short_city",
+    "short_first",
+    "short_known"
+   ],
+   "satisfies_requirement": false
+  },
+  "fixed_typical": {
+   "cost": 255,
+   "distinctions_detected": 6,
+   "distinctions_meeting_requirement": 6,
+   "erasure_tolerance": -1,
+   "panel": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "probe_ids": [
+    "full_history",
+    "full_season",
+    "full_album",
+    "full_species"
+   ],
+   "satisfies_requirement": false
+  },
+  "greedy": {
+   "cost": 224,
+   "distinctions_detected": 14,
+   "distinctions_meeting_requirement": 14,
+   "erasure_tolerance": 1,
+   "panel": [
+    8,
+    9,
+    13,
+    16,
+    18
+   ],
+   "probe_ids": [
+    "pad32_war",
+    "pad32_film",
+    "uni_ligature",
+    "uni_long",
+    "nl_long"
+   ],
+   "satisfies_requirement": true
+  }
+ },
+ "contract": {
+  "adapter": "ByteTransformerAdapter",
+  "attention_mask": true,
+  "decoding": "greedy, no logits processors",
+  "max_context": 64,
+  "model_tensor_sha256": "e59485dcca8ce73bf98ecbabc848bd43b5d6d8cdd1af553d126d258d9ee3eb91",
+  "newline": "0a",
+  "normalization": "none",
+  "pad_id": 0,
+  "padding_side": "left",
+  "position_ids": "offset by left padding",
+  "temperature": 1.0,
+  "text_encoding": "utf-8",
+  "truncate_to": 64,
+  "truncation": "keep last tokens",
+  "use_cache": false,
+  "vocabulary": "UTF-8 bytes 0..255"
+ },
+ "cost_seconds": {
+  "exact_solver": 0.0011287130000710022,
+  "independent_enumeration": 1.5272717799998645,
+  "observation": 0.44368998900017687,
+  "total": 1.9986189740002374
+ },
+ "distinctions": [
+  "seed_1000/padding_mask_dropped",
+  "seed_1000/position_offset_missing",
+  "seed_1000/truncate_48",
+  "seed_1000/unicode_nfkc",
+  "seed_1000/ascii_replace",
+  "seed_1000/temperature_1.3",
+  "seed_1000/quantize_layer1_ffn_in_6bit",
+  "seed_1001/padding_mask_dropped",
+  "seed_1001/position_offset_missing",
+  "seed_1001/truncate_48",
+  "seed_1001/unicode_nfkc",
+  "seed_1001/ascii_replace",
+  "seed_1001/temperature_1.3",
+  "seed_1001/quantize_layer1_ffn_in_6bit"
+ ],
+ "exact": {
+  "cost": 195,
+  "nodes": 17,
+  "probe_ids": [
+   "pad32_war",
+   "uni_padded",
+   "uni_long",
+   "nl_long"
+  ],
+  "root_lower_bound": "179"
+ },
+ "full_pool_cost": 961,
+ "independent_enumeration": {
+  "minimizing_panels": [
+   [
+    "pad32_war",
+    "uni_padded",
+    "uni_long",
+    "nl_long"
+   ],
+   [
+    "pad32_film",
+    "uni_padded",
+    "uni_long",
+    "nl_long"
+   ]
+  ],
+  "minimum_cost": 195,
+  "seconds": 1.5272717799998645,
+  "subsets": 1048576
+ },
+ "protocol_sha256": "3ebf8ee52bbbaa0bae12e064928d771deb418ac3a11e7dd66babe81d4eb2972e",
+ "random_at_exact_budget": {
+  "detecting_all": 318,
+  "draws": 1000,
+  "mean_cost": 187.88,
+  "mean_distinctions_meeting_requirement": 7.012,
+  "satisfying_requirement": 1
+ },
+ "schema": "singularity.robust-audit-construction/1",
+ "separation_table": {
+  "full_album": [
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true
+  ],
+  "full_history": [
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true
+  ],
+  "full_season": [
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true
+  ],
+  "full_species": [
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true
+  ],
+  "nl_list": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "nl_long": [
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true
+  ],
+  "nl_short": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "pad32_film": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "pad32_war": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "pad64_born": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "pad64_church": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "pad64_game": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "pad64_river": [
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "short_city": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "short_first": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "short_known": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true
+  ],
+  "uni_accents": [
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true
+  ],
+  "uni_ligature": [
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true
+  ],
+  "uni_long": [
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "uni_padded": [
+   true,
+   true,
+   false,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   false,
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "separators_per_distinction": {
+  "seed_1000/ascii_replace": 4,
+  "seed_1000/padding_mask_dropped": 8,
+  "seed_1000/position_offset_missing": 8,
+  "seed_1000/quantize_layer1_ffn_in_6bit": 20,
+  "seed_1000/temperature_1.3": 20,
+  "seed_1000/truncate_48": 6,
+  "seed_1000/unicode_nfkc": 3,
+  "seed_1001/ascii_replace": 4,
+  "seed_1001/padding_mask_dropped": 8,
+  "seed_1001/position_offset_missing": 8,
+  "seed_1001/quantize_layer1_ffn_in_6bit": 20,
+  "seed_1001/temperature_1.3": 20,
+  "seed_1001/truncate_48": 6,
+  "seed_1001/unicode_nfkc": 3
+ },
+ "tolerances": {
+  "1000": [
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   }
+  ],
+  "1001": [
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   },
+   {
+    "entropy": 1e-06,
+    "top_logprob": 1e-06
+   }
+  ]
+ }
+}

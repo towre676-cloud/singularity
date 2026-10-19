@@ -1,0 +1,1013 @@
+{
+ "audit_seconds": 0.8181154710000555,
+ "created_at_utc": "2026-10-19T14:05:33.844234+00:00",
+ "frozen_panels_sha256": "e6ee1330cc6bb6e4e6280f744bc7c27530b5c1c81eb7441edd424b5d41a2a643",
+ "full_pool": {
+  "1000": {
+   "false_alarm_probes": {
+    "batch_size_3": [],
+    "deepcopy_clone": [],
+    "reversed_order": [],
+    "threads_4": []
+   },
+   "faults_detected_by_some_probe": {
+    "crlf_newlines": true,
+    "quantize_layer0_attn_out_6bit": true,
+    "temperature_1.1": true,
+    "truncate_56": true,
+    "unicode_nfd": true
+   },
+   "separators_in_pool": {
+    "crlf_newlines": 3,
+    "quantize_layer0_attn_out_6bit": 20,
+    "temperature_1.1": 20,
+    "truncate_56": 5,
+    "unicode_nfd": 3
+   }
+  },
+  "1001": {
+   "false_alarm_probes": {
+    "batch_size_3": [],
+    "deepcopy_clone": [],
+    "reversed_order": [],
+    "threads_4": []
+   },
+   "faults_detected_by_some_probe": {
+    "crlf_newlines": true,
+    "quantize_layer0_attn_out_6bit": true,
+    "temperature_1.1": true,
+    "truncate_56": true,
+    "unicode_nfd": true
+   },
+   "separators_in_pool": {
+    "crlf_newlines": 3,
+    "quantize_layer0_attn_out_6bit": 20,
+    "temperature_1.1": 20,
+    "truncate_56": 5,
+    "unicode_nfd": 3
+   }
+  },
+  "1002": {
+   "false_alarm_probes": {
+    "batch_size_3": [],
+    "deepcopy_clone": [],
+    "reversed_order": [],
+    "threads_4": []
+   },
+   "faults_detected_by_some_probe": {
+    "ascii_replace": true,
+    "crlf_newlines": true,
+    "padding_mask_dropped": true,
+    "position_offset_missing": true,
+    "quantize_layer0_attn_out_6bit": true,
+    "quantize_layer1_ffn_in_6bit": true,
+    "temperature_1.1": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "truncate_56": true,
+    "unicode_nfd": true,
+    "unicode_nfkc": true
+   },
+   "separators_in_pool": {
+    "ascii_replace": 4,
+    "crlf_newlines": 3,
+    "padding_mask_dropped": 8,
+    "position_offset_missing": 8,
+    "quantize_layer0_attn_out_6bit": 20,
+    "quantize_layer1_ffn_in_6bit": 20,
+    "temperature_1.1": 20,
+    "temperature_1.3": 20,
+    "truncate_48": 6,
+    "truncate_56": 5,
+    "unicode_nfd": 3,
+    "unicode_nfkc": 3
+   }
+  }
+ },
+ "heldout_tolerances": [
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  },
+  {
+   "entropy": 1e-06,
+   "top_logprob": 1e-06
+  }
+ ],
+ "panels": {
+  "exact": {
+   "cost": 195,
+   "per_seed": {
+    "1000": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfd": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 2
+      }
+     }
+    },
+    "1001": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfd": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 2
+      }
+     }
+    },
+    "1002": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "ascii_replace": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "crlf_newlines": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "padding_mask_dropped": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "position_offset_missing": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "quantize_layer1_ffn_in_6bit": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.3": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_48": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfd": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "unicode_nfkc": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      }
+     }
+    }
+   },
+   "probe_ids": [
+    "pad32_war",
+    "uni_padded",
+    "uni_long",
+    "nl_long"
+   ]
+  },
+  "fixed_all_short": {
+   "cost": 126,
+   "per_seed": {
+    "1000": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "truncate_56": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "unicode_nfd": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      }
+     }
+    },
+    "1001": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "truncate_56": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "unicode_nfd": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      }
+     }
+    },
+    "1002": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "ascii_replace": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "crlf_newlines": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "padding_mask_dropped": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "position_offset_missing": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "quantize_layer1_ffn_in_6bit": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.3": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "truncate_48": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "truncate_56": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "unicode_nfd": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "unicode_nfkc": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      }
+     }
+    }
+   },
+   "probe_ids": [
+    "pad32_war",
+    "pad32_film",
+    "short_city",
+    "short_first",
+    "short_known"
+   ]
+  },
+  "fixed_typical": {
+   "cost": 255,
+   "per_seed": {
+    "1000": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "unicode_nfd": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      }
+     }
+    },
+    "1001": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "unicode_nfd": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      }
+     }
+    },
+    "1002": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "ascii_replace": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "crlf_newlines": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "padding_mask_dropped": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "position_offset_missing": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "quantize_layer1_ffn_in_6bit": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "temperature_1.3": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_48": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 4
+      },
+      "unicode_nfd": {
+       "detected": false,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 0
+      },
+      "unicode_nfkc": {
+       "detected": false,
+       "heldout": false,
+       "robust": false,
+       "separating_probes": 0
+      }
+     }
+    }
+   },
+   "probe_ids": [
+    "full_history",
+    "full_season",
+    "full_album",
+    "full_species"
+   ]
+  },
+  "greedy": {
+   "cost": 224,
+   "per_seed": {
+    "1000": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfd": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      }
+     }
+    },
+    "1001": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "crlf_newlines": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfd": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      }
+     }
+    },
+    "1002": {
+     "false_alarms": {
+      "batch_size_3": [],
+      "deepcopy_clone": [],
+      "reversed_order": [],
+      "threads_4": []
+     },
+     "faults": {
+      "ascii_replace": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "crlf_newlines": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "padding_mask_dropped": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "position_offset_missing": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "quantize_layer0_attn_out_6bit": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "quantize_layer1_ffn_in_6bit": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.1": {
+       "detected": true,
+       "heldout": true,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "temperature_1.3": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 5
+      },
+      "truncate_48": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      },
+      "truncate_56": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfd": {
+       "detected": true,
+       "heldout": true,
+       "robust": false,
+       "separating_probes": 1
+      },
+      "unicode_nfkc": {
+       "detected": true,
+       "heldout": false,
+       "robust": true,
+       "separating_probes": 2
+      }
+     }
+    }
+   },
+   "probe_ids": [
+    "pad32_war",
+    "pad32_film",
+    "uni_ligature",
+    "uni_long",
+    "nl_long"
+   ]
+  }
+ },
+ "panels_selected_using_audit": false,
+ "protocol_sha256": "3ebf8ee52bbbaa0bae12e064928d771deb418ac3a11e7dd66babe81d4eb2972e",
+ "schema": "singularity.robust-audit-results/1",
+ "seed_1002_package": {
+  "checks": {
+   "ascii_replace": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "uni_padded",
+     "uni_long"
+    ],
+    "verdict": "changed"
+   },
+   "batch_size_3": {
+    "contract_mismatches": 0,
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "crlf_newlines": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "deepcopy_clone": {
+    "contract_mismatches": 0,
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "padding_mask_dropped": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "pad32_war",
+     "uni_padded"
+    ],
+    "verdict": "changed"
+   },
+   "position_offset_missing": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "pad32_war",
+     "uni_padded"
+    ],
+    "verdict": "changed"
+   },
+   "quantize_layer0_attn_out_6bit": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "pad32_war",
+     "uni_padded",
+     "uni_long",
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "quantize_layer1_ffn_in_6bit": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "pad32_war",
+     "uni_padded",
+     "uni_long",
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "reversed_order": {
+    "contract_mismatches": 0,
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "temperature_1.1": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "pad32_war",
+     "uni_padded",
+     "uni_long",
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "temperature_1.3": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "pad32_war",
+     "uni_padded",
+     "uni_long",
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "threads_4": {
+    "contract_mismatches": 0,
+    "flagged_probes": [],
+    "verdict": "unchanged"
+   },
+   "truncate_48": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "uni_long",
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "truncate_56": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "nl_long"
+    ],
+    "verdict": "changed"
+   },
+   "unicode_nfd": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "uni_padded",
+     "uni_long"
+    ],
+    "verdict": "changed"
+   },
+   "unicode_nfkc": {
+    "contract_mismatches": 0,
+    "flagged_probes": [
+     "uni_padded",
+     "uni_long"
+    ],
+    "verdict": "changed"
+   }
+  },
+  "coverage": {
+   "ascii_replace": 2,
+   "padding_mask_dropped": 2,
+   "position_offset_missing": 2,
+   "quantize_layer1_ffn_in_6bit": 4,
+   "temperature_1.3": 4,
+   "truncate_48": 2,
+   "unicode_nfkc": 2
+  },
+  "deficient_faults": [],
+  "file": "seed_1002_package.json",
+  "sha256": "14c3dc716cd9e6f02fc90767ecc239de9e808ca040d11abbf044da07f2323005",
+  "verification": {
+   "faults": 7,
+   "panel_probes": 4,
+   "problems": [],
+   "requirement": 2,
+   "verified": true
+  }
+ }
+}
