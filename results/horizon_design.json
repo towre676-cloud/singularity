@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "K": "2",
+      "bound_holds_first_40": true,
+      "case": "half_decay",
+      "max_gap_first_40": "2",
+      "rho": "1/2",
+      "steady_output": "2"
+    },
+    {
+      "K": "3/2",
+      "bound_holds_first_40": true,
+      "case": "alternating_decay",
+      "max_gap_first_40": "3/2",
+      "rho": "2796203/8388608",
+      "steady_output": "3/2"
+    },
+    {
+      "K": "5919872739215642023196193732394601732564023542272679/56921835019945948866528237158480286581545467117568",
+      "bound_holds_first_40": true,
+      "case": "nonnormal_step",
+      "max_gap_first_40": "40",
+      "rho": "12578717/16777216",
+      "steady_output": "40"
+    },
+    {
+      "K": "31583188307974936648589962803500455328043094128702619/910749360319135181864451794535684585304727473881088",
+      "bound_holds_first_40": true,
+      "case": "nonnormal_free",
+      "max_gap_first_40": "10",
+      "rho": "12578717/16777216",
+      "steady_output": "0"
+    }
+  ],
+  "schema": "singularity.horizon-design-receipt/1",
+  "scope": "Constant-input step experiments from a declared reset; exact rational data. NX10-B/C (horizon optimisation, thermal pairs) are not part of this receipt.",
+  "unit": "NX10-A"
+}
