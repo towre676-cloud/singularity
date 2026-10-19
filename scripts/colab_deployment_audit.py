@@ -57,7 +57,34 @@ import tempfile
 import time
 import unicodedata
 
-ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY = "https://github.com/towre676-cloud/singularity"
+BRANCH = "ccr-f4cbebff-f5j47k"
+
+
+def _locate_root():
+    """Find the repository (script, notebook cell or Colab) or clone it.
+
+    Pasting this file into a notebook cell leaves ``__file__`` undefined, so
+    also look upwards from the working directory and at /content/singularity.
+    """
+    candidates = []
+    try:
+        candidates.append(Path(__file__).resolve().parents[1])
+    except NameError:
+        pass
+    here = Path.cwd().resolve()
+    candidates += [here, *here.parents, here / "singularity", Path("/content/singularity")]
+    for candidate in candidates:
+        if (candidate / "src/singularity/model_audit/core.py").is_file():
+            return candidate
+    target = Path("/content/singularity") if Path("/content").is_dir() else here / "singularity"
+    print(f"Cloning {REPOSITORY} ({BRANCH}) into {target}", flush=True)
+    subprocess.check_call(["git", "clone", "-q", "--depth", "1", "-b", BRANCH, REPOSITORY, str(target)])
+    return target
+
+
+ROOT = _locate_root()
+SCRIPT_PATH = ROOT / "scripts/colab_deployment_audit.py"
 sys.path.insert(0, str(ROOT / "src"))
 
 from singularity.model_audit.core import (  # noqa: E402  standard library only
@@ -491,7 +518,7 @@ def freeze(args, output):
                         "typical": "four full-length typical paragraphs", "random": "1000 seeded random orders filled within the exact budget"},
         "silent_variants": "every variant declares the reference contract",
         "local_test": bool(args.local_test),
-        "script_sha256": sha(Path(__file__).read_bytes()),
+        "script_sha256": sha(SCRIPT_PATH.read_bytes()),
         "frozen_at_utc": now(),
         "claim_boundary": "Exact coverage of the declared construction table only; held-out detection, false alarms and timings are measurements on this run.",
     }
@@ -505,7 +532,7 @@ def freeze(args, output):
 def checked_protocol(output):
     protocol = json.loads((output / "protocol.json").read_text())
     body = {k: v for k, v in protocol.items() if k not in ("frozen_at_utc", "protocol_sha256")}
-    if sha(canonical(body)) != protocol["protocol_sha256"] or protocol["script_sha256"] != sha(Path(__file__).read_bytes()):
+    if sha(canonical(body)) != protocol["protocol_sha256"] or protocol["script_sha256"] != sha(SCRIPT_PATH.read_bytes()):
         raise ValueError("protocol or script changed after freezing")
     return protocol
 
@@ -713,7 +740,7 @@ def cold_checks(output):
     records = []
     for _ in range(TIMING["cold_repeats"]):
         t0 = time.perf_counter()
-        completed = subprocess.run([sys.executable, __file__, "--phase", "cold-check", "--output", str(output)],
+        completed = subprocess.run([sys.executable, str(SCRIPT_PATH), "--phase", "cold-check", "--output", str(output)],
                                    capture_output=True, text=True)
         record = {"process_wall_seconds": time.perf_counter() - t0, "exit_code": completed.returncode}
         try:
@@ -781,14 +808,15 @@ def ensure_dependencies(local_test):
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", *missing])
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--model", help="Hub model id (default: chosen from GPU memory)")
     parser.add_argument("--output", type=Path, default=Path("deployment_audit"))
     parser.add_argument("--phase", choices=("all", "freeze", "run", "cold-check"), default="all")
     parser.add_argument("--local-test", action="store_true", help="CPU smoke test with a tiny random Qwen2 model")
     parser.add_argument("--skip-cold", action="store_true", help="skip fresh-process cold checks")
-    args = parser.parse_args()
+    # parse_known_args ignores the kernel arguments a notebook passes (e.g. -f kernel.json).
+    args, _ = parser.parse_known_args(argv)
     output = args.output.resolve()
     if args.phase == "cold-check":
         return cold_check(output)
