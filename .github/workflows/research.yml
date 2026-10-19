@@ -84,6 +84,7 @@ jobs:
           PYTHONPATH=src python scripts/loop_series.py --check
           PYTHONPATH=src python scripts/collision_cases.py --check
           PYTHONPATH=src python scripts/operator_experiments.py --check
+          PYTHONPATH=src python scripts/robust_search.py --check
       - name: Repository and manuscript checks
         run: python scripts/check_repository.py
       - name: Published document links

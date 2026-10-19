@@ -1,0 +1,827 @@
+{
+  "amplification": {
+    "bounded_optimum_formula": "2^floor(C)",
+    "budgets": [
+      {
+        "branch_and_bound": {
+          "budget": "0",
+          "cost": "0",
+          "experiments": 1,
+          "margin": "1",
+          "nodes": 1,
+          "observation": 0,
+          "pruned": 0,
+          "word": []
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "0",
+          "cost": "0",
+          "experiments": 1,
+          "margin": "1",
+          "nodes": 1,
+          "observation": 0,
+          "pruned": 0,
+          "word": []
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "1",
+          "cost": "1",
+          "experiments": 2,
+          "margin": "2",
+          "nodes": 2,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "1",
+          "cost": "1",
+          "experiments": 2,
+          "margin": "2",
+          "nodes": 2,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "2",
+          "cost": "2",
+          "experiments": 3,
+          "margin": "4",
+          "nodes": 3,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "2",
+          "cost": "2",
+          "experiments": 3,
+          "margin": "4",
+          "nodes": 3,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "3",
+          "cost": "3",
+          "experiments": 4,
+          "margin": "8",
+          "nodes": 4,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "3",
+          "cost": "3",
+          "experiments": 4,
+          "margin": "8",
+          "nodes": 4,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "4",
+          "cost": "4",
+          "experiments": 5,
+          "margin": "16",
+          "nodes": 5,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "4",
+          "cost": "4",
+          "experiments": 5,
+          "margin": "16",
+          "nodes": 5,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "5",
+          "cost": "5",
+          "experiments": 6,
+          "margin": "32",
+          "nodes": 6,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "5",
+          "cost": "5",
+          "experiments": 6,
+          "margin": "32",
+          "nodes": 6,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "6",
+          "cost": "6",
+          "experiments": 7,
+          "margin": "64",
+          "nodes": 7,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "6",
+          "cost": "6",
+          "experiments": 7,
+          "margin": "64",
+          "nodes": 7,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "7",
+          "cost": "7",
+          "experiments": 8,
+          "margin": "128",
+          "nodes": 8,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "7",
+          "cost": "7",
+          "experiments": 8,
+          "margin": "128",
+          "nodes": 8,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "8",
+          "cost": "8",
+          "experiments": 9,
+          "margin": "256",
+          "nodes": 9,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "8",
+          "cost": "8",
+          "experiments": 9,
+          "margin": "256",
+          "nodes": 9,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    ],
+    "cheapest_witness": {
+      "cost": "0",
+      "margin": "1",
+      "word": []
+    },
+    "closure_basis_words": [
+      []
+    ],
+    "system": "n=1, L=(1), M=(2), unit cost, sigma=1, d=(1)",
+    "unrestricted_optimum_exists": false
+  },
+  "dependence_pruning_and_separation": {
+    "bounded_optimum_budget_2": {
+      "branch_and_bound": {
+        "budget": "2",
+        "cost": "2",
+        "experiments": 5,
+        "margin": "3",
+        "nodes": 5,
+        "observation": 0,
+        "pruned": 2,
+        "word": [
+          1,
+          0
+        ]
+      },
+      "equal_value": true,
+      "exhaustive": {
+        "budget": "2",
+        "cost": "2",
+        "experiments": 7,
+        "margin": "3",
+        "nodes": 7,
+        "observation": 0,
+        "pruned": 0,
+        "word": [
+          1,
+          0
+        ]
+      }
+    },
+    "cheapest_witness": {
+      "cost": "1",
+      "margin": "1",
+      "word": [
+        0
+      ]
+    },
+    "closure_basis_words": [
+      [],
+      [
+        0
+      ]
+    ],
+    "optimal_row": [
+      "0",
+      "3"
+    ],
+    "optimal_row_pruned_by_closure": true,
+    "system": "M_0=swap, M_1=diag(1,3), L=(1,0), d=(0,1), unit costs, sigma=1",
+    "words_differ": true
+  },
+  "path_fixture": {
+    "budgets": [
+      {
+        "branch_and_bound": {
+          "budget": "1",
+          "cost": "1",
+          "experiments": 4,
+          "margin": "1/8",
+          "nodes": 2,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "1",
+          "cost": "1",
+          "experiments": 4,
+          "margin": "1/8",
+          "nodes": 4,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "2",
+          "cost": "2",
+          "experiments": 8,
+          "margin": "3/16",
+          "nodes": 4,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "2",
+          "cost": "2",
+          "experiments": 8,
+          "margin": "3/16",
+          "nodes": 8,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "3",
+          "cost": "3",
+          "experiments": 14,
+          "margin": "7/32",
+          "nodes": 7,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "3",
+          "cost": "3",
+          "experiments": 14,
+          "margin": "7/32",
+          "nodes": 14,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "4",
+          "cost": "4",
+          "experiments": 24,
+          "margin": "15/64",
+          "nodes": 12,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "4",
+          "cost": "4",
+          "experiments": 24,
+          "margin": "15/64",
+          "nodes": 24,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "5",
+          "cost": "5",
+          "experiments": 40,
+          "margin": "31/128",
+          "nodes": 20,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "5",
+          "cost": "5",
+          "experiments": 40,
+          "margin": "31/128",
+          "nodes": 40,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "6",
+          "cost": "6",
+          "experiments": 66,
+          "margin": "63/256",
+          "nodes": 33,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "6",
+          "cost": "6",
+          "experiments": 66,
+          "margin": "63/256",
+          "nodes": 66,
+          "observation": 1,
+          "pruned": 0,
+          "word": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    ],
+    "cheapest_witness": {
+      "cost": "1",
+      "observation": 1,
+      "word": [
+        1
+      ]
+    },
+    "d": [
+      "0",
+      "-1/4",
+      "1/4"
+    ],
+    "difference": "compile(P3,(0,2)) - compile(P3,(0,1))",
+    "observed_pattern": "1/4 - 2^-(C+2) for C=1..6 (finite check, not proved)",
+    "system": "BoundaryExperimentSystem(1, 1/2), contexts (pendant_leaf_pair, shared_neighbor), attachment costs (2, 1), observation costs 0, sigma=1"
+  },
+  "schema": "singularity.robust-search/1",
+  "scope": "Exact finite receipts. Bounded maximum-margin search under a cost budget with deterministic additive noise bounds; branch-and-bound uses the proved infinity-norm bound and is compared with exhaustive search. No shared-panel optimization.",
+  "supremum_not_attained": {
+    "attained": false,
+    "budgets": [
+      {
+        "branch_and_bound": {
+          "budget": "0",
+          "cost": "0",
+          "experiments": 1,
+          "margin": "0",
+          "nodes": 1,
+          "observation": 0,
+          "pruned": 0,
+          "word": []
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "0",
+          "cost": "0",
+          "experiments": 1,
+          "margin": "0",
+          "nodes": 1,
+          "observation": 0,
+          "pruned": 0,
+          "word": []
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "1",
+          "cost": "1",
+          "experiments": 2,
+          "margin": "1",
+          "nodes": 2,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "1",
+          "cost": "1",
+          "experiments": 2,
+          "margin": "1",
+          "nodes": 2,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "2",
+          "cost": "2",
+          "experiments": 3,
+          "margin": "3/2",
+          "nodes": 3,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "2",
+          "cost": "2",
+          "experiments": 3,
+          "margin": "3/2",
+          "nodes": 3,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "3",
+          "cost": "3",
+          "experiments": 4,
+          "margin": "7/4",
+          "nodes": 4,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "3",
+          "cost": "3",
+          "experiments": 4,
+          "margin": "7/4",
+          "nodes": 4,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "4",
+          "cost": "4",
+          "experiments": 5,
+          "margin": "15/8",
+          "nodes": 5,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "4",
+          "cost": "4",
+          "experiments": 5,
+          "margin": "15/8",
+          "nodes": 5,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "5",
+          "cost": "5",
+          "experiments": 6,
+          "margin": "31/16",
+          "nodes": 6,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "5",
+          "cost": "5",
+          "experiments": 6,
+          "margin": "31/16",
+          "nodes": 6,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "branch_and_bound": {
+          "budget": "6",
+          "cost": "6",
+          "experiments": 7,
+          "margin": "63/32",
+          "nodes": 7,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "equal_value": true,
+        "exhaustive": {
+          "budget": "6",
+          "cost": "6",
+          "experiments": 7,
+          "margin": "63/32",
+          "nodes": 7,
+          "observation": 0,
+          "pruned": 0,
+          "word": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    ],
+    "checked_k": [
+      0,
+      20
+    ],
+    "matrix_inf_norm": "2",
+    "reading_formula": "2 - 2^(1-k)",
+    "readings": [
+      "0",
+      "1",
+      "3/2",
+      "7/4",
+      "15/8",
+      "31/16",
+      "63/32",
+      "127/64",
+      "255/128",
+      "511/256",
+      "1023/512",
+      "2047/1024",
+      "4095/2048",
+      "8191/4096",
+      "16383/8192",
+      "32767/16384",
+      "65535/32768",
+      "131071/65536",
+      "262143/131072",
+      "524287/262144",
+      "1048575/524288"
+    ],
+    "supremum": "2",
+    "system": "M=[[1,1],[0,1/2]], L=(1,0), d=(0,1), unit cost, sigma=1"
+  }
+}
