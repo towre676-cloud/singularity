@@ -148,3 +148,17 @@ It chooses Qwen2.5 by GPU memory (7B at ≥38 GB, 3B at ≥20 GB, otherwise 1.5B
 - **clean controls:** batch size 1 and 8 for calibration; for false alarms, eager attention instead of SDPA, KV cache disabled, a same-dtype export round-trip and reversed order.
 
 The script compares the exact 2-robust panel with greedy, optimally pruned greedy, a typical-text panel and random panels under the same requirement. It confirms the optimum by an independent scan of all 2^18 subsets. It also builds and verifies a standalone package, times resident checks with CUDA synchronization, runs fresh-process cold checks, and reports break-even counts. Output: a new `deployment_audit_<UTC time>/` folder per run (or `--output`) with `summary.md`, every receipt and a zip. `--local-test` runs every code path on CPU with a tiny random Qwen2 model; the quantized variants are then skipped. Construction variants with fewer than two separating probes, such as position offsets that RoPE makes invisible, are reported and excluded from the guarantee rather than hidden.
+
+### Version 2 of the GPU deployment audit
+
+Version 1 (`scripts/colab_deployment_audit.py`, commit a9bfb31) ran on a T4 with Qwen2.5-1.5B in float16 under protocol `47b381aacf9182f3`. It is preserved unchanged.
+
+That run exposed two problems with its "clean" controls. Disabling the KV cache flagged 4 continuation probes, because tolerances had been calibrated only on batch size. Eager attention emitted 1,348 non-finite log-probabilities. The exact panel tied optimally pruned greedy at 261 tokens.
+
+`scripts/colab_deployment_audit_v2.py` repairs the contract and freezes it before any forward pass:
+
+- **Calibration envelope.** Calibration covers cached and uncached execution at batch sizes 1 and 8. Tolerances are 4 × the largest calibration deviation + 10⁻⁴ nats. Continuations are compared only on the prefix shared by every calibration run.
+- **Separate clean validation runs.** Uncached batch 4, cached batch 3, reversed order and a same-dtype export round-trip never enter calibration. Any flag on them is a false alarm.
+- **Numerical health.** Non-finite output is a separate failure and never widens a tolerance. It aborts the run when it appears in the reference or calibration runs.
+- **Candidate configurations.** Eager attention is approved as clean only for the exact model, revision, dtype and GPU tested, and only if it is numerically healthy and no probe flags.
+- **Variant labels.** Variants repeated from version 1 are labelled retests. An injected prefix token and a generation-path repetition penalty are new held-out variants.
