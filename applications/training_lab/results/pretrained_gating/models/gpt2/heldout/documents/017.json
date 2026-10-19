@@ -1,0 +1,200 @@
+{
+  "arms": {
+    "adaptive_count": {
+      "loss_sum_nats_hex": "0x1.a0f876f80d57ep+11",
+      "nll_nats_per_token": 6.515165083158875
+    },
+    "hierarchy_protected": {
+      "loss_sum_nats_hex": "0x1.7009561768e43p+10",
+      "neural_protection_slack_nats": 125.22039288777182,
+      "nll_nats_per_token": 2.8752849211030322
+    },
+    "neural": {
+      "loss_sum_nats_hex": "0x1.8f54289e82bacp+10",
+      "nll_nats_per_token": 3.119755818746361
+    },
+    "order1_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.6f505a3d95898p+10",
+      "neural_protection_slack_nats": 128.11076464566122,
+      "nll_nats_per_token": 2.8696396637634045
+    },
+    "order1_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.75dedb303c280p+10",
+      "neural_protection_slack_nats": 101.88414429318891,
+      "nll_nats_per_token": 2.920863531639327
+    },
+    "order1_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.8f5771022e343p+10",
+      "neural_protection_slack_nats": 2.2737367544323206e-13,
+      "nll_nats_per_token": 3.119856000961961
+    },
+    "order1_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.75f7e920e3cd5p+10",
+      "neural_protection_slack_nats": 101.4926684595664,
+      "nll_nats_per_token": 2.921628132876871
+    },
+    "order1_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.78bd9c3dc96dep+10",
+      "neural_protection_slack_nats": 90.40361127702045,
+      "nll_nats_per_token": 2.943286447686531
+    },
+    "order1_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.8f5771022e343p+10",
+      "neural_protection_slack_nats": 2.2737367544323206e-13,
+      "nll_nats_per_token": 3.119856000961961
+    },
+    "order2_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.812a86d7b28aap+10",
+      "neural_protection_slack_nats": 56.70179235531259,
+      "nll_nats_per_token": 3.0091103127679917
+    },
+    "order2_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.848af7dae8368p+10",
+      "neural_protection_slack_nats": 43.19489461741523,
+      "nll_nats_per_token": 3.0354909724123225
+    },
+    "order2_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.8f5771022e343p+10",
+      "neural_protection_slack_nats": 2.2737367544323206e-13,
+      "nll_nats_per_token": 3.119856000961961
+    },
+    "order2_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.875356a227e0dp+10",
+      "neural_protection_slack_nats": 32.06410980813757,
+      "nll_nats_per_token": 3.057230786492943
+    },
+    "order2_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.893f828944bf2p+10",
+      "neural_protection_slack_nats": 24.37393019484125,
+      "nll_nats_per_token": 3.0722506685501623
+    },
+    "order2_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.8f5771022e343p+10",
+      "neural_protection_slack_nats": 2.2737367544323206e-13,
+      "nll_nats_per_token": 3.119856000961961
+    },
+    "order3_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.8caaefb01959bp+10",
+      "neural_protection_slack_nats": 10.695393104901314,
+      "nll_nats_per_token": 3.098966561303951
+    },
+    "order3_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.8ea32d4ad61f3p+10",
+      "neural_protection_slack_nats": 2.816633068101737,
+      "nll_nats_per_token": 3.1143547645008254
+    },
+    "order3_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.8f5771022e343p+10",
+      "neural_protection_slack_nats": 2.2737367544323206e-13,
+      "nll_nats_per_token": 3.119856000961961
+    },
+    "order3_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.8dcdf0ca7ab2ap+10",
+      "neural_protection_slack_nats": 6.1484507802001644,
+      "nll_nats_per_token": 3.107847308031883
+    },
+    "order3_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.8ef979317250bp+10",
+      "neural_protection_slack_nats": 1.4682504496433921,
+      "nll_nats_per_token": 3.116988324302502
+    },
+    "order3_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.8f5771022e343p+10",
+      "neural_protection_slack_nats": 2.2737367544323206e-13,
+      "nll_nats_per_token": 3.119856000961961
+    },
+    "ungated_protected": {
+      "loss_sum_nats_hex": "0x1.8f5771020f51dp+10",
+      "neural_protection_slack_nats": 2.8763452064595185e-08,
+      "nll_nats_per_token": 3.119856000905783
+    }
+  },
+  "document": 17,
+  "domain": "python_source",
+  "gate_active_targets": {
+    "order1_support1_alpha025": 307,
+    "order1_support1_alpha050": 307,
+    "order1_support1_alpha100": 307,
+    "order1_support2_alpha025": 219,
+    "order1_support2_alpha050": 219,
+    "order1_support2_alpha100": 219,
+    "order2_support1_alpha025": 184,
+    "order2_support1_alpha050": 184,
+    "order2_support1_alpha100": 184,
+    "order2_support2_alpha025": 139,
+    "order2_support2_alpha050": 139,
+    "order2_support2_alpha100": 139,
+    "order3_support1_alpha025": 117,
+    "order3_support1_alpha050": 117,
+    "order3_support1_alpha100": 117,
+    "order3_support2_alpha025": 91,
+    "order3_support2_alpha050": 91,
+    "order3_support2_alpha100": 91
+  },
+  "model": "gpt2",
+  "name": "inspect.py",
+  "neural_extra_loss_ceiling_nats": 0.05129329438755058,
+  "protocol_sha256": "b7a9de8c3dd3163ceb41483ec5d025590aabacbc9e12686d5ea12166fe9eb376",
+  "raw_gate_loss_sum_nats_hex": {
+    "order1_support1_alpha025": "0x1.6e90a029b9e9bp+10",
+    "order1_support1_alpha050": "0x1.751f211c6088ap+10",
+    "order1_support1_alpha100": "0x1.1431b968f8e7fp+11",
+    "order1_support2_alpha025": "0x1.75382f0d082dap+10",
+    "order1_support2_alpha050": "0x1.77fde229edcecp+10",
+    "order1_support2_alpha100": "0x1.dc3466fcc0dd3p+10",
+    "order2_support1_alpha025": "0x1.806accc3d6eb2p+10",
+    "order2_support1_alpha050": "0x1.83cb3dc70c974p+10",
+    "order2_support1_alpha100": "0x1.ede836438686ap+10",
+    "order2_support2_alpha025": "0x1.86939c8e4c416p+10",
+    "order2_support2_alpha050": "0x1.887fc87569273p+10",
+    "order2_support2_alpha100": "0x1.ccd9399cc5482p+10",
+    "order3_support1_alpha025": "0x1.8beb35fb3d396p+10",
+    "order3_support1_alpha050": "0x1.8de7659e04106p+10",
+    "order3_support1_alpha100": "0x1.cdfc51a19f4cdp+10",
+    "order3_support2_alpha025": "0x1.8d0e59c28e2dep+10",
+    "order3_support2_alpha050": "0x1.8e4a804c7939bp+10",
+    "order3_support2_alpha100": "0x1.bad7f08de760ap+10"
+  },
+  "replay_sha256": "e25cecc0fc1ebe64a28b6e8e7c232d98f594a108aa2e29847805b2b9c391c332",
+  "rounding_allowance_nats": 2.4243992170291847e-08,
+  "scoring_wall_seconds": 1.326093008996395,
+  "selection_sha256": "ea20479053f26afaa844820a66044c510f99921aed2e5947d47b346ff6b880c7",
+  "source_sha256": "a7a62164f4e85903a21281dc1e824c08a0f145435fea8b18032ab0a5aaceec4b",
+  "split": "heldout",
+  "target_chunks": [
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0000.json",
+      "sha256": "56fcea47bf0516c4c0bda74746e8b07979b9e84bcb2e5c3e96234e527141d1c0"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0064.json",
+      "sha256": "d86a51da2d240119be1eb3ca1df813f2b292d6cd52af699f9ac10de26835ef41"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0128.json",
+      "sha256": "d4cc423694af95f589f377a11c2301d9233c3c80d45bb53093ebb9048e4e7ed1"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0192.json",
+      "sha256": "7e09c5a59f19e3851ed12077561e0177279a025f8271db97c95449b7c814e289"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0256.json",
+      "sha256": "8235ef37066ad23a948bf4aed489c148e903a06c690c43d084641cae53565ac0"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0320.json",
+      "sha256": "d73cd3a32ae401627c3a0e698e20e96f616c0da3e5d9530c561915a131e9300d"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0384.json",
+      "sha256": "93f8b8f6cb958bbc0ff33cfe518574ad07776a6226f8806bdfadf4aed23ea49b"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/017_targets/0448.json",
+      "sha256": "b1a1af7d8db3dd953a3dc79361aa20d77653df91ec53d73b029b0898ad35607f"
+    }
+  ],
+  "targets": 512,
+  "token_ids_sha256": "337ef86fec18e4a8cebb08ef924f2b7fa092b9956abe56feff67ec9499b02a5d"
+}

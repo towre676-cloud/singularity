@@ -1,0 +1,200 @@
+{
+  "arms": {
+    "adaptive_count": {
+      "loss_sum_nats_hex": "0x1.5d7225be14194p+11",
+      "nll_nats_per_token": 5.460092006324334
+    },
+    "hierarchy_protected": {
+      "loss_sum_nats_hex": "0x1.3c59f026ee0cfp+10",
+      "neural_protection_slack_nats": 162.914287946483,
+      "nll_nats_per_token": 2.4714946928107575
+    },
+    "neural": {
+      "loss_sum_nats_hex": "0x1.65112b74d9e4dp+10",
+      "nll_nats_per_token": 2.7895864792406315
+    },
+    "order1_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.3ba0f458975acp+10",
+      "neural_protection_slack_nats": 165.80465696567103,
+      "nll_nats_per_token": 2.465849440820156
+    },
+    "order1_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.3ed4aafde2074p+10",
+      "neural_protection_slack_nats": 152.99663415862256,
+      "nll_nats_per_token": 2.4908651103651724
+    },
+    "order1_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.651473d8855e7p+10",
+      "neural_protection_slack_nats": -4.547473508864641e-13,
+      "nll_nats_per_token": 2.789686661456233
+    },
+    "order1_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.49705f3af5c79p+10",
+      "neural_protection_slack_nats": 110.56375826856947,
+      "nll_nats_per_token": 2.5737418210879324
+    },
+    "order1_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.4ac4f3b48eb18p+10",
+      "neural_protection_slack_nats": 105.24219607438431,
+      "nll_nats_per_token": 2.5841354972484503
+    },
+    "order1_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.651473d8855e7p+10",
+      "neural_protection_slack_nats": -4.547473508864641e-13,
+      "nll_nats_per_token": 2.789686661456233
+    },
+    "order2_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.514ab46746c6ap+10",
+      "neural_protection_slack_nats": 79.15230971443702,
+      "nll_nats_per_token": 2.6350923065452223
+    },
+    "order2_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.509cecc3b18a6p+10",
+      "neural_protection_slack_nats": 81.86761971174542,
+      "nll_nats_per_token": 2.6297889667067293
+    },
+    "order2_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.651473d8855e7p+10",
+      "neural_protection_slack_nats": -4.547473508864641e-13,
+      "nll_nats_per_token": 2.789686661456233
+    },
+    "order2_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.5d7845b441ed7p+10",
+      "neural_protection_slack_nats": 30.440316263065597,
+      "nll_nats_per_token": 2.730232918754932
+    },
+    "order2_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.5ca85a6178493p+10",
+      "neural_protection_slack_nats": 33.68905426290121,
+      "nll_nats_per_token": 2.723887727349003
+    },
+    "order2_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.651473d8855e7p+10",
+      "neural_protection_slack_nats": -4.547473508864641e-13,
+      "nll_nats_per_token": 2.789686661456233
+    },
+    "order3_support1_alpha025": {
+      "loss_sum_nats_hex": "0x1.5f5f6efebfe80p+10",
+      "neural_protection_slack_nats": 22.82842106135763,
+      "nll_nats_per_token": 2.745099901570768
+    },
+    "order3_support1_alpha050": {
+      "loss_sum_nats_hex": "0x1.5f3db4cd64254p+10",
+      "neural_protection_slack_nats": 23.355410368389357,
+      "nll_nats_per_token": 2.7440706255804717
+    },
+    "order3_support1_alpha100": {
+      "loss_sum_nats_hex": "0x1.651473d8855e7p+10",
+      "neural_protection_slack_nats": -4.547473508864641e-13,
+      "nll_nats_per_token": 2.789686661456233
+    },
+    "order3_support2_alpha025": {
+      "loss_sum_nats_hex": "0x1.63fbe52b045a3p+10",
+      "neural_protection_slack_nats": 4.383708358757303,
+      "nll_nats_per_token": 2.7811247310680343
+    },
+    "order3_support2_alpha050": {
+      "loss_sum_nats_hex": "0x1.63bd75a513a4dp+10",
+      "neural_protection_slack_nats": 5.35926519494933,
+      "nll_nats_per_token": 2.7792193466223467
+    },
+    "order3_support2_alpha100": {
+      "loss_sum_nats_hex": "0x1.651473d8855e7p+10",
+      "neural_protection_slack_nats": -4.547473508864641e-13,
+      "nll_nats_per_token": 2.789686661456233
+    },
+    "ungated_protected": {
+      "loss_sum_nats_hex": "0x1.51d4e1cab05d9p+10",
+      "neural_protection_slack_nats": 76.99328943062847,
+      "nll_nats_per_token": 2.639309143037036
+    }
+  },
+  "document": 23,
+  "domain": "python_source",
+  "gate_active_targets": {
+    "order1_support1_alpha025": 350,
+    "order1_support1_alpha050": 350,
+    "order1_support1_alpha100": 350,
+    "order1_support2_alpha025": 233,
+    "order1_support2_alpha050": 233,
+    "order1_support2_alpha100": 233,
+    "order2_support1_alpha025": 236,
+    "order2_support1_alpha050": 236,
+    "order2_support1_alpha100": 236,
+    "order2_support2_alpha025": 161,
+    "order2_support2_alpha050": 161,
+    "order2_support2_alpha100": 161,
+    "order3_support1_alpha025": 186,
+    "order3_support1_alpha050": 186,
+    "order3_support1_alpha100": 186,
+    "order3_support2_alpha025": 143,
+    "order3_support2_alpha050": 143,
+    "order3_support2_alpha100": 143
+  },
+  "model": "gpt2",
+  "name": "configparser.py",
+  "neural_extra_loss_ceiling_nats": 0.05129329438755058,
+  "protocol_sha256": "b7a9de8c3dd3163ceb41483ec5d025590aabacbc9e12686d5ea12166fe9eb376",
+  "raw_gate_loss_sum_nats_hex": {
+    "order1_support1_alpha025": "0x1.3ae13a44bbbb8p+10",
+    "order1_support1_alpha050": "0x1.3e14f0ea06682p+10",
+    "order1_support1_alpha100": "0x1.e45e6f41386a3p+10",
+    "order1_support2_alpha025": "0x1.48b0a5271a285p+10",
+    "order1_support2_alpha050": "0x1.4a0539a0b3125p+10",
+    "order1_support2_alpha100": "0x1.ac27e70b2cecap+10",
+    "order2_support1_alpha025": "0x1.508afa536b276p+10",
+    "order2_support1_alpha050": "0x1.4fdd32afd5eb0p+10",
+    "order2_support1_alpha100": "0x1.9b649ae47556fp+10",
+    "order2_support2_alpha025": "0x1.5cb88ba0664e5p+10",
+    "order2_support2_alpha050": "0x1.5be8a04d9ca9dp+10",
+    "order2_support2_alpha100": "0x1.82d07a4f594ddp+10",
+    "order3_support1_alpha025": "0x1.5e9fb4eae46a4p+10",
+    "order3_support1_alpha050": "0x1.5e7dfab988998p+10",
+    "order3_support1_alpha100": "0x1.9806463f621bcp+10",
+    "order3_support2_alpha025": "0x1.633cf8d52f4bfp+10",
+    "order3_support2_alpha050": "0x1.62fe08d34cbfep+10",
+    "order3_support2_alpha100": "0x1.899f8f01970c7p+10"
+  },
+  "replay_sha256": "73bdccadb77115895f43422bc6ba37c0f08cd46a8408b35f0e53393be3d6822b",
+  "rounding_allowance_nats": 2.1784038895671304e-08,
+  "scoring_wall_seconds": 1.0312359040035517,
+  "selection_sha256": "ea20479053f26afaa844820a66044c510f99921aed2e5947d47b346ff6b880c7",
+  "source_sha256": "f59020ab426419c391028b4cb7cc77d812fe3f582f52bab44aa6f2c6a3faf67f",
+  "split": "heldout",
+  "target_chunks": [
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0000.json",
+      "sha256": "ac3487cf1c665ce40a76fef87c8d3d0896b1ede19dfaa6b11bdf137246a72c5f"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0064.json",
+      "sha256": "74515df55f72c8d4779775a782ad5573c62f2b521397463871be9610c476c2b8"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0128.json",
+      "sha256": "38cd7d55edf2b130e025a3a96d82a0b251df9eeafc14285486d7d59349afe451"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0192.json",
+      "sha256": "1deec46d130e83e4cf0566470c317edc95be28c39c548a433510c9a138c2ee08"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0256.json",
+      "sha256": "3f5ddccab08161734c3b387b2c303d60ab07ea2aa83a297c62b666871ea9f2d6"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0320.json",
+      "sha256": "18a5ded746562df5c02243627150422e861591102e6706c667b4c92d5b4a2706"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0384.json",
+      "sha256": "f9b8b6bb92dd7c7a5001d15c7571c100b0f867b30a720ab418072a93074b3106"
+    },
+    {
+      "path": "models/gpt2/heldout/documents/023_targets/0448.json",
+      "sha256": "ff88fe1c1fdad7134a164c7e8e35a6259f6f2a44b2cf327446131fa86ee194da"
+    }
+  ],
+  "targets": 512,
+  "token_ids_sha256": "054d023221e869b4066584645515845dc48686221ad2dfc8ca1e82e61fc9790c"
+}
