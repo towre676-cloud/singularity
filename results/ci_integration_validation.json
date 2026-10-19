@@ -2,7 +2,7 @@
   "schema": "singularity.ci-integration-validation/1",
   "acceptance_id": "CI01",
   "base_main": "0ff46451738a7bededaeb1abcf243c1a6e65c771",
-  "status": "locally_verified",
+  "status": "locally_and_hosted_verified",
   "full_regression": {
     "tests": 891,
     "seconds": 174.706,
@@ -53,7 +53,34 @@
     "status": "preexisting incomplete companion excerpt links remain",
     "reproduction_fixture": "only stale version 0.8.0 -> 0.10.0; all other generated fixture fields compared equal; check passes after correction"
   },
-  "hosted_ci": "must inspect GitHub run after publication; local shell integration does not establish artifact-service execution",
+  "hosted_ci": {
+    "run_id": 39294941032,
+    "run_url": "https://github.com/towre676-cloud/singularity/actions/runs/39294941032",
+    "head_sha": "4852780c94c20307f3282e8286f6d3dde1f19bb3",
+    "job_id": 118204892785,
+    "conclusion": "success",
+    "checks": [
+      "focused regression",
+      "healthy composite deployment",
+      "model-free certificate replay",
+      "intentional weight replacement rejection",
+      "required failing outcome and changed verdict"
+    ],
+    "artifacts": [
+      {
+        "name": "healthy-audit",
+        "id": 12207910351,
+        "bytes": 5011,
+        "digest": "sha256:14303271bfa68de91068f593b9601f5f682cb208834d0bd547d90defe92ffe1d"
+      },
+      {
+        "name": "intentional-fault-audit",
+        "id": 12206878449,
+        "bytes": 5308,
+        "digest": "sha256:40abcb6ed25a13adeb18caa8ac914c7aafb17bdb2884618084fa2578ebde026e"
+      }
+    ]
+  },
   "limits": [
     "coverage certificate is finite construction-table coverage, not universal detection or global model equivalence",
     "portable witness is not a full-pool optimality proof",
