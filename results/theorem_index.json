@@ -564,91 +564,115 @@
       "id": "SNG-O07",
       "declaration": "Proposition SNG-O07 (certified nearest-candidate identification). Suppose:",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 164
+      "line": 173
     },
     {
       "id": "SNG-O08",
       "declaration": "Theorem SNG-O08 (residue numerator). With \\(K=n(M-1)\\),",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 186
+      "line": 195
     },
     {
       "id": "SNG-O09",
       "declaration": "Theorem SNG-O09 (palindrome and sufficient cutoff). Then \\(P_k=P_{K-k}\\) for every \\(k\\). Let two models have the same \\(n\\) and \\(M\\). If their series agree at every volume up to \\(\\lfloor K/2\\rfloor\\), they agree at every volume.",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 194
+      "line": 203
     },
     {
       "id": "SNG-O17",
       "declaration": "Theorem SNG-O17 (period reduction). For an edge exponent \\(a\\), let \\(p_a\\) be the least \\(p\\ge1\\) with \\(M\\mid 2ap\\) and \\(M\\mid ap^2\\), and put \\(M^*=\\operatorname{lcm}_ep_{a_e}\\), which divides \\(M\\). Then",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 203
+      "line": 212
     },
     {
       "id": "SNG-O18",
       "declaration": "Proposition SNG-O18 (closed form at \\(M=2\\)). Let \\(d^{\\mathrm{odd}}_v\\) be the number of odd-exponent edges at \\(v\\), and let \\(o\\) be the number of vertices with \\(d^{\\mathrm{odd}}_v\\) odd. Then",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 213
+      "line": 222
     },
     {
       "id": "SNG-O10",
       "declaration": "Proposition SNG-O10 (finite determination for edge-factor families). Place an independent factor \\(t_e\\) on every edge of a fixed template. For two fixed templates there is an \\(R_*\\) such that, over every commutative \\(\\mathbb Q\\)-algebra, agreement through volume \\(R_*\\) is equivalent to equality of the complete series. The proof is the Hilbert basis theorem applied to the chain of coefficient-difference ideals. No effective \\(R_*\\) is given. An ideal that stops growing once can grow later: the coefficients \\(0,\\ldots,0,t\\) are an example. Noetherian finite determination is not an algorithm.",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 227
+      "line": 236
     },
     {
       "id": "SNG-O11",
       "declaration": "Proposition SNG-O11 (triangle tangent ranks). On the positive octant, the three top-moment probes of the edge-factor triangle have Jacobian rank \\(3\\), \\(2\\) or \\(1\\) according as the edge factors take three, two or one distinct values. No further symmetric coefficient raises the rank.",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 229
+      "line": 238
     },
     {
       "id": "SNG-O12",
       "declaration": "Proposition SNG-O12 (parallel composition and terminal forgetting). Compressed charge interfaces multiply under parallel composition of blocks with disjoint interiors and edge-disjoint terminal graphs. Forgetting a terminal \\(t\\) at interior height \\(h\\) sends a cell by",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 231
+      "line": 240
     },
     {
       "id": "SNG-O15",
       "declaration": "Proposition SNG-O15 (bounded maximum margin). Let observation \\(j\\) carry a deterministic error bound \\(\\sigma_j>0\\) and fix a budget \\(C\\). The normalized margin \\(|L_jM_wd|/\\sigma_j\\) attains a maximum over the finitely many experiments of cost at most \\(C\\). Branch-and-bound with the following bound returns that maximum. For the vector \\(\\infty\\)-norm put \\(\\kappa(b)=\\max\\{\\prod_{i\\in u}\\|M_i\\|_\\infty:\\ c(u)\\le b\\}\\). Then every extension \\(w\\cdot u\\) of a word \\(w\\) satisfies",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 243
+      "line": 252
     },
     {
       "id": "SNG-O16",
       "declaration": "Proposition SNG-O16 (shared panels under box noise). Let a panel \\(\\mathcal P\\) of experiments be read with errors \\(|\\eta_e|\\le\\varepsilon_e\\). Call a candidate \\(c\\) consistent if \\(|y_e-r_e(v_c)|\\le\\varepsilon_e\\) for every \\(e\\in\\mathcal P\\). Then the following are equivalent:",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 252
+      "line": 261
     },
     {
       "id": "SNG-O19",
       "declaration": "Theorem SNG-O19 (exceptional parameters). Let the generators and observations have entries in \\(\\mathbb Q[q]\\). Let \\(W\\) be the matrix of all experiment rows of word length at most \\(n-1\\), let \\(r\\) be its rank over \\(\\mathbb Q(q)\\), and let \\(D_r\\) be the gcd of its \\(r\\times r\\) minors. Then at every \\(\\alpha\\) in a field extending \\(\\mathbb Q\\), the observable rank of the specialized system is at most \\(r\\). It equals \\(r\\) if and only if \\(D_r(\\alpha)\\ne0\\).",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 261
+      "line": 270
     },
     {
       "id": "SNG-O13",
       "declaration": "Theorem SNG-O13 (cyclicity of realizable states). Let \\(A\\) be the unital algebra generated by the compiled operators of a context language at budget \\(R\\) and \\(q\\in\\mathbb Q\\cap(0,1)\\).",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 269
+      "line": 278
     },
     {
       "id": "SNG-O14",
       "declaration": "Theorem SNG-O14 (star family: initial-state compression with growing savings). Let \\(S_\\alpha\\) be the block with \\(\\alpha\\) leaves attached to terminal \\(0\\) and an isolated terminal \\(1\\). There is a matrix \\(C\\), independent of \\(\\alpha\\), such that",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 280
+      "line": 289
     },
     {
       "id": "SNG-O20",
       "declaration": "Proposition SNG-O20 (noncommuting terminal moves with closed semantics). Keep the ordered truncated kernels \\(Y_{(s,t)}[v]=[x^v]x^{s+t}K_G(s,t)\\), with \\(s+t\\le v\\le R\\), without symmetrization. Extending terminal \\(a\\) means joining a new vertex \\(\\ell\\) to \\(a\\), making \\(\\ell\\) the terminal and \\(a\\) interior. This move acts by",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 292
+      "line": 301
     },
     {
       "id": "SNG-O21",
       "declaration": "Theorem SNG-O21 (charge-aware separator compiler). Process a graph along a vertex order using three operations on charge interfaces:",
       "file": "docs/chapters/15_operators_experiments.md",
-      "line": 302
+      "line": 311
+    },
+    {
+      "id": "SNG-O22",
+      "declaration": "Theorem SNG-O22 (the all-budget path margin). Fix \\(0<q<1\\), volume budget one, and the endpoint and adjacent terminal placements of the path with edges \\(01,12\\). Give pendant-leaf pairs cost two, shared neighbors cost one, and both direct observations cost zero. With unit noise normalization, the maximum absolute discrepancy over every affordable single experiment at any real budget \\(C\\ge0\\) is",
+      "file": "docs/chapters/15_operators_experiments.md",
+      "line": 332
+    },
+    {
+      "id": "SNG-T01",
+      "declaration": "Proposition SNG-T01 (candidate-preserving affine lift). Let finitely many candidates \\(c\\) have rational dynamics \\(x^+=A_cx+B_cu\\), and expose the same sensor labels \\(y_j=C_{c,j}x\\). For a finite allowed input alphabet, define",
+      "file": "docs/chapters/16_thermal_diagnostics.md",
+      "line": 25
+    },
+    {
+      "id": "SNG-T02",
+      "declaration": "Proposition SNG-T02 (box propagation and safe panel radii). Suppose the nominal candidate state follows \\(\\bar x_{t+1}=A_c\\bar x_t+B_cu_t\\), while the actual state has initial deviation bounded by \\(b_{0,c}\\ge0\\) and additive per-step disturbance bounded by \\(d_{t,c}\\ge0\\). Define componentwise",
+      "file": "docs/chapters/16_thermal_diagnostics.md",
+      "line": 41
+    },
+    {
+      "id": "SNG-T03",
+      "declaration": "Proposition SNG-T03 (reflection blindness). Let \\(P\\) reflect the plate left to right. For the two blocked-bond candidates,",
+      "file": "docs/chapters/16_thermal_diagnostics.md",
+      "line": 67
     }
   ]
 }

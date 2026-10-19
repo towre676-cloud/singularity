@@ -236,3 +236,103 @@ How the proof uses the premises: Part A's `quotient_first_discrepancy` and `bino
 - The real logarithm and the binomial series are premises (`exp_binom`). Part A treats the formal logarithm only through `k (log A)_k = (x A'/A)_k`, because there are no rationals.
 - The effective tail bound SNG-A14 is not formalized.
 - The concrete exponents are kernel-checked only as elements of an arbitrary commutative ring. The numerical exponents at `q = 1/2` are not formalized. These are `δ = 3/32` for the spectral pair and `δ = 11025/262144` for the binary pair; the manuscript writes the exponents as `-δ`.
+
+## OE12: finite experiment certificates and periodic detection
+
+The operator extension adds **37 audited public theorems**, bringing this core
+package to **128**. The independent Mathlib package retains its earlier 79
+analysis declarations. These counts refer to explicit audit lists, not all
+auxiliary declarations in the source. The new deterministic receipt is
+[formal_operator_audit.json](../results/formal_operator_audit.json). Run
+`python scripts/check_formal.py` from the repository root with the pinned Lake
+on `PATH`; the checker builds the library, audits all 128 declarations, and
+checks the existing operator receipt against the current proof sources.
+After a deliberate proof change, regenerate it with
+`python scripts/check_formal.py --operator-receipt results/formal_operator_audit.json`.
+This is a real local core build and axiom audit, not a new Mathlib build. The
+old [analysis receipt](../results/formal_analysis_audit.json) remains a historical
+source-bound receipt for the earlier analysis build; its old import/audit hashes
+are not represented as hashes of this expanded core package.
+
+The new source files are [Operators.lean](Singularity/Operators.lean),
+[OperatorExamples.lean](Singularity/OperatorExamples.lean),
+[Periodic.lean](Singularity/Periodic.lean), and
+[PeriodicSeries.lean](Singularity/PeriodicSeries.lean). They use only the pinned
+core library and the existing project modules. The separate
+[OperatorAxiomAudit.lean](OperatorAxiomAudit.lean) lists exactly the new endpoints;
+all are included in the full core audit. Only `propext`, `Quot.sound`, and
+`Classical.choice` are permitted. No new project axioms or admitted results are
+used.
+
+### Closure and the invariant quotient
+
+A retained family has type `Fin rank → (State → K)`. `Span` is its finite
+pointwise linear-combination closure; the theorem is general enough to work
+with arbitrary state transitions, so no commutation or matrix diagonalization
+is assumed. A certificate contains the initial-observation span expressions,
+generator closure expressions, and an actual experiment word for each retained
+row. Matrix identities `L = A B` and `B M_i = T_i B` provide these expressions
+for the rational matrix implementation. `certificate_complete` derives span
+membership for **every finite action word** by induction, rather than assuming
+that conclusion as a certificate field. `encode_eq_iff_future` proves both
+directions of exact observational equivalence. `encode_step_eq` proves that
+this relation is invariant under each generator, `quotientStep` constructs the
+induced action, and `quotient_complete` identifies equality in the actual Lean
+quotient with all-future equivalence.
+
+The word convention is chronological: the head action is executed first.
+`OperatorExamples.actions_do_not_commute` evaluates a pair of noncommuting
+integer matrices, and `future_iff_state` derives full reconstruction of their
+two-coordinate state from a concrete finite certificate. `rank_zero_complete`
+constructs and checks a rank-zero certificate for identically zero observations.
+These examples are genuine instances of the general certificate theorem.
+They are not the repository's 22-coordinate graph fixture transcribed into Lean.
+
+### Cost-filtered completeness
+
+`FilteredSpan` restricts retained rows to those with declared cost at most a
+budget. `filtered_pull` proves the dependence-pruning principle under extension
+by a generator. `cost_certificate_complete` propagates that invariant along
+all words, and `affordable_basis_iff` proves that agreement on affordable
+retained rows is equivalent to agreement on every affordable experiment.
+`cheapest_witness` consequently proves global minimum cost within the declared
+generator language when the proposed witness differs and every cheaper
+retained row agrees. The formal costs are natural numbers, hence nonnegative;
+zero-cost operations are allowed by these semantic theorems. The Python
+search additionally requires strictly positive attachment costs for its
+termination argument. Finite nonnegative rational tariffs can be scaled to
+integers by a common denominator, but that scaling and the heap algorithm are
+not formalized here. No maximum-margin or panel-optimality claim follows from
+this pruning theorem.
+
+### Actual residue complementation and the finite cutoff
+
+For a residue profile bounded by `top`, `complement_involution` proves that
+`a ↦ top − a` is an involution, and `complement_volume` proves that its volume
+and the original volume sum to `length(a) * top`. `edge_complement` proves
+invariance of each actual squared endpoint difference. `phaseEnergy_complement`
+extends this to arbitrary signed integer edge phases, including zero phases.
+These statements use the same profile, volume, endpoint lookup, and squared
+energy definitions as the original graph development, and allow disconnected
+or edgeless graphs.
+
+`residueCount_palindrome` proves the palindrome for the **actual finite
+residue-box histogram** by a duplicate-free bijection of the filtered profile
+lists. It does not assume a palindrome property. `residue_histogram_cutoff`
+then derives full histogram equality from agreement through half the maximum
+volume. Specializing `top = M − 1` gives the numerator degree `n(M − 1)`.
+`palindrome_finite_cutoff` also proves half-degree uniqueness for coefficients
+in any type. In the formal-series module, `conv_unit_injective` proves
+injectivity of multiplication by a shared denominator with constant term one
+using triangular strong induction. `periodic_series_cutoff` combines this with
+palindromic numerator uniqueness: agreement of the series through half the
+numerator degree forces full series equality.
+
+The series theorem explicitly assumes the common-denominator representation.
+The height-to-residue decomposition establishing
+`F = P/(1 − x^M)^n`, the concrete cyclotomic-ring implementation, and the
+Python-to-Lean data path are not formalized in OE12. Neither are matrix-rank
+minimality, discovery termination, robust optimization, panels, symbolic
+parameter ranks, the separator compiler, or new compression theorems. Those
+retain their documented paper proofs and exact computational evidence. This
+scope does not reopen any completed original P01–P36 acceptance unit.

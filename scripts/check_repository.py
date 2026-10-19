@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     chapters=sorted((ROOT/'docs'/'chapters').glob('*.md'))
-    assert len(chapters)==15, 'Fifteen substantive chapters required'
+    assert len(chapters)==16, 'Sixteen substantive chapters required'
     words=sum(len(p.read_text().split()) for p in chapters)
     assert words>=30_000, f'Main chapters contain only {words} source words'
     definitions=[]

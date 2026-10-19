@@ -1,0 +1,17 @@
+def plate_model(grid=12,conductance="1/8",loss="1/100"):
+    if type(grid) is not int or grid<2 or grid%2:
+        raise ValueError("Positive even grid size at least two required")
+    k,l=q(conductance),q(loss)
+    if k<0 or l<0 or 4*k+l>1:
+        raise ValueError("Nonnegative conductance/loss with 4*k+loss <= 1 required")
+    n=grid*grid;entries=[]
+    for r in range(grid):
+        for c in range(grid):
+            near=[(r+dr,c+dc) for dr,dc in ((1,0),(-1,0),(0,1),(0,-1)) if 0<=r+dr<grid and 0<=c+dc<grid]
+            i=r*grid+c
+            entries.append((i,i,1-k*len(near)-l))
+            entries.extend((i,rr*grid+cc,k) for rr,cc in near)
+    middle={grid//2-1,grid//2};corners={0,grid-1}
+    b=matrix([[q(int(i//grid in middle and i%grid in middle))/4] for i in range(n)])
+    c=matrix([[q(int(i//grid in corners and i%grid in corners))/4 for i in range(n)]])
+    return SparseLinearModel(SparseOperator.from_entries(n,entries),b,c)

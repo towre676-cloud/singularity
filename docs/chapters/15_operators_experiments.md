@@ -8,7 +8,7 @@ Throughout, \(\mathbb Q\) is the field of rationals and every computation is exa
 
 For a linear system with state \(v\in K^n\), generators \(M_i\) and output rows \(L_j\), the set of states with identical output under every input word is an invariant subspace, and the quotient by it is the minimal linear realization. Kalman (1963) developed this for linear dynamical systems. Schützenberger (1961) introduced the weighted-automaton form of rational series, and Carlyle and Paz (1971) proved the Hankel-rank minimal realization for such automata. Berstel and Reutenauer's monograph gives a modern account of noncommutative rational series and their minimization. These are the established background of Sections 15.2 and 15.3. We do not claim them.
 
-The bibliographic data of these four sources agree across independent library and index records. These include the MIT *Information and Control* author index, the Cambridge copyright record of the Berstel–Reutenauer volume, and reference lists citing Kalman and Carlyle–Paz. In this session the publisher pages, Crossref and author-hosted copies were unreachable through the network policy. Their primary-record check, and the DOIs other than Berstel–Reutenauer's catalogue DOI, remain open.
+Primary publisher records and author-hosted material now verify the four background references and their DOIs. Kalman (1963) studies observability and minimal realization; Schützenberger (1961) supplies foundational automata background; Carlyle and Paz (1971) characterize finite-state real-weighted realizations; Berstel and Reutenauer (2011, Chapters 1–2) develop rational and recognizable series and minimal linear representations. The book’s official front matter states first publication in 2011; Cambridge separately lists 2010 print availability and 2013 digital publication. These distinctions and the checked sources are recorded in [the literature record](../research/OPERATOR_LITERATURE.md). Minimality for every state of a declared formal space is distinguished from realization from a fixed initial state, which also involves reachability.
 
 The project-specific content is as follows:
 
@@ -159,7 +159,16 @@ Experiments that return polynomial curves in \(q\) are compared in the integral 
 \[
 \int_0^1\Delta(q)^2\,dq=\frac1{105},\qquad (0,-1,2,-1)\cdot(0,-1,2,-1)=6 .
 \]
-In the monic orthogonal basis on \([0,1]\), the coordinates of \(\Delta\) are \((-1/12,1/10,1/2,-1)\) with squared norms \((1,1/12,1/180,1/2800)\), and Parseval returns \(1/105\). All Gram matrices are checked positive definite by exact \(LDL^{\mathsf T}\).
+In the monic orthogonal basis on \([0,1]\), the coordinates and squared basis norms are
+
+\[
+\begin{aligned}
+c&=(-1/12,1/10,1/2,-1),\\
+h&=(1,1/12,1/180,1/2800).
+\end{aligned}
+\]
+
+Parseval returns \(1/105\). All Gram matrices are checked positive definite by exact \(LDL^{\mathsf T}\).
 
 **Proposition SNG-O07 (certified nearest-candidate identification).** Suppose:
 
@@ -331,8 +340,8 @@ For \(C\ge1\) it is attained uniquely by \(\lfloor C\rfloor\) shared-neighbor at
 *Proof.* In coordinate order \(((0,0),0),((0,0),1),((0,1),1)\), the two graph states are \((1,q^2,2q)\) and \((1,q,q+q^2)\). Set \(a=q(1-q)\). Their difference is \(d=(0,-a,a)\). The context matrices are
 
 \[
-M_{\rm leaf}=\begin{pmatrix}1&0&0\\2q&1&0\\0&0&q\end{pmatrix},\qquad
-M_{\rm shared}=\begin{pmatrix}1&0&0\\q^2&1&0\\0&0&q\end{pmatrix}.
+M_{\mathrm{leaf}}=\begin{pmatrix}1&0&0\\2q&1&0\\0&0&q\end{pmatrix},\qquad
+M_{\mathrm{shared}}=\begin{pmatrix}1&0&0\\q^2&1&0\\0&0&q\end{pmatrix}.
 \]
 
 Either sends \((0,-a,aq^k)\) to \((0,-a,aq^{k+1})\). Every length-\(k\) word therefore has volume-one discrepancy \(-a(1-q^k)\); the volume-zero discrepancy is zero. The magnitude strictly increases with \(k\). Positive attachment costs force \(k\le\lfloor C\rfloor\), and shared-neighbor repetition attains that bound. At maximal length any leaf pair raises cost to at least \(\lfloor C\rfloor+1>C\). The limit and nonattainment follow from \(0<q<1\). Scalar uncertainty intervals are disjoint exactly when the discrepancy exceeds \(2\varepsilon\); taking the supremum proves the final equivalence. \(\square\)
@@ -367,7 +376,9 @@ assert result.equal and result.cutoff == 1
 
 ## 15.11 Formal status
 
-The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O21. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
+The core Lean 4.12.0 package now checks 37 operator and periodic declarations, in addition to its earlier 91 declarations. `Operators.lean` proves finite-span closure under every chronological action word, exact equality between encoded-state agreement and all-future observational equivalence, invariant quotient updates, natural-cost filtered completeness, and the cheapest-witness guarantee. `OperatorExamples.lean` checks actual noncommuting integer matrices and a rank-zero certificate. The semantic closure and quotient portions of SNG-O01 and SNG-O02 are covered; row independence, dimension minimality, discovery termination, and the Python parser are not kernel-checked. The cost theorem covers natural fees; multiplying finitely many rational fees by a common denominator is a manuscript reduction rather than a formalized rational-cost implementation theorem.
+
+`Periodic.lean` proves actual residue-profile complementation, volume reversal, signed integer phase-energy invariance, and histogram palindromy by bijection. `PeriodicSeries.lean` proves half-degree uniqueness and the formal-series cutoff with a shared denominator of constant coefficient one. The height-to-residue denominator decomposition and cyclotomic arithmetic remain outside this formalization. [The source-bound operator audit](../../results/formal_operator_audit.json) records all 37 declarations, all 128 core audited declarations, source hashes, and permitted standard Lean axioms. No admitted results or additional project axioms are used. The separate 79-declaration Mathlib real-analysis package is unchanged; its earlier audit is historical evidence and is not presented as a fresh local build. The graph compilers, robustness optimization, family compression, exceptional-parameter implementation, SNG-O22 and thermal application retain manuscript proofs and independent exact checks.
 
 ## 15.12 Open questions
 

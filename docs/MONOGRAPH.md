@@ -1,6 +1,6 @@
 # Reading guide {.unnumbered}
 
-This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
+This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. Chapter 16 applies the experiment contract to a source-derived thermal fault-identification model with explicit uncertainty and cost. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence it forgets. A binary census can agree for every subset size and boundary size while a nested-height census differs. The arithmetic lift retains these local distinctions and turns the first discrepancy into a controlled ratio singularity. It adds analytic structure rather than new graph information. The full marked hierarchy explicitly contains the binary sector; complete graph reconstruction remains a research question.
 
@@ -1941,7 +1941,7 @@ A_{2,H_{\mathrm{sp}}}=4q^2+11q^3+6q^4+q^5+2q^6+2q^8+q^{12}+q^{16}.
 Subtracting and factoring gives the exact identity
 
 \[
-\boxed{[x^2](P_{G_{\mathrm{sp}}}-P_{H_{\mathrm{sp}}})
+\boxed{[x^2](chapters/P_{G_{\mathrm{sp}}}-P_{H_{\mathrm{sp}}})
 =2q^2(1-q)^3(1+q).}
 \tag{SNG-E005}
 \]
@@ -1958,7 +1958,7 @@ The height-two-at-one-vertex terms cancel because the degree multisets coincide.
 
 Hence \(J_{G_{\mathrm{sp}}}=3q^4+q^5+2q^6+q^7\), \(J_{H_{\mathrm{sp}}}=q^4+5q^5+q^7\), their difference is \(2q^4(1-q)^2\), and
 \[
-[x^2](P_{G_{\mathrm{sp}}}-P_{H_{\mathrm{sp}}})=q^{-2}(1-q)(1+q)\cdot2q^4(1-q)^2=2q^2(1-q)^3(1+q).
+[x^2](chapters/P_{G_{\mathrm{sp}}}-P_{H_{\mathrm{sp}}})=q^{-2}(1-q)(1+q)\cdot2q^4(1-q)^2=2q^2(1-q)^3(1+q).
 \]
 Reversing the order of the pair reverses the sign. The degree-four vertex of \(G_{\mathrm{sp}}\) is joined to the two degree-two vertices, while in \(H_{\mathrm{sp}}\) it is joined to three leaves; this difference in degree mixing (degree assortativity) is the entire volume-two discrepancy. No higher-order phenomenon is involved: the pair is a cospectral example whose separation is already explained by adjacent-degree statistics. The closed formulas are implemented independently of enumeration in `src/singularity/lowvolume.py`, and `results/pair_acceptance.json` records their agreement with the weak-composition and level-chain enumerators and with the replayed certificate. \(\square\)
 
@@ -2014,8 +2014,8 @@ It remains to inspect exactly forty-two ordered height patterns in the span-two 
 The factorization is an exact polynomial identity, checkable by multiplication. Enumeration over all ternary assignments in \(\{0,1,2\}^7\) independently reproduces the same \(x^3\) span-two difference. Therefore
 
 \[
-[x^3z^2](B_{G_{\mathrm{bin}}}-B_{H_{\mathrm{bin}}})
-=[x^3](P_{G_{\mathrm{bin}}}-P_{H_{\mathrm{bin}}})=\Delta(q).
+[x^3z^2](chapters/B_{G_{\mathrm{bin}}}-B_{H_{\mathrm{bin}}})
+=[x^3](chapters/P_{G_{\mathrm{bin}}}-P_{H_{\mathrm{bin}}})=\Delta(q).
 \]
 
 **Accounting for every lower coefficient.** Volumes zero, one and two depend only on the degree sequence and on \(J_G\) (SNG-F14, SNG-F15). Both binary graphs have degree sequence \(\{4,3,3,2,2,1,1\}\) and \(J=q^4+4q^5+q^6+2q^7\), so these coefficients agree. At volume three, the \(3e_i\) sector is again a function of degrees and the \(e_i+e_j+e_k\) sector is the size-three binary row, equal by SNG-E003. Only the forty-two ordered \(2e_i+e_j\) profiles remain; their energy is \(4d_i+d_j-4A_{ij}\), so they record the ordered degree pair and the adjacency of the two positions together. The two graphs do not have the same joint degree matrix: \(G_{\mathrm{bin}}\) has edges of degree types \(\{1,3\},\{1,4\},3\times\{2,3\},\{2,4\},2\times\{3,4\}\), and \(H_{\mathrm{bin}}\) has \(2\times\{1,4\},\{2,2\},2\times\{2,3\},\{3,3\},2\times\{3,4\}\), with equal degree sums edge by edge in aggregate. Nor are they cospectral. The separation claimed here is specifically beyond the complete binary cut-volume census, through the nested chain \(S_1=\{i,j\}\supseteq S_2=\{i\}\), whose energy is \(c(S_1)+c(S_2)+2e(\{i\},V\setminus\{i,j\})\) by SNG-F10.
@@ -2089,16 +2089,16 @@ The six cube subsets of boundary size four are its six square faces. Its two fou
 **Exact computation SNG-E007.** The first full local difference is
 
 \[
-[x^4](P_{Q_3}-P_{M_8})
-=[x^4z](B_{Q_3}-B_{M_8})
+[x^4](chapters/P_{Q_3}-P_{M_8})
+=[x^4z](chapters/B_{Q_3}-B_{M_8})
 =\boxed{2q^4(1-q^2)^4}.
 \]
 
 All other span sectors at volume four agree. The value at \(q=1/2\) is \(81/2048\). At the next volume the difference moves to span two:
 
 \[
-[x^5](P_{Q_3}-P_{M_8})
-=[x^5z^2](B_{Q_3}-B_{M_8})
+[x^5](chapters/P_{Q_3}-P_{M_8})
+=[x^5z^2](chapters/B_{Q_3}-B_{M_8})
 =\boxed{8q^9(1-q^2)^2(1-q^4)^2}.
 \]
 
@@ -3254,7 +3254,7 @@ The intended order-theoretic theorem target is a chamber formula with a correct 
 
 For fixed graph pairs, coefficient differences are polynomials in \(q\). Their common vanishing defines exceptional parameter values where the first discrepancy moves to a later volume. The generic first discrepancy and its exceptional set should be computed separately. At a rational parameter, direct substitution determines whether a proposed exponent survives. At an algebraic parameter, reduction by a minimal polynomial gives an exact test. Sampling several real values cannot prove that a discrepancy has no interior zero.
 
-**Proposition SNG-F31 (exceptional strata are finite and exactly computable).** Let \(\Delta_v=[x^v](L_G-L_H)\in\mathbb Z[q]\) for \(0\le v\le R\), let \(r\) be the least \(v\) with \(\Delta_v\ne0\), and for \(q_0\in(0,1)\) let \(r(q_0)\) be the least \(v\le R\) with \(\Delta_v(q_0)\ne0\), if any. Then \(r(q_0)=r\) except at the finitely many roots of \(\Delta_r\) in \((0,1)\); at such a root \(\alpha\), \(r(q_0)\) is the least \(v>r\) with \(\Delta_v(\alpha)\ne0\), or undefined through \(R\). Every such root is found by Sturm isolation of the square-free part of \(\Delta_r\), and whether \(\Delta_v(\alpha)=0\) is decided exactly.
+**Proposition SNG-F31 (exceptional strata are finite and exactly computable).** Let \(\Delta_v=[x^v](chapters/L_G-L_H)\in\mathbb Z[q]\) for \(0\le v\le R\), let \(r\) be the least \(v\) with \(\Delta_v\ne0\), and for \(q_0\in(0,1)\) let \(r(q_0)\) be the least \(v\le R\) with \(\Delta_v(q_0)\ne0\), if any. Then \(r(q_0)=r\) except at the finitely many roots of \(\Delta_r\) in \((0,1)\); at such a root \(\alpha\), \(r(q_0)\) is the least \(v>r\) with \(\Delta_v(\alpha)\ne0\), or undefined through \(R\). Every such root is found by Sturm isolation of the square-free part of \(\Delta_r\), and whether \(\Delta_v(\alpha)=0\) is decided exactly.
 
 *Proof.* For \(v<r\), \(\Delta_v=0\) identically, so \(r(q_0)\ge r\) for every \(q_0\), with equality exactly when \(\Delta_r(q_0)\ne0\). A nonzero polynomial has finitely many roots. Let \(f=\Delta_r/\gcd(\Delta_r,\Delta_r')\), which has the same roots, all simple. Sturm's theorem states that the number of distinct roots of \(f\) in \((a,b]\) equals the drop in sign changes of its Sturm sequence from \(a\) to \(b\); subtracting a root at \(b\), found by exact evaluation, gives the number strictly inside. Bisection at rational midpoints, recording any midpoint that is a root, splits every interval with two or more roots. It terminates because distinct roots are separated by a positive distance. Each surviving interval then contains exactly one root, so the list is complete. For an isolated root \(\alpha\) of \(f\) in \((a,b)\), \(\Delta_v(\alpha)=0\) if and only if \(\alpha\) is a common root of \(f\) and \(\Delta_v\), that is, a root of \(\gcd(f,\Delta_v)\). That gcd divides \(f\), so its roots in \((a,b)\) are among those of \(f\), namely \(\alpha\) alone, and a Sturm count of the gcd on the interval decides the question. Rational arithmetic is exact throughout. \(\square\)
 
@@ -3342,13 +3342,13 @@ These references were checked against primary author, publisher, or journal reco
 
 This chapter adds an experimental layer to the boundary machinery of Chapter 10. A two-terminal graph state is changed by attaching declared contexts and is read through its local coefficients. The questions are which states can ever be told apart, by which experiment, at what cost, and how much state an observer must keep. Three ingredients are standard: linear observability, minimal realization of weighted automata, and the invariant-subspace computation behind them. The graph-specific parts are new to this project. They are the context compiler and its correctness conditions, the experiment language with costs, independently replayable certificates that tie the retained rows to actual experiment words, the cost-filtered pruning theorem, the top-volume corank bound and the periodic cutoff. The last section integrates the October 2026 edge-factor supplement.
 
-Throughout, \(\mathbb Q\) is the field of rationals and every computation is exact. "Proved" refers to the proofs written here. "Checked" refers to an exact finite computation with a declared population and budget, retained in `results/operator_experiments.json` and replayed by `scripts/operator_experiments.py --check`. None of the new statements is formalized in Lean unless Section 15.10 says so.
+Throughout, \(\mathbb Q\) is the field of rationals and every computation is exact. "Proved" refers to the proofs written here. "Checked" refers to an exact finite computation with a declared population and budget, retained in `results/operator_experiments.json` and replayed by `scripts/operator_experiments.py --check`. None of the new statements is formalized in Lean unless Section 15.11 says so.
 
 ## Background and what is new
 
 For a linear system with state \(v\in K^n\), generators \(M_i\) and output rows \(L_j\), the set of states with identical output under every input word is an invariant subspace, and the quotient by it is the minimal linear realization. Kalman (1963) developed this for linear dynamical systems. Schützenberger (1961) introduced the weighted-automaton form of rational series, and Carlyle and Paz (1971) proved the Hankel-rank minimal realization for such automata. Berstel and Reutenauer's monograph gives a modern account of noncommutative rational series and their minimization. These are the established background of Sections 15.2 and 15.3. We do not claim them.
 
-The bibliographic data of these four sources agree across independent library and index records. These include the MIT *Information and Control* author index, the Cambridge copyright record of the Berstel–Reutenauer volume, and reference lists citing Kalman and Carlyle–Paz. In this session the publisher pages, Crossref and author-hosted copies were unreachable through the network policy. Their primary-record check, and the DOIs other than Berstel–Reutenauer's catalogue DOI, remain open.
+Primary publisher records and author-hosted material now verify the four background references and their DOIs. Kalman (1963) studies observability and minimal realization; Schützenberger (1961) supplies foundational automata background; Carlyle and Paz (1971) characterize finite-state real-weighted realizations; Berstel and Reutenauer (2011, Chapters 1–2) develop rational and recognizable series and minimal linear representations. The book’s official front matter states first publication in 2011; Cambridge separately lists 2010 print availability and 2013 digital publication. These distinctions and the checked sources are recorded in [the literature record](research/OPERATOR_LITERATURE.md). Minimality for every state of a declared formal space is distinguished from realization from a fixed initial state, which also involves reachability.
 
 The project-specific content is as follows:
 
@@ -3406,7 +3406,7 @@ The identities say that the retained space contains every future observation. Th
 
 *Proof.* (1) If \(Bv=0\), then \(BM_iv=T_iBv=0\). (2) By SNG-O01 every experiment row is a combination of rows of \(B\), so it vanishes on \(N\). Conversely, if \(d\notin N\), some row \(b_k\) of \(B\) is nonzero on \(d\), and \(b_k\) is an experiment. (3) \(BM_iv=T_iBv\) and \(Lv=ABv\). (4) If \(\phi(d)=0\), then \(d\) and \(0\) lie in one fibre, so every experiment, and in particular every \(b_k\), vanishes on \(d\); hence \(d\in N\). Then \(\operatorname{rank}\phi=n-\dim\ker\phi\ge n-\dim N=\operatorname{rank}B\). \(\square\)
 
-Part (4) is minimality among **linear** compressions of the **full declared formal state space**. It says nothing about nonlinear encodings. It also says nothing about the smaller set of states that graphs actually realize: a family occupying an affine subspace or a semialgebraic subset can need fewer coordinates. Section 15.11 lists this as open.
+Part (4) is minimality among **linear** compressions of the **full declared formal state space**. It says nothing about nonlinear encodings. It also says nothing about the smaller set of states that graphs actually realize: a family occupying an affine subspace or a semialgebraic subset can need fewer coordinates. Section 15.12 lists this as open.
 
 **Theorem SNG-O03 (cost-filtered pruning and cheapest witnesses).** Assume the following:
 
@@ -3499,7 +3499,16 @@ Experiments that return polynomial curves in \(q\) are compared in the integral 
 \[
 \int_0^1\Delta(q)^2\,dq=\frac1{105},\qquad (0,-1,2,-1)\cdot(0,-1,2,-1)=6 .
 \]
-In the monic orthogonal basis on \([0,1]\), the coordinates of \(\Delta\) are \((-1/12,1/10,1/2,-1)\) with squared norms \((1,1/12,1/180,1/2800)\), and Parseval returns \(1/105\). All Gram matrices are checked positive definite by exact \(LDL^{\mathsf T}\).
+In the monic orthogonal basis on \([0,1]\), the coordinates and squared basis norms are
+
+\[
+\begin{aligned}
+c&=(-1/12,1/10,1/2,-1),\\
+h&=(1,1/12,1/180,1/2800).
+\end{aligned}
+\]
+
+Parseval returns \(1/105\). All Gram matrices are checked positive definite by exact \(LDL^{\mathsf T}\).
 
 **Proposition SNG-O07 (certified nearest-candidate identification).** Suppose:
 
@@ -3540,6 +3549,26 @@ This is a sufficient cutoff, not a sharpness claim. The argument uses squared ed
 - **A certified equal pair (SNG-E012).** At \(n=3\), \(M=2\), with every exponent one, the path \(0-1-2\) and the edge \(01\) with isolated vertex \(2\) have the same numerator \((1,-1,-1,1)\). The cutoff is \(1\), so their complete series are equal. Direct enumeration confirms agreement through volume \(14\). At \(M=3\) the same pair separates at volume one, with \(F_1=2\zeta+\zeta^2\) versus \(2\zeta+1\).
 - **Exhaustive population.** Every graph on \(n\le3\) labeled vertices, every \(M\in\{1,2,3,4\}\) and every exponent assignment from \(\{-1,0,1,2\}\): \(524\) models. The residue identity was checked against direct height enumeration through volume \(K+2M+1\), the palindrome on every numerator, and the cutoff theorem on every pair with equal \((n,M)\).
 
+**Theorem SNG-O17 (period reduction).** For an edge exponent \(a\), let \(p_a\) be the least \(p\ge1\) with \(M\mid 2ap\) and \(M\mid ap^2\), and put \(M^*=\operatorname{lcm}_ep_{a_e}\), which divides \(M\). Then
+\[
+F=\frac{P^*(x)}{(1-x^{M^*})^n},\qquad \deg P^*\le n(M^*-1),\qquad P^*_k=P^*_{n(M^*-1)-k}.
+\]
+For two models with the same \(n\) and \(M\), let \(L\) be the lcm of their reduced moduli. Agreement of the two series through \(\lfloor n(L-1)/2\rfloor\) proves that they are equal.
+
+*Proof.* We have \(a\bigl((d+p)^2-d^2\bigr)=a(2pd+p^2)\equiv0\pmod M\) for every \(d\) exactly when \(M\mid 2ap\) and \(M\mid ap^2\). So every edge weight depends only on \(d \bmod M^*\). The proofs of SNG-O08 and SNG-O09 then apply verbatim with \(M^*\) in place of \(M\). Each model's weights are periodic modulo \(L\), so both series have the form \(P/(1-x^L)^n\). \(\square\)
+
+For \(M=4\) with odd exponents, \(M^*=2\). The cutoff drops from \(\lfloor 3n/2\rfloor\) to \(\lfloor n/2\rfloor\), and this reduced cutoff is attained: across all graphs on \(n\le4\) vertices with exponents from a declared set, the worst first discrepancy among distinct series equals \(\lfloor n/2\rfloor\). For \(M=3\) there is no reduction. There the observed worst first discrepancy is \(2\) for \(n=4,5\), well below the cutoffs \(4\) and \(5\). Explaining that gap is open.
+
+**Proposition SNG-O18 (closed form at \(M=2\)).** Let \(d^{\mathrm{odd}}_v\) be the number of odd-exponent edges at \(v\), and let \(o\) be the number of vertices with \(d^{\mathrm{odd}}_v\) odd. Then
+\[
+F(x)=(1-x)^{-(n-o)}(1+x)^{-o}.
+\]
+Two models with equal \(n\) have equal series if and only if their volume-one coefficients \(n-2o\) agree.
+
+*Proof.* Modulo \(2\), \(d^2\equiv d\), so \((-1)^{a(h_u-h_v)^2}=(-1)^{a(h_u+h_v)}\). The product over edges is therefore \(\prod_v(-1)^{d^{\mathrm{odd}}_vh_v}\), and the height sum factorizes over vertices into geometric series. \(\square\)
+
+This explains the data at \(M=2\): every graph on \(n\le5\) vertices falls into one of at most three classes, and all of them separate at volume one.
+
 ## Edge-factor families and compressed interfaces
 
 The October 2026 supplement `docs/research/VAKIL_BRIDGES.md` gives full proofs of three results, recorded here with identifiers. It applies standard tools from Vakil's draft of *Foundations of Algebraic Geometry* to the height series.
@@ -3555,6 +3584,109 @@ The October 2026 supplement `docs/research/VAKIL_BRIDGES.md` gives full proofs o
 and a source interface complete through \(R\) suffices for output budget \(R\).
 
 These are applications of standard principles, not new algebraic geometry. They are implemented in `edge_factors.py` and `charges.py` and checked by `scripts/vakil_bridge.py --check`.
+
+## Margins, panels and family compression
+
+SNG-O03 optimizes cost alone. This section treats three different objectives: margin under a cost budget, shared panels for several candidate pairs, and the smallest state needed for a restricted family. Each is posed and solved separately.
+
+**Proposition SNG-O15 (bounded maximum margin).** Let observation \(j\) carry a deterministic error bound \(\sigma_j>0\) and fix a budget \(C\). The normalized margin \(|L_jM_wd|/\sigma_j\) attains a maximum over the finitely many experiments of cost at most \(C\). Branch-and-bound with the following bound returns that maximum. For the vector \(\infty\)-norm put \(\kappa(b)=\max\{\prod_{i\in u}\|M_i\|_\infty:\ c(u)\le b\}\). Then every extension \(w\cdot u\) of a word \(w\) satisfies
+\[
+\frac{|L_jM_uM_wd|}{\sigma_j}\ \le\ \frac{\|L_j\|_1}{\sigma_j}\,\kappa\bigl(C-c(w)-\gamma_j\bigr)\,\|M_wd\|_\infty .
+\]
+
+*Proof.* There are finitely many experiments because the attachment costs are bounded below by a positive constant. The bound follows from \(|Lv|\le\|L\|_1\|v\|_\infty\) and \(\|Mv\|_\infty\le\|M\|_\infty\|v\|_\infty\), applied letter by letter. The quantity \(\kappa\) is computed exactly by dynamic programming over the reachable cost sums, since a product of norms does not depend on letter order. A pruned subtree contains no experiment above its bound, and that bound is at most the incumbent, so the optimum survives. \(\square\)
+
+There are three cautions. First, without a budget no optimum need exist: the amplification example has bounded optimum \(2^{\lfloor C\rfloor}\). Second, a finite supremum need not be attained. For \(M=\bigl(\begin{smallmatrix}1&1\\0&1/2\end{smallmatrix}\bigr)\), \(L=(1,0)\) and \(d=(0,1)\), the readings are \(2-2^{1-k}\). Third, dependence pruning can discard the optimal-margin row. In the two-generator example of `docs/research/ROBUST_SEARCH.md`, the cheapest witness has margin \(1\), while a budget-two experiment whose row is a multiple of a retained row reaches margin \(3\). On the path fixture with \(\sigma=1\) and costs \((2,1)\), the bounded optimum at budgets \(1,\ldots,6\) is \(1/8,3/16,\ldots,63/256\). The pattern \(1/4-2^{-(C+2)}\) is checked only for \(C\le6\).
+
+**Proposition SNG-O16 (shared panels under box noise).** Let a panel \(\mathcal P\) of experiments be read with errors \(|\eta_e|\le\varepsilon_e\). Call a candidate \(c\) consistent if \(|y_e-r_e(v_c)|\le\varepsilon_e\) for every \(e\in\mathcal P\). Then the following are equivalent:
+
+- for every possible true candidate, every admissible reading leaves only that candidate consistent;
+- every pair of candidates is robustly separated by some \(e\in\mathcal P\), meaning \(|r_e(v_a)-r_e(v_b)|>2\varepsilon_e\).
+
+*Proof.* If \(e\) robustly separates the true \(t\) from \(c\), then \(|y_e-r_e(v_c)|\ge|r_e(v_t)-r_e(v_c)|-\varepsilon_e>\varepsilon_e\), so \(c\) is excluded. Conversely, suppose no member robustly separates \(a\) and \(b\). Then the midpoint readings \(y_e=\tfrac12(r_e(v_a)+r_e(v_b))\) are admissible for both, so both remain consistent. \(\square\)
+
+Finding a cheapest certifying panel is therefore a weighted set-cover problem over pairs. That problem is NP-hard in general, so the exact branch-and-bound in `panels.py` is worst-case exponential. Its lower bound packs pairs that no single experiment covers twice. A Euclidean-ball noise model is treated separately. There, several readings jointly certify a pair that no single reading separates robustly. Take six three-vertex candidates at \(R=3\), \(q=1/2\), costs \((2,1)\) and budget \(4\). Exactly one pair is never separable: the endpoint–middle and middle–endpoint placements on the path, which coincide under the path automorphism. The other classes are separated at cost \(1\). A robust panel exists if and only if \(\varepsilon<278513/2097152\).
+
+**Theorem SNG-O19 (exceptional parameters).** Let the generators and observations have entries in \(\mathbb Q[q]\). Let \(W\) be the matrix of all experiment rows of word length at most \(n-1\), let \(r\) be its rank over \(\mathbb Q(q)\), and let \(D_r\) be the gcd of its \(r\times r\) minors. Then at every \(\alpha\) in a field extending \(\mathbb Q\), the observable rank of the specialized system is at most \(r\). It equals \(r\) if and only if \(D_r(\alpha)\ne0\).
+
+*Proof.* At every specialization, the span of rows of length at most \(k\) is nondecreasing in \(k\) and constant from its first non-increase. So length \(n-1\) suffices at \(\alpha\) as well as over \(\mathbb Q(q)\). Minors commute with evaluation, so \(\operatorname{rank}W(\alpha)<r\) exactly when every \(r\times r\) minor vanishes at \(\alpha\). By Bézout in \(\mathbb Q[q]\), that happens exactly when the minors' gcd vanishes at \(\alpha\). \(\square\)
+
+The minors of the generic closure basis alone are not enough. Their gcd can vanish where other words restore the rank. In the synthetic example \(L_1=(1,0)\), \(L_2=(0,q)\), \(M=\bigl(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\bigr)\), we have \(D_2(B)=q\) but \(D_2(W)=1\). The implementation `parametric.py` computes \(D_r\) through Hermite forms of the row modules of length at most \(k\), without listing \(W\). It factors \(D_r\) over \(\mathbb Q\) with certificates, isolates real roots by Sturm sequences, and replays rational exceptional values exactly.
+
+For the standard contexts at \(R=1,\ldots,4\), every irreducible factor of \(D_r\) is \(q\), \(q\pm1\) or cyclotomic. For example, at \(R=2\) the divisor is \(q^4(q-1)^7(q+1)^3\Phi_3\Phi_4\). Hence the closure has full rank \(n\) at **every** \(q\in(0,1)\), not only at \(q=1/2\). The rank drops at \(q=0\), at \(q=1\), where it equals the number of observations \(R+1\), and at \(q=-1\) for \(R\ge2\). This is an exact result for \(R\le4\). Whether the factor pattern persists for larger \(R\) is open.
+
+**Theorem SNG-O13 (cyclicity of realizable states).** Let \(A\) be the unital algebra generated by the compiled operators of a context language at budget \(R\) and \(q\in\mathbb Q\cap(0,1)\).
+
+1. For every realizable graph state \(v\), the reachable space \(\operatorname{span}\{M_wv\}\) equals \(Av\) and has dimension \(\dim A\).
+2. Suppose some context \(C\) in the language has pairwise distinct orbit constants \(q^{d_C(s^2+t^2)}\) over the orbits with \(s+t\le R\), and \([x^1]\kappa_{C,o}\ne0\) in every block of length at least two. Then \(A=\bigoplus_o\mathbb Q[x]/x^{m_o}\) with \(m_o=R+1-s-t\). In that case every realizable state is cyclic, and no attachment-closed family of graph states admits a linear compression, compatible with the attachments and outputs, of dimension below the formal quotient rank.
+
+*Proof.* (1) By SNG-O05 each operator acts on block \(o\) as multiplication by a truncated series. So \(A\) is a commutative subalgebra of \(\mathcal B=\bigoplus_o\mathbb Q[x]/x^{m_o}\), acting on states by multiplication. The block of a realizable state has constant term \([x^0]x^{-s-t}\cdot x^{s+t}K^+_G(o)>0\), since the counts are positive and \(q>0\). So \(v\) is a unit of \(\mathcal B\), and \(a\mapsto av\) is injective on \(A\). The reachable space is \(\{av:\ a\in A\}\).
+
+(2) Taking constant terms is an algebra homomorphism \(\chi:A\to\mathbb Q^{\text{orbits}}\). Since the values \(\chi(M_C)_o\) are distinct, Lagrange interpolation gives a polynomial \(p\) with \(\chi(p(M_C))=e_{o^*}\). The element \(b=p(M_C)^{N}\), with \(N\ge\max m_o\), is zero in every block \(o\ne o^*\), because there it is a nilpotent power. In block \(o^*\) it is a unit \(u\). Since \(u^{-1}\in\mathbb Q[u]\), some polynomial \(h\) gives \(bh(b)=e_{o^*}\in A\). Then \(z=e_{o^*}\bigl(M_C-\chi(M_C)_{o^*}\bigr)\) is multiplication by \(x\cdot(\text{unit})\) in block \(o^*\). Its powers together with \(e_{o^*}\) span \(\mathbb Q[x]/x^{m_{o^*}}\). Hence \(A=\mathcal B\), and every unit is cyclic. For an attachment-closed family, the space a compatible linear compression must preserve contains the reachable space of each member, which is the whole space here. By SNG-O02, the least dimension is then the formal quotient rank. \(\square\)
+
+For the standard contexts the pendant-leaf pair satisfies the hypotheses exactly when \(R\le6\): the first collision is \(0^2+5^2=3^2+4^2\). Its first-order terms \(q^{(1-s)^2+t^2}+q^{s^2+(1-t)^2}\) are positive. Krylov closure confirms full reachability from several seeds for \(R\le4\). At \(R=7\), reachability from two different seeds has dimension \(69\), equal to the formal quotient rank. That is a finite computation, not a theorem for larger \(R\).
+
+**Theorem SNG-O14 (star family: initial-state compression with growing savings).** Let \(S_\alpha\) be the block with \(\alpha\) leaves attached to terminal \(0\) and an isolated terminal \(1\). There is a matrix \(C\), independent of \(\alpha\), such that
+\[
+Y(S_\alpha)=C\,\bigl(\alpha^kq^{\alpha r^2}\bigr)_{0\le r\le R,\ 0\le k\le R-r}.
+\]
+Hence \(\dim\operatorname{span}\{Y(S_\alpha):\alpha\ge0\}\le(R+1)(R+2)/2\), while the formal dimension is \(\sum_{s\le t,\ s+t\le R}(R+1-s-t)\), a cubic polynomial in \(R\).
+
+*Proof.* The interior kernel is \(K(s,t)=f(s)^\alpha\) with \(f(s)=\sum_hx^hq^{(h-s)^2}=q^{s^2}(1+g_s)\) and \(g_s=O(x)\). Then \([x^j]f(s)^\alpha=q^{\alpha s^2}\sum_{k\le j}\binom{\alpha}{k}[x^j]g_s^k\), which is \(q^{\alpha s^2}\) times a polynomial in \(\alpha\) of degree at most \(j\le R-s\) whose coefficients do not depend on \(\alpha\). The swapped term \(K(t,s)\) contributes the same with \(r=t\). \(\square\)
+
+At \(q=1/2\) the span equals the bound for \(R\le7\), which is a finite check. The reconstruction \(C\) is fitted on \(\alpha<d\) and verified exactly on held-out \(\alpha\). The observable part equals the span, and the saving against the formal quotient is \(0,1,3,7,13,22,33\) for \(R=1,\ldots,7\).
+
+The compressed coordinates are the explicit numbers \(\alpha^kq^{\alpha r^2}\). With \(q=a/b\), each has bit length \(O(R\log\alpha+\alpha R^2\log b)\). The \(n\) uncompressed coordinates have the same order each, so the storage ratio is \(n/d\sim R/6\). This family is not attachment-closed, because the pendant pair also adds leaves at terminal \(1\). By SNG-O13, closing it under the standard attachments removes every saving for \(R\le6\). Initial-state compression and attachment-closed compression are thus genuinely different problems.
+
+**Proposition SNG-O20 (noncommuting terminal moves with closed semantics).** Keep the ordered truncated kernels \(Y_{(s,t)}[v]=[x^v]x^{s+t}K_G(s,t)\), with \(s+t\le v\le R\), without symmetrization. Extending terminal \(a\) means joining a new vertex \(\ell\) to \(a\), making \(\ell\) the terminal and \(a\) interior. This move acts by
+\[
+Y'_{(s',t)}[v]=\sum_sq^{(s-s')^2}\,Y_{(s,t)}[v-s'],
+\]
+and symmetrically for \(b\). Any context without a terminal edge, symmetric or not, acts blockwise as in SNG-O05. The truncated ordered space is closed under every such word. Extension does not commute with attaching a shared neighbour.
+
+*Proof.* The new kernel is \(K'(s',t)=\sum_sx^sq^{(s-s')^2}K(s,t)\). The only new edge is \(a\ell\), and the old terminal height joins the interior volume. Extracting \([x^v]x^{s'+t}\) gives the formula, which reads \(Y\) only at volumes \(v-s'\le v\). Noncommutation is witnessed by the two orders, which give different graphs with different readings. \(\square\)
+
+All \(85\) words of length at most three over the four moves agree with direct enumeration on six base blocks at \(R=2,3\). The ordered closure has full rank \(10\) and \(20\) there: within those finite budgets the expanded language distinguishes every pair of ordered states. One consequence: path\((0,1)\) and path\((1,2)\) have identical symmetric states, so no symmetric context can separate them, yet a single terminal extension separates them at cost one. Completeness at larger budgets is not claimed.
+
+**Theorem SNG-O21 (charge-aware separator compiler).** Process a graph along a vertex order using three operations on charge interfaces:
+
+- introduce a boundary vertex with its edges to current boundary vertices;
+- forget a boundary vertex once all its neighbours have been introduced (SNG-O12);
+- optionally join two interfaces at a tree-decomposition join node.
+
+The final interface, on an empty boundary, gives \([x^j]L_G\) exactly for \(j\le R\).
+
+If at most \(k\) boundary vertices have interior neighbours and the maximum degree is \(D\), every interface has charges \(0\le Q_i\le j\) and energies \(0\le E\le Dj^2\). Hence it has at most \((R+1)^{k+1}(DR^2+1)\) cells. On \(N\) vertices, every count is below \(N^R\), so it has at most \(R\log_2N+1\) bits.
+
+*Proof.* The invariant is that, after each step, the interface is the exact charge interface of the subgraph induced by the vertices introduced so far, with the current boundary. Introduction leaves the interior unchanged and adds only terminal metadata. Forgetting is SNG-O12. A vertex is forgotten only after all its neighbours have been introduced, so no later vertex has an edge to it. A count at interior volume \(j\) is at most the number \(\binom{j+m-1}{m-1}\le m^j\) of weak compositions. The range bounds follow from \(Q_i=\sum h_u\) over the interior neighbours of \(i\), and from the energy of at most \(D\) edges per unit of height. \(\square\)
+
+The implementation `separator_compiler.py` extends `charges.py`, reusing its forget and join operations. It agrees with direct enumeration on all \(1099\) graphs with at most \(5\) vertices under several orders, and with the decomposition and connected-support compilers. On paths, cycles, ladders and \(3\times n\) strips up to \(n=200\) at \(R=4\), the following hold:
+
+- **Storage.** Peak storage is constant in \(n\), at 74 to 339 cells.
+- **Work.** Total work grows linearly.
+- **Bit growth.** The maximum count bit length stays within three bits of \(R\log_2n\).
+- **Reusable steps.** For periodic strips, a reusable step operator gives a constant-factor saving over recompiling.
+
+The cell bound is loose: observed cells are 1–29% of it. Wall times are measurements on one machine and are not retained.
+
+**Theorem SNG-O22 (the all-budget path margin).** Fix \(0<q<1\), volume budget one, and the endpoint and adjacent terminal placements of the path with edges \(01,12\). Give pendant-leaf pairs cost two, shared neighbors cost one, and both direct observations cost zero. With unit noise normalization, the maximum absolute discrepancy over every affordable single experiment at any real budget \(C\ge0\) is
+
+\[
+\mu^*(C)=q(1-q)\bigl(1-q^{\lfloor C\rfloor}\bigr).
+\]
+
+For \(C\ge1\) it is attained uniquely by \(\lfloor C\rfloor\) shared-neighbor attachments and the volume-one readout. The unrestricted supremum is \(q(1-q)\) and is not attained. Under adversarial scalar observation error bounded by \(\varepsilon\), a finite robustly distinguishing experiment exists exactly when \(2\varepsilon<q(1-q)\).
+
+*Proof.* In coordinate order \(((0,0),0),((0,0),1),((0,1),1)\), the two graph states are \((1,q^2,2q)\) and \((1,q,q+q^2)\). Set \(a=q(1-q)\). Their difference is \(d=(0,-a,a)\). The context matrices are
+
+\[
+M_{\mathrm{leaf}}=\begin{pmatrix}1&0&0\\2q&1&0\\0&0&q\end{pmatrix},\qquad
+M_{\mathrm{shared}}=\begin{pmatrix}1&0&0\\q^2&1&0\\0&0&q\end{pmatrix}.
+\]
+
+Either sends \((0,-a,aq^k)\) to \((0,-a,aq^{k+1})\). Every length-\(k\) word therefore has volume-one discrepancy \(-a(1-q^k)\); the volume-zero discrepancy is zero. The magnitude strictly increases with \(k\). Positive attachment costs force \(k\le\lfloor C\rfloor\), and shared-neighbor repetition attains that bound. At maximal length any leaf pair raises cost to at least \(\lfloor C\rfloor+1>C\). The limit and nonattainment follow from \(0<q<1\). Scalar uncertainty intervals are disjoint exactly when the discrepancy exceeds \(2\varepsilon\); taking the supremum proves the final equivalence. \(\square\)
+
+The implementation now exposes `OrderedContextAttachment` for contexts without swap symmetry, retaining the original strict `ContextAttachment` in the symmetric compiler. Independent assembled-graph checks include 255 asymmetric word/base comparisons. [The ordered-context supplement](research/ORDERED_CONTEXTS.md) gives the full API, the all-budget proof, and independent checks at several rational parameters. The theorem is about a single experiment; a shared panel has its separately stated noise and cost model.
 
 ## Interfaces and runnable examples
 
@@ -3584,18 +3716,122 @@ assert result.equal and result.cutoff == 1
 
 ## Formal status
 
-The Lean packages `formal/` and `formal-analysis/` predate this chapter. Their declarations do not formalize SNG-O01 to SNG-O12. A separate formalization of the closure, quotient, cost-filtration and periodic-complement arguments is reported in `formal-analysis/README.md` only to the extent that it compiles without admitted results. Until then, all statements in this chapter are mathematical exposition with exact finite checks.
+The core Lean 4.12.0 package now checks 37 operator and periodic declarations, in addition to its earlier 91 declarations. `Operators.lean` proves finite-span closure under every chronological action word, exact equality between encoded-state agreement and all-future observational equivalence, invariant quotient updates, natural-cost filtered completeness, and the cheapest-witness guarantee. `OperatorExamples.lean` checks actual noncommuting integer matrices and a rank-zero certificate. The semantic closure and quotient portions of SNG-O01 and SNG-O02 are covered; row independence, dimension minimality, discovery termination, and the Python parser are not kernel-checked. The cost theorem covers natural fees; multiplying finitely many rational fees by a common denominator is a manuscript reduction rather than a formalized rational-cost implementation theorem.
+
+`Periodic.lean` proves actual residue-profile complementation, volume reversal, signed integer phase-energy invariance, and histogram palindromy by bijection. `PeriodicSeries.lean` proves half-degree uniqueness and the formal-series cutoff with a shared denominator of constant coefficient one. The height-to-residue denominator decomposition and cyclotomic arithmetic remain outside this formalization. [The source-bound operator audit](../results/formal_operator_audit.json) records all 37 declarations, all 128 core audited declarations, source hashes, and permitted standard Lean axioms. No admitted results or additional project axioms are used. The separate 79-declaration Mathlib real-analysis package is unchanged; its earlier audit is historical evidence and is not presented as a fresh local build. The graph compilers, robustness optimization, family compression, exceptional-parameter implementation, SNG-O22 and thermal application retain manuscript proofs and independent exact checks.
 
 ## Open questions
 
 The following are open:
 
-- **Restricted state families.** Find the minimal dimension of a compression that is exact only on the states graphs actually realize, and decide whether such a family can be closed under attachment with typed transitions.
-- **Sharpness of the corank bound.** Is SNG-O06 sharp for every budget, and does the visible rank have a closed form in \(R\)?
-- **Margins.** Develop bounded maximum-margin experiment search under a cost budget. An unrestricted optimum need not exist, because signals can grow without bound (SNG-O04).
-- **Shared panels.** Find minimum-cost shared panels that separate every pair in a candidate family, ideally with joint robustness. Exact methods face set-cover hardness in general.
-- **Parameter dependence.** Determine where the rank depends on \(q\): generic rank over \(\mathbb Q(q)\) versus rank at every specialization.
-- **Sharper periodic cutoffs and noncommuting operations.** Find periodic cutoffs below \(\lfloor K/2\rfloor\) for structured families, and genuinely noncommuting graph operations with closed state semantics.
+- **Restricted families.** SNG-O13 settles attachment-closed graph families at \(R\le6\): they admit no savings. For \(R\ge7\) only finite data exist. Initial-state families such as the stars do compress (SNG-O14). Can any attachment-closed family compress at large \(R\), and does the reachable dimension always equal the formal quotient rank?
+- **Corank.** Is the corank bound SNG-O06 sharp for every budget? It is attained at \(R=4\) and \(R=7\) in the retained receipts; one unretained run gave corank \(1\) at \(R=8\), also equal to the bound. Does the visible rank have a closed form in \(R\)?
+- **Margins.** SNG-O15 handles a fixed budget. The \(\infty\)-norm bound can be loose: nothing is pruned on the path fixture. Better metric-specific bounds remain to be proved.
+- **Panels.** Panels are exact only within a declared pool and candidate family. No polynomial-time exact method exists in general, unless P = NP.
+- **Parameter dependence.** SNG-O19 settles \(R\le4\): full rank on all of \((0,1)\). Does \(D_r\) factor into \(q\), \(q\pm1\) and cyclotomic polynomials for every \(R\)? Rational-function entries, with pole guards, are not yet implemented.
+- **Sharper periodic cutoffs and noncommuting operations.** SNG-O17 and SNG-O18 sharpen the periodic cutoff when weights have smaller periods. At \(M=3\), the observed worst discrepancy of \(2\) is unexplained. Noncommuting terminal moves (SNG-O20) are complete only at the finite budgets checked.
+
+# Costed interventions for thermal fault identification
+
+## From graph observation to a source-derived model
+
+Chapter 15 separates three questions: whether a permitted experiment can distinguish two states, which distinguishing experiment is cheapest, and which finite panel remains informative under error. This chapter applies the last question to a discrete thermal model already used in DynaComp. The graph-height energy is not a heat equation. The connection is the common operator and observation contract, with different front-end semantics.
+
+The nominal source is DynaComp commit `cd788c7ac695728e3f5b22056a0f99a2c1e1463c`, function `plate_model` in `src/dynacomp/thermal.py`. Its exact rational fixture, source excerpt and hashes are retained under `applications/thermal_diagnostics/`. The 12 by 12 plate has 144 states, conductance \(k=1/8\), loss \(\ell=1/100\), a heater distributed equally over the central four cells, and an original sensor averaging the four corners. States are excess temperatures in the source model's units; coefficients are per step. The model is a synthetic discrete benchmark, and the additional faults are constructed hypotheses. No measured fault population or continuum discretization-error bound is inferred.
+
+For a cell \(i\) with adjacent cells \(N(i)\), the nominal equation is
+
+\[
+x_i(t+1)=(1-\ell)x_i(t)
+ +k\sum_{j\in N(i)}(x_j(t)-x_i(t))+B_i u_t,
+\qquad B_i=\tfrac14\mathbf1_{i\text{ central}}.
+\]
+
+Equivalently, \(x^+=Ax+Bu\), with \(A_{ij}=k\) on adjacent distinct cells and \(A_{ii}=1-\ell-k|N(i)|\). All entries are nonnegative and every row sums to \(1-\ell\). The reference fixture is compared entry by entry with an independent undirected-edge construction. An optional source check also imports the pinned DynaComp function and compares its generated model exactly. Ordinary replay is offline and uses only the Python standard library.
+
+Six candidate identities are preserved: nominal; conductance halved; heater gain halved; loss doubled; one blocked bond immediately to the left of the central heater; and its reflected right-hand bond. A blocked bond removes the two off-diagonal conductances and adds each removed conductance to the corresponding diagonal. This preserves the loss rate and changes transport rather than inventing a new sink. The finite population contains these six single-fault hypotheses, not arbitrary combinations of faults.
+
+The sensors are the corner mean, central-four mean, and means of the left and right pairs of central cells. Every reading is an exact rational linear functional. A separate experiment starts from the zero excess-temperature center \(\mathbf0\), with a declared componentwise reset uncertainty. The source's earlier nine-state approximation and its error certificate are not reused for changed faults or changed sensors. This pilot simulates every candidate's full 144-state model exactly, so its model-reduction error is zero.
+
+## A common affine experiment contract
+
+**Proposition SNG-T01 (candidate-preserving affine lift).** Let finitely many candidates \(c\) have rational dynamics \(x^+=A_cx+B_cu\), and expose the same sensor labels \(y_j=C_{c,j}x\). For a finite allowed input alphabet, define
+
+\[
+H_{c,a}=\begin{pmatrix}A_c&B_cu_a\\0&1\end{pmatrix},
+\qquad M_a=\operatorname{diag}_c H_{c,a},
+\qquad L_j=\bigl([C_{c,j},0]\bigr)_c.
+\]
+
+Put the augmented initial state \((x_{0,c},1)\) in candidate block \(c\), and zero in every other block. For every chronological action word, the operator-system reading equals that candidate's original thermal reading. Distinct original identifiers remain distinct even when all available readings agree.
+
+*Proof.* Each homogeneous block sends \((x,1)\) to \((A_cx+B_cu_a,1)\), while a zero block stays zero. Induction on word length leaves exactly the selected block active and gives its original state evolution there. The output concatenation selects the desired sensor reading from that block. No assumption about commuting matrices is used. In particular, heater commands can be order-sensitive. \(\square\)
+
+This gives a mathematically closed bridge to the generic experiment engine. The large pilot computes its declared finite pool by sparse evolution rather than materializing a large dense block matrix. Tiny cases compare the lift, direct model evolution, noncommuting words and original candidate identities. The pilot does not claim an all-future closure calculation for every possible thermal protocol.
+
+## Propagating the uncertainty actually declared
+
+**Proposition SNG-T02 (box propagation and safe panel radii).** Suppose the nominal candidate state follows \(\bar x_{t+1}=A_c\bar x_t+B_cu_t\), while the actual state has initial deviation bounded by \(b_{0,c}\ge0\) and additive per-step disturbance bounded by \(d_{t,c}\ge0\). Define componentwise
+
+\[
+b_{t+1,c}=|A_c|b_{t,c}+d_{t,c}.
+\]
+
+For experiment \(e=(w,j)\) with length \(T\), a safe total output-error radius is
+
+\[
+\rho_{e,c}=|C_{c,j}|b_{T,c}
+ +\varepsilon_{e,\mathrm{sensor}}
+ +\varepsilon_{e,c,\mathrm{reduction}}.
+\]
+
+Consequently \(\varepsilon_e=\max_c\rho_{e,c}\) is a common envelope for the existing box-noise panel theorem. If the chosen panel separates every pair by some coordinate satisfying \(|r_e(a)-r_e(b)|>2\varepsilon_e\), its consistency decoder identifies the true member of the declared candidate family.
+
+*Proof.* The state error obeys \(e_{t+1}=A_ce_t+d_t\). The componentwise triangle inequality gives \(|e_{t+1}|\le|A_c|b_{t,c}+d_{t,c}\). Induction gives the state bound; another triangle inequality after observation and addition of the separately justified sensor and reduction errors gives \(\rho_{e,c}\). Replacing it by its maximum is safe for every candidate. The strict separation and decoder implication are SNG-O16. \(\square\)
+
+An actuator-command error can be included as a justified additional disturbance bound \(|B_c|r_{u,t}\). The retained experiment sets process disturbance and reduction error to zero; these are stated assumptions of the discrete model, not calibrated physical measurements. The API allows nonzero bounds without silently deriving them from a nominal run.
+
+For the plate candidates, \(A_c\ge0\), \(A_c\mathbf1=(1-\ell_c)\mathbf1\), and every sensor has nonnegative weights summing to one. Thus a uniform reset box of radius \(r_0\), with no process disturbance, has exactly attained output radius \(r_0(1-\ell_c)^T\). The two constant initial corners attain the endpoints. This gives both a transparent sensitivity formula and an independent check of the general bound.
+
+The common envelope can exceed a particular candidate's radius. The optimizer is exact for the declared common-box uncertainty model; a smaller panel might suffice under sharper candidate-dependent correlated uncertainty. Panels here consist of separately reset experiments, so no unmodeled shared initial-state history is discarded. Irreversible protocols require the history-aware semantics appropriate to that different problem.
+
+## A permanent blindness and its remedy
+
+**Proposition SNG-T03 (reflection blindness).** Let \(P\) reflect the plate left to right. For the two blocked-bond candidates,
+
+\[
+A_{\mathrm{right}}=PA_{\mathrm{left}}P^{-1},\qquad
+PB=B,\qquad Px_0=x_0.
+\]
+
+The corner-mean and center-mean sensors satisfy \(CP=C\). Therefore these two fault identities have identical readings under every finite scalar heater word and every observation horizon using those symmetric sensors.
+
+*Proof.* Reflection maps the left removed edge to the right removed edge and preserves the grid, loss and heater. The initial center is uniform. Inductively \(x_{\mathrm{right}}(t)=Px_{\mathrm{left}}(t)\) under the same input word. Applying an invariant sensor proves equal outputs. The uniform reset box is also preserved by reflection, so the possible-output sets coincide as well. \(\square\)
+
+This is an all-word obstruction, rather than a finite search that happened not to find a witness. A left-center sensor is not invariant under reflection; its reflected version is the right-center sensor. Adding the spatially resolved channel changes the experiment language and removes this particular obstruction. The example is the thermal counterpart of the terminal-move result in Chapter 15: repeated use of an invariant sensor cannot recover the orientation that sensor discards.
+
+## Retained finite-pool optimum and baselines
+
+The declared pool contains 112 experiments. Heater amplitudes are zero or two; horizons are 1, 2, 3, 4, 6, 8, 12 and 20 steps. Step, first-pulse, last-pulse and alternating protocols are included, with duplicate words removed and all four sensor channels retained. Original candidate identities are never deduplicated. The exact reading table therefore has 672 entries. Its scope is the explicit pool, rather than every conceivable input signal or sensor placement.
+
+Costs are normalized laboratory accounting units:
+
+\[
+c(w,j)=2+|w|+\tfrac12\sum_tu_t+s_j,
+\qquad(s_0,s_1,s_2,s_3)=(1,1,2,2).
+\]
+
+The terms account for reset, elapsed steps, commanded heating and sensor access. These are declared costs, not measured money, energy tariffs or procurement quotations. Every member of a multi-experiment panel pays its own reset cost.
+
+With reset radius \(r_0=1/100\) and sensor error \(1/100\), the exact minimum robust panel costs 20. It heats at amplitude two for eight steps, then reads the left-center mean: \(2+8+8+2=20\). The greedy panel costs 31 on the same pool and uncertainty envelope. The saving is exactly \(11/31\), approximately 35.48 percent. A fixed twenty-step full-heating local-sensor experiment costs 44 and also meets the declared robustness test. With the same reset uncertainty and sensor error \(1/1000\), the optimum costs 16 versus greedy's 20. These are exact finite-model optimization results and do not measure field performance.
+
+The branch-and-bound result is checked independently by a shortest-path calculation on pair-coverage masks derived directly from the reading and error tables. Tiny pools are additionally compared with exhaustive subset enumeration. Sensitivity records vary reset uncertainty and sensor error, and retain the finite-pool sensor-error frontier for several reset radii. A frontier calculated using the common envelope characterizes that declared envelope, not every sharper physical uncertainty description.
+
+## Reproduction, integration and open questions
+
+Run `PYTHONPATH=src python scripts/thermal_diagnostics.py --check`. Optional comparison with the separately cloned pinned source uses `--dynacomp-root PATH`. The retained receipt is `results/thermal_diagnostics.json`; the source record and a plain-language account are under `applications/thermal_diagnostics/`, with the expanded derivation in `docs/research/THERMAL_DIAGNOSTICS.md`. The core requires no DynaComp installation. The independent edge-flux oracle constructs evolution from neighboring heat exchanges, rather than calling the sparse matrix simulator it checks.
+
+This pilot is a concrete interface between existing programs: a DynaComp source model, Singularity's costed panel engine, and stable original candidate identities ready for a higher-level decision interface. It does not automatically modify PerfectJet or PerfectPower. Further work can add constrained combinations of faults, calibrated process uncertainty, continuous-time sampling bounds and adaptive policies with shared histories. Their domains must be stated before reusing any guarantee here. SNG-T01 to SNG-T03 have manuscript proofs and exact computational evidence; no Lean formalization of these thermal statements is claimed.
 
 # Implementation and retained computational results
 

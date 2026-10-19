@@ -2,6 +2,7 @@
 """Assemble the monograph, article, HTML and mathematical PDFs with Pandoc."""
 import base64
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -51,6 +52,19 @@ def normalize_headings(text):
     return re.sub(r'^(#{1,6})\s+\d+(?:\.\d+)*\.?\s+',r'\1 ',text,flags=re.M)
 
 
+def assembled_links(text, source):
+    """Keep chapter-relative Markdown links valid in docs/MONOGRAPH.md."""
+    def replace(match):
+        href = match.group(2)
+        if href.startswith(('#', '/', 'data:')) or re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:', href):
+            return match.group(0)
+        path, sep, fragment = href.partition('#')
+        target = (source.parent / path).resolve()
+        rebased = Path(os.path.relpath(target, ROOT / 'docs')).as_posix()
+        return match.group(1) + rebased + (sep + fragment if sep else '') + match.group(3)
+    return re.sub(r'(!?\[[^\]]*\]\()([^\s)]+)(\))', replace, text)
+
+
 def render(source,stem,title,subtitle,book=False,pdf=True):
     tmp=ROOT/'tmp'/'build';tmp.mkdir(parents=True,exist_ok=True)
     output=ROOT/'output'/'pdf';output.mkdir(parents=True,exist_ok=True)
@@ -77,13 +91,21 @@ def render(source,stem,title,subtitle,book=False,pdf=True):
         run(['xdvipdfmx','-o',str(output/(stem+'.pdf')),str(output/(stem+'.xdv'))],log)
         run(['pdfinfo',str(output/(stem+'.pdf'))],log)
     html=ROOT/'docs'/(stem+'.html')
-    run(common+['--to=html5','--mathml','--css',str(css),'-o',str(html)],log)
-    content=html.read_text()
+    # Capture the complete document before replacing the published file. A
+    # failed or incomplete converter must never truncate an existing HTML book.
+    command=common+['--to=html5','--mathml','--css',str(css)]
+    result=subprocess.run(command,cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    log.write_text(log.read_text()+result.stderr)
+    content=result.stdout
+    if result.returncode or '<html' not in content or '</html>' not in content:
+        raise RuntimeError('Incomplete HTML document: '+stem+'\n'+result.stderr[-9000:])
     content=re.sub(r'<link rel="stylesheet" href="[^"]*style.css"\s*/?>','<style>'+STYLE+'</style>',content)
     for image_path in (ROOT/'docs'/'assets').glob('*.png'):
         data='data:image/png;base64,'+base64.b64encode(image_path.read_bytes()).decode()
         content=content.replace('src="docs/assets/'+image_path.name+'"','src="'+data+'"').replace('src="assets/'+image_path.name+'"','src="'+data+'"')
-    html.write_text(content)
+    temporary=html.with_suffix('.html.pending')
+    temporary.write_text(content)
+    temporary.replace(html)
     print(f'Built {stem}: '+(str(output/(stem+'.pdf')) if pdf else 'LaTeX and HTML only; PDF left unchanged'),flush=True)
 
 
@@ -93,11 +115,11 @@ def main():
     parser.add_argument('--no-pdf',action='store_true',help='regenerate Markdown, LaTeX and HTML without XeLaTeX; retained PDFs become stale')
     pdf=not parser.parse_args().no_pdf
     chapters=sorted((ROOT/'docs'/'chapters').glob('*.md'))
-    if len(chapters)!=15:
-        raise ValueError('Exactly fifteen authored chapters required')
+    if len(chapters)!=16:
+        raise ValueError('Exactly sixteen authored chapters required')
     preface='''# Reading guide {.unnumbered}
 
-This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
+This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. Chapter 16 applies the experiment contract to a source-derived thermal fault-identification model with explicit uncertainty and cost. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence it forgets. A binary census can agree for every subset size and boundary size while a nested-height census differs. The arithmetic lift retains these local distinctions and turns the first discrepancy into a controlled ratio singularity. It adds analytic structure rather than new graph information. The full marked hierarchy explicitly contains the binary sector; complete graph reconstruction remains a research question.
 
@@ -106,7 +128,7 @@ Definitions and theorems are supplied with hypotheses and proofs. Finite graph c
 ![Exact reference graphs. Top: equal Laplacian spectra. Bottom: equal complete binary cut-volume census. Vertex labels remain original.](assets/graph_pairs.png)
 
 '''
-    parts=[preface]+[normalize_headings(p.read_text()) for p in chapters]
+    parts=[preface]+[normalize_headings(assembled_links(p.read_text(), p)) for p in chapters]
     parts += [normalize_headings((ROOT/'docs'/'IMPLEMENTATION.md').read_text()),normalize_headings((ROOT/'docs'/'development'/'PUSHES.md').read_text())]
     manuscript=ROOT/'docs'/'MONOGRAPH.md';manuscript.write_text('\n\n'.join(part.strip() for part in parts)+'\n')
     counts={str(p.relative_to(ROOT)):len(p.read_text().split()) for p in chapters}

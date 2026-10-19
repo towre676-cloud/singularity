@@ -1,0 +1,367 @@
+{
+  "schema": "singularity.thermal-diagnostics/1",
+  "source_commit": "cd788c7ac695728e3f5b22056a0f99a2c1e1463c",
+  "source_model_sha256": "d2b52864fae8e4e3344f3ab7fb25b9274d0452f7c4a91ad061b04efd6c2b4381",
+  "grid": 12,
+  "states_per_candidate": 144,
+  "candidates": [
+    "nominal",
+    "conductance_half",
+    "heater_half",
+    "loss_double",
+    "blocked_left_center_bond",
+    "blocked_right_center_bond"
+  ],
+  "experiments": 112,
+  "readings": 672,
+  "horizons": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12,
+    20
+  ],
+  "assumptions": {
+    "initial_center": "0",
+    "independent_initial_radius": "1/100",
+    "process_radius": "0",
+    "sensor_noise": "1/100",
+    "model_reduction_error": "0",
+    "scope": "synthetic exact discrete source with supplied faults and model-unit costs; no measured fault data or physical calibration"
+  },
+  "exact_panel": {
+    "cost": "8",
+    "indices": [
+      22
+    ],
+    "nodes": 4,
+    "root_lower_bound": "7",
+    "experiments": [
+      {
+        "word": [
+          2,
+          0,
+          0
+        ],
+        "sensor": "left_center_mean",
+        "cost": "8",
+        "error_radius": "1970299/100000000",
+        "readings": [
+          "11577/40000",
+          "60483/160000",
+          "11577/80000",
+          "11283/40000",
+          "53083/160000",
+          "46933/160000"
+        ]
+      }
+    ]
+  },
+  "robust_panel": {
+    "cost": "20",
+    "indices": [
+      78
+    ],
+    "nodes": 18,
+    "root_lower_bound": "15",
+    "experiments": [
+      {
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "sensor": "left_center_mean",
+        "cost": "20",
+        "error_radius": "19227446944279201/1000000000000000000",
+        "readings": [
+          "26065922358243061/12800000000000000",
+          "4365837614930659233/1638400000000000000",
+          "26065922358243061/25600000000000000",
+          "25304071843942433/12800000000000000",
+          "117669922135919069/51200000000000000",
+          "107343290948255369/51200000000000000"
+        ]
+      }
+    ]
+  },
+  "greedy_robust_panel": {
+    "cost": "31",
+    "indices": [
+      9,
+      41,
+      62
+    ],
+    "nodes": 3,
+    "root_lower_bound": null,
+    "experiments": [
+      {
+        "word": [
+          2,
+          0
+        ],
+        "sensor": "center_mean",
+        "cost": "6",
+        "error_radius": "19801/1000000",
+        "readings": [
+          "37/100",
+          "173/400",
+          "37/200",
+          "73/200",
+          "617/1600",
+          "617/1600"
+        ]
+      },
+      {
+        "word": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "sensor": "center_mean",
+        "cost": "9",
+        "error_radius": "196059601/10000000000",
+        "readings": [
+          "4842771/8000000",
+          "49023993/64000000",
+          "4842771/16000000",
+          "4734193/8000000",
+          "41400593/64000000",
+          "41400593/64000000"
+        ]
+      },
+      {
+        "word": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "sensor": "left_center_mean",
+        "cost": "16",
+        "error_radius": "1941480149401/100000000000000",
+        "readings": [
+          "70409130323/40000000000",
+          "5649124361797/2560000000000",
+          "70409130323/80000000000",
+          "137635928397/80000000000",
+          "1253133621793/640000000000",
+          "2296779729711/1280000000000"
+        ]
+      }
+    ]
+  },
+  "all_experiments_cost": "1656",
+  "fixed_twenty_step_left_sensor": {
+    "index": 110,
+    "cost": "44",
+    "robustly_identifies_all": true
+  },
+  "independent_minimum_cover_oracle": {
+    "exact_cost": "8",
+    "exact_settled_masks": 6,
+    "robust_cost": "20",
+    "robust_settled_masks": 23
+  },
+  "original_corner_only_uncoverable": [
+    [
+      4,
+      5
+    ]
+  ],
+  "uncertainty_sensitivity": [
+    {
+      "initial_radius": "0",
+      "contracts": [
+        {
+          "sensor_noise": "0",
+          "feasible": true,
+          "optimal_cost": "8",
+          "optimal_indices": [
+            22
+          ],
+          "greedy_cost": "13",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/1000",
+          "feasible": true,
+          "optimal_cost": "8",
+          "optimal_indices": [
+            22
+          ],
+          "greedy_cost": "13",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/100",
+          "feasible": true,
+          "optimal_cost": "16",
+          "optimal_indices": [
+            62
+          ],
+          "greedy_cost": "19",
+          "uncoverable": []
+        }
+      ],
+      "sensor_noise_frontier": "1145526436604768048467572996461247966340441/13107200000000000000000000000000000000000000",
+      "frontier_is_excluded": true,
+      "uncoverable_at_frontier": [
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "initial_radius": "1/10000",
+      "contracts": [
+        {
+          "sensor_noise": "0",
+          "feasible": true,
+          "optimal_cost": "8",
+          "optimal_indices": [
+            22
+          ],
+          "greedy_cost": "13",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/1000",
+          "feasible": true,
+          "optimal_cost": "8",
+          "optimal_indices": [
+            22
+          ],
+          "greedy_cost": "13",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/100",
+          "feasible": true,
+          "optimal_cost": "16",
+          "optimal_indices": [
+            62
+          ],
+          "greedy_cost": "19",
+          "uncoverable": []
+        }
+      ],
+      "sensor_noise_frontier": "17882099837867509469070017281139051468902284577/204800000000000000000000000000000000000000000000",
+      "frontier_is_excluded": true,
+      "uncoverable_at_frontier": [
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "initial_radius": "1/1000",
+      "contracts": [
+        {
+          "sensor_noise": "0",
+          "feasible": true,
+          "optimal_cost": "8",
+          "optimal_indices": [
+            22
+          ],
+          "greedy_cost": "13",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/1000",
+          "feasible": true,
+          "optimal_cost": "9",
+          "optimal_indices": [
+            38
+          ],
+          "greedy_cost": "13",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/100",
+          "feasible": true,
+          "optimal_cost": "16",
+          "optimal_indices": [
+            62
+          ],
+          "greedy_cost": "20",
+          "uncoverable": []
+        }
+      ],
+      "sensor_noise_frontier": "3546268646225917574989544036805503884479666029/40960000000000000000000000000000000000000000000",
+      "frontier_is_excluded": true,
+      "uncoverable_at_frontier": [
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "initial_radius": "1/100",
+      "contracts": [
+        {
+          "sensor_noise": "0",
+          "feasible": true,
+          "optimal_cost": "13",
+          "optimal_indices": [
+            58
+          ],
+          "greedy_cost": "19",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/1000",
+          "feasible": true,
+          "optimal_cost": "16",
+          "optimal_indices": [
+            62
+          ],
+          "greedy_cost": "20",
+          "uncoverable": []
+        },
+        {
+          "sensor_noise": "1/100",
+          "feasible": true,
+          "optimal_cost": "20",
+          "optimal_indices": [
+            78
+          ],
+          "greedy_cost": "31",
+          "uncoverable": []
+        }
+      ],
+      "sensor_noise_frontier": "648951086550014877348989968516487958294351433/8192000000000000000000000000000000000000000000",
+      "frontier_is_excluded": true,
+      "uncoverable_at_frontier": [
+        [
+          0,
+          3
+        ]
+      ]
+    }
+  ],
+  "independent_stencil_readings_checked": 672,
+  "selected_public_simulator_readings_checked": 36,
+  "bounded_noisy_candidates_decoded": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}

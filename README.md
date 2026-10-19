@@ -20,7 +20,7 @@ The Python core uses Python 3.10+ and the standard library. The repository inclu
 
 [Paper 2: exact observation depth — PDF](output/pdf/locality_paper.pdf) · [Source](docs/papers/locality.md) · [Claim register](docs/papers/locality_claims.md) · [Selection and literature comparison](docs/papers/second_paper_choice.md)
 
-[Complete v0.3.0 download](releases/Singularity-v0.3.0-complete.zip) · [Release manifest](results/archive_manifest.json) · [Operator release record](results/operator_checkpoint.json) · [Earlier v0.2.0 archive](releases/Singularity-v0.2.0-complete.zip) and [its publication checks](results/publication_release.json)
+[Complete v0.4.0 download](releases/Singularity-v0.4.0-complete.zip) · [Release manifest](results/archive_manifest.json) · [Operator release record](results/operator_checkpoint.json) · [Earlier v0.3.0 archive](releases/Singularity-v0.3.0-complete.zip) · [Earlier v0.2.0 archive](releases/Singularity-v0.2.0-complete.zip) and [its publication checks](results/publication_release.json)
 
 The archive contains the source, all three PDFs, editable mathematical documents, exact results, tests, proof sources and dependency manifests. Lean and Mathlib build caches are excluded. No document compiler is needed to read the PDFs.
 
@@ -46,7 +46,7 @@ where $N_g$ counts $g$-cycles. This explains the cube–Möbius witness. The loo
 
 **Experiments and observability (v0.3.0).** A two-terminal state can be changed by attaching symmetric graph contexts and read through its coefficients. `observability.py` computes the exact observation space with retained rows that are actual experiment words, certificates of $L=AB$ and $BM_i=T_iB$, the invisible subspace, quotient dynamics, and a provably cheapest distinguishing experiment under positive attachment costs. Cheapest is not strongest: a discarded longer experiment can amplify a discrepancy. `graph_experiments.py` compiles contexts into exact operators. At budget four the interface has dimension 22 and full observable rank, with length-filtered ranks 5, 11, 15, 17, 18, 19, 20, 21, 22. At budget seven a formal direction $e_{((0,5),7)}-e_{((3,4),7)}$ is invisible, explained by the top-volume corank bound. `periodic.py` treats root-of-unity edge phases. There the numerator of $P/(1-x^M)^n$ is palindromic, so agreement through $\lfloor n(M-1)/2\rfloor$ proves full equality. [Chapter 15](docs/chapters/15_operators_experiments.md) gives the proofs and limitations, [the interface specification](docs/specifications/OPERATORS-v1.md) gives the contracts, and [the retained receipt](results/operator_experiments.json) gives the exact evidence. The [edge-factor supplement](docs/research/VAKIL_BRIDGES.md) adds finite determination for polynomial edge-factor families, triangle tangent ranks and compressed-interface composition. Its [exact experiment](results/vakil_bridge.json) is replayed in CI.
 
-**Expansion after v0.3.0.** Each result below is proved in Chapter 15, implemented, and replayed in CI.
+**Operator expansion (v0.4.0).** Each result below is proved in Chapter 15, implemented, and replayed in CI.
 - **Bounded maximum-margin experiments** (`robust_search.py`). No unrestricted optimum need exist, and a finite supremum need not be attained.
 - **Minimum-cost shared panels with certified identification** under bounded noise (`panels.py`). Exact branch-and-bound; the problem is set-cover hard in general.
 - **Parameter-aware ranks** via determinantal divisors (`parametric.py`). At budgets 1–4 the interface has full rank at every $q\in(0,1)$.
@@ -55,7 +55,11 @@ where $N_g$ counts $g$-cycles. This explains the cube–Möbius witness. The loo
 - **Noncommuting terminal moves** on ordered states (`terminal_moves.py`).
 - **A charge-aware separator compiler** (`separator_compiler.py`) with proved cell and bit bounds.
 
-**Arithmetic and proof scope.** Explicit remainder bounds and outward-rounded computations control the normalized real Euler-product remainder. Core Lean 4.12.0 checks normalization, nested levels, both decisive coefficient certificates and finite cancellation. The separate [Mathlib analysis project](formal-analysis/README.md) proves the actual real Euler-product factorization and positive normalized boundary limit, including both certified graph pairs at $q=1/2$. Its [source-bound audit](results/formal_analysis_audit.json) checks 79 declarations, alongside 91 in the core project. The newer reconstruction and loop theorems have manuscript proofs and computational checks; their Lean formalization is a separate future task.
+**Arithmetic and proof scope.** Explicit remainder bounds and outward-rounded computations control the normalized real Euler-product remainder. Core Lean 4.12.0 checks normalization, nested levels, both decisive coefficient certificates and finite cancellation. The separate [Mathlib analysis project](formal-analysis/README.md) proves the actual real Euler-product factorization and positive normalized boundary limit, including both certified graph pairs at $q=1/2$. Its [source-bound audit](results/formal_analysis_audit.json) checks 79 declarations, alongside the earlier 91 core declarations, now extended to 128 by OE12. The newer reconstruction and loop theorems have manuscript proofs and computational checks; their Lean formalization is a separate future task.
+
+**Thermal experiment pilot (v0.4.0).** The [source-derived DynaComp plate example](applications/thermal_diagnostics/README.md) preserves six fault identities on a 144-state exact model. Among 112 declared tests, the cheapest robust diagnostic costs **20**, compared with greedy’s **31** and a fixed protocol’s **44**, at per-cell reset uncertainty and sensor error both **1/100**. All 672 predictions are checked by a separate heat-flux simulator; an independent pair-mask shortest-path computation confirms the optimum. [Chapter 16](docs/chapters/16_thermal_diagnostics.md) proves the model lift, error composition and permanent blindness of symmetric sensors; [the receipt](results/thermal_diagnostics.json) records scope and uncertainty sensitivity. Costs are normalized model units and faults are constructed hypotheses, not measured physical outcomes.
+
+**New core proof coverage.** The [operator audit](results/formal_operator_audit.json) checks 37 new Lean declarations and all 128 core declarations. It covers all-future closure and quotient behavior, natural-cost witnesses, actual residue-complement histograms and the shared-denominator cutoff. Linear dimension minimality, the Python discovery algorithm and rational-cost scaling remain outside that formal coverage. The existing 79-declaration Mathlib project is unchanged. The [ordered-context supplement](docs/research/ORDERED_CONTEXTS.md) also proves the actual path margin for every budget, with an unattained limiting signal.
 
 ## Run and reproduce
 
@@ -68,6 +72,7 @@ PYTHONPATH=src python scripts/locality_family.py --check
 PYTHONPATH=src python scripts/overlap_hierarchy.py --check
 PYTHONPATH=src python scripts/loop_series.py --check
 PYTHONPATH=src python scripts/operator_experiments.py --check
+PYTHONPATH=src python scripts/thermal_diagnostics.py --check
 python scripts/check_repository.py
 python scripts/check_links.py
 ```

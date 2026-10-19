@@ -3,3 +3,7 @@ import Singularity.Thresholds
 import Singularity.CertificateData
 import Singularity.Certificates
 import Singularity.Visibility
+import Singularity.Operators
+import Singularity.OperatorExamples
+import Singularity.Periodic
+import Singularity.PeriodicSeries

@@ -224,3 +224,15 @@ The linked June 11, 2013 Vakil draft yields a Noetherian finite-determination pr
 - **OE11 (separator_compiler).** SNG-O21: exactness, cell and bit bounds proved. Benchmarks to n=200.
 - **Finite, not retained.** The R=8 corank of 1 equals the bound (one run, 182 s). The R=9 run was lost in the restart.
 - **OE12.** Lean formalization resumed alone in formal-analysis.
+
+## 2026-10-19: finish operator program and integrate thermal diagnostics (v0.4.0)
+
+Integrated Claude branch 764f7f9 into main through completion checkpoint 6557427, preserving the earlier main history and all fifteen research commits. The user explicitly authorized completing the remaining operator work, pushing main, and then implementing the proposed cross-program thermal pilot; this scope supersedes the routine three-unit session limit.
+
+OE12 now has 37 newly kernel-checked declarations and 128 total core audited declarations. The core-only proof covers all-future finite-span closure, invariant quotients, natural-cost witnesses, actual residue-complement histograms and a shared-unit-denominator cutoff. Rational-cost scaling, discovery/termination, linear dimension minimality, the JSON parser and the height-to-residue decomposition retain their explicit separate scopes. The unchanged 79-declaration Mathlib package retains its historical receipt and is rebuilt by CI; no fresh local Mathlib run is inferred. The core audit passed and its new source-bound operator receipt matches.
+
+OrderedContextAttachment fixes the asymmetric-context API gap while preserving the symmetric compiler contract. SNG-O22 proves the actual graph path maximum-margin law for every budget, its unattained supremum and its exact finite-experiment noise frontier. Primary classical references have checked publisher records.
+
+The thermal pilot reuses the exact 144-state DynaComp stencil at pinned source cd788c7, retains six explicit constructed fault identities and computes 112 protocol/sensor experiments. Every one of its 672 readings agrees with an independent neighbor-flux simulator. At reset radius and sensor error both 1/100, the exact common-envelope robust optimum costs 20, greedy costs 31, and the fixed twenty-step local-sensor baseline costs 44. A separate pair-cover shortest-path oracle confirms the optimum. Reflection proves the original symmetric sensors cannot separate mirrored blocked bonds at any horizon; a local sensor removes the obstruction. This is an exact synthetic discrete-model result under declared normalized costs, not observed physical performance.
+
+The 16-chapter monograph, source and both papers are regenerated; the manuscript now includes the operator expansion and thermal derivation. The document builder rebases chapter-relative links and validates complete HTML before atomically replacing published pages. Final version-bound checks and archive hashes are retained in results/release_0_4.json and results/archive_manifest.json.
