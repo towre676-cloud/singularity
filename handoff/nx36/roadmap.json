@@ -948,8 +948,29 @@
           "acceptance": [
             "Prove typed closure, quotient invariance and linear minimality; test exact rectangular fixture, empty outputs, malformed dimensions and illegal paths."
           ],
-          "status": "proposed",
-          "depends_on": []
+          "status": "complete",
+          "depends_on": [],
+          "evidence": {
+            "summary": "Typed closure, quotient invariance, per-type linear minimality and the cheapest witness proved for rectangular exact maps; independent word oracle and edge cases (rank-zero, zero-dimensional, empty outputs, cycles, noncommuting).",
+            "artifacts": [
+              "src/singularity/typed_observability.py",
+              "src/singularity/typed_contexts.py",
+              "tests/test_typed_observability.py",
+              "tests/test_typed_contexts.py",
+              "scripts/typed_contexts.py",
+              "results/typed_contexts.json",
+              "docs/research/TYPED_OBSERVABILITY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_typed_observability",
+                "exit_code": 0,
+                "scope": "14 tests: hand-checked packet example, zoo with rank-zero and zero-dimensional types, independent word-enumeration oracle on 14 fixtures"
+              }
+            ],
+            "commit": "b6fde6f",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX13-B",
@@ -957,10 +978,36 @@
           "acceptance": [
             "Compile a finite boundary grammar and independently enumerate actual graphs for every retained short legal path, including noncommuting order and duplicate-edge rejection."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX13-A"
-          ]
+          ],
+          "evidence": {
+            "summary": "Four-type boundary grammar at fixed budget with exact truncation; duplicate edges become type errors; 27,439 words at R=2 and 610 at R=3 match direct enumeration on assembled graphs.",
+            "artifacts": [
+              "src/singularity/typed_observability.py",
+              "src/singularity/typed_contexts.py",
+              "tests/test_typed_observability.py",
+              "tests/test_typed_contexts.py",
+              "scripts/typed_contexts.py",
+              "results/typed_contexts.json",
+              "docs/research/TYPED_OBSERVABILITY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_typed_contexts",
+                "exit_code": 0,
+                "scope": "11 tests: 4,087 legal words against direct enumeration, noncommuting pairs, duplicate-edge rejection"
+              },
+              {
+                "command": "python scripts/typed_contexts.py --check && python scripts/typed_contexts.py --replay results/typed_contexts.json",
+                "exit_code": 0,
+                "scope": "retained receipt; 4 portable certificates replayed without the compiler"
+              }
+            ],
+            "commit": "b6fde6f",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX13-C",
@@ -968,13 +1015,44 @@
           "acceptance": [
             "Replay portable identities without compiler invocation and compare cheapest witnesses with bounded exhaustive legal-path search, including rank-zero types and chronology tampering."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX13-B"
-          ]
+          ],
+          "evidence": {
+            "summary": "Portable typed certificates replayed without the compiler; cheapest witnesses equal bounded exhaustive legal-path search; tampering rejected.",
+            "artifacts": [
+              "src/singularity/typed_observability.py",
+              "src/singularity/typed_contexts.py",
+              "tests/test_typed_observability.py",
+              "tests/test_typed_contexts.py",
+              "scripts/typed_contexts.py",
+              "results/typed_contexts.json",
+              "docs/research/TYPED_OBSERVABILITY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_typed_observability",
+                "exit_code": 0,
+                "scope": "14 tests: hand-checked packet example, zoo with rank-zero and zero-dimensional types, independent word-enumeration oracle on 14 fixtures"
+              },
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_typed_contexts",
+                "exit_code": 0,
+                "scope": "11 tests: 4,087 legal words against direct enumeration, noncommuting pairs, duplicate-edge rejection"
+              },
+              {
+                "command": "python scripts/typed_contexts.py --check && python scripts/typed_contexts.py --replay results/typed_contexts.json",
+                "exit_code": 0,
+                "scope": "retained receipt; 4 portable certificates replayed without the compiler"
+              }
+            ],
+            "commit": "b6fde6f",
+            "math_status": "proved"
+          }
         }
       ],
-      "status": "proposed",
+      "status": "complete",
       "packet": "packets/NX13.md",
       "execution_rank": 13,
       "supporting_tracks": []
