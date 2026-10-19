@@ -1,0 +1,513 @@
+{
+ "all_single_probe_erasures": {
+  "long_unicode": {
+   "padding_mask_dropped": true,
+   "position_ids_all_zero": true,
+   "temperature_1.3": true,
+   "truncate_48": true,
+   "unicode_nfkc": true
+  },
+  "long_unicode_newline": {
+   "padding_mask_dropped": true,
+   "position_ids_all_zero": true,
+   "temperature_1.3": true,
+   "truncate_48": true,
+   "unicode_nfkc": true
+  }
+ },
+ "clean_resident_check": {
+  "construction_faults_still_separated": {
+   "padding_mask_dropped": true,
+   "position_ids_all_zero": true,
+   "temperature_1.3": true,
+   "truncate_48": true,
+   "unicode_nfkc": true
+  },
+  "contract_mismatches": [],
+  "flagged_probes": [],
+  "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+  "missing_probes": [],
+  "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+  "verdict": "unchanged"
+ },
+ "environment": {
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "threads": 4,
+  "torch": "2.8.0+cpu",
+  "transformers": "4.57.1"
+ },
+ "frozen_panel_sha256": "147539921952bea680d105a2cb82ab2281451fc2f46be4064f054bb7cbe9ab54",
+ "full_pool_cost": 1088,
+ "model_id": "Qwen/Qwen2.5-1.5B",
+ "package_checks_from_retained_observations": {
+  "crlf_newlines": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "left_pad_absolute_positions": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "unchanged"
+  },
+  "padding_mask_dropped": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "position_ids_all_zero": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "temperature_1.1": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "temperature_1.3": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "truncate_48": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "truncate_64": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  },
+  "unicode_nfd": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "unchanged"
+  },
+  "unicode_nfkc": {
+   "construction_faults_still_separated": {
+    "padding_mask_dropped": true,
+    "position_ids_all_zero": true,
+    "temperature_1.3": true,
+    "truncate_48": true,
+    "unicode_nfkc": true
+   },
+   "contract_mismatches": [],
+   "flagged_probes": [
+    "long_unicode",
+    "long_unicode_newline"
+   ],
+   "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+   "missing_probes": [],
+   "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+   "verdict": "changed"
+  }
+ },
+ "package_verification": {
+  "faults": 5,
+  "panel_probes": 2,
+  "problems": [],
+  "requirement": 2,
+  "verified": true
+ },
+ "panels": {
+  "exact": {
+   "clean_false_alarms": {
+    "reversed_order": [],
+    "threads_2": []
+   },
+   "cost": 192,
+   "faults": {
+    "crlf_newlines": {
+     "detected": true,
+     "heldout": true,
+     "robust": false,
+     "separating_probes": 1
+    },
+    "left_pad_absolute_positions": {
+     "detected": false,
+     "heldout": true,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "padding_mask_dropped": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "position_ids_all_zero": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "temperature_1.1": {
+     "detected": true,
+     "heldout": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "temperature_1.3": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "truncate_48": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "truncate_64": {
+     "detected": true,
+     "heldout": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "unicode_nfd": {
+     "detected": false,
+     "heldout": true,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "unicode_nfkc": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    }
+   },
+   "probe_ids": [
+    "long_unicode",
+    "long_unicode_newline"
+   ]
+  },
+  "greedy": {
+   "clean_false_alarms": {
+    "reversed_order": [],
+    "threads_2": []
+   },
+   "cost": 239,
+   "faults": {
+    "crlf_newlines": {
+     "detected": false,
+     "heldout": true,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "left_pad_absolute_positions": {
+     "detected": false,
+     "heldout": true,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "padding_mask_dropped": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 4
+    },
+    "position_ids_all_zero": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 5
+    },
+    "temperature_1.1": {
+     "detected": true,
+     "heldout": true,
+     "robust": true,
+     "separating_probes": 5
+    },
+    "temperature_1.3": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 5
+    },
+    "truncate_48": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "truncate_64": {
+     "detected": true,
+     "heldout": true,
+     "robust": true,
+     "separating_probes": 2
+    },
+    "unicode_nfd": {
+     "detected": false,
+     "heldout": true,
+     "robust": false,
+     "separating_probes": 0
+    },
+    "unicode_nfkc": {
+     "detected": true,
+     "heldout": false,
+     "robust": true,
+     "separating_probes": 2
+    }
+   },
+   "probe_ids": [
+    "plain_science",
+    "unicode_ligature",
+    "unicode_accents",
+    "long_reference",
+    "long_unicode"
+   ]
+  }
+ },
+ "parameters": 1543714304,
+ "pool_clean_false_alarms": {
+  "reversed_order": [],
+  "threads_2": []
+ },
+ "pool_separator_counts": {
+  "crlf_newlines": 9,
+  "left_pad_absolute_positions": 7,
+  "padding_mask_dropped": 10,
+  "position_ids_all_zero": 18,
+  "temperature_1.1": 18,
+  "temperature_1.3": 18,
+  "truncate_48": 5,
+  "truncate_64": 5,
+  "unicode_nfd": 0,
+  "unicode_nfkc": 7
+ },
+ "protocol_sha256": "e8a925ac6373b4f74453b5db03adfd46f766399b61d210ec29cd4516d2c9ceb8",
+ "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+ "schema": "singularity.pretrained-audit-results/1",
+ "seconds": {
+  "load": 0.7211382259993115,
+  "total": 267.84119702300086
+ },
+ "selection": {
+  "eligible_faults": [
+   "padding_mask_dropped",
+   "position_ids_all_zero",
+   "truncate_48",
+   "unicode_nfkc",
+   "temperature_1.3"
+  ],
+  "exact": {
+   "cost": 192,
+   "indices": [
+    12,
+    13
+   ],
+   "nodes": 21,
+   "probe_ids": [
+    "long_unicode",
+    "long_unicode_newline"
+   ]
+  },
+  "greedy": {
+   "cost": 239,
+   "indices": [
+    1,
+    6,
+    7,
+    10,
+    12
+   ],
+   "probe_ids": [
+    "plain_science",
+    "unicode_ligature",
+    "unicode_accents",
+    "long_reference",
+    "long_unicode"
+   ]
+  },
+  "independent_enumeration": {
+   "minimizing_panels": [
+    [
+     12,
+     13
+    ]
+   ],
+   "minimum_cost": 192,
+   "subsets": 262144
+  },
+  "pool_separator_counts": {
+   "padding_mask_dropped": 10,
+   "position_ids_all_zero": 18,
+   "temperature_1.3": 18,
+   "truncate_48": 5,
+   "unicode_nfkc": 7
+  },
+  "unavailable_faults": {}
+ },
+ "temperature_1.1_preserves_all_argmax": true,
+ "temperature_resident_check": {
+  "construction_faults_still_separated": {
+   "padding_mask_dropped": true,
+   "position_ids_all_zero": true,
+   "temperature_1.3": true,
+   "truncate_48": true,
+   "unicode_nfkc": true
+  },
+  "contract_mismatches": [],
+  "flagged_probes": [
+   "long_unicode",
+   "long_unicode_newline"
+  ],
+  "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+  "missing_probes": [],
+  "package_sha256": "5a8899e9307df0c93b7d154fccd6e0370e2d2264732c2a0efb27e00b8a8c9eb4",
+  "verdict": "changed"
+ },
+ "timing": {
+  "full_pool_includes": "observation only",
+  "median_seconds": {
+   "full_pool": 12.012561652998556,
+   "panel_check": 1.9740976710018003
+  },
+  "pairs": [
+   {
+    "full_pool": 12.211016613000538,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 2.201176996000868,
+    "repeat": 0
+   },
+   {
+    "full_pool": 12.012561652998556,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 1.9740976710018003,
+    "repeat": 1
+   },
+   {
+    "full_pool": 11.667874728002062,
+    "order": [
+     "full_pool",
+     "panel_check"
+    ],
+    "panel_check": 1.849727040003927,
+    "repeat": 2
+   }
+  ],
+  "panel_includes": "package verification, observation, comparison",
+  "speed_ratio_full_over_panel": 6.0850898258253405
+ }
+}

@@ -1,0 +1,571 @@
+{
+  "all_subsets": [
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 0,
+        "position_ids_all_zero": 0,
+        "temperature_1.3": 0,
+        "truncate_48": 0,
+        "unicode_nfkc": 0
+      },
+      "cost": 0,
+      "feasible": false,
+      "indices": [],
+      "subset": 0
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 1,
+        "temperature_1.3": 1,
+        "truncate_48": 0,
+        "unicode_nfkc": 0
+      },
+      "cost": 11,
+      "feasible": false,
+      "indices": [
+        1
+      ],
+      "subset": 1
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 1,
+        "temperature_1.3": 1,
+        "truncate_48": 0,
+        "unicode_nfkc": 1
+      },
+      "cost": 23,
+      "feasible": false,
+      "indices": [
+        6
+      ],
+      "subset": 2
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 0,
+        "unicode_nfkc": 1
+      },
+      "cost": 34,
+      "feasible": false,
+      "indices": [
+        1,
+        6
+      ],
+      "subset": 3
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 1,
+        "temperature_1.3": 1,
+        "truncate_48": 0,
+        "unicode_nfkc": 0
+      },
+      "cost": 13,
+      "feasible": false,
+      "indices": [
+        7
+      ],
+      "subset": 4
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 0,
+        "unicode_nfkc": 0
+      },
+      "cost": 24,
+      "feasible": false,
+      "indices": [
+        1,
+        7
+      ],
+      "subset": 5
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 0,
+        "unicode_nfkc": 1
+      },
+      "cost": 36,
+      "feasible": false,
+      "indices": [
+        6,
+        7
+      ],
+      "subset": 6
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 0,
+        "unicode_nfkc": 1
+      },
+      "cost": 47,
+      "feasible": false,
+      "indices": [
+        1,
+        6,
+        7
+      ],
+      "subset": 7
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 0,
+        "position_ids_all_zero": 1,
+        "temperature_1.3": 1,
+        "truncate_48": 1,
+        "unicode_nfkc": 0
+      },
+      "cost": 96,
+      "feasible": false,
+      "indices": [
+        10
+      ],
+      "subset": 8
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 1,
+        "unicode_nfkc": 0
+      },
+      "cost": 107,
+      "feasible": false,
+      "indices": [
+        1,
+        10
+      ],
+      "subset": 9
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 119,
+      "feasible": false,
+      "indices": [
+        6,
+        10
+      ],
+      "subset": 10
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 130,
+      "feasible": false,
+      "indices": [
+        1,
+        6,
+        10
+      ],
+      "subset": 11
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 1,
+        "unicode_nfkc": 0
+      },
+      "cost": 109,
+      "feasible": false,
+      "indices": [
+        7,
+        10
+      ],
+      "subset": 12
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 1,
+        "unicode_nfkc": 0
+      },
+      "cost": 120,
+      "feasible": false,
+      "indices": [
+        1,
+        7,
+        10
+      ],
+      "subset": 13
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 132,
+      "feasible": false,
+      "indices": [
+        6,
+        7,
+        10
+      ],
+      "subset": 14
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 4,
+        "temperature_1.3": 4,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 143,
+      "feasible": false,
+      "indices": [
+        1,
+        6,
+        7,
+        10
+      ],
+      "subset": 15
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 1,
+        "temperature_1.3": 1,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 96,
+      "feasible": false,
+      "indices": [
+        12
+      ],
+      "subset": 16
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 107,
+      "feasible": false,
+      "indices": [
+        1,
+        12
+      ],
+      "subset": 17
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 1,
+        "unicode_nfkc": 2
+      },
+      "cost": 119,
+      "feasible": false,
+      "indices": [
+        6,
+        12
+      ],
+      "subset": 18
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 1,
+        "unicode_nfkc": 2
+      },
+      "cost": 130,
+      "feasible": false,
+      "indices": [
+        1,
+        6,
+        12
+      ],
+      "subset": 19
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 109,
+      "feasible": false,
+      "indices": [
+        7,
+        12
+      ],
+      "subset": 20
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 1,
+        "unicode_nfkc": 1
+      },
+      "cost": 120,
+      "feasible": false,
+      "indices": [
+        1,
+        7,
+        12
+      ],
+      "subset": 21
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 1,
+        "unicode_nfkc": 2
+      },
+      "cost": 132,
+      "feasible": false,
+      "indices": [
+        6,
+        7,
+        12
+      ],
+      "subset": 22
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 4,
+        "position_ids_all_zero": 4,
+        "temperature_1.3": 4,
+        "truncate_48": 1,
+        "unicode_nfkc": 2
+      },
+      "cost": 143,
+      "feasible": false,
+      "indices": [
+        1,
+        6,
+        7,
+        12
+      ],
+      "subset": 23
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 1,
+        "position_ids_all_zero": 2,
+        "temperature_1.3": 2,
+        "truncate_48": 2,
+        "unicode_nfkc": 1
+      },
+      "cost": 192,
+      "feasible": false,
+      "indices": [
+        10,
+        12
+      ],
+      "subset": 24
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 2,
+        "unicode_nfkc": 1
+      },
+      "cost": 203,
+      "feasible": false,
+      "indices": [
+        1,
+        10,
+        12
+      ],
+      "subset": 25
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 2,
+        "unicode_nfkc": 2
+      },
+      "cost": 215,
+      "feasible": true,
+      "indices": [
+        6,
+        10,
+        12
+      ],
+      "subset": 26
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 4,
+        "temperature_1.3": 4,
+        "truncate_48": 2,
+        "unicode_nfkc": 2
+      },
+      "cost": 226,
+      "feasible": true,
+      "indices": [
+        1,
+        6,
+        10,
+        12
+      ],
+      "subset": 27
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 2,
+        "position_ids_all_zero": 3,
+        "temperature_1.3": 3,
+        "truncate_48": 2,
+        "unicode_nfkc": 1
+      },
+      "cost": 205,
+      "feasible": false,
+      "indices": [
+        7,
+        10,
+        12
+      ],
+      "subset": 28
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 4,
+        "temperature_1.3": 4,
+        "truncate_48": 2,
+        "unicode_nfkc": 1
+      },
+      "cost": 216,
+      "feasible": false,
+      "indices": [
+        1,
+        7,
+        10,
+        12
+      ],
+      "subset": 29
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 3,
+        "position_ids_all_zero": 4,
+        "temperature_1.3": 4,
+        "truncate_48": 2,
+        "unicode_nfkc": 2
+      },
+      "cost": 228,
+      "feasible": true,
+      "indices": [
+        6,
+        7,
+        10,
+        12
+      ],
+      "subset": 30
+    },
+    {
+      "construction_coverage": {
+        "padding_mask_dropped": 4,
+        "position_ids_all_zero": 5,
+        "temperature_1.3": 5,
+        "truncate_48": 2,
+        "unicode_nfkc": 2
+      },
+      "cost": 239,
+      "feasible": true,
+      "indices": [
+        1,
+        6,
+        7,
+        10,
+        12
+      ],
+      "subset": 31
+    }
+  ],
+  "analysis_status": "post hoc deterministic comparator on frozen construction observations; zero new model forwards",
+  "claim_boundary": "Only deletion from the original greedy panel is optimized; no model/pool/fault/tolerance or heldout observation changes.",
+  "eligible_faults": [
+    "padding_mask_dropped",
+    "position_ids_all_zero",
+    "truncate_48",
+    "unicode_nfkc",
+    "temperature_1.3"
+  ],
+  "exact_cost": 192,
+  "exact_saving_percent_over_pruned_greedy": 10.69767441860465,
+  "greedy_cost": 239,
+  "greedy_indices": [
+    1,
+    6,
+    7,
+    10,
+    12
+  ],
+  "observations_sha256": "ec342510441f5961e1a6e0a906541391dd872437f2f7779e0574adc3ece9b454",
+  "optimally_pruned_greedy": {
+    "construction_coverage": {
+      "padding_mask_dropped": 2,
+      "position_ids_all_zero": 3,
+      "temperature_1.3": 3,
+      "truncate_48": 2,
+      "unicode_nfkc": 2
+    },
+    "cost": 215,
+    "indices": [
+      6,
+      10,
+      12
+    ]
+  },
+  "protocol_sha256": "e8a925ac6373b4f74453b5db03adfd46f766399b61d210ec29cd4516d2c9ceb8",
+  "requirement": 2,
+  "result_sha256": "4189939f4ebebd7b72dbe7efa71668e79b38fbf9cb205fffffe0d25dd8ed10a0",
+  "schema": "singularity.native-transfer-pruned-greedy/1",
+  "subsets_checked": 32
+}

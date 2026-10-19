@@ -1,0 +1,58 @@
+{
+ "eligible_faults": [
+  "padding_mask_dropped",
+  "position_ids_all_zero",
+  "truncate_48",
+  "unicode_nfkc",
+  "temperature_1.3"
+ ],
+ "exact": {
+  "cost": 192,
+  "indices": [
+   12,
+   13
+  ],
+  "nodes": 21,
+  "probe_ids": [
+   "long_unicode",
+   "long_unicode_newline"
+  ]
+ },
+ "frozen_before_heldout_observations": true,
+ "greedy": {
+  "cost": 239,
+  "indices": [
+   1,
+   6,
+   7,
+   10,
+   12
+  ],
+  "probe_ids": [
+   "plain_science",
+   "unicode_ligature",
+   "unicode_accents",
+   "long_reference",
+   "long_unicode"
+  ]
+ },
+ "independent_enumeration": {
+  "minimizing_panels": [
+   [
+    12,
+    13
+   ]
+  ],
+  "minimum_cost": 192,
+  "subsets": 262144
+ },
+ "pool_separator_counts": {
+  "padding_mask_dropped": 10,
+  "position_ids_all_zero": 18,
+  "temperature_1.3": 18,
+  "truncate_48": 5,
+  "unicode_nfkc": 7
+ },
+ "protocol_sha256": "e8a925ac6373b4f74453b5db03adfd46f766399b61d210ec29cd4516d2c9ceb8",
+ "unavailable_faults": {}
+}
