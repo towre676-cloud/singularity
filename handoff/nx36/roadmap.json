@@ -593,8 +593,27 @@
             "PSD certificates with zero pivots and all tiny examples.",
             "Independent tiny PSD oracle and tamper rejection."
           ],
-          "status": "proposed",
-          "depends_on": []
+          "status": "complete",
+          "depends_on": [],
+          "evidence": {
+            "summary": "Kernel and exact bound semantics: identifiability decided with hidden-target witnesses, sharp amplification bracketed by exact LDL PSD certificates, attaining minimum-norm decoder; matches an all-principal-minors oracle on 600 matrices; tampered receipts rejected.",
+            "artifacts": [
+              "src/singularity/target_recovery.py",
+              "tests/test_target_recovery.py",
+              "scripts/target_recovery.py",
+              "results/target_recovery.json",
+              "docs/research/TARGET_RECOVERY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_target_recovery",
+                "exit_code": 0,
+                "scope": "19 tests including packet examples and 600 seeded PSD oracle comparisons"
+              }
+            ],
+            "commit": "7e664f5",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX08-B",
@@ -604,10 +623,29 @@
             "Equal-rank but differently conditioned examples.",
             "Independent exhaustive catalogue optimum."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX08-A"
-          ]
+          ],
+          "evidence": {
+            "summary": "Minimum-cost sensor layout under an amplification ceiling, exact via one PSD test per layout and monotonicity pruning; agrees with exhaustive and minor-based brute force; rank and conditioning optima differ.",
+            "artifacts": [
+              "src/singularity/target_recovery.py",
+              "tests/test_target_recovery.py",
+              "scripts/target_recovery.py",
+              "results/target_recovery.json",
+              "docs/research/TARGET_RECOVERY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_target_recovery",
+                "exit_code": 0,
+                "scope": "layout optimizer against exhaustive and brute-force oracles over all 64 subsets"
+              }
+            ],
+            "commit": "7e664f5",
+            "math_status": "exact_finite"
+          }
         },
         {
           "id": "NX08-C",
@@ -617,13 +655,32 @@
             "Adversarial error witnesses and source/units binding.",
             "Clear distinction between exact linear claims and future nonlinear/calibrated work."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX08-B"
-          ]
+          ],
+          "evidence": {
+            "summary": "Thermal plate-mean target and synthetic forecast integration with source binding, units and attained adversarial witnesses; linear scope only, with exact versus future claims separated.",
+            "artifacts": [
+              "src/singularity/target_recovery.py",
+              "tests/test_target_recovery.py",
+              "scripts/target_recovery.py",
+              "results/target_recovery.json",
+              "docs/research/TARGET_RECOVERY.md"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python scripts/target_recovery.py --check",
+                "exit_code": 0,
+                "scope": "10 retained receipts replayed and 14 tampered receipts rejected"
+              }
+            ],
+            "commit": "7e664f5",
+            "math_status": "exact_finite"
+          }
         }
       ],
-      "status": "proposed",
+      "status": "complete",
       "packet": "packets/NX08.md",
       "execution_rank": 8,
       "supporting_tracks": []
