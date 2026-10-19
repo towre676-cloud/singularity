@@ -1,0 +1,190 @@
+{
+  "claim_boundary": "Every listed construction fault flags at least `requirement` panel probes on the construction observations, so that many minus one missing results cannot hide it there. Other models, faults and false-alarm rates are empirical; passing is not equivalence.",
+  "constants": {
+    "tie_margin": 0.0001,
+    "tolerance_factor": 4.0,
+    "tolerance_floor": 1e-06
+  },
+  "contract": {
+    "adapter": "HuggingFaceCausalAdapter",
+    "attention_mask": true,
+    "checkpoint_provenance": {
+      "snapshot_manifest_sha256": "524a0408bcc30cf64549b9f4ce2a2339eaad9aeca7ad7d0e221d0cd50f81495e"
+    },
+    "decoding": "greedy, no logits processors",
+    "dtype": "torch.float32",
+    "max_context": 64,
+    "model_class": "GPT2LMHeadModel",
+    "model_config_sha256": "47169b082b10c2dafa733ce6a8a7a3b1609d56dc2847d0838cf2a3df9c8323a6",
+    "normalization": "none",
+    "pad_id": 50256,
+    "padding_side": "left",
+    "position_ids": "offset by left padding",
+    "temperature": 1.0,
+    "tokenizer_backend_format": "fast-tokenizer-json; explicit padding/truncation overrides excluded",
+    "tokenizer_backend_sha256": "daa6b0ec00ecfc5d2d948381273d4335683d300ae66e043a222d4a30727cd309",
+    "tokenizer_class": "GPT2TokenizerFast",
+    "tokenizer_encode_settings": {
+      "add_special_tokens": false,
+      "padding": false,
+      "truncation": false
+    },
+    "tokenizer_special_tokens": {
+      "bos_token": "<|endoftext|>",
+      "eos_token": "<|endoftext|>",
+      "unk_token": "<|endoftext|>"
+    },
+    "tokenizer_vocabulary_sha256": "71cca498f566a6fce90612118ffe70ec265ffdc746e7e6743a2253d346af4d30",
+    "tokenizer_vocabulary_size": 50257,
+    "truncate_to": 64,
+    "truncation": "keep last tokens",
+    "use_cache": true
+  },
+  "coverage": {
+    "temperature_1.3": 2
+  },
+  "deficient_faults": [],
+  "fault_evidence": {
+    "temperature_1.3": {
+      "short": {
+        "discrete_mismatches": 0,
+        "flags": true,
+        "length_mismatch": false,
+        "max_abs": {
+          "entropy": 2.026094079719921,
+          "top_logprob": 1.175316408748694
+        }
+      },
+      "unicode": {
+        "discrete_mismatches": 0,
+        "flags": true,
+        "length_mismatch": false,
+        "max_abs": {
+          "entropy": 1.87093517913571,
+          "top_logprob": 1.423902648048303
+        }
+      }
+    }
+  },
+  "metadata": {
+    "cost_unit": "unpadded input tokens",
+    "purpose": "CI developer example",
+    "tiny_random_model": false,
+    "untested": "all faults except the declared temperature change"
+  },
+  "package_sha256": "6703e61919c4241f3e42f8ee527f68b795116ece5b7279e5ad076416c018f0ce",
+  "probes": [
+    {
+      "clean_maximum": {
+        "entropy": 0.0,
+        "top_logprob": 0.0
+      },
+      "cost": 2,
+      "expected": {
+        "argmax": [
+          11,
+          11
+        ],
+        "entropy": [
+          8.82680707452608,
+          5.925799809680741
+        ],
+        "top_gap": [
+          0.11606979370117188,
+          0.081451416015625
+        ],
+        "top_logprob": [
+          -4.302630601924297,
+          -2.9269518519599163
+        ]
+      },
+      "id": "short",
+      "pad_to": 24,
+      "text": "the cat",
+      "tolerance": {
+        "entropy": 1e-06,
+        "top_logprob": 1e-06
+      }
+    },
+    {
+      "clean_maximum": {
+        "entropy": 0.0,
+        "top_logprob": 0.0
+      },
+      "cost": 7,
+      "expected": {
+        "argmax": [
+          13,
+          66,
+          11,
+          222,
+          122,
+          220,
+          89
+        ],
+        "entropy": [
+          7.995270192647758,
+          5.829986751347324,
+          6.936887706774421,
+          2.7648432157190412,
+          3.832642031847268,
+          7.30078994585009,
+          7.416702167400173
+        ],
+        "top_gap": [
+          0.6712875366210938,
+          0.5000534057617188,
+          0.6370162963867188,
+          0.14336395263671875,
+          0.741943359375,
+          0.094970703125,
+          1.2769927978515625
+        ],
+        "top_logprob": [
+          -2.7468730603814215,
+          -2.6786788751019364,
+          -2.440652171942963,
+          -1.6431733215386441,
+          -2.3865800010793743,
+          -2.8242301957193505,
+          -2.8297297213923045
+        ]
+      },
+      "id": "unicode",
+      "pad_to": 24,
+      "text": "caf\u00e9 \ufb01ne",
+      "tolerance": {
+        "entropy": 1e-06,
+        "top_logprob": 1e-06
+      }
+    }
+  ],
+  "requirement": 2,
+  "schema": "singularity.audit-package/1",
+  "selection": {
+    "deficient_faults": [],
+    "exact_cost": 9,
+    "exact_nodes": 1,
+    "feasible": true,
+    "greedy_cost": 9,
+    "greedy_panel": [
+      "short",
+      "unicode"
+    ],
+    "pool_cost": 31,
+    "pool_probe_count": 3,
+    "pool_separator_counts": {
+      "temperature_1.3": 3
+    },
+    "requirement": 2
+  },
+  "witness": [
+    {
+      "distinction": "temperature_1.3",
+      "separating_probes": [
+        "short",
+        "unicode"
+      ]
+    }
+  ]
+}

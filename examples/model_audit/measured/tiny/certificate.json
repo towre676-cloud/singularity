@@ -1,0 +1,177 @@
+{
+  "claim_boundary": "Every listed construction fault flags at least `requirement` panel probes on the construction observations, so that many minus one missing results cannot hide it there. Other models, faults and false-alarm rates are empirical; passing is not equivalence.",
+  "constants": {
+    "tie_margin": 0.0001,
+    "tolerance_factor": 4.0,
+    "tolerance_floor": 1e-06
+  },
+  "contract": {
+    "adapter": "HuggingFaceCausalAdapter",
+    "attention_mask": true,
+    "checkpoint_provenance": {
+      "snapshot_manifest_sha256": "7ca592f567c635bb5da5538e2553cc7f98481a471b1030bb71275c5abf40920a"
+    },
+    "decoding": "greedy, no logits processors",
+    "dtype": "torch.float32",
+    "max_context": 64,
+    "model_class": "GPT2LMHeadModel",
+    "model_config_sha256": "e687c78c2b39beb0923be8a08a298c89cf91952fa253ebfef220bc0085312b02",
+    "normalization": "none",
+    "pad_id": 0,
+    "padding_side": "left",
+    "position_ids": "offset by left padding",
+    "temperature": 1.0,
+    "tokenizer_backend_format": "fast-tokenizer-json; explicit padding/truncation overrides excluded",
+    "tokenizer_backend_sha256": "1894dcd8a0a4fa3b881fc4d1447e97cfd362e052dd25259341890fd15cabfd7c",
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "tokenizer_encode_settings": {
+      "add_special_tokens": false,
+      "padding": false,
+      "truncation": false
+    },
+    "tokenizer_special_tokens": {
+      "eos_token": "<eos>",
+      "pad_token": "<eos>"
+    },
+    "tokenizer_vocabulary_sha256": "5f3c9540fde327effe5cfed987d02bdd3550beddb81a977d3610f55fc894a28b",
+    "tokenizer_vocabulary_size": 278,
+    "truncate_to": 64,
+    "truncation": "keep last tokens",
+    "use_cache": true
+  },
+  "coverage": {
+    "temperature_1.3": 2
+  },
+  "deficient_faults": [],
+  "fault_evidence": {
+    "temperature_1.3": {
+      "short": {
+        "discrete_mismatches": 0,
+        "flags": true,
+        "length_mismatch": false,
+        "max_abs": {
+          "entropy": 0.0015310919947273405,
+          "top_logprob": 0.05678046795874536
+        }
+      },
+      "unicode": {
+        "discrete_mismatches": 0,
+        "flags": true,
+        "length_mismatch": false,
+        "max_abs": {
+          "entropy": 0.0013601886049761092,
+          "top_logprob": 0.053751381860965175
+        }
+      }
+    }
+  },
+  "metadata": {
+    "cost_unit": "unpadded input tokens",
+    "purpose": "CI developer example",
+    "tiny_random_model": true,
+    "untested": "all faults except the declared temperature change"
+  },
+  "package_sha256": "416178bd786e127c7cf490593c42e2ee3dbf8a4deaf01709be7e92ff98f47ccc",
+  "probes": [
+    {
+      "clean_maximum": {
+        "entropy": 0.0,
+        "top_logprob": 0.0
+      },
+      "cost": 2,
+      "expected": {
+        "argmax": [
+          180,
+          274
+        ],
+        "entropy": [
+          5.623885315853034,
+          5.62456231641246
+        ],
+        "top_gap": [
+          0.001217857003211975,
+          0.00023542344570159912
+        ],
+        "top_logprob": [
+          -5.378702501812017,
+          -5.4256173000886925
+        ]
+      },
+      "id": "short",
+      "pad_to": 24,
+      "text": "the cat",
+      "tolerance": {
+        "entropy": 1e-06,
+        "top_logprob": 1e-06
+      }
+    },
+    {
+      "clean_maximum": {
+        "entropy": 0.0,
+        "top_logprob": 0.0
+      },
+      "cost": 4,
+      "expected": {
+        "argmax": [
+          150,
+          106,
+          24,
+          112
+        ],
+        "entropy": [
+          5.624279619385153,
+          5.624478212485281,
+          5.624496040871218,
+          5.624703309474828
+        ],
+        "top_gap": [
+          0.007696419954299927,
+          0.012933656573295593,
+          0.01797744631767273,
+          0.038033708930015564
+        ],
+        "top_logprob": [
+          -5.436746011424729,
+          -5.4262900721137575,
+          -5.392295837918657,
+          -5.39542623972878
+        ]
+      },
+      "id": "unicode",
+      "pad_to": 24,
+      "text": "caf\u00e9 \ufb01ne",
+      "tolerance": {
+        "entropy": 1e-06,
+        "top_logprob": 1e-06
+      }
+    }
+  ],
+  "requirement": 2,
+  "schema": "singularity.audit-package/1",
+  "selection": {
+    "deficient_faults": [],
+    "exact_cost": 6,
+    "exact_nodes": 1,
+    "feasible": true,
+    "greedy_cost": 6,
+    "greedy_panel": [
+      "short",
+      "unicode"
+    ],
+    "pool_cost": 28,
+    "pool_probe_count": 3,
+    "pool_separator_counts": {
+      "temperature_1.3": 3
+    },
+    "requirement": 2
+  },
+  "witness": [
+    {
+      "distinction": "temperature_1.3",
+      "separating_probes": [
+        "short",
+        "unicode"
+      ]
+    }
+  ]
+}

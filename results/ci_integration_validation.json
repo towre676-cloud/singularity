@@ -1,0 +1,64 @@
+{
+  "schema": "singularity.ci-integration-validation/1",
+  "acceptance_id": "CI01",
+  "base_main": "0ff46451738a7bededaeb1abcf243c1a6e65c771",
+  "status": "locally_verified",
+  "full_regression": {
+    "tests": 891,
+    "seconds": 174.706,
+    "result": "OK",
+    "prerequisite": "materialize_pretrained_evidence.py materialize; repeat for pretrained_context512"
+  },
+  "focused_regression": {
+    "tests": 22,
+    "seconds": 13.334,
+    "result": "OK"
+  },
+  "composite_shell_integration": [
+    {
+      "case": "healthy",
+      "exit_code": 0,
+      "outputs": {
+        "verdict": "pass"
+      },
+      "evidence_written": true,
+      "summary_written": true
+    },
+    {
+      "case": "changed",
+      "exit_code": 1,
+      "outputs": {
+        "verdict": "changed"
+      },
+      "evidence_written": true,
+      "summary_written": true
+    }
+  ],
+  "independent_checks": [
+    "exhaustive subset optimum oracle",
+    "model-free healthy tiny replay",
+    "model-free changed identity replay",
+    "model-free pretrained GPT-2 replay",
+    "externally pinned package tampering rejection",
+    "report-observation disagreement rejection",
+    "missing-result coverage exhaustion refusal"
+  ],
+  "repository_check": "passed",
+  "changed_document_links": {
+    "checked": 42,
+    "missing": 0
+  },
+  "installed_distribution": "built and installed with --no-deps; shell check used installed package",
+  "broader_doctor": {
+    "status": "preexisting incomplete companion excerpt links remain",
+    "reproduction_fixture": "only stale version 0.8.0 -> 0.10.0; all other generated fixture fields compared equal; check passes after correction"
+  },
+  "hosted_ci": "must inspect GitHub run after publication; local shell integration does not establish artifact-service execution",
+  "limits": [
+    "coverage certificate is finite construction-table coverage, not universal detection or global model equivalence",
+    "portable witness is not a full-pool optimality proof",
+    "device/backend clean calibration remains caller responsibility",
+    "user-supplied Qwen notebook measurements not independently replayed",
+    "optional tiny-pretrained Hub download recipe not executed; cached pretrained GPT-2 was executed"
+  ]
+}

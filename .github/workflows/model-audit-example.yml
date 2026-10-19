@@ -1,0 +1,66 @@
+name: Certified model audit developer example
+on:
+  push:
+    paths:
+      - '.github/actions/model-audit/**'
+      - '.github/workflows/model-audit-example.yml'
+      - 'src/singularity/model_audit/**'
+      - 'examples/model_audit/**'
+      - 'tests/test_model_audit_ci.py'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tiny-hf-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tested CPU dependencies
+        run: |
+          python -m pip install 'torch==2.8.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers==4.57.1' 'tokenizers==0.22.2' 'safetensors==0.8.0' .
+      - name: Independent regression and local HF integration
+        env:
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: python -m unittest discover -s tests -p 'test_model_audit*.py' -v
+      - name: Create small reference (demonstration only)
+        run: |
+          python examples/model_audit/create_reference.py --tiny --model "$RUNNER_TEMP/tiny-hf" --output "$RUNNER_TEMP/reference"
+          echo "package_sha=$(cat "$RUNNER_TEMP/reference/reference.sha256")" >> "$GITHUB_ENV"
+      - name: Healthy deployment
+        id: healthy
+        uses: ./.github/actions/model-audit
+        with:
+          model: ${{ runner.temp }}/tiny-hf
+          reference-package: ${{ runner.temp }}/reference/reference.json
+          expected-package-sha256: ${{ env.package_sha }}
+          execution-settings: ${{ runner.temp }}/reference/execution.json
+          artifact-name: healthy-audit
+      - name: Replay healthy certificate without loading model
+        run: |
+          python -c 'import glob,os; from singularity.model_audit.ci import replay; print(replay(glob.glob(os.environ["RUNNER_TEMP"]+"/singularity-audit.*")[0],os.environ["package_sha"]))'
+      - name: Deliberately replace deployment weights
+        run: python examples/model_audit/intentional_fault.py "$RUNNER_TEMP/tiny-hf"
+      - name: Reject intentional fault
+        id: faulty
+        continue-on-error: true
+        uses: ./.github/actions/model-audit
+        with:
+          model: ${{ runner.temp }}/tiny-hf
+          reference-package: ${{ runner.temp }}/reference/reference.json
+          expected-package-sha256: ${{ env.package_sha }}
+          execution-settings: ${{ runner.temp }}/reference/execution.json
+          artifact-name: intentional-fault-audit
+      - name: Require the demonstrated rejection
+        env:
+          OUTCOME: ${{ steps.faulty.outcome }}
+          VERDICT: ${{ steps.faulty.outputs.verdict }}
+        run: |
+          test "$OUTCOME" = failure
+          test "$VERDICT" = changed

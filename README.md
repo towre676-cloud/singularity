@@ -110,3 +110,7 @@ For developers and researchers, that reference also preserves the complete engin
 
 **The next question is yours:** which hidden structures can your observations distinguish, what will they always miss, and what is the best experiment to perform next?
 
+
+## Reusable GitHub CI audit
+
+Developers can now gate local Hugging Face deployments with the [certified model-audit composite action and complete small-model example](examples/model_audit/README.md). It pins a reviewed reference digest, verifies finite coverage before loading, compares exact snapshot/tokenizer contracts, uploads certificates and readable failure diagnostics, and supports model-free replay. The tiny example requires no model download; a separately measured GPT-2 124M run and optional small pretrained acquisition recipe are included. Passing covers only declared observations and frozen tolerances, not general model equivalence or quality.

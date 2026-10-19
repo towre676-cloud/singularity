@@ -1,0 +1,93 @@
+{
+  "check": {
+    "construction_faults_still_separated": {
+      "temperature_1.3": true
+    },
+    "contract_mismatches": [],
+    "flagged_probes": [],
+    "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+    "missing_probes": [],
+    "package_sha256": "6703e61919c4241f3e42f8ee527f68b795116ece5b7279e5ad076416c018f0ce",
+    "probes": [
+      {
+        "discrete_mismatches": 0,
+        "flags": false,
+        "length_mismatch": false,
+        "max_abs": {
+          "entropy": 0.0,
+          "top_logprob": 0.0
+        },
+        "probe": "short",
+        "tie_positions_ignored": 0
+      },
+      {
+        "discrete_mismatches": 0,
+        "flags": false,
+        "length_mismatch": false,
+        "max_abs": {
+          "entropy": 0.0,
+          "top_logprob": 0.0
+        },
+        "probe": "unicode",
+        "tie_positions_ignored": 0
+      }
+    ],
+    "verdict": "unchanged"
+  },
+  "deployed_contract": {
+    "adapter": "HuggingFaceCausalAdapter",
+    "attention_mask": true,
+    "checkpoint_provenance": {
+      "snapshot_manifest_sha256": "524a0408bcc30cf64549b9f4ce2a2339eaad9aeca7ad7d0e221d0cd50f81495e"
+    },
+    "decoding": "greedy, no logits processors",
+    "dtype": "torch.float32",
+    "max_context": 64,
+    "model_class": "GPT2LMHeadModel",
+    "model_config_sha256": "47169b082b10c2dafa733ce6a8a7a3b1609d56dc2847d0838cf2a3df9c8323a6",
+    "normalization": "none",
+    "pad_id": 50256,
+    "padding_side": "left",
+    "position_ids": "offset by left padding",
+    "temperature": 1.0,
+    "tokenizer_backend_format": "fast-tokenizer-json; explicit padding/truncation overrides excluded",
+    "tokenizer_backend_sha256": "daa6b0ec00ecfc5d2d948381273d4335683d300ae66e043a222d4a30727cd309",
+    "tokenizer_class": "GPT2TokenizerFast",
+    "tokenizer_encode_settings": {
+      "add_special_tokens": false,
+      "padding": false,
+      "truncation": false
+    },
+    "tokenizer_special_tokens": {
+      "bos_token": "<|endoftext|>",
+      "eos_token": "<|endoftext|>",
+      "unk_token": "<|endoftext|>"
+    },
+    "tokenizer_vocabulary_sha256": "71cca498f566a6fce90612118ffe70ec265ffdc746e7e6743a2253d346af4d30",
+    "tokenizer_vocabulary_size": 50257,
+    "truncate_to": 64,
+    "truncation": "keep last tokens",
+    "use_cache": true
+  },
+  "expected_package_sha256": "6703e61919c4241f3e42f8ee527f68b795116ece5b7279e5ad076416c018f0ce",
+  "runtime": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "torch": "2.8.0+cpu",
+    "transformers": "4.57.1"
+  },
+  "schema": "singularity.ci-report/1",
+  "seconds": {
+    "selected_probes": 0.8822220820002258,
+    "verification_and_load": 4.585021838000102
+  },
+  "status": "pass",
+  "total_seconds": 5.467687267999281,
+  "verification": {
+    "faults": 1,
+    "panel_probes": 2,
+    "problems": [],
+    "requirement": 2,
+    "verified": true
+  }
+}

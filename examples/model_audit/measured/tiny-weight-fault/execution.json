@@ -1,0 +1,14 @@
+{
+  "attention_backend": "eager",
+  "batch_size": 2,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "max_context": 64,
+  "normalization": "none",
+  "pad_id": 0,
+  "pass_attention_mask": true,
+  "position_correction": true,
+  "temperature": 1.0,
+  "truncate_to": 64,
+  "use_cache": true
+}

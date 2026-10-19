@@ -1,0 +1,56 @@
+name: Singularity certified model audit
+description: Verify a pinned audit certificate and check a local Hugging Face deployment
+inputs:
+  model:
+    description: Local Hugging Face model directory
+    required: true
+  tokenizer:
+    description: Optional separate local tokenizer directory
+    default: ''
+  reference-package:
+    description: Path to the independently reviewed reference JSON
+    required: true
+  expected-package-sha256:
+    description: Canonical package digest pinned separately from the package
+    required: true
+  execution-settings:
+    description: Path to explicit execution settings JSON
+    required: true
+  artifact-name:
+    description: Unique artifact name for this invocation
+    default: singularity-model-audit
+outputs:
+  verdict:
+    description: pass, changed, incomplete, or error
+    value: ${{ steps.audit.outputs.verdict }}
+runs:
+  using: composite
+  steps:
+    - name: Install standard-library certificate checker
+      shell: bash
+      env:
+        ACTION_ROOT: ${{ github.action_path }}
+      run: python -m pip install --no-deps "$ACTION_ROOT/../../.."
+    - name: Verify certificate and audit selected probes
+      id: audit
+      shell: bash
+      env:
+        MODEL: ${{ inputs.model }}
+        TOKENIZER: ${{ inputs.tokenizer }}
+        PACKAGE: ${{ inputs.reference-package }}
+        PACKAGE_SHA: ${{ inputs.expected-package-sha256 }}
+        EXECUTION: ${{ inputs.execution-settings }}
+      run: |
+        AUDIT_OUTPUT="$(mktemp -d "${RUNNER_TEMP}/singularity-audit.XXXXXX")"
+        echo "artifact-directory=$AUDIT_OUTPUT" >> "$GITHUB_OUTPUT"
+        python -m singularity.model_audit.ci check \
+          --model "$MODEL" --tokenizer "$TOKENIZER" \
+          --package "$PACKAGE" --expected-package-sha256 "$PACKAGE_SHA" \
+          --execution "$EXECUTION" --output "$AUDIT_OUTPUT"
+    - name: Upload certificate and diagnostics even on audit failure
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ steps.audit.outputs.artifact-directory }}
+        if-no-files-found: error
