@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replay the four independent frontier-companion receipts, without NX36 work."""
+"""Replay the five independent frontier-companion receipts, without NX36 work."""
 
 import argparse
 import json
@@ -14,6 +14,7 @@ SCRIPTS = (
     "fr02_denominator_recovery.py",
     "fr03_tree_positivity.py",
     "fr04_pinned_theta.py",
+    "fr05_threshold_reconstruction.py",
 )
 
 

@@ -100,16 +100,15 @@ For a positive reduced denominator \(D\), define its clearing depth
 \kappa_B(D)=\min\{k\ge0:D\mid B^k\}.
 \]
 
-If no such integer exists, \(D\) contains a prime absent from \(B\) and cannot occur in a coefficient of this rational specialization. The following procedure computes the clearing depth without factoring either integer:
+If no such integer exists, \(D\) contains a prime absent from \(B\) and cannot occur in a coefficient of this rational specialization. The implementation computes the clearing depth without factoring either integer and without constructing a full power \(B^k\). For \(D>1\), put \(u=\operatorname{bitlength}(D)\). If every prime factor of \(D\) occurs in \(B\), then each prime exponent in \(D\) is at most \(\log_2 D<u\), whereas its exponent in \(B\) is at least one. Consequently \(D\mid B^u\). Conversely, a prime absent from \(B\) makes that divisibility impossible. Thus the single modular-power test
 
 \[
-D_0=D,
-\qquad
-D_{r+1}=D_r/\gcd(D_r,B),
+\operatorname{pow}(B,u,D)=0
 \]
 
-stopping when \(D_r=1\). If \(D_r>1\) and its gcd with \(B\) is one, the procedure rejects. For justification, if a prime occurs in \(D\) with exponent \(e\) and in \(B\) with exponent \(b>0\), each step removes up to \(b\) copies of that prime. It disappears after exactly \(\lceil e/b\rceil\) steps. Thus the total number of steps is the least exponent whose power of \(B\) contains the entire denominator. Factoring is useful for this proof but is not performed by the algorithm.
+certifies that some clearing depth exists; failure rejects the unsupported denominator. The predicate \(D\mid B^k\) is monotone in \(k\). Binary search between zero and \(u\) therefore returns its first true value. If an explicit maximum depth is declared, an additional modular-power test at the smaller upper bound detects a limit violation before the search. The special case \(D=1\) has depth zero after input validation.
 
+This takes \(O(\log\operatorname{bitlength}(D))\) modular-power queries, rather than one gcd division per unit of clearing depth. Each modular power has its own exact-integer bit cost; this query count is not a constant-time or unit-cost claim for arbitrarily long integers. Composite \(B\) requires no special case. A retained test with \(D=2^{20001}3^{12001}\), \(B=12\), recovers depth 12,001, accepts that exact limit, and rejects both limit 12,000 and an added unsupported prime factor.
 For example,
 
 \[

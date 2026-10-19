@@ -6,12 +6,14 @@ on:
       - 'src/singularity/denominator_recovery.py'
       - 'src/singularity/tree_positivity.py'
       - 'src/singularity/pinned_theta.py'
+      - 'src/singularity/threshold_reconstruction.py'
       - 'scripts/fr0*.py'
       - 'scripts/frontier_companion.py'
       - 'tests/test_pole_divisors.py'
       - 'tests/test_denominator_recovery.py'
       - 'tests/test_tree_positivity.py'
       - 'tests/test_pinned_theta.py'
+      - 'tests/test_threshold_reconstruction.py'
       - '.github/workflows/frontier-companion.yml'
   pull_request:
 jobs:

@@ -123,17 +123,21 @@ coefficient</a></li>
 id="toc-what-limiting-observations-preserve-and-forget"><span
 class="toc-section-number">1.4</span> What limiting observations
 preserve and forget</a></li>
+<li><a href="#reconstruction-by-peeling-an-entire-graph-class"
+id="toc-reconstruction-by-peeling-an-entire-graph-class"><span
+class="toc-section-number">1.5</span> Reconstruction by peeling an
+entire graph class</a></li>
 <li><a href="#a-realizability-constraint-with-the-correct-semantics"
 id="toc-a-realizability-constraint-with-the-correct-semantics"><span
-class="toc-section-number">1.5</span> A realizability constraint with
+class="toc-section-number">1.6</span> A realizability constraint with
 the correct semantics</a></li>
 <li><a href="#how-claude-should-use-this-beside-nx36"
 id="toc-how-claude-should-use-this-beside-nx36"><span
-class="toc-section-number">1.6</span> How Claude should use this beside
+class="toc-section-number">1.7</span> How Claude should use this beside
 NX36</a></li>
 <li><a href="#literature-and-proof-status"
 id="toc-literature-and-proof-status"><span
-class="toc-section-number">1.7</span> Literature and proof
+class="toc-section-number">1.8</span> Literature and proof
 status</a></li>
 </ul></li>
 <li><a
@@ -293,33 +297,72 @@ id="toc-api-and-acceptance-evidence"><span
 class="toc-section-number">5.7</span> 7. API and acceptance
 evidence</a></li>
 </ul></li>
+<li><a href="#fr05-fixed-rational-reconstruction-of-threshold-interiors"
+id="toc-fr05-fixed-rational-reconstruction-of-threshold-interiors"><span
+class="toc-section-number">6</span> FR05 — Fixed-rational reconstruction
+of threshold interiors</a>
+<ul>
+<li><a href="#the-inverse-problem-and-its-answer"
+id="toc-the-inverse-problem-and-its-answer"><span
+class="toc-section-number">6.1</span> The inverse problem and its
+answer</a></li>
+<li><a href="#why-the-high-volume-denominator-reveals-a-layer"
+id="toc-why-the-high-volume-denominator-reveals-a-layer"><span
+class="toc-section-number">6.2</span> Why the high-volume denominator
+reveals a layer</a></li>
+<li><a href="#two-exact-operations-remove-every-threshold-layer"
+id="toc-two-exact-operations-remove-every-threshold-layer"><span
+class="toc-section-number">6.3</span> Two exact operations remove every
+threshold layer</a></li>
+<li><a href="#proof-that-the-algorithm-terminates-and-is-unique"
+id="toc-proof-that-the-algorithm-terminates-and-is-unique"><span
+class="toc-section-number">6.4</span> Proof that the algorithm
+terminates and is unique</a></li>
+<li><a
+href="#a-single-declared-closure-reconstructs-threshold-interiors"
+id="toc-a-single-declared-closure-reconstructs-threshold-interiors"><span
+class="toc-section-number">6.5</span> A single declared closure
+reconstructs threshold interiors</a></li>
+<li><a href="#a-collision-that-a-single-low-coefficient-cannot-resolve"
+id="toc-a-collision-that-a-single-low-coefficient-cannot-resolve"><span
+class="toc-section-number">6.6</span> A collision that a single low
+coefficient cannot resolve</a></li>
+<li><a href="#implementation-evidence-and-limits"
+id="toc-implementation-evidence-and-limits"><span
+class="toc-section-number">6.7</span> Implementation, evidence, and
+limits</a></li>
+</ul></li>
 <li><a href="#independent-mathematical-review-of-the-frontier-companion"
 id="toc-independent-mathematical-review-of-the-frontier-companion"><span
-class="toc-section-number">6</span> Independent mathematical review of
+class="toc-section-number">7</span> Independent mathematical review of
 the frontier companion</a>
 <ul>
 <li><a href="#fr01-connected-pole-divisors"
 id="toc-fr01-connected-pole-divisors"><span
-class="toc-section-number">6.1</span> FR01: connected pole
+class="toc-section-number">7.1</span> FR01: connected pole
 divisors</a></li>
 <li><a href="#fr02-denominator-reconstruction"
 id="toc-fr02-denominator-reconstruction"><span
-class="toc-section-number">6.2</span> FR02: denominator
+class="toc-section-number">7.2</span> FR02: denominator
 reconstruction</a></li>
 <li><a href="#fr03-ordered-tree-positivity-and-distance"
 id="toc-fr03-ordered-tree-positivity-and-distance"><span
-class="toc-section-number">6.3</span> FR03: ordered tree positivity and
+class="toc-section-number">7.3</span> FR03: ordered tree positivity and
 distance</a></li>
 <li><a href="#fr04-centered-pinned-theta-limits"
 id="toc-fr04-centered-pinned-theta-limits"><span
-class="toc-section-number">6.4</span> FR04: centered pinned theta
+class="toc-section-number">7.4</span> FR04: centered pinned theta
 limits</a></li>
+<li><a href="#fr05-promised-threshold-graph-reconstruction"
+id="toc-fr05-promised-threshold-graph-reconstruction"><span
+class="toc-section-number">7.5</span> FR05: promised threshold-graph
+reconstruction</a></li>
 <li><a href="#classical-source-boundaries"
 id="toc-classical-source-boundaries"><span
-class="toc-section-number">6.5</span> Classical source
+class="toc-section-number">7.6</span> Classical source
 boundaries</a></li>
 <li><a href="#overall-conclusion" id="toc-overall-conclusion"><span
-class="toc-section-number">6.6</span> Overall conclusion</a></li>
+class="toc-section-number">7.7</span> Overall conclusion</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -329,8 +372,8 @@ class="header-section-number">1</span> Frontier companion: arithmetic,
 poles, and positive interfaces</h1>
 <p><strong>Release scope.</strong> This is a separate research companion
 to the published v0.4.0 baseline, not an implementation of NX36. It adds
-four narrowly stated mathematical tools, exact executable checks, and a
-map of their implications. The detailed proofs are the four FR documents
+five narrowly stated mathematical tools, exact executable checks, and a
+map of their implications. The detailed proofs are the five FR documents
 assembled after this introduction in the companion manuscript. They have
 ordinary mathematical proofs and exact computational checks; no new Lean
 coverage is claimed.</p>
@@ -402,6 +445,14 @@ truncation can destroy positivity</td>
 values</td>
 <td>Equality of these invariants is necessary, not sufficient, for
 equality of the original sequence</td>
+</tr>
+<tr class="odd">
+<td>FR05: threshold reconstruction</td>
+<td>Known order and a short exact rational coefficient prefix</td>
+<td>The whole graph within the promised threshold class</td>
+<td>Fixed rational q, including one half; the observation cutoff is
+logarithmic, while exact precision and coefficient generation remain
+separate costs</td>
 </tr>
 </tbody>
 </table>
@@ -489,8 +540,57 @@ full-series inequivalence. Overlapping intervals are inconclusive, and
 equal limiting values still do not prove equality of the original
 coefficients.</p>
 <h2 data-number="1.5"
+id="reconstruction-by-peeling-an-entire-graph-class"><span
+class="header-section-number">1.5</span> Reconstruction by peeling an
+entire graph class</h2>
+<p>A threshold graph is built from one vertex by repeatedly adding an
+isolated vertex or a vertex adjacent to every existing vertex. Within
+this promised class, the arithmetic decoder identifies a whole layer
+that can be removed. If Delta=0, the graph is edgeless. If
+0&lt;Delta&lt;n-1, it has exactly n-Delta-1 isolated vertices: its
+nontrivial threshold component has a universal vertex and therefore has
+order Delta+1. Removing k isolates divides the series by
+f_lambda(x,q)^k, where</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>a</mi><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>x</mi><mi>a</mi></msup><msup><mi>q</mi><mrow><mi>λ</mi><msup><mi>a</mi><mn>2</mn></msup></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f_\lambda(x,q)=\sum_{a\ge0}x^a q^{\lambda a^2}.
+</annotation></semantics></math></p>
+<p>If Delta=n-1, the m maximum-degree vertices form precisely a
+universal clique. Write G=K_m join H. The residual graph stays in the
+threshold class, and its uniform pinning changes from lambda to
+lambda+m. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>r</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>H</mi><mo>,</mo><mi>λ</mi><mo>+</mo><mi>m</mi></mrow></msub></mrow><annotation encoding="application/x-tex">b_r=[x^r]F_{H,\lambda+m}</annotation></semantics></math>.
+The exact join identity is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></munderover><msub><mi>C</mi><mi>j</mi></msub><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>b</mi><mrow><mi>R</mi><mo>−</mo><mi>j</mi></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ a_R=\sum_{j=0}^R C_j q^{-2j(R-j)}b_{R-j},
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>j</mi></msub><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><msup><mi>j</mi><mn>2</mn></msup></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>z</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>z</mi><mi>u</mi></msup><msup><mi>q</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>u</mi><mn>2</mn></msup></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C_j=q^{-j^2}[z^j]
+ \left(\sum_{u\ge0}z^u q^{(n+\lambda)u^2}\right)^m.
+</annotation></semantics></math></p>
+<p>Since C_0=1, this transformation is unit triangular. Both isolate
+division and universal-clique removal recover the residual prefix
+through the original cutoff. Order decreases at every step. The same
+original cutoff satisfies the denominator condition at every smaller
+order, regardless of the pinning increments. Thus every known-order
+threshold graph is determined through the sufficient volume</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>*</mo></msub><mo>=</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><mi>R</mi><mo>≥</mo><mn>2</mn><mo>:</mo><msup><mi>B</mi><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>&gt;</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>q</mi><mo>=</mo><mi>A</mi><mi>/</mi><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_* =\min\{R\ge2:B^{2(R-1)}&gt;n\},\qquad q=A/B.
+</annotation></semantics></math></p>
+<p>This is logarithmic observation volume. It is not an optimal cutoff,
+a constant-precision measurement claim, or a general graph
+reconstruction algorithm. The decoder receives the exact prefix and the
+class promise; it does not inspect a hidden graph. It returns a
+creation-word witness and the inverse operations.</p>
+<p>At q=1/2, the eight-vertex construction words 1000011 and 1101110
+have the same first coefficient: 81/64 for the local series, or 81/256
+with shift-two pinning. The sufficient volume-three prefix still
+reconstructs each graph. This new class therefore goes beyond assuming
+that the first coefficient already separates every member. It
+accompanies the cycle-interior theorem without resolving fixed-pinning
+completeness on arbitrary graphs.</p>
+<h2 data-number="1.6"
 id="a-realizability-constraint-with-the-correct-semantics"><span
-class="header-section-number">1.5</span> A realizability constraint with
+class="header-section-number">1.6</span> A realizability constraint with
 the correct semantics</h2>
 <p>A tree’s unique terminal path factorizes its ordered kernel into
 Gaussian edge matrices and positive diagonal branch messages.
@@ -511,8 +611,8 @@ its transpose is a different operation, and the new theorem does not
 automatically impose the same strict positivity on every symmetric
 interface. The surviving symmetric ambiguities consequently remain
 open.</p>
-<h2 data-number="1.6" id="how-claude-should-use-this-beside-nx36"><span
-class="header-section-number">1.6</span> How Claude should use this
+<h2 data-number="1.7" id="how-claude-should-use-this-beside-nx36"><span
+class="header-section-number">1.7</span> How Claude should use this
 beside NX36</h2>
 <table>
 <colgroup>
@@ -568,8 +668,8 @@ marked accepted, no NX implementation module is overwritten, and no
 existing theorem is relabeled as a new result. The established
 sixteen-chapter monograph stays intact; this companion is supplied as a
 separate manuscript so it can be reviewed and merged deliberately.</p>
-<h2 data-number="1.7" id="literature-and-proof-status"><span
-class="header-section-number">1.7</span> Literature and proof
+<h2 data-number="1.8" id="literature-and-proof-status"><span
+class="header-section-number">1.8</span> Literature and proof
 status</h2>
 <p>The two classical engines used here are Gaussian Poisson summation
 and total positivity of the exponential kernel. A modern primary-source
@@ -1085,37 +1185,56 @@ define its clearing depth</p>
 contains a prime absent from
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
 and cannot occur in a coefficient of this rational specialization. The
-following procedure computes the clearing depth without factoring either
-integer:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>0</mn></msub><mo>=</mo><mi>D</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>D</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>D</mi><mi>r</mi></msub><mi>/</mi><mo>gcd</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>D</mi><mi>r</mi></msub><mo>,</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
-D_0=D,
-\qquad
-D_{r+1}=D_r/\gcd(D_r,B),
-</annotation></semantics></math></p>
-<p>stopping when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D_r=1</annotation></semantics></math>.
-If
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>r</mi></msub><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D_r&gt;1</annotation></semantics></math>
-and its gcd with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
-is one, the procedure rejects. For justification, if a prime occurs in
+implementation computes the clearing depth without factoring either
+integer and without constructing a full power
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mi>k</mi></msup><annotation encoding="application/x-tex">B^k</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D&gt;1</annotation></semantics></math>,
+put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mo>bitlength</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u=\operatorname{bitlength}(D)</annotation></semantics></math>.
+If every prime factor of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
-with exponent
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
-and in
+occurs in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+then each prime exponent in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mn>2</mn></msub><mi>D</mi><mo>&lt;</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">\log_2 D&lt;u</annotation></semantics></math>,
+whereas its exponent in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
-with exponent
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b&gt;0</annotation></semantics></math>,
-each step removes up to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
-copies of that prime. It disappears after exactly
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌈</mo><mi>e</mi><mi>/</mi><mi>b</mi><mo stretchy="false" form="postfix">⌉</mo></mrow><annotation encoding="application/x-tex">\lceil e/b\rceil</annotation></semantics></math>
-steps. Thus the total number of steps is the least exponent whose power
-of
+is at least one. Consequently
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>∣</mo><msup><mi>B</mi><mi>u</mi></msup></mrow><annotation encoding="application/x-tex">D\mid B^u</annotation></semantics></math>.
+Conversely, a prime absent from
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
-contains the entire denominator. Factoring is useful for this proof but
-is not performed by the algorithm.</p>
-<p>For example,</p>
+makes that divisibility impossible. Thus the single modular-power
+test</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>pow</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo>,</mo><mi>u</mi><mo>,</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\operatorname{pow}(B,u,D)=0
+</annotation></semantics></math></p>
+<p>certifies that some clearing depth exists; failure rejects the
+unsupported denominator. The predicate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>∣</mo><msup><mi>B</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">D\mid B^k</annotation></semantics></math>
+is monotone in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+Binary search between zero and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+therefore returns its first true value. If an explicit maximum depth is
+declared, an additional modular-power test at the smaller upper bound
+detects a limit violation before the search. The special case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D=1</annotation></semantics></math>
+has depth zero after input validation.</p>
+<p>This takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mo>bitlength</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>D</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(\log\operatorname{bitlength}(D))</annotation></semantics></math>
+modular-power queries, rather than one gcd division per unit of clearing
+depth. Each modular power has its own exact-integer bit cost; this query
+count is not a constant-time or unit-cost claim for arbitrarily long
+integers. Composite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+requires no special case. A retained test with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><msup><mn>2</mn><mn>20001</mn></msup><msup><mn>3</mn><mn>12001</mn></msup></mrow><annotation encoding="application/x-tex">D=2^{20001}3^{12001}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">B=12</annotation></semantics></math>,
+recovers depth 12,001, accepts that exact limit, and rejects both limit
+12,000 and an added unsupported prime factor. For example,</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>κ</mi><mn>6</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>72</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>κ</mi><mn>12</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>κ</mi><mn>12</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>18</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
 \kappa_6(72)=3,
 \qquad
@@ -2718,15 +2837,514 @@ fixed positive parameter, raw nonnegative-height populations, and
 necessary full-series invariants. Finite-prefix agreement remains
 separate from the full-series questions motivating this companion.</p>
 <h1 data-number="6"
+id="fr05-fixed-rational-reconstruction-of-threshold-interiors"><span
+class="header-section-number">6</span> FR05 — Fixed-rational
+reconstruction of threshold interiors</h1>
+<p><strong>Status:</strong> proved under the stated threshold-class
+hypothesis, implemented with exact arithmetic, and checked against
+independent height populations. This companion uses the arithmetic
+extremum decoder of FR02. It neither implements an NX36 packet nor
+settles fixed-pinning completeness for unrestricted graphs.</p>
+<h2 data-number="6.1" id="the-inverse-problem-and-its-answer"><span
+class="header-section-number">6.1</span> The inverse problem and its
+answer</h2>
+<p>Write</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>G</mi><mo>,</mo><mi>λ</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>h</mi><mo>∈</mo><msubsup><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow><mrow><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msubsup></mrow></munder><msup><mi>x</mi><mrow><munder><mo>∑</mo><mi>v</mi></munder><msub><mi>h</mi><mi>v</mi></msub></mrow></msup><msup><mi>q</mi><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>λ</mi><munder><mo>∑</mo><mi>v</mi></munder><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>u</mi><mi>v</mi><mo>∈</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>h</mi><mi>u</mi></msub><mo>−</mo><msub><mi>h</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ F_{G,\lambda}(x,q)=\sum_{h\in\mathbb Z_{\ge0}^{V(G)}}
+ x^{\sum_vh_v}q^{E_G(h)+\lambda\sum_vh_v^2},
+ \qquad E_G(h)=\sum_{uv\in E(G)}(h_u-h_v)^2.
+</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+is a known nonnegative integer and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>A</mi><mi>/</mi><mi>B</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q=A/B\in(0,1)</annotation></semantics></math>
+is a known reduced rational, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">B\ge2</annotation></semantics></math>.
+The raw local series is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math>;
+the dominating-terminal interior sequence already used in the project is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda=2</annotation></semantics></math>.
+Heights and assignment multiplicities retain their original meanings. No
+graph-isomorphism quotient enters the sum.</p>
+<p>A threshold graph is obtained from one vertex by successively
+adjoining an isolated vertex or a vertex adjacent to every earlier
+vertex. Encode those choices by a binary creation word, choosing its
+first bit to be zero. This elementary characterization is classical; see
+Diaconis, Holmes and Janson, <em>Threshold Graph Limits and Random
+Threshold Graphs</em>, Internet Mathematics 5 (2008), 267–320, DOI <a
+href="https://doi.org/10.1080/15427951.2008.10129166">10.1080/15427951.2008.10129166</a>,
+also <a href="https://arxiv.org/abs/0908.2448">arXiv:0908.2448</a>. The
+arithmetic reconstruction below is derived here; no broad historical
+priority claim is made.</p>
+<p><strong>Theorem FR05.1.</strong> Suppose the unknown graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+is promised to be a threshold graph of known order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge1</annotation></semantics></math>.
+Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>*</mo></msub><mo>=</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><mi>R</mi><mo>≥</mo><mn>2</mn><mo>:</mo><msup><mi>B</mi><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>&gt;</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ R_* = \min\{R\ge2:B^{2(R-1)}&gt;n\}.
+</annotation></semantics></math></p>
+<p>Then the exact coefficient prefix of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mrow><mi>G</mi><mo>,</mo><mi>λ</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>A</mi><mi>/</mi><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F_{G,\lambda}(x,A/B)</annotation></semantics></math>
+through volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>
+determines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+up to isomorphism. An explicit algorithm reconstructs its canonical
+creation word using only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">n,q,\lambda</annotation></semantics></math>
+and that prefix. Every peeling step uses the same supplied prefix
+budget: the observation cutoff never grows during reconstruction.</p>
+<p>Equivalently, for two promised threshold graphs of the same known
+order,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>G</mi><mo>,</mo><mi>λ</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>H</mi><mo>,</mo><mi>λ</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>≤</mo><mi>r</mi><mo>≤</mo><msub><mi>R</mi><mo>*</mo></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="1.0em"></mspace><mo>⇒</mo><mspace width="1.0em"></mspace><mi>G</mi><mo>≅</mo><mi>H</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ [x^r]F_{G,\lambda}(x,q)=[x^r]F_{H,\lambda}(x,q)
+ \quad(0\le r\le R_*)
+ \quad\Longrightarrow\quad G\cong H.
+</annotation></semantics></math></p>
+<p>This is a completeness theorem within a specified graph class, rather
+than a report that a finite census happened to separate. Its cutoff is
+sufficient; no claim of minimality is made. For fixed denominator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+it is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>log</mo><mi>B</mi></msub><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(\log_B n)</annotation></semantics></math>.
+The strict inequality matters: at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>,
+order 256 requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>*</mo></msub><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">R_*=6</annotation></semantics></math>,
+whereas order 128 requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>*</mo></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">R_*=5</annotation></semantics></math>.</p>
+<h2 data-number="6.2"
+id="why-the-high-volume-denominator-reveals-a-layer"><span
+class="header-section-number">6.2</span> Why the high-volume denominator
+reveals a layer</h2>
+<p>FR02 recovers the maximum degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math>
+and its multiplicity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+from the single coefficient at any volume satisfying the cutoff. For
+clarity, its mechanism is restated in the form required here. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mi>Δ</mi><mo>+</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">D=\Delta+\lambda</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D&gt;0</annotation></semantics></math>,
+the maximum possible energy at volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>D</mi><msup><mi>R</mi><mn>2</mn></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ K=D R^2,
+</annotation></semantics></math></p>
+<p>attained exactly by placing all mass on one of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+maximum-degree vertices. For a profile with at least two positive
+coordinates,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>λ</mi><munder><mo>∑</mo><mi>v</mi></munder><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup><mo>≤</mo><mi>D</mi><munder><mo>∑</mo><mi>v</mi></munder><msubsup><mi>h</mi><mi>v</mi><mn>2</mn></msubsup><mo>≤</mo><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ E_G(h)+\lambda\sum_vh_v^2
+ \le D\sum_vh_v^2
+ \le D((R-1)^2+1).
+</annotation></semantics></math></p>
+<p>A spike at a lower-degree vertex instead loses at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mn>2</mn></msup><annotation encoding="application/x-tex">R^2</annotation></semantics></math>
+energy. Both alternatives must be included. Thus every nonleading
+profile lies at least</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mo>min</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>R</mi><mn>2</mn></msup><mo>,</mo><mspace width="0.222em"></mspace><mn>2</mn><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo><mo>≥</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+ g=\min\{R^2,\ 2D(R-1)\}\ge2(R-1)
+</annotation></semantics></math></p>
+<p>below the leading energy. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>R</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>G</mi><mo>,</mo><mi>λ</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>A</mi><mi>/</mi><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a_R=[x^R]F_{G,\lambda}(x,A/B)</annotation></semantics></math>,
+clearing the full energy denominator gives an integer of the form</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mi>K</mi></msup><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><mi>m</mi><msup><mi>A</mi><mi>K</mi></msup><mo>+</mo><msup><mi>B</mi><mi>g</mi></msup><mi>T</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>T</mi><mo>∈</mo><mi>ℤ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ B^K a_R=mA^K+B^g T,\qquad T\in\mathbb Z.
+</annotation></semantics></math></p>
+<p>Because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mi>g</mi></msup><mo>&gt;</mo><mi>n</mi><mo>≥</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">B^g&gt;n\ge m</annotation></semantics></math>,
+the leading multiplicity cannot disappear arbitrarily far into a
+denominator cancellation. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>κ</mi><annotation encoding="application/x-tex">\kappa</annotation></semantics></math>
+be the least nonnegative integer such that the reduced denominator of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>R</mi></msub><annotation encoding="application/x-tex">a_R</annotation></semantics></math>
+divides
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mi>κ</mi></msup><annotation encoding="application/x-tex">B^\kappa</annotation></semantics></math>.
+Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">⌈</mo><mfrac><mi>κ</mi><msup><mi>R</mi><mn>2</mn></msup></mfrac><mo stretchy="true" form="postfix">⌉</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>Δ</mi><mo>=</mo><mi>D</mi><mo>−</mo><mi>λ</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ D=\left\lceil\frac\kappa{R^2}\right\rceil,
+ \qquad \Delta=D-\lambda,
+</annotation></semantics></math></p>
+<p>and, once
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+are known,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≡</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>B</mi><mi>K</mi></msup><msub><mi>a</mi><mi>R</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>A</mi><mrow><mo>−</mo><mi>K</mi></mrow></msup><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><msup><mi>B</mi><mi>g</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mn>1</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mi>n</mi><mo>&lt;</mo><msup><mi>B</mi><mi>g</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ m\equiv (B^Ka_R)A^{-K}\pmod{B^g},\qquad 1\le m\le n&lt;B^g.
+</annotation></semantics></math></p>
+<p>The residue is the actual integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>,
+not merely a congruence class left to guess. Coprimality of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+makes the inverse valid, including composite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.
+The edgeless unpinned case has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D=0</annotation></semantics></math>
+and is handled separately. This inversion depends on exact coefficients:
+floating approximations discard the denominator information that drives
+it.</p>
+<h2 data-number="6.3"
+id="two-exact-operations-remove-every-threshold-layer"><span
+class="header-section-number">6.3</span> Two exact operations remove
+every threshold layer</h2>
+<p>The class structure supplies the interpretation of the decoded
+extremum. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta=0</annotation></semantics></math>,
+the residual graph is edgeless. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>Δ</mi><mo>&lt;</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;\Delta&lt;n-1</annotation></semantics></math>,
+all isolated vertices can be removed at once: their number is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi>Δ</mi><mo>−</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ k=n-\Delta-1.
+</annotation></semantics></math></p>
+<p>Indeed, after deleting trailing isolated additions from a threshold
+creation word, its last remaining addition is universal. That vertex is
+adjacent to every nonisolated vertex, so the nonisolated induced graph
+has order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta+1</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta=n-1</annotation></semantics></math>,
+the recovered multiplicity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+is precisely the number of universal vertices, and those vertices form a
+clique.</p>
+<p>The corresponding transformations of the series preserve the
+observation budget. These identities also explain why the uniform
+diagonal shift must be tracked rather than silently reset after a
+join.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Graph identity</th>
+<th>Series operation</th>
+<th>New shift</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+isolates</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mi>H</mi><mo>⊔</mo><msub><mi>I</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">G=H\sqcup I_k</annotation></semantics></math></td>
+<td>Divide by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>λ</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">f_\lambda(x,q)^k</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+universal vertices</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mi>K</mi><mi>m</mi></msub><mo>∨</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">G=K_m\vee H</annotation></semantics></math></td>
+<td>Invert the unit-triangular join transform</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>+</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\lambda+m</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>Edgeless residual</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mi>I</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">G=I_n</annotation></semantics></math></td>
+<td>Check the known isolated factor</td>
+<td>Terminal step</td>
+</tr>
+</tbody>
+</table>
+<p>Here</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>h</mi><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>x</mi><mi>h</mi></msup><msup><mi>q</mi><mrow><mi>λ</mi><msup><mi>h</mi><mn>2</mn></msup></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f_\lambda(x,q)=\sum_{h\ge0}x^h q^{\lambda h^2}.
+</annotation></semantics></math></p>
+<p>Its constant coefficient is one, so division in the truncated
+formal-series ring is exact. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>r</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>r</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msubsup><mi>f</mi><mi>λ</mi><mi>k</mi></msubsup></mrow><annotation encoding="application/x-tex">c_r=[x^r]f_\lambda^k</annotation></semantics></math>,
+the residual coefficients satisfy</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>b</mi><mi>R</mi></msub><mo>=</mo><msub><mi>a</mi><mi>R</mi></msub><mo>−</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>R</mi></munderover><msub><mi>c</mi><mi>j</mi></msub><msub><mi>b</mi><mrow><mi>R</mi><mo>−</mo><mi>j</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_0=1,\qquad
+ b_R=a_R-\sum_{j=1}^R c_jb_{R-j}.
+</annotation></semantics></math></p>
+<p>For universal vertices, write their heights as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>u</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">u_1,\ldots,u_m</annotation></semantics></math>,
+with sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+and let the remaining heights have total volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+Expanding all clique and join edges gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>G</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>λ</mi><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mi>i</mi></munder><msubsup><mi>u</mi><mi>i</mi><mn>2</mn></msubsup><mo>+</mo><munder><mo>∑</mo><mi>w</mi></munder><msubsup><mi>v</mi><mi>w</mi><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>E</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>λ</mi><mo>+</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∑</mo><mi>w</mi></munder><msubsup><mi>v</mi><mi>w</mi><mn>2</mn></msubsup><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∑</mo><mi>i</mi></munder><msubsup><mi>u</mi><mi>i</mi><mn>2</mn></msubsup><mo>−</mo><msup><mi>j</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>j</mi><mi>k</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ E_G(u,v)+\lambda(\sum_i u_i^2+\sum_wv_w^2)
+ =E_H(v)+(\lambda+m)\sum_wv_w^2
+ +(n+\lambda)\sum_i u_i^2-j^2-2jk.
+</annotation></semantics></math></p>
+<p>Consequently define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mi>j</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><msup><mi>j</mi><mn>2</mn></msup></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>z</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>z</mi><mi>u</mi></msup><msup><mi>q</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>u</mi><mn>2</mn></msup></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ C_{m,j}^{(n,\lambda)}(q)
+ =q^{-j^2}[z^j]\left(\sum_{u\ge0}z^u q^{(n+\lambda)u^2}\right)^m.
+</annotation></semantics></math></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>k</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>k</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>H</mi><mo>,</mo><mi>λ</mi><mo>+</mo><mi>m</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">b_k=[x^k]F_{H,\lambda+m}(x,q)</annotation></semantics></math>,
+then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></munderover><msubsup><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mi>j</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>b</mi><mrow><mi>R</mi><mo>−</mo><mi>j</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a_R=\sum_{j=0}^R C_{m,j}^{(n,\lambda)}(q)
+ q^{-2j(R-j)}b_{R-j}.
+</annotation></semantics></math></p>
+<p>The coefficient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mi>R</mi></msub><annotation encoding="application/x-tex">b_R</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">C_{m,0}=1</annotation></semantics></math>.
+The exact inverse is therefore</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>R</mi></msub><mo>=</mo><msub><mi>a</mi><mi>R</mi></msub><mo>−</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>R</mi></munderover><msubsup><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mi>j</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>b</mi><mrow><mi>R</mi><mo>−</mo><mi>j</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ b_R=a_R-\sum_{j=1}^R C_{m,j}^{(n,\lambda)}(q)
+ q^{-2j(R-j)}b_{R-j}.
+</annotation></semantics></math></p>
+<p>Negative displayed powers of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+are evaluated as exact rationals. Their appearance in the transform does
+not change the underlying nonnegative energy of actual assignments. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>A</mi><mi>/</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">q=A/B</annotation></semantics></math>,
+no numerical interpolation or rounding is involved.</p>
+<h2 data-number="6.4"
+id="proof-that-the-algorithm-terminates-and-is-unique"><span
+class="header-section-number">6.4</span> Proof that the algorithm
+terminates and is unique</h2>
+<p>Every iteration removes at least one vertex. Threshold membership is
+preserved by deleting isolated or universal vertices. The initial
+condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>R</mi><mo>*</mo></msub><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">B^{2(R_*-1)}&gt;n</annotation></semantics></math>
+remains sufficient for every smaller residual order, so FR02 can be
+applied repeatedly at the same volume. The current shift remains a known
+nonnegative integer. Recovered layer counts are exact, and both series
+inversions are unit triangular. Induction on the remaining order proves
+that the residual series is the series of the residual threshold graph
+after each step.</p>
+<p>The empty residual is represented by the formal series one. The
+implementation never instantiates a zero-vertex <code>Graph</code>,
+whose public contract requires positive order. Reversing the removed
+layers reconstructs the binary creation word; its first bit is set to
+zero because the first vertex has no earlier vertices. At every branch,
+the next layer is forced by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+This proves uniqueness of the resulting word and completes the
+reconstruction theorem.</p>
+<p>The implementation uses an iterative loop rather than recursive
+function calls, so a long alternating creation word does not hit
+Python’s recursion limit. This is an engineering detail with a
+mathematical consequence: there is no hidden finite layer bound in the
+implemented peeling procedure.</p>
+<h2 data-number="6.5"
+id="a-single-declared-closure-reconstructs-threshold-interiors"><span
+class="header-section-number">6.5</span> A single declared closure
+reconstructs threshold interiors</h2>
+<p><strong>Corollary FR05.2.</strong> Let a two-terminal block have
+nonadjacent terminals, each adjacent to every vertex of an unknown
+threshold interior
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+of known order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+Use any fixed, known closing context covered by the existing SNG-F53/F54
+raw-series convention. Its closure coefficients through the same cutoff
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>
+reconstruct
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+up to isomorphism.</p>
+<p>Indeed, <code>charges.dominating_sequence</code> is exactly</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>H</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>F</mi><mrow><mi>H</mi><mo>,</mo><mn>2</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ A_H(x,q)=F_{H,2}(x,q).
+</annotation></semantics></math></p>
+<p>The implemented <code>closure_operator</code> gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>C</mi></msub><mo>=</mo><msub><mi>T</mi><mi>C</mi></msub><msub><mi>A</mi><mi>H</mi></msub></mrow><annotation encoding="application/x-tex">Z_C=T_C A_H</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>C</mi></msub><annotation encoding="application/x-tex">T_C</annotation></semantics></math>
+independent of the interior graph, lower triangular and unit diagonal.
+Its forward-substitution inverse recovers the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>H</mi></msub><annotation encoding="application/x-tex">A_H</annotation></semantics></math>
+prefix at the original volume budget. Applying Theorem FR05.1 with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda=2</annotation></semantics></math>
+completes the reconstruction. Consequently, two nonisomorphic threshold
+interiors of equal known order are distinguished by
+<strong>each</strong> such declared single closure by volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>;
+no search over closing contexts is required. This statement concerns the
+proved raw closure operator, not an arbitrary renormalization, unproved
+observation chart or unspecified experimental language. It reuses the
+existing transport theorem rather than introducing another context
+compiler.</p>
+<h2 data-number="6.6"
+id="a-collision-that-a-single-low-coefficient-cannot-resolve"><span
+class="header-section-number">6.6</span> A collision that a single low
+coefficient cannot resolve</h2>
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>,
+the two order-eight creation words below give the same coefficient at
+volume one. This is a genuine limitation even inside the promised
+class.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Canonical creation word</th>
+<th>Degree multiset, in creation order</th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>G</mi><mo>,</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">[x]F_{G,0}</annotation></semantics></math></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>G</mi><mo>,</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">[x^2]F_{G,0}</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>01000011</code></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">3,3,2,2,2,2,7,7</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>81</mn><mi>/</mi><mn>64</mn></mrow><annotation encoding="application/x-tex">81/64</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>104955905</mn><mi>/</mi><mn>134217728</mn></mrow><annotation encoding="application/x-tex">104955905/134217728</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td><code>01101110</code></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">5,5,5,3,6,6,6,0</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>81</mn><mi>/</mi><mn>64</mn></mrow><annotation encoding="application/x-tex">81/64</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>22368307</mn><mi>/</mi><mn>16777216</mn></mrow><annotation encoding="application/x-tex">22368307/16777216</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>The second coefficient separates this particular pair. The general
+theorem uses the sufficient volume-three prefix and reconstructs each
+entire graph. The receipt shows that volume-one signatures are distinct
+for all threshold graphs through order seven, but only 127 signatures
+occur among the 128 order-eight creation words. These finite counts
+motivate the theorem; they do not replace its proof.</p>
+<h2 data-number="6.7" id="implementation-evidence-and-limits"><span
+class="header-section-number">6.7</span> Implementation, evidence, and
+limits</h2>
+<p><code>src/singularity/threshold_reconstruction.py</code> provides
+<code>reconstruct_threshold</code>, the creation-word constructor,
+isolated-factor division, and forward/inverse universal-clique
+transforms. The inverse function receives no graph. Its return value
+contains the reconstructed graph, canonical word, observation volume and
+a sequence of layer receipts. Exact integer and <code>Fraction</code>
+inputs are required; booleans, floats, malformed prefixes and
+insufficient observation cutoffs are rejected.</p>
+<p><code>tests/test_threshold_reconstruction.py</code> contains eight
+tests. Its independent oracle uses stars-and-bars height assignments and
+direct edge energies. It checks every creation word through order six at
+three rational pinnings and shifts zero and two, giving 378
+reconstructions, and separately checks the join and isolated identities,
+strict validation, the retained collision, complete graphs, edgeless
+graphs and longer prefixes. An additional end-to-end test counts the
+actual raw glued graphs for both collision interiors under a
+terminal-edge context and a shared-neighbor context, then inverts the
+existing closure operator and reconstructs both words.</p>
+<p><code>scripts/fr05_threshold_reconstruction.py --check</code> replays
+the retained census through order ten. It covers all
+<strong>1,023</strong> canonical threshold creation words, at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo>,</mo><mn>5</mn><mi>/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">q=1/2,2/3,5/6</annotation></semantics></math>
+and shifts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0,2</annotation></semantics></math>,
+for <strong>6,138 exact reconstructions</strong>. Both graph
+construction and height-population enumeration are independent of the
+inverse operations.
+<code>results/fr05_threshold_reconstruction.json</code> stores the
+aggregate counts, the complete worked collision receipts, and four
+independently counted raw closure reconstructions.</p>
+<p>The optional <code>--benchmark</code> mode retains larger exact
+algebraic roundtrips. It constructs a prefix by forward
+isolated/universal identities and decodes that prefix back to the
+original alternating word. This is a scale check of the proved
+transforms; it is explicitly <strong>not</strong> another independent
+population-enumeration oracle. The retained timings below are
+machine-specific, and <code>--check</code> does not rerun or compare
+their wall-clock values.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Order</th>
+<th>Volume cutoff</th>
+<th>Prefix generation</th>
+<th>Inverse decoding</th>
+<th>Largest denominator, bits</th>
+<th>Peeling steps</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>128</td>
+<td>5</td>
+<td>0.026 s</td>
+<td>0.032 s</td>
+<td>3,176</td>
+<td>127</td>
+</tr>
+<tr class="even">
+<td>256</td>
+<td>6</td>
+<td>0.261 s</td>
+<td>0.287 s</td>
+<td>9,181</td>
+<td>255</td>
+</tr>
+<tr class="odd">
+<td>1,000</td>
+<td>6</td>
+<td>7.662 s</td>
+<td>7.577 s</td>
+<td>35,965</td>
+<td>999</td>
+</tr>
+</tbody>
+</table>
+<p>The order-1,000 example illustrates both the benefit and the resource
+distinction: six exact nonconstant coefficients suffice, but those
+coefficients carry tens of thousands of denominator bits. A short
+observation prefix does not mean a low-precision experiment. Building
+the canonical graph object also explicitly produces its edges; that
+output cost must be included when comparing implementations.</p>
+<p>The formal-series convolutions and inversions require
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><msup><mi>R</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(nR^2)</annotation></semantics></math>
+rational arithmetic operations with the elementary implementation,
+because the total number of removed vertices is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+That bound excludes the separate denominator-depth decoder and the bit
+cost of rational arithmetic. The decoder’s precise current arithmetic
+implementation belongs to FR02. Observation volume, input precision,
+coefficient acquisition and reconstruction time are distinct resources;
+this theorem bounds the first and gives an explicit algorithm for the
+last. It does not make exact coefficients easy to measure physically,
+nor does it bound the cost of obtaining them from an arbitrary unknown
+graph.</p>
+<p>The graph-class promise is essential. Passing arithmetic checks does
+not certify that arbitrary supplied coefficients arise from a threshold
+graph. The decoder is not a general graph recognizer, and the theorem
+provides neither unrestricted fixed-pinning completeness nor a
+full-series collision outside the class. Its contribution is a new
+family beyond cycle interiors where a finite exact prefix has a proved
+inverse interpretation, with an observation budget that grows
+logarithmically in known graph order.</p>
+<h1 data-number="7"
 id="independent-mathematical-review-of-the-frontier-companion"><span
-class="header-section-number">6</span> Independent mathematical review
+class="header-section-number">7</span> Independent mathematical review
 of the frontier companion</h1>
 <p>This review separates mathematical consequences of complete
 generating series from evidence obtained from a finite coefficient
-prefix. It does not certify either fixed-pinning completeness or the
-realization of a surviving symmetric-interface ambiguity.</p>
-<h2 data-number="6.1" id="fr01-connected-pole-divisors"><span
-class="header-section-number">6.1</span> FR01: connected pole
+prefix. It does not certify either general fixed-pinning completeness or
+the realization of a surviving symmetric-interface ambiguity.</p>
+<h2 data-number="7.1" id="fr01-connected-pole-divisors"><span
+class="header-section-number">7.1</span> FR01: connected pole
 divisors</h2>
 <p><strong>Verdict: sound, subject to the stated connectedness and
 positive-parameter hypotheses.</strong> Let
@@ -2804,8 +3422,8 @@ Gaussian-box errors likewise dominate omitted spanning-tree difference
 assignments. Cyclotomic coefficient vectors are exact partial sums;
 their absolute-error bound concerns evaluation on the complex unit
 circle, not a coordinatewise positivity assertion.</p>
-<h2 data-number="6.2" id="fr02-denominator-reconstruction"><span
-class="header-section-number">6.2</span> FR02: denominator
+<h2 data-number="7.2" id="fr02-denominator-reconstruction"><span
+class="header-section-number">7.2</span> FR02: denominator
 reconstruction</h2>
 <p><strong>Verdict: sound, including composite denominator bases and
 uniform pinning.</strong> For
@@ -2888,14 +3506,19 @@ exact cases</strong>: every labeled graph of orders one through four,
 and shifts zero and two. Every recovered maximum degree and multiplicity
 agreed. This is finite corroboration of the theorem, not a substitute
 for the gap proof.</p>
-<p>The new module’s input validation and the gcd-based composite-base
-clearing procedure were inspected. The caller supplies graph order,
-family membership where used, and the actual coefficient; the decoder
-does not prove coefficient realizability. A logarithmic observation
-volume does not imply a cheap oracle for computing that coefficient.</p>
-<h2 data-number="6.3"
+<p>The new module’s input validation and final modular-divisibility
+clearing procedure were inspected. For denominator D&gt;1, every
+supported prime exponent is smaller than D.bit_length(), so the
+modular-power support test uses a valid universal upper bound;
+divisibility is monotone and binary search returns the exact least
+clearing depth. The optional maximum-depth bound and D=1 case are
+handled correctly. The caller supplies graph order, family membership
+where used, and the actual coefficient; the decoder does not prove
+coefficient realizability. A logarithmic observation volume does not
+imply a cheap oracle for computing that coefficient.</p>
+<h2 data-number="7.3"
 id="fr03-ordered-tree-positivity-and-distance"><span
-class="header-section-number">6.3</span> FR03: ordered tree positivity
+class="header-section-number">7.3</span> FR03: ordered tree positivity
 and distance</h2>
 <p><strong>Verdict: sound for the full ordered kernel and for product
 height boxes, with explicit failure under a simplex volume
@@ -2966,8 +3589,8 @@ interior-volume weighting, leaves terminals unweighted by
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
 and boxes every interior coordinate separately. Its preflight budget
 bounds scalar summands, not arbitrary-precision bit complexity.</p>
-<h2 data-number="6.4" id="fr04-centered-pinned-theta-limits"><span
-class="header-section-number">6.4</span> FR04: centered pinned theta
+<h2 data-number="7.4" id="fr04-centered-pinned-theta-limits"><span
+class="header-section-number">7.4</span> FR04: centered pinned theta
 limits</h2>
 <p><strong>Verdict on the mathematical statement: sound.</strong> For a
 connected or disconnected finite graph, uniform real pinning
@@ -3037,9 +3660,9 @@ enclosure. All 32 then-current unit tests across FR01–FR04 passed with
 the source package on the Python path. These checks concern exact
 arithmetic and enclosure containment, not an empirical proof of the
 limiting theorem.</p>
-<h3 data-number="6.4.1"
+<h3 data-number="7.4.1"
 id="fr04-rational-affine-lift-at-the-working-parameter"><span
-class="header-section-number">6.4.1</span> FR04 rational affine lift at
+class="header-section-number">7.4.1</span> FR04 rational affine lift at
 the working parameter</h3>
 <p>The additional affine-lift APIs remove any need to choose a special
 rational parameter. For every rational
@@ -3088,28 +3711,172 @@ connected and disconnected graphs,
 and pinning one and two checked nested boxes, boundary containment,
 subsequent normalized coefficients and reflected finite-box sums. No new
 runtime or proof correction was required.</p>
-<h2 data-number="6.5" id="classical-source-boundaries"><span
-class="header-section-number">6.5</span> Classical source
+<h2 data-number="7.5"
+id="fr05-promised-threshold-graph-reconstruction"><span
+class="header-section-number">7.5</span> FR05: promised threshold-graph
+reconstruction</h2>
+<p><strong>Verdict on the inverse theorem: sound for the promised
+threshold family.</strong> Fix a known order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+rational
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>A</mi><mi>/</mi><mi>B</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q=A/B\in(0,1)</annotation></semantics></math>,
+and integer diagonal shift
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>.
+Choose one original volume
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mo>*</mo></msub><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">R_*\ge2</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>B</mi><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>R</mi><mo>*</mo></msub><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">B^{2(R_*-1)}&gt;n</annotation></semantics></math>,
+and supply the coefficient prefix through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>.
+Every recursive smaller order satisfies that same cutoff, even as the
+diagonal shift increases.</p>
+<p>A threshold graph has at most one nontrivial connected component, and
+that component has a universal vertex. Therefore if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>Δ</mi><mo>&lt;</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;\Delta&lt;n-1</annotation></semantics></math>,
+the number of isolated vertices is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mo>−</mo><mi>Δ</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k=n-\Delta-1</annotation></semantics></math>.
+Removing them divides the prefix by the unit series</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>λ</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>f</mi><mi>λ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>h</mi><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>q</mi><mrow><mi>λ</mi><msup><mi>h</mi><mn>2</mn></msup></mrow></msup><msup><mi>x</mi><mi>h</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ f_\lambda(x)^k,\qquad f_\lambda(x)=\sum_{h\ge0}q^{\lambda h^2}x^h.
+</annotation></semantics></math></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta=n-1</annotation></semantics></math>,
+the multiplicity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+recovered by FR02 is exactly the number of universal vertices. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mi>K</mi><mi>m</mi></msub><mo>∨</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">G=K_m\vee H</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+be the universal-clique heights with sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,
+and let the residual heights have sum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>.
+The exact energy identity is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>G</mi></msub><mo>+</mo><mi>λ</mi><mo stretchy="false" form="postfix">∥</mo><mi>h</mi><mo>,</mo><mi>u</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>=</mo><msub><mi>E</mi><mi>H</mi></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">∥</mo><mi>h</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">∥</mo><mi>u</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>−</mo><msup><mi>j</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>j</mi><mi>S</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ E_G+\lambda\|h,u\|^2
+ =E_H+(m+\lambda)\|h\|^2
+ +(n+\lambda)\|u\|^2-j^2-2jS.
+</annotation></semantics></math></p>
+<p>Hence, with</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><msup><mi>q</mi><mrow><mo>−</mo><msup><mi>j</mi><mn>2</mn></msup></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>z</mi><mi>j</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><munder><mo>∑</mo><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow></munder><msup><mi>q</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>λ</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>u</mi><mn>2</mn></msup></mrow></msup><msup><mi>z</mi><mi>u</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ C_{m,j}=q^{-j^2}[z^j]
+ \left(\sum_{u\ge0}q^{(n+\lambda)u^2}z^u\right)^m,
+</annotation></semantics></math></p>
+<p>and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>s</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>x</mi><mi>s</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><msub><mi>F</mi><mrow><mi>H</mi><mo>,</mo><mi>λ</mi><mo>+</mo><mi>m</mi></mrow></msub></mrow><annotation encoding="application/x-tex">b_s=[x^s]F_{H,\lambda+m}</annotation></semantics></math>,
+the observed coefficients satisfy</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>R</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>R</mi></munderover><msub><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mi>j</mi></mrow></msub><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><msub><mi>b</mi><mrow><mi>R</mi><mo>−</mo><mi>j</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>C</mi><mrow><mi>m</mi><mo>,</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+ a_R=\sum_{j=0}^R C_{m,j}q^{-2j(R-j)}b_{R-j},\qquad C_{m,0}=1.
+</annotation></semantics></math></p>
+<p>This is a unit lower-triangular transformation, so the entire
+required residual prefix is recovered recursively without increasing the
+observation volume. The residual graph remains threshold. The unpinned
+edgeless branch, the one-vertex branch, and the empty residual must be
+handled explicitly; the empty residual has formal series one and is not
+represented by the nonempty-graph constructor.</p>
+<p>An independent implementation checked <strong>378 exact
+cases</strong>, covering all binary threshold constructions through six
+vertices,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo>,</mo><mn>5</mn><mi>/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">q=1/2,2/3,5/6</annotation></semantics></math>,
+and initial shifts zero and two. At each elimination step the
+transformed prefix was compared against direct weak-composition
+enumeration of the actual residual graph with its updated pinning. Every
+identity and decoded layer size agreed. The NX36 handoff was searched
+for threshold-graph reconstruction; this specific inverse theorem and
+its implementation are not among those packets.</p>
+<p>The final implementation was inspected, including the iterative
+layer-peeling loop, canonical creation-word assembly, and exact empty
+residual check. Its original recursive depth limitation was removed
+before integration. All <strong>42</strong> unit tests across FR01–FR05
+passed in the final scoped review.</p>
+<p>The theorem proves completeness of this finite prefix <strong>inside
+the promised threshold family</strong>, rather than general graph
+completeness. The coefficient-computation oracle remains a separate
+cost. Series multiplication and inversion use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><msubsup><mi>R</mi><mo>*</mo><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(nR_*^2)</annotation></semantics></math>
+arithmetic operations in the direct implementation. The finalized FR02
+helper replaces repeated gcd clearing with logarithmically many
+modular-divisibility tests in denominator bit length. Those modular
+tests and exact rational bit sizes must still be accounted for
+separately from the convolution count.</p>
+<h3 data-number="7.5.1"
+id="fr05-corollary-one-known-raw-closure-reconstructs-threshold-interiors"><span
+class="header-section-number">7.5.1</span> FR05 corollary: one known raw
+closure reconstructs threshold interiors</h3>
+<p>The corollary was checked against the existing
+<code>charges.py</code> contract. Let the two nonadjacent terminals both
+dominate an interior
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+of known order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+Its compressed sequence is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>H</mi></msub><mo>=</mo><msub><mi>F</mi><mrow><mi>H</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">A_H=F_{H,2}</annotation></semantics></math>.
+For any supported known closing context
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+attached through those terminals with disjoint interiors, the existing
+operator satisfies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>C</mi></msub><mo>=</mo><msub><mi>T</mi><mi>C</mi></msub><msub><mi>A</mi><mi>H</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>T</mi><mi>C</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> unit lower triangular</mtext></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+ Z_C=T_C A_H,\qquad T_C\text{ unit lower triangular},
+</annotation></semantics></math></p>
+<p>and depends on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>,</mo><mi>n</mi><mo>,</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">C,n,q</annotation></semantics></math>,
+not the interior edges. Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>C</mi></msub><annotation encoding="application/x-tex">Z_C</annotation></semantics></math>
+is the <strong>raw local series</strong> of the glued graph. Its prefix
+through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mo>*</mo></msub><annotation encoding="application/x-tex">R_*</annotation></semantics></math>
+recovers the same prefix of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mi>H</mi></msub><annotation encoding="application/x-tex">A_H</annotation></semantics></math>
+by forward substitution. FR05 then reconstructs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+in the promised threshold family. Consequently each one such context
+distinguishes every pair of nonisomorphic threshold interiors of the
+same known order by that volume cutoff. A terminal edge in the context
+is permitted because the dominating block’s terminal edge is absent. No
+conversion to a minimum-zero normalized series is implicit in this
+corollary, and it does not establish reconstruction for arbitrary
+interiors. An independent end-to-end check counted raw closed-graph
+profiles directly for all threshold creation words through five interior
+vertices and three contexts (empty terminals, terminal edge, and one
+shared neighbor), then used the existing triangular inverse and FR05:
+all <strong>93</strong> cases reconstructed the original threshold
+interior.</p>
+<h2 data-number="7.6" id="classical-source-boundaries"><span
+class="header-section-number">7.6</span> Classical source
 boundaries</h2>
 <p>The following are primary-source anchors for classical tools. They do
 not claim the project-specific graph consequences or arithmetic
 decoder.</p>
 <ul>
-<li>Christina Roehrig, <em>Siegel theta series for indefinite quadratic
-forms</em>, Research in Number Theory <strong>7</strong> (2021), article
-45, section 4: https://doi.org/10.1007/s40993-021-00272-y. The proof
+<li><p>Christina Roehrig, <em>Siegel theta series for indefinite
+quadratic forms</em>, Research in Number Theory <strong>7</strong>
+(2021), article 45, section 4: <a
+href="https://doi.org/10.1007/s40993-021-00272-y"
+class="uri">https://doi.org/10.1007/s40993-021-00272-y</a>. The proof
 uses Poisson summation and Fourier transforms of positive-definite
 Gaussian forms; our connected pole noncancellation argument is the
-direct positive-definite character specialization written above.</li>
-<li>Kenneth W. Johnson and Donald St. P. Richards,
+direct positive-definite character specialization written
+above.</p></li>
+<li><p>Kenneth W. Johnson and Donald St. P. Richards,
 <em>Hyperdeterminantal Total Positivity</em>, SIGMA <strong>21</strong>
-(2025), 055: https://doi.org/10.3842/SIGMA.2025.055. Its discussion
+(2025), 055: <a href="https://doi.org/10.3842/SIGMA.2025.055"
+class="uri">https://doi.org/10.3842/SIGMA.2025.055</a>. Its discussion
 identifies the classical exponential kernel and Binet–Cauchy composition
 framework; the tree path, volume and leading-coefficient consequences
-above are derived separately.</li>
+above are derived separately.</p></li>
+<li><p>Persi Diaconis, Susan Holmes and Svante Janson, <em>Threshold
+Graph Limits and Random Threshold Graphs</em>, Internet Mathematics
+<strong>5</strong> (2008), 267–320: <a
+href="https://doi.org/10.1080/15427951.2008.10129166"
+class="uri">https://doi.org/10.1080/15427951.2008.10129166</a>; preprint
+<a href="https://arxiv.org/abs/0908.2448"
+class="uri">https://arxiv.org/abs/0908.2448</a>. Its introductory
+characterizations supply the classical threshold-family structure used
+in FR05; the coefficient inverse and logarithmic observation cutoff are
+derived here.</p></li>
 </ul>
-<h2 data-number="6.6" id="overall-conclusion"><span
-class="header-section-number">6.6</span> Overall conclusion</h2>
+<h2 data-number="7.7" id="overall-conclusion"><span
+class="header-section-number">7.7</span> Overall conclusion</h2>
 <p>The companion supplies analytic, arithmetic and ordered-kernel
 constraints on proposed full-series collisions and graph realizations.
 It does not infer full-series equality from an arbitrary finite prefix,

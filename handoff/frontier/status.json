@@ -25,8 +25,18 @@
       "status": "implemented_and_reviewed",
       "proof_status": "ordinary_mathematical_proof_independently_reviewed",
       "exact_receipt": "results/fr04_pinned_theta.json"
+    },
+    {
+      "id": "FR05",
+      "status": "implemented_and_reviewed",
+      "proof_status": "ordinary_mathematical_proof_independently_reviewed",
+      "exact_receipt": "results/fr05_threshold_reconstruction.json"
     }
   ],
   "nx36_units_changed": 0,
-  "general_frontiers_solved": []
+  "general_frontiers_solved": [],
+  "class_specific_reconstruction": [
+    "threshold graphs: FR05.1",
+    "dominating threshold interiors under each supported raw closure:FR05.2"
+  ]
 }

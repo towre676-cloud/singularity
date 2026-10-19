@@ -15,6 +15,7 @@ SOURCES = (
     "docs/research/FR02_DENOMINATOR_RECOVERY.md",
     "docs/research/FR03_TREE_POSITIVITY.md",
     "docs/research/FR04_PINNED_THETA.md",
+    "docs/research/FR05_THRESHOLD_RECONSTRUCTION.md",
     "docs/research/FR_INDEPENDENT_REVIEW.md",
 )
 

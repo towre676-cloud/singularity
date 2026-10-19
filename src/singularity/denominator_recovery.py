@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-from math import comb, gcd
+from math import comb
 
 from .graph import _integer
 
@@ -42,24 +42,32 @@ def recovery_volume(order: int, q: Fraction) -> int:
 def denominator_depth(denominator: int, base: int, *, max_depth: int | None = None) -> int:
     """Least k for which denominator divides base**k, without factorization.
 
-    Reject a denominator containing a prime factor absent from base.  The
-    optional limit rejects excessive clearing depth before building powers.
-    Composite bases are supported: this is not a prime-adic valuation.
+    Reject a denominator containing a prime factor absent from base.
+    Modular exponentiation tests divisibility without constructing base**k;
+    binary search needs logarithmically many such tests in denominator bit
+    length.  Composite bases are supported: this is not a prime-adic valuation.
     """
     denominator = _integer(denominator, "denominator", minimum=1)
     base = _integer(base, "base", minimum=2)
     if max_depth is not None:
         max_depth = _integer(max_depth, "max_depth", minimum=0)
-    depth = 0
-    while denominator > 1:
-        if max_depth is not None and depth >= max_depth:
+    if denominator == 1:
+        return 0
+    upper = denominator.bit_length()
+    if pow(base, upper, denominator) != 0:
+        raise ValueError("denominator has a prime factor absent from the pinning denominator")
+    if max_depth is not None and max_depth < upper:
+        upper = max_depth
+        if pow(base, upper, denominator) != 0:
             raise ValueError("denominator clearing depth exceeds the declared bound")
-        divisor = gcd(denominator, base)
-        if divisor == 1:
-            raise ValueError("denominator has a prime factor absent from the pinning denominator")
-        denominator //= divisor
-        depth += 1
-    return depth
+    lower = 0  # D>1, so D does not divide base**0.
+    while lower + 1 < upper:
+        middle = (lower + upper) // 2
+        if pow(base, middle, denominator) == 0:
+            upper = middle
+        else:
+            lower = middle
+    return upper
 
 
 @dataclass(frozen=True)

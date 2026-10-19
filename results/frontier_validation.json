@@ -1,16 +1,17 @@
 {
   "schema": "singularity.frontier-validation/1",
   "full_python_suite": {
-    "tests": 466,
+    "tests": 475,
     "status": "passed",
-    "seconds": 89.067
+    "seconds": 89.507
   },
-  "frontier_unit_tests": 34,
+  "frontier_unit_tests": 43,
   "receipts": [
     "fr01_pole_divisors",
     "fr02_denominator_recovery",
     "fr03_tree_positivity",
-    "fr04_pinned_theta"
+    "fr04_pinned_theta",
+    "fr05_threshold_reconstruction"
   ],
   "exact_replay": "passed",
   "baseline_reproduction": "passed",
@@ -19,5 +20,20 @@
   "links": "passed",
   "independent_review": "docs/research/FR_INDEPENDENT_REVIEW.md",
   "nx36_changed": false,
-  "formal_proof_scope": "No new Lean proof claimed; baseline formal projects unchanged."
+  "formal_proof_scope": "No new Lean proof claimed; baseline formal projects unchanged.",
+  "threshold_reconstruction": {
+    "independent_census_graphs": 1023,
+    "exact_reconstructions": 6138,
+    "retained_raw_closures": 4,
+    "reviewer_independent_raw_closures": 93,
+    "large_scale_roundtrip_order": 1000,
+    "large_scale_volume": 6,
+    "large_scale_maximum_denominator_bits": 35965,
+    "large_scale_evidence_kind": "algebraic forward/inverse benchmark;not an independent population oracle"
+  },
+  "pdf_visual_review": {
+    "pages": 49,
+    "all_page_contact_sheets": "inspected",
+    "overfull_latex_boxes": 0
+  }
 }

@@ -16,7 +16,7 @@ The Python core uses Python 3.10+ and the standard library. The repository inclu
 
 [Frontier companion — PDF](output/pdf/frontier_companion.pdf) · [HTML](docs/frontier_companion.html) · [Editable manuscript](docs/FRONTIER_MANUSCRIPT.md) · [Claude integration note](handoff/frontier/START_HERE.md)
 
-This separate companion adds exact connected poles, rational-coefficient degree recovery (including fixed pinning), ordered-tree positivity, and centered pinned theta limits. It accompanies the open reconstruction questions and does not implement the proposed NX36 programme.
+This separate companion adds exact connected poles, rational-coefficient degree recovery (including fixed pinning), ordered-tree positivity, centered pinned theta limits, and reconstruction of promised threshold graphs from a sufficient logarithmic coefficient prefix. It accompanies the open reconstruction questions and does not implement the proposed NX36 programme.
 
 [Research monograph — PDF](output/pdf/monograph.pdf) · [HTML](docs/monograph.html) · [Editable source](docs/MONOGRAPH.md)
 

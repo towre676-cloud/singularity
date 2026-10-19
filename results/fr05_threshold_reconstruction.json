@@ -1,0 +1,540 @@
+{
+  "schema": "singularity.fr05-threshold-reconstruction/1",
+  "class_hypothesis": "threshold graphs, known order",
+  "series": "sum_h x^sum(h) q^(E_G(h)+lambda*sum(h_i^2))",
+  "pinnings": [
+    "1/2",
+    "2/3",
+    "5/6"
+  ],
+  "diagonal_shifts": [
+    0,
+    2
+  ],
+  "all_creation_words_through_order": 10,
+  "graphs": 1023,
+  "exact_reconstructions": 6138,
+  "independent_oracle": "sequential graph construction, stars-and-bars heights, direct edge energy",
+  "per_order": [
+    {
+      "order": 1,
+      "creation_words": 1,
+      "q_half_a1_signatures": 1,
+      "recovery_volumes": {
+        "1/2": 2,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 2,
+      "creation_words": 2,
+      "q_half_a1_signatures": 2,
+      "recovery_volumes": {
+        "1/2": 2,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 3,
+      "creation_words": 4,
+      "q_half_a1_signatures": 4,
+      "recovery_volumes": {
+        "1/2": 2,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 4,
+      "creation_words": 8,
+      "q_half_a1_signatures": 8,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 5,
+      "creation_words": 16,
+      "q_half_a1_signatures": 16,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 6,
+      "creation_words": 32,
+      "q_half_a1_signatures": 32,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 7,
+      "creation_words": 64,
+      "q_half_a1_signatures": 64,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 8,
+      "creation_words": 128,
+      "q_half_a1_signatures": 127,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 2,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 9,
+      "creation_words": 256,
+      "q_half_a1_signatures": 253,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 3,
+        "5/6": 2
+      }
+    },
+    {
+      "order": 10,
+      "creation_words": 512,
+      "q_half_a1_signatures": 503,
+      "recovery_volumes": {
+        "1/2": 3,
+        "2/3": 3,
+        "5/6": 2
+      }
+    }
+  ],
+  "first_coefficient_collision": [
+    {
+      "creation_word": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "degrees": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        7,
+        7
+      ],
+      "prefix": [
+        "1",
+        "81/64",
+        "104955905/134217728",
+        "1921419319980326913/4611686018427387904"
+      ],
+      "reconstruction": {
+        "graph": {
+          "n": 8,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              6,
+              7
+            ]
+          ]
+        },
+        "creation_word": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "volume": 3,
+        "q": "1/2",
+        "diagonal_shift": 0,
+        "steps": [
+          {
+            "order": 8,
+            "shift": 0,
+            "operation": "universal",
+            "removed": 2
+          },
+          {
+            "order": 6,
+            "shift": 2,
+            "operation": "isolated",
+            "removed": 4
+          },
+          {
+            "order": 2,
+            "shift": 2,
+            "operation": "universal",
+            "removed": 2
+          }
+        ],
+        "class_hypothesis": "threshold graph"
+      }
+    },
+    {
+      "creation_word": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "degrees": [
+        5,
+        5,
+        5,
+        3,
+        6,
+        6,
+        6,
+        0
+      ],
+      "prefix": [
+        "1",
+        "81/64",
+        "22368307/16777216",
+        "24588955265533443/18014398509481984"
+      ],
+      "reconstruction": {
+        "graph": {
+          "n": 8,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        "creation_word": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "volume": 3,
+        "q": "1/2",
+        "diagonal_shift": 0,
+        "steps": [
+          {
+            "order": 8,
+            "shift": 0,
+            "operation": "isolated",
+            "removed": 1
+          },
+          {
+            "order": 7,
+            "shift": 0,
+            "operation": "universal",
+            "removed": 3
+          },
+          {
+            "order": 4,
+            "shift": 3,
+            "operation": "isolated",
+            "removed": 1
+          },
+          {
+            "order": 3,
+            "shift": 3,
+            "operation": "universal",
+            "removed": 3
+          }
+        ],
+        "class_hypothesis": "threshold graph"
+      }
+    }
+  ],
+  "independent_raw_closure_reconstructions": [
+    {
+      "context": "terminal_edge",
+      "closed_order": 10,
+      "observed_raw_prefix": [
+        "1",
+        "41/128",
+        "908623873/17179869184",
+        "5605360454649541296129/604462909807314587353088"
+      ],
+      "recovered_interior_A_prefix": [
+        "1",
+        "81/256",
+        "1646854145/34359738368",
+        "7495863524848327196673/1208925819614629174706176"
+      ],
+      "reconstructed_creation_word": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "context": "shared_neighbor",
+      "closed_order": 11,
+      "observed_raw_prefix": [
+        "1",
+        "73/128",
+        "2401599489/17179869184",
+        "16707850503076796432385/604462909807314587353088"
+      ],
+      "recovered_interior_A_prefix": [
+        "1",
+        "81/256",
+        "1646854145/34359738368",
+        "7495863524848327196673/1208925819614629174706176"
+      ],
+      "reconstructed_creation_word": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "context": "terminal_edge",
+      "closed_order": 10,
+      "observed_raw_prefix": [
+        "1",
+        "41/128",
+        "1019773337/34359738368",
+        "4147673977294999126785/1208925819614629174706176"
+      ],
+      "recovered_interior_A_prefix": [
+        "1",
+        "81/256",
+        "106172467/4294967296",
+        "8540942827901683203/4722366482869645213696"
+      ],
+      "reconstructed_creation_word": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "context": "shared_neighbor",
+      "closed_order": 11,
+      "observed_raw_prefix": [
+        "1",
+        "73/128",
+        "4005724569/34359738368",
+        "19337994989755160724225/1208925819614629174706176"
+      ],
+      "recovered_interior_A_prefix": [
+        "1",
+        "81/256",
+        "106172467/4294967296",
+        "8540942827901683203/4722366482869645213696"
+      ],
+      "reconstructed_creation_word": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "scope": "complete promised-class reconstruction; not unrestricted graph completeness; observation cutoff is not an acquisition-cost bound",
+  "large_algebraic_roundtrips": {
+    "evidence_kind": "exact forward/inverse algebraic roundtrip, not independent population enumeration",
+    "timings": "wall-clock on this machine; not rerun by --check",
+    "rows": [
+      {
+        "order": 128,
+        "volume": 5,
+        "q": "1/2",
+        "generation_seconds": 0.02624472499883268,
+        "decoding_seconds": 0.03197981200355571,
+        "maximum_numerator_bits": 3165,
+        "maximum_denominator_bits": 3176,
+        "peeling_steps": 127,
+        "creation_word": "0 followed by alternating 1,0,1,0,..."
+      },
+      {
+        "order": 256,
+        "volume": 6,
+        "q": "1/2",
+        "generation_seconds": 0.26143177899939474,
+        "decoding_seconds": 0.28742517399950884,
+        "maximum_numerator_bits": 9166,
+        "maximum_denominator_bits": 9181,
+        "peeling_steps": 255,
+        "creation_word": "0 followed by alternating 1,0,1,0,..."
+      },
+      {
+        "order": 1000,
+        "volume": 6,
+        "q": "1/2",
+        "generation_seconds": 7.6620137540012365,
+        "decoding_seconds": 7.577481908010668,
+        "maximum_numerator_bits": 35950,
+        "maximum_denominator_bits": 35965,
+        "peeling_steps": 999,
+        "creation_word": "0 followed by alternating 1,0,1,0,..."
+      }
+    ]
+  }
+}

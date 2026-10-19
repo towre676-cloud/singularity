@@ -58,6 +58,20 @@ class DenominatorRecoveryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             denominator_depth(72, 6, max_depth=2)
 
+    def test_large_composite_power_depth_and_exact_limit(self):
+        # Unequal prime exponents prevent treating the denominator as one
+        # perfect base power.  A linear-depth gcd loop would need 12,001 steps.
+        denominator = 2 ** 20001 * 3 ** 12001
+        self.assertEqual(denominator_depth(denominator, 12), 12001)
+        self.assertEqual(denominator_depth(denominator, 12, max_depth=12001), 12001)
+        with self.assertRaises(ValueError):
+            denominator_depth(denominator, 12, max_depth=12000)
+        with self.assertRaises(ValueError):
+            denominator_depth(5 * denominator, 12)
+        self.assertEqual(denominator_depth(1, 12, max_depth=0), 0)
+        with self.assertRaises(TypeError):
+            denominator_depth(1, 12, max_depth=True)
+
     def test_divisible_extremal_multiplicity_is_recovered(self):
         for n, q in ((4, Fraction(3, 4)), (6, Fraction(5, 6)), (12, Fraction(5, 6))):
             graph = Graph(n, combinations(range(n), 2))

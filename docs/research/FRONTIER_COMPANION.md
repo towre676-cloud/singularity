@@ -1,9 +1,9 @@
 # Frontier companion: arithmetic, poles, and positive interfaces
 
 **Release scope.** This is a separate research companion to the published
-v0.4.0 baseline, not an implementation of NX36. It adds four narrowly stated
+v0.4.0 baseline, not an implementation of NX36. It adds five narrowly stated
 mathematical tools, exact executable checks, and a map of their implications.
-The detailed proofs are the four FR documents assembled after this introduction
+The detailed proofs are the five FR documents assembled after this introduction
 in the companion manuscript. They have ordinary mathematical proofs and exact
 computational checks; no new Lean coverage is claimed.
 
@@ -36,6 +36,7 @@ pinning. The tree results concern a third object, an ordered terminal kernel.
 | FR02: rational denominator recovery | Known order n and one coefficient at a rational q=A/B | Maximum degree and its multiplicity, for local or integer-pinned series | Exact rational coefficient; a sufficient volume is logarithmic in n, but obtaining that coefficient has its own cost |
 | FR03: positive tree interfaces | Full ordered kernel, or a common height box | Strict total positivity and terminal-distance leading minors | Applies to trees and ordered observations; a global volume truncation can destroy positivity |
 | FR04: centered pinned theta limits | Complete positively pinned sequence | Graph order and a finite family of limiting affine-lattice theta values | Equality of these invariants is necessary, not sufficient, for equality of the original sequence |
+| FR05: threshold reconstruction | Known order and a short exact rational coefficient prefix | The whole graph within the promised threshold class | Fixed rational q, including one half; the observation cutoff is logarithmic, while exact precision and coefficient generation remain separate costs |
 
 ## Why these are useful together
 
@@ -123,6 +124,58 @@ therefore certify intervals for Psi at every rational q in (0,1), including
 one half. Disjoint intervals for a common residue prove full-series
 inequivalence. Overlapping intervals are inconclusive, and equal limiting
 values still do not prove equality of the original coefficients.
+
+## Reconstruction by peeling an entire graph class
+
+A threshold graph is built from one vertex by repeatedly adding an isolated
+vertex or a vertex adjacent to every existing vertex. Within this promised
+class, the arithmetic decoder identifies a whole layer that can be removed.
+If Delta=0, the graph is edgeless. If 0<Delta<n-1, it has exactly n-Delta-1
+isolated vertices: its nontrivial threshold component has a universal vertex
+and therefore has order Delta+1. Removing k isolates divides the series by
+f_lambda(x,q)^k, where
+
+\[
+ f_\lambda(x,q)=\sum_{a\ge0}x^a q^{\lambda a^2}.
+\]
+
+If Delta=n-1, the m maximum-degree vertices form precisely a universal clique.
+Write G=K_m join H. The residual graph stays in the threshold class, and its
+uniform pinning changes from lambda to lambda+m. Put
+$b_r=[x^r]F_{H,\lambda+m}$. The exact join identity is
+
+\[
+ a_R=\sum_{j=0}^R C_j q^{-2j(R-j)}b_{R-j},
+\]
+
+\[
+ C_j=q^{-j^2}[z^j]
+ \left(\sum_{u\ge0}z^u q^{(n+\lambda)u^2}\right)^m.
+\]
+
+Since C_0=1, this transformation is unit triangular. Both isolate division
+and universal-clique removal recover the residual prefix through the original
+cutoff. Order decreases at every step. The same original cutoff satisfies the
+denominator condition at every smaller order, regardless of the pinning
+increments. Thus every known-order threshold graph is determined through
+the sufficient volume
+
+\[
+ R_* =\min\{R\ge2:B^{2(R-1)}>n\},\qquad q=A/B.
+\]
+
+This is logarithmic observation volume. It is not an optimal cutoff, a
+constant-precision measurement claim, or a general graph reconstruction
+algorithm. The decoder receives the exact prefix and the class promise; it
+does not inspect a hidden graph. It returns a creation-word witness and the
+inverse operations.
+
+At q=1/2, the eight-vertex construction words 1000011 and 1101110 have the
+same first coefficient: 81/64 for the local series, or 81/256 with shift-two
+pinning. The sufficient volume-three prefix still reconstructs each graph.
+This new class therefore goes beyond assuming that the first coefficient
+already separates every member. It accompanies the cycle-interior theorem
+without resolving fixed-pinning completeness on arbitrary graphs.
 
 ## A realizability constraint with the correct semantics
 

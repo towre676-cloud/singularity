@@ -2,7 +2,7 @@
 
 This branch adds companion research beside NX36. Start with
 [the scope and implications](../../docs/research/FRONTIER_COMPANION.md), then
-the four FR proof documents in `docs/research/`. Do not treat this supplement
+the five FR proof documents in `docs/research/`. Do not treat this supplement
 as completion of an NX acceptance unit.
 
 The source baseline is published commit
@@ -34,6 +34,7 @@ passing replay does not convert an ordinary proof into a kernel-checked one.
 | FR02 | `src/singularity/denominator_recovery.py` | `docs/research/FR02_DENOMINATOR_RECOVERY.md` | `results/fr02_denominator_recovery.json` |
 | FR03 | `src/singularity/tree_positivity.py` | `docs/research/FR03_TREE_POSITIVITY.md` | `results/fr03_tree_positivity.json` |
 | FR04 | `src/singularity/pinned_theta.py` | `docs/research/FR04_PINNED_THETA.md` | `results/fr04_pinned_theta.json` |
+| FR05 | `src/singularity/threshold_reconstruction.py` | `docs/research/FR05_THRESHOLD_RECONSTRUCTION.md` | `results/fr05_threshold_reconstruction.json` |
 
 ## Carry these limitations forward
 
@@ -47,4 +48,7 @@ equivalence theorem for the full pinned sequence.
 
 The three main research frontiers remain open. Finite agreement, equal theta
 limits, a matching maximum degree, or a positive finite collection of minors
-does not settle full-series equality or graph realization.
+does not settle full-series equality or graph realization in general. FR05
+does reconstruct graphs within the promised threshold class from a sufficient
+logarithmic prefix. It does not establish that arbitrary input graphs belong
+to that class.

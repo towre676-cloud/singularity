@@ -1,6 +1,6 @@
 # Independent mathematical review of the frontier companion
 
-This review separates mathematical consequences of complete generating series from evidence obtained from a finite coefficient prefix. It does not certify either fixed-pinning completeness or the realization of a surviving symmetric-interface ambiguity.
+This review separates mathematical consequences of complete generating series from evidence obtained from a finite coefficient prefix. It does not certify either general fixed-pinning completeness or the realization of a surviving symmetric-interface ambiguity.
 
 ## FR01: connected pole divisors
 
@@ -74,7 +74,7 @@ The residue therefore determines \(m\) uniquely. The unpinned edgeless case \(\L
 
 An independent implementation, written directly from compositions and graph edge energies rather than the new decoder, checked **450 exact cases**: every labeled graph of orders one through four, \(q=1/2,2/3,5/6\), and shifts zero and two. Every recovered maximum degree and multiplicity agreed. This is finite corroboration of the theorem, not a substitute for the gap proof.
 
-The new module's input validation and the gcd-based composite-base clearing procedure were inspected. The caller supplies graph order, family membership where used, and the actual coefficient; the decoder does not prove coefficient realizability. A logarithmic observation volume does not imply a cheap oracle for computing that coefficient.
+The new module's input validation and final modular-divisibility clearing procedure were inspected. For denominator D>1, every supported prime exponent is smaller than D.bit_length(), so the modular-power support test uses a valid universal upper bound; divisibility is monotone and binary search returns the exact least clearing depth. The optional maximum-depth bound and D=1 case are handled correctly. The caller supplies graph order, family membership where used, and the actual coefficient; the decoder does not prove coefficient realizability. A logarithmic observation volume does not imply a cheap oracle for computing that coefficient.
 
 ## FR03: ordered tree positivity and distance
 
@@ -152,12 +152,63 @@ All exponents in the finite arithmetic are integers, including at the working pa
 
 The implementation uses the reflection-friendly product box \([-H,H+1]\). Its omitted one-coordinate positive and negative Gaussian tails start at magnitudes \(H+2\) and \(H+1\), respectively, exactly as coded. For a coefficient at \(R=kn+r\), the missing negative-coordinate tail starts at magnitude \(k+1\). Dropping the charge constraint and using a union bound with a rigorous one-dimensional Gaussian upper bound therefore gives the stated rational enclosure. A further **90 independent exact cases** across connected and disconnected graphs, \(q=1/2,2/3,5/6\), and pinning one and two checked nested boxes, boundary containment, subsequent normalized coefficients and reflected finite-box sums. No new runtime or proof correction was required.
 
+## FR05: promised threshold-graph reconstruction
+
+**Verdict on the inverse theorem: sound for the promised threshold family.** Fix a known order \(n\), rational \(q=A/B\in(0,1)\), and integer diagonal shift \(\lambda\ge0\). Choose one original volume \(R_*\ge2\) with \(B^{2(R_*-1)}>n\), and supply the coefficient prefix through \(R_*\). Every recursive smaller order satisfies that same cutoff, even as the diagonal shift increases.
+
+A threshold graph has at most one nontrivial connected component, and that component has a universal vertex. Therefore if \(0<\Delta<n-1\), the number of isolated vertices is exactly \(k=n-\Delta-1\). Removing them divides the prefix by the unit series
+
+\[
+ f_\lambda(x)^k,\qquad f_\lambda(x)=\sum_{h\ge0}q^{\lambda h^2}x^h.
+\]
+
+If \(\Delta=n-1\), the multiplicity \(m\) recovered by FR02 is exactly the number of universal vertices. Write \(G=K_m\vee H\), let \(u\) be the universal-clique heights with sum \(j\), and let the residual heights have sum \(S\). The exact energy identity is
+
+\[
+ E_G+\lambda\|h,u\|^2
+ =E_H+(m+\lambda)\|h\|^2
+ +(n+\lambda)\|u\|^2-j^2-2jS.
+\]
+
+Hence, with
+
+\[
+ C_{m,j}=q^{-j^2}[z^j]
+ \left(\sum_{u\ge0}q^{(n+\lambda)u^2}z^u\right)^m,
+\]
+
+and \(b_s=[x^s]F_{H,\lambda+m}\), the observed coefficients satisfy
+
+\[
+ a_R=\sum_{j=0}^R C_{m,j}q^{-2j(R-j)}b_{R-j},\qquad C_{m,0}=1.
+\]
+
+This is a unit lower-triangular transformation, so the entire required residual prefix is recovered recursively without increasing the observation volume. The residual graph remains threshold. The unpinned edgeless branch, the one-vertex branch, and the empty residual must be handled explicitly; the empty residual has formal series one and is not represented by the nonempty-graph constructor.
+
+An independent implementation checked **378 exact cases**, covering all binary threshold constructions through six vertices, \(q=1/2,2/3,5/6\), and initial shifts zero and two. At each elimination step the transformed prefix was compared against direct weak-composition enumeration of the actual residual graph with its updated pinning. Every identity and decoded layer size agreed. The NX36 handoff was searched for threshold-graph reconstruction; this specific inverse theorem and its implementation are not among those packets.
+
+The final implementation was inspected, including the iterative layer-peeling loop, canonical creation-word assembly, and exact empty residual check. Its original recursive depth limitation was removed before integration. All **42** unit tests across FR01–FR05 passed in the final scoped review.
+
+The theorem proves completeness of this finite prefix **inside the promised threshold family**, rather than general graph completeness. The coefficient-computation oracle remains a separate cost. Series multiplication and inversion use \(O(nR_*^2)\) arithmetic operations in the direct implementation. The finalized FR02 helper replaces repeated gcd clearing with logarithmically many modular-divisibility tests in denominator bit length. Those modular tests and exact rational bit sizes must still be accounted for separately from the convolution count.
+
+### FR05 corollary: one known raw closure reconstructs threshold interiors
+
+The corollary was checked against the existing `charges.py` contract. Let the two nonadjacent terminals both dominate an interior \(H\) of known order \(n\). Its compressed sequence is exactly \(A_H=F_{H,2}\). For any supported known closing context \(C\), attached through those terminals with disjoint interiors, the existing operator satisfies
+
+\[
+ Z_C=T_C A_H,\qquad T_C\text{ unit lower triangular},
+\]
+
+and depends on \(C,n,q\), not the interior edges. Here \(Z_C\) is the **raw local series** of the glued graph. Its prefix through \(R_*\) recovers the same prefix of \(A_H\) by forward substitution. FR05 then reconstructs \(H\) in the promised threshold family. Consequently each one such context distinguishes every pair of nonisomorphic threshold interiors of the same known order by that volume cutoff. A terminal edge in the context is permitted because the dominating block's terminal edge is absent. No conversion to a minimum-zero normalized series is implicit in this corollary, and it does not establish reconstruction for arbitrary interiors. An independent end-to-end check counted raw closed-graph profiles directly for all threshold creation words through five interior vertices and three contexts (empty terminals, terminal edge, and one shared neighbor), then used the existing triangular inverse and FR05: all **93** cases reconstructed the original threshold interior.
+
 ## Classical source boundaries
 
 The following are primary-source anchors for classical tools. They do not claim the project-specific graph consequences or arithmetic decoder.
 
-* Christina Roehrig, *Siegel theta series for indefinite quadratic forms*, Research in Number Theory **7** (2021), article 45, section 4: https://doi.org/10.1007/s40993-021-00272-y. The proof uses Poisson summation and Fourier transforms of positive-definite Gaussian forms; our connected pole noncancellation argument is the direct positive-definite character specialization written above.
-* Kenneth W. Johnson and Donald St. P. Richards, *Hyperdeterminantal Total Positivity*, SIGMA **21** (2025), 055: https://doi.org/10.3842/SIGMA.2025.055. Its discussion identifies the classical exponential kernel and Binet–Cauchy composition framework; the tree path, volume and leading-coefficient consequences above are derived separately.
+* Christina Roehrig, *Siegel theta series for indefinite quadratic forms*, Research in Number Theory **7** (2021), article 45, section 4: <https://doi.org/10.1007/s40993-021-00272-y>. The proof uses Poisson summation and Fourier transforms of positive-definite Gaussian forms; our connected pole noncancellation argument is the direct positive-definite character specialization written above.
+* Kenneth W. Johnson and Donald St. P. Richards, *Hyperdeterminantal Total Positivity*, SIGMA **21** (2025), 055: <https://doi.org/10.3842/SIGMA.2025.055>. Its discussion identifies the classical exponential kernel and Binet–Cauchy composition framework; the tree path, volume and leading-coefficient consequences above are derived separately.
+
+* Persi Diaconis, Susan Holmes and Svante Janson, *Threshold Graph Limits and Random Threshold Graphs*, Internet Mathematics **5** (2008), 267–320: <https://doi.org/10.1080/15427951.2008.10129166>; preprint <https://arxiv.org/abs/0908.2448>. Its introductory characterizations supply the classical threshold-family structure used in FR05; the coefficient inverse and logarithmic observation cutoff are derived here.
 
 ## Overall conclusion
 
