@@ -8,6 +8,8 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 [**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Deployment evidence**](applications/training_lab/DEPLOYMENT_RESULTS.md) · [**See the pretrained results**](applications/training_lab/PRETRAINED_RESULTS.md) · [**Audit your model**](applications/training_lab/AUDIT_TOOLKIT.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
 
+**Separate GPU audit v3 design:** [all-threshold truncation coverage](applications/training_lab/TRUNCATION_V3.md) gives two conditional shape witnesses for every cap 1–71 at 271 tokens on archived T4 data, versus v2's 261; exact ties optimally pruned greedy. A conservative two-long-probe design through cap 127 costs a projected 379. Frozen v2 evidence is unchanged; fresh v3 GPU measurements remain pending.
+
 <!-- BEGIN deployment-transfer -->
 ## Make every model check count.
 

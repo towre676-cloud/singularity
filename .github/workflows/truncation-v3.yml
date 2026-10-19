@@ -1,0 +1,59 @@
+name: Truncation v3 certificates
+on:
+  push:
+    paths:
+      - 'src/singularity/model_audit/**'
+      - 'src/singularity/robust_coverage.py'
+      - 'scripts/*truncation*.py'
+      - 'scripts/colab_deployment_audit*.py'
+      - 'tests/test_truncation_v3.py'
+      - 'tests/test_gpu_deployment_evidence.py'
+      - 'applications/training_lab/results/gpu_deployment_audit/**'
+      - '.github/workflows/truncation-v3.yml'
+  pull_request:
+    paths:
+      - 'src/singularity/model_audit/**'
+      - 'scripts/*truncation*.py'
+      - 'scripts/colab_deployment_audit*.py'
+      - 'tests/test_truncation_v3.py'
+      - 'tests/test_gpu_deployment_evidence.py'
+      - 'applications/training_lab/results/gpu_deployment_audit/**'
+      - '.github/workflows/truncation-v3.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independent source replay and exact-optimum certificate
+        run: python scripts/confirm_truncation_v3.py --verify
+      - name: Quantified families, numerical health and immutable GPU evidence
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m unittest discover -s tests -p test_truncation_v3.py -v
+          python -m unittest discover -s tests -p test_gpu_deployment_evidence.py -v
+          python -m unittest discover -s tests -p test_robust_coverage.py -v
+  cpu-model-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU model dependencies
+        run: |
+          python -m pip install 'torch==2.8.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers==4.57.1' 'tokenizers==0.22.2' 'safetensors==0.8.0'
+      - name: Real tiny Qwen end-to-end v3 protocol
+        env:
+          PYTHONPATH: src
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: python -m unittest discover -s tests -p test_truncation_v3.py -v

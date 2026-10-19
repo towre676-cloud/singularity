@@ -1,0 +1,244 @@
+{
+ "calibration_clean_runs": {
+  "batch_size_1": {
+   "batch_size": 1
+  },
+  "batch_size_8": {
+   "batch_size": 8
+  }
+ },
+ "claim_boundary": "Exact coverage of the declared construction table only; held-out detection, false alarms and timings are measurements on this run.",
+ "clean_controls": {
+  "eager_attention_backend": {
+   "attention": "eager"
+  },
+  "kv_cache_disabled": {
+   "use_cache": false
+  },
+  "reversed_order": {
+   "reverse": true
+  },
+  "same_dtype_export_roundtrip": {
+   "load": "export_same_dtype"
+  }
+ },
+ "comparators": {
+  "greedy": "cost per remaining deficit",
+  "pruned_greedy": "minimum-cost subset of the greedy output meeting the same requirement",
+  "random": "1000 seeded random orders filled within the exact budget",
+  "typical": "four full-length typical paragraphs"
+ },
+ "construction_variants": {
+  "half_precision_export_swap": {
+   "load": "export_other_dtype"
+  },
+  "int8_bitsandbytes": {
+   "load": "int8"
+  },
+  "padding_mask_dropped": {
+   "attention_mask": false
+  },
+  "positions_not_offset_for_left_padding": {
+   "position_offset": false
+  },
+  "temperature_1.3": {
+   "temperature": 1.3
+  },
+  "truncate_to_48": {
+   "truncate_to": 48
+  },
+  "unicode_nfkc": {
+   "normalization": "NFKC"
+  }
+ },
+ "cost": "forwarded tokens: pad width (or token length) plus continuation steps",
+ "dtype": "float16",
+ "frozen_at_utc": "2026-10-19T20:12:40.660803+00:00",
+ "hardware": {
+  "bf16": false,
+  "compute_capability": "7.5",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "memory_gb": 14.6
+ },
+ "heldout_variants": {
+  "crlf_newlines": {
+   "newline": "\r\n"
+  },
+  "kv_cache_positions_reset": {
+   "cache_positions_reset": true
+  },
+  "nf4_4bit_bitsandbytes": {
+   "load": "nf4"
+  },
+  "right_padding_generation": {
+   "padding_side": "right"
+  },
+  "rope_base_halved": {
+   "rope_scale": 2.0
+  },
+  "temperature_1.1": {
+   "temperature": 1.1
+  },
+  "truncate_to_72": {
+   "truncate_to": 72
+  }
+ },
+ "local_test": false,
+ "model": "Qwen/Qwen2.5-1.5B",
+ "probes": [
+  {
+   "cost": 76,
+   "id": "full_history",
+   "text": "The history of the city begins with a small settlement on the river bank, where traders exchanged grain, salt and timber for nearly two centuries before the first bridge was built. As the population grew, merchants from the coast arrived each summer, and a market square, a customs house and a stone church were added around the old landing place, which remains the centre of the town today.",
+   "tokens": 76
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 72,
+   "id": "full_science",
+   "text": "In the experiment, the researchers measured how quickly the solution cooled after heating, recording the temperature every ten seconds until it returned to room temperature. They repeated the procedure with three different containers and found that the insulated flask lost heat more slowly than either the glass beaker or the thin metal cup, as their model had predicted.",
+   "tokens": 64
+  },
+  {
+   "cost": 72,
+   "id": "full_sport",
+   "text": "During the 1998 season the team won eleven of its sixteen games and reached the final, where a late penalty decided the championship in front of a record crowd. The coach, who had joined only two years earlier, credited the young defenders and a change in training methods, while supporters celebrated in the streets until the early hours of the next morning.",
+   "tokens": 72
+  },
+  {
+   "cost": 66,
+   "id": "full_music",
+   "text": "The album was released in March and reached number four on the national chart, supported by a long tour of small venues across the north of the country. Critics praised its quiet arrangements and the singer's restrained voice, and two of its songs were later used in films, introducing the band to a much wider audience over the following decade.",
+   "tokens": 66
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 56,
+   "id": "pad_born",
+   "pad_to": 48,
+   "text": "He was born in 1907 and",
+   "tokens": 10
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 56,
+   "id": "pad_river",
+   "pad_to": 48,
+   "text": "The river is long and",
+   "tokens": 5
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 40,
+   "id": "pad_capital",
+   "pad_to": 32,
+   "text": "The capital of France is",
+   "tokens": 5
+  },
+  {
+   "cost": 32,
+   "id": "pad_church",
+   "pad_to": 32,
+   "text": "A church was built there in",
+   "tokens": 6
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 14,
+   "id": "short_population",
+   "text": "The city has a population of",
+   "tokens": 6
+  },
+  {
+   "cost": 6,
+   "id": "short_first",
+   "text": "It was the first time that",
+   "tokens": 6
+  },
+  {
+   "cost": 5,
+   "id": "short_known",
+   "text": "She is best known for",
+   "tokens": 5
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 24,
+   "id": "uni_ligature",
+   "text": "The \ufb01nal score was \u00bd point \u2014 a record\u2026 and the crowd",
+   "tokens": 16
+  },
+  {
+   "cost": 12,
+   "id": "uni_accents",
+   "text": "Caf\u00e9 owners in Montr\u00e9al and S\u00e3o Paulo said that",
+   "tokens": 12
+  },
+  {
+   "cost": 32,
+   "id": "uni_padded",
+   "pad_to": 32,
+   "text": "Na\u00efve r\u00e9sum\u00e9 \u00b2 of the",
+   "tokens": 10
+  },
+  {
+   "cost": 19,
+   "id": "uni_width",
+   "text": "The \uff21\uff22\uff23 index rose 3\u2074 points in the \u2460st quarter",
+   "tokens": 19
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 26,
+   "id": "nl_code",
+   "text": "def add(a, b):\n    return a + b\n\n\ndef multiply(a, b):\n",
+   "tokens": 18
+  },
+  {
+   "continuation_tokens": 8,
+   "cost": 40,
+   "id": "nl_list",
+   "pad_to": 32,
+   "text": "Shopping list:\n1. Bread\n2. Milk\n3.",
+   "tokens": 13
+  },
+  {
+   "cost": 19,
+   "id": "nl_header",
+   "text": "= Early life =\nHe grew up in a small town near the coast.\n= Career =\nHe",
+   "tokens": 19
+  }
+ ],
+ "protocol_sha256": "16b658137ff946d279f602bbf98484ba295f52f28c7a4eb4b9c4e65c2058eddc",
+ "requirement": 2,
+ "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+ "schema": "singularity.gpu-deployment-audit/1",
+ "script_sha256": "0268db7e5ebfdac8e4891e238159629e9a97625778381094ee403d3ff1d32614",
+ "selection": "exact minimum-cost 2-robust coverage of construction variants with at least two separating probes; variants with fewer are reported and excluded from the requirement",
+ "silent_variants": "every variant declares the reference contract",
+ "software": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.20.1"
+ },
+ "timing": {
+  "cold_repeats": 2,
+  "measured_pairs": 20,
+  "order_seed": 4401,
+  "warmup_pairs": 3
+ },
+ "tolerance": {
+  "factor": 4.0,
+  "floor": 0.0001,
+  "rule": "per probe and continuous feature: factor * max calibration deviation + floor (nats)",
+  "tie_margin": 0.02,
+  "unstable_positions": "argmax positions that change in any calibration run are treated as ties; a continuation that changes in any calibration run is removed from that probe"
+ },
+ "typical_panel": [
+  "full_history",
+  "full_science",
+  "full_sport",
+  "full_music"
+ ]
+}
