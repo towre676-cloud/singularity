@@ -1,0 +1,328 @@
+{
+ "base": {
+  "claim_boundary": "Every listed construction fault flags at least `requirement` panel probes on the construction observations, so that many minus one missing results cannot hide it there. Other models, faults and false-alarm rates are empirical; passing is not equivalence.",
+  "constants": {
+   "tie_margin": 0.001,
+   "tolerance_factor": 4.0,
+   "tolerance_floor": 1e-05
+  },
+  "contract": {
+   "adapter": "TorchCallableAdapter",
+   "attention_mask": true,
+   "decoding": "greedy, no logits processors",
+   "max_context": 96,
+   "model_id": "HuggingFaceTB/SmolLM2-360M",
+   "normalization": "none",
+   "pad_id": 0,
+   "padding_side": "left",
+   "position_ids": "offset by left padding",
+   "representation": "float32",
+   "revision": "f8027fd0eaeea54caa13c31d31b9fdc459c38b49",
+   "source_snapshot_sha256": "084341a486cfdee2455d50771d24c356ea4404eb2ba02b3be1cf0b981dd0152a",
+   "target_artifact_sha256": "81839812dfc86c8953eebd2e16eabeee5c0c695b070581388fba813eb4d24d5b",
+   "temperature": 1.0,
+   "tokenizer_backend_format": "fast-tokenizer-json; explicit padding/truncation overrides excluded",
+   "tokenizer_backend_sha256": "e3708f39ab97dd726710373ba03ce5204e09d2748a304c793c8f0d5473d39930",
+   "tokenizer_class": "GPT2TokenizerFast",
+   "tokenizer_special_tokens": {
+    "additional_special_tokens": "['<|endoftext|>', '<|im_start|>', '<|im_end|>', '<repo_name>', '<reponame>', '<file_sep>', '<filename>', '<gh_stars>', '<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<jupyter_script>', '<empty_output>']",
+    "bos_token": "<|endoftext|>",
+    "eos_token": "<|endoftext|>",
+    "unk_token": "<|endoftext|>"
+   },
+   "tokenizer_vocabulary_sha256": "450fd25da1a689ff7a201bc70f43cf6fd9765685d8b15598bd2fa1597ae33cc6",
+   "tokenizer_vocabulary_size": 49152,
+   "truncate_to": 96,
+   "truncation": "keep last tokens",
+   "use_cache": false
+  },
+  "coverage": {
+   "service_cache_prefix_dropped_half": 11,
+   "service_logit_scale_1.3": 18,
+   "service_mask_shift_right": 18,
+   "service_position_ids_zero": 18,
+   "service_truncate48": 5,
+   "service_unicode_nfkc": 7
+  },
+  "deficient_faults": [],
+  "metadata": {
+   "protocol_sha256": "ca9df4971e0ee79f83318f7239eb3dd597286a4b0519bdd2361d3d6c6c43d0e1",
+   "target": "float32"
+  },
+  "package_sha256": "db10a6d97ba81f3c2a77db434a670e7d76d6c71a08309c5a7f97170130ce9685",
+  "probes": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "requirement": 2,
+  "schema": "singularity.audit-package/1",
+  "selection": {
+   "deficient_faults": [],
+   "exact_cost": 192,
+   "exact_nodes": 21,
+   "feasible": true,
+   "frozen_panel": true,
+   "greedy_cost": 239,
+   "greedy_panel": [
+    "plain_city",
+    "plain_science",
+    "unicode_ligature",
+    "long_reference",
+    "long_unicode"
+   ],
+   "pool_cost": 1089,
+   "pool_probe_count": 18,
+   "pool_separator_counts": {
+    "service_cache_prefix_dropped_half": 11,
+    "service_logit_scale_1.3": 18,
+    "service_mask_shift_right": 18,
+    "service_position_ids_zero": 18,
+    "service_truncate48": 5,
+    "service_unicode_nfkc": 7
+   },
+   "requirement": 2
+  },
+  "witness": [
+   {
+    "distinction": "service_mask_shift_right",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   },
+   {
+    "distinction": "service_position_ids_zero",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   },
+   {
+    "distinction": "service_truncate48",
+    "separating_probes": [
+     "long_reference",
+     "long_code"
+    ]
+   },
+   {
+    "distinction": "service_unicode_nfkc",
+    "separating_probes": [
+     "pad80_unicode",
+     "unicode_ligature"
+    ]
+   },
+   {
+    "distinction": "service_logit_scale_1.3",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   },
+   {
+    "distinction": "service_cache_prefix_dropped_half",
+    "separating_probes": [
+     "plain_city",
+     "plain_science"
+    ]
+   }
+  ]
+ },
+ "schema": "singularity.readable-evidence-shards/1",
+ "serialization": {
+  "ensure_ascii": true,
+  "indent": 1,
+  "sort_keys": true,
+  "trailing_newline": true
+ },
+ "shards": [
+  {
+   "bytes": 20959,
+   "file": "00000.json",
+   "path": [
+    "fault_evidence"
+   ],
+   "sha256": "b035f9542abebf20d405f040d2db4c0309de0c9c7a361c4cc04be720caa42f9c"
+  },
+  {
+   "bytes": 1680,
+   "file": "00001.json",
+   "path": [
+    "probes",
+    0
+   ],
+   "sha256": "6d6a6a022c30d1fbed9e7341484c51464028f6ed62c5572ebfc54b943da7ef69"
+  },
+  {
+   "bytes": 1426,
+   "file": "00002.json",
+   "path": [
+    "probes",
+    1
+   ],
+   "sha256": "969c985899e0d45bbab35a44e359f095b566accd830fb202b4b45cb9b499c3dd"
+  },
+  {
+   "bytes": 1337,
+   "file": "00003.json",
+   "path": [
+    "probes",
+    2
+   ],
+   "sha256": "3fee70c61dcb4506a266f1fdaaec64f8bfad47c13ff4cc2ffcec05ea95618d98"
+  },
+  {
+   "bytes": 1099,
+   "file": "00004.json",
+   "path": [
+    "probes",
+    3
+   ],
+   "sha256": "88359aa46cad4ab5e68b7c3b4e869d9a0b8f707fcaba3f55477ed9bbda59da5d"
+  },
+  {
+   "bytes": 1404,
+   "file": "00005.json",
+   "path": [
+    "probes",
+    4
+   ],
+   "sha256": "07ea92c03d78281296805a1860cb99255116e6e0dba583754c0e7b13185ad860"
+  },
+  {
+   "bytes": 2181,
+   "file": "00006.json",
+   "path": [
+    "probes",
+    5
+   ],
+   "sha256": "e9067ba21d7abf8461a854d9ced24dcd08a936bf60bce5709307fc8e1b353a06"
+  },
+  {
+   "bytes": 2336,
+   "file": "00007.json",
+   "path": [
+    "probes",
+    6
+   ],
+   "sha256": "3e1159647f50c19a7187ce85b4be1b58af5a40db44acf558b5af3643c2b2659f"
+  },
+  {
+   "bytes": 1691,
+   "file": "00008.json",
+   "path": [
+    "probes",
+    7
+   ],
+   "sha256": "ac5bd6e74933c93dbb3548277a04c0a1af781229c2fbe9b286003ccf8eff1b60"
+  },
+  {
+   "bytes": 2016,
+   "file": "00009.json",
+   "path": [
+    "probes",
+    8
+   ],
+   "sha256": "33e69e94d736929efc49cff83455adf9edfa66f8ff2754e6a6c2028ee4d43ca2"
+  },
+  {
+   "bytes": 3419,
+   "file": "00010.json",
+   "path": [
+    "probes",
+    9
+   ],
+   "sha256": "e2c2859ccfbbc6567b649e0c44966435e7c613641681ad3a14625406e8921f31"
+  },
+  {
+   "bytes": 9329,
+   "file": "00011.json",
+   "path": [
+    "probes",
+    10
+   ],
+   "sha256": "86a43e901b74e143e017b3206a8ee36994c929497867bb9b16974300e01bb2c1"
+  },
+  {
+   "bytes": 8850,
+   "file": "00012.json",
+   "path": [
+    "probes",
+    11
+   ],
+   "sha256": "1ee6eccff0c22eb3ccc4bedc8531d69e7da979263e2095457fa141f19b4f7b54"
+  },
+  {
+   "bytes": 9384,
+   "file": "00013.json",
+   "path": [
+    "probes",
+    12
+   ],
+   "sha256": "650482a84fa910e9fb672a8144831fd26cca7264d1bf0cfd014184560294d756"
+  },
+  {
+   "bytes": 9289,
+   "file": "00014.json",
+   "path": [
+    "probes",
+    13
+   ],
+   "sha256": "0e80404f6d4f713c94b2f20fea489f777cefc2c37b79f5fe0bf0fbb125a1db41"
+  },
+  {
+   "bytes": 9400,
+   "file": "00015.json",
+   "path": [
+    "probes",
+    14
+   ],
+   "sha256": "2ca819eb3fd08f84c6035a66c3699645ab07f1244a40f5de13869d40115d4bf9"
+  },
+  {
+   "bytes": 2269,
+   "file": "00016.json",
+   "path": [
+    "probes",
+    15
+   ],
+   "sha256": "54f67ba0bb2d7ed4b6da7b53cbbff70245035bf21ec5cfe8ee0b95313251ed65"
+  },
+  {
+   "bytes": 1842,
+   "file": "00017.json",
+   "path": [
+    "probes",
+    16
+   ],
+   "sha256": "5ba290e3acfdb89f76bad8178d3bb8b7580d2bf8c92d83314b7ae2ccdcfa73a9"
+  },
+  {
+   "bytes": 1510,
+   "file": "00018.json",
+   "path": [
+    "probes",
+    17
+   ],
+   "sha256": "028bfa368992ab42192d334c0523a92c5fa3c5394a7fa4031f38f6d84b8ccb71"
+  }
+ ],
+ "target_bytes": 96555,
+ "target_relative_to_results": "deployment_audit/smollm2-360m/float32/package_full_pool.json",
+ "target_sha256": "2de3eccebdb80be5558f0297201b0a5f08c83df140712fed47243ac3d305e702"
+}

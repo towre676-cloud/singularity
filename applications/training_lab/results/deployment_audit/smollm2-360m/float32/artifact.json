@@ -1,0 +1,58 @@
+{
+ "artifact_manifest_sha256": "81839812dfc86c8953eebd2e16eabeee5c0c695b070581388fba813eb4d24d5b",
+ "artifacts": {
+  "causal_graph.pt": {
+   "bytes": 1448206011,
+   "sha256": "46c2fb940f29d3e4d36caf907c7aa0a55459c47f14e5010c20701bf36b272764"
+  },
+  "config.json": {
+   "bytes": 721,
+   "sha256": "986b530f95546409d3c6461d17f5339460a08e4d8d8ee454ee60b4a2536a77c5"
+  },
+  "generation_config.json": {
+   "bytes": 111,
+   "sha256": "6e3ede8c97ef97dd195ee04aa45ff0efd82d0c99c4d737f3a6bcd1914b62e4fd"
+  },
+  "model.safetensors": {
+   "bytes": 1447317080,
+   "sha256": "dd1230cc6b7684875ae6502349b65b60d4d733dd6c0de20b1ca6badb79643bef"
+  }
+ },
+ "expected_target_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+ "float_parameter_count": 361821120,
+ "graph_export": true,
+ "graph_manifest": {
+  "artifact_bytes": 1448206011,
+  "artifact_sha256": "46c2fb940f29d3e4d36caf907c7aa0a55459c47f14e5010c20701bf36b272764",
+  "attention": "explicit additive causal and key-padding mask",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "format": "torch.jit.trace executable graph with parameters; no KV cache",
+  "graph_export": true,
+  "inputs": "three CPU int64 rank-two tensors of equal shape: token ids, binary mask, position ids",
+  "max_batch_size": 3,
+  "max_context": 96,
+  "max_position_id": 95,
+  "missing_attention_mask": "all token positions are visible subject to causality",
+  "model_class": "LlamaForCausalLM",
+  "model_type": "llama",
+  "schema": "singularity.causal-torchscript/1",
+  "torch_version": "2.8.0+cpu",
+  "trace_shape": [
+   2,
+   8
+  ],
+  "transformers_version": "4.57.1",
+  "use_cache": false,
+  "vocabulary_size": 49152
+ },
+ "kind": "float32",
+ "load_seconds": 1.5626341059978586,
+ "quantized_linear_count": 0,
+ "quantized_linear_modules": [],
+ "reloaded_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+ "serialization_conversion_reload_seconds": 10.168899637996219,
+ "source_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+ "state_reload_identical": true,
+ "weights_only_load": false
+}

@@ -1,0 +1,35 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+scripts/confirm_deployment_audit.py:168: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  source = torch.ao.quantization.quantize_dynamic(source, {torch.nn.Linear}, dtype=torch.qint8, inplace=True)
+scripts/confirm_deployment_audit.py:179: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  model = torch.ao.quantization.quantize_dynamic(model, {torch.nn.Linear}, dtype=torch.qint8, inplace=True)
+/workspace/scratch/464161e046ff/.venv/lib/python3.12/site-packages/torch/_utils.py:444: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  device=storage.device,
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "dynamic_int8", "stage": "reference", "seconds": 12.925021331000607}
+{"launcher_resources": {"wall_seconds": 27.367774995997024, "peak_rss_kib": 2891152}}
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "scripts/confirm_deployment_audit.py", line 537, in <module>
+    main()
+  File "scripts/confirm_deployment_audit.py", line 533, in main
+    print(json.dumps({"freeze": freeze, "run": run}[args.phase](args), indent=1, default=str)[:8000])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "scripts/confirm_deployment_audit.py", line 423, in run
+    tolerances, maxima = tolerances_from_clean(reference, calibration, **{k: spec[k] for k in ("factor", "floor", "tie_margin")})
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/464161e046ff/singularity/src/singularity/model_audit/core.py", line 141, in tolerances_from_clean
+    raise ValueError(f"clean rerun changed discrete output of probe {index}; reference unstable")
+ValueError: clean rerun changed discrete output of probe 2; reference unstable

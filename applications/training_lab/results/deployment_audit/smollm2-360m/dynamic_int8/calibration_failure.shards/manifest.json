@@ -1,0 +1,48 @@
+{
+ "base": {
+  "calibration": [
+   null,
+   null
+  ],
+  "claim": "no package built; representation failed declared clean-stability rule",
+  "error": "clean rerun changed discrete output of probe 2; reference unstable"
+ },
+ "schema": "singularity.readable-evidence-shards/1",
+ "serialization": {
+  "ensure_ascii": true,
+  "indent": 1,
+  "sort_keys": true,
+  "trailing_newline": true
+ },
+ "shards": [
+  {
+   "bytes": 58302,
+   "file": "00000.json",
+   "path": [
+    "calibration",
+    0
+   ],
+   "sha256": "255f2b3dcf2ef0f38ccd11f1b8e53a119c5bcf77830c60c56d4852cb75c52e6f"
+  },
+  {
+   "bytes": 58229,
+   "file": "00001.json",
+   "path": [
+    "calibration",
+    1
+   ],
+   "sha256": "5949c6f7ccc2e72896551cbfcb5fe9e3344d16583c510d870f98b5405a80d523"
+  },
+  {
+   "bytes": 58222,
+   "file": "00002.json",
+   "path": [
+    "reference"
+   ],
+   "sha256": "3c9a8357de20faa5b60de5e1a17c44568ed0c16272540fcb58a4e54b05f8e047"
+  }
+ ],
+ "target_bytes": 180538,
+ "target_relative_to_results": "deployment_audit/smollm2-360m/dynamic_int8/calibration_failure.json",
+ "target_sha256": "f4800c3b5572fcfe3c740888614e7afaa27b7f6762fb4cb6e479c91676f0f90a"
+}

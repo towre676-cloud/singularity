@@ -1,0 +1,346 @@
+/bin/bash: line 1: /usr/bin/time: No such file or directory
+`torch_dtype` is deprecated! Use `dtype` instead!
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "reference", "seconds": 12.057695303999935}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "construction/service_mask_shift_right", "seconds": 50.849223281999}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "construction/service_position_ids_zero", "seconds": 58.519910044000426}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "construction/service_truncate48", "seconds": 66.2183830310023}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "construction/service_unicode_nfkc", "seconds": 72.38900104899949}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "construction/service_logit_scale_1.3", "seconds": 80.17738447699958}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "construction/service_cache_prefix_dropped_half", "seconds": 86.71619397000177}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_dropped_mask", "seconds": 95.68117669699859}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_crlf", "seconds": 102.102108279003}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_unicode_nfd", "seconds": 108.99894280599983}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_truncate64", "seconds": 115.58367371900385}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_logit_scale_1.1", "seconds": 121.6418304520048}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_output_vocabulary_rolled", "seconds": 128.4369082129997}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "heldout/service_cache_prefix_dropped_third", "seconds": 135.56580351199955}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "clean/sdpa_batch3_threads2_reverse", "seconds": 144.33003796100093}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "clean/eager_batch3_threads2_reverse", "seconds": 152.1952746550014}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "clean/eager_cache_third_threads2", "seconds": 159.31384896599775}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "clean/eager_batch1_threads2_reverse", "seconds": 171.02228989599826}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "clean/torchscript_batch3_threads2_reverse", "seconds": 179.65284787199926}
+{"model": "HuggingFaceTB/SmolLM2-360M", "target": "float32", "stage": "timing", "seconds": 189.905800266999}
+{
+ "schema": "singularity.deployment-audit-results/1",
+ "model_id": "HuggingFaceTB/SmolLM2-360M",
+ "revision": "f8027fd0eaeea54caa13c31d31b9fdc459c38b49",
+ "target": "float32",
+ "protocol_sha256": "ca9df4971e0ee79f83318f7239eb3dd597286a4b0519bdd2361d3d6c6c43d0e1",
+ "artifact": {
+  "kind": "float32",
+  "graph_export": true,
+  "graph_manifest": {
+   "schema": "singularity.causal-torchscript/1",
+   "graph_export": true,
+   "format": "torch.jit.trace executable graph with parameters; no KV cache",
+   "model_class": "LlamaForCausalLM",
+   "model_type": "llama",
+   "torch_version": "2.8.0+cpu",
+   "transformers_version": "4.57.1",
+   "dtype": "torch.float32",
+   "device": "cpu",
+   "attention": "explicit additive causal and key-padding mask",
+   "missing_attention_mask": "all token positions are visible subject to causality",
+   "max_context": 96,
+   "max_batch_size": 3,
+   "vocabulary_size": 49152,
+   "max_position_id": 95,
+   "inputs": "three CPU int64 rank-two tensors of equal shape: token ids, binary mask, position ids",
+   "trace_shape": [
+    2,
+    8
+   ],
+   "use_cache": false,
+   "artifact_bytes": 1448206011,
+   "artifact_sha256": "46c2fb940f29d3e4d36caf907c7aa0a55459c47f14e5010c20701bf36b272764"
+  },
+  "source_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+  "expected_target_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+  "reloaded_state_sha256": "fd58acf1d6ffe7807a514b3c8b3ee959ea88404482c3f689679af3e0330a5905",
+  "state_reload_identical": true,
+  "float_parameter_count": 361821120,
+  "quantized_linear_modules": [],
+  "quantized_linear_count": 0,
+  "artifacts": {
+   "config.json": {
+    "bytes": 721,
+    "sha256": "986b530f95546409d3c6461d17f5339460a08e4d8d8ee454ee60b4a2536a77c5"
+   },
+   "generation_config.json": {
+    "bytes": 111,
+    "sha256": "6e3ede8c97ef97dd195ee04aa45ff0efd82d0c99c4d737f3a6bcd1914b62e4fd"
+   },
+   "model.safetensors": {
+    "bytes": 1447317080,
+    "sha256": "dd1230cc6b7684875ae6502349b65b60d4d733dd6c0de20b1ca6badb79643bef"
+   },
+   "causal_graph.pt": {
+    "bytes": 1448206011,
+    "sha256": "46c2fb940f29d3e4d36caf907c7aa0a55459c47f14e5010c20701bf36b272764"
+   }
+  },
+  "artifact_manifest_sha256": "81839812dfc86c8953eebd2e16eabeee5c0c695b070581388fba813eb4d24d5b",
+  "weights_only_load": false,
+  "load_seconds": 1.5626341059978586,
+  "serialization_conversion_reload_seconds": 10.168899637996219
+ },
+ "execution_receipts": [
+  {
+   "attention_backend": "eager",
+   "batch_size": 1,
+   "threads": 4,
+   "sdpa_calls": 0,
+   "quantized_linear_calls": {},
+   "graph_calls": 0,
+   "change": {},
+   "cache": []
+  },
+  {
+   "attention_backend": "sdpa",
+   "batch_size": 2,
+   "threads": 4,
+   "sdpa_calls": 384,
+   "quantized_linear_calls": {},
+   "graph_calls": 0,
+   "change": {},
+   "cache": []
+  },
+  {
+   "attention_backend": "eager",
+   "batch_size": 1,
+   "threads": 1,
+   "sdpa_calls": 0,
+   "quantized_linear_calls": {},
+   "graph_calls": 0,
+   "change": {},
+   "cache": []
+  },
+  {
+   "attention_backend": "eager",
+   "batch_size": 1,
+   "threads": 4,
+   "sdpa_calls": 0,
+   "quantized_linear_calls": {},
+   "graph_calls": 0,
+   "change": {
+    "cache_split": 0.5
+   },
+   "cache": [
+    {
+     "prefix_tokens": 5,
+     "suffix_tokens": 6,
+     "cache_sequence_length": 5,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 7,
+     "suffix_tokens": 7,
+     "cache_sequence_length": 7,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 7,
+     "suffix_tokens": 7,
+     "cache_sequence_length": 7,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 9,
+     "suffix_tokens": 9,
+     "cache_sequence_length": 9,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 11,
+     "suffix_tokens": 11,
+     "cache_sequence_length": 11,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 17,
+     "suffix_tokens": 17,
+     "cache_sequence_length": 17,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 24,
+     "suffix_tokens": 24,
+     "cache_sequence_length": 24,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 24,
+     "suffix_tokens": 24,
+     "cache_sequence_length": 24,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 32,
+     "cache_sequence_length": 32,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 32,
+     "cache_sequence_length": 32,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 40,
+     "suffix_tokens": 40,
+     "cache_sequence_length": 40,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    },
+    {
+     "prefix_tokens": 48,
+     "suffix_tokens": 48,
+     "cache_sequence_length": 48,
+     "cache_passed_to_suffix": true
+    }
+   ]
+  },
+  {
+   "attention_backend": "eager",
+   "batch_size": 1,
+   "threads": 4,
+   "sdpa_calls": 0,
+   "quantized_linear_calls": {},
+   "graph_calls": 0,
+   "change": {
+    "cache_split": 0.3333333333333333,
+    "drop_cache": true
+   },
+   "cache": [
+    {
+     "prefix_tokens": 3,
+     "suffix_tokens": 8,
+     "cache_sequence_length": 3,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 4,
+     "suffix_tokens": 10,
+     "cache_sequence_length": 4,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 4,
+     "suffix_tokens": 10,
+     "cache_sequence_length": 4,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 6,
+     "suffix_tokens": 12,
+     "cache_sequence_length": 6,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 7,
+     "suffix_tokens": 15,
+     "cache_sequence_length": 7,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 11,
+     "suffix_tokens": 23,
+     "cache_sequence_length": 11,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 16,
+     "suffix_tokens": 32,
+     "cache_sequence_length": 16,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 16,
+     "suffix_tokens": 32,
+     "cache_sequence_length": 16,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 21,
+     "suffix_tokens": 43,
+     "cache_sequence_length": 21,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 21,
+     "suffix_tokens": 43,
+     "cache_sequence_length": 21,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 26,
+     "suffix_tokens": 54,
+     "cache_sequence_length": 26,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 64,
+     "cache_sequence_length": 32,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 64,
+     "cache_sequence_length": 32,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 64,
+     "cache_sequence_length": 32,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 64,
+     "cache_sequence_length": 32,
+     "cache_passed_to_suffix": false
+    },
+    {
+     "prefix_tokens": 32,
+     "suffix_tokens": 64,
+     "cache_s
+{"launcher_resources": {"wall_seconds": 236.13112065000314, "peak_rss_kib": 3992272}}
