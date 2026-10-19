@@ -37,8 +37,28 @@
           "acceptance": [
             "Validated radii matrix, masks, decoder and ambiguity witnesses match independent interval checks."
           ],
-          "status": "proposed",
-          "depends_on": []
+          "status": "complete",
+          "depends_on": [],
+          "evidence": {
+            "summary": "Strict heterogeneous box separation (touching endpoints and zero radii included), masks, decoder and ambiguity witnesses; proved and matched to independent endpoint checks on 250 seeded pools.",
+            "artifacts": [
+              "src/singularity/candidate_boxes.py",
+              "src/singularity/candidate_box_oracles.py",
+              "tests/test_candidate_boxes.py",
+              "docs/research/CANDIDATE_BOXES.md",
+              "scripts/candidate_box_thermal.py",
+              "results/candidate_box_thermal.json"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_candidate_boxes",
+                "exit_code": 0,
+                "scope": "16 tests: geometry, decoder, witnesses, solver versus three independent oracles on 300 seeded pools"
+              }
+            ],
+            "commit": "a84a27f",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX01-B",
@@ -46,10 +66,30 @@
           "acceptance": [
             "Bounded exact solver matches independent subset and cover-state optimum on tiny pools."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX01-A"
-          ]
+          ],
+          "evidence": {
+            "summary": "Exact budgeted branch-and-bound for the heterogeneous pair-cover panel; agrees with exhaustive, cost-bounded and cover-state Dijkstra oracles on 300 tiny pools; exhaustion returns inconclusive with bounds.",
+            "artifacts": [
+              "src/singularity/candidate_boxes.py",
+              "src/singularity/candidate_box_oracles.py",
+              "tests/test_candidate_boxes.py",
+              "docs/research/CANDIDATE_BOXES.md",
+              "scripts/candidate_box_thermal.py",
+              "results/candidate_box_thermal.json"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_candidate_boxes",
+                "exit_code": 0,
+                "scope": "16 tests: geometry, decoder, witnesses, solver versus three independent oracles on 300 seeded pools"
+              }
+            ],
+            "commit": "a84a27f",
+            "math_status": "proved"
+          }
         },
         {
           "id": "NX01-C",
@@ -57,13 +97,38 @@
           "acceptance": [
             "Unchanged source-derived pool has a retained, independently checked heterogeneous optimum or explicit incomplete status."
           ],
-          "status": "proposed",
+          "status": "complete",
           "depends_on": [
             "NX01-B"
-          ]
+          ],
+          "evidence": {
+            "summary": "Unchanged source thermal pool: heterogeneous optimum protocol 78 at cost 20 equals the common-envelope incumbent with identical masks; declared 4x4 sub-pool shows envelope-infeasible but heterogeneous cost 19.",
+            "artifacts": [
+              "src/singularity/candidate_boxes.py",
+              "src/singularity/candidate_box_oracles.py",
+              "tests/test_candidate_boxes.py",
+              "docs/research/CANDIDATE_BOXES.md",
+              "scripts/candidate_box_thermal.py",
+              "results/candidate_box_thermal.json"
+            ],
+            "checks": [
+              {
+                "command": "PYTHONPATH=src python -m unittest tests.test_candidate_boxes",
+                "exit_code": 0,
+                "scope": "16 tests: geometry, decoder, witnesses, solver versus three independent oracles on 300 seeded pools"
+              },
+              {
+                "command": "PYTHONPATH=src python scripts/candidate_box_thermal.py --check",
+                "exit_code": 0,
+                "scope": "112-protocol thermal pool: readings, radii, incumbent, optimum, Dijkstra and cost-bounded exhaustive oracle"
+              }
+            ],
+            "commit": "a84a27f",
+            "math_status": "exact_finite"
+          }
         }
       ],
-      "status": "proposed",
+      "status": "complete",
       "packet": "packets/NX01.md",
       "execution_rank": 1,
       "supporting_tracks": []
