@@ -6,7 +6,15 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 ![The cube and Möbius ladder agree through volume three, then separate at volume four by an exact polynomial.](docs/assets/singularity-observation.svg)
 
-[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**Audit your model**](applications/training_lab/AUDIT_TOOLKIT.md) · [**Use the confirmed AI tools**](applications/training_lab/CONFIRMED_ADVANTAGES.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+[**Read the monograph**](output/pdf/monograph.pdf) · [**Explore the discoveries**](docs/papers/locality.md) · [**See the pretrained results**](applications/training_lab/PRETRAINED_RESULTS.md) · [**Audit your model**](applications/training_lab/AUDIT_TOOLKIT.md) · [**See the applied experiment**](applications/thermal_diagnostics/README.md)
+
+## Real pretrained models. Exact checks. Evidence you can replay.
+
+**New in 0.9.0: tested from GPT-2 to SmolLM2 at 1.7 billion parameters.** Exact audit selection uses **13.8–19.7% fewer input tokens than basic greedy** under the same two-witness requirement. A stronger post-hoc comparison optimally prunes every greedy output: both SmolLM2 models still give a **10.28% exact-selection saving**, while GPT-2 ties that stronger baseline. Separate exhaustive scans confirm the optima. On the 1.7B model, a resident package check takes **1.90 seconds instead of 12.00 seconds** for the full probe pool—a measured **6.32× speedup**. Every construction distinction included in its guarantee survives any one missing probe result; clean resident and fresh-process checks pass.
+
+![Actual pretrained audit costs and prediction outcomes across GPT-2 and two SmolLM2 sizes.](docs/assets/pretrained-confirmation.svg)
+
+**The prediction advantage is model-specific.** A causal neural/count blend reduces GPT-2's average next-token log loss by **10.13%**, improving every one of 24 fixed documents. A separate post-hoc check giving the neural model the entire available document prefix retains **10.05%**. The stronger SmolLM2 models favor the neural model alone on this workload. All six arms, individual losses, tokenizer identities, fault coverage gaps and execution receipts are retained. An optional conservative prior gives a separate mathematical ceiling on adaptation cost: at most **0.0513 extra nats per document** over the neural model in exact arithmetic. This refinement is explicitly a post-hoc analysis, separate from the frozen confirmation. Read the [**complete pretrained study and reproduction commands**](applications/training_lab/PRETRAINED_RESULTS.md).
 
 ## Audit your own model. Survive missing results. Blend faster.
 
@@ -14,7 +22,7 @@ Singularity turns that question into exact mathematics. It counts the configurat
 
 **Exact robust coverage.** Every declared fault must be separated by two probes, so one missing result cannot hide it. Across seven realistic silent faults (padding mask, position offsets, truncation, Unicode handling, temperature and localized quantization), the exact panel costs **195 of 961 pool tokens**; greedy selection costs 224. On a checkpoint excluded from selection, the frozen panel separates every construction fault twice and detects all five held-out faults, including an excluded CRLF family, with **no false alarms** in twelve clean controls. A conventional panel of typical sentences misses half of these faults. A resident check takes **4.7 ms**.
 
-**Same predictions, 9.2× faster blending.** The causal Bayesian blend is now vectorized. It reproduces the 0.7.0 loop to 10⁻¹⁰ nats, gives bit-identical results for any chunk size, saves and resumes exactly, and keeps its log(21) bound. A prospectively frozen confirmation on new prose, legal text and Python source shows online blending beating the neural model by **7.5–19.7%** in every document. It also shows something more useful: a simple adaptive in-document count model beats all of these neural arms on such out-of-domain text, and blending with it is best everywhere. Read the [**0.8.0 audit toolkit guide**](applications/training_lab/AUDIT_TOOLKIT.md).
+**Same predictions, 9.2× faster blending.** The causal Bayesian blend is now vectorized. It reproduces the 0.7.0 loop to 10⁻¹⁰ nats, gives bit-identical results for any chunk size, saves and resumes exactly, and keeps its log(21) bound. A prospectively frozen confirmation on new prose, legal text and Python source shows online blending beating the small byte neural models on every document–seed pair, with **7.5–19.7% domain-averaged loss reductions**. It also shows something more useful: a simple adaptive in-document count model beats all of these neural arms on such out-of-domain text, and blending with it is best everywhere. Read the [**0.8.0 audit toolkit guide**](applications/training_lab/AUDIT_TOOLKIT.md).
 
 ## Better predictions. Smaller checks. Measured results.
 

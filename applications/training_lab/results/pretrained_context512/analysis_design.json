@@ -1,0 +1,8 @@
+{
+  "analysis_status": "POSTHOC context sensitivity; same 24 previously evaluated documents; not independent confirmation",
+  "motivation": "Check whether the GPT-2 gain depends on restricting neural context to256 while counts retain all previous document tokens.",
+  "configuration": "All512next-token targets scored with512input-context: every neural prediction can use the entire available document prefix. Same model, tokenizer, countorder4, six arms,21weightgrid; no settings fitted.",
+  "declared_before_this_configuration_forward_pass": true,
+  "primary_source_results": "../pretrained_prediction/models/gpt2/results.json",
+  "declared_at_utc": "2026-10-19T14:55:28.120312+00:00"
+}

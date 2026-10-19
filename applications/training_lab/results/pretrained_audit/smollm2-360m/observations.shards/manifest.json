@@ -1,0 +1,298 @@
+{
+ "base": {
+  "calibration_maxima": [
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.20005307808511308,
+    "top_logprob": 0.10985565468814151
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   },
+   {
+    "entropy": 0.0,
+    "top_logprob": 0.0
+   }
+  ],
+  "tolerances": [
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 0.8002223123404523,
+    "top_logprob": 0.43943261875256606
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   },
+   {
+    "entropy": 1e-05,
+    "top_logprob": 1e-05
+   }
+  ]
+ },
+ "schema": "singularity.readable-evidence-shards/1",
+ "serialization": {
+  "ensure_ascii": true,
+  "indent": 1,
+  "sort_keys": true,
+  "trailing_newline": true
+ },
+ "shards": [
+  {
+   "bytes": 50942,
+   "file": "reference.json",
+   "path": [
+    "reference"
+   ],
+   "sha256": "bf01b702ad4d0ca386f1b5de132287fbd504c5d249bc1e2ed354b2230aba45de"
+  },
+  {
+   "bytes": 50949,
+   "file": "calibration/000.json",
+   "path": [
+    "calibration",
+    0
+   ],
+   "sha256": "b8157d4d1f4e8c5ab05e8e6a7d4d72b6b3d72213d8b73a123041e642d3cefe78"
+  },
+  {
+   "bytes": 50855,
+   "file": "calibration/001.json",
+   "path": [
+    "calibration",
+    1
+   ],
+   "sha256": "a25e386f96eacf482ce3cca4e8507a8b6ce71a08811335569cdd8543415e8fbc"
+  },
+  {
+   "bytes": 50876,
+   "file": "construction/padding_mask_dropped.json",
+   "path": [
+    "construction",
+    "padding_mask_dropped"
+   ],
+   "sha256": "b099a31ffb0461cf540b5d653a361ea53960562039d7a4774a6b83fb8e2bdb2e"
+  },
+  {
+   "bytes": 49886,
+   "file": "construction/position_ids_all_zero.json",
+   "path": [
+    "construction",
+    "position_ids_all_zero"
+   ],
+   "sha256": "ec4cdd298d6e17d3e10536d0cf2e1c2bcde0fb11794cdc3dd2add13474102b20"
+  },
+  {
+   "bytes": 57726,
+   "file": "construction/temperature_1.3.json",
+   "path": [
+    "construction",
+    "temperature_1.3"
+   ],
+   "sha256": "623c4530aa566627ed85883c9c72aff5cd3b7e0e468253157cd8ff296fc473b8"
+  },
+  {
+   "bytes": 33704,
+   "file": "construction/truncate_48.json",
+   "path": [
+    "construction",
+    "truncate_48"
+   ],
+   "sha256": "bb1cd56171eae71900255d25f7a371df55a50967e5220779b9a7c09519dc3118"
+  },
+  {
+   "bytes": 51128,
+   "file": "construction/unicode_nfkc.json",
+   "path": [
+    "construction",
+    "unicode_nfkc"
+   ],
+   "sha256": "3cab28960250a7f210de17b2a23209f057d10915ae947a169e34f14644d4a2cc"
+  },
+  {
+   "bytes": 51060,
+   "file": "heldout/crlf_newlines.json",
+   "path": [
+    "heldout",
+    "crlf_newlines"
+   ],
+   "sha256": "0c02eb4c3b216ae9279022052272f273d0d3ed5bc145cb00acec8cfbe8bd8a30"
+  },
+  {
+   "bytes": 51002,
+   "file": "heldout/left_pad_absolute_positions.json",
+   "path": [
+    "heldout",
+    "left_pad_absolute_positions"
+   ],
+   "sha256": "833b84f3f4742128ab9728424e1d1093ab64b78a387b1df6f9ebe1f75cfed332"
+  },
+  {
+   "bytes": 58089,
+   "file": "heldout/temperature_1.1.json",
+   "path": [
+    "heldout",
+    "temperature_1.1"
+   ],
+   "sha256": "6bb2b337af9d79cb3b0c5aa298b5a9f1b6b28f54d31e092658aafc494001db32"
+  },
+  {
+   "bytes": 39345,
+   "file": "heldout/truncate_64.json",
+   "path": [
+    "heldout",
+    "truncate_64"
+   ],
+   "sha256": "a06523ffe190466ca9281e195bf82ab79e6b4eca58d6f0517bd4bddd30d8ae76"
+  },
+  {
+   "bytes": 52968,
+   "file": "heldout/unicode_nfd.json",
+   "path": [
+    "heldout",
+    "unicode_nfd"
+   ],
+   "sha256": "e8731dbdb0cb15549936136158219cc4d8c24c7d2c2e64a418947ae1bb958b1f"
+  },
+  {
+   "bytes": 50964,
+   "file": "clean_audit/reversed_order.json",
+   "path": [
+    "clean_audit",
+    "reversed_order"
+   ],
+   "sha256": "a1c03911373c8562e38f8364bd8bf908843c62b5e16cf3764a75691cce900789"
+  },
+  {
+   "bytes": 50959,
+   "file": "clean_audit/threads_2.json",
+   "path": [
+    "clean_audit",
+    "threads_2"
+   ],
+   "sha256": "3b313f08f922a072cc79250f1f8e0086cf5f053b3b7ecd7d386eaaf0fc4db931"
+  }
+ ],
+ "target_bytes": 790789,
+ "target_relative_to_results": "pretrained_audit/smollm2-360m/observations.json",
+ "target_sha256": "c250134a8510faf4aa46d715e827904b659feba70b45024617c8a78b62f8d11e"
+}

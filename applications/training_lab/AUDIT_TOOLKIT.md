@@ -1,5 +1,7 @@
 # Singularity 0.8.0: portable model audits, robust panels and a faster blend
 
+**Pretrained extension in 0.9.0:** the toolkit now has retained real-model audits on GPT-2 124M, SmolLM2 362M and SmolLM2 1.71B, plus a tokenizer-native prediction comparison. See [the pretrained result guide](PRETRAINED_RESULTS.md). The original 0.8.0 byte-model study below remains a separate experiment.
+
 Version 0.8.0 turns the 0.7.0 results into tools that can be applied to other models. It adds four pieces of work, each with frozen protocols and retained evidence:
 
 1. **Standalone audit packages** (`singularity.model_audit`). You build a package from a resident model. It contains only the selected probe inputs, the expected observations, tolerances frozen from clean reruns, the declared execution contract and robust-coverage evidence. A later deployment is checked against that file alone, with no dataset download and no second reference forward pass.
@@ -113,7 +115,7 @@ All values are NLL in nats per byte, averaged over three seeds where the arm use
 
 ## Limits
 
-- The fault catalogue is simulated in software on 84,544-parameter byte models. The Hugging Face adapter is tested on a locally constructed GPT-2-architecture model and tokenizer, because this build environment cannot download pretrained models. No pretrained Hugging Face model was audited.
+- The original 0.8.0 fault catalogue is simulated in software on 84,544-parameter byte models; its Hugging Face tests use a locally constructed GPT-2 architecture. The separate [0.9.0 pretrained study](PRETRAINED_RESULTS.md) downloads and audits real pretrained checkpoints up to 1.71B parameters, with its own frozen faults, costs and limitations.
 - Robust coverage is exact for the construction table. Detection on seed 1002, held-out faults and the zero false-alarm count are measurements on declared runs, not bounds. The excluded CRLF family and the 56-token truncation each had a single panel separator, so one missing result could hide them.
 - A passing check means no declared observation moved beyond its frozen tolerance. It does not establish equivalence, quality or safety.
 - The cross-domain documents come from one build environment, and the comparison is descriptive. The log(21) bound is a per-document guarantee against the declared grid only.

@@ -1,0 +1,1613 @@
+{
+ "base": {
+  "all_frozen_models_included": [
+   "gpt2",
+   "smollm2-1700m",
+   "smollm2-360m"
+  ],
+  "analysis_status": "POSTHOC; not frozen primary confirmation",
+  "bound": "L_online <= min_k(L_k - log(pi_k)) <= L_neural - log(.95)",
+  "created_at_utc": "2026-10-19T14:47:19.696972+00:00",
+  "initial_prior": [
+   0.95,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025,
+   0.0025
+  ],
+  "interpretation": "This demonstrates the declared prior's finite-sequence protection and measures its retained-data behavior. Predictive improvements remain posthoc observations requiring a new prospective benchmark.",
+  "metrics": "realized target NLL only; retained target probabilities cannot reconstruct full-vocabulary accuracy",
+  "model_forward_calls": 0,
+  "models": {
+   "gpt2": {
+    "domains": {
+     "all_domains": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 6.497968205945888
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 2.7867933565147447
+       },
+       "neural": {
+        "nll_nats_per_token": 3.100907426326129
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 2.7925491028221363
+       }
+      },
+      "documents": 24,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.31411406981138357,
+        "documents": 24,
+        "documents_first_better": 24,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.44502578192592646,
+         -0.22485174537609107
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": 0.00575574630739147,
+        "documents": 24,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005755746307390934,
+         0.005755746307392007
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.3083583235039921,
+        "documents": 24,
+        "documents_first_better": 24,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.4392700356185349,
+         -0.21909599906869978
+        ]
+       }
+      },
+      "targets": 12288,
+      "total_neural_excess_loss_ceiling_nats": 1.2310390653012138
+     },
+     "legal_prose": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 6.915378108284302
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 2.5860371003750133
+       },
+       "neural": {
+        "nll_nats_per_token": 2.9259718487161024
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 2.5917928466824054
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.3399347483410889,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.7229551798910514,
+         -0.11862493355771664
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": 0.00575574630739184,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.0057557463073910076,
+         0.005755746307392562
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.33417900203369705,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.7171994335836599,
+         -0.11286918725032473
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     },
+     "reference_prose": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 6.775754698502033
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 3.140888729138816
+       },
+       "neural": {
+        "nll_nats_per_token": 3.4054806138668514
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 3.146644475446207
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.26459188472803535,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.3175853990679371,
+         -0.21489772463080695
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": 0.005755746307391174,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005755746307390286,
+         0.005755746307392173
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.2588361384206442,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.311829652760546,
+         -0.20914197832341677
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     },
+     "source_code": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 5.802771811051328
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 2.633454240030406
+       },
+       "neural": {
+        "nll_nats_per_token": 2.9712698163954325
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 2.6392099863377974
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.33781557636502646,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.4068838994641062,
+         -0.2724702961367669
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": 0.005755746307391396,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005755746307390397,
+         0.005755746307392395
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": -0.33205983005763506,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.40112815315671513,
+         -0.2667145498293749
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     }
+    },
+    "dtype": "float32",
+    "model_id": "openai-community/gpt2",
+    "parameters": 124439808,
+    "primary_results_sha256": "01a25c567479f1999c735b15dc4d284eaecb8450d2991ebe060ddf5ce0a38c8a",
+    "primary_trace_files_sha256": {
+     "models/gpt2/documents/000.json.gz": "d814131cdca61a7bfb7fcf6fb470786ec54d853def6dd0d09176f41a6a312754",
+     "models/gpt2/documents/001.json.gz": "5761a50d470a1ef8ca7471227cb668a9bbf4418fc43c4066083b67aed252029c",
+     "models/gpt2/documents/002.json.gz": "1a69368311dbd970a420538f868789b5ba6e3eee501e88e4176c6637fe9e4503",
+     "models/gpt2/documents/003.json.gz": "9a47d8c593f679523fc2a3a916e0467f2407b16048f989c9d18d47a4af90f46b",
+     "models/gpt2/documents/004.json.gz": "ead242c34800217589c428320472e9c3074f1f941b65073dd56a5f43d58479c5",
+     "models/gpt2/documents/005.json.gz": "d40e72a046d30ce002d4daa5f4657bb441e8995af53cb3bc9c39c79732eb0c4d",
+     "models/gpt2/documents/006.json.gz": "2f6e01c12de2f6b639346fe662a792ef55535c12d98a77ad3201bef1ace9537d",
+     "models/gpt2/documents/007.json.gz": "cd27499b9e50f3f1cf05b9d7b56155d837bb34cc026a0bd0ee3adc6f1ebeede7",
+     "models/gpt2/documents/008.json.gz": "735f1d3adc34be0932684176eb2d852d2a4e2aa4db2733cc1d173c2977048710",
+     "models/gpt2/documents/009.json.gz": "bfaa85c7c059cc52ff436a1b26d99116a9fcb0d80d2ba76aaf1fa30d19615da9",
+     "models/gpt2/documents/010.json.gz": "11c31879e301a36ab06b387c1f68cc31d090c262302e61dc4ac6a81b45ae133f",
+     "models/gpt2/documents/011.json.gz": "17a5fa4e4bff7fe1f297c4169bfc63621ffde70f3c773d10c651478619fc1944",
+     "models/gpt2/documents/012.json.gz": "b607f34fb6b4d9c941b620d63b65e6444e386c3d75215c79bb28ec596743706e",
+     "models/gpt2/documents/013.json.gz": "0d7338591d9c0a8b080f61ab2002fd94a813e2878b5928e2ae7b2f2b7f5f547c",
+     "models/gpt2/documents/014.json.gz": "054149bdb31fd6cda371df9cff1cf0cf7a6390b5f4e3cebe4a3eb7bf675b4cf4",
+     "models/gpt2/documents/015.json.gz": "4135da0f2f824d277753d62889fde93d850a5e256862f017f1fd970dd1c0a3bf",
+     "models/gpt2/documents/016.json.gz": "7c748b46f12da2faab9209143b51758ba31c6bce32d9fcba3a2ea5730357e0d8",
+     "models/gpt2/documents/017.json.gz": "4ffc58b9e29e884391b93fdec38a938a24fe415a699dc03d1ce86328f3a4a8ea",
+     "models/gpt2/documents/018.json.gz": "d767d1539393eb9418b308a880ea8e032c4d8e3a9762b648525b8e5f0980a0d7",
+     "models/gpt2/documents/019.json.gz": "32adbf452542234e6cfa98929d07a20e24a7e527506d0c77cced0a4c7d762c17",
+     "models/gpt2/documents/020.json.gz": "1ebc537cf059e744fe7bcb20366818c1dd4e2399745318e732efee3a0662ec38",
+     "models/gpt2/documents/021.json.gz": "fe09a8d4a81fb027f06c66226aeb3464d5a7d16dd72018fa3e48aaa05b2929d1",
+     "models/gpt2/documents/022.json.gz": "8ffe1e31f48e0801f0b8a11387f70059d6b3f9a209ec706d914407779212c269",
+     "models/gpt2/documents/023.json.gz": "184d9bf8570efb74278d435552fafc50062ccf1621f66486ad75881178db594c"
+    },
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   },
+   "smollm2-1700m": {
+    "domains": {
+     "all_domains": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 7.062990784893809
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 1.2843489513611133
+       },
+       "neural": {
+        "nll_nats_per_token": 1.2784414588474222
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 1.2785415101827027
+       }
+      },
+      "documents": 24,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.005907492513691066,
+        "documents": 24,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005829820159745125,
+         0.005946331434069372
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005807441178410765,
+        "documents": 24,
+        "documents_first_better": 24,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.005846149222290062,
+         -0.005730030563023706
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.00010005133528030036,
+        "documents": 24,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         9.97895967214194e-05,
+         0.00010018221177930884
+        ]
+       }
+      },
+      "targets": 12288,
+      "total_neural_excess_loss_ceiling_nats": 1.2310390653012138
+     },
+     "legal_prose": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 7.436743977763258
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 0.8147911013337098
+       },
+       "neural": {
+        "nll_nats_per_token": 0.8089612738185902
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 0.8090610634346682
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.0058298275151195365,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005596817169572244,
+         0.005946332879445
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005730037899041588,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.005846150663862056,
+         -0.0054978127514961495
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 9.97896160779485e-05,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         9.900441807609434e-05,
+         0.0001001822155829446
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     },
+     "reference_prose": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 7.104129264603567
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 1.6700025725465133
+       },
+       "neural": {
+        "nll_nats_per_token": 1.6640562513196828
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 1.6641564335046004
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.005946321226830503,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005946304066055813,
+         0.005946332316890185
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005846139041912779,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.005846150102787774,
+         -0.005846121926298797
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.00010018218491772424,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.00010018213975701573,
+         0.00010018221410240946
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     },
+     "source_code": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 6.6480991123146005
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 1.368253180203117
+       },
+       "neural": {
+        "nll_nats_per_token": 1.3623068514039938
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 1.362407033608839
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.005946328799123157,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005946322629481526,
+         0.005946332807411442
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005846146594277929,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.00584615059201804,
+         -0.005846140440872283
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.00010018220484522833,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.00010018218860924355,
+         0.00010018221539340177
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     }
+    },
+    "dtype": "bfloat16",
+    "model_id": "HuggingFaceTB/SmolLM2-1.7B",
+    "parameters": 1711376384,
+    "primary_results_sha256": "3196644577eb79df3bfe5df74898a05fb8c3cbdcda02811cc21d067059e0e55c",
+    "primary_trace_files_sha256": {
+     "models/smollm2-1700m/documents/000.json.gz": "9ea5aa693b0e761755d5ea8ac2431446efad228b5e63a666dacb4a53e40772aa",
+     "models/smollm2-1700m/documents/001.json.gz": "b539319981c76bed52c084d4108a65e0c7d7269c1c350ddf19ffa275bb58e37e",
+     "models/smollm2-1700m/documents/002.json.gz": "c31722f601c47b2f56a6ab27b7e87a01be5cbb20f816ae0731916f4a9066e9ce",
+     "models/smollm2-1700m/documents/003.json.gz": "eb10cfbf88f705967e7cf658119457277640dd86b549bb7e51e062bd27846fea",
+     "models/smollm2-1700m/documents/004.json.gz": "b2ce663b69b75798d6efbd1cdb18598299ca46b04dba4b91abca27af5113a197",
+     "models/smollm2-1700m/documents/005.json.gz": "901360e2570714b8245416f720d5f976e5c75fc21843cbbc2ec3af16aa1d463e",
+     "models/smollm2-1700m/documents/006.json.gz": "35aa3a5616a4fbcafcdbfef49c9fa72ad8fcd5e96716f4c903eb765f04f34126",
+     "models/smollm2-1700m/documents/007.json.gz": "ffc5cf7614851a5778308d758f26f5b6d4c021d3d5f365eea764ae9e721ab2a1",
+     "models/smollm2-1700m/documents/008.json.gz": "a1d31f2997bfce1c035011128673a80e5974d82513451dcfc0774c23eb6dea92",
+     "models/smollm2-1700m/documents/009.json.gz": "3f0f599ea1cff7fbcbaa0e651276669eafb3157188674bfcd2df3020e228d27b",
+     "models/smollm2-1700m/documents/010.json.gz": "083b48a0bb5211591d678782fd00ae20bdfa19f17406690483a29a4c87f4304a",
+     "models/smollm2-1700m/documents/011.json.gz": "76a790fac7939430165ae740c10eedb7cdacce5b2f3549c7c013022107afb614",
+     "models/smollm2-1700m/documents/012.json.gz": "219c884d9386395ac92e9bee67f12234c0c5d23bcfe536942d0cc357f35fcf1d",
+     "models/smollm2-1700m/documents/013.json.gz": "8105879200eb13bf0b78b50313b808b71909c84bbc0b4ba0236f69fdcb1d5365",
+     "models/smollm2-1700m/documents/014.json.gz": "bfdeb9c9ee2eb69d83e30a4aed796e7dcf6119feb99a08648fdb589aac1d0c53",
+     "models/smollm2-1700m/documents/015.json.gz": "96118065a0824c4ae5d02a59da5de60e7bb186db40820ffa055fc49785e29fb1",
+     "models/smollm2-1700m/documents/016.json.gz": "2fe5331e1a198457873d242bbea8cec6fe9b3681e74bcb8cd54ea141434515c5",
+     "models/smollm2-1700m/documents/017.json.gz": "bd65a7bd2010b028718500d0c59c09c246fb98b90a5f68f18c4d1cb647fbfc2e",
+     "models/smollm2-1700m/documents/018.json.gz": "e21867fc56be5e3ff58bfb3c378b7afc1f95c1b71bf53b800dcef8c3743b10a7",
+     "models/smollm2-1700m/documents/019.json.gz": "06a6392b2d4dbb3e28427c3b5165413c221eb2cd96a9b2c892c6aced815ad085",
+     "models/smollm2-1700m/documents/020.json.gz": "a0ffd7630d3b202fa5fc30fa720ae1ac2f4d3e1cea586fa71be506d76665fe29",
+     "models/smollm2-1700m/documents/021.json.gz": "59287706b70e03381162abcb97b9c7e5ada336c7fd2c428e44d4799ae9d90848",
+     "models/smollm2-1700m/documents/022.json.gz": "763da56ad55fffe596064d54de4f09810439e5326093b57c0b49f830ac2422c4",
+     "models/smollm2-1700m/documents/023.json.gz": "e220808adb29ec4a619c8550f152fe8e067c41cbe74383724cde6c00a95e1a57"
+    },
+    "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71"
+   },
+   "smollm2-360m": {
+    "domains": {
+     "all_domains": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 7.062990784893809
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 1.8821446954027248
+       },
+       "neural": {
+        "nll_nats_per_token": 1.8766803314071387
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 1.876725023420919
+       }
+      },
+      "documents": 24,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.005464363995585882,
+        "documents": 24,
+        "documents_first_better": 1,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.004500635222812314,
+         0.005946321044931936
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005419671981805614,
+        "documents": 24,
+        "documents_first_better": 23,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.005846138860493161,
+         -0.0045669230621925615
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 4.469201378026755e-05,
+        "documents": 24,
+        "documents_first_better": 1,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -6.628783938024823e-05,
+         0.00010018218443877472
+        ]
+       }
+      },
+      "targets": 12288,
+      "total_neural_excess_loss_ceiling_nats": 1.2310390653012138
+     },
+     "legal_prose": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 7.436743977763258
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 2.0231751978376633
+       },
+       "neural": {
+        "nll_nats_per_token": 2.018674215142005
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 2.0186079282179383
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.004500982695658073,
+        "documents": 8,
+        "documents_first_better": 1,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.0016102836981397028,
+         0.005946332838223266
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.004567269619724951,
+        "documents": 8,
+        "documents_first_better": 7,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.005846150622748898,
+         -0.0020095088979007747
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": -6.62869240668773e-05,
+        "documents": 8,
+        "documents_first_better": 1,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.00039922519976107185,
+         0.00010018221547436479
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     },
+     "reference_prose": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 7.104129264603567
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 1.988677172397223
+       },
+       "neural": {
+        "nll_nats_per_token": 1.9827308716277372
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 1.9828310537588174
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.005946300769485713,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.005946259478885746,
+         0.005946331572662528
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005846118638405479,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.005846149360518582,
+         -0.005846077456468396
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.00010018213108023422,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.00010018202241734997,
+         0.00010018221214394551
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     },
+     "source_code": {
+      "all_documents_within_neural_excess_loss_ceiling": true,
+      "arms": {
+       "adaptive_count": {
+        "nll_nats_per_token": 6.6480991123146005
+       },
+       "equal_prior_blend": {
+        "nll_nats_per_token": 1.6345817159732878
+       },
+       "neural": {
+        "nll_nats_per_token": 1.6286359074516739
+       },
+       "neural_protected_prior_blend": {
+        "nll_nats_per_token": 1.6287360882860014
+       }
+      },
+      "documents": 8,
+      "paired": {
+       "equal_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.00594580852161386,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.0059448010271713056,
+         0.005946327673230949
+        ]
+       },
+       "neural_protected_prior_blend_minus_equal_prior_blend": {
+        "difference_nats_per_token": -0.005845627687286414,
+        "documents": 8,
+        "documents_first_better": 8,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         -0.0058461454713485995,
+         -0.005844622846875702
+        ]
+       },
+       "neural_protected_prior_blend_minus_neural": {
+        "difference_nats_per_token": 0.00010018083432744573,
+        "documents": 8,
+        "documents_first_better": 0,
+        "interpretation": "posthoc descriptive paired document-cluster bootstrap; negative favors first",
+        "percentile_95_interval": [
+         0.00010017818029560352,
+         0.00010018220188234908
+        ]
+       }
+      },
+      "targets": 4096,
+      "total_neural_excess_loss_ceiling_nats": 0.4103463551004046
+     }
+    },
+    "dtype": "bfloat16",
+    "model_id": "HuggingFaceTB/SmolLM2-360M",
+    "parameters": 361821120,
+    "primary_results_sha256": "3aa50d2df4cfda0bdad1a41469e3d480dd9025832f13def167675fc025509416",
+    "primary_trace_files_sha256": {
+     "models/smollm2-360m/documents/000.json.gz": "599eca6aaa24cd5660ebdb5d01fdfe29726db9ec614bfaf22ca19f67a17f4482",
+     "models/smollm2-360m/documents/001.json.gz": "c359db8b0cd1d4a1f296e087c12c1d3fb59fe3e3ec6ba36139b301c429acd118",
+     "models/smollm2-360m/documents/002.json.gz": "c5dd5db47d2e2d46953a94d328ba8774bc273a71480642d482366d77bbfa3ae1",
+     "models/smollm2-360m/documents/003.json.gz": "c929fd341b9c5b761ad27d179503309c47e6c3fdf3ad911ca53e4909d312b624",
+     "models/smollm2-360m/documents/004.json.gz": "caea2116b1a4bb9f8b55d6f8d0771cc0ccf22410b74e9b51e9863957de614572",
+     "models/smollm2-360m/documents/005.json.gz": "3e1b79b0b4dcda7f8baf4614d15a358eb54954a157da71b0b5554c7eb13a8f3d",
+     "models/smollm2-360m/documents/006.json.gz": "f7dccadd8faf7139e2aa5d35376b2b4a720ff0dc446b0c46aa4815fd114cc25f",
+     "models/smollm2-360m/documents/007.json.gz": "44c09640e3360246eab60b3013040e123d16de4d856000c383c298fe72401e06",
+     "models/smollm2-360m/documents/008.json.gz": "396d3e93baf5fe05c92ea2e98697fd978b2fd37d2dbb682e0dc54a157421e037",
+     "models/smollm2-360m/documents/009.json.gz": "25d5c3223e7a2b001bc008c968bd28fdd8a8c3eb20c8611a6847e8d375b95369",
+     "models/smollm2-360m/documents/010.json.gz": "e4019e1301228992b2241933eefd3436d2de2b9241a4724e410876b59ccc8c48",
+     "models/smollm2-360m/documents/011.json.gz": "bf90587c6b1a6457310eecb59a1b90dabfc07aae594c801998373b3ac0425efe",
+     "models/smollm2-360m/documents/012.json.gz": "2e0d1be8d6a77d9f2ccf76f0e571200118d78f6a405df4b3434e7dcec55d7aa5",
+     "models/smollm2-360m/documents/013.json.gz": "5d7b7e97619dfaf4780fe769caec26ee19a5c1b0f8dfa786c70c1e147f9165b6",
+     "models/smollm2-360m/documents/014.json.gz": "802c6f92007b1c41a8fc8ae234673554529765fb4353fc09dd47373c7f084520",
+     "models/smollm2-360m/documents/015.json.gz": "e2c9491eece20efb2907de36892569c9ae8041352739ac5640ce14198c6e5d01",
+     "models/smollm2-360m/documents/016.json.gz": "3c6bac61bdf1138361ccf8ac31a945f73747d343f82e60cae2114a50a97227c6",
+     "models/smollm2-360m/documents/017.json.gz": "8f43c6993bb17a9057ec77ded19689e3f8ce570e11fba6ba1c3c24a4bd41590d",
+     "models/smollm2-360m/documents/018.json.gz": "5a9e4b40dce1a162e959de0ca34232f0f075b9be854eb0ebcb1ccab43becbf0a",
+     "models/smollm2-360m/documents/019.json.gz": "3e122a835a0cc7edd39d8ab1305fcd215f8da522f8826cdd1482579466523be5",
+     "models/smollm2-360m/documents/020.json.gz": "55b8fd45e904fd112f25adb31a7eb576e7b7944c77b07d21c7ed96583f1a4de2",
+     "models/smollm2-360m/documents/021.json.gz": "acbd49a5c10441cee487deeba50e2e7d249c734195379d8c815b496ad365f4b1",
+     "models/smollm2-360m/documents/022.json.gz": "3c9e78c043edc7ae50bae93555f3146d629d8706c40deddbeba1cae57279ffeb",
+     "models/smollm2-360m/documents/023.json.gz": "fbb443df2dfc6f5627ea79e50ae0cb7b2afd2d7813abe84ba897fa222af5c9e9"
+    },
+    "revision": "f8027fd0eaeea54caa13c31d31b9fdc459c38b49"
+   }
+  },
+  "motivation": "After observing the equal-prior blend's negative 360M transfer result, evaluate an analytically baseline-protected prior without changing the original confirmation.",
+  "neural_excess_loss_ceiling_nats_per_document": 0.05129329438755058,
+  "neural_excess_loss_ceiling_nats_per_token_at512_targets": 0.00010018221560068472,
+  "neural_training_updates": 0,
+  "prior_choice": "95% mass on pure neural, remaining 5% uniform over 20 other fixed mixture weights; chosen for -log(.95) comparator ceiling, not fitted to document losses",
+  "protocol_receipt_sha256": "0919dea87dd5f4ea053b5133e79acbd9f86b431cd21645e32804330fadd256d8",
+  "schema": "singularity.posthoc-prior-analysis/1",
+  "selection_policy": "Every completed model and every document in the frozen confirmation; no model, document, mixture weight or prior tuning",
+  "source_sha256": {
+   "scripts/confirm_pretrained_prediction.py": "881a6b6839ebdffc374bcb656158f4dd781c63eddde745d41f429b67ff6c8ce7",
+   "scripts/replay_pretrained_prior.py": "5ba5d10a96e270c4d84778f96af18563c5155aa4c8f32c692418d1c08baf7877",
+   "src/singularity/training/online_blend.py": "d4b595091b5d05c05272c0e5889a0b2aefa3a901814c7534a4eebed955f8a53e",
+   "src/singularity/training/prior_blend.py": "a09eedd3b39fb4fffa9b2c3ce4f15757bb5ea1a0e529f1fd81974d028ed14c0d"
+  },
+  "trigger_model": "smollm2-360m",
+  "trigger_results_sha256": "3aa50d2df4cfda0bdad1a41469e3d480dd9025832f13def167675fc025509416",
+  "uncertainty": "posthoc descriptive paired document-cluster bootstrap, 10000 draws, seed 90211; not a new held-out validation",
+  "weight_grid": [
+   0.0,
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.35,
+   0.4,
+   0.45,
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   1.0
+  ]
+ },
+ "schema": "singularity.readable-evidence-shards/1",
+ "serialization": {
+  "ensure_ascii": true,
+  "indent": 2,
+  "sort_keys": true,
+  "trailing_newline": true
+ },
+ "shards": [
+  {
+   "bytes": 31540,
+   "file": "models/gpt2/documents/000.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    0
+   ],
+   "sha256": "858d58089cec669c65914934c363e12060ce2151458ae3b47e7e6b7f52787dca"
+  },
+  {
+   "bytes": 31531,
+   "file": "models/gpt2/documents/001.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    1
+   ],
+   "sha256": "2aab08003858166d511537d39fed028fde90db2374debd40326841c0f92864d8"
+  },
+  {
+   "bytes": 31580,
+   "file": "models/gpt2/documents/002.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    2
+   ],
+   "sha256": "ae35f4003678e9792ffa7158a6b11f42dc893e9e40f2da4784b8a9b4f9002b8e"
+  },
+  {
+   "bytes": 31532,
+   "file": "models/gpt2/documents/003.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    3
+   ],
+   "sha256": "eff270f3fb02c15f32f76f905d9e849c1c6d2d3441b6e90cb7bbd64ab6dae994"
+  },
+  {
+   "bytes": 31539,
+   "file": "models/gpt2/documents/004.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    4
+   ],
+   "sha256": "19829929728df19957c6a2b520a60dcb414585bfc22b46935caf88429910ce96"
+  },
+  {
+   "bytes": 31542,
+   "file": "models/gpt2/documents/005.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    5
+   ],
+   "sha256": "22b4b7cbae8045c9ed01be85d356a5cb1952897f62f8795de621204e0465f7c4"
+  },
+  {
+   "bytes": 31549,
+   "file": "models/gpt2/documents/006.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    6
+   ],
+   "sha256": "5f88a9c0e55bd83aeacf3345b6997384cad2b114dd67466c2b04bdc8319de882"
+  },
+  {
+   "bytes": 31535,
+   "file": "models/gpt2/documents/007.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    7
+   ],
+   "sha256": "2690a36982951e4431113e29ef2ccfea6f90a69607c268185dee3a3c4bd2df28"
+  },
+  {
+   "bytes": 31535,
+   "file": "models/gpt2/documents/008.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    8
+   ],
+   "sha256": "67bd7bc2d33fbdb338ecba0f738eea012c4cc7dd202d4b1dd47d07ff1577242a"
+  },
+  {
+   "bytes": 31535,
+   "file": "models/gpt2/documents/009.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    9
+   ],
+   "sha256": "813139740ca1f2ab59be781ab7055f6c29d3c67ea0fdbcb2a206f176e9b325cf"
+  },
+  {
+   "bytes": 31550,
+   "file": "models/gpt2/documents/010.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    10
+   ],
+   "sha256": "372b778e841d3bf3106b663b45bcb600ddebc0a33e37ca43f7ae1eca26945075"
+  },
+  {
+   "bytes": 31560,
+   "file": "models/gpt2/documents/011.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    11
+   ],
+   "sha256": "acd0306c58e78aea66af12ffc670535e083e7d71ec61703ecde746d502a87349"
+  },
+  {
+   "bytes": 31521,
+   "file": "models/gpt2/documents/012.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    12
+   ],
+   "sha256": "a2c521c2733bd8ecdc702d69b1fe49cf9c185eb5443b5456c10553d4939d2895"
+  },
+  {
+   "bytes": 31573,
+   "file": "models/gpt2/documents/013.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    13
+   ],
+   "sha256": "21fa94cd9ad8d072f03aa075c3eb73e1e2c903d2b366b71c0f7e934af49e2782"
+  },
+  {
+   "bytes": 31517,
+   "file": "models/gpt2/documents/014.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    14
+   ],
+   "sha256": "1d02baf1f68e1b0008db87de30ac4da0957ee32997ee3678516025265b4416e9"
+  },
+  {
+   "bytes": 31554,
+   "file": "models/gpt2/documents/015.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    15
+   ],
+   "sha256": "95dacfb4fd0c052c494dba85fe4298eae3cd260dfee638d0a3bd6167bd3b0861"
+  },
+  {
+   "bytes": 31602,
+   "file": "models/gpt2/documents/016.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    16
+   ],
+   "sha256": "a648491f56efe6df463af70eaf42ed5b8a9d324be7e78ecee3a82d4b15152069"
+  },
+  {
+   "bytes": 31537,
+   "file": "models/gpt2/documents/017.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    17
+   ],
+   "sha256": "e430a76fbd47dd9a9001c42856a6085e6f8517a1394bc044b519596b6983c4dc"
+  },
+  {
+   "bytes": 31560,
+   "file": "models/gpt2/documents/018.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    18
+   ],
+   "sha256": "f32d882e46e66c6045053b66b5bad55f46022c9e7c88a0851d4dd990dda5cccb"
+  },
+  {
+   "bytes": 31535,
+   "file": "models/gpt2/documents/019.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    19
+   ],
+   "sha256": "6308099f2013ae8455cd8dee31bd8b662c1366807247d2fed7d600272732260f"
+  },
+  {
+   "bytes": 31557,
+   "file": "models/gpt2/documents/020.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    20
+   ],
+   "sha256": "d4af8e61532b1316e2479bbdf36af3e9dc0af99b732535236b3b15c7cb33a229"
+  },
+  {
+   "bytes": 31635,
+   "file": "models/gpt2/documents/021.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    21
+   ],
+   "sha256": "662c49e8b019615ed6309d75712dde30167fbfdabf818aa8738254d856f09cf4"
+  },
+  {
+   "bytes": 31571,
+   "file": "models/gpt2/documents/022.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    22
+   ],
+   "sha256": "2e03f9b1238501f31b72f963e1a9f228b2292bc3edfdf85c7ae3c38ace0687a0"
+  },
+  {
+   "bytes": 31558,
+   "file": "models/gpt2/documents/023.json",
+   "path": [
+    "models",
+    "gpt2",
+    "documents",
+    23
+   ],
+   "sha256": "90368457ae46adfcb4bc1692cceae32a0507cae329e72747aec212684becee4f"
+  },
+  {
+   "bytes": 32061,
+   "file": "models/smollm2-1700m/documents/000.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    0
+   ],
+   "sha256": "8dc1adc3d9ea292c3e49ac8c9b89dc5d925f65082e217e0436e2eb04d487090a"
+  },
+  {
+   "bytes": 32040,
+   "file": "models/smollm2-1700m/documents/001.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    1
+   ],
+   "sha256": "07a894e9c055d76254b404e99c041d03a4832120b6e31c82d05fc8c21c3addc1"
+  },
+  {
+   "bytes": 32144,
+   "file": "models/smollm2-1700m/documents/002.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    2
+   ],
+   "sha256": "979af175bebc378f4cac335f77da5744d0c6e8eff5407d92536a87c5f9edd8c6"
+  },
+  {
+   "bytes": 32051,
+   "file": "models/smollm2-1700m/documents/003.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    3
+   ],
+   "sha256": "446ec81cf1ee25be87f46849a86e1ae66e859467d9a30274b2507b56cfd667b4"
+  },
+  {
+   "bytes": 32048,
+   "file": "models/smollm2-1700m/documents/004.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    4
+   ],
+   "sha256": "fa2728c1fd0f69445ba05bb3d6624f55f6dca5263395be3649f2f97ac5f4c2f9"
+  },
+  {
+   "bytes": 32047,
+   "file": "models/smollm2-1700m/documents/005.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    5
+   ],
+   "sha256": "fc20388e9836d402e4bd48180072610ab5577438809f5188b100d8d28bb23977"
+  },
+  {
+   "bytes": 32060,
+   "file": "models/smollm2-1700m/documents/006.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    6
+   ],
+   "sha256": "83643d83414fd1263c822243b9722bc80ded39e9dde72377e417f8449d2f5236"
+  },
+  {
+   "bytes": 32049,
+   "file": "models/smollm2-1700m/documents/007.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    7
+   ],
+   "sha256": "164831078acb3bb51b8545e3767fca622d3114766e133db03b66b66f6902e576"
+  },
+  {
+   "bytes": 32156,
+   "file": "models/smollm2-1700m/documents/008.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    8
+   ],
+   "sha256": "ba2e5bf27e20ca06b22d5da3c087d8d247e9b5d4f10fb873526c8da6bb403c6f"
+  },
+  {
+   "bytes": 32118,
+   "file": "models/smollm2-1700m/documents/009.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    9
+   ],
+   "sha256": "d4c3efe0b69adf26686a38e00cb2efd683954cd4b8ff0b90b157f4d058d61ffe"
+  },
+  {
+   "bytes": 32052,
+   "file": "models/smollm2-1700m/documents/010.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    10
+   ],
+   "sha256": "6eba6e1232ae277ee5f8f21db108991d88e0d5ff5a3c75f6e662e89fd20ede10"
+  },
+  {
+   "bytes": 32168,
+   "file": "models/smollm2-1700m/documents/011.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    11
+   ],
+   "sha256": "bcdb74309dd1abbcc6629e3c84e219ccf3cd0bf28d2109b85bf572655a246563"
+  },
+  {
+   "bytes": 32040,
+   "file": "models/smollm2-1700m/documents/012.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    12
+   ],
+   "sha256": "0759806b0bd6e2c466ed50aefa336f50ea564d9eceffd434977c5545a7e57542"
+  },
+  {
+   "bytes": 32080,
+   "file": "models/smollm2-1700m/documents/013.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    13
+   ],
+   "sha256": "c8bc1cbdee2939534fd1f5b2dc08e5029f4d1f1cfb873926dd10d3416b39bfb2"
+  },
+  {
+   "bytes": 32201,
+   "file": "models/smollm2-1700m/documents/014.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    14
+   ],
+   "sha256": "fab6c0e30a3fda49e4b69d08f479666964a866d0c72c79d947a5252d922edff8"
+  },
+  {
+   "bytes": 32111,
+   "file": "models/smollm2-1700m/documents/015.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    15
+   ],
+   "sha256": "8e5dcde701693ed14debe02807291cbded4d1228d34638372c291176b67d8007"
+  },
+  {
+   "bytes": 32045,
+   "file": "models/smollm2-1700m/documents/016.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    16
+   ],
+   "sha256": "c9dbea442e773197ccd28220c0a4c37e6683df2271a48ac8112d89bd141d157f"
+  },
+  {
+   "bytes": 32048,
+   "file": "models/smollm2-1700m/documents/017.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    17
+   ],
+   "sha256": "6604aae85640ec0b59ab091e816819aa8ddcb8e999c05b3b7c3308e45e67c2db"
+  },
+  {
+   "bytes": 32052,
+   "file": "models/smollm2-1700m/documents/018.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    18
+   ],
+   "sha256": "5db1bea5a6b8a790541f646611bf3afc21fce37280d6383364667f33f66ef3f1"
+  },
+  {
+   "bytes": 32126,
+   "file": "models/smollm2-1700m/documents/019.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    19
+   ],
+   "sha256": "aa3abeecadab2975bc8e013928692a9fdb56b4a1b0e7855dcfc66f90fdc9cd12"
+  },
+  {
+   "bytes": 32077,
+   "file": "models/smollm2-1700m/documents/020.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    20
+   ],
+   "sha256": "07b9e482c6f21a2ec612c537c2ef0d28062b5853d8a33fc37aa3f45b5c536096"
+  },
+  {
+   "bytes": 32068,
+   "file": "models/smollm2-1700m/documents/021.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    21
+   ],
+   "sha256": "10ebad40c9057a0361d864c39992333d3b332a67c57075db569620b3f882d209"
+  },
+  {
+   "bytes": 32112,
+   "file": "models/smollm2-1700m/documents/022.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    22
+   ],
+   "sha256": "1f1f5ca949d295d6ddda09b0baca17d40257d7b07e37472a3e70aa7f331506a4"
+  },
+  {
+   "bytes": 32102,
+   "file": "models/smollm2-1700m/documents/023.json",
+   "path": [
+    "models",
+    "smollm2-1700m",
+    "documents",
+    23
+   ],
+   "sha256": "f13c31d02efb6cc124cea4d89659659259a57a2055be5e82eb0f2354bf8ad2e8"
+  },
+  {
+   "bytes": 32051,
+   "file": "models/smollm2-360m/documents/000.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    0
+   ],
+   "sha256": "befd56396210ef1c29c9217b6c40f1caed873accda29f8b47fe441a905c8b2ea"
+  },
+  {
+   "bytes": 32049,
+   "file": "models/smollm2-360m/documents/001.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    1
+   ],
+   "sha256": "0e199c5cf3c08e151af85fac1977cc6702b5fddd312d04ea01bf3b6337743cd6"
+  },
+  {
+   "bytes": 32105,
+   "file": "models/smollm2-360m/documents/002.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    2
+   ],
+   "sha256": "c4189d0bdf7561d3bacf44e0fa3bc24df8a6b93b00bb9a37e7f992c78508e844"
+  },
+  {
+   "bytes": 32049,
+   "file": "models/smollm2-360m/documents/003.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    3
+   ],
+   "sha256": "f7f13a665b88098636947f4638f59e46b64865ecf7b64f06a8ef1f0238bd9ee1"
+  },
+  {
+   "bytes": 32035,
+   "file": "models/smollm2-360m/documents/004.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    4
+   ],
+   "sha256": "143ac08530dd6e663337a0735019ee88f3a4a4102f34ccaa2e4664cfae21314c"
+  },
+  {
+   "bytes": 32056,
+   "file": "models/smollm2-360m/documents/005.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    5
+   ],
+   "sha256": "7a1bf33f6afe28f34d2dd817b1b1936080fcf9eb48d6725a05a20a9f17c4fdd6"
+  },
+  {
+   "bytes": 32068,
+   "file": "models/smollm2-360m/documents/006.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    6
+   ],
+   "sha256": "40924161ff4865f924776d04ec56c262dded934bebc8406a7e5d9ca5d60bb91f"
+  },
+  {
+   "bytes": 32040,
+   "file": "models/smollm2-360m/documents/007.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    7
+   ],
+   "sha256": "84f0b3e359d3ec7eb77b129004ec71148a35d9141f80310df15892aacfe2dcf6"
+  },
+  {
+   "bytes": 32027,
+   "file": "models/smollm2-360m/documents/008.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    8
+   ],
+   "sha256": "68cd808f04ec62c5022f62c47004b96854d48acd8fd2fe8ea0f2bce281de94fa"
+  },
+  {
+   "bytes": 32053,
+   "file": "models/smollm2-360m/documents/009.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    9
+   ],
+   "sha256": "986ff10a1d875ee2b670bbfc64bff5f0b37bf2337115e096b96e727eb18da5bb"
+  },
+  {
+   "bytes": 32006,
+   "file": "models/smollm2-360m/documents/010.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    10
+   ],
+   "sha256": "b2d6ee4851204641649c44d44e475665b0fbf4c2c701ac6bba80980e88dc41bd"
+  },
+  {
+   "bytes": 32060,
+   "file": "models/smollm2-360m/documents/011.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    11
+   ],
+   "sha256": "41039fbbc81034c4c6979f0cd56e7ceb7cbafe1ec95c258c8a6de3f036f41f39"
+  },
+  {
+   "bytes": 32038,
+   "file": "models/smollm2-360m/documents/012.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    12
+   ],
+   "sha256": "156c03fcd943a2ebdcd6ac8327969f7ea5801e4c4087d6693e6e92638f0e154f"
+  },
+  {
+   "bytes": 32065,
+   "file": "models/smollm2-360m/documents/013.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    13
+   ],
+   "sha256": "e76608e15eb6d449766a171c22feda834e4df41dc608e493c0369240759acc52"
+  },
+  {
+   "bytes": 32042,
+   "file": "models/smollm2-360m/documents/014.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    14
+   ],
+   "sha256": "d0d8521b8dc63551bda0bb3cc8f5e6c4aa09e2638ed722eb7e9a5e8ff229ec93"
+  },
+  {
+   "bytes": 32057,
+   "file": "models/smollm2-360m/documents/015.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    15
+   ],
+   "sha256": "6acdb6b97bc5f1ddb59530913b5d1ba30b2af4d6804fcaeabc576b538326a804"
+  },
+  {
+   "bytes": 32044,
+   "file": "models/smollm2-360m/documents/016.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    16
+   ],
+   "sha256": "f4bc3b5b2fc10e23f8b1f1373479675271274f7d6aaeb8da885de08fe1ea761f"
+  },
+  {
+   "bytes": 32043,
+   "file": "models/smollm2-360m/documents/017.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    17
+   ],
+   "sha256": "a1ca9cdf3994a4385ea1401c5644cbf26e0b115417fd2693a2ea11e2c8b984d1"
+  },
+  {
+   "bytes": 32058,
+   "file": "models/smollm2-360m/documents/018.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    18
+   ],
+   "sha256": "51141cff2ac996da2877a5f0dadb1b294d513bd5820bec7cfe89c100a6a0b201"
+  },
+  {
+   "bytes": 32098,
+   "file": "models/smollm2-360m/documents/019.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    19
+   ],
+   "sha256": "6990b1ba61f4a2d37347b470e189426f1ccd69dba9edc1ea5dc32006d2391eaa"
+  },
+  {
+   "bytes": 32086,
+   "file": "models/smollm2-360m/documents/020.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    20
+   ],
+   "sha256": "38915795cd6fe5c32c0afc871bdfedad78130c88c12c202978bf43b8b6d82e1b"
+  },
+  {
+   "bytes": 32055,
+   "file": "models/smollm2-360m/documents/021.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    21
+   ],
+   "sha256": "b78e0653d976cbcbf95b39c6b1310c655e2a11ced17f325fdc4c8afc0422212a"
+  },
+  {
+   "bytes": 32093,
+   "file": "models/smollm2-360m/documents/022.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    22
+   ],
+   "sha256": "9b403c9018822b6e85b62c67fc657c3b67f02d5931af314423cec65504a18bfa"
+  },
+  {
+   "bytes": 32070,
+   "file": "models/smollm2-360m/documents/023.json",
+   "path": [
+    "models",
+    "smollm2-360m",
+    "documents",
+    23
+   ],
+   "sha256": "5df6af59aee3e90717a50cfa9f341bda5066aedd3327d64904355d48147e991c"
+  }
+ ],
+ "target_bytes": 3086321,
+ "target_relative_to_results": "pretrained_prediction/posthoc_prior_analysis.json",
+ "target_sha256": "a3bc690405eb4e2616a78698b2879e8e90751fec84ef1598ef9c43e816f85dd8"
+}

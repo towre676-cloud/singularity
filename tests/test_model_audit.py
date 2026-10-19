@@ -115,6 +115,22 @@ class CoreTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.package(requirement=4)
 
+    def test_cli_snapshot_identity_is_recomputed_from_supplied_weights(self):
+        from singularity.model_audit.__main__ import _local_hf_provenance
+        with tempfile.TemporaryDirectory() as directory:
+            weights = Path(directory) / "model.safetensors"
+            weights.write_bytes(b"first weight snapshot")
+            (Path(directory) / "config.json").write_text("{}\n")
+            declared = {"model_id": "example/model", "revision": "a" * 40,
+                        "snapshot_manifest_sha256": "untrusted label"}
+            original = _local_hf_provenance(directory, declared)
+            self.assertNotEqual(original["snapshot_manifest_sha256"], "untrusted label")
+            weights.write_bytes(b"a different weight snapshot")
+            changed = _local_hf_provenance(directory, declared)
+            self.assertNotEqual(original["snapshot_manifest_sha256"], changed["snapshot_manifest_sha256"])
+            self.assertEqual(declared["snapshot_manifest_sha256"], "untrusted label")
+            self.assertEqual(changed["revision"], declared["revision"])
+
 
 @unittest.skipIf(torch is None, "optional PyTorch unavailable")
 class ByteAdapterTests(unittest.TestCase):
@@ -238,6 +254,70 @@ class HuggingFaceAdapterTests(unittest.TestCase):
         changed.add_tokens(["<extra>"])
         self.assertNotEqual(HuggingFaceCausalAdapter(self.model, changed).contract()["tokenizer_vocabulary_sha256"],
                             contract["tokenizer_vocabulary_sha256"])
+        relocated = copy.deepcopy(self.tokenizer)
+        relocated.name_or_path = "/a/different/local/snapshot"
+        self.assertEqual(HuggingFaceCausalAdapter(self.model, relocated).contract(), contract)
+
+    def test_backend_fingerprint_detects_processing_changes_with_identical_vocab(self):
+        from tokenizers import normalizers
+        from singularity.model_audit.adapters import HuggingFaceCausalAdapter
+        original = HuggingFaceCausalAdapter(self.model, self.tokenizer)
+        changed_tokenizer = copy.deepcopy(self.tokenizer)
+        changed_tokenizer.backend_tokenizer.normalizer = normalizers.Lowercase()
+        changed = HuggingFaceCausalAdapter(self.model, changed_tokenizer)
+        left, right = original.contract(), changed.contract()
+        self.assertEqual(left["tokenizer_vocabulary_sha256"], right["tokenizer_vocabulary_sha256"])
+        self.assertNotEqual(left["tokenizer_backend_sha256"], right["tokenizer_backend_sha256"])
+        self.assertNotEqual(original.encode("THE CAT"), changed.encode("THE CAT"))
+        before = original.contract()["tokenizer_backend_sha256"]
+        original.observe([{"text": "the cat sat", "pad_to": 20}])
+        self.assertEqual(original.contract()["tokenizer_backend_sha256"], before)
+        self.assertEqual(left["tokenizer_encode_settings"],
+                         {"add_special_tokens": False, "padding": False, "truncation": False})
+
+    def test_pinned_provenance_is_copied_and_distinguishes_weight_files(self):
+        from singularity.model_audit.adapters import HuggingFaceCausalAdapter
+        source = {"model_repo": "example/model", "revision": "a" * 40,
+                  "weight_files": {"model.safetensors": "b" * 64}}
+        adapter = HuggingFaceCausalAdapter(self.model, self.tokenizer, provenance=source)
+        source["weight_files"]["model.safetensors"] = "c" * 64
+        contract = adapter.contract()
+        self.assertEqual(contract["checkpoint_provenance"]["weight_files"]["model.safetensors"], "b" * 64)
+        contract["checkpoint_provenance"]["weight_files"]["model.safetensors"] = "d" * 64
+        self.assertEqual(adapter.contract()["checkpoint_provenance"]["weight_files"]["model.safetensors"], "b" * 64)
+        other = HuggingFaceCausalAdapter(self.model, self.tokenizer, provenance=source)
+        self.assertNotEqual(adapter.contract()["checkpoint_provenance"], other.contract()["checkpoint_provenance"])
+        with self.assertRaises(ValueError):
+            HuggingFaceCausalAdapter(self.model, self.tokenizer, provenance={"bad": float("nan")})
+        with self.assertRaises(ValueError):
+            HuggingFaceCausalAdapter(self.model, self.tokenizer, provenance=["not an object"])
+
+    def test_cli_reloads_local_bfloat16_pipeline_and_snapshot_identity(self):
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        from singularity.model_audit.adapters import HuggingFaceCausalAdapter
+        from singularity.model_audit.__main__ import _local_hf_provenance, main
+        with tempfile.TemporaryDirectory() as directory:
+            snapshot = Path(directory) / "snapshot"
+            copy.deepcopy(self.model).to(torch.bfloat16).save_pretrained(snapshot)
+            self.tokenizer.save_pretrained(snapshot)
+            model = AutoModelForCausalLM.from_pretrained(snapshot, torch_dtype=torch.bfloat16,
+                                                         local_files_only=True, trust_remote_code=False)
+            tokenizer = AutoTokenizer.from_pretrained(snapshot, local_files_only=True, trust_remote_code=False)
+            provenance = _local_hf_provenance(snapshot, {"model_id": "local/test", "revision": "a" * 40,
+                                                        "snapshot_manifest_sha256": ""})
+            adapter = HuggingFaceCausalAdapter(model, tokenizer, provenance=provenance)
+            probes = [{"id": "sentence", "text": "the cat sat", "cost": len(adapter.encode("the cat sat"))}]
+            reference = adapter.observe(probes)
+            fault = HuggingFaceCausalAdapter(model, tokenizer, provenance=provenance, temperature=1.3)
+            package = build_package(probes, reference, [adapter.observe(probes)],
+                                    {"temperature": fault.observe(probes)}, contract=adapter.contract(), requirement=1)
+            path = Path(directory) / "package.json"
+            save_package(package, path)
+            with redirect_stdout(io.StringIO()) as output:
+                status = main(["check", str(path), "--hf-model", str(snapshot)])
+            report = json.loads(output.getvalue())
+            self.assertEqual((status, report["verdict"]), (0, "unchanged"))
+            self.assertEqual(report["contract_mismatches"], [])
 
 
 if __name__ == "__main__":

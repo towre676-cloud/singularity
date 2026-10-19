@@ -141,7 +141,7 @@ class LogitAdapter:
                 logits, past = self._logits(choice[:, None], mask if self.pass_attention_mask else None,
                                             self._cache_positions(next_position, step), past=past)
             else:
-                ids = torch.cat((ids, choice[:, None]), 1)
+                ids = torch.cat((ids, choice.to(ids.device)[:, None]), 1)
                 if ids.shape[1] > self.max_context:
                     raise ValueError("continuation would exceed max_context")
                 logits, _ = self._logits(ids, mask if self.pass_attention_mask else None, positions)
@@ -221,12 +221,47 @@ class ByteTransformerAdapter(LogitAdapter):
 
 
 def tokenizer_fingerprint(tokenizer):
+    """Fingerprint token IDs and the text-to-token processing pipeline.
+
+    Fast-tokenizer JSON includes the normalizer, pre-tokenizer, merges,
+    post-processor and decoder, which a vocabulary hash alone cannot bind.
+    Transient backend padding/truncation settings are excluded because
+    ``HuggingFaceCausalAdapter.encode`` explicitly disables both. Slow
+    tokenizers retain their constructor settings and, where exposed, their
+    SentencePiece model or BPE merge ranks.
+    """
     vocabulary = sorted(tokenizer.get_vocab().items())
-    return {"tokenizer_class": type(tokenizer).__name__,
+    result = {"tokenizer_class": type(tokenizer).__name__,
             "tokenizer_vocabulary_sha256": hashlib.sha256(json.dumps(vocabulary).encode()).hexdigest(),
             "tokenizer_vocabulary_size": len(vocabulary),
-            "tokenizer_special_tokens": {k: str(v) for k, v in sorted(tokenizer.special_tokens_map.items())},
-            "tokenizer_name_or_path": str(getattr(tokenizer, "name_or_path", ""))}
+            "tokenizer_special_tokens": {k: str(v) for k, v in sorted(tokenizer.special_tokens_map.items())}}
+    backend = getattr(tokenizer, "backend_tokenizer", None)
+    if backend is not None and callable(getattr(backend, "to_str", None)):
+        payload = json.loads(backend.to_str())
+        payload.pop("padding", None)
+        payload.pop("truncation", None)
+        raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
+        result["tokenizer_backend_sha256"] = hashlib.sha256(raw).hexdigest()
+        result["tokenizer_backend_format"] = "fast-tokenizer-json; explicit padding/truncation overrides excluded"
+    else:
+        # Slow implementations expose different serialization interfaces.
+        # Keep the scope explicit rather than calling a vocab hash a complete
+        # tokenizer identity.
+        paths = {"name_or_path", "tokenizer_file", "vocab_file", "merges_file", "added_tokens_file",
+                 "special_tokens_map_file", "tokenizer_config_file"}
+        settings = {key: value for key, value in getattr(tokenizer, "init_kwargs", {}).items() if key not in paths}
+        raw = json.dumps(settings, sort_keys=True, default=str, separators=(",", ":")).encode()
+        result["tokenizer_init_kwargs_sha256"] = hashlib.sha256(raw).hexdigest()
+        sentencepiece = getattr(tokenizer, "sp_model", None)
+        if sentencepiece is not None and callable(getattr(sentencepiece, "serialized_model_proto", None)):
+            result["tokenizer_sentencepiece_sha256"] = hashlib.sha256(sentencepiece.serialized_model_proto()).hexdigest()
+        merges = getattr(tokenizer, "bpe_ranks", None)
+        if merges is not None:
+            raw = json.dumps(sorted((list(pair), rank) for pair, rank in merges.items()),
+                             ensure_ascii=False, separators=(",", ":")).encode()
+            result["tokenizer_bpe_merges_sha256"] = hashlib.sha256(raw).hexdigest()
+        result["tokenizer_backend_format"] = "slow-tokenizer constructor settings and exposed model data"
+    return result
 
 
 class HuggingFaceCausalAdapter(LogitAdapter):
@@ -235,10 +270,21 @@ class HuggingFaceCausalAdapter(LogitAdapter):
     Tokenization uses ``add_special_tokens=False`` so probes declare every
     token. The pad id defaults to the tokenizer's pad, then eos, token. The
     contract records tokenizer identity, model class and configuration digest,
-    dtype, padding, positions, cache use and decoding.
+    dtype, padding, positions, cache use and decoding. ``provenance`` may bind
+    a pinned repository revision and downloaded weight-file hashes; these
+    declared values are copied into the contract, not inferred or recomputed
+    on every observation. A configuration digest alone does not identify
+    model weights. Inputs are placed on the input embedding's device, allowing
+    resident CPU, accelerator and dispatched Hugging Face models.
     """
 
-    def __init__(self, model, tokenizer, **settings):
+    def __init__(self, model, tokenizer, *, provenance=None, **settings):
+        if provenance is not None and not isinstance(provenance, dict):
+            raise ValueError("provenance must be a JSON object")
+        try:
+            self._provenance_json = json.dumps(provenance or {}, sort_keys=True, allow_nan=False)
+        except (TypeError, ValueError) as exc:
+            raise ValueError("provenance must contain finite JSON-serializable values") from exc
         pad = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
         if pad is None:
             raise ValueError("tokenizer needs a pad or eos token for left padding")
@@ -249,7 +295,7 @@ class HuggingFaceCausalAdapter(LogitAdapter):
         self.model, self.tokenizer = model.eval(), tokenizer
 
     def encode(self, text):
-        return list(self.tokenizer(text, add_special_tokens=False)["input_ids"])
+        return list(self.tokenizer(text, add_special_tokens=False, padding=False, truncation=False)["input_ids"])
 
     def _identity(self):
         config = self.model.config.to_dict()
@@ -257,12 +303,16 @@ class HuggingFaceCausalAdapter(LogitAdapter):
         config.pop("transformers_version", None)
         return {**tokenizer_fingerprint(self.tokenizer), "model_class": type(self.model).__name__,
                 "model_config_sha256": hashlib.sha256(json.dumps(config, sort_keys=True, default=str).encode()).hexdigest(),
-                "dtype": str(next(self.model.parameters()).dtype)}
+                "dtype": str(next(self.model.parameters()).dtype),
+                "tokenizer_encode_settings": {"add_special_tokens": False, "padding": False, "truncation": False},
+                "checkpoint_provenance": json.loads(self._provenance_json)}
 
     def _logits(self, ids, attention_mask, position_ids, past=None):
+        device = self.model.get_input_embeddings().weight.device
+        ids, position_ids = ids.to(device), position_ids.to(device)
         arguments = {"input_ids": ids, "position_ids": position_ids, "use_cache": past is not None}
         if attention_mask is not None:
-            arguments["attention_mask"] = attention_mask
+            arguments["attention_mask"] = attention_mask.to(device)
         if past is not None and past != "start":
             arguments["past_key_values"] = past
         output = self.model(**arguments)

@@ -4,6 +4,10 @@ Detailed mathematical results, engines, documents, releases, and development rec
 
 ## Read or download
 
+[0.9.0 pretrained result guide](../applications/training_lab/PRETRAINED_RESULTS.md) · [Numerical summary](../applications/training_lab/results/pretrained_summary.json) · [Pretrained audit receipts](../applications/training_lab/results/pretrained_audit/) · [Prediction receipts and readable traces](../applications/training_lab/results/pretrained_prediction/)
+
+Version 0.9.0 applies the tools to actual pretrained checkpoints up to 1.71B parameters, with pinned model/tokenizer identities, exact two-witness panels, exhaustive subset verification, CPU audit timing and six causal prediction arms. All measured outcomes are retained. A separate post-hoc nonuniform-prior blend supplies a data-independent ceiling on whole-document extra loss relative to the pure neural predictor. No neural weights are updated.
+
 [0.8.0 audit toolkit guide](../applications/training_lab/AUDIT_TOOLKIT.md) · [Robust audit evidence](../applications/training_lab/results/robust_audit/audit.json) · [Cross-domain confirmation](../applications/training_lab/results/cross_domain/results.json)
 
 Version 0.8.0 adds portable behavioral audit packages for PyTorch and Hugging Face causal models, exact minimum-cost panels that tolerate missing probe results (r-fold coverage with checkable witnesses), a vectorized causal online blend equivalent to the 0.7.0 loop, and a prospectively frozen prose/legal/code confirmation in which an adaptive count baseline outperforms the neural experts. No companion PDF was rebuilt for 0.8.0; the guide is the reference document.

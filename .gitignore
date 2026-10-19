@@ -18,3 +18,13 @@ tmp/
 # Training retains lossless compressed logs and explicit small checkpoints.
 /applications/training_lab/results/**/metrics.jsonl
 /applications/training_lab/data_cache/
+
+# Rebuilt from the original public corpus and human-readable trace JSON.
+/applications/training_lab/results/pretrained_prediction/documents.json.gz
+/applications/training_lab/results/pretrained_prediction/models/*/documents/*.json.gz
+/applications/training_lab/results/pretrained_context512/documents.json.gz
+/applications/training_lab/results/pretrained_context512/models/*/documents/*.json.gz
+
+# Original JSON receipts rebuilt byte-for-byte from readable case/document shards.
+/applications/training_lab/results/pretrained_audit/*/observations.json
+/applications/training_lab/results/pretrained_prediction/posthoc_prior_analysis.json

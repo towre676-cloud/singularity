@@ -1,0 +1,24 @@
+{
+ "exit_code": 0,
+ "process_wall_seconds": 5.939860035003221,
+ "report": {
+  "construction_faults_still_separated": {
+   "padding_mask_dropped": true,
+   "position_ids_all_zero": true,
+   "temperature_1.3": true,
+   "truncate_48": true,
+   "unicode_nfkc": true
+  },
+  "contract_mismatches": [],
+  "flagged_probes": [],
+  "interpretation": "A flag means executed behavior differs from the reference beyond frozen clean tolerances; unchanged means no declared observation moved, not that the models are equivalent.",
+  "missing_probes": [],
+  "package_sha256": "de403b676a08e11ea7a69a3351cd64a8e4f973df102194ff6fc8e694bddcb8ea",
+  "seconds": {
+   "check": 0.7875458570015326,
+   "startup_and_load": 4.166468561001238
+  },
+  "verdict": "unchanged"
+ },
+ "stderr": "`torch_dtype` is deprecated! Use `dtype` instead!\n"
+}

@@ -1,0 +1,35 @@
+{
+  "GPT-2 124M": {
+    "audit_cost_reduction_vs_greedy_percent": 13.77551020408163,
+    "audit_exact_tokens": 169,
+    "audit_greedy_tokens": 196,
+    "audit_pool_tokens": 1108,
+    "audit_resident_speed_ratio": 6.685244746351603,
+    "model_id": "openai-community/gpt2",
+    "parameters": 124439808,
+    "primary_prediction_log_loss_reduction_percent": 10.129746768465708,
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+  },
+  "SmolLM2 1.71B": {
+    "audit_cost_reduction_vs_greedy_percent": 19.665271966527197,
+    "audit_exact_tokens": 192,
+    "audit_greedy_tokens": 239,
+    "audit_pool_tokens": 1089,
+    "audit_resident_speed_ratio": 6.3192338674706106,
+    "model_id": "HuggingFaceTB/SmolLM2-1.7B",
+    "parameters": 1711376384,
+    "primary_prediction_log_loss_reduction_percent": -0.4620854926761231,
+    "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71"
+  },
+  "SmolLM2 362M": {
+    "audit_cost_reduction_vs_greedy_percent": 19.665271966527197,
+    "audit_exact_tokens": 192,
+    "audit_greedy_tokens": 239,
+    "audit_pool_tokens": 1089,
+    "audit_resident_speed_ratio": 6.4859431503160385,
+    "model_id": "HuggingFaceTB/SmolLM2-360M",
+    "parameters": 361821120,
+    "primary_prediction_log_loss_reduction_percent": -0.29117180502920004,
+    "revision": "f8027fd0eaeea54caa13c31d31b9fdc459c38b49"
+  }
+}

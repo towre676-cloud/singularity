@@ -1,0 +1,55 @@
+{
+  "analysis_status": "POSTHOC deterministic stronger baseline on unchanged construction tables",
+  "method": "Exhaustively optimize every subset of the original greedy output; at least as strong as any deletion-only cleanup",
+  "models": {
+    "gpt2": {
+      "best_pruned_panels": [
+        [
+          6,
+          9,
+          12
+        ]
+      ],
+      "exact_cost": 169,
+      "exact_reduction_vs_pruned_greedy_percent": 0.0,
+      "model_id": "openai-community/gpt2",
+      "optimally_pruned_greedy_cost": 169,
+      "original_greedy_cost": 196,
+      "pruning_subsets_checked": 32,
+      "source_results_sha256": "a5b25d2a276a86128ce121a269b4ea7cccaa0fcb1ff5f856ec6047a0c6b74f76"
+    },
+    "smollm2-1.7b": {
+      "best_pruned_panels": [
+        [
+          6,
+          10,
+          12
+        ]
+      ],
+      "exact_cost": 192,
+      "exact_reduction_vs_pruned_greedy_percent": 10.280373831775702,
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B",
+      "optimally_pruned_greedy_cost": 214,
+      "original_greedy_cost": 239,
+      "pruning_subsets_checked": 32,
+      "source_results_sha256": "6f18ca8f15578eb825b4e5939f93f38e7261575b97e3568809b2f7c18cdf7ecd"
+    },
+    "smollm2-360m": {
+      "best_pruned_panels": [
+        [
+          6,
+          10,
+          12
+        ]
+      ],
+      "exact_cost": 192,
+      "exact_reduction_vs_pruned_greedy_percent": 10.280373831775702,
+      "model_id": "HuggingFaceTB/SmolLM2-360M",
+      "optimally_pruned_greedy_cost": 214,
+      "original_greedy_cost": 239,
+      "pruning_subsets_checked": 32,
+      "source_results_sha256": "b5ac349308a6296ffa8c04d481e6c74217346ae0f89e48c4e0ae211305169f30"
+    }
+  },
+  "new_model_forward_calls": 0
+}
