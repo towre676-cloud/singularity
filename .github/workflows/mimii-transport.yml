@@ -1,0 +1,29 @@
+name: One-time validated MIMII object transport
+'on':
+  push:
+    branches: ['codex/mimii-transport-20261020']
+    paths: ['_mimii_transport/**', '.github/workflows/mimii-transport.yml']
+permissions:
+  contents: write
+concurrency:
+  group: mimii-exact-object-transport
+  cancel-in-progress: false
+jobs:
+  materialize:
+    if: github.repository == 'towre676-cloud/singularity' && github.ref == 'refs/heads/codex/mimii-transport-20261020'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, official tag resolved 2026-10-20
+        with:
+          fetch-depth: 1
+      - name: Verify archive and stage only the 50 declared research paths
+        run: python3 _mimii_transport/assemble.py
+      - name: Publish verified research Git objects on the temporary branch
+        run: |
+          if git diff --cached --quiet; then
+            echo 'No verified research changes were staged.'
+            exit 1
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Materialize validated MIMII research objects'
+          git push origin HEAD:refs/heads/codex/mimii-transport-20261020
