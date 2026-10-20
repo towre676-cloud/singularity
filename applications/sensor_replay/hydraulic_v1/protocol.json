@@ -1,0 +1,1388 @@
+{
+  "archive_sha256": "24128aad2ee45eea7e6b63ebbd9992cdf25d0483a2cebefbfc13bc69079af1f2",
+  "classifier": {
+    "class_weight": "balanced",
+    "max_features": 1.0,
+    "min_samples_leaf": 2,
+    "n_estimators": 96,
+    "n_jobs": 1,
+    "probability_clip": 1e-06,
+    "seed": 20261019,
+    "type": "Per-sensor, per-task ExtraTreesClassifier; uniform-prior class balancing; sum clipped log probabilities across selected sensors"
+  },
+  "comparators": [
+    "all 14 sensors",
+    "forward greedy minimizing normalized constraint deficit",
+    "exact optimal pruning of greedy output",
+    "up to 256 seeded random panels at exact-selected cardinality"
+  ],
+  "cycles": {
+    "selection": 305,
+    "test": 325,
+    "train": 1575
+  },
+  "dataset": "https://archive.ics.uci.edu/static/public/447/condition+monitoring+of+hydraulic+systems.zip",
+  "excluded": [
+    "CE",
+    "CP",
+    "SE",
+    "stability flag as predictor"
+  ],
+  "features": "Per full 60-second cycle: mean,std,min,max,q10,median,q90, six fixed 10-second means and six fixed 10-second stds (19 per sensor).",
+  "frozen_utc": "2026-10-19T23:17:32.672994+00:00",
+  "group_counts": {
+    "selection": 28,
+    "test": 30,
+    "train": 86
+  },
+  "groups": [
+    {
+      "condition": [
+        3,
+        80,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        1,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        1,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        2,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        1,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        2,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        0,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        2,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        2,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        1,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        1,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        0,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        0,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        2,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        1,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        0,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        1,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        0,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        0,
+        130
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        2,
+        90
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        1,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        0,
+        115
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        1,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        2,
+        100
+      ],
+      "partition": "train"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        2,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        2,
+        100
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        0,
+        100
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        2,
+        90
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        1,
+        100
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        1,
+        115
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        2,
+        90
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        2,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        2,
+        115
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        0,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        0,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        0,
+        90
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        1,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        0,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        1,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        1,
+        100
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        2,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        0,
+        115
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        1,
+        115
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        1,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        2,
+        115
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        2,
+        90
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        1,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        2,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        1,
+        100
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        0,
+        115
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        1,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        0,
+        130
+      ],
+      "partition": "selection"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        2,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        0,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        1,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        1,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        0,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        2,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        1,
+        90
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        0,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        2,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        1,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        1,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        1,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        80,
+        1,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        100,
+        0,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        0,
+        90
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        1,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        90,
+        0,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        0,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        100,
+        2,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        80,
+        1,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        0,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        73,
+        2,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        20,
+        90,
+        0,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        2,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        80,
+        1,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        100,
+        1,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        73,
+        2,
+        130
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        2,
+        100
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        3,
+        90,
+        2,
+        115
+      ],
+      "partition": "test"
+    },
+    {
+      "condition": [
+        100,
+        73,
+        0,
+        130
+      ],
+      "partition": "test"
+    }
+  ],
+  "license": "CC BY 4.0",
+  "limitations": [
+    "Same rig; unknown acquisition-session identifiers.",
+    "Grouping is by fault tuple, not independent machine or recovered session.",
+    "Temperature/history confounding can transfer imperfectly.",
+    "Finite selection optimum for fixed classifier, not universal sensor sufficiency.",
+    "No stimulus or location interventions absent from dataset.",
+    "Source task is supervised severity classification, not unsupervised unknown-fault discovery."
+  ],
+  "logging_cost": "Sum of original channel sample counts; not price, energy, acquisition time or wall-clock speed.",
+  "objective": [
+    "fewest installed sensors",
+    "fewest logged scalar samples per 60-second cycle",
+    "smallest integer mask"
+  ],
+  "phase_order": [
+    "freeze labels/splits/protocol",
+    "extract measurements",
+    "fit training only",
+    "enumerate selection and freeze panels",
+    "evaluate held-out test once"
+  ],
+  "physical_sensors": [
+    "PS1",
+    "PS2",
+    "PS3",
+    "PS4",
+    "PS5",
+    "PS6",
+    "EPS1",
+    "FS1",
+    "FS2",
+    "TS1",
+    "TS2",
+    "TS3",
+    "TS4",
+    "VS1"
+  ],
+  "robust_secondary": "Same selection threshold after any one selected sensor is erased; report infeasible when no panel qualifies.",
+  "schema": "singularity.sensor-replay.protocol/1",
+  "scope": "New combinations of familiar component severities on one measured hydraulic rig; no new-machine claim.",
+  "selection_requirement": "For EACH of four tasks, balanced accuracy >= full-sensor selection balanced accuracy minus exactly 1/50. Integer/rational comparison, no test values used.",
+  "source_doi": "10.24432/C5CW21",
+  "split_rule": "All cycles sharing the same 4-component tuple stay together; SHA256 hydraulic-v1|comma-separated-tuple; first floor(.6G) training, next floor(.2G) selection, remainder test.",
+  "strong_reference": "All-sensor ExtraTreesClassifier,256 trees,min_samples_leaf2,class_weight balanced,max_features sqrt,seed20261019; context only, not used for subset selection.",
+  "targets": [
+    "cooler",
+    "valve",
+    "pump",
+    "accumulator"
+  ],
+  "uncertainty": "2000 paired bootstrap replicates resampling entire test fault-combination groups; missing classes omitted within replicate and counted."
+}

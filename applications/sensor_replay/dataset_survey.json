@@ -1,0 +1,87 @@
+{
+  "searched_utc_date": "2026-10-19",
+  "selection_principle": "Controlled physical conditions, retained sensor channels, credible metadata, defensible holdout unit, official source, practical raw replay.",
+  "datasets": [
+    {
+      "name": "UCI Condition Monitoring of Hydraulic Systems",
+      "source": "https://archive.ics.uci.edu/dataset/447",
+      "status": "Complete corpus executed",
+      "use": "14 physical channels, four component conditions, 144 fault combinations",
+      "limitation": "One rig; session identities unavailable",
+      "license": "CC BY 4.0"
+    },
+    {
+      "name": "MAFAULDA",
+      "source": "https://www02.smt.ufrj.br/~offshore/mfs/page_01.html",
+      "status": "42 original recordings executed across two frozen phases",
+      "use": "Synchronized microphone, six accelerometer axes and tachometer; known induced mechanical faults",
+      "limitation": "Small three-state subset; one rig; tachometer excluded from diagnosis",
+      "license": "No explicit dataset license found on official landing page; raw not redistributed"
+    },
+    {
+      "name": "MIMII original",
+      "source": "https://zenodo.org/records/3384388",
+      "status": "Researched only",
+      "use": "Eight-microphone array, four machine types, machine IDs and factory-noise mixtures",
+      "limitation": "Keep noise variants and original recordings together; about 100 GB for the full release",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "name": "MIMII DUE",
+      "source": "https://zenodo.org/records/4740355",
+      "status": "Researched only",
+      "use": "Source/target operating and environmental domains",
+      "limitation": "Anomaly benchmark; channel and intervention semantics require separate audit",
+      "license": "CC BY-NC-SA 4.0"
+    },
+    {
+      "name": "ToyADMOS original",
+      "source": "https://zenodo.org/records/3351307",
+      "status": "Researched only",
+      "use": "Original multichannel acoustic measurements",
+      "limitation": "Very large split archives; source license PDF authoritative",
+      "license": "Separate noncommercial licence"
+    },
+    {
+      "name": "DCASE 2020 Task 2 derivative",
+      "source": "https://zenodo.org/records/3678171",
+      "status": "Researched only",
+      "use": "Normal-only training and anomaly testing",
+      "limitation": "Single-channel derivative cannot establish microphone-placement advantage",
+      "license": "CC BY-NC-SA 4.0"
+    },
+    {
+      "name": "IDMT-ISA-ELECTRIC-ENGINE",
+      "source": "https://zenodo.org/records/7551261",
+      "status": "Researched only",
+      "use": "2,378 mono recordings of three motors with operating and noise conditions",
+      "limitation": "Audit motor/state confounding; mono input",
+      "license": "CC BY-NC-ND 4.0"
+    },
+    {
+      "name": "CWRU Bearing Data Center",
+      "source": "https://engineering.case.edu/bearingdatacenter/download-data-file",
+      "status": "Researched only",
+      "use": "Known seeded bearing faults, drive/fan/base accelerometers, operating loads",
+      "limitation": "Keep original recordings and fault installations grouped; multiple positions not interchangeable channels",
+      "license": "Consult original source terms"
+    },
+    {
+      "name": "NASA/IMS Bearings",
+      "source": "https://catalog.data.gov/dataset/ims-bearings",
+      "status": "Researched only",
+      "use": "Physical bearing degradation experiments",
+      "limitation": "Run-to-failure sequences require run/device holdouts, not random windows",
+      "license": "Consult original source metadata"
+    },
+    {
+      "name": "Real-IAD",
+      "source": "https://realiad4ad.github.io/Real-IAD/",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_Real-IAD_A_Real-World_Multi-View_Dataset_for_Benchmarking_Versatile_Industrial_Anomaly_CVPR_2024_paper.html",
+      "status": "Researched only; images not acquired",
+      "use": "Five camera views per physical object; candidate for camera-view selection",
+      "limitation": "Authenticated data access; group all views of each physical sample; site-source licence is not dataset licence",
+      "license": "Verify dataset terms at original access point"
+    }
+  ]
+}

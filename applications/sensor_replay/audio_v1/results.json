@@ -1,0 +1,724 @@
+{
+  "channel_count_reduction_fraction": 0.8571428571428572,
+  "features_sha256": "4778d2e3e9aabbdae7006356d18c15ea866e4e49585c1ec2a53d7b95a30e5e4e",
+  "limitations": [
+    "small deliberately chosen subset",
+    "one physical machinery-fault simulator",
+    "one severity per faulty state",
+    "no independent device or installation sessions",
+    "six test recordings, two per class",
+    "no new excitation or sensor placement can be inferred from prerecorded fixed sensors",
+    "exactness concerns the finite selection table; physical generalization remains empirical",
+    "not the original MAFAULDA full benchmark",
+    "official landing page does not state an explicit dataset license; raw data are not redistributed"
+  ],
+  "n_recordings": 24,
+  "protocol_sha256": "96a19f61a11e0232751de8d2d98c1d25104e90979ee62c2e681a0041d4080e71",
+  "results": {
+    "all_accelerometers": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 63,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    "exact": {
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "channels": [
+        "underhang_axial"
+      ],
+      "class_recall": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 2,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 1,
+      "n": 6,
+      "predictions": [
+        2,
+        2,
+        1,
+        0,
+        0,
+        2
+      ]
+    },
+    "full": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 7,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 127,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    "greedy": {
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "channels": [
+        "underhang_axial"
+      ],
+      "class_recall": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 2,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 1,
+      "n": 6,
+      "predictions": [
+        2,
+        2,
+        1,
+        0,
+        0,
+        2
+      ]
+    },
+    "microphone_only": {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 4,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 64,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        0
+      ]
+    },
+    "pruned_greedy": {
+      "accuracy": 0.3333333333333333,
+      "balanced_accuracy": 0.3333333333333333,
+      "channels": [
+        "underhang_axial"
+      ],
+      "class_recall": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 2,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 1,
+      "n": 6,
+      "predictions": [
+        2,
+        2,
+        1,
+        0,
+        0,
+        2
+      ]
+    }
+  },
+  "same_cardinality_unselected_reference": {
+    "all_masks": [
+      {
+        "accuracy": 0.3333333333333333,
+        "balanced_accuracy": 0.3333333333333333,
+        "class_recall": [
+          0.0,
+          0.5,
+          0.5
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "correct": 2,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 1,
+        "n": 6,
+        "predictions": [
+          2,
+          2,
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.5,
+        "class_recall": [
+          0.0,
+          1.0,
+          0.5
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "correct": 3,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 2,
+        "n": 6,
+        "predictions": [
+          2,
+          2,
+          1,
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "class_recall": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "correct": 6,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 4,
+        "n": 6,
+        "predictions": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy": 0.8333333333333334,
+        "class_recall": [
+          0.5,
+          1.0,
+          1.0
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "correct": 5,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 8,
+        "n": 6,
+        "predictions": [
+          0,
+          2,
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy": 0.8333333333333334,
+        "class_recall": [
+          0.5,
+          1.0,
+          1.0
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "correct": 5,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 16,
+        "n": 6,
+        "predictions": [
+          0,
+          1,
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy": 0.8333333333333334,
+        "class_recall": [
+          0.5,
+          1.0,
+          1.0
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "correct": 5,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 32,
+        "n": 6,
+        "predictions": [
+          1,
+          0,
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "accuracy": 0.6666666666666666,
+        "balanced_accuracy": 0.6666666666666666,
+        "class_recall": [
+          0.5,
+          1.0,
+          0.5
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "correct": 4,
+        "labels": [
+          0,
+          0,
+          1,
+          1,
+          2,
+          2
+        ],
+        "mask": 64,
+        "n": 6,
+        "predictions": [
+          0,
+          2,
+          1,
+          1,
+          2,
+          0
+        ]
+      }
+    ],
+    "cost": 1,
+    "max": 1.0,
+    "mean": 0.7142857142857143,
+    "median": 0.8333333333333334,
+    "min": 0.3333333333333333,
+    "number_of_masks": 7
+  },
+  "script_sha256": "f3032c1d154517ec0668d894c65d7c8137c9d1a9e1e4e14b6d5c74a218c4f48e",
+  "selection_snapshot_sha256": "7cb8fd3425b35484713488b6d52bb61de592c599401fc56af41315c66c0100ba",
+  "selection_threshold": 0.98,
+  "source_page": "https://www02.smt.ufrj.br/~offshore/mfs/page_01.html",
+  "splits": {
+    "selection": {
+      "count": 6,
+      "recordings": [
+        "normal/20.2752.csv",
+        "normal/40.3456.csv",
+        "horizontal-misalignment/1.5mm/19.6608.csv",
+        "horizontal-misalignment/1.5mm/39.7312.csv",
+        "imbalance/6g/20.2752.csv",
+        "imbalance/6g/39.3216.csv"
+      ],
+      "rows": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21
+      ]
+    },
+    "test": {
+      "count": 6,
+      "recordings": [
+        "normal/29.4912.csv",
+        "normal/49.5616.csv",
+        "horizontal-misalignment/1.5mm/29.696.csv",
+        "horizontal-misalignment/1.5mm/50.5856.csv",
+        "imbalance/6g/29.4912.csv",
+        "imbalance/6g/50.5856.csv"
+      ],
+      "rows": [
+        3,
+        7,
+        11,
+        15,
+        19,
+        23
+      ]
+    },
+    "train": {
+      "count": 12,
+      "recordings": [
+        "normal/15.1552.csv",
+        "normal/24.576.csv",
+        "normal/35.4304.csv",
+        "normal/44.6464.csv",
+        "horizontal-misalignment/1.5mm/14.9504.csv",
+        "horizontal-misalignment/1.5mm/24.3712.csv",
+        "horizontal-misalignment/1.5mm/35.2256.csv",
+        "horizontal-misalignment/1.5mm/45.4656.csv",
+        "imbalance/6g/15.36.csv",
+        "imbalance/6g/25.3952.csv",
+        "imbalance/6g/34.816.csv",
+        "imbalance/6g/45.4656.csv"
+      ],
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22
+      ]
+    }
+  }
+}

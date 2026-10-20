@@ -1,0 +1,71 @@
+{
+  "audio_confirmation_independent": {
+    "all_frozen_panel_predictions_reproduced": true,
+    "features_sha256": "e9290c946d52bed2bf9aadd6bdd857e518651561d23429c45fb253cc4814398b",
+    "method": "triple-loop per-channel squared distances; no import of either study runner",
+    "new_recording_disjointness_checked": true,
+    "original_train_only_scaling_recomputed": true,
+    "passed": true,
+    "protocol_sha256": "b44709cc9bd2e55b47fd53f622087140c8a96e67564695f30f520146d55aaede",
+    "tie_union_rule_independently_recomputed": true
+  },
+  "audio_independent": {
+    "all_127_selection_masks_recomputed": true,
+    "all_reported_test_predictions_recomputed": true,
+    "features_sha256": "4778d2e3e9aabbdae7006356d18c15ea866e4e49585c1ec2a53d7b95a30e5e4e",
+    "independent_method": "masked flattened training-standardized Euclidean vectors; itertools combinations; no import from run_audio_study",
+    "minimum_cost_independently_reproduced": true,
+    "passed": true,
+    "protocol_sha256": "96a19f61a11e0232751de8d2d98c1d25104e90979ee62c2e681a0041d4080e71",
+    "split_disjointness": true
+  },
+  "commands": [
+    "python scripts/materialize_pretrained_evidence.py materialize",
+    "python scripts/materialize_pretrained_evidence.py materialize --output applications/training_lab/results/pretrained_context512",
+    "PYTHONPATH=src python -m unittest discover -s tests",
+    "python applications/sensor_replay/verify_all.py",
+    "python applications/sensor_replay/retrain_from_features.py applications/sensor_replay/hydraulic_v1",
+    "python applications/sensor_replay/audio_v1/verify_raw_features.py (in acquisition workspace)",
+    "python scripts/check_repository.py",
+    "python scripts/check_links.py",
+    "git diff --check"
+  ],
+  "fixtures": "Reconstructed9 ignored historical JSON receipts plus deterministic traces from tracked readable shards using the repository materialization commands before the successful suite. An initial unmaterialized run failed on missing pre-existing receipts; no historical scientific bytes were changed.",
+  "hydraulic_independent": {
+    "all_mask_predictions_independently_rebuilt": true,
+    "exact_mask": 640,
+    "feasible_masks": 3311,
+    "independent_implementation": true,
+    "masks_checked": 16384,
+    "pruned_greedy_mask": 640,
+    "random_panels_checked": 91,
+    "rational_task_entries_checked": 65536,
+    "robust_feasible_masks": 69,
+    "robust_mask": 9668,
+    "scope": "Independent exact finite-table optimum and saved-score metric replay; training, bootstrap interval generation and physical transfer not independently reproduced.",
+    "source_hash_matches_frozen": true,
+    "status": "PASS",
+    "test_panels_checked": [
+      "exact",
+      "greedy",
+      "pruned_greedy",
+      "full",
+      "robust"
+    ],
+    "uses_study_imports": false,
+    "verifier_sha256": "dc4537d66fa6c144a8953ae1661415b159db3733e2d0462e1a8b961365c8c320"
+  },
+  "hydraulic_training": {
+    "scope": "Deterministic training replay in recorded software environment; not an independent classifier implementation or fresh experiment.",
+    "selection_and_test_score_tables_bit_identical": true,
+    "source_feature_cache_sha256": "6790fe2962787cc87add259686436292d842013fd29f89ef043edc1b9647af5c",
+    "status": "PASS",
+    "training_models_reproduced": 56
+  },
+  "repository_test_count": 920,
+  "repository_test_log_sha256": "0bfdbfde1ed6ddf9a4882f59a9200f2a61d86708ea5df00766b0ff81e07757ac",
+  "repository_test_outcome": "OK (skipped=47)",
+  "repository_test_seconds": 151.448,
+  "scope": "Local executed checks; no remote CI success or Lean proof claimed.",
+  "status": "PASS"
+}

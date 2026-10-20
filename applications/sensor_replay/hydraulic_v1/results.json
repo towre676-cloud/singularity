@@ -1,0 +1,4174 @@
+{
+  "all_sensor_stronger_reference": {
+    "cycles": 325,
+    "joint_exact_match": 0.5353846153846153,
+    "macro_balanced_accuracy": 0.8949684675371863,
+    "tasks": [
+      {
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "classes": [
+          3,
+          20,
+          100
+        ],
+        "confusion": [
+          [
+            102,
+            0,
+            0
+          ],
+          [
+            0,
+            92,
+            0
+          ],
+          [
+            0,
+            0,
+            131
+          ]
+        ],
+        "healthy_cycles": 131,
+        "healthy_false_alarm_rate": 0.0,
+        "recalls": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "task": "cooler"
+      },
+      {
+        "accuracy": 0.8215384615384616,
+        "balanced_accuracy": 0.8179166666666667,
+        "classes": [
+          73,
+          80,
+          90,
+          100
+        ],
+        "confusion": [
+          [
+            110,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            60,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            26,
+            52
+          ],
+          [
+            0,
+            0,
+            4,
+            71
+          ]
+        ],
+        "healthy_cycles": 75,
+        "healthy_false_alarm_rate": 0.05333333333333334,
+        "recalls": [
+          1.0,
+          1.0,
+          0.325,
+          0.9466666666666667
+        ],
+        "task": "valve"
+      },
+      {
+        "accuracy": 0.9907692307692307,
+        "balanced_accuracy": 0.9899417522368342,
+        "classes": [
+          0,
+          1,
+          2
+        ],
+        "confusion": [
+          [
+            121,
+            0,
+            1
+          ],
+          [
+            0,
+            112,
+            0
+          ],
+          [
+            1,
+            1,
+            89
+          ]
+        ],
+        "healthy_cycles": 122,
+        "healthy_false_alarm_rate": 0.00819672131147541,
+        "recalls": [
+          0.9918032786885246,
+          1.0,
+          0.978021978021978
+        ],
+        "task": "pump"
+      },
+      {
+        "accuracy": 0.7169230769230769,
+        "balanced_accuracy": 0.7720154512452445,
+        "classes": [
+          90,
+          100,
+          115,
+          130
+        ],
+        "confusion": [
+          [
+            20,
+            0,
+            0,
+            0
+          ],
+          [
+            38,
+            60,
+            3,
+            0
+          ],
+          [
+            0,
+            10,
+            60,
+            12
+          ],
+          [
+            10,
+            0,
+            19,
+            93
+          ]
+        ],
+        "healthy_cycles": 122,
+        "healthy_false_alarm_rate": 0.23770491803278687,
+        "recalls": [
+          1.0,
+          0.594059405940594,
+          0.7317073170731707,
+          0.7622950819672131
+        ],
+        "task": "accumulator"
+      }
+    ]
+  },
+  "evaluated_utc": "2026-10-19T23:17:55.869413+00:00",
+  "evidence_sha256": {
+    "features.npz": "6790fe2962787cc87add259686436292d842013fd29f89ef043edc1b9647af5c",
+    "protocol.json": "da3cbe24d6c9377805ce28b3b6d1e0d059ea726f628c0f8279d178273783444b",
+    "selected_panels.json": "0e336d877beee90ce0489347c8cdd38e11f4f3586a35d13bb84f1458b6236cc3",
+    "selection_table.npz": "286933f98e1bc9fcff5d982f165fe11f0c45517682308f87c2a51ee8259a4bc5",
+    "split.npz": "f2706f59c14e4bb94420fb0a5de2b359c7e1cca52772b436a9f8311a82a724c5",
+    "test_evidence.npz": "22ca6f3ffbc0cd57b599bfce72ca44c59b74070b80e444d6e99a0c2e9d3a42d3"
+  },
+  "feasible_mask_count": 3311,
+  "limitations": [
+    "Same rig; unknown acquisition-session identifiers.",
+    "Grouping is by fault tuple, not independent machine or recovered session.",
+    "Temperature/history confounding can transfer imperfectly.",
+    "Finite selection optimum for fixed classifier, not universal sensor sufficiency.",
+    "No stimulus or location interventions absent from dataset.",
+    "Source task is supervised severity classification, not unsupervised unknown-fault discovery."
+  ],
+  "panels": {
+    "exact": {
+      "logged_scalars": 660,
+      "mask": 640,
+      "paired_group_bootstrap_vs_full": {
+        "groups": 30,
+        "joint_match_difference_95pct": [
+          -0.09816705993393114,
+          0.15555715658021133
+        ],
+        "missing_class_events": 277,
+        "replicates": 2000,
+        "task_balanced_accuracy_difference_95pct": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.08550425753491787,
+            0.11999465892634473
+          ],
+          [
+            -0.04386206386206386,
+            0.09117835145460808
+          ],
+          [
+            -0.17392819275536658,
+            0.03419037559662557
+          ]
+        ]
+      },
+      "selection_balanced_accuracy": [
+        1.0,
+        0.6466666666666666,
+        0.9703617420565586,
+        0.8747551058200641
+      ],
+      "sensor_count": 2,
+      "sensors": [
+        "FS1",
+        "TS1"
+      ],
+      "stable": {
+        "cycles": 300,
+        "joint_exact_match": 0.27666666666666667,
+        "macro_balanced_accuracy": 0.7987557118807119,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                90,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0
+              ],
+              [
+                0,
+                0,
+                120
+              ]
+            ],
+            "healthy_cycles": 120,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7,
+            "balanced_accuracy": 0.6687121212121213,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                101,
+                4,
+                0,
+                5
+              ],
+              [
+                1,
+                46,
+                12,
+                1
+              ],
+              [
+                0,
+                4,
+                36,
+                40
+              ],
+              [
+                0,
+                0,
+                23,
+                27
+              ]
+            ],
+            "healthy_cycles": 50,
+            "healthy_false_alarm_rate": 0.46,
+            "recalls": [
+              0.9181818181818182,
+              0.7666666666666667,
+              0.45,
+              0.54
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9266666666666666,
+            "balanced_accuracy": 0.923973063973064,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                98,
+                2,
+                0
+              ],
+              [
+                0,
+                103,
+                7
+              ],
+              [
+                2,
+                11,
+                77
+              ]
+            ],
+            "healthy_cycles": 100,
+            "healthy_false_alarm_rate": 0.02,
+            "recalls": [
+              0.98,
+              0.9363636363636364,
+              0.8555555555555555
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5333333333333333,
+            "balanced_accuracy": 0.6023376623376624,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                17,
+                0,
+                3,
+                0
+              ],
+              [
+                33,
+                51,
+                16,
+                0
+              ],
+              [
+                0,
+                28,
+                41,
+                1
+              ],
+              [
+                29,
+                5,
+                25,
+                51
+              ]
+            ],
+            "healthy_cycles": 110,
+            "healthy_false_alarm_rate": 0.5363636363636364,
+            "recalls": [
+              0.85,
+              0.51,
+              0.5857142857142857,
+              0.4636363636363636
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "test": {
+        "cycles": 325,
+        "joint_exact_match": 0.28,
+        "macro_balanced_accuracy": 0.8041563042928215,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                102,
+                0,
+                0
+              ],
+              [
+                0,
+                92,
+                0
+              ],
+              [
+                0,
+                0,
+                131
+              ]
+            ],
+            "healthy_cycles": 131,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7169230769230769,
+            "balanced_accuracy": 0.7003787878787879,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                101,
+                4,
+                0,
+                5
+              ],
+              [
+                1,
+                46,
+                12,
+                1
+              ],
+              [
+                0,
+                4,
+                36,
+                40
+              ],
+              [
+                0,
+                0,
+                25,
+                50
+              ]
+            ],
+            "healthy_cycles": 75,
+            "healthy_false_alarm_rate": 0.3333333333333333,
+            "recalls": [
+              0.9181818181818182,
+              0.7666666666666667,
+              0.45,
+              0.6666666666666666
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9323076923076923,
+            "balanced_accuracy": 0.926083138173302,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                120,
+                2,
+                0
+              ],
+              [
+                0,
+                105,
+                7
+              ],
+              [
+                2,
+                11,
+                78
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.01639344262295082,
+            "recalls": [
+              0.9836065573770492,
+              0.9375,
+              0.8571428571428571
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5230769230769231,
+            "balanced_accuracy": 0.5901632911191959,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                17,
+                0,
+                3,
+                0
+              ],
+              [
+                33,
+                52,
+                16,
+                0
+              ],
+              [
+                0,
+                29,
+                42,
+                11
+              ],
+              [
+                33,
+                5,
+                25,
+                59
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.5163934426229508,
+            "recalls": [
+              0.85,
+              0.5148514851485149,
+              0.5121951219512195,
+              0.48360655737704916
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "transient": {
+        "cycles": 25,
+        "joint_exact_match": 0.32,
+        "macro_balanced_accuracy": 0.8758333333333334,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                12,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                11
+              ]
+            ],
+            "healthy_cycles": 11,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.92,
+            "balanced_accuracy": 0.92,
+            "classes": [
+              100
+            ],
+            "confusion": [
+              [
+                23
+              ]
+            ],
+            "healthy_cycles": 25,
+            "healthy_false_alarm_rate": 0.08,
+            "recalls": [
+              0.92
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                22,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "healthy_cycles": 22,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.4,
+            "balanced_accuracy": 0.5833333333333334,
+            "classes": [
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                10
+              ],
+              [
+                0,
+                0,
+                8
+              ]
+            ],
+            "healthy_cycles": 12,
+            "healthy_false_alarm_rate": 0.3333333333333333,
+            "recalls": [
+              1.0,
+              0.08333333333333333,
+              0.6666666666666666
+            ],
+            "task": "accumulator"
+          }
+        ]
+      }
+    },
+    "full": {
+      "logged_scalars": 43500,
+      "mask": 16383,
+      "paired_group_bootstrap_vs_full": {
+        "groups": 30,
+        "joint_match_difference_95pct": [
+          0.0,
+          0.0
+        ],
+        "missing_class_events": 277,
+        "replicates": 2000,
+        "task_balanced_accuracy_difference_95pct": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "selection_balanced_accuracy": [
+        1.0,
+        0.650625,
+        0.862615673332039,
+        0.8674115684748853
+      ],
+      "sensor_count": 14,
+      "sensors": [
+        "PS1",
+        "PS2",
+        "PS3",
+        "PS4",
+        "PS5",
+        "PS6",
+        "EPS1",
+        "FS1",
+        "FS2",
+        "TS1",
+        "TS2",
+        "TS3",
+        "TS4",
+        "VS1"
+      ],
+      "stable": {
+        "cycles": 300,
+        "joint_exact_match": 0.2633333333333333,
+        "macro_balanced_accuracy": 0.816777371933622,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                90,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0
+              ],
+              [
+                0,
+                0,
+                120
+              ]
+            ],
+            "healthy_cycles": 120,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.6666666666666666,
+            "balanced_accuracy": 0.6717234848484849,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                85,
+                12,
+                0,
+                13
+              ],
+              [
+                0,
+                37,
+                21,
+                2
+              ],
+              [
+                0,
+                2,
+                35,
+                43
+              ],
+              [
+                0,
+                0,
+                7,
+                43
+              ]
+            ],
+            "healthy_cycles": 50,
+            "healthy_false_alarm_rate": 0.14,
+            "recalls": [
+              0.7727272727272727,
+              0.6166666666666667,
+              0.4375,
+              0.86
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.8966666666666666,
+            "balanced_accuracy": 0.9008080808080807,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                96,
+                4,
+                0
+              ],
+              [
+                1,
+                89,
+                20
+              ],
+              [
+                5,
+                1,
+                84
+              ]
+            ],
+            "healthy_cycles": 100,
+            "healthy_false_alarm_rate": 0.04,
+            "recalls": [
+              0.96,
+              0.8090909090909091,
+              0.9333333333333333
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.59,
+            "balanced_accuracy": 0.694577922077922,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                20,
+                0,
+                0,
+                0
+              ],
+              [
+                42,
+                49,
+                9,
+                0
+              ],
+              [
+                0,
+                10,
+                59,
+                1
+              ],
+              [
+                35,
+                0,
+                26,
+                49
+              ]
+            ],
+            "healthy_cycles": 110,
+            "healthy_false_alarm_rate": 0.5545454545454546,
+            "recalls": [
+              1.0,
+              0.49,
+              0.8428571428571429,
+              0.44545454545454544
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "test": {
+        "cycles": 325,
+        "joint_exact_match": 0.2523076923076923,
+        "macro_balanced_accuracy": 0.8102664321279283,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                102,
+                0,
+                0
+              ],
+              [
+                0,
+                92,
+                0
+              ],
+              [
+                0,
+                0,
+                131
+              ]
+            ],
+            "healthy_cycles": 131,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.6923076923076923,
+            "balanced_accuracy": 0.6833901515151515,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                85,
+                12,
+                0,
+                13
+              ],
+              [
+                0,
+                37,
+                21,
+                2
+              ],
+              [
+                0,
+                2,
+                35,
+                43
+              ],
+              [
+                0,
+                0,
+                7,
+                68
+              ]
+            ],
+            "healthy_cycles": 75,
+            "healthy_false_alarm_rate": 0.09333333333333334,
+            "recalls": [
+              0.7727272727272727,
+              0.6166666666666667,
+              0.4375,
+              0.9066666666666666
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.8984615384615384,
+            "balanced_accuracy": 0.89795382213415,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                118,
+                4,
+                0
+              ],
+              [
+                1,
+                90,
+                21
+              ],
+              [
+                6,
+                1,
+                84
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.03278688524590164,
+            "recalls": [
+              0.9672131147540983,
+              0.8035714285714286,
+              0.9230769230769231
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5538461538461539,
+            "balanced_accuracy": 0.6597217548624115,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                20,
+                0,
+                0,
+                0
+              ],
+              [
+                43,
+                49,
+                9,
+                0
+              ],
+              [
+                0,
+                10,
+                61,
+                11
+              ],
+              [
+                46,
+                0,
+                26,
+                50
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.5901639344262295,
+            "recalls": [
+              1.0,
+              0.48514851485148514,
+              0.7439024390243902,
+              0.4098360655737705
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "transient": {
+        "cycles": 25,
+        "joint_exact_match": 0.12,
+        "macro_balanced_accuracy": 0.6458333333333334,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                12,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                11
+              ]
+            ],
+            "healthy_cycles": 11,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              100
+            ],
+            "confusion": [
+              [
+                25
+              ]
+            ],
+            "healthy_cycles": 25,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.92,
+            "balanced_accuracy": 0.5,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                22,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "healthy_cycles": 22,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              0.5,
+              0.0
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.12,
+            "balanced_accuracy": 0.08333333333333333,
+            "classes": [
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                10
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "healthy_cycles": 12,
+            "healthy_false_alarm_rate": 0.9166666666666666,
+            "recalls": [
+              0.0,
+              0.16666666666666666,
+              0.08333333333333333
+            ],
+            "task": "accumulator"
+          }
+        ]
+      }
+    },
+    "greedy": {
+      "logged_scalars": 660,
+      "mask": 640,
+      "paired_group_bootstrap_vs_full": {
+        "groups": 30,
+        "joint_match_difference_95pct": [
+          -0.09816705993393114,
+          0.15555715658021133
+        ],
+        "missing_class_events": 277,
+        "replicates": 2000,
+        "task_balanced_accuracy_difference_95pct": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.08550425753491787,
+            0.11999465892634473
+          ],
+          [
+            -0.04386206386206386,
+            0.09117835145460808
+          ],
+          [
+            -0.17392819275536658,
+            0.03419037559662557
+          ]
+        ]
+      },
+      "selection_balanced_accuracy": [
+        1.0,
+        0.6466666666666666,
+        0.9703617420565586,
+        0.8747551058200641
+      ],
+      "sensor_count": 2,
+      "sensors": [
+        "FS1",
+        "TS1"
+      ],
+      "stable": {
+        "cycles": 300,
+        "joint_exact_match": 0.27666666666666667,
+        "macro_balanced_accuracy": 0.7987557118807119,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                90,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0
+              ],
+              [
+                0,
+                0,
+                120
+              ]
+            ],
+            "healthy_cycles": 120,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7,
+            "balanced_accuracy": 0.6687121212121213,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                101,
+                4,
+                0,
+                5
+              ],
+              [
+                1,
+                46,
+                12,
+                1
+              ],
+              [
+                0,
+                4,
+                36,
+                40
+              ],
+              [
+                0,
+                0,
+                23,
+                27
+              ]
+            ],
+            "healthy_cycles": 50,
+            "healthy_false_alarm_rate": 0.46,
+            "recalls": [
+              0.9181818181818182,
+              0.7666666666666667,
+              0.45,
+              0.54
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9266666666666666,
+            "balanced_accuracy": 0.923973063973064,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                98,
+                2,
+                0
+              ],
+              [
+                0,
+                103,
+                7
+              ],
+              [
+                2,
+                11,
+                77
+              ]
+            ],
+            "healthy_cycles": 100,
+            "healthy_false_alarm_rate": 0.02,
+            "recalls": [
+              0.98,
+              0.9363636363636364,
+              0.8555555555555555
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5333333333333333,
+            "balanced_accuracy": 0.6023376623376624,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                17,
+                0,
+                3,
+                0
+              ],
+              [
+                33,
+                51,
+                16,
+                0
+              ],
+              [
+                0,
+                28,
+                41,
+                1
+              ],
+              [
+                29,
+                5,
+                25,
+                51
+              ]
+            ],
+            "healthy_cycles": 110,
+            "healthy_false_alarm_rate": 0.5363636363636364,
+            "recalls": [
+              0.85,
+              0.51,
+              0.5857142857142857,
+              0.4636363636363636
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "test": {
+        "cycles": 325,
+        "joint_exact_match": 0.28,
+        "macro_balanced_accuracy": 0.8041563042928215,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                102,
+                0,
+                0
+              ],
+              [
+                0,
+                92,
+                0
+              ],
+              [
+                0,
+                0,
+                131
+              ]
+            ],
+            "healthy_cycles": 131,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7169230769230769,
+            "balanced_accuracy": 0.7003787878787879,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                101,
+                4,
+                0,
+                5
+              ],
+              [
+                1,
+                46,
+                12,
+                1
+              ],
+              [
+                0,
+                4,
+                36,
+                40
+              ],
+              [
+                0,
+                0,
+                25,
+                50
+              ]
+            ],
+            "healthy_cycles": 75,
+            "healthy_false_alarm_rate": 0.3333333333333333,
+            "recalls": [
+              0.9181818181818182,
+              0.7666666666666667,
+              0.45,
+              0.6666666666666666
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9323076923076923,
+            "balanced_accuracy": 0.926083138173302,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                120,
+                2,
+                0
+              ],
+              [
+                0,
+                105,
+                7
+              ],
+              [
+                2,
+                11,
+                78
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.01639344262295082,
+            "recalls": [
+              0.9836065573770492,
+              0.9375,
+              0.8571428571428571
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5230769230769231,
+            "balanced_accuracy": 0.5901632911191959,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                17,
+                0,
+                3,
+                0
+              ],
+              [
+                33,
+                52,
+                16,
+                0
+              ],
+              [
+                0,
+                29,
+                42,
+                11
+              ],
+              [
+                33,
+                5,
+                25,
+                59
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.5163934426229508,
+            "recalls": [
+              0.85,
+              0.5148514851485149,
+              0.5121951219512195,
+              0.48360655737704916
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "transient": {
+        "cycles": 25,
+        "joint_exact_match": 0.32,
+        "macro_balanced_accuracy": 0.8758333333333334,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                12,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                11
+              ]
+            ],
+            "healthy_cycles": 11,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.92,
+            "balanced_accuracy": 0.92,
+            "classes": [
+              100
+            ],
+            "confusion": [
+              [
+                23
+              ]
+            ],
+            "healthy_cycles": 25,
+            "healthy_false_alarm_rate": 0.08,
+            "recalls": [
+              0.92
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                22,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "healthy_cycles": 22,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.4,
+            "balanced_accuracy": 0.5833333333333334,
+            "classes": [
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                10
+              ],
+              [
+                0,
+                0,
+                8
+              ]
+            ],
+            "healthy_cycles": 12,
+            "healthy_false_alarm_rate": 0.3333333333333333,
+            "recalls": [
+              1.0,
+              0.08333333333333333,
+              0.6666666666666666
+            ],
+            "task": "accumulator"
+          }
+        ]
+      }
+    },
+    "pruned_greedy": {
+      "logged_scalars": 660,
+      "mask": 640,
+      "paired_group_bootstrap_vs_full": {
+        "groups": 30,
+        "joint_match_difference_95pct": [
+          -0.09816705993393114,
+          0.15555715658021133
+        ],
+        "missing_class_events": 277,
+        "replicates": 2000,
+        "task_balanced_accuracy_difference_95pct": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.08550425753491787,
+            0.11999465892634473
+          ],
+          [
+            -0.04386206386206386,
+            0.09117835145460808
+          ],
+          [
+            -0.17392819275536658,
+            0.03419037559662557
+          ]
+        ]
+      },
+      "selection_balanced_accuracy": [
+        1.0,
+        0.6466666666666666,
+        0.9703617420565586,
+        0.8747551058200641
+      ],
+      "sensor_count": 2,
+      "sensors": [
+        "FS1",
+        "TS1"
+      ],
+      "stable": {
+        "cycles": 300,
+        "joint_exact_match": 0.27666666666666667,
+        "macro_balanced_accuracy": 0.7987557118807119,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                90,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0
+              ],
+              [
+                0,
+                0,
+                120
+              ]
+            ],
+            "healthy_cycles": 120,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7,
+            "balanced_accuracy": 0.6687121212121213,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                101,
+                4,
+                0,
+                5
+              ],
+              [
+                1,
+                46,
+                12,
+                1
+              ],
+              [
+                0,
+                4,
+                36,
+                40
+              ],
+              [
+                0,
+                0,
+                23,
+                27
+              ]
+            ],
+            "healthy_cycles": 50,
+            "healthy_false_alarm_rate": 0.46,
+            "recalls": [
+              0.9181818181818182,
+              0.7666666666666667,
+              0.45,
+              0.54
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9266666666666666,
+            "balanced_accuracy": 0.923973063973064,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                98,
+                2,
+                0
+              ],
+              [
+                0,
+                103,
+                7
+              ],
+              [
+                2,
+                11,
+                77
+              ]
+            ],
+            "healthy_cycles": 100,
+            "healthy_false_alarm_rate": 0.02,
+            "recalls": [
+              0.98,
+              0.9363636363636364,
+              0.8555555555555555
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5333333333333333,
+            "balanced_accuracy": 0.6023376623376624,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                17,
+                0,
+                3,
+                0
+              ],
+              [
+                33,
+                51,
+                16,
+                0
+              ],
+              [
+                0,
+                28,
+                41,
+                1
+              ],
+              [
+                29,
+                5,
+                25,
+                51
+              ]
+            ],
+            "healthy_cycles": 110,
+            "healthy_false_alarm_rate": 0.5363636363636364,
+            "recalls": [
+              0.85,
+              0.51,
+              0.5857142857142857,
+              0.4636363636363636
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "test": {
+        "cycles": 325,
+        "joint_exact_match": 0.28,
+        "macro_balanced_accuracy": 0.8041563042928215,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                102,
+                0,
+                0
+              ],
+              [
+                0,
+                92,
+                0
+              ],
+              [
+                0,
+                0,
+                131
+              ]
+            ],
+            "healthy_cycles": 131,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7169230769230769,
+            "balanced_accuracy": 0.7003787878787879,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                101,
+                4,
+                0,
+                5
+              ],
+              [
+                1,
+                46,
+                12,
+                1
+              ],
+              [
+                0,
+                4,
+                36,
+                40
+              ],
+              [
+                0,
+                0,
+                25,
+                50
+              ]
+            ],
+            "healthy_cycles": 75,
+            "healthy_false_alarm_rate": 0.3333333333333333,
+            "recalls": [
+              0.9181818181818182,
+              0.7666666666666667,
+              0.45,
+              0.6666666666666666
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9323076923076923,
+            "balanced_accuracy": 0.926083138173302,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                120,
+                2,
+                0
+              ],
+              [
+                0,
+                105,
+                7
+              ],
+              [
+                2,
+                11,
+                78
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.01639344262295082,
+            "recalls": [
+              0.9836065573770492,
+              0.9375,
+              0.8571428571428571
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.5230769230769231,
+            "balanced_accuracy": 0.5901632911191959,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                17,
+                0,
+                3,
+                0
+              ],
+              [
+                33,
+                52,
+                16,
+                0
+              ],
+              [
+                0,
+                29,
+                42,
+                11
+              ],
+              [
+                33,
+                5,
+                25,
+                59
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.5163934426229508,
+            "recalls": [
+              0.85,
+              0.5148514851485149,
+              0.5121951219512195,
+              0.48360655737704916
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "transient": {
+        "cycles": 25,
+        "joint_exact_match": 0.32,
+        "macro_balanced_accuracy": 0.8758333333333334,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                12,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                11
+              ]
+            ],
+            "healthy_cycles": 11,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.92,
+            "balanced_accuracy": 0.92,
+            "classes": [
+              100
+            ],
+            "confusion": [
+              [
+                23
+              ]
+            ],
+            "healthy_cycles": 25,
+            "healthy_false_alarm_rate": 0.08,
+            "recalls": [
+              0.92
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                22,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "healthy_cycles": 22,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.4,
+            "balanced_accuracy": 0.5833333333333334,
+            "classes": [
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                10
+              ],
+              [
+                0,
+                0,
+                8
+              ]
+            ],
+            "healthy_cycles": 12,
+            "healthy_false_alarm_rate": 0.3333333333333333,
+            "recalls": [
+              1.0,
+              0.08333333333333333,
+              0.6666666666666666
+            ],
+            "task": "accumulator"
+          }
+        ]
+      }
+    },
+    "robust": {
+      "logged_scalars": 13320,
+      "mask": 9668,
+      "paired_group_bootstrap_vs_full": {
+        "groups": 30,
+        "joint_match_difference_95pct": [
+          0.08357587064676615,
+          0.31111111111111106
+        ],
+        "missing_class_events": 277,
+        "replicates": 2000,
+        "task_balanced_accuracy_difference_95pct": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.023898404889683974,
+            0.20509104489664057
+          ],
+          [
+            0.0017147020481290023,
+            0.0709881851149672
+          ],
+          [
+            0.03332489366894435,
+            0.18375453889671914
+          ]
+        ]
+      },
+      "selection_balanced_accuracy": [
+        1.0,
+        0.699375,
+        0.9280398628098104,
+        0.9245236005915338
+      ],
+      "sensor_count": 6,
+      "sensors": [
+        "PS3",
+        "EPS1",
+        "FS1",
+        "FS2",
+        "TS2",
+        "VS1"
+      ],
+      "single_sensor_erasure_test": {
+        "EPS1": {
+          "cycles": 325,
+          "joint_exact_match": 0.36923076923076925,
+          "macro_balanced_accuracy": 0.8352597555143678,
+          "tasks": [
+            {
+              "accuracy": 1.0,
+              "balanced_accuracy": 1.0,
+              "classes": [
+                3,
+                20,
+                100
+              ],
+              "confusion": [
+                [
+                  102,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  92,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  131
+                ]
+              ],
+              "healthy_cycles": 131,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "task": "cooler"
+            },
+            {
+              "accuracy": 0.7015384615384616,
+              "balanced_accuracy": 0.699280303030303,
+              "classes": [
+                73,
+                80,
+                90,
+                100
+              ],
+              "confusion": [
+                [
+                  93,
+                  11,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  50,
+                  10,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  18,
+                  57
+                ],
+                [
+                  0,
+                  0,
+                  8,
+                  67
+                ]
+              ],
+              "healthy_cycles": 75,
+              "healthy_false_alarm_rate": 0.10666666666666667,
+              "recalls": [
+                0.8454545454545455,
+                0.8333333333333334,
+                0.225,
+                0.8933333333333333
+              ],
+              "task": "valve"
+            },
+            {
+              "accuracy": 0.9107692307692308,
+              "balanced_accuracy": 0.9109432234432235,
+              "classes": [
+                0,
+                1,
+                2
+              ],
+              "confusion": [
+                [
+                  122,
+                  0,
+                  0
+                ],
+                [
+                  6,
+                  87,
+                  19
+                ],
+                [
+                  2,
+                  2,
+                  87
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                0.7767857142857143,
+                0.9560439560439561
+              ],
+              "task": "pump"
+            },
+            {
+              "accuracy": 0.6738461538461539,
+              "balanced_accuracy": 0.7308154955839447,
+              "classes": [
+                90,
+                100,
+                115,
+                130
+              ],
+              "confusion": [
+                [
+                  18,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  21,
+                  75,
+                  5,
+                  0
+                ],
+                [
+                  0,
+                  10,
+                  62,
+                  10
+                ],
+                [
+                  30,
+                  0,
+                  28,
+                  64
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.47540983606557374,
+              "recalls": [
+                0.9,
+                0.7425742574257426,
+                0.7560975609756098,
+                0.5245901639344263
+              ],
+              "task": "accumulator"
+            }
+          ]
+        },
+        "FS1": {
+          "cycles": 325,
+          "joint_exact_match": 0.37846153846153846,
+          "macro_balanced_accuracy": 0.8396405359751036,
+          "tasks": [
+            {
+              "accuracy": 1.0,
+              "balanced_accuracy": 1.0,
+              "classes": [
+                3,
+                20,
+                100
+              ],
+              "confusion": [
+                [
+                  102,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  92,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  131
+                ]
+              ],
+              "healthy_cycles": 131,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "task": "cooler"
+            },
+            {
+              "accuracy": 0.7476923076923077,
+              "balanced_accuracy": 0.7534848484848484,
+              "classes": [
+                73,
+                80,
+                90,
+                100
+              ],
+              "confusion": [
+                [
+                  91,
+                  15,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  55,
+                  5,
+                  0
+                ],
+                [
+                  1,
+                  4,
+                  28,
+                  47
+                ],
+                [
+                  0,
+                  0,
+                  6,
+                  69
+                ]
+              ],
+              "healthy_cycles": 75,
+              "healthy_false_alarm_rate": 0.08,
+              "recalls": [
+                0.8272727272727273,
+                0.9166666666666666,
+                0.35,
+                0.92
+              ],
+              "task": "valve"
+            },
+            {
+              "accuracy": 0.8492307692307692,
+              "balanced_accuracy": 0.8516633639584459,
+              "classes": [
+                0,
+                1,
+                2
+              ],
+              "confusion": [
+                [
+                  121,
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  68,
+                  42
+                ],
+                [
+                  3,
+                  1,
+                  87
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.00819672131147541,
+              "recalls": [
+                0.9918032786885246,
+                0.6071428571428571,
+                0.9560439560439561
+              ],
+              "task": "pump"
+            },
+            {
+              "accuracy": 0.6923076923076923,
+              "balanced_accuracy": 0.7534139314571202,
+              "classes": [
+                90,
+                100,
+                115,
+                130
+              ],
+              "confusion": [
+                [
+                  19,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  18,
+                  77,
+                  6,
+                  0
+                ],
+                [
+                  0,
+                  10,
+                  61,
+                  11
+                ],
+                [
+                  25,
+                  0,
+                  29,
+                  68
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.4426229508196721,
+              "recalls": [
+                0.95,
+                0.7623762376237624,
+                0.7439024390243902,
+                0.5573770491803278
+              ],
+              "task": "accumulator"
+            }
+          ]
+        },
+        "FS2": {
+          "cycles": 325,
+          "joint_exact_match": 0.4246153846153846,
+          "macro_balanced_accuracy": 0.8659149732100893,
+          "tasks": [
+            {
+              "accuracy": 1.0,
+              "balanced_accuracy": 1.0,
+              "classes": [
+                3,
+                20,
+                100
+              ],
+              "confusion": [
+                [
+                  102,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  92,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  131
+                ]
+              ],
+              "healthy_cycles": 131,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "task": "cooler"
+            },
+            {
+              "accuracy": 0.8369230769230769,
+              "balanced_accuracy": 0.8367613636363637,
+              "classes": [
+                73,
+                80,
+                90,
+                100
+              ],
+              "confusion": [
+                [
+                  105,
+                  5,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  59,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  37,
+                  40
+                ],
+                [
+                  0,
+                  0,
+                  4,
+                  71
+                ]
+              ],
+              "healthy_cycles": 75,
+              "healthy_false_alarm_rate": 0.05333333333333334,
+              "recalls": [
+                0.9545454545454546,
+                0.9833333333333333,
+                0.4625,
+                0.9466666666666667
+              ],
+              "task": "valve"
+            },
+            {
+              "accuracy": 0.9538461538461539,
+              "balanced_accuracy": 0.9528538401489222,
+              "classes": [
+                0,
+                1,
+                2
+              ],
+              "confusion": [
+                [
+                  121,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  102,
+                  10
+                ],
+                [
+                  1,
+                  3,
+                  87
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.00819672131147541,
+              "recalls": [
+                0.9918032786885246,
+                0.9107142857142857,
+                0.9560439560439561
+              ],
+              "task": "pump"
+            },
+            {
+              "accuracy": 0.6030769230769231,
+              "balanced_accuracy": 0.674044689055071,
+              "classes": [
+                90,
+                100,
+                115,
+                130
+              ],
+              "confusion": [
+                [
+                  19,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  23,
+                  56,
+                  22,
+                  0
+                ],
+                [
+                  0,
+                  22,
+                  50,
+                  10
+                ],
+                [
+                  11,
+                  3,
+                  37,
+                  71
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.4180327868852459,
+              "recalls": [
+                0.95,
+                0.5544554455445545,
+                0.6097560975609756,
+                0.5819672131147541
+              ],
+              "task": "accumulator"
+            }
+          ]
+        },
+        "PS3": {
+          "cycles": 325,
+          "joint_exact_match": 0.38769230769230767,
+          "macro_balanced_accuracy": 0.8451548880310638,
+          "tasks": [
+            {
+              "accuracy": 1.0,
+              "balanced_accuracy": 1.0,
+              "classes": [
+                3,
+                20,
+                100
+              ],
+              "confusion": [
+                [
+                  102,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  92,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  131
+                ]
+              ],
+              "healthy_cycles": 131,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "task": "cooler"
+            },
+            {
+              "accuracy": 0.72,
+              "balanced_accuracy": 0.7171401515151515,
+              "classes": [
+                73,
+                80,
+                90,
+                100
+              ],
+              "confusion": [
+                [
+                  96,
+                  12,
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  52,
+                  5,
+                  1
+                ],
+                [
+                  0,
+                  5,
+                  21,
+                  54
+                ],
+                [
+                  0,
+                  0,
+                  10,
+                  65
+                ]
+              ],
+              "healthy_cycles": 75,
+              "healthy_false_alarm_rate": 0.13333333333333333,
+              "recalls": [
+                0.8727272727272727,
+                0.8666666666666667,
+                0.2625,
+                0.8666666666666667
+              ],
+              "task": "valve"
+            },
+            {
+              "accuracy": 0.9138461538461539,
+              "balanced_accuracy": 0.9146062271062272,
+              "classes": [
+                0,
+                1,
+                2
+              ],
+              "confusion": [
+                [
+                  122,
+                  0,
+                  0
+                ],
+                [
+                  5,
+                  87,
+                  20
+                ],
+                [
+                  2,
+                  1,
+                  88
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                0.7767857142857143,
+                0.967032967032967
+              ],
+              "task": "pump"
+            },
+            {
+              "accuracy": 0.6861538461538461,
+              "balanced_accuracy": 0.748873173502876,
+              "classes": [
+                90,
+                100,
+                115,
+                130
+              ],
+              "confusion": [
+                [
+                  19,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  13,
+                  83,
+                  5,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  58,
+                  13
+                ],
+                [
+                  30,
+                  0,
+                  29,
+                  63
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.48360655737704916,
+              "recalls": [
+                0.95,
+                0.8217821782178217,
+                0.7073170731707317,
+                0.5163934426229508
+              ],
+              "task": "accumulator"
+            }
+          ]
+        },
+        "TS2": {
+          "cycles": 325,
+          "joint_exact_match": 0.41846153846153844,
+          "macro_balanced_accuracy": 0.8628098646175697,
+          "tasks": [
+            {
+              "accuracy": 1.0,
+              "balanced_accuracy": 1.0,
+              "classes": [
+                3,
+                20,
+                100
+              ],
+              "confusion": [
+                [
+                  102,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  92,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  131
+                ]
+              ],
+              "healthy_cycles": 131,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "task": "cooler"
+            },
+            {
+              "accuracy": 0.8307692307692308,
+              "balanced_accuracy": 0.8265151515151516,
+              "classes": [
+                73,
+                80,
+                90,
+                100
+              ],
+              "confusion": [
+                [
+                  107,
+                  3,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  57,
+                  3,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  36,
+                  42
+                ],
+                [
+                  0,
+                  0,
+                  5,
+                  70
+                ]
+              ],
+              "healthy_cycles": 75,
+              "healthy_false_alarm_rate": 0.06666666666666667,
+              "recalls": [
+                0.9727272727272728,
+                0.95,
+                0.45,
+                0.9333333333333333
+              ],
+              "task": "valve"
+            },
+            {
+              "accuracy": 0.9261538461538461,
+              "balanced_accuracy": 0.9260681258632079,
+              "classes": [
+                0,
+                1,
+                2
+              ],
+              "confusion": [
+                [
+                  121,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  93,
+                  16
+                ],
+                [
+                  1,
+                  3,
+                  87
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.00819672131147541,
+              "recalls": [
+                0.9918032786885246,
+                0.8303571428571429,
+                0.9560439560439561
+              ],
+              "task": "pump"
+            },
+            {
+              "accuracy": 0.6123076923076923,
+              "balanced_accuracy": 0.6986561810919196,
+              "classes": [
+                90,
+                100,
+                115,
+                130
+              ],
+              "confusion": [
+                [
+                  20,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  49,
+                  49,
+                  3,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  61,
+                  10
+                ],
+                [
+                  3,
+                  0,
+                  50,
+                  69
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.4344262295081967,
+              "recalls": [
+                1.0,
+                0.48514851485148514,
+                0.7439024390243902,
+                0.5655737704918032
+              ],
+              "task": "accumulator"
+            }
+          ]
+        },
+        "VS1": {
+          "cycles": 325,
+          "joint_exact_match": 0.47384615384615386,
+          "macro_balanced_accuracy": 0.870182033606334,
+          "tasks": [
+            {
+              "accuracy": 1.0,
+              "balanced_accuracy": 1.0,
+              "classes": [
+                3,
+                20,
+                100
+              ],
+              "confusion": [
+                [
+                  102,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  92,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  131
+                ]
+              ],
+              "healthy_cycles": 131,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "task": "cooler"
+            },
+            {
+              "accuracy": 0.7784615384615384,
+              "balanced_accuracy": 0.7789583333333333,
+              "classes": [
+                73,
+                80,
+                90,
+                100
+              ],
+              "confusion": [
+                [
+                  99,
+                  10,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  56,
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  29,
+                  49
+                ],
+                [
+                  0,
+                  0,
+                  6,
+                  69
+                ]
+              ],
+              "healthy_cycles": 75,
+              "healthy_false_alarm_rate": 0.08,
+              "recalls": [
+                0.9,
+                0.9333333333333333,
+                0.3625,
+                0.92
+              ],
+              "task": "valve"
+            },
+            {
+              "accuracy": 0.9292307692307692,
+              "balanced_accuracy": 0.9294871794871794,
+              "classes": [
+                0,
+                1,
+                2
+              ],
+              "confusion": [
+                [
+                  122,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  92,
+                  18
+                ],
+                [
+                  2,
+                  1,
+                  88
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.0,
+              "recalls": [
+                1.0,
+                0.8214285714285714,
+                0.967032967032967
+              ],
+              "task": "pump"
+            },
+            {
+              "accuracy": 0.72,
+              "balanced_accuracy": 0.7722826216048235,
+              "classes": [
+                90,
+                100,
+                115,
+                130
+              ],
+              "confusion": [
+                [
+                  19,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  19,
+                  78,
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  10,
+                  61,
+                  11
+                ],
+                [
+                  16,
+                  0,
+                  30,
+                  76
+                ]
+              ],
+              "healthy_cycles": 122,
+              "healthy_false_alarm_rate": 0.3770491803278688,
+              "recalls": [
+                0.95,
+                0.7722772277227723,
+                0.7439024390243902,
+                0.6229508196721312
+              ],
+              "task": "accumulator"
+            }
+          ]
+        }
+      },
+      "stable": {
+        "cycles": 300,
+        "joint_exact_match": 0.43666666666666665,
+        "macro_balanced_accuracy": 0.8644157347282347,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                90,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0
+              ],
+              [
+                0,
+                0,
+                120
+              ]
+            ],
+            "healthy_cycles": 120,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7466666666666667,
+            "balanced_accuracy": 0.7573106060606061,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                98,
+                11,
+                0,
+                1
+              ],
+              [
+                0,
+                56,
+                4,
+                0
+              ],
+              [
+                0,
+                3,
+                26,
+                51
+              ],
+              [
+                0,
+                0,
+                6,
+                44
+              ]
+            ],
+            "healthy_cycles": 50,
+            "healthy_false_alarm_rate": 0.12,
+            "recalls": [
+              0.8909090909090909,
+              0.9333333333333333,
+              0.325,
+              0.88
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9233333333333333,
+            "balanced_accuracy": 0.928956228956229,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                100,
+                0,
+                0
+              ],
+              [
+                2,
+                89,
+                19
+              ],
+              [
+                1,
+                1,
+                88
+              ]
+            ],
+            "healthy_cycles": 100,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              0.8090909090909091,
+              0.9777777777777777
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.71,
+            "balanced_accuracy": 0.7713961038961039,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                19,
+                1,
+                0,
+                0
+              ],
+              [
+                23,
+                72,
+                5,
+                0
+              ],
+              [
+                0,
+                10,
+                59,
+                1
+              ],
+              [
+                17,
+                0,
+                30,
+                63
+              ]
+            ],
+            "healthy_cycles": 110,
+            "healthy_false_alarm_rate": 0.42727272727272725,
+            "recalls": [
+              0.95,
+              0.72,
+              0.8428571428571429,
+              0.5727272727272728
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "test": {
+        "cycles": 325,
+        "joint_exact_match": 0.4461538461538462,
+        "macro_balanced_accuracy": 0.8633231555149806,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                102,
+                0,
+                0
+              ],
+              [
+                0,
+                92,
+                0
+              ],
+              [
+                0,
+                0,
+                131
+              ]
+            ],
+            "healthy_cycles": 131,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 0.7661538461538462,
+            "balanced_accuracy": 0.7673106060606061,
+            "classes": [
+              73,
+              80,
+              90,
+              100
+            ],
+            "confusion": [
+              [
+                98,
+                11,
+                0,
+                1
+              ],
+              [
+                0,
+                56,
+                4,
+                0
+              ],
+              [
+                0,
+                3,
+                26,
+                51
+              ],
+              [
+                0,
+                0,
+                6,
+                69
+              ]
+            ],
+            "healthy_cycles": 75,
+            "healthy_false_alarm_rate": 0.08,
+            "recalls": [
+              0.8909090909090909,
+              0.9333333333333333,
+              0.325,
+              0.92
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 0.9292307692307692,
+            "balanced_accuracy": 0.9301739926739927,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                122,
+                0,
+                0
+              ],
+              [
+                2,
+                91,
+                19
+              ],
+              [
+                1,
+                1,
+                89
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              0.8125,
+              0.978021978021978
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.6984615384615385,
+            "balanced_accuracy": 0.7558080233253234,
+            "classes": [
+              90,
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                19,
+                1,
+                0,
+                0
+              ],
+              [
+                23,
+                73,
+                5,
+                0
+              ],
+              [
+                0,
+                10,
+                61,
+                11
+              ],
+              [
+                18,
+                0,
+                30,
+                74
+              ]
+            ],
+            "healthy_cycles": 122,
+            "healthy_false_alarm_rate": 0.39344262295081966,
+            "recalls": [
+              0.95,
+              0.7227722772277227,
+              0.7439024390243902,
+              0.6065573770491803
+            ],
+            "task": "accumulator"
+          }
+        ]
+      },
+      "transient": {
+        "cycles": 25,
+        "joint_exact_match": 0.56,
+        "macro_balanced_accuracy": 0.9236111111111112,
+        "tasks": [
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              3,
+              20,
+              100
+            ],
+            "confusion": [
+              [
+                12,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                11
+              ]
+            ],
+            "healthy_cycles": 11,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "cooler"
+          },
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              100
+            ],
+            "confusion": [
+              [
+                25
+              ]
+            ],
+            "healthy_cycles": 25,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0
+            ],
+            "task": "valve"
+          },
+          {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "classes": [
+              0,
+              1,
+              2
+            ],
+            "confusion": [
+              [
+                22,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "healthy_cycles": 22,
+            "healthy_false_alarm_rate": 0.0,
+            "recalls": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "task": "pump"
+          },
+          {
+            "accuracy": 0.56,
+            "balanced_accuracy": 0.6944444444444445,
+            "classes": [
+              100,
+              115,
+              130
+            ],
+            "confusion": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                10
+              ],
+              [
+                0,
+                0,
+                11
+              ]
+            ],
+            "healthy_cycles": 12,
+            "healthy_false_alarm_rate": 0.08333333333333333,
+            "recalls": [
+              1.0,
+              0.16666666666666666,
+              0.9166666666666666
+            ],
+            "task": "accumulator"
+          }
+        ]
+      }
+    }
+  },
+  "protocol_sha256": "da3cbe24d6c9377805ce28b3b6d1e0d059ea726f628c0f8279d178273783444b",
+  "random_same_cardinality": {
+    "count": 91,
+    "joint_exact_match_quantiles": [
+      0.003076923076923077,
+      0.015384615384615385,
+      0.22153846153846155,
+      0.2846153846153846,
+      0.4461538461538462
+    ],
+    "macro_balanced_accuracy_quantiles": [
+      0.5075610070137977,
+      0.5546328981706724,
+      0.7754956124778185,
+      0.809136732213216,
+      0.8815421407145262
+    ],
+    "panels": [
+      {
+        "joint_exact_match": 0.3323076923076923,
+        "macro_balanced_accuracy": 0.8413483759330533,
+        "mask": 3
+      },
+      {
+        "joint_exact_match": 0.20307692307692307,
+        "macro_balanced_accuracy": 0.8002101121352121,
+        "mask": 5
+      },
+      {
+        "joint_exact_match": 0.2123076923076923,
+        "macro_balanced_accuracy": 0.8056796367795669,
+        "mask": 6
+      },
+      {
+        "joint_exact_match": 0.28,
+        "macro_balanced_accuracy": 0.8049109765123754,
+        "mask": 9
+      },
+      {
+        "joint_exact_match": 0.28615384615384615,
+        "macro_balanced_accuracy": 0.8248779128623898,
+        "mask": 10
+      },
+      {
+        "joint_exact_match": 0.20615384615384616,
+        "macro_balanced_accuracy": 0.7443825188275177,
+        "mask": 12
+      },
+      {
+        "joint_exact_match": 0.23076923076923078,
+        "macro_balanced_accuracy": 0.7868320720844872,
+        "mask": 17
+      },
+      {
+        "joint_exact_match": 0.3446153846153846,
+        "macro_balanced_accuracy": 0.8240611942201158,
+        "mask": 18
+      },
+      {
+        "joint_exact_match": 0.23692307692307693,
+        "macro_balanced_accuracy": 0.7534094263524961,
+        "mask": 20
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5584109312944803,
+        "mask": 24
+      },
+      {
+        "joint_exact_match": 0.24615384615384617,
+        "macro_balanced_accuracy": 0.7914092884911841,
+        "mask": 33
+      },
+      {
+        "joint_exact_match": 0.3353846153846154,
+        "macro_balanced_accuracy": 0.8299131313777002,
+        "mask": 34
+      },
+      {
+        "joint_exact_match": 0.22153846153846155,
+        "macro_balanced_accuracy": 0.7602551539981413,
+        "mask": 36
+      },
+      {
+        "joint_exact_match": 0.012307692307692308,
+        "macro_balanced_accuracy": 0.547215770462643,
+        "mask": 40
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5389810842411139,
+        "mask": 48
+      },
+      {
+        "joint_exact_match": 0.4461538461538462,
+        "macro_balanced_accuracy": 0.8801180953710341,
+        "mask": 65
+      },
+      {
+        "joint_exact_match": 0.39384615384615385,
+        "macro_balanced_accuracy": 0.8623931848035176,
+        "mask": 66
+      },
+      {
+        "joint_exact_match": 0.30153846153846153,
+        "macro_balanced_accuracy": 0.8338647788174189,
+        "mask": 68
+      },
+      {
+        "joint_exact_match": 0.37538461538461537,
+        "macro_balanced_accuracy": 0.8366570059765219,
+        "mask": 72
+      },
+      {
+        "joint_exact_match": 0.3076923076923077,
+        "macro_balanced_accuracy": 0.8007049534473837,
+        "mask": 80
+      },
+      {
+        "joint_exact_match": 0.28307692307692306,
+        "macro_balanced_accuracy": 0.799170867642119,
+        "mask": 96
+      },
+      {
+        "joint_exact_match": 0.4,
+        "macro_balanced_accuracy": 0.8757683151279154,
+        "mask": 129
+      },
+      {
+        "joint_exact_match": 0.4,
+        "macro_balanced_accuracy": 0.8682003879986957,
+        "mask": 130
+      },
+      {
+        "joint_exact_match": 0.3261538461538461,
+        "macro_balanced_accuracy": 0.8458982748822681,
+        "mask": 132
+      },
+      {
+        "joint_exact_match": 0.3723076923076923,
+        "macro_balanced_accuracy": 0.8436248406716382,
+        "mask": 136
+      },
+      {
+        "joint_exact_match": 0.3046153846153846,
+        "macro_balanced_accuracy": 0.8108541692631955,
+        "mask": 144
+      },
+      {
+        "joint_exact_match": 0.3446153846153846,
+        "macro_balanced_accuracy": 0.8297092705030991,
+        "mask": 160
+      },
+      {
+        "joint_exact_match": 0.42153846153846153,
+        "macro_balanced_accuracy": 0.8815421407145262,
+        "mask": 192
+      },
+      {
+        "joint_exact_match": 0.27076923076923076,
+        "macro_balanced_accuracy": 0.7859265131184958,
+        "mask": 257
+      },
+      {
+        "joint_exact_match": 0.3353846153846154,
+        "macro_balanced_accuracy": 0.8197960019527928,
+        "mask": 258
+      },
+      {
+        "joint_exact_match": 0.23076923076923078,
+        "macro_balanced_accuracy": 0.7589611446432808,
+        "mask": 260
+      },
+      {
+        "joint_exact_match": 0.003076923076923077,
+        "macro_balanced_accuracy": 0.5473807805706068,
+        "mask": 264
+      },
+      {
+        "joint_exact_match": 0.009230769230769232,
+        "macro_balanced_accuracy": 0.5573031091749625,
+        "mask": 272
+      },
+      {
+        "joint_exact_match": 0.009230769230769232,
+        "macro_balanced_accuracy": 0.5519626871663823,
+        "mask": 288
+      },
+      {
+        "joint_exact_match": 0.28307692307692306,
+        "macro_balanced_accuracy": 0.8057640136975365,
+        "mask": 320
+      },
+      {
+        "joint_exact_match": 0.3415384615384615,
+        "macro_balanced_accuracy": 0.8298024358606524,
+        "mask": 384
+      },
+      {
+        "joint_exact_match": 0.20615384615384616,
+        "macro_balanced_accuracy": 0.7851821210645095,
+        "mask": 513
+      },
+      {
+        "joint_exact_match": 0.28307692307692306,
+        "macro_balanced_accuracy": 0.8189229483538678,
+        "mask": 514
+      },
+      {
+        "joint_exact_match": 0.17846153846153845,
+        "macro_balanced_accuracy": 0.7503083217911389,
+        "mask": 516
+      },
+      {
+        "joint_exact_match": 0.006153846153846154,
+        "macro_balanced_accuracy": 0.5195451633595843,
+        "mask": 520
+      },
+      {
+        "joint_exact_match": 0.012307692307692308,
+        "macro_balanced_accuracy": 0.5329362466538247,
+        "mask": 528
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5127964492588111,
+        "mask": 544
+      },
+      {
+        "joint_exact_match": 0.3046153846153846,
+        "macro_balanced_accuracy": 0.8050337574517247,
+        "mask": 576
+      },
+      {
+        "joint_exact_match": 0.28,
+        "macro_balanced_accuracy": 0.8041563042928215,
+        "mask": 640
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5593674446125365,
+        "mask": 768
+      },
+      {
+        "joint_exact_match": 0.26153846153846155,
+        "macro_balanced_accuracy": 0.7828915662168827,
+        "mask": 1025
+      },
+      {
+        "joint_exact_match": 0.25846153846153846,
+        "macro_balanced_accuracy": 0.8012513071651143,
+        "mask": 1026
+      },
+      {
+        "joint_exact_match": 0.23076923076923078,
+        "macro_balanced_accuracy": 0.7632793403516642,
+        "mask": 1028
+      },
+      {
+        "joint_exact_match": 0.006153846153846154,
+        "macro_balanced_accuracy": 0.537900972774138,
+        "mask": 1032
+      },
+      {
+        "joint_exact_match": 0.024615384615384615,
+        "macro_balanced_accuracy": 0.5341111854504331,
+        "mask": 1040
+      },
+      {
+        "joint_exact_match": 0.024615384615384615,
+        "macro_balanced_accuracy": 0.525597367201715,
+        "mask": 1056
+      },
+      {
+        "joint_exact_match": 0.31076923076923074,
+        "macro_balanced_accuracy": 0.8093560272410687,
+        "mask": 1088
+      },
+      {
+        "joint_exact_match": 0.3230769230769231,
+        "macro_balanced_accuracy": 0.8089174371853634,
+        "mask": 1152
+      },
+      {
+        "joint_exact_match": 0.024615384615384615,
+        "macro_balanced_accuracy": 0.5684467888726383,
+        "mask": 1280
+      },
+      {
+        "joint_exact_match": 0.006153846153846154,
+        "macro_balanced_accuracy": 0.5132002502274611,
+        "mask": 1536
+      },
+      {
+        "joint_exact_match": 0.2246153846153846,
+        "macro_balanced_accuracy": 0.7910281448684757,
+        "mask": 2049
+      },
+      {
+        "joint_exact_match": 0.26461538461538464,
+        "macro_balanced_accuracy": 0.8121419932243721,
+        "mask": 2050
+      },
+      {
+        "joint_exact_match": 0.21846153846153846,
+        "macro_balanced_accuracy": 0.7558275617998648,
+        "mask": 2052
+      },
+      {
+        "joint_exact_match": 0.012307692307692308,
+        "macro_balanced_accuracy": 0.531008529159066,
+        "mask": 2056
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5239563520695288,
+        "mask": 2064
+      },
+      {
+        "joint_exact_match": 0.012307692307692308,
+        "macro_balanced_accuracy": 0.5214230011971516,
+        "mask": 2080
+      },
+      {
+        "joint_exact_match": 0.3169230769230769,
+        "macro_balanced_accuracy": 0.8016709074811305,
+        "mask": 2112
+      },
+      {
+        "joint_exact_match": 0.2523076923076923,
+        "macro_balanced_accuracy": 0.7985343739791811,
+        "mask": 2176
+      },
+      {
+        "joint_exact_match": 0.024615384615384615,
+        "macro_balanced_accuracy": 0.5652213448177025,
+        "mask": 2304
+      },
+      {
+        "joint_exact_match": 0.006153846153846154,
+        "macro_balanced_accuracy": 0.5075610070137977,
+        "mask": 2560
+      },
+      {
+        "joint_exact_match": 0.018461538461538463,
+        "macro_balanced_accuracy": 0.519622320856699,
+        "mask": 3072
+      },
+      {
+        "joint_exact_match": 0.17846153846153845,
+        "macro_balanced_accuracy": 0.7527343051175622,
+        "mask": 4097
+      },
+      {
+        "joint_exact_match": 0.2676923076923077,
+        "macro_balanced_accuracy": 0.7993973241767856,
+        "mask": 4098
+      },
+      {
+        "joint_exact_match": 0.17846153846153845,
+        "macro_balanced_accuracy": 0.7423725041934361,
+        "mask": 4100
+      },
+      {
+        "joint_exact_match": 0.018461538461538463,
+        "macro_balanced_accuracy": 0.5410239363952724,
+        "mask": 4104
+      },
+      {
+        "joint_exact_match": 0.012307692307692308,
+        "macro_balanced_accuracy": 0.5260721807097595,
+        "mask": 4112
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5345931486331607,
+        "mask": 4128
+      },
+      {
+        "joint_exact_match": 0.23692307692307693,
+        "macro_balanced_accuracy": 0.7766313857372402,
+        "mask": 4160
+      },
+      {
+        "joint_exact_match": 0.2523076923076923,
+        "macro_balanced_accuracy": 0.7940586801859014,
+        "mask": 4224
+      },
+      {
+        "joint_exact_match": 0.018461538461538463,
+        "macro_balanced_accuracy": 0.5748544758794372,
+        "mask": 4352
+      },
+      {
+        "joint_exact_match": 0.006153846153846154,
+        "macro_balanced_accuracy": 0.5200654755197158,
+        "mask": 4608
+      },
+      {
+        "joint_exact_match": 0.009230769230769232,
+        "macro_balanced_accuracy": 0.5361751875975277,
+        "mask": 5120
+      },
+      {
+        "joint_exact_match": 0.009230769230769232,
+        "macro_balanced_accuracy": 0.516200338999679,
+        "mask": 6144
+      },
+      {
+        "joint_exact_match": 0.24307692307692308,
+        "macro_balanced_accuracy": 0.8070233028253867,
+        "mask": 8193
+      },
+      {
+        "joint_exact_match": 0.25846153846153846,
+        "macro_balanced_accuracy": 0.8251973754096265,
+        "mask": 8194
+      },
+      {
+        "joint_exact_match": 0.14153846153846153,
+        "macro_balanced_accuracy": 0.7754956124778185,
+        "mask": 8196
+      },
+      {
+        "joint_exact_match": 0.009230769230769232,
+        "macro_balanced_accuracy": 0.5518930280727312,
+        "mask": 8200
+      },
+      {
+        "joint_exact_match": 0.018461538461538463,
+        "macro_balanced_accuracy": 0.5980964695139112,
+        "mask": 8208
+      },
+      {
+        "joint_exact_match": 0.027692307692307693,
+        "macro_balanced_accuracy": 0.5897630438513362,
+        "mask": 8224
+      },
+      {
+        "joint_exact_match": 0.3292307692307692,
+        "macro_balanced_accuracy": 0.828511518090528,
+        "mask": 8256
+      },
+      {
+        "joint_exact_match": 0.25846153846153846,
+        "macro_balanced_accuracy": 0.8338682646722859,
+        "mask": 8320
+      },
+      {
+        "joint_exact_match": 0.018461538461538463,
+        "macro_balanced_accuracy": 0.5877363137994474,
+        "mask": 8448
+      },
+      {
+        "joint_exact_match": 0.003076923076923077,
+        "macro_balanced_accuracy": 0.562930186299985,
+        "mask": 8704
+      },
+      {
+        "joint_exact_match": 0.003076923076923077,
+        "macro_balanced_accuracy": 0.5606321399434674,
+        "mask": 9216
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5622342106381961,
+        "mask": 10240
+      },
+      {
+        "joint_exact_match": 0.015384615384615385,
+        "macro_balanced_accuracy": 0.5689157041871302,
+        "mask": 12288
+      }
+    ]
+  },
+  "robust_feasible_mask_count": 69,
+  "schema": "singularity.sensor-replay.result/1",
+  "selected_panels_sha256": "0e336d877beee90ce0489347c8cdd38e11f4f3586a35d13bb84f1458b6236cc3",
+  "selection_threshold_balanced_accuracy": [
+    0.98,
+    0.630625,
+    0.842615673332039,
+    0.8474115684748853
+  ]
+}

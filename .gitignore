@@ -32,3 +32,6 @@ tmp/
 /applications/training_lab/results/deployment_audit/*/*/package_full_pool.json
 /applications/training_lab/results/deployment_audit/*/*/calibration_failure.json
 /applications/training_lab/results/deployment_audit/smollm2-360m/dynamic_int8_eager/results.json
+
+# Public physical recordings are reacquired through source-bound replay helpers.
+/applications/sensor_replay/audio_data/

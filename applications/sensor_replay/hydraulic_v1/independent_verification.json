@@ -1,0 +1,24 @@
+{
+  "all_mask_predictions_independently_rebuilt": true,
+  "exact_mask": 640,
+  "feasible_masks": 3311,
+  "independent_implementation": true,
+  "masks_checked": 16384,
+  "pruned_greedy_mask": 640,
+  "random_panels_checked": 91,
+  "rational_task_entries_checked": 65536,
+  "robust_feasible_masks": 69,
+  "robust_mask": 9668,
+  "scope": "Independent exact finite-table optimum and saved-score metric replay; training, bootstrap interval generation and physical transfer not independently reproduced.",
+  "source_hash_matches_frozen": true,
+  "status": "PASS",
+  "test_panels_checked": [
+    "exact",
+    "greedy",
+    "pruned_greedy",
+    "full",
+    "robust"
+  ],
+  "uses_study_imports": false,
+  "verifier_sha256": "dc4537d66fa6c144a8953ae1661415b159db3733e2d0462e1a8b961365c8c320"
+}

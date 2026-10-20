@@ -1,0 +1,6791 @@
+{
+  "all_selection_masks": [
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 1,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_radial"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 2,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 3,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 4,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 5,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 4,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 6,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 5,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 7,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "overhang_axial"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 8,
+      "n": 6,
+      "predictions": [
+        1,
+        0,
+        0,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 9,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 10,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 11,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 12,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 13,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 14,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 15,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "overhang_radial"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 16,
+      "n": 6,
+      "predictions": [
+        1,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 17,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 18,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 19,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 20,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 21,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 22,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 23,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 24,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 25,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 26,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 27,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 28,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 29,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 30,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 31,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 32,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 33,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 34,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 35,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_tangential",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 36,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 37,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 38,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 39,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 40,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 41,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 42,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 43,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 44,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 45,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 46,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 47,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 48,
+      "n": 6,
+      "predictions": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 49,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_radial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 50,
+      "n": 6,
+      "predictions": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 51,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 52,
+      "n": 6,
+      "predictions": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 53,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 54,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 55,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 56,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 57,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 58,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 59,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 60,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 61,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 62,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 63,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "microphone"
+      ],
+      "class_recall": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 1,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 64,
+      "n": 6,
+      "predictions": [
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 65,
+      "n": 6,
+      "predictions": [
+        2,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 66,
+      "n": 6,
+      "predictions": [
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 67,
+      "n": 6,
+      "predictions": [
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 68,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 69,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 70,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        0.5
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "correct": 5,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 71,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 72,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 73,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 74,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 75,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 76,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 77,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 78,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 79,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 80,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 81,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 82,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 83,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 84,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 85,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 86,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 87,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 88,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 89,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 90,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 91,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 92,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 93,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 94,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 95,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 2,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 96,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 97,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 98,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 99,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_tangential",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 100,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.6666666666666666,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 4,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 101,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 102,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 103,
+      "n": 6,
+      "predictions": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 104,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "balanced_accuracy": 0.8333333333333334,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        0.5,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 5,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 105,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 106,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 107,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 108,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 109,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 110,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 111,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 3,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 112,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 113,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 114,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 115,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 116,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 117,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 118,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 119,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 4,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 120,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 121,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 122,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 123,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 5,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 124,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 125,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 6,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 126,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "channels": [
+        "underhang_axial",
+        "underhang_radial",
+        "underhang_tangential",
+        "overhang_axial",
+        "overhang_radial",
+        "overhang_tangential",
+        "microphone"
+      ],
+      "class_recall": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "correct": 6,
+      "cost": 7,
+      "labels": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "mask": 127,
+      "n": 6,
+      "predictions": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2
+      ]
+    }
+  ],
+  "exact_selection": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "channels": [
+      "underhang_axial"
+    ],
+    "class_recall": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "correct": 6,
+    "cost": 1,
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "mask": 1,
+    "n": 6,
+    "predictions": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ]
+  },
+  "features_sha256": "4778d2e3e9aabbdae7006356d18c15ea866e4e49585c1ec2a53d7b95a30e5e4e",
+  "full_selection": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "channels": [
+      "underhang_axial",
+      "underhang_radial",
+      "underhang_tangential",
+      "overhang_axial",
+      "overhang_radial",
+      "overhang_tangential",
+      "microphone"
+    ],
+    "class_recall": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "correct": 6,
+    "cost": 7,
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "mask": 127,
+    "n": 6,
+    "predictions": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ]
+  },
+  "greedy_selection": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "channels": [
+      "underhang_axial"
+    ],
+    "class_recall": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "correct": 6,
+    "cost": 1,
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "mask": 1,
+    "n": 6,
+    "predictions": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ]
+  },
+  "greedy_steps": [
+    1
+  ],
+  "optimality": {
+    "all_minimum_cost_masks": [
+      1,
+      4
+    ],
+    "enumerated_nonempty_masks": 127,
+    "feasible_masks": 96,
+    "minimum_cost": 1,
+    "no_lower_cost_feasible_mask": true
+  },
+  "protocol_sha256": "96a19f61a11e0232751de8d2d98c1d25104e90979ee62c2e681a0041d4080e71",
+  "pruned_greedy_selection": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "channels": [
+      "underhang_axial"
+    ],
+    "class_recall": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "correct": 6,
+    "cost": 1,
+    "labels": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "mask": 1,
+    "n": 6,
+    "predictions": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ]
+  },
+  "script_sha256": "f3032c1d154517ec0668d894c65d7c8137c9d1a9e1e4e14b6d5c74a218c4f48e",
+  "selection_rows": [
+    1,
+    5,
+    9,
+    13,
+    17,
+    21
+  ],
+  "selection_seconds": 0.009326118000899442,
+  "selection_threshold": 0.98,
+  "test_metrics_not_yet_evaluated": true,
+  "training_rows": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+  ]
+}

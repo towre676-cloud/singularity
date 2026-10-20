@@ -80,6 +80,10 @@ Consider a heated plate with six possible fault hypotheses. A symmetric sensor c
 
 On the exact 144-state model, its optimal robust panel costs **20**, compared with **31** for greedy selection and **44** for a fixed protocol. An independent heat-flux simulator checks all 672 candidate predictions, and a separate optimization confirms the minimum. These are constructed faults and normalized model costs, not field measurements. The [thermal diagnostic example](applications/thermal_diagnostics/README.md) gives the complete model, uncertainty assumptions, and reproduction command.
 
+## Replay physical sensor measurements offline
+
+The [physical sensor replay study](applications/sensor_replay/README.md) evaluates the complete 2,205-cycle hydraulic corpus and 42 synchronized microphone/accelerometer recordings across two frozen audio phases. A six-sensor hydraulic panel reaches 86.33% mean component balanced accuracy on held-out fault combinations, versus 81.03% for the same additive model with all fourteen sensors; a stronger full-feature reference reaches 89.50%. The minimum two-sensor panel loses accumulator accuracy, and the audio reductions fail their held-out preservation margins. Exact selection ties optimally pruned greedy. The [illustrated report](applications/sensor_replay/Sensor_Design_Research.html), source manifests, all-mask tables and independent checkers retain both positive and negative results. These are same-rig measurement replays, not new hardware interventions or universal sensor guarantees.
+
 ## The mathematics underneath
 
 ![A five-cycle with heights 0, 1, 3, 2, 0 has total height six, squared-edge energy ten, and three nested threshold sets.](docs/assets/height-profile.svg)

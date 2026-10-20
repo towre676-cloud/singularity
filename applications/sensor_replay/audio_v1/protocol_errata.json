@@ -1,0 +1,8 @@
+{
+  "recorded_at_utc": "2026-10-19T23:22:01.559617+00:00",
+  "preserved_protocol": "protocol.json",
+  "field": "freeze_stage",
+  "original_wording": "before decompression, feature extraction, or signal inspection",
+  "correction": "The protocol was frozen before numerical signal parsing, feature extraction and model/selection/test evaluation. Source ZIP members had already been decompressed as bytes to verify raw size, CRC32 and SHA-256 during acquisition. No signal arrays or features were inspected before freezing. The historical protocol bytes and hash remain unchanged.",
+  "scope": "metadata wording correction; no change to splits, classifier, feature definitions, selections or results"
+}

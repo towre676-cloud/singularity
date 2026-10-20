@@ -1,0 +1,375 @@
+{
+  "all_development_optimal_singletons": [
+    1,
+    4
+  ],
+  "classifier": "fixed one-nearest-neighbor using training-only feature mean and standard deviation per channel/descriptor; squared standardized feature distances averaged within each channel, then averaged over selected channels; nearest-training-row tie broken in fixed state/grid order",
+  "confirmation_rule": "all 18 new recordings form a single locked confirmation set; no selection stage",
+  "cost": "one declared channel unit per selected diagnostic channel; this is channel-count accounting, not measured hardware dollars, energy, or latency",
+  "diagnostic_channels": [
+    "underhang_axial",
+    "underhang_radial",
+    "underhang_tangential",
+    "overhang_axial",
+    "overhang_radial",
+    "overhang_tangential",
+    "microphone"
+  ],
+  "exact_selection": "exhaust all 127 nonempty masks, minimum channel count; ties smallest integer bitmask; no test-based tie breaking",
+  "excluded": "tachometer is excluded from all diagnostic features; filename speed is split metadata only",
+  "expected_samples_per_recording": 250000,
+  "fault_severity": {
+    "horizontal-misalignment": "1.5mm",
+    "imbalance": "6g"
+  },
+  "features": {
+    "bands_hz": [
+      [
+        20,
+        80
+      ],
+      [
+        80,
+        200
+      ],
+      [
+        200,
+        500
+      ],
+      [
+        500,
+        1000
+      ],
+      [
+        1000,
+        2000
+      ],
+      [
+        2000,
+        5000
+      ],
+      [
+        5000,
+        10000
+      ],
+      [
+        10000,
+        20000
+      ]
+    ],
+    "descriptors": [
+      "log10_rms",
+      "log10_mean_abs",
+      "kurtosis",
+      "crest_factor",
+      "zero_crossing_fraction",
+      "spectral_centroid_fraction",
+      "8_log10_bandpowers"
+    ],
+    "log_floor": 1e-20,
+    "psd": "Welch density, scipy.signal.welch, fs=50000, nperseg=4096, default Hann, noverlap=2048, detrend=constant"
+  },
+  "freeze_stage": "after negative v1 test, before acquiring or extracting new confirmation recordings",
+  "greedy": "forward addition maximizing selection balanced accuracy, ties smallest resulting bitmask, stop on selection requirement",
+  "interpretation": "a new design triggered by v1 failure; confirmation does not reinterpret v1 test or claim exact outperformance over an equivalently tie-preserving greedy policy",
+  "limitations": [
+    "small deliberately chosen subset",
+    "one physical machinery-fault simulator",
+    "one severity per faulty state",
+    "no independent device or installation sessions",
+    "no new excitation or sensor placement can be inferred from prerecorded fixed sensors",
+    "exactness concerns the finite selection table; physical generalization remains empirical",
+    "not the original MAFAULDA full benchmark",
+    "official landing page does not state an explicit dataset license; raw data are not redistributed",
+    "eighteen new confirmation recordings, six per class",
+    "confirmation speed targets lie between original targets on the same machine; not independent device/session generalization",
+    "tie-union design is post-v1 and may cost more than the v1 minimum",
+    "no theorem guarantees this union will transfer"
+  ],
+  "locked_panels": {
+    "all_accelerometers": 63,
+    "full": 127,
+    "microphone_only": 64,
+    "original_exact": 1,
+    "original_greedy": 1,
+    "original_pruned_greedy": 1,
+    "tie_preserving_union": 5
+  },
+  "panel_rule": "bitwise union of ALL singleton masks attaining the maximum balanced accuracy on original v1 selection; no use of v1 test score to choose among these tied singletons",
+  "pruned_greedy": "exhaust every nonempty submask of greedy result under identical selection requirement; minimum channels then smallest bitmask",
+  "sample_rate_hz": 50000,
+  "sample_size": 18,
+  "selection_metric": "balanced accuracy",
+  "selection_requirement": "balanced accuracy >= max(0, full-seven-channel selection balanced accuracy minus 0.02)",
+  "selection_rule": "nearest filename frequency to each predeclared target separately per state; no signals examined",
+  "source_acquisition": "../../audio_data/acquisition_v2.json",
+  "source_member_plan": [
+    {
+      "archive_size": 325307137,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/normal.zip",
+      "compressed": 6635925,
+      "crc32": 703525958,
+      "grid_index": 0,
+      "header": 33322350,
+      "name": "normal/17.2032.csv",
+      "size": 17414350,
+      "speed_from_filename_hz": 17.2032,
+      "speed_target_hz": 17.5,
+      "state": "normal"
+    },
+    {
+      "archive_size": 325307137,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/normal.zip",
+      "compressed": 6657903,
+      "crc32": 2765563709,
+      "grid_index": 1,
+      "header": 66565236,
+      "name": "normal/22.3232.csv",
+      "size": 17509557,
+      "speed_from_filename_hz": 22.3232,
+      "speed_target_hz": 22.5,
+      "state": "normal"
+    },
+    {
+      "archive_size": 325307137,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/normal.zip",
+      "compressed": 6619578,
+      "crc32": 783371864,
+      "grid_index": 2,
+      "header": 99840200,
+      "name": "normal/27.4432.csv",
+      "size": 17440845,
+      "speed_from_filename_hz": 27.4432,
+      "speed_target_hz": 27.5,
+      "state": "normal"
+    },
+    {
+      "archive_size": 325307137,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/normal.zip",
+      "compressed": 6649024,
+      "crc32": 3881762910,
+      "grid_index": 3,
+      "header": 133043921,
+      "name": "normal/32.9728.csv",
+      "size": 17482424,
+      "speed_from_filename_hz": 32.9728,
+      "speed_target_hz": 32.5,
+      "state": "normal"
+    },
+    {
+      "archive_size": 325307137,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/normal.zip",
+      "compressed": 6639782,
+      "crc32": 433407176,
+      "grid_index": 4,
+      "header": 166277603,
+      "name": "normal/37.6832.csv",
+      "size": 17442409,
+      "speed_from_filename_hz": 37.6832,
+      "speed_target_hz": 37.5,
+      "state": "normal"
+    },
+    {
+      "archive_size": 325307137,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/normal.zip",
+      "compressed": 6641000,
+      "crc32": 1812742911,
+      "grid_index": 5,
+      "header": 199456544,
+      "name": "normal/42.3936.csv",
+      "size": 17416107,
+      "speed_from_filename_hz": 42.3936,
+      "speed_target_hz": 42.5,
+      "state": "normal"
+    },
+    {
+      "archive_size": 1306244927,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/horizontal-misalignment.zip",
+      "compressed": 6647981,
+      "crc32": 962352722,
+      "grid_index": 0,
+      "header": 33255629,
+      "name": "horizontal-misalignment/1.5mm/17.8176.csv",
+      "size": 17503602,
+      "speed_from_filename_hz": 17.8176,
+      "speed_target_hz": 17.5,
+      "state": "horizontal-misalignment"
+    },
+    {
+      "archive_size": 1306244927,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/horizontal-misalignment.zip",
+      "compressed": 6652835,
+      "crc32": 2780398602,
+      "grid_index": 1,
+      "header": 66461617,
+      "name": "horizontal-misalignment/1.5mm/22.3232.csv",
+      "size": 17562709,
+      "speed_from_filename_hz": 22.3232,
+      "speed_target_hz": 22.5,
+      "state": "horizontal-misalignment"
+    },
+    {
+      "archive_size": 1306244927,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/horizontal-misalignment.zip",
+      "compressed": 6638513,
+      "crc32": 929188155,
+      "grid_index": 2,
+      "header": 93034076,
+      "name": "horizontal-misalignment/1.5mm/26.8288.csv",
+      "size": 17480082,
+      "speed_from_filename_hz": 26.8288,
+      "speed_target_hz": 27.5,
+      "state": "horizontal-misalignment"
+    },
+    {
+      "archive_size": 1306244927,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/horizontal-misalignment.zip",
+      "compressed": 6631499,
+      "crc32": 463339615,
+      "grid_index": 3,
+      "header": 126151811,
+      "name": "horizontal-misalignment/1.5mm/32.768.csv",
+      "size": 17472684,
+      "speed_from_filename_hz": 32.768,
+      "speed_target_hz": 32.5,
+      "state": "horizontal-misalignment"
+    },
+    {
+      "archive_size": 1306244927,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/horizontal-misalignment.zip",
+      "compressed": 6622325,
+      "crc32": 1204833379,
+      "grid_index": 4,
+      "header": 159286789,
+      "name": "horizontal-misalignment/1.5mm/37.2736.csv",
+      "size": 17444094,
+      "speed_from_filename_hz": 37.2736,
+      "speed_target_hz": 37.5,
+      "state": "horizontal-misalignment"
+    },
+    {
+      "archive_size": 1306244927,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/horizontal-misalignment.zip",
+      "compressed": 6622233,
+      "crc32": 2444138808,
+      "grid_index": 5,
+      "header": 192371547,
+      "name": "horizontal-misalignment/1.5mm/42.3936.csv",
+      "size": 17439757,
+      "speed_from_filename_hz": 42.3936,
+      "speed_target_hz": 42.5,
+      "state": "horizontal-misalignment"
+    },
+    {
+      "archive_size": 2212894986,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/imbalance.zip",
+      "compressed": 6623335,
+      "crc32": 4259706552,
+      "grid_index": 0,
+      "header": 1913153647,
+      "name": "imbalance/6g/17.408.csv",
+      "size": 17521836,
+      "speed_from_filename_hz": 17.408,
+      "speed_target_hz": 17.5,
+      "state": "imbalance"
+    },
+    {
+      "archive_size": 2212894986,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/imbalance.zip",
+      "compressed": 6649963,
+      "crc32": 3383448159,
+      "grid_index": 1,
+      "header": 1946358048,
+      "name": "imbalance/6g/22.7328.csv",
+      "size": 17608627,
+      "speed_from_filename_hz": 22.7328,
+      "speed_target_hz": 22.5,
+      "state": "imbalance"
+    },
+    {
+      "archive_size": 2212894986,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/imbalance.zip",
+      "compressed": 6659839,
+      "crc32": 3625015812,
+      "grid_index": 2,
+      "header": 1979627769,
+      "name": "imbalance/6g/27.648.csv",
+      "size": 17538562,
+      "speed_from_filename_hz": 27.648,
+      "speed_target_hz": 27.5,
+      "state": "imbalance"
+    },
+    {
+      "archive_size": 2212894986,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/imbalance.zip",
+      "compressed": 6678869,
+      "crc32": 4081053547,
+      "grid_index": 3,
+      "header": 2012852818,
+      "name": "imbalance/6g/32.9728.csv",
+      "size": 17642281,
+      "speed_from_filename_hz": 32.9728,
+      "speed_target_hz": 32.5,
+      "state": "imbalance"
+    },
+    {
+      "archive_size": 2212894986,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/imbalance.zip",
+      "compressed": 6676286,
+      "crc32": 2217005750,
+      "grid_index": 4,
+      "header": 2046217705,
+      "name": "imbalance/6g/37.6832.csv",
+      "size": 17633408,
+      "speed_from_filename_hz": 37.6832,
+      "speed_target_hz": 37.5,
+      "state": "imbalance"
+    },
+    {
+      "archive_size": 2212894986,
+      "archive_url": "https://www02.smt.ufrj.br/~offshore/mfs/database/mafaulda/imbalance.zip",
+      "compressed": 6676674,
+      "crc32": 70954603,
+      "grid_index": 5,
+      "header": 2079553577,
+      "name": "imbalance/6g/42.5984.csv",
+      "size": 17597804,
+      "speed_from_filename_hz": 42.5984,
+      "speed_target_hz": 42.5,
+      "state": "imbalance"
+    }
+  ],
+  "source_page": "https://www02.smt.ufrj.br/~offshore/mfs/page_01.html",
+  "speed_targets_hz": [
+    17.5,
+    22.5,
+    27.5,
+    32.5,
+    37.5,
+    42.5
+  ],
+  "split_unit": "entire original recording; corresponding nominal-speed groups kept together across states",
+  "splits_grid_indices": {
+    "confirmation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "states": [
+    "normal",
+    "horizontal-misalignment",
+    "imbalance"
+  ],
+  "study": "Prospective new-recording confirmation of a tie-preserving MAFAULDA sensor panel",
+  "test": "freeze exact, greedy, pruned-greedy masks and training models before evaluating test scores; also report full panel, microphone-only, all accelerometers, and all same-cardinality panels as an unselected reference distribution",
+  "training_protocol_sha256": "96a19f61a11e0232751de8d2d98c1d25104e90979ee62c2e681a0041d4080e71",
+  "training_rule": "reuse v1 training recordings, training mean/std and nearest-neighbor models unchanged; no new fit or hyperparameter selection",
+  "training_source": "../features.npz",
+  "v1_results_sha256": "2975c156371a10f361975eeab0e99919cabac04bd4ed674bb0495a479c39472e",
+  "v1_selection_snapshot_sha256": "7cb8fd3425b35484713488b6d52bb61de592c599401fc56af41315c66c0100ba",
+  "version": 2
+}
