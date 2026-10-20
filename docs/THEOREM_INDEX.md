@@ -116,3 +116,14 @@ Stable identifiers connect subsequent development pushes to the precise statemen
 | SNG-T01 | Proposition SNG-T01 (candidate-preserving affine lift). Let finitely many candidates \(c\) have rational dynamics \(x^+=A_cx+B_cu\), and expose the same sensor labels \(y_j=C_{c,j}x\). For a finite allowed input alphabet, define | [16_thermal_diagnostics.md](chapters/16_thermal_diagnostics.md) |
 | SNG-T02 | Proposition SNG-T02 (box propagation and safe panel radii). Suppose the nominal candidate state follows \(\bar x_{t+1}=A_c\bar x_t+B_cu_t\), while the actual state has initial deviation bounded by \(b_{0,c}\ge0\) and additive per-step disturbance bounded by \(d_{t,c}\ge0\). Define componentwise | [16_thermal_diagnostics.md](chapters/16_thermal_diagnostics.md) |
 | SNG-T03 | Proposition SNG-T03 (reflection blindness). Let \(P\) reflect the plate left to right. For the two blocked-bond candidates, | [16_thermal_diagnostics.md](chapters/16_thermal_diagnostics.md) |
+
+## Measured-array finite-design propositions
+
+These propositions concern the declared finite observation table. They do not assert physical identifiability, universal noise bounds or population generalization, and no new Lean formalization is claimed.
+
+| Identifier | Statement | Source |
+|---|---|---|
+| SNG-M01 | Complete enumeration of all 255 nonempty microphone masks certifies the minimum channel count, deterministic tie choice, every tied optimum or infeasibility for a frozen predicate. | [MIMII chapter](chapters/17_mimii_array.md) |
+| SNG-M02 | The classifier's erasure contract holds exactly when every permitted survivor satisfies the intact full-array thresholds and no permitted survivor is empty; nonmonotone fusion requires explicit deletion checks. | [MIMII chapter](chapters/17_mimii_array.md) |
+| SNG-M03 | Equal finite prediction traces force equal scores on those observations but do not imply agreement on an unseen recording without an additional hypothesis. All actual MIMII selection traces were distinct. | [MIMII chapter](chapters/17_mimii_array.md) |
+| SNG-M04 | Increasing erasure strength cannot decrease the exact finite minimum cost; relaxing the allowed score loss cannot increase it, with infeasibility interpreted as infinity. No monotone-classifier assumption is used. | [MIMII chapter](chapters/17_mimii_array.md) |

@@ -10,6 +10,7 @@ import argparse
 from collections import Counter, defaultdict
 from fractions import Fraction
 import hashlib
+import gzip
 import itertools
 import json
 from pathlib import Path
@@ -20,8 +21,21 @@ FULL = 255
 OBJECTIVES = ('nominal', 'nuisance', 'robust', 'erasure_1', 'erasure_2')
 
 
+def read_bytes(path):
+    path = Path(path)
+    if path.exists():
+        return path.read_bytes()
+    compressed = Path(str(path)+'.gz')
+    if path.suffix == '.json' and compressed.exists():
+        with gzip.open(compressed, 'rb') as stream:
+            raw = stream.read(64_000_001)
+        require(len(raw) <= 64_000_000, 'Compressed JSON exceeds metadata budget')
+        return raw
+    raise FileNotFoundError(path)
+
+
 def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    return hashlib.sha256(read_bytes(path)).hexdigest()
 
 
 def require(condition, message):
@@ -30,7 +44,7 @@ def require(condition, message):
 
 
 def load(path):
-    return json.loads(Path(path).read_text())
+    return json.loads(read_bytes(path).decode('utf-8'))
 
 
 def verify_hashes(root, lock):
@@ -93,6 +107,10 @@ def check_manifest(protocol, plan, indexes, receipts=None):
         stem, snr = row['stem'], int(row['snr_db'])
         require(ty in types and identity in ids and state in protocol['states'] and snr in snrs,
                 'Invalid source stratum')
+        require(row['archive'] == f'{snr}_dB_{ty}.zip', 'Archive does not match SNR/type labels')
+        if 'archive_url' in row:
+            require(row['archive_url'] == f'https://zenodo.org/records/3384388/files/{row["archive"]}?download=1',
+                    'Source URL is not the official archive identity')
         canonical = '|'.join([ty, identity, state, stem])
         require(row['recording_group'] == canonical, 'Recording group does not preserve identity')
         require(row['name'] == f'{ty}/id_{identity}/{state}/{stem}', 'Source path does not match labels')
@@ -124,7 +142,8 @@ def check_manifest(protocol, plan, indexes, receipts=None):
                         'sample_width_bytes': 2, 'frames': 160000, 'compression': 'NONE'}
             require(all(fmt[k] == v for k, v in expected.items()), 'Invalid original WAV format receipt')
     return {'recordings': len(rows), 'stem_groups': len(groups),
-            'hash_ranked_strata': len(strata), 'all_snr_mixtures_grouped': True}
+            'hash_ranked_strata': len(strata), 'hash_ranked_sampling_cells': len(chosen),
+            'all_snr_mixtures_grouped': True}
 
 
 def verify_raw_receipts(root, receipts):
@@ -287,6 +306,35 @@ def verify_observability(root, data, protocol):
     return True
 
 
+def paired_stem_bootstrap(truth, predicted, full_prediction, metadata, machine_types,
+                          repetitions=2000, seed=20261020):
+    """Independent integer group-count implementation of the paired interval.
+
+    All three SNR mixtures of a stem share one resampling weight. Each stratum
+    retains its frozen class/type count, so pooled accuracy equals balanced
+    accuracy in this deliberately balanced case-control sample.
+    """
+    import numpy as np
+    truth = np.asarray(truth)
+    predicted, full_prediction = np.asarray(predicted), np.asarray(full_prediction)
+    groups = np.asarray(metadata['group'])
+    kinds = np.asarray(metadata['machine_type'])
+    changes = (predicted == truth).astype(np.int16)-(full_prediction == truth).astype(np.int16)
+    stratum_counts = []
+    for kind in machine_types:
+        for label in [0, 1]:
+            stems = sorted(set(groups[(kinds == kind) & (truth == label)].tolist()))
+            require(bool(stems), 'Bootstrap stratum has no stems')
+            stratum_counts.append(np.array([int(changes[groups == stem].sum()) for stem in stems]))
+    rng = np.random.default_rng(seed)
+    totals = []
+    for _ in range(repetitions):
+        integer_change = sum(int(counts[rng.integers(0, len(counts), len(counts))].sum())
+                             for counts in stratum_counts)
+        totals.append(integer_change/len(truth))
+    return np.quantile(totals, [0.025, 0.975])
+
+
 def replay_predictions(data, protocol, phase):
     """Masked flattened Euclidean arrays, independent of channel decomposition."""
     import numpy as np
@@ -334,7 +382,15 @@ def verify(root=ROOT, selection_only=False, raw=False):
     if not receipts_path.exists():
         receipts_path = root/'acquisition_manifest.json'
     receipts = load(receipts_path)
-    provenance = check_manifest(protocol, plan, load(root/'central_indexes.json'), receipts)
+    indexes = load(root/'central_indexes.json')
+    provenance = check_manifest(protocol, plan, indexes, receipts)
+    official = load(root/'official_record.json')
+    official_files = {file['key']: file for file in official['files']}
+    for archive in indexes['archives']:
+        metadata = official_files[archive['archive']]
+        require(metadata['size'] == archive['archive_bytes'], 'Publisher archive length changed')
+        require(metadata['checksum'] == archive['publisher_checksum'], 'Publisher archive checksum metadata changed')
+        require(archive.get('full_archive_checksum_verified', False) is False, 'Whole-archive checksum improperly claimed')
     require(receipts['protocol_sha256'] == sha(root/'protocol.json'), 'Source receipt protocol mismatch')
     require(receipts['selected_source_manifest_sha256'] == sha(root/'source_subset_manifest.json'),
             'Source receipt frozen plan mismatch')
@@ -357,6 +413,7 @@ def verify(root=ROOT, selection_only=False, raw=False):
             require(str(data[field][i]) == str(row[source]), f'Feature {field} changed')
         require(int(data['y'][i]) == int(row['state'] == 'abnormal'), 'Feature label mismatch')
     feature_provenance = load(root/'feature_provenance.json')
+    require(feature_provenance['acquisition_manifest_sha256'] == sha(receipts_path), 'Feature provenance source-receipt mismatch')
     require(feature_provenance['features_sha256'] == sha(root/'features.npz'), 'Feature provenance hash mismatch')
     require(feature_provenance['protocol_sha256'] == sha(root/'protocol.json'), 'Feature provenance protocol mismatch')
     lock = load(root/'selection_lock.json')
@@ -417,7 +474,7 @@ def verify(root=ROOT, selection_only=False, raw=False):
         require(results['features_sha256'] == sha(root/'features.npz'), 'Results feature hash mismatch')
         require(results['selection_lock_sha256'] == sha(root/'selection_lock.json'), 'Results lock hash mismatch')
         require(results['predictions_sha256'] == sha(root/'predictions.npz'), 'Results predictions hash mismatch')
-        cm = {k: data[k][confirmation_rows] for k in ['y', 'machine_type', 'snr_db']}
+        cm = {k: data[k][confirmation_rows] for k in ['y', 'machine_type', 'snr_db', 'group']}
         confirmation_cells = cell_definitions(protocol['machine_types'], protocol['snr_db'], cm)
         confirmation_scores = rational_scores(data['y'][confirmation_rows], confirmation, confirmation_cells)
         cf_order = {name: i for i, (name, _, _) in enumerate(confirmation_cells)}
@@ -429,6 +486,14 @@ def verify(root=ROOT, selection_only=False, raw=False):
         for name, panel in results['panels'].items():
             m = panel['mask']
             observed = binary_score(data['y'][confirmation_rows], confirmation[m-1])
+            if name.endswith('_exact'):
+                saved_bootstrap = panel['paired_stem_bootstrap']
+                require(saved_bootstrap['repetitions'] == 2000 and saved_bootstrap['seed'] == 20261020,
+                        'Bootstrap settings differ from frozen specification')
+                interval = paired_stem_bootstrap(cm['y'], confirmation[m-1], confirmation[FULL-1],
+                                                cm, protocol['machine_types'])
+                require(np.allclose(interval, saved_bootstrap['paired_balanced_accuracy_difference_percentile_95'],
+                                    atol=1e-12, rtol=0), f'Wrong grouped paired interval: {name}')
             require(Fraction(panel['balanced_accuracy_exact']) == observed,
                     f'Wrong confirmation score: {name}')
             recall_columns = [i for i, (cell_name, _, _) in enumerate(confirmation_cells) if '/recall_' in cell_name]
@@ -494,6 +559,8 @@ def verify(root=ROOT, selection_only=False, raw=False):
         report['all_20_margin_sensitivity_optima_recomputed'] = True
         report['nested_robustness_and_margin_cost_frontiers_verified'] = True
         report['all_selection_alias_splits_recomputed'] = True
+        report['all_primary_paired_stem_bootstrap_intervals_recomputed'] = True
+        report['bootstrap_independent_method'] = 'integer correct-count differences per complete stem; stratified bootstrap weights; no expanded row-list classifier scoring'
     path = root/('independent_selection_verification.json' if selection_only else 'independent_verification.json')
     path.write_text(json.dumps(report, indent=2, sort_keys=True)+'\n')
     print(json.dumps(report, indent=2, sort_keys=True))

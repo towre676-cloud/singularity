@@ -6,8 +6,8 @@ or shifted range is never accepted as a member. ZIP64 central directories are
 handled by Python's zipfile module. Raw data remain in ignored ../mimii_data.
 """
 from __future__ import annotations
-import argparse, concurrent.futures, datetime, hashlib, io, json, pathlib, re
-import struct, time, urllib.error, urllib.request, wave, zipfile, zlib, threading, collections
+import argparse, concurrent.futures, datetime, hashlib, io, json, pathlib, re, email.utils, gzip
+import struct, time, urllib.error, urllib.request, wave, zipfile, zlib, threading, collections, http.client
 ROOT=pathlib.Path(__file__).resolve().parent
 DATA=ROOT.parent/'mimii_data'
 RECORD_URL='https://zenodo.org/api/records/3384388'
@@ -37,6 +37,10 @@ def dump(path,obj):
     path.write_text(json.dumps(obj,sort_keys=True,indent=2)+'\n')
 def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
+def index_bytes():
+    path=ROOT/'central_indexes.json'
+    return path.read_bytes() if path.exists() else gzip.decompress((ROOT/'central_indexes.json.gz').read_bytes())
+
 def get_json(url):
     with urllib.request.urlopen(url,timeout=60) as r:
         raw=r.read(1_000_001)
@@ -57,12 +61,18 @@ def ranged(url,lo,hi,total,attempts=4):
                     raise ValueError(f'Host did not return requested range: {r.status}, {r.headers.get("Content-Range")}')
                 if int(r.headers.get('Content-Length',n))!=n:raise ValueError('Range Content-Length mismatch')
                 raw=r.read(n+1)
-                if len(raw)!=n:raise ValueError('Range body length mismatch')
+                if len(raw)<n:raise ConnectionError(f'Short HTTP range body: expected {n}, received {len(raw)} bytes')
+                if len(raw)>n:raise ValueError('Oversized HTTP range body')
                 return raw
-        except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError) as e:
+        except (urllib.error.HTTPError,urllib.error.URLError,TimeoutError,ConnectionError,http.client.IncompleteRead) as e:
             if attempt==attempts-1:raise
-            pause=min(60,int(getattr(e,'headers',{}).get('Retry-After','2')) if getattr(e,'headers',None) else 2)
-            time.sleep(max(1,pause))
+            value=getattr(e,'headers',{}).get('Retry-After','2') if getattr(e,'headers',None) else '2'
+            try:pause=max(1,float(value))
+            except ValueError:
+                when=email.utils.parsedate_to_datetime(value)
+                pause=max(1,(when-datetime.datetime.now(datetime.timezone.utc)).total_seconds())
+            deadline=time.monotonic()+pause
+            while time.monotonic()<deadline:time.sleep(min(60,max(0.01,deadline-time.monotonic())))
     raise RuntimeError('unreachable')
 
 class RangeArchive(io.RawIOBase):
@@ -105,6 +115,9 @@ def index_archives(record,archive_names):
 
 def acquire_one(row,verify_cache=False):
     """Fetch one frozen member, verify ZIP metadata/CRC and hash compressed+WAV."""
+    if not re.fullmatch(r'(?:-6|0|6)_dB_(?:fan|pump|slider|valve)\.zip',row['archive']):raise ValueError('Not an original MIMII archive identity')
+    expected_url=f"https://zenodo.org/records/3384388/files/{row['archive']}?download=1"
+    if row['archive_url']!=expected_url:raise ValueError('Not the frozen official archive URL')
     key=sha256((row['archive']+'\0'+row['name']).encode())
     dst=DATA/'compressed'/f'{key}.deflate';rawdst=DATA/'wav'/row['archive'].replace('.zip','')/row['name']
     if '..' in pathlib.PurePosixPath(row['name']).parts or row['name'].startswith('/'):
@@ -150,6 +163,7 @@ def acquire_manifest(path,workers=3,verify_cache=False,reacquire=False):
     if reacquire and any('raw_sha256' not in r or 'compressed_sha256' not in r for r in rows):raise ValueError('--reacquire requires retained source receipts with member hashes')
     if sha256((ROOT/'protocol.json').read_bytes())!=manifest['protocol_sha256']:raise ValueError('Manifest protocol hash mismatch')
     retained=ROOT/'source_receipts.json'
+    if retained.exists() and not verify_cache and not reacquire:raise FileExistsError('Retained source receipts exist; use --reacquire or --verify-cache')
     if verify_cache and retained.exists():
         prior=json.loads(retained.read_text())
         if path.resolve()!=retained.resolve() and prior.get('selected_source_manifest_sha256')!=sha256(path.read_bytes()):raise ValueError('Retained receipts are for a different manifest')
@@ -179,7 +193,8 @@ def select_plan(protocol_path):
     """Hash-select common recording stems across SNRs without reading signals."""
     if (ROOT/'source_subset_manifest.json').exists():raise FileExistsError('Refusing to overwrite frozen source subset manifest')
     protocol=json.loads(protocol_path.read_text())
-    index=json.loads((ROOT/'central_indexes.json').read_text())
+    raw_index=index_bytes()
+    index=json.loads(raw_index)
     archives={a['archive']:a for a in index['archives']}
     records=[];groups=[]
     count=protocol.get('stems_per_class_id',16)
@@ -207,7 +222,7 @@ def select_plan(protocol_path):
                                             state=state,snr_db=int(snr),recording_group=group_id,machine_type=typ,id=machine_id,stem=pathlib.PurePosixPath(name).name))
     plan={'schema':'singularity.mimii-subset-plan/1','created_utc':now(),
           'protocol_sha256':sha256(protocol_path.read_bytes()),
-          'central_indexes_sha256':sha256((ROOT/'central_indexes.json').read_bytes()),
+          'central_indexes_sha256':sha256(raw_index),
           'selection_rule':protocol['member_sampling'],
           'compressed_transfer_budget_bytes':protocol['maximum_signal_compressed_bytes'],
           'uncompressed_budget_bytes':protocol['maximum_uncompressed_bytes'],'groups':groups,'records':records}
@@ -220,7 +235,7 @@ if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--index',action='store_true');p.add_argument('--archives',nargs='+',default=[f'{snr}_dB_{typ}.zip' for typ in ['fan','pump','slider','valve'] for snr in ['-6','0','6']])
     p.add_argument('--select',type=pathlib.Path,help='Frozen protocol selecting source names, no WAV data');p.add_argument('--manifest',type=pathlib.Path);p.add_argument('--verify-cache',action='store_true');p.add_argument('--reacquire',action='store_true',help='Reacquire from retained hashes without changing frozen receipts');p.add_argument('--workers',type=int,default=3);args=p.parse_args()
     if args.index:
-        if (ROOT/'central_indexes.json').exists() or (ROOT/'official_record.json').exists():raise FileExistsError('Refusing to overwrite retained official metadata/indexes')
+        if (ROOT/'central_indexes.json').exists() or (ROOT/'central_indexes.json.gz').exists() or (ROOT/'official_record.json').exists():raise FileExistsError('Refusing to overwrite retained official metadata/indexes')
         record=get_json(RECORD_URL);dump(ROOT/'official_record.json',record)
         dump(ROOT/'central_indexes.json',index_archives(record,args.archives))
     if args.select:select_plan(args.select)

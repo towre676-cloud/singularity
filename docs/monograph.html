@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Singularity project contributors" />
-  <meta name="dcterms.date" content="2026-10-18" />
+  <meta name="dcterms.date" content="2026-10-20" />
   <title>Singularity</title>
   <style>
     code{white-space: pre-wrap;}
@@ -97,7 +97,7 @@ body{margin:0;background:#f3f0e8;color:#212c34;font:18px/1.7 Georgia,serif}main,
 <p class="subtitle">Relational Heights and Arithmetic Visibility -
 Research Monograph</p>
 <p class="author">Singularity project contributors</p>
-<p class="date">18 October 2026</p>
+<p class="date">20 October 2026</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -658,184 +658,235 @@ id="toc-reproduction-integration-and-open-questions"><span
 class="toc-section-number">16.6</span> Reproduction, integration and
 open questions</a></li>
 </ul></li>
+<li><a
+href="#microphone-array-selection-under-machine-and-noise-changes"
+id="toc-microphone-array-selection-under-machine-and-noise-changes"><span
+class="toc-section-number">17</span> Microphone-array selection under
+machine and noise changes</a>
+<ul>
+<li><a
+href="#the-advantage-is-complete-knowledge-of-the-declared-design-space"
+id="toc-the-advantage-is-complete-knowledge-of-the-declared-design-space"><span
+class="toc-section-number">17.1</span> The advantage is complete
+knowledge of the declared design space</a></li>
+<li><a
+href="#a-bounded-physical-population-and-an-externally-frozen-protocol"
+id="toc-a-bounded-physical-population-and-an-externally-frozen-protocol"><span
+class="toc-section-number">17.2</span> A bounded physical population and
+an externally frozen protocol</a></li>
+<li><a href="#the-fixed-numerical-observation-map"
+id="toc-the-fixed-numerical-observation-map"><span
+class="toc-section-number">17.3</span> The fixed numerical observation
+map</a></li>
+<li><a href="#five-design-contracts-and-a-complete-optimum-certificate"
+id="toc-five-design-contracts-and-a-complete-optimum-certificate"><span
+class="toc-section-number">17.4</span> Five design contracts and a
+complete optimum certificate</a></li>
+<li><a href="#erasures-and-the-limits-of-monotone-coverage"
+id="toc-erasures-and-the-limits-of-monotone-coverage"><span
+class="toc-section-number">17.5</span> Erasures and the limits of
+monotone coverage</a></li>
+<li><a href="#observational-equivalence-as-a-measurable-warning"
+id="toc-observational-equivalence-as-a-measurable-warning"><span
+class="toc-section-number">17.6</span> Observational equivalence as a
+measurable warning</a></li>
+<li><a
+href="#retained-physical-results-a-useful-audit-unsuccessful-transfer"
+id="toc-retained-physical-results-a-useful-audit-unsuccessful-transfer"><span
+class="toc-section-number">17.7</span> Retained physical results: a
+useful audit, unsuccessful transfer</a></li>
+<li><a
+href="#class-specific-failures-and-the-single-microphone-controls"
+id="toc-class-specific-failures-and-the-single-microphone-controls"><span
+class="toc-section-number">17.8</span> Class-specific failures and the
+single-microphone controls</a></li>
+<li><a href="#sensitivity-observational-equivalence-and-empirical-boxes"
+id="toc-sensitivity-observational-equivalence-and-empirical-boxes"><span
+class="toc-section-number">17.9</span> Sensitivity, observational
+equivalence and empirical boxes</a></li>
+<li><a href="#what-this-experiment-adds-to-the-methodology"
+id="toc-what-this-experiment-adds-to-the-methodology"><span
+class="toc-section-number">17.10</span> What this experiment adds to the
+methodology</a></li>
+</ul></li>
 <li><a href="#implementation-and-retained-computational-results"
 id="toc-implementation-and-retained-computational-results"><span
-class="toc-section-number">17</span> Implementation and retained
+class="toc-section-number">18</span> Implementation and retained
 computational results</a>
 <ul>
 <li><a href="#installing-and-running-the-project"
 id="toc-installing-and-running-the-project"><span
-class="toc-section-number">17.1</span> Installing and running the
+class="toc-section-number">18.1</span> Installing and running the
 project</a></li>
 <li><a href="#implemented-mathematical-modules"
 id="toc-implemented-mathematical-modules"><span
-class="toc-section-number">17.2</span> Implemented mathematical
+class="toc-section-number">18.2</span> Implemented mathematical
 modules</a></li>
 <li><a href="#population-navigation-and-exact-bounds"
 id="toc-population-navigation-and-exact-bounds"><span
-class="toc-section-number">17.3</span> Population navigation and exact
+class="toc-section-number">18.3</span> Population navigation and exact
 bounds</a></li>
 <li><a href="#forest-transfer-experiment"
 id="toc-forest-transfer-experiment"><span
-class="toc-section-number">17.4</span> Forest transfer
+class="toc-section-number">18.4</span> Forest transfer
 experiment</a></li>
 <li><a href="#complete-small-graph-census"
 id="toc-complete-small-graph-census"><span
-class="toc-section-number">17.5</span> Complete small-graph
+class="toc-section-number">18.5</span> Complete small-graph
 census</a></li>
 <li><a href="#reproduction-and-document-generation"
 id="toc-reproduction-and-document-generation"><span
-class="toc-section-number">17.6</span> Reproduction and document
+class="toc-section-number">18.6</span> Reproduction and document
 generation</a></li>
 </ul></li>
 <li><a href="#thirty-six-concrete-research-pushes"
 id="toc-thirty-six-concrete-research-pushes"><span
-class="toc-section-number">18</span> Thirty-six concrete research
+class="toc-section-number">19</span> Thirty-six concrete research
 pushes</a>
 <ul>
 <li><a href="#p01-freeze-the-coefficient-semantics"
 id="toc-p01-freeze-the-coefficient-semantics"><span
-class="toc-section-number">18.1</span> P01 — Freeze the coefficient
+class="toc-section-number">19.1</span> P01 — Freeze the coefficient
 semantics</a></li>
 <li><a href="#p02-add-independent-level-chain-enumeration"
 id="toc-p02-add-independent-level-chain-enumeration"><span
-class="toc-section-number">18.2</span> P02 — Add independent level-chain
+class="toc-section-number">19.2</span> P02 — Add independent level-chain
 enumeration</a></li>
 <li><a href="#p03-publish-portable-coefficient-certificates"
 id="toc-p03-publish-portable-coefficient-certificates"><span
-class="toc-section-number">18.3</span> P03 — Publish portable
+class="toc-section-number">19.3</span> P03 — Publish portable
 coefficient certificates</a></li>
 <li><a href="#p04-give-the-spectral-pair-a-short-coefficient-proof"
 id="toc-p04-give-the-spectral-pair-a-short-coefficient-proof"><span
-class="toc-section-number">18.4</span> P04 — Give the spectral pair a
+class="toc-section-number">19.4</span> P04 — Give the spectral pair a
 short coefficient proof</a></li>
 <li><a href="#p05-explain-the-binary-census-separation"
 id="toc-p05-explain-the-binary-census-separation"><span
-class="toc-section-number">18.5</span> P05 — Explain the binary-census
+class="toc-section-number">19.5</span> P05 — Explain the binary-census
 separation</a></li>
 <li><a href="#p06-derive-universal-low-volume-formulas"
 id="toc-p06-derive-universal-low-volume-formulas"><span
-class="toc-section-number">18.6</span> P06 — Derive universal low-volume
+class="toc-section-number">19.6</span> P06 — Derive universal low-volume
 formulas</a></li>
 <li><a href="#p07-formalize-translation-normalization"
 id="toc-p07-formalize-translation-normalization"><span
-class="toc-section-number">18.7</span> P07 — Formalize translation
+class="toc-section-number">19.7</span> P07 — Formalize translation
 normalization</a></li>
 <li><a href="#p08-formalize-the-nested-level-energy-identity"
 id="toc-p08-formalize-the-nested-level-energy-identity"><span
-class="toc-section-number">18.8</span> P08 — Formalize the nested-level
+class="toc-section-number">19.8</span> P08 — Formalize the nested-level
 energy identity</a></li>
 <li><a href="#p09-implement-bounded-height-tree-messages"
 id="toc-p09-implement-bounded-height-tree-messages"><span
-class="toc-section-number">18.9</span> P09 — Implement bounded-height
+class="toc-section-number">19.9</span> P09 — Implement bounded-height
 tree messages</a></li>
 <li><a href="#p10-prove-safe-volume-truncation"
 id="toc-p10-prove-safe-volume-truncation"><span
-class="toc-section-number">18.10</span> P10 — Prove safe volume
+class="toc-section-number">19.10</span> P10 — Prove safe volume
 truncation</a></li>
 <li><a href="#p11-recover-span-by-bounded-box-subtraction"
 id="toc-p11-recover-span-by-bounded-box-subtraction"><span
-class="toc-section-number">18.11</span> P11 — Recover span by
+class="toc-section-number">19.11</span> P11 — Recover span by
 bounded-box subtraction</a></li>
 <li><a href="#p12-extend-messages-to-bounded-separators"
 id="toc-p12-extend-messages-to-bounded-separators"><span
-class="toc-section-number">18.12</span> P12 — Extend messages to bounded
+class="toc-section-number">19.12</span> P12 — Extend messages to bounded
 separators</a></li>
 <li><a href="#p13-classify-the-first-positive-energy-layer"
 id="toc-p13-classify-the-first-positive-energy-layer"><span
-class="toc-section-number">18.13</span> P13 — Classify the first
+class="toc-section-number">19.13</span> P13 — Classify the first
 positive-energy layer</a></li>
 <li><a href="#p14-compute-the-nested-pair-census"
 id="toc-p14-compute-the-nested-pair-census"><span
-class="toc-section-number">18.14</span> P14 — Compute the nested-pair
+class="toc-section-number">19.14</span> P14 — Compute the nested-pair
 census</a></li>
 <li><a href="#p15-separate-lattice-information-from-chamber-information"
 id="toc-p15-separate-lattice-information-from-chamber-information"><span
-class="toc-section-number">18.15</span> P15 — Separate lattice
+class="toc-section-number">19.15</span> P15 — Separate lattice
 information from chamber information</a></li>
 <li><a href="#p16-test-whitney-switches-systematically"
 id="toc-p16-test-whitney-switches-systematically"><span
-class="toc-section-number">18.16</span> P16 — Test Whitney switches
+class="toc-section-number">19.16</span> P16 — Test Whitney switches
 systematically</a></li>
 <li><a href="#p17-add-exact-volume-congruence-filters"
 id="toc-p17-add-exact-volume-congruence-filters"><span
-class="toc-section-number">18.17</span> P17 — Add exact volume
+class="toc-section-number">19.17</span> P17 — Add exact volume
 congruence filters</a></li>
 <li><a href="#p18-prove-root-of-unity-rationality-in-energy"
 id="toc-p18-prove-root-of-unity-rationality-in-energy"><span
-class="toc-section-number">18.18</span> P18 — Prove root-of-unity
+class="toc-section-number">19.18</span> P18 — Prove root-of-unity
 rationality in energy</a></li>
 <li><a href="#p19-analyze-finite-quadratic-gauss-sums"
 id="toc-p19-analyze-finite-quadratic-gauss-sums"><span
-class="toc-section-number">18.19</span> P19 — Analyze finite quadratic
+class="toc-section-number">19.19</span> P19 — Analyze finite quadratic
 Gauss sums</a></li>
 <li><a href="#p20-build-the-disjoint-order-chamber-formula"
 id="toc-p20-build-the-disjoint-order-chamber-formula"><span
-class="toc-section-number">18.20</span> P20 — Build the disjoint
+class="toc-section-number">19.20</span> P20 — Build the disjoint
 order-chamber formula</a></li>
 <li><a href="#p21-relate-constrained-heights-to-order-polytopes"
 id="toc-p21-relate-constrained-heights-to-order-polytopes"><span
-class="toc-section-number">18.21</span> P21 — Relate constrained heights
+class="toc-section-number">19.21</span> P21 — Relate constrained heights
 to order polytopes</a></li>
 <li><a href="#p22-establish-one-genuine-reciprocity-statement"
 id="toc-p22-establish-one-genuine-reciprocity-statement"><span
-class="toc-section-number">18.22</span> P22 — Establish one genuine
+class="toc-section-number">19.22</span> P22 — Establish one genuine
 reciprocity statement</a></li>
 <li><a href="#p23-implement-formal-logarithmic-extraction"
 id="toc-p23-implement-formal-logarithmic-extraction"><span
-class="toc-section-number">18.23</span> P23 — Implement formal
+class="toc-section-number">19.23</span> P23 — Implement formal
 logarithmic extraction</a></li>
 <li><a href="#p24-determine-exceptional-energy-parameters"
 id="toc-p24-determine-exceptional-energy-parameters"><span
-class="toc-section-number">18.24</span> P24 — Determine exceptional
+class="toc-section-number">19.24</span> P24 — Determine exceptional
 energy parameters</a></li>
 <li><a href="#p25-organize-successive-visibility-levels"
 id="toc-p25-organize-successive-visibility-levels"><span
-class="toc-section-number">18.25</span> P25 — Organize successive
+class="toc-section-number">19.25</span> P25 — Organize successive
 visibility levels</a></li>
 <li><a href="#p26-make-analytic-remainder-bounds-explicit"
 id="toc-p26-make-analytic-remainder-bounds-explicit"><span
-class="toc-section-number">18.26</span> P26 — Make analytic remainder
+class="toc-section-number">19.26</span> P26 — Make analytic remainder
 bounds explicit</a></li>
 <li><a href="#p27-produce-controlled-real-singularity-experiments"
 id="toc-p27-produce-controlled-real-singularity-experiments"><span
-class="toc-section-number">18.27</span> P27 — Produce controlled real
+class="toc-section-number">19.27</span> P27 — Produce controlled real
 singularity experiments</a></li>
 <li><a href="#p28-state-the-available-complex-domain-exactly"
 id="toc-p28-state-the-available-complex-domain-exactly"><span
-class="toc-section-number">18.28</span> P28 — State the available
+class="toc-section-number">19.28</span> P28 — State the available
 complex domain exactly</a></li>
 <li><a href="#p29-specify-a-complete-finite-graph-census"
 id="toc-p29-specify-a-complete-finite-graph-census"><span
-class="toc-section-number">18.29</span> P29 — Specify a complete finite
+class="toc-section-number">19.29</span> P29 — Specify a complete finite
 graph census</a></li>
 <li><a href="#p30-measure-collision-classes-across-invariants"
 id="toc-p30-measure-collision-classes-across-invariants"><span
-class="toc-section-number">18.30</span> P30 — Measure collision classes
+class="toc-section-number">19.30</span> P30 — Measure collision classes
 across invariants</a></li>
 <li><a href="#p31-resolve-targeted-collisions-structurally"
 id="toc-p31-resolve-targeted-collisions-structurally"><span
-class="toc-section-number">18.31</span> P31 — Resolve targeted
+class="toc-section-number">19.31</span> P31 — Resolve targeted
 collisions structurally</a></li>
 <li><a href="#p32-seek-a-separation-bound-for-one-graph-family"
 id="toc-p32-seek-a-separation-bound-for-one-graph-family"><span
-class="toc-section-number">18.32</span> P32 — Seek a separation bound
+class="toc-section-number">19.32</span> P32 — Seek a separation bound
 for one graph family</a></li>
 <li><a href="#p33-verify-concrete-coefficient-certificates-in-a-kernel"
 id="toc-p33-verify-concrete-coefficient-certificates-in-a-kernel"><span
-class="toc-section-number">18.33</span> P33 — Verify concrete
+class="toc-section-number">19.33</span> P33 — Verify concrete
 coefficient certificates in a kernel</a></li>
 <li><a href="#p34-formalize-the-visibility-comparison-boundary"
 id="toc-p34-formalize-the-visibility-comparison-boundary"><span
-class="toc-section-number">18.34</span> P34 — Formalize the visibility
+class="toc-section-number">19.34</span> P34 — Formalize the visibility
 comparison boundary</a></li>
 <li><a href="#p35-release-the-first-focused-manuscript"
 id="toc-p35-release-the-first-focused-manuscript"><span
-class="toc-section-number">18.35</span> P35 — Release the first focused
+class="toc-section-number">19.35</span> P35 — Release the first focused
 manuscript</a></li>
 <li><a href="#p36-choose-the-second-paper-from-actual-results"
 id="toc-p36-choose-the-second-paper-from-actual-results"><span
-class="toc-section-number">18.36</span> P36 — Choose the second paper
+class="toc-section-number">19.36</span> P36 — Choose the second paper
 from actual results</a></li>
 </ul></li>
 </ul>
@@ -852,11 +903,13 @@ methodology, the research program and the literature. Chapter 15 adds
 context operators, certified cheapest experiments, exact robustness and
 the periodic residue sector. Chapter 16 applies the experiment contract
 to a source-derived thermal fault-identification model with explicit
-uncertainty and cost. The implementation appendix records the software
-contracts and validated computational domains. The final roadmap
-preserves the original thirty-six development pushes; their completed
-acceptance records and subsequent research frontiers are maintained in
-the handoff ledger.</p>
+uncertainty and cost. Chapter 17 carries the finite-design machinery
+into measured industrial sound, separating exact microphone-panel
+certificates from protected machine-transfer outcomes. The
+implementation appendix records the software contracts and validated
+computational domains. The final roadmap preserves the original
+thirty-six development pushes; their completed acceptance records and
+subsequent research frontiers are maintained in the handoff ledger.</p>
 <p>The central distinction is between an observation and the
 correspondence it forgets. A binary census can agree for every subset
 size and boundary size while a nested-height census differs. The
@@ -15465,8 +15518,875 @@ reusing any guarantee here. SNG-T01 to SNG-T03 have manuscript proofs
 and exact computational evidence; no Lean formalization of these thermal
 statements is claimed.</p>
 <h1 data-number="17"
+id="microphone-array-selection-under-machine-and-noise-changes"><span
+class="header-section-number">17</span> Microphone-array selection under
+machine and noise changes</h1>
+<h2 data-number="17.1"
+id="the-advantage-is-complete-knowledge-of-the-declared-design-space"><span
+class="header-section-number">17.1</span> The advantage is complete
+knowledge of the declared design space</h2>
+<p>An exact design method can do something useful even when its smallest
+development panel fails on a different machine. It can expose every
+admissible alternative, every declared robustness cost and every
+ambiguity that a single chosen panel conceals. With eight synchronized
+microphones, the complete nonempty design space has only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>−</mo><mn>1</mn><mo>=</mo><mn>255</mn></mrow><annotation encoding="application/x-tex">2^8-1=255</annotation></semantics></math>
+members. This chapter evaluates that entire space on real industrial
+recordings, freezes the design decisions before confirmation, and
+separates a finite optimization certificate from evidence about physical
+transfer. The resulting advantage is a complete, independently
+replayable audit of the stated measurement problem. An empirical saving
+in microphones, if present, is a further claim with its own held-out
+conditions.</p>
+<p>The immediate motivation is the preceding MAFAULDA replay. Its
+development-optimal single accelerometer achieved perfect selection
+accuracy and only two correct classifications among six locked test
+recordings. A separately frozen two-channel confirmation reached fifteen
+correct classifications among eighteen recordings, compared with sixteen
+for the full panel and microphone alone. Exact optimization had
+correctly solved the development problem; the development problem had
+not supplied a reliable transfer guarantee. Those original experiments
+remain unchanged. The present study changes the source corpus, the
+holdout unit and the robustness questions, while retaining the existing
+protocol, provenance, nearest-reference and exact-selection
+architecture.</p>
+<p>The <a href="https://zenodo.org/records/3384388">original MIMII
+release</a>, DOI <code>10.5281/zenodo.3384388</code>, supplies
+eight-channel, sixteen-bit, 16 kHz industrial sound from fans, pumps,
+slide rails and valves. Public version 1.0 includes machine IDs 00, 02,
+04 and 06 for each type. Its binary conditions are normal and abnormal,
+with factory background-noise mixtures in nominal archive conditions
+labeled -6, 0 and +6 dB. The primary paper scales noise using
+model-average signal power; these archive labels are not guarantees of
+measured per-recording SNR. The <a
+href="https://arxiv.org/html/1909.09347v1">primary dataset paper</a>
+describes the recording apparatus and mixture construction. The release
+is attributed to Harsh Purohit and colleagues at Hitachi, Ltd., under CC
+BY-SA 4.0. This chapter’s supervised identity-transfer task differs from
+the original per-machine, normal-only anomaly-detection baseline. Its
+scores are not a reproduction of that published benchmark.</p>
+<h2 data-number="17.2"
+id="a-bounded-physical-population-and-an-externally-frozen-protocol"><span
+class="header-section-number">17.2</span> A bounded physical population
+and an externally frozen protocol</h2>
+<p>For each machine type, machine ID and binary condition, the
+acquisition plan intersects the WAV basenames available in all three
+noise archives. It orders these basenames by SHA-256 of the fixed
+namespace, type, ID, condition and basename, with the basename breaking
+a hash tie, and retains the first sixteen. Every retained basename
+contributes all three noise mixtures. No recording is substituted on the
+basis of its features or predictions. The result is a balanced
+case-control panel of 512 recording-stem groups and 1,536 complete
+ten-second recordings. These groups should not be mistaken for 512
+independent machines, nor should the mixtures be counted as independent
+acquisition sessions.</p>
+<p>Within each machine type, IDs 00 and 02 supply training, ID 04
+supplies sensor selection, and ID 06 supplies protected confirmation.
+Thus training contains 256 stem groups and 768 recordings, while
+selection and confirmation each contain 128 groups and 384 recordings.
+Each confirmation type contains one machine identity and thirty-two
+selected stems, each represented by three mixtures. All windows,
+channels and known mixtures from a stem stay together, and the entire
+machine identity stays in one split. There is no random window split and
+no training example from the confirmation machine.</p>
+<p>The official description does not expose the identities of the
+underlying factory-noise segments. Conservatively grouping matching
+stems across SNR avoids a known route for leakage; it cannot establish
+that unrelated filenames contain independent background noise. Temporal
+session boundaries are also unavailable. Consequently the conditional
+stem bootstrap below is not a confidence interval for a population of
+industrial machines or factory sessions. Machine identity and noise
+provenance are different grouping problems, and the available metadata
+resolve only part of the second.</p>
+<p>The complete protocol was frozen before signal-member acquisition and
+published through the authorized repository controls in commit
+<code>30132a5f7e332c832dc7ad471937a97b3483aa6f</code>. Its protocol hash
+is
+<code>8d7e1e7284a6cad3f72dcdc1ad6022870088ab382d806af95251edf5c321feab</code>.
+The archive inventory and deterministic member plan precede model
+outcomes. A second lock binds the selection predictions, exhaustive
+table and chosen panels before confirmation predictions are computed.
+These two checkpoints answer different questions: the first protects the
+analysis plan, and the second prevents confirmation outcomes from
+changing the selected design.</p>
+<p>The official Zenodo endpoint supports HTTP byte ranges. ZIP64
+directory inspection makes it possible to identify member offsets
+without downloading all twelve archives, whose published total is about
+100 GB. The selected compressed audio members total 2,852,963,714 bytes;
+their uncompressed WAV members total 3,932,282,880 bytes. Strict range
+responses, local ZIP headers, member names, lengths, decompression,
+CRC32 and individual compressed and raw SHA-256 hashes bind the selected
+measurements to the source archives. Published whole-archive MD5 values
+are retained as source metadata; partial retrieval does not verify those
+whole-archive checksums. A source hash supplies byte identity, while the
+independent numerical replay supplies a separate correctness check. A
+second raw-feature route uses Python WAV decoding and an explicit NumPy
+FFT implementation of Welch rather than the production SciPy feature
+path. It verifies every selected compressed member and WAV and
+reproduces all 159,744 descriptor values with maximum absolute
+discrepancy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.4433</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>15</mn></mrow></msup></mrow><annotation encoding="application/x-tex">1.4433\times10^{-15}</annotation></semantics></math>,
+within the declared absolute and relative tolerance of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>11</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2\times10^{-11}</annotation></semantics></math>.
+This is source-to-feature numerical evidence, separate from exact
+optimization and physical transfer.</p>
+<h2 data-number="17.3" id="the-fixed-numerical-observation-map"><span
+class="header-section-number">17.3</span> The fixed numerical
+observation map</h2>
+<p>Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>r</mi><mi>j</mi></mrow></msub><mo>∈</mo><msup><mi>ℝ</mi><mn>160000</mn></msup></mrow><annotation encoding="application/x-tex">x_{rj}\in\mathbb R^{160000}</annotation></semantics></math>
+for microphone
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+in recording
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>.
+The sixteen-bit PCM values are divided by 32,768, and each complete
+channel is centered. Thirteen fixed descriptors are calculated: log RMS,
+log mean absolute amplitude, kurtosis, crest factor, zero-crossing rate,
+normalized spectral centroid, and seven log Welch band powers. The fixed
+bands partition 0–8 kHz at 125, 250, 500, 1000, 2000 and 4000 Hz. Welch
+uses a Hann window of 1,024 samples, overlap 512 and constant
+detrending. The logarithm floor is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>20</mn></mrow></msup><annotation encoding="application/x-tex">10^{-20}</annotation></semantics></math>.
+There is no feature search using the confirmation data.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mrow><mi>r</mi><mi>j</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">F_{rjk}</annotation></semantics></math>
+be descriptor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
+For each machine type
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+training-only mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mrow><mi>t</mi><mi>j</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">\mu_{tjk}</annotation></semantics></math>
+and population standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mrow><mi>t</mi><mi>j</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">\sigma_{tjk}</annotation></semantics></math>,
+floored at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup><annotation encoding="application/x-tex">10^{-9}</annotation></semantics></math>,
+define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mrow><mi>r</mi><mi>j</mi><mi>k</mi></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>F</mi><mrow><mi>r</mi><mi>j</mi><mi>k</mi></mrow></msub><mo>−</mo><msub><mi>μ</mi><mrow><mi>t</mi><mi>j</mi><mi>k</mi></mrow></msub></mrow><mrow><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>σ</mi><mrow><mi>t</mi><mi>j</mi><mi>k</mi></mrow></msub><mo>,</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Z_{rjk}=\frac{F_{rjk}-\mu_{tjk}}{\max(\sigma_{tjk},10^{-9})}.
+</annotation></semantics></math></p>
+<p>The model is the existing additive nearest-reference observation
+rule, applied separately within each known machine type. For a nonempty
+microphone set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>,
+training reference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and query
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
+put</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>S</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>13</mn><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><munder><mo>∑</mo><mrow><mi>j</mi><mo>∈</mo><mi>S</mi></mrow></munder><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mn>13</mn></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Z</mi><mrow><mi>r</mi><mi>j</mi><mi>k</mi></mrow></msub><mo>−</mo><msub><mi>Z</mi><mrow><mi>a</mi><mi>j</mi><mi>k</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>S</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>y</mi><mrow><msup><mi>a</mi><mo>*</mo></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">
+d_S(r,a)=\frac1{13|S|}\sum_{j\in S}\sum_{k=1}^{13}(Z_{rjk}-Z_{ajk})^2,
+\qquad
+\widehat y_S(r)=y_{a^*(r,S)},
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>a</mi><mo>*</mo></msup><annotation encoding="application/x-tex">a^*</annotation></semantics></math>
+is the first minimizing training reference in deterministic manifest
+order. Type is declared known context, not inferred by the model.
+Normalization and references use only training identities. The output is
+a binary condition prediction; the public labels do not justify
+assigning individual fault subtypes to a recording.</p>
+<p>This rule is deliberately fixed rather than tuned into a new
+state-of-the-art anomaly detector. Its purpose is to make the
+sensor-selection assumptions inspectable and the saved predictions
+independently reproducible. It uses per-channel descriptors, not
+phase-preserving beamforming. A selected digital stream is therefore not
+a new microphone placement, and a change in stored channel count is not
+a measured power, price or latency benefit.</p>
+<p>For any nonempty evaluation cell
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>,
+class recall and balanced accuracy are rational functions of the saved
+discrete predictions:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>c</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>;</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>r</mi><mo>∈</mo><mi>A</mi><mo>:</mo><msub><mi>y</mi><mi>r</mi></msub><mo>=</mo><mi>c</mi><mo>,</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>S</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow><mrow><mi>#</mi><mo stretchy="false" form="prefix">{</mo><mi>r</mi><mo>∈</mo><mi>A</mi><mo>:</mo><msub><mi>y</mi><mi>r</mi></msub><mo>=</mo><mi>c</mi><mo stretchy="false" form="postfix">}</mo></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>;</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msub><mi>R</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>;</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>R</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>;</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R_c(S;A)=\frac{\#\{r\in A:y_r=c,\widehat y_S(r)=c\}}{\#\{r\in A:y_r=c\}},
+\qquad B(S;A)=\frac{R_0(S;A)+R_1(S;A)}2.
+</annotation></semantics></math></p>
+<p>Floating-point feature extraction and distance comparisons precede
+this exact arithmetic. The finite certificate does not turn the
+observation map into an exact physical law. Once predictions are fixed,
+however, comparisons against the two-percentage-point margin
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>50</mn></mrow><annotation encoding="application/x-tex">\delta=1/50</annotation></semantics></math>
+need no floating-point tolerance.</p>
+<h2 data-number="17.4"
+id="five-design-contracts-and-a-complete-optimum-certificate"><span
+class="header-section-number">17.4</span> Five design contracts and a
+complete optimum certificate</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>8</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">M=\{1,\ldots,8\}</annotation></semantics></math>
+be the intact array. The nominal contract requires pooled balanced
+accuracy and every type-specific balanced accuracy to satisfy</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>;</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo>;</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>δ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B(S;A)\ge B(M;A)-\delta.
+</annotation></semantics></math></p>
+<p>The nuisance-aware contract additionally imposes the same inequality
+for every type-by-SNR cell. The class-robust contract also requires
+every type-by-SNR-by-class recall to remain within
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+of the corresponding intact-array recall. These requirements prevent an
+improved aggregate score from concealing an additional class failure at
+one noise level. They do not require the intact array itself to be
+accurate: relative preservation and an absolute recall floor are
+reported separately.</p>
+<p>Every selected type-by-SNR cell has sixteen normal and sixteen
+abnormal examples. One additional mistake changes balanced accuracy by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>32</mn><mo>=</mo><mn>3.125</mn></mrow><annotation encoding="application/x-tex">1/32=3.125</annotation></semantics></math>
+percentage points and a class recall by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>16</mn><mo>=</mo><mn>6.25</mn></mrow><annotation encoding="application/x-tex">1/16=6.25</annotation></semantics></math>
+points. Consequently a two-point cell margin permits no additional error
+in those cells. This is a discrete sampling consequence of the frozen
+panel, rather than evidence for a finely calibrated two-point physical
+tolerance.</p>
+<p>Cost is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">c(S)=|S|</annotation></semantics></math>,
+with integer mask breaking ties. Each retained channel represents
+160,000 scalar observations per recording, so channel count and raw
+scalar count have the same ordering here. No measured hardware prices
+enter the objective. Greedy starts empty and repeatedly adds the channel
+minimizing the sum of positive exact constraint deficits, with mask as
+the tie break, until it first reaches feasibility or exhausts the array.
+Optimally pruned greedy enumerates every nonempty submask of the
+terminal greedy mask under the same contract. This stronger comparator
+matters when a greedy path contains redundant channels.</p>
+<p><strong>Proposition SNG-M01 (complete finite optimum).</strong> Fix
+the training data, numerical prediction table, evaluation cells, exact
+margin and a Boolean feasibility predicate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Φ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Phi(S)</annotation></semantics></math>
+on nonempty subsets of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>S</mi><mo>⊆</mo><mi>M</mi><mo>:</mo><mi>S</mi><mo>≠</mo><mi>⌀</mi><mo>,</mo><mi>Φ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathcal F=\{S\subseteq M:S\ne\varnothing,\Phi(S)\}</annotation></semantics></math>
+is nonempty, exhaustive evaluation of all 255 masks and minimization of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mo>mask</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(|S|,\operatorname{mask}(S))</annotation></semantics></math>
+returns the unique declared optimum. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>
+is empty, the same table certifies infeasibility over the declared
+design space.</p>
+<p><em>Proof.</em> Each nonempty subset has one integer mask in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>255</mn></mrow><annotation encoding="application/x-tex">1,\ldots,255</annotation></semantics></math>,
+and every such mask represents one subset. The enumeration is therefore
+exhaustive and has no duplicate designs. Exact recall fractions
+determine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Φ</mi><annotation encoding="application/x-tex">\Phi</annotation></semantics></math>
+without rounding. A finite nonempty set has a least element in the
+stated total order, and no smaller element can be feasible if every
+table entry has been checked. If every entry fails, no declared design
+remains. The proof concerns this finite observation table; it contains
+no inference about a different recording population.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>This is the methodological advantage the study can establish without
+a favorable transfer outcome. It yields the whole feasible set and
+sensitivity frontier together with the selected panel. It can also
+establish that exact and optimally pruned greedy tie. Such a tie is a
+result that narrows the method’s practical advantage on this task; it is
+not suppressed by presenting ordinary greedy as the only comparison.</p>
+<h2 data-number="17.5"
+id="erasures-and-the-limits-of-monotone-coverage"><span
+class="header-section-number">17.5</span> Erasures and the limits of
+monotone coverage</h2>
+<p>For a class-robust predicate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Φ</mi><annotation encoding="application/x-tex">\Phi</annotation></semantics></math>,
+the one- and two-erasure contracts require</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Φ</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>⋀</mo><mrow><mi>L</mi><mo>⊆</mo><mi>S</mi><mo>,</mo><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>L</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>f</mi></mrow></munder><mi>Φ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>\</mo><mi>L</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>f</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\Phi_f(S)=\bigwedge_{L\subseteq S,\,|L|\le f}\Phi(S\setminus L),
+\qquad f\in\{1,2\},
+</annotation></semantics></math></p>
+<p>where an empty survivor is infeasible and every survivor is compared
+with the original intact-array thresholds. The reference threshold does
+not become easier when a channel is erased. All surviving masks are
+explicitly tested, including the intact panel. A two-channel survivor
+can behave differently from either channel alone because the
+nearest-reference decision changes after distances are combined.</p>
+<p><strong>Proposition SNG-M02 (exact deletion criterion).</strong> A
+panel satisfies the stated
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>-erasure
+contract if and only if every nonempty surviving subset obtained by
+deleting at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+selected channels satisfies the original robust predicate, and no
+permitted deletion leaves an empty survivor.</p>
+<p><em>Proof.</em> These are precisely the possible losses of at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+channels from that panel. If every listed survivor passes, every
+permitted loss passes. Conversely any failing survivor supplies its
+deleted set as an explicit counterexample to the contract. An empty
+survivor supplies no input to the declared classifier and fails by
+definition.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The survivor operator also produces a useful exact frontier. For a
+margin
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℱ</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal F_f(\delta)</annotation></semantics></math>
+be the family satisfying the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>-erasure
+contract and let</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>min</mo><mrow><mi>S</mi><mo>∈</mo><msub><mi>ℱ</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><mrow><mo stretchy="true" form="prefix">|</mo><mi>S</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mo>min</mo><mi>⌀</mi><mo>=</mo><mo>+</mo><mi>∞</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+K_f(\delta)=\min_{S\in\mathcal F_f(\delta)}|S|,
+\qquad \min\varnothing=+\infty.
+</annotation></semantics></math></p>
+<p><strong>Proposition SNG-M04 (robustness frontier without sensor
+monotonicity).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mo>≥</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">f&#39;\ge f</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>′</mi><mo>≥</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta&#39;\ge\delta</annotation></semantics></math>,
+then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℱ</mi><mrow><mi>f</mi><mi>′</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊆</mo><msub><mi>ℱ</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ℱ</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊆</mo><msub><mi>ℱ</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>K</mi><mrow><mi>f</mi><mi>′</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><msub><mi>K</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><msub><mi>K</mi><mi>f</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathcal F_{f&#39;}(\delta)\subseteq\mathcal F_f(\delta),\qquad
+\mathcal F_f(\delta)\subseteq\mathcal F_f(\delta&#39;),\qquad
+K_{f&#39;}(\delta)\ge K_f(\delta)\ge K_f(\delta&#39;).
+</annotation></semantics></math></p>
+<p>Every feasible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>-erasure
+panel has at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f+1</annotation></semantics></math>
+members. These statements require no assertion that adding a microphone
+improves classification.</p>
+<p><em>Proof.</em> Increasing the erasure budget adds survivor tests, so
+a panel passing all of the larger collection passes the smaller
+collection. Increasing the margin weakens each fixed full-array
+comparison and therefore cannot invalidate any survivor that previously
+passed. Taking minima over nested feasible families gives the cost
+inequalities, including the empty-family convention. A panel with at
+most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+members permits deletion of all its members, leaving the explicitly
+forbidden empty survivor.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>This frontier separates two forms of monotonicity that are easy to
+confuse. Requirement strength is monotone, even though classifier
+quality as a function of the microphone set is not. A downward step in
+recorded minimum cost when the allowed loss increases is consistent; a
+downward step when the erasure requirement increases signals a
+calculation or presentation error. These are independently checkable
+structural identities of the complete finite table.</p>
+<p>This elementary criterion is worth stating because an apparently
+similar multicover theorem answers a different question. In the existing
+<code>singularity.robust_coverage</code> engine, a microphone may
+independently separate a declared distinction. A panel survives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+erasures exactly when each distinction has at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f+1</annotation></semantics></math>
+independently separating members: deleting at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+leaves one, while deleting all at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+separators defeats an undercovered distinction. That argument relies on
+a fixed per-channel separation relation. Additive nearest-reference
+classification is nonmonotone in its channels, so counting individually
+successful microphones cannot replace the explicit survivor checks
+above.</p>
+<p>The study nevertheless reuses the multicover engine in an appropriate
+separate diagnostic. For each type and SNR, normal and abnormal
+descriptor boxes are the coordinatewise development minima and maxima
+over training plus selection. A microphone separates a distinction only
+when at least one of its descriptor intervals is strictly disjoint
+between the two boxes. The core exact solver and an independent
+exhaustive solver compare multiplicities one, two and three. A
+successful result is conditional on those empirical boxes. Overlapping
+boxes indicate failure of this sufficient certificate; they neither
+establish physical indistinguishability nor supply a universal noise
+envelope.</p>
+<h2 data-number="17.6"
+id="observational-equivalence-as-a-measurable-warning"><span
+class="header-section-number">17.6</span> Observational equivalence as a
+measurable warning</h2>
+<p>For the frozen selection recordings
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>s</mi></msub><annotation encoding="application/x-tex">D_s</annotation></semantics></math>,
+define the prediction trace</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>s</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>S</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>r</mi><mo>∈</mo><msub><mi>D</mi><mi>s</mi></msub></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>S</mi><msub><mo>∼</mo><mi>s</mi></msub><mi>S</mi><mi>′</mi><mo>⇔</mo><msub><mi>T</mi><mi>s</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>T</mi><mi>s</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+T_s(S)=(\widehat y_S(r))_{r\in D_s},\qquad
+S\sim_s S&#39;\iff T_s(S)=T_s(S&#39;).
+</annotation></semantics></math></p>
+<p>This is an equivalence relation on the 255 masks. Its classes
+preserve every observed selection decision, not merely aggregate
+accuracy. All masks in a class satisfy exactly the same selection
+accuracy constraints, although their channel costs may differ. The
+selected masks and these classes are locked before confirmation.</p>
+<p><strong>Proposition SNG-M03 (finite traces do not determine
+transfer).</strong> Equality of finite selection traces implies equality
+of every score computed solely from those traces and fixed labels.
+Without an additional hypothesis on the observation map or
+data-generating population, it does not imply equality on an unobserved
+recording.</p>
+<p><em>Proof.</em> A score computed from equal vectors has equal inputs
+and therefore equal output. For the second statement, take two binary
+functions equal on the finite set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mi>s</mi></msub><annotation encoding="application/x-tex">D_s</annotation></semantics></math>
+and differing at one point outside it. They meet the premise and fail
+the asserted extension. The finite premise imposes no condition at that
+new point. For the fixed physical pipeline, a confirmation trace split
+is a concrete empirical witness of the same logical limitation.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Confirmation records how many selection-equivalence classes split
+into multiple confirmation traces, their score ranges, and the behavior
+of every development-optimal minimum-cost alternative. This is
+descriptive investigation after the lock, never a license to replace the
+chosen panel with the best confirmation member. Equal singleton
+prediction traces do not make two microphones interchangeable inside a
+fused distance calculation, and equality on the retained recordings does
+not prove physical equivalence.</p>
+<p>Sensitivity analysis repeats the finite feasibility calculation at
+margins zero, two, five and ten percentage points and erasure budgets
+zero, one and two. The predeclared paired bootstrap resamples complete
+stems within type and binary class, carrying the three mixtures
+together, for 2,000 replicates with seed 20261020. Its percentile
+score-difference intervals are conditional on the four fixed
+confirmation machines and this sampling plan. They do not establish
+noninferiority across a machine population. The absolute diagnostic asks
+separately whether every type-by-SNR-by-class recall reaches one half;
+passing a relative margin against a weak reference does not settle that
+question.</p>
+<h2 data-number="17.7"
+id="retained-physical-results-a-useful-audit-unsuccessful-transfer"><span
+class="header-section-number">17.7</span> Retained physical results: a
+useful audit, unsuccessful transfer</h2>
+<p><strong>The clear demonstrated advantage is the complete,
+source-to-feature, independently replayable design audit.</strong> It
+establishes the exact cost of each declared requirement and exposes a
+proposed reduction that fails protected confirmation. It establishes no
+exact-over-greedy advantage, hardware saving or population-level
+transfer guarantee. A bounded recorded-stream reduction does survive for
+the predeclared greedy comparator, as detailed below. Selective access
+also makes this bounded all-type, all-ID, all-noise-condition
+investigation practical with 2.85 GB of compressed signal members,
+without requiring the entire roughly 100 GB release. That access saving
+applies to the declared subset; it is not equivalent to evaluating every
+recording in MIMII.</p>
+<p>At the primary two-point margin, thirty of 255 panels meet nominal
+selection feasibility. The minimum channel count is two, with three
+minimizing masks: 36 (microphones 3 and 6), 65 (1 and 7), and 72 (4 and
+7). The integer-mask tie break chooses 36. Its selection balanced
+accuracy is 55.73%, compared with 53.65% for all eight channels. On the
+protected machine IDs it gets 193/384 correct, balanced accuracy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>193</mn><mi>/</mi><mn>384</mn><mo>=</mo><mn>50.26</mn></mrow><annotation encoding="application/x-tex">193/384=50.26%</annotation></semantics></math>,
+versus 203/384,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>203</mn><mi>/</mi><mn>384</mn><mo>=</mo><mn>52.86</mn></mrow><annotation encoding="application/x-tex">203/384=52.86%</annotation></semantics></math>,
+for the full array. The difference is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>5</mn><mi>/</mi><mn>192</mn></mrow><annotation encoding="application/x-tex">-5/192</annotation></semantics></math>,
+or -2.6042 percentage points. Thus even the pooled two-point
+preservation margin fails, and the type-specific nominal contract also
+fails.</p>
+<p>The paired, type-and-class-stratified stem bootstrap gives a
+conditional 95% percentile difference interval from -5.99 to 0.78
+percentage points. This interval includes zero. It neither proves that
+the selected panel is inferior in a machine population nor establishes
+noninferiority. The descriptive protected-panel margin test has already
+failed, and the weak absolute diagnostic scores deserve equal
+attention.</p>
+<p>The exact certificate does not identify a unique minimum-cardinality
+physical design. Ordinary greedy and optimally pruned greedy both return
+mask 65, another cost-two minimizer. They agree with exact optimization
+on minimum channel count while choosing a different tie. Their
+confirmation score is 213/384 = 55.47%, above the deterministic exact
+tie choice. This predeclared greedy pair passes the complete nominal
+confirmation contract, including every type-specific margin, while
+retaining two of eight recorded streams: a 75% reduction in the stated
+digital observation count on this protected panel. That is a concrete
+bounded advantage of the retained candidate. It belongs to an equally
+cheap greedy solution, and its 55.47% balanced accuracy and failed
+absolute class-recall floor prevent interpreting it as a reliable fault
+detector or a general hardware reduction. The third development
+minimizer, mask 72, reaches only 187/384 = 48.70%. This 6.77-point
+spread among equally cheap development-feasible minima shows selection
+ambiguity without making a post-confirmation replacement. The primary
+exact mask remains the reported choice. The zero-margin sensitivity also
+selects mask 65 from development alone; it is retained as sensitivity,
+not substituted for the primary two-point result.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Selection requirement</th>
+<th style="text-align: right;">Feasible masks</th>
+<th style="text-align: right;">Minimum microphones</th>
+<th>Exact microphones</th>
+<th>Greedy cost / status</th>
+<th style="text-align: right;">Pruned-greedy cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pooled and type balanced accuracy</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">2</td>
+<td>3, 6</td>
+<td>2 / feasible</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>Also every type by SNR</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td>1, 2, 3, 4, 5, 6, 7, 8</td>
+<td>8 / feasible</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td>Also each binary-class recall</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td>1, 2, 3, 4, 5, 6, 7, 8</td>
+<td>8 / feasible</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td>Class robust after any one erasure</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">infeasible</td>
+<td>none</td>
+<td>8 / infeasible terminal</td>
+<td style="text-align: right;">infeasible</td>
+</tr>
+<tr class="odd">
+<td>Class robust after any two erasures</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">infeasible</td>
+<td>none</td>
+<td>8 / infeasible terminal</td>
+<td style="text-align: right;">infeasible</td>
+</tr>
+</tbody>
+</table>
+<p>Nuisance-aware selection and class-robust selection each admit
+exactly one panel: all eight microphones. Their relative confirmation
+requirements pass because their chosen mask is the reference mask
+itself. This is not independent evidence of good fault detection:
+full-array confirmation balanced accuracy is only 52.86%, and the full
+array fails the predeclared simultaneous requirement that each
+type-by-SNR-by-class recall reach one half. The exact nominal panel and
+every reported comparator also fail that simultaneous absolute-floor
+requirement. No panel satisfies either erasure requirement at the
+primary margin, and even relaxing the margin to ten points does not
+produce an erasure-feasible panel in this frozen development table.</p>
+<figure>
+<img src="../applications/sensor_replay/mimii_v1/mimii_results.png"
+alt="All primary panels, channel removals, exact robustness costs, and the absence of finite prediction aliases." />
+<figcaption aria-hidden="true">All primary panels, channel removals,
+exact robustness costs, and the absence of finite prediction
+aliases.</figcaption>
+</figure>
+<h2 data-number="17.8"
+id="class-specific-failures-and-the-single-microphone-controls"><span
+class="header-section-number">17.8</span> Class-specific failures and
+the single-microphone controls</h2>
+<p>The protected nominal panel is close to chance in aggregate, with
+materially different class errors. Its mean normal recall for pumps is
+41.67%; its abnormal recall for valves is 39.58%. For slide rails,
+normal and abnormal recall are 47.92% and 41.67%. A fixed reference that
+transfers poorly cannot establish that the raw microphone signals
+themselves lack diagnostic information. It establishes a limit of this
+particular source-bound observation map under the declared identity
+shift. The nominal-noise breakdown keeps the binary failures
+visible.</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Protected type / nominal SNR</th>
+<th style="text-align: right;">Full-array BA</th>
+<th style="text-align: right;">Exact nominal BA</th>
+<th style="text-align: right;">Exact normal recall</th>
+<th style="text-align: right;">Exact abnormal recall</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>fan / -6 dB</td>
+<td style="text-align: right;">56.25%</td>
+<td style="text-align: right;">53.12%</td>
+<td style="text-align: right;">62.50%</td>
+<td style="text-align: right;">43.75%</td>
+</tr>
+<tr class="even">
+<td>fan / +0 dB</td>
+<td style="text-align: right;">59.38%</td>
+<td style="text-align: right;">62.50%</td>
+<td style="text-align: right;">43.75%</td>
+<td style="text-align: right;">81.25%</td>
+</tr>
+<tr class="odd">
+<td>fan / +6 dB</td>
+<td style="text-align: right;">37.50%</td>
+<td style="text-align: right;">40.62%</td>
+<td style="text-align: right;">43.75%</td>
+<td style="text-align: right;">37.50%</td>
+</tr>
+<tr class="even">
+<td>pump / -6 dB</td>
+<td style="text-align: right;">68.75%</td>
+<td style="text-align: right;">68.75%</td>
+<td style="text-align: right;">56.25%</td>
+<td style="text-align: right;">81.25%</td>
+</tr>
+<tr class="odd">
+<td>pump / +0 dB</td>
+<td style="text-align: right;">50.00%</td>
+<td style="text-align: right;">46.88%</td>
+<td style="text-align: right;">37.50%</td>
+<td style="text-align: right;">56.25%</td>
+</tr>
+<tr class="even">
+<td>pump / +6 dB</td>
+<td style="text-align: right;">43.75%</td>
+<td style="text-align: right;">46.88%</td>
+<td style="text-align: right;">31.25%</td>
+<td style="text-align: right;">62.50%</td>
+</tr>
+<tr class="odd">
+<td>slider / -6 dB</td>
+<td style="text-align: right;">40.62%</td>
+<td style="text-align: right;">40.62%</td>
+<td style="text-align: right;">25.00%</td>
+<td style="text-align: right;">56.25%</td>
+</tr>
+<tr class="even">
+<td>slider / +0 dB</td>
+<td style="text-align: right;">59.38%</td>
+<td style="text-align: right;">43.75%</td>
+<td style="text-align: right;">18.75%</td>
+<td style="text-align: right;">68.75%</td>
+</tr>
+<tr class="odd">
+<td>slider / +6 dB</td>
+<td style="text-align: right;">50.00%</td>
+<td style="text-align: right;">50.00%</td>
+<td style="text-align: right;">100.00%</td>
+<td style="text-align: right;">0.00%</td>
+</tr>
+<tr class="even">
+<td>valve / -6 dB</td>
+<td style="text-align: right;">62.50%</td>
+<td style="text-align: right;">53.12%</td>
+<td style="text-align: right;">68.75%</td>
+<td style="text-align: right;">37.50%</td>
+</tr>
+<tr class="odd">
+<td>valve / +0 dB</td>
+<td style="text-align: right;">56.25%</td>
+<td style="text-align: right;">50.00%</td>
+<td style="text-align: right;">56.25%</td>
+<td style="text-align: right;">43.75%</td>
+</tr>
+<tr class="even">
+<td>valve / +6 dB</td>
+<td style="text-align: right;">50.00%</td>
+<td style="text-align: right;">46.88%</td>
+<td style="text-align: right;">56.25%</td>
+<td style="text-align: right;">37.50%</td>
+</tr>
+</tbody>
+</table>
+<p>Mic 1, the single-microphone reference fixed before confirmation,
+gets 219/384 correct, or 57.03%, exceeding the full array by 4.17
+percentage points and the selected exact pair by 6.77 points. It still
+fails the nominal type-specific preservation contract and the
+simultaneous absolute class-recall floor. It is therefore a valuable
+control and a warning about this classifier, not a validated replacement
+sensor design. All eight singleton results remain in the retained
+comparison rather than selecting the best microphone after
+confirmation.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Microphone</th>
+<th style="text-align: right;">Selection balanced accuracy</th>
+<th style="text-align: right;">Protected balanced accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">49.74%</td>
+<td style="text-align: right;">57.03%</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">51.56%</td>
+<td style="text-align: right;">56.77%</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: right;">51.82%</td>
+<td style="text-align: right;">51.56%</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: right;">54.17%</td>
+<td style="text-align: right;">46.35%</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: right;">47.92%</td>
+<td style="text-align: right;">52.86%</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td style="text-align: right;">48.96%</td>
+<td style="text-align: right;">48.44%</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td style="text-align: right;">53.39%</td>
+<td style="text-align: right;">51.04%</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td style="text-align: right;">48.70%</td>
+<td style="text-align: right;">56.25%</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="../applications/sensor_replay/mimii_v1/mimii_controls.png"
+alt="Every singleton microphone and worst permitted channel-erasure outcomes on the protected recordings." />
+<figcaption aria-hidden="true">Every singleton microphone and worst
+permitted channel-erasure outcomes on the protected
+recordings.</figcaption>
+</figure>
+<h2 data-number="17.9"
+id="sensitivity-observational-equivalence-and-empirical-boxes"><span
+class="header-section-number">17.9</span> Sensitivity, observational
+equivalence and empirical boxes</h2>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Margin from the full-array selection score</th>
+<th style="text-align: right;">Nominal minimum</th>
+<th style="text-align: right;">Nuisance-aware minimum</th>
+<th style="text-align: right;">Class-robust minimum</th>
+<th style="text-align: right;">One-erasure minimum</th>
+<th style="text-align: right;">Two-erasure minimum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0 points</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">infeasible</td>
+<td style="text-align: right;">infeasible</td>
+</tr>
+<tr class="even">
+<td>2 points</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">infeasible</td>
+<td style="text-align: right;">infeasible</td>
+</tr>
+<tr class="odd">
+<td>5 points</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">infeasible</td>
+<td style="text-align: right;">infeasible</td>
+</tr>
+<tr class="even">
+<td>10 points</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">infeasible</td>
+<td style="text-align: right;">infeasible</td>
+</tr>
+</tbody>
+</table>
+<p>At five points, nuisance-aware cost falls to three microphones, while
+class robustness still needs eight because a single recall error costs
+6.25 points in a sixteen-example class cell. At ten points, the nominal,
+nuisance-aware and class-robust costs are one, two and three. These are
+different tolerated-loss contracts, not confirmation-driven improvements
+to the primary result. The monotone frontier identities in SNG-M04 hold,
+including the persistent infeasibility of both erasure budgets.</p>
+<p>Every one of the 255 nonempty masks has a distinct complete selection
+prediction trace. Thus no nontrivial exact trace-equivalence class
+occurs, and no such class splits on confirmation in this experiment.
+SNG-M03 remains a general limitation, but this dataset does not supply
+its empirical alias-splitting witness. The three minimum-cost feasible
+alternatives are ambiguity under the nominal performance constraints,
+not equality of their complete observations. This distinction prevents
+an attractive theoretical possibility from being reported as an observed
+discovery.</p>
+<p>The empirical-box diagnostic is wholly negative: none of the twelve
+type-by-SNR normal-versus-abnormal distinctions has an individually
+separating microphone coordinate. Both the existing branch-and-bound
+core and the exhaustive oracle therefore report infeasibility for
+multiplicities one, two and three. All observed development class boxes
+overlap on every channel under this strict coordinate-separation
+criterion. This failure does not certify that normal and abnormal sound
+are physically equivalent; it shows that these conservative empirical
+envelopes cannot support the desired sufficient robustness argument. The
+box certificate and the fused-classifier results fail in different,
+explicitly retained ways.</p>
+<h2 data-number="17.10"
+id="what-this-experiment-adds-to-the-methodology"><span
+class="header-section-number">17.10</span> What this experiment adds to
+the methodology</h2>
+<p>The result is a rigorous negative physical-transfer study with a
+complete finite design frontier. It makes three limits concrete: a
+smallest panel for type-averaged development scores need not preserve a
+protected margin; protecting observed noise and class cells may remove
+every apparent channel saving; and an empirical min/max uncertainty
+model may be too coarse to certify even zero-erasure separation. Exact
+optimization addresses the declared finite optimization problem
+correctly while leaving the observation model and its transfer
+assumptions open to challenge.</p>
+<p>The next justified mathematical question is how to construct an
+observation and nuisance envelope that preserves actual cross-machine
+fault information, with more independent identities available for
+validating that envelope. The present confirmation cannot be reused as
+fresh protection for a redesigned classifier. A future method may use it
+as development evidence only if it labels that change and obtains a new
+protected evaluation. No new placement, procurement, field reliability
+or hardware-efficiency conclusion follows from these prerecorded
+streams. The original MAFAULDA experiments remain unchanged, and this
+MIMII failure is retained alongside their failures rather than being
+absorbed into a favorable aggregate.</p>
+<p>The executable evidence is <a
+href="../applications/sensor_replay/mimii_v1/protocol.json">the frozen
+protocol</a>, <a
+href="../applications/sensor_replay/mimii_v1/selection_snapshot.json">selection
+certificate</a>, <a
+href="../applications/sensor_replay/mimii_v1/results.json">protected
+results</a>, <a
+href="../applications/sensor_replay/mimii_v1/raw_feature_verification.json">raw-feature
+replay</a>, and <a
+href="../applications/sensor_replay/mimii_v1/MIMII_Array_Research.html">illustrated
+report</a>. The independent verifier recomputes predictions and finite
+constraints without importing the production selector. These records
+separate source integrity, numerical observation replay, finite exact
+optimization and physical transfer, so each conclusion can be inspected
+at the level its evidence supports.</p>
+<h1 data-number="18"
 id="implementation-and-retained-computational-results"><span
-class="header-section-number">17</span> Implementation and retained
+class="header-section-number">18</span> Implementation and retained
 computational results</h1>
 <p>The mathematical manuscripts describe a research program, while this
 chapter records the executable boundary of version 0.3.0. The core
@@ -15474,8 +16394,8 @@ package requires Python 3.10 or newer and uses only the standard
 library. Documentation generation additionally uses Pandoc and a LaTeX
 installation. The rendered PDF and HTML are distributed so that a reader
 does not need those authoring tools merely to read the work.</p>
-<h2 data-number="17.1" id="installing-and-running-the-project"><span
-class="header-section-number">17.1</span> Installing and running the
+<h2 data-number="18.1" id="installing-and-running-the-project"><span
+class="header-section-number">18.1</span> Installing and running the
 project</h2>
 <p>From the repository root, <code>python -m pip install -e .</code>
 installs the command <code>singularity</code>. An installation-free
@@ -15499,8 +16419,8 @@ The input can instead be a JSON object with an integer vertex count and
 an explicit edge list. Original vertex labels are retained throughout
 all finite populations. Isomorphism is a separate mathematical quotient,
 never an implicit division of multiplicities.</p>
-<h2 data-number="17.2" id="implemented-mathematical-modules"><span
-class="header-section-number">17.2</span> Implemented mathematical
+<h2 data-number="18.2" id="implemented-mathematical-modules"><span
+class="header-section-number">18.2</span> Implemented mathematical
 modules</h2>
 <p>The meaning of every public coefficient, population and certificate
 interface is fixed in the <a
@@ -15737,8 +16657,8 @@ primitive populations by a finite divisor sum in every retained volume.
 The inverse operation uses the ordinary Mobius function on the scaling
 factor. The released test checks both directions on every simple graph
 through four vertices at a declared finite depth.</p>
-<h2 data-number="17.3" id="population-navigation-and-exact-bounds"><span
-class="header-section-number">17.3</span> Population navigation and
+<h2 data-number="18.3" id="population-navigation-and-exact-bounds"><span
+class="header-section-number">18.3</span> Population navigation and
 exact bounds</h2>
 <p>The command
 <code>population --example binary_g --volume 3 --span 2 --sample 5</code>
@@ -15756,8 +16676,8 @@ storing every completed tuple. Their computational cost still depends on
 the graph’s frontier and on the active constraints. The package does not
 advertise a uniform polynomial-time procedure for arbitrary graphs or
 arbitrary energy budgets.</p>
-<h2 data-number="17.4" id="forest-transfer-experiment"><span
-class="header-section-number">17.4</span> Forest transfer
+<h2 data-number="18.4" id="forest-transfer-experiment"><span
+class="header-section-number">18.4</span> Forest transfer
 experiment</h2>
 <p>The forest engine conditions each subtree on the height at its root.
 Combining a child charges the connecting edge exactly once and convolves
@@ -15779,8 +16699,8 @@ in <code>results/transfer_benchmark.json</code> records both counts and
 measured execution times. Timing is an environmental observation. The
 arithmetic identities and retained population definition are the
 reproducible mathematical conclusions.</p>
-<h2 data-number="17.5" id="complete-small-graph-census"><span
-class="header-section-number">17.5</span> Complete small-graph
+<h2 data-number="18.5" id="complete-small-graph-census"><span
+class="header-section-number">18.5</span> Complete small-graph
 census</h2>
 <p>The script <code>scripts/census.py</code> enumerates every labeled
 simple graph through six vertices, filters connected graphs, and takes
@@ -15867,8 +16787,8 @@ demonstrates why this finite observation cannot be promoted to a
 reconstruction theorem. The census gives a reproducible starting point
 for measuring how visibility changes as the graph population
 expands.</p>
-<h2 data-number="17.6" id="reproduction-and-document-generation"><span
-class="header-section-number">17.6</span> Reproduction and document
+<h2 data-number="18.6" id="reproduction-and-document-generation"><span
+class="header-section-number">18.6</span> Reproduction and document
 generation</h2>
 <p><code>make test</code> runs the standard-library suite.
 <code>make examples</code> regenerates the three reference comparisons,
@@ -15898,8 +16818,8 @@ package (no Mathlib) with kernel-checked theorems for translation
 normalization (P07) and the nested threshold energy identity (P08);
 <code>scripts/check_formal.py</code> builds it and audits the axioms of
 the main theorems (see <code>formal/README.md</code>).</p>
-<h1 data-number="18" id="thirty-six-concrete-research-pushes"><span
-class="header-section-number">18</span> Thirty-six concrete research
+<h1 data-number="19" id="thirty-six-concrete-research-pushes"><span
+class="header-section-number">19</span> Thirty-six concrete research
 pushes</h1>
 <p>This is a proposed sequence after the initial release. No entry is
 marked complete by its presence here. A push closes when its
@@ -15919,8 +16839,8 @@ to be investigated, never an acceptance criterion satisfied by a finite
 census. The two supplied graph pairs remain fixed regression examples
 throughout, so an expansion cannot silently change their labeling,
 normalization, or first-discrepancy statements.</p>
-<h2 data-number="18.1" id="p01-freeze-the-coefficient-semantics"><span
-class="header-section-number">18.1</span> P01 — Freeze the coefficient
+<h2 data-number="19.1" id="p01-freeze-the-coefficient-semantics"><span
+class="header-section-number">19.1</span> P01 — Freeze the coefficient
 semantics</h2>
 <p><strong>Inputs:</strong> the graph and height definitions of the
 initial release. <strong>Outcome:</strong> a versioned mathematical data
@@ -15930,9 +16850,9 @@ explicit finite meaning, and disconnected examples distinguish global
 from componentwise translation. <strong>Dependencies:</strong> the
 initial release. This push settles conventions before optimization
 introduces alternative representations.</p>
-<h2 data-number="18.2"
+<h2 data-number="19.2"
 id="p02-add-independent-level-chain-enumeration"><span
-class="header-section-number">18.2</span> P02 — Add independent
+class="header-section-number">19.2</span> P02 — Add independent
 level-chain enumeration</h2>
 <p><strong>Inputs:</strong> P01 and the nested-boundary identity.
 <strong>Outcome:</strong> a second coefficient enumerator using nonempty
@@ -15941,9 +16861,9 @@ complete marked histograms agree with weak compositions on a declared
 small graph population, including profiles with height gaps.
 <strong>Dependencies:</strong> P01. The implementation must charge mixed
 boundary terms rather than substitute absolute-difference energy.</p>
-<h2 data-number="18.3"
+<h2 data-number="19.3"
 id="p03-publish-portable-coefficient-certificates"><span
-class="header-section-number">18.3</span> P03 — Publish portable
+class="header-section-number">19.3</span> P03 — Publish portable
 coefficient certificates</h2>
 <p><strong>Inputs:</strong> both enumerators and canonical graph
 serialization. <strong>Outcome:</strong>
@@ -15953,9 +16873,9 @@ independent reader rejects malformed degrees, duplicate terms, invalid
 edges, and altered coefficients, while reproducing all released small
 tables. <strong>Dependencies:</strong> P01–P02. Hash agreement alone
 does not close this push.</p>
-<h2 data-number="18.4"
+<h2 data-number="19.4"
 id="p04-give-the-spectral-pair-a-short-coefficient-proof"><span
-class="header-section-number">18.4</span> P04 — Give the spectral pair a
+class="header-section-number">19.4</span> P04 — Give the spectral pair a
 short coefficient proof</h2>
 <p><strong>Inputs:</strong> the fixed seven-vertex spectral pair.
 <strong>Outcome:</strong> a human-readable volume-two classification
@@ -15966,9 +16886,9 @@ zero, one, and two; compare exact Laplacian characteristic polynomials;
 match both enumerators. <strong>Dependencies:</strong> P03. The proof
 should explain the difference through explicit degree and adjacency
 contributions.</p>
-<h2 data-number="18.5"
+<h2 data-number="19.5"
 id="p05-explain-the-binary-census-separation"><span
-class="header-section-number">18.5</span> P05 — Explain the
+class="header-section-number">19.5</span> P05 — Explain the
 binary-census separation</h2>
 <p><strong>Inputs:</strong> the second fixed graph pair and its 128
 binary assignments. <strong>Outcome:</strong> a full binary equality
@@ -15979,9 +16899,9 @@ value at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">q=1/2</annotation></semantics></math>.
 <strong>Dependencies:</strong> P02–P03. Binary sampling is
 insufficient.</p>
-<h2 data-number="18.6"
+<h2 data-number="19.6"
 id="p06-derive-universal-low-volume-formulas"><span
-class="header-section-number">18.6</span> P06 — Derive universal
+class="header-section-number">19.6</span> P06 — Derive universal
 low-volume formulas</h2>
 <p><strong>Inputs:</strong> arbitrary simple graphs and profile
 partitions through volume three. <strong>Outcome:</strong> formulas
@@ -15991,9 +16911,9 @@ disjoint profile classification and compare it against complete
 small-graph enumeration. <strong>Dependencies:</strong> P04–P05. Any
 proposed graph statistic must have a definition independent of the
 formula it explains.</p>
-<h2 data-number="18.7"
+<h2 data-number="19.7"
 id="p07-formalize-translation-normalization"><span
-class="header-section-number">18.7</span> P07 — Formalize translation
+class="header-section-number">19.7</span> P07 — Formalize translation
 normalization</h2>
 <p><strong>Inputs:</strong> the finite graph energy definition and
 minimum-zero bijection. <strong>Outcome:</strong> a proof-assistant
@@ -16004,9 +16924,9 @@ surjectivity, volume shift, and energy preservation without admitted
 lemmas; publish the actual build command and dependencies.
 <strong>Dependencies:</strong> P01. No analytic infinite-product library
 is needed for this push.</p>
-<h2 data-number="18.8"
+<h2 data-number="19.8"
 id="p08-formalize-the-nested-level-energy-identity"><span
-class="header-section-number">18.8</span> P08 — Formalize the
+class="header-section-number">19.8</span> P08 — Formalize the
 nested-level energy identity</h2>
 <p><strong>Inputs:</strong> finite height tuples and threshold sets.
 <strong>Outcome:</strong> kernel-checked volume, span, and quadratic
@@ -16015,9 +16935,9 @@ prove the mixed term equals the stated edge count for nested sets, and
 derive binary extraction. <strong>Dependencies:</strong> P07. The
 theorem should expose the pairwise edge model rather than introduce a
 different interaction law.</p>
-<h2 data-number="18.9"
+<h2 data-number="19.9"
 id="p09-implement-bounded-height-tree-messages"><span
-class="header-section-number">18.9</span> P09 — Implement bounded-height
+class="header-section-number">19.9</span> P09 — Implement bounded-height
 tree messages</h2>
 <p><strong>Inputs:</strong> rooted trees, height bound
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
@@ -16029,8 +16949,8 @@ recursion, count every vertex and edge once, and match reference
 coefficients on paths, stars, and branched trees.
 <strong>Dependencies:</strong> P02. Report polynomial support sizes
 separately from height-state counts.</p>
-<h2 data-number="18.10" id="p10-prove-safe-volume-truncation"><span
-class="header-section-number">18.10</span> P10 — Prove safe volume
+<h2 data-number="19.10" id="p10-prove-safe-volume-truncation"><span
+class="header-section-number">19.10</span> P10 — Prove safe volume
 truncation</h2>
 <p><strong>Inputs:</strong> P09’s recursion and nonnegative volume
 exponents. <strong>Outcome:</strong> a theorem that intermediate
@@ -16043,9 +16963,9 @@ suffices for unrestricted coefficients through
 then demonstrate larger tree computations with identical semantics.
 <strong>Dependencies:</strong> P09. Benchmarks must compare complete
 coefficient ranges.</p>
-<h2 data-number="18.11"
+<h2 data-number="19.11"
 id="p11-recover-span-by-bounded-box-subtraction"><span
-class="header-section-number">18.11</span> P11 — Recover span by
+class="header-section-number">19.11</span> P11 — Recover span by
 bounded-box subtraction</h2>
 <p><strong>Inputs:</strong> the bounded-height polynomials
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>H</mi></msub><annotation encoding="application/x-tex">C_H</annotation></semantics></math>.
@@ -16057,9 +16977,9 @@ subtraction and compare every
 count with direct marked enumeration. <strong>Dependencies:</strong>
 P09–P10. Negative intermediate coefficients must be investigated rather
 than clipped to zero.</p>
-<h2 data-number="18.12"
+<h2 data-number="19.12"
 id="p12-extend-messages-to-bounded-separators"><span
-class="header-section-number">18.12</span> P12 — Extend messages to
+class="header-section-number">19.12</span> P12 — Extend messages to
 bounded separators</h2>
 <p><strong>Inputs:</strong> a graph with an explicitly supplied tree
 decomposition. <strong>Outcome:</strong> a bag-conditioned exact
@@ -16069,9 +16989,9 @@ cycles and bounded-width examples with reference data.
 <strong>Dependencies:</strong> P10–P11. State-count and sparse
 polynomial-convolution costs must remain separate in the complexity
 discussion.</p>
-<h2 data-number="18.13"
+<h2 data-number="19.13"
 id="p13-classify-the-first-positive-energy-layer"><span
-class="header-section-number">18.13</span> P13 — Classify the first
+class="header-section-number">19.13</span> P13 — Classify the first
 positive-energy layer</h2>
 <p><strong>Inputs:</strong> connected graphs and marked coefficients.
 <strong>Outcome:</strong> a theorem describing minimum-energy
@@ -16080,8 +17000,8 @@ nonconstant profiles and their relation to minimum cuts.
 explicitly, prove the stated multiplicities, and compare with exhaustive
 profiles. <strong>Dependencies:</strong> P06 and P08. Energy order must
 not be confused with volume order.</p>
-<h2 data-number="18.14" id="p14-compute-the-nested-pair-census"><span
-class="header-section-number">18.14</span> P14 — Compute the nested-pair
+<h2 data-number="19.14" id="p14-compute-the-nested-pair-census"><span
+class="header-section-number">19.14</span> P14 — Compute the nested-pair
 census</h2>
 <p><strong>Inputs:</strong> all
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>⊆</mo><mi>S</mi><mo>⊆</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">T\subseteq S\subseteq V</annotation></semantics></math>
@@ -16091,9 +17011,9 @@ five-statistic nested-boundary tensor described in Chapter 13.
 an explicit projection and explain the binary-census example’s
 separation. <strong>Dependencies:</strong> P05 and P08. A new tensor
 name is not itself a structural result.</p>
-<h2 data-number="18.15"
+<h2 data-number="19.15"
 id="p15-separate-lattice-information-from-chamber-information"><span
-class="header-section-number">18.15</span> P15 — Separate lattice
+class="header-section-number">19.15</span> P15 — Separate lattice
 information from chamber information</h2>
 <p><strong>Inputs:</strong> the cut-lattice realization and minimum-zero
 volume functional. <strong>Outcome:</strong> a precise preservation
@@ -16102,9 +17022,9 @@ question with proved sufficient conditions for marked-series equality.
 height volume and span, and exhibit a nontrivial worked instance or a
 failure of a proposed condition. <strong>Dependencies:</strong> P08 and
 P14. Abstract energy preservation alone is insufficient.</p>
-<h2 data-number="18.16"
+<h2 data-number="19.16"
 id="p16-test-whitney-switches-systematically"><span
-class="header-section-number">18.16</span> P16 — Test Whitney switches
+class="header-section-number">19.16</span> P16 — Test Whitney switches
 systematically</h2>
 <p><strong>Inputs:</strong> a documented family of admissible
 two-terminal gluings and switches. <strong>Outcome:</strong> exact
@@ -16113,9 +17033,9 @@ conjecture. <strong>Acceptance:</strong> verify the matroid-preserving
 hypotheses independently and retain tested volume bounds for unresolved
 pairs. <strong>Dependencies:</strong> P15. No finite failure to separate
 may be reported as universal matroid invariance.</p>
-<h2 data-number="18.17"
+<h2 data-number="19.17"
 id="p17-add-exact-volume-congruence-filters"><span
-class="header-section-number">18.17</span> P17 — Add exact volume
+class="header-section-number">19.17</span> P17 — Add exact volume
 congruence filters</h2>
 <p><strong>Inputs:</strong> local polynomials and a positive modulus.
 <strong>Outcome:</strong> character-filtered populations for volume
@@ -16124,9 +17044,9 @@ averaging identity and compare it with direct modular filtering of
 assignments. <strong>Dependencies:</strong> P03. This filter must not be
 described as extracting span or the binary sector after those marks have
 been summed away.</p>
-<h2 data-number="18.18"
+<h2 data-number="19.18"
 id="p18-prove-root-of-unity-rationality-in-energy"><span
-class="header-section-number">18.18</span> P18 — Prove root-of-unity
+class="header-section-number">19.18</span> P18 — Prove root-of-unity
 rationality in energy</h2>
 <p><strong>Inputs:</strong> an energy root of unity of order
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
@@ -16137,9 +17057,9 @@ prove the coordinate residue decomposition and reproduce local
 coefficients through an independent bound.
 <strong>Dependencies:</strong> P03 and P17. Complex specialization does
 not inherit positive-real branch assertions.</p>
-<h2 data-number="18.19"
+<h2 data-number="19.19"
 id="p19-analyze-finite-quadratic-gauss-sums"><span
-class="header-section-number">18.19</span> P19 — Analyze finite
+class="header-section-number">19.19</span> P19 — Analyze finite
 quadratic Gauss sums</h2>
 <p><strong>Inputs:</strong> P18 numerators at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=1</annotation></semantics></math>
@@ -16149,9 +17069,9 @@ accounted for. <strong>Acceptance:</strong> compare direct residue
 enumeration with diagonalized forms and give explicit exceptional-prime
 examples. <strong>Dependencies:</strong> P18. Prime powers and
 characteristic two remain separate until proved.</p>
-<h2 data-number="18.20"
+<h2 data-number="19.20"
 id="p20-build-the-disjoint-order-chamber-formula"><span
-class="header-section-number">18.20</span> P20 — Build the disjoint
+class="header-section-number">19.20</span> P20 — Build the disjoint
 order-chamber formula</h2>
 <p><strong>Inputs:</strong> vertex permutations with label-based tie
 breaking. <strong>Outcome:</strong> a gap-coordinate expression for
@@ -16160,9 +17080,9 @@ every profile belongs to exactly one chamber, including tied heights,
 and match complete histograms. <strong>Dependencies:</strong> P02 and
 P06. Summing closed chambers without boundary corrections fails this
 criterion.</p>
-<h2 data-number="18.21"
+<h2 data-number="19.21"
 id="p21-relate-constrained-heights-to-order-polytopes"><span
-class="header-section-number">18.21</span> P21 — Relate constrained
+class="header-section-number">19.21</span> P21 — Relate constrained
 heights to order polytopes</h2>
 <p><strong>Inputs:</strong> an explicit finite poset of height
 inequalities. <strong>Outcome:</strong> a comparison between constrained
@@ -16172,9 +17092,9 @@ specialization with correct weak and strict inequalities, then identify
 what quadratic weighting adds. <strong>Dependencies:</strong> P20.
 Ordinary Ehrhart conclusions require an ordinary fixed-polytope counting
 problem.</p>
-<h2 data-number="18.22"
+<h2 data-number="19.22"
 id="p22-establish-one-genuine-reciprocity-statement"><span
-class="header-section-number">18.22</span> P22 — Establish one genuine
+class="header-section-number">19.22</span> P22 — Establish one genuine
 reciprocity statement</h2>
 <p><strong>Inputs:</strong> a precisely chosen bounded order or chamber
 population. <strong>Outcome:</strong> a proved reciprocity identity with
@@ -16183,9 +17103,9 @@ extension. <strong>Acceptance:</strong> verify complete small instances
 and give a full argument for the stated scope.
 <strong>Dependencies:</strong> P21. An analogy to Ehrhart or chromatic
 reciprocity does not close the push.</p>
-<h2 data-number="18.23"
+<h2 data-number="19.23"
 id="p23-implement-formal-logarithmic-extraction"><span
-class="header-section-number">18.23</span> P23 — Implement formal
+class="header-section-number">19.23</span> P23 — Implement formal
 logarithmic extraction</h2>
 <p><strong>Inputs:</strong> exact local coefficient polynomials through
 volume
@@ -16197,9 +17117,9 @@ coefficient identities. <strong>Dependencies:</strong> P03. Distinguish
 scalar exponents depending on
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
 from integer combinatorial multiplicities.</p>
-<h2 data-number="18.24"
+<h2 data-number="19.24"
 id="p24-determine-exceptional-energy-parameters"><span
-class="header-section-number">18.24</span> P24 — Determine exceptional
+class="header-section-number">19.24</span> P24 — Determine exceptional
 energy parameters</h2>
 <p><strong>Inputs:</strong> discrepancy polynomials for a graph pair.
 <strong>Outcome:</strong> exact rational or algebraic parameter strata
@@ -16209,9 +17129,9 @@ isolate every real root in
 for the tested leading polynomials and recompute at each exceptional
 value. <strong>Dependencies:</strong> P23. A plot or a finite parameter
 grid cannot establish absence of roots.</p>
-<h2 data-number="18.25"
+<h2 data-number="19.25"
 id="p25-organize-successive-visibility-levels"><span
-class="header-section-number">18.25</span> P25 — Organize successive
+class="header-section-number">19.25</span> P25 — Organize successive
 visibility levels</h2>
 <p><strong>Inputs:</strong> coefficient differences through a declared
 volume bound. <strong>Outcome:</strong> a filtration by first
@@ -16220,9 +17140,9 @@ discrepancy, including parameter-dependent refinements.
 first differing coefficient and label unresolved collisions with their
 tested bound. <strong>Dependencies:</strong> P23–P24. Claims of an
 unrestricted separation depth require an additional theorem.</p>
-<h2 data-number="18.26"
+<h2 data-number="19.26"
 id="p26-make-analytic-remainder-bounds-explicit"><span
-class="header-section-number">18.26</span> P26 — Make analytic remainder
+class="header-section-number">19.26</span> P26 — Make analytic remainder
 bounds explicit</h2>
 <p><strong>Inputs:</strong> local coefficient growth bounds and a first
 discrepancy at
@@ -16234,9 +17154,9 @@ sufficient for convergence when
 and treatment of finitely many small primes.
 <strong>Dependencies:</strong> P25. A formal expansion without a
 controlled remainder is not the analytic theorem.</p>
-<h2 data-number="18.27"
+<h2 data-number="19.27"
 id="p27-produce-controlled-real-singularity-experiments"><span
-class="header-section-number">18.27</span> P27 — Produce controlled real
+class="header-section-number">19.27</span> P27 — Produce controlled real
 singularity experiments</h2>
 <p><strong>Inputs:</strong> P26 bounds and exact discrepancy exponents.
 <strong>Outcome:</strong> prime-product evaluations of the normalized
@@ -16246,9 +17166,9 @@ positive-real remainder near
 recover the predicted asymptotic within them.
 <strong>Dependencies:</strong> P26. Numerical slope fitting illustrates
 an established exponent; it does not determine the exponent’s proof.</p>
-<h2 data-number="18.28"
+<h2 data-number="19.28"
 id="p28-state-the-available-complex-domain-exactly"><span
-class="header-section-number">18.28</span> P28 — State the available
+class="header-section-number">19.28</span> P28 — State the available
 complex domain exactly</h2>
 <p><strong>Inputs:</strong> fixed admissible
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>,
@@ -16258,9 +17178,9 @@ domain, or a documented obstruction. <strong>Acceptance:</strong>
 specify logarithm choices and convergence uniformly on compact subsets.
 <strong>Dependencies:</strong> P26. Do not infer global meromorphic
 continuation from real-axis control.</p>
-<h2 data-number="18.29"
+<h2 data-number="19.29"
 id="p29-specify-a-complete-finite-graph-census"><span
-class="header-section-number">18.29</span> P29 — Specify a complete
+class="header-section-number">19.29</span> P29 — Specify a complete
 finite graph census</h2>
 <p><strong>Inputs:</strong> a chosen graph class, order bound, and
 graph-generation method. <strong>Outcome:</strong> a canonical input
@@ -16269,9 +17189,9 @@ manifest with isomorphism handling documented.
 generation options, and graph hashes. <strong>Dependencies:</strong>
 P03. Degree and spectrum filters are not a substitute for a complete
 census or a graph-isomorphism decision.</p>
-<h2 data-number="18.30"
+<h2 data-number="19.30"
 id="p30-measure-collision-classes-across-invariants"><span
-class="header-section-number">18.30</span> P30 — Measure collision
+class="header-section-number">19.30</span> P30 — Measure collision
 classes across invariants</h2>
 <p><strong>Inputs:</strong> P29’s fixed graph population and exact
 coefficient algorithms. <strong>Outcome:</strong> collision partitions
@@ -16280,9 +17200,9 @@ for spectra, binary census, and specified height truncations.
 first-discrepancy witnesses, resource limits, and unresolved classes.
 <strong>Dependencies:</strong> P12, P14, and P29. Report bounded
 separation percentages with their exact denominator.</p>
-<h2 data-number="18.31"
+<h2 data-number="19.31"
 id="p31-resolve-targeted-collisions-structurally"><span
-class="header-section-number">18.31</span> P31 — Resolve targeted
+class="header-section-number">19.31</span> P31 — Resolve targeted
 collisions structurally</h2>
 <p><strong>Inputs:</strong> the smallest unresolved classes from P30.
 <strong>Outcome:</strong> an explicit bijection, a higher-volume
@@ -16291,9 +17211,9 @@ separation, or a precise remaining conjecture for each selected pair.
 increase a cutoff; retain negative results.
 <strong>Dependencies:</strong> P16 and P30. A full-series equality claim
 needs an all-volume argument.</p>
-<h2 data-number="18.32"
+<h2 data-number="19.32"
 id="p32-seek-a-separation-bound-for-one-graph-family"><span
-class="header-section-number">18.32</span> P32 — Seek a separation bound
+class="header-section-number">19.32</span> P32 — Seek a separation bound
 for one graph family</h2>
 <p><strong>Inputs:</strong> low-volume formulas, tree messages, and
 collision evidence. <strong>Outcome:</strong> a proved first-separation
@@ -16302,9 +17222,9 @@ proposed bound. <strong>Acceptance:</strong> parameterize the family and
 prove the statement uniformly. <strong>Dependencies:</strong> P06, P12,
 and P31. Complete graph reconstruction remains outside the claim unless
 proved separately.</p>
-<h2 data-number="18.33"
+<h2 data-number="19.33"
 id="p33-verify-concrete-coefficient-certificates-in-a-kernel"><span
-class="header-section-number">18.33</span> P33 — Verify concrete
+class="header-section-number">19.33</span> P33 — Verify concrete
 coefficient certificates in a kernel</h2>
 <p><strong>Inputs:</strong> P03 certificates and the formal finite
 identities. <strong>Outcome:</strong> a checker connecting released
@@ -16313,9 +17233,9 @@ tables to the mathematical coefficient definition.
 certificates and reject a changed coefficient or graph edge.
 <strong>Dependencies:</strong> P07–P08 and P23. A verified parser alone
 does not verify enumerated multiplicities.</p>
-<h2 data-number="18.34"
+<h2 data-number="19.34"
 id="p34-formalize-the-visibility-comparison-boundary"><span
-class="header-section-number">18.34</span> P34 — Formalize the
+class="header-section-number">19.34</span> P34 — Formalize the
 visibility comparison boundary</h2>
 <p><strong>Inputs:</strong> the finite first-discrepancy theorem and
 available analytic libraries. <strong>Outcome:</strong> a formal
@@ -16325,9 +17245,9 @@ imported theorem and any unformalized premise; claim complete
 verification only when the full chain compiles.
 <strong>Dependencies:</strong> P26 and P33. Missing library
 infrastructure is recorded explicitly.</p>
-<h2 data-number="18.35"
+<h2 data-number="19.35"
 id="p35-release-the-first-focused-manuscript"><span
-class="header-section-number">18.35</span> P35 — Release the first
+class="header-section-number">19.35</span> P35 — Release the first
 focused manuscript</h2>
 <p><strong>Inputs:</strong> the exact examples, finite proofs, and real
 comparison theorem. <strong>Outcome:</strong> a literature-positioned
@@ -16337,9 +17257,9 @@ coefficients, reconcile every claim with its proof or certificate, and
 remove unsupported priority language. <strong>Dependencies:</strong>
 P04–P05, P26–P27, and P33; formal analytics are included only to their
 achieved scope.</p>
-<h2 data-number="18.36"
+<h2 data-number="19.36"
 id="p36-choose-the-second-paper-from-actual-results"><span
-class="header-section-number">18.36</span> P36 — Choose the second paper
+class="header-section-number">19.36</span> P36 — Choose the second paper
 from actual results</h2>
 <p><strong>Inputs:</strong> the tree, matroid, arithmetic, and order
 outcomes. <strong>Outcome:</strong> one coherent methods or structural

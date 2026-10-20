@@ -1,0 +1,36 @@
+name: Physical sensor evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'applications/sensor_replay/**'
+      - 'src/singularity/robust_coverage.py'
+      - 'tests/test_mimii_replay.py'
+      - '.github/workflows/sensor-replay.yml'
+  pull_request:
+    paths:
+      - 'applications/sensor_replay/**'
+      - 'src/singularity/robust_coverage.py'
+      - 'tests/test_mimii_replay.py'
+      - '.github/workflows/sensor-replay.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  independent-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the optional evidence replay dependency
+        run: python -m pip install numpy==2.3.5
+      - name: Replay all physical sensor prediction and selection evidence
+        run: python applications/sensor_replay/verify_all.py
+      - name: Check erasure, identity and strict download failure modes
+        run: PYTHONPATH=src python -m unittest discover -s tests -p test_mimii_replay.py -v

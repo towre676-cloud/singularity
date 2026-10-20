@@ -2,6 +2,9 @@
 import importlib.util
 from fractions import Fraction
 import hashlib
+import gzip
+import itertools
+import http.client
 from pathlib import Path
 import tempfile
 import unittest
@@ -61,6 +64,17 @@ class FinitePanelMathematics(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'no declared class'):
             verify.binary_score([0, 0], [0, 1])
 
+    def test_gzip_inventory_fallback_preserves_original_hash_and_json(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'central_indexes.json'
+            original = b'{"archives": [], "exact_bytes": true}\n'
+            compressed = Path(str(path)+'.gz')
+            compressed.write_bytes(gzip.compress(original, mtime=0))
+            self.assertFalse(path.exists())
+            self.assertEqual(verify.load(path), {'archives': [], 'exact_bytes': True})
+            self.assertEqual(verify.sha(path), hashlib.sha256(original).hexdigest())
+            self.assertEqual(verify.read_bytes(path), original)
+
     def test_changed_lock_payload_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -95,6 +109,22 @@ class FinitePanelMathematics(unittest.TestCase):
         rows, predictions = verify.replay_predictions(data, protocol, 'selection')
         self.assertEqual(rows.tolist(), [2])
         self.assertEqual(predictions[:, 0].tolist(), [int(bool(m & 128)) for m in range(1, 256)])
+
+    def test_paired_stem_bootstrap_preserves_zero_and_fixed_group_changes(self):
+        try:
+            import numpy as np
+        except ImportError:
+            self.skipTest('Optional numerical application dependency unavailable')
+        truth = np.array([0, 0, 0, 1, 1, 1])
+        metadata = {'machine_type': np.array(['valve']*6),
+                    'group': np.array(['healthy']*3+['anomalous']*3)}
+        unchanged = verify.paired_stem_bootstrap(truth, truth, truth, metadata, ['valve'], repetitions=20)
+        self.assertEqual(unchanged.tolist(), [0.0, 0.0])
+        # Each fixed stem loses one of its three correct mixtures, giving an
+        # exact constant difference -2/6 in every grouped resample.
+        reduced = np.array([1, 0, 0, 0, 1, 1])
+        changed = verify.paired_stem_bootstrap(truth, reduced, truth, metadata, ['valve'], repetitions=20)
+        self.assertEqual(changed.tolist(), [-1/3, -1/3])
 
     def test_changed_prediction_is_rejected(self):
         try:
@@ -175,7 +205,9 @@ class StrictRangeAdapterChecks(unittest.TestCase):
 
     def fetch(self, response):
         with mock.patch.object(acquire, 'rate_limit'), mock.patch.object(
-                acquire.urllib.request, 'urlopen', return_value=response):
+                acquire.urllib.request, 'urlopen', return_value=response), mock.patch.object(
+                acquire.time, 'sleep'), mock.patch.object(acquire.time, 'monotonic', side_effect=itertools.count(0, 100)):
+
             return acquire.ranged('https://example.invalid/official.zip', 10, 13, 100)
 
     def test_ignored_range_is_rejected_before_reading_archive_body(self):
@@ -198,13 +230,34 @@ class StrictRangeAdapterChecks(unittest.TestCase):
 
     def test_truncated_body_is_rejected_with_bounded_read(self):
         response = self.Response(body=b'ab')
-        with self.assertRaisesRegex(ValueError, 'body length'):
+        with self.assertRaisesRegex(ConnectionError, 'Short HTTP range body'):
             self.fetch(response)
-        self.assertEqual(response.read_sizes, [5])
+        self.assertEqual(response.read_sizes, [5]*4)
+
+    def test_short_body_retry_can_recover_with_exact_range(self):
+        short = self.Response(body=b'ab')
+        complete = self.Response()
+        with mock.patch.object(acquire, 'rate_limit'), mock.patch.object(
+                acquire.urllib.request, 'urlopen', side_effect=[short, complete]) as network, mock.patch.object(
+                acquire.time, 'sleep'), mock.patch.object(acquire.time, 'monotonic', side_effect=itertools.count(0, 100)):
+            self.assertEqual(acquire.ranged('https://example.invalid/a.zip', 10, 13, 100), b'abcd')
+        self.assertEqual(network.call_count, 2)
+        self.assertEqual(short.read_sizes, [5])
+        self.assertEqual(complete.read_sizes, [5])
+
+    def test_incomplete_read_is_retried_with_exact_range(self):
+        incomplete = self.Response()
+        incomplete.read = mock.Mock(side_effect=http.client.IncompleteRead(b'ab', 2))
+        complete = self.Response()
+        with mock.patch.object(acquire, 'rate_limit'), mock.patch.object(
+                acquire.urllib.request, 'urlopen', side_effect=[incomplete, complete]) as network, mock.patch.object(
+                acquire.time, 'sleep'), mock.patch.object(acquire.time, 'monotonic', side_effect=itertools.count(0, 100)):
+            self.assertEqual(acquire.ranged('https://example.invalid/a.zip', 10, 13, 100), b'abcd')
+        self.assertEqual(network.call_count, 2)
 
     def test_excess_body_is_rejected_with_bounded_read(self):
         response = self.Response(body=b'abcde')
-        with self.assertRaisesRegex(ValueError, 'body length'):
+        with self.assertRaisesRegex(ValueError, 'Oversized HTTP range body'):
             self.fetch(response)
         self.assertEqual(response.read_sizes, [5])
 
@@ -233,7 +286,8 @@ class StrictRangeAdapterChecks(unittest.TestCase):
                 for name in ['../escape.wav', '/absolute.wav', 'valve/../../escape.wav']:
                     with self.subTest(name=name):
                         with self.assertRaisesRegex(ValueError, 'Unsafe archive path'):
-                            acquire.acquire_one({'archive': '6_dB_valve.zip', 'name': name})
+                            acquire.acquire_one({'archive': '6_dB_valve.zip', 'name': name,
+                                                 'archive_url': 'https://zenodo.org/records/3384388/files/6_dB_valve.zip?download=1'})
             network.assert_not_called()
             self.assertEqual(list(cache.iterdir()), [])
 

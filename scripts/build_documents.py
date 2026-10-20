@@ -88,8 +88,10 @@ def render(source,stem,title,subtitle,book=False,pdf=True,date='18 October 2026'
             (output/(stem+suffix)).unlink(missing_ok=True)
         for _ in range(2):
             run(['xelatex','-no-pdf','-interaction=nonstopmode','-halt-on-error','-output-directory',str(output),str(tex)],log)
-        run(['xdvipdfmx','-o',str(output/(stem+'.pdf')),str(output/(stem+'.xdv'))],log)
-        run(['pdfinfo',str(output/(stem+'.pdf'))],log)
+        pending_pdf=tmp/(stem+'.pending.pdf')
+        run(['xdvipdfmx','-o',str(pending_pdf),str(output/(stem+'.xdv'))],log)
+        run(['pdfinfo',str(pending_pdf)],log)
+        pending_pdf.replace(output/(stem+'.pdf'))
     html=ROOT/'docs'/(stem+'.html')
     # Capture the complete document before replacing the published file. A
     # failed or incomplete converter must never truncate an existing HTML book.
@@ -113,13 +115,15 @@ def main():
     import argparse
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--no-pdf',action='store_true',help='regenerate Markdown, LaTeX and HTML without XeLaTeX; retained PDFs become stale')
-    pdf=not parser.parse_args().no_pdf
+    parser.add_argument('--monograph-only',action='store_true',help='rebuild the book without rewriting the two unchanged research articles')
+    args=parser.parse_args()
+    pdf=not args.no_pdf
     chapters=sorted((ROOT/'docs'/'chapters').glob('*.md'))
-    if len(chapters)!=16:
-        raise ValueError('Exactly sixteen authored chapters required')
+    if len(chapters)!=17:
+        raise ValueError('Exactly seventeen authored chapters required')
     preface='''# Reading guide {.unnumbered}
 
-This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. Chapter 16 applies the experiment contract to a source-derived thermal fault-identification model with explicit uncertainty and cost. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
+This monograph develops a precise question: how much of a relation structure can be recovered from integer-height populations, and where does its first hidden difference appear in arithmetic? Chapters 1-4 establish the objects and finite observation hierarchy. Chapters 5-8 develop primewise assembly, local analytic comparison and singular synchronization. Chapters 9-11 give exact examples, inverse questions and the bridges to earlier work. Chapters 12-14 develop computational methodology, the research program and the literature. Chapter 15 adds context operators, certified cheapest experiments, exact robustness and the periodic residue sector. Chapter 16 applies the experiment contract to a source-derived thermal fault-identification model with explicit uncertainty and cost. Chapter 17 carries the finite-design machinery into measured industrial sound, separating exact microphone-panel certificates from protected machine-transfer outcomes. The implementation appendix records the software contracts and validated computational domains. The final roadmap preserves the original thirty-six development pushes; their completed acceptance records and subsequent research frontiers are maintained in the handoff ledger.
 
 The central distinction is between an observation and the correspondence it forgets. A binary census can agree for every subset size and boundary size while a nested-height census differs. The arithmetic lift retains these local distinctions and turns the first discrepancy into a controlled ratio singularity. It adds analytic structure rather than new graph information. The full marked hierarchy explicitly contains the binary sector; complete graph reconstruction remains a research question.
 
@@ -136,9 +140,10 @@ Definitions and theorems are supplied with hypotheses and proofs. Finite graph c
     counts['docs/development/PUSHES.md']=len((ROOT/'docs'/'development'/'PUSHES.md').read_text().split())
     report={'schema':'singularity.manuscript-count/1','count_method':'whitespace-delimited source words; equations and tables included','source_word_counts':counts,'source_total':sum(counts.values()),'assembled_monograph_words':len(manuscript.read_text().split()),'companion_article_words':len((ROOT/'docs'/'papers'/'visibility.md').read_text().split()),'locality_article_words':len((ROOT/'docs'/'papers'/'locality.md').read_text().split())}
     (ROOT/'results'/'manuscript_counts.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
-    render(manuscript,'monograph','Singularity','Relational Heights and Arithmetic Visibility - Research Monograph',book=True,pdf=pdf)
-    render(ROOT/'docs'/'papers'/'visibility.md','visibility_paper','Relational Height Populations and Arithmetic Visibility','Exact examples, nested boundaries, and primewise singularities',pdf=pdf)
-    render(ROOT/'docs'/'papers'/'locality.md','locality_paper','Exact Observation Depth for Integer-Height Graph Populations','Connected supports, delayed distinctions, and sharp reconstruction',pdf=pdf)
+    render(manuscript,'monograph','Singularity','Relational Heights and Arithmetic Visibility - Research Monograph',book=True,pdf=pdf,date='20 October 2026')
+    if not args.monograph_only:
+        render(ROOT/'docs'/'papers'/'visibility.md','visibility_paper','Relational Height Populations and Arithmetic Visibility','Exact examples, nested boundaries, and primewise singularities',pdf=pdf)
+        render(ROOT/'docs'/'papers'/'locality.md','locality_paper','Exact Observation Depth for Integer-Height Graph Populations','Connected supports, delayed distinctions, and sharp reconstruction',pdf=pdf)
     print('Monograph source words:',report['assembled_monograph_words'])
 
 

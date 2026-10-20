@@ -97,7 +97,8 @@ def extract(root, protocol):
     if sum(len(_ids(protocol, phase)) for phase in ['train','selection','confirmation']) != len(allowed_ids):
         raise ValueError('Machine identities cross experimental partitions')
     for index, record in enumerate(records):
-        raw_path = Path(record['raw_path'])
+        portable = root.parent / 'mimii_data' / record.get('wav_path', '__missing__')
+        raw_path = portable if portable.is_file() else Path(record['raw_path'])
         if not raw_path.is_absolute():
             raw_path = root / raw_path
         raw = raw_path.read_bytes()
