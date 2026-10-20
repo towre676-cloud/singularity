@@ -7,7 +7,8 @@ root=Path(__file__).resolve().parent
 commands=[
     [sys.executable,str(root/'verify_hydraulic.py'),str(root/'hydraulic_v1')],
     [sys.executable,str(root/'audio_v1/verify_audio_study.py')],
-    [sys.executable,str(root/'audio_v1/confirmation/verify_confirmation.py')]
+    [sys.executable,str(root/'audio_v1/confirmation/verify_confirmation.py')],
+    [sys.executable,str(root/'mimii_v1/verify_study.py')]
 ]
 if a.retrain:commands.append([sys.executable,str(root/'retrain_from_features.py'),str(root/'hydraulic_v1')])
 for cmd in commands:subprocess.run(cmd,check=True)

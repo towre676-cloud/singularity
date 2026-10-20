@@ -1,0 +1,31 @@
+{
+  "actual_network_transfer_bytes": "Not instrumented; unique payload counts exclude HTTP/index overhead, retries and brief initial duplicate cache work.",
+  "completion_and_cache_verification": {
+    "all_member_raw_and_compressed_hashes_crc_wav_format_and_existing_raw_bytes_verified": true,
+    "frozen_metadata_hashes_unchanged": true,
+    "members": 1536,
+    "network_access_prohibited": true,
+    "seconds": 40.262205071994686,
+    "sha256": {
+      "protocol.json": "8d7e1e7284a6cad3f72dcdc1ad6022870088ab382d806af95251edf5c321feab",
+      "source_receipts.json": "3bf683772bbafe30240eb4b045df3ba62a3119b50d33dd663eba4066c3274b67",
+      "source_subset_manifest.json": "b3814076f562ffb28dc03fcbf5e67adfa6bcf8c1077e149d40484477d379dda2"
+    },
+    "utc": "2026-10-20T18:20:35.528088+00:00"
+  },
+  "events": [
+    {
+      "ordered_progress_receipt_count": 1024,
+      "outcome": "Strict range reader rejected an incomplete transport body with ValueError: Range body length mismatch. No incomplete member was accepted as physical evidence.",
+      "phase": "first_acquisition_resume",
+      "precise_failing_member": "Not retained by the first helper version; first missing manifest ordinal was1034, which is not an identification of the failed request.",
+      "response": "Resume the identical frozen member plan; classify short bodies and HTTP IncompleteRead as retryable transport errors with at most four attempts. Invalid status, Content-Range, CRC, WAV format and member identity remain fatal. No outcomes or sample membership changed.",
+      "verified_wav_cache_count": 1041
+    }
+  ],
+  "schema": "singularity.mimii-access-notes/1",
+  "source_manifest_sha256": "b3814076f562ffb28dc03fcbf5e67adfa6bcf8c1077e149d40484477d379dda2",
+  "unique_compressed_member_bytes": 2852963714,
+  "unique_raw_member_bytes": 3932282880,
+  "utc": "2026-10-20T18:12:04.308118+00:00"
+}

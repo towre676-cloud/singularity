@@ -1,0 +1,24 @@
+{
+  "base_main": "b7c7c4ebef7e012f62a935c08c5e2d04b5d74a5c",
+  "full_repository_suite": {
+    "log_sha256": "6a8988dbc74c02ff786b7e12a05ae8dc7e8e7aae5211beef8bd514347f0abcc1",
+    "outcome": "OK",
+    "seconds": 449.478,
+    "skipped": 47,
+    "tests": 942
+  },
+  "historical_fixture_preparation": [
+    "python scripts/materialize_pretrained_evidence.py materialize",
+    "python scripts/materialize_pretrained_evidence.py materialize --output applications/training_lab/results/pretrained_context512"
+  ],
+  "note": "Initial unmaterialized clone failed on missing ignored historical receipts. Existing standard-library materializer restored the same retained evidence. No original MAFAULDA file has been changed. Actual MIMII selection/confirmation have not yet been evaluated.",
+  "pre_outcome_implementation_commit": "2c37377d4af97467e6025191e20ea7a8e41656ee",
+  "protocol_freeze_commit": "30132a5f7e332c832dc7ad471937a97b3483aa6f",
+  "schema": "singularity.mimii-pre-outcome-validation/1",
+  "targeted_tests_after_retry_regressions": {
+    "includes": "ZIP range failures and recovery, metadata gzip portability, grouped-bootstrap oracle, eighth channel, nonmonotone erasure selection and identity leakage",
+    "outcome": "OK",
+    "tests": 26
+  },
+  "utc": "2026-10-20T18:16:26.845561+00:00"
+}
