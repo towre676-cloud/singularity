@@ -1,0 +1,11 @@
+type tables + cumulants done 0.0 s
+pools loaded: {'n10': 303, 'n12': 153, 'n8': 62}
+n10 computed 303 graphs in 5.4 s
+n12 computed 153 graphs in 8.5 s
+n8 computed 62 graphs in 0.7 s
+all per-graph checks passed 16.0 s
+n10 agreeing pairs: 3861 | failures: zero 42 N5-only 0 F61 0 F61+th+bow 0 F61+th+bow+K23e 0
+n12 agreeing pairs: 665 | failures: zero 417 N5-only 186 F61 184 F61+th+bow 0 F61+th+bow+K23e 0
+n8 agreeing pairs: 519 | failures: zero 0 N5-only 0 F61 0 F61+th+bow 0 F61+th+bow+K23e 0
+triangle-free agreeing pairs: 617 F61 failures: 0
+wrote vol5_results.json
