@@ -1,0 +1,8 @@
+[n=8 control] cube vs Mobius matches earlier 2q^4(1-q^2)^4: True
+[n=8 control] random reproduction: {'sampled_distinct_excluding_cube': 60, 'tested_vs_reference': 60, 'agree_through_vol3': 11, 'formula_holds_among_agreeing': 11, 'failures': [], 'earlier_reported': {'sampled': 60, 'agree_through_vol3': 11, 'formula_holds': 11, 'failures': 0}}
+[n=10] sampled=300 vs Petersen: agree03=57 formula_holds=57 failures=0
+[n=10] pairwise: pairs=45753 agree03=10971 girth>=4 pairs=1770 failures=0 triangle pairs=9201 holds=8057 fails=1144 vol3 formula failures=0 agree03-iff-N3 failures=0 corrected-diamond failures among agree03=0 among all pairs=34782
+[n=12] sampled=150 vs hexagonal prism: agree03=18 formula_holds=18 failures=0
+[n=12] pairwise: pairs=11628 agree03=3234 girth>=4 pairs=190 failures=0 triangle pairs=3044 holds=2634 fails=410 vol3 formula failures=0 agree03-iff-N3 failures=0 corrected-diamond failures among agree03=0 among all pairs=8394
+[n=8] pairwise: pairs=1891 agree03=555 girth>=4 pairs=78 failures=0 triangle pairs=477 holds=477 fails=0 corrected-diamond failures among agree03=0 among all pairs=1336
+wrote singularity_extension.json in 3.128s
