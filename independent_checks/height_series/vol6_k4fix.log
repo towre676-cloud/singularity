@@ -1,0 +1,23 @@
+audit graphs: ['K4', 'K33', 'prism', 'K4+K4', 'K4+K33', 'K33+prism', 'prism+petersen']
+conn6 identity k6_e6_deg322221_m700 K4-correction 0 failures: 0
+conn6 identity k6_e5_deg222211_m692 K4-correction 0 failures: 0
+conn6 identity k6_e6_deg332211_m633 K4-correction 12 failures: 0
+conn6 identity k6_e5_deg322111_m122 K4-correction 0 failures: 0
+conn6 identity k6_e6_deg332211_m694 K4-correction 24 failures: 0
+conn6 identity k6_e7_deg333311_m758 K4-correction -6 failures: 0
+conn6 identity k6_e7_deg333221_m1780 K4-correction -24 failures: 0
+conn6 identity k6_e6_deg322221_m922 K4-correction 0 failures: 0
+conn6 identity k6_e7_deg333221_m954 K4-correction 0 failures: 0
+conn6 identity k6_e5_deg322111_m659 K4-correction 0 failures: 0
+conn6 identity k6_e7_deg333221_m1749 K4-correction 0 failures: 0
+conn6 identity k6_e6_deg322221_m760 K4-correction 0 failures: 0
+conn6 identity k6_e7_deg333221_m762 K4-correction 0 failures: 0
+conn6 identity k6_e6_deg332211_m246 K4-correction 0 failures: 0
+conn6 identity k6_e6_deg332211_m693 K4-correction 12 failures: 0
+conn6 identity k6_e6_deg333111_m691 K4-correction 8 failures: 0
+conn6 identity k6_e8_deg333331_m1788 K4-correction 0 failures: 0
+conn6 identity k6_e5_deg331111_m121 K4-correction 0 failures: 0
+size<=5 k4_e6_deg3333_m63 raw violations: ['K4', 'K4+K4', 'K4+K33'] correction: 1 pool fails: 0 audit fails: 0
+size<=5 k5_e6_deg33330_m183 raw violations: ['K4+K4', 'K4+K33'] correction: 0 pool fails: 0 audit fails: 2
+size<=5 k5_e6_deg33321_m187 raw violations: ['K4', 'K4+K4', 'K4+K33'] correction: -12 pool fails: 0 audit fails: 0
+size<=5 patterns needing K4 correction: {'k4_e6_deg3333_m63': '1', 'k5_e6_deg33330_m183': '0', 'k5_e6_deg33321_m187': '-12'}

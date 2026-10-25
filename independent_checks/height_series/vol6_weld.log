@@ -1,0 +1,15 @@
+unit K33-e I5 = (0, 5, 0, 0, 0, 2, 0, 0) deg2: [2, 5]
+unit prism-tri I5 = (1, 2, 0, 0, 3, 0, 2, 0) deg2: [4, 5]
+unit prism-spoke I5 = (2, 1, 0, 0, 2, 0, 2, 0) deg2: [4, 5]
+ring(2x K33-e) I5 = (0, 10, 0, 0, 0, 4, 0, 0) vs 2u = (0, 10, 0, 0, 0, 4, 0, 0)
+rings built: 31
+B candidates: 72337
+PAIR K33+n12:hexagonal_prism vs ring(K33-e,K33-e,K33-e) | agree<=5: True | {'reduced8': False, 'reduced8+f3': False, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m2012': -6, 'k6_e9_deg333333_m4060': -1, 'k6_e7_deg332222_m1884': -12, 'k6_e6_deg222222_m1880': -8}
+PAIR K33+n12:mobius_ladder_M12 vs ring(K33-e,K33-e,K33-e) | agree<=5: True | {'reduced8': False, 'reduced8+f3': False, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m2012': -6, 'k6_e9_deg333333_m4060': -1, 'k6_e7_deg332222_m1884': -12, 'k6_e6_deg222222_m1880': -6}
+PAIR K33+n12:n12_g20 vs ring(K33-e,K33-e,K33-e) | agree<=5: True | {'reduced8': False, 'reduced8+f3': False, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m2012': -6, 'k6_e9_deg333333_m4060': -1, 'k6_e7_deg332222_m1884': -12, 'k6_e6_deg222222_m1880': -6}
+PAIR K33+n24:n24_g163 vs ring(K33-e,K33-e)+n18:n18_g1538 | agree<=5: True | {'reduced8': False, 'reduced8+f3': False, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m2012': -7, 'k6_e9_deg333333_m4060': -1, 'k6_e7_deg332222_m1884': -14, 'k6_e6_deg222222_m1880': -4}
+weld pairs tested: 4
