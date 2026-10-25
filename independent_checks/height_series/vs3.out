@@ -1,0 +1,22 @@
+library K4 I5 = (4, 3, 6, 1, 0, 0, 0, 0)
+library K33 I5 = (0, 9, 0, 0, 0, 6, 0, 0)
+library prism I5 = (2, 3, 0, 0, 6, 0, 6, 0)
+library cube I5 = (0, 6, 0, 0, 0, 0, 0, 0)
+library M8 I5 = (0, 4, 0, 0, 8, 0, 0, 0)
+library petersen I5 = (0, 0, 0, 0, 12, 0, 0, 0)
+blocks: 10524
+B-side index sizes: {4: 1, 6: 2, 8: 6, 10: 21, 12: 65, 14: 301, 16: 514, 18: 753, 20: 1438, 22: 1692, 24: 2278}
+PAIR K33+n10:n10_g5 vs n10:mobius_ladder_M10+lib:K33 | agree<=5: True | dL6!=0: False | {'reduced8': True, 'reduced8+f3': True, 'reduced8+f2_m2012': True, 'full': True, 'raw_all_conn6': True}
+   dN: {}
+PAIR K33+n10:n10_g6 vs n10:n10_g2+lib:K33 | agree<=5: True | dL6!=0: False | {'reduced8': True, 'reduced8+f3': True, 'reduced8+f2_m2012': True, 'full': True, 'raw_all_conn6': True}
+   dN: {}
+PAIR K33+n10:n10_g8 vs n10:n10_g0+lib:K33 | agree<=5: True | dL6!=0: False | {'reduced8': True, 'reduced8+f3': True, 'reduced8+f2_m2012': True, 'full': True, 'raw_all_conn6': True}
+   dN: {}
+PAIR prism+n10:n10_g5 vs n10:mobius_ladder_M10+lib:prism | agree<=5: True | dL6!=0: False | {'reduced8': True, 'reduced8+f3': True, 'reduced8+f2_m2012': True, 'full': True, 'raw_all_conn6': True}
+   dN: {}
+PAIR prism+n10:n10_g6 vs n10:n10_g2+lib:prism | agree<=5: True | dL6!=0: False | {'reduced8': True, 'reduced8+f3': True, 'reduced8+f2_m2012': True, 'full': True, 'raw_all_conn6': True}
+   dN: {}
+PAIR prism+n10:n10_g8 vs n10:n10_g0+lib:prism | agree<=5: True | dL6!=0: False | {'reduced8': True, 'reduced8+f3': True, 'reduced8+f2_m2012': True, 'full': True, 'raw_all_conn6': True}
+   dN: {}
+pairs made: {'K33': 3, 'prism': 3}
+wrote vol6_search3.json
