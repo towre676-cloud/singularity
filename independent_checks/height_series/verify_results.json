@@ -1,0 +1,272 @@
+{
+ "four_vertex_types": {
+  "star": {
+   "labelled_count": 4,
+   "rep_edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "P": {
+    "3": 1
+   },
+   "func": {
+    "e": 3,
+    "epairs": 3,
+    "tri": 0,
+    "sq": 0,
+    "dia": 0,
+    "k4": 0,
+    "paw": 0,
+    "wedges": 3
+   }
+  },
+  "P4": {
+   "labelled_count": 12,
+   "rep_edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "P": {
+    "3": 1
+   },
+   "func": {
+    "e": 3,
+    "epairs": 3,
+    "tri": 0,
+    "sq": 0,
+    "dia": 0,
+    "k4": 0,
+    "paw": 0,
+    "wedges": 2
+   }
+  },
+  "paw": {
+   "labelled_count": 12,
+   "rep_edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "P": {
+    "3": 3,
+    "4": 1
+   },
+   "func": {
+    "e": 4,
+    "epairs": 6,
+    "tri": 1,
+    "sq": 0,
+    "dia": 0,
+    "k4": 0,
+    "paw": 1,
+    "wedges": 5
+   }
+  },
+  "C4": {
+   "labelled_count": 3,
+   "rep_edges": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "P": {
+    "3": 4,
+    "4": 1
+   },
+   "func": {
+    "e": 4,
+    "epairs": 6,
+    "tri": 0,
+    "sq": 1,
+    "dia": 0,
+    "k4": 0,
+    "paw": 0,
+    "wedges": 4
+   }
+  },
+  "diamond": {
+   "labelled_count": 6,
+   "rep_edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "P": {
+    "3": 8,
+    "4": 5,
+    "5": 1
+   },
+   "func": {
+    "e": 5,
+    "epairs": 10,
+    "tri": 2,
+    "sq": 1,
+    "dia": 1,
+    "k4": 0,
+    "paw": 4,
+    "wedges": 8
+   }
+  },
+  "K4": {
+   "labelled_count": 1,
+   "rep_edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "P": {
+    "3": 16,
+    "4": 15,
+    "5": 6,
+    "6": 1
+   },
+   "func": {
+    "e": 6,
+    "epairs": 15,
+    "tri": 4,
+    "sq": 3,
+    "dia": 6,
+    "k4": 1,
+    "paw": 12,
+    "wedges": 12
+   }
+  }
+ },
+ "identity_D": "verified pointwise on all six types",
+ "bell_E": "L4 = ell4 + ell1 ell3 + ell2^2/2 + ell1^2 ell2/2 + ell1^4/24 verified on exp-consistent rational series; Delta L4 = Delta ell4 when ell_1..ell_3 agree",
+ "stored_blocks": {
+  "n10": {
+   "label": "n10",
+   "pairs_total": 45753,
+   "agree03_pairs": 10971,
+   "agree03_iff_N3_failures": 0,
+   "formula_failures": 0,
+   "naive_failures_among_agree03": 1144,
+   "stored_pairs_total": 45753,
+   "stored_agree03_pairs": 10971,
+   "stored_corrected_failures": 0,
+   "stored_naive_failures": 1144,
+   "counterexamples_checked": 10
+  },
+  "n12": {
+   "label": "n12",
+   "pairs_total": 11628,
+   "agree03_pairs": 3234,
+   "agree03_iff_N3_failures": 0,
+   "formula_failures": 0,
+   "naive_failures_among_agree03": 410,
+   "stored_pairs_total": 11628,
+   "stored_agree03_pairs": 3234,
+   "stored_corrected_failures": 0,
+   "stored_naive_failures": 410,
+   "counterexamples_checked": 10
+  }
+ },
+ "n8": {
+  "label": "n8",
+  "pairs_total": 1891,
+  "agree03_pairs": 555,
+  "agree03_iff_N3_failures": 0,
+  "formula_failures": 0,
+  "naive_failures_among_agree03": 0
+ },
+ "disconnected_K4": {
+  "A": "K4 + K_{3,3} (n=10, N3=4, NK4=1)",
+  "B": "n10_g3 (N3=4, NK4=0)",
+  "agree_through_vol3": true,
+  "extended_formula_with_K4_term_holds": true,
+  "difference_from_formula_without_K4_term": {
+   "0": 1,
+   "2": -6,
+   "4": 15,
+   "6": -20,
+   "8": 15,
+   "10": -6,
+   "12": 1
+  }
+ }
+}
