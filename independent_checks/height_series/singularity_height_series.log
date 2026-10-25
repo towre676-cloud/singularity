@@ -1,0 +1,17 @@
+cube edges=12 squares=6
+mobius edges=12 squares=4
+volume 0: total cube=1 mobius=1 differ=False
+volume 1: total cube=8 mobius=8 differ=False
+volume 2: total cube=36 mobius=36 differ=False
+volume 3: total cube=120 mobius=120 differ=False
+volume 4: total cube=330 mobius=330 differ=True
+  difference (cube - mobius) by energy: {4: 2, 6: -8, 8: 12, 10: -8, 12: 2}
+volume 5: total cube=792 mobius=792 differ=True
+  difference (cube - mobius) by energy: {9: 8, 11: -16, 13: -8, 15: 32, 17: -8, 19: -16, 21: 8}
+volume 6: total cube=1716 mobius=1716 differ=True
+  difference (cube - mobius) by energy: {8: 8, 10: -32, 12: 56, 14: -36, 16: -8, 20: 8, 22: 8, 24: 24, 26: -48, 28: 24, 30: -4, 32: 8, 34: -16, 36: 8}
+volume 7: total cube=3432 mobius=3432 differ=True
+  difference (cube - mobius) by energy: {11: 16, 13: -24, 15: -24, 17: 64, 19: -16, 21: -32, 23: 8, 25: -8, 27: 16, 29: 8, 31: -8, 33: -24, 35: 32, 37: 32, 39: -24, 41: -24, 43: -16, 45: 8, 47: 32, 49: -16, 53: 8, 55: -16, 57: 8}
+volume 8: total cube=6435 mobius=6435 differ=True
+  difference (cube - mobius) by energy: {8: 8, 10: -32, 12: 52, 14: -24, 16: 18, 18: -64, 20: 44, 22: -32, 24: 112, 26: -128, 28: 40, 30: 8, 32: 36, 34: -128, 36: 84, 38: 8, 40: 40, 42: -32, 44: 8, 46: -32, 48: 42, 50: -56, 54: 40, 56: 16, 58: -32, 60: 36, 62: -48, 64: -8, 66: 24, 70: -16, 72: 32, 74: -16, 80: 8, 82: -16, 84: 8}
+wrote singularity_height_series.json
