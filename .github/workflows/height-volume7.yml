@@ -1,0 +1,26 @@
+name: Exact height-series volume seven
+on:
+  pull_request:
+    paths:
+      - 'independent_checks/height_series/vol7*'
+      - 'independent_checks/height_series/VOLUME7*'
+      - '.github/workflows/height-volume7.yml'
+  push:
+    paths:
+      - 'independent_checks/height_series/vol7*'
+      - 'independent_checks/height_series/VOLUME7*'
+      - '.github/workflows/height-volume7.yml'
+  workflow_dispatch:
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay all exact certificates without third-party packages
+        run: python independent_checks/height_series/vol7_verify.py
+      - name: Confirm replay leaves the committed certificates unchanged
+        run: git diff --exit-code

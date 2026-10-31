@@ -1,0 +1,95 @@
+{
+  "arithmetic": "exact rational",
+  "beta_checks": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 6,
+    "5": 10,
+    "6": 29,
+    "7": 64
+  },
+  "conditional_law_direct_witnesses": 2,
+  "conditional_law_symbolic": {
+    "house_mask": 221,
+    "lower_core_columns": 20,
+    "lower_rank": 12,
+    "seven_vertex_core_terms": 21
+  },
+  "delayed_house_witness": {
+    "K23_count_difference": -1,
+    "agreement_through": 6,
+    "all_core_counts_checked_by_injective_embeddings": 40,
+    "delta_L7": {
+      "11": "-18",
+      "13": "43",
+      "15": "-49",
+      "17": "21",
+      "19": "7",
+      "21": "-7",
+      "23": "-3",
+      "25": "4",
+      "27": "-1",
+      "9": "3"
+    },
+    "house_count_difference": 1,
+    "pair_order": 354,
+    "seven_vertex_core_differences": 0
+  },
+  "failures": 0,
+  "graph_checks": {
+    "K33": {
+      "height_assignments_volume7": 792,
+      "nonzero_pattern_counts": 20,
+      "vertices": 6
+    },
+    "K4": {
+      "height_assignments_volume7": 120,
+      "nonzero_pattern_counts": 10,
+      "vertices": 4
+    },
+    "K4_union_K33": {
+      "height_assignments_volume7": 11440,
+      "nonzero_pattern_counts": 24,
+      "vertices": 10
+    },
+    "cube": {
+      "height_assignments_volume7": 3432,
+      "nonzero_pattern_counts": 32,
+      "vertices": 8
+    },
+    "petersen": {
+      "height_assignments_volume7": 11440,
+      "nonzero_pattern_counts": 25,
+      "vertices": 10
+    },
+    "prism": {
+      "height_assignments_volume7": 792,
+      "nonzero_pattern_counts": 37,
+      "vertices": 6
+    }
+  },
+  "kernel_checks": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 6,
+    "5": 10,
+    "6": 29,
+    "7": 64
+  },
+  "off_diagonal_checks": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 6,
+    "5": 10,
+    "6": 29
+  },
+  "source_sha256": {
+    "vol7_independent_check.py": "3f2ebda9798a64b9d80062ddeaf09bfea732d6617c1e6463221f1d52cb86eeb1",
+    "vol7_lib.py": "0bc69a46d6356beba3ae55e95572dc2739d00a86261d212f1fef49631eb467b0",
+    "vol7_reduction.py": "d5e2037b310cafba6cad18f198ed49dbfd544053c9864a5870390463d3d9b73f"
+  },
+  "volume": 7
+}
