@@ -16,7 +16,7 @@ import json
 
 import vol8_lib as lib
 from vol8_reduction import normal_form
-from vol8_offdiagonal import first_off_diagonal, second_off_diagonal
+from vol8_offdiagonal import first_off_diagonal, second_off_diagonal, second_off_diagonal_blocks
 
 HERE = Path(__file__).resolve().parent
 R = 8
@@ -309,6 +309,35 @@ def replay_completed_witnesses(reduced):
 
 def main():
     report = {"arithmetic": "exact rational", "volume": R, "kernel_checks": {}, "beta_checks": {}, "first_off_diagonal_checks": {}, "second_off_diagonal_checks": {}, "graph_checks": {}}
+    # The analytic API is all-order, independent of the catalogue's cutoff.
+    # For C9: U3=9b^2, U22=9a^3(z^2+1)+27a^4,
+    # M=9+81a^2, D=27-9a, with a=z+1 and b=z^2+z+1.
+    cycle_edges = {tuple(sorted((v, (v + 1) % 9))) for v in range(9)}
+    cycle_mask = sum(1 << i for i, edge in enumerate(combinations(range(9), 2)) if edge in cycle_edges)
+    aa = {0: Q(1), 1: Q(1)}
+    bb = {0: Q(1), 1: Q(1), 2: Q(1)}
+    a2 = multiply(aa, aa)
+    a3 = multiply(a2, aa)
+    a4 = multiply(a2, a2)
+    expected_blocks = (
+        add({}, multiply(bb, bb), 9),
+        add(add({}, multiply(a3, {0: Q(1), 2: Q(1)}), 9), a4, 27),
+        add({0: Q(9)}, a2, 81),
+        add({0: Q(27)}, aa, -9),
+    )
+    assert second_off_diagonal_blocks(cycle_mask, 9) == expected_blocks
+    f9 = {j: Q(comb(9, j) * (-1) ** (9 - j)) for j in range(10)}
+    first_expected = add(
+        {36 - 2 * j: c for j, c in multiply(f9, add({}, a2, 9)).items()},
+        {30 - 2 * j: c for j, c in f9.items()}, -9,
+    )
+    second_expected = {}
+    for block, shift, sign in zip(expected_blocks, (51, 45, 39, 33), (1, 1, -1, 1)):
+        second_expected = add(second_expected, {shift - 2 * j: c for j, c in multiply(f9, block).items()}, sign)
+    assert first_off_diagonal(cycle_mask, 9) == first_expected
+    assert second_off_diagonal(cycle_mask, 9) == second_expected
+    report["beyond_catalogue_analytic_regression"] = {"pattern": "C9", "vertices": 9, "edges": 9, "second_off_diagonal_blocks_checked": 4, "first_and_second_off_diagonal_closed_specializations": True}
+    print("independent nine-cycle all-order API regression passed", flush=True)
     for k in range(1, R + 1):
         for mask in lib.connected_types(k):
             independent = kernel_by_inclusion(mask, k)

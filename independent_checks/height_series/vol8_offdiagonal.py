@@ -9,7 +9,25 @@ from fractions import Fraction as Q
 from functools import lru_cache
 from itertools import combinations
 
-from vol8_lib import degrees_of, edges_of
+
+@lru_cache(None)
+def graph_pairs(k):
+    """Dynamic mask positions, with no catalogue-imposed vertex limit."""
+    return tuple(combinations(range(k), 2))
+
+
+@lru_cache(None)
+def edges_of(mask, k):
+    return tuple(edge for i, edge in enumerate(graph_pairs(k)) if mask >> i & 1)
+
+
+@lru_cache(None)
+def degrees_of(mask, k):
+    degrees = [0] * k
+    for u, v in edges_of(mask, k):
+        degrees[u] += 1
+        degrees[v] += 1
+    return tuple(degrees)
 
 
 def add(a, b, scale=1):
