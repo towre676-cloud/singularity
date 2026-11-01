@@ -64,18 +64,54 @@ class RepetitionBlendTests(unittest.TestCase):
             self.assertGreaterEqual(audit["neural_protection_slack_nats"], -1e-12)
         self.assertEqual(total_joint, Fraction(1))
 
+    @staticmethod
+    def reference_distribution(counts):
+        """Exact Witten--Bell reference; recompute totals from follower rows."""
+        distribution = [Fraction(1, counts.vocabulary_size)] * counts.vocabulary_size
+        for order, table in enumerate(counts.tables):
+            if order > len(counts.history):
+                break
+            context = counts.history[-order:] if order else ()
+            row = table.get(context, {})
+            if row:
+                distinct, total = len(row), sum(row.values())
+                distribution = [
+                    (row.get(y, 0) + distinct * probability) / (total + distinct)
+                    for y, probability in enumerate(distribution)
+                ]
+        return distribution
+
+    def check_count_distributions(self, compare_numpy=False):
+        for vocabulary, order, prefix, targets in (
+            (7, 4, (2,), (2, 4, 2, 4, 2, 4, 2, 1, 4, 4, 2)),
+            (3, 0, (), (0, 1, 0, 2, 0)),
+            (1, 8, (), (0,) * 10),
+            (5, 8, (1, 2), (3, 1, 2, 3, 1, 2, 4)),
+        ):
+            counts = AdaptiveTokenCounts(vocabulary, order)
+            counts.reset(prefix)
+            for index, target in enumerate(targets):
+                with self.subTest(vocabulary=vocabulary, order=order, prefix=index):
+                    feature = repetition_feature(counts)
+                    probabilities = self.reference_distribution(counts)
+                    self.assertEqual(sum(probabilities), Fraction(1))
+                    scalar = [count_target_probability(counts, y) for y in range(vocabulary)]
+                    self.assertAlmostEqual(sum(scalar), 1., places=14)
+                    arrays = counts.probabilities() if compare_numpy else None
+                    for y in range(vocabulary):
+                        self.assertAlmostEqual(scalar[y], float(probabilities[y]), places=15)
+                        if arrays is not None:
+                            self.assertAlmostEqual(arrays[y], float(probabilities[y]), places=15)
+                    # Indexing any target cannot alter the prefix feature.
+                    self.assertEqual(feature, repetition_feature(counts))
+                    counts.update(target)
+
     def test_scalar_count_probability_matches_full_normalized_distribution(self):
-        counts = AdaptiveTokenCounts(7, 4)
-        counts.reset((2,))
-        for target in (2, 4, 2, 4, 2, 4, 2, 1, 4, 4, 2):
-            feature = repetition_feature(counts)
-            probabilities = counts.probabilities()
-            self.assertAlmostEqual(sum(count_target_probability(counts, y) for y in range(7)), 1., places=14)
-            for y in range(7):
-                self.assertAlmostEqual(count_target_probability(counts, y), probabilities[y], places=15)
-            # Indexing any target cannot alter the prefix feature.
-            self.assertEqual(feature, repetition_feature(counts))
-            counts.update(target)
+        self.check_count_distributions()
+
+    @unittest.skipUnless(importlib.util.find_spec("numpy"), "optional NumPy unavailable")
+    def test_numpy_count_distribution_matches_exact_reference(self):
+        self.check_count_distributions(compare_numpy=True)
 
     def test_future_targets_cannot_change_prefix_predictions(self):
         def run(targets):

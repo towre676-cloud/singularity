@@ -1,0 +1,26 @@
+name: Exact height-series volume eight
+on:
+  pull_request:
+    paths:
+      - 'independent_checks/height_series/vol8*'
+      - 'independent_checks/height_series/VOLUME8*'
+      - '.github/workflows/height-volume8.yml'
+  push:
+    paths:
+      - 'independent_checks/height_series/vol8*'
+      - 'independent_checks/height_series/VOLUME8*'
+      - '.github/workflows/height-volume8.yml'
+  workflow_dispatch:
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay exact eighth-order certificates
+        run: python independent_checks/height_series/vol8_verify.py
+      - name: Confirm replay leaves certificates unchanged
+        run: git diff --exit-code
