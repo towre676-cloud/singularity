@@ -1,0 +1,26 @@
+import + tables built in 35.6 s
+k=1: types 1 connected 1
+k=2: types 2 connected 1
+k=3: types 4 connected 2
+k=4: types 11 connected 6
+k=5: types 34 connected 21
+k=6: types 156 connected 112
+type counts OK (1,2,4,11,34,156 / 1,1,2,6,21,112)
+connected 6-types with maxdeg<=3: 29 of 112
+multilinear identity + vanishing below k: k=1 OK
+multilinear identity + vanishing below k: k=2 OK
+multilinear identity + vanishing below k: k=3 OK
+multilinear identity + vanishing below k: k=4 OK
+multilinear identity + vanishing below k: k=5 OK
+multilinear identity + vanishing below k: k=6 OK
+size-6 alpha identity P_j(tau) = sum_{Y conn, e(Y)=j} sub_Y(tau): OK for all 112 connected types
+size-2 subgraph matrix rank 2 of 2 (invertible)
+size-3 subgraph matrix rank 4 of 4 (invertible)
+size-4 subgraph matrix rank 11 of 11 (invertible)
+size-5 subgraph matrix rank 34 of 34 (invertible)
+graph cube_Q3: fast==slow (r<=5), totals r<=6, ell_5 and ell_6 SNG-F55 identities OK
+graph mobius_M8: fast==slow (r<=5), totals r<=6, ell_5 and ell_6 SNG-F55 identities OK
+graph petersen: fast==slow (r<=5), totals r<=6, ell_5 and ell_6 SNG-F55 identities OK
+graph K3,3: fast==slow (r<=5), totals r<=6, ell_5 and ell_6 SNG-F55 identities OK
+graph prism: fast==slow (r<=5), totals r<=6, ell_5 and ell_6 SNG-F55 identities OK
+ALL LIB TESTS PASSED in 35.7 s

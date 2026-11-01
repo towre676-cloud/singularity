@@ -1,0 +1,38 @@
+pools: {'n10': 303, 'n12': 153, 'n8': 62, 'n14': 3000, 'n16': 2000} 2.8 s
+n10 computed 303 graphs in 10.6 s
+n12 computed 153 graphs in 11.5 s
+n8 computed 62 graphs in 1.0 s
+n14 computed 3000 graphs in 317.0 s
+n16 computed 2000 graphs in 754.4 s
+n10 per-graph checks passed: totals, ell6 = S<=5 + T6, T6 raw identity, stored counts
+n12 per-graph checks passed: totals, ell6 = S<=5 + T6, T6 raw identity, stored counts
+n8 per-graph checks passed: totals, ell6 = S<=5 + T6, T6 raw identity, stored counts
+n14 per-graph checks passed: totals, ell6 = S<=5 + T6, T6 raw identity, stored counts
+n16 per-graph checks passed: totals, ell6 = S<=5 + T6, T6 raw identity, stored counts
+direct brute-force spot checks for C6 / K3,3 / prism counts passed
+n10 agreeing-through-5 pairs: 3819 | raw formula failures: 0 | pairs with dL6 != 0: 0
+n12 agreeing-through-5 pairs: 246 | raw formula failures: 0 | pairs with dL6 != 0: 2
+   varies: k6_e7_deg332222_m1881 on 10 pairs
+   varies: k6_e7_deg332222_m956 on 10 pairs
+   varies: k6_e7_deg332222_m5907 on 10 pairs
+   varies: k6_e6_deg222222_m1880 on 2 pairs
+n8 agreeing-through-5 pairs: 519 | raw formula failures: 0 | pairs with dL6 != 0: 0
+n14 agreeing-through-5 pairs: 39722 | raw formula failures: 0 | pairs with dL6 != 0: 23017
+   varies: k6_e8_deg333322_m1916 on 96 pairs
+   varies: k6_e8_deg333322_m5948 on 4 pairs
+   varies: k6_e7_deg332222_m1881 on 11146 pairs
+   varies: k6_e7_deg332222_m956 on 11692 pairs
+   varies: k6_e7_deg332222_m5907 on 3586 pairs
+   varies: k6_e7_deg332222_m1884 on 6858 pairs
+   varies: k6_e6_deg222222_m1880 on 21731 pairs
+   varies: k6_e8_deg333322_m5941 on 33 pairs
+n16 agreeing-through-5 pairs: 14496 | raw formula failures: 0 | pairs with dL6 != 0: 12419
+   varies: k6_e8_deg333322_m1916 on 8 pairs
+   varies: k6_e8_deg333322_m5948 on 4 pairs
+   varies: k6_e7_deg332222_m1881 on 5747 pairs
+   varies: k6_e7_deg332222_m956 on 4952 pairs
+   varies: k6_e7_deg332222_m5907 on 1346 pairs
+   varies: k6_e7_deg332222_m1884 on 3158 pairs
+   varies: k6_e6_deg222222_m1880 on 11252 pairs
+   varies: k6_e8_deg333322_m5941 on 21 pairs
+wrote vol6_results.json in 1125.1 s

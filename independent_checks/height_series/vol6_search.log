@@ -1,0 +1,11 @@
+K33 I5 = (0, 9, 0, 0, 0, 6, 0, 0) | N_C6 = 6
+prism I5 = (2, 3, 0, 0, 6, 0, 6, 0) | N_C6 = 3
+pool sizes by n: {8: 62, 10: 303, 12: 153, 14: 3000, 16: 2000}
+single-component pairs found: {'K33': 0, 'prism': 0}
+audit K4 violations: {'k6_e6_deg332211_m633': {'actual': 0, 'fitted': '-12'}, 'k6_e6_deg332211_m694': {'actual': 0, 'fitted': '-24'}, 'k6_e7_deg333311_m758': {'actual': 0, 'fitted': '6'}, 'k6_e7_deg333221_m1780': {'actual': 0, 'fitted': '24'}, 'k6_e6_deg332211_m693': {'actual': 0, 'fitted': '-12'}, 'k6_e6_deg333111_m691': {'actual': 0, 'fitted': '-8'}}
+audit K33 violations: none
+audit prism violations: none
+audit K4+K4 violations: {'k6_e6_deg332211_m633': {'actual': 0, 'fitted': '-24'}, 'k6_e6_deg332211_m694': {'actual': 0, 'fitted': '-48'}, 'k6_e7_deg333311_m758': {'actual': 0, 'fitted': '12'}, 'k6_e7_deg333221_m1780': {'actual': 0, 'fitted': '48'}, 'k6_e6_deg332211_m693': {'actual': 0, 'fitted': '-24'}, 'k6_e6_deg333111_m691': {'actual': 0, 'fitted': '-16'}}
+audit K4+K33 violations: {'k6_e6_deg332211_m633': {'actual': 0, 'fitted': '-12'}, 'k6_e6_deg332211_m694': {'actual': 0, 'fitted': '-24'}, 'k6_e7_deg333311_m758': {'actual': 0, 'fitted': '6'}, 'k6_e7_deg333221_m1780': {'actual': 0, 'fitted': '24'}, 'k6_e6_deg332211_m693': {'actual': 36, 'fitted': '24'}, 'k6_e6_deg333111_m691': {'actual': 0, 'fitted': '-8'}}
+audit K33+prism violations: none
+audit prism+petersen violations: none

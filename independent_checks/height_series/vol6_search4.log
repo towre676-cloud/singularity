@@ -1,0 +1,17 @@
+library K4 I5 = (4, 3, 6, 1, 0, 0, 0, 0)
+library K33 I5 = (0, 9, 0, 0, 0, 6, 0, 0)
+library prism I5 = (2, 3, 0, 0, 6, 0, 6, 0)
+library cube I5 = (0, 6, 0, 0, 0, 0, 0, 0)
+library M8 I5 = (0, 4, 0, 0, 8, 0, 0, 0)
+library petersen I5 = (0, 0, 0, 0, 12, 0, 0, 0)
+blocks: 10524
+B-side ready: {4: 1, 6: 2, 8: 30, 10: 102, 12: 177, 14: 1348, 16: 1607, 18: 3604, 20: 7332, 22: 10783, 24: 12284}
+PAIR prism+n18:n18_g355 vs n12:n12_g11+n12:n12_g39 | agree<=5: True | dL6!=0: True | {'reduced8': False, 'reduced8+f3': True, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m1916': -4, 'k6_e9_deg333333_m7100': -1, 'k6_e7_deg332222_m1881': -4, 'k6_e7_deg332222_m956': -4, 'k6_e7_deg332222_m5907': -4, 'k6_e7_deg332222_m1884': -2, 'k6_e8_deg333322_m5941': -3}
+PAIR prism+n18:n18_g355 vs n12:n12_g11+n12:n12_g58 | agree<=5: True | dL6!=0: True | {'reduced8': False, 'reduced8+f3': True, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m1916': -4, 'k6_e9_deg333333_m7100': -1, 'k6_e7_deg332222_m1881': -4, 'k6_e7_deg332222_m956': -4, 'k6_e7_deg332222_m5907': -4, 'k6_e7_deg332222_m1884': -2, 'k6_e8_deg333322_m5941': -3}
+PAIR prism+n18:n18_g355 vs n12:n12_g11+n12:n12_g86 | agree<=5: True | dL6!=0: True | {'reduced8': False, 'reduced8+f3': True, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m1916': -4, 'k6_e9_deg333333_m7100': -1, 'k6_e7_deg332222_m1881': -4, 'k6_e7_deg332222_m956': -4, 'k6_e7_deg332222_m5907': -4, 'k6_e7_deg332222_m1884': -2, 'k6_e8_deg333322_m5941': -3}
+PAIR prism+n18:n18_g355 vs n12:n12_g39+n12:n12_g138 | agree<=5: True | dL6!=0: True | {'reduced8': False, 'reduced8+f3': True, 'reduced8+f2_m2012': False, 'full': True, 'raw_all_conn6': True}
+   dN: {'k6_e8_deg333322_m1916': -4, 'k6_e9_deg333333_m7100': -1, 'k6_e7_deg332222_m1881': -4, 'k6_e7_deg332222_m956': -4, 'k6_e7_deg332222_m5907': -4, 'k6_e7_deg332222_m1884': -2, 'k6_e8_deg333322_m5941': -3}
+I5-matched candidates examined: 69701 | tested interesting pairs: {'K33': 0, 'prism': 4}
