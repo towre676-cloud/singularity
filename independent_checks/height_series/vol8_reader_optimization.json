@@ -1,0 +1,36 @@
+{
+  "objective": "minimize ||M^-1||_infinity, unscaled coefficient errors bounded equally",
+  "candidate_degrees": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30
+  ],
+  "panels_tested": 11440,
+  "nonsingular": 10710,
+  "optimal_gain": "93093/14165",
+  "optimal_panel": [
+    4,
+    8,
+    12,
+    14,
+    18,
+    24,
+    26
+  ],
+  "optimal_determinant": "916192200",
+  "optimal_panel_count": 1,
+  "scope": "global within seven distinct single q-coefficient measurements, no rescaling"
+}

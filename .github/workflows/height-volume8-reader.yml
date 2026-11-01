@@ -1,0 +1,30 @@
+name: Exact volume-eight coefficient reader
+on:
+  pull_request:
+    paths:
+      - 'independent_checks/height_series/**'
+      - '.github/workflows/height-volume8-reader.yml'
+  push:
+    paths:
+      - 'independent_checks/height_series/**'
+      - '.github/workflows/height-volume8-reader.yml'
+  workflow_dispatch:
+jobs:
+  exact-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay unchanged proof dependencies and isolated witnesses
+        run: python independent_checks/height_series/vol8_verify.py
+      - name: Reproduce exact reader certificate, independent enumeration and global search
+        run: |
+          python independent_checks/height_series/vol8_reader_check.py --enumerate --optimize > /tmp/reader-certificate.json
+          diff -u independent_checks/height_series/vol8_reader_certificate.json /tmp/reader-certificate.json
+      - name: Reproduce offline visualization
+        run: python independent_checks/height_series/vol8_reader_visual.py
+      - name: Confirm deterministic replay
+        run: git diff --exit-code
