@@ -1,0 +1,3005 @@
+diff --git a/independent_checks/height_series/FIXED20_PURE_UNIT_WITNESSES.md b/independent_checks/height_series/FIXED20_PURE_UNIT_WITNESSES.md
+new file mode 100644
+--- /dev/null
++++ b/independent_checks/height_series/FIXED20_PURE_UNIT_WITNESSES.md
+@@ -0,0 +1,181 @@
++# Fixed-order bases and pure unit witnesses
++
++November 4, 2026. This extends the preserved connectivity-minima result in
++`final_bundle/RESULTS.md`. No repository file, branch, commit or PR was changed.
++
++## A minimal common-order six-direction basis
++
++There exist six pairs of connected bridgeless finite simple cubic graphs,
++**all of order twenty**, agreeing in every height polynomial through volume
++seven, with volume-eight coordinate difference vectors
++
++| Pair | Q0 | Q1 | S8_10 | S8_11 | Theta223 | closed_diamond |
++|---|---:|---:|---:|---:|---:|---:|
++| 1 | -1 | 1 | 1 | 0 | 0 | 0 |
++| 2 | -2 | -1 | 0 | 0 | 0 | 0 |
++| 3 | -1 | 0 | 0 | 0 | 0 | 0 |
++| 4 | 0 | -9 | -6 | -1 | 0 | 0 |
++| 5 | 2 | 1 | 0 | 0 | 0 | 1 |
++| 6 | -1 | 1 | 0 | 0 | -1 | 0 |
++
++Convention: B minus A. The determinant of this integer 6-by-6 matrix is
++**one**. The inverse is integral and is retained with all twelve complete edge
++lists in `fixed20_certificate.json`.
++
++This closes the earlier common-order question, not merely the vertex-ceiling
++question. The previous complete catalogues through eighteen vertices have
++span at most five, and no cubic graphs have odd order. Here those catalogues
++were freshly re-enumerated by exact core counting and the established source
++law, retaining all reference differences again. Consequently **twenty is the
++smallest common order supporting six independent differences**, in both the
++connected and bridgeless classes. The basis is also unimodular at that order.
++
++Unimodularity means these six realized differences generate the full integer
++coordinate lattice. It does not mean arbitrary integer vectors occur between
++individual twenty-vertex graphs: that finite realization set is bounded. Nor
++does span rank alone establish a measurement-count minimum on a bounded finite
++graph class. The unbounded six- and four-measurement minima remain as proved
++in the preceding bundle.
++
++## Construction
++
++Two controlled operations generate the new graphs.
++
++* Triangle expansion replaces one cubic vertex by a triangle, attaching its
++  three former neighbors to the three triangle vertices. Order increases by two.
++* Two-edge expansion subdivides two distinct edges once each and joins the two
++  new subdivision vertices. This also increases order by two. Adjacent selected
++  edges are permitted, and the resulting edge list is checked for simplicity.
++
++The discovery search tries paired operations on inherited agreeing graphs.
++It does **not** assume either operation preserves lower-order equality. Every
++candidate is evaluated with exact source-law features, and only matching
++complete lower polynomials are retained. All six final pairs are then checked
++independently by direct global weak-composition height enumeration, which uses
++only their edge lists and integer edge energies. Each pair's simplicity,
++cubicity and bridgelessness is checked separately by exact unit-capacity flows.
++The twenty-vertex weld pair supplies the fourth row unchanged.
++
++## Exact pure-unit minima already settled
++
++A pure unit witness means the seven original invariant differences are zero
++except for a single surviving coordinate, which is exactly +1 or -1. An
++integral combination of several graph-pair differences is not such a witness.
++
++| Coordinate | Exact smallest pure-unit order | Connectivity of an attaining pair |
++|---|---:|---|
++| Q0 | 18 | 3-edge-connected |
++| Q1 | 18 | 3-edge-connected |
++| Theta223 | 18 | 3-edge-connected |
++| S8_10 | 20 | 3-edge-connected |
++
++These minima hold in the connected class and therefore in its bridgeless and
++3-edge-connected subclasses, since the attaining witnesses have the strongest
++connectivity. All three eighteen-vertex witnesses were checked by the separate
++integer direct-height program. The twenty-vertex S8_10 witness was checked the
++same way. Complete edge lists are in `pure18_certificate.json` and
++`S10_20_certificate.json`.
++
++The complete eighteen-vertex catalogue has pure unit witnesses for Q0, Q1 and
++Theta223, but none for S8_10, S8_11 or closed_diamond. There are no pure unit
++witnesses for any surviving coordinate at orders four through sixteen. Counts
++in `pure_n*.json` count pairs of distinct eighth-polynomial points within lower
++agreement fibers, choosing one representative graph for an isospectral point;
++they are not multiplicity counts of every graph pair.
++
++## Exact bounded search method
++
++For each retained connected leafless induced pattern through size eight, the
++checker precomputes its contribution to the established reduced source law by
++summing its connected leafless spanning edge subsets. Every relabeling is
++retained in an exact mask table. Denominators are cleared with common scale 840.
++
++For each cubic graph, short cycles seed a growth search over connected vertex
++sets of size at most eight. This reaches every leafless connected support,
++because every such support contains a cycle and can be grown from that cycle
++by adjoining adjacent vertices. Sets are deduplicated, and supports failing
++minimum degree two are discarded. Induced-pattern contributions reconstruct
++all required logarithmic height coefficients. The vertex-order contribution
++is constant within a catalogue and cancels in every difference.
++
++Graphs are grouped by their complete coefficients at volumes three through
++seven; volumes one and two are fixed by common cubic vertex order. Within each
++fiber, a graph's eighth polynomial is shifted by exactly one of the six pure
++factor polynomials and looked up in an exact ordered map. This tests **every
++possible pure-unit pair**, not only differences from a chosen reference.
++
++The current lower-order replay also retains the full reference differences in
++`reference4.json` through `reference18.json`, regenerating the source-law data
++that workspace maintenance had removed in the preceding pass. Their ranks and
++counts match the inherited results. Selected witnesses are checked against the
++independent global enumeration path. Arithmetic accumulation bounds explicitly
++exclude signed-64-bit overflow at order twenty.
++
++## Remaining-coordinate status
++
++The two remaining pure-coordinate questions concern closed_diamond and S8_11,
++which vanish entirely under 3-edge-connectivity. The exhaustive twenty-vertex
++catalogue test is recorded separately in the final status section below.
++The bounded surgical pools at twenty and twenty-two are discovery searches,
++not exhaustive absence proofs. A failure to find a witness in such a pool
++never establishes a lower bound.
++
++Independently replayed constructive pure-unit upper bounds, from the general
++bridgeless reservoir construction, are 13,184 vertices for closed_diamond and
++25,932 for S8_11. Exact signed seed recipes are in `unit_upper_bounds.json`.
++These are explicit sufficient orders, not optimality claims.
++
++## Replay and scope
++
++Run from the archive root, preserving the `open_work/` and `final_bundle/`
++layout. Python scripts use the standard library; the independent height and
++catalogue programs require a C++17 compiler. The pinned nauty source is retained
++in `final_bundle/nauty_source.tar.gz`.
++
++    python open_work/unit_tables.py
++    g++ -O3 -std=c++17 open_work/unit_catalogue.cpp -o open_work/unit_catalogue
++    python open_work/verify_fixed20.py
++    python open_work/verify_units.py
++    python open_work/fresh_bounds.py
++    python open_work/unit_upper_bounds.py
++
++The exact bounded catalogue invocation is
++
++    open_work/unit_catalogue CATALOGUE.g6 open_work/weights.txt open_work/orbits.txt OUTPUT.json [REFERENCE_OUTPUT.json]
++
++`verify_fixed20.py` compiles and uses a height enumerator that does not call the
++source law. The final pure-unit verifier is packaged alongside it. The source
++law remains an inherited mathematical dependency; these results are executable
++integer/rational mathematics, not proof-assistant formalizations.
++
++## Final complete twenty-vertex result
++
++All **510,489** connected cubic graphs at order twenty were generated using the
++pinned nauty code, by eight disjoint generator residues. The concatenated union
++contains exactly that many distinct graph6 records. The manifest retains the
++part counts, hashes and complete sorted-catalogue hash.
++
++The exact unit query finds representatives for 58,040 Q0 point pairs, 42,373 Q1,
++910 S8_10, and 7,643 Theta223 point pairs, but **zero S8_11 and zero
++closed_diamond point pairs**. These are point-pair counts as defined above,
++not counts with graph multiplicity. The full result is in `pure_complete20.json`.
++Together with the smaller complete catalogues this checks **556,471** connected
++cubic graphs through order twenty.
++
++Therefore the remaining rigorous pure-unit bounds, in both connected and
++bridgeless classes, are
++
++| Coordinate | Proved lower bound | Explicit constructive upper bound |
++|---|---:|---:|
++| closed_diamond | 22 | 13,184 |
++| S8_11 | 22 | 25,932 |
++
++The surgical family of 5,220 twenty-two-vertex graphs, the additional 1,312 ring
++words at order twenty-two, and 3,319 ring words at order twenty-four did not
++supply the last two units. These searches do not establish nonexistence at
++twenty-two or twenty-four. Exact minima for these two coordinates remain open.
++
++This pass checkpoints the complete catalogue and newly regenerated lower-order
++reference tables. No new raw search data are claimed lost. `proposed.patch`
++adds a report and compact certificates only; all executable replay programs,
++large catalogues and discovery records are delivered in this archive for review.
+diff --git a/independent_checks/height_series/fixed20_unimodular_basis.json b/independent_checks/height_series/fixed20_unimodular_basis.json
+new file mode 100644
+--- /dev/null
++++ b/independent_checks/height_series/fixed20_unimodular_basis.json
+@@ -0,0 +1,1701 @@
++{
++  "rank": 6,
++  "pairs": [
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          0,
++          9
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          18
++        ],
++        [
++          1,
++          19
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          16
++        ],
++        [
++          2,
++          17
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          4,
++          9
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          4,
++          13
++        ],
++        [
++          5,
++          10
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          11
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          7,
++          13
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          11
++        ],
++        [
++          10,
++          18
++        ],
++        [
++          12,
++          19
++        ],
++        [
++          14,
++          16
++        ],
++        [
++          15,
++          17
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          0,
++          12
++        ],
++        [
++          0,
++          13
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          16
++        ],
++        [
++          1,
++          17
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          10
++        ],
++        [
++          2,
++          18
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          3,
++          19
++        ],
++        [
++          4,
++          9
++        ],
++        [
++          4,
++          13
++        ],
++        [
++          4,
++          15
++        ],
++        [
++          5,
++          10
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          11
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          11
++        ],
++        [
++          9,
++          16
++        ],
++        [
++          10,
++          17
++        ],
++        [
++          12,
++          18
++        ],
++        [
++          12,
++          19
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        -1,
++        1,
++        1,
++        0,
++        0,
++        0
++      ],
++      "triangle_vertices": [
++        1,
++        12
++      ],
++      "delta_L8": {
++        "4": "1",
++        "6": "-9",
++        "8": "35",
++        "10": "-76",
++        "12": "98",
++        "14": "-70",
++        "16": "14",
++        "18": "20",
++        "20": "-19",
++        "22": "7",
++        "24": "-1"
++      },
++      "first_triangle_vertices": [
++        2,
++        1
++      ],
++      "original_witness_index": 1,
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          0,
++          12
++        ],
++        [
++          0,
++          13
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          18
++        ],
++        [
++          1,
++          19
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          10
++        ],
++        [
++          2,
++          11
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          4,
++          9
++        ],
++        [
++          4,
++          16
++        ],
++        [
++          4,
++          17
++        ],
++        [
++          5,
++          10
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          11
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          12
++        ],
++        [
++          9,
++          18
++        ],
++        [
++          10,
++          19
++        ],
++        [
++          13,
++          16
++        ],
++        [
++          14,
++          17
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          0,
++          12
++        ],
++        [
++          0,
++          13
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          9
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          14
++        ],
++        [
++          2,
++          15
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          18
++        ],
++        [
++          3,
++          19
++        ],
++        [
++          4,
++          9
++        ],
++        [
++          4,
++          16
++        ],
++        [
++          4,
++          17
++        ],
++        [
++          5,
++          10
++        ],
++        [
++          5,
++          11
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          6,
++          10
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          11
++        ],
++        [
++          11,
++          18
++        ],
++        [
++          12,
++          19
++        ],
++        [
++          13,
++          16
++        ],
++        [
++          14,
++          17
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        -2,
++        -1,
++        0,
++        0,
++        0,
++        0
++      ],
++      "triangle_vertices": [
++        1,
++        3
++      ],
++      "delta_L8": {
++        "6": "-1",
++        "8": "7",
++        "10": "-20",
++        "12": "28",
++        "14": "-14",
++        "16": "-14",
++        "18": "28",
++        "20": "-20",
++        "22": "7",
++        "24": "-1"
++      },
++      "first_triangle_vertices": [
++        4,
++        4
++      ],
++      "original_witness_index": 2,
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          8
++        ],
++        [
++          0,
++          16
++        ],
++        [
++          0,
++          17
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          9
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          10
++        ],
++        [
++          2,
++          12
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          4,
++          14
++        ],
++        [
++          5,
++          11
++        ],
++        [
++          5,
++          13
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          12
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          13
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          9,
++          18
++        ],
++        [
++          10,
++          17
++        ],
++        [
++          16,
++          18
++        ],
++        [
++          16,
++          19
++        ],
++        [
++          17,
++          19
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          0,
++          18
++        ],
++        [
++          0,
++          19
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          9
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          2,
++          10
++        ],
++        [
++          2,
++          11
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          4,
++          11
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          4,
++          13
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          5,
++          13
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          15
++        ],
++        [
++          8,
++          16
++        ],
++        [
++          9,
++          17
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          16,
++          18
++        ],
++        [
++          17,
++          19
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        -1,
++        0,
++        0,
++        0,
++        0,
++        0
++      ],
++      "triangle_vertices": [
++        16,
++        0
++      ],
++      "delta_L8": {
++        "8": "-1",
++        "10": "8",
++        "12": "-28",
++        "14": "56",
++        "16": "-70",
++        "18": "56",
++        "20": "-28",
++        "22": "8",
++        "24": "-1"
++      },
++      "first_triangle_vertices": [
++        0,
++        0
++      ],
++      "original_witness_index": 4,
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          1
++        ],
++        [
++          0,
++          3
++        ],
++        [
++          0,
++          5
++        ],
++        [
++          1,
++          2
++        ],
++        [
++          1,
++          5
++        ],
++        [
++          2,
++          3
++        ],
++        [
++          2,
++          4
++        ],
++        [
++          3,
++          4
++        ],
++        [
++          4,
++          19
++        ],
++        [
++          5,
++          10
++        ],
++        [
++          6,
++          7
++        ],
++        [
++          6,
++          9
++        ],
++        [
++          6,
++          11
++        ],
++        [
++          7,
++          8
++        ],
++        [
++          7,
++          11
++        ],
++        [
++          8,
++          9
++        ],
++        [
++          8,
++          10
++        ],
++        [
++          9,
++          10
++        ],
++        [
++          11,
++          14
++        ],
++        [
++          12,
++          13
++        ],
++        [
++          12,
++          14
++        ],
++        [
++          12,
++          15
++        ],
++        [
++          13,
++          14
++        ],
++        [
++          13,
++          15
++        ],
++        [
++          15,
++          18
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          16,
++          18
++        ],
++        [
++          16,
++          19
++        ],
++        [
++          17,
++          18
++        ],
++        [
++          17,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          1
++        ],
++        [
++          0,
++          3
++        ],
++        [
++          0,
++          5
++        ],
++        [
++          1,
++          2
++        ],
++        [
++          1,
++          5
++        ],
++        [
++          2,
++          3
++        ],
++        [
++          2,
++          4
++        ],
++        [
++          3,
++          4
++        ],
++        [
++          4,
++          19
++        ],
++        [
++          5,
++          8
++        ],
++        [
++          6,
++          7
++        ],
++        [
++          6,
++          8
++        ],
++        [
++          6,
++          9
++        ],
++        [
++          7,
++          8
++        ],
++        [
++          7,
++          9
++        ],
++        [
++          9,
++          14
++        ],
++        [
++          10,
++          11
++        ],
++        [
++          10,
++          13
++        ],
++        [
++          10,
++          15
++        ],
++        [
++          11,
++          12
++        ],
++        [
++          11,
++          15
++        ],
++        [
++          12,
++          13
++        ],
++        [
++          12,
++          14
++        ],
++        [
++          13,
++          14
++        ],
++        [
++          15,
++          18
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          16,
++          18
++        ],
++        [
++          16,
++          19
++        ],
++        [
++          17,
++          18
++        ],
++        [
++          17,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        0,
++        -9,
++        -6,
++        -1,
++        0,
++        0
++      ],
++      "edge_connectivity_lower_bound": 2,
++      "construction": "existing weld",
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          0,
++          8
++        ],
++        [
++          0,
++          16
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          9
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          2,
++          12
++        ],
++        [
++          2,
++          13
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          3,
++          14
++        ],
++        [
++          3,
++          18
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          4,
++          14
++        ],
++        [
++          4,
++          16
++        ],
++        [
++          5,
++          11
++        ],
++        [
++          5,
++          17
++        ],
++        [
++          5,
++          19
++        ],
++        [
++          6,
++          11
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          6,
++          17
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          12
++        ],
++        [
++          9,
++          13
++        ],
++        [
++          10,
++          15
++        ],
++        [
++          11,
++          17
++        ],
++        [
++          13,
++          18
++        ],
++        [
++          15,
++          19
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          6
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          0,
++          11
++        ],
++        [
++          1,
++          7
++        ],
++        [
++          1,
++          13
++        ],
++        [
++          1,
++          18
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          13
++        ],
++        [
++          2,
++          14
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          15
++        ],
++        [
++          3,
++          16
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          4,
++          11
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          5,
++          13
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          5,
++          19
++        ],
++        [
++          6,
++          12
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          16
++        ],
++        [
++          7,
++          17
++        ],
++        [
++          8,
++          14
++        ],
++        [
++          8,
++          15
++        ],
++        [
++          9,
++          16
++        ],
++        [
++          9,
++          17
++        ],
++        [
++          10,
++          11
++        ],
++        [
++          12,
++          18
++        ],
++        [
++          17,
++          19
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        2,
++        1,
++        0,
++        0,
++        0,
++        1
++      ],
++      "expanded_edges_A": [
++        13,
++        18
++      ],
++      "expanded_edges_B": [
++        9,
++        24
++      ],
++      "edge_connectivity_lower_bound": 2,
++      "target": "closed_diamond",
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          10
++        ],
++        [
++          0,
++          16
++        ],
++        [
++          0,
++          18
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          9
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          2,
++          8
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          2,
++          14
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          4,
++          19
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          11
++        ],
++        [
++          7,
++          12
++        ],
++        [
++          7,
++          16
++        ],
++        [
++          8,
++          11
++        ],
++        [
++          13,
++          17
++        ],
++        [
++          15,
++          18
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          17,
++          19
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          9
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          0,
++          18
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          2,
++          12
++        ],
++        [
++          2,
++          13
++        ],
++        [
++          2,
++          16
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          3,
++          19
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          4,
++          13
++        ],
++        [
++          4,
++          15
++        ],
++        [
++          5,
++          11
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          12
++        ],
++        [
++          7,
++          17
++        ],
++        [
++          7,
++          18
++        ],
++        [
++          8,
++          9
++        ],
++        [
++          8,
++          16
++        ],
++        [
++          11,
++          19
++        ],
++        [
++          14,
++          17
++        ],
++        [
++          16,
++          17
++        ],
++        [
++          18,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        -1,
++        1,
++        0,
++        0,
++        -1,
++        0
++      ],
++      "expanded_edges_A": [
++        1,
++        14
++      ],
++      "expanded_edges_B": [
++        0,
++        10
++      ],
++      "first_expansion": {
++        "n": 18,
++        "coordinates_B_minus_A": [
++          3,
++          2,
++          0,
++          0,
++          -1,
++          0
++        ],
++        "expanded_edges_A": [
++          0,
++          16
++        ],
++        "expanded_edges_B": [
++          2,
++          20
++        ]
++      },
++      "edge_connectivity_lower_bound": 2,
++      "target": "Theta223",
++      "independent_direct_height_check": true
++    }
++  ],
++  "coordinate_determinant": "1",
++  "coordinate_inverse": [
++    [
++      "0",
++      "0",
++      "-1",
++      "0",
++      "0",
++      "0"
++    ],
++    [
++      "0",
++      "-1",
++      "2",
++      "0",
++      "0",
++      "0"
++    ],
++    [
++      "1",
++      "1",
++      "-3",
++      "0",
++      "0",
++      "0"
++    ],
++    [
++      "-6",
++      "3",
++      "0",
++      "-1",
++      "0",
++      "0"
++    ],
++    [
++      "0",
++      "-1",
++      "3",
++      "0",
++      "0",
++      "-1"
++    ],
++    [
++      "0",
++      "1",
++      "0",
++      "0",
++      "1",
++      "0"
++    ]
++  ],
++  "all_pairs_bridgeless": true,
++  "all_pairs_order": 20
++}
+diff --git a/independent_checks/height_series/pure_unit_minima_bounds.json b/independent_checks/height_series/pure_unit_minima_bounds.json
+new file mode 100644
+--- /dev/null
++++ b/independent_checks/height_series/pure_unit_minima_bounds.json
+@@ -0,0 +1,143 @@
++{
++  "coordinate_order": [
++    "Q0",
++    "Q1",
++    "S8_10",
++    "S8_11",
++    "Theta223",
++    "closed_diamond"
++  ],
++  "pure_unit_count_definition": "distinct eighth-polynomial point pairs in a common complete lower-agreement fiber, with one graph representative per point",
++  "complete_catalogues": [
++    {
++      "n": 4,
++      "graphs": 1,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 6,
++      "graphs": 2,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 8,
++      "graphs": 5,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 10,
++      "graphs": 19,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 12,
++      "graphs": 85,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 14,
++      "graphs": 509,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 16,
++      "graphs": 4060,
++      "representative_unit_point_pairs": {
++        "Q0": 0,
++        "Q1": 0,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 0,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 18,
++      "graphs": 41301,
++      "representative_unit_point_pairs": {
++        "Q0": 888,
++        "Q1": 505,
++        "S8_10": 0,
++        "S8_11": 0,
++        "Theta223": 106,
++        "closed_diamond": 0
++      }
++    },
++    {
++      "n": 20,
++      "graphs": 510489,
++      "representative_unit_point_pairs": {
++        "Q0": 58040,
++        "Q1": 42373,
++        "S8_10": 910,
++        "S8_11": 0,
++        "Theta223": 7643,
++        "closed_diamond": 0
++      }
++    }
++  ],
++  "exact_pure_unit_minima": {
++    "Q0": 18,
++    "Q1": 18,
++    "Theta223": 18,
++    "S8_10": 20
++  },
++  "remaining_bounds": {
++    "closed_diamond": {
++      "lower": 22,
++      "constructive_upper": 13184
++    },
++    "S8_11": {
++      "lower": 22,
++      "constructive_upper": 25932
++    }
++  },
++  "common_order_unimodular_six_basis": {
++    "minimum_order": 20,
++    "determinant": 1,
++    "all_pairs_bridgeless": true
++  },
++  "bounded_discovery_families": "No remaining unit found in 5220 surgical graphs at22, 1312 additional ring words at22, or3319 ring words at24. These are not full order22/24 absence proofs."
++}
+diff --git a/independent_checks/height_series/pure_unit_small_witnesses.json b/independent_checks/height_series/pure_unit_small_witnesses.json
+new file mode 100644
+--- /dev/null
++++ b/independent_checks/height_series/pure_unit_small_witnesses.json
+@@ -0,0 +1,960 @@
++{
++  "pure_unit_witnesses": [
++    {
++      "n": 18,
++      "A_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          0,
++          9
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          2,
++          11
++        ],
++        [
++          5,
++          11
++        ],
++        [
++          10,
++          11
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          2,
++          12
++        ],
++        [
++          6,
++          12
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          8,
++          13
++        ],
++        [
++          9,
++          13
++        ],
++        [
++          1,
++          14
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          3,
++          15
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          0,
++          16
++        ],
++        [
++          4,
++          16
++        ],
++        [
++          8,
++          16
++        ],
++        [
++          4,
++          17
++        ],
++        [
++          5,
++          17
++        ],
++        [
++          6,
++          17
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          0,
++          11
++        ],
++        [
++          2,
++          11
++        ],
++        [
++          4,
++          11
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          8,
++          12
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          8,
++          13
++        ],
++        [
++          9,
++          13
++        ],
++        [
++          3,
++          14
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          9,
++          14
++        ],
++        [
++          3,
++          15
++        ],
++        [
++          4,
++          15
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          5,
++          16
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          7,
++          16
++        ],
++        [
++          1,
++          17
++        ],
++        [
++          2,
++          17
++        ],
++        [
++          5,
++          17
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        1,
++        0,
++        0,
++        0,
++        0,
++        0
++      ],
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 18,
++      "A_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          0,
++          11
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          2,
++          11
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          7,
++          13
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          9,
++          14
++        ],
++        [
++          4,
++          15
++        ],
++        [
++          8,
++          15
++        ],
++        [
++          9,
++          15
++        ],
++        [
++          2,
++          16
++        ],
++        [
++          4,
++          16
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          5,
++          17
++        ],
++        [
++          6,
++          17
++        ],
++        [
++          8,
++          17
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          0,
++          11
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          5,
++          11
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          2,
++          12
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          8,
++          13
++        ],
++        [
++          4,
++          14
++        ],
++        [
++          8,
++          14
++        ],
++        [
++          9,
++          14
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          9,
++          15
++        ],
++        [
++          4,
++          16
++        ],
++        [
++          5,
++          16
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          2,
++          17
++        ],
++        [
++          5,
++          17
++        ],
++        [
++          7,
++          17
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        0,
++        1,
++        0,
++        0,
++        0,
++        0
++      ],
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 18,
++      "A_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          3,
++          9
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          5,
++          10
++        ],
++        [
++          0,
++          11
++        ],
++        [
++          6,
++          11
++        ],
++        [
++          9,
++          11
++        ],
++        [
++          0,
++          12
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          4,
++          12
++        ],
++        [
++          2,
++          13
++        ],
++        [
++          4,
++          13
++        ],
++        [
++          5,
++          13
++        ],
++        [
++          2,
++          14
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          8,
++          14
++        ],
++        [
++          3,
++          15
++        ],
++        [
++          7,
++          15
++        ],
++        [
++          8,
++          15
++        ],
++        [
++          3,
++          16
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          10,
++          16
++        ],
++        [
++          1,
++          17
++        ],
++        [
++          6,
++          17
++        ],
++        [
++          7,
++          17
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          7
++        ],
++        [
++          1,
++          8
++        ],
++        [
++          2,
++          9
++        ],
++        [
++          0,
++          10
++        ],
++        [
++          3,
++          10
++        ],
++        [
++          4,
++          10
++        ],
++        [
++          0,
++          11
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          2,
++          11
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          3,
++          12
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          4,
++          13
++        ],
++        [
++          7,
++          13
++        ],
++        [
++          6,
++          14
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          9,
++          14
++        ],
++        [
++          4,
++          15
++        ],
++        [
++          8,
++          15
++        ],
++        [
++          9,
++          15
++        ],
++        [
++          2,
++          16
++        ],
++        [
++          5,
++          16
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          5,
++          17
++        ],
++        [
++          6,
++          17
++        ],
++        [
++          8,
++          17
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        0,
++        0,
++        0,
++        0,
++        1,
++        0
++      ],
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    },
++    {
++      "n": 20,
++      "A_edges": [
++        [
++          0,
++          9
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          2,
++          10
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          4,
++          11
++        ],
++        [
++          0,
++          12
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          0,
++          13
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          7,
++          13
++        ],
++        [
++          3,
++          14
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          10,
++          14
++        ],
++        [
++          3,
++          15
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          8,
++          15
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          7,
++          16
++        ],
++        [
++          9,
++          16
++        ],
++        [
++          2,
++          17
++        ],
++        [
++          7,
++          17
++        ],
++        [
++          8,
++          17
++        ],
++        [
++          4,
++          18
++        ],
++        [
++          8,
++          18
++        ],
++        [
++          9,
++          18
++        ],
++        [
++          2,
++          19
++        ],
++        [
++          4,
++          19
++        ],
++        [
++          5,
++          19
++        ]
++      ],
++      "B_edges": [
++        [
++          0,
++          9
++        ],
++        [
++          1,
++          10
++        ],
++        [
++          2,
++          10
++        ],
++        [
++          1,
++          11
++        ],
++        [
++          3,
++          11
++        ],
++        [
++          4,
++          11
++        ],
++        [
++          0,
++          12
++        ],
++        [
++          1,
++          12
++        ],
++        [
++          5,
++          12
++        ],
++        [
++          0,
++          13
++        ],
++        [
++          3,
++          13
++        ],
++        [
++          6,
++          13
++        ],
++        [
++          3,
++          14
++        ],
++        [
++          5,
++          14
++        ],
++        [
++          7,
++          14
++        ],
++        [
++          5,
++          15
++        ],
++        [
++          6,
++          15
++        ],
++        [
++          9,
++          15
++        ],
++        [
++          6,
++          16
++        ],
++        [
++          7,
++          16
++        ],
++        [
++          8,
++          16
++        ],
++        [
++          2,
++          17
++        ],
++        [
++          7,
++          17
++        ],
++        [
++          9,
++          17
++        ],
++        [
++          4,
++          18
++        ],
++        [
++          8,
++          18
++        ],
++        [
++          10,
++          18
++        ],
++        [
++          2,
++          19
++        ],
++        [
++          4,
++          19
++        ],
++        [
++          8,
++          19
++        ]
++      ],
++      "coordinates_B_minus_A": [
++        0,
++        0,
++        1,
++        0,
++        0,
++        0
++      ],
++      "edge_connectivity_lower_bound": 3,
++      "independent_direct_height_check": true
++    }
++  ]
++}
