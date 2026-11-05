@@ -1,0 +1,107 @@
+[
+  {
+    "id": "02",
+    "title": "Exact volumes nine and ten",
+    "target": "singularity",
+    "sources": [
+      "Singularity_Volume9_10_Theorems_2026-11-04.zip",
+      "Singularity_Pattern_Research_2026-11-04.zip"
+    ],
+    "summary": "Fixed-excess kernel, exact ninth/tenth height-series laws, cumulative ranks 24\u219234\u219248, invertible 10- and 14-coordinate readers, connectivity-class increments, high-girth refinements, witness constructions and independent direct-height checks.",
+    "boundary": "Source baseline exactly matches current main 17f033ea. Fresh verify_saved.py passed both reader inverses and all four graph classes, zero failures. Full catalogue/regeneration was not rerun here. No volume-eleven table or optimal noisy ninth/tenth panel is claimed.",
+    "next_step": "Create one theorem PR from main. Preserve existing volume-eight laws; add new standalone law builders, readers, catalogues, provenance and fast/full replay jobs. Import fixed-excess groundwork once.",
+    "priority": "1",
+    "status": "Archive work; integration required",
+    "source_refs": [
+      {
+        "name": "Singularity_Volume9_10_Theorems_2026-11-04.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_5023adc763708191b608ea463da8ed32&account_id=personal",
+        "library_file_id": "libfile_5023adc763708191b608ea463da8ed32"
+      },
+      {
+        "name": "Singularity_Pattern_Research_2026-11-04.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_2b5ac5ca31408191897de6b413279bc4&account_id=personal",
+        "library_file_id": "libfile_2b5ac5ca31408191897de6b413279bc4"
+      }
+    ],
+    "base_snapshot": "17f033ea9a1e6d93224e946a341f7a0e545ee64a"
+  },
+  {
+    "id": "03",
+    "title": "Connectivity minima and fixed-order unit witnesses",
+    "target": "singularity",
+    "sources": [
+      "Singularity_Connectivity_Minima_2026-11-04.zip",
+      "Singularity_Fixed20_UnitWitness_Advance_2026-11-04.zip",
+      "Singularity_Connected_Volume8_Theorem.zip"
+    ],
+    "summary": "Measurement minima 7/6/6/4 for unrestricted/connected/bridgeless/3-edge-connected graphs. Common six-direction witness order 20 with determinant one. Pure Q0, Q1, Theta223 minima 18; S8_10 minimum 20. Complete order-20 census has 510,489 graphs.",
+    "boundary": "Closed_diamond and S8_11 pure minima remain between lower bound 22 and upper bounds 13,184/25,932. Partial higher-order searches are not nonexistence proofs. The latest fixed20 package contains recovered lower-order tables; earlier missing-log statements are historical.",
+    "next_step": "Combine compact proposed.patch and proposed_fixed20.patch with replay sources in a separate PR. Keep large graph catalogues as pinned evidence bundles. Replay selected witnesses, the complete order-20 census and direct-height checks.",
+    "priority": "1",
+    "status": "Archive work; integration required",
+    "source_refs": [
+      {
+        "name": "Singularity_Connectivity_Minima_2026-11-04.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_3f3ff849480881918e0bf1bfc246f48e&account_id=personal",
+        "library_file_id": "libfile_3f3ff849480881918e0bf1bfc246f48e"
+      },
+      {
+        "name": "Singularity_Fixed20_UnitWitness_Advance_2026-11-04.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_6891176f38ec8191ba250f57d06b90b9&account_id=personal",
+        "library_file_id": "libfile_6891176f38ec8191ba250f57d06b90b9"
+      },
+      {
+        "name": "Singularity_Connected_Volume8_Theorem.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_6269ae5035ec819199fc6355b600c5bf&account_id=personal",
+        "library_file_id": "libfile_6269ae5035ec819199fc6355b600c5bf"
+      }
+    ],
+    "base_snapshot": "17f033ea9a1e6d93224e946a341f7a0e545ee64a"
+  },
+  {
+    "id": "04",
+    "title": "What Must Survive II and supplements",
+    "target": "singularity + nonlinearhamiltonian; cross-reference annular work",
+    "sources": [
+      "what_must_survive_II (4).zip",
+      "What_Must_Survive_II_Quartic_Supplement.zip",
+      "What_Must_Survive_II_Parallel_Advance.zip",
+      "What_Must_Survive_II_Marked_Lattice_Supplement.zip",
+      "What_Must_Survive_II_Tree_Shell_Proof_Advance.zip"
+    ],
+    "summary": "Graph loop-law engine, measurement-rank work through volumes 13/14, quartic Hamiltonian supplement, promotion/onset certificates, finite Lean witness layer, marked-cut-lattice reconstruction, exact modular arithmetic and tree energy-shell analysis. Tree supplement proves root-of-unity sector collapse to shell one and completeness on spider trees.",
+    "boundary": "This is a separate research lineage, not an automatic replacement for volume-nine/ten files. Source README clean-room replay covers through volume 12; volume 13/14 need their specified prime/CRT replays. Marked lattice reconstruction does not prove that its theta series determines the lattice. Full tree/graph completeness remains open. Lean checks finite witnesses, not engine semantics.",
+    "next_step": "Preserve one immutable source import and all four supplements, then split semantic changes by repository. Compare height/volume conventions and CRT bounds before merging with Singularity. Cross-link the annular transfer contract without identifying distinct period systems.",
+    "priority": "2",
+    "status": "Archive work; integration required",
+    "source_refs": [
+      {
+        "name": "what_must_survive_II (4).zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_970d3e792c3c8191bb791ede88ea4a02&account_id=personal",
+        "library_file_id": "libfile_970d3e792c3c8191bb791ede88ea4a02"
+      },
+      {
+        "name": "What_Must_Survive_II_Quartic_Supplement.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_a2970e4251508191a8010298c837d6db&account_id=personal",
+        "library_file_id": "libfile_a2970e4251508191a8010298c837d6db"
+      },
+      {
+        "name": "What_Must_Survive_II_Parallel_Advance.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_9e1ca3ae5268819193d5b505d82cdcdc&account_id=personal",
+        "library_file_id": "libfile_9e1ca3ae5268819193d5b505d82cdcdc"
+      },
+      {
+        "name": "What_Must_Survive_II_Marked_Lattice_Supplement.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_92ef06910df08191823cb67e9ac0fbcf&account_id=personal",
+        "library_file_id": "libfile_92ef06910df08191823cb67e9ac0fbcf"
+      },
+      {
+        "name": "What_Must_Survive_II_Tree_Shell_Proof_Advance.zip",
+        "url": "https://chatgpt.com/library?file_id=libfile_7530dd13b8ec8191a6a4db850639cb35&account_id=personal",
+        "library_file_id": "libfile_7530dd13b8ec8191a6a4db850639cb35"
+      }
+    ],
+    "base_snapshot": "17f033ea9a1e6d93224e946a341f7a0e545ee64a"
+  }
+]

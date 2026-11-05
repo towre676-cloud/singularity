@@ -1,0 +1,36 @@
+{
+  "catalogues": {
+    "9": {
+      "connected_types": 531,
+      "leafless_histogram": {
+        "9": 1,
+        "10": 13,
+        "11": 52,
+        "12": 63,
+        "13": 19
+      },
+      "two_route_agreement": true,
+      "growth_candidates": 4069,
+      "geng_command": "geng -cq -D3 9",
+      "graph6_sha256": "ef874304229992a319a0d0b097d5d4079e10dd5833c518fe5db274af9163dc08"
+    },
+    "10": {
+      "connected_types": 1733,
+      "leafless_histogram": {
+        "10": 1,
+        "11": 18,
+        "12": 109,
+        "13": 198,
+        "14": 113,
+        "15": 19
+      },
+      "two_route_agreement": true,
+      "growth_candidates": 13807,
+      "geng_command": "geng -cq -D3 10",
+      "graph6_sha256": "04c24122668e7a96a3ce28ffc973abbd3dba50c6e7779de4be0adb711c9f205a"
+    }
+  },
+  "nauty_source_sha256": "87f7bfd6b63a2e41bb1e7a257de9e487bb6e1da1c536163122c1d816b1bace1f",
+  "pynauty": "2.8.8.1",
+  "sympy": "1.14.0"
+}

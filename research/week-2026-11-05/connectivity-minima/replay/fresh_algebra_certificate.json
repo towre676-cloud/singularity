@@ -1,0 +1,151 @@
+{
+  "classes": [
+    {
+      "edge_connectivity": 1,
+      "admissible_cores": 92,
+      "unit_isolators": 92,
+      "lower_rank": 15,
+      "total_rank": 21
+    },
+    {
+      "edge_connectivity": 2,
+      "admissible_cores": 86,
+      "unit_isolators": 86,
+      "lower_rank": 13,
+      "total_rank": 19
+    },
+    {
+      "edge_connectivity": 3,
+      "admissible_cores": 58,
+      "unit_isolators": 58,
+      "lower_rank": 11,
+      "total_rank": 15
+    }
+  ],
+  "small_graphs": [
+    {
+      "n": 4,
+      "connected_cubic_types": 1,
+      "lower_collision_pairs": 0
+    },
+    {
+      "n": 6,
+      "connected_cubic_types": 2,
+      "lower_collision_pairs": 0
+    },
+    {
+      "n": 8,
+      "connected_cubic_types": 5,
+      "lower_collision_pairs": 0
+    }
+  ],
+  "reservoir_parent_girth": 12,
+  "reservoir_parent_edge_connectivity": 3,
+  "panels": {
+    "six": {
+      "degrees": [
+        6,
+        10,
+        14,
+        18,
+        24,
+        26
+      ],
+      "determinant": "74791080",
+      "inverse_norm": "44191/19786",
+      "inverse": [
+        [
+          "6933/19786",
+          "-95115/554008",
+          "2337/19786",
+          "-3973/39572",
+          "42834/69251",
+          "-24151/79144"
+        ],
+        [
+          "5944/9893",
+          "-212153/831012",
+          "4397/29679",
+          "-1995/19786",
+          "42086/69251",
+          "-61805/118716"
+        ],
+        [
+          "105281/296790",
+          "-1014581/8310120",
+          "17509/296790",
+          "-4519/118716",
+          "202873/1038765",
+          "-45757/237432"
+        ],
+        [
+          "10648/148395",
+          "-6079/346255",
+          "1192/148395",
+          "-151/29679",
+          "25408/1038765",
+          "-253/9893"
+        ],
+        [
+          "56/9893",
+          "-36/9893",
+          "36/9893",
+          "-56/9893",
+          "-1408/9893",
+          "-347/9893"
+        ],
+        [
+          "-98/29679",
+          "21/9893",
+          "-21/9893",
+          "98/29679",
+          "2464/29679",
+          "-622/9893"
+        ]
+      ],
+      "checked": 5005,
+      "invertible": 4775,
+      "optimal_ties": 1
+    },
+    "four": {
+      "degrees": [
+        8,
+        14,
+        18,
+        20
+      ],
+      "determinant": "-1014120",
+      "inverse_norm": "5977/22536",
+      "inverse": [
+        [
+          "186/1565",
+          "175/3756",
+          "-327/12520",
+          "68/939"
+        ],
+        [
+          "2261/14085",
+          "1715/33804",
+          "-523/12520",
+          "103/8451"
+        ],
+        [
+          "728/14085",
+          "77/8451",
+          "-73/9390",
+          "7/8451"
+        ],
+        [
+          "14/1565",
+          "5/626",
+          "-189/6260",
+          "-14/313"
+        ]
+      ],
+      "checked": 1001,
+      "invertible": 825,
+      "optimal_ties": 1
+    }
+  },
+  "evidence": "freshly regenerated after workspace maintenance"
+}

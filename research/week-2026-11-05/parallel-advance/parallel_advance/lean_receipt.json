@@ -1,0 +1,15 @@
+{
+  "lean_version": "4.20.0",
+  "lean_commit": "77cfc4d1a4f6",
+  "files": {
+    "CertificateKernel.lean": "1ec5fd70a86cd233dba344b9829df8d719af8bdb029024742099709c11e8c243",
+    "Witness17.lean": "0549e04d1d3c252a16bf3acdf00d7e5193cad0a36b0b3240deee5792a59718da",
+    "ResidueUniqueness.lean": "f4b172b2f096c9a5e28d99735f148322d29f7263936ac057b6564b6719191791"
+  },
+  "certificate_acceptance_axioms": [],
+  "soundness_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "scope": "finite encoded row witness, not engine semantics"
+}
