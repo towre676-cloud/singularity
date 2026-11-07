@@ -70,3 +70,86 @@ python independent_checks/height_series/vol8_reader_visual.py
 ```
 
 All computation uses the Python standard library. The reader CI runs the unchanged full dependency replay, reproduces all isolated observation witnesses, checks the source-row identity, re-enumerates the small pair, repeats exhaustive optimization, and verifies deterministic certificate/HTML generation. The explorer is a self-contained offline HTML file; its browser arithmetic is illustrative and separate from the exact reader.
+
+# Connected six-measurement extraction
+
+The default Python and command-line interfaces retain the original general
+seven-coordinate model, panel, output schema and `B-A` convention. Use
+`extract(A, B, mode='connected')` or:
+
+```sh
+python independent_checks/height_series/vol8_reader.py input.json --mode connected
+```
+
+Connected mode uses `(Q0,Q1,S8_10,S8_11,Theta223,closed_diamond)` and defaults
+to degrees `(6,10,14,18,24,26)`. Its exact determinant is `74791080` and inverse
+infinity norm is `44191/19786`. `matrix(mode='connected')`,
+`factors('connected')`, and `reconstruct(values, mode='connected')` use this
+coordinate order. A custom six-degree panel can be passed to the Python API.
+The existing approximate sensitivity interface remains general-only; the CLI
+rejects connected sensitivity and the general tail panel in connected mode.
+
+Both calculation records must retain `graph_class: "finite_simple_cubic"` and
+the existing schema and q convention, and additionally supply:
+
+```json
+{"connected": true, "graph": {"n": 4, "edges": [[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]]}}
+```
+
+This is an applicability example, not a complete calculation record. The reader
+checks both edge lists for valid integer endpoints, simplicity, cubicity and
+connectedness, and checks that volume one is `n*q^3`. It requires every complete
+height or log polynomial through eight, compares all lower-order polynomials,
+solves over rational numbers, reconstructs the entire eighth difference
+(including coefficients outside the panel), and requires integer coordinates.
+For compatible connected orders at most eight it additionally requires zero
+eighth difference. Sparse dictionaries mean that omitted degrees are zero;
+they cannot be used to mark unmeasured coefficients.
+
+The result lists six invariant differences, identifies the connected model,
+records verified topology and explicitly reports the omitted `S8_12` difference
+as zero. Output remains **B minus A**. The recovered recipes use **A minus B**;
+their retained differences must be negated (or their inputs reversed). These
+are differences of coordinates, not individual graph counts.
+
+Topology validation does not prove that the supplied height calculations were
+computed from those edge lists. The algebraic certificate remains conditional
+on correct supplied calculations. Full polynomial and integer checks are
+necessary consistency checks, not a graph-realizability certificate.
+
+## Proof, retained evidence, and implementation
+
+`connected_volume8/CONNECTED_PROOF.md` preserves the mathematical argument
+from PR #11, pinned in `connected_volume8/PROVENANCE.json`. Its claims are
+conditional on the inherited volume-eight source law; this integration is not
+a proof-assistant formalization. Historical proposed changes and relative paths
+in that verbatim document describe its original research package.
+
+`connected_volume8/connected_certificate.json` is the unchanged retained
+research certificate. `vol8_connected_replay.py` replays the source-row identity,
+ranks 15 and 21, exceptional small-order classification, 92 integer isolators,
+six connected witness recipes, exact panel search and optional connected Theta223
+edge-list enumeration. Only its filename and explicit output-directory handling
+differ from the recovered checker. Run:
+
+```sh
+python independent_checks/height_series/vol8_connected_replay.py --optimize --enumerate-connected --output-dir /tmp/connected-volume8
+python independent_checks/height_series/vol8_connected_reader_check.py
+python independent_checks/height_series/vol8_reader.py --mode connected --optimize
+```
+
+The production optimization independently exhausts the 5,005 six-coefficient
+panels: 4,775 are invertible and the retained panel is the unique optimum for
+unscaled coefficient errors bounded equally. This finite optimization claim
+does not cover arbitrary rescaled observations.
+
+Regression checks distinguish six formal retained difference fixtures from
+absolute connected Theta223 calculations evaluated from the source law and
+independently counted seed-rooted cores. The reservoir exclusion argument is
+still used for those large witnesses; complete large-graph height enumeration
+is not claimed. Direct height enumeration checks a nonzero compatible connected pair at order
+twelve in both modes, as well as all eight connected cubic types at orders four,
+six and eight. Adversarial cases cover
+disconnected topology, the retained general `S8_12` witness, missing lower
+volumes, lower disagreement, fractional coordinates, unsupported panels and
+off-panel polynomial inconsistency. Existing general reader checks remain in CI.
