@@ -1,0 +1,26 @@
+name: Exact volume-nine and volume-ten readers
+
+on:
+  push:
+    paths:
+      - 'independent_checks/height_series/vol9_10_reader*'
+      - 'independent_checks/height_series/vol8_reader.py'
+      - '.github/workflows/height-volume9-10-reader.yml'
+  pull_request:
+    paths:
+      - 'independent_checks/height_series/vol9_10_reader*'
+      - 'independent_checks/height_series/vol8_reader.py'
+      - '.github/workflows/height-volume9-10-reader.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  reader-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m unittest discover -s independent_checks/height_series -p vol9_10_reader_check.py -v
