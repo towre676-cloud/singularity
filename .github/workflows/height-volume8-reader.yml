@@ -26,5 +26,12 @@ jobs:
           diff -u independent_checks/height_series/vol8_reader_certificate.json /tmp/reader-certificate.json
       - name: Reproduce offline visualization
         run: python independent_checks/height_series/vol8_reader_visual.py
+      - name: Check connected extraction and retained research certificate
+        run: |
+          python independent_checks/height_series/vol8_connected_reader_check.py
+          python independent_checks/height_series/vol8_connected_replay.py --optimize --enumerate-connected --output-dir /tmp/connected-volume8
+          python -c "import json; from pathlib import Path; p=Path('independent_checks/height_series/connected_volume8/connected_certificate.json'); assert json.loads(p.read_text()) == json.loads(Path('/tmp/connected-volume8/connected_certificate.json').read_text())"
+          python independent_checks/height_series/vol8_reader.py --mode connected --optimize > /tmp/connected-reader-optimization.json
+          python -c "import json; from pathlib import Path; c=json.loads(Path('independent_checks/height_series/connected_volume8/connected_certificate.json').read_text())['panel']; p=json.loads(Path('/tmp/connected-reader-optimization.json').read_text()); assert (p['optimal_panel'],p['optimal_gain'],p['optimal_determinant'],p['panels_tested'],p['nonsingular'],p['optimal_panel_count']) == (c['degrees'],c['inverse_infinity_norm'],c['determinant'],c['subsets_checked'],c['invertible'],c['optimal_ties'])"
       - name: Confirm deterministic replay
         run: git diff --exit-code
