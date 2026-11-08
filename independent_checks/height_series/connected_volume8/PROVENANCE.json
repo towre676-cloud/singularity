@@ -1,0 +1,12 @@
+{
+  "source_pr": 11,
+  "source_commit": "25b212a5ba9ab02f74d8a8b7ff37d9ad8f47d3f5",
+  "base_commit": "17f033ea9a1e6d93224e946a341f7a0e545ee64a",
+  "source_directory": "research/week-2026-11-05/connected-volume8-verified/Connected_Volume8_2026-11-05",
+  "retained_files": {
+    "CONNECTED_PROOF.md": "33aec5072c6c98fb746e7819b3a8285a636e5a804a78344154a9ed50b2233a86",
+    "replay/connected_certificate.json": "c9ad816dbc759fba91d2d85dbe673c86d86c844c5d61acc395691f1e3ab69004",
+    "replay/connected_check.py": "4176d2bb160206646ae233f572d082276063beb292153412eb9e74094fdb73c8"
+  },
+  "adaptation": "Replay script renamed vol8_connected_replay.py; output directory must be explicit. Mathematical checks unchanged. Uses existing pinned production law and modules. Historical proof text retained verbatim; its proposed.patch/replay paths describe the original research package, not this integration."
+}

@@ -12,6 +12,52 @@ HERE = Path(__file__).resolve().parent
 NAMES = ('Q0', 'Q1', 'S8_10', 'S8_11', 'S8_12', 'Theta223', 'closed_diamond')
 PANEL = (2, 6, 8, 18, 22, 28, 30)
 OPTIMAL_PANEL = (4, 8, 12, 14, 18, 24, 26)
+CONNECTED_INDICES = (0, 1, 2, 3, 5, 6)
+CONNECTED_NAMES = tuple(NAMES[i] for i in CONNECTED_INDICES)
+CONNECTED_PANEL = (6, 10, 14, 18, 24, 26)
+
+
+def model(mode, panel):
+    if mode not in ('general', 'connected'):
+        raise ValueError('mode must be general or connected')
+    names = CONNECTED_NAMES if mode == 'connected' else NAMES
+    default = CONNECTED_PANEL if mode == 'connected' else PANEL
+    panel = tuple(default if panel is None else panel)
+    if (len(panel) != len(names) or any(type(e) is not int or e < 0 for e in panel)
+            or len(set(panel)) != len(panel)):
+        raise ValueError('Choose %s distinct nonnegative integer degrees' % len(names))
+    return names, panel
+
+
+def connected_graph(record):
+    """Validate explicit topology; supplied calculations remain conditional."""
+    if record.get('connected') is not True:
+        raise ValueError('Connected mode requires connected=true on both records')
+    graph = record.get('graph')
+    if not isinstance(graph, dict):
+        raise ValueError('Connected mode requires graph with n and edges')
+    n, edges = graph.get('n'), graph.get('edges')
+    if type(n) is not int or n < 4 or n % 2 or not isinstance(edges, list):
+        raise ValueError('Invalid finite simple cubic graph')
+    adj = [set() for _ in range(n)]
+    for edge in edges:
+        if not isinstance(edge, (list, tuple)) or len(edge) != 2:
+            raise ValueError('Edges must be endpoint pairs')
+        a, b = edge
+        if (type(a) is not int or type(b) is not int or not 0 <= a < n
+                or not 0 <= b < n or a == b or b in adj[a]):
+            raise ValueError('Invalid endpoint, loop or duplicate edge')
+        adj[a].add(b); adj[b].add(a)
+    if any(len(row) != 3 for row in adj):
+        raise ValueError('Graph must be cubic')
+    seen, pending = {0}, [0]
+    while pending:
+        for v in adj[pending.pop()]:
+            if v not in seen:
+                seen.add(v); pending.append(v)
+    if len(seen) != n:
+        raise ValueError('Graph must be connected')
+    return n
 
 
 def add(a, b, scale=1):
@@ -50,7 +96,7 @@ def polynomial(p):
 
 
 @lru_cache(None)
-def factors():
+def factors(mode='general'):
     k = {8+2*j: F((-1)**j*comb(8, j)) for j in range(9)}
     f = {-2: F(1), 0: F(-1)}
     a = {2: F(3), 4: F(3), 6: F(1)}
@@ -58,13 +104,14 @@ def factors():
     for _ in range(4):
         weights.append(mul(weights[-1], f))
     weights += [{e: -x for e, x in a.items()}, mul(f, a)]
-    return tuple(mul(k, w) for w in weights)
+    model(mode, None)
+    result = tuple(mul(k, w) for w in weights)
+    return tuple(result[i] for i in CONNECTED_INDICES) if mode == 'connected' else result
 
 
-def matrix(panel=PANEL):
-    if len(panel) != 7 or len(set(panel)) != 7:
-        raise ValueError('Choose seven distinct degrees')
-    return [[p.get(e, F(0)) for p in factors()] for e in panel]
+def matrix(panel=None, *, mode='general'):
+    _, panel = model(mode, panel)
+    return [[p.get(e, F(0)) for p in factors(mode)] for e in panel]
 
 
 def invert(a):
@@ -88,9 +135,12 @@ def invert(a):
     return tuple(tuple(row[n:]) for row in rows), det
 
 
-def reconstruct(values):
+def reconstruct(values, *, mode='general'):
+    names, _ = model(mode, None)
+    if len(values) != len(names):
+        raise ValueError('Wrong coordinate count')
     p = {}
-    for x, factor in zip(values, factors()):
+    for x, factor in zip(values, factors(mode)):
         p = add(p, factor, x)
     return p
 
@@ -122,25 +172,36 @@ def log_series(record):
     return out
 
 
-def extract(a, b, panel=PANEL):
-    """Return seven *differences*, never individual graph counts. B minus A."""
+def extract(a, b, panel=None, *, mode='general'):
+    """Return invariant differences B-A, conditional on complete calculations."""
+    names, panel = model(mode, panel)
+    orders = [connected_graph(record) for record in (a, b)] if mode == 'connected' else None
     left, right = log_series(a), log_series(b)
+    if orders is not None and any(series[1] != {3: F(n)} for series, n in zip((left, right), orders)):
+        raise ValueError('Volume one must agree with supplied graph order')
     for r in range(1, 8):
         if left[r] != right[r]:
             raise ValueError('Lower-order disagreement at volume %s' % r)
     delta = add(right[8], left[8], -1)
-    inv, det = invert(matrix(tuple(panel)))
+    inv, det = invert(matrix(panel, mode=mode))
     values = [sum(x*delta.get(e, 0) for x, e in zip(row, panel)) for row in inv]
-    if reconstruct(values) != delta:
-        raise ValueError('Eighth polynomial is inconsistent with the seven-coordinate model')
+    if reconstruct(values, mode=mode) != delta:
+        raise ValueError('Eighth polynomial is inconsistent with the %s-coordinate model' % len(names))
+    if mode == 'connected' and orders[0] <= 8 and delta:
+        raise ValueError('Compatible connected graphs through order eight must have zero difference')
     if any(x.denominator != 1 for x in values):
         raise ValueError('Recovered invariant differences are not integers')
-    return {'schema': 'singularity.volume8.extraction.v1', 'delta': 'B-A',
+    result = {'schema': 'singularity.volume8.extraction.v1', 'delta': 'B-A',
             'status': 'exact_integer_algebraic_certificate',
             'scope': 'conditional on supplied complete cubic-graph calculations being correct',
             'panel': list(panel), 'determinant': str(det),
-            'invariant_differences': dict(zip(NAMES, map(int, values))),
+            'invariant_differences': dict(zip(names, map(int, values))),
             'full_polynomial_reconstructed': True}
+    if mode == 'connected':
+        result.update(model='connected', connected_topology_verified=True,
+                      omitted_invariant_differences={'S8_12': 0},
+                      research_delta_convention='A-B; negate retained witness differences for B-A')
+    return result
 
 
 def sensitivity(samples, radii, panel=PANEL):
@@ -150,7 +211,7 @@ def sensitivity(samples, radii, panel=PANEL):
     samples, radii = [float(x) for x in samples], [float(x) for x in radii]
     if not all(isfinite(x) for x in samples+radii) or any(x < 0 for x in radii):
         raise ValueError('Require finite samples and nonnegative finite radii')
-    inv, _ = invert(matrix(tuple(panel)))
+    inv, _ = invert(matrix(panel))
     estimates = [sum(float(x)*y for x, y in zip(row, samples)) for row in inv]
     bounds = [sum(abs(float(x))*y for x, y in zip(row, radii)) for row in inv]
     if not all(isfinite(x) for x in estimates+bounds):
@@ -163,15 +224,16 @@ def sensitivity(samples, radii, panel=PANEL):
             'inverse_infinity_norm': str(max(sum(map(abs, row)) for row in inv))}
 
 
-def optimize():
+def optimize(*, mode='general'):
     """Exhaust all unscaled single-coefficient panels; exact l-infinity error gain."""
-    degrees = sorted({e for p in factors() for e in p})
+    names, _ = model(mode, None)
+    degrees = sorted({e for p in factors(mode) for e in p})
     best = None
     total = nonsingular = ties = 0
-    for panel in combinations(degrees, 7):
+    for panel in combinations(degrees, len(names)):
         total += 1
         try:
-            inv, det = invert(matrix(panel))
+            inv, det = invert(matrix(panel, mode=mode))
         except ValueError:
             continue
         nonsingular += 1
@@ -184,24 +246,29 @@ def optimize():
             'candidate_degrees': degrees, 'panels_tested': total, 'nonsingular': nonsingular,
             'optimal_gain': str(best[0]), 'optimal_panel': list(best[1]),
             'optimal_determinant': str(best[2]), 'optimal_panel_count': ties,
-            'scope': 'global within seven distinct single q-coefficient measurements, no rescaling'}
+            'scope': 'global within %s distinct single q-coefficient measurements, no rescaling' % ('six' if mode == 'connected' else 'seven')}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('input', nargs='?', help='JSON with A and B calculation records')
+    parser.add_argument('--mode', choices=('general', 'connected'), default='general')
     parser.add_argument('--optimize', action='store_true')
-    parser.add_argument('--panel', choices=('tail', 'optimal'), default='tail')
+    parser.add_argument('--panel', choices=('tail', 'optimal'), default=None)
     parser.add_argument('--sensitivity', action='store_true', help='JSON with samples and radii')
     args = parser.parse_args()
     if args.optimize:
-        out = optimize()
+        out = optimize(mode=args.mode)
     else:
         if not args.input:
             parser.error('Provide input JSON or --optimize')
         data = json.loads(Path(args.input).read_text())
-        panel = OPTIMAL_PANEL if args.panel == 'optimal' else PANEL
-        out = sensitivity(data['samples'], data['radii'], panel) if args.sensitivity else extract(data['A'], data['B'], panel)
+        if args.mode == 'connected' and (args.sensitivity or args.panel == 'tail'):
+            parser.error('Connected mode supports exact extraction with its optimal panel; sensitivity is general-only')
+        panel = (CONNECTED_PANEL if args.mode == 'connected' else
+                 OPTIMAL_PANEL if args.panel == 'optimal' else PANEL)
+        out = (sensitivity(data['samples'], data['radii'], panel) if args.sensitivity else
+               extract(data['A'], data['B'], panel, mode=args.mode))
     print(json.dumps(out, indent=2))
 
 
