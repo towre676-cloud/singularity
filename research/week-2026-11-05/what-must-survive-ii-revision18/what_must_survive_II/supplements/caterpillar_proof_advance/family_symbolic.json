@@ -1,0 +1,89 @@
+{
+  "variable": "s, a positive integer",
+  "delta_h3": [
+    {
+      "exponent_s": 3,
+      "exponent_constant": 3,
+      "coefficient": "1 - s"
+    },
+    {
+      "exponent_s": 3,
+      "exponent_constant": 5,
+      "coefficient": "s + 1"
+    },
+    {
+      "exponent_s": 4,
+      "exponent_constant": 3,
+      "coefficient": "-1"
+    },
+    {
+      "exponent_s": 4,
+      "exponent_constant": 7,
+      "coefficient": "1"
+    },
+    {
+      "exponent_s": 5,
+      "exponent_constant": 5,
+      "coefficient": "-s - 2"
+    },
+    {
+      "exponent_s": 5,
+      "exponent_constant": 7,
+      "coefficient": "s"
+    },
+    {
+      "exponent_s": 6,
+      "exponent_constant": 5,
+      "coefficient": "1"
+    },
+    {
+      "exponent_s": 6,
+      "exponent_constant": 9,
+      "coefficient": "-1"
+    },
+    {
+      "exponent_s": 7,
+      "exponent_constant": 7,
+      "coefficient": "s - 1"
+    },
+    {
+      "exponent_s": 7,
+      "exponent_constant": 9,
+      "coefficient": "-s - 1"
+    },
+    {
+      "exponent_s": 9,
+      "exponent_constant": 9,
+      "coefficient": "s + 2"
+    },
+    {
+      "exponent_s": 9,
+      "exponent_constant": 11,
+      "coefficient": "-s"
+    }
+  ],
+  "exponent_collision_parameters": [
+    1,
+    2
+  ],
+  "tail_cutoff": 3,
+  "tail_extreme_exponent": [
+    9,
+    11
+  ],
+  "tail_extreme_coefficient": "-s",
+  "special_checks": {
+    "1": {
+      "lowest_exponent": 7,
+      "lowest_coefficient": -1,
+      "highest_exponent": 20,
+      "highest_coefficient": -1
+    },
+    "2": {
+      "lowest_exponent": 9,
+      "lowest_coefficient": -1,
+      "highest_exponent": 29,
+      "highest_coefficient": -2
+    }
+  }
+}

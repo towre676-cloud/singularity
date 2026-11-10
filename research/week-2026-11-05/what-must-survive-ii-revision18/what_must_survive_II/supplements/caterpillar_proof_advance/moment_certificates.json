@@ -1,0 +1,11 @@
+{
+  "exact_polynomial_identities": true,
+  "mu2_differences": {
+    "(0, 1)": "(-4*c + 2*n)*(a + b - 2)",
+    "(0, 2)": "2*b*(-2*c + n) - 4*b + 4*c + 2*(a - 2)*(-2*b + n)",
+    "(0, 3)": "(4*a - 4)*(-b - c + n)",
+    "(1, 2)": "(4*a - 4)*(-b + c)",
+    "(2, 3)": "(2*a - 2*b)*(-2*c + n)"
+  },
+  "critical_relation": "delta3 = 3/2*(n-a-b)*delta2 - 6*(a-1)*(b-1)*(b-c)"
+}

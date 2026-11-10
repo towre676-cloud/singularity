@@ -1,0 +1,416 @@
+{
+  "construction": "common prism reservoir with 125-vertex Q-minus-vertex blocks; A minus B",
+  "recipes": [
+    {
+      "coordinate": "Q0",
+      "n": 1516,
+      "reservoir_blocks": 12,
+      "sides": [
+        {
+          "seeds": [
+            {
+              "k": 8,
+              "mask": 873568,
+              "multiplicity": 1
+            }
+          ],
+          "K": 8,
+          "D": 8
+        },
+        {
+          "seeds": [
+            {
+              "k": 1,
+              "mask": 0,
+              "multiplicity": 4
+            }
+          ],
+          "K": 4,
+          "D": 12
+        }
+      ],
+      "pure_unit": true,
+      "bridgeless_by_capacity_theorem": true
+    },
+    {
+      "coordinate": "Q1",
+      "n": 2786,
+      "reservoir_blocks": 22,
+      "sides": [
+        {
+          "seeds": [
+            {
+              "k": 8,
+              "mask": 309872,
+              "multiplicity": 1
+            },
+            {
+              "k": 1,
+              "mask": 0,
+              "multiplicity": 4
+            },
+            {
+              "k": 2,
+              "mask": 1,
+              "multiplicity": 1
+            }
+          ],
+          "K": 14,
+          "D": 22
+        },
+        {
+          "seeds": [
+            {
+              "k": 4,
+              "mask": 30,
+              "multiplicity": 1
+            },
+            {
+              "k": 7,
+              "mask": 44336,
+              "multiplicity": 2
+            }
+          ],
+          "K": 18,
+          "D": 18
+        }
+      ],
+      "pure_unit": true,
+      "bridgeless_by_capacity_theorem": true
+    },
+    {
+      "coordinate": "S8_10",
+      "n": 6856,
+      "reservoir_blocks": 54,
+      "sides": [
+        {
+          "seeds": [
+            {
+              "k": 3,
+              "mask": 7,
+              "multiplicity": 3
+            },
+            {
+              "k": 4,
+              "mask": 30,
+              "multiplicity": 3
+            },
+            {
+              "k": 6,
+              "mask": 1880,
+              "multiplicity": 2
+            },
+            {
+              "k": 7,
+              "mask": 44336,
+              "multiplicity": 2
+            },
+            {
+              "k": 8,
+              "mask": 326000,
+              "multiplicity": 1
+            }
+          ],
+          "K": 55,
+          "D": 51
+        },
+        {
+          "seeds": [
+            {
+              "k": 7,
+              "mask": 7864,
+              "multiplicity": 1
+            },
+            {
+              "k": 7,
+              "mask": 44337,
+              "multiplicity": 2
+            },
+            {
+              "k": 7,
+              "mask": 57777,
+              "multiplicity": 1
+            },
+            {
+              "k": 8,
+              "mask": 309872,
+              "multiplicity": 1
+            },
+            {
+              "k": 8,
+              "mask": 365424,
+              "multiplicity": 1
+            },
+            {
+              "k": 1,
+              "mask": 0,
+              "multiplicity": 6
+            },
+            {
+              "k": 2,
+              "mask": 1,
+              "multiplicity": 1
+            }
+          ],
+          "K": 52,
+          "D": 54
+        }
+      ],
+      "pure_unit": true,
+      "bridgeless_by_capacity_theorem": true
+    },
+    {
+      "coordinate": "S8_11",
+      "n": 25932,
+      "reservoir_blocks": 204,
+      "sides": [
+        {
+          "seeds": [
+            {
+              "k": 4,
+              "mask": 31,
+              "multiplicity": 3
+            },
+            {
+              "k": 7,
+              "mask": 7864,
+              "multiplicity": 6
+            },
+            {
+              "k": 7,
+              "mask": 44337,
+              "multiplicity": 8
+            },
+            {
+              "k": 7,
+              "mask": 57777,
+              "multiplicity": 4
+            },
+            {
+              "k": 8,
+              "mask": 309872,
+              "multiplicity": 2
+            },
+            {
+              "k": 8,
+              "mask": 365424,
+              "multiplicity": 4
+            },
+            {
+              "k": 8,
+              "mask": 850544,
+              "multiplicity": 1
+            },
+            {
+              "k": 8,
+              "mask": 984673,
+              "multiplicity": 2
+            },
+            {
+              "k": 1,
+              "mask": 0,
+              "multiplicity": 19
+            }
+          ],
+          "K": 229,
+          "D": 203
+        },
+        {
+          "seeds": [
+            {
+              "k": 3,
+              "mask": 7,
+              "multiplicity": 12
+            },
+            {
+              "k": 4,
+              "mask": 30,
+              "multiplicity": 13
+            },
+            {
+              "k": 6,
+              "mask": 1880,
+              "multiplicity": 8
+            },
+            {
+              "k": 7,
+              "mask": 44336,
+              "multiplicity": 4
+            },
+            {
+              "k": 7,
+              "mask": 789222,
+              "multiplicity": 2
+            },
+            {
+              "k": 8,
+              "mask": 326000,
+              "multiplicity": 4
+            },
+            {
+              "k": 8,
+              "mask": 841956,
+              "multiplicity": 1
+            },
+            {
+              "k": 8,
+              "mask": 12693829,
+              "multiplicity": 2
+            }
+          ],
+          "K": 234,
+          "D": 198
+        }
+      ],
+      "pure_unit": true,
+      "bridgeless_by_capacity_theorem": true
+    },
+    {
+      "coordinate": "Theta223",
+      "n": 1778,
+      "reservoir_blocks": 14,
+      "sides": [
+        {
+          "seeds": [
+            {
+              "k": 3,
+              "mask": 7,
+              "multiplicity": 1
+            },
+            {
+              "k": 6,
+              "mask": 956,
+              "multiplicity": 1
+            },
+            {
+              "k": 6,
+              "mask": 1880,
+              "multiplicity": 1
+            }
+          ],
+          "K": 15,
+          "D": 13
+        },
+        {
+          "seeds": [
+            {
+              "k": 4,
+              "mask": 30,
+              "multiplicity": 1
+            },
+            {
+              "k": 5,
+              "mask": 220,
+              "multiplicity": 1
+            },
+            {
+              "k": 6,
+              "mask": 1881,
+              "multiplicity": 1
+            }
+          ],
+          "K": 15,
+          "D": 13
+        }
+      ],
+      "pure_unit": true,
+      "bridgeless_by_capacity_theorem": true
+    },
+    {
+      "coordinate": "closed_diamond",
+      "n": 13184,
+      "reservoir_blocks": 104,
+      "sides": [
+        {
+          "seeds": [
+            {
+              "k": 4,
+              "mask": 30,
+              "multiplicity": 3
+            },
+            {
+              "k": 5,
+              "mask": 220,
+              "multiplicity": 2
+            },
+            {
+              "k": 5,
+              "mask": 221,
+              "multiplicity": 2
+            },
+            {
+              "k": 6,
+              "mask": 1880,
+              "multiplicity": 1
+            },
+            {
+              "k": 6,
+              "mask": 6355,
+              "multiplicity": 2
+            },
+            {
+              "k": 6,
+              "mask": 17142,
+              "multiplicity": 1
+            },
+            {
+              "k": 7,
+              "mask": 44336,
+              "multiplicity": 6
+            }
+          ],
+          "K": 98,
+          "D": 86
+        },
+        {
+          "seeds": [
+            {
+              "k": 3,
+              "mask": 7,
+              "multiplicity": 2
+            },
+            {
+              "k": 4,
+              "mask": 31,
+              "multiplicity": 1
+            },
+            {
+              "k": 6,
+              "mask": 956,
+              "multiplicity": 1
+            },
+            {
+              "k": 6,
+              "mask": 1881,
+              "multiplicity": 2
+            },
+            {
+              "k": 6,
+              "mask": 5941,
+              "multiplicity": 1
+            },
+            {
+              "k": 8,
+              "mask": 309872,
+              "multiplicity": 3
+            },
+            {
+              "k": 1,
+              "mask": 0,
+              "multiplicity": 20
+            },
+            {
+              "k": 2,
+              "mask": 1,
+              "multiplicity": 1
+            }
+          ],
+          "K": 80,
+          "D": 104
+        }
+      ],
+      "pure_unit": true,
+      "bridgeless_by_capacity_theorem": true
+    }
+  ]
+}
