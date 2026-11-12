@@ -1,0 +1,41 @@
+name: PerfectJet observation bridge
+on:
+  pull_request:
+    paths:
+      - 'independent_checks/height_series/perfectjet_observation_bridge.py'
+      - 'independent_checks/height_series/test_perfectjet_observation_bridge.py'
+      - 'independent_checks/height_series/PERFECTJET_PIN.txt'
+      - 'independent_checks/height_series/PERFECTJET_BRIDGE.md'
+      - '.github/workflows/perfectjet-observation-bridge.yml'
+  push:
+    paths:
+      - 'independent_checks/height_series/perfectjet_observation_bridge.py'
+      - 'independent_checks/height_series/test_perfectjet_observation_bridge.py'
+      - 'independent_checks/height_series/PERFECTJET_PIN.txt'
+      - 'independent_checks/height_series/PERFECTJET_BRIDGE.md'
+      - '.github/workflows/perfectjet-observation-bridge.yml'
+  workflow_dispatch:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned PerfectJet
+        shell: bash
+        run: |
+          PIN="$(cat independent_checks/height_series/PERFECTJET_PIN.txt)"
+          python -m pip install "git+https://github.com/towre676-cloud/PerfectJet.git@${PIN}"
+      - name: Replay both reader optimizations
+        working-directory: independent_checks/height_series
+        run: python -m unittest test_perfectjet_observation_bridge.py -v
+      - name: Emit bridge receipt
+        working-directory: independent_checks/height_series
+        run: python perfectjet_observation_bridge.py > /tmp/perfectjet-observation-bridge.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: perfectjet-observation-bridge
+          path: /tmp/perfectjet-observation-bridge.json
