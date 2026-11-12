@@ -1,0 +1,40 @@
+name: Arbitrary rational sensor theorem
+on:
+  pull_request:
+    paths:
+      - 'independent_checks/height_series/arbitrary_sensor_discovery.py'
+      - 'independent_checks/height_series/test_arbitrary_sensor_discovery.py'
+      - 'independent_checks/height_series/ARBITRARY_SENSOR_THEOREM.md'
+      - 'independent_checks/height_series/PERFECTJET_PIN.txt'
+      - '.github/workflows/arbitrary-sensor-discovery.yml'
+  push:
+    paths:
+      - 'independent_checks/height_series/arbitrary_sensor_discovery.py'
+      - 'independent_checks/height_series/test_arbitrary_sensor_discovery.py'
+      - 'independent_checks/height_series/ARBITRARY_SENSOR_THEOREM.md'
+      - 'independent_checks/height_series/PERFECTJET_PIN.txt'
+      - '.github/workflows/arbitrary-sensor-discovery.yml'
+  workflow_dispatch:
+jobs:
+  exact-dual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned PerfectJet
+        run: |
+          PIN="$(cat independent_checks/height_series/PERFECTJET_PIN.txt)"
+          python -m pip install "git+https://github.com/towre676-cloud/PerfectJet.git@${PIN}"
+      - name: Replay exact global dual witnesses
+        working-directory: independent_checks/height_series
+        run: python -m unittest test_arbitrary_sensor_discovery.py -v
+      - name: Emit discovery receipt
+        working-directory: independent_checks/height_series
+        run: python arbitrary_sensor_discovery.py > /tmp/arbitrary-sensors.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arbitrary-sensor-global-optimum
+          path: /tmp/arbitrary-sensors.json
